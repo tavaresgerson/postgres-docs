@@ -1,0 +1,3 @@
+## O.5. `pg_receivexlog` renomeado para `pg_receivewal` [#](#APP-PGRECEIVEXLOG)
+
+O PostgreSQL 9.6 e versões anteriores forneciam um comando chamado `pg_receivexlog` para recuperar arquivos de log de pré-escrita (WAL). Esse comando foi renomeado para `pg_receivewal`, consulte [pg_receivewal](app-pgreceivewal.md "pg_receivewal") para documentação do `pg_receivewal` e consulte as notas de lançamento do PostgreSQL 10(release-prior.md "E.6. Prior Releases") para detalhes sobre essa mudança.

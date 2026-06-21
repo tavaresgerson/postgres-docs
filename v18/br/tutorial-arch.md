@@ -1,0 +1,11 @@
+## 1.2. Fundamentos arquitetônicos [#](#TUTORIAL-ARCH)
+
+Antes de prosseguir, você deve entender a arquitetura básica do sistema PostgreSQL. Entender como as partes do PostgreSQL interagem tornará este capítulo um pouco mais claro.
+
+No jargão de banco de dados, o PostgreSQL utiliza um modelo cliente/servidor. Uma sessão do PostgreSQL consiste nos seguintes processos (programas) cooperativos:
+
+* Um processo de servidor, que gerencia os arquivos do banco de dados, aceita conexões ao banco de dados a partir de aplicativos de cliente e realiza ações de banco de dados em nome dos clientes. O programa do servidor de banco de dados é chamado `postgres`. * O aplicativo de cliente (frontend) do usuário que deseja realizar operações de banco de dados. Os aplicativos de cliente podem ser muito diversos em natureza: um cliente pode ser uma ferramenta orientada a texto, uma aplicação gráfica, um servidor web que acessa o banco de dados para exibir páginas da web, ou uma ferramenta especializada de manutenção de banco de dados. Algumas aplicações de cliente são fornecidas com a distribuição PostgreSQL; a maioria é desenvolvida por usuários.
+
+Como é típico em aplicações cliente/servidor, o cliente e o servidor podem estar em diferentes hosts. Nesse caso, eles se comunicam através de uma conexão de rede TCP/IP. Você deve ter isso em mente, porque os arquivos que podem ser acessados em uma máquina cliente podem não ser acessíveis (ou podem ser acessados apenas usando um nome de arquivo diferente) na máquina do servidor de banco de dados.
+
+O servidor PostgreSQL pode lidar com múltiplas conexões concorrentes dos clientes. Para isso, ele inicia (ou "dividir") um novo processo para cada conexão. A partir desse ponto, o cliente e o novo processo do servidor se comunicam sem intervenção do processo original do `postgres`. Assim, o processo do servidor supervisor está sempre em execução, esperando conexões de clientes, enquanto os processos do cliente e do servidor associado vêm e vão. (Tudo isso, é claro, é invisível ao usuário. Apenas mencionamos isso aqui para a totalidade.)

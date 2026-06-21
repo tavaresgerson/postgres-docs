@@ -1,0 +1,7 @@
+## 29.10. Monitoramento [#](#LOGICAL-REPLICATION-MONITORING)
+
+Como a replicação lógica é baseada em uma arquitetura semelhante à da replicação de fluxo físico (warm-standby.md#STREAMING-REPLICATION "26.2.5. Streaming Replication"), o monitoramento em um nó de publicação é semelhante ao monitoramento de um primário de replicação física (consulte [Seção 26.2.5.2] (warm-standby.md#STREAMING-REPLICATION-MONITORING "26.2.5.2. Monitoring")).
+
+As informações de monitoramento sobre a assinatura são visíveis em `pg_stat_subscription`(monitoring-stats.md#MONITORING-PG-STAT-SUBSCRIPTION "27.2.8. pg_stat_subscription"). Esta visualização contém uma linha para cada trabalhador de assinatura. Uma assinatura pode ter zero ou mais trabalhadores de assinatura ativos, dependendo de seu estado.
+
+Normalmente, há um único processo de aplicação em andamento para uma assinatura habilitada. Uma assinatura desativada ou uma assinatura que travou terá zero linhas nesta visualização. Se a sincronização inicial dos dados de qualquer tabela estiver em andamento, haverá trabalhadores adicionais para as tabelas que estão sendo sincronizadas. Além disso, se a transação `streaming`(sql-createsubscription.md#SQL-CREATESUBSCRIPTION-PARAMS-WITH-STREAMING) for aplicada em paralelo, pode haver trabalhadores adicionais de aplicação paralelos.

@@ -1,0 +1,3 @@
+## 36.8. Funções de linguagem processual [#](#XFUNC-PL)
+
+O PostgreSQL permite que funções definidas pelo usuário sejam escritas em outros idiomas além do SQL e do C. Esses outros idiomas são genericamente chamados de *linguagens procedimentais* (LPs). As linguagens procedimentais não são incorporadas ao servidor PostgreSQL; elas são oferecidas por módulos carregáveis. Consulte o [Capítulo 40][(xplang.md "Chapter 40. Procedural Languages")] e os capítulos seguintes para mais informações.

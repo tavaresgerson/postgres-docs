@@ -1,0 +1,19 @@
+## 19.14. Gerenciamento de Erros [#](#RUNTIME-CONFIG-ERROR-HANDLING)
+
+`exit_on_error` (`boolean`) [#](#GUC-EXIT-ON-ERROR): Se ativado, qualquer erro terminará a sessão atual. Por padrão, isso está definido como desativado, de modo que apenas os erros FATAL terminem a sessão.
+
+`restart_after_crash` (`boolean`) [#](#GUC-RESTART-AFTER-CRASH): Quando definido como ativo, que é o padrão, o PostgreSQL será automaticamente reinicializado após um crash no backend. Deixar esse valor definido como ativo é normalmente a melhor maneira de maximizar a disponibilidade do banco de dados. No entanto, em algumas circunstâncias, como quando o PostgreSQL está sendo invocado pelo clusterware, pode ser útil desativar o reinício para que o clusterware possa obter controle e tomar quaisquer ações que considere apropriadas.
+
+Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor.
+
+`data_sync_retry` (`boolean`) [#](#GUC-DATA-SYNC-RETRY): Quando definido como desligado, que é o padrão, o PostgreSQL levantará um erro de nível PANIC quando não conseguir limpar os arquivos de dados modificados no sistema de arquivos. Isso faz com que o servidor de banco de dados quebre. Este parâmetro só pode ser definido no início do servidor.
+
+Em alguns sistemas operacionais, o status dos dados na cache de páginas do kernel é desconhecido após uma falha de retorno de dados. Em alguns casos, pode ter sido completamente esquecido, tornando-o inseguro para tentar novamente; a segunda tentativa pode ser relatada como bem-sucedida, quando, na verdade, os dados foram perdidos. Nessas circunstâncias, a única maneira de evitar a perda de dados é recuperar o WAL após qualquer falha ser relatada, de preferência após investigar a causa raiz da falha e substituir qualquer hardware defeituoso.
+
+Se configurado como ligado, o PostgreSQL informará um erro, mas continuará a funcionar para que a operação de esvaziamento de dados possa ser repetida em um ponto de verificação posterior. Configure-o apenas como ligado após investigar o tratamento do sistema operacional dos dados armazenados, no caso de falha de retorno.
+
+`recovery_init_sync_method` (`enum`) [#](#GUC-RECOVERY-INIT-SYNC-METHOD): Quando configurado para `fsync`, que é o padrão, o PostgreSQL abrirá e sincronizará recursivamente todos os arquivos no diretório de dados antes de começar a recuperação em caso de falha. A busca por arquivos seguirá links simbólicos para o diretório WAL e cada espaço de tabela configurado (mas não outros links simbólicos). Isso visa garantir que todos os arquivos WAL e de dados sejam armazenados de forma durável no disco antes de refazer as alterações. Isso se aplica sempre que iniciar um clúster de banco de dados que não foi desligado de forma limpa, incluindo cópias criadas com pg_basebackup.
+
+Em Linux, `syncfs` pode ser usado em vez disso, para pedir ao sistema operacional que sincronize os sistemas de arquivos que contêm o diretório de dados, os arquivos WAL e cada espaço de tabela (mas não quaisquer outros sistemas de arquivos que possam ser acessados por meio de links simbólicos). Isso pode ser muito mais rápido do que a configuração `fsync`, porque não precisa abrir cada arquivo um por um. Por outro lado, pode ser mais lento se um sistema de arquivos for compartilhado por outras aplicações que modificam muitos arquivos, uma vez que esses arquivos também serão escritos no disco. Além disso, em versões do Linux antes da 5.8, erros de I/O encontrados ao gravar dados no disco podem não ser relatados ao PostgreSQL, e mensagens de erro relevantes podem aparecer apenas nos registros do kernel.
+
+Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor.

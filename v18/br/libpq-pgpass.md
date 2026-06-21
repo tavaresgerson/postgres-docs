@@ -1,0 +1,13 @@
+## 32.16. O arquivo de senha [#](#LIBPQ-PGPASS)
+
+O arquivo `.pgpass` no diretório de usuário pode conter senhas que serão usadas se a conexão exigir uma senha (e não tiver sido especificada senha de outra forma). Em sistemas Unix, o diretório pode ser especificado pela variável de ambiente `HOME`, ou, se indefinida, o diretório de casa do usuário efetivo. Em sistemas Microsoft Windows, o arquivo é denominado `%APPDATA%\postgresql\pgpass.conf` (onde `%APPDATA%` se refere ao subdiretório de Dados da Aplicação no perfil do usuário). Alternativamente, o arquivo de senha a ser usado pode ser especificado usando o parâmetro de conexão [passfile](libpq-connect.md#LIBPQ-CONNECT-PASSFILE) ou a variável de ambiente `PGPASSFILE`.
+
+Este arquivo deve conter linhas no seguinte formato:
+
+```
+hostname:port:database:username:password
+```
+
+(Você pode adicionar um comentário de lembrança ao arquivo copiando a linha acima e antecedendo-a com `#`. Cada um dos primeiros quatro campos pode ser um valor literal, ou `*`, que corresponde a qualquer coisa. O campo de senha da primeira linha que corresponde aos parâmetros de conexão atuais será usado. (Portanto, coloque entradas mais específicas primeiro quando estiver usando caracteres especiais). Se uma entrada precisar conter `:` ou `\`, escape este caractere com `\`. O campo de nome de host é correspondido ao parâmetro de conexão `host` se isso for especificado, caso contrário, ao parâmetro `hostaddr` se isso for especificado; se nenhum dos dois for dado, então o nome de host `localhost` é buscado. O campo de nome de host `localhost` também é buscado quando a conexão é uma conexão de socket de domínio Unix e o parâmetro `host` corresponde ao caminho padrão do diretório de socket do libpq. Em um servidor de espera, um campo de banco de dados de `replication` corresponde a conexões de replicação em streaming feitas ao servidor principal. O campo de banco de dados é de utilidade limitada caso contrário, porque os usuários têm a mesma senha para todos os bancos de dados no mesmo clúster.
+
+Nos sistemas Unix, as permissões de um arquivo de senha devem impedir qualquer acesso ao mundo ou ao grupo; realize isso com um comando como `chmod 0600 ~/.pgpass`. Se as permissões forem menos restritivas que essa, o arquivo será ignorado. No Microsoft Windows, presume-se que o arquivo esteja armazenado em um diretório seguro, portanto, não é feita nenhuma verificação de permissões especiais.

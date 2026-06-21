@@ -1,0 +1,9 @@
+## 61.1. Gerenciamento de consultas como um problema de otimização complexo [#](#GEQO-INTRO)
+
+Entre todos os operadores relacionais, o mais difícil de processar e otimizar é o *join*. O número de planos de consulta possíveis cresce exponencialmente com o número de *join* na consulta. Mais esforço de otimização é causado pelo suporte a uma variedade de *métodos de join* (por exemplo, loop aninhado, join hash, join de fusão no PostgreSQL) para processar *join* individuais e uma diversidade de *índices* (por exemplo, B-tree, hash, GiST e GIN no PostgreSQL) como caminhos de acesso para as relações.
+
+O otimizador de consultas normal do PostgreSQL realiza uma *pesquisa quase exaustiva* sobre o espaço de estratégias alternativas. Esse algoritmo, introduzido pela primeira vez no banco de dados IBM System R, produz uma ordem de junção quase ótima, mas pode levar uma quantidade enorme de tempo e espaço de memória quando o número de junções na consulta cresce. Isso torna o otimizador de consultas comum do PostgreSQL inadequado para consultas que unem um grande número de tabelas.
+
+O Instituto de Controle Automático da Universidade de Mineração e Tecnologia, em Freiberg, Alemanha, encontrou alguns problemas quando quis usar PostgreSQL como o backend para um sistema de suporte a decisões baseado em conhecimento para a manutenção de uma rede elétrica. O DBMS precisava lidar com grandes consultas de junção para a máquina de inferência do sistema baseado em conhecimento. O número de junções nessas consultas feitas usando o otimizador de consulta normal tornou-se inviável.
+
+No que se segue, descrevemos a implementação de um *algoritmo genético* para resolver o problema de ordenação de junções de uma maneira eficiente para consultas que envolvem um grande número de junções.

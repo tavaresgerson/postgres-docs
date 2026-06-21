@@ -1,0 +1,5 @@
+## 8.20. `pg_lsn` Tipo [#](#DATATYPE-PG-LSN)
+
+O tipo de dados `pg_lsn` pode ser usado para armazenar dados LSN (Número de Sequência de Registro) que é um ponteiro para uma localização no WAL. Esse tipo é uma representação do `XLogRecPtr` e um tipo interno do sistema do PostgreSQL.
+
+Internamente, um LSN é um inteiro de 64 bits, representando uma posição de byte no fluxo de log de antecipação. Ele é impresso como dois números hexadecimais de até 8 dígitos cada, separados por uma barra; por exemplo, `16/B374D848`. O tipo `pg_lsn` suporta os operadores de comparação padrão, como `=` e `>`. Duas LSNs podem ser subtraídas usando o operador `-`; o resultado é o número de bytes que separam essas localizações de log de antecipação. Além disso, o número de bytes pode ser adicionado e subtraído de LSN usando os operadores `+(pg_lsn,numeric)` e `-(pg_lsn,numeric)`, respectivamente. Note que o LSN calculado deve estar na faixa do tipo `pg_lsn`, ou seja, entre `0/0` e `FFFFFFFF/FFFFFFFF`.

@@ -1,0 +1,9 @@
+## 20.4. Autenticação de confiança [#](#AUTH-TRUST)
+
+Quando a autenticação `trust` é especificada, o PostgreSQL assume que qualquer pessoa que possa se conectar ao servidor está autorizada a acessar o banco de dados com qualquer nome de usuário do banco de dados que especificar (mesmo nomes de superusuário). Claro, as restrições feitas nas colunas `database` e `user` ainda se aplicam. Este método deve ser usado apenas quando há proteção adequada em nível de sistema operacional nas conexões ao servidor.
+
+A autenticação `trust` é apropriada e muito conveniente para conexões locais em uma estação de trabalho de um único usuário. Geralmente, não é apropriada por si só em uma máquina multiusuário. No entanto, você pode ser capaz de usar `trust`, mesmo em uma máquina multiusuário, se restringir o acesso ao arquivo de soquete de Unix do servidor usando permissões do sistema de arquivos. Para fazer isso, defina os parâmetros de configuração `unix_socket_permissions` (e possivelmente `unix_socket_group`) conforme descrito em [Seção 19.3][(runtime-config-connection.md "19.3. Connections and Authentication")]. Ou você pode definir o parâmetro de configuração `unix_socket_directories` para colocar o arquivo de soquete em um diretório devidamente restrito.
+
+Definir permissões de sistema de arquivos só ajuda em conexões de Unix-socket. Conexões locais TCP/IP não são restringidas por permissões de sistema de arquivos. Portanto, se você deseja usar permissões de sistema de arquivos para segurança local, remova a linha `host ... 127.0.0.1 ...` de `pg_hba.conf`, ou mude-a para um método de autenticação que não seja `trust`.
+
+A autenticação `trust` é adequada apenas para conexões TCP/IP se você confiar em todos os usuários em todas as máquinas que são autorizadas a se conectar ao servidor pelas linhas `pg_hba.conf` que especificam `trust`. É raramente razoável usar `trust` para quaisquer conexões TCP/IP que não sejam as que vêm do localhost (127.0.0.1).

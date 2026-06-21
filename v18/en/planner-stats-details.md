@@ -1,0 +1,16 @@
+## Chapter 69. How the Planner Uses Statistics
+
+**Table of Contents**
+
+* [69.1. Row Estimation Examples](row-estimation-examples.md)
+* [69.2. Multivariate Statistics Examples](multivariate-statistics-examples.md)
+
++ [69.2.1. Functional Dependencies](multivariate-statistics-examples.md#FUNCTIONAL-DEPENDENCIES)
++ [69.2.2. Multivariate N-Distinct Counts](multivariate-statistics-examples.md#MULTIVARIATE-NDISTINCT-COUNTS)
++ [69.2.3. MCV Lists](multivariate-statistics-examples.md#MCV-LISTS)
+
+* [69.3. Planner Statistics and Security](planner-stats-security.md)
+
+This chapter builds on the material covered in [Section 14.1](using-explain.md "14.1. Using EXPLAIN") and [Section 14.2](planner-stats.md "14.2. Statistics Used by the Planner") to show some additional details about how the planner uses the system statistics to estimate the number of rows each part of a query might return. This is a significant part of the planning process, providing much of the raw material for cost calculation.
+
+The intent of this chapter is not to document the code in detail, but to present an overview of how it works. This will perhaps ease the learning curve for someone who subsequently wishes to read the code.

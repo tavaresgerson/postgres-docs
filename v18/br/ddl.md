@@ -1,0 +1,59 @@
+## Capítulo 5. Definição de Dados
+
+**Índice**
+
+* [5.1. Fundamentos da tabela](ddl-basics.md)
+* [5.2. Valores padrão](ddl-default.md)
+* [5.3. Colunas de identidade](ddl-identity-columns.md)
+* [5.4. Colunas geradas](ddl-generated-columns.md)
+* [5.5. Restrições](ddl-constraints.md)
+
++ [5.5.1. Restrições de verificação][(ddl-constraints.md#DDL-CONSTRAINTS-CHECK-CONSTRAINTS)]
++ [5.5.2. Restrições de não nulidade][(ddl-constraints.md#DDL-CONSTRAINTS-NOT-NULL)]
++ [5.5.3. Restrições únicas][(ddl-constraints.md#DDL-CONSTRAINTS-UNIQUE-CONSTRAINTS)]
++ [5.5.4. Chaves primárias][(ddl-constraints.md#DDL-CONSTRAINTS-PRIMARY-KEYS)]
++ [5.5.5. Chaves estrangeiras][(ddl-constraints.md#DDL-CONSTRAINTS-FK)]
++ [5.5.6. Restrições de exclusão][(ddl-constraints.md#DDL-CONSTRAINTS-EXCLUSION)]
+
+* [5.6. Colunas do sistema](ddl-system-columns.md)
+* [5.7. Modificando tabelas](ddl-alter.md)
+
++ [5.7.1. Adicionar uma Coluna](ddl-alter.md#DDL-ALTER-ADDING-A-COLUMN)
++ [5.7.2. Remover uma Coluna](ddl-alter.md#DDL-ALTER-REMOVING-A-COLUMN)
++ [5.7.3. Adicionar uma Restrição](ddl-alter.md#DDL-ALTER-ADDING-A-CONSTRAINT)
++ [5.7.4. Remover uma Restrição](ddl-alter.md#DDL-ALTER-REMOVING-A-CONSTRAINT)
++ [5.7.5. Alterar o Valor Padrão de uma Coluna](ddl-alter.md#DDL-ALTER-COLUMN-DEFAULT)
++ [5.7.6. Alterar o Tipo de Dados de uma Coluna](ddl-alter.md#DDL-ALTER-COLUMN-TYPE)
++ [5.7.7. Renomear uma Coluna](ddl-alter.md#DDL-ALTER-RENAMING-COLUMN)
++ [5.7.8. Renomear uma Tabela](ddl-alter.md#DDL-ALTER-RENAMING-TABLE)
+
+* [5.8. Privilegios](ddl-priv.md)
+* [5.9. Políticas de segurança de linha](ddl-rowsecurity.md)
+* [5.10. Esquemas](ddl-schemas.md)
+
++ [5.10.1. Criando um Esquema][(ddl-schemas.md#DDL-SCHEMAS-CREATE)]
++ [5.10.2. O Esquema Público][(ddl-schemas.md#DDL-SCHEMAS-PUBLIC)]
++ [5.10.3. O Caminho de Pesquisa do Esquema][(ddl-schemas.md#DDL-SCHEMAS-PATH)]
++ [5.10.4. Esquemas e Privilegios][(ddl-schemas.md#DDL-SCHEMAS-PRIV)]
++ [5.10.5. O Esquema do Catálogo do Sistema][(ddl-schemas.md#DDL-SCHEMAS-CATALOG)]
++ [5.10.6. Padrões de Uso][(ddl-schemas.md#DDL-SCHEMAS-PATTERNS)]
++ [5.10.7. Portabilidade][(ddl-schemas.md#DDL-SCHEMAS-PORTABILITY)]
+
+* [5.11. Herança](ddl-inherit.md)
+
++ [5.11.1. Observações][(ddl-inherit.md#DDL-INHERIT-CAVEATS)]
+
+* [5.12. Partição de tabela](ddl-partitioning.md)
+
++ [5.12.1. Visão geral](ddl-partitioning.md#DDL-PARTITIONING-OVERVIEW)
++ [5.12.2. Partição declarativa](ddl-partitioning.md#DDL-PARTITIONING-DECLARATIVE)
++ [5.12.3. Partição usando herança](ddl-partitioning.md#DDL-PARTITIONING-USING-INHERITANCE)
++ [5.12.4. Remoção de partições](ddl-partitioning.md#DDL-PARTITION-PRUNING)
++ [5.12.5. Partição e exclusão de restrições](ddl-partitioning.md#DDL-PARTITIONING-CONSTRAINT-EXCLUSION)
++ [5.12.6. Melhores práticas para partição declarativa](ddl-partitioning.md#DDL-PARTITIONING-DECLARATIVE-BEST-PRACTICES)
+
+* [5.13. Dados Estrangeiros](ddl-foreign-data.md)
+* [5.14. Outros Objetos de Banco de Dados](ddl-others.md)
+* [5.15. Rastreamento de Dependências](ddl-depend.md)
+
+Este capítulo aborda como criar as estruturas de banco de dados que guardará os dados. Em um banco de dados relacional, os dados brutos são armazenados em tabelas, portanto, a maioria deste capítulo é dedicada a explicar como as tabelas são criadas e modificadas e quais recursos estão disponíveis para controlar quais dados são armazenados nas tabelas. Posteriormente, discutimos como as tabelas podem ser organizadas em esquemas e como privilégios podem ser atribuídos às tabelas. Por fim, veremos brevemente outros recursos que afetam o armazenamento de dados, como herança, particionamento de tabelas, visualizações, funções e gatilhos.

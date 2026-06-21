@@ -1,0 +1,13 @@
+## 67.1. Transações e Identificadores [#](#TRANSACTION-ID)
+
+As transações podem ser criadas explicitamente usando `BEGIN` ou `START TRANSACTION` e terminadas usando `COMMIT` ou `ROLLBACK`. As instruções SQL fora de transações explícitas usam automaticamente transações de um único comando.
+
+Cada transação é identificada por um número único `VirtualTransactionId` (também chamado `virtualXID` ou `vxid`), que é composto por um número de processo do backend (ou `procNumber`) e um número sequencialmente atribuído local a cada backend, conhecido como `localXID`. Por exemplo, o ID de transação virtual `4/12532` tem um `procNumber` de `4` e um `localXID` de `12532`.
+
+Os `TransactionId`s não virtuais (ou `xid`, por exemplo, `278394`) são atribuídos sequencialmente às transações de um contador global utilizado por todas as bases de dados dentro do clúster PostgreSQL. Essa atribuição ocorre quando uma transação escreve pela primeira vez no banco de dados. Isso significa que os xids numerados com números menores começaram a escrever antes dos xids numerados com números maiores. Note que a ordem em que as transações realizam sua primeira escrita no banco de dados pode ser diferente da ordem em que as transações começaram, especialmente se a transação começou com declarações que realizaram apenas leituras no banco de dados.
+
+O tipo de ID de transação interna `xid` é de 32 bits de largura e [volta ao início](routine-vacuuming.md#VACUUM-FOR-WRAPAROUND "24.1.5. Preventing Transaction ID Wraparound Failures") a cada 4 bilhões de transações. Um período de 32 bits é incrementado durante cada volta ao início. Há também um tipo de 64 bits `xid8` que inclui esse período e, portanto, não volta ao início durante a vida de uma instalação; ele pode ser convertido em xid por conversão. As funções em [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSHOT "Table 9.84. Transaction ID and Snapshot Information Functions") retornam valores de `xid8`. Os xids são usados como base para o mecanismo de concorrência [MVCC](mvcc.md "Chapter 13. Concurrency Control") e replicação em fluxo do PostgreSQL.
+
+Quando uma transação de nível superior com um (não virtual) xid é confirmada, ela é marcada como confirmada no diretório `pg_xact`. Informações adicionais são registradas no diretório `pg_commit_ts` se [track_commit_timestamp](runtime-config-replication.md#GUC-TRACK-COMMIT-TIMESTAMP) estiver habilitado.
+
+Além de `vxid` e `xid`, as transações preparadas também recebem Identificadores de Transação Global (GID). Os GID são literais de cadeia de até 200 bytes de comprimento, que devem ser únicos entre outras transações preparadas atualmente. O mapeamento do GID para xid é mostrado em [`pg_prepared_xacts`](view-pg-prepared-xacts.md "53.17. pg_prepared_xacts").

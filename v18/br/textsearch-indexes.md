@@ -1,0 +1,21 @@
+## 12.9. Tipos de índice preferidos para pesquisa de texto [#](#TEXTSEARCH-INDEXES)
+
+Existem dois tipos de índices que podem ser usados para acelerar as pesquisas de texto completo: [GIN](gin.md "65.4. GIN Indexes") e [GiST](gist.md "65.2. GiST Indexes"). Observe que os índices não são obrigatórios para pesquisas de texto completo, mas, em casos em que uma coluna é pesquisada regularmente, um índice é geralmente desejável.
+
+Para criar um índice desse tipo, faça uma das seguintes ações:
+
+`CREATE INDEX name ON table USING GIN (column);`: Cria um índice baseado em GIN (Índice Generalizado Invertido). O *`column`* deve ser do tipo `tsvector`.
+
+`CREATE INDEX name ON table USING GIST (column [ { DEFAULT | tsvector_ops } (siglen = number) ] );`: Cria um índice baseado em GiST (Generalized Search Tree). O *`column`* pode ser do tipo `tsvector` ou `tsquery`. O parâmetro opcional inteiro `siglen` determina o comprimento da assinatura em bytes (consulte abaixo para detalhes).
+
+Os índices GIN são o tipo de índice de busca de texto preferido. Como índices invertidos, eles contêm uma entrada de índice para cada palavra (lexema), com uma lista comprimida de locais correspondentes. Pesquisas de múltiplas palavras podem encontrar a primeira correspondência e, em seguida, usar o índice para remover linhas que não possuem palavras adicionais. Os índices GIN armazenam apenas as palavras (lexemas) dos valores do `tsvector`, e não suas etiquetas de peso. Assim, uma revalidação da linha da tabela é necessária quando se usa uma consulta que envolve pesos.
+
+Um índice GiST é *perda de dados*, o que significa que o índice pode produzir correspondências falsas, e é necessário verificar a linha da tabela real para eliminar tais correspondências falsas. (O PostgreSQL faz isso automaticamente quando necessário.) Os índices GiST são perdas de dados porque cada documento é representado no índice por uma assinatura de comprimento fixo. O comprimento da assinatura em bytes é determinado pelo valor do parâmetro inteiro opcional `siglen`. O comprimento padrão da assinatura (quando `siglen` não é especificado) é 124 bytes, o comprimento máximo da assinatura é 2024 bytes. A assinatura é gerada por hash de cada palavra em um único bit em uma string de n bits, com todos esses bits OR-ados juntos para produzir uma assinatura de documento de n bits. Quando duas palavras hash para a mesma posição de bit, haverá uma correspondência falsa. Se todas as palavras na consulta tiverem correspondências (reais ou falsas) então a linha da tabela deve ser recuperada para ver se a correspondência é correta. Assinaturas mais longas levam a uma pesquisa mais precisa (digitalizando uma fração menor do índice e menos páginas de heap), ao custo de um índice maior.
+
+Um índice GiST pode ser coberto, ou seja, pode usar a cláusula `INCLUDE`. As colunas incluídas podem ter tipos de dados sem qualquer classe de operador GiST. Os atributos incluídos serão armazenados não comprimidos.
+
+A perda de desempenho ocorre devido a pesquisas desnecessárias de registros de tabela que se revelam ser correspondências falsas. Como o acesso aleatório a registros de tabela é lento, isso limita a utilidade dos índices GiST. A probabilidade de correspondências falsas depende de vários fatores, em particular o número de palavras únicas, portanto, é recomendável usar dicionários para reduzir esse número.
+
+Observe que o tempo de construção do índice GIN pode ser frequentemente melhorado aumentando [maintenance_work_mem][(runtime-config-resource.md#GUC-MAINTENANCE-WORK-MEM)], enquanto o tempo de construção do índice GiST não é sensível a esse parâmetro.
+
+A partição de grandes coleções e o uso adequado dos índices GIN e GiST permitem a implementação de pesquisas muito rápidas com atualização online. A partição pode ser feita no nível do banco de dados usando a herança de tabela, ou distribuindo documentos entre servidores e coletando resultados de pesquisa externa, por exemplo, via acesso [Dados Estrangeiros][(ddl-foreign-data.md "5.13. Foreign Data")]. Este último é possível porque as funções de classificação usam apenas informações locais.

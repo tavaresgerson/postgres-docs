@@ -1,0 +1,3 @@
+## H.4. Extensões [#](#EXTERNAL-EXTENSIONS)
+
+O PostgreSQL foi projetado para ser facilmente extensível. Por essa razão, as extensões carregadas no banco de dados podem funcionar da mesma forma que as funcionalidades integradas. O diretório `contrib/` fornecido com o código-fonte contém várias extensões, que são descritas em [Apêndice F](contrib.md "Appendix F. Additional Supplied Modules and Extensions"). Outras extensões são desenvolvidas de forma independente, como [PostGIS](https://postgis.net/). Até mesmo soluções de replicação do PostgreSQL podem ser desenvolvidas externamente. Por exemplo,  [Slony-I](https://www.slony.info) é uma solução de replicação primária/de reserva popular que é desenvolvida de forma independente do projeto principal.

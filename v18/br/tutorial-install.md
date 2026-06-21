@@ -1,0 +1,9 @@
+## 1.1. Instalação [#](#TUTORIAL-INSTALL)
+
+Antes de poder usar o PostgreSQL, é claro, você precisa instalá-lo. É possível que o PostgreSQL já esteja instalado em seu site, seja porque foi incluído na distribuição do seu sistema operacional ou porque o administrador do sistema já o instalou. Se esse for o caso, você deve obter informações da documentação do sistema operacional ou do administrador do sistema sobre como acessar o PostgreSQL.
+
+Se você não tem certeza de se o PostgreSQL já está disponível ou se pode usá-lo para suas experiências, você pode instalá-lo por conta própria. Isso não é difícil e pode ser um bom exercício. O PostgreSQL pode ser instalado por qualquer usuário não privilegiado; não é necessário acesso de superusuário (root).
+
+Se você estiver instalando o PostgreSQL por conta própria, consulte o [Capítulo 17][(installation.md "Chapter 17. Installation from Source Code")] para obter instruções sobre a instalação e volte a este guia quando a instalação estiver concluída. Certifique-se de seguir de perto a seção sobre a configuração das variáveis de ambiente apropriadas.
+
+Se o administrador do seu site não configurou as coisas da maneira padrão, você pode ter mais trabalho a fazer. Por exemplo, se o servidor de banco de dados é uma máquina remota, você precisará definir a variável de ambiente `PGHOST` para o nome da máquina do servidor de banco de dados. A variável de ambiente `PGPORT` também pode precisar ser definida. O ponto principal é o seguinte: se você tentar iniciar um programa de aplicação e ele reclamar que não consegue se conectar ao banco de dados, você deve consultar o administrador do seu site ou, se você é o administrador, a documentação para garantir que seu ambiente esteja configurado corretamente. Se você não entendeu o parágrafo anterior, leia a seção seguinte.

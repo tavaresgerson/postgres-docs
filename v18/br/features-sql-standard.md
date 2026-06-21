@@ -1,0 +1,4796 @@
+## D.1. Recursos suportados [#](#FEATURES-SQL-STANDARD)
+
+
+
+<table border="1" class="informaltable">
+<colgroup>
+<col class="col1"/>
+<col class="col2"/>
+<col class="col3"/>
+<col class="col4"/>
+</colgroup>
+<thead>
+<tr>
+<th>
+    Identifier
+   </th>
+<th>
+    Core?
+   </th>
+<th>Descrição</th>
+<th>Comentário</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+    B012
+   </td>
+<td>
+</td>
+<td>C embutido</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    B021
+   </td>
+<td>
+</td>
+<td>SQL direto</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    B128
+   </td>
+<td>
+</td>
+<td>Linguagem de rotina SQL</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E011
+   </td>
+<td>
+    Core
+   </td>
+<td>Tipos de dados numéricos</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E011-01
+   </td>
+<td>
+    Core
+   </td>
+<td>Tipos de dados INTEGER e SMALLINT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E011-02
+   </td>
+<td>
+    Core
+   </td>
+<td>Tipos de dados REAL, DOUBLE PRECISION e FLOAT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E011-03
+   </td>
+<td>
+    Core
+   </td>
+<td>Tipos de dados DECIMAL e NUMERIC</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E011-04
+   </td>
+<td>
+    Core
+   </td>
+<td>Operadores aritméticos</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E011-05
+   </td>
+<td>
+    Core
+   </td>
+<td>Comparações numéricas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E011-06
+   </td>
+<td>
+    Core
+   </td>
+<td>Casting implícito entre os tipos de dados numéricos</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E021
+   </td>
+<td>
+    Core
+   </td>
+<td>Tipos de dados de caractere</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E021-01
+   </td>
+<td>
+    Core
+   </td>
+<td>Tipo de dados CARACTERE</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E021-02
+   </td>
+<td>
+    Core
+   </td>
+<td>Tipo de dados variável de caráter</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E021-03
+   </td>
+<td>
+    Core
+   </td>
+<td>Literais de caractere</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E021-04
+   </td>
+<td>
+    Core
+   </td>
+<td>Função CHARACTER_LENGTH</td>
+<td>recorta espaços finais dos valores do CHARACTER antes de contar</td>
+</tr>
+<tr>
+<td>
+    E021-05
+   </td>
+<td>
+    Core
+   </td>
+<td>Função OCTET_LENGTH</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E021-06
+   </td>
+<td>
+    Core
+   </td>
+<td>Função SUBSTRING</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E021-07
+   </td>
+<td>
+    Core
+   </td>
+<td>Concatenação de caracteres</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E021-08
+   </td>
+<td>
+    Core
+   </td>
+<td>Funções UPPER e LOWER</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E021-09
+   </td>
+<td>
+    Core
+   </td>
+<td>Função TRIM</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E021-10
+   </td>
+<td>
+    Core
+   </td>
+<td>Casting implícito entre os tipos de cadeia de caracteres de caractere</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E021-11
+   </td>
+<td>
+    Core
+   </td>
+<td>Função POSIÇÃO</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E021-12
+   </td>
+<td>
+    Core
+   </td>
+<td>Comparação de personagens</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E031
+   </td>
+<td>
+    Core
+   </td>
+<td>Identificadores</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E031-01
+   </td>
+<td>
+    Core
+   </td>
+<td>Identificadores delimitados</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E031-02
+   </td>
+<td>
+    Core
+   </td>
+<td>Identificadores em minúsculas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E031-03
+   </td>
+<td>
+    Core
+   </td>
+<td>Sublinhado traçando</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E051
+   </td>
+<td>
+    Core
+   </td>
+<td>Especificação básica da consulta</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E051-01
+   </td>
+<td>
+    Core
+   </td>
+<td>DISTINCT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E051-02
+   </td>
+<td>
+    Core
+   </td>
+<td>Cláusula GROUP BY</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E051-04
+   </td>
+<td>
+    Core
+   </td>
+<td>GROUP BY pode conter colunas que não estão na lista &lt;select&gt;</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E051-05
+   </td>
+<td>
+    Core
+   </td>
+<td>Os itens da lista selecionados podem ser renomeados</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E051-06
+   </td>
+<td>
+    Core
+   </td>
+<td>Cláusula HAVING</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E051-07
+   </td>
+<td>
+    Core
+   </td>
+<td>Qualificado * na lista selecionada</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E051-08
+   </td>
+<td>
+    Core
+   </td>
+<td>Nomes de correlação na cláusula FROM</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E051-09
+   </td>
+<td>
+    Core
+   </td>
+<td>Renomear colunas na cláusula FROM</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E061
+   </td>
+<td>
+    Core
+   </td>
+<td>Predicados básicos e condições de busca</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E061-01
+   </td>
+<td>
+    Core
+   </td>
+<td>Predicado de comparação</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E061-02
+   </td>
+<td>
+    Core
+   </td>
+<td>ENTRE predicado</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E061-03
+   </td>
+<td>
+    Core
+   </td>
+<td>IN predicado com lista de valores</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E061-04
+   </td>
+<td>
+    Core
+   </td>
+<td>Predicado LIKE</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E061-05
+   </td>
+<td>
+    Core
+   </td>
+<td>Cláusula de predicado LIKE com cláusula ESCAPE</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E061-06
+   </td>
+<td>
+    Core
+   </td>
+<td>Predicado NULL</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E061-07
+   </td>
+<td>
+    Core
+   </td>
+<td>Predicado de comparação quantificada</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E061-08
+   </td>
+<td>
+    Core
+   </td>
+<td>Predicado EXISTE</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E061-09
+   </td>
+<td>
+    Core
+   </td>
+<td>Subconsultas em predicado de comparação</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E061-11
+   </td>
+<td>
+    Core
+   </td>
+<td>Subconsultas no predicado IN</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E061-12
+   </td>
+<td>
+    Core
+   </td>
+<td>Subconsultas em predicado de comparação quantificada</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E061-13
+   </td>
+<td>
+    Core
+   </td>
+<td>Subconsultas correlacionadas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E061-14
+   </td>
+<td>
+    Core
+   </td>
+<td>Condição de pesquisa</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E071
+   </td>
+<td>
+    Core
+   </td>
+<td>Expressões básicas de consulta</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E071-01
+   </td>
+<td>
+    Core
+   </td>
+<td>Operador de tabela UNION DISTINCT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E071-02
+   </td>
+<td>
+    Core
+   </td>
+<td>Operador de tabela UNION ALL</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E071-03
+   </td>
+<td>
+    Core
+   </td>
+<td>Excluindo operador de tabela DISTINCT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E071-05
+   </td>
+<td>
+    Core
+   </td>
+<td>Colunas combinadas por meio de operadores de tabela não precisam ter exatamente o mesmo tipo de dados</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E071-06
+   </td>
+<td>
+    Core
+   </td>
+<td>Operadores de tabela em subconsultas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E081
+   </td>
+<td>
+    Core
+   </td>
+<td>Privilégios Básicos</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E081-01
+   </td>
+<td>
+    Core
+   </td>
+<td>Privilegio SELECT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E081-02
+   </td>
+<td>
+    Core
+   </td>
+<td>PRIVILEGIADO DE EXCLUIR</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E081-03
+   </td>
+<td>
+    Core
+   </td>
+<td>Privilegio de inserção no nível da tabela</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E081-04
+   </td>
+<td>
+    Core
+   </td>
+<td>ATUALIZAR privilégio no nível da tabela</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E081-05
+   </td>
+<td>
+    Core
+   </td>
+<td>ATUALIZAR privilégio no nível da coluna</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E081-06
+   </td>
+<td>
+    Core
+   </td>
+<td>REFERÊNCIAS privilégio no nível da tabela</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E081-07
+   </td>
+<td>
+    Core
+   </td>
+<td>REFERÊNCIAS privilégio no nível da coluna</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E081-08
+   </td>
+<td>
+    Core
+   </td>
+<td>COM OPÇÃO DE CONCEDIMENTO</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E081-09
+   </td>
+<td>
+    Core
+   </td>
+<td>PRÉVILEGO DE USO</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E081-10
+   </td>
+<td>
+    Core
+   </td>
+<td>Privilegio EXECUTE</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E091
+   </td>
+<td>
+    Core
+   </td>
+<td>Definir funções</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E091-01
+   </td>
+<td>
+    Core
+   </td>
+<td>AVG</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E091-02
+   </td>
+<td>
+    Core
+   </td>
+<td>CONTAR</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E091-03
+   </td>
+<td>
+    Core
+   </td>
+<td>MAX</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E091-04
+   </td>
+<td>
+    Core
+   </td>
+<td>MIN</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E091-05
+   </td>
+<td>
+    Core
+   </td>
+<td>SUM</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E091-06
+   </td>
+<td>
+    Core
+   </td>
+<td>Todo quantificador</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E091-07
+   </td>
+<td>
+    Core
+   </td>
+<td>Quantificador DISTINCT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E101
+   </td>
+<td>
+    Core
+   </td>
+<td>Manipulação básica de dados</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E101-01
+   </td>
+<td>
+    Core
+   </td>
+<td>Instrução INSERT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E101-03
+   </td>
+<td>
+    Core
+   </td>
+<td>Instrução de atualização pesquisada</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E101-04
+   </td>
+<td>
+    Core
+   </td>
+<td>Instrução de DELETE pesquisada</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E111
+   </td>
+<td>
+    Core
+   </td>
+<td>Instrução SELECT de linha única</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E121
+   </td>
+<td>
+    Core
+   </td>
+<td>Suporte básico para cursor</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E121-01
+   </td>
+<td>
+    Core
+   </td>
+<td>DECLARE CURSOR</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E121-02
+   </td>
+<td>
+    Core
+   </td>
+<td>As colunas da ordem não precisam estar na lista de seleção</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E121-03
+   </td>
+<td>
+    Core
+   </td>
+<td>Expressões de valor na cláusula ORDER BY</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E121-04
+   </td>
+<td>
+    Core
+   </td>
+<td>Declaração OPEN</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E121-06
+   </td>
+<td>
+    Core
+   </td>
+<td>Instrução de posição UPDATE</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E121-07
+   </td>
+<td>
+    Core
+   </td>
+<td>Instrução de posição DELETE</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E121-08
+   </td>
+<td>
+    Core
+   </td>
+<td>Declaração de encerramento</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E121-10
+   </td>
+<td>
+    Core
+   </td>
+<td>declaração FETCH implícita NEXT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E121-17
+   </td>
+<td>
+    Core
+   </td>
+<td>COM CURSOS DE RETRAPAÇÃO</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E131
+   </td>
+<td>
+    Core
+   </td>
+<td>Suporte para valores nulos (nulos em vez de valores)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E141
+   </td>
+<td>
+    Core
+   </td>
+<td>Restrições básicas de integridade</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E141-01
+   </td>
+<td>
+    Core
+   </td>
+<td>Restrições NOT NULL</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E141-02
+   </td>
+<td>
+    Core
+   </td>
+<td>Restrições ÚNICAS de colunas NOT NULL</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E141-03
+   </td>
+<td>
+    Core
+   </td>
+<td>CONSTRANÇAS DE CHAVE PRIMÁRIA</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E141-04
+   </td>
+<td>
+    Core
+   </td>
+<td>Restrição de CHAVE ESTÁVEL EXTERNA básica com a opção "SEM AÇÃO" para a ação de exclusão referencial e a ação de atualização referencial</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E141-06
+   </td>
+<td>
+    Core
+   </td>
+<td>Restrições CHECK</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E141-07
+   </td>
+<td>
+    Core
+   </td>
+<td>Padrões de coluna padrão</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E141-08
+   </td>
+<td>
+    Core
+   </td>
+<td>NOT NULL inferido no PRIMARY KEY</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E141-10
+   </td>
+<td>
+    Core
+   </td>
+<td>Os nomes em uma chave estrangeira podem ser especificados em qualquer ordem</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E151
+   </td>
+<td>
+    Core
+   </td>
+<td>Suporte para transações</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E151-01
+   </td>
+<td>
+    Core
+   </td>
+<td>Declaração COMMIT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E151-02
+   </td>
+<td>
+    Core
+   </td>
+<td>declaração ROLLBACK</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E152
+   </td>
+<td>
+    Core
+   </td>
+<td>Instrução básica SET TRANSACTION</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E152-01
+   </td>
+<td>
+    Core
+   </td>
+<td>Instrução SET TRANSACTION: cláusula ISOLATION LEVEL SERIALIZABLE</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E152-02
+   </td>
+<td>
+    Core
+   </td>
+<td>Instrução SET TRANSACTION: cláusulas READ ONLY e READ WRITE</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E153
+   </td>
+<td>
+    Core
+   </td>
+<td>Consultas atualizáveis com subconsultas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E161
+   </td>
+<td>
+    Core
+   </td>
+<td>Comentários SQL usando dois traços de hífen no início</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E171
+   </td>
+<td>
+    Core
+   </td>
+<td>Suporte SQLSTATE</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    E182
+   </td>
+<td>
+    Core
+   </td>
+<td>Ligações de idioma de hospedagem</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F021
+   </td>
+<td>
+    Core
+   </td>
+<td>Esquema de informações básicas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F021-01
+   </td>
+<td>
+    Core
+   </td>
+<td>COLUNAS de visão</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F021-02
+   </td>
+<td>
+    Core
+   </td>
+<td>visualização de TÁBUAS</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F021-03
+   </td>
+<td>
+    Core
+   </td>
+<td>VISTAS view</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F021-04
+   </td>
+<td>
+    Core
+   </td>
+<td>TABELA_CONSTRAINTS view</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F021-05
+   </td>
+<td>
+    Core
+   </td>
+<td>REFERENCIAL_CONSTRAINTS view</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F021-06
+   </td>
+<td>
+    Core
+   </td>
+<td>visualização CHECK_CONSTRAINTS</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F031
+   </td>
+<td>
+    Core
+   </td>
+<td>Manipulação básica de esquema</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F031-01
+   </td>
+<td>
+    Core
+   </td>
+<td>Instrução CREATE TABLE para criar tabelas de base persistentes</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F031-02
+   </td>
+<td>
+    Core
+   </td>
+<td>Instrução CREATE VIEW</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F031-03
+   </td>
+<td>
+    Core
+   </td>
+<td>declaração GRANT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F031-04
+   </td>
+<td>
+    Core
+   </td>
+<td>declaração ALTER TABLE: cláusula ADD COLUMN</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F031-13
+   </td>
+<td>
+    Core
+   </td>
+<td>declaração DROP TABLE: cláusula RESTRICT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F031-16
+   </td>
+<td>
+    Core
+   </td>
+<td>declaração DROP VIEW: cláusula RESTRICT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F031-19
+   </td>
+<td>
+    Core
+   </td>
+<td>Declaração REVOKE: cláusula RESTRICT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F032
+   </td>
+<td>
+</td>
+<td>Comportamento de queda CASCADE</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F033
+   </td>
+<td>
+</td>
+<td>declaração ALTER TABLE: cláusula DROP COLUMN</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F034
+   </td>
+<td>
+</td>
+<td>Declaração estendida de REVOGAÇÃO</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F035
+   </td>
+<td>
+</td>
+<td>REVOGA com CASCADE</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F036
+   </td>
+<td>
+</td>
+<td>Declaração REVOKE realizada por não proprietário</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F037
+   </td>
+<td>
+</td>
+<td>Declaração REVOKE: CONCEDA OPÇÃO PARA cláusula</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F038
+   </td>
+<td>
+</td>
+<td>REVOGA de um privilégio com opção de concessão</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F041
+   </td>
+<td>
+    Core
+   </td>
+<td>Tabela integrada básica</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F041-01
+   </td>
+<td>
+    Core
+   </td>
+<td>Conjunção interna (mas não necessariamente a palavra-chave INNER)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F041-02
+   </td>
+<td>
+    Core
+   </td>
+<td>Palavra-chave INNER</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F041-03
+   </td>
+<td>
+    Core
+   </td>
+<td>JOIN ESQUERDA EXTERNA</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F041-04
+   </td>
+<td>
+    Core
+   </td>
+<td>JOGO EXTERNO DIREITO</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F041-05
+   </td>
+<td>
+    Core
+   </td>
+<td>As junções externas podem ser aninhadas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F041-07
+   </td>
+<td>
+    Core
+   </td>
+<td>A tabela interna em uma junção externa esquerda ou direita também pode ser usada em uma junção interna.</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F041-08
+   </td>
+<td>
+    Core
+   </td>
+<td>Todos os operadores de comparação são suportados (e não apenas =)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F051
+   </td>
+<td>
+    Core
+   </td>
+<td>Data e hora básica</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F051-01
+   </td>
+<td>
+    Core
+   </td>
+<td>Tipo de dados DATE (incluindo suporte para literal DATE)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F051-02
+   </td>
+<td>
+    Core
+   </td>
+<td>Tipo de dados TIME (incluindo suporte para literal TIME) com precisão de segundos fracionários de pelo menos 0</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F051-03
+   </td>
+<td>
+    Core
+   </td>
+<td>Tipo de dados TIMESTAMP (incluindo suporte para literal TIMESTAMP) com precisão de segundos fracionários de pelo menos 0 e 6</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F051-04
+   </td>
+<td>
+    Core
+   </td>
+<td>Predicado de comparação em tipos de dados DATE, TIME e TIMESTAMP</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F051-05
+   </td>
+<td>
+    Core
+   </td>
+<td>CAST explícito entre tipos datetime e tipos de cadeia de caracteres</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F051-06
+   </td>
+<td>
+    Core
+   </td>
+<td>
+    CURRENT_DATE
+   </td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F051-07
+   </td>
+<td>
+    Core
+   </td>
+<td>LOCALTIME</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F051-08
+   </td>
+<td>
+    Core
+   </td>
+<td>LOCALTIMESTAMP</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F052
+   </td>
+<td>
+</td>
+<td>Intervalo e aritmética de data e hora</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F053
+   </td>
+<td>
+</td>
+<td>Predicado de sobreposição</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F081
+   </td>
+<td>
+    Core
+   </td>
+<td>UNIÃO e EXCLUSÃO em visualizações</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F111
+   </td>
+<td>
+</td>
+<td>Níveis de isolamento que não são SERIALIZÁVEIS</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F112
+   </td>
+<td>
+</td>
+<td>Nível de isolamento LEIA NÃO COMPROMETIDO</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F113
+   </td>
+<td>
+</td>
+<td>Nível de isolamento READ COMMITTED</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F114
+   </td>
+<td>
+</td>
+<td>Nível de isolamento REPEATABLE READ</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F131
+   </td>
+<td>
+    Core
+   </td>
+<td>Operações agrupadas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F131-01
+   </td>
+<td>
+    Core
+   </td>
+<td>Cláusulas WHERE, GROUP BY e HAVING suportadas em consultas com visualizações agrupadas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F131-02
+   </td>
+<td>
+    Core
+   </td>
+<td>Tabelas múltiplas suportadas em consultas com visualizações agrupadas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F131-03
+   </td>
+<td>
+    Core
+   </td>
+<td>Funções definidas suportadas em consultas com visualizações agrupadas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F131-04
+   </td>
+<td>
+    Core
+   </td>
+<td>Subconsultas com cláusulas GROUP BY e HAVING e visualizações agrupadas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F131-05
+   </td>
+<td>
+    Core
+   </td>
+<td>SELECT com uma única linha, com cláusulas GROUP BY e HAVING e visualizações agrupadas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F171
+   </td>
+<td>
+</td>
+<td>Múltiplos esquemas por usuário</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F181
+   </td>
+<td>
+    Core
+   </td>
+<td>Suporte para múltiplos módulos</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F191
+   </td>
+<td>
+</td>
+<td>Ações de exclusão referencial</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F200
+   </td>
+<td>
+</td>
+<td>Instrução de TRUNCATE TABLE</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F201
+   </td>
+<td>
+    Core
+   </td>
+<td>Função CAST</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F202
+   </td>
+<td>
+</td>
+<td>TRUNCATE TABLE: opção de reinício da coluna de identidade</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F221
+   </td>
+<td>
+    Core
+   </td>
+<td>Falhas explícitas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F222
+   </td>
+<td>
+</td>
+<td>Instrução INSERT: cláusula DEFAULT VALUES</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F231
+   </td>
+<td>
+</td>
+<td>Tabelas de privilégios</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F251
+   </td>
+<td>
+</td>
+<td>Suporte de domínio</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F261
+   </td>
+<td>
+    Core
+   </td>
+<td>Expressão CASE</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F261-01
+   </td>
+<td>
+    Core
+   </td>
+<td>CASO SIMPLES</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F261-02
+   </td>
+<td>
+    Core
+   </td>
+<td>Procurado CASO</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F261-03
+   </td>
+<td>
+    Core
+   </td>
+<td>NULLIF</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F261-04
+   </td>
+<td>
+    Core
+   </td>
+<td>COALESCE</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F262
+   </td>
+<td>
+</td>
+<td>Expressão CASE estendida</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F271
+   </td>
+<td>
+</td>
+<td>Literais de caracteres compostos</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F281
+   </td>
+<td>
+</td>
+<td>Melhorias do LIKE</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F292
+   </td>
+<td>
+</td>
+<td>Tratamento único null</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F302
+   </td>
+<td>
+</td>
+<td>Operador de tabela INTERSECT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F303
+   </td>
+<td>
+</td>
+<td>Operador de tabela INTERSECT DISTINCT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F304
+   </td>
+<td>
+</td>
+<td>EXCLUINDO OPERADOR DE TÁBUA</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F305
+   </td>
+<td>
+</td>
+<td>OPERADOR INTERSEÇÃO em tabela</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F311
+   </td>
+<td>
+    Core
+   </td>
+<td>Declaração de definição de esquema</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F311-01
+   </td>
+<td>
+    Core
+   </td>
+<td>Crie o esquema</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F311-02
+   </td>
+<td>
+    Core
+   </td>
+<td>Crie uma tabela para tabelas de base persistentes</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F311-03
+   </td>
+<td>
+    Core
+   </td>
+<td>Crie a visualização</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F311-04
+   </td>
+<td>
+    Core
+   </td>
+<td>Crie a visão: com opção de verificação</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F311-05
+   </td>
+<td>
+    Core
+   </td>
+<td>declaração GRANT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F312
+   </td>
+<td>
+</td>
+<td>Declaração MERGE</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F313
+   </td>
+<td>
+</td>
+<td>Declaração MERGE aprimorada</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F314
+   </td>
+<td>
+</td>
+<td>Instrução MERGE com ramo DELETE</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F321
+   </td>
+<td>
+</td>
+<td>Autorização do usuário</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F341
+   </td>
+<td>
+</td>
+<td>Tabelas de uso</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F361
+   </td>
+<td>
+</td>
+<td>Suporte a subprogramas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F381
+   </td>
+<td>
+</td>
+<td>Manipulação de esquema estendida</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F382
+   </td>
+<td>
+</td>
+<td>Alterar o tipo de dados da coluna</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F383
+   </td>
+<td>
+</td>
+<td>Cláusula de não deixar coluna nula</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F384
+   </td>
+<td>
+</td>
+<td>Clausula de propriedade de identidade drop</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F385
+   </td>
+<td>
+</td>
+<td>Cláusula de expressão de geração de coluna drop</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F386
+   </td>
+<td>
+</td>
+<td>Defina a cláusula de geração de coluna de identidade</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F387
+   </td>
+<td>
+</td>
+<td>declaração ALTER TABLE: cláusula ALTER COLUMN</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F388
+   </td>
+<td>
+</td>
+<td>declaração ALTER TABLE: cláusula ADD/DROP CONSTRAINT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F391
+   </td>
+<td>
+</td>
+<td>Identificadores longos</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F392
+   </td>
+<td>
+</td>
+<td>Evasões Unicode em identificadores</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F393
+   </td>
+<td>
+</td>
+<td>Evasões Unicode em literais</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F394
+   </td>
+<td>
+</td>
+<td>Especificação opcional da forma normal padrão</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F401
+   </td>
+<td>
+</td>
+<td>Tabela estendida junta</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F402
+   </td>
+<td>
+</td>
+<td>Conjuntos de colunas nomeados para LOBs, arrays e multisets</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F404
+   </td>
+<td>
+</td>
+<td>Intervalo variável para nomes de colunas comuns</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F405
+   </td>
+<td>
+</td>
+<td>JUNTURA NATURAL</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F406
+   </td>
+<td>
+</td>
+<td>JOIN EXTERNO TOTAL</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F407
+   </td>
+<td>
+</td>
+<td>JOGO EM CRUZ</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F411
+   </td>
+<td>
+</td>
+<td>Especificação do fuso horário</td>
+<td>diferenças quanto à interpretação literal</td>
+</tr>
+<tr>
+<td>
+    F421
+   </td>
+<td>
+</td>
+<td>Caráter nacional</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F431
+   </td>
+<td>
+</td>
+<td>Indicadores de cursor roláveis somente de leitura</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F432
+   </td>
+<td>
+</td>
+<td>FETCH com NEXT explícito</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F433
+   </td>
+<td>
+</td>
+<td>FETCH FIRST</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F434
+   </td>
+<td>
+</td>
+<td>RECUPERE A ÚLTIMA</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F435
+   </td>
+<td>
+</td>
+<td>FETCH PRIOR</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F436
+   </td>
+<td>
+</td>
+<td>FETCH ABSOLUTO</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F437
+   </td>
+<td>
+</td>
+<td>FETCH RELATIVO</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F438
+   </td>
+<td>
+</td>
+<td>Cursos roláveis</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F441
+   </td>
+<td>
+</td>
+<td>Suporte para função de conjunto estendido</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F442
+   </td>
+<td>
+</td>
+<td>Referências de coluna mista em funções de conjunto</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F471
+   </td>
+<td>
+    Core
+   </td>
+<td>Valores de subconsulta escalar</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F481
+   </td>
+<td>
+    Core
+   </td>
+<td>Predicado NULL expandido</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F491
+   </td>
+<td>
+</td>
+<td>Gestão de restrições</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F492
+   </td>
+<td>
+</td>
+<td>Execução opcional de restrições de tabela</td>
+<td>exceto restrições não nulos</td>
+</tr>
+<tr>
+<td>
+    F501
+   </td>
+<td>
+    Core
+   </td>
+<td>Visões de características e conformidade</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F501-01
+   </td>
+<td>
+    Core
+   </td>
+<td>exibição SQL_FEATURES</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F501-02
+   </td>
+<td>
+    Core
+   </td>
+<td>visual SQL_SIZING</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F502
+   </td>
+<td>
+</td>
+<td>Tabelas de documentação aprimoradas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F531
+   </td>
+<td>
+</td>
+<td>Tabelas temporárias</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F555
+   </td>
+<td>
+</td>
+<td>Segundos de precisão aprimorados</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F561
+   </td>
+<td>
+</td>
+<td>Expressões de valor total</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F571
+   </td>
+<td>
+</td>
+<td>Testes de valor de verdade</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F591
+   </td>
+<td>
+</td>
+<td>Tabelas derivadas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F611
+   </td>
+<td>
+</td>
+<td>Tipos de dados dos indicadores</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F641
+   </td>
+<td>
+</td>
+<td>Construtores de linhas e tabelas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F651
+   </td>
+<td>
+</td>
+<td>Qualificadores de nome do catálogo</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F661
+   </td>
+<td>
+</td>
+<td>Tabelas simples</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F672
+   </td>
+<td>
+</td>
+<td>Restrições de verificação retrospectiva</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F690
+   </td>
+<td>
+</td>
+<td>Suporte para cotação</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F692
+   </td>
+<td>
+</td>
+<td>Suporte para colagem estendida</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F701
+   </td>
+<td>
+</td>
+<td>Ações de atualização referencial</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F711
+   </td>
+<td>
+</td>
+<td>Alter domínio</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F731
+   </td>
+<td>
+</td>
+<td>Privilegios de coluna INSERT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F751
+   </td>
+<td>
+</td>
+<td>Ver aprimoramentos de CHECK</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F761
+   </td>
+<td>
+</td>
+<td>Gestão de sessão</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F762
+   </td>
+<td>
+</td>
+<td>
+    CURRENT_CATALOG
+   </td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F763
+   </td>
+<td>
+</td>
+<td>
+    CURRENT_SCHEMA
+   </td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F771
+   </td>
+<td>
+</td>
+<td>Gestão de conexões</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F781
+   </td>
+<td>
+</td>
+<td>Operações de autoreferência</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F791
+   </td>
+<td>
+</td>
+<td>Indicadores insensíveis</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F801
+   </td>
+<td>
+</td>
+<td>Função completa do conjunto</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F850
+   </td>
+<td>
+</td>
+<td>ORDEM de nível superior na expressão de consulta</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F851
+   </td>
+<td>
+</td>
+<td>ORDENE POR em subconsultas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F852
+   </td>
+<td>
+</td>
+<td>ORDEM de nível superior em visualizações</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F855
+   </td>
+<td>
+</td>
+<td>ORDERN em expressão de consulta aninhada</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F856
+   </td>
+<td>
+</td>
+<td>FETCH FIRST inserido dentro da expressão da consulta</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F857
+   </td>
+<td>
+</td>
+<td>FETCH FIRST no nível superior na expressão de consulta</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F858
+   </td>
+<td>
+</td>
+<td>FETCH FIRST em subconsultas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F859
+   </td>
+<td>
+</td>
+<td>FETCH FIRST de nível superior em visualizações</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F860
+   </td>
+<td>
+</td>
+<td>Contagem dinâmica do primeiro número da linha</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F861
+   </td>
+<td>
+</td>
+<td>OFFSET no topo da expressão de consulta</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F862
+   </td>
+<td>
+</td>
+<td>OFFSET em subconsultas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F863
+   </td>
+<td>
+</td>
+<td>OFFSET inserido em expressão de consulta</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F864
+   </td>
+<td>
+</td>
+<td>OFFSET de alto nível em visualizações</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F865
+   </td>
+<td>
+</td>
+<td>Contagem dinâmica de linhas de deslocamento em OFFSET</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F867
+   </td>
+<td>
+</td>
+<td>Cláusula FETCH FIRST: opção WITH TIES</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F868
+   </td>
+<td>
+</td>
+<td>ORDENE POR em tabela agrupada</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    F869
+   </td>
+<td>
+</td>
+<td>Informações sobre a implementação do SQL população</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    S071
+   </td>
+<td>
+</td>
+<td>Caminhos SQL na resolução de nomes de função e tipo</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    S090
+   </td>
+<td>
+</td>
+<td>Suporte mínimo para matriz</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    S092
+   </td>
+<td>
+</td>
+<td>Arrays de tipos definidos pelo usuário</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    S095
+   </td>
+<td>
+</td>
+<td>Construtores de matriz por consulta</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    S096
+   </td>
+<td>
+</td>
+<td>Limites opcionais de matriz</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    S098
+   </td>
+<td>
+</td>
+<td>
+    ARRAY_AGG
+   </td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    S099
+   </td>
+<td>
+</td>
+<td>Expressões de matriz</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    S111
+   </td>
+<td>
+</td>
+<td>SOMENTE em expressões de consulta</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    S201
+   </td>
+<td>
+</td>
+<td>Rotinas invocadas por SQL em arrays</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    S203
+   </td>
+<td>
+</td>
+<td>Parâmetros do array</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    S204
+   </td>
+<td>
+</td>
+<td>Array como tipo de resultado de funções</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    S211
+   </td>
+<td>
+</td>
+<td>Funções de elenco definidas pelo usuário</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    S301
+   </td>
+<td>
+</td>
+<td>Desdobramento aprimorado</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    S404
+   </td>
+<td>
+</td>
+<td>
+    TRIM_ARRAY
+   </td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T031
+   </td>
+<td>
+</td>
+<td>Tipo de dados BOOLEAN</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T054
+   </td>
+<td>
+</td>
+<td>MAIOR e MENOR</td>
+<td>tratamento de nulos diferente</td>
+</tr>
+<tr>
+<td>
+    T055
+   </td>
+<td>
+</td>
+<td>Funções de preenchimento de cordas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T056
+   </td>
+<td>
+</td>
+<td>Funções TRIM de vários caracteres</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T061
+   </td>
+<td>
+</td>
+<td>Suporte UCS</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T071
+   </td>
+<td>
+</td>
+<td>Tipo de dados BIGINT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T081
+   </td>
+<td>
+</td>
+<td>Comprimento máximo dos tipos de string opcionais</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T121
+   </td>
+<td>
+</td>
+<td>COM (excluindo RECURSIVE) na expressão de consulta</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T122
+   </td>
+<td>
+</td>
+<td>COM (excluindo RECURSIVE) na subconsulta</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T131
+   </td>
+<td>
+</td>
+<td>Consulta recursiva</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T132
+   </td>
+<td>
+</td>
+<td>Consulta recursiva em subconsulta</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T133
+   </td>
+<td>
+</td>
+<td>Valores aprimorados da marca de ciclo</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T141
+   </td>
+<td>
+</td>
+<td>Predicado similar</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T151
+   </td>
+<td>
+</td>
+<td>Predicado distinto</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T152
+   </td>
+<td>
+</td>
+<td>Predicado DISTINCT com negação</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T171
+   </td>
+<td>
+</td>
+<td>Cláusula LIKE na definição de tabela</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T172
+   </td>
+<td>
+</td>
+<td>Cláusula de subconsulta AS na definição de tabela</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T173
+   </td>
+<td>
+</td>
+<td>Cláusula LIKE estendida na definição de tabela</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T174
+   </td>
+<td>
+</td>
+<td>Colunas de identidade</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T177
+   </td>
+<td>
+</td>
+<td>Suporte para gerador de sequência: opção de reinício simples</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T178
+   </td>
+<td>
+</td>
+<td>Colunas de identidade: opção de reinício simples</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T191
+   </td>
+<td>
+</td>
+<td>Ação referencial RESTRITA</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T201
+   </td>
+<td>
+</td>
+<td>Tipos de dados comparáveis para restrições referenciais</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T212
+   </td>
+<td>
+</td>
+<td>Capacidade aprimorada de disparo</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T213
+   </td>
+<td>
+</td>
+<td>EM VEZ DE gatilhos</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T214
+   </td>
+<td>
+</td>
+<td>ANTES de desencadear</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T215
+   </td>
+<td>
+</td>
+<td>AFTER triggers</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T216
+   </td>
+<td>
+</td>
+<td>Capacidade de exigir uma condição de busca verdadeira antes de o gatilho ser invocado</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T217
+   </td>
+<td>
+</td>
+<td>PRÉMIUM TRIGGER</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T241
+   </td>
+<td>
+</td>
+<td>declaração START TRANSACTION</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T261
+   </td>
+<td>
+</td>
+<td>Transações vinculadas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T271
+   </td>
+<td>
+</td>
+<td>Pontos de salvamento</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T281
+   </td>
+<td>
+</td>
+<td>Privilegio SELECT com granularidade de coluna</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T285
+   </td>
+<td>
+</td>
+<td>Nomes de colunas derivadas aprimorados</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T312
+   </td>
+<td>
+</td>
+<td>Função SOBREPOSIÇÃO</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T321-01
+   </td>
+<td>
+    Core
+   </td>
+<td>Funções definidas pelo usuário sem sobrecarga</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T321-02
+   </td>
+<td>
+    Core
+   </td>
+<td>Procedimentos armazenados definidos pelo usuário sem sobrecarga</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T321-03
+   </td>
+<td>
+    Core
+   </td>
+<td>Invocação de função</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T321-04
+   </td>
+<td>
+    Core
+   </td>
+<td>declaração CALL</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T321-05
+   </td>
+<td>
+    Core
+   </td>
+<td>declaração de retorno</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T321-06
+   </td>
+<td>
+    Core
+   </td>
+<td>VISÃO DE ROTINAS</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T321-07
+   </td>
+<td>
+    Core
+   </td>
+<td>visualização de PARÂMETROS</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T323
+   </td>
+<td>
+</td>
+<td>Segurança explícita para rotinas externas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T325
+   </td>
+<td>
+</td>
+<td>Referências qualificadas de parâmetros SQL</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T331
+   </td>
+<td>
+</td>
+<td>Papéis básicos</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T332
+   </td>
+<td>
+</td>
+<td>Papéis ampliados</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T341
+   </td>
+<td>
+</td>
+<td>Sobrecarga de funções invocadas por SQL e procedimentos invocados por SQL</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T351
+   </td>
+<td>
+</td>
+<td>Comentários entre colchetes</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T431
+   </td>
+<td>
+</td>
+<td>Capacidades de agrupamento estendido</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T432
+   </td>
+<td>
+</td>
+<td>Grupos agrupados e concatenados</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T433
+   </td>
+<td>
+</td>
+<td>Função agrupamento de vários argumentos</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T434
+   </td>
+<td>
+</td>
+<td>GROUP BY DISTINCT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T441
+   </td>
+<td>
+</td>
+<td>Funções ABS e MOD</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T461
+   </td>
+<td>
+</td>
+<td>Predicado simétrico BETWEEN</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T491
+   </td>
+<td>
+</td>
+<td>Tabela derivada LATERAL</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T501
+   </td>
+<td>
+</td>
+<td>Predicado EXISTS aprimorado</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T521
+   </td>
+<td>
+</td>
+<td>Argumentos nomeados na declaração CALL</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T523
+   </td>
+<td>
+</td>
+<td>Valores padrão para os parâmetros INOUT de procedimentos invocados por SQL</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T524
+   </td>
+<td>
+</td>
+<td>Argumentos nomeados em invocações rotineiras, exceto em uma declaração CALL</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T525
+   </td>
+<td>
+</td>
+<td>Valores padrão para os parâmetros das funções invocadas por SQL</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T551
+   </td>
+<td>
+</td>
+<td>Palavras-chave opcionais para sintaxe padrão</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T581
+   </td>
+<td>
+</td>
+<td>Função de subcadeia de caracteres de expressão regular</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T591
+   </td>
+<td>
+</td>
+<td>Restrições ÚNICAS de colunas que podem ser de valor nulo</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T611
+   </td>
+<td>
+</td>
+<td>Operações OLAP elementar</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T612
+   </td>
+<td>
+</td>
+<td>Operações OLAP avançadas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T613
+   </td>
+<td>
+</td>
+<td>Amostragem</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T614
+   </td>
+<td>
+</td>
+<td>Função NTILE</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T615
+   </td>
+<td>
+</td>
+<td>Funções LEAD e LAG</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T617
+   </td>
+<td>
+</td>
+<td>Funções FIRST_VALUE e LAST_VALUE</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T620
+   </td>
+<td>
+</td>
+<td>Cláusula de JANELA: opção GRUPOS</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T621
+   </td>
+<td>
+</td>
+<td>Funções numéricas aprimoradas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T622
+   </td>
+<td>
+</td>
+<td>Funções trigonométricas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T623
+   </td>
+<td>
+</td>
+<td>Funções gerais de logaritmo</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T624
+   </td>
+<td>
+</td>
+<td>Funções de logaritmo comum</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T626
+   </td>
+<td>
+</td>
+<td>
+    ANY_VALUE
+   </td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T627
+   </td>
+<td>
+</td>
+<td>CONTAR DISTINTOS com moldura de janela</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T631
+   </td>
+<td>
+    Core
+   </td>
+<td>IN predicado com um elemento da lista</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T651
+   </td>
+<td>
+</td>
+<td>Ensaios de esquema SQL em rotinas SQL</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T653
+   </td>
+<td>
+</td>
+<td>Ensaios de esquema SQL em rotinas externas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T655
+   </td>
+<td>
+</td>
+<td>Rotinas dependentes de ciclos</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T661
+   </td>
+<td>
+</td>
+<td>Literais de número inteiro não decimal</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T662
+   </td>
+<td>
+</td>
+<td>Sublinhados em numerais literais</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T670
+   </td>
+<td>
+</td>
+<td>Mistura de declaração de esquema e dados</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T803
+   </td>
+<td>
+</td>
+<td>JSON baseado em cadeia</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T811
+   </td>
+<td>
+</td>
+<td>Funções básicas de construção de SQL/JSON</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T812
+   </td>
+<td>
+</td>
+<td>SQL/JSON: JSON_OBJECTAGG</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T813
+   </td>
+<td>
+</td>
+<td>SQL/JSON: JSON_ARRAYAGG com ORDER BY</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T814
+   </td>
+<td>
+</td>
+<td>Colônia em JSON_OBJECT ou JSON_OBJECTAGG</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T821
+   </td>
+<td>
+</td>
+<td>Operadores básicos de consulta SQL/JSON</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T822
+   </td>
+<td>
+</td>
+<td>SQL/JSON: Predicado JSON com Chaves Únicas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T823
+   </td>
+<td>
+</td>
+<td>SQL/JSON: Cláusula PASSING</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T825
+   </td>
+<td>
+</td>
+<td>SQL/JSON: Cláusulas ON EMPTY e ON ERROR</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T826
+   </td>
+<td>
+</td>
+<td>Expressão de valor geral em cláusulas ON ERROR ou ON EMPTY</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T827
+   </td>
+<td>
+</td>
+<td>JSON_TABLE: cláusulas de COLUNAS NESTADAS de irmãos</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T828
+   </td>
+<td>
+</td>
+<td>
+    JSON_QUERY
+   </td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T829
+   </td>
+<td>
+</td>
+<td>JSON_QUERY: opções de envoltório de array</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T830
+   </td>
+<td>
+</td>
+<td>Exigir chaves únicas em funções construtoras SQL/JSON</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T831
+   </td>
+<td>
+</td>
+<td>Linguagem de caminho SQL/JSON: modo rigoroso</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T832
+   </td>
+<td>
+</td>
+<td>Linguagem de caminho SQL/JSON: método item</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T833
+   </td>
+<td>
+</td>
+<td>Linguagem de caminho SQL/JSON: múltiplos subíndices</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T834
+   </td>
+<td>
+</td>
+<td>Linguagem de caminho SQL/JSON: acessador de membro com caractere curinga</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T835
+   </td>
+<td>
+</td>
+<td>Língua de caminho SQL/JSON: expressões de filtro</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T836
+   </td>
+<td>
+</td>
+<td>Linguagem de caminho SQL/JSON: começa com predicado</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T837
+   </td>
+<td>
+</td>
+<td>Linguagem de caminho SQL/JSON: predicado semelhante a regex</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T840
+   </td>
+<td>
+</td>
+<td>Literais de inteiro hexadecimal no SQL/JSON path language</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T851
+   </td>
+<td>
+</td>
+<td>SQL/JSON: palavras-chave opcionais para sintaxe padrão</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T865
+   </td>
+<td>
+</td>
+<td>Método de item SQL/JSON: bigint()</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T866
+   </td>
+<td>
+</td>
+<td>Método de item SQL/JSON: boolean()</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T867
+   </td>
+<td>
+</td>
+<td>Método de item SQL/JSON: date()</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T868
+   </td>
+<td>
+</td>
+<td>Método de item SQL/JSON: decimal()</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T869
+   </td>
+<td>
+</td>
+<td>Método de item SQL/JSON: decimal() com precisão e escala</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T870
+   </td>
+<td>
+</td>
+<td>Método de item SQL/JSON: integer()</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T871
+   </td>
+<td>
+</td>
+<td>Método de item SQL/JSON: number()</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T872
+   </td>
+<td>
+</td>
+<td>Método de item SQL/JSON: string()</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T873
+   </td>
+<td>
+</td>
+<td>Método de item SQL/JSON: time()</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T874
+   </td>
+<td>
+</td>
+<td>Método de item SQL/JSON: time_tz()</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T875
+   </td>
+<td>
+</td>
+<td>Método de item SQL/JSON: precisão de tempo</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T876
+   </td>
+<td>
+</td>
+<td>Método de item SQL/JSON: timestamp()</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T877
+   </td>
+<td>
+</td>
+<td>Método de item SQL/JSON: timestamp_tz()</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T878
+   </td>
+<td>
+</td>
+<td>Método de item SQL/JSON: precisão do timestamp</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    T879
+   </td>
+<td>
+</td>
+<td>JSON em operações de igualdade</td>
+<td>com jsonb</td>
+</tr>
+<tr>
+<td>
+    T880
+   </td>
+<td>
+</td>
+<td>JSON em operações de agrupamento</td>
+<td>com jsonb</td>
+</tr>
+<tr>
+<td>
+    X010
+   </td>
+<td>
+</td>
+<td>Tipo XML</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X011
+   </td>
+<td>
+</td>
+<td>Arrays do tipo XML</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X014
+   </td>
+<td>
+</td>
+<td>Atributos do tipo XML</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X016
+   </td>
+<td>
+</td>
+<td>Valores XML persistentes</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X020
+   </td>
+<td>
+</td>
+<td>XMLConcat</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X031
+   </td>
+<td>
+</td>
+<td>XMLElement</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X032
+   </td>
+<td>
+</td>
+<td>XMLForest</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X034
+   </td>
+<td>
+</td>
+<td>XMLAgg</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X035
+   </td>
+<td>
+</td>
+<td>XMLAgg: opção ORDER BY</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X036
+   </td>
+<td>
+</td>
+<td>XMLComment</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X037
+   </td>
+<td>
+</td>
+<td>XMLPI</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X038
+   </td>
+<td>
+</td>
+<td>XMLText</td>
+<td>apoiada, exceto RETURNING</td>
+</tr>
+<tr>
+<td>
+    X040
+   </td>
+<td>
+</td>
+<td>Mapeamento básico de tabela</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X041
+   </td>
+<td>
+</td>
+<td>Mapeamento básico de tabela: nulo ausente</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X042
+   </td>
+<td>
+</td>
+<td>Mapeamento básico de tabela: null como nil</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X043
+   </td>
+<td>
+</td>
+<td>Mapeamento básico de tabela: tabela como floresta</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X044
+   </td>
+<td>
+</td>
+<td>Mapeamento básico de tabela: tabela como elemento</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X045
+   </td>
+<td>
+</td>
+<td>Mapeamento básico de tabela: com o namespace alvo</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X046
+   </td>
+<td>
+</td>
+<td>Mapeamento básico de tabela: mapeamento de dados</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X047
+   </td>
+<td>
+</td>
+<td>Mapeamento básico de tabela: mapeamento de metadados</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X048
+   </td>
+<td>
+</td>
+<td>Mapeamento básico de tabela: codificação base64 de strings binárias</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X049
+   </td>
+<td>
+</td>
+<td>Mapeamento básico de tabela: codificação hexadecimal de strings binárias</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X050
+   </td>
+<td>
+</td>
+<td>Mapeamento avançado de tabela</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X051
+   </td>
+<td>
+</td>
+<td>Mapeamento avançado de tabela: nulo ausente</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X052
+   </td>
+<td>
+</td>
+<td>Mapeamento avançado de tabela: null como nil</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X053
+   </td>
+<td>
+</td>
+<td>Mapeamento avançado de tabela: tabela como floresta</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X054
+   </td>
+<td>
+</td>
+<td>Mapeamento avançado de tabela: tabela como elemento</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X055
+   </td>
+<td>
+</td>
+<td>Mapeamento avançado de tabela: com namespace alvo</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X056
+   </td>
+<td>
+</td>
+<td>Mapeamento avançado de tabela: mapeamento de dados</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X057
+   </td>
+<td>
+</td>
+<td>Mapeamento avançado de tabelas: mapeamento de metadados</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X058
+   </td>
+<td>
+</td>
+<td>Mapeamento avançado de tabela: codificação base64 de strings binárias</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X059
+   </td>
+<td>
+</td>
+<td>Mapeamento avançado de tabela: codificação hexadecimal de strings binárias</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X060
+   </td>
+<td>
+</td>
+<td>XMLParse: entrada de string de caracteres e opção de CONTÊM</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X061
+   </td>
+<td>
+</td>
+<td>XMLParse: entrada de string de caracteres e opção DOCUMENT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X069
+   </td>
+<td>
+</td>
+<td>XMLSerialize: INDENT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X070
+   </td>
+<td>
+</td>
+<td>XMLSerialize: serialização de cadeias de caracteres e opção CONTENT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X071
+   </td>
+<td>
+</td>
+<td>XMLSerialize: serialização de cadeia de caracteres e opção DOCUMENT</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X072
+   </td>
+<td>
+</td>
+<td>XMLSerialize: serialização de cadeia de caracteres</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X090
+   </td>
+<td>
+</td>
+<td>predicado do documento XML</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X120
+   </td>
+<td>
+</td>
+<td>Parâmetros XML em rotinas SQL</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X121
+   </td>
+<td>
+</td>
+<td>Parâmetros XML em rotinas externas</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X221
+   </td>
+<td>
+</td>
+<td>Mecanismo de passagem de XML POR VALOR</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X301
+   </td>
+<td>
+</td>
+<td>XMLTable: opção de lista de coluna derivada</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X302
+   </td>
+<td>
+</td>
+<td>XMLTable: opção de coluna de ordinalidade</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X303
+   </td>
+<td>
+</td>
+<td>XMLTable: opção padrão da coluna</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X304
+   </td>
+<td>
+</td>
+<td>XMLTable: passando um item de contexto</td>
+<td>deve ser um DOCUMENTO XML</td>
+</tr>
+<tr>
+<td>
+    X400
+   </td>
+<td>
+</td>
+<td>Mapeamento de nomes e identificadores</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+    X410
+   </td>
+<td>
+</td>
+<td>Alterar o tipo de dados da coluna: Tipo XML</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+

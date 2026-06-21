@@ -1,0 +1,3 @@
+## 47.7. Escritores de saída de decodificação lógica [#](#LOGICALDECODING-WRITER)
+
+É possível adicionar mais métodos de saída para decodificação lógica. Para detalhes, consulte `src/backend/replication/logical/logicalfuncs.c`. Essencialmente, três funções precisam ser fornecidas: uma para ler o WAL, uma para preparar a saída de escrita e uma para escrever a saída (consulte [Seção 47.6.5][(logicaldecoding-output-plugin.md#LOGICALDECODING-OUTPUT-PLUGIN-OUTPUT "47.6.5. Functions for Producing Output")]).

@@ -1,0 +1,5 @@
+## 42.12. Nomes de Procedimentos Tcl [#](#PLTCL-PROCNAMES)
+
+Em PostgreSQL, o mesmo nome de função pode ser usado para diferentes definições de função se as funções estiverem em esquemas diferentes, ou se o número de argumentos ou seus tipos diferirem. No entanto, o Tcl exige que todos os nomes de procedimentos sejam distintos. O PL/Tcl lida com isso incluindo os nomes dos tipos de argumentos no nome interno do procedimento Tcl e, em seguida, adicionando o ID do objeto (OID) da função ao nome interno do procedimento Tcl, se necessário, para torná-lo diferente dos nomes de todas as funções carregadas anteriormente no mesmo interpretador Tcl. Assim, as funções PostgreSQL com o mesmo nome e tipos de argumentos diferentes serão também procedimentos Tcl diferentes. Isso normalmente não é uma preocupação para um programador PL/Tcl, mas pode ser visível durante a depuração.
+
+Por essa e outras razões, uma função PL/Tcl não pode chamar diretamente outra (ou seja, dentro do Tcl). Se você precisar fazer isso, deve passar pelo SQL, usando `spi_exec` ou um comando relacionado.

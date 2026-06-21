@@ -1,0 +1,9 @@
+## Capítulo 40. Linguagens Procedimentais
+
+**Índice**
+
+* [40.1. Instalação de Linguagens Procedimentais](xplang-install.md)
+
+O PostgreSQL permite que funções definidas pelo usuário sejam escritas em outros idiomas além do SQL e do C. Esses outros idiomas são genericamente chamados de *linguagens procedimentais* (PLs). Para uma função escrita em uma linguagem procedural, o servidor de banco de dados não tem conhecimento embutido sobre como interpretar o texto fonte da função. Em vez disso, a tarefa é passada para um manipulador especial que conhece os detalhes da linguagem. O manipulador pode realizar todo o trabalho de análise, análise sintática, execução, etc. ele mesmo, ou pode servir como "cola" entre o PostgreSQL e uma implementação existente de uma linguagem de programação. O próprio manipulador é uma função em linguagem C compilada em um objeto compartilhado e carregada sob demanda, assim como qualquer outra função em C.
+
+Atualmente, há quatro linguagens processuais disponíveis na distribuição padrão do PostgreSQL: PL/pgSQL ([Capítulo 41][(plpgsql.md "Chapter 41. PL/pgSQL — SQL Procedural Language")]), PL/Tcl ([Capítulo 42][(pltcl.md "Chapter 42. PL/Tcl — Tcl Procedural Language")]), PL/Perl ([Capítulo 43][(plperl.md "Chapter 43. PL/Perl — Perl Procedural Language")]) e PL/Python ([Capítulo 44][(plpython.md "Chapter 44. PL/Python — Python Procedural Language")]). Há linguagens processuais adicionais disponíveis que não estão incluídas na distribuição básica. [Apêndice H][(external-projects.md "Appendix H. External Projects")] contém informações sobre como encontrá-las. Além disso, outros idiomas podem ser definidos por usuários; os fundamentos do desenvolvimento de uma nova linguagem processual são abordados em [Capítulo 57][(plhandler.md "Chapter 57. Writing a Procedural Language Handler")].

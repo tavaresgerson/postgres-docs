@@ -1,0 +1,5 @@
+## 67.2. Transações e bloqueio [#](#XACT-LOCKING)
+
+Os IDs de transação dos processos atualmente em execução são mostrados em `pg_locks`(view-pg-locks.md "53.13. pg_locks") nas colunas `virtualxid` e `transactionid`. As transações somente de leitura terão `virtualxid`s, mas `transactionid`s NULL, enquanto ambas as colunas serão definidas em transações de leitura e escrita.
+
+Alguns tipos de bloqueio esperam por `virtualxid`, enquanto outros esperam por `transactionid`. Os bloqueios de leitura e escrita em nível de linha são registrados diretamente nas linhas bloqueadas e podem ser inspecionados usando a extensão [pgrowlocks](pgrowlocks.md "F.31. pgrowlocks — show a table's row locking information"). Os bloqueios de leitura em nível de linha também podem exigir a atribuição de IDs multixact (`mxid`; veja [Seção 24.1.5.1](routine-vacuuming.md#VACUUM-FOR-MULTIXACT-WRAPAROUND "24.1.5.1. Multixacts and Wraparound")).

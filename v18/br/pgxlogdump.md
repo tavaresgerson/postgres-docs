@@ -1,0 +1,3 @@
+## O.3. `pg_xlogdump` renomeado para `pg_waldump` [#](#PGXLOGDUMP)
+
+O PostgreSQL 9.6 e versões anteriores forneciam um comando chamado `pg_xlogdump` para ler arquivos de log de pré-escrita (WAL). Esse comando foi renomeado para `pg_waldump`, consulte [pg_waldump](pgwaldump.md "pg_waldump") para documentação do `pg_waldump` e consulte as notas de lançamento do PostgreSQL 10[(release-prior.md "E.6. Prior Releases") para detalhes sobre essa mudança.

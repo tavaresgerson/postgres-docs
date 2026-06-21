@@ -1,0 +1,11 @@
+## 42.1. Visão geral [#](#PLTCL-OVERVIEW)
+
+O PL/Tcl oferece a maioria das capacidades que um programador de funções tem no idioma C, com algumas restrições, e com a adição das poderosas bibliotecas de processamento de strings disponíveis para Tcl.
+
+Uma restrição *boa* convincente é que tudo é executado dentro da segurança do contexto de um interpretador Tcl. Além do conjunto limitado de comandos seguro do Tcl, apenas alguns comandos estão disponíveis para acessar o banco de dados via SPI e para emitir mensagens via `elog()`. O PL/Tcl não oferece nenhuma maneira de acessar os recursos internos do servidor de banco de dados ou de obter acesso ao nível do sistema operacional sob as permissões do processo do servidor PostgreSQL, como uma função C pode fazer. Assim, os usuários de banco de dados não privilegiados podem ser confiáveis para usar esse idioma; ele não lhes dá autoridade ilimitada.
+
+A outra restrição de implementação notável é que as funções Tcl não podem ser usadas para criar funções de entrada/saída para novos tipos de dados.
+
+Às vezes, é desejável escrever funções Tcl que não sejam restritas ao Tcl seguro. Por exemplo, pode-se querer uma função Tcl que envie e-mail. Para lidar com esses casos, existe uma variante do PL/Tcl chamada `PL/TclU` (para Tcl não confiável). Este é exatamente o mesmo idioma, exceto que um interpretador Tcl completo é usado. *Se o PL/TclU for usado, ele deve ser instalado como um idioma processual não confiável* para que apenas os superusuários do banco de dados possam criar funções nele. O autor de uma função PL/TclU deve ter cuidado para que a função não possa ser usada para fazer algo indesejado, pois ela poderá fazer qualquer coisa que um usuário conectado como administrador do banco de dados possa fazer.
+
+O código objeto compartilhado para os manipuladores de chamadas PL/Tcl e PL/TclU é automaticamente construído e instalado no diretório da biblioteca PostgreSQL se o suporte Tcl for especificado na etapa de configuração do procedimento de instalação. Para instalar PL/Tcl e/ou PL/TclU em um banco de dados específico, use o comando `CREATE EXTENSION`, por exemplo, `CREATE EXTENSION pltcl` ou `CREATE EXTENSION pltclu`.

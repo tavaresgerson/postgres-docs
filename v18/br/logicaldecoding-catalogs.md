@@ -1,0 +1,3 @@
+## 47.5. Catálogos do sistema relacionados à decodificação lógica [#](#LOGICALDECODING-CATALOGS)
+
+A vista `pg_replication_slots` e a vista (view-pg-replication-slots.md "53.20. pg_replication_slots") fornecem informações sobre o estado atual dos slots de replicação e, respectivamente, as conexões de replicação em streaming. Essas vistas se aplicam tanto à replicação física quanto à lógica. A vista `pg_stat_replication_slots` fornece informações estatísticas sobre os slots de replicação lógica.

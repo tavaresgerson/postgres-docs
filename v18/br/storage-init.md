@@ -1,0 +1,3 @@
+## 66.5. A Broca do Inicialização [#](#STORAGE-INIT)
+
+Cada tabela não registrada e cada índice em uma tabela não registrada têm um ramo de inicialização. O ramo de inicialização é uma tabela ou índice vazio do tipo apropriado. Quando uma tabela não registrada deve ser redefinida para vazio devido a um crash, o ramo de inicialização é copiado sobre o ramo principal e quaisquer outros ramos são apagados (eles serão recriados automaticamente conforme necessário).

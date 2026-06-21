@@ -1,0 +1,3 @@
+## O.4. `pg_resetxlog` renomeado para `pg_resetwal` [#](#APP-PGRESETXLOG)
+
+O PostgreSQL 9.6 e versões anteriores forneciam um comando chamado `pg_resetxlog` para redefinir os arquivos de log de antecipação (WAL). Esse comando foi renomeado para `pg_resetwal`, consulte [pg_resetwal](app-pgresetwal.md "pg_resetwal") para documentação do `pg_resetwal` e consulte as notas de lançamento do PostgreSQL 10 (release-prior.md "E.6. Prior Releases") para detalhes sobre essa mudança.

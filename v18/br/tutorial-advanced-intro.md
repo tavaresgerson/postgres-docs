@@ -1,0 +1,5 @@
+## 3.1. Introdução [#](#TUTORIAL-ADVANCED-INTRO)
+
+No capítulo anterior, cobrimos os conceitos básicos de uso do SQL para armazenar e acessar seus dados no PostgreSQL. Agora, discutiremos algumas funcionalidades mais avançadas do SQL que simplificam a gestão e previnem a perda ou corrupção de seus dados. Por fim, veremos algumas extensões do PostgreSQL.
+
+Este capítulo, por vezes, fará referência a exemplos encontrados em [Capítulo 2][(tutorial-sql.md "Chapter 2. The SQL Language")] para os alterar ou melhorá-los, portanto, será útil ter lido esse capítulo. Alguns exemplos deste capítulo também podem ser encontrados em `advanced.sql` no diretório do tutorial. Este arquivo também contém alguns dados de amostra para carregar, que não são repetidos aqui. (Consulte [Seção 2.1][(tutorial-sql-intro.md "2.1. Introduction")] para saber como usar o arquivo.)

@@ -1,0 +1,134 @@
+# Documentação do PostgreSQL 18.4
+
+### O Grupo Global de Desenvolvimento do PostgreSQL
+
+Copyright © 1996–2026 O Grupo Global de Desenvolvimento do PostgreSQL
+
+[Aviso Legal](legalnotice.md)
+
+---
+
+**Índice**
+
+* [Prefácio](preface.md)
+
++ [1. O que é o PostgreSQL?][(intro-whatis.md)]
++ [2. Uma breve história do PostgreSQL][(history.md)]
++ [3. Convenções][(notation.md)]
++ [4. Informações adicionais][(resources.md)]
++ [5. Diretrizes de relatórios de erros][(bug-reporting.md)]
+
+* [I. Tutorial](tutorial.md)
+
++ [1. Começando](tutorial-start.md)
++ [2. O Idioma SQL](tutorial-sql.md)
++ [3. Recursos Avançados](tutorial-advanced.md)
+
+* [II. A Linguagem SQL](sql.md)
+
++ [4. Sintaxe SQL](sql-syntax.md)
++ [5. Definição de dados](ddl.md)
++ [6. Manipulação de dados](dml.md)
++ [7. Consultas](queries.md)
++ [8. Tipos de dados](datatype.md)
++ [9. Funções e operadores](functions.md)
++ [10. Conversão de tipos](typeconv.md)
++ [11. Índices](indexes.md)
++ [12. Busca de texto completo](textsearch.md)
++ [13. Controle de concorrência](mvcc.md)
++ [14. Dicas de desempenho](performance-tips.md)
++ [15. Consulta paralela](parallel-query.md)
+
+* [III. Administração de Servidores](admin.md)
+
++ [16. Instalação a partir de Binários](install-binaries.md)
++ [17. Instalação a partir de Código-fonte](installation.md)
++ [18. Configuração e Operação do Servidor](runtime.md)
++ [19. Configuração do Servidor](runtime-config.md)]
++ [20. Autenticação do Cliente][(client-authentication.md)]
++ [21. Papéis de Banco de Dados][(user-manag.md)]
++ [22. Gerenciamento de Bancos de Dados][(managing-databases.md)]
++ [23. Localização][(charset.md)]
++ [24. Tarefas de Manutenção Rotineira de Banco de Dados][(maintenance.md)]
++ [25. Backup e Restauração][(backup.md)]
++ [26. Alta Disponibilidade, Equilibração de Carga e Replicação][(high-availability.md)]
++ [27. Monitoramento da Atividade do Banco de Dados][(monitoring.md)]
++ [28. Confiabilidade e o Registro Antecipado][(wal.md)]
++ [29. Replicação Lógica][(logical-replication.md)]
++ [30. Compilação Just-in-Time (JIT)][(jit.md)]
++ [31. Testes de Regressão][(regress.md)]
+
+* [IV. Interfaces do Cliente](client-interfaces.md)
+
++ [32. libpq — Biblioteca C](libpq.md)
++ [33. Grandes Objetos](largeobjects.md)
++ [34. ECPG — SQL embutido em C](ecpg.md)
++ [35. O esquema de informações](information-schema.md)
+
+* [Programação de Servidor](server-programming.md)
+
++ [36. Extensão do SQL][(extend.md)]
++ [37. Triggers][(triggers.md)]
++ [38. Triggers de evento][(event-triggers.md)]
++ [39. O sistema de regras][(rules.md)]
++ [40. Linguagens processuais][(xplang.md)]
++ [41. PL/pgSQL — Linguagem procedural SQL][(plpgsql.md)]
++ [42. PL/Tcl — Linguagem procedural Tcl][(pltcl.md)]
++ [43. PL/Perl — Linguagem procedural Perl][(plperl.md)]
++ [44. PL/Python — Linguagem procedural Python][(plpython.md)]
++ [45. Interface de programação do servidor][(spi.md)]
++ [46. Processos de trabalho em segundo plano][(bgworker.md)]
++ [47. Decodificação lógica][(logicaldecoding.md)]
++ [48. Rastreamento do progresso da replicação][(replication-origins.md)]
++ [49. Módulos de arquivo][(archive-modules.md)]
++ [50. Módulos de validação OAuth][(oauth-validators.md)]
+
+* [VI. Referência](reference.md)
+
++ [I. Comandos SQL](sql-commands.md)
++ [II. Aplicações de cliente do PostgreSQL](reference-client.md)
++ [III. Aplicações do servidor do PostgreSQL](reference-server.md)
+
+* [VII. Internos](internals.md)
+
++ [51. Visão Geral dos Internos do PostgreSQL](overview.md)
++ [52. Catálogos do Sistema](catalogs.md)
++ [53. Visualizações do Sistema](views.md)
++ [54. Protocolo Frontend/Backend](protocol.md)
++ [55. Convenções de Codificação do PostgreSQL](source.md)
++ [56. Suporte a Idioma Nativo](nls.md)
++ [57. Escrever um Manipulador de Linguagem Procedimental](plhandler.md)
++ [58. Escrever um Wrapper de Dados Estrangeiro](fdwhandler.md)
++ [59. Escrever um Método de Amostragem de Tabela](tablesample-method.md)
++ [60. Escrever um Fornecedor de Varredura Personalizado](custom-scan.md)
++ [61. Otimizador de Consulta Genética](geqo.md)
++ [62. Definição da Interface do Método de Acesso à Tabela](tableam.md)
++ [63. Definição da Interface do Método de Acesso ao Índice](indexam.md)
++ [64. Registro Antecipado para Extensões](wal-for-extensions.md)
++ [65. Métodos de Acesso a Índice Integrados](indextypes.md)
++ [66. Armazenamento Físico do Banco de Dados](storage.md)
++ [67. Processamento de Transações](transactions.md)
++ [68. Declarações de Catálogo do Sistema e Conteúdo Inicial](bki.md)
++ [69. Como o Planejador Usa Estatísticas](planner-stats-details.md)
++ [70. Formato de Manifiesto de Backup](backup-manifest-format.md)
+
+* [VIII. Anexos](appendixes.md)
+
++ [A. Códigos de Erro do PostgreSQL][(errcodes-appendix.md)]
++ [B. Suporte de Data/Hora][(datetime-appendix.md)]
++ [C. Palavras-chave SQL][(sql-keywords-appendix.md)]
++ [D. Conformidade SQL][(features.md)]
++ [E. Notas de Lançamento][(release.md)]
++ [F. Módulos e Extensões Adicionais Fornecidos][(contrib.md)]
++ [G. Programas Adicionais Fornecidos][(contrib-prog.md)]
++ [H. Projetos Externos][(external-projects.md)]
++ [I. Repositório do Código-Fonte][(sourcerepo.md)]
++ [J. Documentação][(docguide.md)]
++ [K. Limites do PostgreSQL][(limits.md)]
++ [L. Abreviações][(acronyms.md)]
++ [M. Glossário][(glossary.md)]
++ [N. Suporte de Cores][(color.md)]
++ [O. Recursos Desatualizados ou Renomeados][(appendix-obsolete.md)]
+
+* [Bibliografia](biblio.md)
+* [Índice](bookindex.md)

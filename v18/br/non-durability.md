@@ -1,0 +1,10 @@
+## 14.5. Configurações Não Duraveis [#](#NON-DURABILITY)
+
+A durabilidade é uma característica de banco de dados que garante a gravação de transações comprometidas mesmo se o servidor falhar ou perder energia. No entanto, a durabilidade adiciona um sobrecarga significativa ao banco de dados, então, se o seu site não requer tal garantia, o PostgreSQL pode ser configurado para funcionar muito mais rápido. As seguintes mudanças de configuração que você pode fazer para melhorar o desempenho nesses casos são: Exceto conforme indicado abaixo, a durabilidade ainda é garantida em caso de falha do software do banco de dados; apenas uma falha abrupta do sistema operacional cria um risco de perda ou corrupção de dados quando essas configurações são usadas.
+
+* Coloque o diretório de dados do clúster de banco de dados em um sistema de arquivos com suporte de memória (ou seja, disco RAM). Isso elimina todo o I/O de disco do banco de dados, mas limita o armazenamento de dados à quantidade de memória disponível (e talvez troca).
+* Desative [fsync][(runtime-config-wal.md#GUC-FSYNC)]; não há necessidade de limpar os dados no disco.
+* Desative [synchronous_commit][(runtime-config-wal.md#GUC-SYNCHRONOUS-COMMIT)]; pode não haver necessidade de forçar a escrita de WAL no disco em cada commit. Esta configuração arrisca a perda de transações (embora não a corrupção de dados) em caso de falha do *banco de dados*.
+* Desative [full_page_writes][(runtime-config-wal.md#GUC-FULL-PAGE-WRITES)]; não há necessidade de se proteger contra escritas de página parcial.
+* Aumente [max_wal_size][(runtime-config-wal.md#GUC-MAX-WAL-SIZE)] e [checkpoint_timeout][(runtime-config-wal.md#GUC-CHECKPOINT-TIMEOUT)]; isso reduz a frequência dos checkpoints, mas aumenta os requisitos de armazenamento de `/pg_wal`.
+* Crie [tabelas não registradas][(sql-createtable.md#SQL-CREATETABLE-UNLOGGED)] para evitar escritas de WAL, embora isso torne as tabelas não seguras em caso de falha.
