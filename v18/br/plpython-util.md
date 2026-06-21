@@ -103,6 +103,7 @@ O módulo `plpy` também fornece as funções
 
 
 
+
 `plpy.error` e `plpy.fatal` realmente levantam uma exceção do Python que, se não for detectada, se propaga para a consulta que a chamou, fazendo com que a transação ou subtransação atual seja abortada. `raise plpy.Error(msg)` e `raise plpy.Fatal(msg)` são equivalentes ao chamar `plpy.error(msg)` e `plpy.fatal(msg)`, respectivamente, mas o formulário `raise` não permite passar argumentos por palavra-chave. As outras funções geram apenas mensagens de diferentes níveis de prioridade. Se as mensagens de uma prioridade específica são relatadas ao cliente, escritas no log do servidor ou ambas, é controlado pelas variáveis de configuração [log_min_messages](runtime-config-logging.md#GUC-LOG-MIN-MESSAGES) e [client_min_messages](runtime-config-client.md#GUC-CLIENT-MIN-MESSAGES). Consulte [Capítulo 19](runtime-config.md "Chapter 19. Server Configuration") para mais informações.
 
 O argumento *`msg`* é fornecido como um argumento posicional. Para compatibilidade reversa, pode ser fornecido mais de um argumento posicional. Nesse caso, a representação em cadeia da tupla de argumentos posicionais se torna a mensagem relatada ao cliente.
@@ -169,6 +170,7 @@ Os seguintes argumentos com palavras-chave são aceitos:
   </td>
  </tr>
 </table>
+
 
 
 

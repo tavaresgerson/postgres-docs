@@ -112,6 +112,7 @@ Se a linha antiga não satisfazer a expressão do filtro de linha (não foi envi
 
 
 
+
 ### 29.4.4. Tabelas Partidas [#](#LOGICAL-REPLICATION-ROW-FILTER-PARTITIONED-TABLE)
 
 Se a publicação contiver uma tabela dividida, o parâmetro de publicação `publish_via_partition_root`(sql-createpublication.md#SQL-CREATEPUBLICATION-PARAMS-WITH-PUBLISH-VIA-PARTITION-ROOT) determina qual filtro de linha é usado. Se `publish_via_partition_root` é `true`, o filtro de linha do *root partitioned table* é usado. Caso contrário, se `publish_via_partition_root` é `false` (padrão), cada filtro de linha do *partition* é usado.

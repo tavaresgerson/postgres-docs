@@ -133,4 +133,5 @@ A vista `pg_prepared_xacts` exibe informações sobre as transações que estão
 
 
 
+
 Quando a visualização `pg_prepared_xacts` é acessada, as estruturas de dados do gerenciador de transações interno são temporariamente bloqueadas e uma cópia é feita para que a visualização possa ser exibida. Isso garante que a visualização produza um conjunto consistente de resultados, sem bloquear operações normais por mais tempo do que o necessário. No entanto, pode haver algum impacto no desempenho do banco de dados se essa visualização for frequentemente acessada.

@@ -576,4 +576,5 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
 
 
 
+
 Novas funções agregadas são registradas com o comando `CREATE AGGREGATE`(sql-createaggregate.md "CREATE AGGREGATE"). Consulte [Seção 36.12](xaggr.md "36.12. User-Defined Aggregates") para obter mais informações sobre a escrita de funções agregadas e o significado das funções de transição, etc.

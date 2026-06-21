@@ -97,3 +97,4 @@ A vista `collations` contém as colações disponíveis no banco de dados atual.
 
 
 
+

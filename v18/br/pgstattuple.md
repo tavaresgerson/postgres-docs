@@ -187,6 +187,7 @@ As colunas de saída são descritas em [Tabela F.24](pgstattuple.md#PGSTATTUPLE-
 
 
 
+
 ### Nota
 
 O `table_len` será sempre maior que a soma dos `tuple_len`, `dead_tuple_len` e `free_space`. A diferença é contabilizada pelo overhead fixo da página, a tabela de per página de ponteiros para tuplas e o preenchimento para garantir que as tuplas estejam corretamente alinhadas.
@@ -393,6 +394,7 @@ As colunas de saída são:
 
 
 
+
 O `index_size` relatado normalmente corresponderá a uma página a mais do que a contabilizada pelo `internal_pages + leaf_pages + empty_pages + deleted_pages`, porque também inclui a metapágina do índice.
 
 Assim como no caso de `pgstattuple`, os resultados são acumulados página por página e não devem ser esperados para representar um instantâneo instantâneo de todo o índice.
@@ -476,6 +478,7 @@ As colunas de saída são:
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -634,6 +637,7 @@ As colunas de saída são:
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -834,6 +838,7 @@ Para as páginas que não podem ser ignoradas, ele digitaliza cada tupla, regist
   </tr>
  </tbody>
 </table>
+
 
 
 

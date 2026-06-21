@@ -300,6 +300,7 @@ As funções de formatação do PostgreSQL fornecem um conjunto poderoso de ferr
 
 
 
+
 ### DICA
 
 `to_timestamp` e `to_date` existem para lidar com formatos de entrada que não podem ser convertidos por simples casting. Para a maioria dos formatos padrão de data/hora, simplesmente converter a string de origem para o tipo de dado necessário funciona e é muito mais fácil. Da mesma forma, `to_number` é desnecessário para representações numéricas padrão.
@@ -1011,6 +1012,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
 
 
 
+
 Modificadores podem ser aplicados a qualquer padrão de modelo para alterar seu comportamento. Por exemplo, `FMMonth` é o padrão `Month` com o modificador `FM`. [Tabela 9.28](functions-formatting.md#FUNCTIONS-FORMATTING-DATETIMEMOD-TABLE) mostra os padrões de modificadores para formatação de data/hora.
 
 **Tabela 9.28. Modificadores de Padrão de Modelo para Formatação de Data/Hora**
@@ -1147,6 +1149,7 @@ Modificadores podem ser aplicados a qualquer padrão de modelo para alterar seu 
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -1396,6 +1399,7 @@ Aqui está um exemplo mais complexo: `to_timestamp('15:12:02.020.001230', 'HH24:
 
 
 
+
 Observações de uso para formatação numérica:
 
 * `0` especifica uma posição de dígito que será sempre impressa, mesmo que contenha um zero inicial/final. `9` também especifica uma posição de dígito, mas se for um zero inicial, ele será substituído por um espaço, enquanto se for um zero final e o modo de preenchimento for especificado, ele será excluído. (Para `to_number()`, esses dois caracteres de padrão são equivalentes.)
@@ -1486,6 +1490,7 @@ Certos modificadores podem ser aplicados a qualquer padrão de modelo para alter
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -1992,6 +1997,7 @@ Certos modificadores podem ser aplicados a qualquer padrão de modelo para alter
   </tr>
  </tbody>
 </table>
+
 
 
 

@@ -95,6 +95,7 @@ O PostgreSQL oferece tipos de dados para armazenar endereços IPv4, IPv6 e MAC, 
 
 
 
+
 Ao classificar os tipos de dados `inet` ou `cidr`, as endereços IPv4 serão sempre classificados antes das endereços IPv6, incluindo endereços IPv4 encapsulados ou mapeados para endereços IPv6, como ::10.2.3.4 ou ::ffff:10.4.3.2.
 
 ### 8.9.1. `inet` [#](#DATATYPE-INET)
@@ -331,6 +332,7 @@ O tipo `cidr` contém uma especificação de rede IPv4 ou IPv6. Os formatos de e
 
 
 
+
 ### 8.9.3. `inet` vs. `cidr` [#](#DATATYPE-INET-VS-CIDR)
 
 A diferença essencial entre os tipos de dados `inet` e `cidr` é que o `inet` aceita valores com bits não nulos à direita da máscara de rede, enquanto o `cidr` não. Por exemplo, o `192.168.0.1/24` é válido para `inet`, mas não para `cidr`.
@@ -396,6 +398,7 @@ O tipo `macaddr` armazena endereços MAC, conhecidos, por exemplo, dos endereço
   </td>
  </tr>
 </table>
+
 
 
 
@@ -472,6 +475,7 @@ O tipo `macaddr8` armazena endereços MAC no formato EUI-64, conhecido, por exem
   </td>
  </tr>
 </table>
+
 
 
 

@@ -243,6 +243,7 @@ O catálogo `pg_amop` armazena informações sobre operadores associados a famí
 
 
 
+
 Uma entrada de operador de pesquisa indica que um índice dessa família de operadores pode ser pesquisado para encontrar todas as linhas que satisfazem `WHERE` * `indexed_column` * `operator` * `constant`. Obviamente, tal operador deve retornar `boolean`, e seu tipo de entrada à esquerda deve corresponder ao tipo de dados da coluna do índice.
 
 Uma entrada de operador de "ordem" indica que um índice desta família de operadores pode ser percorrido para retornar linhas na ordem representada por `ORDER BY` *`indexed_column`* *`operator`* *`constant`*. Tal operador pode retornar qualquer tipo de dados ordenável, embora, novamente, seu tipo de entrada à esquerda deve corresponder ao tipo de dados da coluna do índice. A semântica exata do `ORDER BY` é especificada pela coluna `amopsortfamily`, que deve referenciar uma família de operadores de árvore B para o tipo de resultado do operador.

@@ -109,6 +109,7 @@ O catálogo `pg_enum` contém entradas que mostram os valores e rótulos para ca
 
 
 
+
 Os OIDs para as linhas `pg_enum` seguem uma regra especial: os OIDs pares são garantidos para serem ordenados da mesma maneira que o ordenamento de classificação de seu tipo de enum. Isso significa que, se dois OIDs pares pertencem ao mesmo tipo de enum, o OID menor deve ter o menor valor `enumsortorder`. Os valores de OID ímpares não precisam ter relação com o pedido de classificação. Essa regra permite que as rotinas de comparação de enum evitem pesquisas no catálogo em muitos casos comuns. As rotinas que criam e alteram tipos de enum tentam atribuir OIDs pares a valores de enum sempre que possível.
 
 Quando um tipo de enum é criado, seus membros recebem posições de ordem de classificação de 1..`n`*. Mas os membros adicionados posteriormente podem receber valores negativos ou fracionários de `enumsortorder`. O único requisito desses valores é que eles sejam corretamente ordenados e únicos dentro de cada tipo de enum.

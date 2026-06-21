@@ -126,3 +126,4 @@ A negociação de protocolo foi introduzida na versão 9.3.21 do PostgreSQL. As 
 
 
 
+

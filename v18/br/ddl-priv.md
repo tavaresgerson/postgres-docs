@@ -461,6 +461,7 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
 
 
 
+
 [Tabela 5.2](ddl-priv.md#PRIVILEGES-SUMMARY-TABLE) resume os privilégios disponíveis para cada tipo de objeto SQL, usando as abreviações mostradas acima. Também mostra o comando psql que pode ser usado para examinar as configurações de privilégios para cada tipo de objeto.
 
 **Tabela 5.2. Resumo dos privilégios de acesso**
@@ -793,6 +794,7 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
   </tr>
  </tbody>
 </table>
+
 
 
 

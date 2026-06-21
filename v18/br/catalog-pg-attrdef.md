@@ -119,3 +119,4 @@ O catálogo `pg_attrdef` armazena expressões padrão de colunas e expressões d
 
 
 
+

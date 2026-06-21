@@ -446,6 +446,7 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
 
 
 
+
 **Tabela 9.59. Operadores de múltiplos intervalos**
 
 
@@ -1380,6 +1381,7 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
 
 
 
+
 Os operadores de esquerda/direita/adjacente sempre retornam falso quando há uma faixa vazia ou uma faixa múltipla envolvida; ou seja, uma faixa vazia não é considerada antes ou depois de qualquer outra faixa.
 
 Em outros lugares, intervalos vazios e multiintervalos são tratados como a identidade aditiva: qualquer coisa que é unida a um valor vazio é ela mesma. Qualquer coisa menos um valor vazio é ela mesma. Um multiintervalo vazio tem exatamente os mesmos pontos que um intervalo vazio. Cada intervalo contém o intervalo vazio. Cada multiintervalo contém tantas faixas vazias quanto você quiser.
@@ -1666,6 +1668,7 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -2011,6 +2014,7 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
   </tr>
  </tbody>
 </table>
+
 
 
 

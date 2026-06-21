@@ -122,6 +122,7 @@ Para mais informações sobre como criar gatilhos, consulte [CREATE TRIGGER](sql
 
 
 
+
 A função `suppress_redundant_updates_trigger`, quando aplicada como um gatilho de nível de linha `BEFORE UPDATE`, impedirá que qualquer atualização que não mude efetivamente os dados da linha ocorra. Isso substitui o comportamento normal, que sempre realiza uma atualização física da linha, independentemente de os dados terem sido alterados ou não. (Esse comportamento normal faz com que as atualizações sejam executadas mais rapidamente, uma vez que não é necessária nenhuma verificação, e também é útil em certos casos.)
 
 Idealmente, você deve evitar executar atualizações que não alteram realmente os dados no registro. As atualizações redundantes podem custar um tempo considerável e desnecessário, especialmente se houver muitos índices a serem alterados e espaço em linhas mortas que, eventualmente, terão que ser varridos. No entanto, detectar tais situações no código do cliente nem sempre é fácil, ou até mesmo possível, e escrever expressões para detectá-las pode ser propenso a erros. Uma alternativa é usar `suppress_redundant_updates_trigger`, que ignorará as atualizações que não alteram os dados. No entanto, você deve usar isso com cuidado. O gatilho leva um tempo pequeno, mas não trivial, para cada registro, então, se a maioria dos registros afetados pelas atualizações realmente mudar, o uso deste gatilho fará com que as atualizações sejam executadas mais lentamente em média.

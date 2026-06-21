@@ -357,3 +357,4 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
 
 
 
+

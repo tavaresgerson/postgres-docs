@@ -448,6 +448,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
 
 
 
+
 ### F.50.3. `xpath_table` [#](#XML2-XPATH-TABLE)
 
 ```
@@ -567,6 +568,7 @@ xpath_table(text key, text document, text relation, text xpaths, text criteria) 
   </tr>
  </tbody>
 </table>
+
 
 
 

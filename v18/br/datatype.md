@@ -834,6 +834,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
 
 
 
+
 ### Compatibilidade
 
 Os seguintes tipos (ou suas ortografias) são especificados pelo SQL: `bigint`, `bit`, `bit varying`, `boolean`, `char`, `character varying`, `character`, `varchar`, `date`, `double precision`, `integer`, `interval`, `numeric`, `decimal`, `real`, `smallint`, `time` (com ou sem fuso horário), `timestamp` (com ou sem fuso horário), `xml`.

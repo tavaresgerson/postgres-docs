@@ -145,3 +145,4 @@ O catálogo `pg_publication_rel` contém a mapeo entre as relações e as public
 
 
 
+

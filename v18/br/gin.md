@@ -175,6 +175,7 @@ A distribuição principal do PostgreSQL inclui as classes de operadores GIN mos
 
 
 
+
 Das duas classes de operadores para o tipo `jsonb`, `jsonb_ops` é o padrão. `jsonb_path_ops` suporta menos operadores, mas oferece melhor desempenho para aqueles operadores. Veja [Seção 8.14.4](datatype-json.md#JSON-INDEXING) para detalhes.
 
 ### 65.4.3. Extensibilidade [#](#GIN-EXTENSIBILITY)

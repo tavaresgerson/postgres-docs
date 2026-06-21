@@ -810,4 +810,5 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
 
 
 
+
 Para funções compiladas, tanto as integradas quanto as carregadas dinamicamente, `prosrc` contém o nome da função em linguagem C (símbolo de ligação). Para funções de linguagem SQL, `prosrc` contém o texto de fonte da função, se isso for especificado como uma literal de string; mas se o corpo da função for especificado no estilo padrão SQL, `prosrc` é inutilizado (tipicamente é uma string vazia) e `prosqlbody` contém a definição pré-parada. Para todos os outros tipos de linguagem atualmente conhecidos, `prosrc` contém o texto de fonte da função. `probin` é nu, exceto para funções C carregadas dinamicamente, para as quais ele dá o nome do arquivo da biblioteca compartilhada que contém a função.

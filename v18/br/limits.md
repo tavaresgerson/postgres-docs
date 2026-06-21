@@ -200,6 +200,7 @@
 
 
 
+
 O número máximo de colunas para uma tabela é reduzido ainda mais, pois o tuplo que está sendo armazenado deve caber em uma única página de heap de 8192 bytes. Por exemplo, excluindo o cabeçalho do tuplo, um tuplo composto por 1.600 colunas `int` consumiria 6400 bytes e poderia ser armazenado em uma página de heap, mas um tuplo de 1.600 colunas `bigint` consumiria 12800 bytes e, portanto, não caberia dentro de uma página de heap. Campos de comprimento variável de tipos como `text`, `varchar` e `char` podem ter seus valores armazenados fora da linha na tabela TOAST quando os valores forem grandes o suficiente para exigir isso. Apenas um ponteiro de 18 bytes deve permanecer dentro do tuplo na heap da tabela. Para campos de comprimento variável de menor comprimento, ou seja, um cabeçalho de campo de 4 bytes ou 1 byte é usado e o valor é armazenado dentro do tuplo de heap.
 
 As colunas que foram excluídas da tabela também contribuem para o limite máximo de colunas. Além disso, embora os valores das colunas excluídas para tuplas recém-criadas sejam marcados internamente como nulos na bitmap de nulidade da tupla, a bitmap de nulidade também ocupa espaço.

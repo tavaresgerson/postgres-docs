@@ -1619,6 +1619,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
 
 
 
+
 Deve-se notar que, exceto para `count`, essas funções retornam um valor nulo quando nenhuma linha é selecionada. Em particular, `sum` sem nenhuma linha retorna nulo, não zero como se poderia esperar, e `array_agg` retorna nulo em vez de um array vazio quando não há linhas de entrada. A função `coalesce` pode ser usada para substituir zero ou um array vazio por nulo quando necessário.
 
 As funções agregadas `array_agg`, `json_agg`, `jsonb_agg`, `json_agg_strict`, `jsonb_agg_strict`, `json_object_agg`, `jsonb_object_agg`, `json_object_agg_strict`, `jsonb_object_agg_strict`, `json_object_agg_unique`, `jsonb_object_agg_unique`, `json_object_agg_unique_strict`, `jsonb_object_agg_unique_strict`, `string_agg` e `xmlagg`, bem como funções agregadas definidas pelo usuário semelhantes, produzem valores de resultado significativamente diferentes, dependendo da ordem dos valores de entrada. Essa ordem não é especificada por padrão, mas pode ser controlada escrevendo uma cláusula `ORDER BY` dentro da chamada agregada, conforme mostrado em [Seção 4.2.7](sql-expressions.md#SYNTAX-AGGREGATES). Alternativamente, fornecer os valores de entrada de uma subconsulta ordenada geralmente funciona. Por exemplo:
@@ -2526,6 +2527,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
 
 
 
+
 [Tabela 9.64](functions-aggregate.md#FUNCTIONS-ORDEREDSET-TABLE) mostra algumas funções agregadas que utilizam a sintaxe de *conjunto ordenado* agregada. Essas funções são, por vezes, referidas como funções de “distribuição inversa”. A entrada agregada é introduzida por `ORDER BY`, e elas também podem receber um *argumento direto* que não é agregado, mas é calculado apenas uma vez. Todas essas funções ignoram valores nulos na sua entrada agregada. Para aquelas que recebem um *`fraction`* parâmetro, o valor da fração deve estar entre 0 e 1; uma exceção é lançada se não estiver. No entanto, um valor nulo de *`fraction`* simplesmente produz um resultado nulo.
 
 **Tabela 9.64. Funções agregadas de conjunto ordenado**
@@ -2844,6 +2846,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
 
 
 
+
 Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](functions-aggregate.md#FUNCTIONS-HYPOTHETICAL-TABLE) está associado a uma função de janela com o mesmo nome definida em [Seção 9.22](functions-window.md). Em cada caso, o resultado do agregado é o valor que a função de janela associada teria retornado para a linha "hipotética" construída a partir de *`args`*, se tal linha tivesse sido adicionada ao grupo de filas ordenadas representado por *`sorted_args`*. Para cada uma dessas funções, a lista de argumentos diretos dada em *`args`* deve corresponder ao número e aos tipos dos argumentos agregados dados em *`sorted_args`*. Ao contrário da maioria dos agregados embutidos, esses agregados não são estritos, ou seja, não descartam filas de entrada que contenham nulos. Os valores nulos são ordenados de acordo com a regra especificada na cláusula `ORDER BY`.
 
 **Tabela 9.65. Funções agregadas de conjunto hipotéticas**
@@ -3044,6 +3047,7 @@ Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](funct
 
 
 
+
 **Tabela 9.66. Operações de Grupos**
 
 
@@ -3093,6 +3097,7 @@ Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](funct
   </tr>
  </tbody>
 </table>
+
 
 
 

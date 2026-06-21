@@ -855,6 +855,7 @@ Cada *`item`* é uma palavra-chave que identifica um valor de status a ser atrib
 
 
 
+
 Se a exceção não definir um valor para um item, uma string vazia será devolvida.
 
 Aqui está um exemplo:

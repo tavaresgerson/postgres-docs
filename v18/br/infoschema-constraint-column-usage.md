@@ -134,3 +134,4 @@ A vista `constraint_column_usage` identifica todas as colunas no banco de dados 
 
 
 
+

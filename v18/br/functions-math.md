@@ -721,6 +721,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
 
 
 
+
 [Tabela 9.5](functions-math.md#FUNCTIONS-MATH-FUNC-TABLE) mostra as funções matemáticas disponíveis. Muitas dessas funções são fornecidas em várias formas com diferentes tipos de argumentos. Exceto onde indicado, qualquer forma dada de uma função retorna o mesmo tipo de dados que seus(s) argumento(s); casos de cruzamento de tipos são resolvidos da mesma maneira como explicado acima para operadores. As funções que trabalham com dados de `double precision` são implementadas principalmente no topo da biblioteca C do sistema hospedeiro; portanto, a precisão e o comportamento em casos de fronteira podem variar dependendo do sistema hospedeiro.
 
 **Tabela 9.5. Funções matemáticas**
@@ -2425,6 +2426,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
 
 
 
+
 [Tabela 9.6](functions-math.md#FUNCTIONS-MATH-RANDOM-TABLE "Table 9.6. Random Functions") mostra funções para gerar números aleatórios.
 
 **Tabela 9.6. Funções aleatórias**
@@ -2706,6 +2708,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -3270,6 +3273,7 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
 
 
 
+
 ### Nota
 
 Outra maneira de trabalhar com ângulos medidos em graus é usar as funções de transformação de unidade `radians()` e `degrees()`, mostradas anteriormente. No entanto, é preferível usar as funções trigonométricas baseadas em graus, pois dessa forma é evitado o erro de arredondamento para casos especiais, como `sind(30)`.
@@ -3476,6 +3480,7 @@ Outra maneira de trabalhar com ângulos medidos em graus é usar as funções de
   </tr>
  </tbody>
 </table>
+
 
 
 

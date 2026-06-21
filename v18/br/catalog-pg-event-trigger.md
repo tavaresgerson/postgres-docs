@@ -200,3 +200,4 @@ O catálogo `pg_event_trigger` armazena gatilhos de eventos. Consulte o [Capítu
 
 
 
+

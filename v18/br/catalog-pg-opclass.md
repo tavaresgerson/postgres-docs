@@ -243,4 +243,5 @@ As classes de operador são descritas em detalhes na [Seção 36.16](xindex.md).
 
 
 
+
 O `opcmethod` de uma classe de operador deve corresponder ao `opfmethod` da sua família de operadores contida. Além disso, não deve haver mais de uma linha `pg_opclass` com `opcdefault` verdadeiro para qualquer combinação dada de `opcmethod` e `opcintype`.

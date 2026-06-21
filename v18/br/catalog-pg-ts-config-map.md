@@ -123,3 +123,4 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
 
 
 
+

@@ -704,6 +704,7 @@ As restrições sobre os domínios também são armazenadas aqui.
 
 
 
+
 No caso de uma restrição de exclusão, `conkey` é útil apenas para elementos de restrição que são referências simples de coluna. Para outros casos, um zero aparece em `conkey` e o índice associado deve ser consultado para descobrir a expressão que está sob restrição. (O `conkey` tem, portanto, o mesmo conteúdo que [`pg_index`](catalog-pg-index.md).`indkey` para o índice.)
 
 ### Nota

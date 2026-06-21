@@ -246,6 +246,7 @@ Os algoritmos em `crypt()` diferem dos algoritmos de hashing MD5 ou SHA-1 usuais
 
 
 
+
 #### F.26.2.1. `crypt()` [#](#PGCRYPTO-PASSWORD-HASHING-FUNCS-CRYPT)
 
 ```
@@ -358,6 +359,7 @@ O parâmetro *`iter_count`* permite que o usuário especifique o número de iter
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -571,6 +573,7 @@ O padrão *`iter_count` para `sha256crypt` e `sha512crypt` de `5000` é consider
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -980,6 +983,7 @@ Marko Kreen `<markokr@gmail.com>`
   </tr>
  </tbody>
 </table>
+
 
 
 

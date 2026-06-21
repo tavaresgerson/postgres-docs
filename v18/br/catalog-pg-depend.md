@@ -181,6 +181,7 @@ Veja também `pg_shdepend` (catalog-pg-shdepend.md "52.48. pg_shdepend"), que r
 
 
 
+
 Em todos os casos, uma entrada `pg_depend` indica que o objeto referenciado não pode ser descartado sem também descartar o objeto dependente. No entanto, existem vários subsabores identificados por `deptype`:
 
 `DEPENDENCY_NORMAL` (`n`): Uma relação normal entre objetos criados separadamente. O objeto dependente pode ser descartado sem afetar o objeto referenciado. O objeto referenciado só pode ser descartado especificando `CASCADE`, no caso, o objeto dependente também é descartado. Exemplo: uma coluna de tabela tem uma dependência normal em seu tipo de dados.

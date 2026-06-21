@@ -206,6 +206,7 @@ Os tipos numéricos consistem em inteiros de dois, quatro e oito bytes, números
 
 
 
+
 A sintaxe das constantes para os tipos numéricos é descrita em [Seção 4.1.2](sql-syntax-lexical.md#SQL-SYNTAX-CONSTANTS). Os tipos numéricos têm um conjunto completo de operadores e funções aritméticas correspondentes. Consulte [Capítulo 9](functions.md) para mais informações. As seções a seguir descrevem os tipos em detalhes.
 
 ### 8.1.1. Tipos de Inteiros [#](#DATATYPE-INT)

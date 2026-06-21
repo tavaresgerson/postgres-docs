@@ -226,6 +226,7 @@ Alguns pseudotipos de interesse especial são os *tipos polimórficos*, que são
 
 
 
+
 Os argumentos e resultados polimórficos estão ligados entre si e são resolvidos para tipos de dados específicos quando uma consulta que chama uma função polimórfica é analisada. Quando há mais de um argumento polimórfico, os tipos de dados reais dos valores de entrada devem corresponder conforme descrito abaixo. Se o tipo de resultado do resultado da função é polimórfico, ou tem parâmetros de saída de tipos polimórficos, os tipos desses resultados são deduzidos dos tipos reais dos inputs polimórficos conforme descrito abaixo.
 
 Para a “simples” família de tipos polimórficos, as regras de correspondência e dedução funcionam da seguinte forma:

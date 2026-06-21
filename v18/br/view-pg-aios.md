@@ -435,6 +435,7 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
 
 
 
+
 A visão `pg_aios` é somente de leitura.
 
 Por padrão, a visualização `pg_aios` pode ser lida apenas por superusuários ou papéis com privilégios da função `pg_read_all_stats`.

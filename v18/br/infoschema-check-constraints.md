@@ -91,3 +91,4 @@ O padrão SQL considera restrições não nulos como restrições de verificaç�
 
 
 
+

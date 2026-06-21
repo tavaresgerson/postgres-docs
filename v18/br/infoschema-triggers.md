@@ -375,6 +375,7 @@ A vista `triggers` contém todos os gatilhos definidos no banco de dados atual e
 
 
 
+
 Os gatilhos no PostgreSQL têm duas incompatibilidades com o padrão SQL que afetam a representação no esquema de informações. Primeiro, os nomes dos gatilhos são locais para cada tabela no PostgreSQL, em vez de serem objetos de esquema independentes. Portanto, pode haver nomes de gatilhos duplicados definidos em um esquema, desde que pertençam a diferentes tabelas. (`trigger_catalog` e `trigger_schema` são realmente os valores que pertencem à tabela na qual o gatilho é definido.) Segundo, os gatilhos podem ser definidos para disparar em múltiplos eventos no PostgreSQL (por exemplo, `ON INSERT OR UPDATE`), enquanto o padrão SQL só permite um. Se um gatilho é definido para disparar em múltiplos eventos, ele é representado como múltiplas linhas no esquema de informações, uma para cada tipo de evento. Como consequência dessas duas questões, a chave primária da visão `triggers` é realmente `(trigger_catalog, trigger_schema, event_object_table, trigger_name, event_manipulation)`, em vez de `(trigger_catalog, trigger_schema, trigger_name)`, o que o padrão SQL especifica. No entanto, se você definir seus gatilhos de uma maneira que esteja em conformidade com o padrão SQL (nomes de gatilho únicos no esquema e apenas um tipo de evento por gatilho), isso não o afetará.
 
 ### Nota

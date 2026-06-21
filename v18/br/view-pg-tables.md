@@ -237,3 +237,4 @@ A vista `pg_tables` fornece acesso a informações úteis sobre cada tabela no b
 
 
 
+

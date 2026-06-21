@@ -394,6 +394,7 @@ Existem vários tipos distintos de objetos que podem ser bloqueados: relações 
 
 
 
+
 `granted` é verdadeiro em uma linha que representa um bloqueio mantido pelo processo indicado. Falso indica que este processo está atualmente aguardando para adquirir este bloqueio, o que implica que pelo menos outro processo está segurando ou aguardando um modo de bloqueio conflitante no mesmo objeto bloqueável. O processo em espera dormirá até que o outro bloqueio seja liberado (ou até que uma situação de deadlock seja detectada). Um único processo pode estar aguardando para adquirir no máximo um bloqueio de cada vez.
 
 Durante a execução de uma transação, um processo do servidor mantém um bloqueio exclusivo sobre o ID virtual da transação. Se uma ID permanente é atribuída à transação (o que normalmente acontece apenas se a transação alterar o estado do banco de dados), ela também mantém um bloqueio exclusivo sobre o ID permanente da transação até que ela termine. Quando um processo considera necessário esperar especificamente para que outra transação termine, ele faz isso tentando adquirir um bloqueio compartilhado sobre o ID da outra transação (seja o ID virtual ou permanente, dependendo da situação). Isso só será bem-sucedido quando a outra transação termina e libera seus bloqueios.

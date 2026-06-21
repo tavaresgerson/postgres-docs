@@ -179,4 +179,5 @@ CREATE TYPE rainbow AS ENUM ('red', 'orange', 'yellow', 'green', 'blue', 'purple
 
 
 
+
 Observe que, exceto para a forma de dois argumentos de `enum_range`, essas funções ignoram o valor específico passado para elas; elas se importam apenas com seu tipo de dados declarado. Pode ser passado nulo ou um valor específico do tipo, com o mesmo resultado. É mais comum aplicar essas funções a uma coluna de tabela ou argumento de função do que a um nome de tipo hardwired como usado nos exemplos.

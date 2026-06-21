@@ -171,6 +171,7 @@ O quadro a seguir resume o comportamento quando há colunas geradas envolvidas n
 
 
 
+
 ### Aviso
 
 Atualmente, não há suporte para assinaturas que compreendem várias publicações onde a mesma tabela foi publicada com diferentes listas de colunas. Veja [Seção 29.5](logical-replication-col-lists.md).

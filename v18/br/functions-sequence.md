@@ -273,6 +273,7 @@ SELECT setval('myseq', 42);           <em class="lineannotation"><span class="li
 
 
 
+
 ### Atenção
 
 Para evitar bloquear transações concorrentes que obtêm números da mesma sequência, o valor obtido por `nextval` não é recuperado para uso novamente se a transação solicitante for cancelada posteriormente. Isso significa que abortos de transações ou falhas no banco de dados podem resultar em lacunas na sequência de valores atribuídos. Isso também pode acontecer sem um aborto de transação. Por exemplo, um `INSERT` com uma cláusula `ON CONFLICT` calculará o tuplo a ser inserido, incluindo a realização de quaisquer chamadas necessárias `nextval`, antes de detectar qualquer conflito que o faça seguir a regra `ON CONFLICT` em vez disso. Assim, os objetos de sequência do PostgreSQL *não podem ser usados para obter sequências sem lacunas*.

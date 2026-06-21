@@ -310,6 +310,7 @@ O catálogo `pg_collation` descreve as colatões disponíveis, que são essencia
 
 
 
+
 Observe que a chave única neste catálogo é (`collname`, `collencoding`, `collnamespace`) e não apenas (`collname`, `collnamespace`). O PostgreSQL geralmente ignora todas as codificações que não têm `collencoding` igual à codificação do banco de dados atual ou -1, e a criação de novas entradas com o mesmo nome que uma entrada com `collencoding` = -1 é proibida. Portanto, é suficiente usar um nome SQL qualificado (*`schema`*.*`name`*) para identificar uma codificação, embora isso não seja único de acordo com a definição do catálogo. A razão para definir o catálogo dessa maneira é que o initdb o preenche no momento da inicialização do clúster com entradas para todos os locais disponíveis no sistema, então ele deve ser capaz de conter entradas para todas as codificações que possam ser usadas no clúster.
 
 No banco de dados `template0`, poderia ser útil criar colatinas cujas codificações não correspondem à codificação do banco de dados, uma vez que elas poderiam corresponder às codificações dos bancos de dados que posteriormente seriam clonados a partir de `template0`. Isso atualmente teria que ser feito manualmente.

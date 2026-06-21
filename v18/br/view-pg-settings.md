@@ -334,6 +334,7 @@ A vista `pg_settings` fornece acesso aos parâmetros de execução do servidor. 
 
 
 
+
 Existem vários valores possíveis para `context`. Em ordem decrescente de dificuldade para alterar o ajuste, eles são:
 
 `internal`: Esses ajustes não podem ser alterados diretamente; eles refletem valores determinados internamente. Alguns deles podem ser ajustados reconstruindo o servidor com diferentes opções de configuração, ou alterando as opções fornecidas ao initdb.

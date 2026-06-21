@@ -203,3 +203,4 @@ A vista `table_privileges` identifica todos os privilégios concedidos em tabela
 
 
 
+

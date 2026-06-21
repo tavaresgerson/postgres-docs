@@ -50,6 +50,7 @@ O PostgreSQL fornece o tipo padrão SQL `boolean`; veja [Tabela 8.19](datatype-b
 
 
 
+
 As constantes booleanas podem ser representadas em consultas SQL pelos termos-chave SQL `TRUE`, `FALSE` e `NULL`.
 
 A função de entrada de tipo de dados do tipo `boolean` aceita essas representações de string para o estado “verdadeiro”:
@@ -92,6 +93,7 @@ A função de entrada de tipo de dados do tipo `boolean` aceita essas representa
 
 
 
+
 e essas representações para o estado “falso”:
 
 
@@ -126,6 +128,7 @@ e essas representações para o estado “falso”:
   </td>
  </tr>
 </table>
+
 
 
 

@@ -270,6 +270,7 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
 
 
 
+
 Para cada banco de dados no clúster, há um subdiretório dentro de `PGDATA``/base`, com o nome do OID do banco de dados no `pg_database`. Este subdiretório é o local padrão para os arquivos do banco de dados; em particular, seus catálogos do sistema são armazenados lá.
 
 Observe que as seções a seguir descrevem o comportamento do método de acesso à tabela embutido `heap` [(tableam.md "Chapter 62. Table Access Method Interface Definition")], e os métodos de acesso ao índice embutido (indexam.md "Chapter 63. Index Access Method Interface Definition"). Devido à natureza extensiva do PostgreSQL, outros métodos de acesso podem funcionar de maneira diferente.

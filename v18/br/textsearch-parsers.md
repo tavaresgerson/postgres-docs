@@ -400,6 +400,7 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
 
 
 
+
 ### Nota
 
 A noção de uma “letra” do analisador é determinada pelo ajuste do local da base de dados, especificamente `lc_ctype`. As palavras que contêm apenas as letras básicas ASCII são relatadas como um tipo de token separado, uma vez que às vezes é útil distingui-las. Na maioria das línguas europeias, os tipos de token `word` e `asciiword` devem ser tratados da mesma forma.

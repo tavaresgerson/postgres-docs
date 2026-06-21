@@ -176,6 +176,7 @@ A vista `pg_user_mappings` fornece acesso a informações sobre mapeamentos de u
 
 
 
+
 Para proteger as informações de senha armazenadas como uma opção de mapeamento de usuário, a coluna `umoptions` será considerada nula, a menos que uma das seguintes situações se aplique:
 
 * o usuário atual é o usuário que está sendo mapeado e possui o servidor ou possui o privilégio `USAGE` nele

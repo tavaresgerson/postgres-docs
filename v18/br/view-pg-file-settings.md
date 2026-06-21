@@ -149,6 +149,7 @@ Por padrão, a visualização `pg_file_settings` pode ser lida apenas por superu
 
 
 
+
 Se o arquivo de configuração contiver erros de sintaxe ou nomes de parâmetros inválidos, o servidor não tentará aplicar quaisquer configurações nele, e, portanto, todos os campos `applied` serão lidos como falsos. Nesse caso, haverá uma ou mais linhas com campos `error` não nulos, indicando o(s) problema(s). Caso contrário, as configurações individuais serão aplicadas, se possível. Se uma configuração individual não puder ser aplicada (por exemplo, um valor inválido ou a configuração não pode ser alterada após o início do servidor), ela terá uma mensagem apropriada no campo `error`. Outra maneira em que uma entrada pode ter `applied` = false é que ela seja sobrescrita por uma entrada posterior para o mesmo nome de parâmetro; esse caso não é considerado um erro, então nada aparece no campo `error`.
 
 Consulte a [Seção 19.1](config-setting.md) para obter mais informações sobre as várias maneiras de alterar os parâmetros de execução.

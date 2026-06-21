@@ -763,6 +763,7 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
 
 
 
+
 ### Nota
 
 `current_catalog`, `current_role`, `current_schema`, `current_user`, `session_user` e `user` têm um status sintático especial no SQL: eles devem ser chamados sem parênteses finais. No PostgreSQL, os parênteses podem ser usados opcionalmente com `current_schema`, mas não com os outros.
@@ -1884,6 +1885,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
 
 
 
+
 [Tabela 9.73](functions-info.md#FUNCTIONS-ACLITEM-OP-TABLE) mostra os operadores disponíveis para o tipo `aclitem`, que é a representação de catálogo de privilégios de acesso. Consulte [Seção 5.8](ddl-priv.md) para obter informações sobre como ler os valores de privilégios de acesso.
 
 **Tabela 9.73. Operadores `aclitem`
@@ -2025,6 +2027,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -2338,6 +2341,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -2702,6 +2706,7 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -3785,7 +3790,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
      <a class="xref" href="functions-info.md#FUNCTIONS-INFO-INDEX-COLUMN-PROPS" title="Table 9.77. Index Column Properties">
       Table 9.77
      </a>
-     .
+     .</p>
 
         (Note that extension access methods can define additional property names for their indexes.)
      <code class="literal">
@@ -4461,6 +4466,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
 
 
 
+
 A maioria das funções que reconstruem (decompilam) objetos de banco de dados tem uma bandeira opcional *`pretty`*, que, se `true` causar o resultado a ser “impresso de forma bonita”. A impressão bonita suprime as chaves e parênteses desnecessários e adiciona espaços em branco para legibilidade. O formato impresso de forma bonita é mais legível, mas o formato padrão é mais provável que seja interpretado da mesma maneira por versões futuras do PostgreSQL; portanto, evite usar saída impressa de forma bonita para fins de dump. Passar `false` para o parâmetro *`pretty`* produz o mesmo resultado que omitir o parâmetro.
 
 **Tabela 9.77. Propriedades da coluna de índice**
@@ -4608,6 +4614,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
 
 
 
+
 **Tabela 9.78. Propriedades do índice**
 
 
@@ -4678,6 +4685,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -4779,6 +4787,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -4890,6 +4899,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -5352,6 +5362,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
 
 
 
+
 `pg_get_acl` é útil para recuperar e inspecionar os privilégios associados a objetos de banco de dados sem olhar para catálogos específicos. Por exemplo, para recuperar todos os privilégios concedidos em objetos no banco de dados atual:
 
 ```
@@ -5546,6 +5557,7 @@ As funções mostradas na [Tabela 9.82](functions-info.md#FUNCTIONS-INFO-COMMENT
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -5765,6 +5777,7 @@ As funções apresentadas na [Tabela 9.83](functions-info.md#FUNCTIONS-INFO-VALI
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -6153,6 +6166,7 @@ As funções apresentadas na [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSH
 
 
 
+
 O tipo de ID de transação interna `xid` é de 32 bits e volta ao início a cada 4 bilhões de transações. No entanto, as funções mostradas na [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSHOT "Table 9.84. Transaction ID and Snapshot Information Functions"), exceto `age`, `mxid_age` e `pg_get_multixact_members`, utilizam um tipo de 64 bits `xid8` que não volta ao início durante a vida de uma instalação e pode ser convertido para `xid` por colagem, se necessário; consulte [Seção 67.1](transaction-id.md "67.1. Transactions and Identifiers") para detalhes. O tipo de dados `pg_snapshot` armazena informações sobre a visibilidade do ID de transação em um momento específico. Seus componentes são descritos na [Tabela 9.85](functions-info.md#FUNCTIONS-PG-SNAPSHOT-PARTS "Table 9.85. Snapshot Components"). A representação textual de `pg_snapshot` é `xmin:xmax:xip_list`. Por exemplo, `10:20:10,14,15` significa `xmin=10, xmax=20, xip_list=10, 14, 15`.
 
 **Tabela 9.85. Componentes do Instantâneo**
@@ -6225,6 +6239,7 @@ O tipo de ID de transação interna `xid` é de 32 bits e volta ao início a cad
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -6449,6 +6464,7 @@ Nas versões do PostgreSQL anteriores à 13, não havia o tipo `xid8`. Portanto,
 
 
 
+
 ### 9.27.9. Funções de Informações de Transações Comprometidas [#](#FUNCTIONS-INFO-COMMIT-TIMESTAMP)
 
 As funções mostradas na [Tabela 9.87](functions-info.md#FUNCTIONS-COMMIT-TIMESTAMP) fornecem informações sobre quando as transações passadas foram realizadas. Elas fornecem dados úteis apenas quando a opção de configuração [track_commit_timestamp](runtime-config-replication.md#GUC-TRACK-COMMIT-TIMESTAMP) é habilitada, e apenas para transações que foram realizadas após sua habilitação. As informações do timestamp de compromisso são removidas rotineiramente durante o vácuo.
@@ -6585,6 +6601,7 @@ As funções mostradas na [Tabela 9.87](functions-info.md#FUNCTIONS-COMMIT-TIMES
 
 
 
+
 ### 9.27.10. Funções de Controle de Dados [#](#FUNCTIONS-INFO-CONTROLDATA)
 
 As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA) imprimem informações inicializadas durante `initdb`, como a versão do catálogo. Elas também mostram informações sobre o registro prévio de escrita e o processamento de pontos de verificação. Essas informações são válidas para todo o clúster, e não são específicas para nenhum banco de dados. Essas funções fornecem a maioria das mesmas informações, provenientes da mesma fonte, que o aplicativo [pg_controldata](app-pgcontroldata.md).
@@ -6692,6 +6709,7 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -6948,6 +6966,7 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
 
 
 
+
 **Tabela 9.90. Colunas de Saída `pg_control_system`**
 
 
@@ -7018,6 +7037,7 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -7202,6 +7222,7 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
 
 
 
+
 **Tabela 9.92. Colunas de Saída `pg_control_recovery`**
 
 
@@ -7284,6 +7305,7 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -7394,6 +7416,7 @@ As funções mostradas na [Tabela 9.93](functions-info.md#FUNCTIONS-VERSION) imp
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -7689,6 +7712,7 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
   </tr>
  </tbody>
 </table>
+
 
 
 

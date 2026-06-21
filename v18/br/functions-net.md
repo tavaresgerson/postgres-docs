@@ -444,6 +444,7 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
 
 
 
+
 **Tabela 9.40. Funções de endereço IP**
 
 
@@ -945,6 +946,7 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
 
 
 
+
 ### DICA
 
 As funções `abbrev`, `host` e `text` são, principalmente, destinadas a oferecer formatos de exibição alternativos para endereços IP.
@@ -1072,6 +1074,7 @@ Os tipos de endereço MAC `macaddr` e `macaddr8` suportam os operadores de compa
   </tr>
  </tbody>
 </table>
+
 
 
 

@@ -297,6 +297,7 @@ As seguintes sequências de barra invertida especiais são reconhecidas por `COP
 
 
 
+
 Atualmente, `COPY TO` nunca emitirá uma sequência de barra invertida de octal ou hexaliteral, mas utiliza as outras sequências listadas acima para esses caracteres de controle.
 
 Qualquer outro caractere com barra invertida que não seja mencionado na tabela acima será considerado como ele mesmo. No entanto, tenha cuidado em adicionar barras invertidas desnecessariamente, pois isso pode produzir acidentalmente uma string que corresponda ao marcador de fim de dados (`\.`) ou à string nula (`\N` por padrão). Essas strings serão reconhecidas antes de qualquer outro processamento de barra invertida ser feito.

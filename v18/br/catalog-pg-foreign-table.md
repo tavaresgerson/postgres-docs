@@ -110,3 +110,4 @@ O catálogo `pg_foreign_table` contém informações auxiliares sobre tabelas es
 
 
 
+

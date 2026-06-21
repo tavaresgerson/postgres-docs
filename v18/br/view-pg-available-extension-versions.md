@@ -181,4 +181,5 @@ A visão `pg_available_extension_versions` lista as versões específicas de ext
 
 
 
+
 A visão `pg_available_extension_versions` é somente de leitura.

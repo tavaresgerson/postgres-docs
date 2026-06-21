@@ -509,6 +509,7 @@ As seguintes extensões são confiáveis em uma instalação padrão:
 
 
 
+
 Muitas extensões permitem que você instale seus objetos em um esquema de sua escolha. Para fazer isso, adicione `SCHEMA schema_name` ao comando `CREATE EXTENSION`. Por padrão, os objetos serão colocados no seu esquema atual de destino de criação, que, por sua vez, é padrão para `public`.
 
 Observe, no entanto, que alguns desses componentes não são “extensões” nesse sentido, mas são carregados no servidor de alguma outra forma, por exemplo, por meio de [shared_preload_libraries](runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES). Consulte a documentação de cada componente para obter detalhes.

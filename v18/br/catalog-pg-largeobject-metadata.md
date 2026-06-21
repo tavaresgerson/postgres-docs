@@ -89,3 +89,4 @@ O catálogo `pg_largeobject_metadata` contém metadados associados a objetos gra
 
 
 
+

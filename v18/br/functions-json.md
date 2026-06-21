@@ -369,6 +369,7 @@ Para saber mais sobre o padrão SQL/JSON, consulte [[sqltr-19075-6]] (biblio.md#
 
 
 
+
 ### Nota
 
 Os operadores de extração de campo/elemento/caminho retornam NULL, em vez de falhar, se a entrada JSON não tiver a estrutura correta para corresponder à solicitação; por exemplo, se não existir tal chave ou elemento de matriz.
@@ -850,6 +851,7 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -1868,6 +1870,7 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
 
 
 
+
 [Tabela 9.50](functions-json.md#FUNCTIONS-SQLJSON-MISC "Table 9.50. SQL/JSON Testing Functions") detalha as facilidades SQL/JSON para testar JSON.
 
 **Tabela 9.50. Funções de teste SQL/JSON**
@@ -2010,6 +2013,7 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -4378,7 +4382,7 @@ ERROR:  value too long for type character(2)
      <code class="literal">
       null
      </code>
-     .
+     .</p>
 
         (The
      <code class="literal">
@@ -4417,6 +4421,7 @@ ERROR:  value too long for type character(2)
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -5953,6 +5958,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
 
 
 
+
 ### Nota
 
 O tipo de resultado dos métodos `datetime()` e `datetime(template)` pode ser `date`, `timetz`, `time`, `timestamptz` ou `timestamp`. Ambos os métodos determinam seu tipo de resultado dinamicamente.
@@ -6620,6 +6626,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
 
 
 
+
 #### 9.16.2.4. Expressões regulares SQL/JSON [#](#JSONPATH-REGULAR-EXPRESSIONS)
 
 As expressões de caminho SQL/JSON permitem que o texto seja correspondido a uma expressão regular com o filtro `like_regex`. Por exemplo, a seguinte consulta de caminho SQL/JSON corresponderia, de forma sensível ao caso, a todas as cadeias em um array que comecem com uma vogal em inglês:
@@ -7140,6 +7147,7 @@ ERROR:  malformed array literal: "[1, 2]" DETAIL:  Missing "]" after array dimen
   </tr>
  </tbody>
 </table>
+
 
 
 

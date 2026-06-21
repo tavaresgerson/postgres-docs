@@ -127,6 +127,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
 
 
 
+
 Algumas notas:
 
 Os números ISBN13, ISMN13 e ISSN13 são todos números EAN13. Os números EAN13 nem sempre são ISBN13, ISMN13 ou ISSN13 (alguns são). Alguns números ISBN13 podem ser exibidos como ISBN. Alguns números ISMN13 podem ser exibidos como ISMN. Alguns números ISSN13 podem ser exibidos como ISSN. Os números UPC são um subconjunto dos números EAN13 (eles são basicamente EAN13 sem o primeiro dígito `0`). Todos os números UPC, ISBN, ISMN e ISSN podem ser representados como números EAN13.
@@ -263,6 +264,7 @@ O módulo `isn` fornece os operadores de comparação padrão, além do suporte 
   </tr>
  </tbody>
 </table>
+
 
 
 

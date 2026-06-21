@@ -585,6 +585,7 @@ A distribuição principal do PostgreSQL inclui as classes de operadores SP-GiST
 
 
 
+
 Das duas classes de operadores para o tipo `point`, `quad_point_ops` é o padrão. `kd_point_ops` suporta os mesmos operadores, mas utiliza uma estrutura de dados de índice diferente que pode oferecer melhor desempenho em algumas aplicações.
 
 As classes de operadores `quad_point_ops`, `kd_point_ops` e `poly_ops` suportam o operador de ordenação `<->`, que permite a busca do vizinho k mais próximo (`k-NN`) sobre conjuntos de dados de pontos ou polígonos indexados.

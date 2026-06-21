@@ -372,6 +372,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
 
 
 
+
 #### F.43.1.1. `normal_rand` [#](#TABLEFUNC-FUNCTIONS-NORMAL-RAND)
 
 ```
@@ -818,6 +819,7 @@ A função `connectby` produz uma exibição de dados hierárquicos que são arm
   </tr>
  </tbody>
 </table>
+
 
 
 

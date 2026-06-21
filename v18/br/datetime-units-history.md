@@ -33,6 +33,7 @@ A aproximação 365+97/400 é alcançada ao ter 97 anos bissextos a cada 400 ano
 
 
 
+
 Portanto, 1700, 1800, 1900, 2100 e 2200 não são anos bissextos. Mas 1600, 2000 e 2400 são anos bissextos. Em contraste, no calendário juliano mais antigo, todos os anos divisíveis por 4 são anos bissextos.
 
 A bula papal de 15 de fevereiro de 1582 decretou que 10 dias deveriam ser eliminados de outubro de 1582, para que o dia 15 de outubro seguisse imediatamente após o dia 4 de outubro. Isso foi observado na Itália, na Polônia, em Portugal e na Espanha. Outros países católicos seguiram pouco depois, mas os países protestantes relutaram em mudar, e os países ortodoxos gregos não mudaram até o início do século XX. A reforma foi observada pela Grã-Bretanha e seus domínios (incluindo o que é agora os EUA) em 1752. Assim, o dia 2 de setembro de 1752 foi seguido pelo dia 14 de setembro de 1752. É por isso que os sistemas Unix que possuem o programa `cal` produzem o seguinte:

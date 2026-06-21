@@ -119,6 +119,7 @@ Escrever novas funções de estimativa de seletividade de restrição vai muito 
 
 
 
+
 Você pode frequentemente se safar usando `eqsel` ou `neqsel` para operadores que têm seletividade muito alta ou muito baixa, mesmo que não sejam realmente igualdade ou desigualdade. Por exemplo, os operadores geométricos de aproximadamente igualdade usam `eqsel` na suposição de que eles geralmente corresponderão apenas a uma pequena fração das entradas em uma tabela.
 
 Você pode usar `scalarltsel`, `scalarlesel`, `scalargtsel` e `scalargesel` para comparações em tipos de dados que têm meios sensíveis de serem convertidos em escalares numéricos para comparações de intervalo. Se possível, adicione o tipo de dados aos que são compreendidos pela função `convert_to_scalar()` em `src/backend/utils/adt/selfuncs.c`. (Eventualmente, essa função deve ser substituída por funções por tipo de dado identificadas através de uma coluna do catálogo do sistema `pg_type`; mas isso ainda não aconteceu.) Se você não fizer isso, as coisas ainda funcionarão, mas as estimativas do otimizador não serão tão boas quanto poderiam ser.
@@ -241,6 +242,7 @@ Como antes, este capítulo não fará nenhuma tentativa de explicar como escreve
   </td>
  </tr>
 </table>
+
 
 
 

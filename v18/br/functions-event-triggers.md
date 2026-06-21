@@ -185,6 +185,7 @@ pg_event_trigger_ddl_commands () → setof record
 
 
 
+
 ### 9.30.2. Processamento de Objetos Arrastados por um Comando DDL [#](#PG-EVENT-TRIGGER-SQL-DROP-FUNCTIONS)
 
 ```
@@ -426,6 +427,7 @@ pg_event_trigger_dropped_objects () → setof record
 
 
 
+
 A função `pg_event_trigger_dropped_objects` pode ser usada em um gatilho de evento como este:
 
 ```
@@ -525,6 +527,7 @@ As funções mostradas na [Tabela 9.111](functions-event-triggers.md#FUNCTIONS-E
   </tr>
  </tbody>
 </table>
+
 
 
 

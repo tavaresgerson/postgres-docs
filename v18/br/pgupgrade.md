@@ -359,6 +359,7 @@ O pg_upgrade não suporta a atualização de bancos de dados que contêm colunas
 
 
 
+
 (`regclass`, `regrole` e `regtype` podem ser atualizados.)
 
 Se você deseja usar o modo de link e não quiser que seu antigo clúster seja modificado quando o novo clúster for iniciado, considere usar o modo de clonagem. Se isso não estiver disponível, faça uma cópia do antigo clúster e atualize-o no modo de link. Para fazer uma cópia válida do antigo clúster, use `rsync` para criar uma cópia suja do antigo clúster enquanto o servidor estiver em execução, depois desligue o servidor antigo e execute `rsync --checksum` novamente para atualizar a cópia com quaisquer alterações para torná-la consistente. (`--checksum` é necessário porque `rsync` tem apenas granularidade de tempo de modificação de arquivo de um segundo.) Você pode querer excluir alguns arquivos, por exemplo, `postmaster.pid`, conforme documentado em [Seção 25.3.4](continuous-archiving.md#BACKUP-LOWLEVEL-BASE-BACKUP "25.3.4. Making a Base Backup Using the Low Level API"). Se seu sistema de arquivos suportar instantâneos de sistema de arquivos ou cópias de arquivo de cópia por escrita, você pode usá-las para fazer um backup do antigo clúster e dos espaços de tabela, embora o instantâneo e as cópias devem ser criados simultaneamente ou enquanto o servidor de banco de dados está fora de operação.

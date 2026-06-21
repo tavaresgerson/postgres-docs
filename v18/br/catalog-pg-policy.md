@@ -224,6 +224,7 @@ O catálogo `pg_policy` armazena políticas de segurança de nível de linha par
 
 
 
+
 ### Nota
 
 As políticas armazenadas em `pg_policy` são aplicadas apenas quando `pg_class`(catalog-pg-class.md "52.11. pg_class").`relrowsecurity` está definido para sua tabela.

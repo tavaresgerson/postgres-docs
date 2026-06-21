@@ -244,6 +244,7 @@ O catálogo `pg_rewrite` armazena regras de reescrita para tabelas e visualizaç
 
 
 
+
 ### Nota
 
 `pg_class.relhasrules` deve ser verdadeiro se uma tabela tiver alguma regra neste catálogo.

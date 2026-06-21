@@ -159,4 +159,5 @@ Os cursors são usados internamente para implementar alguns dos componentes do P
 
 
 
+
 A visualização `pg_cursors` é somente de leitura.

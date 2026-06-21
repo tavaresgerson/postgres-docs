@@ -176,6 +176,7 @@ Existem duas possíveis sintaxes para uma invocação de operador:
 
 
 
+
 onde o *`operator`* segue as regras de sintaxe do [Seção 4.1.3](sql-syntax-lexical.md#SQL-SYNTAX-OPERATORS), ou é uma das palavras-chave `AND`, `OR` e `NOT`, ou é um nome de operador qualificado na forma:
 
 ```

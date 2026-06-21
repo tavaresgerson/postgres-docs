@@ -223,6 +223,7 @@ O PostgreSQL suporta o conjunto completo dos tipos de data e hora do SQL, mostra
 
 
 
+
 ### Nota
 
 O padrão SQL exige que a escrita apenas `timestamp` seja equivalente a `timestamp without time zone`, e o PostgreSQL respeita esse comportamento. `timestamptz` é aceito como uma abreviação para `timestamp with time zone`; essa é uma extensão do PostgreSQL.
@@ -465,6 +466,7 @@ onde *`p`* é uma especificação opcional de precisão que fornece o número de
 
 
 
+
 #### 8.5.1.2. Horários [#](#DATATYPE-DATETIME-INPUT-TIMES)
 
 Os tipos de hora do dia são `time [ (p) ] without time zone` e `time [ (p) ] with time zone`. `time` sozinho é equivalente a `time without time zone`.
@@ -642,6 +644,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
 
 
 
+
 **Tabela 8.12. Entrada de fuso horário**
 
 
@@ -758,6 +761,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -1028,6 +1032,7 @@ O PostgreSQL suporta vários valores especiais de data/hora para conveniência, 
 
 
 
+
 As seguintes funções compatíveis com SQL também podem ser usadas para obter o valor da hora atual para o tipo de dados correspondente: `CURRENT_DATE`, `CURRENT_TIME`, `CURRENT_TIMESTAMP`, `LOCALTIME`, `LOCALTIMESTAMP`. (Veja [Seção 9.9.5](functions-datetime.md#FUNCTIONS-DATETIME-CURRENT). Observe que essas são funções SQL e *não* são reconhecidas em strings de entrada de dados.
 
 ### Atenção
@@ -1124,6 +1129,7 @@ O formato de saída dos tipos de data/hora pode ser definido como um dos quatro 
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -1261,6 +1267,7 @@ Nos estilos SQL e POSTGRES, o dia aparece antes do mês se o campo de ordenaçã
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -1419,6 +1426,7 @@ A string deve começar com um `P`, e pode incluir um `T` que introduz as unidade
 
 
 
+
 No formato alternativo:
 
 ```
@@ -1540,6 +1548,7 @@ Os valores dos campos de entrada podem ter partes fracionárias, por exemplo, `'
 
 
 
+
 ### 8.5.5. Saída de intervalo [#](#DATATYPE-INTERVAL-OUTPUT)
 
 Como explicado anteriormente, o PostgreSQL armazena os valores `interval` em meses, dias e microsegundos. Para a saída, o campo meses é convertido em anos e meses dividindo por 12. O campo dias é mostrado como está. O campo microsegundos é convertido em horas, minutos, segundos e segundos fracionários. Assim, meses, minutos e segundos nunca serão mostrados excedendo os intervalos 0–11, 0–59 e 30–59, respectivamente, enquanto os campos anos, dias e horas exibidos podem ser bastante grandes. (As funções `justify_days` e (functions-datetime.md#FUNCTION-JUSTIFY-DAYS) e `justify_hours` podem ser usadas se for desejável transpô-los grandes valores de dias ou horas para o campo da próxima categoria superior.)
@@ -1648,6 +1657,7 @@ A saída do estilo `iso_8601` corresponde ao "formato com designações" descrit
   </tr>
  </tbody>
 </table>
+
 
 
 

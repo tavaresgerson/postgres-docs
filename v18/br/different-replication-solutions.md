@@ -354,6 +354,7 @@ PostgreSQL não oferece esse tipo de replicação, embora o PostgreSQL com dois 
 
 
 
+
 Há algumas soluções que não se encaixam nas categorias acima:
 
 Particionamento de dados: O particionamento de dados divide as tabelas em conjuntos de dados. Cada conjunto pode ser modificado por apenas um servidor. Por exemplo, os dados podem ser particionados por escritórios, como Londres e Paris, com um servidor em cada escritório. Se forem necessárias consultas que combinem dados de Londres e Paris, uma aplicação pode consultar ambos os servidores, ou a replicação primária/de reserva pode ser usada para manter uma cópia somente de leitura dos dados do outro escritório em cada servidor.

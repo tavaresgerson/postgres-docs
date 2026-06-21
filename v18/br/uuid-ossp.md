@@ -177,6 +177,7 @@ SELECT uuid_generate_v3(uuid_ns_url(), 'http://www.postgresql.org');
 
 
 
+
 **Tabela F.36. Funções que retornam constantes UUID**
 
 
@@ -292,6 +293,7 @@ SELECT uuid_generate_v3(uuid_ns_url(), 'http://www.postgresql.org');
   </tr>
  </tbody>
 </table>
+
 
 
 

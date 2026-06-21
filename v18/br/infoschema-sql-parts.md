@@ -119,3 +119,4 @@ A tabela `sql_parts` contém informações sobre quais das várias partes do pad
 
 
 
+

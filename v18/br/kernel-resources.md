@@ -204,6 +204,7 @@ As características do Sistema V IPC são tipicamente limitadas por limites de a
 
 
 
+
 O PostgreSQL requer alguns bytes de memória compartilhada do Sistema V (tipicamente 48 bytes, em plataformas de 64 bits) para cada cópia do servidor. Na maioria dos sistemas operacionais modernos, essa quantidade pode ser facilmente alocada. No entanto, se você estiver executando muitas cópias do servidor ou se estiver explicitamente configurando o servidor para usar grandes quantidades de memória compartilhada do Sistema V (consulte [shared_memory_type](runtime-config-resource.md#GUC-SHARED-MEMORY-TYPE) e [dynamic_shared_memory_type](runtime-config-resource.md#GUC-DYNAMIC-SHARED-MEMORY-TYPE)), pode ser necessário aumentar `SHMALL`, que é a quantidade total de memória compartilhada do Sistema V em todo o sistema. Note que `SHMALL` é medido em páginas, em vez de bytes, em muitos sistemas.
 
 Menos provável de causar problemas é o tamanho mínimo para segmentos de memória compartilhada (`SHMMIN`), que deve ser no máximo aproximadamente 32 bytes para o PostgreSQL (geralmente é apenas 1). O número máximo de segmentos em todo o sistema (`SHMMNI`) ou por processo (`SHMSEG`) é improvável de causar um problema, a menos que seu sistema os tenha configurados como zero.

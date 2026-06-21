@@ -1226,6 +1226,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
 
 
 
+
 Nem todas as APIs do cliente suportam todos os conjuntos de caracteres listados. Por exemplo, o driver JDBC do PostgreSQL não suporta `MULE_INTERNAL`, `LATIN6`, `LATIN8` e `LATIN10`.
 
 O ajuste `SQL_ASCII` se comporta de maneira consideravelmente diferente dos outros ajustes. Quando o conjunto de caracteres do servidor é `SQL_ASCII`, o servidor interpreta os valores de byte 0–127 de acordo com o padrão ASCII, enquanto os valores de byte 128–255 são considerados caracteres não interpretados. Não haverá conversão de codificação quando o ajuste for `SQL_ASCII`. Assim, este ajuste não é tanto uma declaração de que uma codificação específica está sendo usada, quanto uma declaração de ignorância sobre a codificação. Na maioria dos casos, se você estiver trabalhando com algum dado não ASCII, não é prudente usar o ajuste `SQL_ASCII`, pois o PostgreSQL não poderá ajudá-lo a converter ou validar caracteres não ASCII.
@@ -2229,6 +2230,7 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -4401,6 +4403,7 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
   </tr>
  </tbody>
 </table>
+
 
 
 

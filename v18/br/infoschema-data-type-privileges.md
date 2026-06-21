@@ -116,3 +116,4 @@ A vista `data_type_privileges` identifica todos os descritores de tipo de dados 
 
 
 
+

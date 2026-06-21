@@ -110,3 +110,4 @@ A tabela `sql_implementation_info` contém informações sobre vários aspectos 
 
 
 
+

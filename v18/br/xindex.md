@@ -100,6 +100,7 @@ O método de índice de árvore B define cinco estratégias, mostradas na [Tabel
 
 
 
+
 Os índices de hash só suportam comparações de igualdade, e, portanto, usam apenas uma estratégia, mostrada em [Tabela 36.4](xindex.md#XINDEX-HASH-STRAT-TABLE).
 
 **Tabela 36.4. Estratégias de Hash**
@@ -132,6 +133,7 @@ Os índices de hash só suportam comparações de igualdade, e, portanto, usam a
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -270,6 +272,7 @@ Os índices GiST são mais flexíveis: não possuem um conjunto fixo de estraté
 
 
 
+
 Os índices SP-GiST são semelhantes aos índices GiST em termos de flexibilidade: eles não têm um conjunto fixo de estratégias. Em vez disso, as rotinas de suporte de cada classe de operador interpretam os números de estratégia de acordo com a definição da classe de operador. Como exemplo, os números de estratégia usados pelas classes de operadores embutidas para pontos são mostrados na [Tabela 36.6](xindex.md#XINDEX-SPGIST-POINT-STRAT-TABLE).
 
 **Tabela 36.6. Estratégias de Pontos SP-GiST**
@@ -351,6 +354,7 @@ Os índices SP-GiST são semelhantes aos índices GiST em termos de flexibilidad
 
 
 
+
 Os índices GIN são semelhantes aos índices GiST e SP-GiST, na medida em que também não possuem um conjunto fixo de estratégias. Em vez disso, as rotinas de suporte de cada classe de operador interpretam os números de estratégia de acordo com a definição da classe de operador. Como exemplo, os números de estratégia usados pela classe de operadores embutida para arrays são mostrados em [Tabela 36.7](xindex.md#XINDEX-GIN-ARRAY-STRAT-TABLE).
 
 **Tabela 36.7. Estratégias do Array GIN**
@@ -407,6 +411,7 @@ Os índices GIN são semelhantes aos índices GiST e SP-GiST, na medida em que t
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -480,6 +485,7 @@ Os índices BRIN são semelhantes aos índices GiST, SP-GiST e GIN, pois também
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -580,6 +586,7 @@ As árvores B requerem uma função de suporte para comparações e permitem que
 
 
 
+
 Os índices hash exigem uma função de suporte e permitem que duas outras sejam fornecidas, conforme opção do autor da classe de operador, conforme mostrado na [Tabela 36.10](xindex.md#XINDEX-HASH-SUPPORT-TABLE).
 
 **Tabela 36.10. Funções de suporte de hash**
@@ -628,6 +635,7 @@ Os índices hash exigem uma função de suporte e permitem que duas outras sejam
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -830,6 +838,7 @@ Os índices GiST têm doze funções de suporte, das quais sete são opcionais, 
 
 
 
+
 Os índices SP-GiST têm seis funções de suporte, uma das quais é opcional, conforme mostrado na [Tabela 36.12]((xindex.md#XINDEX-SPGIST-SUPPORT-TABLE)). (Para mais informações, consulte a [Seção 65.3]((spgist.md))).
 
 **Tabela 36.12. Funções de Suporte SP-GiST**
@@ -936,6 +945,7 @@ Os índices SP-GiST têm seis funções de suporte, uma das quais é opcional, c
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -1073,6 +1083,7 @@ Os índices GIN têm sete funções de suporte, quatro das quais são opcionais,
 
 
 
+
 Os índices BRIN têm cinco funções de suporte básicas, uma das quais é opcional, conforme mostrado na [Tabela 36.14](xindex.md#XINDEX-BRIN-SUPPORT-TABLE). Algumas versões das funções básicas exigem que funções de suporte adicionais sejam fornecidas. (Para mais informações, consulte [Seção 65.5.3](brin.md#BRIN-EXTENSIBILITY).
 
 **Tabela 36.14. Funções de Suporte do BRIN**
@@ -1166,6 +1177,7 @@ Os índices BRIN têm cinco funções de suporte básicas, uma das quais é opci
   </tr>
  </tbody>
 </table>
+
 
 
 

@@ -150,3 +150,4 @@ Assim como `pg_statistic` (catalog-pg-statistic.md "52.51. pg_statistic"), `pg_
 
 
 
+

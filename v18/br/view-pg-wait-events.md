@@ -74,3 +74,4 @@ A vista `pg_wait_events` fornece uma descrição sobre os eventos de espera.
 
 
 
+

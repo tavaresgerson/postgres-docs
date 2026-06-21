@@ -128,6 +128,7 @@
 
 
 
+
 [Tabela B.2] (datetime-keywords.md#DATETIME-DOW-TABLE "Table B.2. Day of the Week Names") mostra os tokens que são reconhecidos como nomes de dias da semana.
 
 **Tabela B.2. Nomes dos Dias da Semana**
@@ -208,6 +209,7 @@
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -309,6 +311,7 @@
   </tr>
  </tbody>
 </table>
+
 
 
 

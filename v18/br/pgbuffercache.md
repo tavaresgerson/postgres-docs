@@ -240,6 +240,7 @@ As definições das colunas expostas pela visualização são mostradas em [Tabe
 
 
 
+
 Há uma linha para cada buffer no cache compartilhado. Os buffers não utilizados são mostrados com todos os campos nulos, exceto `bufferid`. Os catálogos compartilhados do sistema são mostrados como pertencentes ao banco de dados zero.
 
 Como o cache é compartilhado por todos os bancos de dados, normalmente haverá páginas de relações que não pertencem ao banco de dados atual. Isso significa que pode não haver linhas de junção correspondentes em `pg_class` para algumas linhas, ou que pode até haver junções incorretas. Se você está tentando fazer uma junção contra `pg_class`, é uma boa ideia restringir a junção às linhas que têm `reldatabase` igual ao OID do banco de dados atual ou zero.
@@ -325,6 +326,7 @@ As definições das colunas expostas pela visualização são mostradas em [Tabe
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -451,6 +453,7 @@ As definições das colunas expostas pela função são mostradas em [Tabela F.1
 
 
 
+
 A função `pg_buffercache_summary()` retorna uma única linha que resume o estado de todos os buffers compartilhados. Informações semelhantes e mais detalhadas são fornecidas pela visão `pg_buffercache`, mas a `pg_buffercache_summary()` é significativamente mais barata.
 
 Assim como a visualização `pg_buffercache`, a `pg_buffercache_summary()` não adquire bloqueios do gerenciador de buffer. Portanto, a atividade concorrente pode levar a pequenas imprecisões no resultado.
@@ -542,6 +545,7 @@ As definições das colunas expostas pela função são mostradas na [Tabela F.1
   </tr>
  </tbody>
 </table>
+
 
 
 

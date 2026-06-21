@@ -175,3 +175,4 @@ Você pode considerar um "codificação" no PostgreSQL como um conjunto de carac
 
 
 
+

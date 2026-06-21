@@ -222,3 +222,4 @@ O catálogo `pg_publication` contém todas as publicações criadas no banco de 
 
 
 
+

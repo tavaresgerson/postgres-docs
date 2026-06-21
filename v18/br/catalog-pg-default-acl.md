@@ -155,6 +155,7 @@ O catálogo `pg_default_acl` armazena privilégios iniciais a serem atribuídos 
 
 
 
+
 Uma entrada `pg_default_acl` mostra os privilégios iniciais a serem atribuídos a um objeto pertencente ao usuário indicado. Atualmente, existem dois tipos de entradas: entradas “globais” com `defaclnamespace` = zero e entradas “por esquema” que fazem referência a um esquema específico. Se uma entrada global estiver presente, ela *sobrepõe* os privilégios padrão hard-wired normais para o tipo de objeto. Uma entrada por esquema, se presente, representa privilégios a serem *adicionados* aos privilégios padrão globais ou hard-wired.
 
 Observe que, quando uma entrada de ACL em outro catálogo é nula, ela é considerada para representar os privilégios padrão hard-wired para seu objeto, *não* o que possa estar em `pg_default_acl` no momento. `pg_default_acl` é consultado apenas durante a criação do objeto.

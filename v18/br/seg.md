@@ -196,6 +196,7 @@ Em [Tabela F.29](seg.md#SEG-REPR-TABLE), *`x`*, *`y`* e *`delta`* denotam númer
 
 
 
+
 **Tabela F.30. Exemplos de entrada válida do `seg`**
 
 
@@ -341,6 +342,7 @@ Em [Tabela F.29](seg.md#SEG-REPR-TABLE), *`x`*, *`y`* e *`delta`* denotam númer
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -595,6 +597,7 @@ O módulo `seg` inclui uma classe de operador de índice GiST para valores de `s
   </tr>
  </tbody>
 </table>
+
 
 
 

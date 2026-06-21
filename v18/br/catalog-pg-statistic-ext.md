@@ -258,4 +258,5 @@ O catálogo `pg_statistic_ext` contém definições de estatísticas de planejad
 
 
 
+
 A entrada `pg_statistic_ext` é preenchida completamente durante `CREATE STATISTICS`(sql-createstatistics.md "CREATE STATISTICS"), mas os valores estatísticos reais não são calculados nessa etapa. Os comandos subsequentes `ANALYZE`(sql-analyze.md "ANALYZE") calculam os valores desejados e preenchem uma entrada no catálogo `pg_statistic_ext_data`(catalog-pg-statistic-ext-data.md "52.53. pg_statistic_ext_data").

@@ -233,6 +233,7 @@ As funções fornecidas são mostradas na [Tabela F.4](earthdistance.md#EARTHDIS
 
 
 
+
 ### F.14.2. Distâncias terrestres baseadas em pontos [#](#EARTHDISTANCE-POINT-BASED)
 
 A segunda parte do módulo depende da representação de locais na Terra como valores do tipo `point`, na qual o primeiro componente é considerado para representar a longitude em graus, e o segundo componente é considerado para representar a latitude em graus. Os pontos são considerados como (longitude, latitude) e não vice-versa, porque a longitude está mais próxima da ideia intuitiva do eixo x e a latitude do eixo y.
@@ -284,6 +285,7 @@ Um único operador é fornecido, mostrado em [Tabela F.5](earthdistance.md#EARTH
   </tr>
  </tbody>
 </table>
+
 
 
 

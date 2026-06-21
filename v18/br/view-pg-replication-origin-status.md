@@ -115,3 +115,4 @@ A visão `pg_replication_origin_status` contém informações sobre o progresso 
 
 
 
+

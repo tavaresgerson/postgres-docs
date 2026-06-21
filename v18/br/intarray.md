@@ -423,6 +423,7 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
 
 
 
+
 **Tabela F.9. Operadores `intarray`**
 
 
@@ -761,6 +762,7 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   </tr>
  </tbody>
 </table>
+
 
 
 

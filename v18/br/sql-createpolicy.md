@@ -518,6 +518,7 @@ Uma política `DELETE` não pode ter uma expressão `WITH CHECK`, pois ela só s
 
 
 
+
 ### Aplicação de Políticas Múltiplas
 
 Quando várias políticas de diferentes tipos de comando se aplicam ao mesmo comando (por exemplo, as políticas `SELECT` e `UPDATE` aplicadas a um comando `UPDATE`, o usuário deve ter ambos os tipos de permissão (por exemplo, permissão para selecionar linhas da relação, bem como permissão para atualizá-las). Assim, as expressões para um tipo de política são combinadas com as expressões para o outro tipo de política usando o operador `AND`.

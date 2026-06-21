@@ -204,6 +204,7 @@ As funções do lado do servidor, adaptadas para manipular objetos grandes a par
 
 
 
+
 Existem funções adicionais no lado do servidor correspondentes a cada uma das funções do lado do cliente descritas anteriormente; de fato, na maior parte, as funções do lado do cliente são simplesmente interfaces para as funções equivalentes do lado do servidor. As que são igualmente convenientes para serem chamadas por meio de comandos SQL são `lo_creat`, `lo_create`, `lo_unlink`, `lo_import` e `lo_export`. Aqui estão exemplos de seu uso:
 
 ```

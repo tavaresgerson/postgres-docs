@@ -117,6 +117,7 @@ SELECT city, count(*), max(temp_lo)
 
 
 
+
 É importante entender a interação entre agregados e as cláusulas `WHERE` e `HAVING` do SQL. A diferença fundamental entre `WHERE` e `HAVING` é esta: `WHERE` seleciona linhas de entrada antes que grupos e agregados sejam calculados (assim, controla quais linhas serão usadas na computação agregada), enquanto `HAVING` seleciona linhas de grupo após os grupos e agregados serem calculados. Assim, a cláusula `WHERE` não deve conter funções agregadas; não faz sentido tentar usar um agregado para determinar quais linhas serão entradas para os agregados. Por outro lado, a cláusula `HAVING` sempre contém funções agregadas. (Estritamente falando, você pode escrever uma cláusula `HAVING` que não use agregados, mas raramente é útil. A mesma condição poderia ser usada de forma mais eficiente na etapa `WHERE`).
 
 No exemplo anterior, podemos aplicar a restrição do nome da cidade em `WHERE`, uma vez que não precisa de agregação. Isso é mais eficiente do que adicionar a restrição em `HAVING`, porque evitamos realizar os cálculos de agrupamento e agregação para todas as linhas que falham na verificação de `WHERE`.

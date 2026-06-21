@@ -222,6 +222,7 @@ As funções fornecidas pelo módulo `pg_trgm` são mostradas na [Tabela F.26](p
 
 
 
+
 Considere o exemplo a seguir:
 
 ```
@@ -567,6 +568,7 @@ Assim, a função `strict_word_similarity` é útil para encontrar a similaridad
   </tr>
  </tbody>
 </table>
+
 
 
 

@@ -389,6 +389,7 @@ GET DIAGNOSTICS integer_var = ROW_COUNT;
 
 
 
+
 O segundo método para determinar os efeitos de um comando é verificar a variável especial denominada `FOUND`, que é do tipo `boolean`. `FOUND` começa como falso em cada chamada de função PL/pgSQL. É definido por cada um dos seguintes tipos de declarações:
 
 A declaração `SELECT INTO` define `FOUND` como verdadeiro se uma linha for atribuída, falsa se nenhuma linha for retornada. A declaração `PERFORM` define `FOUND` como verdadeiro se ela produz (e descarta) uma ou mais linhas, falsa se nenhuma linha for produzida. As declarações `UPDATE`, `INSERT`, `DELETE` e `MERGE` definem `FOUND` como verdadeiro se pelo menos uma linha é afetada, falsa se nenhuma linha é afetada. A declaração `FETCH` define `FOUND` como verdadeiro se ela retorna uma linha, falsa se nenhuma linha for retornada. A declaração `MOVE` define `FOUND` como verdadeiro se ela reposiciona o cursor com sucesso, falsa de outra forma. As declarações `FOR` ou `FOREACH` definem `FOUND` como verdadeiro se ela se itera uma ou mais vezes, caso contrário falsa. `FOUND` é definido dessa forma quando o loop sai; dentro da execução do loop, `FOUND` não é modificado pela declaração do loop, embora possa ser alterado pela execução de outras declarações dentro do corpo do loop. As declarações `RETURN QUERY` e `RETURN QUERY EXECUTE` definem `FOUND` como verdadeiro se a consulta retorna pelo menos uma linha, falsa se nenhuma linha for retornada.

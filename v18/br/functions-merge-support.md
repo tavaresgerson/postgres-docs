@@ -62,6 +62,7 @@ O PostgreSQL inclui uma função de suporte a junção que pode ser usada na lis
 
 
 
+
 Exemplo:
 
 ```

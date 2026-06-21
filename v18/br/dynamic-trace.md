@@ -963,6 +963,7 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
 
 
 
+
 **Tabela 27.50. Tipos Definidos Usados nos Parâmetros de Sondagem**
 
 
@@ -1069,6 +1070,7 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
  </tbody>
 </table>
+
 
 
 

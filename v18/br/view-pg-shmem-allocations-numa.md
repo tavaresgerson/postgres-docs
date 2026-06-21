@@ -89,4 +89,5 @@ Ao determinar o nó NUMA, a visão toca todas as páginas de memória do segment
 
 
 
+
 Por padrão, a visualização `pg_shmem_allocations_numa` pode ser lida apenas por superusuários ou papéis com privilégios da função `pg_read_all_stats`.

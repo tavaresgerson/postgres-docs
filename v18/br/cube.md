@@ -254,6 +254,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
 
 
 
+
 Não importa a ordem em que os cantos opostos de um cubo são inseridos. As funções `cube` trocam automaticamente os valores, se necessário, para criar uma representação interna uniforme “inferior esquerdo — superior direito”. Quando os cantos coincidem, a `cube` armazena apenas um canto juntamente com uma bandeira de “é ponto” para evitar desperdício de espaço.
 
 O espaço em branco é ignorado na entrada, portanto `[(x),(y)]` é o mesmo que `[ ( x ), ( y ) ]`.
@@ -519,6 +520,7 @@ Os valores são armazenados internamente como números de ponto flutuante de 64 
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -1155,6 +1157,7 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
   </tr>
  </tbody>
 </table>
+
 
 
 

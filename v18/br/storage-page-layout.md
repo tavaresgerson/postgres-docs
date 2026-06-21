@@ -81,6 +81,7 @@ Cada tabela e índice são armazenados como um array de *páginas* de tamanho fi
 
 
 
+
 Os primeiros 24 bytes de cada página consistem em um cabeçalho de página (`PageHeaderData`). Seu formato é detalhado em [Tabela 66.3](storage-page-layout.md#PAGEHEADERDATA-TABLE "Table 66.3. PageHeaderData Layout"). O primeiro campo acompanha a entrada mais recente do WAL relacionada a esta página. O segundo campo contém o checksum da página se [[`-k`](app-initdb.md#APP-INITDB-DATA-CHECKSUMS)]] estiverem habilitados. A seguir, há um campo de 2 bytes contendo bits de sinalização. Isso é seguido por três campos inteiros de 2 bytes (`pd_lower`, `pd_upper` e `pd_special`). Esses campos contêm offsets de byte do início da página até o início do espaço não alocado, até o fim do espaço não alocado e até o início do espaço especial. Os próximos 2 bytes do cabeçalho de página, `pd_pagesize_version`, armazenam tanto o tamanho da página quanto um indicador de versão. A partir do PostgreSQL 8.3, o número de versão é 4; o PostgreSQL 8.1 e 8.2 utilizaram o número de versão 3; o PostgreSQL 8.0 utilizou o número de versão 2; o PostgreSQL 7.3 e 7.4 utilizaram o número de versão 1; versões anteriores utilizaram o número de versão 0. (O layout básico da página e o formato do cabeçalho não mudaram na maioria dessas versões, mas o layout dos cabeçalhos de linha do heap.) O tamanho da página basicamente só está presente como um cruzamento; não há suporte para ter mais de um tamanho de página em uma instalação. O último campo é um aviso que mostra se a poda da página é provável que seja lucrativa: ele acompanha o XMAX não podado mais antigo na página.
 
 **Tabela 66.3. Layout de PageHeaderData**
@@ -225,6 +226,7 @@ Os primeiros 24 bytes de cada página consistem em um cabeçalho de página (`Pa
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -394,6 +396,7 @@ Todas as linhas da tabela são estruturadas da mesma maneira. Há um cabeçalho 
   </tr>
  </tbody>
 </table>
+
 
 
 

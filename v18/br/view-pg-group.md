@@ -107,3 +107,4 @@ A vista `pg_group` existe para compatibilidade reversa: ela emula um catálogo q
 
 
 
+

@@ -168,4 +168,5 @@ O catálogo `pg_amproc` armazena informações sobre as funções de suporte ass
 
 
 
+
 A interpretação usual dos campos `amproclefttype` e `amprocrighttype` é que eles identificam os tipos de entrada esquerda e direita dos operadores que uma função de suporte específica suporta. Para alguns métodos de acesso, eles correspondem ao(s) tipo(s) de dados de entrada da própria função de suporte, e para outros, não. Há uma noção de funções de suporte "padrão" para um índice, que são aquelas com `amproclefttype` e `amprocrighttype` iguais à classe de operador de índice `opcintype`.

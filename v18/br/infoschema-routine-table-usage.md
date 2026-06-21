@@ -176,3 +176,4 @@ A vista `routine_table_usage` Ã© destinada a identificar todas as tabelas que sÃ
 
 
 
+

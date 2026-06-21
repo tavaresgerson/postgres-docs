@@ -1412,6 +1412,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
 
 
 
+
 Funções e operadores adicionais de manipulação de strings estão disponíveis e estão listados em [Tabela 9.10] ((functions-string.md#FUNCTIONS-STRING-OTHER "Table 9.10. Other String Functions and Operators")). (Algumas dessas funções são usadas internamente para implementar as funções de string padrão do SQL listadas em [Tabela 9.9] ((functions-string.md#FUNCTIONS-STRING-SQL "Table 9.9. SQL String Functions and Operators")). Além disso, há operadores de correspondência de padrões, que são descritos em [Seção 9.7] ((functions-matching.md "9.7. Pattern Matching")), e operadores para pesquisa de texto completo, que são descritos em [Capítulo 12] ((textsearch.md "Chapter 12. Full Text Search")).
 
 **Tabela 9.10. Outras funções e operadores de cadeia**
@@ -4358,6 +4359,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   </tr>
  </tbody>
 </table>
+
 
 
 

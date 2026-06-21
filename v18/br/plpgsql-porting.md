@@ -358,6 +358,7 @@ $$ LANGUAGE plpgsql;
 
 
 
+
 ### 41.13.2. Outras coisas a observar [#](#PLPGSQL-PORTING-OTHER)
 
 Esta seção explica algumas outras coisas a serem observadas ao migrar funções Oracle PL/SQL para PostgreSQL.

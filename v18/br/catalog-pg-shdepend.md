@@ -186,6 +186,7 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_shdepend` é compartil
 
 
 
+
 Em todos os casos, uma entrada `pg_shdepend` indica que o objeto referenciado não pode ser descartado sem também descartar o objeto dependente. No entanto, existem vários subsabores identificados por `deptype`:
 
 `SHARED_DEPENDENCY_OWNER` (`o`): O objeto referenciado (que deve ser um papel) é o proprietário do objeto dependente.

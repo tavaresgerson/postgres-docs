@@ -164,3 +164,4 @@ A vista `key_column_usage` identifica todas as colunas no banco de dados atual q
 
 
 
+

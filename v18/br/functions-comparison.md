@@ -201,6 +201,7 @@ Os operadores de comparação comuns estão disponíveis, conforme mostrado na [
 
 
 
+
 ### Nota
 
 `<>` é a notação SQL padrão para “não igual”. `!=` é um alias, que é convertido para `<>` em uma fase muito inicial do parsing. Portanto, não é possível implementar os operadores `!=` e `<>` que fazem coisas diferentes.
@@ -895,6 +896,7 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
 
 
 
+
 O predicado `BETWEEN` simplifica os testes de intervalo:
 
 ```
@@ -1063,6 +1065,7 @@ Algumas funções relacionadas à comparação também estão disponíveis, conf
   </tr>
  </tbody>
 </table>
+
 
 
 

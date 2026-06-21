@@ -313,6 +313,7 @@ substring('foobar' similar '#"o_b#"%' escape '#')    NULL
 
 
 
+
 As expressões regulares POSIX oferecem um meio mais poderoso para a correspondência de padrões do que os operadores `LIKE` e `SIMILAR TO`. Muitas ferramentas Unix, como `egrep`, `sed` ou `awk`, utilizam uma linguagem de correspondência de padrões semelhante àquela descrita aqui.
 
 Uma expressão regular é uma sequência de caracteres que é uma definição abreviada de um conjunto de cadeias de caracteres (um *conjunto regular*). Diz-se que uma cadeia de caracteres corresponde a uma expressão regular se ela é um membro do conjunto regular descrito pela expressão regular. Assim como em `LIKE`, os caracteres do padrão correspondem exatamente aos caracteres da cadeia de caracteres, a menos que sejam caracteres especiais na linguagem da expressão regular — mas as expressões regulares usam caracteres especiais diferentes do que `LIKE` faz. Ao contrário dos padrões de `LIKE`, uma expressão regular pode corresponder em qualquer lugar dentro de uma cadeia de caracteres, a menos que a expressão regular seja explicitamente ancorada ao início ou fim da cadeia de caracteres.
@@ -750,6 +751,7 @@ Uma *restrição* corresponde a uma cadeia vazia, mas só corresponde quando con
 
 
 
+
 Um RE não pode terminar com uma barra invertida (`\`).
 
 ### Nota
@@ -1056,6 +1058,7 @@ Se você tiver desativado [standard_conforming_strings](runtime-config-compatibl
 
 
 
+
 Os formulários que utilizam `{`*`...`*`}` são conhecidos como *limites*. Os números *`m`* e *`n`* dentro de um limite são inteiros decimais não assinados com valores permitidos de 0 a 255, inclusive.
 
 Os quantificadores (*não-ganídicos*) (disponíveis apenas em AREs) correspondem às mesmas possibilidades que seus equivalentes normais (*ganídicos*) correspondentes, mas preferem o menor número em vez do maior número de correspondências. Veja [Seção 9.7.3.5] para mais detalhes.
@@ -1214,6 +1217,7 @@ Um quantificador não pode seguir imediatamente outro quantificador, por exemplo
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -1582,6 +1586,7 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
 
 
 
+
 Os dígitos hexadecimais são `0`-`9`, `a`-`f` e `A`-`F`. Os dígitos óctal são `0`-`7`.
 
 Saídas de entrada de caracteres numéricos que especificam valores fora do intervalo ASCII (0–127) têm significados dependentes do codificação do banco de dados. Quando a codificação é UTF-8, os valores de escape são equivalentes a pontos de código Unicode, por exemplo, `\u1234` significa o caractere `U+1234`. Para outras codificações multibyte, as saídas de entrada de caracteres geralmente especificam apenas a concatenação dos valores de byte para o caractere. Se o valor de escape não corresponder a nenhum caractere legal na codificação do banco de dados, não será gerado nenhum erro, mas nunca corresponderá a nenhum dado.
@@ -1688,6 +1693,7 @@ As escapas de entrada de caracteres são sempre tratadas como caracteres comuns.
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -1806,6 +1812,7 @@ As fórmulas de escape de abreviação de classe também funcionam dentro de exp
 
 
 
+
 Uma palavra é definida conforme especificado nos padrões de `[[:<:]]` e `[[:>:]]` acima. Fuga de restrição é ilegal dentro das expressões de chaves.
 
 **Tabela 9.23. Referências de expressão regular de volta**
@@ -1896,6 +1903,7 @@ Uma palavra é definida conforme especificado nos padrões de `[[:<:]]` e `[[:>:
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -2094,6 +2102,7 @@ Um RE pode começar com *opções embutidas*: uma sequência `(?`*`xyz`*`)` (ond
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -2431,6 +2440,7 @@ O PostgreSQL não implementa atualmente esses operadores e funções. Você pode
   </tr>
  </tbody>
 </table>
+
 
 
 

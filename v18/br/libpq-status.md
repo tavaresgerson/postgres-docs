@@ -205,6 +205,7 @@ Os parâmetros relatados a partir da versão atual incluem:
 
 
 
+
 (`default_transaction_read_only` e `in_hot_standby` não foram relatados em lançamentos antes de 14; `scram_iterations` não foi relatado em lançamentos antes de 16; `search_path` não foi relatado em lançamentos antes de 18.) Observe que `server_version`, `server_encoding` e `integer_datetimes` não podem ser alterados após a inicialização.
 
 Se não for informado nenhum valor para `standard_conforming_strings`, as aplicações podem assumir que é `off`, ou seja, barras invertidas são tratadas como escapamentos em literais de string. Além disso, a presença deste parâmetro pode ser considerada como uma indicação de que a sintaxe de string de escapamento (`E'...'`) é aceita.

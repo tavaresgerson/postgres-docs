@@ -144,4 +144,5 @@ As famílias de operadores são descritas em detalhes na [Seção 36.16](xindex.
 
 
 
+
 A maioria das informações que definem uma família de operadores não está na sua linha `pg_opfamily`, mas nas linhas associadas em [`pg_amop`](catalog-pg-amop.md "52.4. pg_amop"), [`pg_amproc`](catalog-pg-amproc.md "52.5. pg_amproc") e [`pg_opclass`](catalog-pg-opclass.md "52.33. pg_opclass").

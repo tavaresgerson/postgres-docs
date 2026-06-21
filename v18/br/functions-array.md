@@ -244,6 +244,7 @@
 
 
 
+
 Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do operador de matriz. Veja [Seção 11.2](indexes-types.md) para mais detalhes sobre quais operadores suportam operações indexadas.
 
 [Tabela 9.57](functions-array.md#ARRAY-FUNCTIONS-TABLE) mostra as funções disponíveis para uso com tipos de matriz. Consulte [Seção 8.15](arrays.md) para mais informações e exemplos de uso dessas funções.
@@ -1309,6 +1310,7 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   </tr>
  </tbody>
 </table>
+
 
 
 

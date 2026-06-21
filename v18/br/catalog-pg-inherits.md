@@ -121,3 +121,4 @@ O catálogo `pg_inherits` registra informações sobre hierarquias de herança d
 
 
 
+

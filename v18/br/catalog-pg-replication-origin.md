@@ -61,3 +61,4 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_replication_origin` é
 
 
 
+

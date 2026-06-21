@@ -104,3 +104,4 @@ A vista `foreign_tables` contém todas as tabelas externas definidas no banco de
 
 
 
+

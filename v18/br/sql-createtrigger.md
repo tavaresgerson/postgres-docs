@@ -189,6 +189,7 @@ O quadro a seguir resume os tipos de gatilho que podem ser usados em tabelas, vi
 
 
 
+
 Além disso, uma definição de gatilho pode especificar uma condição booleana `WHEN`, que será testada para determinar se o gatilho deve ser disparado. Em gatilhos de nível de linha, a condição `WHEN` pode examinar os valores antigos e/ou novos das colunas da linha. Gatilhos de nível de declaração também podem ter condições `WHEN`, embora o recurso não seja tão útil para eles, uma vez que a condição não pode se referir a quaisquer valores na tabela.
 
 Se vários gatilhos do mesmo tipo forem definidos para o mesmo evento, eles serão disparados em ordem alfabética por nome.

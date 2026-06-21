@@ -342,6 +342,7 @@ As colunas de saída são descritas em [Tabela F.28](postgres-fdw.md#POSTGRES-FD
 
 
 
+
 `postgres_fdw_disconnect(server_name text) returns boolean`: Esta função descarta as conexões abertas que são estabelecidas por `postgres_fdw` da sessão local para o servidor estrangeiro com o nome dado. Note que pode haver múltiplas conexões ao servidor dado usando diferentes mapeamentos de usuário. Se as conexões forem usadas na transação local atual, elas não serão desconectadas e mensagens de aviso serão relatadas. Esta função retorna `true` se desconectar pelo menos uma conexão, caso contrário, `false`. Se não for encontrado nenhum servidor estrangeiro com o nome dado, um erro será relatado. Exemplo de uso da função:
 
 ```
@@ -517,6 +518,7 @@ Outra limitação é que, ao executar as instruções `INSERT` com uma cláusula
   </tr>
  </tbody>
 </table>
+
 
 
 

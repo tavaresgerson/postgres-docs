@@ -3617,3 +3617,4 @@ As seguintes características definidas no SQL:2023 não são implementadas nest
 
 
 
+

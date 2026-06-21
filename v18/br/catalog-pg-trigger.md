@@ -472,6 +472,7 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
 
 
 
+
 Atualmente, o disparo específico para coluna é suportado apenas para eventos `UPDATE`, e, portanto, `tgattr` é relevante apenas para esse tipo de evento. `tgtype` pode conter bits para outros tipos de eventos também, mas esses são presumidos serem de todo o quadro, independentemente do que está em `tgattr`.
 
 ### Nota

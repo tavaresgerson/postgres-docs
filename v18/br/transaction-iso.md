@@ -129,6 +129,7 @@ Os níveis de isolamento de transação implementados no padrão SQL e no Postgr
 
 
 
+
 Em PostgreSQL, você pode solicitar qualquer um dos quatro níveis padrão de isolamento de transação, mas internamente, apenas três níveis de isolamento distintos são implementados, ou seja, o modo Não Comitado de Leitura do PostgreSQL se comporta como Leitura Comitada. Isso ocorre porque é a única maneira sensível de mapear os níveis de isolamento padrão para a arquitetura de controle de concorrência multiversão do PostgreSQL.
 
 A tabela também mostra que a implementação de Leitura Repetível do PostgreSQL não permite leituras fantasmas. Isso é aceitável sob o padrão SQL, porque o padrão especifica quais anomalias não devem *ocorrer* em certos níveis de isolamento; garantias mais altas são aceitáveis. O comportamento dos níveis de isolamento disponíveis é detalhado nas seções a seguir.

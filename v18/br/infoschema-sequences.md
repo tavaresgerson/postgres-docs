@@ -236,4 +236,5 @@ A vista `sequences` contém todas as sequências definidas no banco de dados atu
 
 
 
+
 Observe que, de acordo com o padrão SQL, os valores de início, mínimo, máximo e incremento são retornados como cadeias de caracteres.

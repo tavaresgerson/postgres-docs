@@ -353,6 +353,7 @@ Uma vez adquirida, uma bloqueio é normalmente mantida até o final da transaç�
 
 
 
+
 ### 13.3.2. Lås de nível de linha [#](#LOCKING-ROWS)
 
 Além das bloqueadoras de nível de tabela, existem bloqueadoras de nível de linha, que são listadas abaixo com os contextos em que elas são usadas automaticamente pelo PostgreSQL. Veja [Tabela 13.3](explicit-locking.md#ROW-LOCK-COMPATIBILITY) para uma tabela completa de conflitos de bloqueadoras de nível de linha. Note que uma transação pode manter bloqueadoras conflitantes na mesma linha, mesmo em subtransações diferentes; mas, além disso, duas transações nunca podem manter bloqueadoras conflitantes na mesma linha. As bloqueadoras de nível de linha não afetam a consulta de dados; elas bloqueiam apenas os *escritores e bloqueadores* da mesma linha. As bloqueadoras de nível de linha são liberadas no final da transação ou durante o rollback do ponto de salvamento, assim como as bloqueadoras de nível de tabela.
@@ -472,6 +473,7 @@ O PostgreSQL não lembra nenhuma informação sobre as linhas modificadas na mem
   </tr>
  </tbody>
 </table>
+
 
 
 

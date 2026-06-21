@@ -126,6 +126,7 @@
 
 
 
+
 ### Nota
 
 O módulo [uuid-ossp](uuid-ossp.md) fornece funções adicionais que implementam outros algoritmos padrão para gerar UUIDs.
@@ -237,6 +238,7 @@ O módulo [uuid-ossp](uuid-ossp.md) fornece funções adicionais que implementam
   </tr>
  </tbody>
 </table>
+
 
 
 

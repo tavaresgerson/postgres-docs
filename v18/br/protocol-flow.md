@@ -389,6 +389,7 @@ Atualmente, há um conjunto de parâmetros pré-definidos para os quais o Parame
 
 
 
+
 (`default_transaction_read_only` e `in_hot_standby` não foram relatados em versões anteriores a 14; `scram_iterations` não foi relatado em versões anteriores a 16; `search_path` não foi relatado em versões anteriores a 18.) Observe que `server_version`, `server_encoding` e `integer_datetimes` são pseudo-parâmetros que não podem ser alterados após a inicialização. Este conjunto pode mudar no futuro, ou até mesmo se tornar configurável. Assim, um frontend deve simplesmente ignorar o ParameterStatus para os parâmetros que ele não entende ou não se importa.
 
 Se um frontend emitir o comando `LISTEN`, o backend enviará uma mensagem NotificationResponse (não confundir com NoticeResponse!) sempre que um comando `NOTIFY` for executado para o mesmo nome de canal.

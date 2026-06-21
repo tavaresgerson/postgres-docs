@@ -243,3 +243,4 @@ A vista `pg_roles` fornece acesso a informações sobre os papéis do banco de d
 
 
 
+

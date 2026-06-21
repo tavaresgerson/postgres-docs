@@ -168,6 +168,7 @@ O parâmetro é o nome de uma tabela. O resultado é um conjunto de registros, c
 
 
 
+
 `pgrowlocks` assume `AccessShareLock` para a tabela alvo e lê cada linha uma a uma para coletar as informações de bloqueio da linha. Isso não é muito rápido para uma tabela grande. Observe que:
 
 1. Se um bloqueio `ACCESS EXCLUSIVE` for realizado na tabela, o `pgrowlocks` será bloqueado.

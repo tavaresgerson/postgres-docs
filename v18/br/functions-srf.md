@@ -301,6 +301,7 @@ Esta seção descreve funções que possivelmente retornam mais de uma linha. As
 
 
 
+
 Quando *`step`* é positivo, zero linhas são retornadas se *`start`* for maior que *`stop`*. Por outro lado, quando *`step`* é negativo, zero linhas são retornadas se *`start`* for menor que *`stop`*. Zero linhas também são retornadas se qualquer entrada for `NULL`. É um erro para *`step`* ser zero. Alguns exemplos seguem:
 
 ```
@@ -495,6 +496,7 @@ SELECT * FROM generate_series('2001-10-22 00:00 -04:00'::timestamptz,
   </tr>
  </tbody>
 </table>
+
 
 
 

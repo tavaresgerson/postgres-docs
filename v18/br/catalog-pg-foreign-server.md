@@ -183,3 +183,4 @@ O catálogo `pg_foreign_server` armazena definições de servidores externos. Um
 
 
 
+

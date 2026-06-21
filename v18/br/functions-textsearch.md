@@ -377,6 +377,7 @@
 
 
 
+
 Além desses operadores especializados, os operadores de comparação comuns mostrados na [Tabela 9.1](functions-comparison.md#FUNCTIONS-COMPARISON-OP-TABLE) estão disponíveis para os tipos `tsvector` e `tsquery`. Estes não são muito úteis para pesquisas de texto, mas permitem, por exemplo, a construção de índices únicos em colunas desses tipos.
 
 **Tabela 9.43. Funções de pesquisa de texto**
@@ -2220,6 +2221,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
 
 
 
+
 ### Nota
 
 Todas as funções de busca de texto que aceitam um argumento opcional `regconfig` usarão a configuração especificada por [default_text_search_config](runtime-config-client.md#GUC-DEFAULT-TEXT-SEARCH-CONFIG) quando esse argumento for omitido.
@@ -2774,6 +2776,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
   </tr>
  </tbody>
 </table>
+
 
 
 

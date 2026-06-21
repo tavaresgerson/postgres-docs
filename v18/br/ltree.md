@@ -694,6 +694,7 @@ O tipo `ltree` possui os operadores de comparação habituais `=`, `<>`, `<`, `>
 
 
 
+
 Os operadores `<@`, `@>`, `@` e `~` têm análogos `^<@`, `^@>`, `^@`, `^~`, que são os mesmos, exceto que não usam índices. Esses são úteis apenas para fins de teste.
 
 As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TABLE).
@@ -1208,6 +1209,7 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
   </tr>
  </tbody>
 </table>
+
 
 
 

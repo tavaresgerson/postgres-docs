@@ -544,3 +544,4 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
 
 
 
+

@@ -177,6 +177,7 @@ Os tipos de dados geométricos representam objetos espaciais bidimensionais. [Ta
 
 
 
+
 Em todos esses tipos, as coordenadas individuais são armazenadas como números `double precision` (`float8`).
 
 Um conjunto rico de funções e operadores está disponível para realizar várias operações geométricas, como escala, tradução, rotação e determinação de interseções. Eles são explicados em [Seção 9.11](functions-geometry.md).

@@ -250,3 +250,4 @@ O catálogo `pg_partitioned_table` armazena informações sobre como as tabelas 
 
 
 
+

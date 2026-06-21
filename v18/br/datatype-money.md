@@ -57,6 +57,7 @@ O tipo `money` armazena um valor monetário com precisão fracionária fixa; vej
 
 
 
+
 Como a saída deste tipo de dados é sensível ao local, pode não funcionar carregar os dados `money` em um banco de dados que tenha um conjunto diferente de `lc_monetary`. Para evitar problemas, antes de restaurar um dump em um novo banco de dados, certifique-se de que `lc_monetary` tenha o mesmo valor ou um valor equivalente ao do banco de dados que foi exportado.
 
 Os valores dos tipos de dados `numeric`, `int` e `bigint` podem ser convertidos para `money`. A conversão dos tipos de dados `real` e `double precision` pode ser feita por conversão para `numeric` primeiro, por exemplo:

@@ -179,3 +179,4 @@ O catálogo `pg_foreign_data_wrapper` armazena definições de wrappers de dados
 
 
 
+

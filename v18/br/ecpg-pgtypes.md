@@ -439,6 +439,7 @@ Observe que a função sempre assume datas formatadas MDY e, atualmente, não h�
 
 
 
+
 `PGTYPESdate_to_asc` [#](#PGTYPESDATETOASC) :   Retorne a representação textual de uma variável de data.
 
 ```
@@ -676,6 +677,7 @@ Todos os outros caracteres são copiados 1:1 para a string de saída.
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -945,6 +947,7 @@ A função recebe um ponteiro para o valor da data que deve conter o resultado d
 
 
 
+
 ### 34.6.4. O tipo de marcação de tempo [#](#ECPG-PGTYPES-TIMESTAMP)
 
 O tipo de marcação de tempo em C permite que seus programas lidem com dados do tipo timestamp do SQL. Consulte a [Seção 8.5](datatype-datetime.md) para o tipo equivalente no servidor PostgreSQL.
@@ -1035,6 +1038,7 @@ Em geral, a string de entrada pode conter qualquer combinação de uma especific
   </tr>
  </tbody>
 </table>
+
 
 
 

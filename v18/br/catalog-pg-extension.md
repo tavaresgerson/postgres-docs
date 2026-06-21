@@ -203,4 +203,5 @@ O catálogo `pg_extension` armazena informações sobre as extensões instaladas
 
 
 
+
 Observe que, ao contrário da maioria dos catálogos com uma coluna de “namespace”, `extnamespace` não deve ser entendido como se a extensão pertencesse a esse esquema. Os nomes das extensões nunca são qualificados pelo esquema. Em vez disso, `extnamespace` indica o esquema que contém a maioria ou todos os objetos da extensão. Se `extrelocatable` for verdadeiro, então esse esquema deve, de fato, conter todos os objetos qualificáveis pelo esquema que pertencem à extensão.

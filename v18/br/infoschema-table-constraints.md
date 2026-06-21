@@ -238,3 +238,4 @@ A vista `table_constraints` contém todas as restrições que pertencem a tabela
 
 
 
+

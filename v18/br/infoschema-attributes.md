@@ -606,4 +606,5 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
 
 
 
+
 Veja também, sob [Seção 35.17](infoschema-columns.md), uma visão de estrutura semelhante, para obter mais informações sobre algumas das colunas.

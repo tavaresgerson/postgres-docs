@@ -102,4 +102,5 @@ A visão `pg_available_extensions` lista as extensões disponíveis para instala
 
 
 
+
 A visão `pg_available_extensions` é somente de leitura.

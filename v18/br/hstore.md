@@ -551,6 +551,7 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
 
 
 
+
 **Tabela F.7. `hstore` Funções**
 
 
@@ -1409,6 +1410,7 @@ a b
   </tr>
  </tbody>
 </table>
+
 
 
 

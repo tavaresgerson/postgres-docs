@@ -403,3 +403,4 @@ O catálogo `pg_operator` armazena informações sobre operadores. Consulte [CRE
 
 
 
+

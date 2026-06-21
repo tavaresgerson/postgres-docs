@@ -186,3 +186,4 @@ Como as identidades dos usuários são globais para o clúster, o `pg_auth_membe
 
 
 
+

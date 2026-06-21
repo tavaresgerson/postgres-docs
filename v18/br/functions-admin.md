@@ -221,6 +221,7 @@ As funções descritas nesta seção são usadas para controlar e monitorar uma 
 
 
 
+
 ### 9.28.2. Funções de Sinalização do Servidor [#](#FUNCTIONS-ADMIN-SIGNAL)
 
 As funções exibidas na [Tabela 9.96](functions-admin.md#FUNCTIONS-ADMIN-SIGNAL-TABLE) enviam sinais de controle para outros processos do servidor. O uso dessas funções é restrito por padrão a superusuários, mas o acesso pode ser concedido a outros usuários usando `GRANT`, com exceções indicadas.
@@ -457,6 +458,7 @@ Cada uma dessas funções retorna `true` se o sinal for enviado com sucesso e `f
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -951,6 +953,7 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
 
 
 
+
 `pg_current_wal_lsn` exibe a localização atual do log de pré-escrita no mesmo formato utilizado pelas funções acima. Da mesma forma, `pg_current_wal_insert_lsn` exibe a localização atual de inserção do log de pré-escrita e `pg_current_wal_flush_lsn` exibe a localização atual de esvaziamento do log de pré-escrita. A localização de inserção é o "lógico" final do log de pré-escrita em qualquer instante, enquanto a localização de escrita é o final do que foi efetivamente escrito dos buffers internos do servidor, e a localização de esvaziamento é a última localização conhecida que foi escrita em armazenamento durável. A localização de escrita é o final do que pode ser examinado de fora do servidor, e geralmente é o que você deseja se estiver interessado em arquivar arquivos de log de pré-escrita parcialmente completos. As localizações de inserção e esvaziamento são disponibilizadas principalmente para fins de depuração do servidor. Essas são todas operações somente de leitura e não requerem permissões de superusuário.
 
 Você pode usar `pg_walfile_name_offset` para extrair o nome do arquivo de registro de pré-escrita correspondente e o deslocamento de byte de um valor `pg_lsn`. Por exemplo:
@@ -1137,6 +1140,7 @@ As funções apresentadas na [Tabela 9.98](functions-admin.md#FUNCTIONS-RECOVERY
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -1361,6 +1365,7 @@ As funções mostradas na [Tabela 9.99](functions-admin.md#FUNCTIONS-RECOVERY-CO
 
 
 
+
 `pg_wal_replay_pause` e `pg_wal_replay_resume` não podem ser executados enquanto uma promoção está em andamento. Se uma promoção for acionada enquanto a recuperação está em pausa, o estado de pausa termina e a promoção continua.
 
 Se a replicação em streaming estiver desativada, o estado pausado pode continuar indefinidamente sem problemas. Se a replicação em streaming estiver em andamento, os registros WAL continuarão a ser recebidos, o que acabará por preencher o espaço em disco disponível, dependendo da duração da pausa, da taxa de geração de WAL e do espaço em disco disponível.
@@ -1449,6 +1454,7 @@ Os instantâneos são exportados com a função `pg_export_snapshot`, mostrada n
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -2913,6 +2919,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
 
 
 
+
 ### 9.28.7. Funções de Gerenciamento de Objetos de Banco de Dados [#](#FUNCTIONS-ADMIN-DBOBJECT)
 
 As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-DBSIZE) calculam o uso do espaço em disco dos objetos do banco de dados, ou auxiliam na apresentação ou compreensão dos resultados de uso. Os resultados `bigint` são medidos em bytes. Se um OID que não representa um objeto existente for passado para uma dessas funções, `NULL` é retornado.
@@ -3381,6 +3388,7 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
 
 
 
+
 As funções acima que operam em tabelas ou índices aceitam um argumento `regclass`, que é simplesmente o OID da tabela ou índice no catálogo de sistema `pg_class`. No entanto, você não precisa procurar o OID manualmente, pois o conversor de entrada do tipo de dados `regclass` fará o trabalho por você. Veja [Seção 8.19](datatype-oid.md) para detalhes.
 
 As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-DBLOCATION) auxiliam na identificação dos arquivos específicos do disco associados aos objetos do banco de dados.
@@ -3537,6 +3545,7 @@ As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-D
 
 
 
+
 [Tabela 9.104](functions-admin.md#FUNCTIONS-ADMIN-COLLATION) lista as funções usadas para gerenciar colatões.
 
 **Tabela 9.104. Funções de Gerenciamento de Colaboração**
@@ -3681,6 +3690,7 @@ As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-D
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -4164,6 +4174,7 @@ SELECT pg_restore_attribute_stats( 'schemaname', 'myschema', 'relname',    'myta
 
 
 
+
 [Tabela 9.106](functions-admin.md#FUNCTIONS-INFO-PARTITION) lista funções que fornecem informações sobre a estrutura de tabelas particionadas.
 
 **Tabela 9.106. Funções de informações de particionamento**
@@ -4290,6 +4301,7 @@ SELECT pg_restore_attribute_stats( 'schemaname', 'myschema', 'relname',    'myta
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -4479,6 +4491,7 @@ SELECT pg_size_pretty(sum(pg_relation_size(relid))) AS total_size
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -5346,6 +5359,7 @@ SELECT convert_from(pg_read_binary_file('file_in_utf8.txt'), 'UTF8');
 
 
 
+
 ### 9.28.10. Funções de bloqueio de aconselhamento [#](#FUNCTIONS-ADVISORY-LOCKS)
 
 As funções apresentadas na [Tabela 9.109](functions-admin.md#FUNCTIONS-ADVISORY-LOCKS-TABLE) gerenciam bloqueios de aconselhamento. Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 13.3.5](explicit-locking.md#ADVISORY-LOCKS).
@@ -5959,6 +5973,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
   </tr>
  </tbody>
 </table>
+
 
 
 

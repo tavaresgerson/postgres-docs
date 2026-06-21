@@ -354,4 +354,5 @@ A vista `pg_stats_ext` fornece acesso a informações sobre cada objeto de estat
 
 
 
+
 O número máximo de entradas nos campos da matriz pode ser controlado de forma coluna por coluna usando o comando `ALTER TABLE SET STATISTICS`(sql-altertable.md "ALTER TABLE"), ou globalmente, definindo o parâmetro de tempo de execução [default_statistics_target](runtime-config-query.md#GUC-DEFAULT-STATISTICS-TARGET).

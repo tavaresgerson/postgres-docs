@@ -119,3 +119,4 @@ A vista `collation_character_set_applicability` identifica qual conjunto de cara
 
 
 
+

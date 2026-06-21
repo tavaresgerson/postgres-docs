@@ -133,6 +133,7 @@ pg_mcv_list_items ( pg_mcv_list ) → setof record
 
 
 
+
 A função `pg_mcv_list_items` pode ser usada da seguinte forma:
 
 ```

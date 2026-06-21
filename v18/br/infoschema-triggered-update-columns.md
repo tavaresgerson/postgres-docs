@@ -134,3 +134,4 @@ Para gatilhos no banco de dados atual que especificam uma lista de colunas (como
 
 
 
+

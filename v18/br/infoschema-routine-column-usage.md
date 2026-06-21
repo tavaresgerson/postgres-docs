@@ -191,3 +191,4 @@ A vista `routine_column_usage` identifica todas as colunas que são usadas por u
 
 
 
+

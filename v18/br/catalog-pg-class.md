@@ -920,4 +920,5 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
 
 
 
+
 Vários dos indicadores lógicos em `pg_class` são mantidos preguiçosamente: eles são garantidos como verdadeiros se esse for o estado correto, mas podem não ser redefinidos como falsos imediatamente quando a condição não é mais verdadeira. Por exemplo, `relhasindex` é definido por [`CREATE INDEX`](sql-createindex.md "CREATE INDEX"), mas nunca é limpo por [`DROP INDEX`](sql-dropindex.md "DROP INDEX"). Em vez disso, [`VACUUM`](sql-vacuum.md "VACUUM") limpa `relhasindex` se encontrar que a tabela não tem índices. Esse arranjo evita condições de corrida e melhora a concorrência.

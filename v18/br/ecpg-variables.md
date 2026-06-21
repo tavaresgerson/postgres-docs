@@ -471,6 +471,7 @@ Nesse sentido, existem dois tipos de dados: Alguns tipos de dados simples do Pos
 
 
 
+
 #### 34.4.4.1. Tratamento de cadeias de caracteres [#](#ECPG-CHAR)
 
 Para lidar com tipos de dados de cadeia de caracteres SQL, como `varchar` e `text`, existem duas maneiras possíveis de declarar as variáveis hostis.

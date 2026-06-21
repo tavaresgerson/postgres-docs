@@ -243,6 +243,7 @@ A vista `pg_sequences` fornece acesso a informações úteis sobre cada sequênc
 
 
 
+
 A coluna `last_value` será considerada nula se qualquer uma das seguintes condições for verdadeira:
 
 * A sequência ainda não foi lida. * O usuário atual não tem privilégio `USAGE` ou `SELECT` na sequência. * A sequência não está registrada e o servidor está em standby.

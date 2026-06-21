@@ -224,6 +224,7 @@ Como as identidades dos usuários são globais para o clúster, o `pg_authid` é
 
 
 
+
 Para uma senha criptografada por MD5, a coluna `rolpassword` começará com a string `md5`, seguida por um hash hexadecimal de 32 caracteres MD5. O hash MD5 será a senha do usuário concatenada ao seu nome de usuário. Por exemplo, se o usuário `joe` tiver senha `xyzzy`, o PostgreSQL armazenará o hash md5 de `xyzzyjoe`.
 
 ### Aviso

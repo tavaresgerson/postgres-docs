@@ -528,6 +528,7 @@ A comparação de duas cadeias de caracteres (colação) no ICU é determinada p
 
 
 
+
 Em todos os níveis, mesmo com a normalização completa desativada, a normalização básica é realizada. Por exemplo, `'á'` pode ser composto pelos pontos de código `U&'\0061\0301'` ou pelo único ponto de código `U&'\00E1'`, e essas sequências serão consideradas iguais mesmo no nível `identic`. Para tratar qualquer diferença na representação dos pontos de código como distintos, use uma ordenação criada com `deterministic` definida como `true`.
 
 ##### 23.2.3.1.1. Exemplos de nível de cotação [#](#ICU-COLLATION-LEVEL-EXAMPLES)
@@ -1034,6 +1035,7 @@ SELECT 'x-y' = 'x_y' COLLATE level4; -- false
   </tr>
  </tbody>
 </table>
+
 
 
 

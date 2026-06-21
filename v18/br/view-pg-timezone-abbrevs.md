@@ -79,4 +79,5 @@ A vista `pg_timezone_abbrevs` fornece uma lista de abreviações de fuso horári
 
 
 
+
 Enquanto a maioria das abreviações de fuso horário representam desvios fixos em relação ao UTC, há algumas que historicamente variaram em valor (consulte a Seção B.4 para mais informações). Nesses casos, essa visão apresenta seu significado atual.

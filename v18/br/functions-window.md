@@ -473,6 +473,7 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
 
 
 
+
 Todas as funções listadas em [Tabela 9.67](functions-window.md#FUNCTIONS-WINDOW-TABLE) dependem da ordem de classificação especificada pela cláusula `ORDER BY` da definição associada da janela. As linhas que não são distintas quando consideradas apenas as colunas `ORDER BY` são chamadas de *pares*. As quatro funções de classificação (incluindo `cume_dist`) são definidas de modo que elas forneçam a mesma resposta para todas as linhas de um grupo de pares.
 
 Observe que `first_value`, `last_value` e `nth_value` consideram apenas as linhas dentro do "quadro de janela", que, por padrão, contém as linhas desde o início da partição até o último parceiro da linha atual. Isso provavelmente dará resultados inúteis para `last_value` e, às vezes, também para `nth_value`. Você pode redefinir o quadro adicionando uma especificação de quadro adequada (`RANGE`, `ROWS` ou `GROUPS`) à cláusula `OVER`. Consulte [Seção 4.2.8](sql-expressions.md#SYNTAX-WINDOW-FUNCTIONS "4.2.8. Window Function Calls") para obter mais informações sobre especificações de quadro.

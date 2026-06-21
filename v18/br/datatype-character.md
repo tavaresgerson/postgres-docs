@@ -113,6 +113,7 @@
 
 
 
+
 [Tabela 8.4](datatype-character.md#DATATYPE-CHARACTER-TABLE) mostra os tipos de caracteres de propósito geral disponíveis no PostgreSQL.
 
 O SQL define dois tipos de caracteres principais: `character varying(n)` e `character(n)`, onde *`n`* é um inteiro positivo. Ambos esses tipos podem armazenar strings com até *`n`* caracteres (não bytes) de comprimento. Uma tentativa de armazenar uma string mais longa em uma coluna desses tipos resultará em um erro, a menos que os excessos de caracteres sejam todos espaços, no qual caso a string será truncada até o comprimento máximo. (Essa exceção um tanto bizarra é exigida pelo padrão SQL.) No entanto, se uma pessoa explicitamente converter um valor para `character varying(n)` ou `character(n)`, então um valor de comprimento excessivo será truncado para *`n`* caracteres sem levantar um erro. (Isso também é exigido pelo padrão SQL.) Se a string a ser armazenada for mais curta que o comprimento declarado, os valores do tipo `character` serão preenchidos com espaços; os valores do tipo `character varying` simplesmente armazenarão a string mais curta.
@@ -197,6 +198,7 @@ SELECT b, char_length(b) FROM test2;
 
 
 
+
 Existem outros dois tipos de caracteres de comprimento fixo no PostgreSQL, mostrados em [Tabela 8.5](datatype-character.md#DATATYPE-CHARACTER-SPECIAL-TABLE). Estes não são destinados ao uso geral, apenas para uso nos catálogos internos do sistema. O tipo `name` é usado para armazenar identificadores. Seu comprimento é atualmente definido como 64 bytes (63 caracteres utilizáveis mais o terminador) mas deve ser referenciado usando a constante `NAMEDATALEN` no código-fonte `C`. O comprimento é definido no momento da compilação (e, portanto, é ajustável para usos especiais); o comprimento máximo padrão pode mudar em uma versão futura. O tipo `"char"` (note as aspas) é diferente de `char(1)` na medida em que ele usa apenas um byte de armazenamento, e, portanto, pode armazenar apenas um único caractere ASCII. Ele é usado nos catálogos do sistema como um tipo de enumeração simplista.
 
 **Tabela 8.5. Tipos de Caracteres Especiais**
@@ -251,6 +253,7 @@ Existem outros dois tipos de caracteres de comprimento fixo no PostgreSQL, mostr
   </tr>
  </tbody>
 </table>
+
 
 
 

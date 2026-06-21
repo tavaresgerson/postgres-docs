@@ -694,6 +694,7 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
 
 
 
+
 Funções adicionais de manipulação de strings binárias estão disponíveis e estão listadas em [Tabela 9.12](functions-binarystring.md#FUNCTIONS-BINARYSTRING-OTHER). Algumas delas são usadas internamente para implementar as funções de string padrão do SQL listadas em [Tabela 9.11](functions-binarystring.md#FUNCTIONS-BINARYSTRING-SQL).
 
 **Tabela 9.12. Outras funções de string binária**
@@ -1416,6 +1417,7 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
 
 
 
+
 As funções `get_byte` e `set_byte` numeram o primeiro byte de uma string binária como byte 0. As funções `get_bit` e `set_bit` numeram bits da direita para a esquerda em cada byte; por exemplo, o bit 0 é o bit menos significativo do primeiro byte, e o bit 15 é o bit mais significativo do segundo byte.
 
 Por razões históricas, a função `md5` retorna um valor codificado em hexadecimal do tipo `text`, enquanto as funções SHA-2 retornam do tipo `bytea`. Use as funções `encode`(functions-binarystring.md#FUNCTION-ENCODE) e `decode`(functions-binarystring.md#FUNCTION-DECODE) para converter entre os dois. Por exemplo, escreva `encode(sha256('abc'), 'hex')` para obter uma representação de texto codificada em hexadecimal, ou `decode(md5('abc'), 'hex')` para obter um valor de `bytea`.
@@ -1750,6 +1752,7 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
   </tr>
  </tbody>
 </table>
+
 
 
 

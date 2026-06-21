@@ -153,6 +153,7 @@ Por padrão, a visualização `pg_ident_file_mappings` pode ser lida apenas por 
 
 
 
+
 Normalmente, uma linha que reflete uma entrada incorreta terá valores apenas nos campos `line_number` e `error`.
 
 Veja [Capítulo 20](client-authentication.md "Chapter 20. Client Authentication") para mais informações sobre a configuração de autenticação do cliente.

@@ -119,3 +119,4 @@ O catálogo `pg_user_mapping` armazena as mapeamentos de usuário local para rem
 
 
 
+

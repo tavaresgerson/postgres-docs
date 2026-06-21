@@ -969,6 +969,7 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
 
 
 
+
 Por razões de segurança, apenas superusuários e papéis com privilégios da função `pg_read_all_stats` têm permissão para ver o texto SQL e as consultas `queryid` executadas por outros usuários. Outros usuários, no entanto, podem ver as estatísticas, desde que a visualização tenha sido instalada em seu banco de dados.
 
 As consultas planejáveis (ou seja, `SELECT`, `INSERT`, `UPDATE`, `DELETE` e `MERGE`) e os comandos de utilidade são combinados em uma única entrada `pg_stat_statements` sempre que tiverem estruturas de consulta idênticas de acordo com um cálculo de hash interno. Tipicamente, duas consultas serão consideradas iguais para este propósito se forem semanticamente equivalentes, exceto pelos valores das constantes literais que aparecem na consulta.
@@ -1079,6 +1080,7 @@ As estatísticas do próprio módulo `pg_stat_statements` são acompanhadas e di
   </tr>
  </tbody>
 </table>
+
 
 
 

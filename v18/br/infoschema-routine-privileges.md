@@ -202,3 +202,4 @@ A visão `routine_privileges` identifica todos os privilégios concedidos em fun
 
 
 
+

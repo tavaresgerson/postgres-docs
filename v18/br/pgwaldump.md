@@ -168,6 +168,7 @@ As imagens da página inteira são salvas com o seguinte formato de nome de arqu
 
 
 
+
 `-?` `--help`: Mostrar ajuda sobre os argumentos da linha de comando do comando pg_waldump e sair.
 
 ## Meio Ambiente

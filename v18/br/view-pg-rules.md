@@ -127,4 +127,5 @@ A vista `pg_rules` fornece acesso a informações úteis sobre as regras de rees
 
 
 
+
 A visão `pg_rules` exclui as regras de visões e visões materializadas do `ON SELECT`; essas podem ser vistas em [`pg_views`](view-pg-views.md "53.37. pg_views") e [`pg_matviews`](view-pg-matviews.md "53.14. pg_matviews").

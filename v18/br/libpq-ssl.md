@@ -204,6 +204,7 @@ Todas as opções de SSL apresentam custos na forma de criptografia e troca de c
 
 
 
+
 A diferença entre `verify-ca` e `verify-full` depende da política da CA raiz. Se uma CA pública for usada, `verify-ca` permite conexões a um servidor que *alguém mais* pode ter registrado com a CA. Neste caso, `verify-full` deve ser sempre usado. Se uma CA local for usada, ou até mesmo um certificado autoassinado, usar `verify-ca` muitas vezes oferece proteção suficiente.
 
 O valor padrão para `sslmode` é `prefer`. Como mostrado na tabela, isso não faz sentido do ponto de vista de segurança, e promete apenas sobrecarga de desempenho se possível. É fornecido apenas como padrão para compatibilidade reversa e não é recomendado em implantações seguras.
@@ -290,6 +291,7 @@ O valor padrão para `sslmode` é `prefer`. Como mostrado na tabela, isso não f
   </tr>
  </tbody>
 </table>
+
 
 
 

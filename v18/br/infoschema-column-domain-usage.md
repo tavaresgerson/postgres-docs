@@ -134,3 +134,4 @@ A vista `column_domain_usage` identifica todas as colunas (de uma tabela ou de u
 
 
 
+

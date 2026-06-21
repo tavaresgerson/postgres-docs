@@ -154,3 +154,4 @@ A vista `pg_indexes` fornece acesso a informações úteis sobre cada índice no
 
 
 
+

@@ -73,6 +73,7 @@ O nível `minimal` gera o menor volume de WAL. Ele não registra nenhuma informa
 
 
 
+
 No entanto, o WAL mínimo não contém informações suficientes para recuperação em ponto no tempo, então `replica` ou superior deve ser usado para habilitar o arquivamento contínuo ([archive_mode](runtime-config-wal.md#GUC-ARCHIVE-MODE)) e a replicação binária em streaming. De fato, o servidor não iniciará sequer nesse modo se `max_wal_senders` não for zero. Note que alterar `wal_level` para `minimal` torna os backups anteriores da base inutilizáveis para recuperação em ponto no tempo e servidores de standby.
 
 No nível `logical`, as mesmas informações são registradas como com `replica`, além das informações necessárias para extrair conjuntos de alterações lógicas do WAL. O uso de um nível de `logical` aumentará o volume do WAL, especialmente se muitas tabelas forem configuradas para `REPLICA IDENTITY FULL` e muitas declarações de `UPDATE` e `DELETE` forem executadas.
@@ -212,6 +213,7 @@ Este parâmetro pode ser alterado a qualquer momento; o comportamento de qualque
   </tr>
  </tbody>
 </table>
+
 
 
 

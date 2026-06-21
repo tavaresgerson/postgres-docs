@@ -373,6 +373,7 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
 
 
 
+
 As funções codificadas em C (seja embutidas ou carregadas dinamicamente) podem ser declaradas para aceitar ou retornar qualquer um desses pseudotípicos. Cabe ao autor da função garantir que a função se comporte de forma segura quando um pseudotípico é usado como tipo de argumento.
 
 As funções codificadas em linguagens procedimentais podem usar pseudotipos apenas conforme permitido por suas linguagens de implementação. Atualmente, a maioria das linguagens procedimentais proíbe o uso de um pseudotipo como tipo de argumento e permite apenas `void` e `record` como tipo de resultado (mais `trigger` ou `event_trigger` quando a função é usada como um gatilho ou gatilho de evento). Algumas também suportam funções polimórficas usando os pseudotipos polimórficos, que são mostrados acima e discutidos em detalhes em [Seção 36.2.5](extend-type-system.md#EXTEND-TYPES-POLYMORPHIC).

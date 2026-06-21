@@ -132,3 +132,4 @@ Os objetos que possuem privilégios iniciais definidos por initdb terão entrada
 
 
 
+

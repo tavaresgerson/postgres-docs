@@ -89,3 +89,4 @@ A tabela `sql_sizing` contém informações sobre vários limites de tamanho e v
 
 
 
+

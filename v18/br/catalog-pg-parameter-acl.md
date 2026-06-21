@@ -80,3 +80,4 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_parameter_acl` é comp
 
 
 
+

@@ -173,3 +173,4 @@ Se um privilégio tiver sido concedido em uma tabela inteira, ele aparecerá nes
 
 
 
+

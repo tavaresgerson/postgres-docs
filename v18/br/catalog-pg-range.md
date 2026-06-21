@@ -220,4 +220,5 @@ O catálogo `pg_range` armazena informações sobre os tipos de faixa. Isso é a
 
 
 
+
 `rngsubopc` (mais `rngcollation`, se o tipo de elemento for coletável) determina a ordem de classificação usada pelo tipo de intervalo. `rngcanonical` é usado quando o tipo de elemento é discreto. `rngsubdiff` é opcional, mas deve ser fornecido para melhorar o desempenho dos índices GiST no tipo de intervalo.

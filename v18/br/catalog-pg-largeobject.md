@@ -96,4 +96,5 @@ Antes do PostgreSQL 9.0, não havia uma estrutura de permissão associada a obje
 
 
 
+
 Cada linha de `pg_largeobject` contém dados para uma página de um grande objeto, começando no deslocamento de byte (`pageno * LOBLKSIZE`) dentro do objeto. A implementação permite armazenamento esparso: as páginas podem estar ausentes e podem ser menores que os `LOBLKSIZE` bytes, mesmo que não sejam a última página do objeto. Regiões ausentes dentro de um grande objeto são lidas como zeros.

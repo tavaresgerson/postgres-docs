@@ -251,6 +251,7 @@ Esta seção descreve funções e operadores para examinar e manipular strings d
 
 
 
+
 Algumas das funções disponíveis para strings binárias também estão disponíveis para strings de bits, conforme mostrado na [Tabela 9.15](functions-bitstring.md#FUNCTIONS-BIT-STRING-TABLE).
 
 **Tabela 9.15. Funções de String de Bits**
@@ -771,6 +772,7 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
   </tr>
  </tbody>
 </table>
+
 
 
 

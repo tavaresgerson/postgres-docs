@@ -408,6 +408,7 @@ Recusamos o comando `LOAD`(sql-load.md "LOAD") em todos os casos, porque qualque
 
 
 
+
 ### F.40.7. Limitações [#](#SEPGSQL-LIMITATIONS)
 
 Permissões de Linguagem de Definição de Dados (DDL): Devido a restrições de implementação, algumas operações de DDL não verificam permissões.

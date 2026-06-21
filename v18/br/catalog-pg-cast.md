@@ -195,6 +195,7 @@ Deve-se notar que `pg_cast` não representa todo o tipo de conversão que o sist
 
 
 
+
 As funções de cast listadas em `pg_cast` devem sempre receber o tipo de fonte de cast como seu primeiro tipo de argumento e retornar o tipo de destino de cast como seu tipo de resultado. Uma função de cast pode ter até três argumentos. O segundo argumento, se presente, deve ser do tipo `integer`; ele recebe o modificador de tipo associado ao tipo de destino, ou -1 se não houver nenhum. O terceiro argumento, se presente, deve ser do tipo `boolean`; ele recebe `true` se a cast for uma cast explícita, `false` caso contrário.
 
 É legítimo criar uma entrada `pg_cast` na qual os tipos de origem e destino sejam os mesmos, se a função associada receber mais de um argumento. Tais entradas representam "funções de coerção de comprimento" que coagem valores do tipo a serem legais para um valor específico do modificador de tipo.

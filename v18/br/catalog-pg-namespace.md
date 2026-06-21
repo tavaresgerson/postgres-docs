@@ -104,3 +104,4 @@ O catálogo `pg_namespace` armazena namespaces. Um namespace é a estrutura subj
 
 
 
+

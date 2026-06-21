@@ -181,3 +181,4 @@ No PostgreSQL, as sequências também suportam os privilégios `SELECT` e `UPDAT
 
 
 
+

@@ -14,8 +14,6 @@ O "Protocolo de Identificação" é descrito em [RFC 1413](https://datatracker.i
 
 O inconveniente desse procedimento é que ele depende da integridade do cliente: se a máquina do cliente não é confiável ou comprometida, um invasor poderia executar praticamente qualquer programa na porta 113 e retornar qualquer nome de usuário que escolheu. Esse método de autenticação, portanto, é apropriado apenas para redes fechadas, onde cada máquina do cliente está sob controle rigoroso e onde os administradores do banco de dados e do sistema operam em contato próximo. Em outras palavras, você deve confiar na máquina que executa o servidor ident. Atenção ao aviso:
 
-
-
 <table border="0" class="blockquote" style="width: 100%; cellspacing: 0; cellpadding: 0;" summary="Block quote">
  <tr>
   <td valign="top" width="10%">
@@ -39,10 +37,5 @@ O inconveniente desse procedimento é que ele depende da integridade do cliente:
   </td>
  </tr>
 </table>
-
-
-
-
-
 
 Alguns servidores ident têm uma opção não padrão que faz com que o nome do usuário retornado seja criptografado, usando uma chave que apenas o administrador da máquina de origem conhece. Esta opção *não deve* ser usada ao usar o servidor ident com o PostgreSQL, uma vez que o PostgreSQL não tem nenhuma maneira de descriptografar a string retornada para determinar o nome real do usuário.

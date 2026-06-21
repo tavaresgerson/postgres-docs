@@ -318,6 +318,7 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
 
 
 
+
 **Tabela 27.2. Visualizações de estatísticas coletadas**
 
 
@@ -812,6 +813,7 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -1397,6 +1399,7 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
 
 
 
+
 ### Nota
 
 As colunas `wait_event` e `state` são independentes. Se um backend estiver no estado `active`, ele pode ou não ser `waiting` em algum evento. Se o estado for `active` e `wait_event` não for nulo, isso significa que uma consulta está sendo executada, mas está sendo bloqueada em algum lugar do sistema. Para manter o overhead de relatórios baixo, o sistema não tenta sincronizar diferentes aspectos dos dados de atividade para um backend. Como resultado, podem existir discrepâncias efêmeras entre as colunas da visão.
@@ -1591,6 +1594,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -1814,6 +1818,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
 
 
 
+
 **Tabela 27.6. Eventos de espera do tipo `Bufferpin`**
 
 
@@ -1849,6 +1854,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -1982,6 +1988,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
 
 
 
+
 **Tabela 27.8. Eventos de espera do tipo `Extension`**
 
 
@@ -2017,6 +2024,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -2890,6 +2898,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
 
 
 
+
 **Tabela 27.10. Eventos de espera do tipo `Ipc`**
 
 
@@ -3526,6 +3535,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
 
 
 
+
 **Tabela 27.11. Eventos de espera do tipo `Lock`**
 
 
@@ -3691,6 +3701,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -4622,6 +4633,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
 
 
 
+
 **Tabela 27.13. Eventos de espera do tipo `Timeout`**
 
 
@@ -4755,6 +4767,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -5255,6 +5268,7 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
 
 
 
+
 Os tempos de atraso relatados na visualização `pg_stat_replication` são medições do tempo necessário para que as WAL recentes sejam escritas, esvaziadas e reinterpretadas e para que o remetente saiba disso. Esses tempos representam o atraso de commit que foi (ou teria sido) introduzido por cada nível de commit sincronizado, se o servidor remoto fosse configurado como um standby sincronizado. Para um standby assíncrono, a coluna `replay_lag` aproxima o atraso antes das transações recentes se tornarem visíveis para consultas. Se o servidor de standby tiver completado totalmente o servidor de envio e não houver mais atividade de WAL, os tempos de atraso mais recentemente medidos continuarão a ser exibidos por um curto período e, em seguida, mostrarão NULL.
 
 Os tempos de atraso funcionam automaticamente para a replicação física. Os plugins de decodificação lógica podem emitir mensagens de rastreamento opcionalmente; se não o fizerem, o mecanismo de rastreamento simplesmente exibirá NULL lag.
@@ -5456,6 +5470,7 @@ A visualização `pg_stat_replication_slots` conterá uma linha por slot de repl
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -5732,6 +5747,7 @@ A vista `pg_stat_wal_receiver` conterá apenas uma linha, mostrando estatística
 
 
 
+
 ### 27.2.7. `pg_stat_recovery_prefetch` [#](#MONITORING-PG-STAT-RECOVERY-PREFETCH)
 
 A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colunas `wal_distance`, `block_distance` e `io_depth` mostram os valores atuais, e as outras colunas mostram contadores acumulados que podem ser redefinidos com a função `pg_stat_reset_shared`.
@@ -5909,6 +5925,7 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -6117,6 +6134,7 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -6384,6 +6402,7 @@ A visualização `pg_stat_subscription_stats` conterá uma linha por assinatura.
 
 
 
+
 ### 27.2.10. `pg_stat_ssl` [#](#MONITORING-PG-STAT-SSL-VIEW)
 
 A visão `pg_stat_ssl` conterá uma linha por processo de emissor de backend ou WAL, mostrando estatísticas sobre o uso do SSL nesta conexão. Ela pode ser associada a `pg_stat_activity` ou `pg_stat_replication` na coluna `pid` para obter mais detalhes sobre a conexão.
@@ -6545,6 +6564,7 @@ A visão `pg_stat_ssl` conterá uma linha por processo de emissor de backend ou 
 
 
 
+
 ### 27.2.11. `pg_stat_gssapi` [#](#MONITORING-PG-STAT-GSSAPI-VIEW)
 
 A visão `pg_stat_gssapi` conterá uma linha por backend, mostrando informações sobre o uso do GSSAPI nesta conexão. Ela pode ser associada a `pg_stat_activity` ou `pg_stat_replication` na coluna `pid` para obter mais detalhes sobre a conexão.
@@ -6651,6 +6671,7 @@ A visão `pg_stat_gssapi` conterá uma linha por backend, mostrando informaçõe
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -6789,6 +6810,7 @@ A visão `pg_stat_archiver` sempre terá uma única linha, contendo dados sobre 
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -7411,6 +7433,7 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
 
 
 
+
 Alguns tipos de backend nunca realizam operações de E/S em alguns objetos de E/S e/ou em alguns contextos de E/S. Essas linhas são omitidas da visualização. Por exemplo, o checkpointer não faz o checkpoint de tabelas temporárias, portanto, não haverá linhas para `backend_type` `checkpointer` e `object` `temp relation`.
 
 Além disso, algumas operações de E/S nunca serão realizadas por certos tipos de backend ou em certos objetos de E/S e/ou em certos contextos de E/S. Essas células serão NULL. Por exemplo, as tabelas temporárias não são `fsync`adas, então `fsyncs` será NULL para `object` `temp relation`. Além disso, o escritor de segundo plano não realiza leituras, então `reads` será NULL em linhas para `backend_type` `background writer`.
@@ -7514,6 +7537,7 @@ A vista `pg_stat_bgwriter` sempre terá uma única linha, contendo dados sobre o
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -7721,6 +7745,7 @@ A visão `pg_stat_checkpointer` sempre terá uma única linha, contendo dados so
 
 
 
+
 Os pontos de verificação podem ser ignorados se o servidor não estiver ativo desde o último. `num_timed` e `num_requested` contam tanto os pontos de verificação completos quanto os ignorados, enquanto `num_done` registra apenas os completos. Da mesma forma, os pontos de reinício podem ser ignorados se o último registro de ponto de verificação reinterpretado já for o último ponto de reinício. `restartpoints_timed` e `restartpoints_req` contam tanto os pontos de verificação completos quanto os ignorados, enquanto `restartpoints_done` registra apenas os completos.
 
 ### 27.2.16.  `pg_stat_wal` [#](#MONITORING-PG-STAT-WAL-VIEW)
@@ -7825,6 +7850,7 @@ A vista `pg_stat_wal` sempre terá uma única linha, contendo dados sobre a ativ
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -8372,6 +8398,7 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
 
 
 
+
 ### 27.2.18.  `pg_stat_database_conflicts` [#](#MONITORING-PG-STAT-DATABASE-CONFLICTS-VIEW)
 
 A visão `pg_stat_database_conflicts` conterá uma linha por banco de dados, mostrando estatísticas de nível de banco de dados sobre cancelamentos de consulta que ocorrem devido a conflitos com recuperação em servidores de espera. Esta visão conterá apenas informações sobre servidores de espera, uma vez que os conflitos não ocorrem em servidores primários.
@@ -8523,6 +8550,7 @@ A visão `pg_stat_database_conflicts` conterá uma linha por banco de dados, mos
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -9061,6 +9089,7 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
 
 
 
+
 ### 27.2.20. `pg_stat_all_indexes` [#](#MONITORING-PG-STAT-ALL-INDEXES-VIEW)
 
 A visualização `pg_stat_all_indexes` conterá uma linha para cada índice no banco de dados atual, mostrando estatísticas sobre os acessos a esse índice específico. As visualizações `pg_stat_user_indexes` e `pg_stat_sys_indexes` contêm as mesmas informações, mas filtradas para mostrar apenas índices de usuário e sistema, respectivamente.
@@ -9223,6 +9252,7 @@ A visualização `pg_stat_all_indexes` conterá uma linha para cada índice no b
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -9446,6 +9476,7 @@ A visualização `pg_statio_all_tables` conterá uma linha para cada tabela no b
 
 
 
+
 ### 27.2.22. `pg_statio_all_indexes` [#](#MONITORING-PG-STATIO-ALL-INDEXES-VIEW)
 
 A visualização `pg_statio_all_indexes` conterá uma linha para cada índice no banco de dados atual, mostrando estatísticas sobre o I/O nesse índice específico. As visualizações `pg_statio_user_indexes` e `pg_statio_sys_indexes` contêm as mesmas informações, mas filtradas para mostrar apenas índices de usuário e sistema, respectivamente.
@@ -9584,6 +9615,7 @@ A visualização `pg_statio_all_indexes` conterá uma linha para cada índice no
 
 
 
+
 ### 27.2.23. `pg_statio_all_sequences` [#](#MONITORING-PG-STATIO-ALL-SEQUENCES-VIEW)
 
 A visualização `pg_statio_all_sequences` conterá uma linha para cada sequência no banco de dados atual, mostrando estatísticas sobre o I/O nessa sequência específica.
@@ -9686,6 +9718,7 @@ A visualização `pg_statio_all_sequences` conterá uma linha para cada sequênc
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -9809,6 +9842,7 @@ A visualização `pg_stat_user_functions` conterá uma linha para cada função 
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -9979,6 +10013,7 @@ Para cada cache `SLRU` que faz parte do servidor principal, há um parâmetro de
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -10580,6 +10615,7 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
 
 
 
+
 ### Aviso
 
 Usar `pg_stat_reset()` também redefere os contadores que o autovacuum usa para determinar quando deve ser executado um vácuo ou um análise. Redefinir esses contadores pode fazer com que o autovacuum não realize o trabalho necessário, o que pode causar problemas como o engasgo da tabela ou estatísticas de tabela desatualizadas. Um `ANALYZE` para todo o banco de dados é recomendado após a redefinição das estatísticas.
@@ -10895,6 +10931,7 @@ FROM pg_stat_get_backend_idset() AS backendid;
   </tr>
  </tbody>
 </table>
+
 
 
 

@@ -350,6 +350,7 @@ Existe uma função simples de substituição de variáveis para arquivos de scr
 
 
 
+
 Os comandos meta de arquivo de script começam com uma barra invertida (`\`) e normalmente se estendem até o final da linha, embora possam ser continuados para linhas adicionais escrevendo barra invertida-retorno. Os argumentos de um comando meta são separados por espaço em branco. Esses comandos meta são suportados:
 
 `\gset [prefix]` `\aset [prefix]` [#](#PGBENCH-METACOMMAND-GSET): Esses comandos podem ser usados para encerrar consultas SQL, ocupando o lugar do ponto e vírgula final (`;`).
@@ -1359,6 +1360,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
 
 
 
+
 ### Funções embutidas
 
 As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorporadas ao pgbench e podem ser usadas em expressões que aparecem em [[`\set`](pgbench.md#PGBENCH-METACOMMAND-SET)].
@@ -2224,6 +2226,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
   </tr>
  </tbody>
 </table>
+
 
 
 

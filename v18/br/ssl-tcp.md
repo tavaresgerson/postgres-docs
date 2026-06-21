@@ -153,6 +153,7 @@ A segunda abordagem combina qualquer método de autenticação para as entradas 
 
 
 
+
 O servidor lê esses arquivos no início do servidor e sempre que a configuração do servidor é recarregada. Em sistemas Windows, eles também são lidos novamente sempre que um novo processo de backend é gerado para uma nova conexão do cliente.
 
 Se um erro nesses arquivos for detectado no início do servidor, o servidor se negará a iniciar. Mas se um erro for detectado durante uma recarga da configuração, os arquivos são ignorados e a configuração SSL antiga continua sendo usada. Em sistemas Windows, se um erro nesses arquivos for detectado no início do backend, esse backend não conseguirá estabelecer uma conexão SSL. Em todos esses casos, a condição do erro é relatada no log do servidor.

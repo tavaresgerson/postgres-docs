@@ -690,6 +690,7 @@ memcpy(destination->data, buffer, 40);
 
 
 
+
 Agora que já analisamos todas as possíveis estruturas para os tipos de base, podemos mostrar alguns exemplos de funções reais.
 
 ### 36.10.3. Convenções de Chamada da Versão 1 [#](#XFUNC-C-V1-CALL-CONV)

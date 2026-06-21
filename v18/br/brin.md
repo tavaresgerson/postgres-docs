@@ -24,8 +24,6 @@ Existem várias maneiras de iniciar a síntese inicial de um intervalo de págin
 
 Por último, as seguintes funções podem ser utilizadas (enquanto essas funções estão em execução, [search_path](runtime-config-client.md#GUC-SEARCH-PATH) é temporariamente alterado para `pg_catalog, pg_temp`):
 
-
-
 <table border="0" class="simplelist" summary="Simple list">
  <tr>
   <td>
@@ -45,11 +43,6 @@ Por último, as seguintes funções podem ser utilizadas (enquanto essas funçõ
  </tr>
 </table>
 
-
-
-
-
-
 Quando a auto-resumo é habilitada, um pedido é enviado para `autovacuum` para executar uma resumo direcionado para uma faixa de blocos quando uma inserção é detectada para o primeiro item da primeira página da próxima faixa de blocos, para ser cumprido na próxima vez que um trabalhador de auto-vazamento termina de executar no mesmo banco de dados. Se a fila de pedidos estiver cheia, o pedido não é registrado e uma mensagem é enviada para o log do servidor:
 
 ```
@@ -67,8 +60,6 @@ A distribuição principal do PostgreSQL inclui as classes de operadores BRIN mo
 As classes do operador *minmax* armazenam os valores mínimo e máximo que aparecem na coluna indexada dentro do intervalo. As classes do operador *inclusion* armazenam um valor que inclui os valores na coluna indexada dentro do intervalo. As classes do operador *bloom* constroem um filtro Bloom para todos os valores dentro do intervalo. As classes do operador *minmax-multi* armazenam múltiplos valores mínimo e máximo, representando valores que aparecem na coluna indexada dentro do intervalo.
 
 **Tabela 65.4. Classes de operadores BRIN integrados**
-
-
 
 <table border="1" class="table" summary="Built-in BRIN Operator Classes">
  <colgroup>
@@ -2431,6 +2422,7 @@ As classes do operador *minmax* armazenam os valores mínimo e máximo que apare
 
 
 
+
 #### 65.5.2.1. Parâmetros da Classe do Operador [#](#BRIN-BUILTIN-OPCLASSES--PARAMETERS)
 
 Algumas das classes de operadores embutidas permitem especificar parâmetros que afetam o comportamento da classe de operador. Cada classe de operador tem seu próprio conjunto de parâmetros permitidos. Apenas as classes de operadores `bloom` e `minmax-multi` permitem especificar parâmetros:
@@ -2593,6 +2585,7 @@ Para escrever uma classe de operador para um tipo de dados que implementa um con
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -2905,6 +2898,7 @@ Para escrever uma classe de operador para um tipo de dados complexo que tem valo
 
 
 
+
 Os números de função de suporte de 1 a 10 são reservados para as funções internas do BRIN, então as funções do nível SQL começam com o número 11. O número de função de suporte 11 é a função principal necessária para construir o índice. Ele deve aceitar dois argumentos com o mesmo tipo de dados que a classe de operador, e retornar a união deles. A classe de operador de inclusão pode armazenar valores de união com diferentes tipos de dados se for definida com o parâmetro `STORAGE`. O valor de retorno da função de união deve corresponder ao tipo de dados `STORAGE`.
 
 Os números de suporte 12 e 14 são fornecidos para suportar irregularidades de tipos de dados embutidos. O número de função 12 é usado para suportar endereços de rede de diferentes famílias que não podem ser mesclados. O número de função 14 é usado para suportar intervalos vazios. O número de função 13 é um opcional, mas recomendado, que permite que o novo valor seja verificado antes de ser passado para a função de união. Como o quadro BRIN pode agilizar algumas operações quando a união não é alterada, usar essa função pode melhorar o desempenho do índice.
@@ -3004,6 +2998,7 @@ Para escrever uma classe de operador para um tipo de dados que implemente apenas
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -3142,6 +3137,7 @@ A classe do operador minmax-multi também é destinada a tipos de dados que impl
   </tr>
  </tbody>
 </table>
+
 
 
 

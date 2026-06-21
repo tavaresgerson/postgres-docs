@@ -786,6 +786,7 @@ A distribuição principal do PostgreSQL inclui as classes de operadores GiST mo
 
 
 
+
 Por razões históricas, a classe de operador `inet_ops` não é a classe padrão para os tipos `inet` e `cidr`. Para usá-la, mencione o nome da classe em `CREATE INDEX`, por exemplo
 
 ```

@@ -1065,6 +1065,7 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
 
 
 
+
 ### Nota
 
 Para tipos de largura fixa usados em tabelas de sistema, é fundamental que o tamanho e o alinhamento definidos em `pg_type` estejam de acordo com a forma como o compilador irá organizar a coluna em uma estrutura que representa uma linha de tabela.
@@ -1256,6 +1257,7 @@ Para tipos de largura fixa usados em tabelas de sistema, é fundamental que o ta
   </tr>
  </tbody>
 </table>
+
 
 
 

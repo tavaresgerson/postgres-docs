@@ -134,3 +134,4 @@ A vista `column_udt_usage` identifica todas as colunas que utilizam tipos de dad
 
 
 
+

@@ -108,6 +108,7 @@ Observe que essa visão não inclui a memória alocada usando a infraestrutura d
 
 
 
+
 As alocações anônimas são as alocações que foram feitas diretamente com `ShmemAlloc()`, em vez de através de `ShmemInitStruct()` ou `ShmemInitHash()`.
 
 Por padrão, a visualização `pg_shmem_allocations` pode ser lida apenas por superusuários ou papéis com privilégios da função `pg_read_all_stats`.

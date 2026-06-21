@@ -522,3 +522,4 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
 
 
 
+

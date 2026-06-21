@@ -333,6 +333,7 @@ Por exemplo, se a sincronização do diretório de dados leva 25 segundos e, pos
 
 
 
+
 ### 19.8.3. O que registrar [#](#RUNTIME-CONFIG-LOGGING-WHAT)
 
 ### Nota
@@ -431,6 +432,7 @@ O que você escolhe registrar pode ter implicações de segurança; veja [Seçã
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -791,6 +793,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
  </tbody>
 </table>
+
 
 
 
@@ -1291,6 +1294,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
  </tbody>
 </table>
+
 
 
 

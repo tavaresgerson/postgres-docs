@@ -53,6 +53,7 @@ O tipo de dados `bytea` permite o armazenamento de cadeias binárias; veja [Tabe
 
 
 
+
 Uma string binária é uma sequência de octetos (ou bytes). As strings binárias se distinguem das strings de caracteres em dois modos. Primeiro, as strings binárias permitem especificamente armazenar octetos de valor zero e outros octetos “não imprimíveis” (geralmente, octetos fora do intervalo decimal de 32 a 126). As strings de caracteres não permitem octetos zero e também não permitem quaisquer outros valores de octeto e sequências de valores de octeto que sejam inválidos de acordo com o conjunto de caracteres de codificação selecionado pelo banco de dados. Em segundo lugar, as operações em strings binárias processam os bytes reais, enquanto o processamento de strings de caracteres depende das configurações do local. Em resumo, as strings binárias são apropriadas para armazenar dados que o programador considera como “bytes brutos”, enquanto as strings de caracteres são apropriadas para armazenar texto.
 
 O tipo `bytea` suporta dois formatos para entrada e saída: o formato "hex" e o histórico formato "escape" do PostgreSQL. Ambos são sempre aceitos na entrada. O formato de saída depende do parâmetro de configuração [bytea_output](runtime-config-client.md#GUC-BYTEA-OUTPUT); o padrão é hex. (Observe que o formato hex foi introduzido no PostgreSQL 9.0; versões anteriores e algumas ferramentas não o entendem.)
@@ -236,6 +237,7 @@ Ao inserir valores de `bytea` em formato de escape, os octetos de certos valores
 
 
 
+
 O requisito de escapar de octaltos *não imprimíveis* varia de acordo com as configurações do local. Em alguns casos, você pode ficar com eles sem escapá-los.
 
 A razão pela qual as aspas simples devem ser duplicadas, conforme mostrado em [Tabela 8.7](datatype-binary.md#DATATYPE-BINARY-SQLESC), é que isso é verdade para qualquer literal de string em um comando SQL. O parser genérico de literal de string consome as aspas externas e reduz qualquer par de aspas simples a um caractere de dados. O que a função de entrada `bytea` vê é apenas uma aspas simples, que ela trata como um caractere de dados simples. No entanto, a função de entrada `bytea` trata barras invertidas como especiais, e os outros comportamentos mostrados em [Tabela 8.7](datatype-binary.md#DATATYPE-BINARY-SQLESC) são implementados por essa função.
@@ -376,6 +378,7 @@ O octal com valor decimal 92 (barra) é duplicado na saída. Os detalhes estão 
   </tr>
  </tbody>
 </table>
+
 
 
 

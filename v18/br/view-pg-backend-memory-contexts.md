@@ -194,6 +194,7 @@ A vista `pg_backend_memory_contexts` exibe todos os contextos de memória do pro
 
 
 
+
 Por padrão, a visualização `pg_backend_memory_contexts` pode ser lida apenas por superusuários ou papéis com os privilégios do papel `pg_read_all_stats`.
 
 Como os contextos de memória são criados e destruídos durante a execução de uma consulta, os identificadores armazenados na coluna `path` podem ser instáveis entre múltiplas invocações da visão na mesma consulta. O exemplo abaixo demonstra um uso eficaz desta coluna e calcula o número total de bytes usados por `CacheMemoryContext` e todos os seus filhos:

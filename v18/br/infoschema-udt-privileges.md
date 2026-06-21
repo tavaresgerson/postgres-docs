@@ -144,3 +144,4 @@ A vista `udt_privileges` identifica os privilégios `USAGE` concedidos em tipos 
 
 
 
+

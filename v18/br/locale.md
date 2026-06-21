@@ -99,6 +99,7 @@ Ocasionalmente, é útil misturar regras de vários locais, por exemplo, usar re
 
 
 
+
 Os nomes das categorias traduzem-se em nomes de opções do `initdb` para substituir a escolha do local para uma categoria específica. Por exemplo, para definir o local como francês canadense, mas usar as regras dos EUA para formatação de moeda, use `initdb --locale=fr_CA --lc-monetary=en_US`.
 
 Se você deseja que o sistema se comporte como se não tivesse suporte a localização, use o nome especial de localização `C`, ou, de forma equivalente, `POSIX`.

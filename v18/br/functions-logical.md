@@ -159,6 +159,7 @@ O SQL utiliza um sistema lógico de três valores com verdadeiro, falso e `null`
 
 
 
+
 <table border="1" class="informaltable">
  <colgroup>
   <col/>
@@ -210,6 +211,7 @@ O SQL utiliza um sistema lógico de três valores com verdadeiro, falso e `null`
   </tr>
  </tbody>
 </table>
+
 
 
 

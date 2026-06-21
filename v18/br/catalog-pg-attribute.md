@@ -594,4 +594,5 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
 
 
 
+
 Na entrada do `pg_attribute` de uma coluna excluída, o `atttypid` é redefinido para zero, mas o `attlen` e os outros campos copiados do [`pg_type`](catalog-pg-type.md "52.64. pg_type") ainda são válidos. Esse arranjo é necessário para lidar com a situação em que o tipo de dados da coluna excluída foi posteriormente excluído, e, portanto, não há mais uma linha de `pg_type`. O `attlen` e os outros campos podem ser usados para interpretar o conteúdo de uma linha da tabela.

@@ -596,6 +596,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
 
 
 
+
 **Tabela 9.33. Funções de data/hora**
 
 
@@ -2174,6 +2175,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
 
 
 
+
 Além dessas funções, o operador SQL `OVERLAPS` é suportado:
 
 ```
@@ -2516,6 +2518,7 @@ Os valores válidos para *`field`* são:
 
 
 
+
 Quando o valor de entrada é do tipo `timestamp with time zone`, a troncamento é realizada em relação a um fuso horário específico; por exemplo, a troncamento para `day` produz um valor que é meia-noite nessa zona. Por padrão, a troncamento é feita em relação à configuração atual de [TimeZone](runtime-config-client.md#GUC-TIMEZONE), mas o argumento opcional *`time_zone`* pode ser fornecido para especificar um fuso horário diferente. O nome do fuso horário pode ser especificado em qualquer uma das maneiras descritas em [Seção 8.5.3](datatype-datetime.md#DATATYPE-TIMEZONES).
 
 Não é possível especificar um fuso horário ao processar as entradas `timestamp without time zone` ou `interval`. Essas são sempre tomadas como verdadeiras.
@@ -2842,6 +2845,7 @@ O operador `AT TIME ZONE` converte o rótulo de tempo *sem* fuso horário para/d
   </tr>
  </tbody>
 </table>
+
 
 
 

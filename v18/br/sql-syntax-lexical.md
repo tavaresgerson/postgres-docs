@@ -303,6 +303,7 @@ O PostgreSQL também aceita constantes de cadeia de "escape", que são uma exten
 
 
 
+
 Qualquer outro caractere que siga uma barra invertida é tomado literalmente. Assim, para incluir um caractere de barra invertida, escreva duas barras invertidas (`\\`). Além disso, uma única citação pode ser incluída em uma string de escape escrevendo `\'`, além da maneira normal de `''`.
 
 É sua responsabilidade garantir que as sequências de bytes que você cria, especialmente ao usar escapamentos octal ou hexadecimal, comportem caracteres válidos no conjunto de caracteres do servidor. Uma alternativa útil é usar escapamentos Unicode ou a sintaxe de escapamento Unicode alternativa, explicada em [Seção 4.1.2.3](sql-syntax-lexical.md#SQL-SYNTAX-STRINGS-UESCAPE); então o servidor verificará se a conversão de caracteres é possível.
@@ -804,6 +805,7 @@ Um comentário é removido do fluxo de entrada antes de uma análise sintática 
   </tr>
  </tbody>
 </table>
+
 
 
 
