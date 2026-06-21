@@ -830,26 +830,27 @@ Dependendo dos operadores que você incluiu na classe, o tipo de dados de `query
 
 A declaração SQL da função deve parecer assim:
 
-``` CREATE OR REPLACE FUNCTION my_union(internal, internal) RETURNS storage_type AS 'MODULE_PATHNAME' LANGUAGE C STRICT;
-    ```
+```
+CREATE OR REPLACE FUNCTION my_union(internal, internal) RETURNS storage_type AS 'MODULE_PATHNAME' LANGUAGE C STRICT;
+```
 
 E o código correspondente no módulo C poderia então seguir este esqueleto:
 
-    ```
-    PG_FUNCTION_INFO_V1(my_union);
+```
+PG_FUNCTION_INFO_V1(my_union);
 
-    Datum my_union(PG_FUNCTION_ARGS) { GistEntryVector *entryvec = (GistEntryVector *) PG_GETARG_POINTER(0); GISTENTRY  *ent = entryvec->vector; data_type  *out, *tmp, *old; int         numranges, i = 0;
+Datum my_union(PG_FUNCTION_ARGS) { GistEntryVector *entryvec = (GistEntryVector *) PG_GETARG_POINTER(0); GISTENTRY  *ent = entryvec->vector; data_type  *out, *tmp, *old; int         numranges, i = 0;
 
-        numranges = entryvec->n; tmp = DatumGetDataType(ent[0].key); out = tmp;
+    numranges = entryvec->n; tmp = DatumGetDataType(ent[0].key); out = tmp;
 
-        if (numranges == 1) { out = data_type_deep_copy(tmp);
-
-            PG_RETURN_DATA_TYPE_P(out); }
-
-        for (i = 1; i < numranges; i++) { old = out; tmp = DatumGetDataType(ent[i].key); out = my_union_implementation(out, tmp); }
+    if (numranges == 1) { out = data_type_deep_copy(tmp);
 
         PG_RETURN_DATA_TYPE_P(out); }
-    ```
+
+    for (i = 1; i < numranges; i++) { old = out; tmp = DatumGetDataType(ent[i].key); out = my_union_implementation(out, tmp); }
+
+    PG_RETURN_DATA_TYPE_P(out); }
+```
 
 Como você pode ver, neste esqueleto, estamos lidando com um tipo de dados onde `union(X, Y, Z) = union(union(X, Y), Z)`. É fácil o suficiente para suportar tipos de dados onde isso não é o caso, implementando o algoritmo de união adequado neste método de suporte GiST.
 
@@ -883,14 +884,10 @@ E o código correspondente no módulo C poderia então seguir este esqueleto:
 
 Você precisa adaptar *`compressed_data_type`* ao tipo específico para o qual você está convertendo, para, claro, comprimir seus nós de folha.
 
-`decompress`
-:   Converte a representação armazenada de um item de dados em um formato que pode ser manipulado pelos outros métodos GiST na classe de operadores.
-    Se o método `decompress` for omitido, presume-se que os outros métodos GiST possam trabalhar diretamente no formato de dados armazenado.
-    (`decompress` não é necessariamente o inverso do método `compress`; em particular,
-    se `compress` for perdas, então é impossível
-    para `decompress` reconstruir exatamente os dados originais. `decompress` não é necessariamente equivalente
-    a `fetch`, também, pois os outros métodos GiST podem não
-    requerer a reconstrução completa dos dados.)
+`decompress`: Converte a representação armazenada de um item de dados em um formato que pode ser manipulado pelos outros métodos GiST na classe de operadores.
+Se o método `decompress` for omitido, presume-se que os outros métodos GiST possam trabalhar diretamente no formato de dados armazenado.
+
+(`decompress` não é necessariamente o inverso do método `compress`; em particular, se `compress` for perdas, então é impossível para `decompress` reconstruir exatamente os dados originais. `decompress` não é necessariamente equivalente a `fetch`, também, pois os outros métodos GiST podem não requerer a reconstrução completa dos dados.)
 
 A declaração SQL da função deve parecer assim:
 
