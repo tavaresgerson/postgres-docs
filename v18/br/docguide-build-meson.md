@@ -8,4 +8,4 @@ Para construir apenas a versão HTML da documentação:
 build$ ninja html
 ```
 
-Para uma lista de outros alvos de documentação, consulte [Seção 17.4.4.3][(install-meson.md#TARGETS-MESON-DOCUMENTATION "17.4.4.3. Documentation Targets")]. A saída aparece no subdiretório `build/doc/src/sgml`.
+Para uma lista de outros alvos de documentação, consulte [Seção 17.4.4.3](install-meson.md#TARGETS-MESON-DOCUMENTATION). A saída aparece no subdiretório `build/doc/src/sgml`.

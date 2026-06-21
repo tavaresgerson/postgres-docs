@@ -20,15 +20,15 @@ O arquivo de regras tem o seguinte formato:
 
 * Cada linha representa uma regra de tradução, consistindo em um caractere com acento seguido de um caractere sem acento. A primeira é traduzida para a segunda. Por exemplo,
 
-  ```
-  À        A
-  Á        A
-  Â        A
-  Ã        A
-  Ä        A
-  Å        A
-  Æ        AE
-  ```
+```
+À        A
+Á        A
+Â        A
+Ã        A
+Ä        A
+Å        A
+Æ        AE
+```
 
 Os dois caracteres devem ser separados por espaço em branco, e qualquer espaço em branco inicial ou final em uma linha é ignorado.
 * Alternativamente, se apenas um caractere for dado em uma linha, as instâncias desse caractere são excluídas; isso é útil em linguagens onde acentos são representados por caracteres separados.

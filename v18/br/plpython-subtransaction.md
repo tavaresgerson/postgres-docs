@@ -2,7 +2,7 @@
 
 * [44.7.1. Geradores de contexto de subtransação](plpython-subtransaction.md#PLPYTHON-SUBTRANSACTION-CONTEXT-MANAGERS)
 
-Recuperar erros causados pelo acesso ao banco de dados, conforme descrito em [Seção 44.6.2][(plpython-database.md#PLPYTHON-TRAPPING "44.6.2. Trapping Errors")] pode levar a uma situação indesejável em que algumas operações têm sucesso antes de uma delas falhar, e, após a recuperação desse erro, os dados permanecem em um estado inconsistente. O PL/Python oferece uma solução para esse problema na forma de subtransações explícitas.
+Recuperar erros causados pelo acesso ao banco de dados, conforme descrito em [Seção 44.6.2](plpython-database.md#PLPYTHON-TRAPPING) pode levar a uma situação indesejável em que algumas operações têm sucesso antes de uma delas falhar, e, após a recuperação desse erro, os dados permanecem em um estado inconsistente. O PL/Python oferece uma solução para esse problema na forma de subtransações explícitas.
 
 ### 44.7.1. Geradores de contexto de subtransação [#](#PLPYTHON-SUBTRANSACTION-CONTEXT-MANAGERS)
 

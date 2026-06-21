@@ -1,10 +1,10 @@
 ## 32.19. Suporte SSL [#](#LIBPQ-SSL)
 
-* [32.19.1. Verificação do Cliente dos Certificados do Servidor][(libpq-ssl.md#LIBQ-SSL-CERTIFICATES)]
-* [32.19.2. Certificados do Cliente][(libpq-ssl.md#LIBPQ-SSL-CLIENTCERT)]
-* [32.19.3. Proteção Fornecida em Diferentes Modos][(libpq-ssl.md#LIBPQ-SSL-PROTECTION)]
-* [32.19.4. Uso do Arquivo de Cliente SSL][(libpq-ssl.md#LIBPQ-SSL-FILEUSAGE)]
-* [32.19.5. Inicialização da Biblioteca SSL][(libpq-ssl.md#LIBPQ-SSL-INITIALIZE)]
+* [32.19.1. Verificação do Cliente dos Certificados do Servidor](libpq-ssl.md#LIBQ-SSL-CERTIFICATES)
+* [32.19.2. Certificados do Cliente](libpq-ssl.md#LIBPQ-SSL-CLIENTCERT)
+* [32.19.3. Proteção Fornecida em Diferentes Modos](libpq-ssl.md#LIBPQ-SSL-PROTECTION)
+* [32.19.4. Uso do Arquivo de Cliente SSL](libpq-ssl.md#LIBPQ-SSL-FILEUSAGE)
+* [32.19.5. Inicialização da Biblioteca SSL](libpq-ssl.md#LIBPQ-SSL-INITIALIZE)
 
 O PostgreSQL tem suporte nativo para usar conexões SSL para criptografar comunicações cliente/servidor usando protocolos TLS para maior segurança. Consulte a [Seção 18.9] para obter detalhes sobre a funcionalidade SSL do lado do servidor.
 
@@ -22,7 +22,7 @@ No modo `verify-full`, o nome do host é comparado com o(s) atributo(s) de Nome 
 
 ### Nota
 
-Para compatibilidade reversa com versões anteriores do PostgreSQL, o endereço IP do host é verificado de uma maneira diferente de [RFC 6125][(https://datatracker.ietf.org/doc/html/rfc6125)]. O endereço IP do host é sempre verificado contra SANs `dNSName` e `iPAddress`, e pode ser verificado contra o atributo Common Name se não houver SANs relevantes.
+Para compatibilidade reversa com versões anteriores do PostgreSQL, o endereço IP do host é verificado de uma maneira diferente de [RFC 6125](https://datatracker.ietf.org/doc/html/rfc6125). O endereço IP do host é sempre verificado contra SANs `dNSName` e `iPAddress`, e pode ser verificado contra o atributo Common Name se não houver SANs relevantes.
 
 Para permitir a verificação do certificado do servidor, um ou mais certificados raiz devem ser colocados no arquivo `~/.postgresql/root.crt` no diretório de usuário. (No Microsoft Windows, o arquivo é denominado `%APPDATA%\postgresql\root.crt`.) Certificados intermediários também devem ser adicionados ao arquivo se forem necessários para vincular a cadeia de certificados enviada pelo servidor aos certificados raiz armazenados no cliente.
 
@@ -44,9 +44,9 @@ O primeiro certificado em `postgresql.crt` deve ser o certificado do cliente, po
 
 O certificado e a chave podem estar no formato PEM ou ASN.1 DER.
 
-A chave pode ser armazenada em texto claro ou criptografada com uma senha usando qualquer algoritmo suportado pelo OpenSSL, como AES-128. Se a chave for armazenada criptografada, a senha pode ser fornecida na opção de conexão [sslpassword][(libpq-connect.md#LIBPQ-CONNECT-SSLPASSWORD)]. Se uma chave criptografada for fornecida e a opção `sslpassword` estiver ausente ou em branco, a senha será solicitada interativamente pelo OpenSSL com um prompt `Enter PEM pass phrase:` se um TTY estiver disponível. As aplicações podem sobrepor o prompt do certificado do cliente e o tratamento do parâmetro `sslpassword` fornecendo seu próprio callback de senha da chave; veja [`PQsetSSLKeyPassHook_OpenSSL`][(libpq-connect.md#LIBPQ-PQSETSSLKEYPASSHOOK-OPENSSL)].
+A chave pode ser armazenada em texto claro ou criptografada com uma senha usando qualquer algoritmo suportado pelo OpenSSL, como AES-128. Se a chave for armazenada criptografada, a senha pode ser fornecida na opção de conexão [sslpassword](libpq-connect.md#LIBPQ-CONNECT-SSLPASSWORD). Se uma chave criptografada for fornecida e a opção `sslpassword` estiver ausente ou em branco, a senha será solicitada interativamente pelo OpenSSL com um prompt `Enter PEM pass phrase:` se um TTY estiver disponível. As aplicações podem sobrepor o prompt do certificado do cliente e o tratamento do parâmetro `sslpassword` fornecendo seu próprio callback de senha da chave; veja [`PQsetSSLKeyPassHook_OpenSSL`](libpq-connect.md#LIBPQ-PQSETSSLKEYPASSHOOK-OPENSSL).
 
-Para obter instruções sobre como criar certificados, consulte [Seção 18.9.5][(ssl-tcp.md#SSL-CERTIFICATE-CREATION "18.9.5. Creating Certificates")].
+Para obter instruções sobre como criar certificados, consulte [Seção 18.9.5](ssl-tcp.md#SSL-CERTIFICATE-CREATION).
 
 ### 32.19.3. Proteção fornecida em diferentes modos [#](#LIBPQ-SSL-PROTECTION)
 
@@ -69,123 +69,140 @@ Todas as opções de SSL apresentam custos na forma de criptografia e troca de c
 
 
 <table border="1" class="table" summary="SSL Mode Descriptions">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-<col class="col4"/>
-</colgroup>
-<thead>
-<tr>
-<th>
-<code class="literal">
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+  <col class="col4"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
+    <code class="literal">
      sslmode
     </code>
-</th>
-<th>
+   </th>
+   <th>
     Eavesdropping protection
    </th>
-<th>
-<acronym class="acronym">
+   <th>
+    <acronym class="acronym">
      MITM
     </acronym>
     protection
    </th>
-<th>Declaração</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+   <th>
+    Declaração
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      disable
     </code>
-</td>
-<td>
+   </td>
+   <td>
     No
    </td>
-<td>
+   <td>
     No
    </td>
-<td>Não me importo com a segurança e não quero pagar as despesas com criptografia.</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Não me importo com a segurança e não quero pagar as despesas com criptografia.
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      allow
     </code>
-</td>
-<td>
+   </td>
+   <td>
     Maybe
    </td>
-<td>
+   <td>
     No
    </td>
-<td>Não me importo com a segurança, mas vou pagar o custo da criptografia se o servidor insistir nisso.</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Não me importo com a segurança, mas vou pagar o custo da criptografia se o servidor insistir nisso.
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      prefer
     </code>
-</td>
-<td>
+   </td>
+   <td>
     Maybe
    </td>
-<td>
+   <td>
     No
    </td>
-<td>Não me importo com a criptografia, mas gostaria de pagar o custo da criptografia se o servidor a suportar.</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Não me importo com a criptografia, mas gostaria de pagar o custo da criptografia se o servidor a suportar.
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      require
     </code>
-</td>
-<td>
+   </td>
+   <td>
     Yes
    </td>
-<td>
+   <td>
     No
    </td>
-<td>Eu quero que meus dados sejam criptografados e aceito o custo adicional. Confio que a rede se encarregará de garantir que eu sempre me conecte ao servidor que quero.</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Eu quero que meus dados sejam criptografados e aceito o custo adicional. Confio que a rede se encarregará de garantir que eu sempre me conecte ao servidor que quero.
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      verify-ca
     </code>
-</td>
-<td>
+   </td>
+   <td>
     Yes
    </td>
-<td>
+   <td>
     Depends on CA policy
    </td>
-<td>Eu quero meus dados criptografados e aceito o custo adicional. Quero ter certeza de que me conecto a um servidor em que confio.</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Eu quero meus dados criptografados e aceito o custo adicional. Quero ter certeza de que me conecto a um servidor em que confio.
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      verify-full
     </code>
-</td>
-<td>
+   </td>
+   <td>
     Yes
    </td>
-<td>
+   <td>
     Yes
    </td>
-<td>Eu quero meus dados criptografados e aceito o custo adicional. Quero ter certeza de que me conecto a um servidor em que confio e que é o que especifico.</td>
-</tr>
-</tbody>
+   <td>
+    Eu quero meus dados criptografados e aceito o custo adicional. Quero ter certeza de que me conecto a um servidor em que confio e que é o que especifico.
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 A diferença entre `verify-ca` e `verify-full` depende da política da CA raiz. Se uma CA pública for usada, `verify-ca` permite conexões a um servidor que *alguém mais* pode ter registrado com a CA. Neste caso, `verify-full` deve ser sempre usado. Se uma CA local for usada, ou até mesmo um certificado autoassinado, usar `verify-ca` muitas vezes oferece proteção suficiente.
 
@@ -193,66 +210,89 @@ O valor padrão para `sslmode` é `prefer`. Como mostrado na tabela, isso não f
 
 ### 32.19.4. Uso do arquivo de cliente SSL [#](#LIBPQ-SSL-FILEUSAGE)
 
-[Tabela 32.2][(libpq-ssl.md#LIBPQ-SSL-FILE-USAGE "Table 32.2. Libpq/Client SSL File Usage")] resume os arquivos que são relevantes para a configuração SSL no cliente.
+[Tabela 32.2](libpq-ssl.md#LIBPQ-SSL-FILE-USAGE) resume os arquivos que são relevantes para a configuração SSL no cliente.
 
 **Tabela 32.2. Uso do arquivo SSL Libpq/Client**
 
 
 
 <table border="1" class="table" summary="Libpq/Client SSL File Usage">
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     File
    </th>
-<th>Conteúdo</th>
-<th>Efeito</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="filename">
+   <th>
+    Conteúdo
+   </th>
+   <th>
+    Efeito
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="filename">
      ~/.postgresql/postgresql.crt
     </code>
-</td>
-<td>certificado do cliente</td>
-<td>enviado ao servidor</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    certificado do cliente
+   </td>
+   <td>
+    enviado ao servidor
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      ~/.postgresql/postgresql.key
     </code>
-</td>
-<td>chave privada do cliente</td>
-<td>prova que o certificado do cliente foi enviado pelo proprietário; não indica que o proprietário do certificado é confiável</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    chave privada do cliente
+   </td>
+   <td>
+    prova que o certificado do cliente foi enviado pelo proprietário; não indica que o proprietário do certificado é confiável
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      ~/.postgresql/root.crt
     </code>
-</td>
-<td>autoridades de certificação confiáveis</td>
-<td>verifica que o certificado do servidor é assinado por uma autoridade de certificação confiável</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    autoridades de certificação confiáveis
+   </td>
+   <td>
+    verifica que o certificado do servidor é assinado por uma autoridade de certificação confiável
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      ~/.postgresql/root.crl
     </code>
-</td>
-<td>certificados revogados por autoridades de certificação</td>
-<td>o certificado do servidor não deve estar nesta lista</td>
-</tr>
-</tbody>
+   </td>
+   <td>
+    certificados revogados por autoridades de certificação
+   </td>
+   <td>
+    o certificado do servidor não deve estar nesta lista
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 
@@ -264,20 +304,18 @@ Consulte a documentação da versão do PostgreSQL que você está utilizando pa
 
 `PQinitOpenSSL` [#](#LIBPQ-PQINITOPENSSL): Permite que os aplicativos selecionem quais bibliotecas de segurança devem ser inicializadas.
 
-``` void PQinitOpenSSL(int do_ssl, int do_crypto);
-    ```
+```
+void PQinitOpenSSL(int do_ssl, int do_crypto);
+```
 
 Essa função é desatualizada e está presente apenas para compatibilidade reversa, ela não faz nada.
 
 `PQinitSSL` [#](#LIBPQ-PQINITSSL): Permite que os aplicativos selecionem quais bibliotecas de segurança devem ser inicializadas.
 
-``` void PQinitSSL(int do_ssl);
-    ```
+```
+void PQinitSSL(int do_ssl);
+```
 
 Essa função é equivalente a `PQinitOpenSSL(do_ssl, do_ssl)`. Essa função é descontinuada e apenas presente para compatibilidade reversa, ela não faz nada.
 
-[`PQinitSSL`](libpq-ssl.md#LIBPQ-PQINITSSL) e [`PQinitOpenSSL`](libpq-ssl.md#LIBPQ-PQINITOPENSSL) são mantidos para compatibilidade reversa, mas não são mais necessários
-desde o PostgreSQL 18.
-[`PQinitSSL`](libpq-ssl.md#LIBPQ-PQINITSSL) está presente desde o PostgreSQL 8.0, enquanto [`PQinitOpenSSL`](libpq-ssl.md#LIBPQ-PQINITOPENSSL)
-foi adicionado no PostgreSQL 8.4, então [`PQinitSSL`](libpq-ssl.md#LIBPQ-PQINITSSL)
-pode ser preferível para aplicações que precisam trabalhar com versões mais antigas do libpq.
+[`PQinitSSL`](libpq-ssl.md#LIBPQ-PQINITSSL) e [`PQinitOpenSSL`](libpq-ssl.md#LIBPQ-PQINITOPENSSL) são mantidos para compatibilidade reversa, mas não são mais necessários desde o PostgreSQL 18. [`PQinitSSL`](libpq-ssl.md#LIBPQ-PQINITSSL) está presente desde o PostgreSQL 8.0, enquanto [`PQinitOpenSSL`](libpq-ssl.md#LIBPQ-PQINITOPENSSL) foi adicionado no PostgreSQL 8.4, então [`PQinitSSL`](libpq-ssl.md#LIBPQ-PQINITSSL) pode ser preferível para aplicações que precisam trabalhar com versões mais antigas do libpq.

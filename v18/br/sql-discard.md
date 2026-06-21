@@ -22,8 +22,9 @@ DISCARD { ALL | PLANS | SEQUENCES | TEMPORARY | TEMP }
 
 `ALL`: Libera todos os recursos temporários associados à sessão atual e refaz a sessão ao seu estado inicial. Atualmente, isso tem o mesmo efeito que executar a seguinte sequência de instruções:
 
-``` CLOSE ALL; SET SESSION AUTHORIZATION DEFAULT; RESET ALL; DEALLOCATE ALL; UNLISTEN *; SELECT pg_advisory_unlock_all(); DISCARD PLANS; DISCARD TEMP; DISCARD SEQUENCES;
-    ```
+```
+CLOSE ALL; SET SESSION AUTHORIZATION DEFAULT; RESET ALL; DEALLOCATE ALL; UNLISTEN *; SELECT pg_advisory_unlock_all(); DISCARD PLANS; DISCARD TEMP; DISCARD SEQUENCES;
+```
 
 ## Notas
 

@@ -18,7 +18,7 @@ DROP SEQUENCE [ IF EXISTS ] name [, ...] [ CASCADE | RESTRICT ]
 
 *`name`*: O nome (opcionalmente qualificado por esquema) de uma sequência.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem da sequência e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem da sequência e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a interrupção da sequência se quaisquer objetos dependerem dela. Esse é o padrão.
 

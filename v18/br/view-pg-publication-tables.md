@@ -7,111 +7,144 @@ A vista `pg_publication_tables` fornece informações sobre o mapeamento entre a
 
 
 <table border="1" class="table" summary="pg_publication_tables Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">Tipo de coluna</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
+     Tipo de coluna
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       pubname
      </code>
-<code class="type">
+     <code class="type">
       name
-     </code>(referências<a class="link" href="catalog-pg-publication.md" title="52.40. pg_publication">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-publication.md" title="52.40. pg_publication">
+      <code class="structname">
        pg_publication
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       pubname
-     </code>)</p>
-<p>Nome da publicação</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     Nome da publicação
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       schemaname
      </code>
-<code class="type">
+     <code class="type">
       name
-     </code>(referências<a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
+      <code class="structname">
        pg_namespace
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       nspname
-     </code>)</p>
-<p>Nome do esquema que contém a tabela</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     Nome do esquema que contém a tabela
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       tablename
      </code>
-<code class="type">
+     <code class="type">
       name
-     </code>(referências<a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
+      <code class="structname">
        pg_class
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       relname
-     </code>)</p>
-<p>Nome da tabela</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     Nome da tabela
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       attnames
      </code>
-<code class="type">
+     <code class="type">
       name[]
-     </code>(referências<a class="link" href="catalog-pg-attribute.md" title="52.7. pg_attribute">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-attribute.md" title="52.7. pg_attribute">
+      <code class="structname">
        pg_attribute
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       attname
-     </code>)</p>
-<p>Nomes das colunas da tabela incluídos na publicação. Isso contém todas as colunas da tabela quando o usuário não especificou a lista de colunas para a tabela.</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     Nomes das colunas da tabela incluídos na publicação. Isso contém todas as colunas da tabela quando o usuário não especificou a lista de colunas para a tabela.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       rowfilter
      </code>
-<code class="type">
+     <code class="type">
       text
      </code>
-</p>
-<p>Expressão para a condição de qualificação da publicação da tabela</p>
-</td>
-</tr>
-</tbody>
+    </p>
+    <p>
+     Expressão para a condição de qualificação da publicação da tabela
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 

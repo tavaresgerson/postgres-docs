@@ -30,4 +30,4 @@ ERROR:  insert or update on table "weather" violates foreign key constraint "wea
 DETAIL:  Key (city)=(Berkeley) is not present in table "cities".
 ```
 
-O comportamento das chaves estrangeiras pode ser ajustado conforme a sua aplicação. Não iremos além deste exemplo simples neste tutorial, mas apenas nos referiremos a [Capítulo 5][(ddl.md "Chapter 5. Data Definition")] para obter mais informações. Fazer o uso correto das chaves estrangeiras definitivamente melhorará a qualidade de suas aplicações de banco de dados, portanto, é fortemente recomendado que você aprenda sobre elas.
+O comportamento das chaves estrangeiras pode ser ajustado conforme a sua aplicação. Não iremos além deste exemplo simples neste tutorial, mas apenas nos referiremos a [Capítulo 5](ddl.md) para obter mais informações. Fazer o uso correto das chaves estrangeiras definitivamente melhorará a qualidade de suas aplicações de banco de dados, portanto, é fortemente recomendado que você aprenda sobre elas.

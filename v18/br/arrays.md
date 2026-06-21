@@ -67,7 +67,7 @@ Essa constante é uma matriz bidimensional, 3 x 3, composta por três submatrize
 
 Para definir um elemento de um array como constante NULL, escreva `NULL` para o valor do elemento. (Qualquer variante maiúscula ou minúscula de `NULL` servirá.) Se você deseja um valor de string real "NULL", você deve colocá-lo entre aspas duplas.
 
-(Esses tipos de constantes de matriz são, na verdade, apenas um caso especial das constantes de tipo genérico discutidas na [Seção 4.1.2.7][(sql-syntax-lexical.md#SQL-SYNTAX-CONSTANTS-GENERIC "4.1.2.7. Constants of Other Types")]. A constante é inicialmente tratada como uma string e passada para a rotina de conversão de entrada de matriz. Pode ser necessária uma especificação explícita do tipo.)
+(Esses tipos de constantes de matriz são, na verdade, apenas um caso especial das constantes de tipo genérico discutidas na [Seção 4.1.2.7](sql-syntax-lexical.md#SQL-SYNTAX-CONSTANTS-GENERIC). A constante é inicialmente tratada como uma string e passada para a rotina de conversão de entrada de matriz. Pode ser necessária uma especificação explícita do tipo.)
 
 Agora podemos mostrar algumas declarações `INSERT`:
 
@@ -119,7 +119,7 @@ INSERT INTO sal_emp
     ARRAY[['breakfast', 'consulting'], ['meeting', 'lunch']]);
 ```
 
-Observe que os elementos da matriz são constantes ou expressões comuns do SQL; por exemplo, as literais de string são citadas com aspas simples, em vez de aspas duplas, como faria em uma literal de matriz. A sintaxe do construtor `ARRAY` é discutida com mais detalhes em [Seção 4.2.12][(sql-expressions.md#SQL-SYNTAX-ARRAY-CONSTRUCTORS "4.2.12. Array Constructors")].
+Observe que os elementos da matriz são constantes ou expressões comuns do SQL; por exemplo, as literais de string são citadas com aspas simples, em vez de aspas duplas, como faria em uma literal de matriz. A sintaxe do construtor `ARRAY` é discutida com mais detalhes em [Seção 4.2.12](sql-expressions.md#SQL-SYNTAX-ARRAY-CONSTRUCTORS).
 
 ### 8.15.3. Acessando Arrays [#](#ARRAYS-ACCESSING)
 
@@ -403,7 +403,7 @@ SELECT * FROM sal_emp WHERE pay_by_quarter[1] = 10000 OR
                             pay_by_quarter[4] = 10000;
 ```
 
-No entanto, isso rapidamente se torna tedioso para grandes matrizes e não é útil se o tamanho da matriz é desconhecido. Um método alternativo é descrito em [Seção 9.25][(functions-comparisons.md "9.25. Row and Array Comparisons")]. A consulta acima pode ser substituída por:
+No entanto, isso rapidamente se torna tedioso para grandes matrizes e não é útil se o tamanho da matriz é desconhecido. Um método alternativo é descrito em [Seção 9.25](functions-comparisons.md). A consulta acima pode ser substituída por:
 
 ```
 SELECT * FROM sal_emp WHERE 10000 = ANY (pay_by_quarter);
@@ -425,7 +425,7 @@ SELECT * FROM
  WHERE pay_by_quarter[s] = 10000;
 ```
 
-Essa função é descrita em [Tabela 9.70][(functions-srf.md#FUNCTIONS-SRF-SUBSCRIPTS "Table 9.70. Subscript Generating Functions")].
+Essa função é descrita em [Tabela 9.70](functions-srf.md#FUNCTIONS-SRF-SUBSCRIPTS).
 
 Você também pode pesquisar um array usando o operador `&&`, que verifica se o operando esquerdo sobrepõe-se ao operando direito. Por exemplo:
 
@@ -433,7 +433,7 @@ Você também pode pesquisar um array usando o operador `&&`, que verifica se o 
 SELECT * FROM sal_emp WHERE pay_by_quarter && ARRAY[10000];
 ```
 
-Isso e outros operadores de matriz são descritos mais adiante na [Seção 9.19][(functions-array.md "9.19. Array Functions and Operators")]. Pode ser acelerado por um índice apropriado, conforme descrito na [Seção 11.2][(indexes-types.md "11.2. Index Types")].
+Isso e outros operadores de matriz são descritos mais adiante na [Seção 9.19](functions-array.md). Pode ser acelerado por um índice apropriado, conforme descrito na [Seção 11.2](indexes-types.md).
 
 Você também pode procurar valores específicos em um array usando as funções `array_position` e `array_positions`. A primeira delas retorna o índice da primeira ocorrência de um valor em um array; a segunda retorna um array com os índices de todas as ocorrências do valor no array. Por exemplo:
 
@@ -475,7 +475,7 @@ SELECT f1[1][-2][3] AS e1, f1[1][-1][5] AS e2
 
 A rotina de saída de matriz incluirá dimensões explícitas em seu resultado apenas quando houver um ou mais limites inferiores diferentes de um.
 
-Se o valor escrito para um elemento for `NULL` (em qualquer caso, variante), o elemento é considerado NULL. A presença de quaisquer aspas ou barras invertidas desativa isso e permite que o valor literal da string “NULL” seja inserido. Além disso, para compatibilidade reversa com versões anteriores à versão 8.2 do PostgreSQL, o parâmetro de configuração [array_nulls][(runtime-config-compatible.md#GUC-ARRAY-NULLS)] pode ser convertido em `off` para suprimir o reconhecimento de `NULL` como NULL.
+Se o valor escrito para um elemento for `NULL` (em qualquer caso, variante), o elemento é considerado NULL. A presença de quaisquer aspas ou barras invertidas desativa isso e permite que o valor literal da string “NULL” seja inserido. Além disso, para compatibilidade reversa com versões anteriores à versão 8.2 do PostgreSQL, o parâmetro de configuração [array_nulls](runtime-config-compatible.md#GUC-ARRAY-NULLS) pode ser convertido em `off` para suprimir o reconhecimento de `NULL` como NULL.
 
 Como mostrado anteriormente, ao escrever um valor de matriz, você pode usar aspas duplas em torno de qualquer elemento individual da matriz. Você *deve* fazer isso se o valor do elemento de outra forma confundir o analisador de valor de matriz. Por exemplo, elementos que contêm chaves, vírgulas (ou o caractere delimitador do tipo de dados), aspas duplas, barras invertidas ou espaços em branco no início ou no fim devem ser citados. Strings vazias e strings que correspondem à palavra `NULL` também devem ser citadas. Para colocar uma aspa dupla ou barra invertida em um valor de elemento de matriz com aspas duplas, preceda-a com uma barra invertida. Alternativamente, você pode evitar aspas e usar escapagem de barra invertida para proteger todos os caracteres de dados que de outra forma seriam tomados como sintaxe de matriz.
 
@@ -483,4 +483,4 @@ Você pode adicionar espaços em branco antes de uma brace esquerda ou após uma
 
 ### DICA
 
-A sintaxe do construtor `ARRAY` (ver [Seção 4.2.12][(sql-expressions.md#SQL-SYNTAX-ARRAY-CONSTRUCTORS "4.2.12. Array Constructors")]) é frequentemente mais fácil de trabalhar do que a sintaxe de literal de matriz ao escrever valores de matriz em comandos SQL. Em `ARRAY`, os valores de elementos individuais são escritos da mesma maneira que seriam escritos quando não são membros de uma matriz.
+A sintaxe do construtor `ARRAY` (ver [Seção 4.2.12](sql-expressions.md#SQL-SYNTAX-ARRAY-CONSTRUCTORS)) é frequentemente mais fácil de trabalhar do que a sintaxe de literal de matriz ao escrever valores de matriz em comandos SQL. Em `ARRAY`, os valores de elementos individuais são escritos da mesma maneira que seriam escritos quando não são membros de uma matriz.

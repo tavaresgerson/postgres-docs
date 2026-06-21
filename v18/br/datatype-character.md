@@ -5,94 +5,115 @@
 
 
 <table border="1" class="table" summary="Character Types">
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>Nome</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="type">
+ <colgroup>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
+    Nome
+   </th>
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="type">
      character varying(
      <em class="replaceable">
-<code>
+      <code>
        n
       </code>
-</em>
+     </em>
      )
-    </code>,<code class="type">
+    </code>
+    ,
+    <code class="type">
      varchar(
      <em class="replaceable">
-<code>
+      <code>
        n
       </code>
-</em>
+     </em>
      )
     </code>
-</td>
-<td>com comprimento variável e limite</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    com comprimento variável e limite
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      character(
      <em class="replaceable">
-<code>
+      <code>
        n
       </code>
-</em>
+     </em>
      )
-    </code>,<code class="type">
+    </code>
+    ,
+    <code class="type">
      char(
      <em class="replaceable">
-<code>
+      <code>
        n
       </code>
-</em>
+     </em>
      )
-    </code>,<code class="type">
+    </code>
+    ,
+    <code class="type">
      bpchar(
      <em class="replaceable">
-<code>
+      <code>
        n
       </code>
-</em>
+     </em>
      )
     </code>
-</td>
-<td>de comprimento fixo, com revestimento em branco</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    de comprimento fixo, com revestimento em branco
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      bpchar
     </code>
-</td>
-<td>variável de comprimento ilimitado, com recorte em branco</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    variável de comprimento ilimitado, com recorte em branco
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      text
     </code>
-</td>
-<td>variável de comprimento ilimitado</td>
-</tr>
-</tbody>
+   </td>
+   <td>
+    variável de comprimento ilimitado
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
 
-[Tabela 8.4][(datatype-character.md#DATATYPE-CHARACTER-TABLE "Table 8.4. Character Types")] mostra os tipos de caracteres de propósito geral disponíveis no PostgreSQL.
+
+
+
+
+[Tabela 8.4](datatype-character.md#DATATYPE-CHARACTER-TABLE) mostra os tipos de caracteres de propósito geral disponíveis no PostgreSQL.
 
 O SQL define dois tipos de caracteres principais: `character varying(n)` e `character(n)`, onde *`n`* é um inteiro positivo. Ambos esses tipos podem armazenar strings com até *`n`* caracteres (não bytes) de comprimento. Uma tentativa de armazenar uma string mais longa em uma coluna desses tipos resultará em um erro, a menos que os excessos de caracteres sejam todos espaços, no qual caso a string será truncada até o comprimento máximo. (Essa exceção um tanto bizarra é exigida pelo padrão SQL.) No entanto, se uma pessoa explicitamente converter um valor para `character varying(n)` ou `character(n)`, então um valor de comprimento excessivo será truncado para *`n`* caracteres sem levantar um erro. (Isso também é exigido pelo padrão SQL.) Se a string a ser armazenada for mais curta que o comprimento declarado, os valores do tipo `character` serão preenchidos com espaços; os valores do tipo `character varying` simplesmente armazenarão a string mais curta.
 
@@ -104,7 +125,7 @@ Se especificado, o comprimento *`n`* deve ser maior que zero e não pode exceder
 
 Os valores do tipo `character` são preenchidos fisicamente com espaços até a largura especificada *`n`*, e são armazenados e exibidos dessa forma. No entanto, os espaços finais são tratados como semanticamente insignificantes e ignorados ao comparar dois valores do tipo `character`. Em colas onde o espaço em branco é significativo, esse comportamento pode produzir resultados inesperados; por exemplo, `SELECT 'a '::CHAR(2) collate "C" < E'a\n'::CHAR(2)` retorna verdadeiro, mesmo que o local `C` considere um espaço maior que uma nova linha. Os espaços finais são removidos ao converter um valor de `character` para um dos outros tipos de string. Note que os espaços finais *são* semanticamente significativos nos valores de `character varying` e `text`, e ao usar correspondência de padrões, ou seja, `LIKE` e expressões regulares.
 
-Os caracteres que podem ser armazenados em qualquer um desses tipos de dados são determinados pelo conjunto de caracteres do banco de dados, que é selecionado quando o banco de dados é criado. Independentemente do conjunto de caracteres específico, o caractere com código zero (às vezes chamado de NUL) não pode ser armazenado. Para mais informações, consulte [Seção 23.3][(multibyte.md "23.3. Character Set Support")].
+Os caracteres que podem ser armazenados em qualquer um desses tipos de dados são determinados pelo conjunto de caracteres do banco de dados, que é selecionado quando o banco de dados é criado. Independentemente do conjunto de caracteres específico, o caractere com código zero (às vezes chamado de NUL) não pode ser armazenado. Para mais informações, consulte [Seção 23.3](multibyte.md).
 
 O requisito de armazenamento para uma string curta (até 126 bytes) é de 1 byte mais a própria string, o que inclui o preenchimento de espaço no caso de `character`. Strings mais longas têm 4 bytes de sobrecarga em vez de 1. As strings longas são comprimidas automaticamente pelo sistema, então o requisito físico no disco pode ser menor. Valores muito longos também são armazenados em tabelas de segundo plano para que não interfiram no acesso rápido a valores de colunas mais curtas. Em qualquer caso, a string de caracteres mais longa possível que pode ser armazenada é de cerca de 1 GB. (O valor máximo que será permitido para *`n`* na declaração do tipo de dados é menor que esse. Não seria útil mudar isso porque, com codificações de caracteres multibyte, o número de caracteres e bytes pode ser bastante diferente. Se você deseja armazenar strings longas sem um limite superior específico, use `text` ou `character varying` sem um especificado de comprimento, em vez de criar um limite de comprimento arbitrário.)
 
@@ -112,7 +133,7 @@ O requisito de armazenamento para uma string curta (até 126 bytes) é de 1 byte
 
 Não há diferença de desempenho entre esses três tipos, exceto pelo aumento do espaço de armazenamento ao usar o tipo preenchido com branco, e alguns ciclos de CPU adicionais para verificar o comprimento ao armazenar em uma coluna com comprimento limitado. Embora o `character(n)` tenha vantagens de desempenho em alguns outros sistemas de banco de dados, não há tal vantagem no PostgreSQL; de fato, o `character(n)` é geralmente o mais lento dos três devido aos seus custos de armazenamento adicionais. Na maioria das situações, o `text` ou o `character varying` deve ser usado em vez disso.
 
-Consulte a [Seção 4.1.2.1][(sql-syntax-lexical.md#SQL-SYNTAX-STRINGS "4.1.2.1. String Constants")] para obter informações sobre a sintaxe de literais de cadeia, e consulte o [Capítulo 9][(functions.md "Chapter 9. Functions and Operators")] para obter informações sobre os operadores e funções disponíveis.
+Consulte a [Seção 4.1.2.1](sql-syntax-lexical.md#SQL-SYNTAX-STRINGS) para obter informações sobre a sintaxe de literais de cadeia, e consulte o [Capítulo 9](functions.md) para obter informações sobre os operadores e funções disponíveis.
 
 **Exemplo 8.1. Usando os Tipos de Caracteres**
 
@@ -144,16 +165,16 @@ SELECT b, char_length(b) FROM test2;
 
 
 <table border="0" summary="Callout list">
-<tr>
-<td align="left" valign="top" width="5%">
-<p>
-<a href="#co.datatype-char">
+ <tr>
+  <td align="left" valign="top" width="5%">
+   <p>
+    <a href="#co.datatype-char">
      (1)
     </a>
-</p>
-</td>
-<td align="left" valign="top">
-<p>
+   </p>
+  </td>
+  <td align="left" valign="top">
+   <p>
     The
     <code class="function">
      char_length
@@ -164,61 +185,73 @@ SELECT b, char_length(b) FROM test2;
     </a>
     .
    </p>
-</td>
-</tr>
+  </td>
+ </tr>
 </table>
 
 
 
 
-  
 
-Existem outros dois tipos de caracteres de comprimento fixo no PostgreSQL, mostrados em [Tabela 8.5][(datatype-character.md#DATATYPE-CHARACTER-SPECIAL-TABLE "Table 8.5. Special Character Types")]. Estes não são destinados ao uso geral, apenas para uso nos catálogos internos do sistema. O tipo `name` é usado para armazenar identificadores. Seu comprimento é atualmente definido como 64 bytes (63 caracteres utilizáveis mais o terminador) mas deve ser referenciado usando a constante `NAMEDATALEN` no código-fonte `C`. O comprimento é definido no momento da compilação (e, portanto, é ajustável para usos especiais); o comprimento máximo padrão pode mudar em uma versão futura. O tipo `"char"` (note as aspas) é diferente de `char(1)` na medida em que ele usa apenas um byte de armazenamento, e, portanto, pode armazenar apenas um único caractere ASCII. Ele é usado nos catálogos do sistema como um tipo de enumeração simplista.
+
+
+
+
+Existem outros dois tipos de caracteres de comprimento fixo no PostgreSQL, mostrados em [Tabela 8.5](datatype-character.md#DATATYPE-CHARACTER-SPECIAL-TABLE). Estes não são destinados ao uso geral, apenas para uso nos catálogos internos do sistema. O tipo `name` é usado para armazenar identificadores. Seu comprimento é atualmente definido como 64 bytes (63 caracteres utilizáveis mais o terminador) mas deve ser referenciado usando a constante `NAMEDATALEN` no código-fonte `C`. O comprimento é definido no momento da compilação (e, portanto, é ajustável para usos especiais); o comprimento máximo padrão pode mudar em uma versão futura. O tipo `"char"` (note as aspas) é diferente de `char(1)` na medida em que ele usa apenas um byte de armazenamento, e, portanto, pode armazenar apenas um único caractere ASCII. Ele é usado nos catálogos do sistema como um tipo de enumeração simplista.
 
 **Tabela 8.5. Tipos de Caracteres Especiais**
 
 
 
 <table border="1" class="table" summary="Special Character Types">
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Name
    </th>
-<th>
+   <th>
     Storage Size
    </th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="type">
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="type">
      "char"
     </code>
-</td>
-<td>
+   </td>
+   <td>
     1 byte
    </td>
-<td>tipo interno de byte único</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   <td>
+    tipo interno de byte único
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      name
     </code>
-</td>
-<td>
+   </td>
+   <td>
     64 bytes
    </td>
-<td>tipo interno para nomes de objetos</td>
-</tr>
-</tbody>
+   <td>
+    tipo interno para nomes de objetos
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 

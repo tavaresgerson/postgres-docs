@@ -51,7 +51,7 @@
 + [19.7.3. Otimizador de Consulta Genética](runtime-config-query.md#RUNTIME-CONFIG-QUERY-GEQO)
 + [19.7.4. Outras Opções do Planejador](runtime-config-query.md#RUNTIME-CONFIG-QUERY-OTHER)
 
-* [19.8. Relatório de Erros e Registro][(runtime-config-logging.md)]
+* [19.8. Relatório de Erros e Registro](runtime-config-logging.md)
 
 + [19.8.1. Onde registrar](runtime-config-logging.md#RUNTIME-CONFIG-LOGGING-WHERE)
 + [19.8.2. Quando registrar](runtime-config-logging.md#RUNTIME-CONFIG-LOGGING-WHEN)

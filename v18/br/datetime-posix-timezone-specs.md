@@ -16,7 +16,7 @@ STD offset [ DST [ dstoffset ] [ , rule ] ]
 * *`dstoffset`* é o deslocamento de horário de verão em relação ao UTC. Este campo é tipicamente omitido, pois ele é padrão com uma hora a menos que o *`offset`*, que geralmente é a coisa certa.
 * *`rule`* define a regra para quando o horário de verão está em vigor, conforme descrito abaixo.
 
-Nessa sintaxe, uma abreviação de zona pode ser uma cadeia de letras, como `EST`, ou uma cadeia arbitrária cercada por chaves angulares, como `<UTC-05>`. Observe que as abreviações de zona fornecidas aqui são usadas apenas para saída e, mesmo assim, apenas em alguns formatos de saída de marcação de tempo. As abreviações de zona reconhecidas na entrada de marcação de tempo são determinadas conforme explicado em [Seção B.4][(datetime-config-files.md "B.4. Date/Time Configuration Files")].
+Nessa sintaxe, uma abreviação de zona pode ser uma cadeia de letras, como `EST`, ou uma cadeia arbitrária cercada por chaves angulares, como `<UTC-05>`. Observe que as abreviações de zona fornecidas aqui são usadas apenas para saída e, mesmo assim, apenas em alguns formatos de saída de marcação de tempo. As abreviações de zona reconhecidas na entrada de marcação de tempo são determinadas conforme explicado em [Seção B.4](datetime-config-files.md).
 
 Os campos de deslocamento especificam as horas e, opcionalmente, os minutos e segundos, diferença em relação ao UTC. Eles têm o formato *`hh`*[`:`*`mm`*[`:`*`ss`*]] opcionalmente com um sinal inicial (`+` ou `-`). O sinal positivo é usado para zonas *a oeste* de Greenwich. (Observe que isso é o oposto da convenção de sinalização ISO-8601 usada em outros lugares no PostgreSQL.) *`hh`* pode ter um ou dois dígitos; *`mm`* e *`ss`* (se usado) devem ter dois.
 

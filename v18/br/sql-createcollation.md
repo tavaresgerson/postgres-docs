@@ -29,7 +29,7 @@ Para criar uma correção, você deve ter o privilégio `CREATE` no esquema de d
 
 *`name`*: O nome da correção. O nome da correção pode ser qualificado pelo esquema. Se não for, a correção é definida no esquema atual. O nome da correção deve ser único dentro desse esquema. (Os catálogos do sistema podem conter correções com o mesmo nome para outros codificações, mas esses são ignorados se a codificação do banco de dados não corresponder.)
 
-*`locale`*: O nome do local para esta correção. Consulte a [Seção 23.2.2.3.1][(collation.md#COLLATION-MANAGING-CREATE-LIBC "23.2.2.3.1. libc Collations")] e a [Seção 23.2.2.3.2][(collation.md#COLLATION-MANAGING-CREATE-ICU "23.2.2.3.2. ICU Collations")] para obter detalhes.
+*`locale`*: O nome do local para esta correção. Consulte a [Seção 23.2.2.3.1](collation.md#COLLATION-MANAGING-CREATE-LIBC) e a [Seção 23.2.2.3.2](collation.md#COLLATION-MANAGING-CREATE-ICU) para obter detalhes.
 
 Se *`provider`* for `libc`, este é um atalho para definir `LC_COLLATE` e `LC_CTYPE` de uma vez. Se você especificar *`locale`*, não poderá especificar nenhum desses parâmetros.
 
@@ -39,13 +39,13 @@ Se *`provider`* for `builtin`, então *`locale`* deve ser especificado e definid
 
 *`lc_ctype`*: Se *`provider`* for `libc`, use o local do sistema operacional especificado para a categoria de local do `LC_CTYPE`.
 
-*`provider`*: Especifica o provedor a ser usado para serviços de localização associados a esta codificação. Os valores possíveis são `builtin`, `icu` (se o servidor foi construído com suporte ao ICU) ou `libc`. `libc` é o padrão. Consulte [Seção 23.1.4][(locale.md#LOCALE-PROVIDERS "23.1.4. Locale Providers")] para detalhes.
+*`provider`*: Especifica o provedor a ser usado para serviços de localização associados a esta codificação. Os valores possíveis são `builtin`, `icu` (se o servidor foi construído com suporte ao ICU) ou `libc`. `libc` é o padrão. Consulte [Seção 23.1.4](locale.md#LOCALE-PROVIDERS) para detalhes.
 
 `DETERMINISTIC`: Especifica se a correção de texto deve usar comparações determinísticas. O padrão é verdadeiro. Uma comparação determinística considera que cadeias que não são iguais em bytes são desiguais, mesmo que sejam consideradas logicamente iguais pela comparação. O PostgreSQL resolve os empates usando uma comparação em bytes. A comparação que não é determinística pode fazer com que a correção de texto seja, por exemplo, insensível ao caso ou ao acento. Para isso, você precisa escolher um ajuste apropriado `LOCALE` *e* definir a correção de texto como não determinística aqui.
 
 As collation não determinísticas são suportadas apenas com o provedor ICU.
 
-*`rules`*: Especifica regras adicionais de ordenação para personalizar o comportamento da ordenação. Isso é suportado apenas para ICU. Consulte [Seção 23.2.3.4][(collation.md#ICU-TAILORING-RULES "23.2.3.4. ICU Tailoring Rules")] para detalhes.
+*`rules`*: Especifica regras adicionais de ordenação para personalizar o comportamento da ordenação. Isso é suportado apenas para ICU. Consulte [Seção 23.2.3.4](collation.md#ICU-TAILORING-RULES) para detalhes.
 
 *`version`*: Especifica a string de versão a ser armazenada com a correção de texto. Normalmente, isso deve ser omitido, o que fará com que a versão seja calculada a partir da versão real da correção de texto fornecida pelo sistema operacional. Esta opção é destinada a ser usada por `pg_upgrade` para copiar a versão de uma instalação existente.
 
@@ -59,7 +59,7 @@ Veja também [ALTER COLLATION](sql-altercollation.md "ALTER COLLATION") para sab
 
 Use `DROP COLLATION` para remover colateções definidas pelo usuário.
 
-Consulte a [Seção 23.2.2.3][(collation.md#COLLATION-CREATE "23.2.2.3. Creating New Collation Objects")] para obter mais informações sobre como criar colatões.
+Consulte a [Seção 23.2.2.3](collation.md#COLLATION-CREATE) para obter mais informações sobre como criar colatões.
 
 Ao usar o provedor de codificação de collation `libc`, o local deve ser aplicável à codificação atual do banco de dados. Consulte [CREATE DATABASE](sql-createdatabase.md "CREATE DATABASE") para as regras precisas.
 
@@ -83,7 +83,7 @@ Para criar uma ordenação usando o provedor ICU, com base no idioma raiz ICU, c
 CREATE COLLATION custom (provider = icu, locale = 'und', rules = '&V << w <<< W');
 ```
 
-Veja [Seção 23.2.3.4][(collation.md#ICU-TAILORING-RULES "23.2.3.4. ICU Tailoring Rules")] para mais detalhes e exemplos sobre a sintaxe das regras.
+Veja [Seção 23.2.3.4](collation.md#ICU-TAILORING-RULES) para mais detalhes e exemplos sobre a sintaxe das regras.
 
 Para criar uma correção a partir de uma correção existente:
 

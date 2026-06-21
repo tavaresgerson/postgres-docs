@@ -4,7 +4,7 @@ Normalmente, o PL/Perl é instalado como uma linguagem de programação "confiá
 
 ### Aviso
 
-O PL/Perl confiável depende do módulo Perl `Opcode` para preservar a segurança. O Perl [documentação][(https://perldoc.perl.org/Opcode#WARNING)] que o módulo não é eficaz para o caso de uso PL/Perl confiável. Se suas necessidades de segurança forem incompatíveis com a incerteza nesse aviso, considere executar `REVOKE USAGE ON LANGUAGE plperl FROM PUBLIC`.
+O PL/Perl confiável depende do módulo Perl `Opcode` para preservar a segurança. O Perl [documentação](https://perldoc.perl.org/Opcode#WARNING) que o módulo não é eficaz para o caso de uso PL/Perl confiável. Se suas necessidades de segurança forem incompatíveis com a incerteza nesse aviso, considere executar `REVOKE USAGE ON LANGUAGE plperl FROM PUBLIC`.
 
 Aqui está um exemplo de uma função que não funcionará porque as operações do sistema de arquivos não são permitidas por razões de segurança:
 

@@ -29,7 +29,7 @@ O comando `DROP OWNED`](sql-drop-owned.md "DROP OWNED") é uma alternativa que s
 
 O comando `REASSIGN OWNED` não afeta quaisquer privilégios concedidos ao *`old_roles`* em objetos que não sejam de sua propriedade. Da mesma forma, ele não afeta os privilégios padrão criados com `ALTER DEFAULT PRIVILEGES`. Use `DROP OWNED` para revogar tais privilégios.
 
-Veja [Seção 21.4][(role-removal.md "21.4. Dropping Roles")] para mais discussão.
+Veja [Seção 21.4](role-removal.md) para mais discussão.
 
 ## Compatibilidade
 

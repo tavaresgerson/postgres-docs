@@ -1,6 +1,6 @@
 ## 5.11. Herança [#](#DDL-INHERIT)
 
-* [5.11.1. Observações][(ddl-inherit.md#DDL-INHERIT-CAVEATS)]
+* [5.11.1. Observações](ddl-inherit.md#DDL-INHERIT-CAVEATS)
 
 O PostgreSQL implementa a herança de tabelas, que pode ser uma ferramenta útil para os projetistas de banco de dados. (SQL: 1999 e versões posteriores definem uma característica de herança de tipos, que difere em muitos aspectos das características descritas aqui.)
 
@@ -28,7 +28,7 @@ SELECT name, elevation
     WHERE elevation > 500;
 ```
 
-Dadas as informações da amostra do tutorial do PostgreSQL (consulte a Seção 2.1 [(tutorial-sql-intro.md "2.1. Introduction")]), isso retorna:
+Dadas as informações da amostra do tutorial do PostgreSQL (consulte a [Seção 2.1](tutorial-sql-intro.md)), isso retorna:
 
 ```
    name    | elevation
@@ -114,7 +114,7 @@ INSERT INTO cities (name, population, elevation, state)
 VALUES ('Albany', NULL, NULL, 'NY');
 ```
 
-Podemos esperar que os dados sejam encaminhados de alguma forma para a tabela `capitals`, mas isso não acontece: `INSERT` sempre insere exatamente na tabela especificada. Em alguns casos, é possível redirecionar a inserção usando uma regra (consulte [Capítulo 39][(rules.md "Chapter 39. The Rule System")]). No entanto, isso não ajuda no caso acima, porque a tabela `cities` não contém a coluna `state`, e, portanto, o comando será rejeitado antes que a regra possa ser aplicada.
+Podemos esperar que os dados sejam encaminhados de alguma forma para a tabela `capitals`, mas isso não acontece: `INSERT` sempre insere exatamente na tabela especificada. Em alguns casos, é possível redirecionar a inserção usando uma regra (consulte [Capítulo 39](rules.md)). No entanto, isso não ajuda no caso acima, porque a tabela `cities` não contém a coluna `state`, e, portanto, o comando será rejeitado antes que a regra possa ser aplicada.
 
 Todas as restrições de verificação e restrições não nulo em uma tabela pai são automaticamente herdadas por suas crianças, a menos que especificamente especificado de outra forma com cláusulas `NO INHERIT`. Outros tipos de restrições (união, chave primária e restrições de chave estrangeira) não são herdados.
 
@@ -124,13 +124,13 @@ A herança de tabela é tipicamente estabelecida quando a tabela filho é criada
 
 Uma maneira conveniente de criar uma tabela compatível que será posteriormente feita uma nova criança é usar a cláusula `LIKE` em `CREATE TABLE`. Isso cria uma nova tabela com as mesmas colunas que a tabela de origem. Se houver quaisquer restrições `CHECK` definidas na tabela de origem, a opção `INCLUDING CONSTRAINTS` para `LIKE` deve ser especificada, pois a nova criança deve ter restrições que correspondam ao pai para ser considerada compatível.
 
-Uma tabela principal não pode ser excluída enquanto qualquer uma de suas crianças permanecerem. Da mesma forma, as colunas ou restrições de verificação das tabelas de crianças não podem ser excluídas ou alteradas se forem herdadas de qualquer tabela principal. Se você deseja remover uma tabela e todos os seus descendentes, uma maneira fácil é excluir a tabela principal com a opção `CASCADE` (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+Uma tabela principal não pode ser excluída enquanto qualquer uma de suas crianças permanecerem. Da mesma forma, as colunas ou restrições de verificação das tabelas de crianças não podem ser excluídas ou alteradas se forem herdadas de qualquer tabela principal. Se você deseja remover uma tabela e todos os seus descendentes, uma maneira fácil é excluir a tabela principal com a opção `CASCADE` (consulte [Seção 5.15](ddl-depend.md)).
 
 `ALTER TABLE` propagará quaisquer alterações nas definições de dados das colunas e nas restrições de verificação na hierarquia de herança. Novamente, a remoção de colunas que dependem de outras tabelas só é possível ao usar a opção `CASCADE`. `ALTER TABLE` segue as mesmas regras para a fusão e rejeição de colunas duplicadas que se aplicam durante `CREATE TABLE`.
 
 As consultas herdadas realizam verificações de permissão de acesso apenas na tabela pai. Assim, por exemplo, conceder a permissão `UPDATE` na tabela `cities` implica em permissão para atualizar linhas na tabela `capitals`, também, quando elas são acessadas através de `cities`. Isso preserva a aparência de que os dados estão (também) na tabela pai. Mas a tabela `capitals` não poderia ser atualizada diretamente sem uma concessão adicional. Da mesma forma, as políticas de segurança de linha da tabela pai (ver [Seção 5.9] (ddl-rowsecurity.md "5.9. Row Security Policies")) são aplicadas às linhas que vêm de tabelas filhas durante uma consulta herdada. As políticas de uma tabela filhas, se houver, são aplicadas apenas quando ela é a tabela explicitamente nomeada na consulta; e, nesse caso, quaisquer políticas anexadas a seus(s) pai(s) são ignoradas.
 
-As tabelas externas (consulte a Seção 5.13 [(ddl-foreign-data.md "5.13. Foreign Data")]) também podem fazer parte de hierarquias de herança, seja como tabelas pai ou filho, assim como as tabelas regulares podem. Se uma tabela externa faz parte de uma hierarquia de herança, então quaisquer operações que não sejam suportadas pela tabela externa também não são suportadas na hierarquia como um todo.
+As tabelas externas (consulte a [Seção 5.13](ddl-foreign-data.md)) também podem fazer parte de hierarquias de herança, seja como tabelas pai ou filho, assim como as tabelas regulares podem. Se uma tabela externa faz parte de uma hierarquia de herança, então quaisquer operações que não sejam suportadas pela tabela externa também não são suportadas na hierarquia como um todo.
 
 ### 5.11.1. Avisos [#](#DDL-INHERIT-CAVEATS)
 

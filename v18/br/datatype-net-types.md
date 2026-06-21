@@ -13,64 +13,87 @@ O PostgreSQL oferece tipos de dados para armazenar endereços IPv4, IPv6 e MAC, 
 
 
 <table border="1" class="table" summary="Network Address Types">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Name
    </th>
-<th>Tamanho de armazenamento</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="type">
+   <th>
+    Tamanho de armazenamento
+   </th>
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="type">
      cidr
     </code>
-</td>
-<td>7 ou 19 bytes</td>
-<td>Redes IPv4 e IPv6</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    7 ou 19 bytes
+   </td>
+   <td>
+    Redes IPv4 e IPv6
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      inet
     </code>
-</td>
-<td>7 ou 19 bytes</td>
-<td>Hospedeiros e redes IPv4 e IPv6</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    7 ou 19 bytes
+   </td>
+   <td>
+    Hospedeiros e redes IPv4 e IPv6
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      macaddr
     </code>
-</td>
-<td>6 bytes</td>
-<td>Endereços MAC</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    6 bytes
+   </td>
+   <td>
+    Endereços MAC
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      macaddr8
     </code>
-</td>
-<td>8 bytes</td>
-<td>Endereços MAC (formato EUI-64)</td>
-</tr>
-</tbody>
+   </td>
+   <td>
+    8 bytes
+   </td>
+   <td>
+    Endereços MAC (formato EUI-64)
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Ao classificar os tipos de dados `inet` ou `cidr`, as endereços IPv4 serão sempre classificados antes das endereços IPv6, incluindo endereços IPv4 encapsulados ou mapeados para endereços IPv6, como ::10.2.3.4 ou ::ffff:10.4.3.2.
 
@@ -91,217 +114,220 @@ O tipo `cidr` contém uma especificação de rede IPv4 ou IPv6. Os formatos de e
 
 
 <table border="1" class="table" summary="cidr Type Input Examples">
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
-<code class="type">
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
+    <code class="type">
      cidr
     </code>
     Input
    </th>
-<th>
-<code class="type">
+   <th>
+    <code class="type">
      cidr
     </code>
     Output
    </th>
-<th>
-<code class="literal">
-<code class="function">
+   <th>
+    <code class="literal">
+     <code class="function">
       abbrev(
       <code class="type">
        cidr
       </code>
       )
      </code>
-</code>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+    </code>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
     192.168.100.128/25
    </td>
-<td>
+   <td>
     192.168.100.128/25
    </td>
-<td>
+   <td>
     192.168.100.128/25
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     192.168/24
    </td>
-<td>
+   <td>
     192.168.0.0/24
    </td>
-<td>
+   <td>
     192.168.0/24
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     192.168/25
    </td>
-<td>
+   <td>
     192.168.0.0/25
    </td>
-<td>
+   <td>
     192.168.0.0/25
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     192.168.1
    </td>
-<td>
+   <td>
     192.168.1.0/24
    </td>
-<td>
+   <td>
     192.168.1/24
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     192.168
    </td>
-<td>
+   <td>
     192.168.0.0/24
    </td>
-<td>
+   <td>
     192.168.0/24
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     128.1
    </td>
-<td>
+   <td>
     128.1.0.0/16
    </td>
-<td>
+   <td>
     128.1/16
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     128
    </td>
-<td>
+   <td>
     128.0.0.0/16
    </td>
-<td>
+   <td>
     128.0/16
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     128.1.2
    </td>
-<td>
+   <td>
     128.1.2.0/24
    </td>
-<td>
+   <td>
     128.1.2/24
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     10.1.2
    </td>
-<td>
+   <td>
     10.1.2.0/24
    </td>
-<td>
+   <td>
     10.1.2/24
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     10.1
    </td>
-<td>
+   <td>
     10.1.0.0/16
    </td>
-<td>
+   <td>
     10.1/16
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     10
    </td>
-<td>
+   <td>
     10.0.0.0/8
    </td>
-<td>
+   <td>
     10/8
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     10.1.2.3/32
    </td>
-<td>
+   <td>
     10.1.2.3/32
    </td>
-<td>
+   <td>
     10.1.2.3/32
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     2001:4f8:3:ba::/64
    </td>
-<td>
+   <td>
     2001:4f8:3:ba::/64
    </td>
-<td>
+   <td>
     2001:4f8:3:ba/64
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     2001:4f8:3:ba:​2e0:81ff:fe22:d1f1/128
    </td>
-<td>
+   <td>
     2001:4f8:3:ba:​2e0:81ff:fe22:d1f1/128
    </td>
-<td>
+   <td>
     2001:4f8:3:ba:​2e0:81ff:fe22:d1f1/128
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     ::ffff:1.2.3.0/120
    </td>
-<td>
+   <td>
     ::ffff:1.2.3.0/120
    </td>
-<td>
+   <td>
     ::ffff:1.2.3/120
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     ::ffff:1.2.3.0/128
    </td>
-<td>
+   <td>
     ::ffff:1.2.3.0/128
    </td>
-<td>
+   <td>
     ::ffff:1.2.3.0/128
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 
@@ -320,56 +346,59 @@ O tipo `macaddr` armazena endereços MAC, conhecidos, por exemplo, dos endereço
 
 
 <table border="0" class="simplelist" summary="Simple list">
-<tr>
-<td>
-<code class="literal">
+ <tr>
+  <td>
+   <code class="literal">
     '08:00:2b:01:02:03'
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     '08-00-2b-01-02-03'
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     '08002b:010203'
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     '08002b-010203'
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     '0800.2b01.0203'
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     '0800-2b01-0203'
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     '08002b010203'
    </code>
-</td>
-</tr>
+  </td>
+ </tr>
 </table>
+
+
+
 
 
 
@@ -386,63 +415,66 @@ O tipo `macaddr8` armazena endereços MAC no formato EUI-64, conhecido, por exem
 
 
 <table border="0" class="simplelist" summary="Simple list">
-<tr>
-<td>
-<code class="literal">
+ <tr>
+  <td>
+   <code class="literal">
     '08:00:2b:01:02:03:04:05'
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     '08-00-2b-01-02-03-04-05'
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     '08002b:0102030405'
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     '08002b-0102030405'
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     '0800.2b01.0203.0405'
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     '0800-2b01-0203-0405'
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     '08002b01:02030405'
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     '08002b0102030405'
    </code>
-</td>
-</tr>
+  </td>
+ </tr>
 </table>
+
+
+
 
 
 

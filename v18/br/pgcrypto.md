@@ -66,164 +66,185 @@ Os algoritmos em `crypt()` diferem dos algoritmos de hashing MD5 ou SHA-1 usuais
 
 
 <table border="1" class="table" summary="Supported Algorithms for crypt()">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-<col class="col4"/>
-<col class="col5"/>
-<col class="col6"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+  <col class="col4"/>
+  <col class="col5"/>
+  <col class="col6"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Algorithm
    </th>
-<th>
+   <th>
     Max Password Length
    </th>
-<th>
+   <th>
     Adaptive?
    </th>
-<th>
+   <th>
     Salt Bits
    </th>
-<th>
+   <th>
     Output Length
    </th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      bf
     </code>
-</td>
-<td>
+   </td>
+   <td>
     72
    </td>
-<td>
+   <td>
     yes
    </td>
-<td>
+   <td>
     128
    </td>
-<td>
+   <td>
     60
    </td>
-<td>Baseado em Blowfish, variante 2a</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Baseado em Blowfish, variante 2a
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      md5
     </code>
-</td>
-<td>
+   </td>
+   <td>
     unlimited
    </td>
-<td>
+   <td>
     no
    </td>
-<td>
+   <td>
     48
    </td>
-<td>
+   <td>
     34
    </td>
-<td>criptografia baseada em MD5</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    criptografia baseada em MD5
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      xdes
     </code>
-</td>
-<td>
+   </td>
+   <td>
     8
    </td>
-<td>
+   <td>
     yes
    </td>
-<td>
+   <td>
     24
    </td>
-<td>
+   <td>
     20
    </td>
-<td>DES estendido</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    DES estendido
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      des
     </code>
-</td>
-<td>
+   </td>
+   <td>
     8
    </td>
-<td>
+   <td>
     no
    </td>
-<td>
+   <td>
     12
    </td>
-<td>
+   <td>
     13
    </td>
-<td>cripto original UNIX</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    cripto original UNIX
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      sha256crypt
     </code>
-</td>
-<td>
+   </td>
+   <td>
     unlimited
    </td>
-<td>
+   <td>
     yes
    </td>
-<td>
+   <td>
     up to 32
    </td>
-<td>
+   <td>
     80
    </td>
-<td>Adaptado de uma implementação de referência disponível publicamente<a class="ulink" href="https://www.akkadia.org/drepper/SHA-crypt.txt" target="_top">Unix crypt usando SHA-256 e SHA-512</a>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Adaptado de uma implementação de referência disponível publicamente
+    <a class="ulink" href="https://www.akkadia.org/drepper/SHA-crypt.txt" target="_top">
+     Unix crypt usando SHA-256 e SHA-512
+    </a>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      sha512crypt
     </code>
-</td>
-<td>
+   </td>
+   <td>
     unlimited
    </td>
-<td>
+   <td>
     yes
    </td>
-<td>
+   <td>
     up to 32
    </td>
-<td>
+   <td>
     123
    </td>
-<td>Adaptado de uma implementação de referência disponível publicamente<a class="ulink" href="https://www.akkadia.org/drepper/SHA-crypt.txt" target="_top">Unix crypt usando SHA-256 e SHA-512</a>
-</td>
-</tr>
-</tbody>
+   <td>
+    Adaptado de uma implementação de referência disponível publicamente
+    <a class="ulink" href="https://www.akkadia.org/drepper/SHA-crypt.txt" target="_top">
+     Unix crypt usando SHA-256 e SHA-512
+    </a>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 #### F.26.2.1. `crypt()` [#](#PGCRYPTO-PASSWORD-HASHING-FUNCS-CRYPT)
 
@@ -264,84 +285,87 @@ O parâmetro *`iter_count`* permite que o usuário especifique o número de iter
 
 
 <table border="1" class="table" summary="Iteration Counts for crypt()">
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Algorithm
    </th>
-<th>
+   <th>
     Default
    </th>
-<th>
+   <th>
     Min
    </th>
-<th>
+   <th>
     Max
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      xdes
     </code>
-</td>
-<td>
+   </td>
+   <td>
     725
    </td>
-<td>
+   <td>
     1
    </td>
-<td>
+   <td>
     16777215
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      bf
     </code>
-</td>
-<td>
+   </td>
+   <td>
     6
    </td>
-<td>
+   <td>
     4
    </td>
-<td>
+   <td>
     31
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      sha256crypt, sha512crypt
     </code>
-</td>
-<td>
+   </td>
+   <td>
     5000
    </td>
-<td>
+   <td>
     1000
    </td>
-<td>
+   <td>
     999999999
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Para `xdes`, há uma limitação adicional de que o número de iterações deve ser um número ímpar.
 
@@ -356,202 +380,205 @@ O padrão *`iter_count` para `sha256crypt` e `sha512crypt` de `5000` é consider
 
 
 <table border="1" class="table" summary="Hash Algorithm Speeds">
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Algorithm
    </th>
-<th>
+   <th>
     Hashes/sec
    </th>
-<th>
+   <th>
     For
     <code class="literal">
      [a-z]
     </code>
-</th>
-<th>
+   </th>
+   <th>
     For
     <code class="literal">
      [A-Za-z0-9]
     </code>
-</th>
-<th>
+   </th>
+   <th>
     Duration relative to
     <code class="literal">
      md5 hash
     </code>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      crypt-bf/8
     </code>
-</td>
-<td>
+   </td>
+   <td>
     1792
    </td>
-<td>
+   <td>
     4 years
    </td>
-<td>
+   <td>
     3927 years
    </td>
-<td>
+   <td>
     100k
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      crypt-bf/7
     </code>
-</td>
-<td>
+   </td>
+   <td>
     3648
    </td>
-<td>
+   <td>
     2 years
    </td>
-<td>
+   <td>
     1929 years
    </td>
-<td>
+   <td>
     50k
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      crypt-bf/6
     </code>
-</td>
-<td>
+   </td>
+   <td>
     7168
    </td>
-<td>
+   <td>
     1 year
    </td>
-<td>
+   <td>
     982 years
    </td>
-<td>
+   <td>
     25k
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      crypt-bf/5
     </code>
-</td>
-<td>
+   </td>
+   <td>
     13504
    </td>
-<td>
+   <td>
     188 days
    </td>
-<td>
+   <td>
     521 years
    </td>
-<td>
+   <td>
     12.5k
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      crypt-md5
     </code>
-</td>
-<td>
+   </td>
+   <td>
     171584
    </td>
-<td>
+   <td>
     15 days
    </td>
-<td>
+   <td>
     41 years
    </td>
-<td>
+   <td>
     1k
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      crypt-des
     </code>
-</td>
-<td>
+   </td>
+   <td>
     23221568
    </td>
-<td>
+   <td>
     157.5 minutes
    </td>
-<td>
+   <td>
     108 days
    </td>
-<td>
+   <td>
     7
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      sha1
     </code>
-</td>
-<td>
+   </td>
+   <td>
     37774272
    </td>
-<td>
+   <td>
     90 minutes
    </td>
-<td>
+   <td>
     68 days
    </td>
-<td>
+   <td>
     4
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      md5
     </code>
     (hash)
    </td>
-<td>
+   <td>
     150085504
    </td>
-<td>
+   <td>
     22.5 minutes
    </td>
-<td>
+   <td>
     17 days
    </td>
-<td>
+   <td>
     1
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Notas:
 
@@ -561,7 +588,7 @@ Observe que "tentar todas as combinações" não é um exercício realista. Gera
 
 ### F.26.3. Funções de Encriptação PGP [#](#PGCRYPTO-PGP-ENC-FUNCS)
 
-As funções aqui implementam a parte de criptografia do padrão OpenPGP ([RFC 4880][(https://datatracker.ietf.org/doc/html/rfc4880)]). São suportadas a criptografia de chave simétrica e a criptografia de chave pública.
+As funções aqui implementam a parte de criptografia do padrão OpenPGP ([RFC 4880](https://datatracker.ietf.org/doc/html/rfc4880)). São suportadas a criptografia de chave simétrica e a criptografia de chave pública.
 
 Uma mensagem PGP criptografada é composta por 2 partes, ou *pacotes*:
 
@@ -575,7 +602,7 @@ Ao criptografar com uma chave simétrica (ou seja, uma senha):
 
 Ao criptografar com uma chave pública:
 
-1. Uma nova chave aleatória de sessão é gerada.  
+1. Uma nova chave aleatória de sessão é gerada.
 2. Ela é criptografada usando a chave pública e colocada no pacote de chave de sessão.
 
 Em qualquer caso, os dados a serem criptografados são processados da seguinte forma:
@@ -775,7 +802,7 @@ gpg -a --export-secret-keys KEYID > secret.key
 
 Você precisa usar `dearmor()` nessas chaves antes de entregá-las às funções PGP. Ou, se você pode lidar com dados binários, pode descartar `-a` do comando.
 
-Para mais detalhes, consulte `man gpg`, [O Manual de Privacidade do GNU][(https://www.gnupg.org/gph/en/manual.html)] e outras documentações em <https://www.gnupg.org/>.
+Para mais detalhes, consulte `man gpg`, [O Manual de Privacidade do GNU](https://www.gnupg.org/gph/en/manual.html) e outras documentações em <https://www.gnupg.org/>.
 
 #### F.26.3.10. Limitações do Código PGP [#](#PGCRYPTO-PGP-ENC-FUNCS-LIMITATIONS)
 
@@ -787,9 +814,9 @@ Para mais detalhes, consulte `man gpg`, [O Manual de Privacidade do GNU][(https:
 
 Essas funções apenas aplicam um cifrador aos dados; elas não possuem nenhuma característica avançada da criptografia PGP. Portanto, elas têm alguns problemas importantes:
 
-1. Eles usam a chave do usuário diretamente como chave de cifra.  
-2. Eles não fornecem nenhum controle de integridade para verificar se os dados criptografados foram modificados.  
-3. Eles esperam que os usuários gerenciem todos os parâmetros de criptografia, até mesmo o IV.  
+1. Eles usam a chave do usuário diretamente como chave de cifra.
+2. Eles não fornecem nenhum controle de integridade para verificar se os dados criptografados foram modificados.
+3. Eles esperam que os usuários gerenciem todos os parâmetros de criptografia, até mesmo o IV.
 4. Eles não lidam com texto.
 
 Portanto, com a introdução da criptografia PGP, o uso de funções de criptografia bruta é desencorajado.
@@ -821,7 +848,7 @@ e *`mode`* é uma das:
 
 e *`padding`* é uma das:
 
-* `pkcs` — os dados podem ter qualquer comprimento (padrão)  
+* `pkcs` — os dados podem ter qualquer comprimento (padrão)
 * `none` — os dados devem ser múltiplos do tamanho do bloco de cifra
 
 Então, por exemplo, estes são equivalentes:
@@ -845,7 +872,7 @@ Retorna *`count`* bytes aleatórios criptograficamente fortes. No máximo, 1024 
 gen_random_uuid() returns uuid
 ```
 
-Retorna uma UUID da versão 4 (aleatória). (Desatualizada, essa função chama internamente a função [função central][(functions-uuid.md "9.14. UUID Functions")] do mesmo nome.)
+Retorna uma UUID da versão 4 (aleatória). (Desatualizada, essa função chama internamente a função [função central](functions-uuid.md) do mesmo nome.)
 
 ### F.26.6. Funções de Suporte OpenSSL [#](#PGCRYPTO-OPENSSL-SUPPORT-FUNCS)
 
@@ -883,7 +910,7 @@ Como é padrão no SQL, todas as funções retornam NULL, se algum dos argumento
 
 Todas as funções do `pgcrypto` são executadas dentro do servidor de banco de dados. Isso significa que todos os dados e senhas se movem entre o `pgcrypto` e as aplicações do cliente em texto claro. Assim, você deve:
 
-1. Conecte localmente ou use conexões SSL.  
+1. Conecte localmente ou use conexões SSL.
 2. Confie tanto no administrador do sistema quanto no do banco de dados.
 
 Se não puder, então é melhor fazer criptografia dentro da aplicação do cliente.
@@ -899,58 +926,61 @@ Marko Kreen `<markokr@gmail.com>`
 
 
 <table border="1" class="informaltable">
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Algorithm
    </th>
-<th>
+   <th>
     Author
    </th>
-<th>
+   <th>
     Source origin
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
     DES crypt
    </td>
-<td>
+   <td>
     David Burren and others
    </td>
-<td>
+   <td>
     FreeBSD libcrypt
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     MD5 crypt
    </td>
-<td>
+   <td>
     Poul-Henning Kamp
    </td>
-<td>
+   <td>
     FreeBSD libcrypt
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     Blowfish crypt
    </td>
-<td>
+   <td>
     Solar Designer
    </td>
-<td>
+   <td>
     www.openwall.com
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
+
+
+
 

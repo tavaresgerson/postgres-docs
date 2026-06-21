@@ -34,7 +34,7 @@ Uma publicação é, essencialmente, um grupo de tabelas cujos dados devem ser r
 
 Se a cláusula opcional `WHERE` for especificada, ela define uma expressão de *filtro de linha*. As linhas para as quais o *`expression`* avalia como falso ou nulo não serão publicadas. Note que parênteses são necessários ao redor da expressão. Não tem efeito sobre os comandos `TRUNCATE`.
 
-Quando uma lista de colunas é especificada, apenas as colunas nomeadas são replicadas. A lista de colunas pode conter colunas geradas armazenadas também. Se a lista de colunas for omitida, a publicação irá replicar todas as colunas não geradas (incluindo quaisquer adicionadas no futuro) por padrão. Colunas geradas armazenadas também podem ser replicadas se `publish_generated_columns` for definido como `stored`. Especificar uma lista de colunas não tem efeito sobre os comandos `TRUNCATE`. Consulte [Seção 29.5][(logical-replication-col-lists.md "29.5. Column Lists")] para detalhes sobre listas de colunas.
+Quando uma lista de colunas é especificada, apenas as colunas nomeadas são replicadas. A lista de colunas pode conter colunas geradas armazenadas também. Se a lista de colunas for omitida, a publicação irá replicar todas as colunas não geradas (incluindo quaisquer adicionadas no futuro) por padrão. Colunas geradas armazenadas também podem ser replicadas se `publish_generated_columns` for definido como `stored`. Especificar uma lista de colunas não tem efeito sobre os comandos `TRUNCATE`. Consulte [Seção 29.5](logical-replication-col-lists.md) para detalhes sobre listas de colunas.
 
 Somente tabelas de base persistentes e tabelas particionadas podem fazer parte de uma publicação. Tabelas temporárias, tabelas não registradas, tabelas externas, visualizações materializadas e visualizações regulares não podem fazer parte de uma publicação.
 
@@ -56,7 +56,7 @@ Quando uma tabela dividida é publicada por meio de uma publicação em nível d
 
 `publish` (`string`) [#](#SQL-CREATEPUBLICATION-PARAMS-WITH-PUBLISH) :   Este parâmetro determina quais operações de DML serão publicadas pela nova publicação para os assinantes. O valor é uma lista de operações separadas por vírgula. As operações permitidas são `insert`, `update`, `delete` e `truncate`. O padrão é publicar todas as ações, e, portanto, o valor padrão para esta opção é `'insert, update, delete, truncate'`.
 
-Este parâmetro afeta apenas as operações de DML. Em particular, a sincronização inicial de dados (consulte [Seção 29.9.1] [(logical-replication-architecture.md#LOGICAL-REPLICATION-SNAPSHOT "29.9.1. Initial Snapshot")]) para replicação lógica não leva em conta este parâmetro ao copiar dados de tabela existentes.
+Este parâmetro afeta apenas as operações de DML. Em particular, a sincronização inicial de dados (consulte [Seção 29.9.1](logical-replication-architecture.md#LOGICAL-REPLICATION-SNAPSHOT)) para replicação lógica não leva em conta este parâmetro ao copiar dados de tabela existentes.
 
 `publish_generated_columns` (`enum`) [#](#SQL-CREATEPUBLICATION-PARAMS-WITH-PUBLISH-GENERATED-COLUMNS) : Especifica se as colunas geradas presentes nas tabelas associadas à publicação devem ser replicadas. Os valores possíveis são `none` e `stored`.
 
@@ -68,7 +68,7 @@ Se configurado como `stored`, as colunas geradas armazenadas presentes nas tabel
 
 Se o assinante tiver uma versão anterior a 18, a sincronização inicial da tabela não copiará as colunas geradas, mesmo que o parâmetro `publish_generated_columns` seja `stored` no editor.
 
-Veja [Seção 29.6][(logical-replication-gencols.md "29.6. Generated Column Replication")] para mais detalhes sobre a replicação lógica de colunas geradas.
+Veja [Seção 29.6](logical-replication-gencols.md) para mais detalhes sobre a replicação lógica de colunas geradas.
 
 `publish_via_partition_root` (`boolean`) [#](#SQL-CREATEPUBLICATION-PARAMS-WITH-PUBLISH-VIA-PARTITION-ROOT) :   Este parâmetro controla como as alterações em uma tabela particionada (ou em qualquer uma de suas partições) são publicadas. Quando definido como `true`, as alterações são publicadas usando a identidade e o esquema da tabela particionada raiz. Quando definido como `false` (o padrão), as alterações são publicadas usando a identidade e o esquema das partições individuais onde as alterações ocorreram. Habilitar esta opção permite que as alterações sejam replicadas em uma tabela não particionada ou em uma tabela particionada cuja estrutura de partição difere da do publicador.
 
@@ -100,7 +100,7 @@ As colunas geradas que fazem parte de `REPLICA IDENTITY` devem ser publicadas ex
 
 O filtro de linha em uma tabela se torna redundante se `FOR TABLES IN SCHEMA` for especificado e a tabela pertencer ao esquema referido.
 
-Para tabelas particionadas publicadas, o filtro de linha para cada partição é retirado da tabela particionada publicada se o parâmetro de publicação `publish_via_partition_root` for verdadeiro, ou da própria partição se for falso (o padrão). Veja [Seção 29.4][(logical-replication-row-filter.md "29.4. Row Filters")] para detalhes sobre filtros de linha. Da mesma forma, para tabelas particionadas publicadas, a lista de colunas para cada partição é retirada da tabela particionada publicada se o parâmetro de publicação `publish_via_partition_root` for verdadeiro, ou da própria partição se for falso.
+Para tabelas particionadas publicadas, o filtro de linha para cada partição é retirado da tabela particionada publicada se o parâmetro de publicação `publish_via_partition_root` for verdadeiro, ou da própria partição se for falso (o padrão). Veja [Seção 29.4](logical-replication-row-filter.md) para detalhes sobre filtros de linha. Da mesma forma, para tabelas particionadas publicadas, a lista de colunas para cada partição é retirada da tabela particionada publicada se o parâmetro de publicação `publish_via_partition_root` for verdadeiro, ou da própria partição se for falso.
 
 Para um comando `INSERT ... ON CONFLICT`, a publicação publicará a operação que resulta do comando. Dependendo do resultado, ela pode ser publicada como `INSERT` ou `UPDATE`, ou pode não ser publicada em absoluto.
 

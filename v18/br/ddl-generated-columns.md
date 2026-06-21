@@ -26,7 +26,7 @@ Várias restrições se aplicam à definição de colunas e tabelas geradas que 
 * Uma coluna gerada virtual não pode ter um tipo definido pelo usuário e a expressão de geração de uma coluna gerada virtual não deve referenciar funções ou tipos definidos pelo usuário, ou seja, só pode usar funções ou tipos embutidos. Isso também se aplica indiretamente, como para funções ou tipos que subjazem a operadores ou casts. (Essa restrição não existe para colunas geradas armazenadas.)
 * Uma coluna gerada não pode ter um padrão de coluna ou uma definição de identidade.
 * Uma coluna gerada não pode fazer parte de uma chave de partição.
-* Tabelas estrangeiras podem ter colunas geradas. Veja [CREATE FOREIGN TABLE][(sql-createforeigntable.md "CREATE FOREIGN TABLE")] para detalhes.
+* Tabelas estrangeiras podem ter colunas geradas. Veja [CREATE FOREIGN TABLE](sql-createforeigntable.md) para detalhes.
 * Para herança e particionamento:
 
 + Se uma coluna pai for uma coluna gerada, sua coluna filho também deve ser uma coluna gerada do mesmo tipo (armazenada ou virtual); no entanto, a coluna filho pode ter uma expressão de geração diferente.
@@ -41,7 +41,7 @@ Considerações adicionais se aplicam ao uso de colunas geradas.
 
 * As colunas geradas mantêm privilégios de acesso separadamente de suas colunas de base subjacentes. Portanto, é possível configurá-las de modo que um determinado papel possa ler de uma coluna gerada, mas não das colunas de base subjacentes.
 
-Para colunas geradas virtualmente, isso é totalmente seguro apenas se a expressão de geração usar apenas funções à prova de vazamento (consulte [CREATE FUNCTION][(sql-createfunction.md "CREATE FUNCTION")]), mas isso não é exigido pelo sistema.
+Para colunas geradas virtualmente, isso é totalmente seguro apenas se a expressão de geração usar apenas funções à prova de vazamento (consulte [CREATE FUNCTION](sql-createfunction.md)), mas isso não é exigido pelo sistema.
 * Os privilégios das funções usadas nas expressões de geração são verificados quando a expressão é executada, na escrita ou leitura, respectivamente, como se a expressão de geração tivesse sido chamada diretamente da consulta usando a coluna gerada. O usuário de uma coluna gerada deve ter permissões para chamar todas as funções usadas pela expressão de geração. As funções na expressão de geração são executadas com os privilégios do usuário que executa a consulta ou do proprietário da função, dependendo se as funções são definidas como `SECURITY INVOKER` ou `SECURITY DEFINER`.
 * As colunas geradas são, conceitualmente, atualizadas após os gatilhos `BEFORE` terem sido executados. Portanto, as alterações feitas nas colunas base em um gatilho `BEFORE` serão refletidas nas colunas geradas. Mas, reciprocamente, não é permitido acessar colunas geradas em gatilhos `BEFORE`.
-* As colunas geradas podem ser replicadas durante a replicação lógica de acordo com o parâmetro `CREATE PUBLICATION` [`publish_generated_columns`][(sql-createpublication.md#SQL-CREATEPUBLICATION-PARAMS-WITH-PUBLISH-GENERATED-COLUMNS)] ou incluindo-as na lista de colunas do comando `CREATE PUBLICATION`. Isso atualmente é suportado apenas para colunas geradas armazenadas. Consulte [Seção 29.6][(logical-replication-gencols.md "29.6. Generated Column Replication")] para detalhes.
+* As colunas geradas podem ser replicadas durante a replicação lógica de acordo com o parâmetro `CREATE PUBLICATION` [`publish_generated_columns`](sql-createpublication.md#SQL-CREATEPUBLICATION-PARAMS-WITH-PUBLISH-GENERATED-COLUMNS) ou incluindo-as na lista de colunas do comando `CREATE PUBLICATION`. Isso atualmente é suportado apenas para colunas geradas armazenadas. Consulte [Seção 29.6](logical-replication-gencols.md) para detalhes.

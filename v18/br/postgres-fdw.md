@@ -14,7 +14,7 @@
 
 O módulo `postgres_fdw` fornece o wrapper de dados externos `postgres_fdw`, que pode ser usado para acessar dados armazenados em servidores externos PostgreSQL.
 
-A funcionalidade fornecida por este módulo sobrepõe-se substancialmente à funcionalidade do módulo anterior [dblink][(dblink.md "F.11. dblink — connect to other PostgreSQL databases")]. Mas o `postgres_fdw` oferece uma sintaxe mais transparente e conforme com os padrões para acessar tabelas remotas e pode oferecer melhor desempenho em muitos casos.
+A funcionalidade fornecida por este módulo sobrepõe-se substancialmente à funcionalidade do módulo anterior [dblink](dblink.md). Mas o `postgres_fdw` oferece uma sintaxe mais transparente e conforme com os padrões para acessar tabelas remotas e pode oferecer melhor desempenho em muitos casos.
 
 Para se preparar para o acesso remoto usando `postgres_fdw`:
 
@@ -37,7 +37,7 @@ Observe que uma tabela estrangeira pode ser declarada com menos colunas ou com u
 
 #### F.38.1.1. Opções de conexão [#](#POSTGRES-FDW-OPTIONS-CONNECTION)
 
-Um servidor estrangeiro que utiliza o wrapper de dados estrangeiro `postgres_fdw` pode ter as mesmas opções que a libpq aceita nas configurações de conexão, conforme descrito em [Seção 32.1.2][(libpq-connect.md#LIBPQ-PARAMKEYWORDS "32.1.2. Parameter Key Words")], exceto que essas opções não são permitidas ou têm tratamento especial:
+Um servidor estrangeiro que utiliza o wrapper de dados estrangeiro `postgres_fdw` pode ter as mesmas opções que a libpq aceita nas configurações de conexão, conforme descrito em [Seção 32.1.2](libpq-connect.md#LIBPQ-PARAMKEYWORDS), exceto que essas opções não são permitidas ou têm tratamento especial:
 
 * `user`, `password` e `sslpassword` (especifique esses em um mapeamento de usuário em vez disso, ou use um arquivo de serviço)
 * `client_encoding` (este é definido automaticamente a partir da codificação do servidor local)
@@ -58,7 +58,7 @@ OPTIONS (ADD password_required 'false');
 
 Para impedir que usuários não privilegiados explorem os direitos de autenticação do usuário Unix que o servidor postgres está executando para escalar para direitos de superusuário, apenas o superusuário pode definir essa opção em um mapeamento de usuário.
 
-É necessário ter cuidado para garantir que isso não permita que o usuário mapeado conecte-se como usuário superutilizador ao banco de dados mapeado, conforme CVE-2007-3278 e CVE-2007-6601. Não defina `password_required=false` no papel `public`. Tenha em mente que o usuário mapeado pode potencialmente usar quaisquer certificados de cliente, `.pgpass`, `.pg_service.conf` etc., no diretório de casa do sistema do usuário do servidor postgres. (Para detalhes sobre como os diretórios de casa são encontrados, consulte [Seção 32.16][(libpq-pgpass.md "32.16. The Password File")]. Eles também podem usar qualquer relação de confiança concedida por modos de autenticação como `peer` ou `ident` autenticação.
+É necessário ter cuidado para garantir que isso não permita que o usuário mapeado conecte-se como usuário superutilizador ao banco de dados mapeado, conforme CVE-2007-3278 e CVE-2007-6601. Não defina `password_required=false` no papel `public`. Tenha em mente que o usuário mapeado pode potencialmente usar quaisquer certificados de cliente, `.pgpass`, `.pg_service.conf` etc., no diretório de casa do sistema do usuário do servidor postgres. (Para detalhes sobre como os diretórios de casa são encontrados, consulte [Seção 32.16](libpq-pgpass.md). Eles também podem usar qualquer relação de confiança concedida por modos de autenticação como `peer` ou `ident` autenticação.
 
 #### F.38.1.2. Opções de Nome do Objeto [#](#POSTGRES-FDW-OPTIONS-OBJECT-NAME)
 
@@ -156,7 +156,7 @@ Mesmo quando este parâmetro é definido como `true`, importar colunas cuja corr
 
 `import_not_null` (`boolean`): Esta opção controla se as restrições da coluna `NOT NULL` são incluídas nas definições de tabelas externas importadas de um servidor externo. O padrão é `true`.
 
-Observe que restrições que não sejam `NOT NULL` nunca serão importadas das tabelas remotas. Embora o PostgreSQL suporte restrições de verificação em tabelas externas, não há disposição para importá-las automaticamente, devido ao risco de que uma expressão de restrição possa ser avaliada de maneira diferente nos servidores local e remoto. Qualquer inconsistência desse tipo no comportamento de uma restrição de verificação pode levar a erros difíceis de detectar na otimização de consultas. Portanto, se você deseja importar restrições de verificação, deve fazê-lo manualmente e deve verificar cuidadosamente a semântica de cada uma delas. Para mais detalhes sobre o tratamento de restrições de verificação em tabelas externas, consulte [CREATE FOREIGN TABLE][(sql-createforeigntable.md "CREATE FOREIGN TABLE")].
+Observe que restrições que não sejam `NOT NULL` nunca serão importadas das tabelas remotas. Embora o PostgreSQL suporte restrições de verificação em tabelas externas, não há disposição para importá-las automaticamente, devido ao risco de que uma expressão de restrição possa ser avaliada de maneira diferente nos servidores local e remoto. Qualquer inconsistência desse tipo no comportamento de uma restrição de verificação pode levar a erros difíceis de detectar na otimização de consultas. Portanto, se você deseja importar restrições de verificação, deve fazê-lo manualmente e deve verificar cuidadosamente a semântica de cada uma delas. Para mais detalhes sobre o tratamento de restrições de verificação em tabelas externas, consulte [CREATE FOREIGN TABLE](sql-createforeigntable.md).
 
 Tabelas ou tabelas estrangeiras que são divisões de outras tabelas são importadas apenas quando especificadas explicitamente na cláusula `LIMIT TO`. Caso contrário, elas são automaticamente excluídas de [IMPORTAR SCHEMA ESTRANGEIRO](sql-importforeignschema.md "IMPORT FOREIGN SCHEMA"). Como todos os dados podem ser acessados através da tabela dividida, que é a raiz da hierarquia de divisão, a importação de apenas tabelas divididas deve permitir o acesso a todos os dados sem criar objetos extras.
 
@@ -182,180 +182,197 @@ Se `check_conn` estiver definido como `true`, a função verifica o estado de ca
 
 Exemplo de uso da função:
 
-``` postgres=# SELECT * FROM postgres_fdw_get_connections(true); server_name | user_name | valid | used_in_xact | closed | remote_backend_pid -------------+-----------+-------+--------------+----------------------------- loopback1   | postgres  | t     | t            | f      |            1353340 loopback2   | public    | t     | t            | f      |            1353120 loopback3   |           | f     | t            | f      |            1353156
-    ```
+```
+postgres=# SELECT * FROM postgres_fdw_get_connections(true); server_name | user_name | valid | used_in_xact | closed | remote_backend_pid -------------+-----------+-------+--------------+----------------------------- loopback1   | postgres  | t     | t            | f      |            1353340 loopback2   | public    | t     | t            | f      |            1353120 loopback3   |           | f     | t            | f      |            1353156
+```
 
-As colunas de saída são descritas em [Tabela F.28][(postgres-fdw.md#POSTGRES-FDW-GET-CONNECTIONS-COLUMNS "Table F.28. postgres_fdw_get_connections Output Columns")].
+As colunas de saída são descritas em [Tabela F.28](postgres-fdw.md#POSTGRES-FDW-GET-CONNECTIONS-COLUMNS).
 
 **Tabela F.28. Colunas de Saída `postgres_fdw_get_connections`**
 
-    
+
 
 <table border="1" class="table" summary="postgres_fdw_get_connections Output Columns">
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Column
    </th>
-<th>
+   <th>
     Type
    </th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="structfield">
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="structfield">
      server_name
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      text
     </code>
-</td>
-<td>O nome do servidor estrangeiro desta conexão. Se o servidor for descartado, mas a conexão permanecer aberta (ou seja, marcada como inválida), isso será<code class="literal">
+   </td>
+   <td>
+    O nome do servidor estrangeiro desta conexão. Se o servidor for descartado, mas a conexão permanecer aberta (ou seja, marcada como inválida), isso será
+    <code class="literal">
      NULL
     </code>
     .
    </td>
-</tr>
-<tr>
-<td>
-<code class="structfield">
+  </tr>
+  <tr>
+   <td>
+    <code class="structfield">
      user_name
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      text
     </code>
-</td>
-<td>Nome do usuário local mapeado para o servidor estrangeiro desta conexão, ou<code class="literal">
+   </td>
+   <td>
+    Nome do usuário local mapeado para o servidor estrangeiro desta conexão, ou
+    <code class="literal">
      public
-    </code>se uma mapear público for usada. Se a mapear do usuário for descartada, mas a conexão permanecer aberta (ou seja, marcada como inválida), isso será<code class="literal">
+    </code>
+    se uma mapear público for usada. Se a mapear do usuário for descartada, mas a conexão permanecer aberta (ou seja, marcada como inválida), isso será
+    <code class="literal">
      NULL
     </code>
     .
    </td>
-</tr>
-<tr>
-<td>
-<code class="structfield">
+  </tr>
+  <tr>
+   <td>
+    <code class="structfield">
      valid
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      boolean
     </code>
-</td>
-<td>Falso se essa conexão for inválida, ou seja, ela é usada na transação atual, mas seu mapeamento de servidor ou usuário estrangeiro foi alterado ou excluído. A conexão inválida será fechada no final da transação. Verdadeiro é retornado caso contrário.</td>
-</tr>
-<tr>
-<td>
-<code class="structfield">
+   </td>
+   <td>
+    Falso se essa conexão for inválida, ou seja, ela é usada na transação atual, mas seu mapeamento de servidor ou usuário estrangeiro foi alterado ou excluído. A conexão inválida será fechada no final da transação. Verdadeiro é retornado caso contrário.
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="structfield">
      used_in_xact
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      boolean
     </code>
-</td>
-<td>Verdadeiro se essa conexão for usada na transação atual.</td>
-</tr>
-<tr>
-<td>
-<code class="structfield">
+   </td>
+   <td>
+    Verdadeiro se essa conexão for usada na transação atual.
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="structfield">
      closed
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      boolean
     </code>
-</td>
-<td>Verdadeiro se essa conexão for fechada, falso caso contrário.<code class="literal">
+   </td>
+   <td>
+    Verdadeiro se essa conexão for fechada, falso caso contrário.
+    <code class="literal">
      NULL
-    </code>é devolvida se<code class="literal">
+    </code>
+    é devolvida se
+    <code class="literal">
      check_conn
-    </code>está previsto<code class="literal">
+    </code>
+    está previsto
+    <code class="literal">
      false
-    </code>ou se o controle de status de conexão não estiver disponível nesta plataforma.</td>
-</tr>
-<tr>
-<td>
-<code class="structfield">
+    </code>
+    ou se o controle de status de conexão não estiver disponível nesta plataforma.
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="structfield">
      remote_backend_pid
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      int4
     </code>
-</td>
-<td>ID do processo do backend remoto, no servidor estrangeiro, que lida com a conexão. Se o backend remoto for encerrado e a conexão for fechada (com<code class="literal">
+   </td>
+   <td>
+    ID do processo do backend remoto, no servidor estrangeiro, que lida com a conexão. Se o backend remoto for encerrado e a conexão for fechada (com
+    <code class="literal">
      closed
-    </code>prontos para<code class="literal">
+    </code>
+    prontos para
+    <code class="literal">
      true
-    </code>), isso ainda mostra o ID do processo do backend terminado.</td>
-</tr>
-</tbody>
+    </code>
+    ), isso ainda mostra o ID do processo do backend terminado.
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 
 `postgres_fdw_disconnect(server_name text) returns boolean`: Esta função descarta as conexões abertas que são estabelecidas por `postgres_fdw` da sessão local para o servidor estrangeiro com o nome dado. Note que pode haver múltiplas conexões ao servidor dado usando diferentes mapeamentos de usuário. Se as conexões forem usadas na transação local atual, elas não serão desconectadas e mensagens de aviso serão relatadas. Esta função retorna `true` se desconectar pelo menos uma conexão, caso contrário, `false`. Se não for encontrado nenhum servidor estrangeiro com o nome dado, um erro será relatado. Exemplo de uso da função:
 
-``` postgres=# SELECT postgres_fdw_disconnect('loopback1'); postgres_fdw_disconnect ------------------------- t
-    ```
+```
+postgres=# SELECT postgres_fdw_disconnect('loopback1'); postgres_fdw_disconnect ------------------------- t
+```
 
-`postgres_fdw_disconnect_all() returns boolean`
-:   Esta função descarta todas as conexões abertas que são estabelecidas por
-    `postgres_fdw` da sessão local para
-    servidores externos. Se as conexões forem usadas na transação local atual, elas não serão desconectadas e mensagens de aviso serão relatadas.
-    Esta função retorna `true` se desconectar pelo menos uma conexão, caso contrário `false`.
-    Exemplo de uso da função:
+`postgres_fdw_disconnect_all() returns boolean`: Esta função descarta todas as conexões abertas que são estabelecidas por `postgres_fdw` da sessão local para servidores externos. Se as conexões forem usadas na transação local atual, elas não serão desconectadas e mensagens de aviso serão relatadas. Esta função retorna `true` se desconectar pelo menos uma conexão, caso contrário `false`. Exemplo de uso da função:
 
-    ```
-    postgres=# SELECT postgres_fdw_disconnect_all(); postgres_fdw_disconnect_all ----------------------------- t
-    ```
+```
+postgres=# SELECT postgres_fdw_disconnect_all(); postgres_fdw_disconnect_all ----------------------------- t
+```
 
 ### F.38.3. Gerenciamento de Conexão [#](#POSTGRES-FDW-CONNECTION-MANAGEMENT)
 
 `postgres_fdw` estabelece uma conexão com um servidor estrangeiro durante a primeira consulta que utiliza uma tabela estrangeira associada ao servidor estrangeiro. Por padrão, essa conexão é mantida e reutilizada para consultas subsequentes na mesma sessão. Esse comportamento pode ser controlado usando a opção `keep_connections` para um servidor estrangeiro. Se várias identidades de usuário (mapeamentos de usuário) forem usadas para acessar o servidor estrangeiro, uma conexão é estabelecida para cada mapeamento de usuário.
 
-Quando alterar a definição de um servidor estrangeiro ou remover uma mapeia de usuário, as conexões associadas são fechadas.
-Mas observe que, se houver conexões em uso na transação local atual, elas serão mantidas até o final da transação.
-As conexões fechadas serão restabelecidas quando forem necessárias por consultas futuras que utilizem uma tabela estrangeira.
+Quando alterar a definição de um servidor estrangeiro ou remover uma mapeia de usuário, as conexões associadas são fechadas. Mas observe que, se houver conexões em uso na transação local atual, elas serão mantidas até o final da transação. As conexões fechadas serão restabelecidas quando forem necessárias por consultas futuras que utilizem uma tabela estrangeira.
 
 Uma vez que uma conexão com um servidor estrangeiro tenha sido estabelecida, ela é mantida por padrão até que a sessão local ou remota correspondente seja encerrada. Para desconectar uma conexão explicitamente, a opção `keep_connections` para um servidor estrangeiro pode ser desativada, ou as funções `postgres_fdw_disconnect` e `postgres_fdw_disconnect_all` podem ser usadas. Por exemplo, essas funções são úteis para fechar conexões que não são mais necessárias, liberando assim as conexões no servidor estrangeiro.
 
 ### F.38.4. Gestão de Transações [#](#POSTGRES-FDW-TRANSACTION-MANAGEMENT)
 
-Durante uma consulta que faz referência a quaisquer tabelas remotas em um servidor externo,
-`postgres_fdw` abre uma transação no servidor remoto, se uma não estiver já aberta correspondente à transação local atual. A transação remota é comprometida ou abortada quando a transação local compromete ou abor de. Os pontos de salvamento são gerenciados de maneira semelhante, criando pontos de salvamento remotos correspondentes.
+Durante uma consulta que faz referência a quaisquer tabelas remotas em um servidor externo, `postgres_fdw` abre uma transação no servidor remoto, se uma não estiver já aberta correspondente à transação local atual. A transação remota é comprometida ou abortada quando a transação local compromete ou abor de. Os pontos de salvamento são gerenciados de maneira semelhante, criando pontos de salvamento remotos correspondentes.
 
-A transação remota usa o nível de isolamento `SERIALIZABLE` quando a transação local tem o nível de isolamento `SERIALIZABLE`; caso contrário, usa o nível de isolamento `REPEATABLE READ`. Essa escolha garante que, se uma consulta realizar múltiplos varreduras em uma tabela no servidor remoto, ela obterá resultados consistentes com instantâneo para todas as varreduras. Uma consequência é que consultas consecutivas dentro de uma única transação verão os mesmos dados do servidor remoto, mesmo que atualizações concorrentes estejam ocorrendo no servidor remoto devido a outras atividades. Esse comportamento seria esperado de qualquer maneira se a transação local usasse o nível de isolamento `SERIALIZABLE` ou `REPEATABLE READ`, mas pode ser surpreendente para uma transação local `READ
-COMMITTED`. Uma futura versão do PostgreSQL pode modificar essas regras.
+A transação remota usa o nível de isolamento `SERIALIZABLE` quando a transação local tem o nível de isolamento `SERIALIZABLE`; caso contrário, usa o nível de isolamento `REPEATABLE READ`. Essa escolha garante que, se uma consulta realizar múltiplos varreduras em uma tabela no servidor remoto, ela obterá resultados consistentes com instantâneo para todas as varreduras. Uma consequência é que consultas consecutivas dentro de uma única transação verão os mesmos dados do servidor remoto, mesmo que atualizações concorrentes estejam ocorrendo no servidor remoto devido a outras atividades. Esse comportamento seria esperado de qualquer maneira se a transação local usasse o nível de isolamento `SERIALIZABLE` ou `REPEATABLE READ`, mas pode ser surpreendente para uma transação local `READ COMMITTED`. Uma futura versão do PostgreSQL pode modificar essas regras.
 
 Observe que, atualmente, não é suportado pelo `postgres_fdw` para preparar a transação remota para o commit de duas fases.
 
 ### F.38.5. Otimização de consultas remotas [#](#POSTGRES-FDW-REMOTE-QUERY-OPTIMIZATION)
 
-`postgres_fdw` tenta otimizar consultas remotas para reduzir a quantidade de dados transferidos de servidores estrangeiros. Isso é feito enviando cláusulas de consulta `WHERE` ao servidor remoto para execução e não recuperando colunas de tabela que não são necessárias para a consulta atual. Para reduzir o risco de execução incorreta de consultas, as cláusulas de `WHERE` não são enviadas ao servidor remoto, a menos que utilizem apenas tipos de dados, operadores e funções que são embutidos ou pertencem a uma extensão que está listada na opção `extensions` do servidor estrangeiro. Operadores e funções nessas cláusulas também devem ser `IMMUTABLE`.
-Para uma consulta `UPDATE` ou `DELETE`,
-`postgres_fdw` tenta otimizar a execução da consulta enviando toda a consulta ao servidor remoto se não houver cláusulas de consulta `WHERE` que não possam ser enviadas ao servidor remoto, sem junções locais para a consulta, sem gatilhos locais de nível de linha `BEFORE` ou `AFTER` ou colunas geradas armazenadas na tabela de destino e sem restrições `CHECK OPTION` de visualizações parentais. Em `UPDATE`,
-expressões para atribuir às colunas de destino devem usar apenas tipos de dados embutidos,
-`IMMUTABLE` operadores ou funções `IMMUTABLE`,
-para reduzir o risco de execução incorreta da consulta.
+`postgres_fdw` tenta otimizar consultas remotas para reduzir a quantidade de dados transferidos de servidores estrangeiros. Isso é feito enviando cláusulas de consulta `WHERE` ao servidor remoto para execução e não recuperando colunas de tabela que não são necessárias para a consulta atual. Para reduzir o risco de execução incorreta de consultas, as cláusulas de `WHERE` não são enviadas ao servidor remoto, a menos que utilizem apenas tipos de dados, operadores e funções que são embutidos ou pertencem a uma extensão que está listada na opção `extensions` do servidor estrangeiro. Operadores e funções nessas cláusulas também devem ser `IMMUTABLE`. Para uma consulta `UPDATE` ou `DELETE`, `postgres_fdw` tenta otimizar a execução da consulta enviando toda a consulta ao servidor remoto se não houver cláusulas de consulta `WHERE` que não possam ser enviadas ao servidor remoto, sem junções locais para a consulta, sem gatilhos locais de nível de linha `BEFORE` ou `AFTER` ou colunas geradas armazenadas na tabela de destino e sem restrições `CHECK OPTION` de visualizações parentais. Em `UPDATE`, expressões para atribuir às colunas de destino devem usar apenas tipos de dados embutidos, `IMMUTABLE` operadores ou funções `IMMUTABLE`, para reduzir o risco de execução incorreta da consulta.
 
 Quando o `postgres_fdw` encontra uma junção entre tabelas estrangeiras no mesmo servidor estrangeiro, ele envia toda a junção para o servidor estrangeiro, a menos que, por algum motivo, ele acredite que será mais eficiente buscar linhas de cada tabela individualmente, ou a menos que as tabelas referenciadas envolvidas estejam sujeitas a diferentes mapeamentos de usuário. Ao enviar as cláusulas `JOIN`, ele toma as mesmas precauções mencionadas acima para as cláusulas `WHERE`.
 
@@ -363,30 +380,16 @@ A consulta que é realmente enviada ao servidor remoto para execução pode ser 
 
 ### F.38.6. Ambiente de execução de consultas remotas [#](#POSTGRES-FDW-REMOTE-QUERY-EXECUTION-ENVIRONMENT)
 
-Nas sessões remotas abertas por `postgres_fdw`,
-o parâmetro [search_path](runtime-config-client.md#GUC-SEARCH-PATH) é definido apenas para
-`pg_catalog`, para que apenas os objetos embutidos sejam visíveis
-sem qualificação de esquema. Isso não é um problema para consultas
-geradas pelo próprio `postgres_fdw`, porque ele sempre
-fornece tal qualificação. No entanto, isso pode representar um perigo
-para funções que são executadas no servidor remoto por meio de gatilhos ou regras
-em tabelas remotas. Por exemplo, se uma tabela remota é realmente uma visão,
-qualquer função usada nessa visão será executada com o caminho de busca
-restritivo. Recomenda-se qualificar todos os nomes nessas funções,
-ou então anexar as opções `SET search_path`
-(veja [CREATE FUNCTION](sql-createfunction.md "CREATE FUNCTION")) a essas funções
-para estabelecer seu ambiente de caminho de busca esperado.
+Nas sessões remotas abertas por `postgres_fdw`, o parâmetro [search_path](runtime-config-client.md#GUC-SEARCH-PATH) é definido apenas para `pg_catalog`, para que apenas os objetos embutidos sejam visíveis sem qualificação de esquema. Isso não é um problema para consultas geradas pelo próprio `postgres_fdw`, porque ele sempre fornece tal qualificação. No entanto, isso pode representar um perigo para funções que são executadas no servidor remoto por meio de gatilhos ou regras em tabelas remotas. Por exemplo, se uma tabela remota é realmente uma visão, qualquer função usada nessa visão será executada com o caminho de busca restritivo. Recomenda-se qualificar todos os nomes nessas funções, ou então anexar as opções `SET search_path` (veja [CREATE FUNCTION](sql-createfunction.md "CREATE FUNCTION")) a essas funções para estabelecer seu ambiente de caminho de busca esperado.
 
 `postgres_fdw` estabelece, igualmente, configurações de sessão remota para vários parâmetros:
 
 * [TimeZone](runtime-config-client.md#GUC-TIMEZONE) está definido para `UTC`
 * [DateStyle](runtime-config-client.md#GUC-DATESTYLE) está definido para `ISO`
 * [IntervalStyle](runtime-config-client.md#GUC-INTERVALSTYLE) está definido para `postgres`
-* [extra_float_digits](runtime-config-client.md#GUC-EXTRA-FLOAT-DIGITS) está definido para `3` para servidores remotos
-9.0 e versões mais recentes e está definido para `2` para versões mais antigas
+* [extra_float_digits](runtime-config-client.md#GUC-EXTRA-FLOAT-DIGITS) está definido para `3` para servidores remotos 9.0 e versões mais recentes e está definido para `2` para versões mais antigas
 
-Esses são menos propensos a serem problemáticos do que `search_path`, mas
-podem ser tratados com as opções da função `SET` se necessário.
+Esses são menos propensos a serem problemáticos do que `search_path`, mas podem ser tratados com as opções da função `SET` se necessário.
 
 Não é recomendado que você sobrecarregue esse comportamento ao alterar as configurações de nível de sessão desses parâmetros; isso provavelmente fará com que o `postgres_fdw` funcione mal.
 
@@ -400,118 +403,127 @@ Outra limitação é que, ao executar as instruções `INSERT` com uma cláusula
 
 ### F.38.8. Eventos de espera [#](#POSTGRES-FDW-WAIT-EVENTS)
 
-`postgres_fdw` pode relatar os seguintes eventos de espera
-sob o tipo de evento de espera `Extension`:
+`postgres_fdw` pode relatar os seguintes eventos de espera sob o tipo de evento de espera `Extension`:
 
-`PostgresFdwCleanupResult`
-:   Esperando pelo cancelamento da transação no servidor remoto.
+`PostgresFdwCleanupResult`: Esperando pelo cancelamento da transação no servidor remoto.
 
-`PostgresFdwConnect`
-:   Esperando estabelecer uma conexão com um servidor remoto.
+`PostgresFdwConnect`: Esperando estabelecer uma conexão com um servidor remoto.
 
 `PostgresFdwGetResult`  : Esperando receber os resultados de uma consulta de um servidor remoto.
 
 ### F.38.9. Parâmetros de configuração [#](#POSTGRES-FDW-CONFIGURATION-PARAMETERS)
 
-`postgres_fdw.application_name` (`string`) [#](#GUC-PGFDW-APPLICATION-NAME)
-:   Especifica um valor para o parâmetro de configuração de [application_name](runtime-config-logging.md#GUC-APPLICATION-NAME)
-    usado quando `postgres_fdw`
-    estabelece uma conexão com um servidor externo. Isso substitui
-    a opção `application_name` do objeto do servidor.
-    Observe que a alteração deste parâmetro não afeta quaisquer conexões
-    existentes até que sejam restabelecidas.
+`postgres_fdw.application_name` (`string`) [#](#GUC-PGFDW-APPLICATION-NAME): Especifica um valor para o parâmetro de configuração de [application_name](runtime-config-logging.md#GUC-APPLICATION-NAME) usado quando `postgres_fdw` estabelece uma conexão com um servidor externo. Isso substitui a opção `application_name` do objeto do servidor. Observe que a alteração deste parâmetro não afeta quaisquer conexões existentes até que sejam restabelecidas.
 
-`postgres_fdw.application_name` pode ser qualquer string de qualquer comprimento e conter caracteres não ASCII. No entanto, quando é passado e usado como `application_name` em um servidor estrangeiro, observe que ele será truncado para menos de caracteres `NAMEDATALEN`.
-Qualquer coisa que não seja caracteres ASCII imprimíveis é substituída por escapamentos hexadecimais estilo C (sql-syntax-lexical.md#SQL-SYNTAX-STRINGS-ESCAPE "4.1.2.2. String Constants with C-Style Escapes").
-Consulte [application_name](runtime-config-logging.md#GUC-APPLICATION-NAME) para obter detalhes.
+`postgres_fdw.application_name` pode ser qualquer string de qualquer comprimento e conter caracteres não ASCII. No entanto, quando é passado e usado como `application_name` em um servidor estrangeiro, observe que ele será truncado para menos de caracteres `NAMEDATALEN`. Qualquer coisa que não seja caracteres ASCII imprimíveis é substituída por escapamentos hexadecimais estilo C (sql-syntax-lexical.md#SQL-SYNTAX-STRINGS-ESCAPE "4.1.2.2. String Constants with C-Style Escapes"). Consulte [application_name](runtime-config-logging.md#GUC-APPLICATION-NAME) para obter detalhes.
 
-`%` caracteres começam com "sequências de escape" que são substituídas por informações de status conforme descrito abaixo.
-Escape não reconhecido é ignorado. Outros caracteres são copiados diretamente para o nome da aplicação. Note que não é permitido especificar um sinal de mais/menos ou um literal numérico após o `%` e antes da opção, para alinhamento e preenchimento.
+`%` caracteres começam com "sequências de escape" que são substituídas por informações de status conforme descrito abaixo. Escape não reconhecido é ignorado. Outros caracteres são copiados diretamente para o nome da aplicação. Note que não é permitido especificar um sinal de mais/menos ou um literal numérico após o `%` e antes da opção, para alinhamento e preenchimento.
 
-    
+
 
 <table border="1" class="informaltable">
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Escape
    </th>
-<th>Efeito</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+   <th>
+    Efeito
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      %a
     </code>
-</td>
-<td>Nome do aplicativo no servidor local</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Nome do aplicativo no servidor local
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %c
     </code>
-</td>
-<td>ID de sessão no servidor local<a class="xref" href="runtime-config-logging.md#GUC-LOG-LINE-PREFIX">
+   </td>
+   <td>
+    ID de sessão no servidor local
+    <a class="xref" href="runtime-config-logging.md#GUC-LOG-LINE-PREFIX">
      log_line_prefix
-    </a>para detalhes)</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+    </a>
+    para detalhes)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %C
     </code>
-</td>
-<td>Nome do cluster no servidor local<a class="xref" href="runtime-config-logging.md#GUC-CLUSTER-NAME">
+   </td>
+   <td>
+    Nome do cluster no servidor local
+    <a class="xref" href="runtime-config-logging.md#GUC-CLUSTER-NAME">
      cluster_name
-    </a>para detalhes)</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+    </a>
+    para detalhes)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %u
     </code>
-</td>
-<td>Nome do usuário no servidor local</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Nome do usuário no servidor local
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %d
     </code>
-</td>
-<td>Nome do banco de dados no servidor local</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Nome do banco de dados no servidor local
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %p
     </code>
-</td>
-<td>ID de processo do backend no servidor local</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    ID de processo do backend no servidor local
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %%
     </code>
-</td>
-<td>Literalmente %</td>
-</tr>
-</tbody>
+   </td>
+   <td>
+    Literalmente %
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
-Por exemplo, se o usuário `local_user` estabelece uma conexão da base de dados `local_db` para
-`foreign_db` como o usuário `foreign_user`, o ajuste `'db=%d, user=%u'` é substituído por
-`'db=local_db, user=local_user'`.
+
+
+
+Por exemplo, se o usuário `local_user` estabelece uma conexão da base de dados `local_db` para `foreign_db` como o usuário `foreign_user`, o ajuste `'db=%d, user=%u'` é substituído por `'db=local_db, user=local_user'`.
 
 ### F.38.10. Exemplos [#](#POSTGRES-FDW-EXAMPLES)
 
@@ -521,17 +533,13 @@ Aqui está um exemplo de criação de uma tabela estrangeira com `postgres_fdw`.
 CREATE EXTENSION postgres_fdw;
 ```
 
-Em seguida, crie um servidor remoto usando [CREATE SERVER][(sql-createserver.md "CREATE SERVER")].
-Neste exemplo, desejamos conectar-se a um servidor PostgreSQL
-no host `192.83.123.89` que está ouvindo na
-porta `5432`. O banco de dados ao qual a conexão é feita
-é chamado `foreign_db` no servidor remoto:
+Em seguida, crie um servidor remoto usando [CREATE SERVER](sql-createserver.md). Neste exemplo, desejamos conectar-se a um servidor PostgreSQL no host `192.83.123.89` que está ouvindo na porta `5432`. O banco de dados ao qual a conexão é feita é chamado `foreign_db` no servidor remoto:
 
 ```
 CREATE SERVER foreign_server FOREIGN DATA WRAPPER postgres_fdw OPTIONS (host '192.83.123.89', port '5432', dbname 'foreign_db');
 ```
 
-É necessário um mapeamento de usuário, definido com [CREATE USER MAPPING][(sql-createusermapping.md "CREATE USER MAPPING")], para identificar o papel que será usado no servidor remoto:
+É necessário um mapeamento de usuário, definido com [CREATE USER MAPPING](sql-createusermapping.md), para identificar o papel que será usado no servidor remoto:
 
 ```
 CREATE USER MAPPING FOR local_user SERVER foreign_server OPTIONS (user 'foreign_user', password 'password');
@@ -543,7 +551,7 @@ Agora é possível criar uma tabela estrangeira com [CREATE FOREIGN TABLE] (sql-
 CREATE FOREIGN TABLE foreign_table ( id integer NOT NULL, data text ) SERVER foreign_server OPTIONS (schema_name 'some_schema', table_name 'some_table');
 ```
 
-É essencial que os tipos de dados e outras propriedades das colunas declaradas em `CREATE FOREIGN TABLE` correspondam à tabela remota real. Os nomes das colunas também devem corresponder, a menos que você adicione as opções `column_name` às colunas individuais para mostrar como elas são nomeadas na tabela remota. Em muitos casos, o uso de [`IMPORT FOREIGN SCHEMA`(sql-importforeignschema.md "IMPORT FOREIGN SCHEMA") é preferível à construção manual de definições de tabela externa.
+É essencial que os tipos de dados e outras propriedades das colunas declaradas em `CREATE FOREIGN TABLE` correspondam à tabela remota real. Os nomes das colunas também devem corresponder, a menos que você adicione as opções `column_name` às colunas individuais para mostrar como elas são nomeadas na tabela remota. Em muitos casos, o uso de [`IMPORT FOREIGN SCHEMA`](sql-importforeignschema.md) é preferível à construção manual de definições de tabela externa.
 
 ### F.38.11. Autor [#](#POSTGRES-FDW-AUTHOR)
 

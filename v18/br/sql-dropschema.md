@@ -20,7 +20,7 @@ Um esquema só pode ser descartado pelo seu proprietário ou por um superusuári
 
 *`name`*: O nome de um esquema.
 
-`CASCADE`: Descarte automaticamente os objetos (tabelas, funções, etc.) que estão contidos no esquema e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos (tabelas, funções, etc.) que estão contidos no esquema e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a eliminação do esquema se ele contiver quaisquer objetos. Esse é o padrão.
 

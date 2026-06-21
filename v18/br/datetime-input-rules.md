@@ -10,7 +10,7 @@ As strings de entrada de data/hora são decodificadas usando o procedimento a se
    4. Se o token começar com um mais (`+`) ou menos (`-`), então é um fuso horário numérico ou um campo especial.
 2. Se o token for uma string alfabética, corresponda com as possíveis strings:
 
-1. Verifique se o token corresponde a alguma abreviação conhecida de fuso horário. Essas abreviações são determinadas pelas configurações descritas na [Seção B.4][(datetime-config-files.md "B.4. Date/Time Configuration Files")].
+1. Verifique se o token corresponde a alguma abreviação conhecida de fuso horário. Essas abreviações são determinadas pelas configurações descritas na [Seção B.4](datetime-config-files.md).
 2. Se não for encontrado, procure uma tabela interna para corresponder ao token como uma string especial (por exemplo, `today`, `Thursday`, `January` ou palavra de ruído (por exemplo, `at`, `on`).
 3. Se ainda não for encontrado, lance um erro.
 3. Quando o token é um número ou campo numérico:

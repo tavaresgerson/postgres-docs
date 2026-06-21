@@ -70,7 +70,7 @@ Você deve possuir a função para usar `ALTER FUNCTION`. Para alterar o esquema
 
 `ROWS` *`result_rows`*: Altere o número estimado de linhas devolvidas por uma função que retorna um conjunto. Consulte [CREATE FUNCTION](sql-createfunction.md "CREATE FUNCTION") para obter mais informações.
 
-`SUPPORT` *`support_function`*: Defina ou altere a função de suporte do planejador a ser usada para esta função. Consulte [Seção 36.11][(xfunc-optimization.md "36.11. Function Optimization Information")] para obter detalhes. Você deve ser um superusuário para usar esta opção.
+`SUPPORT` *`support_function`*: Defina ou altere a função de suporte do planejador a ser usada para esta função. Consulte [Seção 36.11](xfunc-optimization.md) para obter detalhes. Você deve ser um superusuário para usar esta opção.
 
 Essa opção não pode ser usada para remover a função de suporte completamente, pois ela deve nomear uma nova função de suporte. Use `CREATE OR REPLACE FUNCTION` se você precisar fazer isso.
 

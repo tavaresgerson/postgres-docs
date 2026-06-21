@@ -18,7 +18,7 @@ O identificador do usuário da sessão é inicialmente definido como o nome do u
 
 O identificador do usuário da sessão pode ser alterado apenas se o usuário inicial da sessão (o usuário autenticado) tiver o privilégio de superusuário. Caso contrário, o comando é aceito apenas se especificar o nome do usuário autenticado.
 
-Os modificadores `SESSION` e `LOCAL` atuam da mesma forma que o comando regular [`SET`(sql-set.md "SET")].
+Os modificadores `SESSION` e `LOCAL` atuam da mesma forma que o comando regular [`SET`](sql-set.md)].
 
 Os formulários `DEFAULT` e `RESET` redefinem as sessões e os identificadores do usuário atual para o nome do usuário autenticado originalmente. Esses formulários podem ser executados por qualquer usuário.
 

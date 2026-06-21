@@ -8,8 +8,9 @@ Em versões anteriores, o libpq podia ser compilado com ou sem suporte a múltip
 
 `PQisthreadsafe` [#](#LIBPQ-PQISTHREADSAFE): Retorna o status de segurança de thread da biblioteca libpq.
 
-``` int PQisthreadsafe();
-    ```
+```
+int PQisthreadsafe();
+```
 
 Retorna 1 se a libpq for segura em relação a múltiplos threads e 0 se não for. Sempre retorna 1 na versão 17 e superior.
 
@@ -17,4 +18,4 @@ As funções obsoletas `PQrequestCancel` e (libpq-cancel.md#LIBPQ-PQREQUESTCANCE
 
 Se você estiver usando Kerberos dentro de sua aplicação (bem como dentro da libpq), você precisará realizar o bloqueio em torno das chamadas do Kerberos, pois as funções do Kerberos não são seguras para múltiplos threads. Consulte a função `PQregisterThreadLock` no código-fonte da libpq para uma maneira de realizar o bloqueio cooperativo entre a libpq e sua aplicação.
 
-Da mesma forma, se você estiver usando o Curl dentro da sua aplicação e ainda não [inicializar o libcurl globalmente][(https://curl.se/libcurl/c/curl_global_init.html)] antes de iniciar novos threads, você precisará bloquear de forma cooperativa (novamente via `PQregisterThreadLock`) em torno de qualquer código que possa inicializar o libcurl. Essa restrição é levantada para versões mais recentes do Curl que são construídas para suportar inicialização segura para threads; essas compilações podem ser identificadas pela publicidade de uma característica `threadsafe` em seus metadados de versão.
+Da mesma forma, se você estiver usando o Curl dentro da sua aplicação e ainda não [inicializar o libcurl globalmente](https://curl.se/libcurl/c/curl_global_init.html) antes de iniciar novos threads, você precisará bloquear de forma cooperativa (novamente via `PQregisterThreadLock`) em torno de qualquer código que possa inicializar o libcurl. Essa restrição é levantada para versões mais recentes do Curl que são construídas para suportar inicialização segura para threads; essas compilações podem ser identificadas pela publicidade de uma característica `threadsafe` em seus metadados de versão.

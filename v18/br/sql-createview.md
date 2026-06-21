@@ -27,14 +27,15 @@ Se alguma das tabelas referenciadas pela visão for temporária, a visão é cri
 
 `RECURSIVE`: Cria uma visão recursiva. A sintaxe
 
-``` CREATE RECURSIVE VIEW [ schema . ] view_name (column_names) AS SELECT ...;
-    ```
+```
+CREATE RECURSIVE VIEW [ schema . ] view_name (column_names) AS SELECT ...;
+```
 
 é equivalente a
 
-    ```
-    CREATE VIEW [ schema . ] view_name AS WITH RECURSIVE view_name (column_names) AS (SELECT ...) SELECT column_names FROM view_name;
-    ```
+```
+CREATE VIEW [ schema . ] view_name AS WITH RECURSIVE view_name (column_names) AS (SELECT ...) SELECT column_names FROM view_name;
+```
 
 Uma lista de nome de coluna de visualização deve ser especificada para uma visualização recursiva.
 
@@ -80,7 +81,7 @@ CREATE VIEW vista AS SELECT 'Hello World';
 CREATE VIEW vista AS SELECT text 'Hello World' AS hello;
 ```
 
-Por padrão, o acesso às relações subjacentes referenciadas na visualização é determinado pelas permissões do proprietário da visualização. Em alguns casos, isso pode ser usado para fornecer acesso seguro, mas restrito, às tabelas subjacentes. No entanto, nem todas as visualizações são seguras contra manipulações; consulte [Seção 39.5][(rules-privileges.md "39.5. Rules and Privileges")] para obter detalhes.
+Por padrão, o acesso às relações subjacentes referenciadas na visualização é determinado pelas permissões do proprietário da visualização. Em alguns casos, isso pode ser usado para fornecer acesso seguro, mas restrito, às tabelas subjacentes. No entanto, nem todas as visualizações são seguras contra manipulações; consulte [Seção 39.5](rules-privileges.md) para obter detalhes.
 
 Se a vista tiver a propriedade `security_invoker` definida como `true`, o acesso às relações de base subjacentes é determinado pelas permissões do usuário que executa a consulta, e não pelo proprietário da vista. Assim, o usuário de uma vista de invocação de segurança deve ter as permissões relevantes na vista e nas suas relações de base subjacentes.
 
@@ -109,11 +110,11 @@ Se a visualização for automaticamente atualizável, o sistema converterá qual
 
 Se uma visão automaticamente atualizável contiver uma condição `WHERE`, a condição restringe quais linhas da relação base estão disponíveis para serem modificadas pelas instruções `UPDATE`, `DELETE` e `MERGE` na visão. No entanto, uma `UPDATE` ou `MERGE` é permitida para alterar uma linha de modo que ela não satisfaça mais a condição `WHERE`, e assim não seja mais visível através da visão. Da mesma forma, um comando `INSERT` ou `MERGE` pode potencialmente inserir linhas da relação base que não satisfaçam a condição `WHERE` e, portanto, não sejam visíveis através da visão (`ON CONFLICT UPDATE` pode afetar de maneira semelhante uma linha existente que não seja visível através da visão). A `CHECK OPTION` pode ser usada para impedir que as instruções `INSERT`, `UPDATE` e `MERGE` criem tais linhas que não sejam visíveis através da visão.
 
-Se uma visão automaticamente atualizável for marcada com a propriedade `security_barrier`, todas as condições `WHERE` da visão (e quaisquer condições que utilizem operadores que estejam marcados como `LEAKPROOF`) serão sempre avaliadas antes de quaisquer condições que um usuário da visão tenha adicionado. Consulte [Seção 39.5][(rules-privileges.md "39.5. Rules and Privileges")] para obter detalhes completos. Observe que, devido a isso, as linhas que não são devolvidas (porque não passam das condições `WHERE` do usuário) ainda podem acabar sendo bloqueadas. `EXPLAIN` pode ser usado para ver quais condições são aplicadas no nível da relação (e, portanto, não bloqueiam linhas) e quais não são.
+Se uma visão automaticamente atualizável for marcada com a propriedade `security_barrier`, todas as condições `WHERE` da visão (e quaisquer condições que utilizem operadores que estejam marcados como `LEAKPROOF`) serão sempre avaliadas antes de quaisquer condições que um usuário da visão tenha adicionado. Consulte [Seção 39.5](rules-privileges.md) para obter detalhes completos. Observe que, devido a isso, as linhas que não são devolvidas (porque não passam das condições `WHERE` do usuário) ainda podem acabar sendo bloqueadas. `EXPLAIN` pode ser usado para ver quais condições são aplicadas no nível da relação (e, portanto, não bloqueiam linhas) e quais não são.
 
 Uma visão mais complexa que não satisfaça todas essas condições é leitura somente por padrão: o sistema não permitirá um `INSERT`, `UPDATE`, `DELETE` ou `MERGE` na visão. Você pode obter o efeito de uma visão atualizável criando gatilhos `INSTEAD OF` na visão, que devem converter tentativas de inserção, etc., na visão em ações apropriadas em outras tabelas. Para mais informações, consulte [CREATE TRIGGER](sql-createtrigger.md "CREATE TRIGGER"). Outra possibilidade é criar regras (consulte [CREATE RULE](sql-createrule.md "CREATE RULE")) , mas, na prática, os gatilhos são mais fáceis de entender e usar corretamente. Além disso, note que o `MERGE` não é suportado em relações com regras.
 
-Observe que o usuário que realiza a inserção, atualização ou exclusão na visualização deve ter os privilégios correspondentes de inserção, atualização ou exclusão na visualização. Além disso, por padrão, o proprietário da visualização deve ter os privilégios relevantes nas relações de base subjacentes, enquanto o usuário que realiza a atualização não precisa de quaisquer permissões nas relações de base subjacentes (consulte [Seção 39.5] [(rules-privileges.md "39.5. Rules and Privileges")]). No entanto, se a visualização tiver `security_invoker` definida como `true`, o usuário que realiza a atualização, e não o proprietário da visualização, deve ter os privilégios relevantes nas relações de base subjacentes.
+Observe que o usuário que realiza a inserção, atualização ou exclusão na visualização deve ter os privilégios correspondentes de inserção, atualização ou exclusão na visualização. Além disso, por padrão, o proprietário da visualização deve ter os privilégios relevantes nas relações de base subjacentes, enquanto o usuário que realiza a atualização não precisa de quaisquer permissões nas relações de base subjacentes (consulte [Seção 39.5](rules-privileges.md)). No entanto, se a visualização tiver `security_invoker` definida como `true`, o usuário que realiza a atualização, e não o proprietário da visualização, deve ter os privilégios relevantes nas relações de base subjacentes.
 
 ## Exemplos
 

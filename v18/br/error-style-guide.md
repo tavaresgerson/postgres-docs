@@ -179,4 +179,4 @@ Razão: Isso melhorará a consistência.
 
 ### Localização [#](#ERROR-STYLE-GUIDE-LOCALIZATION)
 
-Tenha em mente que os textos das mensagens de erro precisam ser traduzidos para outros idiomas. Siga as diretrizes em [Seção 56.2.2][(nls-programmer.md#NLS-GUIDELINES "56.2.2. Message-Writing Guidelines")] para não dificultar a vida dos tradutores.
+Tenha em mente que os textos das mensagens de erro precisam ser traduzidos para outros idiomas. Siga as diretrizes em [Seção 56.2.2](nls-programmer.md#NLS-GUIDELINES) para não dificultar a vida dos tradutores.

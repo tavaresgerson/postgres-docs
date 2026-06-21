@@ -57,7 +57,7 @@ Os superusuários podem alterar as configurações padrão de qualquer sessão. 
 
 `SESSION_USER` [#](#SQL-ALTERROLE-PARAMS-SESSION-USER): Alterar o usuário da sessão atual em vez de um papel explicitamente identificado.
 
-`SUPERUSER` `NOSUPERUSER` `CREATEDB` `NOCREATEDB` `CREATEROLE` `NOCREATEROLE` `INHERIT` `NOINHERIT` `LOGIN` `NOLOGIN` `REPLICATION` `NOREPLICATION` `BYPASSRLS` `NOBYPASSRLS` `CONNECTION LIMIT` *`connlimit`* [ `ENCRYPTED` ] `PASSWORD` '*`password`*' `PASSWORD NULL` `VALID UNTIL` '*`timestamp`*' [#](#SQL-ALTERROLE-PARAMS-SUPERUSER): Essas cláusulas alteram atributos originalmente definidos por [`CREATE ROLE`(sql-createrole.md "CREATE ROLE"). Para mais informações, consulte a página de referência `CREATE ROLE`.
+`SUPERUSER` `NOSUPERUSER` `CREATEDB` `NOCREATEDB` `CREATEROLE` `NOCREATEROLE` `INHERIT` `NOINHERIT` `LOGIN` `NOLOGIN` `REPLICATION` `NOREPLICATION` `BYPASSRLS` `NOBYPASSRLS` `CONNECTION LIMIT` *`connlimit`* [ `ENCRYPTED` ] `PASSWORD` '*`password`*' `PASSWORD NULL` `VALID UNTIL` '*`timestamp`*' [#](#SQL-ALTERROLE-PARAMS-SUPERUSER): Essas cláusulas alteram atributos originalmente definidos por [`CREATE ROLE`](sql-createrole.md). Para mais informações, consulte a página de referência `CREATE ROLE`.
 
 *`new_name`* [#](#SQL-ALTERROLE-PARAMS-NEW-NAME): O novo nome do papel.
 
@@ -65,7 +65,7 @@ Os superusuários podem alterar as configurações padrão de qualquer sessão. 
 
 *`configuration_parameter`* *`value`* [#](#SQL-ALTERROLE-PARAMS-CONFIGURATION-PARAMETER): Defina o valor padrão da sessão do papel para o parâmetro de configuração especificado no valor dado. Se *`value`* for `DEFAULT` ou, de forma equivalente, `RESET` for usado, o ajuste da variável específica do papel é removido, de modo que o papel herde o ajuste padrão de nível de sistema em novas sessões. Use `RESET ALL` para limpar todos os ajustes específicos do papel. `SET FROM CURRENT` salva o valor atual da sessão do parâmetro como o valor específico do papel. Se `IN DATABASE` for especificado, o parâmetro de configuração é definido ou removido apenas para o papel e o banco de dados.
 
-As configurações variáveis específicas para o papel só entram em vigor no momento do login; `SET ROLE` (sql-set-role.md "SET ROLE") e [`SET SESSION AUTHORIZATION` (sql-set-session-authorization.md "SET SESSION AUTHORIZATION") não processam configurações variáveis específicas para o papel.
+As configurações variáveis específicas para o papel só entram em vigor no momento do login; `SET ROLE` (sql-set-role.md "SET ROLE") e [`SET SESSION AUTHORIZATION` ](sql-set-session-authorization.md) não processam configurações variáveis específicas para o papel.
 
 Consulte [SET](sql-set.md "SET") e [Capítulo 19](runtime-config.md "Chapter 19. Server Configuration") para obter mais informações sobre os nomes e valores permitidos dos parâmetros.
 
@@ -111,13 +111,13 @@ Dê a uma função a capacidade de gerenciar outras funções e criar novos banc
 ALTER ROLE miriam CREATEROLE CREATEDB;
 ```
 
-Dê um valor padrão diferente para o parâmetro [maintenance_work_mem][(runtime-config-resource.md#GUC-MAINTENANCE-WORK-MEM)] de um recurso:
+Dê um valor padrão diferente para o parâmetro [maintenance_work_mem](runtime-config-resource.md#GUC-MAINTENANCE-WORK-MEM) de um recurso:
 
 ```
 ALTER ROLE worker_bee SET maintenance_work_mem = 100000;
 ```
 
-Dê a um papel uma configuração específica do parâmetro [client_min_messages][(runtime-config-client.md#GUC-CLIENT-MIN-MESSAGES)] que não seja padrão e específica do banco de dados:
+Dê a um papel uma configuração específica do parâmetro [client_min_messages](runtime-config-client.md#GUC-CLIENT-MIN-MESSAGES) que não seja padrão e específica do banco de dados:
 
 ```
 ALTER ROLE fred IN DATABASE devel SET client_min_messages = DEBUG;

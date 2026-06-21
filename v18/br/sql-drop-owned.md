@@ -16,7 +16,7 @@ DROP OWNED BY { name | CURRENT_ROLE | CURRENT_USER | SESSION_USER } [, ...] [ CA
 
 *`name`*: O nome de um papel cujos objetos serão removidos e cujos privilégios serão revogados.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem dos objetos afetados e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem dos objetos afetados e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a eliminação dos objetos de propriedade de um papel se outros objetos de banco de dados dependerem de um dos objetos afetados. Este é o padrão.
 
@@ -30,7 +30,7 @@ O comando `REASSIGN OWNED`(sql-reassign-owned.md "REASSIGN OWNED") é uma altern
 
 Os bancos de dados e os espaços de tabela de propriedade do(s) papel(is) não serão removidos.
 
-Veja [Seção 21.4][(role-removal.md "21.4. Dropping Roles")] para mais discussão.
+Veja [Seção 21.4](role-removal.md) para mais discussão.
 
 ## Compatibilidade
 

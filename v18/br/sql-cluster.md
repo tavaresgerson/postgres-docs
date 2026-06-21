@@ -46,15 +46,15 @@ Enquanto o `CLUSTER` está em execução, o [search_path](runtime-config-client.
 
 Quando um varredura de índice é usada, uma cópia temporária da tabela é criada que contém os dados da tabela na ordem do índice. Cópias temporárias de cada índice na tabela também são criadas. Portanto, você precisa de espaço livre no disco, pelo menos igual à soma do tamanho da tabela e dos tamanhos dos índices.
 
-Quando um varredura e ordenação sequencial são usados, um arquivo temporário de ordenação também é criado, de modo que o requisito temporário máximo de espaço seja o dobro do tamanho da tabela, mais os tamanhos dos índices. Esse método é frequentemente mais rápido do que o método de varredura de índice, mas se o requisito de espaço em disco for intolerável, você pode desabilitar essa opção, definindo temporariamente [enable_sort][(runtime-config-query.md#GUC-ENABLE-SORT)] como `off`.
+Quando um varredura e ordenação sequencial são usados, um arquivo temporário de ordenação também é criado, de modo que o requisito temporário máximo de espaço seja o dobro do tamanho da tabela, mais os tamanhos dos índices. Esse método é frequentemente mais rápido do que o método de varredura de índice, mas se o requisito de espaço em disco for intolerável, você pode desabilitar essa opção, definindo temporariamente [enable_sort](runtime-config-query.md#GUC-ENABLE-SORT) como `off`.
 
-É aconselhável definir [maintenance_work_mem][(runtime-config-resource.md#GUC-MAINTENANCE-WORK-MEM)] para um valor razoavelmente grande (mas não mais do que a quantidade de RAM que você pode dedicar à operação `CLUSTER` antes do agrupamento.
+É aconselhável definir [maintenance_work_mem](runtime-config-resource.md#GUC-MAINTENANCE-WORK-MEM) para um valor razoavelmente grande (mas não mais do que a quantidade de RAM que você pode dedicar à operação `CLUSTER` antes do agrupamento.
 
 Como o planejador registra estatísticas sobre a ordenação de tabelas, é aconselhável executar `ANALYZE` (sql-analyze.md "ANALYZE") na tabela recém-agrupada. Caso contrário, o planejador pode fazer escolhas ruins em relação aos planos de consulta.
 
 Como o `CLUSTER` lembra quais índices estão agrupados, é possível agrupar as tabelas que se deseja agrupar manualmente na primeira vez, e, em seguida, configurar um script de manutenção periódico que execute o `CLUSTER` sem quaisquer parâmetros, para que as tabelas desejadas sejam reclasificadas periodicamente.
 
-Cada backend que executa `CLUSTER` informará seu progresso na visualização `pg_stat_progress_cluster`. Consulte [Seção 27.4.2][(progress-reporting.md#CLUSTER-PROGRESS-REPORTING "27.4.2. CLUSTER Progress Reporting")] para obter detalhes.
+Cada backend que executa `CLUSTER` informará seu progresso na visualização `pg_stat_progress_cluster`. Consulte [Seção 27.4.2](progress-reporting.md#CLUSTER-PROGRESS-REPORTING) para obter detalhes.
 
 Agrupar uma tabela particionada agrupa cada uma de suas partições usando a partição do índice particionado especificado. Ao agrupar uma tabela particionada, o índice não pode ser omitido. `CLUSTER` em uma tabela particionada não pode ser executado dentro de um bloco de transação.
 

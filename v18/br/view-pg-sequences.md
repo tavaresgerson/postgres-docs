@@ -7,238 +7,241 @@ A vista `pg_sequences` fornece acesso a informações úteis sobre cada sequênc
 
 
 <table border="1" class="table" summary="pg_sequences Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
      Column Type
     </p>
-<p>
+    <p>
      Description
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       schemaname
      </code>
-<code class="type">
+     <code class="type">
       name
      </code>
      (references
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-<code class="structname">
+      <code class="structname">
        pg_namespace
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       nspname
      </code>
      )
     </p>
-<p>
+    <p>
      Name of schema containing sequence
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       sequencename
      </code>
-<code class="type">
+     <code class="type">
       name
      </code>
      (references
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-<code class="structname">
+      <code class="structname">
        pg_class
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       relname
      </code>
      )
     </p>
-<p>
+    <p>
      Name of sequence
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       sequenceowner
      </code>
-<code class="type">
+     <code class="type">
       name
      </code>
      (references
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-<code class="structname">
+      <code class="structname">
        pg_authid
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       rolname
      </code>
      )
     </p>
-<p>
+    <p>
      Name of sequence's owner
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       data_type
      </code>
-<code class="type">
+     <code class="type">
       regtype
      </code>
      (references
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-<code class="structname">
+      <code class="structname">
        pg_type
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
      </code>
      )
     </p>
-<p>
+    <p>
      Data type of the sequence
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       start_value
      </code>
-<code class="type">
+     <code class="type">
       int8
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Start value of the sequence
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       min_value
      </code>
-<code class="type">
+     <code class="type">
       int8
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Minimum value of the sequence
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       max_value
      </code>
-<code class="type">
+     <code class="type">
       int8
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Maximum value of the sequence
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       increment_by
      </code>
-<code class="type">
+     <code class="type">
       int8
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Increment value of the sequence
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       cycle
      </code>
-<code class="type">
+     <code class="type">
       bool
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Whether the sequence cycles
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       cache_size
      </code>
-<code class="type">
+     <code class="type">
       int8
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Cache size of the sequence
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       last_value
      </code>
-<code class="type">
+     <code class="type">
       int8
      </code>
-</p>
-<p>
+    </p>
+    <p>
      The last sequence value written to disk.  If caching is used, this value can be greater than the last value handed out from the sequence.
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 A coluna `last_value` será considerada nula se qualquer uma das seguintes condições for verdadeira:
 

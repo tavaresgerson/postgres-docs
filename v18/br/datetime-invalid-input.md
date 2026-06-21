@@ -2,7 +2,7 @@
 
 Normalmente, se uma string de data/hora for sintaticamente válida, mas contiver valores de campo fora do intervalo, um erro será lançado. Por exemplo, a entrada que especifica o dia 31 de fevereiro será rejeitada.
 
-Durante uma transição de horário de verão, é possível que uma string de marcação de tempo aparentemente válida represente um horário de marcação de tempo inexistente ou ambíguo. Esses casos não são rejeitados; a ambiguidade é resolvida determinando qual deslocamento UTC aplicar. Por exemplo, supondo que o parâmetro [TimeZone][(runtime-config-client.md#GUC-TIMEZONE)] esteja configurado como `America/New_York`, considere
+Durante uma transição de horário de verão, é possível que uma string de marcação de tempo aparentemente válida represente um horário de marcação de tempo inexistente ou ambíguo. Esses casos não são rejeitados; a ambiguidade é resolvida determinando qual deslocamento UTC aplicar. Por exemplo, supondo que o parâmetro [TimeZone](runtime-config-client.md#GUC-TIMEZONE) esteja configurado como `America/New_York`, considere
 
 ```
 => SELECT '2018-03-11 02:30'::timestamptz;

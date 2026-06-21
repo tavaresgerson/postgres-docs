@@ -27,7 +27,7 @@ where option can be:
 
 ## Descrição
 
-`CREATE ROLE` adiciona um novo papel a um clúster de banco de dados PostgreSQL. Um papel é uma entidade que pode possuir objetos de banco de dados e ter privilégios de banco de dados; um papel pode ser considerado um “usuário”, um “grupo” ou ambos, dependendo de como é usado. Consulte [Capítulo 21][(user-manag.md "Chapter 21. Database Roles")] e [Capítulo 20][(client-authentication.md "Chapter 20. Client Authentication")] para obter informações sobre a gestão de usuários e autenticação. Você deve ter privilégio `CREATEROLE` ou ser um superusuário do banco de dados para usar este comando.
+`CREATE ROLE` adiciona um novo papel a um clúster de banco de dados PostgreSQL. Um papel é uma entidade que pode possuir objetos de banco de dados e ter privilégios de banco de dados; um papel pode ser considerado um “usuário”, um “grupo” ou ambos, dependendo de como é usado. Consulte [Capítulo 21](user-manag.md) e [Capítulo 20](client-authentication.md) para obter informações sobre a gestão de usuários e autenticação. Você deve ter privilégio `CREATEROLE` ou ser um superusuário do banco de dados para usar este comando.
 
 Observe que os papéis são definidos no nível do clúster do banco de dados e, portanto, são válidos em todos os bancos de dados do clúster.
 
@@ -67,7 +67,7 @@ A senha é sempre armazenada criptografada nos catálogos do sistema. A palavra-
 
 ### Aviso
 
-O suporte para senhas criptografadas com MD5 é desatualizado e será removido em uma versão futura do PostgreSQL. Consulte [Seção 20.5][(auth-password.md "20.5. Password Authentication")] para obter detalhes sobre a migração para outro tipo de senha.
+O suporte para senhas criptografadas com MD5 é desatualizado e será removido em uma versão futura do PostgreSQL. Consulte [Seção 20.5](auth-password.md) para obter detalhes sobre a migração para outro tipo de senha.
 
 `VALID UNTIL` '*`timestamp`*: A cláusula `VALID UNTIL` define uma data e uma hora após a qual a senha do papel não será mais válida. Se esta cláusula for omitida, a senha será válida por todo o tempo.
 
@@ -87,13 +87,13 @@ A maneira preferida de adicionar e remover membros de papéis que estão sendo u
 
 A cláusula `VALID UNTIL` define um tempo de expiração apenas para uma senha, não para o papel em si. Em particular, o tempo de expiração não é aplicado ao acesso usando um método de autenticação que não é baseado em senha.
 
-Os atributos de papel definidos aqui não são hereditários, ou seja, sendo membro de um papel com, por exemplo, `CREATEDB`, o membro não poderá criar novos bancos de dados, mesmo que a concessão de acesso tenha a opção `INHERIT`. Claro que, se a concessão de acesso tiver a opção `SET`, o papel do membro poderá [`SET ROLE`(sql-set-role.md "SET ROLE") para o papel criado_db e, em seguida, criar um novo banco de dados.
+Os atributos de papel definidos aqui não são hereditários, ou seja, sendo membro de um papel com, por exemplo, `CREATEDB`, o membro não poderá criar novos bancos de dados, mesmo que a concessão de acesso tenha a opção `INHERIT`. Claro que, se a concessão de acesso tiver a opção `SET`, o papel do membro poderá [`SET ROLE`](sql-set-role.md) para o papel criado_db e, em seguida, criar um novo banco de dados.
 
 As concessões de filiação criadas pelas cláusulas `IN ROLE`, `ROLE` e `ADMIN` têm o papel de executar este comando como concedente.
 
 O atributo `INHERIT` é o padrão por razões de compatibilidade reversa: em versões anteriores do PostgreSQL, os usuários sempre tinham acesso a todos os privilégios dos grupos dos quais eram membros. No entanto, `NOINHERIT` fornece uma correspondência mais próxima às semânticas especificadas no padrão SQL.
 
-O PostgreSQL inclui um programa [createuser][(app-createuser.md "createuser")] que tem a mesma funcionalidade que `CREATE ROLE` (de fato, ele chama esse comando) mas pode ser executado a partir do shell de comando.
+O PostgreSQL inclui um programa [createuser](app-createuser.md) que tem a mesma funcionalidade que `CREATE ROLE` (de fato, ele chama esse comando) mas pode ser executado a partir do shell de comando.
 
 A opção `CONNECTION LIMIT` é apenas aplicada aproximadamente; se duas novas sessões começarem aproximadamente ao mesmo tempo, quando apenas um "caixote" de conexão permanece para o papel, é possível que ambas falhem. Além disso, o limite nunca é aplicado para superusuários.
 

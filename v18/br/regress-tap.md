@@ -1,6 +1,6 @@
 ## 31.4. Testes TAP [#](#REGRESS-TAP)
 
-* [31.4.1. Variáveis de ambiente][(regress-tap.md#REGRESS-TAP-VARS)]
+* [31.4.1. Variáveis de ambiente](regress-tap.md#REGRESS-TAP-VARS)
 
 Vários testes, particularmente os testes do programa cliente sob `src/bin`, utilizam as ferramentas Perl TAP e são executados usando o programa de teste Perl `prove`. Você pode passar opções de linha de comando para `prove` definindo a variável `make`, por exemplo:
 
@@ -16,7 +16,7 @@ A variável `make` `PROVE_TESTS` pode ser usada para definir uma lista de caminh
 make check PROVE_TESTS='t/001_test1.pl t/003_test3.pl'
 ```
 
-Os testes do TAP exigem o módulo Perl `IPC::Run`. Esse módulo está disponível no [CPAN][(https://metacpan.org/dist/IPC-Run)] ou em um pacote do sistema operacional. Eles também exigem que o PostgreSQL seja configurado com a opção `--enable-tap-tests`.
+Os testes do TAP exigem o módulo Perl `IPC::Run`. Esse módulo está disponível no [CPAN](https://metacpan.org/dist/IPC-Run) ou em um pacote do sistema operacional. Eles também exigem que o PostgreSQL seja configurado com a opção `--enable-tap-tests`.
 
 De forma genérica, os testes do TAP testarão os executáveis em uma árvore de instalação pré-instalada se você disser `make installcheck`, ou construirá uma nova árvore de instalação local a partir das fontes atuais se você disser `make check`. Em qualquer caso, eles inicializarão uma instância local (diretório de dados) e executarão temporariamente um servidor nela. Alguns desses testes executam mais de um servidor. Assim, esses testes podem ser bastante intensivos em recursos.
 

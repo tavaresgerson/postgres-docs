@@ -1,6 +1,6 @@
 ## 54.9. Formatos de Mensagens de Replicação Lógica [#](#PROTOCOL-LOGICALREP-MESSAGE-FORMATS)
 
-Esta seção descreve o formato detalhado de cada mensagem de replicação lógica. Essas mensagens são devolvidas pela interface SQL do slot de replicação ou são enviadas por um walsender. No caso de um walsender, elas são encapsuladas dentro de mensagens de protocolo de replicação WAL, conforme descrito em [Seção 54.4][(protocol-replication.md "54.4. Streaming Replication Protocol")], e geralmente obedecem ao mesmo fluxo de mensagens da replicação física.
+Esta seção descreve o formato detalhado de cada mensagem de replicação lógica. Essas mensagens são devolvidas pela interface SQL do slot de replicação ou são enviadas por um walsender. No caso de um walsender, elas são encapsuladas dentro de mensagens de protocolo de replicação WAL, conforme descrito em [Seção 54.4](protocol-replication.md), e geralmente obedecem ao mesmo fluxo de mensagens da replicação física.
 
 Comece [#](#PROTOCOL-LOGICALREP-MESSAGE-FORMATS-BEGIN): Byte1('B') :   Identifica a mensagem como uma mensagem de início.
 

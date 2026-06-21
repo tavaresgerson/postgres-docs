@@ -31,13 +31,13 @@ ALTER OPERATOR FAMILY name USING index_method
 
 `ALTER OPERATOR FAMILY` altera a definição de uma família de operadores. Você pode adicionar operadores e funções de suporte à família, removê-los da família ou alterar o nome ou o proprietário da família.
 
-Quando operadores e funções de suporte são adicionados a uma família com `ALTER OPERATOR FAMILY`, eles não fazem parte de nenhuma classe específica de operador dentro da família, mas são apenas "soltos" dentro da família. Isso indica que esses operadores e funções são compatíveis com a semântica da família, mas não são necessários para o funcionamento correto de qualquer índice específico. (Operadores e funções que são necessários para isso devem ser declarados como parte de uma classe de operador, em vez disso; veja [CREATE OPERATOR CLASS][(sql-createopclass.md "CREATE OPERATOR CLASS")].]) O PostgreSQL permitirá que membros soltos de uma família sejam descartados da família a qualquer momento, mas os membros de uma classe de operador não podem ser descartados sem descartar toda a classe e quaisquer índices que dependem dela. Tipicamente, operadores e funções de único tipo de dado fazem parte de classes de operador porque são necessários para suportar um índice nesse tipo de dado específico, enquanto operadores e funções de vários tipos de dados são feitos membros soltos da família.
+Quando operadores e funções de suporte são adicionados a uma família com `ALTER OPERATOR FAMILY`, eles não fazem parte de nenhuma classe específica de operador dentro da família, mas são apenas "soltos" dentro da família. Isso indica que esses operadores e funções são compatíveis com a semântica da família, mas não são necessários para o funcionamento correto de qualquer índice específico. (Operadores e funções que são necessários para isso devem ser declarados como parte de uma classe de operador, em vez disso; veja [CREATE OPERATOR CLASS](sql-createopclass.md).]) O PostgreSQL permitirá que membros soltos de uma família sejam descartados da família a qualquer momento, mas os membros de uma classe de operador não podem ser descartados sem descartar toda a classe e quaisquer índices que dependem dela. Tipicamente, operadores e funções de único tipo de dado fazem parte de classes de operador porque são necessários para suportar um índice nesse tipo de dado específico, enquanto operadores e funções de vários tipos de dados são feitos membros soltos da família.
 
 Você deve ser um superusuário para usar `ALTER OPERATOR FAMILY`. (Essa restrição é feita porque uma definição errada da família de operadores pode confundir ou até mesmo fazer o servidor falhar.)
 
 `ALTER OPERATOR FAMILY` atualmente não verifica se a definição da família de operadores inclui todos os operadores e funções exigidos pelo método de índice, nem se os operadores e funções formam um conjunto autoconsistente. É responsabilidade do usuário definir uma família de operadores válida.
 
-Consulte [Seção 36.16][(xindex.md "36.16. Interfacing Extensions to Indexes")] para obter mais informações.
+Consulte [Seção 36.16](xindex.md) para obter mais informações.
 
 ## Parâmetros
 

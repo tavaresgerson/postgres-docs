@@ -2,562 +2,554 @@
 
 Esta seção descreve funções e operadores para examinar e manipular strings binárias, ou seja, valores do tipo `bytea`. Muitas dessas funções são equivalentes, em propósito e sintaxe, às funções de string de texto descritas na seção anterior.
 
-O SQL define algumas funções de string que utilizam palavras-chave, em vez de vírgulas, para separar os argumentos. Os detalhes estão em [Tabela 9.11][(functions-binarystring.md#FUNCTIONS-BINARYSTRING-SQL "Table 9.11. SQL Binary String Functions and Operators")]. O PostgreSQL também fornece versões dessas funções que utilizam a sintaxe de invocação de função regular (consulte [Tabela 9.12][(functions-binarystring.md#FUNCTIONS-BINARYSTRING-OTHER "Table 9.12. Other Binary String Functions")]).
+O SQL define algumas funções de string que utilizam palavras-chave, em vez de vírgulas, para separar os argumentos. Os detalhes estão em [Tabela 9.11](functions-binarystring.md#FUNCTIONS-BINARYSTRING-SQL). O PostgreSQL também fornece versões dessas funções que utilizam a sintaxe de invocação de função regular (consulte [Tabela 9.12](functions-binarystring.md#FUNCTIONS-BINARYSTRING-OTHER)).
 
 **Tabela 9.11. Funções e operadores de cadeia binária SQL**
 
 
 
 <table border="1" class="table" summary="SQL Binary String Functions and Operators">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
      Function/Operator
     </p>
-<p>
+    <p>
      Description
     </p>
-<p>
+    <p>
      Example(s)
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       bytea
      </code>
-<code class="literal">
+     <code class="literal">
       ||
      </code>
-<code class="type">
+     <code class="type">
       bytea
      </code>
      →
      <code class="returnvalue">
       bytea
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Concatenates the two binary strings.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       '\x123456'::bytea || '\x789a00bcde'::bytea
      </code>
      →
      <code class="returnvalue">
       \x123456789a00bcde
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       bit_length
      </code>
      (
      <code class="type">
       bytea
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       integer
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Returns number of bits in the binary string (8 times the
      <code class="function">
       octet_length
      </code>
      ).
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       bit_length('\x123456'::bytea)
      </code>
      →
      <code class="returnvalue">
       24
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       btrim
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        bytesremoved
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       bytea
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Removes the longest string containing only bytes appearing in
      <em class="parameter">
-<code>
+      <code>
        bytesremoved
       </code>
-</em>
+     </em>
      from the start and end of
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
+     </em>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       btrim('\x1234567890'::bytea, '\x9012'::bytea)
      </code>
      →
      <code class="returnvalue">
       \x345678
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       ltrim
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        bytesremoved
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
-     )
-         →
+     ) →
      <code class="returnvalue">
       bytea
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Removes the longest string containing only bytes appearing in
      <em class="parameter">
-<code>
+      <code>
        bytesremoved
       </code>
-</em>
+     </em>
      from the start of
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
+     </em>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       ltrim('\x1234567890'::bytea, '\x9012'::bytea)
      </code>
      →
      <code class="returnvalue">
       \x34567890
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       octet_length
      </code>
      (
      <code class="type">
       bytea
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       integer
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Returns number of bytes in the binary string.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       octet_length('\x123456'::bytea)
      </code>
      →
      <code class="returnvalue">
       3
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       overlay
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
-<code class="literal">
+     <code class="literal">
       PLACING
      </code>
-<em class="parameter">
-<code>
+     <em class="parameter">
+      <code>
        newsubstring
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
-<code class="literal">
+     <code class="literal">
       FROM
      </code>
-<em class="parameter">
-<code>
+     <em class="parameter">
+      <code>
        start
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       integer
      </code>
      [
      <span class="optional">
-<code class="literal">
+      <code class="literal">
        FOR
       </code>
-<em class="parameter">
-<code>
+      <em class="parameter">
+       <code>
         count
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        integer
       </code>
-</span>
-     ] )
-        →
+     </span>
+     ] ) →
      <code class="returnvalue">
       bytea
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Replaces the substring of
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
+     </em>
      that starts at the
      <em class="parameter">
-<code>
+      <code>
        start
       </code>
-</em>
+     </em>
      'th byte and extends for
      <em class="parameter">
-<code>
+      <code>
        count
       </code>
-</em>
+     </em>
      bytes with
      <em class="parameter">
-<code>
+      <code>
        newsubstring
       </code>
-</em>
+     </em>
      . If
      <em class="parameter">
-<code>
+      <code>
        count
       </code>
-</em>
+     </em>
      is omitted, it defaults to the length of
      <em class="parameter">
-<code>
+      <code>
        newsubstring
       </code>
-</em>
+     </em>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       overlay('\x1234567890'::bytea placing '\002\003'::bytea from 2 for 3)
      </code>
      →
      <code class="returnvalue">
       \x12020390
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       position
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        substring
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
-<code class="literal">
+     <code class="literal">
       IN
      </code>
-<em class="parameter">
-<code>
+     <em class="parameter">
+      <code>
        bytes
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       integer
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Returns first starting index of the specified
      <em class="parameter">
-<code>
+      <code>
        substring
       </code>
-</em>
+     </em>
      within
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
+     </em>
      , or zero if it's not present.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       position('\x5678'::bytea in '\x1234567890'::bytea)
      </code>
      →
      <code class="returnvalue">
       3
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       rtrim
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        bytesremoved
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
-     )
-         →
+     ) →
      <code class="returnvalue">
       bytea
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Removes the longest string containing only bytes appearing in
      <em class="parameter">
-<code>
+      <code>
        bytesremoved
       </code>
-</em>
+     </em>
      from the end of
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
+     </em>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       rtrim('\x1234567890'::bytea, '\x9012'::bytea)
      </code>
      →
      <code class="returnvalue">
       \x12345678
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       substring
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
      [
      <span class="optional">
-<code class="literal">
+      <code class="literal">
        FROM
       </code>
-<em class="parameter">
-<code>
+      <em class="parameter">
+       <code>
         start
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        integer
       </code>
-</span>
+     </span>
      ] [
      <span class="optional">
-<code class="literal">
+      <code class="literal">
        FOR
       </code>
-<em class="parameter">
-<code>
+      <em class="parameter">
+       <code>
         count
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        integer
       </code>
-</span>
-     ] )
-        →
+     </span>
+     ] ) →
      <code class="returnvalue">
       bytea
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Extracts the substring of
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
+     </em>
      starting at the
      <em class="parameter">
-<code>
+      <code>
        start
       </code>
-</em>
+     </em>
      'th byte if that is specified, and stopping after
      <em class="parameter">
-<code>
+      <code>
        count
       </code>
-</em>
+     </em>
      bytes if that is specified.  Provide at least one of
      <em class="parameter">
-<code>
+      <code>
        start
       </code>
-</em>
+     </em>
      and
      <em class="parameter">
-<code>
+      <code>
        count
       </code>
-</em>
+     </em>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       substring('\x1234567890'::bytea from 3 for 2)
      </code>
      →
      <code class="returnvalue">
       \x5678
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       trim
      </code>
      ( [
      <span class="optional">
-<code class="literal">
+      <code class="literal">
        LEADING
       </code>
       |
@@ -568,73 +560,71 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
       <code class="literal">
        BOTH
       </code>
-</span>
+     </span>
      ]
      <em class="parameter">
-<code>
+      <code>
        bytesremoved
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
-<code class="literal">
+     <code class="literal">
       FROM
      </code>
-<em class="parameter">
-<code>
+     <em class="parameter">
+      <code>
        bytes
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       bytea
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Removes the longest string containing only bytes appearing in
      <em class="parameter">
-<code>
+      <code>
        bytesremoved
       </code>
-</em>
-     from the start,
-        end, or both ends (
+     </em>
+     from the start, end, or both ends (
      <code class="literal">
       BOTH
      </code>
      is the default) of
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
+     </em>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       trim('\x9012'::bytea from '\x1234567890'::bytea)
      </code>
      →
      <code class="returnvalue">
       \x345678
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       trim
      </code>
      ( [
      <span class="optional">
-<code class="literal">
+      <code class="literal">
        LEADING
       </code>
       |
@@ -645,111 +635,112 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
       <code class="literal">
        BOTH
       </code>
-</span>
+     </span>
      ] [
      <span class="optional">
-<code class="literal">
+      <code class="literal">
        FROM
       </code>
-</span>
+     </span>
      ]
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        bytesremoved
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       bytea
      </code>
-</p>
-<p>
+    </p>
+    <p>
      This is a non-standard syntax for
      <code class="function">
       trim()
      </code>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       trim(both from '\x1234567890'::bytea, '\x9012'::bytea)
      </code>
      →
      <code class="returnvalue">
       \x345678
      </code>
-</p>
-</td>
-</tr>
-</tbody>
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
 
-Funções adicionais de manipulação de strings binárias estão disponíveis e estão listadas em [Tabela 9.12][(functions-binarystring.md#FUNCTIONS-BINARYSTRING-OTHER "Table 9.12. Other Binary String Functions")]. Algumas delas são usadas internamente para implementar as funções de string padrão do SQL listadas em [Tabela 9.11][(functions-binarystring.md#FUNCTIONS-BINARYSTRING-SQL "Table 9.11. SQL Binary String Functions and Operators")].
+
+
+
+
+Funções adicionais de manipulação de strings binárias estão disponíveis e estão listadas em [Tabela 9.12](functions-binarystring.md#FUNCTIONS-BINARYSTRING-OTHER). Algumas delas são usadas internamente para implementar as funções de string padrão do SQL listadas em [Tabela 9.11](functions-binarystring.md#FUNCTIONS-BINARYSTRING-SQL).
 
 **Tabela 9.12. Outras funções de string binária**
 
 
 
 <table border="1" class="table" summary="Other Binary String Functions">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
      Function
     </p>
-<p>
+    <p>
      Description
     </p>
-<p>
+    <p>
      Example(s)
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       bit_count
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Returns the number of bits set in the binary string (also known as
      <span class="quote">
       “
@@ -760,819 +751,805 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
      </span>
      ).
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       bit_count('\x1234567890'::bytea)
      </code>
      →
      <code class="returnvalue">
       15
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       crc32
      </code>
      (
      <code class="type">
       bytea
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Computes the CRC-32 value of the binary string.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       crc32('abc'::bytea)
      </code>
      →
      <code class="returnvalue">
       891568578
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       crc32c
      </code>
      (
      <code class="type">
       bytea
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Computes the CRC-32C value of the binary string.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       crc32c('abc'::bytea)
      </code>
      →
      <code class="returnvalue">
       910901175
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       get_bit
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        n
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bigint
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       integer
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Extracts
      <a class="link" href="functions-binarystring.md#FUNCTIONS-ZEROBASED-NOTE">
       n'th
      </a>
      bit from binary string.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       get_bit('\x1234567890'::bytea, 30)
      </code>
      →
      <code class="returnvalue">
       1
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       get_byte
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        n
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       integer
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       integer
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Extracts
      <a class="link" href="functions-binarystring.md#FUNCTIONS-ZEROBASED-NOTE">
       n'th
      </a>
      byte from binary string.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       get_byte('\x1234567890'::bytea, 4)
      </code>
      →
      <code class="returnvalue">
       144
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       length
      </code>
      (
      <code class="type">
       bytea
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       integer
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Returns the number of bytes in the binary string.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       length('\x1234567890'::bytea)
      </code>
      →
      <code class="returnvalue">
       5
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       length
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        encoding
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       name
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       integer
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Returns the number of characters in the binary string, assuming that it is text in the given
      <em class="parameter">
-<code>
+      <code>
        encoding
       </code>
-</em>
+     </em>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       length('jose'::bytea, 'UTF8')
      </code>
      →
      <code class="returnvalue">
       4
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       md5
      </code>
      (
      <code class="type">
       bytea
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       text
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Computes the MD5
      <a class="link" href="functions-binarystring.md#FUNCTIONS-HASH-NOTE">
       hash
      </a>
      of the binary string, with the result written in hexadecimal.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       md5('Th\000omas'::bytea)
      </code>
      →
      <code class="returnvalue">
       8ab2d3c9689aaf18​b4958c334c82d8b1
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       reverse
      </code>
      (
      <code class="type">
       bytea
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       bytea
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Reverses the order of the bytes in the binary string.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       reverse('\xabcd'::bytea)
      </code>
      →
      <code class="returnvalue">
       \xcdab
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       set_bit
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        n
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bigint
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        newvalue
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       integer
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       bytea
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Sets
      <a class="link" href="functions-binarystring.md#FUNCTIONS-ZEROBASED-NOTE">
       n'th
      </a>
      bit in binary string to
      <em class="parameter">
-<code>
+      <code>
        newvalue
       </code>
-</em>
+     </em>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       set_bit('\x1234567890'::bytea, 30, 0)
      </code>
      →
      <code class="returnvalue">
       \x1234563890
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       set_byte
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        n
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       integer
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        newvalue
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       integer
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       bytea
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Sets
      <a class="link" href="functions-binarystring.md#FUNCTIONS-ZEROBASED-NOTE">
       n'th
      </a>
      byte in binary string to
      <em class="parameter">
-<code>
+      <code>
        newvalue
       </code>
-</em>
+     </em>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       set_byte('\x1234567890'::bytea, 4, 64)
      </code>
      →
      <code class="returnvalue">
       \x1234567840
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       sha224
      </code>
      (
      <code class="type">
       bytea
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       bytea
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Computes the SHA-224
      <a class="link" href="functions-binarystring.md#FUNCTIONS-HASH-NOTE">
       hash
      </a>
      of the binary string.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       sha224('abc'::bytea)
      </code>
      →
      <code class="returnvalue">
       \x23097d223405d8228642a477bda2​55b32aadbce4bda0b3f7e36c9da7
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       sha256
      </code>
      (
      <code class="type">
       bytea
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       bytea
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Computes the SHA-256
      <a class="link" href="functions-binarystring.md#FUNCTIONS-HASH-NOTE">
       hash
      </a>
      of the binary string.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       sha256('abc'::bytea)
      </code>
      →
      <code class="returnvalue">
       \xba7816bf8f01cfea414140de5dae2223​b00361a396177a9cb410ff61f20015ad
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       sha384
      </code>
      (
      <code class="type">
       bytea
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       bytea
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Computes the SHA-384
      <a class="link" href="functions-binarystring.md#FUNCTIONS-HASH-NOTE">
       hash
      </a>
      of the binary string.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       sha384('abc'::bytea)
      </code>
      →
      <code class="returnvalue">
       \xcb00753f45a35e8bb5a03d699ac65007​272c32ab0eded1631a8b605a43ff5bed​8086072ba1e7cc2358baeca134c825a7
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       sha512
      </code>
      (
      <code class="type">
       bytea
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       bytea
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Computes the SHA-512
      <a class="link" href="functions-binarystring.md#FUNCTIONS-HASH-NOTE">
       hash
      </a>
      of the binary string.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       sha512('abc'::bytea)
      </code>
      →
      <code class="returnvalue">
       \xddaf35a193617abacc417349ae204131​12e6fa4e89a97ea20a9eeee64b55d39a​2192992a274fc1a836ba3c23a3feebbd​454d4423643ce80e2a9ac94fa54ca49f
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       substr
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        start
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       integer
      </code>
      [
      <span class="optional">
       ,
       <em class="parameter">
-<code>
+       <code>
         count
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        integer
       </code>
-</span>
-     ] )
-        →
+     </span>
+     ] ) →
      <code class="returnvalue">
       bytea
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Extracts the substring of
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
+     </em>
      starting at the
      <em class="parameter">
-<code>
+      <code>
        start
       </code>
-</em>
+     </em>
      'th byte, and extending for
      <em class="parameter">
-<code>
+      <code>
        count
       </code>
-</em>
+     </em>
      bytes if that is specified.  (Same as
      <code class="literal">
       substring(
       <em class="parameter">
-<code>
+       <code>
         bytes
        </code>
-</em>
+      </em>
       from
       <em class="parameter">
-<code>
+       <code>
         start
        </code>
-</em>
+      </em>
       for
       <em class="parameter">
-<code>
+       <code>
         count
        </code>
-</em>
+      </em>
       )
      </code>
      .)
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       substr('\x1234567890'::bytea, 3, 2)
      </code>
      →
      <code class="returnvalue">
       \x5678
      </code>
-</p>
-</td>
-</tr>
-</tbody>
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 As funções `get_byte` e `set_byte` numeram o primeiro byte de uma string binária como byte 0. As funções `get_bit` e `set_bit` numeram bits da direita para a esquerda em cada byte; por exemplo, o bit 0 é o bit menos significativo do primeiro byte, e o bit 15 é o bit mais significativo do segundo byte.
 
 Por razões históricas, a função `md5` retorna um valor codificado em hexadecimal do tipo `text`, enquanto as funções SHA-2 retornam do tipo `bytea`. Use as funções `encode`(functions-binarystring.md#FUNCTION-ENCODE) e `decode`(functions-binarystring.md#FUNCTION-DECODE) para converter entre os dois. Por exemplo, escreva `encode(sha256('abc'), 'hex')` para obter uma representação de texto codificada em hexadecimal, ou `decode(md5('abc'), 'hex')` para obter um valor de `bytea`.
 
-As funções para converter strings entre diferentes conjuntos de caracteres (códigos de codificação) e para representar dados binários arbitrários em forma textual são mostradas em [Tabela 9.13][(functions-binarystring.md#FUNCTIONS-BINARYSTRING-CONVERSIONS "Table 9.13. Text/Binary String Conversion Functions")]. Para essas funções, um argumento ou resultado do tipo `text` é expresso no codificação padrão do banco de dados, enquanto argumentos ou resultados do tipo `bytea` estão em um codificação nomeada por outro argumento.
+As funções para converter strings entre diferentes conjuntos de caracteres (códigos de codificação) e para representar dados binários arbitrários em forma textual são mostradas em [Tabela 9.13](functions-binarystring.md#FUNCTIONS-BINARYSTRING-CONVERSIONS). Para essas funções, um argumento ou resultado do tipo `text` é expresso no codificação padrão do banco de dados, enquanto argumentos ou resultados do tipo `bytea` estão em um codificação nomeada por outro argumento.
 
 **Tabela 9.13. Funções de conversão de string de texto/binária**
 
 
 
 <table border="1" class="table" summary="Text/Binary String Conversion Functions">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
      Function
     </p>
-<p>
+    <p>
      Description
     </p>
-<p>
+    <p>
      Example(s)
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       convert
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        src_encoding
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       name
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        dest_encoding
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       name
      </code>
-     )
-       →
+     ) →
      <code class="returnvalue">
       bytea
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Converts a binary string representing text in encoding
      <em class="parameter">
-<code>
+      <code>
        src_encoding
       </code>
-</em>
+     </em>
      to a binary string in encoding
      <em class="parameter">
-<code>
+      <code>
        dest_encoding
       </code>
-</em>
+     </em>
      (see
      <a class="xref" href="multibyte.md#MULTIBYTE-CONVERSIONS-SUPPORTED" title="23.3.4. Available Character Set Conversions">
       Section 23.3.4
      </a>
      for available conversions).
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       convert('text_in_utf8', 'UTF8', 'LATIN1')
      </code>
      →
      <code class="returnvalue">
       \x746578745f696e5f75746638
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       convert_from
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        src_encoding
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       name
      </code>
-     )
-       →
+     ) →
      <code class="returnvalue">
       text
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Converts a binary string representing text in encoding
      <em class="parameter">
-<code>
+      <code>
        src_encoding
       </code>
-</em>
+     </em>
      to
      <code class="type">
       text
@@ -1583,205 +1560,204 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
      </a>
      for available conversions).
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       convert_from('text_in_utf8', 'UTF8')
      </code>
      →
      <code class="returnvalue">
       text_in_utf8
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       convert_to
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        string
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        dest_encoding
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       name
      </code>
-     )
-       →
+     ) →
      <code class="returnvalue">
       bytea
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Converts a
      <code class="type">
       text
      </code>
      string (in the database encoding) to a binary string encoded in encoding
      <em class="parameter">
-<code>
+      <code>
        dest_encoding
       </code>
-</em>
+     </em>
      (see
      <a class="xref" href="multibyte.md#MULTIBYTE-CONVERSIONS-SUPPORTED" title="23.3.4. Available Character Set Conversions">
       Section 23.3.4
      </a>
      for available conversions).
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       convert_to('some_text', 'UTF8')
      </code>
      →
      <code class="returnvalue">
       \x736f6d655f74657874
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       encode
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        bytes
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        format
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-       →
+     ) →
      <code class="returnvalue">
       text
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Encodes binary data into a textual representation; supported
      <em class="parameter">
-<code>
+      <code>
        format
       </code>
-</em>
+     </em>
      values are:
      <a class="link" href="functions-binarystring.md#ENCODE-FORMAT-BASE64">
-<code class="literal">
+      <code class="literal">
        base64
       </code>
-</a>
+     </a>
      ,
      <a class="link" href="functions-binarystring.md#ENCODE-FORMAT-ESCAPE">
-<code class="literal">
+      <code class="literal">
        escape
       </code>
-</a>
+     </a>
      ,
      <a class="link" href="functions-binarystring.md#ENCODE-FORMAT-HEX">
-<code class="literal">
+      <code class="literal">
        hex
       </code>
-</a>
+     </a>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       encode('123\000\001', 'base64')
      </code>
      →
      <code class="returnvalue">
       MTIzAAE=
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       decode
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        string
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        format
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-       →
+     ) →
      <code class="returnvalue">
       bytea
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Decodes binary data from a textual representation; supported
      <em class="parameter">
-<code>
+      <code>
        format
       </code>
-</em>
-     values are the same as
-       for
+     </em>
+     values are the same as for
      <code class="function">
       encode
      </code>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       decode('MTIzAAE=', 'base64')
      </code>
      →
      <code class="returnvalue">
       \x3132330001
      </code>
-</p>
-</td>
-</tr>
-</tbody>
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 As funções `encode` e `decode` suportam os seguintes formatos textuais:
 

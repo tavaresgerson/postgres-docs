@@ -1,7 +1,7 @@
 ## 61.3. Otimização de Consulta Genética (GEQO) no PostgreSQL [#](#GEQO-PG-INTRO)
 
-* [61.3.1. Gerando Planos Possíveis com GEQO][(geqo-pg-intro.md#GEQO-PG-INTRO-GEN-POSSIBLE-PLANS)]
-* [61.3.2. Tarefas de Implementação Futura para PostgreSQL GEQO][(geqo-pg-intro.md#GEQO-FUTURE)]
+* [61.3.1. Gerando Planos Possíveis com GEQO](geqo-pg-intro.md#GEQO-PG-INTRO-GEN-POSSIBLE-PLANS)
+* [61.3.2. Tarefas de Implementação Futura para PostgreSQL GEQO](geqo-pg-intro.md#GEQO-FUTURE)
 
 O módulo GEQO aborda o problema de otimização de consultas como se fosse o conhecido problema do vendedor viajante (TSP). Os planos de consulta possíveis são codificados como strings inteiras. Cada string representa a ordem de junção de uma relação da consulta para a próxima. Por exemplo, a árvore de junção
 

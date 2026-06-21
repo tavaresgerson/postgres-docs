@@ -13,7 +13,7 @@ Uma replica síncrona que recebe alterações por meio de decodificação lógic
 
 ### 47.8.2. Avisos [#](#LOGICALDECODING-SYNCHRONOUS-CAVEATS)
 
-Em uma configuração de replicação síncrona, um bloqueio pode ocorrer se a transação tiver bloqueado as tabelas do catálogo do [usuário] exclusivamente. Consulte [Seção 47.6.2][(logicaldecoding-output-plugin.md#LOGICALDECODING-CAPABILITIES "47.6.2. Capabilities")] para obter informações sobre as tabelas do catálogo do usuário. Isso ocorre porque a decodificação lógica das transações pode bloquear as tabelas do catálogo para acessá-las. Para evitar isso, os usuários devem abster-se de tomar um bloqueio exclusivo nas tabelas do catálogo do [usuário]. Isso pode ocorrer das seguintes maneiras:
+Em uma configuração de replicação síncrona, um bloqueio pode ocorrer se a transação tiver bloqueado as tabelas do catálogo do [usuário] exclusivamente. Consulte [Seção 47.6.2](logicaldecoding-output-plugin.md#LOGICALDECODING-CAPABILITIES) para obter informações sobre as tabelas do catálogo do usuário. Isso ocorre porque a decodificação lógica das transações pode bloquear as tabelas do catálogo para acessá-las. Para evitar isso, os usuários devem abster-se de tomar um bloqueio exclusivo nas tabelas do catálogo do [usuário]. Isso pode ocorrer das seguintes maneiras:
 
 * Emitir um `LOCK` explícito sobre `pg_class` em uma transação.
 * Realizar `CLUSTER` sobre `pg_class` em uma transação.

@@ -8,6 +8,6 @@ Através da simulação das operações evolutivas *recombinação*, *mutação*
 
 **Figura 61.1. Estrutura de um Algoritmo Genético**
 
-  
+
 
 De acordo com a FAQ comp.ai.genetic, não se pode enfatizar o suficiente que uma GA não é uma busca pura aleatória para uma solução de um problema. Uma GA utiliza processos estocásticos, mas o resultado é claramente não aleatório (melhor do que aleatório).

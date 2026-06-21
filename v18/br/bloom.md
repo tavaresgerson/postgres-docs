@@ -1,12 +1,12 @@
 ## F.6. bloom — método de acesso ao índice de filtro bloom [#](#BLOOM)
 
-* [F.6.1. Parâmetros][(bloom.md#BLOOM-PARAMETERS)]
-* [F.6.2. Exemplos][(bloom.md#BLOOM-EXAMPLES)]
-* [F.6.3. Interface da Classe Operadora][(bloom.md#BLOOM-OPERATOR-CLASS-INTERFACE)]
-* [F.6.4. Limitações][(bloom.md#BLOOM-LIMITATIONS)]
-* [F.6.5. Autores][(bloom.md#BLOOM-AUTHORS)]
+* [F.6.1. Parâmetros](bloom.md#BLOOM-PARAMETERS)
+* [F.6.2. Exemplos](bloom.md#BLOOM-EXAMPLES)
+* [F.6.3. Interface da Classe Operadora](bloom.md#BLOOM-OPERATOR-CLASS-INTERFACE)
+* [F.6.4. Limitações](bloom.md#BLOOM-LIMITATIONS)
+* [F.6.5. Autores](bloom.md#BLOOM-AUTHORS)
 
-`bloom` fornece um método de acesso ao índice baseado em [Bloom filters][(https://en.wikipedia.org/wiki/Bloom_filter)].
+`bloom` fornece um método de acesso ao índice baseado em [Bloom filters](https://en.wikipedia.org/wiki/Bloom_filter).
 
 Um filtro Bloom é uma estrutura de dados eficiente em termos de espaço que é usada para testar se um elemento é membro de um conjunto. No caso de um método de acesso a índice, ele permite a rápida exclusão de tuplas que não correspondem, por meio de assinaturas cujas dimensões são determinadas na criação do índice.
 

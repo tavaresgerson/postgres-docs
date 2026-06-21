@@ -36,7 +36,7 @@ Se o mesmo nome de canal for sinalizado várias vezes com strings de carga idên
 
 Existe uma fila que contém notificações que foram enviadas, mas ainda não processadas por todas as sessões de escuta. Se essa fila ficar cheia, as transações que chamam `NOTIFY` falharão no commit. A fila é bastante grande (8 GB em uma instalação padrão) e deve ser dimensionada de forma suficiente para quase todos os casos de uso. No entanto, não é possível realizar uma limpeza se uma sessão executar `LISTEN` e, em seguida, entrar em uma transação por um período muito longo. Uma vez que a fila esteja meio cheia, você verá avisos no arquivo de log apontando para a sessão que está impedindo a limpeza. Neste caso, você deve garantir que essa sessão termine sua transação atual para que a limpeza possa prosseguir.
 
-A função `pg_notification_queue_usage` retorna a fração da fila que está atualmente ocupada por notificações pendentes. Consulte [Seção 9.27][(functions-info.md "9.27. System Information Functions and Operators")] para obter mais informações.
+A função `pg_notification_queue_usage` retorna a fração da fila que está atualmente ocupada por notificações pendentes. Consulte [Seção 9.27](functions-info.md) para obter mais informações.
 
 Uma transação que executou `NOTIFY` não pode ser preparada para um compromisso de duas fases.
 

@@ -11,179 +11,216 @@ Por padrão, a visualização `pg_hba_file_rules` pode ser lida apenas por super
 
 
 <table border="1" class="table" summary="pg_hba_file_rules Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">Tipo de coluna</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
+     Tipo de coluna
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       rule_number
      </code>
-<code class="type">
+     <code class="type">
       int4
      </code>
-</p>
-<p>Número desta regra, se válida, caso contrário<code class="literal">
+    </p>
+    <p>
+     Número desta regra, se válida, caso contrário
+     <code class="literal">
       NULL
-     </code>. Isso indica a ordem em que cada regra é considerada até que uma correspondência seja encontrada durante a autenticação.</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     . Isso indica a ordem em que cada regra é considerada até que uma correspondência seja encontrada durante a autenticação.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       file_name
      </code>
-<code class="type">
+     <code class="type">
       text
      </code>
-</p>
-<p>Nome do arquivo que contém esta regra</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Nome do arquivo que contém esta regra
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       line_number
      </code>
-<code class="type">
+     <code class="type">
       int4
      </code>
-</p>
-<p>Número da linha desta regra em<code class="literal">
+    </p>
+    <p>
+     Número da linha desta regra em
+     <code class="literal">
       file_name
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       type
      </code>
-<code class="type">
+     <code class="type">
       text
      </code>
-</p>
-<p>Tipo de conexão</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Tipo de conexão
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       database
      </code>
-<code class="type">
+     <code class="type">
       text[]
      </code>
-</p>
-<p>Lista de nome(s) do banco de dados a que esta regra se aplica</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Lista de nome(s) do banco de dados a que esta regra se aplica
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       user_name
      </code>
-<code class="type">
+     <code class="type">
       text[]
      </code>
-</p>
-<p>Lista de nome(s) do usuário e grupo(s) a que esta regra se aplica</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Lista de nome(s) do usuário e grupo(s) a que esta regra se aplica
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       address
      </code>
-<code class="type">
+     <code class="type">
       text
      </code>
-</p>
-<p>Nome do host ou endereço IP, ou um dos<code class="literal">
+    </p>
+    <p>
+     Nome do host ou endereço IP, ou um dos
+     <code class="literal">
       all
-     </code>,<code class="literal">
+     </code>
+     ,
+     <code class="literal">
       samehost
-     </code>, ou<code class="literal">
+     </code>
+     , ou
+     <code class="literal">
       samenet
-     </code>, ou nulo para conexões locais</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     , ou nulo para conexões locais
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       netmask
      </code>
-<code class="type">
+     <code class="type">
       text
      </code>
-</p>
-<p>Máscara de endereço IP, ou nulo, se não for aplicável</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Máscara de endereço IP, ou nulo, se não for aplicável
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       auth_method
      </code>
-<code class="type">
+     <code class="type">
       text
      </code>
-</p>
-<p>Método de autenticação</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Método de autenticação
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       options
      </code>
-<code class="type">
+     <code class="type">
       text[]
      </code>
-</p>
-<p>Opções especificadas para o método de autenticação, se houver</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Opções especificadas para o método de autenticação, se houver
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       error
      </code>
-<code class="type">
+     <code class="type">
       text
      </code>
-</p>
-<p>Se não for nulo, uma mensagem de erro indicando por que essa linha não pode ser processada</p>
-</td>
-</tr>
-</tbody>
+    </p>
+    <p>
+     Se não for nulo, uma mensagem de erro indicando por que essa linha não pode ser processada
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Normalmente, uma linha que reflete uma entrada incorreta terá valores apenas nos campos `line_number` e `error`.
 

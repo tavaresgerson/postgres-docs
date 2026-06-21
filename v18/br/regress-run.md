@@ -1,11 +1,11 @@
 ## 31.1. Realizar os testes [#](#REGRESS-RUN)
 
-* [31.1.1. Executar os testes em uma instalação temporária][(regress-run.md#REGRESS-RUN-TEMP-INST)]
-* [31.1.2. Executar os testes em uma instalação existente][(regress-run.md#REGRESS-RUN-EXISTING-INST)]
-* [31.1.3. Suítes de teste adicionais][(regress-run.md#REGRESS-ADDITIONAL)]
-* [31.1.4. Local e codificação][(regress-run.md#REGRESS-RUN-LOCALE)]
-* [31.1.5. Configurações personalizadas do servidor][(regress-run.md#REGRESS-RUN-CUSTOM-SETTINGS)]
-* [31.1.6. Testes extras][(regress-run.md#REGRESS-RUN-EXTRA-TESTS)]
+* [31.1.1. Executar os testes em uma instalação temporária](regress-run.md#REGRESS-RUN-TEMP-INST)
+* [31.1.2. Executar os testes em uma instalação existente](regress-run.md#REGRESS-RUN-EXISTING-INST)
+* [31.1.3. Suítes de teste adicionais](regress-run.md#REGRESS-ADDITIONAL)
+* [31.1.4. Local e codificação](regress-run.md#REGRESS-RUN-LOCALE)
+* [31.1.5. Configurações personalizadas do servidor](regress-run.md#REGRESS-RUN-CUSTOM-SETTINGS)
+* [31.1.6. Testes extras](regress-run.md#REGRESS-RUN-EXTRA-TESTS)
 
 Os testes de regressão podem ser executados contra um servidor já instalado e em funcionamento, ou usando uma instalação temporária dentro da árvore de construção. Além disso, há um modo “paralelo” e um modo “sequencial” para executar os testes. O método sequencial executa cada script de teste sozinho, enquanto o método paralelo inicia vários processos de servidor para executar grupos de testes em paralelo. O teste paralelo adiciona a confiança de que a comunicação e o bloqueio entre processos estão funcionando corretamente. Alguns testes podem ser executados sequencialmente mesmo no modo “paralelo”, caso isso seja necessário pelo teste.
 
@@ -39,7 +39,7 @@ não executa mais de dez testes simultaneamente.
 
 ### 31.1.2. Executar os testes em uma instalação existente [#](#REGRESS-RUN-EXISTING-INST)
 
-Para executar os testes após a instalação (consulte [Capítulo 17][(installation.md "Chapter 17. Installation from Source Code")]), inicialize um diretório de dados e inicie o servidor conforme explicado em [Capítulo 18][(runtime.md "Chapter 18. Server Setup and Operation")], em seguida, digite:
+Para executar os testes após a instalação (consulte [Capítulo 17](installation.md)), inicialize um diretório de dados e inicie o servidor conforme explicado em [Capítulo 18](runtime.md), em seguida, digite:
 
 ```
 make installcheck
@@ -91,7 +91,7 @@ Os testes adicionais que podem ser solicitados dessa forma incluem:
 
 Ao usar o modo `installcheck`, esses testes criarão e destruirão bancos de dados de teste cujos nomes incluem `regression`, por exemplo, `pl_regression` ou `contrib_regression`. Tenha cuidado ao usar o modo `installcheck` com uma instalação que tenha quaisquer bancos de dados não de teste com nomes assim.
 
-Alguns desses conjuntos de testes auxiliares utilizam a infraestrutura TAP explicada em [Seção 31.4][(regress-tap.md "31.4. TAP Tests")]. Os testes baseados em TAP são executados apenas quando o PostgreSQL foi configurado com a opção `--enable-tap-tests`. Isso é recomendado para desenvolvimento, mas pode ser omitido se não houver uma instalação adequada do Perl.
+Alguns desses conjuntos de testes auxiliares utilizam a infraestrutura TAP explicada em [Seção 31.4](regress-tap.md). Os testes baseados em TAP são executados apenas quando o PostgreSQL foi configurado com a opção `--enable-tap-tests`. Isso é recomendado para desenvolvimento, mas pode ser omitido se não houver uma instalação adequada do Perl.
 
 Alguns conjuntos de testes não são executados por padrão, porque não são seguros para serem executados em um sistema multiusuário, porque exigem software especial ou porque são intensivos em recursos. Você pode decidir quais conjuntos de testes executar adicionalmente, definindo a variável de ambiente `make` ou `PG_TEST_EXTRA` como uma lista separada por espaços em branco, por exemplo:
 
@@ -150,7 +150,7 @@ O codificação do banco de dados pode ser definida para testes contra uma insta
 
 ### 31.1.5. Configurações personalizadas do servidor [#](#REGRESS-RUN-CUSTOM-SETTINGS)
 
-Existem várias maneiras de usar configurações personalizadas do servidor ao executar uma suíte de testes. Isso pode ser útil para habilitar registros adicionais, ajustar limites de recursos ou habilitar verificações adicionais de tempo de execução, como [debug_discard_caches][(runtime-config-developer.md#GUC-DEBUG-DISCARD-CACHES)]. Mas observe que nem todos os testes podem ser esperados para passar de forma limpa com configurações arbitrárias.
+Existem várias maneiras de usar configurações personalizadas do servidor ao executar uma suíte de testes. Isso pode ser útil para habilitar registros adicionais, ajustar limites de recursos ou habilitar verificações adicionais de tempo de execução, como [debug_discard_caches](runtime-config-developer.md#GUC-DEBUG-DISCARD-CACHES). Mas observe que nem todos os testes podem ser esperados para passar de forma limpa com configurações arbitrárias.
 
 Opções adicionais podem ser passadas aos vários comandos `initdb` que são executados internamente durante a configuração do teste usando a variável de ambiente `PG_TEST_INITDB_EXTRA_OPTS`. Por exemplo, para executar um teste com verificações de checksums habilitadas e um tamanho de segmento WAL personalizado e configuração `work_mem`, use:
 
@@ -164,7 +164,7 @@ Para a suíte de testes de regressão principal e outros testes impulsionados po
 make check PGOPTIONS="-c debug_parallel_query=regress -c work_mem=50MB"
 ```
 
-(Isso utiliza a funcionalidade fornecida pelo libpq; consulte [opções][(libpq-connect.md#LIBPQ-CONNECT-OPTIONS)] para detalhes.)
+(Isso utiliza a funcionalidade fornecida pelo libpq; consulte [opções](libpq-connect.md#LIBPQ-CONNECT-OPTIONS) para detalhes.)
 
 Ao executar em uma instalação temporária, as configurações personalizadas também podem ser definidas fornecendo um pré-escrito `postgresql.conf`:
 

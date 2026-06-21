@@ -2,7 +2,7 @@
 
 Uma configuração de busca de texto especifica todas as opções necessárias para transformar um documento em um `tsvector`: o analisador a ser usado para dividir o texto em tokens e os dicionários a serem usados para transformar cada token em um léxico. Cada chamada de `to_tsvector` ou `to_tsquery` precisa de uma configuração de busca de texto para realizar seu processamento. O parâmetro de configuração [default_text_search_config](runtime-config-client.md#GUC-DEFAULT-TEXT-SEARCH-CONFIG) especifica o nome da configuração padrão, que é a usada pelas funções de busca de texto se um parâmetro de configuração explícito for omitido. Pode ser definido em `postgresql.conf`, ou definido para uma sessão individual usando o comando `SET`.
 
-Várias configurações pré-definidas para pesquisa de texto estão disponíveis, e você pode criar configurações personalizadas facilmente. Para facilitar a gestão de objetos de pesquisa de texto, um conjunto de comandos SQL está disponível, e há vários comandos psql que exibem informações sobre objetos de pesquisa de texto ([Seção 12.10][(textsearch-psql.md "12.10. psql Support")]).
+Várias configurações pré-definidas para pesquisa de texto estão disponíveis, e você pode criar configurações personalizadas facilmente. Para facilitar a gestão de objetos de pesquisa de texto, um conjunto de comandos SQL está disponível, e há vários comandos psql que exibem informações sobre objetos de pesquisa de texto ([Seção 12.10](textsearch-psql.md)).
 
 Como exemplo, vamos criar uma configuração `pg`, começando por duplicar a configuração embutida `english`:
 

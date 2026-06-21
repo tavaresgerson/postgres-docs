@@ -19,10 +19,10 @@ Observe duas coisas sobre o conjunto de resultados:
 * Não há uma linha de resultado para a cidade de Hayward. Isso ocorre porque não há uma entrada correspondente na tabela `cities` para Hayward, então a junção ignora as linhas não correspondentes na tabela `weather`. Veremos em breve como isso pode ser corrigido.
 * Há duas colunas que contêm o nome da cidade. Isso é correto porque as listas de colunas das tabelas `weather` e `cities` são concatenadas. Na prática, isso é indesejável, embora, provavelmente, você deseje listar as colunas de saída explicitamente em vez de usar `*`:
 
-  ```
-  SELECT city, temp_lo, temp_hi, prcp, date, location
-      FROM weather JOIN cities ON city = name;
-  ```
+```
+SELECT city, temp_lo, temp_hi, prcp, date, location
+    FROM weather JOIN cities ON city = name;
+```
 
 Como todas as colunas tinham nomes diferentes, o analisador encontrou automaticamente para qual tabela elas pertencem. Se houvesse nomes de colunas duplicados nas duas tabelas, você precisaria *qualificar* os nomes das colunas para mostrar qual deles você queria, como:
 

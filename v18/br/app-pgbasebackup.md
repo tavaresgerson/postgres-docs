@@ -8,17 +8,17 @@ pg_basebackup — fazer um backup de base de um clúster PostgreSQL
 
 ## Descrição
 
-O pg_basebackup é usado para fazer um backup básico de um clúster de banco de dados PostgreSQL em execução. O backup é feito sem afetar outros clientes do banco de dados e pode ser usado tanto para recuperação em um ponto no tempo (consulte [Seção 25.3][(continuous-archiving.md "25.3. Continuous Archiving and Point-in-Time Recovery (PITR)]) quanto como ponto de partida para um servidor de envio de log ou de replicação em streaming (consulte [Seção 26.2][(warm-standby.md "26.2. Log-Shipping Standby Servers")]).
+O pg_basebackup é usado para fazer um backup básico de um clúster de banco de dados PostgreSQL em execução. O backup é feito sem afetar outros clientes do banco de dados e pode ser usado tanto para recuperação em um ponto no tempo (consulte [Seção 25.3](continuous-archiving.md)) quanto como ponto de partida para um servidor de envio de log ou de replicação em streaming (consulte [Seção 26.2](warm-standby.md)).
 
-O pg_basebackup pode realizar um backup de base completo ou incremental do banco de dados. Quando usado para realizar um backup completo, ele faz uma cópia exata dos arquivos do clúster do banco de dados. Quando usado para realizar um backup incremental, alguns arquivos que seriam parte de um backup completo podem ser substituídos por versões incrementais dos mesmos arquivos, contendo apenas os blocos que foram modificados desde o backup de referência. Um backup incremental não pode ser usado diretamente; em vez disso, [pg_combinebackup][(app-pgcombinebackup.md "pg_combinebackup")] deve ser usado primeiro para combiná-lo com os backups anteriores dos quais depende. Consulte [Seção 25.3.3][(continuous-archiving.md#BACKUP-INCREMENTAL-BACKUP "25.3.3. Making an Incremental Backup")] para mais informações sobre backups incrementais e [Seção 25.3.5][(continuous-archiving.md#BACKUP-PITR-RECOVERY "25.3.5. Recovering Using a Continuous Archive Backup")] para etapas de recuperação a partir de um backup.
+O pg_basebackup pode realizar um backup de base completo ou incremental do banco de dados. Quando usado para realizar um backup completo, ele faz uma cópia exata dos arquivos do clúster do banco de dados. Quando usado para realizar um backup incremental, alguns arquivos que seriam parte de um backup completo podem ser substituídos por versões incrementais dos mesmos arquivos, contendo apenas os blocos que foram modificados desde o backup de referência. Um backup incremental não pode ser usado diretamente; em vez disso, [pg_combinebackup](app-pgcombinebackup.md) deve ser usado primeiro para combiná-lo com os backups anteriores dos quais depende. Consulte [Seção 25.3.3](continuous-archiving.md#BACKUP-INCREMENTAL-BACKUP) para mais informações sobre backups incrementais e [Seção 25.3.5](continuous-archiving.md#BACKUP-PITR-RECOVERY) para etapas de recuperação a partir de um backup.
 
-Em qualquer modo, o pg_basebackup garante que o servidor seja colocado no modo de backup e retirado dele automaticamente. Os backups são sempre feitos do conjunto de bancos de dados inteiros; não é possível fazer backups de bancos de dados ou objetos de banco de dados individuais. Para backups seletivos, outra ferramenta, como [pg_dump][(app-pgdump.md "pg_dump")], deve ser usada.
+Em qualquer modo, o pg_basebackup garante que o servidor seja colocado no modo de backup e retirado dele automaticamente. Os backups são sempre feitos do conjunto de bancos de dados inteiros; não é possível fazer backups de bancos de dados ou objetos de banco de dados individuais. Para backups seletivos, outra ferramenta, como [pg_dump](app-pgdump.md), deve ser usada.
 
-O backup é feito através de uma conexão regular com PostgreSQL que utiliza o protocolo de replicação. A conexão deve ser feita com um ID de usuário que tenha permissões `REPLICATION` (consulte [Seção 21.2][(role-attributes.md "21.2. Role Attributes")]) ou seja um superusuário, e [[`pg_hba.conf`][(auth-pg-hba-conf.md "20.1. The pg_hba.conf File")]] deve permitir a conexão de replicação. O servidor também deve ser configurado com [max_wal_senders][(runtime-config-replication.md#GUC-MAX-WAL-SENDERS)] definido o suficiente para fornecer pelo menos um walsender para o backup, além de um para o streaming WAL (se usado).
+O backup é feito através de uma conexão regular com PostgreSQL que utiliza o protocolo de replicação. A conexão deve ser feita com um ID de usuário que tenha permissões `REPLICATION` (consulte [Seção 21.2](role-attributes.md)) ou seja um superusuário, e [[`pg_hba.conf`](auth-pg-hba-conf.md)] deve permitir a conexão de replicação. O servidor também deve ser configurado com [max_wal_senders](runtime-config-replication.md#GUC-MAX-WAL-SENDERS) definido o suficiente para fornecer pelo menos um walsender para o backup, além de um para o streaming WAL (se usado).
 
 Pode haver vários `pg_basebackup`s em execução ao mesmo tempo, mas geralmente é melhor, do ponto de vista de desempenho, fazer apenas um backup e copiar o resultado.
 
-O pg_basebackup pode fazer um backup de base não apenas de um servidor primário, mas também de um de reserva. Para fazer um backup de um de reserva, configure o de reserva para que ele possa aceitar conexões de replicação (ou seja, defina `max_wal_senders` e [hot_standby][(runtime-config-replication.md#GUC-HOT-STANDBY)] e configure seu `pg_hba.conf` adequadamente). Você também precisará habilitar [full_page_writes][(runtime-config-wal.md#GUC-FULL-PAGE-WRITES)] no primário.
+O pg_basebackup pode fazer um backup de base não apenas de um servidor primário, mas também de um de reserva. Para fazer um backup de um de reserva, configure o de reserva para que ele possa aceitar conexões de replicação (ou seja, defina `max_wal_senders` e [hot_standby](runtime-config-replication.md#GUC-HOT-STANDBY) e configure seu `pg_hba.conf` adequadamente). Você também precisará habilitar [full_page_writes](runtime-config-wal.md#GUC-FULL-PAGE-WRITES) no primário.
 
 Observe que há algumas limitações ao fazer um backup de um estado de espera:
 
@@ -27,7 +27,7 @@ Observe que há algumas limitações ao fazer um backup de um estado de espera:
 * Se o standby for promovido a ser primário durante o backup, o backup falha.
 * Todos os registros WAL necessários para o backup devem conter escritas suficientes de página completa, o que exige que você habilite `full_page_writes` no primário.
 
-Sempre que o pg_basebackup estiver fazendo um backup de base, a vista `pg_stat_progress_basebackup` do servidor informará o progresso do backup. Consulte [Seção 27.4.6][(progress-reporting.md#BASEBACKUP-PROGRESS-REPORTING "27.4.6. Base Backup Progress Reporting")] para obter detalhes.
+Sempre que o pg_basebackup estiver fazendo um backup de base, a vista `pg_stat_progress_basebackup` do servidor informará o progresso do backup. Consulte [Seção 27.4.6](progress-reporting.md#BASEBACKUP-PROGRESS-REPORTING) para obter detalhes.
 
 ## Opções
 
@@ -97,7 +97,7 @@ Quando esta opção é usada em combinação com `-Xstream`, `pg_wal.tar` será 
 
 As opções de linha de comando a seguir controlam a geração do backup e a invocação do programa:
 
-`-c {fast|spread}` `--checkpoint={fast|spread}`: Define o modo de verificação como rápido (imediato) ou espalhado (padrão) (consulte [Seção 25.3.4][(continuous-archiving.md#BACKUP-LOWLEVEL-BASE-BACKUP "25.3.4. Making a Base Backup Using the Low Level API")]).
+`-c {fast|spread}` `--checkpoint={fast|spread}`: Define o modo de verificação como rápido (imediato) ou espalhado (padrão) (consulte [Seção 25.3.4](continuous-archiving.md#BACKUP-LOWLEVEL-BASE-BACKUP)).
 
 `-C` `--create-slot`: Especifica que o slot de replicação nomeado pela opção `--slot` deve ser criado antes de iniciar o backup. Um erro é exibido se o slot já existir.
 
@@ -123,7 +123,7 @@ Se esta opção não for especificada e o servidor suportar slots de replicaçã
 
 `--sync-method=method`: Quando configurado para `fsync`, que é o padrão, `pg_basebackup` abrirá e sincronizará recursivamente todos os arquivos no diretório de backup. Quando o formato simples é usado, a busca por arquivos seguirá links simbólicos para o diretório WAL e cada espaço de tabela configurado.
 
-Em Linux, `syncfs` pode ser usado para pedir ao sistema operacional que sincronize todo o sistema de arquivos que contém o diretório de backup. Quando o formato simples é usado, `pg_basebackup` também sincronizará os sistemas de arquivos que contêm os arquivos WAL e cada espaço de tabela. Consulte [recovery_init_sync_method][(runtime-config-error-handling.md#GUC-RECOVERY-INIT-SYNC-METHOD)] para obter informações sobre as advertências a serem consideradas ao usar `syncfs`.
+Em Linux, `syncfs` pode ser usado para pedir ao sistema operacional que sincronize todo o sistema de arquivos que contém o diretório de backup. Quando o formato simples é usado, `pg_basebackup` também sincronizará os sistemas de arquivos que contêm os arquivos WAL e cada espaço de tabela. Consulte [recovery_init_sync_method](runtime-config-error-handling.md#GUC-RECOVERY-INIT-SYNC-METHOD) para obter informações sobre as advertências a serem consideradas ao usar `syncfs`.
 
 Esta opção não tem efeito quando o `--no-sync` é usado.
 
@@ -145,7 +145,7 @@ Sem essa opção, o backup começará enumerando o tamanho de todo o banco de da
 
 Esta opção não é permitida ao usar `--progress`.
 
-`--no-manifest`: Desabilita a geração de um manifesto de backup. Se esta opção não for especificada, o servidor gerará e enviará um manifesto de backup que pode ser verificado usando [pg_verifybackup][(app-pgverifybackup.md "pg_verifybackup")]. O manifesto é uma lista de todos os arquivos presentes no backup, com exceção de quaisquer arquivos WAL que possam ser incluídos. Ele também armazena o tamanho, o horário de última modificação e um checksum opcional para cada arquivo.
+`--no-manifest`: Desabilita a geração de um manifesto de backup. Se esta opção não for especificada, o servidor gerará e enviará um manifesto de backup que pode ser verificado usando [pg_verifybackup](app-pgverifybackup.md). O manifesto é uma lista de todos os arquivos presentes no backup, com exceção de quaisquer arquivos WAL que possam ser incluídos. Ele também armazena o tamanho, o horário de última modificação e um checksum opcional para cada arquivo.
 
 `--no-slot`: Previne a criação de um slot de replicação temporário para o backup.
 
@@ -161,7 +161,7 @@ As opções de linha de comando a seguir controlam a conexão com o servidor de 
 
 `-d connstr` `--dbname=connstr`: Especifica os parâmetros usados para se conectar ao servidor, como uma [string de conexão](libpq-connect.md#LIBPQ-CONNSTRING "32.1.1. Connection Strings"); esses parâmetros substituirão quaisquer opções de linha de comando conflitantes.
 
-Essa opção é chamada `--dbname` para garantir a consistência com outras aplicações do cliente, mas, como o pg_basebackup não se conecta a nenhum banco de dados específico no clúster, qualquer nome de banco de dados incluído na string de conexão será ignorado pelo servidor. No entanto, um nome de banco de dados fornecido dessa maneira substitui o nome de banco de dados padrão (`replication`) para fins de busca da senha da conexão de replicação em `~/.pgpass`. Da mesma forma, o middleware ou proxies utilizados na conexão com o PostgreSQL podem utilizar o nome para fins como roteamento de conexão. O nome do banco de dados também pode ser utilizado pelo [sincronização de slot de replicação lógica][(logicaldecoding-explanation.md#LOGICALDECODING-REPLICATION-SLOTS-SYNCHRONIZATION "47.2.3. Replication Slot Synchronization")].
+Essa opção é chamada `--dbname` para garantir a consistência com outras aplicações do cliente, mas, como o pg_basebackup não se conecta a nenhum banco de dados específico no clúster, qualquer nome de banco de dados incluído na string de conexão será ignorado pelo servidor. No entanto, um nome de banco de dados fornecido dessa maneira substitui o nome de banco de dados padrão (`replication`) para fins de busca da senha da conexão de replicação em `~/.pgpass`. Da mesma forma, o middleware ou proxies utilizados na conexão com o PostgreSQL podem utilizar o nome para fins como roteamento de conexão. O nome do banco de dados também pode ser utilizado pelo [sincronização de slot de replicação lógica](logicaldecoding-explanation.md#LOGICALDECODING-REPLICATION-SLOTS-SYNCHRONIZATION).
 
 `-h host`: Especifica o nome do host da máquina na qual o servidor está sendo executado. Se o valor começar com uma barra, ele é usado como o diretório para uma conexão de soquete de domínio Unix. O padrão é tomado da variável de ambiente `PGHOST`, se definida, caso contrário, uma conexão de soquete de domínio Unix é tentada.
 
@@ -185,7 +185,7 @@ Outras opções também estão disponíveis:
 
 ## Meio Ambiente
 
-Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, utiliza as variáveis de ambiente suportadas pelo libpq (consulte a Seção 32.15 [(libpq-envars.md "32.15. Environment Variables")]).
+Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, utiliza as variáveis de ambiente suportadas pelo libpq (consulte a [Seção 32.15](libpq-envars.md)).
 
 A variável de ambiente `PG_COLOR` especifica se a cor deve ser usada nas mensagens de diagnóstico. Os valores possíveis são `always`, `auto` e `never`.
 

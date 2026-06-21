@@ -18,7 +18,7 @@ DROP DOMAIN [ IF EXISTS ] name [, ...] [ CASCADE | RESTRICT ]
 
 *`name`*: O nome (opcionalmente qualificado por esquema) de um domínio existente.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem do domínio (como as colunas de tabela) e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem do domínio (como as colunas de tabela) e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a eliminação do domínio se houver algum objeto dependente dele. Esse é o padrão.
 

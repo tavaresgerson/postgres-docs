@@ -153,7 +153,7 @@ Se um superusuário optar por emitir um comando `GRANT` ou `REVOKE`, o comando �
 
 Se o papel que executa `REVOKE` tiver privilégios indiretamente por meio de mais de um caminho de associação de papel, não é especificado qual papel contendo será usado para executar o comando. Nesses casos, é melhor prática usar `SET ROLE` para se tornar o papel específico que você deseja realizar o `REVOKE`. Não fazer isso pode levar à revogação de privilégios que não são os que você pretendia, ou à não revogação de nada.
 
-Consulte a [Seção 5.8][(ddl-priv.md "5.8. Privileges")] para obter mais informações sobre os tipos específicos de privilégio, bem como sobre como inspecionar os privilégios dos objetos.
+Consulte a [Seção 5.8](ddl-priv.md) para obter mais informações sobre os tipos específicos de privilégio, bem como sobre como inspecionar os privilégios dos objetos.
 
 ## Exemplos
 

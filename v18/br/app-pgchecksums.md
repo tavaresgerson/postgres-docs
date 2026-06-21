@@ -32,7 +32,7 @@ As opções de linha de comando disponíveis são as seguintes:
 
 `--sync-method=method`: Quando configurado para `fsync`, que é o padrão, `pg_checksums` abrirá e sincronizará recursivamente todos os arquivos no diretório de dados. A busca por arquivos seguirá links simbólicos para o diretório WAL e cada espaço de tabela configurado.
 
-Em Linux, `syncfs` pode ser usado para pedir ao sistema operacional que sincronize todos os sistemas de arquivos que contêm o diretório de dados, os arquivos WAL e cada espaço de tabela. Consulte [recovery_init_sync_method][(runtime-config-error-handling.md#GUC-RECOVERY-INIT-SYNC-METHOD)] para obter informações sobre as advertências a serem observadas ao usar `syncfs`.
+Em Linux, `syncfs` pode ser usado para pedir ao sistema operacional que sincronize todos os sistemas de arquivos que contêm o diretório de dados, os arquivos WAL e cada espaço de tabela. Consulte [recovery_init_sync_method](runtime-config-error-handling.md#GUC-RECOVERY-INIT-SYNC-METHOD) para obter informações sobre as advertências a serem observadas ao usar `syncfs`.
 
 Esta opção não tem efeito quando o `--no-sync` é usado.
 
@@ -52,6 +52,6 @@ Esta opção não tem efeito quando o `--no-sync` é usado.
 
 Habilitar verificações de checksum em um grande clúster pode levar um tempo considerável. Durante essa operação, o clúster ou outros programas que escrevem no diretório de dados não devem ser iniciados, pois isso pode causar perda de dados.
 
-Ao usar uma configuração de replicação com ferramentas que realizam cópias diretas de blocos de arquivos de relação (por exemplo, [pg_rewind][(app-pgrewind.md "pg_rewind")]), habilitar ou desabilitar verificações de checksum pode levar a corrupções de página na forma de checksums incorretos se a operação não for realizada de forma consistente em todos os nós. Ao habilitar ou desabilitar verificações de checksum em uma configuração de replicação, é recomendável, portanto, parar todos os clústeres antes de alterná-los consistentemente. Também é seguro destruir todos os backups, realizar a operação no primário e, finalmente, recriar os backups do zero.
+Ao usar uma configuração de replicação com ferramentas que realizam cópias diretas de blocos de arquivos de relação (por exemplo, [pg_rewind](app-pgrewind.md)), habilitar ou desabilitar verificações de checksum pode levar a corrupções de página na forma de checksums incorretos se a operação não for realizada de forma consistente em todos os nós. Ao habilitar ou desabilitar verificações de checksum em uma configuração de replicação, é recomendável, portanto, parar todos os clústeres antes de alterná-los consistentemente. Também é seguro destruir todos os backups, realizar a operação no primário e, finalmente, recriar os backups do zero.
 
 Se o pg_checksums for interrompido ou eliminado ao habilitar ou desabilitar as verificações de checksum, a configuração de verificação de checksum do cluster permanece inalterada, e o pg_checksums pode ser executado novamente para realizar a mesma operação.

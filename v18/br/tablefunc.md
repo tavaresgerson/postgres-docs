@@ -16,252 +16,361 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
 
 
 <table border="1" class="table" summary="tablefunc Functions">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">Função</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
+     Função
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       normal_rand
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        numvals
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       integer
-     </code>,<em class="parameter">
-<code>
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        mean
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       float8
-     </code>,<em class="parameter">
-<code>
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        stddev
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       float8
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       setof float8
      </code>
-</p>
-<p>Produz um conjunto de valores aleatórios distribuídos normalmente.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+    <p>
+     Produz um conjunto de valores aleatórios distribuídos normalmente.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       crosstab
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        sql
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       setof record
      </code>
-</p>
-<p>Produz um<span class="quote">“<span class="quote">tabela pivot</span>”</span>contendo nomes de linha, além de<em class="replaceable">
-<code>
+    </p>
+    <p>
+     Produz um
+     <span class="quote">
+      “
+      <span class="quote">
+       tabela pivot
+      </span>
+      ”
+     </span>
+     contendo nomes de linha, além de
+     <em class="replaceable">
+      <code>
        N
       </code>
-</em>colunas de valor, onde<em class="replaceable">
-<code>
+     </em>
+     colunas de valor, onde
+     <em class="replaceable">
+      <code>
        N
       </code>
-</em>é determinada pelo tipo de linha especificado na consulta de chamada.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+     </em>
+     é determinada pelo tipo de linha especificado na consulta de chamada.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       crosstab
       <em class="replaceable">
-<code>
+       <code>
         N
        </code>
-</em>
-</code>(<em class="parameter">
-<code>
+      </em>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        sql
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       setof table_crosstab_
       <em class="replaceable">
-<code>
+       <code>
         N
        </code>
-</em>
-</code>
-</p>
-<p>Produz um<span class="quote">“<span class="quote">tabela pivot</span>”</span>contendo nomes de linha, além de<em class="replaceable">
-<code>
+      </em>
+     </code>
+    </p>
+    <p>
+     Produz um
+     <span class="quote">
+      “
+      <span class="quote">
+       tabela pivot
+      </span>
+      ”
+     </span>
+     contendo nomes de linha, além de
+     <em class="replaceable">
+      <code>
        N
       </code>
-</em>colunas de valor.<code class="function">
+     </em>
+     colunas de valor.
+     <code class="function">
       crosstab2
-     </code>,<code class="function">
+     </code>
+     ,
+     <code class="function">
       crosstab3
-     </code>, e<code class="function">
+     </code>
+     , e
+     <code class="function">
       crosstab4
-     </code>são pré-definidos, mas você pode criar outros<code class="function">
+     </code>
+     são pré-definidos, mas você pode criar outros
+     <code class="function">
       crosstab
       <em class="replaceable">
-<code>
+       <code>
         N
        </code>
-</em>
-</code>funciona conforme descrito abaixo.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+      </em>
+     </code>
+     funciona conforme descrito abaixo.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       crosstab
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        source_sql
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
-     </code>,<em class="parameter">
-<code>
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        category_sql
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       setof record
      </code>
-</p>
-<p>Produz um<span class="quote">“<span class="quote">tabela pivot</span>”</span>com as colunas de valor especificadas por uma segunda consulta.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+    <p>
+     Produz um
+     <span class="quote">
+      “
+      <span class="quote">
+       tabela pivot
+      </span>
+      ”
+     </span>
+     com as colunas de valor especificadas por uma segunda consulta.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       crosstab
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        sql
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
-     </code>,<em class="parameter">
-<code>
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        N
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       integer
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       setof record
      </code>
-</p>
-<p>Versão obsoleta de<code class="function">
+    </p>
+    <p>
+     Versão obsoleta de
+     <code class="function">
       crosstab(text)
-     </code>O parâmetro<em class="parameter">
-<code>
+     </code>
+     O parâmetro
+     <em class="parameter">
+      <code>
        N
       </code>
-</em>agora é ignorado, uma vez que o número de colunas de valor é sempre determinado pela consulta que está chamando.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+     </em>
+     agora é ignorado, uma vez que o número de colunas de valor é sempre determinado pela consulta que está chamando.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       connectby
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        relname
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
-     </code>,<em class="parameter">
-<code>
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        keyid_fld
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
-     </code>,<em class="parameter">
-<code>
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        parent_keyid_fld
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
-     </code>[<span class="optional">,<em class="parameter">
-<code>
+     </code>
+     [
+     <span class="optional">
+      ,
+      <em class="parameter">
+       <code>
         orderby_fld
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        text
       </code>
-</span>],<em class="parameter">
-<code>
+     </span>
+     ],
+     <em class="parameter">
+      <code>
        start_with
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
-     </code>,<em class="parameter">
-<code>
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        max_depth
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       integer
-     </code>[<span class="optional">,<em class="parameter">
-<code>
+     </code>
+     [
+     <span class="optional">
+      ,
+      <em class="parameter">
+       <code>
         branch_delim
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        text
       </code>
-</span>] ) →<code class="returnvalue">
+     </span>
+     ] ) →
+     <code class="returnvalue">
       setof record
      </code>
-</p>
-<p>Produz uma representação de uma estrutura de árvore hierárquica.</p>
-</td>
-</tr>
-</tbody>
+    </p>
+    <p>
+     Produz uma representação de uma estrutura de árvore hierárquica.
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 #### F.43.1.1. `normal_rand` [#](#TABLEFUNC-FUNCTIONS-NORMAL-RAND)
 
@@ -446,20 +555,20 @@ Essas funções são fornecidas principalmente para fins ilustrativos. Você pod
   CREATE OR REPLACE FUNCTION crosstab_float8_5_cols(text)
       RETURNS setof my_crosstab_float8_5_cols
       AS '$libdir/tablefunc','crosstab' LANGUAGE C STABLE STRICT;
-  ``` * Utilize os parâmetros `OUT` para definir o tipo de retorno implicitamente. O mesmo exemplo também pode ser feito dessa maneira:
+```
 
-  ```
-  CREATE OR REPLACE FUNCTION crosstab_float8_5_cols(
-      IN text,
-      OUT my_row_name text,
-      OUT my_category_1 float8,
-      OUT my_category_2 float8,
-      OUT my_category_3 float8,
-      OUT my_category_4 float8,
-      OUT my_category_5 float8)
-    RETURNS setof record
-    AS '$libdir/tablefunc','crosstab' LANGUAGE C STABLE STRICT;
-  ```
+```
+CREATE OR REPLACE FUNCTION crosstab_float8_5_cols(
+    IN text,
+    OUT my_row_name text,
+    OUT my_category_1 float8,
+    OUT my_category_2 float8,
+    OUT my_category_3 float8,
+    OUT my_category_4 float8,
+    OUT my_category_5 float8)
+  RETURNS setof record
+  AS '$libdir/tablefunc','crosstab' LANGUAGE C STABLE STRICT;
+```
 
 #### F.43.1.4. `crosstab(text, text)` [#](#TABLEFUNC-FUNCTIONS-CROSSTAB-TEXT-2)
 
@@ -608,96 +717,115 @@ A função `connectby` produz uma exibição de dados hierárquicos que são arm
 
 
 <table border="1" class="table" summary="connectby Parameters">
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Parameter
    </th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<em class="parameter">
-<code>
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <em class="parameter">
+     <code>
       relname
      </code>
-</em>
-</td>
-<td>Nome da relação de fonte</td>
-</tr>
-<tr>
-<td>
-<em class="parameter">
-<code>
+    </em>
+   </td>
+   <td>
+    Nome da relação de fonte
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <em class="parameter">
+     <code>
       keyid_fld
      </code>
-</em>
-</td>
-<td>Nome do campo chave</td>
-</tr>
-<tr>
-<td>
-<em class="parameter">
-<code>
+    </em>
+   </td>
+   <td>
+    Nome do campo chave
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <em class="parameter">
+     <code>
       parent_keyid_fld
      </code>
-</em>
-</td>
-<td>Nome do campo chave-pai</td>
-</tr>
-<tr>
-<td>
-<em class="parameter">
-<code>
+    </em>
+   </td>
+   <td>
+    Nome do campo chave-pai
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <em class="parameter">
+     <code>
       orderby_fld
      </code>
-</em>
-</td>
-<td>Nome do campo para ordenar os irmãos (opcional)</td>
-</tr>
-<tr>
-<td>
-<em class="parameter">
-<code>
+    </em>
+   </td>
+   <td>
+    Nome do campo para ordenar os irmãos (opcional)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <em class="parameter">
+     <code>
       start_with
      </code>
-</em>
-</td>
-<td>Valor chave da linha para onde começar</td>
-</tr>
-<tr>
-<td>
-<em class="parameter">
-<code>
+    </em>
+   </td>
+   <td>
+    Valor chave da linha para onde começar
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <em class="parameter">
+     <code>
       max_depth
      </code>
-</em>
-</td>
-<td>Profundidade máxima para descida, ou zero para profundidade ilimitada</td>
-</tr>
-<tr>
-<td>
-<em class="parameter">
-<code>
+    </em>
+   </td>
+   <td>
+    Profundidade máxima para descida, ou zero para profundidade ilimitada
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <em class="parameter">
+     <code>
       branch_delim
      </code>
-</em>
-</td>
-<td>String para separar as chaves em uma saída de ramo (opcional)</td>
-</tr>
-</tbody>
+    </em>
+   </td>
+   <td>
+    String para separar as chaves em uma saída de ramo (opcional)
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Os campos chave e chave-pai podem ser qualquer tipo de dado, mas devem ser do mesmo tipo. Observe que o valor *`start_with`* deve ser inserido como uma string de texto, independentemente do tipo do campo chave.
 

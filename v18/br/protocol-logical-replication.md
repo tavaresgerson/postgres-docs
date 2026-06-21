@@ -36,7 +36,7 @@ origem: Opção para enviar alterações por sua origem. Os valores possíveis s
 
 ### 54.5.2. Mensagens do Protocolo de Replicação Lógica [#](#PROTOCOL-LOGICAL-MESSAGES)
 
-As mensagens de protocolo individuais são discutidas nas seções a seguir. As mensagens individuais são descritas em [Seção 54.9][(protocol-logicalrep-message-formats.md "54.9. Logical Replication Message Formats")].
+As mensagens de protocolo individuais são discutidas nas seções a seguir. As mensagens individuais são descritas em [Seção 54.9](protocol-logicalrep-message-formats.md).
 
 Todas as mensagens de protocolo de nível superior começam com um byte de tipo de mensagem. Embora representado em código como um caractere, este é um byte assinado sem codificação associada.
 

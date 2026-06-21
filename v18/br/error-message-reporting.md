@@ -77,7 +77,7 @@ ereport(level, errmsg_internal("format string", ...));
 
 Observe que o código de erro SQLSTATE é sempre predefinido e a string de mensagem não está sujeita à tradução. Portanto, `elog` deve ser usado apenas para erros internos e registro de depuração de baixo nível. Qualquer mensagem que provavelmente seja de interesse para usuários comuns deve passar por `ereport`. No entanto, há verificações de erro internas suficientes que não podem ocorrer no sistema que `elog` ainda é amplamente utilizado; é preferido para essas mensagens por sua simplicidade notarial.
 
-Conselhos sobre como escrever boas mensagens de erro podem ser encontrados em [Seção 55.3][(error-style-guide.md "55.3. Error Message Style Guide")].
+Conselhos sobre como escrever boas mensagens de erro podem ser encontrados em [Seção 55.3](error-style-guide.md).
 
 ---
 

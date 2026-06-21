@@ -39,4 +39,4 @@ ECPG = ecpg
 
 A sintaxe completa do comando `ecpg` é detalhada em [ecpg](app-ecpg.md "ecpg").
 
-A biblioteca ecpg é segura em relação a múltiplos fios por padrão. No entanto, você pode precisar usar algumas opções de linha de comando de execução em paralelo para compilar seu código de cliente.
+A biblioteca ecpg é segura em relação a múltiplos threads por padrão. No entanto, você pode precisar usar algumas opções de linha de comando de execução em paralelo para compilar seu código de cliente.

@@ -4,8 +4,9 @@ Um papel de banco de dados pode ter vários atributos que definem seus privilég
 
 privilégio de login: Apenas os papéis que possuem o atributo `LOGIN` podem ser usados como o nome inicial do papel para uma conexão de banco de dados. Um papel com o atributo `LOGIN` pode ser considerado o mesmo que um “usuário do banco de dados”. Para criar um papel com privilégio de login, use:
 
-``` CREATE ROLE name LOGIN; CREATE USER name;
-    ```
+```
+CREATE ROLE name LOGIN; CREATE USER name;
+```
 
 (`CREATE USER` é equivalente a `CREATE ROLE`, exceto que `CREATE USER` inclui `LOGIN` por padrão, enquanto `CREATE ROLE` não o faz.)
 
@@ -29,7 +30,7 @@ limite de conexão: O limite de conexão pode especificar quantas conexões conc
 
 Os atributos de um papel podem ser modificados após a criação com `ALTER ROLE`. Consulte as páginas de referência para os comandos [CREATE ROLE](sql-createrole.md "CREATE ROLE") e [ALTER ROLE](sql-alterrole.md "ALTER ROLE") para obter detalhes.
 
-Um papel também pode ter configurações específicas para o papel para muitas das configurações de configuração de tempo de execução descritas em [Capítulo 19][(runtime-config.md "Chapter 19. Server Configuration")]. Por exemplo, se, por algum motivo, você quiser desabilitar varreduras de índice (dica: não é uma boa ideia) a qualquer momento que você se conectar, você pode usar:
+Um papel também pode ter configurações específicas para o papel para muitas das configurações de configuração de tempo de execução descritas em [Capítulo 19](runtime-config.md). Por exemplo, se, por algum motivo, você quiser desabilitar varreduras de índice (dica: não é uma boa ideia) a qualquer momento que você se conectar, você pode usar:
 
 ```
 ALTER ROLE myname SET enable_indexscan TO off;

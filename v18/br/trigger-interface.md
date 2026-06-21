@@ -69,8 +69,9 @@ onde os membros são definidos da seguinte forma:
 
 `tg_trigger`: Um ponteiro para uma estrutura do tipo `Trigger`, definida em `utils/reltrigger.h`:
 
-``` typedef struct Trigger { Oid         tgoid; char       *tgname; Oid         tgfoid; int16       tgtype; char        tgenabled; bool        tgisinternal; bool        tgisclone; Oid         tgconstrrelid; Oid         tgconstrindid; Oid         tgconstraint; bool        tgdeferrable; bool        tginitdeferred; int16       tgnargs; int16       tgnattr; int16      *tgattr; char      **tgargs; char       *tgqual; char       *tgoldtable; char       *tgnewtable; } Trigger;
-    ```
+```
+typedef struct Trigger { Oid         tgoid; char       *tgname; Oid         tgfoid; int16       tgtype; char        tgenabled; bool        tgisinternal; bool        tgisclone; Oid         tgconstrrelid; Oid         tgconstrindid; Oid         tgconstraint; bool        tgdeferrable; bool        tginitdeferred; int16       tgnargs; int16       tgnattr; int16      *tgattr; char      **tgargs; char       *tgqual; char       *tgoldtable; char       *tgnewtable; } Trigger;
+```
 
 onde `tgname` é o nome do gatilho, `tgnargs` é o número de argumentos em `tgargs`, e `tgargs` é um array de ponteiros para os argumentos especificados na declaração `CREATE TRIGGER`. Os outros membros são apenas para uso interno.
 

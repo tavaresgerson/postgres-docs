@@ -23,7 +23,7 @@ Para as declarações `INSERT`, `UPDATE` e `MERGE`, as expressões `WITH CHECK` 
 
 Os nomes de políticas são por tabela. Portanto, um nome de política pode ser usado para muitas tabelas diferentes e ter uma definição para cada tabela que seja apropriada para essa tabela.
 
-As políticas podem ser aplicadas para comandos específicos ou para papéis específicos. O padrão para políticas recém-criadas é que elas se apliquem a todos os comandos e papéis, a menos que especificado de outra forma. Múltiplas políticas podem ser aplicadas a um único comando; consulte abaixo para mais detalhes. [Tabela 300][(sql-createpolicy.md#SQL-CREATEPOLICY-SUMMARY "Table 300. Policies Applied by Command Type")] resume como os diferentes tipos de política se aplicam a comandos específicos.
+As políticas podem ser aplicadas para comandos específicos ou para papéis específicos. O padrão para políticas recém-criadas é que elas se apliquem a todos os comandos e papéis, a menos que especificado de outra forma. Múltiplas políticas podem ser aplicadas a um único comando; consulte abaixo para mais detalhes. [Tabela 300](sql-createpolicy.md#SQL-CREATEPOLICY-SUMMARY) resume como os diferentes tipos de política se aplicam a comandos específicos.
 
 Para políticas que podem ter tanto expressões `USING` quanto `WITH CHECK` (`ALL` e `UPDATE`), se nenhuma expressão `WITH CHECK` for definida, então a expressão `USING` será usada tanto para determinar quais linhas são visíveis (caso normal `USING`) quanto para determinar quais novas linhas serão permitidas para serem adicionadas (caso `WITH CHECK`).
 
@@ -81,371 +81,440 @@ Na maioria dos casos, um comando `DELETE` também precisa ler dados de colunas n
 
 Uma política `DELETE` não pode ter uma expressão `WITH CHECK`, pois ela só se aplica em casos em que os registros estão sendo excluídos da relação, de modo que não há uma nova linha a ser verificada.
 
-[Tabela 300][(sql-createpolicy.md#SQL-CREATEPOLICY-SUMMARY "Table 300. Policies Applied by Command Type")] resume como os diferentes tipos de política se aplicam a comandos específicos. Na tabela, “check” significa que a expressão de política é verificada e um erro é lançado se ela retornar falso ou nulo, enquanto “filter” significa que a linha é ignorada silenciosamente se a expressão de política retornar falso ou nulo.
+[Tabela 300](sql-createpolicy.md#SQL-CREATEPOLICY-SUMMARY) resume como os diferentes tipos de política se aplicam a comandos específicos. Na tabela, “check” significa que a expressão de política é verificada e um erro é lançado se ela retornar falso ou nulo, enquanto “filter” significa que a linha é ignorada silenciosamente se a expressão de política retornar falso ou nulo.
 
 **Tabela 300. Políticas Aplicadas por Tipo de Comando**
 
 
 
 <table border="1" class="table" summary="Policies Applied by Command Type">
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col class="update-using"/>
-<col class="update-check"/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th rowspan="2">Comando</th>
-<th>
-<code class="literal">
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+  <col class="update-using"/>
+  <col class="update-check"/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th rowspan="2">
+    Comando
+   </th>
+   <th>
+    <code class="literal">
      SELECT/ALL policy
     </code>
-</th>
-<th>
-<code class="literal">
+   </th>
+   <th>
+    <code class="literal">
      INSERT/ALL policy
     </code>
-</th>
-<th colspan="2">
-<code class="literal">
+   </th>
+   <th colspan="2">
+    <code class="literal">
      UPDATE/ALL policy
     </code>
-</th>
-<th>
-<code class="literal">
+   </th>
+   <th>
+    <code class="literal">
      DELETE/ALL policy
     </code>
-</th>
-</tr>
-<tr>
-<th>
-<code class="literal">
+   </th>
+  </tr>
+  <tr>
+   <th>
+    <code class="literal">
      USING expression
     </code>
-</th>
-<th>
-<code class="literal">
+   </th>
+   <th>
+    <code class="literal">
      WITH CHECK expression
     </code>
-</th>
-<th>
-<code class="literal">
+   </th>
+   <th>
+    <code class="literal">
      USING expression
     </code>
-</th>
-<th>
-<code class="literal">
+   </th>
+   <th>
+    <code class="literal">
      WITH CHECK expression
     </code>
-</th>
-<th>
-<code class="literal">
+   </th>
+   <th>
+    <code class="literal">
      USING expression
     </code>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="command">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="command">
      SELECT
-    </code>/<code class="command">
+    </code>
+    /
+    <code class="command">
      COPY ... TO
     </code>
-</td>
-<td>Filtrar linha existente</td>
-<td>
+   </td>
+   <td>
+    Filtrar linha existente
+   </td>
+   <td>
     —
    </td>
-<td>
+   <td>
     —
    </td>
-<td>
+   <td>
     —
    </td>
-<td>
+   <td>
     —
    </td>
-</tr>
-<tr>
-<td>
-<code class="command">
+  </tr>
+  <tr>
+   <td>
+    <code class="command">
      SELECT FOR UPDATE/SHARE
     </code>
-</td>
-<td>Filtrar linha existente</td>
-<td>
+   </td>
+   <td>
+    Filtrar linha existente
+   </td>
+   <td>
     —
    </td>
-<td>
+   <td>
     Filter existing row
    </td>
-<td>
+   <td>
     —
    </td>
-<td>
+   <td>
     —
    </td>
-</tr>
-<tr>
-<td>
-<code class="command">
+  </tr>
+  <tr>
+   <td>
+    <code class="command">
      INSERT
     </code>
-</td>
-<td>Ver nova linha<a class="footnote" href="#ftn.RLS-SELECT-PRIV">
-<sup class="footnote" id="RLS-SELECT-PRIV">[a]</sup>
-</a>
-</td>
-<td>
+   </td>
+   <td>
+    Ver nova linha
+    <a class="footnote" href="#ftn.RLS-SELECT-PRIV">
+     <sup class="footnote" id="RLS-SELECT-PRIV">
+      [a]
+     </sup>
+    </a>
+   </td>
+   <td>
     Check new row
    </td>
-<td>
+   <td>
     —
    </td>
-<td>
+   <td>
     —
    </td>
-<td>
+   <td>
     —
    </td>
-</tr>
-<tr>
-<td>
-<code class="command">
+  </tr>
+  <tr>
+   <td>
+    <code class="command">
      UPDATE
     </code>
-</td>
-<td>Filtrar linha existente<a class="footnoteref" href="sql-createpolicy.md#ftn.RLS-SELECT-PRIV">
-<sup class="footnoteref">[a]</sup>
-</a>&amp; verificar nova linha<a class="footnoteref" href="sql-createpolicy.md#ftn.RLS-SELECT-PRIV">
-<sup class="footnoteref">[a]</sup>
-</a>
-</td>
-<td>
+   </td>
+   <td>
+    Filtrar linha existente
+    <a class="footnoteref" href="sql-createpolicy.md#ftn.RLS-SELECT-PRIV">
+     <sup class="footnoteref">
+      [a]
+     </sup>
+    </a>
+    &amp; verificar nova linha
+    <a class="footnoteref" href="sql-createpolicy.md#ftn.RLS-SELECT-PRIV">
+     <sup class="footnoteref">
+      [a]
+     </sup>
+    </a>
+   </td>
+   <td>
     —
    </td>
-<td>
+   <td>
     Filter existing row
    </td>
-<td>
+   <td>
     Check new row
    </td>
-<td>
+   <td>
     —
    </td>
-</tr>
-<tr>
-<td>
-<code class="command">
+  </tr>
+  <tr>
+   <td>
+    <code class="command">
      DELETE
     </code>
-</td>
-<td>Filtrar linha existente<a class="footnoteref" href="sql-createpolicy.md#ftn.RLS-SELECT-PRIV">
-<sup class="footnoteref">[a]</sup>
-</a>
-</td>
-<td>
+   </td>
+   <td>
+    Filtrar linha existente
+    <a class="footnoteref" href="sql-createpolicy.md#ftn.RLS-SELECT-PRIV">
+     <sup class="footnoteref">
+      [a]
+     </sup>
+    </a>
+   </td>
+   <td>
     —
    </td>
-<td>
+   <td>
     —
    </td>
-<td>
+   <td>
     —
    </td>
-<td>
+   <td>
     Filter existing row
    </td>
-</tr>
-<tr>
-<td>
-<code class="command">
+  </tr>
+  <tr>
+   <td>
+    <code class="command">
      INSERT ... ON CONFLICT
     </code>
-</td>
-<td>Ver nova linha<a class="footnote" href="#ftn.id-1.9.3.75.6.3.4.2.5.6.2.1">
-<sup class="footnote" id="id-1.9.3.75.6.3.4.2.5.6.2.1">[b]</sup>
-</a>
-<a class="footnote" href="#ftn.RLS-ON-CONFLICT-PRIV">
-<sup class="footnote" id="RLS-ON-CONFLICT-PRIV">[c]</sup>
-</a>
-</td>
-<td>
-    Check new row
-    <a class="footnoteref" href="sql-createpolicy.md#ftn.RLS-ON-CONFLICT-PRIV">
-<sup class="footnoteref">
+   </td>
+   <td>
+    Ver nova linha
+    <a class="footnote" href="#ftn.id-1.9.3.75.6.3.4.2.5.6.2.1">
+     <sup class="footnote" id="id-1.9.3.75.6.3.4.2.5.6.2.1">
+      [b]
+     </sup>
+    </a>
+    <a class="footnote" href="#ftn.RLS-ON-CONFLICT-PRIV">
+     <sup class="footnote" id="RLS-ON-CONFLICT-PRIV">
       [c]
      </sup>
-</a>
-</td>
-<td>
+    </a>
+   </td>
+   <td>
+    Check new row
+    <a class="footnoteref" href="sql-createpolicy.md#ftn.RLS-ON-CONFLICT-PRIV">
+     <sup class="footnoteref">
+      [c]
+     </sup>
+    </a>
+   </td>
+   <td>
     —
    </td>
-<td>
+   <td>
     —
    </td>
-<td>
+   <td>
     —
    </td>
-</tr>
-<tr>
-<td>
-<code class="command">
+  </tr>
+  <tr>
+   <td>
+    <code class="command">
      ON CONFLICT DO UPDATE
     </code>
-</td>
-<td>Verifique as linhas existentes e novas<a class="footnote" href="#ftn.RLS-ON-CONFLICT-UPDATE-PRIV">
-<sup class="footnote" id="RLS-ON-CONFLICT-UPDATE-PRIV">[d]</sup>
-</a>
-</td>
-<td>
-    —
    </td>
-<td>
-    Check existing row
-   </td>
-<td>
-    Check new row
-    <a class="footnoteref" href="sql-createpolicy.md#ftn.RLS-ON-CONFLICT-UPDATE-PRIV">
-<sup class="footnoteref">
+   <td>
+    Verifique as linhas existentes e novas
+    <a class="footnote" href="#ftn.RLS-ON-CONFLICT-UPDATE-PRIV">
+     <sup class="footnote" id="RLS-ON-CONFLICT-UPDATE-PRIV">
       [d]
      </sup>
-</a>
-</td>
-<td>
+    </a>
+   </td>
+   <td>
     —
    </td>
-</tr>
-<tr>
-<td>
-<code class="command">
+   <td>
+    Check existing row
+   </td>
+   <td>
+    Check new row
+    <a class="footnoteref" href="sql-createpolicy.md#ftn.RLS-ON-CONFLICT-UPDATE-PRIV">
+     <sup class="footnoteref">
+      [d]
+     </sup>
+    </a>
+   </td>
+   <td>
+    —
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="command">
      MERGE
     </code>
-</td>
-<td>Filtrar linhas de origem e destino</td>
-<td>
+   </td>
+   <td>
+    Filtrar linhas de origem e destino
+   </td>
+   <td>
     —
    </td>
-<td>
+   <td>
     —
    </td>
-<td>
+   <td>
     —
    </td>
-<td>
+   <td>
     —
    </td>
-</tr>
-<tr>
-<td>
-<code class="command">
+  </tr>
+  <tr>
+   <td>
+    <code class="command">
      MERGE ... THEN INSERT
     </code>
-</td>
-<td>Ver nova linha<a class="footnoteref" href="sql-createpolicy.md#ftn.RLS-SELECT-PRIV">
-<sup class="footnoteref">[a]</sup>
-</a>
-</td>
-<td>
+   </td>
+   <td>
+    Ver nova linha
+    <a class="footnoteref" href="sql-createpolicy.md#ftn.RLS-SELECT-PRIV">
+     <sup class="footnoteref">
+      [a]
+     </sup>
+    </a>
+   </td>
+   <td>
     Check new row
    </td>
-<td>
+   <td>
     —
    </td>
-<td>
+   <td>
     —
    </td>
-<td>
+   <td>
     —
    </td>
-</tr>
-<tr>
-<td>
-<code class="command">
+  </tr>
+  <tr>
+   <td>
+    <code class="command">
      MERGE ... THEN UPDATE
     </code>
-</td>
-<td>Ver nova linha</td>
-<td>
+   </td>
+   <td>
+    Ver nova linha
+   </td>
+   <td>
     —
    </td>
-<td>
+   <td>
     Check existing row
    </td>
-<td>
+   <td>
     Check new row
    </td>
-<td>
+   <td>
     —
    </td>
-</tr>
-<tr>
-<td>
-<code class="command">
+  </tr>
+  <tr>
+   <td>
+    <code class="command">
      MERGE ... THEN DELETE
     </code>
-</td>
-<td>—</td>
-<td>
+   </td>
+   <td>
     —
    </td>
-<td>
+   <td>
     —
    </td>
-<td>
+   <td>
     —
    </td>
-<td>
+   <td>
+    —
+   </td>
+   <td>
     Check existing row
    </td>
-</tr>
-</tbody>
-<tbody class="footnotes">
-<tr>
-<td colspan="6">
-<div class="footnote" id="ftn.RLS-SELECT-PRIV">
-<p>
-<a class="para" href="#RLS-SELECT-PRIV">
-<sup class="para">[a]</sup>
-</a>Se for necessário acesso de leitura para a linha existente ou nova (por exemplo, uma<code class="literal">
+  </tr>
+ </tbody>
+ <tbody class="footnotes">
+  <tr>
+   <td colspan="6">
+    <div class="footnote" id="ftn.RLS-SELECT-PRIV">
+     <p>
+      <a class="para" href="#RLS-SELECT-PRIV">
+       <sup class="para">
+        [a]
+       </sup>
+      </a>
+      Se for necessário acesso de leitura para a linha existente ou nova (por exemplo, uma
+      <code class="literal">
        WHERE
-      </code>ou<code class="literal">
+      </code>
+      ou
+      <code class="literal">
        RETURNING
-      </code>cláusula que se refere a colunas da relação).</p>
-</div>
-<div class="footnote" id="ftn.id-1.9.3.75.6.3.4.2.5.6.2.1">
-<p>
-<a class="para" href="#id-1.9.3.75.6.3.4.2.5.6.2.1">
-<sup class="para">[b]</sup>
-</a>Se um índice ou restrição de árbitro for especificado.</p>
-</div>
-<div class="footnote" id="ftn.RLS-ON-CONFLICT-PRIV">
-<p>
-<a class="para" href="#RLS-ON-CONFLICT-PRIV">
-<sup class="para">[c]</sup>
-</a>A linha proposta para inserção é verificada, independentemente de ocorrer ou não um conflito.</p>
-</div>
-<div class="footnote" id="ftn.RLS-ON-CONFLICT-UPDATE-PRIV">
-<p>
-<a class="para" href="#RLS-ON-CONFLICT-UPDATE-PRIV">
-<sup class="para">[d]</sup>
-</a>Nova linha do auxiliar<code class="command">
+      </code>
+      cláusula que se refere a colunas da relação).
+     </p>
+    </div>
+    <div class="footnote" id="ftn.id-1.9.3.75.6.3.4.2.5.6.2.1">
+     <p>
+      <a class="para" href="#id-1.9.3.75.6.3.4.2.5.6.2.1">
+       <sup class="para">
+        [b]
+       </sup>
+      </a>
+      Se um índice ou restrição de árbitro for especificado.
+     </p>
+    </div>
+    <div class="footnote" id="ftn.RLS-ON-CONFLICT-PRIV">
+     <p>
+      <a class="para" href="#RLS-ON-CONFLICT-PRIV">
+       <sup class="para">
+        [c]
+       </sup>
+      </a>
+      A linha proposta para inserção é verificada, independentemente de ocorrer ou não um conflito.
+     </p>
+    </div>
+    <div class="footnote" id="ftn.RLS-ON-CONFLICT-UPDATE-PRIV">
+     <p>
+      <a class="para" href="#RLS-ON-CONFLICT-UPDATE-PRIV">
+       <sup class="para">
+        [d]
+       </sup>
+      </a>
+      Nova linha do auxiliar
+      <code class="command">
        UPDATE
-      </code>comando, que pode ser diferente da nova linha do original<code class="command">
+      </code>
+      comando, que pode ser diferente da nova linha do original
+      <code class="command">
        INSERT
       </code>
       command.
      </p>
-</div>
-</td>
-</tr>
-</tbody>
+    </div>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 
@@ -501,7 +570,7 @@ Como as expressões de política são adicionadas diretamente à consulta do usu
 
 Não existe uma política separada para `MERGE`. Em vez disso, as políticas definidas para `SELECT`, `INSERT`, `UPDATE` e `DELETE` são aplicadas durante a execução de `MERGE`, dependendo das ações que são realizadas.
 
-Discussões adicionais e exemplos práticos podem ser encontrados em [Seção 5.9][(ddl-rowsecurity.md "5.9. Row Security Policies")].
+Discussões adicionais e exemplos práticos podem ser encontrados em [Seção 5.9](ddl-rowsecurity.md).
 
 ## Compatibilidade
 

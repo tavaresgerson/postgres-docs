@@ -19,11 +19,11 @@
 * [20.15. Autenticação/Autenticação OAuth](auth-oauth.md)
 * [20.16. Problemas de Autenticação](client-authentication-problems.md)
 
-Quando um aplicativo de cliente se conecta ao servidor de banco de dados, ele especifica qual nome de usuário do banco de dados PostgreSQL deseja se conectar como, da mesma forma que se inicia em um computador Unix como um usuário específico. Dentro do ambiente SQL, o nome de usuário do banco de dados ativo determina os privilégios de acesso aos objetos do banco de dados — consulte [Capítulo 21][(user-manag.md "Chapter 21. Database Roles")] para mais informações. Portanto, é essencial restringir quais usuários do banco de dados podem se conectar.
+Quando um aplicativo de cliente se conecta ao servidor de banco de dados, ele especifica qual nome de usuário do banco de dados PostgreSQL deseja se conectar como, da mesma forma que se inicia em um computador Unix como um usuário específico. Dentro do ambiente SQL, o nome de usuário do banco de dados ativo determina os privilégios de acesso aos objetos do banco de dados — consulte [Capítulo 21](user-manag.md) para mais informações. Portanto, é essencial restringir quais usuários do banco de dados podem se conectar.
 
 ### Nota
 
-Como explicado no [Capítulo 21][(user-manag.md "Chapter 21. Database Roles")], o PostgreSQL, na verdade, realiza a gestão de privilégios em termos de “rolos”. Neste capítulo, usamos consistentemente *usuário do banco de dados* para significar “rol com o privilégio [[`LOGIN`]”.
+Como explicado no [Capítulo 21](user-manag.md), o PostgreSQL, na verdade, realiza a gestão de privilégios em termos de “rolos”. Neste capítulo, usamos consistentemente *usuário do banco de dados* para significar “rol com o privilégio [[`LOGIN`]”.
 
 *Autenticação* é o processo pelo qual o servidor de banco de dados estabelece a identidade do cliente e, por extensão, determina se o aplicativo do cliente (ou o usuário que executa o aplicativo do cliente) está autorizado a se conectar ao nome do usuário do banco de dados que foi solicitado.
 

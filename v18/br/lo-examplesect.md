@@ -1,6 +1,6 @@
 ## 33.5. Programa Exemplo [#](#LO-EXAMPLESECT)
 
-[Exemplo 33.1][(lo-examplesect.md#LO-EXAMPLE "Example 33.1. Large Objects with libpq Example Program")] é um programa de amostra que mostra como a grande interface de objeto em libpq pode ser usada. Parte do programa está comentada, mas foi deixada no código fonte para o benefício do leitor. Este programa também pode ser encontrado em `src/test/examples/testlo.c` na distribuição de código fonte.
+[Exemplo 33.1](lo-examplesect.md#LO-EXAMPLE) é um programa de amostra que mostra como a grande interface de objeto em libpq pode ser usada. Parte do programa está comentada, mas foi deixada no código fonte para o benefício do leitor. Este programa também pode ser encontrado em `src/test/examples/testlo.c` na distribuição de código fonte.
 
 **Exemplo 33.1. Programa com a biblioteca libpq para objetos grandes**
 

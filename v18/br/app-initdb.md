@@ -20,7 +20,7 @@ Por razões de segurança, o novo grupo criado por `initdb` será acessível ape
 
 `initdb` inicializa o idioma padrão e o conjunto de codificação de caracteres do clúster de banco de dados. Esses valores também podem ser definidos separadamente para cada banco de dados quando ele é criado. `initdb` determina esses ajustes para os bancos de modelo, que servirão como padrão para todos os outros bancos.
 
-Por padrão, o `initdb` utiliza o provedor de localização `libc` (consulte [Seção 23.1.4][(locale.md#LOCALE-PROVIDERS "23.1.4. Locale Providers")]). O provedor de localização `libc` obtém as configurações de localização do ambiente e determina o codificação a partir das configurações de localização.
+Por padrão, o `initdb` utiliza o provedor de localização `libc` (consulte [Seção 23.1.4](locale.md#LOCALE-PROVIDERS)). O provedor de localização `libc` obtém as configurações de localização do ambiente e determina o codificação a partir das configurações de localização.
 
 Para escolher um local diferente para o clúster, use a opção `--locale`. Também existem opções individuais `--lc-*` e `--icu-locale` (veja abaixo) para definir valores para as categorias individuais de local. Observe que configurações inconsistentes para diferentes categorias de local podem gerar resultados sem sentido, portanto, isso deve ser usado com cuidado.
 
@@ -28,9 +28,9 @@ Alternativamente, `initdb` pode usar a biblioteca ICU para fornecer serviços de
 
 Quando o `initdb` for executado, ele imprimirá as configurações de localização que ele escolheu. Se você tiver requisitos complexos ou especificou várias opções, é aconselhável verificar se o resultado corresponde ao que foi planejado.
 
-Mais detalhes sobre as configurações de localização podem ser encontrados em [Seção 23.1][(locale.md "23.1. Locale Support")].
+Mais detalhes sobre as configurações de localização podem ser encontrados em [Seção 23.1](locale.md).
 
-Para alterar o codificação padrão, use o `--encoding`. Mais detalhes podem ser encontrados em [Seção 23.3][(multibyte.md "23.3. Character Set Support")].
+Para alterar o codificação padrão, use o `--encoding`. Mais detalhes podem ser encontrados em [Seção 23.3](multibyte.md).
 
 ## Opções
 
@@ -114,7 +114,7 @@ Esta opção é destinada principalmente para uso interno por ferramentas que ga
 
 `--sync-method=method` [#](#APP-INITDB-OPTION-SYNC-METHOD): Quando configurado para `fsync`, que é o padrão, `initdb` abrirá e sincronizará recursivamente todos os arquivos no diretório de dados. A busca por arquivos seguirá links simbólicos para o diretório WAL e cada espaço de tabela configurado.
 
-Em Linux, `syncfs` pode ser usado para pedir ao sistema operacional que sincronize todos os sistemas de arquivos que contêm o diretório de dados, os arquivos WAL e cada espaço de tabela. Consulte [recovery_init_sync_method][(runtime-config-error-handling.md#GUC-RECOVERY-INIT-SYNC-METHOD)] para obter informações sobre as advertências a serem observadas ao usar `syncfs`.
+Em Linux, `syncfs` pode ser usado para pedir ao sistema operacional que sincronize todos os sistemas de arquivos que contêm o diretório de dados, os arquivos WAL e cada espaço de tabela. Consulte [recovery_init_sync_method](runtime-config-error-handling.md#GUC-RECOVERY-INIT-SYNC-METHOD) para obter informações sobre as advertências a serem observadas ao usar `syncfs`.
 
 Esta opção não tem efeito quando o `--no-sync` é utilizado.
 

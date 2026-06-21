@@ -1,9 +1,9 @@
 ## 7.8. `WITH` Consultas (Expressões de Tabela Comum] [#](#QUERIES-WITH)
 
-* [7.8.1. `SELECT` em `WITH`(queries-with.md#QUERIES-WITH-SELECT)
+* [7.8.1. `SELECT` em `WITH`](queries-with.md#QUERIES-WITH-SELECT)
 * [7.8.2. Consultas recursivas](queries-with.md#QUERIES-WITH-RECURSIVE)
 * [7.8.3. Materialização da expressão de tabela comum](queries-with.md#QUERIES-WITH-CTE-MATERIALIZATION)
-* [7.8.4. Declarações que modificam dados em `WITH`(queries-with.md#QUERIES-WITH-MODIFYING)
+* [7.8.4. Declarações que modificam dados em `WITH`](queries-with.md#QUERIES-WITH-MODIFYING)
 
 `WITH` fornece uma maneira de escrever declarações auxiliares para uso em uma consulta maior. Essas declarações, que são frequentemente referidas como Expressões de Tabela Comum ou CTEs, podem ser consideradas como definindo tabelas temporárias que existem apenas para uma consulta. Cada declaração auxiliar em uma cláusula `WITH` pode ser um `SELECT`, `INSERT`, `UPDATE`, `DELETE` ou `MERGE`; e a própria cláusula `WITH` é anexada a uma declaração principal que também pode ser um `SELECT`, `INSERT`, `UPDATE`, `DELETE` ou `MERGE`.
 
@@ -338,7 +338,7 @@ Essa consulta efetivamente move as linhas de `products` para `products_log`. O `
 
 Um ponto importante do exemplo acima é que a cláusula `WITH` está anexada ao `INSERT`, e não ao sub-`SELECT` dentro do `INSERT`. Isso é necessário porque as declarações que modificam dados só são permitidas em cláusulas `WITH` que estão anexadas à declaração de nível superior. No entanto, as regras normais de visibilidade `WITH` se aplicam, portanto, é possível referenciar a saída da declaração `WITH` do sub-`SELECT`.
 
-As declarações que modificam dados em `WITH` geralmente têm cláusulas `RETURNING` (veja [Seção 6.4][(dml-returning.md "6.4. Returning Data from Modified Rows")]), como mostrado no exemplo acima. É a saída da cláusula `RETURNING`, *não* a tabela-alvo da declaração que modifica dados, que forma a tabela temporária que pode ser referenciada pelo resto da consulta. Se uma declaração que modifica dados em `WITH` não tiver uma cláusula `RETURNING`, então ela não forma nenhuma tabela temporária e não pode ser referenciada no resto da consulta. Tal declaração será executada, não obstante. Um exemplo que não é particularmente útil é:
+As declarações que modificam dados em `WITH` geralmente têm cláusulas `RETURNING` (veja [Seção 6.4](dml-returning.md)), como mostrado no exemplo acima. É a saída da cláusula `RETURNING`, *não* a tabela-alvo da declaração que modifica dados, que forma a tabela temporária que pode ser referenciada pelo resto da consulta. Se uma declaração que modifica dados em `WITH` não tiver uma cláusula `RETURNING`, então ela não forma nenhuma tabela temporária e não pode ser referenciada no resto da consulta. Tal declaração será executada, não obstante. Um exemplo que não é particularmente útil é:
 
 ```
 WITH t AS (
@@ -367,7 +367,7 @@ Essa consulta removeria todas as subpartes diretas e indiretas de um produto.
 
 As declarações que modificam dados em `WITH` são executadas exatamente uma vez e sempre até o término, independentemente de a consulta primária ler todas (ou qualquer) suas saídas. Observe que isso é diferente da regra para `SELECT` em `WITH`: conforme declarado na seção anterior, a execução de um `SELECT` é realizada apenas até onde a consulta primária exige sua saída.
 
-As sub-declarações em `WITH` são executadas simultaneamente entre si e com a consulta principal. Portanto, ao usar declarações que modificam dados em `WITH`, a ordem em que as atualizações especificadas realmente ocorrem é imprevisível. Todas as declarações são executadas com o mesmo *instantâneo* (ver [Capítulo 13][(mvcc.md "Chapter 13. Concurrency Control")]), então elas não podem "ver" os efeitos uns dos outros nas tabelas de destino. Isso alivia os efeitos da imprevisibilidade da ordem real das atualizações de linha, e significa que os dados de `RETURNING` são a única maneira de comunicar mudanças entre diferentes sub-declarações de `WITH` e a consulta principal. Um exemplo disso é que em
+As sub-declarações em `WITH` são executadas simultaneamente entre si e com a consulta principal. Portanto, ao usar declarações que modificam dados em `WITH`, a ordem em que as atualizações especificadas realmente ocorrem é imprevisível. Todas as declarações são executadas com o mesmo *instantâneo* (ver [Capítulo 13](mvcc.md)), então elas não podem "ver" os efeitos uns dos outros nas tabelas de destino. Isso alivia os efeitos da imprevisibilidade da ordem real das atualizações de linha, e significa que os dados de `RETURNING` são a única maneira de comunicar mudanças entre diferentes sub-declarações de `WITH` e a consulta principal. Um exemplo disso é que em
 
 ```
 WITH t AS (

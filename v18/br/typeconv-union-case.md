@@ -27,7 +27,7 @@ SELECT text 'a' AS "text" UNION SELECT 'b';
 
 Aqui, o literal de tipo desconhecido `'b'` será resolvido para o tipo `text`.
 
-  
+
 
 **Exemplo 10.11. Resolução de tipo em uma união simples**
 
@@ -43,7 +43,7 @@ SELECT 1.2 AS "numeric" UNION SELECT 1;
 
 O literal `1.2` é do tipo `numeric`, e o valor `integer` `1` pode ser convertido implicitamente para `numeric`, de modo que esse tipo seja usado.
 
-  
+
 
 **Exemplo 10.12. Resolução de tipo em uma união transposta**
 
@@ -59,7 +59,7 @@ SELECT 1 AS "real" UNION SELECT CAST('2.2' AS REAL);
 
 Aqui, uma vez que o tipo `real` não pode ser implicitamente convertido para `integer`, mas o tipo `integer` pode ser implicitamente convertido para `real`, o tipo de resultado da união é resolvido como `real`.
 
-  
+
 
 **Exemplo 10.13. Resolução de tipo em uma união aninhada**
 
@@ -79,7 +79,7 @@ O `UNION` interno é resolvido como emitindo o tipo `text`, de acordo com as reg
 
 As operações `INTERSECT` e `EXCEPT` são resolvidas de forma semelhante em pares. No entanto, os outros construtos descritos nesta seção consideram todos os seus inputs em uma etapa de resolução.
 
-  
+
 
 ---
 

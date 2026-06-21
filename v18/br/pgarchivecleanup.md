@@ -8,7 +8,7 @@ pg_archivecleanup — limpar arquivos de arquivo WAL do PostgreSQL
 
 ## Descrição
 
-O pg_archivecleanup é projetado para ser usado como um `archive_cleanup_command` para limpar arquivos de arquivos WAL ao executar como um servidor de espera (consulte [Seção 26.2][(warm-standby.md "26.2. Log-Shipping Standby Servers")]). O pg_archivecleanup também pode ser usado como um programa autônomo para limpar arquivos de arquivos WAL.
+O pg_archivecleanup é projetado para ser usado como um `archive_cleanup_command` para limpar arquivos de arquivos WAL ao executar como um servidor de espera (consulte [Seção 26.2](warm-standby.md)). O pg_archivecleanup também pode ser usado como um programa autônomo para limpar arquivos de arquivos WAL.
 
 Para configurar um servidor de espera para usar pg_archivecleanup, coloque isso em seu arquivo de configuração `postgresql.conf`:
 
@@ -18,7 +18,7 @@ archive_cleanup_command = 'pg_archivecleanup archivelocation %r'
 
 onde *`archivelocation`* é o diretório a partir do qual os arquivos de segmento WAL devem ser removidos.
 
-Quando usado dentro de [archive_cleanup_command][(runtime-config-wal.md#GUC-ARCHIVE-CLEANUP-COMMAND)], todos os arquivos WAL que logicamente precedem o valor do argumento `%r` serão removidos de *`archivelocation`*. Isso minimiza o número de arquivos que precisam ser retidos, preservando a capacidade de reinício em caso de falha. O uso deste parâmetro é apropriado se o *`archivelocation`* for uma área de preparação transitória para este servidor de espera específico, mas *não* quando o *`archivelocation`* é destinado como uma área de arquivo WAL de longo prazo, ou quando múltiplos servidores de espera estão recuperando da mesma localização de arquivo.
+Quando usado dentro de [archive_cleanup_command](runtime-config-wal.md#GUC-ARCHIVE-CLEANUP-COMMAND), todos os arquivos WAL que logicamente precedem o valor do argumento `%r` serão removidos de *`archivelocation`*. Isso minimiza o número de arquivos que precisam ser retidos, preservando a capacidade de reinício em caso de falha. O uso deste parâmetro é apropriado se o *`archivelocation`* for uma área de preparação transitória para este servidor de espera específico, mas *não* quando o *`archivelocation`* é destinado como uma área de arquivo WAL de longo prazo, ou quando múltiplos servidores de espera estão recuperando da mesma localização de arquivo.
 
 Quando usado como um programa independente, todos os arquivos WAL que logicamente precedem o *`oldestkeptwalfile`* serão removidos de *`archivelocation`*. Neste modo, se você especificar um nome de arquivo `.partial` ou `.backup`, então apenas o prefixo do arquivo será usado como o *`oldestkeptwalfile`*. Este tratamento do nome de arquivo `.backup` permite que você remova todos os arquivos WAL arquivados antes de um backup específico da base sem erro. Por exemplo, o seguinte exemplo removerá todos os arquivos mais antigos do nome de arquivo WAL `000000010000003700000010`:
 

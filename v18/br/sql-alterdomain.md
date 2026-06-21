@@ -64,7 +64,7 @@ Você deve ser o proprietário do domínio para usar `ALTER DOMAIN`. Para altera
 
 `NOT VALID`: Não verifique os dados armazenados existentes quanto à validade da restrição.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem da restrição e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem da restrição e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a eliminação da restrição se houver quaisquer objetos dependentes. Esse é o comportamento padrão.
 

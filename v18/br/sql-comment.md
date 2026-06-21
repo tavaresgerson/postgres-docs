@@ -69,7 +69,7 @@ Um bloqueio `SHARE UPDATE EXCLUSIVE` é adquirido no objeto que será comentado.
 
 Para a maioria dos tipos de objeto, apenas o proprietário do objeto pode definir o comentário. Os papéis não têm proprietários, portanto, a regra para `COMMENT ON ROLE` é que você deve ser um superusuário para comentar em um papel de superusuário, ou ter o privilégio `CREATEROLE` e ter sido concedido `ADMIN OPTION` no papel alvo. Da mesma forma, os métodos de acesso também não têm proprietários; você deve ser um superusuário para comentar em um método de acesso. Claro, um superusuário pode comentar sobre qualquer coisa.
 
-Os comentários podem ser visualizados usando a família de comandos `\d` do psql. Outras interfaces de usuário para recuperar comentários podem ser construídas sobre as mesmas funções embutidas que o psql usa, ou seja, `obj_description`, `col_description` e `shobj_description` (consulte [Tabela 9.82][(functions-info.md#FUNCTIONS-INFO-COMMENT-TABLE "Table 9.82. Comment Information Functions")]).
+Os comentários podem ser visualizados usando a família de comandos `\d` do psql. Outras interfaces de usuário para recuperar comentários podem ser construídas sobre as mesmas funções embutidas que o psql usa, ou seja, `obj_description`, `col_description` e `shobj_description` (consulte [Tabela 9.82](functions-info.md#FUNCTIONS-INFO-COMMENT-TABLE)).
 
 ## Parâmetros
 

@@ -35,12 +35,12 @@
 * [27.3. Visualização de bloqueios](monitoring-locks.md)
 * [27.4. Relatórios de progresso](progress-reporting.md)
 
-+ [27.4.1. RELATÓRIO DE PROGRSO][(progress-reporting.md#ANALYZE-PROGRESS-REPORTING)]
-+ [27.4.2. RELATÓRIO DE CLUSTER][(progress-reporting.md#CLUSTER-PROGRESS-REPORTING)]
-+ [27.4.3. COPIAR RELATÓRIO DE PROGRSO][(progress-reporting.md#COPY-PROGRESS-REPORTING)]
-+ [27.4.4. CRIAR ÍNDICE DE RELATÓRIO DE PROGRSO][(progress-reporting.md#CREATE-INDEX-PROGRESS-REPORTING)]
-+ [27.4.5. VACUUM RELATÓRIO DE PROGRSO][(progress-reporting.md#VACUUM-PROGRESS-REPORTING)]
-+ [27.4.6. RELATÓRIO DE BACKUP DE BASE][(progress-reporting.md#BASEBACKUP-PROGRESS-REPORTING)]
++ [27.4.1. RELATÓRIO DE PROGRSO](progress-reporting.md#ANALYZE-PROGRESS-REPORTING)
++ [27.4.2. RELATÓRIO DE CLUSTER](progress-reporting.md#CLUSTER-PROGRESS-REPORTING)
++ [27.4.3. COPIAR RELATÓRIO DE PROGRSO](progress-reporting.md#COPY-PROGRESS-REPORTING)
++ [27.4.4. CRIAR ÍNDICE DE RELATÓRIO DE PROGRSO](progress-reporting.md#CREATE-INDEX-PROGRESS-REPORTING)
++ [27.4.5. VACUUM RELATÓRIO DE PROGRSO](progress-reporting.md#VACUUM-PROGRESS-REPORTING)
++ [27.4.6. RELATÓRIO DE BACKUP DE BASE](progress-reporting.md#BASEBACKUP-PROGRESS-REPORTING)
 
 * [27.5. Rastreamento Dinâmico](dynamic-trace.md)
 
@@ -49,7 +49,7 @@
 + [27.5.3. Usando Sondas][(dynamic-trace.md#USING-TRACE-POINTS)
 + [27.5.4. Definindo Novas Sondas][(dynamic-trace.md#DEFINING-TRACE-POINTS)
 
-* [27.6. Monitoramento do uso do disco][(diskusage.md)]
+* [27.6. Monitoramento do uso do disco](diskusage.md)
 
 + [27.6.1. Determinação do uso do disco](diskusage.md#DISK-USAGE)
 + [27.6.2. Falha de esgotamento do disco](diskusage.md#DISK-FULL)

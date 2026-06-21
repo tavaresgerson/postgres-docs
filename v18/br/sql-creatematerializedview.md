@@ -36,7 +36,7 @@ O `CREATE MATERIALIZED VIEW` requer privilégio `CREATE` no esquema usado para a
 
 `TABLESPACE tablespace_name`: O *`tablespace_name`* é o nome do tablespace no qual a nova visão materializada deve ser criada. Se não for especificado, [default_tablespace](runtime-config-client.md#GUC-DEFAULT-TABLESPACE) é consultado.
 
-*`query`*: Um comando [`SELECT`(sql-select.md "SELECT"), [`TABLE`(sql-select.md#SQL-TABLE "TABLE Command"), ou [`VALUES`(sql-values.md "VALUES")]. Esta consulta será executada dentro de uma operação com restrições de segurança; em particular, as chamadas a funções que criam tabelas temporárias falharão. Além disso, enquanto a consulta estiver sendo executada, o [search_path](runtime-config-client.md#GUC-SEARCH-PATH) será alterado temporariamente para `pg_catalog, pg_temp`.
+*`query`*: Um comando [`SELECT`](sql-select.md), [`TABLE`](sql-select.md#SQL-TABLE), ou [`VALUES`](sql-values.md)]. Esta consulta será executada dentro de uma operação com restrições de segurança; em particular, as chamadas a funções que criam tabelas temporárias falharão. Além disso, enquanto a consulta estiver sendo executada, o [search_path](runtime-config-client.md#GUC-SEARCH-PATH) será alterado temporariamente para `pg_catalog, pg_temp`.
 
 `WITH [ NO ] DATA`: Esta cláusula especifica se a visão materializada deve ser preenchida no momento da criação. Se não for o caso, a visão materializada será marcada como não scanável e não poderá ser consultada até que `REFRESH MATERIALIZED VIEW` seja usado.
 

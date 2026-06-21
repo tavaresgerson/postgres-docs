@@ -26,13 +26,13 @@ where option can be:
 
 `FORCE`: Tente encerrar todas as conexões existentes no banco de dados-alvo. Não é possível encerrar se houver transações preparadas, slots de replicação lógica ativa ou assinaturas presentes no banco de dados-alvo.
 
-Isso interrompe as conexões dos trabalhadores de segundo plano e as conexões que o usuário atual tem permissão para interromper com `pg_terminate_backend`, descrito em [Seção 9.28.2][(functions-admin.md#FUNCTIONS-ADMIN-SIGNAL "9.28.2. Server Signaling Functions")]. Se as conexões permanecerem, este comando falhará.
+Isso interrompe as conexões dos trabalhadores de segundo plano e as conexões que o usuário atual tem permissão para interromper com `pg_terminate_backend`, descrito em [Seção 9.28.2](functions-admin.md#FUNCTIONS-ADMIN-SIGNAL). Se as conexões permanecerem, este comando falhará.
 
 ## Notas
 
 `DROP DATABASE` não pode ser executado dentro de um bloco de transação.
 
-Este comando não pode ser executado enquanto estiver conectado ao banco de dados de destino. Assim, pode ser mais conveniente usar o programa [dropdb][(app-dropdb.md "dropdb")] em vez disso, que é um wrapper em torno deste comando.
+Este comando não pode ser executado enquanto estiver conectado ao banco de dados de destino. Assim, pode ser mais conveniente usar o programa [dropdb](app-dropdb.md) em vez disso, que é um wrapper em torno deste comando.
 
 ## Compatibilidade
 

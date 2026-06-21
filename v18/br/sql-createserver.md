@@ -36,7 +36,7 @@ Para criar um servidor, é necessário o privilégio `USAGE` no wrapper de dados
 
 ## Notas
 
-Ao usar o módulo [dblink][(dblink.md "F.11. dblink — connect to other PostgreSQL databases")], o nome de um servidor externo pode ser usado como argumento da função [dblink_connect][(contrib-dblink-connect.md "dblink_connect")] para indicar os parâmetros de conexão. É necessário ter o privilégio `USAGE` no servidor externo para poder usá-lo dessa maneira.
+Ao usar o módulo [dblink](dblink.md), o nome de um servidor externo pode ser usado como argumento da função [dblink_connect](contrib-dblink-connect.md) para indicar os parâmetros de conexão. É necessário ter o privilégio `USAGE` no servidor externo para poder usá-lo dessa maneira.
 
 Se o servidor estrangeiro suportar o pushdown de classificação, é necessário que ele tenha a mesma ordem de classificação do servidor local.
 

@@ -15,247 +15,345 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
 
 
 <table border="1" class="table" summary="pg_statistic Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">Tipo de coluna</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
+     Tipo de coluna
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       starelid
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
+      <code class="structname">
        pg_class
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
-     </code>)</p>
-<p>A tabela ou índice ao qual a coluna descrita pertence</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     A tabela ou índice ao qual a coluna descrita pertence
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       staattnum
      </code>
-<code class="type">
+     <code class="type">
       int2
-     </code>(referências<a class="link" href="catalog-pg-attribute.md" title="52.7. pg_attribute">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-attribute.md" title="52.7. pg_attribute">
+      <code class="structname">
        pg_attribute
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       attnum
-     </code>)</p>
-<p>O número da coluna descrita</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     O número da coluna descrita
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       stainherit
      </code>
-<code class="type">
+     <code class="type">
       bool
      </code>
-</p>
-<p>Se for verdade, as estatísticas incluem valores de tabelas de crianças, não apenas os valores na relação especificada</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Se for verdade, as estatísticas incluem valores de tabelas de crianças, não apenas os valores na relação especificada
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       stanullfrac
      </code>
-<code class="type">
+     <code class="type">
       float4
      </code>
-</p>
-<p>A fração das entradas da coluna que são nulos</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     A fração das entradas da coluna que são nulos
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       stawidth
      </code>
-<code class="type">
+     <code class="type">
       int4
      </code>
-</p>
-<p>A largura média armazenada, em bytes, das entradas não nulos</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     A largura média armazenada, em bytes, das entradas não nulos
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       stadistinct
      </code>
-<code class="type">
+     <code class="type">
       float4
      </code>
-</p>
-<p>O número de valores de dados distintos e não nulos na coluna. Um valor maior que zero é o número real de valores distintos. Um valor menor que zero é o negativo de um multiplicador para o número de linhas na tabela; por exemplo, uma coluna na qual cerca de 80% dos valores são não nulos e cada valor não nulo aparece aproximadamente duas vezes em média pode ser representado por<code class="structfield">
+    </p>
+    <p>
+     O número de valores de dados distintos e não nulos na coluna. Um valor maior que zero é o número real de valores distintos. Um valor menor que zero é o negativo de um multiplicador para o número de linhas na tabela; por exemplo, uma coluna na qual cerca de 80% dos valores são não nulos e cada valor não nulo aparece aproximadamente duas vezes em média pode ser representado por
+     <code class="structfield">
       stadistinct
-     </code>= -0,4. Um valor zero significa que o número de valores distintos é desconhecido.</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     = -0,4. Um valor zero significa que o número de valores distintos é desconhecido.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       stakind
       <em class="replaceable">
-<code>
+       <code>
         N
        </code>
-</em>
-</code>
-<code class="type">
+      </em>
+     </code>
+     <code class="type">
       int2
      </code>
-</p>
-<p>Um número de código que indica o tipo de estatísticas armazenadas no<em class="replaceable">
-<code>
+    </p>
+    <p>
+     Um número de código que indica o tipo de estatísticas armazenadas no
+     <em class="replaceable">
+      <code>
        N
       </code>
-</em>th<span class="quote">“<span class="quote">jogada</span>”</span>de o<code class="structname">
+     </em>
+     th
+     <span class="quote">
+      “
+      <span class="quote">
+       jogada
+      </span>
+      ”
+     </span>
+     de o
+     <code class="structname">
       pg_statistic
      </code>
      row.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       staop
       <em class="replaceable">
-<code>
+       <code>
         N
        </code>
-</em>
-</code>
-<code class="type">
+      </em>
+     </code>
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-operator.md" title="52.34. pg_operator">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-operator.md" title="52.34. pg_operator">
+      <code class="structname">
        pg_operator
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
-     </code>)</p>
-<p>Um operador costuma derivar as estatísticas armazenadas no<em class="replaceable">
-<code>
+     </code>
+     )
+    </p>
+    <p>
+     Um operador costuma derivar as estatísticas armazenadas no
+     <em class="replaceable">
+      <code>
        N
       </code>
-</em>th<span class="quote">“<span class="quote">jogada</span>”</span>Por exemplo, um
-       carpete de histograma mostraria o<code class="literal">
+     </em>
+     th
+     <span class="quote">
+      “
+      <span class="quote">
+       jogada
+      </span>
+      ”
+     </span>
+     Por exemplo, um carpete de histograma mostraria o
+     <code class="literal">
       &lt;
-     </code>operador que define a ordem de classificação dos dados. Zero se o tipo de estatística não requer um operador.</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     operador que define a ordem de classificação dos dados. Zero se o tipo de estatística não requer um operador.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       stacoll
       <em class="replaceable">
-<code>
+       <code>
         N
        </code>
-</em>
-</code>
-<code class="type">
+      </em>
+     </code>
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-collation.md" title="52.12. pg_collation">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-collation.md" title="52.12. pg_collation">
+      <code class="structname">
        pg_collation
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
-     </code>)</p>
-<p>A agregação usada para derivar as estatísticas armazenadas no<em class="replaceable">
-<code>
+     </code>
+     )
+    </p>
+    <p>
+     A agregação usada para derivar as estatísticas armazenadas no
+     <em class="replaceable">
+      <code>
        N
       </code>
-</em>th<span class="quote">“<span class="quote">jogada</span>”</span>Por exemplo, um intervalo de histograma para uma coluna colidível mostraria a collation que define a ordem de classificação dos dados. Zero para dados não colidíveis.</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </em>
+     th
+     <span class="quote">
+      “
+      <span class="quote">
+       jogada
+      </span>
+      ”
+     </span>
+     Por exemplo, um intervalo de histograma para uma coluna colidível mostraria a collation que define a ordem de classificação dos dados. Zero para dados não colidíveis.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       stanumbers
       <em class="replaceable">
-<code>
+       <code>
         N
        </code>
-</em>
-</code>
-<code class="type">
+      </em>
+     </code>
+     <code class="type">
       float4[]
      </code>
-</p>
-<p>Estatísticas numéricas do tipo apropriado para o<em class="replaceable">
-<code>
+    </p>
+    <p>
+     Estatísticas numéricas do tipo apropriado para o
+     <em class="replaceable">
+      <code>
        N
       </code>
-</em>th<span class="quote">“<span class="quote">jogada</span>”</span>, ou nulo se o tipo de slot não envolver valores numéricos</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </em>
+     th
+     <span class="quote">
+      “
+      <span class="quote">
+       jogada
+      </span>
+      ”
+     </span>
+     , ou nulo se o tipo de slot não envolver valores numéricos
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       stavalues
       <em class="replaceable">
-<code>
+       <code>
         N
        </code>
-</em>
-</code>
-<code class="type">
+      </em>
+     </code>
+     <code class="type">
       anyarray
      </code>
-</p>
-<p>Valores de dados de coluna do tipo apropriado para o<em class="replaceable">
-<code>
+    </p>
+    <p>
+     Valores de dados de coluna do tipo apropriado para o
+     <em class="replaceable">
+      <code>
        N
       </code>
-</em>th<span class="quote">“<span class="quote">jogada</span>”</span>, ou nulo se o tipo de slot não armazenar nenhum valor de dados. Os valores dos elementos de cada matriz são, na verdade, do tipo de dados da coluna específica, ou de um tipo relacionado, como o tipo de elemento de uma matriz, portanto, não há como definir o tipo dessas colunas de forma mais específica do que<code class="type">
+     </em>
+     th
+     <span class="quote">
+      “
+      <span class="quote">
+       jogada
+      </span>
+      ”
+     </span>
+     , ou nulo se o tipo de slot não armazenar nenhum valor de dados. Os valores dos elementos de cada matriz são, na verdade, do tipo de dados da coluna específica, ou de um tipo relacionado, como o tipo de elemento de uma matriz, portanto, não há como definir o tipo dessas colunas de forma mais específica do que
+     <code class="type">
       anyarray
      </code>
      .
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 

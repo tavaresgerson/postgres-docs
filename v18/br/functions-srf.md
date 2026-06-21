@@ -1,226 +1,305 @@
 ## 9.26. Definir funções de retorno [#](#FUNCTIONS-SRF)
 
-Esta seção descreve funções que possivelmente retornam mais de uma linha. As funções mais amplamente utilizadas nesta classe são as funções geradoras de séries, conforme detalhado em [Tabela 9.69][(functions-srf.md#FUNCTIONS-SRF-SERIES "Table 9.69. Series Generating Functions")] e [Tabela 9.70][(functions-srf.md#FUNCTIONS-SRF-SUBSCRIPTS "Table 9.70. Subscript Generating Functions")]. Outras funções mais especializadas que retornam conjuntos são descritas em outros lugares deste manual. Veja [Seção 7.2.1.4][(queries-table-expressions.md#QUERIES-TABLEFUNCTIONS "7.2.1.4. Table Functions")] para formas de combinar múltiplas funções que retornam conjuntos.
+Esta seção descreve funções que possivelmente retornam mais de uma linha. As funções mais amplamente utilizadas nesta classe são as funções geradoras de séries, conforme detalhado em [Tabela 9.69](functions-srf.md#FUNCTIONS-SRF-SERIES) e [Tabela 9.70](functions-srf.md#FUNCTIONS-SRF-SUBSCRIPTS). Outras funções mais especializadas que retornam conjuntos são descritas em outros lugares deste manual. Veja [Seção 7.2.1.4](queries-table-expressions.md#QUERIES-TABLEFUNCTIONS) para formas de combinar múltiplas funções que retornam conjuntos.
 
 **Tabela 9.69. Funções geradoras de série**
 
 
 
 <table border="1" class="table" summary="Series Generating Functions">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">Função</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
+     Função
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       generate_series
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        start
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       integer
-     </code>,<em class="parameter">
-<code>
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        stop
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       integer
-     </code>[<span class="optional">,<em class="parameter">
-<code>
+     </code>
+     [
+     <span class="optional">
+      ,
+      <em class="parameter">
+       <code>
         step
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        integer
       </code>
-</span>] )<code class="returnvalue">
+     </span>
+     ] )
+     <code class="returnvalue">
       setof integer
      </code>
-</p>
-<p class="func_signature">
-<code class="function">
+    </p>
+    <p class="func_signature">
+     <code class="function">
       generate_series
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        start
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bigint
-     </code>,<em class="parameter">
-<code>
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        stop
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bigint
-     </code>[<span class="optional">,<em class="parameter">
-<code>
+     </code>
+     [
+     <span class="optional">
+      ,
+      <em class="parameter">
+       <code>
         step
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        bigint
       </code>
-</span>] )<code class="returnvalue">
+     </span>
+     ] )
+     <code class="returnvalue">
       setof bigint
      </code>
-</p>
-<p class="func_signature">
-<code class="function">
+    </p>
+    <p class="func_signature">
+     <code class="function">
       generate_series
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        start
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       numeric
-     </code>,<em class="parameter">
-<code>
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        stop
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       numeric
-     </code>[<span class="optional">,<em class="parameter">
-<code>
+     </code>
+     [
+     <span class="optional">
+      ,
+      <em class="parameter">
+       <code>
         step
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        numeric
       </code>
-</span>] )<code class="returnvalue">
+     </span>
+     ] )
+     <code class="returnvalue">
       setof numeric
      </code>
-</p>
-<p>Gera uma série de valores a partir de<em class="parameter">
-<code>
+    </p>
+    <p>
+     Gera uma série de valores a partir de
+     <em class="parameter">
+      <code>
        start
       </code>
-</em>para<em class="parameter">
-<code>
+     </em>
+     para
+     <em class="parameter">
+      <code>
        stop
       </code>
-</em>, com um tamanho de passo de<em class="parameter">
-<code>
+     </em>
+     , com um tamanho de passo de
+     <em class="parameter">
+      <code>
        step
       </code>
-</em>
+     </em>
      .
      <em class="parameter">
-<code>
+      <code>
        step
       </code>
-</em>o padrão é 1.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+     </em>
+     o padrão é 1.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       generate_series
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        start
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       timestamp
-     </code>,<em class="parameter">
-<code>
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        stop
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       timestamp
-     </code>,<em class="parameter">
-<code>
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        step
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       interval
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       setof timestamp
      </code>
-</p>
-<p class="func_signature">
-<code class="function">
+    </p>
+    <p class="func_signature">
+     <code class="function">
       generate_series
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        start
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       timestamp with time zone
-     </code>,<em class="parameter">
-<code>
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        stop
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       timestamp with time zone
-     </code>,<em class="parameter">
-<code>
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        step
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       interval
-     </code>[<span class="optional">,<em class="parameter">
-<code>
+     </code>
+     [
+     <span class="optional">
+      ,
+      <em class="parameter">
+       <code>
         timezone
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        text
       </code>
-</span>] )<code class="returnvalue">
+     </span>
+     ] )
+     <code class="returnvalue">
       setof timestamp with time zone
      </code>
-</p>
-<p>Gera uma série de valores a partir de<em class="parameter">
-<code>
+    </p>
+    <p>
+     Gera uma série de valores a partir de
+     <em class="parameter">
+      <code>
        start
       </code>
-</em>para<em class="parameter">
-<code>
+     </em>
+     para
+     <em class="parameter">
+      <code>
        stop
       </code>
-</em>, com um tamanho de passo de<em class="parameter">
-<code>
+     </em>
+     , com um tamanho de passo de
+     <em class="parameter">
+      <code>
        step
       </code>
-</em>. No formulário que considera a fusão horária, os horários do dia e os ajustes de horário de verão são calculados de acordo com a fusão horária indicada pelo<em class="parameter">
-<code>
+     </em>
+     . No formulário que considera a fusão horária, os horários do dia e os ajustes de horário de verão são calculados de acordo com a fusão horária indicada pelo
+     <em class="parameter">
+      <code>
        timezone
       </code>
-</em>argumento, ou o atual<a class="xref" href="runtime-config-client.md#GUC-TIMEZONE">Fuso Horário</a>especificações, se este for omitido.</p>
-</td>
-</tr>
-</tbody>
+     </em>
+     argumento, ou o atual
+     <a class="xref" href="runtime-config-client.md#GUC-TIMEZONE">
+      Fuso Horário
+     </a>
+     especificações, se este for omitido.
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Quando *`step`* é positivo, zero linhas são retornadas se *`start`* for maior que *`stop`*. Por outro lado, quando *`step`* é negativo, zero linhas são retornadas se *`start`* for menor que *`stop`*. Zero linhas também são retornadas se qualquer entrada for `NULL`. É um erro para *`step`* ser zero. Alguns exemplos seguem:
 
@@ -303,96 +382,127 @@ SELECT * FROM generate_series('2001-10-22 00:00 -04:00'::timestamptz,
 
 
 <table border="1" class="table" summary="Subscript Generating Functions">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">Função</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
+     Função
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       generate_subscripts
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        array
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       anyarray
-     </code>,<em class="parameter">
-<code>
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        dim
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       integer
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       setof integer
      </code>
-</p>
-<p>Gera uma série que compreende os subíndices válidos do<em class="parameter">
-<code>
+    </p>
+    <p>
+     Gera uma série que compreende os subíndices válidos do
+     <em class="parameter">
+      <code>
        dim
       </code>
-</em>'a dimensão da matriz fornecida.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+     </em>
+     'a dimensão da matriz fornecida.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       generate_subscripts
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        array
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       anyarray
-     </code>,<em class="parameter">
-<code>
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        dim
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       integer
-     </code>,<em class="parameter">
-<code>
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        reverse
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       boolean
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       setof integer
      </code>
-</p>
-<p>Gera uma série que compreende os subíndices válidos do<em class="parameter">
-<code>
+    </p>
+    <p>
+     Gera uma série que compreende os subíndices válidos do
+     <em class="parameter">
+      <code>
        dim
       </code>
-</em>'a dimensão da matriz fornecida. Quando<em class="parameter">
-<code>
+     </em>
+     'a dimensão da matriz fornecida. Quando
+     <em class="parameter">
+      <code>
        reverse
       </code>
-</em>Se é verdade, retorna a série em ordem inversa.</p>
-</td>
-</tr>
-</tbody>
+     </em>
+     Se é verdade, retorna a série em ordem inversa.
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 `generate_subscripts` é uma função de conveniência que gera o conjunto de subíndices válidos para a dimensão especificada da matriz fornecida. São retornadas zero linhas para matrizes que não possuem a dimensão solicitada, ou se qualquer entrada for `NULL`. Alguns exemplos seguem:
 

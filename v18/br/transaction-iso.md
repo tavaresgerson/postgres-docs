@@ -16,105 +16,118 @@ Phantom read: Uma transação reexecuta uma consulta que retorna um conjunto de 
 
 anomalia de serialização: O resultado de comprovar com sucesso um grupo de transações é inconsistente com todas as possíveis ordens de execução dessas transações uma de cada vez.
 
-Os níveis de isolamento de transação implementados no padrão SQL e no PostgreSQL são descritos em [Tabela 13.1] [(transaction-iso.md#MVCC-ISOLEVEL-TABLE "Table 13.1. Transaction Isolation Levels")].
+Os níveis de isolamento de transação implementados no padrão SQL e no PostgreSQL são descritos em [Tabela 13.1](transaction-iso.md#MVCC-ISOLEVEL-TABLE).
 
 **Tabela 13.1. Níveis de Isolamento de Transação**
 
 
 
 <table border="1" class="table" summary="Transaction Isolation Levels">
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Isolation Level
    </th>
-<th>Dirty Read</th>
-<th>
+   <th>
+    Dirty Read
+   </th>
+   <th>
     Nonrepeatable Read
    </th>
-<th>
+   <th>
     Phantom Read
    </th>
-<th>
+   <th>
     Serialization Anomaly
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
     Read uncommitted
    </td>
-<td>Permitido, mas não em PG</td>
-<td>
+   <td>
+    Permitido, mas não em PG
+   </td>
+   <td>
     Possible
    </td>
-<td>
+   <td>
     Possible
    </td>
-<td>
+   <td>
     Possible
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     Read committed
    </td>
-<td>Não é possível</td>
-<td>
+   <td>
+    Não é possível
+   </td>
+   <td>
     Possible
    </td>
-<td>
+   <td>
     Possible
    </td>
-<td>
+   <td>
     Possible
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     Repeatable read
    </td>
-<td>Não é possível</td>
-<td>
+   <td>
+    Não é possível
+   </td>
+   <td>
     Not possible
    </td>
-<td>
+   <td>
     Allowed, but not in PG
    </td>
-<td>
+   <td>
     Possible
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     Serializable
    </td>
-<td>Não é possível</td>
-<td>
+   <td>
+    Não é possível
+   </td>
+   <td>
     Not possible
    </td>
-<td>
+   <td>
     Not possible
    </td>
-<td>
+   <td>
     Not possible
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Em PostgreSQL, você pode solicitar qualquer um dos quatro níveis padrão de isolamento de transação, mas internamente, apenas três níveis de isolamento distintos são implementados, ou seja, o modo Não Comitado de Leitura do PostgreSQL se comporta como Leitura Comitada. Isso ocorre porque é a única maneira sensível de mapear os níveis de isolamento padrão para a arquitetura de controle de concorrência multiversão do PostgreSQL.
 
@@ -124,7 +137,7 @@ Para definir o nível de isolamento de transação de uma transação, use o com
 
 ### Importante
 
-Alguns tipos de dados e funções do PostgreSQL têm regras especiais em relação ao comportamento transacional. Em particular, as alterações feitas em uma sequência (e, portanto, o contador de uma coluna declarada usando `serial`) são imediatamente visíveis para todas as outras transações e não são revertidas se a transação que fez as alterações abortar. Veja [Seção 9.17][(functions-sequence.md "9.17. Sequence Manipulation Functions")] e [Seção 8.1.4][(datatype-numeric.md#DATATYPE-SERIAL "8.1.4. Serial Types")].
+Alguns tipos de dados e funções do PostgreSQL têm regras especiais em relação ao comportamento transacional. Em particular, as alterações feitas em uma sequência (e, portanto, o contador de uma coluna declarada usando `serial`) são imediatamente visíveis para todas as outras transações e não são revertidas se a transação que fez as alterações abortar. Veja [Seção 9.17](functions-sequence.md) e [Seção 8.1.4](datatype-numeric.md#DATATYPE-SERIAL).
 
 ### 13.2.1. Nível de Isolamento de Leitura Comprometido [#](#XACT-READ-COMMITTED)
 
@@ -242,9 +255,9 @@ Para obter um desempenho ótimo quando se utiliza transações serializáveis pa
 * Declare as transações como `READ ONLY` quando possível.
 * Controle o número de conexões ativas, usando um pool de conexões, se necessário. Isso é sempre uma consideração importante de desempenho, mas pode ser particularmente importante em um sistema ocupado que usa transações serializáveis.
 * Não coloque mais em uma única transação do que o necessário para fins de integridade.
-* Não deixe as conexões pendentes "inativas na transação" por mais tempo do que o necessário. O parâmetro de configuração [idle_in_transaction_session_timeout][(runtime-config-client.md#GUC-IDLE-IN-TRANSACTION-SESSION-TIMEOUT)] pode ser usado para desconectar automaticamente as sessões que persistem.
+* Não deixe as conexões pendentes "inativas na transação" por mais tempo do que o necessário. O parâmetro de configuração [idle_in_transaction_session_timeout](runtime-config-client.md#GUC-IDLE-IN-TRANSACTION-SESSION-TIMEOUT) pode ser usado para desconectar automaticamente as sessões que persistem.
 * Elimine as bloqueadoras explícitas, `SELECT FOR UPDATE` e `SELECT FOR SHARE`, quando não forem mais necessárias devido às proteções fornecidas automaticamente pelas transações serializáveis.
-* Quando o sistema é forçado a combinar várias bloqueadoras de predicado de nível de página em uma única bloqueadora de predicado de nível de relação, porque a tabela de bloqueadora de predicado está sem memória, pode ocorrer um aumento na taxa de falhas de serialização. Você pode evitar isso aumentando [max_pred_locks_per_transaction][(runtime-config-locks.md#GUC-MAX-PRED-LOCKS-PER-TRANSACTION)], [max_pred_locks_per_relation][(runtime-config-locks.md#GUC-MAX-PRED-LOCKS-PER-RELATION)] e/ou [max_pred_locks_per_page][(runtime-config-locks.md#GUC-MAX-PRED-LOCKS-PER-PAGE)].
-* Uma varredura sequencial sempre exigirá uma bloqueadora de predicado de nível de relação. Isso pode resultar em um aumento na taxa de falhas de serialização. Pode ser útil incentivar o uso de varreduras de índice, reduzindo [random_page_cost][(runtime-config-query.md#GUC-RANDOM-PAGE-COST)] e/ou aumentando [cpu_tuple_cost][(runtime-config-query.md#GUC-CPU-TUPLE-COST)]. Certifique-se de pesar qualquer diminuição nos rollback e reinício das transações contra qualquer mudança geral no tempo de execução da consulta.
+* Quando o sistema é forçado a combinar várias bloqueadoras de predicado de nível de página em uma única bloqueadora de predicado de nível de relação, porque a tabela de bloqueadora de predicado está sem memória, pode ocorrer um aumento na taxa de falhas de serialização. Você pode evitar isso aumentando [max_pred_locks_per_transaction](runtime-config-locks.md#GUC-MAX-PRED-LOCKS-PER-TRANSACTION), [max_pred_locks_per_relation](runtime-config-locks.md#GUC-MAX-PRED-LOCKS-PER-RELATION) e/ou [max_pred_locks_per_page](runtime-config-locks.md#GUC-MAX-PRED-LOCKS-PER-PAGE).
+* Uma varredura sequencial sempre exigirá uma bloqueadora de predicado de nível de relação. Isso pode resultar em um aumento na taxa de falhas de serialização. Pode ser útil incentivar o uso de varreduras de índice, reduzindo [random_page_cost](runtime-config-query.md#GUC-RANDOM-PAGE-COST) e/ou aumentando [cpu_tuple_cost](runtime-config-query.md#GUC-CPU-TUPLE-COST). Certifique-se de pesar qualquer diminuição nos rollback e reinício das transações contra qualquer mudança geral no tempo de execução da consulta.
 
 O nível de isolamento Serializable é implementado usando uma técnica conhecida na literatura acadêmica sobre bancos de dados como Isolamento de Escaneamento Serializável, que se baseia no Isolamento de Escaneamento, adicionando verificações para anomalias de serialização. Algumas diferenças de comportamento e desempenho podem ser observadas quando comparado com outros sistemas que utilizam uma técnica de bloqueio tradicional. Consulte [[ports12]](biblio.md#PORTS12) para informações detalhadas.

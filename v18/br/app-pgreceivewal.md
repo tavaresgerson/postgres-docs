@@ -8,13 +8,13 @@ pg_receivewal — fluxo de registros de pré-escrita de dados de um servidor Pos
 
 ## Descrição
 
-O pg_receivewal é usado para transmitir o log de pré-escrita de um cluster PostgreSQL em execução. O log de pré-escrita é transmitido usando o protocolo de replicação de streaming e é escrito em um diretório local de arquivos. Esse diretório pode ser usado como local de arquivo para realizar uma restauração usando recuperação em ponto no tempo (consulte [Seção 25.3] [(continuous-archiving.md "25.3. Continuous Archiving and Point-in-Time Recovery (PITR)]).
+O pg_receivewal é usado para transmitir o log de pré-escrita de um cluster PostgreSQL em execução. O log de pré-escrita é transmitido usando o protocolo de replicação de streaming e é escrito em um diretório local de arquivos. Esse diretório pode ser usado como local de arquivo para realizar uma restauração usando recuperação em ponto no tempo (consulte [Seção 25.3](continuous-archiving.md)).
 
 pg_receivewal transmite o log de pré-escrita em tempo real à medida que é gerado no servidor e não espera que os segmentos sejam concluídos, como o [archive_command](runtime-config-wal.md#GUC-ARCHIVE-COMMAND) e o [archive_library](runtime-config-wal.md#GUC-ARCHIVE-LIBRARY) fazem. Por essa razão, não é necessário definir [archive_timeout](runtime-config-wal.md#GUC-ARCHIVE-TIMEOUT) ao usar pg_receivewal.
 
-Ao contrário do receptor WAL de um servidor de espera PostgreSQL, o pg_receivewal, por padrão, esvazia os dados do WAL apenas quando um arquivo WAL é fechado. A opção `--synchronous` deve ser especificada para esvaziar os dados do WAL em tempo real. Como o pg_receivewal não aplica o WAL, você não deve permitir que ele se torne um standby síncrono quando [síncrono_commit][(runtime-config-wal.md#GUC-SYNCHRONOUS-COMMIT)] é igual a `remote_apply`. Se isso ocorrer, ele parecerá ser um standby que nunca se atualiza e causará bloqueio dos commits de transação. Para evitar isso, você deve configurar um valor apropriado para [síncrono_standby_names][(runtime-config-replication.md#GUC-SYNCHRONOUS-STANDBY-NAMES)], ou especificar `application_name` para o pg_receivewal que não corresponda a ele, ou alterar o valor de `synchronous_commit` para algo diferente de `remote_apply`.
+Ao contrário do receptor WAL de um servidor de espera PostgreSQL, o pg_receivewal, por padrão, esvazia os dados do WAL apenas quando um arquivo WAL é fechado. A opção `--synchronous` deve ser especificada para esvaziar os dados do WAL em tempo real. Como o pg_receivewal não aplica o WAL, você não deve permitir que ele se torne um standby síncrono quando [síncrono_commit](runtime-config-wal.md#GUC-SYNCHRONOUS-COMMIT) é igual a `remote_apply`. Se isso ocorrer, ele parecerá ser um standby que nunca se atualiza e causará bloqueio dos commits de transação. Para evitar isso, você deve configurar um valor apropriado para [síncrono_standby_names](runtime-config-replication.md#GUC-SYNCHRONOUS-STANDBY-NAMES), ou especificar `application_name` para o pg_receivewal que não corresponda a ele, ou alterar o valor de `synchronous_commit` para algo diferente de `remote_apply`.
 
-O log de pré-escrita é transmitido através de uma conexão regular do PostgreSQL e utiliza o protocolo de replicação. A conexão deve ser feita com um usuário que tenha permissões `REPLICATION` (consulte [Seção 21.2][(role-attributes.md "21.2. Role Attributes")]) ou um superusuário, e `pg_hba.conf` deve permitir a conexão de replicação. O servidor também deve ser configurado com [max_wal_senders][(runtime-config-replication.md#GUC-MAX-WAL-SENDERS)] definido o suficiente para deixar pelo menos uma sessão disponível para o fluxo.
+O log de pré-escrita é transmitido através de uma conexão regular do PostgreSQL e utiliza o protocolo de replicação. A conexão deve ser feita com um usuário que tenha permissões `REPLICATION` (consulte [Seção 21.2](role-attributes.md)) ou um superusuário, e `pg_hba.conf` deve permitir a conexão de replicação. O servidor também deve ser configurado com [max_wal_senders](runtime-config-replication.md#GUC-MAX-WAL-SENDERS) definido o suficiente para deixar pelo menos uma sessão disponível para o fluxo.
 
 O ponto de partida do streaming de log de escrita prévia é calculado quando o pg_receivewal começa:
 
@@ -46,7 +46,7 @@ Esta opção é incompatível com `--synchronous`.
 
 `-s interval` `--status-interval=interval`: Especifica o número de segundos entre os pacotes de status enviados de volta ao servidor. Isso permite uma monitorização mais fácil do progresso a partir do servidor. Um valor de zero desativa as atualizações periódicas de status completamente, embora uma atualização ainda seja enviada quando solicitada pelo servidor, para evitar a desconexão por tempo excedido. O valor padrão é de 10 segundos.
 
-`-S slotname` `--slot=slotname`: Requer que o pg_receivewal use um slot de replicação existente (consulte [Seção 26.2.6][(warm-standby.md#STREAMING-REPLICATION-SLOTS "26.2.6. Replication Slots")]). Quando esta opção é usada, o pg_receivewal informará ao servidor uma posição de esvaziamento, indicando quando cada segmento foi sincronizado com o disco, para que o servidor possa remover esse segmento se não for necessário.
+`-S slotname` `--slot=slotname`: Requer que o pg_receivewal use um slot de replicação existente (consulte [Seção 26.2.6](warm-standby.md#STREAMING-REPLICATION-SLOTS)). Quando esta opção é usada, o pg_receivewal informará ao servidor uma posição de esvaziamento, indicando quando cada segmento foi sincronizado com o disco, para que o servidor possa remover esse segmento se não for necessário.
 
 Quando o cliente de replicação do pg_receivewal é configurado no servidor como um standby síncrono, então o uso de um slot de replicação informará ao servidor a posição de esvaziamento, mas apenas quando um arquivo WAL é fechado. Portanto, essa configuração fará com que as transações no primário esperem por um longo tempo e, efetivamente, não funcionem de forma satisfatória. A opção `--synchronous` (veja abaixo) deve ser especificada adicionalmente para que isso funcione corretamente.
 
@@ -66,7 +66,7 @@ O sufixo `.gz` será adicionado automaticamente a todos os nomes de arquivo ao u
 
 As opções de linha de comando a seguir controlam os parâmetros de conexão do banco de dados.
 
-`-d connstr`: Especifica os parâmetros usados para se conectar ao servidor, como uma [string de conexão][(libpq-connect.md#LIBPQ-CONNSTRING "32.1.1. Connection Strings")]; esses parâmetros substituirão quaisquer opções de linha de comando conflitantes.
+`-d connstr`: Especifica os parâmetros usados para se conectar ao servidor, como uma [string de conexão](libpq-connect.md#LIBPQ-CONNSTRING); esses parâmetros substituirão quaisquer opções de linha de comando conflitantes.
 
 Essa opção é chamada `--dbname` para manter a consistência com outras aplicações do cliente, mas, como o pg_receivewal não se conecta a nenhum banco de dados específico no clúster, qualquer nome de banco de dados incluído na string de conexão será ignorado pelo servidor. No entanto, um nome de banco de dados fornecido dessa maneira substitui o nome de banco de dados padrão (`replication`) para fins de busca da senha da conexão de replicação em `~/.pgpass`. Da mesma forma, o middleware ou proxies utilizados na conexão com o PostgreSQL podem utilizar o nome para fins como roteamento de conexão.
 
@@ -100,7 +100,7 @@ pg_receivewal sairá com status 0 quando encerrado pelo sinal SIGINT ou SIGTERM.
 
 ## Meio Ambiente
 
-Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, utiliza as variáveis de ambiente suportadas pelo libpq (consulte a Seção 32.15 [(libpq-envars.md "32.15. Environment Variables")]).
+Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, utiliza as variáveis de ambiente suportadas pelo libpq (consulte a [Seção 32.15](libpq-envars.md)).
 
 A variável de ambiente `PG_COLOR` especifica se a cor deve ser usada nas mensagens de diagnóstico. Os valores possíveis são `always`, `auto` e `never`.
 

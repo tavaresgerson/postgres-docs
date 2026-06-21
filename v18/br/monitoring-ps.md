@@ -20,7 +20,7 @@ postgres  15610  0.0  0.0  58772  3056 ?        Ss   18:07   0:00 postgres: tgl 
 postgres: user database host activity
 ```
 
-Os itens usuário, banco de dados e (cliente) host permanecem os mesmos durante a vida da conexão do cliente, mas o indicador de atividade muda. A atividade pode ser `idle` (ou seja, esperando um comando do cliente), `idle in transaction` (esperando por um cliente dentro de um bloco `BEGIN`, ou um nome de tipo de comando, como `SELECT`. Além disso, `waiting` é anexado se o processo do servidor estiver atualmente esperando por um bloqueio mantido por outra sessão. No exemplo acima, podemos inferir que o processo 15606 está esperando que o processo 15610 complete sua transação e, assim, libere algum bloqueio. (O processo 15610 deve ser o bloqueante, porque não há outra sessão ativa. Em casos mais complicados, seria necessário examinar a visão do sistema [`pg_locks`(view-pg-locks.md "53.13. pg_locks") para determinar quem está bloqueando quem.)
+Os itens usuário, banco de dados e (cliente) host permanecem os mesmos durante a vida da conexão do cliente, mas o indicador de atividade muda. A atividade pode ser `idle` (ou seja, esperando um comando do cliente), `idle in transaction` (esperando por um cliente dentro de um bloco `BEGIN`, ou um nome de tipo de comando, como `SELECT`. Além disso, `waiting` é anexado se o processo do servidor estiver atualmente esperando por um bloqueio mantido por outra sessão. No exemplo acima, podemos inferir que o processo 15606 está esperando que o processo 15610 complete sua transação e, assim, libere algum bloqueio. (O processo 15610 deve ser o bloqueante, porque não há outra sessão ativa. Em casos mais complicados, seria necessário examinar a visão do sistema [`pg_locks`](view-pg-locks.md) para determinar quem está bloqueando quem.)
 
 Se [cluster_name](runtime-config-logging.md#GUC-CLUSTER-NAME) tiver sido configurado, o nome do cluster também será exibido na saída `ps`:
 
@@ -36,7 +36,7 @@ postgres   27093  0.0  0.0  30096  2752 ?        Ss   11:34   0:00 postgres: ser
 ...
 ```
 
-Se você desativou [update_process_title][(runtime-config-logging.md#GUC-UPDATE-PROCESS-TITLE)], o indicador de atividade não é atualizado; o título do processo é definido apenas uma vez quando um novo processo é iniciado. Em algumas plataformas, isso economiza uma quantidade mensurável de sobrecarga por comando; em outras, é insignificante.
+Se você desativou [update_process_title](runtime-config-logging.md#GUC-UPDATE-PROCESS-TITLE), o indicador de atividade não é atualizado; o título do processo é definido apenas uma vez quando um novo processo é iniciado. Em algumas plataformas, isso economiza uma quantidade mensurável de sobrecarga por comando; em outras, é insignificante.
 
 ### DICA
 

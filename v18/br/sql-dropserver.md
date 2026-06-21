@@ -18,7 +18,7 @@ DROP SERVER [ IF EXISTS ] name [, ...] [ CASCADE | RESTRICT ]
 
 *`name`*: O nome de um servidor existente.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem do servidor (como mapeamentos de usuários) e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem do servidor (como mapeamentos de usuários) e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a interrupção do servidor se quaisquer objetos dependere disso. Esse é o padrão.
 

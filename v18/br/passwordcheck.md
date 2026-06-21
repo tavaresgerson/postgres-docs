@@ -6,13 +6,13 @@ O módulo `passwordcheck` verifica as senhas dos usuários sempre que elas são 
 
 Para habilitar este módulo, adicione `'$libdir/passwordcheck'` a [shared_preload_libraries](runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES) em `postgresql.conf`, em seguida, reinicie o servidor.
 
-Você pode adaptar este módulo às suas necessidades, alterando o código-fonte. Por exemplo, você pode usar [CrackLib][(https://github.com/cracklib/cracklib)] para verificar senhas — isso só requer a descomentar duas linhas no `Makefile` e a reconstrução do módulo. (Não podemos incluir CrackLib por razões de licença). Sem CrackLib, o módulo impõe algumas regras simples para a força da senha, que você pode modificar ou estender conforme desejar.
+Você pode adaptar este módulo às suas necessidades, alterando o código-fonte. Por exemplo, você pode usar [CrackLib](https://github.com/cracklib/cracklib) para verificar senhas — isso só requer a descomentar duas linhas no `Makefile` e a reconstrução do módulo. (Não podemos incluir CrackLib por razões de licença). Sem CrackLib, o módulo impõe algumas regras simples para a força da senha, que você pode modificar ou estender conforme desejar.
 
 ### Atenção
 
 Para evitar que senhas não criptografadas sejam enviadas pela rede, escritas no log do servidor ou roubadas de outra forma por um administrador de banco de dados, o PostgreSQL permite que o usuário forneça senhas pré-criptografadas. Muitos programas cliente utilizam essa funcionalidade e criptografam a senha antes de enviá-la ao servidor.
 
-Isso limita a utilidade do módulo `passwordcheck`, porque, nesse caso, ele só pode tentar adivinhar a senha. Por essa razão, `passwordcheck` não é recomendado se seus requisitos de segurança forem altos. É mais seguro usar um método de autenticação externo, como GSSAPI (consulte [Capítulo 20][(client-authentication.md "Chapter 20. Client Authentication")]), do que confiar em senhas dentro do banco de dados.
+Isso limita a utilidade do módulo `passwordcheck`, porque, nesse caso, ele só pode tentar adivinhar a senha. Por essa razão, `passwordcheck` não é recomendado se seus requisitos de segurança forem altos. É mais seguro usar um método de autenticação externo, como GSSAPI (consulte [Capítulo 20](client-authentication.md)), do que confiar em senhas dentro do banco de dados.
 
 Como alternativa, você poderia modificar `passwordcheck` para rejeitar senhas pré-encriptadas, mas forçar os usuários a definir suas senhas em texto claro traz seus próprios riscos de segurança.
 

@@ -2,7 +2,7 @@
 
 Aqui está um exemplo muito simples de uma função de gatilho de evento escrita em C. (Exemplos de gatilhos escritos em linguagens procedimentais podem ser encontrados na documentação das linguagens procedimentais.)
 
-A função `noddl` gera uma exceção cada vez que é chamada. A definição do gatilho de evento associou a função ao evento `ddl_command_start`. O efeito é que todos os comandos DDL (com as exceções mencionadas no [Seção 38.1][(event-trigger-definition.md "38.1. Overview of Event Trigger Behavior")]) são impedidos de serem executados.
+A função `noddl` gera uma exceção cada vez que é chamada. A definição do gatilho de evento associou a função ao evento `ddl_command_start`. O efeito é que todos os comandos DDL (com as exceções mencionadas no [Seção 38.1](event-trigger-definition.md)) são impedidos de serem executados.
 
 Este é o código-fonte da função de gatilho:
 
@@ -35,7 +35,7 @@ noddl(PG_FUNCTION_ARGS)
 }
 ```
 
-Depois de compilar o código-fonte (consulte [Seção 36.10.5][(xfunc-c.md#DFUNC "36.10.5. Compiling and Linking Dynamically-Loaded Functions")]), declare a função e os gatilhos:
+Depois de compilar o código-fonte (consulte [Seção 36.10.5](xfunc-c.md#DFUNC)), declare a função e os gatilhos:
 
 ```
 CREATE FUNCTION noddl() RETURNS event_trigger

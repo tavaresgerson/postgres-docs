@@ -11,144 +11,147 @@ Por padrão, a visualização `pg_ident_file_mappings` pode ser lida apenas por 
 
 
 <table border="1" class="table" summary="pg_ident_file_mappings Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
      Column Type
     </p>
-<p>
+    <p>
      Description
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       map_number
      </code>
-<code class="type">
+     <code class="type">
       int4
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Number of this map, in priority order, if valid, otherwise
      <code class="literal">
       NULL
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       file_name
      </code>
-<code class="type">
+     <code class="type">
       text
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the file containing this map
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       line_number
      </code>
-<code class="type">
+     <code class="type">
       int4
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Line number of this map in
      <code class="literal">
       file_name
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       map_name
      </code>
-<code class="type">
+     <code class="type">
       text
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the map
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       sys_name
      </code>
-<code class="type">
+     <code class="type">
       text
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Detected user name of the client
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       pg_username
      </code>
-<code class="type">
+     <code class="type">
       text
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Requested PostgreSQL user name
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       error
      </code>
-<code class="type">
+     <code class="type">
       text
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If not
      <code class="literal">
       NULL
      </code>
      , an error message indicating why this line could not be processed
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Normalmente, uma linha que reflete uma entrada incorreta terá valores apenas nos campos `line_number` e `error`.
 

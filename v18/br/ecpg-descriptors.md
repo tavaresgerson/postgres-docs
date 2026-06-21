@@ -40,7 +40,7 @@ EXEC SQL PREPARE stmt1 FROM :sql_stmt;
 EXEC SQL DESCRIBE stmt1 INTO SQL DESCRIPTOR mydesc;
 ```
 
-Antes do PostgreSQL 9.0, a palavra-chave `SQL` era opcional, então o uso de `DESCRIPTOR` e `SQL DESCRIPTOR` produzia Áreas de Descritor SQL com nome. Agora, é obrigatório, omitindo a palavra-chave `SQL` produz Áreas de Descritor SQLDA, veja [Seção 34.7.2][(ecpg-descriptors.md#ECPG-SQLDA-DESCRIPTORS "34.7.2. SQLDA Descriptor Areas")].
+Antes do PostgreSQL 9.0, a palavra-chave `SQL` era opcional, então o uso de `DESCRIPTOR` e `SQL DESCRIPTOR` produzia Áreas de Descritor SQL com nome. Agora, é obrigatório, omitindo a palavra-chave `SQL` produz Áreas de Descritor SQLDA, veja [Seção 34.7.2](ecpg-descriptors.md#ECPG-SQLDA-DESCRIPTORS).
 
 Nas declarações `DESCRIBE` e `FETCH`, as palavras-chave `INTO` e `USING` podem ser usadas de maneira semelhante: elas produzem o conjunto de resultados e os metadados em uma Área de Descrição.
 
@@ -483,7 +483,7 @@ Feche o cursor após processar todos os registros e desconecte-se do banco de da
     EXEC SQL DISCONNECT ALL;
 ```
 
-Todo o programa é mostrado em [Exemplo 34.1][(ecpg-descriptors.md#ECPG-SQLDA-EXAMPLE-EXAMPLE "Example 34.1. Example SQLDA Program")].
+Todo o programa é mostrado em [Exemplo 34.1](ecpg-descriptors.md#ECPG-SQLDA-EXAMPLE-EXAMPLE).
 
 **Exemplo 34.1. Programa SQLDA**
 

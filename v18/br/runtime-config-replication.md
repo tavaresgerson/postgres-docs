@@ -5,9 +5,9 @@
 * [19.6.3. Servidores de reserva](runtime-config-replication.md#RUNTIME-CONFIG-REPLICATION-STANDBY)
 * [19.6.4. Subscritores](runtime-config-replication.md#RUNTIME-CONFIG-REPLICATION-SUBSCRIBER)
 
-Esses ajustes controlam o comportamento do recurso de *replicação em streaming* integrado (consulte [Seção 26.2.5][(warm-standby.md#STREAMING-REPLICATION "26.2.5. Streaming Replication")]) e do recurso de *replicação lógica* integrado (consulte [Capítulo 29][(logical-replication.md "Chapter 29. Logical Replication")]).
+Esses ajustes controlam o comportamento do recurso de *replicação em streaming* integrado (consulte [Seção 26.2.5](warm-standby.md#STREAMING-REPLICATION)) e do recurso de *replicação lógica* integrado (consulte [Capítulo 29](logical-replication.md)).
 
-Para a *replicação em fluxo*, os servidores serão servidores primários ou de reserva. Os primários podem enviar dados, enquanto os de reserva são sempre receptores de dados replicados. Quando a replicação em cascata (ver [Seção 26.2.7] [(warm-standby.md#CASCADING-REPLICATION "26.2.7. Cascading Replication")]) é usada, os servidores de reserva também podem ser emissores, bem como receptores. Os parâmetros são principalmente para servidores de envio e de reserva, embora alguns parâmetros tenham significado apenas no servidor primário. As configurações podem variar sem problemas em todo o clúster se isso for necessário.
+Para a *replicação em fluxo*, os servidores serão servidores primários ou de reserva. Os primários podem enviar dados, enquanto os de reserva são sempre receptores de dados replicados. Quando a replicação em cascata (ver [Seção 26.2.7](warm-standby.md#CASCADING-REPLICATION)) é usada, os servidores de reserva também podem ser emissores, bem como receptores. Os parâmetros são principalmente para servidores de envio e de reserva, embora alguns parâmetros tenham significado apenas no servidor primário. As configurações podem variar sem problemas em todo o clúster se isso for necessário.
 
 Para a *replicação lógica*, os *publicadores* (servidores que fazem `CREATE PUBLICATION`)(sql-createpublication.md "CREATE PUBLICATION") replicam dados para os *subscritores* (servidores que fazem `CREATE SUBSCRIPTION`)(sql-createsubscription.md "CREATE SUBSCRIPTION"). Os servidores também podem ser publicadores e assinantes ao mesmo tempo. Observe que as seções seguintes se referem aos publicadores como "emitentes". Para mais detalhes sobre as configurações de configuração de replicação lógica, consulte [Seção 29.12](logical-replication-config.md "29.12. Configuration Settings").
 
@@ -41,7 +41,7 @@ Com um grupo distribuído em várias localidades geográficas, usar diferentes v
 
 ### 19.6.2. Servidor primário [#](#RUNTIME-CONFIG-REPLICATION-PRIMARY)
 
-Esses parâmetros podem ser definidos no servidor principal que deve enviar dados de replicação para um ou mais servidores de espera. Observe que, além desses parâmetros, [wal_level][(runtime-config-wal.md#GUC-WAL-LEVEL)] deve ser definido apropriadamente no servidor principal, e opcionalmente, o arquivamento WAL também pode ser habilitado (consulte [Seção 19.5.3][(runtime-config-wal.md#RUNTIME-CONFIG-WAL-ARCHIVING "19.5.3. Archiving")]). Os valores desses parâmetros nos servidores de espera são irrelevantes, embora você possa desejar defini-los lá, em preparação para a possibilidade de um servidor de espera se tornar o principal.
+Esses parâmetros podem ser definidos no servidor principal que deve enviar dados de replicação para um ou mais servidores de espera. Observe que, além desses parâmetros, [wal_level](runtime-config-wal.md#GUC-WAL-LEVEL) deve ser definido apropriadamente no servidor principal, e opcionalmente, o arquivamento WAL também pode ser habilitado (consulte [Seção 19.5.3](runtime-config-wal.md#RUNTIME-CONFIG-WAL-ARCHIVING)). Os valores desses parâmetros nos servidores de espera são irrelevantes, embora você possa desejar defini-los lá, em preparação para a possibilidade de um servidor de espera se tornar o principal.
 
 `synchronous_standby_names` (`string`) [#](#GUC-SYNCHRONOUS-STANDBY-NAMES): Especifica uma lista de servidores de espera que podem suportar *replicação síncrona*, conforme descrito em [Seção 26.2.8](warm-standby.md#SYNCHRONOUS-REPLICATION "26.2.8. Synchronous Replication"). Haverá um ou mais servidores síncronos ativos; as transações que aguardam confirmação serão permitidas a prosseguir após esses servidores de espera confirmarem a recepção de seus dados. Os servidores síncronos serão aqueles cujos nomes aparecem nesta lista e que estão atualmente conectados e transmitindo dados em tempo real (como mostrado por um estado de `streaming` na visão do [`pg_stat_replication`](monitoring-stats.md#MONITORING-PG-STAT-REPLICATION-VIEW "27.2.4. pg_stat_replication")). Especificar mais de um servidor síncrono pode permitir uma disponibilidade muito alta e proteção contra perda de dados.
 
@@ -49,8 +49,9 @@ O nome de um servidor de espera para este propósito é o ajuste `application_na
 
 Este parâmetro especifica uma lista de servidores de espera usando uma das seguintes sintaxes:
 
-``` [FIRST] num_sync ( standby_name [, ...] ) ANY num_sync ( standby_name [, ...] ) standby_name [, ...]
-    ```
+```
+[FIRST] num_sync ( standby_name [, ...] ) ANY num_sync ( standby_name [, ...] ) standby_name [, ...]
+```
 
 onde *`num_sync`* é o número de standby síncronos para os quais as transações precisam esperar respostas, e *`standby_name`* é o nome de um servidor de standby. *`num_sync`* deve ser um valor inteiro maior que zero. `FIRST` e `ANY` especificam o método para escolher standby síncronos dos servidores listados.
 
@@ -80,17 +81,17 @@ Os standby correspondentes aos slots de replicação física em `synchronized_st
 
 ### 19.6.3. Servidores em espera [#](#RUNTIME-CONFIG-REPLICATION-STANDBY)
 
-Esses ajustes controlam o comportamento de um [servidor em espera][(warm-standby.md#STANDBY-SERVER-OPERATION "26.2.2. Standby Server Operation")] que deve receber dados de replicação. Seus valores no servidor principal são irrelevantes.
+Esses ajustes controlam o comportamento de um [servidor em espera](warm-standby.md#STANDBY-SERVER-OPERATION) que deve receber dados de replicação. Seus valores no servidor principal são irrelevantes.
 
 `primary_conninfo` (`string`) [#](#GUC-PRIMARY-CONNINFO): Especifica uma cadeia de conexão a ser usada para que o servidor de espera se conecte a um servidor de envio. Essa cadeia de conexão está no formato descrito em [Seção 32.1.1] (libpq-connect.md#LIBPQ-CONNSTRING "32.1.1. Connection Strings"). Se qualquer opção não for especificada nessa cadeia de conexão, então a variável de ambiente correspondente (ver [Seção 32.15] (libpq-envars.md "32.15. Environment Variables")) é verificada. Se a variável de ambiente não for definida, então os valores padrão são usados.
 
-A cadeia de conexão deve especificar o nome (ou endereço) do servidor de envio, bem como o número de porta, se não for o mesmo que o padrão do servidor de reserva. Além disso, especifique um nome de usuário correspondente a um papel com privilégios adequados no servidor de envio (consulte [Seção 26.2.5.1] [(warm-standby.md#STREAMING-REPLICATION-AUTHENTICATION "26.2.5.1. Authentication")]). Também é necessário fornecer uma senha, se o remetente exigir autenticação por senha. Ela pode ser fornecida na cadeia de `primary_conninfo`, ou em um arquivo separado de `~/.pgpass` no servidor de reserva (use `replication` como o nome do banco de dados).
+A cadeia de conexão deve especificar o nome (ou endereço) do servidor de envio, bem como o número de porta, se não for o mesmo que o padrão do servidor de reserva. Além disso, especifique um nome de usuário correspondente a um papel com privilégios adequados no servidor de envio (consulte [Seção 26.2.5.1](warm-standby.md#STREAMING-REPLICATION-AUTHENTICATION)). Também é necessário fornecer uma senha, se o remetente exigir autenticação por senha. Ela pode ser fornecida na cadeia de `primary_conninfo`, ou em um arquivo separado de `~/.pgpass` no servidor de reserva (use `replication` como o nome do banco de dados).
 
-Para a sincronização de slots de replicação (consulte [Seção 47.2.3][(logicaldecoding-explanation.md#LOGICALDECODING-REPLICATION-SLOTS-SYNCHRONIZATION "47.2.3. Replication Slot Synchronization")]), também é necessário especificar um `dbname` válido na string `primary_conninfo`. Isso será usado apenas para sincronização de slots. É ignorado para streaming.
+Para a sincronização de slots de replicação (consulte [Seção 47.2.3](logicaldecoding-explanation.md#LOGICALDECODING-REPLICATION-SLOTS-SYNCHRONIZATION)), também é necessário especificar um `dbname` válido na string `primary_conninfo`. Isso será usado apenas para sincronização de slots. É ignorado para streaming.
 
 Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor. Se este parâmetro for alterado enquanto o processo de recepção WAL estiver em execução, esse processo é sinalizado para ser desligado e espera-se que seja reiniciado com a nova configuração (exceto se `primary_conninfo` for uma string vazia). Este ajuste não tem efeito se o servidor não estiver no modo standby.
 
-`primary_slot_name` (`string`) [#](#GUC-PRIMARY-SLOT-NAME): Especifica opcionalmente um intervalo de replicação existente a ser utilizado ao se conectar ao servidor de envio por replicação em streaming para controlar a remoção de recursos no nó upstream (ver [Seção 26.2.6][(warm-standby.md#STREAMING-REPLICATION-SLOTS "26.2.6. Replication Slots")]). Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor. Se este parâmetro for alterado enquanto o processo do receptor WAL estiver em execução, esse processo é sinalizado para ser desligado e espera-se que seja reiniciado com a nova configuração. Este ajuste não tem efeito se `primary_conninfo` não for definido ou se o servidor não estiver no modo standby.
+`primary_slot_name` (`string`) [#](#GUC-PRIMARY-SLOT-NAME): Especifica opcionalmente um intervalo de replicação existente a ser utilizado ao se conectar ao servidor de envio por replicação em streaming para controlar a remoção de recursos no nó upstream (ver [Seção 26.2.6](warm-standby.md#STREAMING-REPLICATION-SLOTS)). Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor. Se este parâmetro for alterado enquanto o processo do receptor WAL estiver em execução, esse processo é sinalizado para ser desligado e espera-se que seja reiniciado com a nova configuração. Este ajuste não tem efeito se `primary_conninfo` não for definido ou se o servidor não estiver no modo standby.
 
 `hot_standby` (`boolean`) [#](#GUC-HOT-STANDBY): Especifica se é possível conectar e executar consultas durante a recuperação, conforme descrito em [Seção 26.4](hot-standby.md "26.4. Hot Standby"). O valor padrão é `on`. Este parâmetro só pode ser definido no início do servidor. Ele só tem efeito durante a recuperação de arquivo ou no modo standby.
 
@@ -144,7 +145,7 @@ Ele é desativado por padrão. Este parâmetro só pode ser definido no arquivo 
 
 ### 19.6.4. Subscritores [#](#RUNTIME-CONFIG-REPLICATION-SUBSCRIBER)
 
-Esses ajustes controlam o comportamento de um assinante de replicação lógica. Seus valores no publicador são irrelevantes. Consulte [Seção 29.12][(logical-replication-config.md "29.12. Configuration Settings")] para mais detalhes.
+Esses ajustes controlam o comportamento de um assinante de replicação lógica. Seus valores no publicador são irrelevantes. Consulte [Seção 29.12](logical-replication-config.md) para mais detalhes.
 
 `max_active_replication_origins` (`integer`) [#](#GUC-MAX-ACTIVE-REPLICATION-ORIGINS): Especifica quantas origens de replicação (ver [Capítulo 48](replication-origins.md "Chapter 48. Replication Progress Tracking")) podem ser rastreadas simultaneamente, limitando efetivamente quantas assinaturas de replicação lógicas podem ser criadas no servidor. Definindo-o para um valor menor que o número atual de origens de replicação rastreadas (refletido em [pg_replication_origin_status](view-pg-replication-origin-status.md "53.19. pg_replication_origin_status")) impedirá que o servidor seja iniciado. Ele tem como padrão 10. Este parâmetro só pode ser definido no início do servidor. `max_active_replication_origins` deve ser definido como pelo menos o número de assinaturas que serão adicionadas ao assinante, mais algumas reservas para a sincronização de tabelas.
 

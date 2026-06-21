@@ -7,188 +7,241 @@ O catálogo `pg_amop` armazena informações sobre operadores associados a famí
 
 
 <table border="1" class="table" summary="pg_amop Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">Tipo de coluna</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
+     Tipo de coluna
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       oid
      </code>
-<code class="type">
+     <code class="type">
       oid
      </code>
-</p>
-<p>Identificador da linha</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Identificador da linha
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       amopfamily
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-opfamily.md" title="52.35. pg_opfamily">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-opfamily.md" title="52.35. pg_opfamily">
+      <code class="structname">
        pg_opfamily
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
-     </code>)</p>
-<p>A família do operador esta entrada é para</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     A família do operador esta entrada é para
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       amoplefttype
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
+      <code class="structname">
        pg_type
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
-     </code>)</p>
-<p>Tipo de dados de entrada da mão esquerda do operador</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     Tipo de dados de entrada da mão esquerda do operador
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       amoprighttype
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
+      <code class="structname">
        pg_type
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
-     </code>)</p>
-<p>Tipo de dados de entrada da mão direita do operador</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     Tipo de dados de entrada da mão direita do operador
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       amopstrategy
      </code>
-<code class="type">
+     <code class="type">
       int2
      </code>
-</p>
-<p>Número da estratégia do operador</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Número da estratégia do operador
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       amoppurpose
      </code>
-<code class="type">
+     <code class="type">
       char
      </code>
-</p>
-<p>Propósito do operador, ou seja,<code class="literal">
+    </p>
+    <p>
+     Propósito do operador, ou seja,
+     <code class="literal">
       s
-     </code>para pesquisa ou<code class="literal">
+     </code>
+     para pesquisa ou
+     <code class="literal">
       o
-     </code>para encomendar</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     para encomendar
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       amopopr
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-operator.md" title="52.34. pg_operator">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-operator.md" title="52.34. pg_operator">
+      <code class="structname">
        pg_operator
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
-     </code>)</p>
-<p>OID do operador</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     OID do operador
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       amopmethod
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-am.md" title="52.3. pg_am">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-am.md" title="52.3. pg_am">
+      <code class="structname">
        pg_am
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
-     </code>)</p>
-<p>O método de acesso ao índice é para a família de operadores</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     O método de acesso ao índice é para a família de operadores
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       amopsortfamily
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-opfamily.md" title="52.35. pg_opfamily">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-opfamily.md" title="52.35. pg_opfamily">
+      <code class="structname">
        pg_opfamily
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
-     </code>)</p>
-<p>A família de operadores de árvore B, conforme esta entrada é classificada, se for um operador de ordenação; zero, se for um operador de busca</p>
-</td>
-</tr>
-</tbody>
+     </code>
+     )
+    </p>
+    <p>
+     A família de operadores de árvore B, conforme esta entrada é classificada, se for um operador de ordenação; zero, se for um operador de busca
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Uma entrada de operador de pesquisa indica que um índice dessa família de operadores pode ser pesquisado para encontrar todas as linhas que satisfazem `WHERE` * `indexed_column` * `operator` * `constant`. Obviamente, tal operador deve retornar `boolean`, e seu tipo de entrada à esquerda deve corresponder ao tipo de dados da coluna do índice.
 

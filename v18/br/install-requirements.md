@@ -1,12 +1,12 @@
 ## 17.1. Requisitos [#](#INSTALL-REQUIREMENTS)
 
-Em geral, uma plataforma moderna compatível com Unix deve ser capaz de executar o PostgreSQL. As plataformas que receberam testes específicos no momento do lançamento estão descritas em [Seção 17.6][(supported-platforms.md "17.6. Supported Platforms")] abaixo.
+Em geral, uma plataforma moderna compatível com Unix deve ser capaz de executar o PostgreSQL. As plataformas que receberam testes específicos no momento do lançamento estão descritas em [Seção 17.6](supported-platforms.md) abaixo.
 
 Os seguintes pacotes de software são necessários para a construção do PostgreSQL:
 
 * É necessário o uso da versão 3.81 ou superior do GNU make; outros programas do make ou versões mais antigas do GNU make *não* funcionarão. (O GNU make é, às vezes, instalado sob o nome `gmake`.). Para testar o GNU make, digite:
 
-* Alternativamente, o PostgreSQL pode ser construído usando [Meson][(https://mesonbuild.com/)]. Esta é a única opção para construir o PostgreSQL no Windows usando o Visual Studio. Para outras plataformas, o uso do Meson é atualmente experimental. Se você optar por usar o Meson, então não precisa do GNU make, mas os outros requisitos abaixo ainda se aplicam.
+* Alternativamente, o PostgreSQL pode ser construído usando [Meson](https://mesonbuild.com/). Esta é a única opção para construir o PostgreSQL no Windows usando o Visual Studio. Para outras plataformas, o uso do Meson é atualmente experimental. Se você optar por usar o Meson, então não precisa do GNU make, mas os outros requisitos abaixo ainda se aplicam.
 
 A versão mínima necessária do Meson é 0.54.
 * Você precisa de um compilador ISO/ANSI C (pelo menos compatível com C99). Versões recentes do GCC são recomendadas, mas o PostgreSQL é conhecido por ser construído usando uma ampla variedade de compiladores de diferentes fornecedores.
@@ -15,15 +15,15 @@ A versão mínima necessária do Meson é 0.54.
 * Perl 5.14 ou posterior é necessário durante o processo de construção e para executar algumas suítes de teste. (Essa exigência é separada das exigências para a construção do PL/Perl; veja abaixo.)
 * A biblioteca GNU Readline é usada por padrão. Ela permite que o psql (o interpretador de SQL da linha de comando do PostgreSQL) lembre cada comando que você digita e permite que você use as teclas seta para lembrar e editar comandos anteriores. Isso é muito útil e é fortemente recomendado. Se você não quiser usá-lo, então você deve especificar a opção `--without-readline` para `configure`. Como alternativa, você pode frequentemente usar a biblioteca `libedit`, originalmente desenvolvida no NetBSD, licenciada sob BSD. A biblioteca `libedit` é compatível com GNU Readline e é usada se `libreadline` não for encontrada, ou se `--with-libedit-preferred` for usada como uma opção para `configure`. Se você está usando uma distribuição Linux baseada em pacotes, esteja ciente de que você precisa tanto dos pacotes `readline` quanto `readline-devel`, se esses forem separados em sua distribuição.
 * A biblioteca de compressão zlib é usada por padrão. Se você não quiser usá-la, então você deve especificar a opção `--without-zlib` para `configure`. Usar essa opção desativa o suporte para arquivos comprimidos em pg_dump e pg_restore.
-* A biblioteca ICU é usada por padrão. Se você não quiser usá-la, então você deve especificar a opção `--without-icu` para `configure`. Usar essa opção desativa o suporte para recursos de ordenação ICU (veja [Seção 23.2][(collation.md "23.2. Collation Support")]).
+* A biblioteca ICU é usada por padrão. Se você não quiser usá-la, então você deve especificar a opção `--without-icu` para `configure`. Usar essa opção desativa o suporte para recursos de ordenação ICU (veja [Seção 23.2](collation.md)).
 
 O suporte do ICU requer que o pacote ICU4C seja instalado. A versão mínima necessária do ICU4C é atualmente 4.2.
 
 Por padrão, o pkg-config será usado para encontrar as opções de compilação necessárias. Isso é suportado para a versão ICU4C 4.6 e posterior. Para versões mais antigas, ou se o pkg-config não estiver disponível, as variáveis `ICU_CFLAGS` e `ICU_LIBS` podem ser especificadas para `configure`, como neste exemplo:
 
-  ```
-  ./configure ... ICU_CFLAGS='-I/some/where/include' ICU_LIBS='-L/some/where/lib -licui18n -licuuc -licudata'
-  ```
+```
+./configure ... ICU_CFLAGS='-I/some/where/include' ICU_LIBS='-L/some/where/lib -licui18n -licuuc -licudata'
+```
 
 (Se o ICU4C estiver no caminho de busca padrão do compilador, ainda é necessário especificar strings não vazias para evitar o uso do pkg-config, por exemplo, `ICU_CFLAGS=' '`.)
 
@@ -40,9 +40,9 @@ Como o PL/Python será uma biblioteca compartilhada, a biblioteca `libpython` ta
 
 Além disso, o LibreSSL é suportado usando a camada de compatibilidade OpenSSL. A versão mínima necessária é 3.4 (a partir da versão 7.0 do OpenBSD).
 * Você precisa do MIT Kerberos (para GSSAPI), OpenLDAP e/ou PAM, se quiser suportar autenticação usando esses serviços.
-* Você precisa do Curl para construir um módulo opcional que implemente o fluxo de [Autenticação de Dispositivo OAuth][(libpq-oauth.md "32.20. OAuth Support")] para aplicativos de cliente.
-* Você precisa do LZ4, se quiser suportar compressão de dados com esse método; veja [compressão_default_toast][(runtime-config-client.md#GUC-DEFAULT-TOAST-COMPRESSION)] e [compressão_wal][(runtime-config-wal.md#GUC-WAL-COMPRESSION)].
-* Você precisa do Zstandard, se quiser suportar compressão de dados com esse método; veja [compressão_wal][(runtime-config-wal.md#GUC-WAL-COMPRESSION)]. A versão mínima necessária é 1.4.0.
-* Para construir a documentação do PostgreSQL, há um conjunto separado de requisitos; veja [Seção J.2][(docguide-toolsets.md "J.2. Tool Sets")].
+* Você precisa do Curl para construir um módulo opcional que implemente o fluxo de [Autenticação de Dispositivo OAuth](libpq-oauth.md) para aplicativos de cliente.
+* Você precisa do LZ4, se quiser suportar compressão de dados com esse método; veja [compressão_default_toast](runtime-config-client.md#GUC-DEFAULT-TOAST-COMPRESSION) e [compressão_wal](runtime-config-wal.md#GUC-WAL-COMPRESSION).
+* Você precisa do Zstandard, se quiser suportar compressão de dados com esse método; veja [compressão_wal](runtime-config-wal.md#GUC-WAL-COMPRESSION). A versão mínima necessária é 1.4.0.
+* Para construir a documentação do PostgreSQL, há um conjunto separado de requisitos; veja [Seção J.2](docguide-toolsets.md).
 
 Se você precisa obter um pacote GNU, pode encontrá-lo em seu site local de espelho GNU (consulte <https://www.gnu.org/prep/ftp> para uma lista) ou em <ftp://ftp.gnu.org/gnu/>.

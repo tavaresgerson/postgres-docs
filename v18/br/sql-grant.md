@@ -132,7 +132,7 @@ Cada uma das opções descritas abaixo pode ser definida como `TRUE` ou `FALSE`.
 
 A opção `ADMIN` permite que o membro, por sua vez, conceda a filiação no papel a outros e também revogue a filiação no papel. Sem a opção de administrador, os usuários comuns não podem fazer isso. Um papel não é considerado para ter `WITH ADMIN OPTION` em si. Superusuários do banco de dados podem conceder ou revogar a filiação em qualquer papel para qualquer pessoa. Esta opção tem como padrão `FALSE`.
 
-A opção `INHERIT` controla o status de herança da nova adesão; consulte [Seção 21.3][(role-membership.md "21.3. Role Membership")] para detalhes sobre herança. Se estiver definida como `TRUE`, isso faz com que o novo membro herde do papel concedido. Se definida como `FALSE`, o novo membro não herda. Se não especificado ao criar uma nova adesão de papel, isso é padrão para o atributo de herança do novo membro.
+A opção `INHERIT` controla o status de herança da nova adesão; consulte [Seção 21.3](role-membership.md) para detalhes sobre herança. Se estiver definida como `TRUE`, isso faz com que o novo membro herde do papel concedido. Se definida como `FALSE`, o novo membro não herda. Se não especificado ao criar uma nova adesão de papel, isso é padrão para o atributo de herança do novo membro.
 
 A opção `SET`, se configurada como `TRUE`, permite que o membro mude para o papel concedido usando o comando (sql-set-role.md "SET ROLE"). Se um papel for um membro indireto de outro papel, ele pode usar `SET ROLE` para mudar para esse papel apenas se houver uma cadeia de concessões, cada uma das quais tem `SET TRUE`. Esta opção tem como padrão `TRUE`.
 
@@ -162,7 +162,7 @@ Se o papel que executa `GRANT` possuir os privilégios necessários indiretament
 
 A concessão de permissão em uma tabela não estende automaticamente as permissões para quaisquer sequências utilizadas pela tabela, incluindo sequências vinculadas às colunas `SERIAL`. As permissões em sequências devem ser definidas separadamente.
 
-Consulte a [Seção 5.8][(ddl-priv.md "5.8. Privileges")] para obter mais informações sobre os tipos específicos de privilégio, bem como sobre como inspecionar os privilégios dos objetos.
+Consulte a [Seção 5.8](ddl-priv.md) para obter mais informações sobre os tipos específicos de privilégio, bem como sobre como inspecionar os privilégios dos objetos.
 
 ## Exemplos
 

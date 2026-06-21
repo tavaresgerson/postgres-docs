@@ -21,7 +21,7 @@ Será iniciado um trabalhador de replicação lógica para replicar dados para a
 
 Para criar uma assinatura, você deve ter os privilégios do papel `pg_create_subscription`, bem como os privilégios `CREATE` no banco de dados atual.
 
-Informações adicionais sobre assinaturas e replicação lógica como um todo estão disponíveis em [Seção 29.2][(logical-replication-subscription.md "29.2. Subscription")] e [Capítulo 29][(logical-replication.md "Chapter 29. Logical Replication")].
+Informações adicionais sobre assinaturas e replicação lógica como um todo estão disponíveis em [Seção 29.2](logical-replication-subscription.md) e [Capítulo 29](logical-replication.md).
 
 ## Parâmetros
 
@@ -37,17 +37,17 @@ Os seguintes parâmetros controlam o que acontece durante a criação da assinat
 
 `connect` (`boolean`) [#](#SQL-CREATESUBSCRIPTION-PARAMS-WITH-CONNECT) : Especifica se o comando `CREATE SUBSCRIPTION` deve se conectar ao editora. O padrão é `true`. Definir isso como `false` fará com que os valores de `create_slot`, `enabled` e `copy_data` sejam `false`. (Você não pode combinar a definição de `connect` como `false` com a definição de `create_slot`, `enabled` ou `copy_data` como `true`.).
 
-Como não há conexão quando esta opção é `false`, nenhuma tabela é assinada. Para iniciar a replicação, você deve criar manualmente o slot de replicação, habilitar o failover, se necessário, habilitar a assinatura e atualizar a assinatura. Consulte [Seção 29.2.3][(logical-replication-subscription.md#LOGICAL-REPLICATION-SUBSCRIPTION-EXAMPLES-DEFERRED-SLOT "29.2.3. Examples: Deferred Replication Slot Creation")] para exemplos.
+Como não há conexão quando esta opção é `false`, nenhuma tabela é assinada. Para iniciar a replicação, você deve criar manualmente o slot de replicação, habilitar o failover, se necessário, habilitar a assinatura e atualizar a assinatura. Consulte [Seção 29.2.3](logical-replication-subscription.md#LOGICAL-REPLICATION-SUBSCRIPTION-EXAMPLES-DEFERRED-SLOT) para exemplos.
 
 `create_slot` (`boolean`) [#](#SQL-CREATESUBSCRIPTION-PARAMS-WITH-CREATE-SLOT) : Especifica se o comando deve criar o slot de replicação no publicador. O padrão é `true`.
 
-Se configurado como `false`, você é responsável por criar a posição do editor de alguma outra forma. Consulte [Seção 29.2.3][(logical-replication-subscription.md#LOGICAL-REPLICATION-SUBSCRIPTION-EXAMPLES-DEFERRED-SLOT "29.2.3. Examples: Deferred Replication Slot Creation")] para exemplos.
+Se configurado como `false`, você é responsável por criar a posição do editor de alguma outra forma. Consulte [Seção 29.2.3](logical-replication-subscription.md#LOGICAL-REPLICATION-SUBSCRIPTION-EXAMPLES-DEFERRED-SLOT) para exemplos.
 
 `enabled` (`boolean`) [#](#SQL-CREATESUBSCRIPTION-PARAMS-WITH-ENABLED) : Especifica se a assinatura deve ser replicada ativamente ou se deve apenas ser configurada, mas ainda não iniciada. O padrão é `true`.
 
 `slot_name` (`string`) [#](#SQL-CREATESUBSCRIPTION-PARAMS-WITH-SLOT-NAME) : Nome do slot de replicação do editor a ser utilizado. O padrão é utilizar o nome da assinatura para o nome do slot.
 
-Definir `slot_name` para `NONE` significa que não haverá um slot de replicação associado à assinatura. Essas assinaturas também devem ter os valores de `enabled` e `create_slot` definidos para `false`. Use isso quando você irá criar o slot de replicação manualmente posteriormente. Consulte [Seção 29.2.3][(logical-replication-subscription.md#LOGICAL-REPLICATION-SUBSCRIPTION-EXAMPLES-DEFERRED-SLOT "29.2.3. Examples: Deferred Replication Slot Creation")] para exemplos.
+Definir `slot_name` para `NONE` significa que não haverá um slot de replicação associado à assinatura. Essas assinaturas também devem ter os valores de `enabled` e `create_slot` definidos para `false`. Use isso quando você irá criar o slot de replicação manualmente posteriormente. Consulte [Seção 29.2.3](logical-replication-subscription.md#LOGICAL-REPLICATION-SUBSCRIPTION-EXAMPLES-DEFERRED-SLOT) para exemplos.
 
 Ao definir `slot_name` para um nome válido e `create_slot` para `false`, o valor da propriedade `failover` do slot nomeado pode diferir do parâmetro correspondente `failover` especificado na assinatura. Sempre certifique-se de que a propriedade do slot `failover` corresponda ao parâmetro correspondente da assinatura e vice-versa. Caso contrário, o slot no publicador pode se comportar de maneira diferente do que essas opções de assinatura dizem: por exemplo, o slot no publicador pode ser sincronizado com os stand-by mesmo quando a opção `failover` da assinatura está desativada ou pode ser desativado para sincronização mesmo quando a opção `failover` da assinatura está habilitada.
 
@@ -61,9 +61,9 @@ Se o editor for uma versão do PostgreSQL anterior à 16, então qualquer sincro
 
 `copy_data` (`boolean`) [#](#SQL-CREATESUBSCRIPTION-PARAMS-WITH-COPY-DATA) : Especifica se os dados pré-existentes nas publicações que estão sendo assinadas devem ser copiados quando a replicação começar. O padrão é `true`.
 
-Se as publicações contiverem cláusulas `WHERE`, isso afetará os dados que serão copiados. Consulte as [Notas][(sql-createsubscription.md#SQL-CREATESUBSCRIPTION-NOTES "Notes")] para obter detalhes.
+Se as publicações contiverem cláusulas `WHERE`, isso afetará os dados que serão copiados. Consulte as [Notas](sql-createsubscription.md#SQL-CREATESUBSCRIPTION-NOTES) para obter detalhes.
 
-Veja [Notas][(sql-createsubscription.md#SQL-CREATESUBSCRIPTION-NOTES "Notes")] para obter detalhes sobre como o `copy_data = true` pode interagir com o parâmetro `origin`.
+Veja [Notas](sql-createsubscription.md#SQL-CREATESUBSCRIPTION-NOTES) para obter detalhes sobre como o `copy_data = true` pode interagir com o parâmetro `origin`.
 
 `streaming` (`enum`) [#](#SQL-CREATESUBSCRIPTION-PARAMS-WITH-STREAMING) : Especifica se deve habilitar o streaming de transações em andamento para esta assinatura. O valor padrão é `parallel`, o que significa que as alterações recebidas são aplicadas diretamente por um dos trabalhadores de aplicação paralela, se disponível. Se nenhum trabalhador de aplicação paralela estiver disponível para lidar com transações de streaming, as alterações são escritas em arquivos temporários e aplicadas após a transação ser comprometida. Observe que, se ocorrer um erro em um trabalhador de aplicação paralela, o LSN de término da transação remota pode não ser relatado no log do servidor.
 
@@ -95,7 +95,7 @@ A implementação do commit em duas fases exige que a replicação tenha conclu�
 
 `origin` (`string`) [#](#SQL-CREATESUBSCRIPTION-PARAMS-WITH-ORIGIN) :   Especifica se a assinatura solicitará que o editor envie apenas alterações que não tenham origem ou envie alterações independentemente da origem. Definir `origin` para `none` significa que a assinatura solicitará que o editor envie apenas alterações que não tenham origem. Definir `origin` para `any` significa que o editor envia alterações independentemente de sua origem. O padrão é `any`.
 
-Veja [Notas][(sql-createsubscription.md#SQL-CREATESUBSCRIPTION-NOTES "Notes")] para obter detalhes sobre como o `copy_data = true` pode interagir com o parâmetro `origin`.
+Veja [Notas](sql-createsubscription.md#SQL-CREATESUBSCRIPTION-NOTES) para obter detalhes sobre como o `copy_data = true` pode interagir com o parâmetro `origin`.
 
 `failover` (`boolean`) [#](#SQL-CREATESUBSCRIPTION-PARAMS-WITH-FAILOVER) : Especifica se os slots de replicação associados à assinatura estão habilitados para serem sincronizados com os backups, para que a replicação lógica possa ser retomada a partir do novo primário após o failover. O padrão é `false`.
 
@@ -103,11 +103,11 @@ Ao especificar um parâmetro do tipo `boolean`, a parte *`value`* do `=` pode se
 
 ## Notas
 
-Consulte a [Seção 29.11][(logical-replication-security.md "29.11. Security")] para obter detalhes sobre como configurar o controle de acesso entre a assinatura e a instância de publicação.
+Consulte a [Seção 29.11](logical-replication-security.md) para obter detalhes sobre como configurar o controle de acesso entre a assinatura e a instância de publicação.
 
 Ao criar um intervalo de replicação (o comportamento padrão), `CREATE SUBSCRIPTION` não pode ser executado dentro de um bloco de transação.
 
-Criar uma assinatura que se conecte ao mesmo clúster de banco de dados (por exemplo, para replicar entre bancos de dados no mesmo clúster ou para replicar dentro do mesmo banco de dados) só terá sucesso se o intervalo de replicação não for criado como parte do mesmo comando. Caso contrário, a chamada `CREATE SUBSCRIPTION` ficará pendente. Para fazer isso funcionar, crie o intervalo de replicação separadamente (usando a função `pg_create_logical_replication_slot` com o nome do plugin `pgoutput`) e crie a assinatura usando o parâmetro `create_slot = false`. Veja [Seção 29.2.3][(logical-replication-subscription.md#LOGICAL-REPLICATION-SUBSCRIPTION-EXAMPLES-DEFERRED-SLOT "29.2.3. Examples: Deferred Replication Slot Creation")] para exemplos. Esta é uma restrição de implementação que pode ser levantada em uma versão futura.
+Criar uma assinatura que se conecte ao mesmo clúster de banco de dados (por exemplo, para replicar entre bancos de dados no mesmo clúster ou para replicar dentro do mesmo banco de dados) só terá sucesso se o intervalo de replicação não for criado como parte do mesmo comando. Caso contrário, a chamada `CREATE SUBSCRIPTION` ficará pendente. Para fazer isso funcionar, crie o intervalo de replicação separadamente (usando a função `pg_create_logical_replication_slot` com o nome do plugin `pgoutput`) e crie a assinatura usando o parâmetro `create_slot = false`. Veja [Seção 29.2.3](logical-replication-subscription.md#LOGICAL-REPLICATION-SUBSCRIPTION-EXAMPLES-DEFERRED-SLOT) para exemplos. Esta é uma restrição de implementação que pode ser levantada em uma versão futura.
 
 Se houver qualquer tabela na publicação com uma cláusula `WHERE`, as linhas para as quais o *`expression`* seja avaliado como `false` ou `NULL` não serão publicadas. Se a assinatura tiver várias publicações nas quais a mesma tabela foi publicada com diferentes cláusulas `WHERE`, uma linha será publicada se alguma das expressões (referindo a essa operação de publicação) for satisfeita. No caso de diferentes cláusulas `WHERE`, se uma das publicações não tiver nenhuma cláusula `WHERE` (referindo a essa operação de publicação) ou a publicação seja declarada como [`FOR ALL TABLES`](sql-createpublication.md#SQL-CREATEPUBLICATION-PARAMS-FOR-ALL-TABLES) ou [`FOR TABLES IN SCHEMA`](sql-createpublication.md#SQL-CREATEPUBLICATION-PARAMS-FOR-TABLES-IN-SCHEMA), as linhas são sempre publicadas, independentemente da definição das outras expressões. Se o assinante for uma versão do PostgreSQL anterior à 15, então qualquer filtragem de linha é ignorada durante a fase inicial de sincronização de dados. Nesse caso, o usuário pode querer considerar a eliminação de qualquer dado inicialmente copiado que seria incompatível com o posterior filtro. Como a sincronização de dados inicial não leva em conta o parâmetro de publicação [`publish`](sql-createpublication.md#SQL-CREATEPUBLICATION-PARAMS-WITH-PUBLISH) ao copiar dados de tabela existentes, algumas linhas podem ser copiadas que não seriam replicadas usando DML. Consulte [Seção 29.2.2](logical-replication-subscription.md#LOGICAL-REPLICATION-SUBSCRIPTION-EXAMPLES "29.2.2. Examples: Set Up Logical Replication") para exemplos.
 

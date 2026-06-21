@@ -5,7 +5,7 @@
 
 `auth_delay` faz com que o servidor faça uma pausa breve antes de relatar a falha de autenticação, para tornar mais difícil os ataques brutais às senhas do banco de dados. Note que ele não faz nada para prevenir ataques de negação de serviço e pode até exacerbar esses ataques, uma vez que os processos que estão esperando antes de relatar a falha de autenticação ainda consumirão faixas de conexão.
 
-Para funcionar, este módulo deve ser carregado via [shared_preload_libraries][(runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES)] em `postgresql.conf`.
+Para funcionar, este módulo deve ser carregado via [shared_preload_libraries](runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES) em `postgresql.conf`.
 
 ### F.2.1. Parâmetros de Configuração [#](#AUTH-DELAY-CONFIGURATION-PARAMETERS)
 

@@ -15,7 +15,7 @@ DECLARE name [ BINARY ] [ ASENSITIVE | INSENSITIVE ] [ [ NO ] SCROLL ]
 
 ### Nota
 
-Esta página descreve o uso de cursor no nível do comando SQL. Se você está tentando usar cursors dentro de uma função PL/pgSQL, as regras são diferentes — veja [Seção 41.7][(plpgsql-cursors.md "41.7. Cursors")].
+Esta página descreve o uso de cursor no nível do comando SQL. Se você está tentando usar cursors dentro de uma função PL/pgSQL, as regras são diferentes — veja [Seção 41.7](plpgsql-cursors.md).
 
 ## Parâmetros
 
@@ -45,7 +45,7 @@ Os cursors binários devem ser usados com cuidado. Muitas aplicações, incluind
 
 Quando o aplicativo cliente usa o protocolo de "consulta estendida" para emitir um comando `FETCH`, a mensagem do protocolo Bind especifica se os dados devem ser recuperados em formato de texto ou binário. Essa escolha substitui a maneira como o cursor é definido. O conceito de cursor binário como tal é, portanto, obsoleto ao usar o protocolo de consulta estendida — qualquer cursor pode ser tratado como texto ou binário.
 
-A menos que `WITH HOLD` seja especificado, o cursor criado por este comando só pode ser usado dentro da transação atual. Assim, `DECLARE` sem `WITH HOLD` é inútil fora de um bloco de transação: o cursor sobreviveria apenas até o término da declaração. Portanto, o PostgreSQL reporta um erro se tal comando for usado fora de um bloco de transação. Use [`BEGIN`(sql-begin.md "BEGIN") e [`COMMIT`(sql-commit.md "COMMIT") (ou [`ROLLBACK`(sql-rollback.md "ROLLBACK")) para definir um bloco de transação.
+A menos que `WITH HOLD` seja especificado, o cursor criado por este comando só pode ser usado dentro da transação atual. Assim, `DECLARE` sem `WITH HOLD` é inútil fora de um bloco de transação: o cursor sobreviveria apenas até o término da declaração. Portanto, o PostgreSQL reporta um erro se tal comando for usado fora de um bloco de transação. Use [`BEGIN`](sql-begin.md) e [`COMMIT`](sql-commit.md) (ou [`ROLLBACK`](sql-rollback.md)) para definir um bloco de transação.
 
 Se `WITH HOLD` for especificado e a transação que criou o cursor cometer com sucesso, o cursor pode continuar a ser acessado por transações subsequentes na mesma sessão. (Mas se a transação de criação for abortada, o cursor é removido.) Um cursor criado com `WITH HOLD` é fechado quando um comando explícito `CLOSE` é emitido sobre ele, ou quando a sessão termina. Na implementação atual, as linhas representadas por um cursor mantido são copiadas para um arquivo temporário ou área de memória para que permaneçam disponíveis para transações subsequentes.
 
@@ -57,7 +57,7 @@ Os buscam retroativos também não são permitidos quando a consulta inclui `FOR
 
 ### Atenção
 
-Os cursors roláveis podem fornecer resultados inesperados se invocarem funções voláteis (consulte [Seção 36.7][(xfunc-volatility.md "36.7. Function Volatility Categories")]). Quando uma linha previamente obtida é obtida novamente, as funções podem ser executadas novamente, o que pode levar a resultados diferentes da primeira vez. É melhor especificar `NO SCROLL` para uma consulta que envolva funções voláteis. Se isso não for prático, uma solução é declarar o cursor `SCROLL WITH HOLD` e confirmar a transação antes de ler quaisquer linhas dele. Isso forçará que toda a saída do cursor seja materializada em armazenamento temporário, de modo que as funções voláteis sejam executadas exatamente uma vez para cada linha.
+Os cursors roláveis podem fornecer resultados inesperados se invocarem funções voláteis (consulte [Seção 36.7](xfunc-volatility.md)). Quando uma linha previamente obtida é obtida novamente, as funções podem ser executadas novamente, o que pode levar a resultados diferentes da primeira vez. É melhor especificar `NO SCROLL` para uma consulta que envolva funções voláteis. Se isso não for prático, uma solução é declarar o cursor `SCROLL WITH HOLD` e confirmar a transação antes de ler quaisquer linhas dele. Isso forçará que toda a saída do cursor seja materializada em armazenamento temporário, de modo que as funções voláteis sejam executadas exatamente uma vez para cada linha.
 
 Se a consulta do cursor incluir `FOR UPDATE` ou `FOR SHARE`, as linhas devolvidas serão bloqueadas no momento em que são obtidas pela primeira vez, da mesma maneira que para um comando regular [`SELECT`](sql-select.md "SELECT") com essas opções. Além disso, as linhas devolvidas serão as versões mais atualizadas.
 

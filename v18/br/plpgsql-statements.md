@@ -1,13 +1,13 @@
 ## 41.5. Declarações Básicas [#](#PLPGSQL-STATEMENTS)
 
-* [41.5.1. Atribuição][(plpgsql-statements.md#PLPGSQL-STATEMENTS-ASSIGNMENT)]
-* [41.5.2. Executar comandos SQL][(plpgsql-statements.md#PLPGSQL-STATEMENTS-GENERAL-SQL)]
-* [41.5.3. Executar um comando com um resultado de uma única linha][(plpgsql-statements.md#PLPGSQL-STATEMENTS-SQL-ONEROW)]
-* [41.5.4. Executar comandos dinâmicos][(plpgsql-statements.md#PLPGSQL-STATEMENTS-EXECUTING-DYN)]
-* [41.5.5. Obter o status do resultado][(plpgsql-statements.md#PLPGSQL-STATEMENTS-DIAGNOSTICS)]
-* [41.5.6. Não fazer nada][(plpgsql-statements.md#PLPGSQL-STATEMENTS-NULL)]
+* [41.5.1. Atribuição](plpgsql-statements.md#PLPGSQL-STATEMENTS-ASSIGNMENT)
+* [41.5.2. Executar comandos SQL](plpgsql-statements.md#PLPGSQL-STATEMENTS-GENERAL-SQL)
+* [41.5.3. Executar um comando com um resultado de uma única linha](plpgsql-statements.md#PLPGSQL-STATEMENTS-SQL-ONEROW)
+* [41.5.4. Executar comandos dinâmicos](plpgsql-statements.md#PLPGSQL-STATEMENTS-EXECUTING-DYN)
+* [41.5.5. Obter o status do resultado](plpgsql-statements.md#PLPGSQL-STATEMENTS-DIAGNOSTICS)
+* [41.5.6. Não fazer nada](plpgsql-statements.md#PLPGSQL-STATEMENTS-NULL)
 
-Nesta seção e nas seguintes, descrevemos todos os tipos de declaração que são explicitamente compreendidos pelo PL/pgSQL. Qualquer coisa que não seja reconhecida como um desses tipos de declaração é presumida ser um comando SQL e é enviada ao motor principal do banco de dados para execução, conforme descrito em [Seção 41.5.2][(plpgsql-statements.md#PLPGSQL-STATEMENTS-GENERAL-SQL "41.5.2. Executing SQL Commands")].
+Nesta seção e nas seguintes, descrevemos todos os tipos de declaração que são explicitamente compreendidos pelo PL/pgSQL. Qualquer coisa que não seja reconhecida como um desses tipos de declaração é presumida ser um comando SQL e é enviada ao motor principal do banco de dados para execução, conforme descrito em [Seção 41.5.2](plpgsql-statements.md#PLPGSQL-STATEMENTS-GENERAL-SQL).
 
 ### 41.5.1. Atribuição [#](#PLPGSQL-STATEMENTS-ASSIGNMENT)
 
@@ -19,7 +19,7 @@ variable { := | = } expression;
 
 Como explicado anteriormente, a expressão em tal declaração é avaliada por meio de um comando SQL `SELECT` enviado ao motor principal do banco de dados. A expressão deve produzir um único valor (possivelmente um valor de linha, se a variável for uma variável de linha ou registro). A variável alvo pode ser uma variável simples (opcionalmente qualificada com um nome de bloco), um campo de um alvo de linha ou registro, ou um elemento ou fatias de um alvo de matriz. Igual (`=`) pode ser usado em vez de `:=` compatível com PL/SQL.
 
-Se o tipo de dados do resultado da expressão não corresponder ao tipo de dados da variável, o valor será convertido como se fosse um cast de atribuição (consulte [Seção 10.4] [(typeconv-query.md "10.4. Value Storage")]). Se não for conhecido nenhum cast de atribuição para o par de tipos de dados envolvidos, o interpretador PL/pgSQL tentará converter o valor do resultado textualmente, ou seja, aplicando a função de saída do tipo de resultado seguida pela função de entrada do tipo de variável. Observe que isso pode resultar em erros de execução gerados pela função de entrada, se a forma de string do valor do resultado não for aceitável para a função de entrada.
+Se o tipo de dados do resultado da expressão não corresponder ao tipo de dados da variável, o valor será convertido como se fosse um cast de atribuição (consulte [Seção 10.4](typeconv-query.md)). Se não for conhecido nenhum cast de atribuição para o par de tipos de dados envolvidos, o interpretador PL/pgSQL tentará converter o valor do resultado textualmente, ou seja, aplicando a função de saída do tipo de resultado seguida pela função de entrada do tipo de variável. Observe que isso pode resultar em erros de execução gerados pela função de entrada, se a forma de string do valor do resultado não for aceitável para a função de entrada.
 
 Exemplos:
 
@@ -40,15 +40,15 @@ CREATE TABLE mytable (id int primary key, data text);
 INSERT INTO mytable VALUES (1,'one'), (2,'two');
 ```
 
-Se o comando retornar linhas (por exemplo, `SELECT`, ou `INSERT`/`UPDATE`/`DELETE`/`MERGE` com `RETURNING`), há duas maneiras de proceder. Quando o comando retornará, no máximo, uma linha, ou você só se importa com a primeira linha de saída, escreva o comando como de costume, mas adicione uma cláusula `INTO` para capturar a saída, conforme descrito em [Seção 41.5.3][(plpgsql-statements.md#PLPGSQL-STATEMENTS-SQL-ONEROW "41.5.3. Executing a Command with a Single-Row Result")]. Para processar todas as linhas de saída, escreva o comando como fonte de dados para um loop `FOR`, conforme descrito em [Seção 41.6.6][(plpgsql-control-structures.md#PLPGSQL-RECORDS-ITERATING "41.6.6. Looping through Query Results")].
+Se o comando retornar linhas (por exemplo, `SELECT`, ou `INSERT`/`UPDATE`/`DELETE`/`MERGE` com `RETURNING`), há duas maneiras de proceder. Quando o comando retornará, no máximo, uma linha, ou você só se importa com a primeira linha de saída, escreva o comando como de costume, mas adicione uma cláusula `INTO` para capturar a saída, conforme descrito em [Seção 41.5.3](plpgsql-statements.md#PLPGSQL-STATEMENTS-SQL-ONEROW). Para processar todas as linhas de saída, escreva o comando como fonte de dados para um loop `FOR`, conforme descrito em [Seção 41.6.6](plpgsql-control-structures.md#PLPGSQL-RECORDS-ITERATING).
 
 Geralmente, não é suficiente apenas executar comandos SQL definidos estaticamente. Normalmente, você deseja um comando que utilize valores de dados variáveis ou até mesmo que varie de maneiras mais fundamentais, como usar diferentes nomes de tabela em diferentes momentos. Novamente, há duas maneiras de proceder, dependendo da situação.
 
-Os valores das variáveis PL/pgSQL podem ser inseridos automaticamente em comandos SQL otimizáveis, que são `SELECT`, `INSERT`, `UPDATE`, `DELETE`, `MERGE` e certos comandos utilitários que incorporam um desses, como `EXPLAIN` e `CREATE TABLE ... AS SELECT`. Nesses comandos, qualquer nome de variável PL/pgSQL que apareça no texto do comando é substituído por um parâmetro de consulta, e então o valor atual da variável é fornecido como o valor do parâmetro no momento da execução. Isso é exatamente como o processamento descrito anteriormente para expressões; para detalhes, consulte [Seção 41.11.1][(plpgsql-implementation.md#PLPGSQL-VAR-SUBST "41.11.1. Variable Substitution")].
+Os valores das variáveis PL/pgSQL podem ser inseridos automaticamente em comandos SQL otimizáveis, que são `SELECT`, `INSERT`, `UPDATE`, `DELETE`, `MERGE` e certos comandos utilitários que incorporam um desses, como `EXPLAIN` e `CREATE TABLE ... AS SELECT`. Nesses comandos, qualquer nome de variável PL/pgSQL que apareça no texto do comando é substituído por um parâmetro de consulta, e então o valor atual da variável é fornecido como o valor do parâmetro no momento da execução. Isso é exatamente como o processamento descrito anteriormente para expressões; para detalhes, consulte [Seção 41.11.1](plpgsql-implementation.md#PLPGSQL-VAR-SUBST).
 
-Ao executar um comando SQL otimizável dessa forma, o PL/pgSQL pode armazenar e reutilizar o plano de execução do comando, conforme discutido em [Seção 41.11.2][(plpgsql-implementation.md#PLPGSQL-PLAN-CACHING "41.11.2. Plan Caching")].
+Ao executar um comando SQL otimizável dessa forma, o PL/pgSQL pode armazenar e reutilizar o plano de execução do comando, conforme discutido em [Seção 41.11.2](plpgsql-implementation.md#PLPGSQL-PLAN-CACHING).
 
-Os comandos SQL não otimizáveis (também chamados de comandos utilitários) não são capazes de aceitar parâmetros de consulta. Portanto, a substituição automática de variáveis PL/pgSQL não funciona em tais comandos. Para incluir texto não constante em um comando utilitário executado a partir de PL/pgSQL, você deve construir o comando utilitário como uma string e, em seguida, `EXECUTE`-lo, conforme discutido em [Seção 41.5.4][(plpgsql-statements.md#PLPGSQL-STATEMENTS-EXECUTING-DYN "41.5.4. Executing Dynamic Commands")].
+Os comandos SQL não otimizáveis (também chamados de comandos utilitários) não são capazes de aceitar parâmetros de consulta. Portanto, a substituição automática de variáveis PL/pgSQL não funciona em tais comandos. Para incluir texto não constante em um comando utilitário executado a partir de PL/pgSQL, você deve construir o comando utilitário como uma string e, em seguida, `EXECUTE`-lo, conforme discutido em [Seção 41.5.4](plpgsql-statements.md#PLPGSQL-STATEMENTS-EXECUTING-DYN).
 
 `EXECUTE` também deve ser usado se você quiser modificar o comando de alguma outra maneira que não seja fornecer um valor de dados, por exemplo, alterando o nome de uma tabela.
 
@@ -92,7 +92,7 @@ Se uma variável de linha ou uma lista de variáveis for usada como alvo, as col
 
 A cláusula `INTO` pode aparecer quase em qualquer lugar no comando SQL. Costuma ser escrita antes ou depois da lista de *`select_expressions`* em um comando `SELECT`, ou no final do comando para outros tipos de comandos. É recomendável que você siga essa convenção, caso o analisador PL/pgSQL se torne mais rigoroso em versões futuras.
 
-Se `STRICT` não for especificado na cláusula `INTO`, então *`target`* será definido na primeira linha retornada pelo comando, ou em nulos se o comando não retornar nenhuma linha. (Observe que “a primeira linha” não é bem definida a menos que você tenha usado `ORDER BY`.) Quaisquer linhas de resultado após a primeira linha são descartadas. Você pode verificar a variável especial `FOUND` (consulte [Seção 41.5.5][(plpgsql-statements.md#PLPGSQL-STATEMENTS-DIAGNOSTICS "41.5.5. Obtaining the Result Status")]) para determinar se uma linha foi retornada:
+Se `STRICT` não for especificado na cláusula `INTO`, então *`target`* será definido na primeira linha retornada pelo comando, ou em nulos se o comando não retornar nenhuma linha. (Observe que “a primeira linha” não é bem definida a menos que você tenha usado `ORDER BY`.) Quaisquer linhas de resultado após a primeira linha são descartadas. Você pode verificar a variável especial `FOUND` (consulte [Seção 41.5.5](plpgsql-statements.md#PLPGSQL-STATEMENTS-DIAGNOSTICS)) para determinar se uma linha foi retornada:
 
 ```
 SELECT * INTO myrec FROM emp WHERE empname = myname;
@@ -148,7 +148,7 @@ A opção `STRICT` corresponde ao comportamento do `SELECT INTO` do Oracle PL/SQ
 
 ### 41.5.4. Executando comandos dinâmicos [#](#PLPGSQL-STATEMENTS-EXECUTING-DYN)
 
-Muitas vezes, você vai querer gerar comandos dinâmicos dentro de suas funções PL/pgSQL, ou seja, comandos que envolverão diferentes tabelas ou diferentes tipos de dados cada vez que forem executados. As tentativas normais do PL/pgSQL de cachear planos para comandos (como discutido em [Seção 41.11.2][(plpgsql-implementation.md#PLPGSQL-PLAN-CACHING "41.11.2. Plan Caching")]) não funcionarão em tais cenários. Para lidar com esse tipo de problema, a declaração `EXECUTE` é fornecida:
+Muitas vezes, você vai querer gerar comandos dinâmicos dentro de suas funções PL/pgSQL, ou seja, comandos que envolverão diferentes tabelas ou diferentes tipos de dados cada vez que forem executados. As tentativas normais do PL/pgSQL de cachear planos para comandos (como discutido em [Seção 41.11.2](plpgsql-implementation.md#PLPGSQL-PLAN-CACHING)) não funcionarão em tais cenários. Para lidar com esse tipo de problema, a declaração `EXECUTE` é fornecida:
 
 ```
 EXECUTE command-string [ INTO [STRICT] target ] [ USING expression [, ... ] ];
@@ -225,7 +225,7 @@ EXECUTE 'UPDATE tbl SET '
         || quote_literal(keyvalue);
 ```
 
-Este exemplo demonstra o uso das funções `quote_ident` e `quote_literal` (ver [Seção 9.4][(functions-string.md "9.4. String Functions and Operators")]). Por segurança, as expressões que contêm identificadores de coluna ou tabela devem ser passadas através de `quote_ident` antes da inserção em uma consulta dinâmica. As expressões que contêm valores que devem ser strings literais no comando construído devem ser passadas através de `quote_literal`. Essas funções tomam as medidas apropriadas para retornar o texto de entrada fechado em aspas duplas ou simples, respectivamente, com quaisquer caracteres especiais incorporados adequadamente escapados.
+Este exemplo demonstra o uso das funções `quote_ident` e `quote_literal` (ver [Seção 9.4](functions-string.md)). Por segurança, as expressões que contêm identificadores de coluna ou tabela devem ser passadas através de `quote_ident` antes da inserção em uma consulta dinâmica. As expressões que contêm valores que devem ser strings literais no comando construído devem ser passadas através de `quote_literal`. Essas funções tomam as medidas apropriadas para retornar o texto de entrada fechado em aspas duplas ou simples, respectivamente, com quaisquer caracteres especiais incorporados adequadamente escapados.
 
 Como `quote_literal` é rotulado como `STRICT`, ele sempre retornará nulo quando chamado com um argumento nulo. No exemplo acima, se `newvalue` ou `keyvalue` fossem nulos, toda a string dinâmica da consulta se tornaria nulo, levando a um erro de `EXECUTE`. Você pode evitar esse problema usando a função `quote_nullable`, que funciona da mesma forma que `quote_literal`, exceto que, quando chamada com um argumento nulo, ela retorna a string `NULL`. Por exemplo,
 
@@ -267,7 +267,7 @@ EXECUTE 'UPDATE tbl SET '
 
 porque ele quebraria se o conteúdo do `newvalue` por acaso contivesse `$$`. A mesma objeção se aplicaria a qualquer outro delimitador que citasse dólares que você pudesse escolher. Portanto, para citar com segurança um texto que não é conhecido antecipadamente, você *deve* usar `quote_literal`, `quote_nullable` ou `quote_ident`, conforme apropriado.
 
-As instruções SQL dinâmicas também podem ser construídas com segurança usando a função `format` (consulte [Seção 9.4.1][(functions-string.md#FUNCTIONS-STRING-FORMAT "9.4.1. format")]). Por exemplo:
+As instruções SQL dinâmicas também podem ser construídas com segurança usando a função `format` (consulte [Seção 9.4.1](functions-string.md#FUNCTIONS-STRING-FORMAT)). Por exemplo:
 
 ```
 EXECUTE format('UPDATE tbl SET %I = %L '
@@ -283,9 +283,9 @@ EXECUTE format('UPDATE tbl SET %I = $1 WHERE key = $2', colname)
 
 Essa forma é melhor porque as variáveis são manipuladas em seu formato de tipo de dados nativo, em vez de convertê-las incondicionalmente para texto e cita-las via `%L`. Também é mais eficiente.
 
-  
 
-Um exemplo muito maior de um comando dinâmico e `EXECUTE` pode ser visto em [Exemplo 41.10][(plpgsql-porting.md#PLPGSQL-PORTING-EX2 "Example 41.10. Porting a Function that Creates Another Function from PL/SQL to PL/pgSQL")], que constrói e executa um comando `CREATE FUNCTION` para definir uma nova função.
+
+Um exemplo muito maior de um comando dinâmico e `EXECUTE` pode ser visto em [Exemplo 41.10](plpgsql-porting.md#PLPGSQL-PORTING-EX2), que constrói e executa um comando `CREATE FUNCTION` para definir uma nova função.
 
 ### 41.5.5. Obter o status do resultado [#](#PLPGSQL-STATEMENTS-DIAGNOSTICS)
 
@@ -306,79 +306,92 @@ GET DIAGNOSTICS integer_var = ROW_COUNT;
 
 
 <table border="1" class="table" summary="Available Diagnostics Items">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Name
    </th>
-<th>
+   <th>
     Type
    </th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="varname">
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="varname">
      ROW_COUNT
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      bigint
     </code>
-</td>
-<td>o número de linhas processadas pelo mais recente<acronym class="acronym">SQL</acronym>comando</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    o número de linhas processadas pelo mais recente
+    <acronym class="acronym">
+     SQL
+    </acronym>
+    comando
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      PG_CONTEXT
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      text
     </code>
-</td>
-<td>linha(s) de texto descrevendo a pilha de chamadas atual (consulte<a class="xref" href="plpgsql-control-structures.md#PLPGSQL-CALL-STACK" title="41.6.9. Obtaining Execution Location Information">Seção 41.6.9</a>)</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    linha(s) de texto descrevendo a pilha de chamadas atual (consulte
+    <a class="xref" href="plpgsql-control-structures.md#PLPGSQL-CALL-STACK" title="41.6.9. Obtaining Execution Location Information">
+     Seção 41.6.9
+    </a>
+    )
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      PG_ROUTINE_OID
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      oid
     </code>
-</td>
-<td>OID da função atual</td>
-</tr>
-</tbody>
+   </td>
+   <td>
+    OID da função atual
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 O segundo método para determinar os efeitos de um comando é verificar a variável especial denominada `FOUND`, que é do tipo `boolean`. `FOUND` começa como falso em cada chamada de função PL/pgSQL. É definido por cada um dos seguintes tipos de declarações:
 
-A declaração `SELECT INTO` define `FOUND` como verdadeiro se uma linha for atribuída, falsa se nenhuma linha for retornada.
-A declaração `PERFORM` define `FOUND` como verdadeiro se ela produz (e descarta) uma ou mais linhas, falsa se nenhuma linha for produzida.
-As declarações `UPDATE`, `INSERT`, `DELETE` e `MERGE` definem `FOUND` como verdadeiro se pelo menos uma linha é afetada, falsa se nenhuma linha é afetada.
-A declaração `FETCH` define `FOUND` como verdadeiro se ela retorna uma linha, falsa se nenhuma linha for retornada.
-A declaração `MOVE` define `FOUND` como verdadeiro se ela reposiciona o cursor com sucesso, falsa de outra forma.
-As declarações `FOR` ou `FOREACH` definem `FOUND` como verdadeiro se ela se itera uma ou mais vezes, caso contrário falsa. `FOUND` é definido dessa forma quando o loop sai; dentro da execução do loop, `FOUND` não é modificado pela declaração do loop, embora possa ser alterado pela execução de outras declarações dentro do corpo do loop.
-As declarações `RETURN QUERY` e `RETURN QUERY EXECUTE` definem `FOUND` como verdadeiro se a consulta retorna pelo menos uma linha, falsa se nenhuma linha for retornada.
+A declaração `SELECT INTO` define `FOUND` como verdadeiro se uma linha for atribuída, falsa se nenhuma linha for retornada. A declaração `PERFORM` define `FOUND` como verdadeiro se ela produz (e descarta) uma ou mais linhas, falsa se nenhuma linha for produzida. As declarações `UPDATE`, `INSERT`, `DELETE` e `MERGE` definem `FOUND` como verdadeiro se pelo menos uma linha é afetada, falsa se nenhuma linha é afetada. A declaração `FETCH` define `FOUND` como verdadeiro se ela retorna uma linha, falsa se nenhuma linha for retornada. A declaração `MOVE` define `FOUND` como verdadeiro se ela reposiciona o cursor com sucesso, falsa de outra forma. As declarações `FOR` ou `FOREACH` definem `FOUND` como verdadeiro se ela se itera uma ou mais vezes, caso contrário falsa. `FOUND` é definido dessa forma quando o loop sai; dentro da execução do loop, `FOUND` não é modificado pela declaração do loop, embora possa ser alterado pela execução de outras declarações dentro do corpo do loop. As declarações `RETURN QUERY` e `RETURN QUERY EXECUTE` definem `FOUND` como verdadeiro se a consulta retorna pelo menos uma linha, falsa se nenhuma linha for retornada.
 
 Outras declarações do PL/pgSQL não alteram o estado de `FOUND`. Note, em particular, que `EXECUTE` altera a saída de `GET DIAGNOSTICS`, mas não altera `FOUND`.
 

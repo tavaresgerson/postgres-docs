@@ -27,113 +27,119 @@ O mesmo nome de classe de operador pode ser usado para vários métodos de índi
 
 Os operadores associados a uma classe de operadores são identificados por “números de estratégia”, que servem para identificar a semântica de cada operador no contexto de sua classe de operadores. Por exemplo, as árvores B impõem uma ordem estrita sobre as chaves, menor para maior, e, portanto, operadores como “menor que” e “maior que ou igual a” são interessantes em relação a uma árvore B. Como o PostgreSQL permite que o usuário defina operadores, o PostgreSQL não pode olhar para o nome de um operador (por exemplo, `<` ou `>=`) e dizer que tipo de comparação é. Em vez disso, o método de índice define um conjunto de “estratégias”, que podem ser consideradas como operadores generalizados. Cada classe de operador especifica qual operador real corresponde a cada estratégia para um tipo de dados particular e interpretação da semântica do índice.
 
-O método de índice de árvore B define cinco estratégias, mostradas na Tabela 36.3 ((xindex.md#XINDEX-BTREE-STRAT-TABLE "Table 36.3. B-Tree Strategies")).
+O método de índice de árvore B define cinco estratégias, mostradas na [Tabela 36.3]((xindex.md#XINDEX-BTREE-STRAT-TABLE)).
 
 **Tabela 36.3. Estratégias de Árvores B**
 
 
 
 <table border="1" class="table" summary="B-Tree Strategies">
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Operation
    </th>
-<th>
+   <th>
     Strategy Number
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
     less than
    </td>
-<td>
+   <td>
     1
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     less than or equal
    </td>
-<td>
+   <td>
     2
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     equal
    </td>
-<td>
+   <td>
     3
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     greater than or equal
    </td>
-<td>
+   <td>
     4
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     greater than
    </td>
-<td>
+   <td>
     5
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
 
-Os índices de hash só suportam comparações de igualdade, e, portanto, usam apenas uma estratégia, mostrada em [Tabela 36.4][(xindex.md#XINDEX-HASH-STRAT-TABLE "Table 36.4. Hash Strategies")].
+
+
+
+
+Os índices de hash só suportam comparações de igualdade, e, portanto, usam apenas uma estratégia, mostrada em [Tabela 36.4](xindex.md#XINDEX-HASH-STRAT-TABLE).
 
 **Tabela 36.4. Estratégias de Hash**
 
 
 
 <table border="1" class="table" summary="Hash Strategies">
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Operation
    </th>
-<th>
+   <th>
     Strategy Number
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
     equal
    </td>
-<td>
+   <td>
     1
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Os índices GiST são mais flexíveis: não possuem um conjunto fixo de estratégias. Em vez disso, a rotina de suporte à “consistência” de cada classe específica de operadores GiST interpreta os números de estratégia da maneira que bem entender. Como exemplo, várias das classes de operadores de índice GiST embutidos indexam objetos geométricos bidimensionais, fornecendo as estratégias de “R-tree” mostradas em [Tabela 36.5] ((xindex.md#XINDEX-RTREE-STRAT-TABLE "Table 36.5. GiST Two-Dimensional “R-tree” Strategies")). Quatro dessas são testes verdadeiramente bidimensionais (sobreposição, mesmo, contém, contido por); quatro delas consideram apenas a direção X; e as outras quatro fornecem os mesmos testes na direção Y.
 
@@ -142,310 +148,348 @@ Os índices GiST são mais flexíveis: não possuem um conjunto fixo de estraté
 
 
 <table border="1" class="table" summary="GiST Two-Dimensional R-tree Strategies">
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>Operação</th>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
+    Operação
+   </th>
+   <th>
     Strategy Number
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>estranhamente à esquerda</td>
-<td>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    estranhamente à esquerda
+   </td>
+   <td>
     1
    </td>
-</tr>
-<tr>
-<td>não se estende ao direito de</td>
-<td>
+  </tr>
+  <tr>
+   <td>
+    não se estende ao direito de
+   </td>
+   <td>
     2
    </td>
-</tr>
-<tr>
-<td>sobreposição</td>
-<td>
+  </tr>
+  <tr>
+   <td>
+    sobreposição
+   </td>
+   <td>
     3
    </td>
-</tr>
-<tr>
-<td>não se estende à esquerda de</td>
-<td>
+  </tr>
+  <tr>
+   <td>
+    não se estende à esquerda de
+   </td>
+   <td>
     4
    </td>
-</tr>
-<tr>
-<td>direito estritamente direito</td>
-<td>
+  </tr>
+  <tr>
+   <td>
+    direito estritamente direito
+   </td>
+   <td>
     5
    </td>
-</tr>
-<tr>
-<td>mesmo</td>
-<td>
+  </tr>
+  <tr>
+   <td>
+    mesmo
+   </td>
+   <td>
     6
    </td>
-</tr>
-<tr>
-<td>contem</td>
-<td>
+  </tr>
+  <tr>
+   <td>
+    contem
+   </td>
+   <td>
     7
    </td>
-</tr>
-<tr>
-<td>contenida por</td>
-<td>
+  </tr>
+  <tr>
+   <td>
+    contenida por
+   </td>
+   <td>
     8
    </td>
-</tr>
-<tr>
-<td>não se estende acima</td>
-<td>
+  </tr>
+  <tr>
+   <td>
+    não se estende acima
+   </td>
+   <td>
     9
    </td>
-</tr>
-<tr>
-<td>estreitamente abaixo</td>
-<td>
+  </tr>
+  <tr>
+   <td>
+    estreitamente abaixo
+   </td>
+   <td>
     10
    </td>
-</tr>
-<tr>
-<td>absolutamente acima</td>
-<td>
+  </tr>
+  <tr>
+   <td>
+    absolutamente acima
+   </td>
+   <td>
     11
    </td>
-</tr>
-<tr>
-<td>não se estende abaixo</td>
-<td>
+  </tr>
+  <tr>
+   <td>
+    não se estende abaixo
+   </td>
+   <td>
     12
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
 
-Os índices SP-GiST são semelhantes aos índices GiST em termos de flexibilidade: eles não têm um conjunto fixo de estratégias. Em vez disso, as rotinas de suporte de cada classe de operador interpretam os números de estratégia de acordo com a definição da classe de operador. Como exemplo, os números de estratégia usados pelas classes de operadores embutidas para pontos são mostrados na [Tabela 36.6] [(xindex.md#XINDEX-SPGIST-POINT-STRAT-TABLE "Table 36.6. SP-GiST Point Strategies")].
+
+
+
+
+Os índices SP-GiST são semelhantes aos índices GiST em termos de flexibilidade: eles não têm um conjunto fixo de estratégias. Em vez disso, as rotinas de suporte de cada classe de operador interpretam os números de estratégia de acordo com a definição da classe de operador. Como exemplo, os números de estratégia usados pelas classes de operadores embutidas para pontos são mostrados na [Tabela 36.6](xindex.md#XINDEX-SPGIST-POINT-STRAT-TABLE).
 
 **Tabela 36.6. Estratégias de Pontos SP-GiST**
 
 
 
 <table border="1" class="table" summary="SP-GiST Point Strategies">
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Operation
    </th>
-<th>
+   <th>
     Strategy Number
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
     strictly left of
    </td>
-<td>
+   <td>
     1
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     strictly right of
    </td>
-<td>
+   <td>
     5
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     same
    </td>
-<td>
+   <td>
     6
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     contained by
    </td>
-<td>
+   <td>
     8
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     strictly below
    </td>
-<td>
+   <td>
     10
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     strictly above
    </td>
-<td>
+   <td>
     11
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
 
-Os índices GIN são semelhantes aos índices GiST e SP-GiST, na medida em que também não possuem um conjunto fixo de estratégias. Em vez disso, as rotinas de suporte de cada classe de operador interpretam os números de estratégia de acordo com a definição da classe de operador. Como exemplo, os números de estratégia usados pela classe de operadores embutida para arrays são mostrados em [Tabela 36.7] [(xindex.md#XINDEX-GIN-ARRAY-STRAT-TABLE "Table 36.7. GIN Array Strategies")].
+
+
+
+
+Os índices GIN são semelhantes aos índices GiST e SP-GiST, na medida em que também não possuem um conjunto fixo de estratégias. Em vez disso, as rotinas de suporte de cada classe de operador interpretam os números de estratégia de acordo com a definição da classe de operador. Como exemplo, os números de estratégia usados pela classe de operadores embutida para arrays são mostrados em [Tabela 36.7](xindex.md#XINDEX-GIN-ARRAY-STRAT-TABLE).
 
 **Tabela 36.7. Estratégias do Array GIN**
 
 
 
 <table border="1" class="table" summary="GIN Array Strategies">
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Operation
    </th>
-<th>
+   <th>
     Strategy Number
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
     overlap
    </td>
-<td>
+   <td>
     1
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     contains
    </td>
-<td>
+   <td>
     2
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     is contained by
    </td>
-<td>
+   <td>
     3
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     equal
    </td>
-<td>
+   <td>
     4
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
 
-Os índices BRIN são semelhantes aos índices GiST, SP-GiST e GIN, pois também não possuem um conjunto fixo de estratégias. Em vez disso, as rotinas de suporte de cada classe de operador interpretam os números de estratégia de acordo com a definição da classe de operador. Como exemplo, os números de estratégia usados pelas classes de operador embutidas `Minmax` são mostrados em [Tabela 36.8][(xindex.md#XINDEX-BRIN-MINMAX-STRAT-TABLE "Table 36.8. BRIN Minmax Strategies")].
+
+
+
+
+Os índices BRIN são semelhantes aos índices GiST, SP-GiST e GIN, pois também não possuem um conjunto fixo de estratégias. Em vez disso, as rotinas de suporte de cada classe de operador interpretam os números de estratégia de acordo com a definição da classe de operador. Como exemplo, os números de estratégia usados pelas classes de operador embutidas `Minmax` são mostrados em [Tabela 36.8](xindex.md#XINDEX-BRIN-MINMAX-STRAT-TABLE).
 
 **Tabela 36.8. Estratégias BRIN Minmax**
 
 
 
 <table border="1" class="table" summary="BRIN Minmax Strategies">
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Operation
    </th>
-<th>
+   <th>
     Strategy Number
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
     less than
    </td>
-<td>
+   <td>
     1
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     less than or equal
    </td>
-<td>
+   <td>
     2
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     equal
    </td>
-<td>
+   <td>
     3
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     greater than or equal
    </td>
-<td>
+   <td>
     4
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     greater than
    </td>
-<td>
+   <td>
     5
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
 
-Observe que todos os operadores listados acima retornam valores booleanos. Na prática, todos os operadores definidos como operadores de pesquisa de método de índice devem retornar o tipo `boolean`, uma vez que devem aparecer no nível superior de uma cláusula `WHERE` para serem usados com um índice. (Alguns métodos de acesso a índices também suportam operadores de *ordem*, que normalmente não retornam valores booleanos; essa característica é discutida em [Seção 36.16.7][(xindex.md#XINDEX-ORDERING-OPS "36.16.7. Ordering Operators")].
+
+
+
+
+Observe que todos os operadores listados acima retornam valores booleanos. Na prática, todos os operadores definidos como operadores de pesquisa de método de índice devem retornar o tipo `boolean`, uma vez que devem aparecer no nível superior de uma cláusula `WHERE` para serem usados com um índice. (Alguns métodos de acesso a índices também suportam operadores de *ordem*, que normalmente não retornam valores booleanos; essa característica é discutida em [Seção 36.16.7](xindex.md#XINDEX-ORDERING-OPS).
 
 ### 36.16.3. Rotinas de suporte ao método de índice [#](#XINDEX-SUPPORT)
 
@@ -455,584 +499,692 @@ Assim como nas estratégias, a classe de operador identifica quais funções esp
 
 Além disso, algumas classes de operações permitem que os usuários especifiquem parâmetros que controlam seu comportamento. Cada método de acesso a índice embutido tem uma função de suporte opcional `options`, que define um conjunto de parâmetros específicos da classe de operações.
 
-As árvores B requerem uma função de suporte para comparações e permitem que quatro funções de suporte adicionais sejam fornecidas, conforme opção do autor da classe de operador, conforme mostrado na [Tabela 36.9][(xindex.md#XINDEX-BTREE-SUPPORT-TABLE "Table 36.9. B-Tree Support Functions")]. Os requisitos para essas funções de suporte são explicados mais detalhadamente na [Seção 65.1.3][(btree.md#BTREE-SUPPORT-FUNCS "65.1.3. B-Tree Support Functions")].
+As árvores B requerem uma função de suporte para comparações e permitem que quatro funções de suporte adicionais sejam fornecidas, conforme opção do autor da classe de operador, conforme mostrado na [Tabela 36.9](xindex.md#XINDEX-BTREE-SUPPORT-TABLE). Os requisitos para essas funções de suporte são explicados mais detalhadamente na [Seção 65.1.3](btree.md#BTREE-SUPPORT-FUNCS).
 
 **Tabela 36.9. Funções de suporte de árvore B**
 
 
 
 <table border="1" class="table" summary="B-Tree Support Functions">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-</colgroup>
-<thead>
-<tr>
-<th>Função</th>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
+    Função
+   </th>
+   <th>
     Support Number
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Compare duas chaves e retorne um número inteiro menor que zero, zero ou maior que zero, indicando se a primeira chave é menor que, igual a ou maior que a segunda.</td>
-<td>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    Compare duas chaves e retorne um número inteiro menor que zero, zero ou maior que zero, indicando se a primeira chave é menor que, igual a ou maior que a segunda.
+   </td>
+   <td>
     1
    </td>
-</tr>
-<tr>
-<td>Retorne os endereços das funções de suporte de classificação C-callable (opcional)</td>
-<td>
+  </tr>
+  <tr>
+   <td>
+    Retorne os endereços das funções de suporte de classificação C-callable (opcional)
+   </td>
+   <td>
     2
    </td>
-</tr>
-<tr>
-<td>Compare um valor de teste a um valor de base mais/menos um deslocamento e retorne verdadeiro ou falso de acordo com o resultado da comparação (opcional)</td>
-<td>
+  </tr>
+  <tr>
+   <td>
+    Compare um valor de teste a um valor de base mais/menos um deslocamento e retorne verdadeiro ou falso de acordo com o resultado da comparação (opcional)
+   </td>
+   <td>
     3
    </td>
-</tr>
-<tr>
-<td>Determine se é seguro para índices que utilizam a classe do operador aplicar a otimização de deduplicação btree (opcional)</td>
-<td>
+  </tr>
+  <tr>
+   <td>
+    Determine se é seguro para índices que utilizam a classe do operador aplicar a otimização de deduplicação btree (opcional)
+   </td>
+   <td>
     4
    </td>
-</tr>
-<tr>
-<td>Defina opções específicas para essa classe de operador (opcional)</td>
-<td>
+  </tr>
+  <tr>
+   <td>
+    Defina opções específicas para essa classe de operador (opcional)
+   </td>
+   <td>
     5
    </td>
-</tr>
-<tr>
-<td>Retorne os endereços das funções de suporte de salto C-callable (opcional)</td>
-<td>
+  </tr>
+  <tr>
+   <td>
+    Retorne os endereços das funções de suporte de salto C-callable (opcional)
+   </td>
+   <td>
     6
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
 
-Os índices hash exigem uma função de suporte e permitem que duas outras sejam fornecidas, conforme opção do autor da classe de operador, conforme mostrado na [Tabela 36.10] [(xindex.md#XINDEX-HASH-SUPPORT-TABLE "Table 36.10. Hash Support Functions")].
+
+
+
+
+Os índices hash exigem uma função de suporte e permitem que duas outras sejam fornecidas, conforme opção do autor da classe de operador, conforme mostrado na [Tabela 36.10](xindex.md#XINDEX-HASH-SUPPORT-TABLE).
 
 **Tabela 36.10. Funções de suporte de hash**
 
 
 
 <table border="1" class="table" summary="Hash Support Functions">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-</colgroup>
-<thead>
-<tr>
-<th>Função</th>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
+    Função
+   </th>
+   <th>
     Support Number
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Calcule o valor de hash de 32 bits para uma chave</td>
-<td>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    Calcule o valor de hash de 32 bits para uma chave
+   </td>
+   <td>
     1
    </td>
-</tr>
-<tr>
-<td>Calcule o valor de hash de 64 bits para uma chave dada uma sal de 64 bits; se o sal for 0, os 32 bits baixos do resultado devem corresponder ao valor que teria sido calculado pela função 1 (opcional)</td>
-<td>
+  </tr>
+  <tr>
+   <td>
+    Calcule o valor de hash de 64 bits para uma chave dada uma sal de 64 bits; se o sal for 0, os 32 bits baixos do resultado devem corresponder ao valor que teria sido calculado pela função 1 (opcional)
+   </td>
+   <td>
     2
    </td>
-</tr>
-<tr>
-<td>Defina opções específicas para essa classe de operador (opcional)</td>
-<td>
+  </tr>
+  <tr>
+   <td>
+    Defina opções específicas para essa classe de operador (opcional)
+   </td>
+   <td>
     3
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
 
-Os índices GiST têm doze funções de suporte, das quais sete são opcionais, conforme mostrado na Tabela 36.11 ((xindex.md#XINDEX-GIST-SUPPORT-TABLE "Table 36.11. GiST Support Functions")). (Para mais informações, consulte a Seção 65.2 ((gist.md "65.2. GiST Indexes"))).
+
+
+
+
+Os índices GiST têm doze funções de suporte, das quais sete são opcionais, conforme mostrado na [Tabela 36.11]((xindex.md#XINDEX-GIST-SUPPORT-TABLE)). (Para mais informações, consulte a [Seção 65.2]((gist.md))).
 
 **Tabela 36.11. Funções de Suporte GiST**
 
 
 
 <table border="1" class="table" summary="GiST Support Functions">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Function
    </th>
-<th>Descrição</th>
-<th>
+   <th>
+    Descrição
+   </th>
+   <th>
     Support Number
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="function">
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="function">
      consistent
     </code>
-</td>
-<td>determine se a chave atende ao qualificador da consulta</td>
-<td>
+   </td>
+   <td>
+    determine se a chave atende ao qualificador da consulta
+   </td>
+   <td>
     1
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      union
     </code>
-</td>
-<td>calcular a união de um conjunto de chaves</td>
-<td>
+   </td>
+   <td>
+    calcular a união de um conjunto de chaves
+   </td>
+   <td>
     2
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      compress
     </code>
-</td>
-<td>calcular uma representação comprimida de uma chave ou valor a ser indexado (opcional)</td>
-<td>
+   </td>
+   <td>
+    calcular uma representação comprimida de uma chave ou valor a ser indexado (opcional)
+   </td>
+   <td>
     3
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      decompress
     </code>
-</td>
-<td>calcular uma representação descomprimida de uma chave comprimida (opcional)</td>
-<td>
+   </td>
+   <td>
+    calcular uma representação descomprimida de uma chave comprimida (opcional)
+   </td>
+   <td>
     4
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      penalty
     </code>
-</td>
-<td>calcular penalidade por inserir uma nova chave em uma subárvore com a chave da subárvore dada</td>
-<td>
+   </td>
+   <td>
+    calcular penalidade por inserir uma nova chave em uma subárvore com a chave da subárvore dada
+   </td>
+   <td>
     5
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      picksplit
     </code>
-</td>
-<td>determinar quais entradas de uma página devem ser movidas para a nova página e calcular as chaves de união para as páginas resultantes</td>
-<td>
+   </td>
+   <td>
+    determinar quais entradas de uma página devem ser movidas para a nova página e calcular as chaves de união para as páginas resultantes
+   </td>
+   <td>
     6
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      same
     </code>
-</td>
-<td>comparar duas chaves e retornar verdadeiro se elas forem iguais</td>
-<td>
+   </td>
+   <td>
+    comparar duas chaves e retornar verdadeiro se elas forem iguais
+   </td>
+   <td>
     7
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      distance
     </code>
-</td>
-<td>determinar a distância entre a chave e o valor da consulta (opcional)</td>
-<td>
+   </td>
+   <td>
+    determinar a distância entre a chave e o valor da consulta (opcional)
+   </td>
+   <td>
     8
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      fetch
     </code>
-</td>
-<td>calcular a representação original de uma chave comprimida para varreduras apenas de índice (opcional)</td>
-<td>
+   </td>
+   <td>
+    calcular a representação original de uma chave comprimida para varreduras apenas de índice (opcional)
+   </td>
+   <td>
     9
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      options
     </code>
-</td>
-<td>defina opções que sejam específicas para essa classe de operador (opcional)</td>
-<td>
+   </td>
+   <td>
+    defina opções que sejam específicas para essa classe de operador (opcional)
+   </td>
+   <td>
     10
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      sortsupport
     </code>
-</td>
-<td>fornecer um comparador de classificação para ser usado em construções de índice rápidas (opcional)</td>
-<td>
+   </td>
+   <td>
+    fornecer um comparador de classificação para ser usado em construções de índice rápidas (opcional)
+   </td>
+   <td>
     11
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      translate_cmptype
     </code>
-</td>
-<td>traduzir comparar tipos para números de estratégia utilizados pela classe de operador (opcional)</td>
-<td>
+   </td>
+   <td>
+    traduzir comparar tipos para números de estratégia utilizados pela classe de operador (opcional)
+   </td>
+   <td>
     12
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
 
-Os índices SP-GiST têm seis funções de suporte, uma das quais é opcional, conforme mostrado na Tabela 36.12 ((xindex.md#XINDEX-SPGIST-SUPPORT-TABLE "Table 36.12. SP-GiST Support Functions")). (Para mais informações, consulte a Seção 65.3 ((spgist.md "65.3. SP-GiST Indexes"))).
+
+
+
+
+Os índices SP-GiST têm seis funções de suporte, uma das quais é opcional, conforme mostrado na [Tabela 36.12]((xindex.md#XINDEX-SPGIST-SUPPORT-TABLE)). (Para mais informações, consulte a [Seção 65.3]((spgist.md))).
 
 **Tabela 36.12. Funções de Suporte SP-GiST**
 
 
 
 <table border="1" class="table" summary="SP-GiST Support Functions">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Function
    </th>
-<th>Descrição</th>
-<th>
+   <th>
+    Descrição
+   </th>
+   <th>
     Support Number
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="function">
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="function">
      config
     </code>
-</td>
-<td>fornecer informações básicas sobre a classe do operador</td>
-<td>
+   </td>
+   <td>
+    fornecer informações básicas sobre a classe do operador
+   </td>
+   <td>
     1
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      choose
     </code>
-</td>
-<td>determine como inserir um novo valor em um par ordenado interno</td>
-<td>
+   </td>
+   <td>
+    determine como inserir um novo valor em um par ordenado interno
+   </td>
+   <td>
     2
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      picksplit
     </code>
-</td>
-<td>determine como particionar um conjunto de valores</td>
-<td>
+   </td>
+   <td>
+    determine como particionar um conjunto de valores
+   </td>
+   <td>
     3
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      inner_consistent
     </code>
-</td>
-<td>determine quais subpartições precisam ser pesquisadas para uma consulta</td>
-<td>
+   </td>
+   <td>
+    determine quais subpartições precisam ser pesquisadas para uma consulta
+   </td>
+   <td>
     4
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      leaf_consistent
     </code>
-</td>
-<td>determinar se a chave atende ao qualificador da consulta</td>
-<td>
+   </td>
+   <td>
+    determinar se a chave atende ao qualificador da consulta
+   </td>
+   <td>
     5
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      options
     </code>
-</td>
-<td>defina opções que sejam específicas para essa classe de operador (opcional)</td>
-<td>
+   </td>
+   <td>
+    defina opções que sejam específicas para essa classe de operador (opcional)
+   </td>
+   <td>
     6
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
 
-Os índices GIN têm sete funções de suporte, quatro das quais são opcionais, conforme mostrado na Tabela 36.13 ((xindex.md#XINDEX-GIN-SUPPORT-TABLE "Table 36.13. GIN Support Functions")). (Para mais informações, consulte a Seção 65.4 ((gin.md "65.4. GIN Indexes"))).
+
+
+
+
+Os índices GIN têm sete funções de suporte, quatro das quais são opcionais, conforme mostrado na [Tabela 36.13]((xindex.md#XINDEX-GIN-SUPPORT-TABLE)). (Para mais informações, consulte a [Seção 65.4]((gin.md))).
 
 **Tabela 36.13. Funções de Suporte GIN**
 
 
 
 <table border="1" class="table" summary="GIN Support Functions">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Function
    </th>
-<th>Descrição</th>
-<th>
+   <th>
+    Descrição
+   </th>
+   <th>
     Support Number
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="function">
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="function">
      compare
     </code>
-</td>
-<td>comparar duas chaves e retornar um número inteiro menor que zero, zero ou maior que zero, indicando se a primeira chave é menor que, igual a ou maior que a segunda</td>
-<td>
+   </td>
+   <td>
+    comparar duas chaves e retornar um número inteiro menor que zero, zero ou maior que zero, indicando se a primeira chave é menor que, igual a ou maior que a segunda
+   </td>
+   <td>
     1
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      extractValue
     </code>
-</td>
-<td>extrair chaves de um valor a ser indexado</td>
-<td>
+   </td>
+   <td>
+    extrair chaves de um valor a ser indexado
+   </td>
+   <td>
     2
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      extractQuery
     </code>
-</td>
-<td>extrair chaves de uma condição de consulta</td>
-<td>
+   </td>
+   <td>
+    extrair chaves de uma condição de consulta
+   </td>
+   <td>
     3
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      consistent
     </code>
-</td>
-<td>determinar se o valor corresponde à condição da consulta (variante booleana) (opcional se a função de suporte 6 estiver presente)</td>
-<td>
+   </td>
+   <td>
+    determinar se o valor corresponde à condição da consulta (variante booleana) (opcional se a função de suporte 6 estiver presente)
+   </td>
+   <td>
     4
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      comparePartial
     </code>
-</td>
-<td>comparar a chave parcial da consulta e a chave do índice, e retornar um número inteiro menor que zero, zero ou maior que zero, indicando se o GIN deve ignorar esta entrada do índice, tratar a entrada como uma correspondência ou parar a varredura do índice (opcional)</td>
-<td>
+   </td>
+   <td>
+    comparar a chave parcial da consulta e a chave do índice, e retornar um número inteiro menor que zero, zero ou maior que zero, indicando se o GIN deve ignorar esta entrada do índice, tratar a entrada como uma correspondência ou parar a varredura do índice (opcional)
+   </td>
+   <td>
     5
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      triConsistent
     </code>
-</td>
-<td>determinar se o valor corresponde à condição da consulta (variante ternária) (opcional se a função de suporte 4 estiver presente)</td>
-<td>
+   </td>
+   <td>
+    determinar se o valor corresponde à condição da consulta (variante ternária) (opcional se a função de suporte 4 estiver presente)
+   </td>
+   <td>
     6
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      options
     </code>
-</td>
-<td>defina opções que sejam específicas para essa classe de operador (opcional)</td>
-<td>
+   </td>
+   <td>
+    defina opções que sejam específicas para essa classe de operador (opcional)
+   </td>
+   <td>
     7
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
 
-Os índices BRIN têm cinco funções de suporte básicas, uma das quais é opcional, conforme mostrado na [Tabela 36.14][(xindex.md#XINDEX-BRIN-SUPPORT-TABLE "Table 36.14. BRIN Support Functions")]. Algumas versões das funções básicas exigem que funções de suporte adicionais sejam fornecidas. (Para mais informações, consulte [Seção 65.5.3][(brin.md#BRIN-EXTENSIBILITY "65.5.3. Extensibility")].
+
+
+
+
+Os índices BRIN têm cinco funções de suporte básicas, uma das quais é opcional, conforme mostrado na [Tabela 36.14](xindex.md#XINDEX-BRIN-SUPPORT-TABLE). Algumas versões das funções básicas exigem que funções de suporte adicionais sejam fornecidas. (Para mais informações, consulte [Seção 65.5.3](brin.md#BRIN-EXTENSIBILITY).
 
 **Tabela 36.14. Funções de Suporte do BRIN**
 
 
 
 <table border="1" class="table" summary="BRIN Support Functions">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Function
    </th>
-<th>Descrição</th>
-<th>
+   <th>
+    Descrição
+   </th>
+   <th>
     Support Number
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="function">
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="function">
      opcInfo
     </code>
-</td>
-<td>retorne informações internas que descrevam os dados resumidos das colunas indexadas</td>
-<td>
+   </td>
+   <td>
+    retorne informações internas que descrevam os dados resumidos das colunas indexadas
+   </td>
+   <td>
     1
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      add_value
     </code>
-</td>
-<td>adicionar um novo valor a um conjunto de tuplas de índice resumido existente</td>
-<td>
+   </td>
+   <td>
+    adicionar um novo valor a um conjunto de tuplas de índice resumido existente
+   </td>
+   <td>
     2
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      consistent
     </code>
-</td>
-<td>determinar se o valor corresponde à condição da consulta</td>
-<td>
+   </td>
+   <td>
+    determinar se o valor corresponde à condição da consulta
+   </td>
+   <td>
     3
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      union
     </code>
-</td>
-<td>calcular a união de dois tuplos resumidos</td>
-<td>
+   </td>
+   <td>
+    calcular a união de dois tuplos resumidos
+   </td>
+   <td>
     4
    </td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </tr>
+  <tr>
+   <td>
+    <code class="function">
      options
     </code>
-</td>
-<td>defina opções que sejam específicas para essa classe de operador (opcional)</td>
-<td>
+   </td>
+   <td>
+    defina opções que sejam específicas para essa classe de operador (opcional)
+   </td>
+   <td>
     5
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Ao contrário dos operadores de busca, as funções de suporte retornam o tipo de dados que o método de índice específico espera; por exemplo, no caso da função de comparação para B-trees, um inteiro assinado. O número e os tipos dos argumentos de cada função de suporte também dependem do método de índice. Para B-tree e hash, as funções de suporte de comparação e hashing aceitam os mesmos tipos de dados de entrada que os operadores incluídos na classe de operadores, mas isso não é o caso da maioria das funções de suporte GiST, SP-GiST, GIN e BRIN.
 
 ### 36.16.4. Um exemplo [#](#XINDEX-EXAMPLE)
 
-Agora que vimos as ideias, aqui está o exemplo prometido para criar uma nova classe de operadores. (Você pode encontrar uma cópia de trabalho deste exemplo em `src/tutorial/complex.c` e `src/tutorial/complex.sql` na distribuição de código-fonte.) A classe de operadores encapsula operadores que ordenam números complexos em ordem de valor absoluto, então escolhemos o nome `complex_abs_ops`. Primeiro, precisamos de um conjunto de operadores. O procedimento para definir operadores foi discutido em [Seção 36.14][(xoper.md "36.14. User-Defined Operators")]. Para uma classe de operadores em B-trees, os operadores que exigimos são:
+Agora que vimos as ideias, aqui está o exemplo prometido para criar uma nova classe de operadores. (Você pode encontrar uma cópia de trabalho deste exemplo em `src/tutorial/complex.c` e `src/tutorial/complex.sql` na distribuição de código-fonte.) A classe de operadores encapsula operadores que ordenam números complexos em ordem de valor absoluto, então escolhemos o nome `complex_abs_ops`. Primeiro, precisamos de um conjunto de operadores. O procedimento para definir operadores foi discutido em [Seção 36.14](xoper.md). Para uma classe de operadores em B-trees, os operadores que exigimos são:
 
-* menor que (absoluto) (estratégia 1)  
-* menor que ou igual a (absoluto) (estratégia 2)  
-* igual (absoluto) (estratégia 3)  
-* maior que ou igual a (absoluto) (estratégia 4)  
+* menor que (absoluto) (estratégia 1)
+* menor que ou igual a (absoluto) (estratégia 2)
+* igual (absoluto) (estratégia 3)
+* maior que ou igual a (absoluto) (estratégia 4)
 * maior que (absoluto) (estratégia 5)
 
 A maneira menos propensa a erros de definir um conjunto relacionado de operadores de comparação é escrever primeiro a função de suporte de comparação de árvore B, e depois escrever as outras funções como invólucros de uma linha em torno da função de suporte. Isso reduz as chances de obter resultados inconsistentes para casos de esquina. Seguindo essa abordagem, primeiro escrevemos:
@@ -1240,7 +1392,7 @@ ALTER OPERATOR FAMILY integer_ops USING btree ADD
 
 Observe que essa definição "sobrecarrega" os números da estratégia do operador e da função de suporte: cada número ocorre várias vezes dentro da família. Isso é permitido desde que cada instância de um número específico tenha tipos de dados de entrada distintos. As instâncias que têm ambos os tipos de entrada iguais ao tipo de entrada de uma classe de operador são os operadores e funções de suporte primários para aquela classe de operador, e na maioria dos casos devem ser declaradas como parte da classe de operador em vez de como membros soltos da família.
 
-Em uma família de operadores de árvore B, todos os operadores da família devem ser compatíveis, conforme detalhado em [Seção 65.1.2][(btree.md#BTREE-BEHAVIOR "65.1.2. Behavior of B-Tree Operator Classes")]. Para cada operador da família, deve haver uma função de suporte com os mesmos dois tipos de dados de entrada que o operador. Recomenda-se que uma família seja completa, ou seja, para cada combinação de tipos de dados, todos os operadores devem ser incluídos. Cada classe de operador deve incluir apenas os operadores não cruzados e a função de suporte para seu tipo de dados.
+Em uma família de operadores de árvore B, todos os operadores da família devem ser compatíveis, conforme detalhado em [Seção 65.1.2](btree.md#BTREE-BEHAVIOR). Para cada operador da família, deve haver uma função de suporte com os mesmos dois tipos de dados de entrada que o operador. Recomenda-se que uma família seja completa, ou seja, para cada combinação de tipos de dados, todos os operadores devem ser incluídos. Cada classe de operador deve incluir apenas os operadores não cruzados e a função de suporte para seu tipo de dados.
 
 Para construir uma família de operadores de hash de vários tipos de dados, funções de suporte a hash compatíveis devem ser criadas para cada tipo de dados que é suportado pela família. Aqui, a compatibilidade significa que as funções são garantidas para retornar o mesmo código de hash para quaisquer dois valores que são considerados iguais pelos operadores de igualdade da família, mesmo quando os valores são de tipos diferentes. Isso geralmente é difícil de realizar quando os tipos têm representações físicas diferentes, mas pode ser feito em alguns casos. Além disso, a conversão de um valor de um tipo de dados representado na família de operadores para outro tipo de dados também representado na família de operadores via uma conversão implícita ou binária não deve alterar o valor de hash calculado. Observe que há apenas uma função de suporte por tipo de dados, não uma por operador de igualdade. Recomenda-se que uma família seja completa, ou seja, forneça um operador de igualdade para cada combinação de tipos de dados. Cada classe de operador deve incluir apenas o operador de igualdade não cruzado e a função de suporte para seu tipo de dados.
 

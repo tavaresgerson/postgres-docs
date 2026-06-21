@@ -22,7 +22,7 @@ DROP OPERATOR FAMILY [ IF EXISTS ] name USING index_method [ CASCADE | RESTRICT 
 
 *`index_method`*: O nome do método de acesso ao índice para o qual a família de operadores é destinada.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem da família de operadores e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem da família de operadores e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a eliminação da família de operadores se algum objeto depender dela. Este é o padrão.
 

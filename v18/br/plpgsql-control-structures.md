@@ -509,7 +509,7 @@ END LOOP [ label ];
 
 Isso é semelhante à forma anterior, exceto que a consulta de origem é especificada como uma expressão em cadeia, que é avaliada e reprojetada em cada entrada no loop `FOR`. Isso permite que o programador escolha a velocidade de uma consulta pré-planejada ou a flexibilidade de uma consulta dinâmica, assim como com uma simples declaração `EXECUTE`. Assim como em `EXECUTE`, os valores dos parâmetros podem ser inseridos no comando dinâmico via `USING`.
 
-Outra maneira de especificar a consulta cujos resultados devem ser iterados é declará-la como um cursor. Isso é descrito em [Seção 41.7.4][(plpgsql-cursors.md#PLPGSQL-CURSOR-FOR-LOOP "41.7.4. Looping through a Cursor's Result")].
+Outra maneira de especificar a consulta cujos resultados devem ser iterados é declará-la como um cursor. Isso é descrito em [Seção 41.7.4](plpgsql-cursors.md#PLPGSQL-CURSOR-FOR-LOOP).
 
 ### 41.6.7. Percorrer matrizes em laço [#](#PLPGSQL-FOREACH-ARRAY)
 
@@ -650,13 +650,13 @@ SELECT merge_db(1, 'dennis');
 
 Essa codificação assume que o erro `unique_violation` é causado pelo `INSERT`, e não, por exemplo, por um `INSERT` em uma função de gatilho na tabela. Também pode se comportar mal se houver mais de um índice único na tabela, pois ele repetirá a operação independentemente do índice que causou o erro. Mais segurança pode ser obtida usando as características discutidas a seguir para verificar se o erro capturado era o esperado.
 
-  
+
 
 #### 41.6.8.1. Obter informações sobre um erro [#](#PLPGSQL-EXCEPTION-DIAGNOSTICS)
 
 Os manipuladores de exceções frequentemente precisam identificar o erro específico que ocorreu. Existem duas maneiras de obter informações sobre a exceção atual no PL/pgSQL: variáveis especiais e o comando `GET STACKED DIAGNOSTICS`.
 
-Dentro de um manipulador de exceção, a variável especial `SQLSTATE` contém o código de erro que corresponde à exceção que foi levantada (consulte [Tabela A.1][(errcodes-appendix.md#ERRCODES-TABLE "Table A.1. PostgreSQL Error Codes")] para uma lista de códigos de erro possíveis). A variável especial `SQLERRM` contém a mensagem de erro associada à exceção. Essas variáveis são indefinidas fora dos manipuladores de exceção.
+Dentro de um manipulador de exceção, a variável especial `SQLSTATE` contém o código de erro que corresponde à exceção que foi levantada (consulte [Tabela A.1](errcodes-appendix.md#ERRCODES-TABLE) para uma lista de códigos de erro possíveis). A variável especial `SQLERRM` contém a mensagem de erro associada à exceção. Essas variáveis são indefinidas fora dos manipuladores de exceção.
 
 Dentro de um manipulador de exceção, também é possível recuperar informações sobre a exceção atual usando o comando `GET STACKED DIAGNOSTICS`, que tem a seguinte forma:
 
@@ -671,160 +671,189 @@ Cada *`item`* é uma palavra-chave que identifica um valor de status a ser atrib
 
 
 <table border="1" class="table" summary="Error Diagnostics Items">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Name
    </th>
-<th>
+   <th>
     Type
    </th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      RETURNED_SQLSTATE
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      text
     </code>
-</td>
-<td>o código de erro SQLSTATE da exceção</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    o código de erro SQLSTATE da exceção
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      COLUMN_NAME
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      text
     </code>
-</td>
-<td>o nome da coluna relacionada à exceção</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    o nome da coluna relacionada à exceção
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      CONSTRAINT_NAME
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      text
     </code>
-</td>
-<td>o nome da restrição relacionada à exceção</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    o nome da restrição relacionada à exceção
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      PG_DATATYPE_NAME
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      text
     </code>
-</td>
-<td>o nome do tipo de dados relacionado à exceção</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    o nome do tipo de dados relacionado à exceção
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      MESSAGE_TEXT
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      text
     </code>
-</td>
-<td>o texto da mensagem principal da exceção</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    o texto da mensagem principal da exceção
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      TABLE_NAME
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      text
     </code>
-</td>
-<td>o nome da tabela relacionada à exceção</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    o nome da tabela relacionada à exceção
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      SCHEMA_NAME
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      text
     </code>
-</td>
-<td>o nome do esquema relacionado à exceção</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    o nome do esquema relacionado à exceção
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      PG_EXCEPTION_DETAIL
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      text
     </code>
-</td>
-<td>o texto da mensagem de detalhe da exceção, se houver</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    o texto da mensagem de detalhe da exceção, se houver
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      PG_EXCEPTION_HINT
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      text
     </code>
-</td>
-<td>o texto da mensagem de dica da exceção, se houver</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    o texto da mensagem de dica da exceção, se houver
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      PG_EXCEPTION_CONTEXT
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      text
     </code>
-</td>
-<td>linha(s) de texto descrevendo a pilha de chamadas no momento da exceção (ver<a class="xref" href="plpgsql-control-structures.md#PLPGSQL-CALL-STACK" title="41.6.9. Obtaining Execution Location Information">Seção 41.6.9</a>)</td>
-</tr>
-</tbody>
+   </td>
+   <td>
+    linha(s) de texto descrevendo a pilha de chamadas no momento da exceção (ver
+    <a class="xref" href="plpgsql-control-structures.md#PLPGSQL-CALL-STACK" title="41.6.9. Obtaining Execution Location Information">
+     Seção 41.6.9
+    </a>
+    )
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Se a exceção não definir um valor para um item, uma string vazia será devolvida.
 
@@ -847,7 +876,7 @@ END;
 
 ### 41.6.9. Obter informações sobre a localização da execução [#](#PLPGSQL-CALL-STACK)
 
-O comando `GET DIAGNOSTICS`, descrito anteriormente na [Seção 41.5.5][(plpgsql-statements.md#PLPGSQL-STATEMENTS-DIAGNOSTICS "41.5.5. Obtaining the Result Status")], recupera informações sobre o estado atual de execução (enquanto o comando `GET STACKED DIAGNOSTICS`, discutido acima, relata informações sobre o estado de execução a partir de um erro anterior). Seu item de status `PG_CONTEXT` é útil para identificar a localização atual de execução. `PG_CONTEXT` retorna uma string de texto com(s) linha(s) de texto descrevendo a pilha de chamadas. A primeira linha se refere à função atual e ao comando `GET DIAGNOSTICS` atualmente em execução. A segunda e quaisquer linhas subsequentes se referem a funções chamadas mais acima na pilha de chamadas. Por exemplo:
+O comando `GET DIAGNOSTICS`, descrito anteriormente na [Seção 41.5.5](plpgsql-statements.md#PLPGSQL-STATEMENTS-DIAGNOSTICS), recupera informações sobre o estado atual de execução (enquanto o comando `GET STACKED DIAGNOSTICS`, discutido acima, relata informações sobre o estado de execução a partir de um erro anterior). Seu item de status `PG_CONTEXT` é útil para identificar a localização atual de execução. `PG_CONTEXT` retorna uma string de texto com(s) linha(s) de texto descrevendo a pilha de chamadas. A primeira linha se refere à função atual e ao comando `GET DIAGNOSTICS` atualmente em execução. A segunda e quaisquer linhas subsequentes se referem a funções chamadas mais acima na pilha de chamadas. Por exemplo:
 
 ```
 CREATE OR REPLACE FUNCTION outer_func() RETURNS integer AS $$

@@ -18,7 +18,7 @@ DROP VIEW [ IF EXISTS ] name [, ...] [ CASCADE | RESTRICT ]
 
 *`name`*: O nome (opcionalmente qualificado por esquema) da visualização a ser removida.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem da visualização (como outras visualizações), e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem da visualização (como outras visualizações), e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a eliminação da visão se algum objeto depender dela. Esse é o padrão.
 

@@ -28,7 +28,7 @@ CSV: [Valores separados por vírgula](https://en.wikipedia.org/wiki/Comma-separa
 
 CTE: [Expressão de Tabela Comum](queries-with.md "7.8. WITH Queries (Common Table Expressions)")
 
-CVE: [Vulnerabilidades e Exposições Comuns][(https://cve.mitre.org/)]
+CVE: [Vulnerabilidades e Exposições Comuns](https://cve.mitre.org/)
 
 DBA: [Administrador de Banco de Dados](https://en.wikipedia.org/wiki/Database_administrator)
 
@@ -42,9 +42,9 @@ DML: [Linguagem de Manipulação de Dados](https://en.wikipedia.org/wiki/Data_ma
 
 DTA: [Horário de Verão](https://en.wikipedia.org/wiki/Daylight_saving_time)
 
-ECPG: [C embutido para PostgreSQL][(ecpg.md "Chapter 34. ECPG — Embedded SQL in C")]
+ECPG: [C embutido para PostgreSQL](ecpg.md)
 
-ESQL: [SQL embutido][(https://en.wikipedia.org/wiki/Embedded_SQL)]
+ESQL: [SQL embutido](https://en.wikipedia.org/wiki/Embedded_SQL)
 
 Perguntas Frequentes: [Perguntas Frequentes](https://en.wikipedia.org/wiki/FAQ)
 
@@ -114,9 +114,9 @@ ORDBMS: [Sistema de Gerenciamento de Banco de Dados Objeto-Relação](https://en
 
 PAM: Módulos de Autenticação Conectam-se (Pluggable Authentication Modules) (https://en.wikipedia.org/wiki/Pluggable_authentication_module)
 
-PGSQL: [PostgreSQL][(index.md "PostgreSQL 18.4 Documentation")]
+PGSQL: [PostgreSQL](index.md)
 
-PGXS: [Sistema de Extensão PostgreSQL][(extend-pgxs.md "36.18. Extension Building Infrastructure")]
+PGXS: [Sistema de Extensão PostgreSQL](extend-pgxs.md)
 
 PID: [Identificador do processo](https://en.wikipedia.org/wiki/Process_identifier)
 
@@ -158,7 +158,7 @@ TLS: [Segurança da Camada de Transporte](https://en.wikipedia.org/wiki/Transpor
 
 TOAST: [Técnica de Armazenamento de Atributos de Grande Tamanho](storage-toast.md "66.2. TOAST")
 
-TPC: [Conselho de Desempenho de Processamento de Transações][(http://www.tpc.org/)]
+TPC: [Conselho de Desempenho de Processamento de Transações](http://www.tpc.org/)
 
 URL: [Localizador de Recursos Uniforme](https://en.wikipedia.org/wiki/URL)
 

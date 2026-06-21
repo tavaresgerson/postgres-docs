@@ -8,61 +8,68 @@
 * [19.5.6. Alvo de recuperação](runtime-config-wal.md#RUNTIME-CONFIG-WAL-RECOVERY-TARGET)
 * [19.5.7. Resumo WAL](runtime-config-wal.md#RUNTIME-CONFIG-WAL-SUMMARIZATION)
 
-Para informações adicionais sobre o ajuste dessas configurações, consulte [Seção 28.5][(wal-configuration.md "28.5. WAL Configuration")].
+Para informações adicionais sobre o ajuste dessas configurações, consulte [Seção 28.5](wal-configuration.md).
 
 ### 19.5.1. Configurações [#](#RUNTIME-CONFIG-WAL-SETTINGS)
 
 `wal_level` (`enum`) [#](#GUC-WAL-LEVEL): `wal_level` determina quanto de informação é escrito para o WAL. O valor padrão é `replica`, que escreve dados suficientes para suportar a arquivamento e replicação do WAL, incluindo a execução de consultas somente de leitura em um servidor de espera. `minimal` remove toda a logagem, exceto as informações necessárias para recuperar de um acidente ou desligamento imediato. Finalmente, `logical` adiciona informações necessárias para suportar a decodificação lógica. Cada nível inclui as informações registradas em todos os níveis inferiores. Este parâmetro só pode ser definido no início do servidor.
 
-O nível `minimal` gera o menor volume de WAL. Ele não registra nenhuma informação de linha para relações permanentes em transações que as criam ou as reescrevem. Isso pode tornar as operações muito mais rápidas (consulte [Seção 14.4.7][(populate.md#POPULATE-PITR "14.4.7. Disable WAL Archival and Streaming Replication")]). As operações que iniciam essa otimização incluem:
+O nível `minimal` gera o menor volume de WAL. Ele não registra nenhuma informação de linha para relações permanentes em transações que as criam ou as reescrevem. Isso pode tornar as operações muito mais rápidas (consulte [Seção 14.4.7](populate.md#POPULATE-PITR)). As operações que iniciam essa otimização incluem:
 
-    
+
 
 <table border="0" class="simplelist" summary="Simple list">
-<tr>
-<td>
-<code class="command">
+ <tr>
+  <td>
+   <code class="command">
     ALTER ... SET TABLESPACE
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="command">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="command">
     CLUSTER
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="command">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="command">
     CREATE TABLE
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="command">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="command">
     REFRESH MATERIALIZED VIEW
-   </code>(sem<code class="option">
+   </code>
+   (sem
+   <code class="option">
     CONCURRENTLY
-   </code>)</td>
-</tr>
-<tr>
-<td>
-<code class="command">
+   </code>
+   )
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="command">
     REINDEX
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="command">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="command">
     TRUNCATE
    </code>
-</td>
-</tr>
+  </td>
+ </tr>
 </table>
+
+
+
 
 
 
@@ -80,15 +87,15 @@ Exemplos de circunstâncias seguras para desativar `fsync` incluem o carregament
 
 Para uma recuperação confiável ao mudar `fsync` de desligado para ligado, é necessário forçar todos os buffers modificados no kernel para armazenamento durável. Isso pode ser feito enquanto o clúster está desligado ou enquanto `fsync` está ligado, executando `initdb --sync-only`, executando `sync`, desmontando o sistema de arquivos ou reiniciando o servidor.
 
-Em muitas situações, desligar [synchronous_commit][(runtime-config-wal.md#GUC-SYNCHRONOUS-COMMIT)] para transações não críticas pode oferecer muitos dos benefícios de desempenho potencial de desligar [`fsync`], sem os riscos associados à corrupção de dados.
+Em muitas situações, desligar [synchronous_commit](runtime-config-wal.md#GUC-SYNCHRONOUS-COMMIT) para transações não críticas pode oferecer muitos dos benefícios de desempenho potencial de desligar [`fsync`], sem os riscos associados à corrupção de dados.
 
-`fsync` só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor. Se você desativar este parâmetro, também considere desativar [full_page_writes][(runtime-config-wal.md#GUC-FULL-PAGE-WRITES)].
+`fsync` só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor. Se você desativar este parâmetro, também considere desativar [full_page_writes](runtime-config-wal.md#GUC-FULL-PAGE-WRITES).
 
 `synchronous_commit` (`enum`) [#](#GUC-SYNCHRONOUS-COMMIT): Especifica quanto processamento do WAL deve ser concluído antes que o servidor de banco de dados retorne uma indicação de “sucesso” ao cliente. Os valores válidos são `remote_apply`, `on` (o padrão), `remote_write`, `local` e `off`.
 
-Se `synchronous_standby_names` estiver vazio, os únicos ajustes significativos são `on` e `off`; `remote_apply`, `remote_write` e `local` fornecem o mesmo nível de sincronização local que `on`. O comportamento local de todos os modos que não são `off` é esperar pelo apagamento local do WAL no disco. No modo `off`, não há espera, então pode haver um atraso entre o momento em que o sucesso é relatado ao cliente e quando a transação é posteriormente garantida como segura contra um crash do servidor. (O atraso máximo é três vezes [wal_writer_delay][(runtime-config-wal.md#GUC-WAL-WRITER-DELAY)].). Ao contrário de [fsync][(runtime-config-wal.md#GUC-FSYNC)], definir este parâmetro para `off` não cria nenhum risco de inconsistência no banco de dados: um crash do sistema operacional ou do banco de dados pode resultar na perda de algumas transações supostamente comprometidas, mas o estado do banco de dados será exatamente o mesmo como se essas transações tivessem sido abortadas de forma limpa. Portanto, desativar `synchronous_commit` pode ser uma alternativa útil quando o desempenho é mais importante do que a certeza exata sobre a durabilidade de uma transação. Para mais discussão, veja [Seção 28.4][(wal-async-commit.md "28.4. Asynchronous Commit")].
+Se `synchronous_standby_names` estiver vazio, os únicos ajustes significativos são `on` e `off`; `remote_apply`, `remote_write` e `local` fornecem o mesmo nível de sincronização local que `on`. O comportamento local de todos os modos que não são `off` é esperar pelo apagamento local do WAL no disco. No modo `off`, não há espera, então pode haver um atraso entre o momento em que o sucesso é relatado ao cliente e quando a transação é posteriormente garantida como segura contra um crash do servidor. (O atraso máximo é três vezes [wal_writer_delay](runtime-config-wal.md#GUC-WAL-WRITER-DELAY).). Ao contrário de [fsync](runtime-config-wal.md#GUC-FSYNC), definir este parâmetro para `off` não cria nenhum risco de inconsistência no banco de dados: um crash do sistema operacional ou do banco de dados pode resultar na perda de algumas transações supostamente comprometidas, mas o estado do banco de dados será exatamente o mesmo como se essas transações tivessem sido abortadas de forma limpa. Portanto, desativar `synchronous_commit` pode ser uma alternativa útil quando o desempenho é mais importante do que a certeza exata sobre a durabilidade de uma transação. Para mais discussão, veja [Seção 28.4](wal-async-commit.md).
 
-Se [synchronous_standby_names][(runtime-config-replication.md#GUC-SYNCHRONOUS-STANDBY-NAMES)] não estiver vazio, `synchronous_commit` também controla se os commits de transação irão esperar que seus registros WAL sejam processados no(s) servidor(es) de standby.
+Se [synchronous_standby_names](runtime-config-replication.md#GUC-SYNCHRONOUS-STANDBY-NAMES) não estiver vazio, `synchronous_commit` também controla se os commits de transação irão esperar que seus registros WAL sejam processados no(s) servidor(es) de standby.
 
 Quando configurado em `remote_apply`, os compromissos aguardam até que as respostas dos standby(s) síncronos atuais indiquem que receberam o registro de compromisso da transação e o aplicaram, de modo que ele se torne visível para consultas nos(s) standby(s), e também escrito em armazenamento durável nos(s) standby(s). Isso causará atrasos muito maiores nos compromissos do que as configurações anteriores, pois espera pela reprodução da WAL. Quando configurado em `on`, os compromissos aguardam até que as respostas dos standby(s) síncronos atuais indiquem que receberam o registro de compromisso da transação e o descarregaram em armazenamento durável. Isso garante que a transação não será perdida, a menos que tanto o principal quanto todos os standby(s) síncronos sofram corrupção de seu armazenamento de banco de dados. Quando configurado em `remote_write`, os compromissos aguardam até que as respostas dos standby(s) síncronos atuais indiquem que receberam o registro de compromisso da transação e o escreveram em seus sistemas de arquivos. Esta configuração garante a preservação dos dados se uma instância de standby do PostgreSQL falhar, mas não se a instância de standby sofrer um falha de nível operacional porque os dados não necessariamente atingiram o armazenamento durável no standby. A configuração `local` faz com que os compromissos esperem pelo descarregamento local no disco, mas não para replicação. Isso geralmente não é desejável quando a replicação síncrona está em uso, mas é fornecido por completo.
 
@@ -98,107 +105,116 @@ Este parâmetro pode ser alterado a qualquer momento; o comportamento de qualque
 
 **Tabela 19.1. Modos de sincronização_commit**
 
-    
+
 
 <table border="1" class="table" summary="synchronous_commit Modes">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-<col class="col4"/>
-<col class="col5"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+  <col class="col4"/>
+  <col class="col5"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     synchronous_commit setting
    </th>
-<th>
+   <th>
     local durable commit
    </th>
-<th>
+   <th>
     standby durable commit after PG crash
    </th>
-<th>commit durável de espera após o crash do sistema operacional</th>
-<th>
+   <th>
+    commit durável de espera após o crash do sistema operacional
+   </th>
+   <th>
     standby query consistency
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
     remote_apply
    </td>
-<td align="center">
+   <td align="center">
     •
    </td>
-<td align="center">
+   <td align="center">
     •
    </td>
-<td align="center">•</td>
-<td align="center">
+   <td align="center">
     •
    </td>
-</tr>
-<tr>
-<td>
+   <td align="center">
+    •
+   </td>
+  </tr>
+  <tr>
+   <td>
     on
    </td>
-<td align="center">
+   <td align="center">
     •
    </td>
-<td align="center">
+   <td align="center">
     •
    </td>
-<td align="center">•</td>
-<td align="center">
-</td>
-</tr>
-<tr>
-<td>
+   <td align="center">
+    •
+   </td>
+   <td align="center">
+   </td>
+  </tr>
+  <tr>
+   <td>
     remote_write
    </td>
-<td align="center">
+   <td align="center">
     •
    </td>
-<td align="center">
+   <td align="center">
     •
    </td>
-<td align="center">
-</td>
-<td align="center">
-</td>
-</tr>
-<tr>
-<td>
+   <td align="center">
+   </td>
+   <td align="center">
+   </td>
+  </tr>
+  <tr>
+   <td>
     local
    </td>
-<td align="center">
+   <td align="center">
     •
    </td>
-<td align="center">
-</td>
-<td align="center">
-</td>
-<td align="center">
-</td>
-</tr>
-<tr>
-<td>
+   <td align="center">
+   </td>
+   <td align="center">
+   </td>
+   <td align="center">
+   </td>
+  </tr>
+  <tr>
+   <td>
     off
    </td>
-<td align="center">
-</td>
-<td align="center">
-</td>
-<td align="center">
-</td>
-<td align="center">
-</td>
-</tr>
-</tbody>
+   <td align="center">
+   </td>
+   <td align="center">
+   </td>
+   <td align="center">
+   </td>
+   <td align="center">
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 
@@ -206,13 +222,13 @@ Este parâmetro pode ser alterado a qualquer momento; o comportamento de qualque
 
 * `open_datasync` (escreva arquivos WAL com a opção `open()` `O_DSYNC`) * `fdatasync` (chame `fdatasync()` em cada commit) * `fsync` (chame `fsync()` em cada commit) * `fsync_writethrough` (chame `fsync()` em cada commit, forçando a escrita direta de qualquer cache de escrita em disco) * `open_sync` (escreva arquivos WAL com a opção `open()` `O_SYNC`)
 
-Nem todas essas opções estão disponíveis em todas as plataformas. O padrão é o primeiro método na lista acima que é suportado pela plataforma, exceto que `fdatasync` é o padrão no Linux e no FreeBSD. O padrão não é necessariamente ideal; pode ser necessário alterar este ajuste ou outros aspectos da configuração do seu sistema para criar uma configuração segura contra falhas ou alcançar o desempenho ótimo. Esses aspectos são discutidos em [Seção 28.1][(wal-reliability.md "28.1. Reliability")]. Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor.
+Nem todas essas opções estão disponíveis em todas as plataformas. O padrão é o primeiro método na lista acima que é suportado pela plataforma, exceto que `fdatasync` é o padrão no Linux e no FreeBSD. O padrão não é necessariamente ideal; pode ser necessário alterar este ajuste ou outros aspectos da configuração do seu sistema para criar uma configuração segura contra falhas ou alcançar o desempenho ótimo. Esses aspectos são discutidos em [Seção 28.1](wal-reliability.md). Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor.
 
 `full_page_writes` (`boolean`) [#](#GUC-FULL-PAGE-WRITES): Quando este parâmetro está ativado, o servidor PostgreSQL escreve todo o conteúdo de cada página do disco no WAL durante a primeira modificação dessa página após um ponto de verificação. Isso é necessário porque uma escrita de página que está em processo durante um acidente do sistema operacional pode ser apenas parcialmente concluída, levando a uma página em disco que contém uma mistura de dados antigos e novos. Os dados de mudança de nível de linha normalmente armazenados no WAL não serão suficientes para restaurar completamente tal página durante a recuperação pós-acidente. Armazenar a imagem completa da página garante que a página possa ser restaurada corretamente, mas ao preço de aumentar a quantidade de dados que deve ser escrita no WAL. (Como o replay do WAL sempre começa a partir de um ponto de verificação, é suficiente fazer isso durante a primeira mudança de cada página após um ponto de verificação. Portanto, uma maneira de reduzir o custo das escritas de página completa é aumentar os parâmetros do intervalo do ponto de verificação.)
 
 Desligar este parâmetro acelera o funcionamento normal, mas pode levar à corrupção dos dados irrecuperável ou à corrupção silenciosa dos dados após uma falha no sistema. Os riscos são semelhantes aos de desligar `fsync`, embora menores, e deve ser desligado apenas com base nas mesmas circunstâncias recomendadas para esse parâmetro.
 
-Desativar este parâmetro não afeta o uso do arquivamento WAL para recuperação em ponto no tempo (PITR) (consulte [Seção 25.3][(continuous-archiving.md "25.3. Continuous Archiving and Point-in-Time Recovery (PITR)]).
+Desativar este parâmetro não afeta o uso do arquivamento WAL para recuperação em ponto no tempo (PITR) (consulte [Seção 25.3](continuous-archiving.md)).
 
 Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor. O padrão é `on`.
 
@@ -222,7 +238,7 @@ Se os checksums de dados estiverem habilitados, as atualizações do bit de dica
 
 Este parâmetro só pode ser definido no início do servidor. O valor padrão é `off`.
 
-`wal_compression` (`enum`) [#](#GUC-WAL-COMPRESSION): Este parâmetro permite a compressão do WAL usando o método de compressão especificado. Quando habilitado, o servidor PostgreSQL comprime imagens de página completa escritas no WAL (por exemplo, quando [full_page_writes][(runtime-config-wal.md#GUC-FULL-PAGE-WRITES)] está ativado, durante um backup básico, etc.). Uma imagem de página comprimida será descomprimida durante a reprodução do WAL. Os métodos suportados são `pglz`, `lz4` (se o PostgreSQL foi compilado com `--with-lz4`) e `zstd` (se o PostgreSQL foi compilado com `--with-zstd`). O valor padrão é `off`. Somente usuários superusuários e usuários com o privilégio apropriado `SET` podem alterar esta configuração.
+`wal_compression` (`enum`) [#](#GUC-WAL-COMPRESSION): Este parâmetro permite a compressão do WAL usando o método de compressão especificado. Quando habilitado, o servidor PostgreSQL comprime imagens de página completa escritas no WAL (por exemplo, quando [full_page_writes](runtime-config-wal.md#GUC-FULL-PAGE-WRITES) está ativado, durante um backup básico, etc.). Uma imagem de página comprimida será descomprimida durante a reprodução do WAL. Os métodos suportados são `pglz`, `lz4` (se o PostgreSQL foi compilado com `--with-lz4`) e `zstd` (se o PostgreSQL foi compilado com `--with-zstd`). O valor padrão é `off`. Somente usuários superusuários e usuários com o privilégio apropriado `SET` podem alterar esta configuração.
 
 A ativação da compressão pode reduzir o volume do WAL sem aumentar o risco de corrupção de dados irrecuperáveis, mas com o custo de um pouco de CPU extra gasto na compressão durante o registro do WAL e na descomprimagem durante a reprodução do WAL.
 
@@ -296,12 +312,13 @@ Para iniciar o servidor no modo standby, crie um arquivo chamado `standby.signal
 
 Para iniciar o servidor no modo de recuperação direcionado, crie um arquivo chamado `recovery.signal` no diretório de dados. Se os arquivos `standby.signal` e `recovery.signal` forem criados, o modo de espera tem precedência. O modo de recuperação direcionado termina quando o WAL arquivado é totalmente reinterpretado ou quando o `recovery_target` é alcançado. Neste modo, os parâmetros desta seção e do [Seção 19.5.6](runtime-config-wal.md#RUNTIME-CONFIG-WAL-RECOVERY-TARGET "19.5.6. Recovery Target") serão usados.
 
-`restore_command` (`string`) [#](#GUC-RESTORE-COMMAND): O comando de linha de comando local a ser executado para recuperar um segmento arquivado da série de arquivos WAL. Este parâmetro é necessário para a recuperação de arquivos de arquivamento, mas opcional para replicação em fluxo. Qualquer `%f` na string é substituído pelo nome do arquivo a ser recuperado do arquivo, e qualquer `%p` é substituído pelo nome do caminho de destino da cópia no servidor. (O nome do caminho é relativo ao diretório de trabalho atual, ou seja, o diretório de dados do clúster.) Qualquer `%r` é substituído pelo nome do arquivo que contém o último ponto de reinício válido. Esse é o arquivo mais antigo que deve ser mantido para permitir que uma restauração possa ser reiniciada, então essas informações podem ser usadas para truncar o arquivo apenas no mínimo necessário para suportar o reinício a partir da restauração atual. `%r` é tipicamente usado apenas em configurações de standby quente (ver [Seção 26.2][(warm-standby.md "26.2. Log-Shipping Standby Servers")]). Escreva `%%` para incorporar um caractere de `%` real.
+`restore_command` (`string`) [#](#GUC-RESTORE-COMMAND): O comando de linha de comando local a ser executado para recuperar um segmento arquivado da série de arquivos WAL. Este parâmetro é necessário para a recuperação de arquivos de arquivamento, mas opcional para replicação em fluxo. Qualquer `%f` na string é substituído pelo nome do arquivo a ser recuperado do arquivo, e qualquer `%p` é substituído pelo nome do caminho de destino da cópia no servidor. (O nome do caminho é relativo ao diretório de trabalho atual, ou seja, o diretório de dados do clúster.) Qualquer `%r` é substituído pelo nome do arquivo que contém o último ponto de reinício válido. Esse é o arquivo mais antigo que deve ser mantido para permitir que uma restauração possa ser reiniciada, então essas informações podem ser usadas para truncar o arquivo apenas no mínimo necessário para suportar o reinício a partir da restauração atual. `%r` é tipicamente usado apenas em configurações de standby quente (ver [Seção 26.2](warm-standby.md)). Escreva `%%` para incorporar um caractere de `%` real.
 
 É importante que o comando retorne um status de saída zero apenas se for bem-sucedido. O comando *será* solicitado para nomes de arquivos que não estão presentes no arquivo; ele deve retornar um valor não nulo quando solicitado. Exemplos:
 
-``` restore_command = 'cp /mnt/server/archivedir/%f "%p"' restore_command = 'copy "C:\\server\\archivedir\\%f" "%p"'  # Windows
-    ```
+```
+restore_command = 'cp /mnt/server/archivedir/%f "%p"' restore_command = 'copy "C:\\server\\archivedir\\%f" "%p"'  # Windows
+```
 
 Uma exceção é que, se o comando foi encerrado por um sinal (diferente de SIGTERM, que é usado como parte de um desligamento do servidor de banco de dados) ou por um erro do shell (como comando não encontrado), então a recuperação será interrompida e o servidor não será iniciado.
 
@@ -309,24 +326,17 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
 
 `archive_cleanup_command` (`string`) [#](#GUC-ARCHIVE-CLEANUP-COMMAND): Este parâmetro opcional especifica um comando de shell que será executado em cada ponto de reinício. O propósito de `archive_cleanup_command` é fornecer um mecanismo para limpar arquivos WAL arquivados antigos que não são mais necessários pelo servidor de espera. Qualquer `%r` é substituído pelo nome do arquivo que contém o último ponto de reinício válido. Esse é o arquivo mais antigo que deve ser *mantido* para permitir que um restabelecimento seja restabelecido, e, portanto, todos os arquivos anteriores a `%r` podem ser removidos com segurança. Esta informação pode ser usada para truncar o arquivo apenas no mínimo necessário para suportar o reinício a partir do restabelecimento atual. O módulo [pg_archivecleanup](pgarchivecleanup.md "pg_archivecleanup") é frequentemente usado em `archive_cleanup_command` para configurações de único servidor de espera, por exemplo:
 
-``` archive_cleanup_command = 'pg_archivecleanup /mnt/server/archivedir %r'
-    ```
+```
+archive_cleanup_command = 'pg_archivecleanup /mnt/server/archivedir %r'
+```
 
-Observe, no entanto, que se vários servidores de espera estarem restaurando a partir do mesmo diretório de arquivo, você precisará garantir que não delete os arquivos WAL até que eles não sejam mais necessários por nenhum dos servidores.
-`archive_cleanup_command` seria tipicamente usado em uma configuração de standby quente (consulte [Seção 26.2] (warm-standby.md "26.2. Log-Shipping Standby Servers")).
-Escreva `%%` para incorporar um caractere real `%` no comando.
+Observe, no entanto, que se vários servidores de espera estarem restaurando a partir do mesmo diretório de arquivo, você precisará garantir que não delete os arquivos WAL até que eles não sejam mais necessários por nenhum dos servidores. `archive_cleanup_command` seria tipicamente usado em uma configuração de standby quente (consulte [Seção 26.2] (warm-standby.md "26.2. Log-Shipping Standby Servers")). Escreva `%%` para incorporar um caractere real `%` no comando.
 
 Se o comando retornar um estado de saída não nulo, uma mensagem de log de alerta será escrita. Uma exceção é que, se o comando foi terminado por um sinal ou um erro pelo shell (como comando não encontrado), um erro fatal será gerado.
 
 Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor.
 
-`recovery_end_command` (`string`) [#](#GUC-RECOVERY-END-COMMAND)
-:   Este parâmetro especifica um comando de shell que será executado apenas
-    no final da recuperação. Este parâmetro é opcional. O propósito do
-    `recovery_end_command` é fornecer um mecanismo para limpeza
-    seguindo a replicação ou recuperação.
-    Qualquer `%r` é substituído pelo nome do arquivo que contém
-    o último ponto de reinício válido, como em [archive_cleanup_command](runtime-config-wal.md#GUC-ARCHIVE-CLEANUP-COMMAND).
+`recovery_end_command` (`string`) [#](#GUC-RECOVERY-END-COMMAND): Este parâmetro especifica um comando de shell que será executado apenas no final da recuperação. Este parâmetro é opcional. O propósito do `recovery_end_command` é fornecer um mecanismo para limpeza seguindo a replicação ou recuperação. Qualquer `%r` é substituído pelo nome do arquivo que contém o último ponto de reinício válido, como em [archive_cleanup_command](runtime-config-wal.md#GUC-ARCHIVE-CLEANUP-COMMAND).
 
 Se o comando retornar um estado de saída não nulo, uma mensagem de log de alerta será escrita e o banco de dados prosseguirá com o início. Uma exceção é que, se o comando foi terminado por um sinal ou um erro pelo shell (como comando não encontrado), o banco de dados não prosseguirá com o início.
 
@@ -334,87 +344,41 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
 
 ### 19.5.6. Objetivo de recuperação [#](#RUNTIME-CONFIG-WAL-RECOVERY-TARGET)
 
-Por padrão, a recuperação será feita até o final do log WAL. Os seguintes parâmetros podem ser usados para especificar um ponto de parada anterior.
-No máximo, um dos seguintes `recovery_target`,
-`recovery_target_lsn`, `recovery_target_name`,
-`recovery_target_time` ou `recovery_target_xid`
-pode ser usado; se mais de um desses forem especificados no arquivo de configuração, um erro será gerado.
-Esses parâmetros só podem ser definidos no início do servidor.
+Por padrão, a recuperação será feita até o final do log WAL. Os seguintes parâmetros podem ser usados para especificar um ponto de parada anterior. No máximo, um dos seguintes `recovery_target`, `recovery_target_lsn`, `recovery_target_name`, `recovery_target_time` ou `recovery_target_xid` pode ser usado; se mais de um desses forem especificados no arquivo de configuração, um erro será gerado. Esses parâmetros só podem ser definidos no início do servidor.
 
-`recovery_target` `= 'immediate'` [#](#GUC-RECOVERY-TARGET)
-:   Este parâmetro especifica que a recuperação deve terminar assim que um estado consistente for alcançado, ou seja, o mais cedo possível. Ao restaurar a partir de um backup online, isso significa o ponto em que a tomada do backup terminou.
+`recovery_target` `= 'immediate'` [#](#GUC-RECOVERY-TARGET): Este parâmetro especifica que a recuperação deve terminar assim que um estado consistente for alcançado, ou seja, o mais cedo possível. Ao restaurar a partir de um backup online, isso significa o ponto em que a tomada do backup terminou.
 
 Tecnicamente, este é um parâmetro de cadeia, mas `'immediate'` é atualmente o único valor permitido.
 
-`recovery_target_name` (`string`) [#](#GUC-RECOVERY-TARGET-NAME)
-:   Este parâmetro especifica o ponto de restauração nomeado (criado com
-    `pg_create_restore_point()`) para o qual a recuperação prosseguirá.
+`recovery_target_name` (`string`) [#](#GUC-RECOVERY-TARGET-NAME): Este parâmetro especifica o ponto de restauração nomeado (criado com `pg_create_restore_point()`) para o qual a recuperação prosseguirá.
 
-`recovery_target_time` (`timestamp`) [#](#GUC-RECOVERY-TARGET-TIME)
-:   Este parâmetro especifica o rótulo de tempo até o qual a recuperação
-    procurará prosseguir.
-    O ponto de parada preciso também é influenciado por
-    [recovery_target_inclusive](runtime-config-wal.md#GUC-RECOVERY-TARGET-INCLUSIVE).
+`recovery_target_time` (`timestamp`) [#](#GUC-RECOVERY-TARGET-TIME): Este parâmetro especifica o rótulo de tempo até o qual a recuperação procurará prosseguir. O ponto de parada preciso também é influenciado por [recovery_target_inclusive](runtime-config-wal.md#GUC-RECOVERY-TARGET-INCLUSIVE).
 
-O valor deste parâmetro é um rótulo de tempo no mesmo formato
-aceito pelo tipo de dados `timestamp with time zone`,
-exceto que você não pode usar uma abreviação de fuso horário (a menos que
-a variável [timezone_abbreviations](runtime-config-client.md#GUC-TIMEZONE-ABBREVIATIONS) tenha sido definida
-anteriormente no arquivo de configuração). O estilo preferido é usar um
-deslocamento numérico em relação ao UTC, ou você pode escrever um nome
-completo de fuso horário, por exemplo, `Europe/Helsinki` não `EEST`.
+O valor deste parâmetro é um rótulo de tempo no mesmo formato aceito pelo tipo de dados `timestamp with time zone`, exceto que você não pode usar uma abreviação de fuso horário (a menos que a variável [timezone_abbreviations](runtime-config-client.md#GUC-TIMEZONE-ABBREVIATIONS) tenha sido definida anteriormente no arquivo de configuração). O estilo preferido é usar um deslocamento numérico em relação ao UTC, ou você pode escrever um nome completo de fuso horário, por exemplo, `Europe/Helsinki` não `EEST`.
 
-`recovery_target_xid` (`string`) [#](#GUC-RECOVERY-TARGET-XID)
-:   Este parâmetro especifica o ID de transação até o qual a recuperação
-    procurará prosseguir. Tenha em mente
-    que, embora os IDs de transação sejam atribuídos sequencialmente no início da transação,
-    as transações podem ser concluídas em um ordem numérica diferente.
-    As transações que serão recuperadas são aquelas que foram comprometidas
-    antes (e opcionalmente incluindo) a uma especificada.
-    O ponto de parada preciso também é influenciado por
-    [recovery_target_inclusive](runtime-config-wal.md#GUC-RECOVERY-TARGET-INCLUSIVE).
+`recovery_target_xid` (`string`) [#](#GUC-RECOVERY-TARGET-XID): Este parâmetro especifica o ID de transação até o qual a recuperação procurará prosseguir. Tenha em mente que, embora os IDs de transação sejam atribuídos sequencialmente no início da transação, as transações podem ser concluídas em um ordem numérica diferente. As transações que serão recuperadas são aquelas que foram comprometidas antes (e opcionalmente incluindo) a uma especificada. O ponto de parada preciso também é influenciado por [recovery_target_inclusive](runtime-config-wal.md#GUC-RECOVERY-TARGET-INCLUSIVE).
 
-`recovery_target_lsn` (`pg_lsn`) [#](#GUC-RECOVERY-TARGET-LSN)
-:   Este parâmetro especifica o LSN (Local Storage Number) do local de log de pré-escrita até o qual a recuperação prosseguirá. O ponto de parada preciso também é influenciado por [recovery_target_inclusive](runtime-config-wal.md#GUC-RECOVERY-TARGET-INCLUSIVE). Este parâmetro é analisado usando o tipo de dados do sistema
-[`pg_lsn`](datatype-pg-lsn.md "8.20. pg_lsn Type").
+`recovery_target_lsn` (`pg_lsn`) [#](#GUC-RECOVERY-TARGET-LSN): Este parâmetro especifica o LSN (Local Storage Number) do local de log de pré-escrita até o qual a recuperação prosseguirá. O ponto de parada preciso também é influenciado por [recovery_target_inclusive](runtime-config-wal.md#GUC-RECOVERY-TARGET-INCLUSIVE). Este parâmetro é analisado usando o tipo de dados do sistema [`pg_lsn`](datatype-pg-lsn.md "8.20. pg_lsn Type").
 
 As opções a seguir especificam ainda mais o objetivo de recuperação e afetam o que acontece quando o objetivo é alcançado:
 
-`recovery_target_inclusive` (`boolean`) [#](#GUC-RECOVERY-TARGET-INCLUSIVE)
-: Especifica se deve parar logo após o alvo de recuperação especificado
-    (`on`), ou logo antes do alvo de recuperação
-    (`off`).
-    Aplica-se quando [recovery_target_lsn](runtime-config-wal.md#GUC-RECOVERY-TARGET-LSN),
-    [recovery_target_time](runtime-config-wal.md#GUC-RECOVERY-TARGET-TIME), ou
-    [recovery_target_xid](runtime-config-wal.md#GUC-RECOVERY-TARGET-XID) é especificado.
-    Este ajuste controla se as transações
-    que têm exatamente a localização do WAL alvo (LSN), tempo de compromisso ou ID de transação, respectivamente, serão
-    incluídas na recuperação. O padrão é `on`.
+`recovery_target_inclusive` (`boolean`) [#](#GUC-RECOVERY-TARGET-INCLUSIVE): Especifica se deve parar logo após o alvo de recuperação especificado (`on`), ou logo antes do alvo de recuperação (`off`). Aplica-se quando [recovery_target_lsn](runtime-config-wal.md#GUC-RECOVERY-TARGET-LSN), [recovery_target_time](runtime-config-wal.md#GUC-RECOVERY-TARGET-TIME), ou [recovery_target_xid](runtime-config-wal.md#GUC-RECOVERY-TARGET-XID) é especificado. Este ajuste controla se as transações que têm exatamente a localização do WAL alvo (LSN), tempo de compromisso ou ID de transação, respectivamente, serão incluídas na recuperação. O padrão é `on`.
 
-`recovery_target_timeline` (`string`) [#](#GUC-RECOVERY-TARGET-TIMELINE)
-:   Especifica a recuperação em um determinado período de tempo. O valor pode ser um ID de linha de tempo numérico ou um valor especial. O valor
-`current` recupera ao longo do mesmo período de tempo que estava em uso quando o backup de base foi feito. O valor
-`latest` recupera
-para o último período de tempo encontrado no arquivo, o que é útil em um servidor de espera. `latest` é o padrão.
+`recovery_target_timeline` (`string`) [#](#GUC-RECOVERY-TARGET-TIMELINE): Especifica a recuperação em um determinado período de tempo. O valor pode ser um ID de linha de tempo numérico ou um valor especial. O valor `current` recupera ao longo do mesmo período de tempo que estava em uso quando o backup de base foi feito. O valor `latest` recupera para o último período de tempo encontrado no arquivo, o que é útil em um servidor de espera. `latest` é o padrão.
 
 Para especificar um ID de linha de tempo em hexadecimal (por exemplo, se extraído de um nome de arquivo WAL ou arquivo de histórico), prefixe-o com `0x`. Por exemplo, se o nome do arquivo WAL for `00000011000000A10000004F`, então o ID de linha de tempo é `0x11` (ou 17 decimal).
 
-Normalmente, você só precisa definir esse parâmetro em situações de re-recuperação complexas, onde você precisa retornar a um estado que foi alcançado após uma recuperação ponto-no-tempo. Consulte [Seção 25.3.6][(continuous-archiving.md#BACKUP-TIMELINES "25.3.6. Timelines")] para discussão.
+Normalmente, você só precisa definir esse parâmetro em situações de re-recuperação complexas, onde você precisa retornar a um estado que foi alcançado após uma recuperação ponto-no-tempo. Consulte [Seção 25.3.6](continuous-archiving.md#BACKUP-TIMELINES) para discussão.
 
-`recovery_target_action` (`enum`) [#](#GUC-RECOVERY-TARGET-ACTION)
-:   Especifica a ação que o servidor deve tomar uma vez que o alvo de recuperação é
-    atendido. O padrão é `pause`, o que significa que a recuperação será
-    pausada. `promote` significa que o processo de recuperação terminará e o servidor
-    começará a aceitar conexões.
-    Finalmente, `shutdown` parará o servidor após atingir o alvo de recuperação.
+`recovery_target_action` (`enum`) [#](#GUC-RECOVERY-TARGET-ACTION): Especifica a ação que o servidor deve tomar uma vez que o alvo de recuperação é atendido. O padrão é `pause`, o que significa que a recuperação será pausada. `promote` significa que o processo de recuperação terminará e o servidor começará a aceitar conexões. Finalmente, `shutdown` parará o servidor após atingir o alvo de recuperação.
 
-O uso pretendido do ajuste `pause` é permitir que consultas sejam executadas no banco de dados para verificar se este alvo de recuperação é o ponto mais desejável para a recuperação. O estado parado pode ser retomado usando `pg_wal_replay_resume()` (consulte [Tabela 9.99] [(functions-admin.md#FUNCTIONS-RECOVERY-CONTROL-TABLE "Table 9.99. Recovery Control Functions")]), o que, em seguida, faz com que a recuperação termine. Se este alvo de recuperação não for o ponto de parada desejado, então desligue o servidor, mude as configurações do alvo de recuperação para um alvo posterior e reinicie para continuar a recuperação.
+O uso pretendido do ajuste `pause` é permitir que consultas sejam executadas no banco de dados para verificar se este alvo de recuperação é o ponto mais desejável para a recuperação. O estado parado pode ser retomado usando `pg_wal_replay_resume()` (consulte [Tabela 9.99](functions-admin.md#FUNCTIONS-RECOVERY-CONTROL-TABLE)), o que, em seguida, faz com que a recuperação termine. Se este alvo de recuperação não for o ponto de parada desejado, então desligue o servidor, mude as configurações do alvo de recuperação para um alvo posterior e reinicie para continuar a recuperação.
 
 A configuração `shutdown` é útil para ter a instância pronta no ponto de reprodução exato desejado. A instância ainda poderá reproduzir mais registros WAL (e, de fato, terá que reproduzir registros WAL da próxima vez que for iniciada).
 
 Observe que, porque o `recovery.signal` não será removido quando o `recovery_target_action` estiver configurado como `shutdown`, qualquer início subsequente terminará com desligamento imediato, a menos que a configuração seja alterada ou o arquivo `recovery.signal` seja removido manualmente.
 
-Este ajuste não tem efeito se não for definido um alvo de recuperação. Se [hot_standby][(runtime-config-replication.md#GUC-HOT-STANDBY)] não estiver habilitado, um ajuste de `pause` atuará da mesma forma que `shutdown`. Se o alvo de recuperação for atingido enquanto uma promoção está em andamento, um ajuste de `pause` atuará da mesma forma que `promote`.
+Este ajuste não tem efeito se não for definido um alvo de recuperação. Se [hot_standby](runtime-config-replication.md#GUC-HOT-STANDBY) não estiver habilitado, um ajuste de `pause` atuará da mesma forma que `shutdown`. Se o alvo de recuperação for atingido enquanto uma promoção está em andamento, um ajuste de `pause` atuará da mesma forma que `promote`.
 
 Em qualquer caso, se um objetivo de recuperação for configurado, mas a recuperação do arquivo terminar antes de o objetivo ser atingido, o servidor será desligado com um erro fatal.
 
@@ -422,11 +386,8 @@ Em qualquer caso, se um objetivo de recuperação for configurado, mas a recuper
 
 Esses ajustes controlam a sumarização WAL, uma funcionalidade que deve ser habilitada para realizar um [backup incremental] (continuous-archiving.md#BACKUP-INCREMENTAL-BACKUP "25.3.3. Making an Incremental Backup").
 
-`summarize_wal` (`boolean`) [#](#GUC-SUMMARIZE-WAL)
-:   Habilita o processo de sumarizador WAL. Observe que a sumarização WAL pode ser habilitada em um primário ou em um de reserva. Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor. O padrão é `off`.
+`summarize_wal` (`boolean`) [#](#GUC-SUMMARIZE-WAL): Habilita o processo de sumarizador WAL. Observe que a sumarização WAL pode ser habilitada em um primário ou em um de reserva. Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor. O padrão é `off`.
 
 O servidor não pode ser iniciado com `summarize_wal=on` se `wal_level` estiver configurado como `minimal`. Se `summarize_wal=on` for configurado após a inicialização do servidor enquanto `wal_level=minimal` estiver ativo, o resumidor será executado, mas se recusará a gerar arquivos de resumo para qualquer WAL gerado com `wal_level=minimal`.
 
-`wal_summary_keep_time` (`integer`) [#](#GUC-WAL-SUMMARY-KEEP-TIME)
-:   Configura o tempo após o qual o sumarizador WAL remove automaticamente os resumos antigos do WAL. O timestamp do arquivo é usado para determinar quais arquivos são antigos o suficiente para serem removidos. Normalmente, você deve definir esse valor de forma confortávelmente maior do que o tempo que pode passar entre um backup e um backup incremental posterior que dependa dele. Os resumos WAL devem estar disponíveis para toda a faixa de registros WAL entre o backup anterior e o novo que está sendo realizado; caso contrário, o backup incremental falhará. Se este parâmetro for definido como zero, os resumos WAL não serão removidos automaticamente, mas é seguro remover manualmente os arquivos que você sabe que não serão necessários para backups incrementais futuros.
-Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor. Se este valor for especificado sem unidades, ele é considerado em minutos. O padrão é 10 dias. Se `summarize_wal = off`, os resumos WAL existentes não serão removidos, independentemente do valor deste parâmetro, porque o sumarizador WAL não será executado.
+`wal_summary_keep_time` (`integer`) [#](#GUC-WAL-SUMMARY-KEEP-TIME): Configura o tempo após o qual o sumarizador WAL remove automaticamente os resumos antigos do WAL. O timestamp do arquivo é usado para determinar quais arquivos são antigos o suficiente para serem removidos. Normalmente, você deve definir esse valor de forma confortávelmente maior do que o tempo que pode passar entre um backup e um backup incremental posterior que dependa dele. Os resumos WAL devem estar disponíveis para toda a faixa de registros WAL entre o backup anterior e o novo que está sendo realizado; caso contrário, o backup incremental falhará. Se este parâmetro for definido como zero, os resumos WAL não serão removidos automaticamente, mas é seguro remover manualmente os arquivos que você sabe que não serão necessários para backups incrementais futuros. Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor. Se este valor for especificado sem unidades, ele é considerado em minutos. O padrão é 10 dias. Se `summarize_wal = off`, os resumos WAL existentes não serão removidos, independentemente do valor deste parâmetro, porque o sumarizador WAL não será executado.

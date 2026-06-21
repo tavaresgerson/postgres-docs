@@ -34,7 +34,7 @@ pg_upgrade aceita os seguintes argumentos de linha de comando:
 
 `-D` *`configdir`* `--new-datadir=`*`configdir`*: o novo diretório de configuração do cluster de banco de dados; variável de ambiente `PGDATANEW`
 
-`-j njobs` `--jobs=njobs`: número de conexões e processos/fios simultâneos a serem utilizados
+`-j njobs` `--jobs=njobs`: número de conexões e processos/threads simultâneos a serem utilizados
 
 `-k` `--link`: use hard links em vez de copiar arquivos para o novo clúster
 
@@ -82,11 +82,11 @@ Essa opção permite que você defina explicitamente a assinatura de caráter pa
 
 No entanto, esse modo cria muitos arquivos de lixo no antigo clúster, o que pode prolongar a etapa de sincronização de arquivos se `--sync-method=syncfs` for usado. Portanto, é recomendável usar `--sync-method=fsync` com `--swap`.
 
-Além disso, uma vez que a etapa de transferência de arquivo comece, o antigo clúster será destrutivamente modificado e, portanto, não será mais seguro para iniciar. Consulte [Passo 17][(pgupgrade.md#PGUPGRADE-STEP-REVERT "Reverting to old cluster")] para obter detalhes.
+Além disso, uma vez que a etapa de transferência de arquivo comece, o antigo clúster será destrutivamente modificado e, portanto, não será mais seguro para iniciar. Consulte [Passo 17](pgupgrade.md#PGUPGRADE-STEP-REVERT) para obter detalhes.
 
 `--sync-method=`*`method`*: Quando configurado para `fsync`, que é o padrão, `pg_upgrade` abrirá e sincronizará recursivamente todos os arquivos no diretório de dados do clúster atualizado. A busca por arquivos seguirá links simbólicos para o diretório WAL e cada espaço de tabela configurado.
 
-Em Linux, `syncfs` pode ser usado para pedir ao sistema operacional que sincronize todos os sistemas de arquivos que contêm o diretório de dados do clúster atualizado, seus arquivos WAL e cada espaço de tabela. Consulte [recovery_init_sync_method][(runtime-config-error-handling.md#GUC-RECOVERY-INIT-SYNC-METHOD)] para obter informações sobre as advertências a serem observadas ao usar `syncfs`.
+Em Linux, `syncfs` pode ser usado para pedir ao sistema operacional que sincronize todos os sistemas de arquivos que contêm o diretório de dados do clúster atualizado, seus arquivos WAL e cada espaço de tabela. Consulte [recovery_init_sync_method](runtime-config-error-handling.md#GUC-RECOVERY-INIT-SYNC-METHOD) para obter informações sobre as advertências a serem observadas ao usar `syncfs`.
 
 Esta opção não tem efeito quando o `--no-sync` é usado.
 
@@ -98,7 +98,7 @@ Estes são os passos para realizar uma atualização com o pg_upgrade:
 
 ### Nota
 
-Os passos para atualizar [*[clusters de replicação lógica][(glossary.md#GLOSSARY-LOGICAL-REPLICATION-CLUSTER "Logical replication cluster")*]](glossário.md#GLÓSSICA-REPLICAÇÃO-CLUSTERS) não são abordados aqui; consulte [Seção 29.13][(logical-replication-upgrade.md "29.13. Upgrade")] para obter detalhes.
+Os passos para atualizar [*[clusters de replicação lógica][(glossary.md#GLOSSARY-LOGICAL-REPLICATION-CLUSTER "Logical replication cluster")*]](glossário.md#GLÓSSICA-REPLICAÇÃO-CLUSTERS) não são abordados aqui; consulte [Seção 29.13](logical-replication-upgrade.md) para obter detalhes.
 
 1. **Opcionalmente, mova o antigo cluster**
 
@@ -106,9 +106,9 @@ Se você estiver usando um diretório de instalação específico para uma vers�
 
 Se o diretório de instalação não for específico para a versão, por exemplo, `/usr/local/pgsql`, é necessário mover o diretório atual de instalação do PostgreSQL para que ele não interfira com a nova instalação do PostgreSQL. Uma vez que o servidor PostgreSQL atual seja desligado, é seguro renomear o diretório de instalação do PostgreSQL; assumindo que o diretório antigo é `/usr/local/pgsql`, você pode fazer:
 
-   ```
-   mv /usr/local/pgsql /usr/local/pgsql.old
-   ```
+```
+mv /usr/local/pgsql /usr/local/pgsql.old
+```
 
 para renomear o diretório.
 2. **Para instalações de origem, compile a nova versão**
@@ -132,22 +132,22 @@ Copie quaisquer arquivos de pesquisa de texto completo personalizados (dicionár
 
 Certifique-se de que ambos os servidores de banco de dados estão parados, usando, em Unix, por exemplo:
 
-   ```
-   pg_ctl -D /opt/PostgreSQL/12 stop
-   pg_ctl -D /opt/PostgreSQL/18 stop
-   ```
+```
+pg_ctl -D /opt/PostgreSQL/12 stop
+pg_ctl -D /opt/PostgreSQL/18 stop
+```
 
 ou no Windows, usando os nomes de serviço adequados:
 
-   ```
-   NET STOP postgresql-12
-   NET STOP postgresql-18
-   ```
+```
+NET STOP postgresql-12
+NET STOP postgresql-18
+```
 
 As réplicas de streaming e os servidores de espera do envio de registros devem estar em execução durante esse desligamento para receber todas as alterações.
 9. **Prepare-se para atualizações dos servidores de espera**
 
-Se você está atualizando servidores de espera usando os métodos descritos na seção [Passo 11][(pgupgrade.md#PGUPGRADE-STEP-REPLICAS "Upgrade streaming replication and log-shipping standby servers")], verifique se os servidores de espera antigos estão atualizados executando pg_controldata contra os clusters primário e de espera antigos. Verifique se os valores de “Localização do ponto de verificação mais recente” correspondem em todos os clusters. Além disso, certifique-se de que `wal_level` não está definido como `minimal` no arquivo `postgresql.conf` no novo cluster primário.
+Se você está atualizando servidores de espera usando os métodos descritos na seção [Passo 11](pgupgrade.md#PGUPGRADE-STEP-REPLICAS), verifique se os servidores de espera antigos estão atualizados executando pg_controldata contra os clusters primário e de espera antigos. Verifique se os valores de “Localização do ponto de verificação mais recente” correspondem em todos os clusters. Além disso, certifique-se de que `wal_level` não está definido como `minimal` no arquivo `postgresql.conf` no novo cluster primário.
 
 Sempre execute o binário pg_upgrade do novo servidor, não o antigo. O pg_upgrade requer a especificação dos diretórios de dados e diretórios executáveis (`bin`) dos clusters antigo e novo. Você também pode especificar valores de usuário e porta, e se deseja que os arquivos de dados sejam vinculados, clonados ou trocados em vez do comportamento de cópia padrão.
 
@@ -157,27 +157,27 @@ Definir `--jobs` para 2 ou superior permite que o pg_upgrade processe vários ba
 
 Para usuários do Windows, você deve estar logado em uma conta administrativa e, em seguida, executar o pg_upgrade com diretórios com aspas, por exemplo:
 
-    ```
-    pg_upgrade.exe
-            --old-datadir "C:/Program Files/PostgreSQL/12/data"
-            --new-datadir "C:/Program Files/PostgreSQL/18/data"
-            --old-bindir "C:/Program Files/PostgreSQL/12/bin"
-            --new-bindir "C:/Program Files/PostgreSQL/18/bin"
-    ```
+```
+pg_upgrade.exe
+        --old-datadir "C:/Program Files/PostgreSQL/12/data"
+        --new-datadir "C:/Program Files/PostgreSQL/18/data"
+        --old-bindir "C:/Program Files/PostgreSQL/12/bin"
+        --new-bindir "C:/Program Files/PostgreSQL/18/bin"
+```
 
 Uma vez iniciado, `pg_upgrade` verificará se os dois clusters são compatíveis e, em seguida, realizará a atualização. Você pode usar `pg_upgrade --check` para realizar apenas as verificações, mesmo que o servidor antigo ainda esteja em execução. `pg_upgrade --check` também descreverá quaisquer ajustes manuais que você precisará fazer após a atualização. Se você vai usar o modo link, clone, copiar faixa de arquivo ou swap, você deve usar a opção `--link`, `--clone`, `--copy-file-range` ou `--swap` com `--check` para habilitar verificações específicas do modo. `pg_upgrade` requer permissão de escrita no diretório atual.
 
 Obviamente, ninguém deve acessar os clusters durante a atualização. O pg_upgrade por padrão executa servidores na porta 50432 para evitar conexões não intencionais do cliente. Você pode usar o mesmo número de porta para ambos os clusters ao fazer uma atualização, porque os clusters antigos e novos não serão executados ao mesmo tempo. No entanto, ao verificar um servidor antigo em execução, os números de porta antigos e novos devem ser diferentes.
 
-Se ocorrer um erro durante a restauração do esquema do banco de dados, `pg_upgrade` será encerrado e você terá que voltar ao antigo clúster conforme descrito em [Passo 17][(pgupgrade.md#PGUPGRADE-STEP-REVERT "Reverting to old cluster")] abaixo. Para tentar `pg_upgrade` novamente, você precisará modificar o antigo clúster para que o restauro do esquema do pg_upgrade seja bem-sucedido. Se o problema for um módulo `contrib`, você pode precisar desinstalar o módulo `contrib` do antigo clúster e instalá-lo no novo clúster após a atualização, assumindo que o módulo não está sendo usado para armazenar dados do usuário.
+Se ocorrer um erro durante a restauração do esquema do banco de dados, `pg_upgrade` será encerrado e você terá que voltar ao antigo clúster conforme descrito em [Passo 17](pgupgrade.md#PGUPGRADE-STEP-REVERT) abaixo. Para tentar `pg_upgrade` novamente, você precisará modificar o antigo clúster para que o restauro do esquema do pg_upgrade seja bem-sucedido. Se o problema for um módulo `contrib`, você pode precisar desinstalar o módulo `contrib` do antigo clúster e instalá-lo no novo clúster após a atualização, assumindo que o módulo não está sendo usado para armazenar dados do usuário.
 
-Se você usou o modo de link e tem servidores de replicação em streaming (consulte [Seção 26.2.5][(warm-standby.md#STREAMING-REPLICATION "26.2.5. Streaming Replication")]) ou Log-Shipping (consulte [Seção 26][(warm-standby.md "26.2. Log-Shipping Standby Servers")]) em standby, você pode seguir estes passos para atualizá-los rapidamente. Você não executará o pg_upgrade nos servidores de standby, mas sim o rsync no primário. Não inicie nenhum servidor ainda.
+Se você usou o modo de link e tem servidores de replicação em streaming (consulte [Seção 26.2.5](warm-standby.md#STREAMING-REPLICATION)) ou Log-Shipping (consulte [Seção 26](warm-standby.md)) em standby, você pode seguir estes passos para atualizá-los rapidamente. Você não executará o pg_upgrade nos servidores de standby, mas sim o rsync no primário. Não inicie nenhum servidor ainda.
 
 Se você não usou o modo de link, não tem ou não quer usar rsync, ou quer uma solução mais fácil, ignore as instruções nesta seção e simplesmente recrie os servidores de espera assim que o pg_upgrade for concluído e o novo primário estiver em funcionamento.
 
 1. **Instale os novos binários do PostgreSQL nos servidores de espera**
 
-Certifique-se de que os novos binários e arquivos de suporte estejam instalados em todos os servidores de espera.  
+Certifique-se de que os novos binários e arquivos de suporte estejam instalados em todos os servidores de espera.
 2. **Certifique-se de que os novos diretórios de dados de espera *não* existam**
 
 Certifique-se de que os novos diretórios de dados de espera *não* existam ou estejam vazios. Se o initdb foi executado, exclua os novos diretórios de dados dos servidores de espera.
@@ -194,16 +194,16 @@ Salve quaisquer arquivos de configuração dos diretórios de configuração dos
 
 Ao usar o modo de ligação, os servidores de espera podem ser rapidamente atualizados usando o rsync. Para isso, em um diretório no servidor principal que esteja acima dos diretórios do antigo e do novo clúster de bancos de dados, execute o seguinte no *principal* para cada servidor de espera:
 
-       ```
-       rsync --archive --delete --hard-links --size-only --no-inc-recursive old_cluster new_cluster remote_dir
-       ```
+```
+rsync --archive --delete --hard-links --size-only --no-inc-recursive old_cluster new_cluster remote_dir
+```
 
 onde `old_cluster` e `new_cluster` estão relacionados ao diretório atual no primário, e `remote_dir` está *acima* dos diretórios antigos e novos de cluster no standby. A estrutura de diretórios sob os diretórios especificados no primário e nos standby deve corresponder. Consulte a página do manual do rsync para obter detalhes sobre a especificação do diretório remoto, por exemplo:
 
-       ```
-       rsync --archive --delete --hard-links --size-only --no-inc-recursive /opt/PostgreSQL/12 \
-             /opt/PostgreSQL/18 standby.example.com:/opt/PostgreSQL
-       ```
+```
+rsync --archive --delete --hard-links --size-only --no-inc-recursive /opt/PostgreSQL/12 \
+      /opt/PostgreSQL/18 standby.example.com:/opt/PostgreSQL
+```
 
 Você pode verificar o que o comando fará usando a opção `--dry-run` do rsync. Embora o rsync deva ser executado no principal por pelo menos um standby, é possível executar o rsync em um standby atualizado para atualizar outros standbys, desde que o standby atualizado não tenha sido iniciado.
 
@@ -211,10 +211,10 @@ O que isso faz é registrar os links criados pelo modo de ligação do pg_upgrad
 
 Se você tiver tablespaces, você precisará executar um comando similar de rsync para cada diretório de tablespace, por exemplo:
 
-       ```
-       rsync --archive --delete --hard-links --size-only --no-inc-recursive /vol1/pg_tblsp/PG_12_201909212 \
-             /vol1/pg_tblsp/PG_18_202307071 standby.example.com:/vol1/pg_tblsp
-       ```
+```
+rsync --archive --delete --hard-links --size-only --no-inc-recursive /vol1/pg_tblsp/PG_12_201909212 \
+      /vol1/pg_tblsp/PG_18_202307071 standby.example.com:/vol1/pg_tblsp
+```
 
 Se você tiver reposicionado `pg_wal` fora dos diretórios de dados, o rsync também deve ser executado nesses diretórios.
 7. **Configure a replicação em streaming e o envio de logs dos servidores de standby**
@@ -229,9 +229,9 @@ O novo servidor pode agora ser iniciado com segurança, e em seguida, qualquer s
 
 Se algum processamento pós-upgrade for necessário, o pg_upgrade emitirá avisos conforme o processo for concluído. Ele também gerará arquivos de script que devem ser executados pelo administrador. Os arquivos de script se conectarão a cada banco de dados que precisa de processamento pós-upgrade. Cada script deve ser executado usando:
 
-    ```
-    psql --username=postgres --file=script.sql postgres
-    ```
+```
+psql --username=postgres --file=script.sql postgres
+```
 
 Os scripts podem ser executados em qualquer ordem e podem ser excluídos uma vez que tenham sido executados.
 
@@ -296,63 +296,66 @@ O pg_upgrade não suporta a atualização de bancos de dados que contêm colunas
 
 
 <table border="0" class="simplelist" summary="Simple list">
-<tr>
-<td>
-<code class="type">
+ <tr>
+  <td>
+   <code class="type">
     regcollation
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="type">
     regconfig
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="type">
     regdictionary
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="type">
     regnamespace
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="type">
     regoper
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="type">
     regoperator
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="type">
     regproc
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="type">
     regprocedure
    </code>
-</td>
-</tr>
+  </td>
+ </tr>
 </table>
+
+
+
 
 
 

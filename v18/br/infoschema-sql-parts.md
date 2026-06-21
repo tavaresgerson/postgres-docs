@@ -7,68 +7,67 @@ A tabela `sql_parts` contém informações sobre quais das várias partes do pad
 
 
 <table border="1" class="table" summary="sql_parts Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
      Column Type
     </p>
-<p>
+    <p>
      Description
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       feature_id
      </code>
-<code class="type">
+     <code class="type">
       character_data
      </code>
-</p>
-<p>
+    </p>
+    <p>
      An identifier string containing the number of the part
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       feature_name
      </code>
-<code class="type">
+     <code class="type">
       character_data
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Descriptive name of the part
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       is_supported
      </code>
-<code class="type">
+     <code class="type">
       yes_or_no
      </code>
-</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     <code class="literal">
       YES
      </code>
-     if the part is fully supported by the
-       current version of
+     if the part is fully supported by the current version of
      <span class="productname">
       PostgreSQL
      </span>
@@ -78,42 +77,45 @@ A tabela `sql_parts` contém informações sobre quais das várias partes do pad
      </code>
      if not
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       is_verified_by
      </code>
-<code class="type">
+     <code class="type">
       character_data
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Always null, since the
      <span class="productname">
       PostgreSQL
      </span>
      development group does not perform formal testing of feature conformance
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       comments
      </code>
-<code class="type">
+     <code class="type">
       character_data
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Possibly a comment about the supported status of the part
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 

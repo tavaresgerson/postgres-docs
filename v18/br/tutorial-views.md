@@ -1,6 +1,6 @@
 ## 3.2. Visões [#](#TUTORIAL-VIEWS)
 
-Reveja as consultas na [Seção 2.6][(tutorial-join.md "2.6. Joins Between Tables")]. Suponha que a listagem combinada de registros climáticos e localização da cidade seja de particular interesse para sua aplicação, mas você não queira digitar a consulta toda vez que precisar dela. Você pode criar uma *visualização* sobre a consulta, o que dá um nome à consulta que você pode referir como uma tabela comum:
+Reveja as consultas na [Seção 2.6](tutorial-join.md). Suponha que a listagem combinada de registros climáticos e localização da cidade seja de particular interesse para sua aplicação, mas você não queira digitar a consulta toda vez que precisar dela. Você pode criar uma *visualização* sobre a consulta, o que dá um nome à consulta que você pode referir como uma tabela comum:
 
 ```
 CREATE VIEW myview AS

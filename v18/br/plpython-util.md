@@ -5,98 +5,101 @@ O módulo `plpy` também fornece as funções
 
 
 <table border="0" class="simplelist" summary="Simple list">
-<tr>
-<td>
-<code class="literal">
+ <tr>
+  <td>
+   <code class="literal">
     plpy.debug(
     <em class="replaceable">
-<code>
+     <code>
       msg, **kwargs
      </code>
-</em>
+    </em>
     )
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     plpy.log(
     <em class="replaceable">
-<code>
+     <code>
       msg, **kwargs
      </code>
-</em>
+    </em>
     )
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     plpy.info(
     <em class="replaceable">
-<code>
+     <code>
       msg, **kwargs
      </code>
-</em>
+    </em>
     )
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     plpy.notice(
     <em class="replaceable">
-<code>
+     <code>
       msg, **kwargs
      </code>
-</em>
+    </em>
     )
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     plpy.warning(
     <em class="replaceable">
-<code>
+     <code>
       msg, **kwargs
      </code>
-</em>
+    </em>
     )
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     plpy.error(
     <em class="replaceable">
-<code>
+     <code>
       msg, **kwargs
      </code>
-</em>
+    </em>
     )
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     plpy.fatal(
     <em class="replaceable">
-<code>
+     <code>
       msg, **kwargs
      </code>
-</em>
+    </em>
     )
    </code>
-</td>
-</tr>
+  </td>
+ </tr>
 </table>
+
+
+
 
 
 
@@ -109,63 +112,66 @@ Os seguintes argumentos com palavras-chave são aceitos:
 
 
 <table border="0" class="simplelist" summary="Simple list">
-<tr>
-<td>
-<code class="literal">
+ <tr>
+  <td>
+   <code class="literal">
     detail
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     hint
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     sqlstate
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     schema_name
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     table_name
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     column_name
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     datatype_name
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="literal">
     constraint_name
    </code>
-</td>
-</tr>
+  </td>
+ </tr>
 </table>
+
+
+
 
 
 

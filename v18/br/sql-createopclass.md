@@ -25,7 +25,7 @@ O usuário que define uma classe de operador se torna seu proprietário. Atualme
 
 As classes de operador relacionadas podem ser agrupadas em *famílias de operadores*. Para adicionar uma nova classe de operador a uma família existente, especifique a opção `FAMILY` em `CREATE OPERATOR CLASS`. Sem essa opção, a nova classe é colocada em uma família com o mesmo nome da nova classe (criando essa família se ela ainda não existir).
 
-Consulte [Seção 36.16][(xindex.md "36.16. Interfacing Extensions to Indexes")] para obter mais informações.
+Consulte [Seção 36.16](xindex.md) para obter mais informações.
 
 ## Parâmetros
 

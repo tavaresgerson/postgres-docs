@@ -122,12 +122,12 @@ Aqui estão algumas sugestões sobre as formas mais fáceis de realizar tarefas 
    +           {
    +               $values{prokind} = 'w';
    +           }
-   ``` 3. Execute o novo script:
+```
 
-   ```
-   $ cd src/include/catalog
-   $ perl  rewrite_dat_with_prokind.pl  pg_proc.dat
-   ```
+```
+$ cd src/include/catalog
+$ perl  rewrite_dat_with_prokind.pl  pg_proc.dat
+```
 
 Neste ponto, `pg_proc.dat` possui as três colunas `prokind`, `proisagg` e `proiswindow`, embora elas apareçam apenas em linhas onde elas têm valores não padrão.
 4. Remova as colunas antigas de `pg_proc.h`:

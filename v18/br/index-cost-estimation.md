@@ -62,18 +62,18 @@ Um projetista de custos típico procederá da seguinte forma:
 3. Estime o número de páginas de índice que serão recuperadas durante o varrimento. Isso pode ser apenas *`indexSelectivity`* vezes o tamanho do índice em páginas.
 4. Calcule o custo de acesso ao índice. Um estimador genérico pode fazer isso:
 
-   ```
-   /*
-    * Our generic assumption is that the index pages will be read
-    * sequentially, so they cost seq_page_cost each, not random_page_cost.
-    * Also, we charge for evaluation of the indexquals at each index row.
-    * All the costs are assumed to be paid incrementally during the scan.
-    */
-   cost_qual_eval(&index_qual_cost, path->indexquals, root);
-   *indexStartupCost = index_qual_cost.startup;
-   *indexTotalCost = seq_page_cost * numIndexPages +
-       (cpu_index_tuple_cost + index_qual_cost.per_tuple) * numIndexTuples;
-   ```
+```
+/*
+ * Our generic assumption is that the index pages will be read
+ * sequentially, so they cost seq_page_cost each, not random_page_cost.
+ * Also, we charge for evaluation of the indexquals at each index row.
+ * All the costs are assumed to be paid incrementally during the scan.
+ */
+cost_qual_eval(&index_qual_cost, path->indexquals, root);
+*indexStartupCost = index_qual_cost.startup;
+*indexTotalCost = seq_page_cost * numIndexPages +
+    (cpu_index_tuple_cost + index_qual_cost.per_tuple) * numIndexTuples;
+```
 
 No entanto, o acima não leva em conta a amortização das leituras do índice em varreduras repetidas do índice.
 5. Estime a correlação do índice. Para um índice simples ordenado em um único campo, isso pode ser recuperado de pg_statistic. Se a correlação não for conhecida, a estimativa conservadora é zero (sem correlação).

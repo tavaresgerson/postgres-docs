@@ -1,8 +1,8 @@
 ## 18.10. Conexões TCP/IP seguras com criptografia GSSAPI [#](#GSSAPI-ENC)
 
-* [18.10.1. Configuração Básica][(gssapi-enc.md#GSSAPI-SETUP)]
+* [18.10.1. Configuração Básica](gssapi-enc.md#GSSAPI-SETUP)
 
-O PostgreSQL também tem suporte nativo para usar GSSAPI para criptografar comunicações cliente/servidor para maior segurança. O suporte requer que uma implementação GSSAPI (como MIT Kerberos) seja instalada nos sistemas cliente e servidor, e que o suporte no PostgreSQL seja habilitado na hora da construção (consulte [Capítulo 17][(installation.md "Chapter 17. Installation from Source Code")]).
+O PostgreSQL também tem suporte nativo para usar GSSAPI para criptografar comunicações cliente/servidor para maior segurança. O suporte requer que uma implementação GSSAPI (como MIT Kerberos) seja instalada nos sistemas cliente e servidor, e que o suporte no PostgreSQL seja habilitado na hora da construção (consulte [Capítulo 17](installation.md)).
 
 ### 18.10.1. Configuração básica [#](#GSSAPI-SETUP)
 

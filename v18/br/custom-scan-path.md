@@ -55,7 +55,7 @@ Plan *(*PlanCustomPath) (PlannerInfo *root,
                          List *custom_plans);
 ```
 
-Converte um caminho personalizado em um plano finalizado. O valor de retorno geralmente será um objeto `CustomScan`, que o callback deve alocar e inicializar. Consulte [Seção 60.2][(custom-scan-plan.md "60.2. Creating Custom Scan Plans")] para mais detalhes.
+Converte um caminho personalizado em um plano finalizado. O valor de retorno geralmente será um objeto `CustomScan`, que o callback deve alocar e inicializar. Consulte [Seção 60.2](custom-scan-plan.md) para mais detalhes.
 
 ```
 List *(*ReparameterizeCustomPathByChild) (PlannerInfo *root,

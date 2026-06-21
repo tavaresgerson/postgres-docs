@@ -18,7 +18,7 @@ DROP TEXT SEARCH PARSER [ IF EXISTS ] name [ CASCADE | RESTRICT ]
 
 *`name`*: O nome (opcionalmente qualificado por esquema) de um analisador de busca de texto existente.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem do analisador de pesquisa de texto e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem do analisador de pesquisa de texto e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a eliminação do analisador de busca de texto se houver objetos que dependem dele. Esse é o padrão.
 

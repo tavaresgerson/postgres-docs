@@ -76,7 +76,7 @@ Um valor seguro pode ser determinado procurando pelo nome de arquivo numericamen
 
 Para um conjunto de bancos de dados que `pg_upgrade` atualizou a partir de uma versão do PostgreSQL anterior a 18, o valor seguro seria a assinatura `char` padrão da plataforma que executou o conjunto antes desse upgrade. Para todos os outros conjuntos, `signed` seria o valor seguro. No entanto, esta opção é exclusivamente para uso com `pg_upgrade` e normalmente não deve ser usada manualmente.
 
-`--wal-segsize=wal_segment_size`: Defina o novo tamanho do segmento WAL, em megabytes. O valor deve ser definido como um expoente de 2 entre 1 e 1024 (megabytes). Consulte a mesma opção de [initdb][(app-initdb.md "initdb")] para obter mais informações.
+`--wal-segsize=wal_segment_size`: Defina o novo tamanho do segmento WAL, em megabytes. O valor deve ser definido como um expoente de 2 entre 1 e 1024 (megabytes). Consulte a mesma opção de [initdb](app-initdb.md) para obter mais informações.
 
 Essa opção também pode ser usada para alterar o tamanho do segmento WAL de um clúster de banco de dados existente, evitando a necessidade de re-`initdb`.
 

@@ -5,11 +5,11 @@
 * [68.1. Regras de Declaração do Catálogo do Sistema](system-catalog-declarations.md)
 * [68.2. Dados Iniciais do Catálogo do Sistema](system-catalog-initial-data.md)
 
-+ [68.2.1. Formato do arquivo de dados][(system-catalog-initial-data.md#SYSTEM-CATALOG-INITIAL-DATA-FORMAT)]
-+ [68.2.2. Atribuição de OID][(system-catalog-initial-data.md#SYSTEM-CATALOG-OID-ASSIGNMENT)]
-+ [68.2.3. Pesquisa de referência de OID][(system-catalog-initial-data.md#SYSTEM-CATALOG-OID-REFERENCES)]
-+ [68.2.4. Criação automática de tipos de matriz][(system-catalog-initial-data.md#SYSTEM-CATALOG-AUTO-ARRAY-TYPES)]
-+ [68.2.5. Receitas para edição de arquivos de dados][(system-catalog-initial-data.md#SYSTEM-CATALOG-RECIPES)]
++ [68.2.1. Formato do arquivo de dados](system-catalog-initial-data.md#SYSTEM-CATALOG-INITIAL-DATA-FORMAT)
++ [68.2.2. Atribuição de OID](system-catalog-initial-data.md#SYSTEM-CATALOG-OID-ASSIGNMENT)
++ [68.2.3. Pesquisa de referência de OID](system-catalog-initial-data.md#SYSTEM-CATALOG-OID-REFERENCES)
++ [68.2.4. Criação automática de tipos de matriz](system-catalog-initial-data.md#SYSTEM-CATALOG-AUTO-ARRAY-TYPES)
++ [68.2.5. Receitas para edição de arquivos de dados](system-catalog-initial-data.md#SYSTEM-CATALOG-RECIPES)
 
 * [68.3. Formato do arquivo BKI][(bki-format.md)
 * [68.4. Comandos BKI][(bki-commands.md)

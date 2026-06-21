@@ -16,7 +16,7 @@ O pg_rewind examina os históricos de linha do tempo dos clusters de origem e de
 
 Após executar o pg_rewind, a reprodução do WAL precisa ser concluída para que o diretório de dados esteja em um estado consistente. Quando o servidor alvo for iniciado novamente, ele entrará na recuperação de arquivo e reproduzirá todos os WAL gerados no servidor de origem a partir do último ponto de verificação antes do ponto de divergência. Se parte do WAL não estiver mais disponível no servidor de origem quando o pg_rewind for executado, e, portanto, não puder ser copiado pela sessão do pg_rewind, ele deve ser disponibilizado quando o servidor alvo for iniciado. Isso pode ser feito criando um arquivo `recovery.signal` no diretório de dados do servidor alvo e configurando um comando de restauração adequado (runtime-config-wal.md#GUC-RESTORE-COMMAND) em `postgresql.conf`.
 
-O pg_rewind exige que o servidor de destino tenha a opção [wal_log_hints][(runtime-config-wal.md#GUC-WAL-LOG-HINTS)] habilitada em `postgresql.conf` ou que os checksums de dados estejam habilitados quando o clúster foi inicializado com o initdb (o padrão). [full_page_writes][(runtime-config-wal.md#GUC-FULL-PAGE-WRITES)] também deve ser definido para `on`, mas é habilitado por padrão.
+O pg_rewind exige que o servidor de destino tenha a opção [wal_log_hints](runtime-config-wal.md#GUC-WAL-LOG-HINTS) habilitada em `postgresql.conf` ou que os checksums de dados estejam habilitados quando o clúster foi inicializado com o initdb (o padrão). [full_page_writes](runtime-config-wal.md#GUC-FULL-PAGE-WRITES) também deve ser definido para `on`, mas é habilitado por padrão.
 
 ### Aviso: Falhas durante o rewindamento
 
@@ -54,7 +54,7 @@ pg_rewind aceita os seguintes argumentos de linha de comando:
 
 `--sync-method=method`: Quando configurado para `fsync`, que é o padrão, o `pg_rewind` abrirá e sincronizará recursivamente todos os arquivos no diretório de dados. A busca por arquivos seguirá links simbólicos para o diretório WAL e cada espaço de tabela configurado.
 
-Em Linux, `syncfs` pode ser usado para pedir ao sistema operacional que sincronize todos os sistemas de arquivos que contêm o diretório de dados, os arquivos WAL e cada espaço de tabela. Consulte [recovery_init_sync_method][(runtime-config-error-handling.md#GUC-RECOVERY-INIT-SYNC-METHOD)] para obter informações sobre as advertências a serem observadas ao usar `syncfs`.
+Em Linux, `syncfs` pode ser usado para pedir ao sistema operacional que sincronize todos os sistemas de arquivos que contêm o diretório de dados, os arquivos WAL e cada espaço de tabela. Consulte [recovery_init_sync_method](runtime-config-error-handling.md#GUC-RECOVERY-INIT-SYNC-METHOD) para obter informações sobre as advertências a serem observadas ao usar `syncfs`.
 
 Esta opção não tem efeito quando o `--no-sync` é usado.
 
@@ -64,7 +64,7 @@ Esta opção não tem efeito quando o `--no-sync` é usado.
 
 ## Meio Ambiente
 
-Quando a opção `--source-server` é usada, o pg_rewind também utiliza as variáveis de ambiente suportadas pelo libpq (consulte a Seção 32.15 (libpq-envars.md "32.15. Environment Variables")).
+Quando a opção `--source-server` é usada, o pg_rewind também utiliza as variáveis de ambiente suportadas pelo libpq (consulte a [Seção 32.15](libpq-envars.md)).
 
 A variável de ambiente `PG_COLOR` especifica se é necessário usar cor nas mensagens de diagnóstico. Os valores possíveis são `always`, `auto` e `never`.
 

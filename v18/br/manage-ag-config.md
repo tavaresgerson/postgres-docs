@@ -1,6 +1,6 @@
 ## 22.4. Configuração do banco de dados [#](#MANAGE-AG-CONFIG)
 
-Lembre-se de que o servidor PostgreSQL fornece um grande número de variáveis de configuração de tempo de execução. Você pode definir valores padrão específicos para o banco de dados para muitas dessas configurações. [Capítulo 19][(runtime-config.md "Chapter 19. Server Configuration")]
+Lembre-se de que o servidor PostgreSQL fornece um grande número de variáveis de configuração de tempo de execução. Você pode definir valores padrão específicos para o banco de dados para muitas dessas configurações. [Capítulo 19](runtime-config.md)
 
 Por exemplo, se, por algum motivo, você quiser desabilitar o otimizador GEQO para um banco de dados específico, você normalmente teria que desabilitá-lo para todos os bancos de dados ou garantir que cada cliente que se conecta seja cuidadoso o suficiente para emitir `SET geqo TO off`. Para tornar essa configuração padrão em um banco de dados específico, você pode executar o comando:
 

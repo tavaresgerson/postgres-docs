@@ -128,8 +128,8 @@ SELECT sum(salary) OVER w, avg(salary) OVER w
   WINDOW w AS (PARTITION BY depname ORDER BY salary DESC);
 ```
 
-Mais detalhes sobre as funções de janela podem ser encontrados em [Seção 4.2.8][(sql-expressions.md#SYNTAX-WINDOW-FUNCTIONS "4.2.8. Window Function Calls")], [Seção 9.22][(functions-window.md "9.22. Window Functions")], [Seção 7.2.5][(queries-table-expressions.md#QUERIES-WINDOW "7.2.5. Window Function Processing")] e na página de referência [SELECT][(sql-select.md "SELECT")].
+Mais detalhes sobre as funções de janela podem ser encontrados em [Seção 4.2.8](sql-expressions.md#SYNTAX-WINDOW-FUNCTIONS), [Seção 9.22](functions-window.md), [Seção 7.2.5](queries-table-expressions.md#QUERIES-WINDOW) e na página de referência [SELECT](sql-select.md).
 
 ---
 
-[[5]](#id-1.4.5.6.9.5) Existem opções para definir o quadro da janela de outras maneiras, mas este tutorial não as abrange. Consulte [Seção 4.2.8][(sql-expressions.md#SYNTAX-WINDOW-FUNCTIONS "4.2.8. Window Function Calls")] para obter detalhes.
+[[5]](#id-1.4.5.6.9.5) Existem opções para definir o quadro da janela de outras maneiras, mas este tutorial não as abrange. Consulte [Seção 4.2.8](sql-expressions.md#SYNTAX-WINDOW-FUNCTIONS) para obter detalhes.

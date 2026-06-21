@@ -1,6 +1,6 @@
 ## 42.9. Subtransações explícitas no PL/Tcl [#](#PLTCL-SUBTRANSACTIONS)
 
-Recuperar erros causados pelo acesso ao banco de dados, conforme descrito em [Seção 42.8][(pltcl-error-handling.md "42.8. Error Handling in PL/Tcl")], pode levar a uma situação indesejável em que algumas operações têm sucesso antes de uma delas falhar, e, após a recuperação desse erro, os dados permanecem em um estado inconsistente. O PL/Tcl oferece uma solução para esse problema na forma de subtransações explícitas.
+Recuperar erros causados pelo acesso ao banco de dados, conforme descrito em [Seção 42.8](pltcl-error-handling.md), pode levar a uma situação indesejável em que algumas operações têm sucesso antes de uma delas falhar, e, após a recuperação desse erro, os dados permanecem em um estado inconsistente. O PL/Tcl oferece uma solução para esse problema na forma de subtransações explícitas.
 
 Considere uma função que implemente uma transferência entre duas contas:
 

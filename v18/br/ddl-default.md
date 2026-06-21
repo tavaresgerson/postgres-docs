@@ -23,7 +23,7 @@ CREATE TABLE products (
 );
 ```
 
-onde a função `nextval()` fornece valores sucessivos de um objeto de *sequência* (ver [Seção 9.17][(functions-sequence.md "9.17. Sequence Manipulation Functions")]). Esse arranjo é suficientemente comum que há um abreviação especial para ele:
+onde a função `nextval()` fornece valores sucessivos de um objeto de *sequência* (ver [Seção 9.17](functions-sequence.md)). Esse arranjo é suficientemente comum que há um abreviação especial para ele:
 
 ```
 CREATE TABLE products (
@@ -32,4 +32,4 @@ CREATE TABLE products (
 );
 ```
 
-O abreviação `SERIAL` é discutido mais adiante em [Seção 8.1.4][(datatype-numeric.md#DATATYPE-SERIAL "8.1.4. Serial Types")].
+O abreviação `SERIAL` é discutido mais adiante em [Seção 8.1.4](datatype-numeric.md#DATATYPE-SERIAL).

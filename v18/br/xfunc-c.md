@@ -42,7 +42,7 @@ De qualquer forma, o nome do arquivo que é dado no comando `CREATE FUNCTION` é
 
 ### Nota
 
-O PostgreSQL não compilará uma função C automaticamente. O arquivo objeto deve ser compilado antes de ser referenciado em um comando `CREATE FUNCTION`. Consulte [Seção 36.10.5][(xfunc-c.md#DFUNC "36.10.5. Compiling and Linking Dynamically-Loaded Functions")] para obter informações adicionais.
+O PostgreSQL não compilará uma função C automaticamente. O arquivo objeto deve ser compilado antes de ser referenciado em um comando `CREATE FUNCTION`. Consulte [Seção 36.10.5](xfunc-c.md#DFUNC) para obter informações adicionais.
 
 Para garantir que um arquivo de objeto carregado dinamicamente não seja carregado em um servidor incompatível, o PostgreSQL verifica se o arquivo contém um "bloco mágico" com o conteúdo apropriado. Isso permite que o servidor detecte incompatibilidades óbvias, como código compilado para uma versão principal diferente do PostgreSQL. Para incluir um bloco mágico, escreva isso em um (e apenas um) dos arquivos de fonte do módulo, após ter incluído o cabeçalho `fmgr.h`:
 
@@ -108,7 +108,7 @@ Outro ponto importante é evitar deixar quaisquer bits não inicializados dentro
 
 ### Aviso
 
-*Nunca* modifique o conteúdo de um valor de entrada por referência. Se você fizer isso, provavelmente corromperá os dados no disco, uma vez que o ponteiro que você recebe pode apontar diretamente para um buffer de disco. A única exceção a essa regra é explicada em [Seção 36.12][(xaggr.md "36.12. User-Defined Aggregates")].
+*Nunca* modifique o conteúdo de um valor de entrada por referência. Se você fizer isso, provavelmente corromperá os dados no disco, uma vez que o ponteiro que você recebe pode apontar diretamente para um buffer de disco. A única exceção a essa regra é explicada em [Seção 36.12](xaggr.md).
 
 Como exemplo, podemos definir o tipo `text` da seguinte forma:
 
@@ -136,153 +136,153 @@ memcpy(destination->data, buffer, 40);
 
 `VARHDRSZ` é o mesmo que `sizeof(int32)`, mas é considerado bom estilo usar a macro `VARHDRSZ` para se referir ao tamanho do overhead para um tipo de comprimento variável. Além disso, o campo de comprimento *deve* ser definido usando a macro `SET_VARSIZE`, não por simples atribuição.
 
-[Tabela 36.2][(xfunc-c.md#XFUNC-C-TYPE-TABLE "Table 36.2. Equivalent C Types for Built-in SQL Types")] mostra os tipos C correspondentes a muitos dos tipos de dados SQL integrados do PostgreSQL. A coluna “Definido em” fornece o arquivo de cabeçalho que precisa ser incluído para obter a definição do tipo. (A definição real pode estar em um arquivo diferente que é incluído pelo arquivo listado. É recomendável que os usuários sigam a interface definida.) Note que você deve sempre incluir `postgres.h` primeiro em qualquer arquivo de fonte de código do servidor, porque ele declara várias coisas que você precisará de qualquer maneira, e porque incluir outros cabeçalhos primeiro pode causar problemas de portabilidade.
+[Tabela 36.2](xfunc-c.md#XFUNC-C-TYPE-TABLE) mostra os tipos C correspondentes a muitos dos tipos de dados SQL integrados do PostgreSQL. A coluna “Definido em” fornece o arquivo de cabeçalho que precisa ser incluído para obter a definição do tipo. (A definição real pode estar em um arquivo diferente que é incluído pelo arquivo listado. É recomendável que os usuários sigam a interface definida.) Note que você deve sempre incluir `postgres.h` primeiro em qualquer arquivo de fonte de código do servidor, porque ele declara várias coisas que você precisará de qualquer maneira, e porque incluir outros cabeçalhos primeiro pode causar problemas de portabilidade.
 
 **Tabela 36.2. Tipos C equivalentes para tipos SQL integrados**
 
 
 
 <table border="1" class="table" summary="Equivalent C Types for Built-in SQL Types">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     SQL Type
    </th>
-<th>
+   <th>
     C Type
    </th>
-<th>
+   <th>
     Defined In
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="type">
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="type">
      boolean
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      bool
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      postgres.h
     </code>
     (maybe compiler built-in)
    </td>
-</tr>
-<tr>
-<td>
-<code class="type">
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      box
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      BOX*
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      utils/geo_decls.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      bytea
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      bytea*
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      postgres.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      "char"
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      char
     </code>
-</td>
-<td>
+   </td>
+   <td>
     (compiler built-in)
    </td>
-</tr>
-<tr>
-<td>
-<code class="type">
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      character
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      BpChar*
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      postgres.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      cid
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      CommandId
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      postgres.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      date
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      DateADT
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      utils/date.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      float4
     </code>
     (
@@ -291,20 +291,20 @@ memcpy(destination->data, buffer, 40);
     </code>
     )
    </td>
-<td>
-<code class="type">
+   <td>
+    <code class="type">
      float4
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      postgres.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      float8
     </code>
     (
@@ -313,20 +313,20 @@ memcpy(destination->data, buffer, 40);
     </code>
     )
    </td>
-<td>
-<code class="type">
+   <td>
+    <code class="type">
      float8
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      postgres.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      int2
     </code>
     (
@@ -335,20 +335,20 @@ memcpy(destination->data, buffer, 40);
     </code>
     )
    </td>
-<td>
-<code class="type">
+   <td>
+    <code class="type">
      int16
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      postgres.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      int4
     </code>
     (
@@ -357,20 +357,20 @@ memcpy(destination->data, buffer, 40);
     </code>
     )
    </td>
-<td>
-<code class="type">
+   <td>
+    <code class="type">
      int32
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      postgres.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      int8
     </code>
     (
@@ -379,313 +379,316 @@ memcpy(destination->data, buffer, 40);
     </code>
     )
    </td>
-<td>
-<code class="type">
+   <td>
+    <code class="type">
      int64
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      postgres.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      interval
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      Interval*
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      datatype/timestamp.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      lseg
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      LSEG*
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      utils/geo_decls.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      name
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      Name
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      postgres.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      numeric
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      Numeric
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      utils/numeric.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      oid
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      Oid
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      postgres.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      oidvector
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      oidvector*
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      postgres.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      path
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      PATH*
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      utils/geo_decls.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      point
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      POINT*
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      utils/geo_decls.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      regproc
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      RegProcedure
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      postgres.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      text
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      text*
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      postgres.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      tid
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      ItemPointer
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      storage/itemptr.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      time
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      TimeADT
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      utils/date.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      time with time zone
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      TimeTzADT
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      utils/date.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      timestamp
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      Timestamp
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      datatype/timestamp.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      timestamp with time zone
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      TimestampTz
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      datatype/timestamp.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      varchar
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      VarChar*
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      postgres.h
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      xid
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      TransactionId
     </code>
-</td>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    <code class="filename">
      postgres.h
     </code>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Agora que já analisamos todas as possíveis estruturas para os tipos de base, podemos mostrar alguns exemplos de funções reais.
 
@@ -871,7 +874,7 @@ O macro `PG_ARGISNULL(n)` permite que uma função teste se cada entrada é nula
 
 Outras opções fornecidas pela interface da versão 1 são duas variantes das macros `PG_GETARG_xxx()`. A primeira delas, `PG_GETARG_xxx_COPY()`, garante o retorno de uma cópia do argumento especificado que é segura para escrita. (As macros normais às vezes retornam um ponteiro para um valor que é fisicamente armazenado em uma tabela, que não deve ser escrito. Usar as macros `PG_GETARG_xxx_COPY()` garante um resultado legível.) A segunda variante consiste nas macros `PG_GETARG_xxx_SLICE()`, que levam três argumentos. O primeiro é o número do argumento da função (como acima). O segundo e terceiro são o deslocamento e o comprimento do segmento a ser retornado. Os deslocamentos são contados a partir de zero, e um comprimento negativo solicita que o restante do valor seja retornado. Essas macros fornecem acesso mais eficiente a partes de grandes valores no caso em que eles têm tipo de armazenamento “externo”. (O tipo de armazenamento de uma coluna pode ser especificado usando `ALTER TABLE tablename ALTER COLUMN colname SET STORAGE storagetype`. *`storagetype`* é uma das `plain`, `external`, `extended`, ou `main`.)
 
-Por fim, as convenções de chamada de função da versão 1 permitem retornar resultados de conjunto ([Seção 36.10.9][(xfunc-c.md#XFUNC-C-RETURN-SET "36.10.9. Returning Sets")]) e implementar funções de gatilho ([Capítulo 37][(triggers.md "Chapter 37. Triggers")]) e manipuladores de chamadas de linguagem procedural ([Capítulo 57][(plhandler.md "Chapter 57. Writing a Procedural Language Handler")]). Para mais detalhes, consulte `src/backend/utils/fmgr/README` na distribuição de fonte.
+Por fim, as convenções de chamada de função da versão 1 permitem retornar resultados de conjunto ([Seção 36.10.9](xfunc-c.md#XFUNC-C-RETURN-SET)) e implementar funções de gatilho ([Capítulo 37](triggers.md)) e manipuladores de chamadas de linguagem procedural ([Capítulo 57](plhandler.md)). Para mais detalhes, consulte `src/backend/utils/fmgr/README` na distribuição de fonte.
 
 ### 36.10.4. Escrever Código [#](#XFUNC-C-CODE)
 
@@ -880,8 +883,8 @@ Antes de nos aprofundarmos em tópicos mais avançados, devemos discutir algumas
 As regras básicas para escrever e construir funções C são as seguintes:
 
 * Use `pg_config --includedir-server` para descobrir onde os arquivos de cabeçalho do servidor PostgreSQL estão instalados no seu sistema (ou no sistema no qual seus usuários irão executar).
-* Compilar e vincular seu código de forma que ele possa ser carregado dinamicamente no PostgreSQL sempre requer flags especiais. Veja [Seção 36.10.5][(xfunc-c.md#DFUNC "36.10.5. Compiling and Linking Dynamically-Loaded Functions")] para uma explicação detalhada de como fazer isso para seu sistema operacional específico.
-* Lembre-se de definir um "bloco mágico" para sua biblioteca compartilhada, conforme descrito em [Seção 36.10.1][(xfunc-c.md#XFUNC-C-DYNLOAD "36.10.1. Dynamic Loading")].
+* Compilar e vincular seu código de forma que ele possa ser carregado dinamicamente no PostgreSQL sempre requer flags especiais. Veja [Seção 36.10.5](xfunc-c.md#DFUNC) para uma explicação detalhada de como fazer isso para seu sistema operacional específico.
+* Lembre-se de definir um "bloco mágico" para sua biblioteca compartilhada, conforme descrito em [Seção 36.10.1](xfunc-c.md#XFUNC-C-DYNLOAD).
 * Ao alocar memória, use as funções PostgreSQL `palloc` e `pfree` em vez das funções correspondentes da biblioteca C `malloc` e `free`. A memória alocada por `palloc` será liberada automaticamente no final de cada transação, prevenindo vazamentos de memória.
 * Sempre inicialize os bytes de suas estruturas usando `memset` (ou aloque-os com `palloc0` em primeiro lugar). Mesmo que você atribua a cada campo de sua estrutura, pode haver alinhamento de preenchimento (buracos na estrutura) que contenham valores de lixo. Sem isso, é difícil suportar índices de hash ou junções de hash, pois você deve selecionar apenas os bits significativos de sua estrutura de dados para calcular um hash. O planejador também às vezes depende da comparação de constantes via igualdade binária, então você pode obter resultados indesejados de planejamento se valores logicamente equivalentes não forem iguais binariamente.
 * A maioria dos tipos internos do PostgreSQL são declarados em `postgres.h`, enquanto as interfaces do gerenciador de funções (`PG_FUNCTION_ARGS`, etc.) estão em `fmgr.h`, então você precisará incluir pelo menos esses dois arquivos. Por razões de portabilidade, é melhor incluir `postgres.h` *primeiro*, antes de qualquer outro arquivo de cabeçalho do sistema ou do usuário. Incluir `postgres.h` também incluirá `elog.h` e `palloc.h` para você.
@@ -899,61 +902,55 @@ Nos exemplos a seguir, assumimos que seu código-fonte está em um arquivo `foo.
 
 FreeBSD: A bandeira do compilador para criar PIC é `-fPIC`. Para criar bibliotecas compartilhadas, a bandeira do compilador é `-shared`.
 
-``` cc -fPIC -c foo.c cc -shared -o foo.so foo.o
-    ```
+```
+cc -fPIC -c foo.c cc -shared -o foo.so foo.o
+```
 
 Isso é aplicável a partir da versão 13.0 do FreeBSD, versões mais antigas utilizavam o compilador `gcc`.
 
 Linux: A bandeira do compilador para criar PIC é `-fPIC`. A bandeira do compilador para criar uma biblioteca compartilhada é `-shared`. Um exemplo completo parece assim:
 
-``` cc -fPIC -c foo.c cc -shared -o foo.so foo.o
-    ```
+```
+cc -fPIC -c foo.c cc -shared -o foo.so foo.o
+```
 
 macOS: Aqui está um exemplo. Assume que as ferramentas de desenvolvimento estão instaladas.
 
-    ```
-    cc -c foo.c cc -bundle -flat_namespace -undefined suppress -o foo.so foo.o
-    ```
+```
+cc -c foo.c cc -bundle -flat_namespace -undefined suppress -o foo.so foo.o
+```
 
-NetBSD
-: A opção do compilador para criar PIC é `-fPIC`. Para sistemas ELF, o compilador com a opção `-shared` é usado para vincular bibliotecas compartilhadas. Nos sistemas mais antigos, não ELF, é usado `ld
-    -Bshareable`.
+NetBSD: A opção do compilador para criar PIC é `-fPIC`. Para sistemas ELF, o compilador com a opção `-shared` é usado para vincular bibliotecas compartilhadas. Nos sistemas mais antigos, não ELF, é usado `ld -Bshareable`.
 
-    ```
-    gcc -fPIC -c foo.c gcc -shared -o foo.so foo.o
-    ```
+```
+gcc -fPIC -c foo.c gcc -shared -o foo.so foo.o
+```
 
-OpenBSD
-: A opção do compilador para criar PIC é `-fPIC`. `ld -Bshareable` é usada para vincular bibliotecas compartilhadas.
+OpenBSD: A opção do compilador para criar PIC é `-fPIC`. `ld -Bshareable` é usada para vincular bibliotecas compartilhadas.
 
-    ```
-    gcc -fPIC -c foo.c ld -Bshareable -o foo.so foo.o
-    ```
+```
+gcc -fPIC -c foo.c ld -Bshareable -o foo.so foo.o
+```
 
-Solaris: A bandeira do compilador para criar PIC é
-`-KPIC` com o compilador Sun e
-`-fPIC` com GCC. Para vincular bibliotecas compartilhadas, a opção do compilador é
-`-G` com qualquer compilador ou, alternativamente,
-`-shared` com GCC.
+Solaris: A bandeira do compilador para criar PIC é `-KPIC` com o compilador Sun e `-fPIC` com GCC. Para vincular bibliotecas compartilhadas, a opção do compilador é `-G` com qualquer compilador ou, alternativamente, `-shared` com GCC.
 
-    ```
-    cc -KPIC -c foo.c cc -G -o foo.so foo.o
-    ```
+```
+cc -KPIC -c foo.c cc -G -o foo.so foo.o
+```
 
 ou
 
-    ```
-    gcc -fPIC -c foo.c gcc -G -o foo.so foo.o
-    ```
+```
+gcc -fPIC -c foo.c gcc -G -o foo.so foo.o
+```
 
 ### DICA
 
-Se isso é muito complicado para você, você deve considerar o uso de [GNU Libtool][(https://www.gnu.org/software/libtool/)], que esconde as diferenças de plataforma por trás de uma interface uniforme.
+Se isso é muito complicado para você, você deve considerar o uso de [GNU Libtool](https://www.gnu.org/software/libtool/), que esconde as diferenças de plataforma por trás de uma interface uniforme.
 
-O arquivo de biblioteca compartilhada resultante pode então ser carregado no PostgreSQL. Ao especificar o nome do arquivo da biblioteca compartilhada para o comando `CREATE FUNCTION`, é necessário fornecer o nome do arquivo de objeto intermediário, não o arquivo de objeto intermediário.
-Observe que a extensão padrão de biblioteca compartilhada do sistema (geralmente `.so` ou `.sl`) pode ser omitida do comando `CREATE FUNCTION`, e normalmente deve ser omitida para melhor portabilidade.
+O arquivo de biblioteca compartilhada resultante pode então ser carregado no PostgreSQL. Ao especificar o nome do arquivo da biblioteca compartilhada para o comando `CREATE FUNCTION`, é necessário fornecer o nome do arquivo de objeto intermediário, não o arquivo de objeto intermediário. Observe que a extensão padrão de biblioteca compartilhada do sistema (geralmente `.so` ou `.sl`) pode ser omitida do comando `CREATE FUNCTION`, e normalmente deve ser omitida para melhor portabilidade.
 
-Reveja [Seção 36.10.1][(xfunc-c.md#XFUNC-C-DYNLOAD "36.10.1. Dynamic Loading")] sobre onde o servidor espera encontrar os arquivos da biblioteca compartilhada.
+Reveja [Seção 36.10.1](xfunc-c.md#XFUNC-C-DYNLOAD) sobre onde o servidor espera encontrar os arquivos da biblioteca compartilhada.
 
 ### 36.10.6. Orientações sobre estabilidade da API e ABI do servidor [#](#XFUNC-API-ABI-STABILITY-GUIDANCE)
 
@@ -961,7 +958,7 @@ Esta seção contém orientações para autores de extensões e outros plugins d
 
 #### 36.10.6.1. Geral [#](#XFUNC-GUIDANCE-GENERAL)
 
-O servidor PostgreSQL contém várias APIs bem demarcadas para plugins do servidor, como o gerenciador de funções (fmgr, descrito neste capítulo), SPI ([Capítulo 45] [(spi.md "Chapter 45. Server Programming Interface")]) e vários ganchos especificamente projetados para extensões. Essas interfaces são cuidadosamente gerenciadas para estabilidade e compatibilidade a longo prazo. No entanto, o conjunto completo de funções e variáveis globais no servidor efetivamente constitui a API públicamente utilizável, e a maioria delas não foi projetada com extensibilidade e estabilidade a longo prazo em mente.
+O servidor PostgreSQL contém várias APIs bem demarcadas para plugins do servidor, como o gerenciador de funções (fmgr, descrito neste capítulo), SPI ([Capítulo 45](spi.md)) e vários ganchos especificamente projetados para extensões. Essas interfaces são cuidadosamente gerenciadas para estabilidade e compatibilidade a longo prazo. No entanto, o conjunto completo de funções e variáveis globais no servidor efetivamente constitui a API públicamente utilizável, e a maioria delas não foi projetada com extensibilidade e estabilidade a longo prazo em mente.
 
 Portanto, embora aproveitar essas interfaces seja válido, quanto mais se afasta do caminho bem trilhado, mais provável é que, em algum momento, se possa encontrar problemas de compatibilidade com API ou ABI. Os autores de extensões são incentivados a fornecer feedback sobre seus requisitos, para que, com o tempo, à medida que novos padrões de uso surgem, certas interfaces possam ser consideradas mais estabilizadas ou novas interfaces, melhor projetadas, podem ser adicionadas.
 
@@ -991,10 +988,9 @@ Servidores de diferentes versões principais têm ABIs intencionalmente incompat
 
 O PostgreSQL faz um esforço para evitar quebras no ABI em versões menores. Em geral, uma extensão compilada contra qualquer versão menor deve funcionar com qualquer outra versão menor da mesma versão principal, passada ou futura.
 
-Quando uma mudança *é* necessária,
-o PostgreSQL escolherá a mudança menos invasiva possível, por exemplo, encolhendo um novo campo em espaço de preenchimento ou anexando-o ao final de uma estrutura. Esse tipo de mudança não deve afetar extensões, a menos que use padrões de código muito incomuns.
+Quando uma mudança *é* necessária, o PostgreSQL escolherá a mudança menos invasiva possível, por exemplo, encolhendo um novo campo em espaço de preenchimento ou anexando-o ao final de uma estrutura. Esse tipo de mudança não deve afetar extensões, a menos que use padrões de código muito incomuns.
 
-Em casos raros, no entanto, mesmo essas mudanças não invasivas podem ser impraticáveis ou impossíveis. Nesse caso, a mudança será cuidadosamente gerenciada, levando em consideração os requisitos das extensões. Essas mudanças também serão documentadas nas notas de lançamento ([Apêndice E][(release.md "Appendix E. Release Notes")]).
+Em casos raros, no entanto, mesmo essas mudanças não invasivas podem ser impraticáveis ou impossíveis. Nesse caso, a mudança será cuidadosamente gerenciada, levando em consideração os requisitos das extensões. Essas mudanças também serão documentadas nas notas de lançamento ([Apêndice E](release.md)).
 
 Observe, no entanto, que muitas partes do servidor não são projetadas ou mantidas como APIs (e que, na maioria dos casos, a fronteira real também não é bem definida). Se necessidades urgentes surgirem, as alterações nessas partes serão feitas naturalmente com menos consideração para o código de extensão do que as alterações em interfaces bem definidas e amplamente utilizadas.
 
@@ -1027,18 +1023,7 @@ Datum c_overpaid(PG_FUNCTION_ARGS) { HeapTupleHeader  t = PG_GETARG_HEAPTUPLEHEA
     PG_RETURN_BOOL(DatumGetInt32(salary) > limit); }
 ```
 
-`GetAttributeByName` é a função do sistema PostgreSQL que
-retorna atributos da linha especificada. Ela tem
-três argumentos: o argumento do tipo `HeapTupleHeader` passado
-na função, o nome do atributo desejado e um
-parâmetro de retorno que indica se o atributo
-é nulo. `GetAttributeByName` retorna um valor `Datum`
-que você pode converter para o tipo de dados apropriado
-usando a função apropriada `DatumGetXXX()`.
-Observe que o valor de retorno não tem significado se a
-marca de nulo estiver definida; sempre verifique a
-marca de nulo antes de tentar fazer algo com o
-resultado.
+`GetAttributeByName` é a função do sistema PostgreSQL que retorna atributos da linha especificada. Ela tem três argumentos: o argumento do tipo `HeapTupleHeader` passado na função, o nome do atributo desejado e um parâmetro de retorno que indica se o atributo é nulo. `GetAttributeByName` retorna um valor `Datum` que você pode converter para o tipo de dados apropriado usando a função apropriada `DatumGetXXX()`. Observe que o valor de retorno não tem significado se a marca de nulo estiver definida; sempre verifique a marca de nulo antes de tentar fazer algo com o resultado.
 
 Existe também `GetAttributeByNum`, que seleciona o atributo alvo pelo número da coluna em vez do nome.
 
@@ -1058,11 +1043,7 @@ Para retornar uma linha ou um valor de tipo composto de uma função em linguage
 #include "funcapi.h"
 ```
 
-Existem duas maneiras de construir um valor de dados composto (doravante denominado “tuplo”): você pode construí-lo a partir de uma matriz de valores de Datum,
-ou a partir de uma matriz de strings C que podem ser passadas às funções de conversão de entrada dos tipos de dados das colunas do tuplo. Em qualquer caso, você precisa primeiro obter ou construir um descritor `TupleDesc` para a estrutura do tuplo. Ao trabalhar com Datums, você passa o `TupleDesc` para `BlessTupleDesc`,
-e então chama o `heap_form_tuple` para cada linha. Ao trabalhar com strings C, você passa o `TupleDesc` para
-`TupleDescGetAttInMetadata`, e então chama
-`BuildTupleFromCStrings` para cada linha. No caso de uma função que retorne um conjunto de tuplos, as etapas de configuração podem ser feitas todas uma vez durante a primeira chamada da função.
+Existem duas maneiras de construir um valor de dados composto (doravante denominado “tuplo”): você pode construí-lo a partir de uma matriz de valores de Datum, ou a partir de uma matriz de strings C que podem ser passadas às funções de conversão de entrada dos tipos de dados das colunas do tuplo. Em qualquer caso, você precisa primeiro obter ou construir um descritor `TupleDesc` para a estrutura do tuplo. Ao trabalhar com Datums, você passa o `TupleDesc` para `BlessTupleDesc`, e então chama o `heap_form_tuple` para cada linha. Ao trabalhar com strings C, você passa o `TupleDesc` para `TupleDescGetAttInMetadata`, e então chama `BuildTupleFromCStrings` para cada linha. No caso de uma função que retorne um conjunto de tuplos, as etapas de configuração podem ser feitas todas uma vez durante a primeira chamada da função.
 
 Várias funções auxiliares estão disponíveis para configurar o necessário `TupleDesc`. A maneira recomendada para fazer isso na maioria das funções que retornam valores compostos é chamar:
 
@@ -1070,10 +1051,7 @@ Várias funções auxiliares estão disponíveis para configurar o necessário `
 TypeFuncClass get_call_result_type(FunctionCallInfo fcinfo, Oid *resultTypeId, TupleDesc *resultTupleDesc)
 ```
 
-passando a mesma estrutura `fcinfo` passada para a função chamada
-própria. (Isso, claro, exige que você use as convenções de chamada da versão 1.) `resultTypeId` pode ser especificado como `NULL` ou como o endereço de uma variável local para receber o tipo OID do resultado da função. `resultTupleDesc` deve ser o endereço de uma variável local `TupleDesc`. Verifique se o resultado é `TYPEFUNC_COMPOSITE`; se sim,
-`resultTupleDesc` foi preenchido com o necessário
-`TupleDesc`. (Se não for, você pode relatar um erro na linha do tipo “registro de retorno da função chamado em contexto que não pode aceitar registro de tipo”).
+passando a mesma estrutura `fcinfo` passada para a função chamada própria. (Isso, claro, exige que você use as convenções de chamada da versão 1.) `resultTypeId` pode ser especificado como `NULL` ou como o endereço de uma variável local para receber o tipo OID do resultado da função. `resultTupleDesc` deve ser o endereço de uma variável local `TupleDesc`. Verifique se o resultado é `TYPEFUNC_COMPOSITE`; se sim, `resultTupleDesc` foi preenchido com o necessário `TupleDesc`. (Se não for, você pode relatar um erro na linha do tipo “registro de retorno da função chamado em contexto que não pode aceitar registro de tipo”).
 
 ### DICA
 
@@ -1081,15 +1059,9 @@ própria. (Isso, claro, exige que você use as convenções de chamada da versã
 
 ### Nota
 
-`get_call_result_type` tem um irmão
-`get_expr_result_type`, que pode ser usado para resolver o
-tipo de saída esperado para uma chamada de função representada por uma árvore de expressão. Isso pode ser usado quando se tenta determinar o tipo de resultado de fora da própria função. Também existe
-`get_func_result_type`, que pode ser usado quando apenas o OID da função está disponível. No entanto, essas funções não podem lidar com funções declaradas para retornar `record`, e
-`get_func_result_type` não pode resolver tipos polimórficos,
-portanto, você deve preferencialmente usar `get_call_result_type`.
+`get_call_result_type` tem um irmão `get_expr_result_type`, que pode ser usado para resolver o tipo de saída esperado para uma chamada de função representada por uma árvore de expressão. Isso pode ser usado quando se tenta determinar o tipo de resultado de fora da própria função. Também existe `get_func_result_type`, que pode ser usado quando apenas o OID da função está disponível. No entanto, essas funções não podem lidar com funções declaradas para retornar `record`, e `get_func_result_type` não pode resolver tipos polimórficos, portanto, você deve preferencialmente usar `get_call_result_type`.
 
-Funções mais antigas, agora desatualizadas, para obtenção de
-`TupleDesc` são:
+Funções mais antigas, agora desatualizadas, para obtenção de `TupleDesc` são:
 
 ```
 TupleDesc RelationNameGetTupleDesc(const char *relname)
@@ -1131,14 +1103,7 @@ Ao trabalhar com strings C, use:
 HeapTuple BuildTupleFromCStrings(AttInMetadata *attinmeta, char **values)
 ```
 
-para construir um `HeapTuple` com base em dados do usuário
-em forma de string C. *`values`* é um array de strings C,
-um para cada atributo da linha de retorno. Cada string C deve estar
-na forma esperada pela função de entrada do tipo de dados do atributo.
-Para retornar um valor nulo para um dos atributos,
-o ponteiro correspondente no array *`values`*
-deve ser definido como `NULL`. Esta função precisará
-ser chamada novamente para cada linha que você retornar.
+para construir um `HeapTuple` com base em dados do usuário em forma de string C. *`values`* é um array de strings C, um para cada atributo da linha de retorno. Cada string C deve estar na forma esperada pela função de entrada do tipo de dados do atributo. Para retornar um valor nulo para um dos atributos, o ponteiro correspondente no array *`values`* deve ser definido como `NULL`. Esta função precisará ser chamada novamente para cada linha que você retornar.
 
 Depois de construir uma tupla para retornar de sua função, ela deve ser convertida em um `Datum`. Use:
 
@@ -1146,18 +1111,13 @@ Depois de construir uma tupla para retornar de sua função, ela deve ser conver
 HeapTupleGetDatum(HeapTuple tuple)
 ```
 
-para converter um `HeapTuple` em um Datum válido. Este
-`Datum` pode ser retornado diretamente se você pretende retornar
-apenas uma única linha, ou ele pode ser usado como o valor de retorno atual
-em uma função que retorna um conjunto.
+para converter um `HeapTuple` em um Datum válido. Este `Datum` pode ser retornado diretamente se você pretende retornar apenas uma única linha, ou ele pode ser usado como o valor de retorno atual em uma função que retorna um conjunto.
 
 Um exemplo aparece na seção seguinte.
 
 ### 36.10.9. Conjuntos de retorno [#](#XFUNC-C-RETURN-SET)
 
-As funções em linguagem C têm duas opções para retornar conjuntos (várias linhas). Em um método, chamado modo *ValuePerCall*, uma função que retorna um conjunto é chamada repetidamente (passando os mesmos argumentos cada vez) e retorna uma nova linha em cada chamada, até que não tenha mais linhas para retornar e sinaliza isso ao retornar NULL.
-A função que retorna um conjunto (SRF) deve, portanto, salvar estado suficiente entre as chamadas para lembrar o que estava fazendo e retornar o próximo item correto em cada chamada.
-No outro método, chamado modo *Materialize*, uma SRF preenche e retorna um objeto de tuplestore contendo todo o seu resultado; então, apenas uma chamada ocorre para todo o resultado, e não é necessário estado entre as chamadas.
+As funções em linguagem C têm duas opções para retornar conjuntos (várias linhas). Em um método, chamado modo *ValuePerCall*, uma função que retorna um conjunto é chamada repetidamente (passando os mesmos argumentos cada vez) e retorna uma nova linha em cada chamada, até que não tenha mais linhas para retornar e sinaliza isso ao retornar NULL. A função que retorna um conjunto (SRF) deve, portanto, salvar estado suficiente entre as chamadas para lembrar o que estava fazendo e retornar o próximo item correto em cada chamada. No outro método, chamado modo *Materialize*, uma SRF preenche e retorna um objeto de tuplestore contendo todo o seu resultado; então, apenas uma chamada ocorre para todo o resultado, e não é necessário estado entre as chamadas.
 
 Ao usar o modo ValuePerCall, é importante lembrar que a consulta não é garantida para ser executada até o final; ou seja, devido a opções como `LIMIT`, o executor pode parar de fazer chamadas à função que retorna o conjunto antes de todas as linhas terem sido obtidas. Isso significa que não é seguro realizar atividades de limpeza na última chamada, porque isso pode nunca acontecer. Recomenda-se usar o modo Materialize para funções que precisam acessar recursos externos, como descritores de arquivo.
 
@@ -1233,10 +1193,7 @@ Se sua função tiver dados para ser retornados na chamada atual, use:
 SRF_RETURN_NEXT(funcctx, result)
 ```
 
-para devolvê-lo ao chamador. (`result` deve ser do tipo
-`Datum`, um único valor ou uma tupla preparada conforme
-descrito acima.) Finalmente, quando sua função terminar de
-devolver dados, use:
+para devolvê-lo ao chamador. (`result` deve ser do tipo `Datum`, um único valor ou uma tupla preparada conforme descrito acima.) Finalmente, quando sua função terminar de devolver dados, use:
 
 ```
 SRF_RETURN_DONE(funcctx)
@@ -1244,19 +1201,13 @@ SRF_RETURN_DONE(funcctx)
 
 limpar e acabar com o SRF.
 
-O contexto de memória que é atual quando o SRF é chamado é um contexto transitório que será apagado entre as chamadas. Isso significa que você não precisa chamar `pfree` em tudo o que você alocou usando `palloc`; ele desaparecerá de qualquer maneira. No entanto, se você quiser alocar quaisquer estruturas de dados para serem mantidas entre as chamadas, você precisa colocá-las em outro lugar. O contexto de memória referenciado por
-`multi_call_memory_ctx` é um local adequado para qualquer dado que precise sobreviver até o SRF terminar de ser executado. Na maioria dos casos, isso significa que você deve alternar para
-`multi_call_memory_ctx` enquanto faz a configuração da primeira chamada.
-Use `funcctx->user_fctx` para manter um ponteiro para quaisquer estruturas de dados de chamada cruzada.
+O contexto de memória que é atual quando o SRF é chamado é um contexto transitório que será apagado entre as chamadas. Isso significa que você não precisa chamar `pfree` em tudo o que você alocou usando `palloc`; ele desaparecerá de qualquer maneira. No entanto, se você quiser alocar quaisquer estruturas de dados para serem mantidas entre as chamadas, você precisa colocá-las em outro lugar. O contexto de memória referenciado por `multi_call_memory_ctx` é um local adequado para qualquer dado que precise sobreviver até o SRF terminar de ser executado. Na maioria dos casos, isso significa que você deve alternar para `multi_call_memory_ctx` enquanto faz a configuração da primeira chamada. Use `funcctx->user_fctx` para manter um ponteiro para quaisquer estruturas de dados de chamada cruzada.
+
 (Os dados que você aloca em `multi_call_memory_ctx` desaparecerão automaticamente quando a consulta terminar, então não é necessário liberar manualmente esses dados.)
 
 ### Aviso
 
-Embora os argumentos reais da função permaneçam inalterados entre as chamadas, se você destoar os valores dos argumentos (o que normalmente é feito de forma transparente pelo macro
-`PG_GETARG_xxx`
-em contexto transitório, então as cópias destoadas serão liberadas em cada ciclo. Assim, se você manter referências a tais valores em
-`user_fctx`, você deve ou copiá-los para o
-`multi_call_memory_ctx` após o destoação, ou garantir que você destoar os valores apenas nesse contexto.
+Embora os argumentos reais da função permaneçam inalterados entre as chamadas, se você destoar os valores dos argumentos (o que normalmente é feito de forma transparente pelo macro `PG_GETARG_xxx` em contexto transitório, então as cópias destoadas serão liberadas em cada ciclo. Assim, se você manter referências a tais valores em `user_fctx`, você deve ou copiá-los para o `multi_call_memory_ctx` após o destoação, ou garantir que você destoar os valores apenas nesse contexto.
 
 Um exemplo completo de pseudo-código parece o seguinte:
 
@@ -1335,26 +1286,7 @@ Observe que, nesse método, o tipo de saída da função é formalmente um tipo 
 
 ### 36.10.10. Argumentos polimórficos e tipos de retorno [#](#XFUNC-C-POLYMORPHIC)
 
-As funções em linguagem C podem ser declaradas para aceitar e
-retornar os tipos polimórficos descritos em [Seção 36.2.5][(extend-type-system.md#EXTEND-TYPES-POLYMORPHIC "36.2.5. Polymorphic Types")].
-Quando os argumentos ou os tipos de retorno de uma função são definidos como tipos polimórficos, o autor da função não pode saber
-adiantadamente com que tipo de dados será chamada ou
-precisa retornar. Existem duas rotinas fornecidas em `fmgr.h`
-para permitir que uma função C de versão 1 descubra os tipos de dados
-reais de seus argumentos e o tipo que espera retornar. As rotinas são
-chamadas de `get_fn_expr_rettype(FmgrInfo *flinfo)` e
-`get_fn_expr_argtype(FmgrInfo *flinfo, int argnum)`.
-Retornam o tipo de resultado ou argumento OID, ou `InvalidOid` se a
-informação não estiver disponível.
-A estrutura `flinfo` é normalmente acessada como
-`fcinfo->flinfo`. O parâmetro `argnum`
-é baseado em zero. `get_call_result_type` também pode ser usado
-como uma alternativa a `get_fn_expr_rettype`.
-Há também `get_fn_expr_variadic`, que pode ser usado para
-determinar se argumentos variáveis foram mesclados em um array.
-Isso é principalmente útil para funções `VARIADIC "any"`,
-já que tal mesclagem sempre ocorrerá para funções variáveis
-que utilizam tipos de array comuns.
+As funções em linguagem C podem ser declaradas para aceitar e retornar os tipos polimórficos descritos em [Seção 36.2.5](extend-type-system.md#EXTEND-TYPES-POLYMORPHIC). Quando os argumentos ou os tipos de retorno de uma função são definidos como tipos polimórficos, o autor da função não pode saber adiantadamente com que tipo de dados será chamada ou precisa retornar. Existem duas rotinas fornecidas em `fmgr.h` para permitir que uma função C de versão 1 descubra os tipos de dados reais de seus argumentos e o tipo que espera retornar. As rotinas são chamadas de `get_fn_expr_rettype(FmgrInfo *flinfo)` e `get_fn_expr_argtype(FmgrInfo *flinfo, int argnum)`. Retornam o tipo de resultado ou argumento OID, ou `InvalidOid` se a informação não estiver disponível. A estrutura `flinfo` é normalmente acessada como `fcinfo->flinfo`. O parâmetro `argnum` é baseado em zero. `get_call_result_type` também pode ser usado como uma alternativa a `get_fn_expr_rettype`. Há também `get_fn_expr_variadic`, que pode ser usado para determinar se argumentos variáveis foram mesclados em um array. Isso é principalmente útil para funções `VARIADIC "any"`, já que tal mesclagem sempre ocorrerá para funções variáveis que utilizam tipos de array comuns.
 
 Por exemplo, suponha que queira escrever uma função que aceite um único elemento de qualquer tipo e retorne uma matriz unidimensional desse tipo:
 
@@ -1386,12 +1318,7 @@ Existe uma variante de polimorfismo que só está disponível para funções em 
 
 #### 36.10.11.1. Solicitação de Memória Compartilhada na Inicialização [#](#XFUNC-SHARED-ADDIN-AT-STARTUP)
 
-Os complementos podem reservar memória compartilhada no início do servidor. Para isso, a biblioteca compartilhada do complemento deve ser pré-carregada, especificando-a em
-[shared_preload_libraries][(runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES)].
-A biblioteca compartilhada também deve registrar um
-`shmem_request_hook` em sua
-`_PG_init` função. Este
-`shmem_request_hook` pode reservar memória compartilhada chamando:
+Os complementos podem reservar memória compartilhada no início do servidor. Para isso, a biblioteca compartilhada do complemento deve ser pré-carregada, especificando-a em [shared_preload_libraries](runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES). A biblioteca compartilhada também deve registrar um `shmem_request_hook` em sua `_PG_init` função. Este `shmem_request_hook` pode reservar memória compartilhada chamando:
 
 ```
 void RequestAddinShmemSpace(Size size)
@@ -1403,12 +1330,7 @@ Cada backend deve obter um ponteiro para a memória compartilhada reservada cham
 void *ShmemInitStruct(const char *name, Size size, bool *foundPtr)
 ```
 
-Se essa função definir `foundPtr` para
-`false`, o chamador deve proceder à inicialização dos
-conteúdos da memória compartilhada reservada. Se `foundPtr`
-for definido para `true`, a memória compartilhada já foi
-inicializada por outro backend, e o chamador não precisa inicializar
-mais.
+Se essa função definir `foundPtr` para `false`, o chamador deve proceder à inicialização dos conteúdos da memória compartilhada reservada. Se `foundPtr` for definido para `true`, a memória compartilhada já foi inicializada por outro backend, e o chamador não precisa inicializar mais.
 
 Para evitar condições de corrida, cada backend deve usar o LWLock ao inicializar sua alocação de memória compartilhada, como mostrado aqui:
 
@@ -1420,10 +1342,7 @@ LWLockAcquire(AddinShmemInitLock, LW_EXCLUSIVE); ptr = ShmemInitStruct("my struc
 
 `shmem_startup_hook` fornece um local conveniente para o código de inicialização, mas não é estritamente necessário que todo esse código seja colocado neste gancho. Em Windows (e em qualquer outro lugar onde `EXEC_BACKEND` é definido), cada backend executa o `shmem_startup_hook` registrado logo após se conectar à memória compartilhada, portanto, os complementos ainda devem adquirir `AddinShmemInitLock` dentro deste gancho, como mostrado no exemplo acima. Em outras plataformas, apenas o processo postmaster executa o `shmem_startup_hook`, e cada backend herda automaticamente os ponteiros para a memória compartilhada.
 
-Um exemplo de um `shmem_request_hook` e
-`shmem_startup_hook` pode ser encontrado em
-`contrib/pg_stat_statements/pg_stat_statements.c` em
-a árvore de código-fonte do PostgreSQL.
+Um exemplo de um `shmem_request_hook` e `shmem_startup_hook` pode ser encontrado em `contrib/pg_stat_statements/pg_stat_statements.c` em a árvore de código-fonte do PostgreSQL.
 
 #### 36.10.11.2. Solicitação de Memória Compartilhada Após o Inicialização [#](#XFUNC-SHARED-ADDIN-AFTER-STARTUP)
 
@@ -1435,26 +1354,15 @@ void *GetNamedDSMSegment(const char *name, size_t size, void (*init_callback) (v
 
 Se um segmento de memória compartilhada dinâmica com o nome fornecido ainda não existir, esta função o alocará e o iniciará com a função de callback fornecida `init_callback`. Se o segmento já tiver sido alocado e iniciado por outro backend, esta função simplesmente anexa o segmento de memória compartilhada dinâmica existente ao backend atual.
 
-Ao contrário da memória compartilhada reservada no início do servidor, não é necessário
-adquirir `AddinShmemInitLock` ou tomar outras ações
-para evitar condições de corrida ao reservar memória compartilhada com
-`GetNamedDSMSegment`. Esta função garante que apenas
-um backend aloque e inicie o segmento e que todos os outros
-backends recebam um ponteiro para o segmento totalmente alocado e inicializado.
+Ao contrário da memória compartilhada reservada no início do servidor, não é necessário adquirir `AddinShmemInitLock` ou tomar outras ações para evitar condições de corrida ao reservar memória compartilhada com `GetNamedDSMSegment`. Esta função garante que apenas um backend aloque e inicie o segmento e que todos os outros backends recebam um ponteiro para o segmento totalmente alocado e inicializado.
 
-Um exemplo completo de uso de `GetNamedDSMSegment` pode ser encontrado em
-`src/test/modules/test_dsm_registry/test_dsm_registry.c`
-na árvore de código-fonte do PostgreSQL.
+Um exemplo completo de uso de `GetNamedDSMSegment` pode ser encontrado em `src/test/modules/test_dsm_registry/test_dsm_registry.c` na árvore de código-fonte do PostgreSQL.
 
 ### 36.10.12. LWLocks [#](#XFUNC-ADDIN-LWLOCKS)
 
 #### 36.10.12.1. Solicitação de LWLocks na inicialização [#](#XFUNC-ADDIN-LWLOCKS-AT-STARTUP)
 
-Os complementos podem reservar LWLocks no início da inicialização do servidor. Assim como a memória compartilhada reservada no início da inicialização do servidor, a biblioteca compartilhada do complemento deve ser pré-carregada, especificando-a em
-[shared_preload_libraries][(runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES)], e a biblioteca compartilhada deve registrar um
-`shmem_request_hook` em sua
-`_PG_init` função. Este
-`shmem_request_hook` pode reservar LWLocks chamando:
+Os complementos podem reservar LWLocks no início da inicialização do servidor. Assim como a memória compartilhada reservada no início da inicialização do servidor, a biblioteca compartilhada do complemento deve ser pré-carregada, especificando-a em [shared_preload_libraries](runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES), e a biblioteca compartilhada deve registrar um `shmem_request_hook` em sua `_PG_init` função. Este `shmem_request_hook` pode reservar LWLocks chamando:
 
 ```
 void RequestNamedLWLockTranche(const char *tranche_name, int num_lwlocks)
@@ -1468,16 +1376,13 @@ LWLockPadded *GetNamedLWLockTranche(const char *tranche_name)
 
 #### 36.10.12.2. Solicitação de LWLocks após o início do sistema [#](#XFUNC-ADDIN-LWLOCKS-AFTER-STARTUP)
 
-Existe outro método mais flexível de obtenção de LWLocks que pode ser feito após a inicialização do servidor e fora de um
-`shmem_request_hook`. Para isso, aloque primeiro um
-`tranche_id` chamando:
+Existe outro método mais flexível de obtenção de LWLocks que pode ser feito após a inicialização do servidor e fora de um `shmem_request_hook`. Para isso, aloque primeiro um `tranche_id` chamando:
 
 ```
 int LWLockNewTrancheId(void)
 ```
 
-Em seguida, inicialize cada LWLock, passando o novo
-`tranche_id` como um argumento:
+Em seguida, inicialize cada LWLock, passando o novo `tranche_id` como um argumento:
 
 ```
 void LWLockInitialize(LWLock *lock, int tranche_id)
@@ -1517,14 +1422,7 @@ Um ponto de injeção com um `name` dado é declarado usando a macro:
 INJECTION_POINT(name, arg);
 ```
 
-Existem alguns pontos de injeção já declarados em pontos estratégicos
-dentro do código do servidor. Após adicionar um novo ponto de injeção, o código
-precisa ser compilado para que esse ponto de injeção esteja disponível no
-binário. Os complementos escritos em linguagem C podem declarar pontos de
-injeção em seu próprio código usando a mesma macro. Os nomes dos pontos de
-injeção devem usar caracteres minúsculos, com termos separados por
-traços. `arg` é um valor de argumento opcional dado ao
-callback em tempo de execução.
+Existem alguns pontos de injeção já declarados em pontos estratégicos dentro do código do servidor. Após adicionar um novo ponto de injeção, o código precisa ser compilado para que esse ponto de injeção esteja disponível no binário. Os complementos escritos em linguagem C podem declarar pontos de injeção em seu próprio código usando a mesma macro. Os nomes dos pontos de injeção devem usar caracteres minúsculos, com termos separados por traços. `arg` é um valor de argumento opcional dado ao callback em tempo de execução.
 
 Executar um ponto de injeção pode exigir a alocação de uma pequena quantidade de memória, o que pode falhar. Se você precisa ter um ponto de injeção em uma seção crítica onde alocações dinâmicas não são permitidas, você pode usar uma abordagem de dois passos com as seguintes macros:
 
@@ -1542,8 +1440,7 @@ extern void InjectionPointAttach(const char *name, const char *library, const ch
 
 `name` é o nome do ponto de injeção, que, quando alcançado durante a execução, executará o `function` carregado a partir de `library`. `private_data` é uma área privada de dados com tamanho `private_data_size` fornecido como argumento ao callback quando executado.
 
-Aqui está um exemplo de callback para
-`InjectionPointCallback`:
+Aqui está um exemplo de callback para `InjectionPointCallback`:
 
 ```
 static void custom_injection_callback(const char *name, const void *private_data, void *arg) { uint32 wait_event_info = WaitEventInjectionPointNew(name);
@@ -1581,7 +1478,7 @@ Para habilitar os pontos de injeção, é necessário o `--enable-injection-poin
 
 ### 36.10.15. Estatísticas cumulativas personalizadas [#](#XFUNC-ADDIN-CUSTOM-CUMULATIVE-STATISTICS)
 
-É possível que complementos escritos em linguagem C utilizem tipos personalizados de estatísticas acumuladas registrados no [Sistema de Estatísticas Acumuladas][(monitoring-stats.md#MONITORING-STATS-SETUP "27.2.1. Statistics Collection Configuration")].
+É possível que complementos escritos em linguagem C utilizem tipos personalizados de estatísticas acumuladas registrados no [Sistema de Estatísticas Acumuladas](monitoring-stats.md#MONITORING-STATS-SETUP).
 
 Primeiro, defina um `PgStat_KindInfo` que inclua todas as informações relacionadas ao tipo personalizado registrado. Por exemplo:
 
@@ -1595,16 +1492,13 @@ Em seguida, cada backend que precise usar esse tipo personalizado precisa regist
 extern PgStat_Kind pgstat_register_kind(PgStat_Kind kind, const PgStat_KindInfo *kind_info);
 ```
 
-Ao desenvolver uma nova extensão, use
-`PGSTAT_KIND_EXPERIMENTAL` para
-*`kind`*. Quando estiver pronto para liberar a extensão para os usuários, reserve um ID amigável na página
-[Estatísticas cumulativas personalizadas][(https://wiki.postgresql.org/wiki/CustomCumulativeStats)].
+Ao desenvolver uma nova extensão, use `PGSTAT_KIND_EXPERIMENTAL` para *`kind`*. Quando estiver pronto para liberar a extensão para os usuários, reserve um ID amigável na página [Estatísticas cumulativas personalizadas](https://wiki.postgresql.org/wiki/CustomCumulativeStats).
 
 Os detalhes da API para `PgStat_KindInfo` podem ser encontrados em `src/include/utils/pgstat_internal.h`.
 
 O tipo de estatísticas registrado está associado a um nome e a um ID único compartilhado em todo o servidor na memória compartilhada. Cada backend que utiliza um tipo personalizado de estatísticas mantém um cache local que armazena as informações de cada `PgStat_KindInfo` personalizado.
 
-Coloque o módulo de extensão que implementa as estatísticas cumulativas personalizadas no [shared_preload_libraries][(runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES)] para que ele seja carregado cedo durante o início do PostgreSQL.
+Coloque o módulo de extensão que implementa as estatísticas cumulativas personalizadas no [shared_preload_libraries](runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES) para que ele seja carregado cedo durante o início do PostgreSQL.
 
 Um exemplo que descreve como registrar e usar estatísticas personalizadas pode ser encontrado em `src/test/modules/injection_points`.
 
@@ -1612,8 +1506,7 @@ Um exemplo que descreve como registrar e usar estatísticas personalizadas pode 
 
 Embora o backend do PostgreSQL seja escrito em C, é possível escrever extensões em C++, desde que essas diretrizes sejam seguidas:
 
-* Todas as funções acessadas pelo backend devem apresentar uma interface C para o backend; essas funções em C podem então chamar funções em C++.
-Por exemplo, a vinculação `extern C` é necessária para funções acessadas pelo backend. Isso também é necessário para quaisquer funções que sejam passadas como ponteiros entre o backend e o código em C++.
+* Todas as funções acessadas pelo backend devem apresentar uma interface C para o backend; essas funções em C podem então chamar funções em C++. Por exemplo, a vinculação `extern C` é necessária para funções acessadas pelo backend. Isso também é necessário para quaisquer funções que sejam passadas como ponteiros entre o backend e o código em C++.
 * Lembre-se de liberar a memória usando o método apropriado de alocação. Por exemplo, a maioria da memória do backend é alocada usando `palloc()`, então use `pfree()` para liberá-la. Usar C++ `delete` nesses casos falhará.
 * Impedir que exceções se propague para o código em C (use um bloco de captura geral no nível superior de todas as funções `extern C`). Isso é necessário mesmo que o código em C++ não arraste explicitamente quaisquer exceções, porque eventos como falta de memória ainda podem lançar exceções. Qualquer exceção deve ser capturada e erros apropriados devem ser passados de volta para a interface em C. Se possível, compile o C++ com `-fno-exceptions` para eliminar exceções completamente; nesses casos, você deve verificar por falhas no seu código em C++, por exemplo, verificar o NULL retornado por `new()`.
 * Se estiver chamando funções do backend a partir do código em C++, certifique-se de que a pilha de chamadas do C++ contenha apenas estruturas de dados simples e antigas (POD). Isso é necessário porque os erros do backend geram um `longjmp()` distante que não desenrola adequadamente uma pilha de chamadas em C++ com objetos não-POD.

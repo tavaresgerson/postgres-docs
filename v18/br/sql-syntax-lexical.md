@@ -23,11 +23,11 @@ Esta é uma sequência de três comandos, um por linha (embora isso não seja ne
 
 Além disso, os *comentários* podem ocorrer na entrada SQL. Eles não são tokens, eles são efetivamente equivalentes a espaços em branco.
 
-A sintaxe SQL não é muito consistente em relação ao que os tokens identificam como comandos e quais são operadores ou parâmetros. Os primeiros tokens são geralmente o nome do comando, então, no exemplo acima, geralmente falamos em um comando de “SELECT”, “UPDATE” e “INSERT”. Mas, por exemplo, o comando `UPDATE` sempre requer que um token `SET` apareça em uma certa posição, e esta variação específica de `INSERT` também requer um `VALUES` para ser completa. As regras precisas de sintaxe para cada comando são descritas em [Parte VI][(reference.md "Part VI. Reference")].
+A sintaxe SQL não é muito consistente em relação ao que os tokens identificam como comandos e quais são operadores ou parâmetros. Os primeiros tokens são geralmente o nome do comando, então, no exemplo acima, geralmente falamos em um comando de “SELECT”, “UPDATE” e “INSERT”. Mas, por exemplo, o comando `UPDATE` sempre requer que um token `SET` apareça em uma certa posição, e esta variação específica de `INSERT` também requer um `VALUES` para ser completa. As regras precisas de sintaxe para cada comando são descritas em [Parte VI](reference.md).
 
 ### 4.1.1. Identificadores e Palavras-Chave [#](#SQL-SYNTAX-IDENTIFIERS)
 
-Títulos como `SELECT`, `UPDATE` ou `VALUES` no exemplo acima são exemplos de *palavras-chave*, ou seja, palavras que têm um significado fixo na linguagem SQL. Os títulos `MY_TABLE` e `A` são exemplos de *identificadores*. Eles identificam nomes de tabelas, colunas ou outros objetos de banco de dados, dependendo do comando em que são usados. Portanto, às vezes são simplesmente chamados de “nomes”. Palavras-chave e identificadores têm a mesma estrutura lexical, o que significa que não se pode saber se um título é um identificador ou uma palavra-chave sem conhecer a linguagem. Uma lista completa de palavras-chave pode ser encontrada em [Apêndice C][(sql-keywords-appendix.md "Appendix C. SQL Key Words")].
+Títulos como `SELECT`, `UPDATE` ou `VALUES` no exemplo acima são exemplos de *palavras-chave*, ou seja, palavras que têm um significado fixo na linguagem SQL. Os títulos `MY_TABLE` e `A` são exemplos de *identificadores*. Eles identificam nomes de tabelas, colunas ou outros objetos de banco de dados, dependendo do comando em que são usados. Portanto, às vezes são simplesmente chamados de “nomes”. Palavras-chave e identificadores têm a mesma estrutura lexical, o que significa que não se pode saber se um título é um identificador ou uma palavra-chave sem conhecer a linguagem. Uma lista completa de palavras-chave pode ser encontrada em [Apêndice C](sql-keywords-appendix.md).
 
 Os identificadores e palavras-chave do SQL devem começar com uma letra (`a`-`z`, mas também letras com acentos gráficos e letras não latinas) ou um underscore (`_`). Os caracteres subsequentes em um identificador ou palavra-chave podem ser letras, underscores, dígitos (`0`-`9`), ou sinais de dólar (`$`). Observe que os sinais de dólar não são permitidos em identificadores de acordo com a letra do padrão SQL, portanto, seu uso pode tornar as aplicações menos portáteis. O padrão SQL não definirá uma palavra-chave que contenha dígitos ou comece ou termine com um underscore, portanto, os identificadores dessa forma são seguros contra possíveis conflitos com futuras extensões do padrão.
 
@@ -118,197 +118,200 @@ não é sintaxe válida. (Esse comportamento ligeiramente bizarro é especificad
 
 #### 4.1.2.2. Constantes de cadeia com escapamentos em estilo C [#](#SQL-SYNTAX-STRINGS-ESCAPE)
 
-O PostgreSQL também aceita constantes de cadeia de "escape", que são uma extensão do padrão SQL. Uma constante de cadeia de escape é especificada escrevendo a letra `E` (maiúscula ou minúscula) logo antes da primeira citação aberta, por exemplo, `E'foo'`. (Ao continuar uma constante de cadeia de escape em linhas, escreva `E` apenas antes da primeira citação aberta.) Dentro de uma cadeia de escape, um caractere barra (`\`) inicia uma sequência de escape *barra de escape* semelhante ao C, na qual a combinação de barra e caracteres subsequentes representa um valor de byte especial, conforme mostrado em [Tabela 4.1][(sql-syntax-lexical.md#SQL-BACKSLASH-TABLE "Table 4.1. Backslash Escape Sequences")].
+O PostgreSQL também aceita constantes de cadeia de "escape", que são uma extensão do padrão SQL. Uma constante de cadeia de escape é especificada escrevendo a letra `E` (maiúscula ou minúscula) logo antes da primeira citação aberta, por exemplo, `E'foo'`. (Ao continuar uma constante de cadeia de escape em linhas, escreva `E` apenas antes da primeira citação aberta.) Dentro de uma cadeia de escape, um caractere barra (`\`) inicia uma sequência de escape *barra de escape* semelhante ao C, na qual a combinação de barra e caracteres subsequentes representa um valor de byte especial, conforme mostrado em [Tabela 4.1](sql-syntax-lexical.md#SQL-BACKSLASH-TABLE).
 
 **Tabela 4.1. Sequências de Escape de Backslash**
 
 
 
 <table border="1" class="table" summary="Backslash Escape Sequences">
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Backslash Escape Sequence
    </th>
-<th>
+   <th>
     Interpretation
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      \b
     </code>
-</td>
-<td>
+   </td>
+   <td>
     backspace
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      \f
     </code>
-</td>
-<td>
+   </td>
+   <td>
     form feed
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      \n
     </code>
-</td>
-<td>
+   </td>
+   <td>
     newline
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      \r
     </code>
-</td>
-<td>
+   </td>
+   <td>
     carriage return
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      \t
     </code>
-</td>
-<td>
+   </td>
+   <td>
     tab
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      \
      <em class="replaceable">
-<code>
+      <code>
        o
       </code>
-</em>
-</code>
+     </em>
+    </code>
     ,
     <code class="literal">
      \
      <em class="replaceable">
-<code>
+      <code>
        oo
       </code>
-</em>
-</code>
+     </em>
+    </code>
     ,
     <code class="literal">
      \
      <em class="replaceable">
-<code>
+      <code>
        ooo
       </code>
-</em>
-</code>
+     </em>
+    </code>
     (
     <em class="replaceable">
-<code>
+     <code>
       o
      </code>
-</em>
+    </em>
     = 0–7)
    </td>
-<td>
+   <td>
     octal byte value
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      \x
      <em class="replaceable">
-<code>
+      <code>
        h
       </code>
-</em>
-</code>
+     </em>
+    </code>
     ,
     <code class="literal">
      \x
      <em class="replaceable">
-<code>
+      <code>
        hh
       </code>
-</em>
-</code>
+     </em>
+    </code>
     (
     <em class="replaceable">
-<code>
+     <code>
       h
      </code>
-</em>
+    </em>
     = 0–9, A–F)
    </td>
-<td>
+   <td>
     hexadecimal byte value
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      \u
      <em class="replaceable">
-<code>
+      <code>
        xxxx
       </code>
-</em>
-</code>
+     </em>
+    </code>
     ,
     <code class="literal">
      \U
      <em class="replaceable">
-<code>
+      <code>
        xxxxxxxx
       </code>
-</em>
-</code>
+     </em>
+    </code>
     (
     <em class="replaceable">
-<code>
+     <code>
       x
      </code>
-</em>
+    </em>
     = 0–9, A–F)
    </td>
-<td>
+   <td>
     16 or 32-bit hexadecimal Unicode character value
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Qualquer outro caractere que siga uma barra invertida é tomado literalmente. Assim, para incluir um caractere de barra invertida, escreva duas barras invertidas (`\\`). Além disso, uma única citação pode ser incluída em uma string de escape escrevendo `\'`, além da maneira normal de `''`.
 
-É sua responsabilidade garantir que as sequências de bytes que você cria, especialmente ao usar escapamentos octal ou hexadecimal, comportem caracteres válidos no conjunto de caracteres do servidor. Uma alternativa útil é usar escapamentos Unicode ou a sintaxe de escapamento Unicode alternativa, explicada em [Seção 4.1.2.3][(sql-syntax-lexical.md#SQL-SYNTAX-STRINGS-UESCAPE "4.1.2.3. String Constants with Unicode Escapes")]; então o servidor verificará se a conversão de caracteres é possível.
+É sua responsabilidade garantir que as sequências de bytes que você cria, especialmente ao usar escapamentos octal ou hexadecimal, comportem caracteres válidos no conjunto de caracteres do servidor. Uma alternativa útil é usar escapamentos Unicode ou a sintaxe de escapamento Unicode alternativa, explicada em [Seção 4.1.2.3](sql-syntax-lexical.md#SQL-SYNTAX-STRINGS-UESCAPE); então o servidor verificará se a conversão de caracteres é possível.
 
 ### Atenção
 
-Se o parâmetro de configuração [standard_conforming_strings][(runtime-config-compatible.md#GUC-STANDARD-CONFORMING-STRINGS)] for `off`, o PostgreSQL reconhece escapamentos de barra insira em constantes de strings regulares e de escape. No entanto, a partir do PostgreSQL 9.1, o padrão é `on`, o que significa que os escapamentos de barra são reconhecidos apenas em constantes de strings de escape. Esse comportamento é mais compatível com os padrões, mas pode quebrar aplicações que dependem do comportamento histórico, onde os escapamentos de barra eram sempre reconhecidos. Como uma solução, você pode definir esse parâmetro para `off`, mas é melhor migrar para não usar escapamentos de barra. Se você precisar usar um escapamento de barra para representar um caractere especial, escreva a constante de string com `E`.
+Se o parâmetro de configuração [standard_conforming_strings](runtime-config-compatible.md#GUC-STANDARD-CONFORMING-STRINGS) for `off`, o PostgreSQL reconhece escapamentos de barra insira em constantes de strings regulares e de escape. No entanto, a partir do PostgreSQL 9.1, o padrão é `on`, o que significa que os escapamentos de barra são reconhecidos apenas em constantes de strings de escape. Esse comportamento é mais compatível com os padrões, mas pode quebrar aplicações que dependem do comportamento histórico, onde os escapamentos de barra eram sempre reconhecidos. Como uma solução, você pode definir esse parâmetro para `off`, mas é melhor migrar para não usar escapamentos de barra. Se você precisar usar um escapamento de barra para representar um caractere especial, escreva a constante de string com `E`.
 
-Além do `standard_conforming_strings`, os parâmetros de configuração [escape_string_warning][(runtime-config-compatible.md#GUC-ESCAPE-STRING-WARNING)] e [backslash_quote][(runtime-config-compatible.md#GUC-BACKSLASH-QUOTE)] regem o tratamento de barras inclinadas em constantes de string.
+Além do `standard_conforming_strings`, os parâmetros de configuração [escape_string_warning](runtime-config-compatible.md#GUC-ESCAPE-STRING-WARNING) e [backslash_quote](runtime-config-compatible.md#GUC-BACKSLASH-QUOTE) regem o tratamento de barras inclinadas em constantes de string.
 
 O caractere com o código zero não pode estar em uma constante de string.
 
@@ -340,7 +343,7 @@ Pode-se usar a forma de escape de 4 dígitos ou de 6 dígitos para especificar p
 
 Se o codificação do servidor não for UTF-8, o ponto de código Unicode identificado por uma dessas sequências de escape é convertido para a codificação real do servidor; um erro é relatado se isso não for possível.
 
-Além disso, a sintaxe de escape Unicode para constantes de string só funciona quando o parâmetro de configuração [standard_conforming_strings][(runtime-config-compatible.md#GUC-STANDARD-CONFORMING-STRINGS)] está ativado. Isso ocorre porque, caso contrário, essa sintaxe poderia confundir os clientes que analisam as declarações SQL ao ponto de poder levar a injeções SQL e problemas de segurança semelhantes. Se o parâmetro estiver definido como desligado, essa sintaxe será rejeitada com uma mensagem de erro.
+Além disso, a sintaxe de escape Unicode para constantes de string só funciona quando o parâmetro de configuração [standard_conforming_strings](runtime-config-compatible.md#GUC-STANDARD-CONFORMING-STRINGS) está ativado. Isso ocorre porque, caso contrário, essa sintaxe poderia confundir os clientes que analisam as declarações SQL ao ponto de poder levar a injeções SQL e problemas de segurança semelhantes. Se o parâmetro estiver definido como desligado, essa sintaxe será rejeitada com uma mensagem de erro.
 
 #### 4.1.2.4. Constantes de cadeia com valores citados em dólares [#](#SQL-SYNTAX-DOLLAR-QUOTING)
 
@@ -447,9 +450,9 @@ Também é possível especificar uma coerção de tipo usando uma sintaxe semelh
 typename ( 'string' )
 ```
 
-mas nem todos os nomes de tipo podem ser usados dessa maneira; consulte [Seção 4.2.9][(sql-expressions.md#SQL-SYNTAX-TYPE-CASTS "4.2.9. Type Casts")] para obter detalhes.
+mas nem todos os nomes de tipo podem ser usados dessa maneira; consulte [Seção 4.2.9](sql-expressions.md#SQL-SYNTAX-TYPE-CASTS) para obter detalhes.
 
-As sintaxes `::`, `CAST()` e de chamada de função também podem ser usadas para especificar conversões de tipo de expressão arbitrária em tempo de execução, conforme discutido em [Seção 4.2.9][(sql-expressions.md#SQL-SYNTAX-TYPE-CASTS "4.2.9. Type Casts")]. Para evitar ambiguidade sintática, a sintaxe `type 'string'` só pode ser usada para especificar o tipo de uma constante literal simples. Outra restrição sobre a sintaxe `type 'string'` é que ela não funciona para tipos de matriz; use `::` ou `CAST()` para especificar o tipo de uma constante de matriz.
+As sintaxes `::`, `CAST()` e de chamada de função também podem ser usadas para especificar conversões de tipo de expressão arbitrária em tempo de execução, conforme discutido em [Seção 4.2.9](sql-expressions.md#SQL-SYNTAX-TYPE-CASTS). Para evitar ambiguidade sintática, a sintaxe `type 'string'` só pode ser usada para especificar o tipo de uma constante literal simples. Outra restrição sobre a sintaxe `type 'string'` é que ela não funciona para tipos de matriz; use `::` ou `CAST()` para especificar o tipo de uma constante de matriz.
 
 A sintaxe `CAST()` é conforme com a SQL. A sintaxe `type 'string'` é uma generalização do padrão: a SQL especifica essa sintaxe apenas para alguns tipos de dados, mas o PostgreSQL permite isso para todos os tipos. A sintaxe com `::` é o uso histórico do PostgreSQL, assim como a sintaxe de chamada de função.
 
@@ -474,14 +477,7 @@ Ao trabalhar com nomes de operadores que não são padrão para SQL, geralmente 
 
 Alguns caracteres que não são alfanuméricos têm um significado especial que é diferente de ser um operador. Os detalhes sobre o uso podem ser encontrados no local onde o respectivo elemento de sintaxe é descrito. Esta seção existe apenas para avisar sobre a existência e resumir os propósitos desses caracteres.
 
-Um símbolo de dólar (`$`) seguido por dígitos é usado para representar um parâmetro posicional no corpo de uma definição de função ou uma declaração preparada. Em outros contextos, o símbolo de dólar pode fazer parte de um identificador ou uma constante de cadeia citada por dólar.
-Parenteses (`()`) têm seu significado usual para agrupar expressões e impor precedência. Em alguns casos, as parenteses são necessárias como parte da sintaxe fixa de um comando SQL específico.
-Colchetes (`[]`) são usados para selecionar os elementos de um array. Consulte [Seção 8.15](arrays.md "8.15. Arrays") para mais informações sobre arrays.
-Vírgula (`,`) são usadas em algumas construções sintáticas para separar os elementos de uma lista.
-O ponto e vírgula (`;`) termina um comando SQL. Não pode aparecer em qualquer lugar dentro de um comando, exceto dentro de uma constante de cadeia ou identificador citado.
-O colon (`:`) é usado para selecionar “cortes” de arrays. (Veja [Seção 8.15](arrays.md "8.15. Arrays").). Em certos dialetos SQL (como Embedded SQL), o colon é usado para prefixar nomes de variáveis.
-O asterisco (`*`) é usado em alguns contextos para denotar todos os campos de uma linha de tabela ou valor composto. Também tem um significado especial quando usado como argumento de uma função agregada, ou seja, o agregado não requer nenhum parâmetro explícito.
-O ponto (`.`) é usado em constantes numéricas e para separar nomes de esquema, tabela e coluna.
+Um símbolo de dólar (`$`) seguido por dígitos é usado para representar um parâmetro posicional no corpo de uma definição de função ou uma declaração preparada. Em outros contextos, o símbolo de dólar pode fazer parte de um identificador ou uma constante de cadeia citada por dólar. Parenteses (`()`) têm seu significado usual para agrupar expressões e impor precedência. Em alguns casos, as parenteses são necessárias como parte da sintaxe fixa de um comando SQL específico. Colchetes (`[]`) são usados para selecionar os elementos de um array. Consulte [Seção 8.15](arrays.md "8.15. Arrays") para mais informações sobre arrays. Vírgula (`,`) são usadas em algumas construções sintáticas para separar os elementos de uma lista. O ponto e vírgula (`;`) termina um comando SQL. Não pode aparecer em qualquer lugar dentro de um comando, exceto dentro de uma constante de cadeia ou identificador citado. O colon (`:`) é usado para selecionar “cortes” de arrays. (Veja [Seção 8.15](arrays.md "8.15. Arrays").). Em certos dialetos SQL (como Embedded SQL), o colon é usado para prefixar nomes de variáveis. O asterisco (`*`) é usado em alguns contextos para denotar todos os campos de uma linha de tabela ou valor composto. Também tem um significado especial quando usado como argumento de uma função agregada, ou seja, o agregado não requer nenhum parâmetro explícito. O ponto (`.`) é usado em constantes numéricas e para separar nomes de esquema, tabela e coluna.
 
 ### 4.1.5. Comentários [#](#SQL-SYNTAX-COMMENTS)
 
@@ -512,266 +508,310 @@ Um comentário é removido do fluxo de entrada antes de uma análise sintática 
 
 
 <table border="1" class="table" summary="Operator Precedence (highest to lowest)">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Operator/Element
    </th>
-<th>
+   <th>
     Associativity
    </th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="token">
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="token">
      .
     </code>
-</td>
-<td>
+   </td>
+   <td>
     left
    </td>
-<td>separador de nome de tabela/coluna</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+    separador de nome de tabela/coluna
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ::
     </code>
-</td>
-<td>
+   </td>
+   <td>
     left
    </td>
-<td>
-<span class="productname">PostgreSQL</span>- tipo de elenco de estilo</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+    <span class="productname">
+     PostgreSQL
+    </span>
+    - tipo de elenco de estilo
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      [
     </code>
-<code class="token">
+    <code class="token">
      ]
     </code>
-</td>
-<td>
+   </td>
+   <td>
     left
    </td>
-<td>seleção de elemento de matriz</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+    seleção de elemento de matriz
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      +
     </code>
-<code class="token">
+    <code class="token">
      -
     </code>
-</td>
-<td>
+   </td>
+   <td>
     right
    </td>
-<td>mais um, menos um</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+    mais um, menos um
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COLLATE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     left
    </td>
-<td>seleção de colagem</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+    seleção de colagem
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      AT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     left
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      AT TIME ZONE
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      AT LOCAL
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ^
     </code>
-</td>
-<td>
+   </td>
+   <td>
     left
    </td>
-<td>exponenciação</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+    exponenciação
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      *
     </code>
-<code class="token">
+    <code class="token">
      /
     </code>
-<code class="token">
+    <code class="token">
      %
     </code>
-</td>
-<td>
+   </td>
+   <td>
     left
    </td>
-<td>multiplicação, divisão, módulo</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+    multiplicação, divisão, módulo
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      +
     </code>
-<code class="token">
+    <code class="token">
      -
     </code>
-</td>
-<td>
+   </td>
+   <td>
     left
    </td>
-<td>adição, subtração</td>
-</tr>
-<tr>
-<td>
+   <td>
+    adição, subtração
+   </td>
+  </tr>
+  <tr>
+   <td>
     (any other operator)
    </td>
-<td>
+   <td>
     left
    </td>
-<td>todos os outros operadores nativos e definidos pelo usuário</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+    todos os outros operadores nativos e definidos pelo usuário
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      BETWEEN
     </code>
-<code class="token">
+    <code class="token">
      IN
     </code>
-<code class="token">
+    <code class="token">
      LIKE
     </code>
-<code class="token">
+    <code class="token">
      ILIKE
     </code>
-<code class="token">
+    <code class="token">
      SIMILAR
     </code>
-</td>
-<td>
-</td>
-<td>containment de intervalo, pertença de conjunto, correspondência de string</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   </td>
+   <td>
+   </td>
+   <td>
+    containment de intervalo, pertença de conjunto, correspondência de string
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      &lt;
     </code>
-<code class="token">
+    <code class="token">
      &gt;
     </code>
-<code class="token">
+    <code class="token">
      =
     </code>
-<code class="token">
+    <code class="token">
      &lt;=
     </code>
-<code class="token">
+    <code class="token">
      &gt;=
     </code>
-<code class="token">
+    <code class="token">
      &lt;&gt;
     </code>
-</td>
-<td>
-</td>
-<td>operadores de comparação</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   </td>
+   <td>
+   </td>
+   <td>
+    operadores de comparação
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      IS
     </code>
-<code class="token">
+    <code class="token">
      ISNULL
     </code>
-<code class="token">
+    <code class="token">
      NOTNULL
     </code>
-</td>
-<td>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+   </td>
+   <td>
+    <code class="literal">
      IS TRUE
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      IS FALSE
-    </code>,<code class="literal">
-     IS
-       NULL
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
+     IS NULL
+    </code>
+    ,
+    <code class="literal">
      IS DISTINCT FROM
-    </code>, etc.</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+    </code>
+    , etc.
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NOT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     right
    </td>
-<td>negação lógica</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+    negação lógica
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      AND
     </code>
-</td>
-<td>
+   </td>
+   <td>
     left
    </td>
-<td>conjunção lógica</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+    conjunção lógica
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OR
     </code>
-</td>
-<td>
+   </td>
+   <td>
     left
    </td>
-<td>disjunção lógica</td>
-</tr>
-</tbody>
+   <td>
+    disjunção lógica
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Observe que as regras de precedência do operador também se aplicam a operadores definidos pelo usuário que tenham os mesmos nomes dos operadores internos mencionados acima. Por exemplo, se você definir um operador "+" para algum tipo de dados personalizado, ele terá a mesma precedência que o operador interno "+" interno, independentemente do que o seu fizer.
 
@@ -781,7 +821,7 @@ Quando um nome de operador qualificado por esquema é usado na sintaxe do `OPERA
 SELECT 3 OPERATOR(pg_catalog.+) 4;
 ```
 
-o `OPERATOR` é considerado ter a precedência padrão mostrada em [Tabela 4.2][(sql-syntax-lexical.md#SQL-PRECEDENCE-TABLE "Table 4.2. Operator Precedence (highest to lowest)]) para “qualquer outro operador”. Isso é verdadeiro, independentemente de qual operador específico aparecer dentro de `OPERATOR()`.
+o `OPERATOR` é considerado ter a precedência padrão mostrada em [Tabela 4.2](sql-syntax-lexical.md#SQL-PRECEDENCE-TABLE)) para “qualquer outro operador”. Isso é verdadeiro, independentemente de qual operador específico aparecer dentro de `OPERATOR()`.
 
 ### Nota
 

@@ -1,13 +1,13 @@
 ## 5.7. Modificando tabelas [#](#DDL-ALTER)
 
-* [5.7.1. Adicionar uma Coluna][(ddl-alter.md#DDL-ALTER-ADDING-A-COLUMN)]
-* [5.7.2. Remover uma Coluna][(ddl-alter.md#DDL-ALTER-REMOVING-A-COLUMN)]
-* [5.7.3. Adicionar uma Restrição][(ddl-alter.md#DDL-ALTER-ADDING-A-CONSTRAINT)]
-* [5.7.4. Remover uma Restrição][(ddl-alter.md#DDL-ALTER-REMOVING-A-CONSTRAINT)]
-* [5.7.5. Alterar o Valor Padrão de uma Coluna][(ddl-alter.md#DDL-ALTER-COLUMN-DEFAULT)]
-* [5.7.6. Alterar o Tipo de Dados de uma Coluna][(ddl-alter.md#DDL-ALTER-COLUMN-TYPE)]
-* [5.7.7. Renomear uma Coluna][(ddl-alter.md#DDL-ALTER-RENAMING-COLUMN)]
-* [5.7.8. Renomear uma Tabela][(ddl-alter.md#DDL-ALTER-RENAMING-TABLE)]
+* [5.7.1. Adicionar uma Coluna](ddl-alter.md#DDL-ALTER-ADDING-A-COLUMN)
+* [5.7.2. Remover uma Coluna](ddl-alter.md#DDL-ALTER-REMOVING-A-COLUMN)
+* [5.7.3. Adicionar uma Restrição](ddl-alter.md#DDL-ALTER-ADDING-A-CONSTRAINT)
+* [5.7.4. Remover uma Restrição](ddl-alter.md#DDL-ALTER-REMOVING-A-CONSTRAINT)
+* [5.7.5. Alterar o Valor Padrão de uma Coluna](ddl-alter.md#DDL-ALTER-COLUMN-DEFAULT)
+* [5.7.6. Alterar o Tipo de Dados de uma Coluna](ddl-alter.md#DDL-ALTER-COLUMN-TYPE)
+* [5.7.7. Renomear uma Coluna](ddl-alter.md#DDL-ALTER-RENAMING-COLUMN)
+* [5.7.8. Renomear uma Tabela](ddl-alter.md#DDL-ALTER-RENAMING-TABLE)
 
 Quando você cria uma tabela e percebe que cometeu um erro ou os requisitos da aplicação mudam, pode descartar a tabela e criá-la novamente. Mas essa não é uma opção conveniente se a tabela já estiver preenchida com dados ou se a tabela for referenciada por outros objetos do banco de dados (por exemplo, uma restrição de chave estrangeira). Portanto, o PostgreSQL fornece uma família de comandos para fazer modificações em tabelas existentes. Observe que isso é conceitualmente distinto de alterar os dados contidos na tabela: aqui estamos interessados em alterar a definição ou a estrutura da tabela.
 
@@ -22,7 +22,7 @@ Você pode:
 * Renomear colunas
 * Renomear tabelas
 
-Todas essas ações são realizadas usando o comando [ALTER TABLE][(sql-altertable.md "ALTER TABLE")], cuja página de referência contém detalhes além dos dados fornecidos aqui.
+Todas essas ações são realizadas usando o comando [ALTER TABLE](sql-altertable.md), cuja página de referência contém detalhes além dos dados fornecidos aqui.
 
 ### 5.7.1. Adicionar uma coluna [#](#DDL-ALTER-ADDING-A-COLUMN)
 
@@ -62,7 +62,7 @@ Qualquer dado que estivesse na coluna desaparecerá. As restrições da tabela q
 ALTER TABLE products DROP COLUMN description CASCADE;
 ```
 
-Veja [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")] para uma descrição do mecanismo geral por trás disso.
+Veja [Seção 5.15](ddl-depend.md) para uma descrição do mecanismo geral por trás disso.
 
 ### 5.7.3. Adicionar uma restrição [#](#DDL-ALTER-ADDING-A-CONSTRAINT)
 

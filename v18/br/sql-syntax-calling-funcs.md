@@ -4,7 +4,7 @@
 * [4.3.2. Usando notação nomeada](sql-syntax-calling-funcs.md#SQL-SYNTAX-CALLING-FUNCS-NAMED)
 * [4.3.3. Usando notação mista](sql-syntax-calling-funcs.md#SQL-SYNTAX-CALLING-FUNCS-MIXED)
 
-O PostgreSQL permite que funções com parâmetros nomeados sejam chamadas usando notação *posicionada* ou *nomeada*. A notação nomeada é especialmente útil para funções que têm um grande número de parâmetros, pois torna as associações entre os parâmetros e os argumentos reais mais explícitas e confiáveis. Na notação posicionada, uma chamada de função é escrita com seus valores de argumento na mesma ordem em que são definidos na declaração da função. Na notação nomeada, os argumentos são correspondidos aos parâmetros da função pelo nome e podem ser escritos em qualquer ordem. Para cada notação, também considere o efeito dos tipos de argumentos da função, documentado em [Seção 10.3][(typeconv-func.md "10.3. Functions")].
+O PostgreSQL permite que funções com parâmetros nomeados sejam chamadas usando notação *posicionada* ou *nomeada*. A notação nomeada é especialmente útil para funções que têm um grande número de parâmetros, pois torna as associações entre os parâmetros e os argumentos reais mais explícitas e confiáveis. Na notação posicionada, uma chamada de função é escrita com seus valores de argumento na mesma ordem em que são definidos na declaração da função. Na notação nomeada, os argumentos são correspondidos aos parâmetros da função pelo nome e podem ser escritos em qualquer ordem. Para cada notação, também considere o efeito dos tipos de argumentos da função, documentado em [Seção 10.3](typeconv-func.md).
 
 Em qualquer notação, os parâmetros que têm valores padrão definidos na declaração da função não precisam ser escritos na chamada. Mas isso é particularmente útil na notação nomeada, pois qualquer combinação de parâmetros pode ser omitida; enquanto que na notação posicional, os parâmetros só podem ser omitidos de direita para esquerda.
 
@@ -25,7 +25,7 @@ $$
 LANGUAGE SQL IMMUTABLE STRICT;
 ```
 
-A função `concat_lower_or_upper` tem dois parâmetros obrigatórios, `a` e `b`. Além disso, há um parâmetro opcional `uppercase`, que tem como padrão `false`. As entradas `a` e `b` serão concatenadas e forçadas a maiúsculas ou minúsculas, dependendo do parâmetro `uppercase`. Os detalhes restantes desta definição da função não são importantes aqui (consulte [Capítulo 36][(extend.md "Chapter 36. Extending SQL")] para mais informações).
+A função `concat_lower_or_upper` tem dois parâmetros obrigatórios, `a` e `b`. Além disso, há um parâmetro opcional `uppercase`, que tem como padrão `false`. As entradas `a` e `b` serão concatenadas e forçadas a maiúsculas ou minúsculas, dependendo do parâmetro `uppercase`. Os detalhes restantes desta definição da função não são importantes aqui (consulte [Capítulo 36](extend.md) para mais informações).
 
 ### 4.3.1. Uso da notação posicional [#](#SQL-SYNTAX-CALLING-FUNCS-POSITIONAL)
 

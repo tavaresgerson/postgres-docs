@@ -23,7 +23,7 @@ $ postgres -D /usr/local/pgsql/data >logfile 2>&1 &
 
 É importante armazenar a saída de stdout e stderr do servidor em algum lugar, como mostrado acima. Isso ajudará para fins de auditoria e para diagnosticar problemas. (Consulte [Seção 24.3] para uma discussão mais detalhada sobre o manuseio de arquivos de registro.)
 
-O programa `postgres` também aceita uma série de outras opções de linha de comando. Para mais informações, consulte a página de referência [postgres][(app-postgres.md "postgres")] e [Capítulo 19][(runtime-config.md "Chapter 19. Server Configuration")] abaixo.
+O programa `postgres` também aceita uma série de outras opções de linha de comando. Para mais informações, consulte a página de referência [postgres](app-postgres.md) e [Capítulo 19](runtime-config.md) abaixo.
 
 Essa sintaxe de shell pode se tornar entediante rapidamente. Portanto, o programa wrapper [pg_ctl](app-pg-ctl.md "pg_ctl") é fornecido para simplificar algumas tarefas. Por exemplo:
 
@@ -48,33 +48,33 @@ Aqui estão algumas sugestões específicas para cada sistema operacional. (Em c
 
 * Em sistemas Linux, adicione
 
-  ```
-  /usr/local/pgsql/bin/pg_ctl start -l logfile -D /usr/local/pgsql/data
-  ```
+```
+/usr/local/pgsql/bin/pg_ctl start -l logfile -D /usr/local/pgsql/data
+```
 
 para `/etc/rc.d/rc.local` ou `/etc/rc.local` ou veja o arquivo `contrib/start-scripts/linux` na distribuição de fonte do PostgreSQL.
 
 Ao usar o systemd, você pode usar o seguinte arquivo de unidade de serviço (por exemplo, em `/etc/systemd/system/postgresql.service`):
 
-  ```
-  [Unit]
-  Description=PostgreSQL database server
-  Documentation=man:postgres(1)
-  After=network-online.target
-  Wants=network-online.target
+```
+[Unit]
+Description=PostgreSQL database server
+Documentation=man:postgres(1)
+After=network-online.target
+Wants=network-online.target
 
-  [Service]
-  Type=notify
-  User=postgres
-  ExecStart=/usr/local/pgsql/bin/postgres -D /usr/local/pgsql/data
-  ExecReload=/bin/kill -HUP $MAINPID
-  KillMode=mixed
-  KillSignal=SIGINT
-  TimeoutSec=infinity
+[Service]
+Type=notify
+User=postgres
+ExecStart=/usr/local/pgsql/bin/postgres -D /usr/local/pgsql/data
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=mixed
+KillSignal=SIGINT
+TimeoutSec=infinity
 
-  [Install]
-  WantedBy=multi-user.target
-  ```
+[Install]
+WantedBy=multi-user.target
+```
 
 Para usar `Type=notify`, é necessário que o binário do servidor tenha sido construído com `configure --with-systemd`.
 
@@ -82,9 +82,9 @@ Considere cuidadosamente a configuração do tempo de espera. O systemd tem um t
 * Em NetBSD, use os scripts de inicialização do FreeBSD ou Linux, dependendo da preferência.
 * Em Solaris, crie um arquivo chamado `/etc/init.d/postgresql` que contenha a seguinte linha:
 
-  ```
-  su - postgres -c "/usr/local/pgsql/bin/pg_ctl start -l logfile -D /usr/local/pgsql/data"
-  ```
+```
+su - postgres -c "/usr/local/pgsql/bin/pg_ctl start -l logfile -D /usr/local/pgsql/data"
+```
 
 Em seguida, crie um link simbólico para ele em `/etc/rc3.d` como `S99postgresql`.
 
@@ -127,7 +127,7 @@ DETAIL:  Failed system call was semget(5440126, 17, 03600).
 
 *não* significa que você esgotou o espaço em disco. Isso significa que o limite do kernel sobre o número de semaforos System V é menor que o número que o PostgreSQL quer criar. Como mencionado acima, você pode resolver o problema iniciando o servidor com um número reduzido de conexões permitidas ([max_connections](runtime-config-connection.md#GUC-MAX-CONNECTIONS)), mas você acabará querendo aumentar o limite do kernel.
 
-Detalhes sobre a configuração das facilidades do System V IPC estão fornecidos em [Seção 18.4.1][(kernel-resources.md#SYSVIPC "18.4.1. Shared Memory and Semaphores")].
+Detalhes sobre a configuração das facilidades do System V IPC estão fornecidos em [Seção 18.4.1](kernel-resources.md#SYSVIPC).
 
 ### 18.3.2. Problemas com a conexão do cliente [#](#CLIENT-CONNECTION-PROBLEMS)
 
@@ -138,7 +138,7 @@ psql: error: connection to server at "server.joe.com" (123.123.123.123), port 54
         Is the server running on that host and accepting TCP/IP connections?
 ```
 
-Essa é a falha genérica de "não consegui encontrar um servidor para conversar". Parece o acima quando a comunicação TCP/IP é tentada. Um erro comum é esquecer de configurar [listen_addresses][(runtime-config-connection.md#GUC-LISTEN-ADDRESSES)] para que o servidor aceite conexões TCP remotas.
+Essa é a falha genérica de "não consegui encontrar um servidor para conversar". Parece o acima quando a comunicação TCP/IP é tentada. Um erro comum é esquecer de configurar [listen_addresses](runtime-config-connection.md#GUC-LISTEN-ADDRESSES) para que o servidor aceite conexões TCP remotas.
 
 Como alternativa, você pode receber isso ao tentar comunicação de soquete de domínio Unix em um servidor local:
 
@@ -149,4 +149,4 @@ psql: error: connection to server on socket "/tmp/.s.PGSQL.5432" failed: No such
 
 Se o servidor realmente estiver em execução, verifique se a ideia do cliente sobre o caminho do socket (aqui `/tmp`) está de acordo com a configuração do servidor do diretório de socket [unix_socket_directories](runtime-config-connection.md#GUC-UNIX-SOCKET-DIRECTORIES).
 
-Uma mensagem de falha de conexão sempre exibe o endereço do servidor ou o nome do caminho de soquete, o que é útil para verificar se o cliente está tentando se conectar ao local correto. Se, de fato, não houver servidor ouvindo lá, a mensagem de erro do kernel geralmente será `Connection refused` ou `No such file or directory`, como ilustrado. (É importante perceber que `Connection refused` neste contexto *não* significa que o servidor recebeu a solicitação de conexão e a rejeitou. Esse caso produzirá uma mensagem diferente, conforme mostrado em [Seção 20.16][(client-authentication-problems.md "20.16. Authentication Problems")]). Outras mensagens de erro, como `Connection timed out`, podem indicar problemas mais fundamentais, como falta de conectividade de rede ou um firewall bloqueando a conexão.
+Uma mensagem de falha de conexão sempre exibe o endereço do servidor ou o nome do caminho de soquete, o que é útil para verificar se o cliente está tentando se conectar ao local correto. Se, de fato, não houver servidor ouvindo lá, a mensagem de erro do kernel geralmente será `Connection refused` ou `No such file or directory`, como ilustrado. (É importante perceber que `Connection refused` neste contexto *não* significa que o servidor recebeu a solicitação de conexão e a rejeitou. Esse caso produzirá uma mensagem diferente, conforme mostrado em [Seção 20.16](client-authentication-problems.md)). Outras mensagens de erro, como `Connection timed out`, podem indicar problemas mais fundamentais, como falta de conectividade de rede ou um firewall bloqueando a conexão.

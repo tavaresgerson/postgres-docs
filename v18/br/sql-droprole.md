@@ -24,7 +24,7 @@ No entanto, não é necessário remover as associações de papéis que envolvem
 
 ## Notas
 
-O PostgreSQL inclui um programa [dropuser][(app-dropuser.md "dropuser")] que tem a mesma funcionalidade que este comando (de fato, ele chama este comando) mas pode ser executado a partir do shell de comando.
+O PostgreSQL inclui um programa [dropuser](app-dropuser.md) que tem a mesma funcionalidade que este comando (de fato, ele chama este comando) mas pode ser executado a partir do shell de comando.
 
 ## Exemplos
 

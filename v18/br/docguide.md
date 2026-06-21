@@ -5,11 +5,11 @@
 * [J.1. DocBook](docguide-docbook.md)
 * [J.2. Conjuntos de Ferramentas](docguide-toolsets.md)
 
-+ [J.2.1. Instalação no Fedora, RHEL e Derivados][(docguide-toolsets.md#DOCGUIDE-TOOLSETS-INST-FEDORA-ET-AL)]
-+ [J.2.2. Instalação no FreeBSD][(docguide-toolsets.md#DOCGUIDE-TOOLSETS-INST-FREEBSD)]
-+ [J.2.3. Pacotes do Debian][(docguide-toolsets.md#DOCGUIDE-TOOLSETS-INST-DEBIAN)]
-+ [J.2.4. macOS][(docguide-toolsets.md#DOCGUIDE-TOOLSETS-INST-MACOS)]
-+ [J.2.5. Detecção pelo `configure`][(docguide-toolsets.md#DOCGUIDE-TOOLSETS-CONFIGURE)]
++ [J.2.1. Instalação no Fedora, RHEL e Derivados](docguide-toolsets.md#DOCGUIDE-TOOLSETS-INST-FEDORA-ET-AL)
++ [J.2.2. Instalação no FreeBSD](docguide-toolsets.md#DOCGUIDE-TOOLSETS-INST-FREEBSD)
++ [J.2.3. Pacotes do Debian](docguide-toolsets.md#DOCGUIDE-TOOLSETS-INST-DEBIAN)
++ [J.2.4. macOS](docguide-toolsets.md#DOCGUIDE-TOOLSETS-INST-MACOS)
++ [J.2.5. Detecção pelo `configure`](docguide-toolsets.md#DOCGUIDE-TOOLSETS-CONFIGURE)
 
 * [J.3. Construindo a documentação com Make](docguide-build.md)
 

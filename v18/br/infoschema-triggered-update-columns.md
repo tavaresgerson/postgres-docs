@@ -7,127 +7,130 @@ Para gatilhos no banco de dados atual que especificam uma lista de colunas (como
 
 
 <table border="1" class="table" summary="triggered_update_columns Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
      Column Type
     </p>
-<p>
+    <p>
      Description
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       trigger_catalog
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the database that contains the trigger (always the current database)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       trigger_schema
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the schema that contains the trigger
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       trigger_name
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the trigger
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       event_object_catalog
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the database that contains the table that the trigger is defined on (always the current database)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       event_object_schema
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the schema that contains the table that the trigger is defined on
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       event_object_table
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the table that the trigger is defined on
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       event_object_column
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the column that the trigger is defined on
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 

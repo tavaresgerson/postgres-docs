@@ -21,7 +21,7 @@ Se um nome de esquema for fornecido, a configuração de pesquisa de texto é cr
 
 O usuário que define uma configuração de busca de texto torna-se seu proprietário.
 
-Consulte o [Capítulo 12][(textsearch.md "Chapter 12. Full Text Search")] para obter mais informações.
+Consulte o [Capítulo 12](textsearch.md) para obter mais informações.
 
 ## Parâmetros
 

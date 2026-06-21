@@ -51,11 +51,11 @@
 
 * [F.9. citext — um tipo de cadeia de caracteres insensível a maiúsculas e minúsculas](citext.md)
 
-+ [F.9.1. Razão][(citext.md#CITEXT-RATIONALE)]
-+ [F.9.2. Como usá-lo][(citext.md#CITEXT-HOW-TO-USE-IT)]
-+ [F.9.3. Comportamento de comparação de strings][(citext.md#CITEXT-STRING-COMPARISON-BEHAVIOR)]
-+ [F.9.4. Limitações][(citext.md#CITEXT-LIMITATIONS)]
-+ [F.9.5. Autor][(citext.md#CITEXT-AUTHOR)]
++ [F.9.1. Razão](citext.md#CITEXT-RATIONALE)
++ [F.9.2. Como usá-lo](citext.md#CITEXT-HOW-TO-USE-IT)
++ [F.9.3. Comportamento de comparação de strings](citext.md#CITEXT-STRING-COMPARISON-BEHAVIOR)
++ [F.9.4. Limitações](citext.md#CITEXT-LIMITATIONS)
++ [F.9.5. Autor](citext.md#CITEXT-AUTHOR)
 
 * [F.10. cubo — um tipo de dados cubo multidimensional](cube.md)
 
@@ -146,11 +146,11 @@
 + [F.20.6. Bibliografia](isn.md#ISN-BIBLIOGRAPHY)
 + [F.20.7. Autor](isn.md#ISN-AUTHOR)
 
-* [F.21. lo — gerenciar objetos grandes][(lo.md)]
+* [F.21. lo — gerenciar objetos grandes](lo.md)
 
-+ [F.21.1. Razão][(lo.md#LO-RATIONALE)  
-+ [F.21.2. Como usá-lo][(lo.md#LO-HOW-TO-USE)  
-+ [F.21.3. Limitações][(lo.md#LO-LIMITATIONS)  
++ [F.21.1. Razão][(lo.md#LO-RATIONALE)
++ [F.21.2. Como usá-lo][(lo.md#LO-HOW-TO-USE)
++ [F.21.3. Limitações][(lo.md#LO-LIMITATIONS)
 + [F.21.4. Autor][(lo.md#LO-AUTHOR)
 
 * [F.22. ltree — tipo de dados hierárquico semelhante a uma árvore](ltree.md)
@@ -217,7 +217,7 @@
 + [F.29.2. EXPLICAR (TABELA DE CAMADAS DE LIGAÇÃO)](pgoverexplain.md#PGOVEREXPLAIN-RANGE-TABLE)
 + [F.29.3. Autor](pgoverexplain.md#PGOVEREXPLAIN-AUTHOR)
 
-* [F.30. pg_prewarm — pré-carregar dados de relação em caches de buffer][(pgprewarm.md)]
+* [F.30. pg_prewarm — pré-carregar dados de relação em caches de buffer](pgprewarm.md)
 
 + [F.30.1. Funções](pgprewarm.md#PGPREWARM-FUNCS)
 + [F.30.2. Parâmetros de Configuração](pgprewarm.md#PGPREWARM-CONFIG-PARAMS)
@@ -284,12 +284,12 @@
 
 * [F.39. seg — um tipo de dado para segmentos de linha ou intervalos de ponto flutuante](seg.md)
 
-+ [F.39.1. Raciocínio][(seg.md#SEG-RATIONALE)]
-+ [F.39.2. Sintaxe][(seg.md#SEG-SYNTAX)]
-+ [F.39.3. Precisão][(seg.md#SEG-PRECISION)]
-+ [F.39.4. Uso][(seg.md#SEG-USAGE)]
-+ [F.39.5. Notas][(seg.md#SEG-NOTES)]
-+ [F.39.6. Créditos][(seg.md#SEG-CREDITS)]
++ [F.39.1. Raciocínio](seg.md#SEG-RATIONALE)
++ [F.39.2. Sintaxe](seg.md#SEG-SYNTAX)
++ [F.39.3. Precisão](seg.md#SEG-PRECISION)
++ [F.39.4. Uso](seg.md#SEG-USAGE)
++ [F.39.5. Notas](seg.md#SEG-NOTES)
++ [F.39.6. Créditos](seg.md#SEG-CREDITS)
 
 * [F.40. sepgsql — Módulo de segurança de controle de acesso obrigatório (MAC) baseado em SELinux e rótulo](sepgsql.md)
 
@@ -320,9 +320,9 @@
 + [F.43.1. Funções Fornecidas](tablefunc.md#TABLEFUNC-FUNCTIONS-SECT)
 + [F.43.2. Autor](tablefunc.md#TABLEFUNC-AUTHOR)
 
-* [F.44. tcn — uma função de disparo para notificar os ouvintes sobre alterações no conteúdo da tabela][(tcn.md)]
-* [F.45. test_decoding — módulo de teste/exemplo baseado em SQL para decodificação lógica do WAL][(test-decoding.md)]
-* [F.46. tsm_system_rows — o método de amostragem `SYSTEM_ROWS` para `TABLESAMPLE`][(tsm-system-rows.md)]
+* [F.44. tcn — uma função de disparo para notificar os ouvintes sobre alterações no conteúdo da tabela](tcn.md)
+* [F.45. test_decoding — módulo de teste/exemplo baseado em SQL para decodificação lógica do WAL](test-decoding.md)
+* [F.46. tsm_system_rows — o método de amostragem `SYSTEM_ROWS` para `TABLESAMPLE`](tsm-system-rows.md)
 
 + [F.46.1. Exemplos](tsm-system-rows.md#TSM-SYSTEM-ROWS-EXAMPLES)
 
@@ -354,7 +354,7 @@ Este apêndice e o próximo contêm informações sobre os componentes opcionais
 
 Este apêndice abrange extensões e outras bibliotecas de módulos de plug-in do servidor encontradas em `contrib`. [Apêndice G](contrib-prog.md "Appendix G. Additional Supplied Programs") abrange programas utilitários.
 
-Ao construir a partir da distribuição de origem, esses componentes opcionais não são construídos automaticamente, a menos que você construa o alvo "mundo" (consulte [Passo 2][(install-make.md#BUILD "Build")]). Você pode construir e instalar todos eles executando:
+Ao construir a partir da distribuição de origem, esses componentes opcionais não são construídos automaticamente, a menos que você construa o alvo "mundo" (consulte [Passo 2](install-make.md#BUILD)). Você pode construir e instalar todos eles executando:
 
 ```
 make
@@ -377,7 +377,7 @@ uma vez que você tenha um servidor PostgreSQL em execução.
 
 Se você estiver usando uma versão pré-embalada do PostgreSQL, esses componentes são normalmente disponibilizados como um subpacote separado, como `postgresql-contrib`.
 
-Muitos componentes fornecem novas funções definidas pelo usuário, operadores ou tipos, embalados como *extensões*. Para usar uma dessas extensões, após instalar o código necessário, você deve registrar os novos objetos SQL no sistema de banco de dados. Isso é feito executando um comando [CREATE EXTENSION][(sql-createextension.md "CREATE EXTENSION")]. Em um banco de dados novo, você pode simplesmente fazer
+Muitos componentes fornecem novas funções definidas pelo usuário, operadores ou tipos, embalados como *extensões*. Para usar uma dessas extensões, após instalar o código necessário, você deve registrar os novos objetos SQL no sistema de banco de dados. Isso é feito executando um comando [CREATE EXTENSION](sql-createextension.md). Em um banco de dados novo, você pode simplesmente fazer
 
 ```
 CREATE EXTENSION extension_name;
@@ -392,120 +392,123 @@ As seguintes extensões são confiáveis em uma instalação padrão:
 
 
 <table border="0" class="simplelist" summary="Simple list">
-<tr>
-<td>
-<a class="xref" href="btree-gin.md" title="F.7. btree_gin — GIN operator classes with B-tree behavior">
+ <tr>
+  <td>
+   <a class="xref" href="btree-gin.md" title="F.7. btree_gin — GIN operator classes with B-tree behavior">
     btree_gin
    </a>
-</td>
-<td>
-<a class="xref" href="fuzzystrmatch.md" title="F.16. fuzzystrmatch — determine string similarities and distance">
+  </td>
+  <td>
+   <a class="xref" href="fuzzystrmatch.md" title="F.16. fuzzystrmatch — determine string similarities and distance">
     fuzzystrmatch
    </a>
-</td>
-<td>
-<a class="xref" href="ltree.md" title="F.22. ltree — hierarchical tree-like data type">
+  </td>
+  <td>
+   <a class="xref" href="ltree.md" title="F.22. ltree — hierarchical tree-like data type">
     ltree
    </a>
-</td>
-<td>
-<a class="xref" href="tcn.md" title="F.44. tcn — a trigger function to notify listeners of changes to table content">
+  </td>
+  <td>
+   <a class="xref" href="tcn.md" title="F.44. tcn — a trigger function to notify listeners of changes to table content">
     tcn
    </a>
-</td>
-</tr>
-<tr>
-<td>
-<a class="xref" href="btree-gist.md" title="F.8. btree_gist — GiST operator classes with B-tree behavior">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a class="xref" href="btree-gist.md" title="F.8. btree_gist — GiST operator classes with B-tree behavior">
     btree_gist
    </a>
-</td>
-<td>
-<a class="xref" href="hstore.md" title="F.17. hstore — hstore key/value datatype">
+  </td>
+  <td>
+   <a class="xref" href="hstore.md" title="F.17. hstore — hstore key/value datatype">
     hstore
    </a>
-</td>
-<td>
-<a class="xref" href="pgcrypto.md" title="F.26. pgcrypto — cryptographic functions">
+  </td>
+  <td>
+   <a class="xref" href="pgcrypto.md" title="F.26. pgcrypto — cryptographic functions">
     pgcrypto
    </a>
-</td>
-<td>
-<a class="xref" href="tsm-system-rows.md" title="F.46. tsm_system_rows — the SYSTEM_ROWS sampling method for TABLESAMPLE">
+  </td>
+  <td>
+   <a class="xref" href="tsm-system-rows.md" title="F.46. tsm_system_rows — the SYSTEM_ROWS sampling method for TABLESAMPLE">
     tsm_system_rows
    </a>
-</td>
-</tr>
-<tr>
-<td>
-<a class="xref" href="citext.md" title="F.9. citext — a case-insensitive character string type">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a class="xref" href="citext.md" title="F.9. citext — a case-insensitive character string type">
     citext
    </a>
-</td>
-<td>
-<a class="xref" href="intarray.md" title="F.19. intarray — manipulate arrays of integers">
+  </td>
+  <td>
+   <a class="xref" href="intarray.md" title="F.19. intarray — manipulate arrays of integers">
     intarray
    </a>
-</td>
-<td>
-<a class="xref" href="pgtrgm.md" title="F.35. pg_trgm — support for similarity of text using trigram matching">
+  </td>
+  <td>
+   <a class="xref" href="pgtrgm.md" title="F.35. pg_trgm — support for similarity of text using trigram matching">
     pg_trgm
    </a>
-</td>
-<td>
-<a class="xref" href="tsm-system-time.md" title="F.47. tsm_system_time — the SYSTEM_TIME sampling method for TABLESAMPLE">
+  </td>
+  <td>
+   <a class="xref" href="tsm-system-time.md" title="F.47. tsm_system_time — the SYSTEM_TIME sampling method for TABLESAMPLE">
     tsm_system_time
    </a>
-</td>
-</tr>
-<tr>
-<td>
-<a class="xref" href="cube.md" title="F.10. cube — a multi-dimensional cube data type">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a class="xref" href="cube.md" title="F.10. cube — a multi-dimensional cube data type">
     cube
    </a>
-</td>
-<td>
-<a class="xref" href="isn.md" title="F.20. isn — data types for international standard numbers (ISBN, EAN, UPC, etc.)">
+  </td>
+  <td>
+   <a class="xref" href="isn.md" title="F.20. isn — data types for international standard numbers (ISBN, EAN, UPC, etc.)">
     isn
    </a>
-</td>
-<td>
-<a class="xref" href="seg.md" title="F.39. seg — a datatype for line segments or floating point intervals">
+  </td>
+  <td>
+   <a class="xref" href="seg.md" title="F.39. seg — a datatype for line segments or floating point intervals">
     seg
    </a>
-</td>
-<td>
-<a class="xref" href="unaccent.md" title="F.48. unaccent — a text search dictionary which removes diacritics">
+  </td>
+  <td>
+   <a class="xref" href="unaccent.md" title="F.48. unaccent — a text search dictionary which removes diacritics">
     unaccent
    </a>
-</td>
-</tr>
-<tr>
-<td>
-<a class="xref" href="dict-int.md" title="F.12. dict_int — example full-text search dictionary for integers">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a class="xref" href="dict-int.md" title="F.12. dict_int — example full-text search dictionary for integers">
     dict_int
    </a>
-</td>
-<td>
-<a class="xref" href="lo.md" title="F.21. lo — manage large objects">
+  </td>
+  <td>
+   <a class="xref" href="lo.md" title="F.21. lo — manage large objects">
     lo
    </a>
-</td>
-<td>
-<a class="xref" href="tablefunc.md" title="F.43. tablefunc — functions that return tables (crosstab and others)">
+  </td>
+  <td>
+   <a class="xref" href="tablefunc.md" title="F.43. tablefunc — functions that return tables (crosstab and others)">
     tablefunc
    </a>
-</td>
-<td>
-<a class="xref" href="uuid-ossp.md" title="F.49. uuid-ossp — a UUID generator">
+  </td>
+  <td>
+   <a class="xref" href="uuid-ossp.md" title="F.49. uuid-ossp — a UUID generator">
     uuid-ossp
    </a>
-</td>
-</tr>
+  </td>
+ </tr>
 </table>
+
+
+
 
 
 
 Muitas extensões permitem que você instale seus objetos em um esquema de sua escolha. Para fazer isso, adicione `SCHEMA schema_name` ao comando `CREATE EXTENSION`. Por padrão, os objetos serão colocados no seu esquema atual de destino de criação, que, por sua vez, é padrão para `public`.
 
-Observe, no entanto, que alguns desses componentes não são “extensões” nesse sentido, mas são carregados no servidor de alguma outra forma, por exemplo, por meio de [shared_preload_libraries][(runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES)]. Consulte a documentação de cada componente para obter detalhes.
+Observe, no entanto, que alguns desses componentes não são “extensões” nesse sentido, mas são carregados no servidor de alguma outra forma, por exemplo, por meio de [shared_preload_libraries](runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES). Consulte a documentação de cada componente para obter detalhes.

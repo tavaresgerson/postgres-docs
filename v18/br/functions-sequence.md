@@ -7,164 +7,271 @@ Esta seção descreve funções para operar em objetos de sequência, também ch
 
 
 <table border="1" class="table" summary="Sequence Functions">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">Função</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
+     Função
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       nextval
-     </code>(<code class="type">
+     </code>
+     (
+     <code class="type">
       regclass
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       bigint
      </code>
-</p>
-<p>Avança o objeto de sequência para seu próximo valor e retorna esse valor. Isso é feito de forma atômica: mesmo que várias sessões executem<code class="function">
+    </p>
+    <p>
+     Avança o objeto de sequência para seu próximo valor e retorna esse valor. Isso é feito de forma atômica: mesmo que várias sessões executem
+     <code class="function">
       nextval
-     </code>concomitantemente, cada um receberá, de forma segura, um valor de sequência distinto. Se o objeto de sequência tiver sido criado com parâmetros padrão, sucessivos<code class="function">
+     </code>
+     concomitantemente, cada um receberá, de forma segura, um valor de sequência distinto. Se o objeto de sequência tiver sido criado com parâmetros padrão, sucessivos
+     <code class="function">
       nextval
-     </code>As chamadas retornarão valores sucessivos que começam com 1. Outros comportamentos podem ser obtidos usando parâmetros apropriados no<a class="xref" href="sql-createsequence.md" title="CREATE SEQUENCE">
-<span class="refentrytitle">Crie Sequência</span>
-</a>
+     </code>
+     As chamadas retornarão valores sucessivos que começam com 1. Outros comportamentos podem ser obtidos usando parâmetros apropriados no
+     <a class="xref" href="sql-createsequence.md" title="CREATE SEQUENCE">
+      <span class="refentrytitle">
+       Crie Sequência
+      </span>
+     </a>
      command.
     </p>
-<p>Esta função requer<code class="literal">
+    <p>
+     Esta função requer
+     <code class="literal">
       USAGE
-     </code>ou<code class="literal">
+     </code>
+     ou
+     <code class="literal">
       UPDATE
-     </code>privilégio na sequência.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+     </code>
+     privilégio na sequência.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       setval
-     </code>(<code class="type">
+     </code>
+     (
+     <code class="type">
       regclass
-     </code>,<code class="type">
-      bigint
-     </code>[<span class="optional">,<code class="type">
-       boolean
-      </code>
-</span>] )<code class="returnvalue">
+     </code>
+     ,
+     <code class="type">
       bigint
      </code>
-</p>
-<p>Define o valor atual do objeto de sequência e, opcionalmente, sua<code class="literal">
+     [
+     <span class="optional">
+      ,
+      <code class="type">
+       boolean
+      </code>
+     </span>
+     ] )
+     <code class="returnvalue">
+      bigint
+     </code>
+    </p>
+    <p>
+     Define o valor atual do objeto de sequência e, opcionalmente, sua
+     <code class="literal">
       is_called
-     </code>flag. A forma de dois parâmetros define a sequência<code class="literal">
+     </code>
+     flag. A forma de dois parâmetros define a sequência
+     <code class="literal">
       last_value
-     </code>campo para o valor especificado e define seu<code class="literal">
+     </code>
+     campo para o valor especificado e define seu
+     <code class="literal">
       is_called
-     </code>campo para<code class="literal">
+     </code>
+     campo para
+     <code class="literal">
       true
-     </code>, ou seja, a próxima<code class="function">
+     </code>
+     , ou seja, a próxima
+     <code class="function">
       nextval
-     </code>avançar a sequência antes de
-        retornar um valor. O valor que será relatado por<code class="function">
+     </code>
+     avançar a sequência antes de retornar um valor. O valor que será relatado por
+     <code class="function">
       currval
-     </code>também é definido para o valor especificado. Na forma de três parâmetros,<code class="literal">
+     </code>
+     também é definido para o valor especificado. Na forma de três parâmetros,
+     <code class="literal">
       is_called
-     </code>pode ser configurada para qualquer uma das opções<code class="literal">
+     </code>
+     pode ser configurada para qualquer uma das opções
+     <code class="literal">
       true
-     </code>ou<code class="literal">
+     </code>
+     ou
+     <code class="literal">
       false
      </code>
      .
      <code class="literal">
       true
-     </code>tem o mesmo efeito que a forma de dois parâmetros. Se estiver definido como<code class="literal">
+     </code>
+     tem o mesmo efeito que a forma de dois parâmetros. Se estiver definido como
+     <code class="literal">
       false
-     </code>, a próxima<code class="function">
+     </code>
+     , a próxima
+     <code class="function">
       nextval
-     </code>retornará exatamente o valor especificado, e o avanço da sequência começa com o seguinte<code class="function">
+     </code>
+     retornará exatamente o valor especificado, e o avanço da sequência começa com o seguinte
+     <code class="function">
       nextval
-     </code>Além disso, o valor relatado por<code class="function">
+     </code>
+     Além disso, o valor relatado por
+     <code class="function">
       currval
-     </code>não é alterado neste caso. Por exemplo,</p>
-<pre class="programlisting">
+     </code>
+     não é alterado neste caso. Por exemplo,
+    </p>
+    <pre class="programlisting">
 SELECT setval('myseq', 42);           <em class="lineannotation"><span class="lineannotation">Próximo<code class="function">nextval</code>retornará 43</span></em> SELECT setval('myseq', 42, true);     <em class="lineannotation"><span class="lineannotation">O mesmo que acima</span></em> SELECT setval('myseq', 42, false);    <em class="lineannotation"><span class="lineannotation">Próximo<code class="function">nextval</code>retornará 42</span></em>
 </pre>
-<p>O resultado retornado por<code class="function">
+    <p>
+     O resultado retornado por
+     <code class="function">
       setval
-     </code>é apenas o valor do seu segundo argumento.</p>
-<p>Esta função requer<code class="literal">
+     </code>
+     é apenas o valor do seu segundo argumento.
+    </p>
+    <p>
+     Esta função requer
+     <code class="literal">
       UPDATE
-     </code>privilégio na sequência.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+     </code>
+     privilégio na sequência.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       currval
-     </code>(<code class="type">
+     </code>
+     (
+     <code class="type">
       regclass
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       bigint
      </code>
-</p>
-<p>Retorna o valor obtido mais recentemente por<code class="function">
+    </p>
+    <p>
+     Retorna o valor obtido mais recentemente por
+     <code class="function">
       nextval
-     </code>para esta sequência na sessão atual. (Um erro é relatado se<code class="function">
+     </code>
+     para esta sequência na sessão atual. (Um erro é relatado se
+     <code class="function">
       nextval
-     </code>nunca foi chamada para essa sequência nesta sessão.) Como isso está retornando um valor local da sessão, ele dá uma resposta previsível, independentemente de outras sessões terem executado ou<code class="function">
+     </code>
+     nunca foi chamada para essa sequência nesta sessão.) Como isso está retornando um valor local da sessão, ele dá uma resposta previsível, independentemente de outras sessões terem executado ou
+     <code class="function">
       nextval
-     </code>como a sessão atual já fez.</p>
-<p>Esta função requer<code class="literal">
+     </code>
+     como a sessão atual já fez.
+    </p>
+    <p>
+     Esta função requer
+     <code class="literal">
       USAGE
-     </code>ou<code class="literal">
+     </code>
+     ou
+     <code class="literal">
       SELECT
-     </code>privilégio na sequência.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+     </code>
+     privilégio na sequência.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       lastval
-     </code>()<code class="returnvalue">
+     </code>
+     ()
+     <code class="returnvalue">
       bigint
      </code>
-</p>
-<p>Retorna o valor mais recentemente retornado por<code class="function">
+    </p>
+    <p>
+     Retorna o valor mais recentemente retornado por
+     <code class="function">
       nextval
-     </code>na sessão atual. Esta função é
-        identicamente igual a<code class="function">
+     </code>
+     na sessão atual. Esta função é identicamente igual a
+     <code class="function">
       currval
-     </code>, exceto que, em vez de tomar o nome da sequência como argumento, ele se refere a qualquer sequência<code class="function">
+     </code>
+     , exceto que, em vez de tomar o nome da sequência como argumento, ele se refere a qualquer sequência
+     <code class="function">
       nextval
-     </code>foi mais recentemente aplicado na sessão atual. É um erro chamar<code class="function">
+     </code>
+     foi mais recentemente aplicado na sessão atual. É um erro chamar
+     <code class="function">
       lastval
-     </code>se<code class="function">
+     </code>
+     se
+     <code class="function">
       nextval
-     </code>não foi convocada ainda na sessão atual.</p>
-<p>Esta função requer<code class="literal">
+     </code>
+     não foi convocada ainda na sessão atual.
+    </p>
+    <p>
+     Esta função requer
+     <code class="literal">
       USAGE
-     </code>ou<code class="literal">
+     </code>
+     ou
+     <code class="literal">
       SELECT
-     </code>privilegio na última sequência usada.</p>
-</td>
-</tr>
-</tbody>
+     </code>
+     privilegio na última sequência usada.
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 ### Atenção
 
@@ -174,4 +281,4 @@ Da mesma forma, as mudanças de estado de sequência feitas por `setval` são im
 
 Se o grupo de bancos de dados falhar antes de comprometer uma transação que contém uma chamada de `nextval` ou `setval`, a mudança do estado da sequência pode não ter sido armazenada no armazenamento persistente, de modo que é incerto se a sequência terá seu estado original ou atualizado após o restabelecimento do grupo. Isso é inócuo para o uso da sequência dentro do banco de dados, uma vez que outros efeitos das transações não comprometidas também não serão visíveis. No entanto, se você deseja usar um valor de sequência para fins persistentes fora do banco de dados, certifique-se de que a chamada de `nextval` tenha sido comprometida antes de fazer isso.
 
-A sequência que será operada por uma função de sequência é especificada por um argumento `regclass`, que é simplesmente o OID da sequência no catálogo de sistema `pg_class`. No entanto, você não precisa procurar o OID manualmente, pois o conversor de entrada do tipo de dados `regclass` fará o trabalho por você. Veja [Seção 8.19][(datatype-oid.md "8.19. Object Identifier Types")] para detalhes.
+A sequência que será operada por uma função de sequência é especificada por um argumento `regclass`, que é simplesmente o OID da sequência no catálogo de sistema `pg_class`. No entanto, você não precisa procurar o OID manualmente, pois o conversor de entrada do tipo de dados `regclass` fará o trabalho por você. Veja [Seção 8.19](datatype-oid.md) para detalhes.

@@ -28,7 +28,7 @@ A sintaxe geral de uma declaração de variável é:
 name [ CONSTANT ] type [ COLLATE collation_name ] [ NOT NULL ] [ { DEFAULT | := | = } expression ];
 ```
 
-A cláusula `DEFAULT`, se fornecida, especifica o valor inicial atribuído à variável quando o bloco é entrado. Se a cláusula `DEFAULT` não for fornecida, a variável é inicializada com o valor nulo do SQL. A opção `CONSTANT` impede que a variável seja atribuída após a inicialização, de modo que seu valor permanecerá constante durante a duração do bloco. A opção `COLLATE` especifica uma collation a ser usada para a variável (ver [Seção 41.3.6][(plpgsql-declarations.md#PLPGSQL-DECLARATION-COLLATION "41.3.6. Collation of PL/pgSQL Variables")]). Se `NOT NULL` for especificado, uma atribuição de um valor nulo resulta em um erro de tempo de execução. Todas as variáveis declaradas como `NOT NULL` devem ter um valor padrão não nulo especificado. Igual (`=`) pode ser usado em vez de `:=` compatível com PL/SQL.
+A cláusula `DEFAULT`, se fornecida, especifica o valor inicial atribuído à variável quando o bloco é entrado. Se a cláusula `DEFAULT` não for fornecida, a variável é inicializada com o valor nulo do SQL. A opção `CONSTANT` impede que a variável seja atribuída após a inicialização, de modo que seu valor permanecerá constante durante a duração do bloco. A opção `COLLATE` especifica uma collation a ser usada para a variável (ver [Seção 41.3.6](plpgsql-declarations.md#PLPGSQL-DECLARATION-COLLATION)). Se `NOT NULL` for especificado, uma atribuição de um valor nulo resulta em um erro de tempo de execução. Todas as variáveis declaradas como `NOT NULL` devem ter um valor padrão não nulo especificado. Igual (`=`) pode ser usado em vez de `:=` compatível com PL/SQL.
 
 O valor padrão de uma variável é avaliado e atribuído à variável cada vez que o bloco é inserido (não apenas uma vez por chamada de função). Por exemplo, atribuir `now()` a uma variável do tipo `timestamp` faz com que a variável tenha o tempo da chamada de função atual, e não o tempo em que a função foi pré-compilada.
 
@@ -138,7 +138,7 @@ SELECT * FROM sum_n_product(2, 4);
    6 |    8
 ```
 
-Como discutido na [Seção 36.5.4][(xfunc-sql.md#XFUNC-OUTPUT-PARAMETERS "36.5.4. SQL Functions with Output Parameters")], isso efetivamente cria um tipo de registro anônimo para os resultados da função. Se uma cláusula `RETURNS` for dada, ela deve dizer `RETURNS record`.
+Como discutido na [Seção 36.5.4](xfunc-sql.md#XFUNC-OUTPUT-PARAMETERS), isso efetivamente cria um tipo de registro anônimo para os resultados da função. Se uma cláusula `RETURNS` for dada, ela deve dizer `RETURNS record`.
 
 Isso também funciona com procedimentos, por exemplo:
 
@@ -176,7 +176,7 @@ $$ LANGUAGE plpgsql;
 
 Isso é exatamente equivalente a declarar um ou mais parâmetros `OUT` e especificar `RETURNS SETOF sometype`.
 
-Quando o tipo de retorno de uma função PL/pgSQL é declarado como um tipo polimórfico (consulte [Seção 36.2.5][(extend-type-system.md#EXTEND-TYPES-POLYMORPHIC "36.2.5. Polymorphic Types")]), um parâmetro especial `$0` é criado. Seu tipo de dado é o tipo de retorno real da função, conforme deduzido dos tipos de entrada reais. Isso permite que a função acesse seu tipo de retorno real, conforme mostrado em [Seção 41.3.3][(plpgsql-declarations.md#PLPGSQL-DECLARATION-TYPE "41.3.3. Copying Types")]. `$0` é inicializado para null e pode ser modificado pela função, portanto, pode ser usado para armazenar o valor de retorno, se desejado, embora isso não seja necessário. `$0` também pode receber um alias. Por exemplo, esta função funciona em qualquer tipo de dado que tenha um operador `+`:
+Quando o tipo de retorno de uma função PL/pgSQL é declarado como um tipo polimórfico (consulte [Seção 36.2.5](extend-type-system.md#EXTEND-TYPES-POLYMORPHIC)), um parâmetro especial `$0` é criado. Seu tipo de dado é o tipo de retorno real da função, conforme deduzido dos tipos de entrada reais. Isso permite que a função acesse seu tipo de retorno real, conforme mostrado em [Seção 41.3.3](plpgsql-declarations.md#PLPGSQL-DECLARATION-TYPE). `$0` é inicializado para null e pode ser modificado pela função, portanto, pode ser usado para armazenar o valor de retorno, se desejado, embora isso não seja necessário. `$0` também pode receber um alias. Por exemplo, esta função funciona em qualquer tipo de dado que tenha um operador `+`:
 
 ```
 CREATE FUNCTION add_three_values(v1 anyelement, v2 anyelement, v3 anyelement)
@@ -259,7 +259,7 @@ user_ids users.user_id%TYPE[];
 user_ids users.user_id%TYPE ARRAY[4];  -- equivalent to the above
 ```
 
-Assim como ao declarar colunas de tabela que são matrizes, não importa se você escreve múltiplos pares de chaves ou dimensões específicas de matriz: o PostgreSQL trata todos os arrays de um tipo de elemento dado como o mesmo tipo, independentemente da dimensionalidade. (Veja [Seção 8.15.1] [(arrays.md#ARRAYS-DECLARATION "8.15.1. Declaration of Array Types")].)
+Assim como ao declarar colunas de tabela que são matrizes, não importa se você escreve múltiplos pares de chaves ou dimensões específicas de matriz: o PostgreSQL trata todos os arrays de um tipo de elemento dado como o mesmo tipo, independentemente da dimensionalidade. (Veja [Seção 8.15.1](arrays.md#ARRAYS-DECLARATION).)
 
 Ao usar `%TYPE`, você não precisa saber o tipo de dados da estrutura que você está referenciando, e o mais importante é que, se o tipo de dados do item referenciado mudar no futuro (por exemplo: você muda o tipo de `user_id` de `integer` para `real`, você pode não precisar alterar a definição da sua função.
 
@@ -307,7 +307,7 @@ Observe que `RECORD` não é um tipo de dado verdadeiro, apenas um marcador. Tam
 
 ### 41.3.6. Colaboração de variáveis PL/pgSQL [#](#PLPGSQL-DECLARATION-COLLATION)
 
-Quando uma função PL/pgSQL tem um ou mais parâmetros de tipos de dados colidíveis, uma codificação é identificada para cada chamada de função, dependendo das codificações atribuídas aos argumentos reais, conforme descrito em [Seção 23.2][(collation.md "23.2. Collation Support")]. Se uma codificação for identificada com sucesso (ou seja, não houver conflitos de codificações implícitas entre os argumentos), todos os parâmetros colidíveis são tratados como tendo aquela codificação implicitamente. Isso afetará o comportamento das operações sensíveis à codificação dentro da função. Por exemplo, considere
+Quando uma função PL/pgSQL tem um ou mais parâmetros de tipos de dados colidíveis, uma codificação é identificada para cada chamada de função, dependendo das codificações atribuídas aos argumentos reais, conforme descrito em [Seção 23.2](collation.md). Se uma codificação for identificada com sucesso (ou seja, não houver conflitos de codificações implícitas entre os argumentos), todos os parâmetros colidíveis são tratados como tendo aquela codificação implicitamente. Isso afetará o comportamento das operações sensíveis à codificação dentro da função. Por exemplo, considere
 
 ```
 CREATE FUNCTION less_than(a text, b text) RETURNS boolean AS $$

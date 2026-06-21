@@ -2,8 +2,8 @@
 
 **Índice**
 
-* [36.1. Como a Extensibilidade Funciona][(extend-how.md)]
-* [36.2. O Sistema de Tipos do PostgreSQL][(extend-type-system.md)]
+* [36.1. Como a Extensibilidade Funciona](extend-how.md)
+* [36.2. O Sistema de Tipos do PostgreSQL](extend-type-system.md)
 
 + [36.2.1. Tipos de Base](extend-type-system.md#EXTEND-TYPE-SYSTEM-BASE)
 + [36.2.2. Tipos de Contêiner](extend-type-system.md#EXTEND-TYPE-SYSTEM-CONTAINER)
@@ -15,24 +15,24 @@
 * [36.4. Procedimentos Definidos pelo Usuário](xproc.md)
 * [36.5. Funções do Idioma de Consulta (SQL)](xfunc-sql.md)
 
-+ [36.5.1. Argumentos para Funções SQL][(xfunc-sql.md#XFUNC-SQL-FUNCTION-ARGUMENTS)]
-+ [36.5.2. Funções SQL em Tipos Básicos][(xfunc-sql.md#XFUNC-SQL-BASE-FUNCTIONS)]
-+ [36.5.3. Funções SQL em Tipos Compostos][(xfunc-sql.md#XFUNC-SQL-COMPOSITE-FUNCTIONS)]
-+ [36.5.4. Funções SQL com Parâmetros de Saída][(xfunc-sql.md#XFUNC-OUTPUT-PARAMETERS)]
-+ [36.5.5. Procedimentos SQL com Parâmetros de Saída][(xfunc-sql.md#XFUNC-OUTPUT-PARAMETERS-PROC)]
-+ [36.5.6. Funções SQL com Número Variável de Argumentos][(xfunc-sql.md#XFUNC-SQL-VARIADIC-FUNCTIONS)]
-+ [36.5.7. Funções SQL com Valores Padrão para Argumentos][(xfunc-sql.md#XFUNC-SQL-PARAMETER-DEFAULTS)]
-+ [36.5.8. Funções SQL como Fontes de Tabela][(xfunc-sql.md#XFUNC-SQL-TABLE-FUNCTIONS)]
-+ [36.5.9. Funções SQL que Retornam Conjuntos][(xfunc-sql.md#XFUNC-SQL-FUNCTIONS-RETURNING-SET)]
-+ [36.5.10. Funções SQL que Retornam `TABLE`][(xfunc-sql.md#XFUNC-SQL-FUNCTIONS-RETURNING-TABLE)]
-+ [36.5.11. Funções SQL Polimorfas][(xfunc-sql.md#XFUNC-SQL-POLYMORPHIC-FUNCTIONS)]
-+ [36.5.12. Funções SQL com Colagens][(xfunc-sql.md#XFUNC-SQL-COLLATIONS)]
++ [36.5.1. Argumentos para Funções SQL](xfunc-sql.md#XFUNC-SQL-FUNCTION-ARGUMENTS)
++ [36.5.2. Funções SQL em Tipos Básicos](xfunc-sql.md#XFUNC-SQL-BASE-FUNCTIONS)
++ [36.5.3. Funções SQL em Tipos Compostos](xfunc-sql.md#XFUNC-SQL-COMPOSITE-FUNCTIONS)
++ [36.5.4. Funções SQL com Parâmetros de Saída](xfunc-sql.md#XFUNC-OUTPUT-PARAMETERS)
++ [36.5.5. Procedimentos SQL com Parâmetros de Saída](xfunc-sql.md#XFUNC-OUTPUT-PARAMETERS-PROC)
++ [36.5.6. Funções SQL com Número Variável de Argumentos](xfunc-sql.md#XFUNC-SQL-VARIADIC-FUNCTIONS)
++ [36.5.7. Funções SQL com Valores Padrão para Argumentos](xfunc-sql.md#XFUNC-SQL-PARAMETER-DEFAULTS)
++ [36.5.8. Funções SQL como Fontes de Tabela](xfunc-sql.md#XFUNC-SQL-TABLE-FUNCTIONS)
++ [36.5.9. Funções SQL que Retornam Conjuntos](xfunc-sql.md#XFUNC-SQL-FUNCTIONS-RETURNING-SET)
++ [36.5.10. Funções SQL que Retornam `TABLE`](xfunc-sql.md#XFUNC-SQL-FUNCTIONS-RETURNING-TABLE)
++ [36.5.11. Funções SQL Polimorfas](xfunc-sql.md#XFUNC-SQL-POLYMORPHIC-FUNCTIONS)
++ [36.5.12. Funções SQL com Colagens](xfunc-sql.md#XFUNC-SQL-COLLATIONS)
 
-* [36.6. Sobrecarga de Função][(xfunc-overload.md)]
-* [36.7. Categorias de Volatilidade de Função][(xfunc-volatility.md)]
-* [36.8. Funções de Linguagem Procedimental][(xfunc-pl.md)]
-* [36.9. Funções Internacionais][(xfunc-internal.md)]
-* [36.10. Funções em Linguagem C][(xfunc-c.md)]
+* [36.6. Sobrecarga de Função](xfunc-overload.md)
+* [36.7. Categorias de Volatilidade de Função](xfunc-volatility.md)
+* [36.8. Funções de Linguagem Procedimental](xfunc-pl.md)
+* [36.9. Funções Internacionais](xfunc-internal.md)
+* [36.10. Funções em Linguagem C](xfunc-c.md)
 
 + [36.10.1. Carregamento Dinâmico][(xfunc-c.md#XFUNC-C-DYNLOAD)
 + [36.10.2. Tipos Básicos em Funções em Linguagem C][(xfunc-c.md#XFUNC-C-BASETYPE)
@@ -87,21 +87,21 @@
 
 * [36.17. Objetos relacionados ao acondicionamento em uma extensão](extend-extensions.md)
 
-+ [36.17.1. Arquivos de extensão][(extend-extensions.md#EXTEND-EXTENSIONS-FILES)]
-+ [36.17.2. Realocação de extensão][(extend-extensions.md#EXTEND-EXTENSIONS-RELOCATION)]
-+ [36.17.3. Tabelas de configuração de extensão][(extend-extensions.md#EXTEND-EXTENSIONS-CONFIG-TABLES)]
-+ [36.17.4. Atualizações de extensão][(extend-extensions.md#EXTEND-EXTENSIONS-UPDATES)]
-+ [36.17.5. Instalação de extensões usando scripts de atualização][(extend-extensions.md#EXTEND-EXTENSIONS-UPDATE-SCRIPTS)]
-+ [36.17.6. Considerações de segurança para extensões][(extend-extensions.md#EXTEND-EXTENSIONS-SECURITY)]
-+ [36.17.7. Exemplo de extensão][(extend-extensions.md#EXTEND-EXTENSIONS-EXAMPLE)]
++ [36.17.1. Arquivos de extensão](extend-extensions.md#EXTEND-EXTENSIONS-FILES)
++ [36.17.2. Realocação de extensão](extend-extensions.md#EXTEND-EXTENSIONS-RELOCATION)
++ [36.17.3. Tabelas de configuração de extensão](extend-extensions.md#EXTEND-EXTENSIONS-CONFIG-TABLES)
++ [36.17.4. Atualizações de extensão](extend-extensions.md#EXTEND-EXTENSIONS-UPDATES)
++ [36.17.5. Instalação de extensões usando scripts de atualização](extend-extensions.md#EXTEND-EXTENSIONS-UPDATE-SCRIPTS)
++ [36.17.6. Considerações de segurança para extensões](extend-extensions.md#EXTEND-EXTENSIONS-SECURITY)
++ [36.17.7. Exemplo de extensão](extend-extensions.md#EXTEND-EXTENSIONS-EXAMPLE)
 
 * [36.18. Edifício de extensão de infraestrutura](extend-pgxs.md)
 
 Nas seções a seguir, discutiremos como você pode estender o PostgreSQL SQL, adicionando:
 
-* funções (a partir de [Seção 36.3][(xfunc.md "36.3. User-Defined Functions")])
-* agregados (a partir de [Seção 36.12][(xaggr.md "36.12. User-Defined Aggregates")])
-* tipos de dados (a partir de [Seção 36.13][(xtypes.md "36.13. User-Defined Types")])
-* operadores (a partir de [Seção 36.14][(xoper.md "36.14. User-Defined Operators")])
-* classes de operadores para índices (a partir de [Seção 36.16][(xindex.md "36.16. Interfacing Extensions to Indexes")])
-* pacotes de objetos relacionados (a partir de [Seção 36.17][(extend-extensions.md "36.17. Packaging Related Objects into an Extension")])
+* funções (a partir de [Seção 36.3](xfunc.md))
+* agregados (a partir de [Seção 36.12](xaggr.md))
+* tipos de dados (a partir de [Seção 36.13](xtypes.md))
+* operadores (a partir de [Seção 36.14](xoper.md))
+* classes de operadores para índices (a partir de [Seção 36.16](xindex.md))
+* pacotes de objetos relacionados (a partir de [Seção 36.17](extend-extensions.md))

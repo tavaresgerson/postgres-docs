@@ -447,7 +447,7 @@ Normalmente, uma linha de referência não precisa satisfazer a restrição de c
 
 Uma chave estrangeira deve fazer referência a colunas que sejam uma chave primária ou forme uma restrição única, ou que sejam colunas de um índice único não parcial. Isso significa que as colunas referenciadas sempre têm um índice para permitir pesquisas eficientes sobre se uma linha de referência tem uma correspondência. Como um `DELETE` de uma linha da tabela referenciada ou um `UPDATE` de uma coluna referenciada exigirá uma varredura da tabela de referência para linhas que correspondam ao valor antigo, muitas vezes é uma boa ideia indexar as colunas de referência também. Como isso nem sempre é necessário e há muitas opções disponíveis sobre como indexar, a declaração de uma restrição de chave estrangeira não cria automaticamente um índice nas colunas de referência.
 
-Mais informações sobre atualização e exclusão de dados estão no [Capítulo 6][(dml.md "Chapter 6. Data Manipulation")]. Veja também a descrição da sintaxe de restrição de chave estrangeira na documentação de referência para [CREATE TABLE][(sql-createtable.md "CREATE TABLE")].
+Mais informações sobre atualização e exclusão de dados estão no [Capítulo 6](dml.md). Veja também a descrição da sintaxe de restrição de chave estrangeira na documentação de referência para [CREATE TABLE](sql-createtable.md).
 
 ### 5.5.6. Restrições de Exclusão [#](#DDL-CONSTRAINTS-EXCLUSION)
 

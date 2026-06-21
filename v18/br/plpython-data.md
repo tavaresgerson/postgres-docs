@@ -32,7 +32,7 @@ Observe que os desalinhamentos lógicos entre o tipo de retorno declarado do Pos
 
 ### 44.2.2. Nulo, Nenhum [#](#PLPYTHON-DATA-NULL)
 
-Se um valor nulo do SQL for passado para uma função, o valor do argumento aparecerá como `None` no Python. Por exemplo, a definição da função de `pymax` mostrada em [Seção 44.1][(plpython-funcs.md "44.1. PL/Python Functions")] retornará a resposta errada para entradas nulos. Podíamos adicionar `STRICT` à definição da função para fazer com que o PostgreSQL faça algo mais razoável: se um valor nulo for passado, a função não será chamada em absoluto, mas apenas retornará um resultado nulo automaticamente. Alternativamente, podemos verificar entradas nulos no corpo da função:
+Se um valor nulo do SQL for passado para uma função, o valor do argumento aparecerá como `None` no Python. Por exemplo, a definição da função de `pymax` mostrada em [Seção 44.1](plpython-funcs.md) retornará a resposta errada para entradas nulos. Podíamos adicionar `STRICT` à definição da função para fazer com que o PostgreSQL faça algo mais razoável: se um valor nulo for passado, a função não será chamada em absoluto, mas apenas retornará um resultado nulo automaticamente. Alternativamente, podemos verificar entradas nulos no corpo da função:
 
 ```
 CREATE FUNCTION pymax (a integer, b integer)
@@ -135,8 +135,9 @@ Um resultado composto pode ser retornado como:
 
 Tipo de sequência (uma tupla ou uma lista, mas não um conjunto, pois não é indexável): Os objetos de sequência retornados devem ter o mesmo número de itens que o tipo de resultado composto tem campos. O item com índice 0 é atribuído ao primeiro campo do tipo composto, 1 ao segundo e assim por diante. Por exemplo:
 
-``` CREATE FUNCTION make_pair (name text, value integer) RETURNS named_value AS $$ return ( name, value ) # or alternatively, as list: return [ name, value ] $$ LANGUAGE plpython3u;
-    ```
+```
+CREATE FUNCTION make_pair (name text, value integer) RETURNS named_value AS $$ return ( name, value ) # or alternatively, as list: return [ name, value ] $$ LANGUAGE plpython3u;
+```
 
 Para retornar um SQL nulo para qualquer coluna, insira `None` na posição correspondente.
 
@@ -144,21 +145,20 @@ Quando um array de tipos compostos é retornado, ele não pode ser retornado com
 
 Mapeamento (dicionário): O valor para cada coluna do tipo de resultado é recuperado do mapeamento com o nome da coluna como chave. Exemplo:
 
-``` CREATE FUNCTION make_pair (name text, value integer) RETURNS named_value AS $$ return { "name": name, "value": value } $$ LANGUAGE plpython3u;
-    ```
+```
+CREATE FUNCTION make_pair (name text, value integer) RETURNS named_value AS $$ return { "name": name, "value": value } $$ LANGUAGE plpython3u;
+```
 
 Qualquer par chave/valor adicional do dicionário é ignorado. Chaves ausentes são tratadas como erros. Para retornar um valor nulo do SQL para qualquer coluna, insira `None` com o nome da coluna correspondente como chave.
 
-Objeto (qualquer objeto que forneça o método `__getattr__`)
-:   Funciona da mesma forma que um mapeamento.
-    Exemplo:
+Objeto (qualquer objeto que forneça o método `__getattr__`): Funciona da mesma forma que um mapeamento. Exemplo:
 
-    ```
-    CREATE FUNCTION make_pair (name text, value integer) RETURNS named_value AS $$ class named_value: def __init__ (self, n, v): self.name = n self.value = v return named_value(name, value)
+```
+CREATE FUNCTION make_pair (name text, value integer) RETURNS named_value AS $$ class named_value: def __init__ (self, n, v): self.name = n self.value = v return named_value(name, value)
 
-      # or simply
-      class nv: pass nv.name = name nv.value = value return nv $$ LANGUAGE plpython3u;
-    ```
+  # or simply
+  class nv: pass nv.name = name nv.value = value return nv $$ LANGUAGE plpython3u;
+```
 
 Também são suportadas funções com parâmetros `OUT`. Por exemplo:
 
@@ -195,7 +195,7 @@ Tipo de sequência (tupla, lista, conjunto)
       # all other combinations work also
       return ( [ how, "World" ], [ how, "PostgreSQL" ], [ how, "PL/Python" ] )
     $$ LANGUAGE plpython3u;
-    ```
+```
 
 Iterador (qualquer objeto que forneça os métodos `__iter__` e `__next__`): ``` CREATE FUNCTION greet (how text) RETURNS SETOF greeting AS $$ class producer: def __init__ (self, how, who): self.how = how self.who = who self.ndx = -1
 
@@ -204,17 +204,16 @@ def __iter__ (self): return self
 def __next__(self): self.ndx += 1 if self.ndx == len(self.who): raise StopIteration return ( self.how, self.who[self.ndx] )
 
 return producer(how, [ "World", "PostgreSQL", "PL/Python" ]) $$ LANGUAGE plpython3u;
-    ```
+```
 
-Gerador (`yield`)
-:   ```
-    CREATE FUNCTION greet (how text)
-      RETURNS SETOF greeting
-    AS $$
-      for who in [ "World", "PostgreSQL", "PL/Python" ]:
-        yield ( how, who )
-    $$ LANGUAGE plpython3u;
-    ```
+Gerador (`yield`): ```
+CREATE FUNCTION greet (how text)
+RETURNS SETOF greeting
+AS $$
+for who in [ "World", "PostgreSQL", "PL/Python" ]:
+yield ( how, who )
+$$ LANGUAGE plpython3u;
+```
 
 Também são suportadas funções de retorno de conjunto com parâmetros `OUT` (usando `RETURNS SETOF record`). Por exemplo:
 

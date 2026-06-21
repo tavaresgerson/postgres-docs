@@ -8,7 +8,7 @@ oid2name — resolva OIDs e nós de arquivos em um diretório de dados do Postgr
 
 ## Descrição
 
-oid2name é um programa utilitário que ajuda os administradores a examinar a estrutura de arquivo usada pelo PostgreSQL. Para usá-lo, você precisa estar familiarizado com a estrutura de arquivo do banco de dados, que é descrita em [Capítulo 66][(storage.md "Chapter 66. Database Physical Storage")].
+oid2name é um programa utilitário que ajuda os administradores a examinar a estrutura de arquivo usada pelo PostgreSQL. Para usá-lo, você precisa estar familiarizado com a estrutura de arquivo do banco de dados, que é descrita em [Capítulo 66](storage.md).
 
 ### Nota
 
@@ -62,7 +62,7 @@ Se você não fornecer também o `-d`, ele exibirá uma lista de OIDs do banco d
 
 `PGHOST` `PGPORT` `PGUSER`: Parâmetros de conexão padrão.
 
-Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, também utiliza as variáveis de ambiente suportadas pelo libpq (consulte a Seção 32.15 [(libpq-envars.md "32.15. Environment Variables")]).
+Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, também utiliza as variáveis de ambiente suportadas pelo libpq (consulte a [Seção 32.15](libpq-envars.md)).
 
 A variável de ambiente `PG_COLOR` especifica se a cor deve ser usada nas mensagens de diagnóstico. Os valores possíveis são `always`, `auto` e `never`.
 

@@ -14,7 +14,7 @@ Defina um comportamento que é chamado nos casos especiais (linhas não encontra
 
 ## Parâmetros
 
-Veja [Seção 34.8.1][(ecpg-errors.md#ECPG-WHENEVER "34.8.1. Setting Callbacks")] para uma descrição dos parâmetros.
+Veja [Seção 34.8.1](ecpg-errors.md#ECPG-WHENEVER) para uma descrição dos parâmetros.
 
 ## Exemplos
 

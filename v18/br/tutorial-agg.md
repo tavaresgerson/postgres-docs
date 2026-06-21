@@ -88,23 +88,32 @@ SELECT city, count(*), max(temp_lo)
 
 
 <table border="0" summary="Callout list">
-<tr>
-<td align="left" valign="top" width="5%">
-<p>
-<a href="#co.tutorial-agg-like">
+ <tr>
+  <td align="left" valign="top" width="5%">
+   <p>
+    <a href="#co.tutorial-agg-like">
      (1)
     </a>
-</p>
-</td>
-<td align="left" valign="top">
-<p>O<code class="literal">
+   </p>
+  </td>
+  <td align="left" valign="top">
+   <p>
+    O
+    <code class="literal">
      LIKE
-    </code>o operador faz correspondência de padrões e é explicado em<a class="xref" href="functions-matching.md" title="9.7. Pattern Matching">Seção 9.7</a>
+    </code>
+    o operador faz correspondência de padrões e é explicado em
+    <a class="xref" href="functions-matching.md" title="9.7. Pattern Matching">
+     Seção 9.7
+    </a>
     .
    </p>
-</td>
-</tr>
+  </td>
+ </tr>
 </table>
+
+
+
 
 
 

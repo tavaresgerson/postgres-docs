@@ -7,84 +7,83 @@ A vista `data_type_privileges` identifica todos os descritores de tipo de dados 
 
 
 <table border="1" class="table" summary="data_type_privileges Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
      Column Type
     </p>
-<p>
+    <p>
      Description
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       object_catalog
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the database that contains the described object (always the current database)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       object_schema
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the schema that contains the described object
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       object_name
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the described object
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       object_type
      </code>
-<code class="type">
+     <code class="type">
       character_data
      </code>
-</p>
-<p>
+    </p>
+    <p>
      The type of the described object: one of
      <code class="literal">
       TABLE
      </code>
-     (the data type descriptor pertains to
-       a column of that table),
+     (the data type descriptor pertains to a column of that table),
      <code class="literal">
       DOMAIN
      </code>
@@ -92,26 +91,28 @@ A vista `data_type_privileges` identifica todos os descritores de tipo de dados 
      <code class="literal">
       ROUTINE
      </code>
-     (the data type descriptor pertains
-       to a parameter or the return data type of that function).
+     (the data type descriptor pertains to a parameter or the return data type of that function).
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       dtd_identifier
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      The identifier of the data type descriptor, which is unique among the data type descriptors for that same object.
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 

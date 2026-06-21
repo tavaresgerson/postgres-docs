@@ -13,8 +13,8 @@
 * [39.3. Visões Materializadas](rules-materializedviews.md)
 * [39.4. Regras sobre `INSERT`, `UPDATE` e `DELETE`](rules-update.md)
 
-+ [39.4.1. Como funcionam as regras de atualização][(rules-update.md#RULES-UPDATE-HOW)]
-+ [39.4.2. Cooperação com visualizações][(rules-update.md#RULES-UPDATE-VIEWS)]
++ [39.4.1. Como funcionam as regras de atualização](rules-update.md#RULES-UPDATE-HOW)
++ [39.4.2. Cooperação com visualizações](rules-update.md#RULES-UPDATE-VIEWS)
 
 * [39.5. Regras e Privilegios](rules-privileges.md)
 * [39.6. Regras e Status de Comando](rules-status.md)

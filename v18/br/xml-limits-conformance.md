@@ -53,7 +53,7 @@ Em SQL:2006 e versões posteriores, ambas as direções de conversão entre os t
 
 Quando o PostgreSQL mapeia os valores de dados SQL para XML (como no `xmlelement`), ou XML para SQL (como nas colunas de saída do `xmltable`), exceto em alguns casos tratados de forma especial, o PostgreSQL simplesmente assume que a forma de string XPath 1.0 do tipo de dados XML será válida como a forma de entrada de texto do tipo de dados SQL, e vice-versa. Esta regra tem a virtude da simplicidade enquanto produz, para muitos tipos de dados, resultados semelhantes aos mapeamentos especificados no padrão.
 
-Quando a interoperabilidade com outros sistemas é uma preocupação, para alguns tipos de dados, pode ser necessário usar funções de formatação de tipos de dados (como as do [Seção 9.8] [(functions-formatting.md "9.8. Data Type Formatting Functions")]) explicitamente para produzir as mapeamentos padrão.
+Quando a interoperabilidade com outros sistemas é uma preocupação, para alguns tipos de dados, pode ser necessário usar funções de formatação de tipos de dados (como as do [Seção 9.8](functions-formatting.md)) explicitamente para produzir as mapeamentos padrão.
 
 ### D.3.2. Limites Incidentais da Implementação [#](#FUNCTIONS-XML-LIMITS-POSTGRESQL)
 

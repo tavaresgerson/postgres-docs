@@ -24,7 +24,7 @@ Para tabelas temporárias, `DROP INDEX` é sempre não concorrente, pois nenhuma
 
 *`name`*: O nome (opcionalmente qualificado por esquema) de um índice a ser removido.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem do índice e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem do índice e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a eliminação do índice se houver algum objeto dependente dele. Esse é o padrão.
 

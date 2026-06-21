@@ -1,17 +1,17 @@
 ## 36.5. Linguagem de consulta (SQL) [#](#XFUNC-SQL)
 
-* [36.5.1. Argumentos para Funções SQL][(xfunc-sql.md#XFUNC-SQL-FUNCTION-ARGUMENTS)]
-* [36.5.2. Funções SQL em Tipos Básicos][(xfunc-sql.md#XFUNC-SQL-BASE-FUNCTIONS)]
-* [36.5.3. Funções SQL em Tipos Compostos][(xfunc-sql.md#XFUNC-SQL-COMPOSITE-FUNCTIONS)]
-* [36.5.4. Funções SQL com Parâmetros de Saída][(xfunc-sql.md#XFUNC-OUTPUT-PARAMETERS)]
-* [36.5.5. Procedimentos SQL com Parâmetros de Saída][(xfunc-sql.md#XFUNC-OUTPUT-PARAMETERS-PROC)]
-* [36.5.6. Funções SQL com Número Variável de Argumentos][(xfunc-sql.md#XFUNC-SQL-VARIADIC-FUNCTIONS)]
-* [36.5.7. Funções SQL com Valores Padrão para Argumentos][(xfunc-sql.md#XFUNC-SQL-PARAMETER-DEFAULTS)]
-* [36.5.8. Funções SQL como Fontes de Tabela][(xfunc-sql.md#XFUNC-SQL-TABLE-FUNCTIONS)]
-* [36.5.9. Funções SQL que Retornam Conjuntos][(xfunc-sql.md#XFUNC-SQL-FUNCTIONS-RETURNING-SET)]
-* [36.5.10. Funções SQL que Retornam `TABLE`][(xfunc-sql.md#XFUNC-SQL-FUNCTIONS-RETURNING-TABLE)]
-* [36.5.11. Funções SQL Polimorfas][(xfunc-sql.md#XFUNC-SQL-POLYMORPHIC-FUNCTIONS)]
-* [36.5.12. Funções SQL com Colagens][(xfunc-sql.md#XFUNC-SQL-COLLATIONS)]
+* [36.5.1. Argumentos para Funções SQL](xfunc-sql.md#XFUNC-SQL-FUNCTION-ARGUMENTS)
+* [36.5.2. Funções SQL em Tipos Básicos](xfunc-sql.md#XFUNC-SQL-BASE-FUNCTIONS)
+* [36.5.3. Funções SQL em Tipos Compostos](xfunc-sql.md#XFUNC-SQL-COMPOSITE-FUNCTIONS)
+* [36.5.4. Funções SQL com Parâmetros de Saída](xfunc-sql.md#XFUNC-OUTPUT-PARAMETERS)
+* [36.5.5. Procedimentos SQL com Parâmetros de Saída](xfunc-sql.md#XFUNC-OUTPUT-PARAMETERS-PROC)
+* [36.5.6. Funções SQL com Número Variável de Argumentos](xfunc-sql.md#XFUNC-SQL-VARIADIC-FUNCTIONS)
+* [36.5.7. Funções SQL com Valores Padrão para Argumentos](xfunc-sql.md#XFUNC-SQL-PARAMETER-DEFAULTS)
+* [36.5.8. Funções SQL como Fontes de Tabela](xfunc-sql.md#XFUNC-SQL-TABLE-FUNCTIONS)
+* [36.5.9. Funções SQL que Retornam Conjuntos](xfunc-sql.md#XFUNC-SQL-FUNCTIONS-RETURNING-SET)
+* [36.5.10. Funções SQL que Retornam `TABLE`](xfunc-sql.md#XFUNC-SQL-FUNCTIONS-RETURNING-TABLE)
+* [36.5.11. Funções SQL Polimorfas](xfunc-sql.md#XFUNC-SQL-POLYMORPHIC-FUNCTIONS)
+* [36.5.12. Funções SQL com Colagens](xfunc-sql.md#XFUNC-SQL-COLLATIONS)
 
 As funções SQL executam uma lista arbitrária de instruções SQL, retornando o resultado da última consulta na lista. No caso simples (não definido), a primeira linha do resultado da última consulta será devolvida. (Tenha em mente que a “primeira linha” de um resultado de várias linhas não é bem definida, a menos que você use `ORDER BY`. Se a última consulta não retornar nenhuma linha, o valor nulo será devolvido.
 
@@ -240,10 +240,10 @@ Observe duas coisas importantes sobre a definição da função:
 * A ordem da lista selecionada na consulta deve ser exatamente a mesma em que as colunas aparecem no tipo composto. (Nomear as colunas, como fizemos acima, é irrelevante para o sistema.)
 * Devemos garantir que o tipo de cada expressão possa ser convertido para o da coluna correspondente ao tipo composto. Caso contrário, obteremos erros como este:
 
-  ```
-  ERROR:  return type mismatch in function declared to return emp
-  DETAIL:  Final statement returns text instead of point at column 4.
-  ```
+```
+ERROR:  return type mismatch in function declared to return emp
+DETAIL:  Final statement returns text instead of point at column 4.
+```
 
 Assim como no caso do tipo de base, o sistema não inserirá casts explícitos automaticamente, apenas casts implícitos ou de atribuição.
 
@@ -277,7 +277,7 @@ SELECT * FROM new_emp();
  None | 1000.0 |  25 | (2,2)
 ```
 
-A segunda maneira é descrita mais detalhadamente em [Seção 36.5.8][(xfunc-sql.md#XFUNC-SQL-TABLE-FUNCTIONS "36.5.8. SQL Functions as Table Sources")].
+A segunda maneira é descrita mais detalhadamente em [Seção 36.5.8](xfunc-sql.md#XFUNC-SQL-TABLE-FUNCTIONS).
 
 Quando você usa uma função que retorna um tipo composto, você pode querer apenas um campo (atributo) de seu resultado. Você pode fazer isso com a sintaxe desta forma:
 
@@ -308,7 +308,7 @@ SELECT name(new_emp());
  None
 ```
 
-Como explicado na [Seção 8.16.5][(rowtypes.md#ROWTYPES-USAGE "8.16.5. Using Composite Types in Queries")], a notação de campo e a notação funcional são equivalentes.
+Como explicado na [Seção 8.16.5](rowtypes.md#ROWTYPES-USAGE), a notação de campo e a notação funcional são equivalentes.
 
 Outra maneira de usar uma função que retorna um tipo composto é passar o resultado para outra função que aceita o tipo de linha correto como entrada:
 
@@ -340,7 +340,7 @@ SELECT add_em(3,7);
 (1 row)
 ```
 
-Isso não é essencialmente diferente da versão do `add_em` mostrada em [Seção 36.5.2][(xfunc-sql.md#XFUNC-SQL-BASE-FUNCTIONS "36.5.2. SQL Functions on Base Types")]. O verdadeiro valor dos parâmetros de saída é que eles fornecem uma maneira conveniente de definir funções que retornam várias colunas. Por exemplo,
+Isso não é essencialmente diferente da versão do `add_em` mostrada em [Seção 36.5.2](xfunc-sql.md#XFUNC-SQL-BASE-FUNCTIONS). O verdadeiro valor dos parâmetros de saída é que eles fornecem uma maneira conveniente de definir funções que retornam várias colunas. Por exemplo,
 
 ```
 CREATE FUNCTION sum_n_product (x int, y int, OUT sum int, OUT product int)
@@ -396,7 +396,7 @@ CALL tp1(17, 100.0, NULL);
 
 Se você escrever algo mais, deve ser uma expressão que seja implicitamente coerente com o tipo declarado do parâmetro, assim como para os parâmetros de entrada. No entanto, observe que tal expressão não será avaliada.
 
-Ao chamar um procedimento a partir do PL/pgSQL, em vez de escrever `NULL`, você deve escrever uma variável que receberá a saída do procedimento. Consulte [Seção 41.6.3][(plpgsql-control-structures.md#PLPGSQL-STATEMENTS-CALLING-PROCEDURE "41.6.3. Calling a Procedure")] para obter detalhes.
+Ao chamar um procedimento a partir do PL/pgSQL, em vez de escrever `NULL`, você deve escrever uma variável que receberá a saída do procedimento. Consulte [Seção 41.6.3](plpgsql-control-structures.md#PLPGSQL-STATEMENTS-CALLING-PROCEDURE) para obter detalhes.
 
 ### 36.5.6. Funções SQL com Número Variável de Argumentos [#](#XFUNC-SQL-VARIADIC-FUNCTIONS)
 
@@ -422,7 +422,7 @@ SELECT mleast(ARRAY[10, -1, 5, 4.4]);    -- doesn't work
 
 Na verdade, você não pode escrever isso — ou, pelo menos, isso não corresponderá à definição dessa função. Um parâmetro marcado `VARIADIC` corresponde a uma ou mais ocorrências de seu tipo de elemento, não do seu próprio tipo.
 
-Às vezes, é útil ser capaz de passar uma matriz já construída para uma função variável; isso é particularmente útil quando uma função variável deseja passar seu parâmetro de matriz para outra. Além disso, essa é a única maneira segura de chamar uma função variável encontrada em um esquema que permite que usuários não confiáveis criem objetos; veja [Seção 10.3][(typeconv-func.md "10.3. Functions")]. Você pode fazer isso especificando `VARIADIC` na chamada:
+Às vezes, é útil ser capaz de passar uma matriz já construída para uma função variável; isso é particularmente útil quando uma função variável deseja passar seu parâmetro de matriz para outra. Além disso, essa é a única maneira segura de chamar uma função variável encontrada em um esquema que permite que usuários não confiáveis criem objetos; veja [Seção 10.3](typeconv-func.md). Você pode fazer isso especificando `VARIADIC` na chamada:
 
 ```
 SELECT mleast(VARIADIC ARRAY[10, -1, 5, 4.4]);
@@ -438,7 +438,7 @@ SELECT mleast(VARIADIC ARRAY[]::numeric[]);
 
 Simplesmente escrever `SELECT mleast()` não funciona porque um parâmetro variável deve corresponder a pelo menos um argumento real. (Você poderia definir uma segunda função também com o nome `mleast`, sem parâmetros, se quisesse permitir tais chamadas.)
 
-Os parâmetros dos elementos da matriz gerados a partir de um parâmetro variável são tratados como não tendo nomes próprios. Isso significa que não é possível chamar uma função variável usando argumentos nomeados ([Seção 4.3][(sql-syntax-calling-funcs.md "4.3. Calling Functions")]), exceto quando você especifica `VARIADIC`. Por exemplo, isso funcionará:
+Os parâmetros dos elementos da matriz gerados a partir de um parâmetro variável são tratados como não tendo nomes próprios. Isso significa que não é possível chamar uma função variável usando argumentos nomeados ([Seção 4.3](sql-syntax-calling-funcs.md)), exceto quando você especifica `VARIADIC`. Por exemplo, isso funcionará:
 
 ```
 SELECT mleast(VARIADIC arr => ARRAY[10, -1, 5, 4.4]);
@@ -453,7 +453,7 @@ SELECT mleast(arr => ARRAY[10, -1, 5, 4.4]);
 
 ### 36.5.7. Funções SQL com valores padrão para argumentos [#](#XFUNC-SQL-PARAMETER-DEFAULTS)
 
-As funções podem ser declaradas com valores padrão para alguns ou todos os argumentos de entrada. Os valores padrão são inseridos sempre que a função é chamada com um número insuficiente de argumentos reais. Como os argumentos só podem ser omitidos do final da lista de argumentos reais, todos os parâmetros após um parâmetro com um valor padrão devem ter valores padrão também. (Embora o uso da notação de argumentos nomeados possa permitir que essa restrição seja relaxada, ainda é aplicada para que a notação de argumentos posicionais funcione sensatamente.) Se você a usa ou não, essa capacidade cria a necessidade de precauções ao chamar funções em bancos de dados onde alguns usuários não confiam em outros usuários; veja [Seção 10.3] [(typeconv-func.md "10.3. Functions")].
+As funções podem ser declaradas com valores padrão para alguns ou todos os argumentos de entrada. Os valores padrão são inseridos sempre que a função é chamada com um número insuficiente de argumentos reais. Como os argumentos só podem ser omitidos do final da lista de argumentos reais, todos os parâmetros após um parâmetro com um valor padrão devem ter valores padrão também. (Embora o uso da notação de argumentos nomeados possa permitir que essa restrição seja relaxada, ainda é aplicada para que a notação de argumentos posicionais funcione sensatamente.) Se você a usa ou não, essa capacidade cria a necessidade de precauções ao chamar funções em bancos de dados onde alguns usuários não confiam em outros usuários; veja [Seção 10.3](typeconv-func.md).
 
 Por exemplo:
 
@@ -565,7 +565,7 @@ SELECT * FROM sum_n_product_with_tab(10);
 
 O ponto chave aqui é que você deve escrever `RETURNS SETOF record` para indicar que a função retorna várias linhas em vez de apenas uma. Se houver apenas um parâmetro de saída, escreva o tipo desse parâmetro em vez de `record`.
 
-É frequentemente útil construir o resultado de uma consulta invocando uma função que retorna um conjunto várias vezes, com os parâmetros para cada invocação provenientes de linhas sucessivas de uma tabela ou subconsulta. A maneira preferencial de fazer isso é usar a palavra-chave `LATERAL`, que é descrita em [Seção 7.2.1.5][(queries-table-expressions.md#QUERIES-LATERAL "7.2.1.5. LATERAL Subqueries")]. Aqui está um exemplo usando uma função que retorna um conjunto para enumerar elementos de uma estrutura de árvore:
+É frequentemente útil construir o resultado de uma consulta invocando uma função que retorna um conjunto várias vezes, com os parâmetros para cada invocação provenientes de linhas sucessivas de uma tabela ou subconsulta. A maneira preferencial de fazer isso é usar a palavra-chave `LATERAL`, que é descrita em [Seção 7.2.1.5](queries-table-expressions.md#QUERIES-LATERAL). Aqui está um exemplo usando uma função que retorna um conjunto para enumerar elementos de uma estrutura de árvore:
 
 ```
 SELECT * FROM nodes;
@@ -707,7 +707,7 @@ Não é permitido usar explicitamente os parâmetros `OUT` ou `INOUT` com a nota
 
 ### 36.5.11. Funções SQL polimórficas [#](#XFUNC-SQL-POLYMORPHIC-FUNCTIONS)
 
-As funções SQL podem ser declaradas para aceitar e retornar os tipos polimórficos descritos em [Seção 36.2.5][(extend-type-system.md#EXTEND-TYPES-POLYMORPHIC "36.2.5. Polymorphic Types")]. Aqui está uma função polimórfica `make_array` que constrói um array a partir de dois elementos de tipos de dados arbitrários:
+As funções SQL podem ser declaradas para aceitar e retornar os tipos polimórficos descritos em [Seção 36.2.5](extend-type-system.md#EXTEND-TYPES-POLYMORPHIC). Aqui está uma função polimórfica `make_array` que constrói um array a partir de dois elementos de tipos de dados arbitrários:
 
 ```
 CREATE FUNCTION make_array(anyelement, anyelement) RETURNS anyarray AS $$
@@ -824,7 +824,7 @@ SELECT concat_values('|', 1, 4, 2);
 
 ### 36.5.12. Funções SQL com Colagens [#](#XFUNC-SQL-COLLATIONS)
 
-Quando uma função SQL tem um ou mais parâmetros de tipos de dados colidíveis, uma codificação é identificada para cada chamada de função, dependendo das codificações atribuídas aos argumentos reais, conforme descrito em [Seção 23.2][(collation.md "23.2. Collation Support")]. Se uma codificação for identificada com sucesso (ou seja, não houver conflitos de codificações implícitas entre os argumentos), todos os parâmetros colidíveis são tratados como tendo aquela codificação implicitamente. Isso afetará o comportamento das operações sensíveis à codificação dentro da função. Por exemplo, usando a função `anyleast` descrita acima, o resultado de
+Quando uma função SQL tem um ou mais parâmetros de tipos de dados colidíveis, uma codificação é identificada para cada chamada de função, dependendo das codificações atribuídas aos argumentos reais, conforme descrito em [Seção 23.2](collation.md). Se uma codificação for identificada com sucesso (ou seja, não houver conflitos de codificações implícitas entre os argumentos), todos os parâmetros colidíveis são tratados como tendo aquela codificação implicitamente. Isso afetará o comportamento das operações sensíveis à codificação dentro da função. Por exemplo, usando a função `anyleast` descrita acima, o resultado de
 
 ```
 SELECT anyleast('abc'::text, 'ABC');

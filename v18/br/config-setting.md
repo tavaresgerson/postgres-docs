@@ -1,10 +1,10 @@
 ## 19.1. Configuração de Parâmetros [#](#CONFIG-SETTING)
 
-* [19.1.1. Nomes e Valores dos Parâmetros][(config-setting.md#CONFIG-SETTING-NAMES-VALUES)]
-* [19.1.2. Interação do Parâmetro via Arquivo de Configuração][(config-setting.md#CONFIG-SETTING-CONFIGURATION-FILE)]
-* [19.1.3. Interação do Parâmetro via SQL][(config-setting.md#CONFIG-SETTING-SQL)]
-* [19.1.4. Interação do Parâmetro via Shell][(config-setting.md#CONFIG-SETTING-SHELL)]
-* [19.1.5. Gerenciamento do Conteúdo do Arquivo de Configuração][(config-setting.md#CONFIG-INCLUDES)]
+* [19.1.1. Nomes e Valores dos Parâmetros](config-setting.md#CONFIG-SETTING-NAMES-VALUES)
+* [19.1.2. Interação do Parâmetro via Arquivo de Configuração](config-setting.md#CONFIG-SETTING-CONFIGURATION-FILE)
+* [19.1.3. Interação do Parâmetro via SQL](config-setting.md#CONFIG-SETTING-SQL)
+* [19.1.4. Interação do Parâmetro via Shell](config-setting.md#CONFIG-SETTING-SHELL)
+* [19.1.5. Gerenciamento do Conteúdo do Arquivo de Configuração](config-setting.md#CONFIG-INCLUDES)
 
 ### 19.1.1. Nomes e valores dos parâmetros [#](#CONFIG-SETTING-NAMES-VALUES)
 
@@ -39,11 +39,11 @@ Os parâmetros definidos dessa forma fornecem valores padrão para o clúster. A
 
 O arquivo de configuração é lido novamente sempre que o processo do servidor principal recebe um sinal SIGHUP; esse sinal é mais facilmente enviado executando `pg_ctl reload` a partir da linha de comando ou chamando a função SQL `pg_reload_conf()`. O processo do servidor principal também propaga esse sinal para todos os processos de servidor atualmente em execução, de modo que as sessões existentes também adotem os novos valores (isso ocorrerá após elas completarem qualquer comando de cliente atualmente em execução). Alternativamente, você pode enviar o sinal para um único processo de servidor diretamente. Alguns parâmetros só podem ser definidos no início do servidor; quaisquer alterações em suas entradas no arquivo de configuração serão ignoradas até que o servidor seja reiniciado. Configurações de parâmetros inválidas no arquivo de configuração também são ignoradas (mas registradas) durante o processamento do SIGHUP.
 
-Além do `postgresql.conf`, um diretório de dados do PostgreSQL contém um arquivo `postgresql.auto.conf`, que tem o mesmo formato que o `postgresql.conf`, mas é destinado a ser editado automaticamente, não manualmente. Este arquivo contém configurações fornecidas através do comando [`ALTER SYSTEM`(sql-altersystem.md "ALTER SYSTEM")]. Este arquivo é lido sempre que o `postgresql.conf` está presente, e suas configurações entram em vigor da mesma maneira. As configurações em `postgresql.auto.conf` substituem as do `postgresql.conf`.
+Além do `postgresql.conf`, um diretório de dados do PostgreSQL contém um arquivo `postgresql.auto.conf`, que tem o mesmo formato que o `postgresql.conf`, mas é destinado a ser editado automaticamente, não manualmente. Este arquivo contém configurações fornecidas através do comando [`ALTER SYSTEM`](sql-altersystem.md)]. Este arquivo é lido sempre que o `postgresql.conf` está presente, e suas configurações entram em vigor da mesma maneira. As configurações em `postgresql.auto.conf` substituem as do `postgresql.conf`.
 
 As ferramentas externas também podem modificar `postgresql.auto.conf`. Não é recomendado fazer isso enquanto o servidor estiver em execução, a menos que [allow_alter_system](runtime-config-compatible.md#GUC-ALLOW-ALTER-SYSTEM) esteja definido como `off`, pois um comando `ALTER SYSTEM` concorrente poderia sobrescrever essas alterações. Essas ferramentas podem simplesmente anexar novos ajustes ao final, ou podem optar por remover configurações duplicadas e/ou comentários (como `ALTER SYSTEM` fará).
 
-A visualização do sistema [[`pg_file_settings`][(view-pg-file-settings.md "53.8. pg_file_settings")]] pode ser útil para testar antecipadamente as alterações nos arquivos de configuração, ou para diagnosticar problemas caso um sinal SIGHUP não tenha produzido os efeitos desejados.
+A visualização do sistema [[`pg_file_settings`](view-pg-file-settings.md)] pode ser útil para testar antecipadamente as alterações nos arquivos de configuração, ou para diagnosticar problemas caso um sinal SIGHUP não tenha produzido os efeitos desejados.
 
 ### 19.1.3. Interação de parâmetros via SQL [#](#CONFIG-SETTING-SQL)
 
@@ -55,23 +55,22 @@ Os valores definidos com `ALTER DATABASE` e `ALTER ROLE` são aplicados apenas a
 
 Uma vez que um cliente esteja conectado ao banco de dados, o PostgreSQL fornece dois comandos SQL adicionais (e funções equivalentes) para interagir com as configurações locais de sessão:
 
-O comando `SHOW`(sql-show.md "SHOW") permite a inspeção do valor atual de qualquer parâmetro. A função SQL correspondente é `current_setting(setting_name text)` (consulte [Seção 9.28.1](functions-admin.md#FUNCTIONS-ADMIN-SET "9.28.1. Configuration Settings Functions")).
-O comando `SET`(sql-set.md "SET") permite a modificação do valor atual desses parâmetros que podem ser definidos localmente para uma sessão; ele não tem efeito em outras sessões. Muitos parâmetros podem ser definidos dessa forma por qualquer usuário, mas alguns podem ser definidos apenas por superusuários e usuários que receberam o privilégio `SET` nesse parâmetro. A função SQL correspondente é `set_config(setting_name, new_value, is_local)` (consulte [Seção 9.28.1](functions-admin.md#FUNCTIONS-ADMIN-SET "9.28.1. Configuration Settings Functions")).
+O comando `SHOW`(sql-show.md "SHOW") permite a inspeção do valor atual de qualquer parâmetro. A função SQL correspondente é `current_setting(setting_name text)` (consulte [Seção 9.28.1](functions-admin.md#FUNCTIONS-ADMIN-SET "9.28.1. Configuration Settings Functions")). O comando `SET`(sql-set.md "SET") permite a modificação do valor atual desses parâmetros que podem ser definidos localmente para uma sessão; ele não tem efeito em outras sessões. Muitos parâmetros podem ser definidos dessa forma por qualquer usuário, mas alguns podem ser definidos apenas por superusuários e usuários que receberam o privilégio `SET` nesse parâmetro. A função SQL correspondente é `set_config(setting_name, new_value, is_local)` (consulte [Seção 9.28.1](functions-admin.md#FUNCTIONS-ADMIN-SET "9.28.1. Configuration Settings Functions")).
 
-Além disso, a visualização do sistema [[`pg_settings`][(view-pg-settings.md "53.25. pg_settings")]] pode ser usada para visualizar e alterar os valores locais da sessão:
+Além disso, a visualização do sistema [[`pg_settings`](view-pg-settings.md)] pode ser usada para visualizar e alterar os valores locais da sessão:
 
 * Consultar essa visão é semelhante ao uso de `SHOW ALL`, mas fornece mais detalhes. Também é mais flexível, pois é possível especificar condições de filtro ou unir contra outras relações.
 * Usar `UPDATE` nessa visão, especificamente atualizando a coluna `setting`, é o equivalente a emitir comandos `SET`. Por exemplo, o equivalente a
 
-  ```
-  SET configuration_parameter TO DEFAULT;
-  ```
+```
+SET configuration_parameter TO DEFAULT;
+```
 
 é:
 
-  ```
-  UPDATE pg_settings SET setting = reset_val WHERE name = 'configuration_parameter';
-  ```
+```
+UPDATE pg_settings SET setting = reset_val WHERE name = 'configuration_parameter';
+```
 
 ### 19.1.4. Interação de parâmetros via shell [#](#CONFIG-SETTING-SHELL)
 
@@ -79,16 +78,16 @@ Além de definir padrões globais ou anexar sobrescritos no nível do banco de d
 
 * Durante o início do servidor, as configurações dos parâmetros podem ser passadas ao comando `postgres` através do parâmetro de linha de comando `-c name=value`, ou sua variação equivalente `--name=value`. Por exemplo,
 
-  ```
-  postgres -c log_connections=all --log-destination='syslog'
-  ```
+```
+postgres -c log_connections=all --log-destination='syslog'
+```
 
 As configurações fornecidas dessa forma substituem as definidas por meio de `postgresql.conf` ou `ALTER SYSTEM`, portanto, não podem ser alteradas globalmente sem reiniciar o servidor.
 * Ao iniciar uma sessão de cliente via libpq, as configurações do parâmetro podem ser especificadas usando a variável de ambiente `PGOPTIONS`. As configurações estabelecidas dessa forma constituem os padrões para a vida da sessão, mas não afetam outras sessões. Por razões históricas, o formato de `PGOPTIONS` é semelhante ao usado ao iniciar o comando `postgres`; especificamente, o `-c`, ou o `--` pré-fixado, antes do nome, deve ser especificado. Por exemplo,
 
-  ```
-  env PGOPTIONS="-c geqo=off --statement-timeout=5min" psql
-  ```
+```
+env PGOPTIONS="-c geqo=off --statement-timeout=5min" psql
+```
 
 Outros clientes e bibliotecas podem fornecer seus próprios mecanismos, via shell ou de outra forma, que permitam ao usuário alterar as configurações da sessão sem o uso direto de comandos SQL.
 

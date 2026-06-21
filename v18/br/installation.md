@@ -15,8 +15,8 @@
 
 + [17.4.1. Versão Breve](install-meson.md#INSTALL-SHORT-MESON)
 + [17.4.2. Procedimento de Instalação](install-meson.md#INSTALL-PROCEDURE-MESON)
-+ [17.4.3. Opções de (install-meson.md#MESON-OPTIONS) ICD-14]]
-+ [17.4.4. (install-meson.md#TARGETS-MESON) Alvos de Construção de ICD-15]]
++ [17.4.3. Opções de ](install-meson.md#MESON-OPTIONS) ICD-14]]
++ [17.4.4. ](install-meson.md#TARGETS-MESON) Alvos de Construção de ICD-15]]
 
 * [17.5. Configuração pós-instalação](install-post.md)
 
@@ -32,4 +32,4 @@
 + [17.7.4. Solaris][(installation-platform-notes.md#INSTALLATION-NOTES-SOLARIS)
 + [17.7.5. Visual Studio][(installation-platform-notes.md#INSTALLATION-NOTES-VISUAL-STUDIO)
 
-Este capítulo descreve a instalação do PostgreSQL usando a distribuição de código-fonte. Se você estiver instalando uma distribuição pré-embalada, como um pacote RPM ou Debian, ignore este capítulo e veja [Capítulo 16][(install-binaries.md "Chapter 16. Installation from Binaries")] em vez disso.
+Este capítulo descreve a instalação do PostgreSQL usando a distribuição de código-fonte. Se você estiver instalando uma distribuição pré-embalada, como um pacote RPM ou Debian, ignore este capítulo e veja [Capítulo 16](install-binaries.md) em vez disso.

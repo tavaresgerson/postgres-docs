@@ -12,9 +12,9 @@ Existem também algumas classes de operadores embutidas além das de padrão:
 
 As classes de operador `text_pattern_ops`, `varchar_pattern_ops` e `bpchar_pattern_ops` suportam índices B-tree nos tipos `text`, `varchar` e `char`, respectivamente. A diferença em relação às classes de operador padrão é que os valores são comparados estritamente caracter a caractere, em vez de de acordo com as regras de ordenação específicas do local. Isso torna essas classes de operador adequadas para uso em consultas que envolvem expressões de correspondência de padrões (`LIKE` ou expressões regulares POSIX) quando o banco de dados não usa o local padrão “C”. Como exemplo, você pode indexar uma coluna `varchar` assim:
 
-  ```
-  CREATE INDEX test_index ON test_table (col varchar_pattern_ops);
-  ```
+```
+CREATE INDEX test_index ON test_table (col varchar_pattern_ops);
+```
 
 Observe que você também deve criar um índice com a classe do operador padrão se quiser que consultas que envolvam comparações comuns de `<`, `<=`, `>` ou `>=` usem um índice. Tais consultas não podem usar as classes de operadores `xxx_pattern_ops`. (As comparações de igualdade comuns podem usar essas classes de operadores, no entanto.) É possível criar vários índices na mesma coluna com diferentes classes de operadores. Se você usar o C locale, não precisa das classes de operadores `xxx_pattern_ops`, porque um índice com a classe do operador padrão é utilizável para consultas de correspondência de padrões no C locale.
 

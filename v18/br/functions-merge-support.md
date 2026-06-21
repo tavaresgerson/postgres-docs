@@ -7,45 +7,60 @@ O PostgreSQL inclui uma função de suporte a junção que pode ser usada na lis
 
 
 <table border="1" class="table" summary="Merge Support Functions">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">Função</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry" id="MERGE-ACTION">
-<p class="func_signature">
-<code class="function">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
+     Função
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry" id="MERGE-ACTION">
+    <p class="func_signature">
+     <code class="function">
       merge_action
-     </code>( )<code class="returnvalue">
+     </code>
+     ( )
+     <code class="returnvalue">
       text
      </code>
-</p>
-<p>Retorna o comando de ação de junção executado para a linha atual. Isso será<code class="literal">
+    </p>
+    <p>
+     Retorna o comando de ação de junção executado para a linha atual. Isso será
+     <code class="literal">
       'INSERT'
-     </code>,<code class="literal">
+     </code>
+     ,
+     <code class="literal">
       'UPDATE'
-     </code>, ou<code class="literal">
+     </code>
+     , ou
+     <code class="literal">
       'DELETE'
      </code>
      .
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Exemplo:
 

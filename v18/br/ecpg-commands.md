@@ -40,7 +40,7 @@ EXEC SQL UPDATE foo
 EXEC SQL COMMIT;
 ```
 
-As declarações `SELECT` que retornam uma única linha de resultado também podem ser executadas usando `EXEC SQL` diretamente. Para lidar com conjuntos de resultados com várias linhas, uma aplicação deve usar um cursor; veja [Seção 34.3.2][(ecpg-commands.md#ECPG-CURSORS "34.3.2. Using Cursors")] abaixo. (Como um caso especial, uma aplicação pode obter várias linhas de uma vez em uma variável hospedeira de matriz; veja [Seção 34.4.4.3.1][(ecpg-variables.md#ECPG-VARIABLES-ARRAYS "34.4.4.3.1. Arrays")].
+As declarações `SELECT` que retornam uma única linha de resultado também podem ser executadas usando `EXEC SQL` diretamente. Para lidar com conjuntos de resultados com várias linhas, uma aplicação deve usar um cursor; veja [Seção 34.3.2](ecpg-commands.md#ECPG-CURSORS) abaixo. (Como um caso especial, uma aplicação pode obter várias linhas de uma vez em uma variável hospedeira de matriz; veja [Seção 34.4.4.3.1](ecpg-variables.md#ECPG-VARIABLES-ARRAYS).
 
 Seleção de linha única:
 
@@ -54,7 +54,7 @@ Além disso, um parâmetro de configuração pode ser recuperado com o comando `
 EXEC SQL SHOW search_path INTO :var;
 ```
 
-Os tokens da forma `:something` são *variáveis hospedeira*, ou seja, eles se referem a variáveis no programa C. Eles são explicados em [Seção 34.4][(ecpg-variables.md "34.4. Using Host Variables")].
+Os tokens da forma `:something` são *variáveis hospedeira*, ou seja, eles se referem a variáveis no programa C. Eles são explicados em [Seção 34.4](ecpg-variables.md).
 
 ### 34.3.2. Uso de cursor [#](#ECPG-CURSORS)
 
@@ -81,7 +81,7 @@ O comando ECPG `DECLARE` não realmente faz com que uma declaração seja enviad
 
 ### 34.3.3. Gerenciamento de Transações [#](#ECPG-TRANSACTIONS)
 
-No modo padrão, as declarações são realizadas apenas quando o `EXEC SQL COMMIT` é emitido. A interface de SQL integrada também suporta o autocommit de transações (semelhante ao comportamento padrão do psql) via a opção de linha de comando `-t` para `ecpg` (ver [ecpg][(app-ecpg.md "ecpg")]) ou via a declaração `EXEC SQL SET AUTOCOMMIT TO ON`. No modo autocommit, cada comando é automaticamente realizado, a menos que esteja dentro de um bloco de transação explícito. Esse modo pode ser desligado explicitamente usando `EXEC SQL SET AUTOCOMMIT TO OFF`.
+No modo padrão, as declarações são realizadas apenas quando o `EXEC SQL COMMIT` é emitido. A interface de SQL integrada também suporta o autocommit de transações (semelhante ao comportamento padrão do psql) via a opção de linha de comando `-t` para `ecpg` (ver [ecpg](app-ecpg.md)) ou via a declaração `EXEC SQL SET AUTOCOMMIT TO ON`. No modo autocommit, cada comando é automaticamente realizado, a menos que esteja dentro de um bloco de transação explícito. Esse modo pode ser desligado explicitamente usando `EXEC SQL SET AUTOCOMMIT TO OFF`.
 
 Os seguintes comandos de gerenciamento de transações estão disponíveis:
 

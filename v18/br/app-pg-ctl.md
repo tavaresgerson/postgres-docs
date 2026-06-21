@@ -46,7 +46,7 @@ O modo `status` verifica se um servidor está em execução no diretório de dad
 
 Os comandos do modo `promote` controlam o servidor de espera que está em execução no diretório de dados especificado para encerrar o modo de espera e iniciar operações de leitura e escrita.
 
-O modo `logrotate` roda o arquivo de registro do servidor. Para obter detalhes sobre como usar esse modo com ferramentas de rotação de registro externas, consulte [Seção 24.3][(logfile-maintenance.md "24.3. Log File Maintenance")].
+O modo `logrotate` roda o arquivo de registro do servidor. Para obter detalhes sobre como usar esse modo com ferramentas de rotação de registro externas, consulte [Seção 24.3](logfile-maintenance.md).
 
 O modo `kill` envia um sinal para um processo especificado. Isso é principalmente útil no Microsoft Windows, que não possui um comando de kill integrado. Use `--help` para ver uma lista dos nomes de sinal suportados.
 
@@ -118,7 +118,7 @@ Se uma opção for especificada que é válida, mas não relevante para o modo o
 
 A maioria dos modos do `pg_ctl` exige o conhecimento da localização do diretório de dados; portanto, a opção `-D` é necessária, a menos que o `PGDATA` esteja definido.
 
-Para variáveis adicionais que afetam o servidor, consulte [postgres][(app-postgres.md "postgres")].
+Para variáveis adicionais que afetam o servidor, consulte [postgres](app-postgres.md).
 
 ## Arquivos
 

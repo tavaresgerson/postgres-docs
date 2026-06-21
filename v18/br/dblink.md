@@ -30,4 +30,4 @@
 
 `DblinkGetResult`: Aguardando a recepção dos resultados de uma consulta de um servidor remoto.
 
-Veja também [postgres_fdw][(postgres-fdw.md "F.38. postgres_fdw — access data stored in external PostgreSQL servers")], que oferece aproximadamente a mesma funcionalidade usando uma infraestrutura mais moderna e conforme com os padrões.
+Veja também [postgres_fdw](postgres-fdw.md), que oferece aproximadamente a mesma funcionalidade usando uma infraestrutura mais moderna e conforme com os padrões.

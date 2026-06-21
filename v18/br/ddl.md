@@ -8,12 +8,12 @@
 * [5.4. Colunas geradas](ddl-generated-columns.md)
 * [5.5. Restrições](ddl-constraints.md)
 
-+ [5.5.1. Restrições de verificação][(ddl-constraints.md#DDL-CONSTRAINTS-CHECK-CONSTRAINTS)]
-+ [5.5.2. Restrições de não nulidade][(ddl-constraints.md#DDL-CONSTRAINTS-NOT-NULL)]
-+ [5.5.3. Restrições únicas][(ddl-constraints.md#DDL-CONSTRAINTS-UNIQUE-CONSTRAINTS)]
-+ [5.5.4. Chaves primárias][(ddl-constraints.md#DDL-CONSTRAINTS-PRIMARY-KEYS)]
-+ [5.5.5. Chaves estrangeiras][(ddl-constraints.md#DDL-CONSTRAINTS-FK)]
-+ [5.5.6. Restrições de exclusão][(ddl-constraints.md#DDL-CONSTRAINTS-EXCLUSION)]
++ [5.5.1. Restrições de verificação](ddl-constraints.md#DDL-CONSTRAINTS-CHECK-CONSTRAINTS)
++ [5.5.2. Restrições de não nulidade](ddl-constraints.md#DDL-CONSTRAINTS-NOT-NULL)
++ [5.5.3. Restrições únicas](ddl-constraints.md#DDL-CONSTRAINTS-UNIQUE-CONSTRAINTS)
++ [5.5.4. Chaves primárias](ddl-constraints.md#DDL-CONSTRAINTS-PRIMARY-KEYS)
++ [5.5.5. Chaves estrangeiras](ddl-constraints.md#DDL-CONSTRAINTS-FK)
++ [5.5.6. Restrições de exclusão](ddl-constraints.md#DDL-CONSTRAINTS-EXCLUSION)
 
 * [5.6. Colunas do sistema](ddl-system-columns.md)
 * [5.7. Modificando tabelas](ddl-alter.md)
@@ -31,17 +31,17 @@
 * [5.9. Políticas de segurança de linha](ddl-rowsecurity.md)
 * [5.10. Esquemas](ddl-schemas.md)
 
-+ [5.10.1. Criando um Esquema][(ddl-schemas.md#DDL-SCHEMAS-CREATE)]
-+ [5.10.2. O Esquema Público][(ddl-schemas.md#DDL-SCHEMAS-PUBLIC)]
-+ [5.10.3. O Caminho de Pesquisa do Esquema][(ddl-schemas.md#DDL-SCHEMAS-PATH)]
-+ [5.10.4. Esquemas e Privilegios][(ddl-schemas.md#DDL-SCHEMAS-PRIV)]
-+ [5.10.5. O Esquema do Catálogo do Sistema][(ddl-schemas.md#DDL-SCHEMAS-CATALOG)]
-+ [5.10.6. Padrões de Uso][(ddl-schemas.md#DDL-SCHEMAS-PATTERNS)]
-+ [5.10.7. Portabilidade][(ddl-schemas.md#DDL-SCHEMAS-PORTABILITY)]
++ [5.10.1. Criando um Esquema](ddl-schemas.md#DDL-SCHEMAS-CREATE)
++ [5.10.2. O Esquema Público](ddl-schemas.md#DDL-SCHEMAS-PUBLIC)
++ [5.10.3. O Caminho de Pesquisa do Esquema](ddl-schemas.md#DDL-SCHEMAS-PATH)
++ [5.10.4. Esquemas e Privilegios](ddl-schemas.md#DDL-SCHEMAS-PRIV)
++ [5.10.5. O Esquema do Catálogo do Sistema](ddl-schemas.md#DDL-SCHEMAS-CATALOG)
++ [5.10.6. Padrões de Uso](ddl-schemas.md#DDL-SCHEMAS-PATTERNS)
++ [5.10.7. Portabilidade](ddl-schemas.md#DDL-SCHEMAS-PORTABILITY)
 
 * [5.11. Herança](ddl-inherit.md)
 
-+ [5.11.1. Observações][(ddl-inherit.md#DDL-INHERIT-CAVEATS)]
++ [5.11.1. Observações](ddl-inherit.md#DDL-INHERIT-CAVEATS)
 
 * [5.12. Partição de tabela](ddl-partitioning.md)
 

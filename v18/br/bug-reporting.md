@@ -54,7 +54,7 @@ Em caso de erros fatais, a mensagem de erro relatada pelo cliente pode não cont
 Se sua versão for mais antiga que 18.4, quase certamente vamos te dizer para fazer uma atualização. Há muitas correções de bugs e melhorias em cada nova versão, então é bem possível que um bug que você encontrou em uma versão mais antiga do PostgreSQL já tenha sido corrigido. Só podemos fornecer suporte limitado para sites que usam versões mais antigas do PostgreSQL; se você precisar de mais do que o que podemos fornecer, considere adquirir um contrato de suporte comercial.
 * Informações da plataforma. Isso inclui o nome e a versão do kernel, a biblioteca C, o processador, informações de memória, e assim por diante. Na maioria dos casos, é suficiente relatar o fornecedor e a versão, mas não presuma que todos saibam exatamente o que “Debian” contém ou que todos funcionam no x86_64. Se você tiver problemas de instalação, as informações sobre a ferramenta na sua máquina (compilador, make, e assim por diante) também são necessárias.
 
-Não tenha medo se seu relatório de bug se tornar bastante extenso. Esse é um fato da vida. É melhor relatar tudo na primeira vez do que ter que extrair os fatos de você. Por outro lado, se seus arquivos de entrada são enormes, é justo perguntar primeiro se alguém está interessado em examiná-los. Aqui está um [artigo][(https://www.chiark.greenend.org.uk/~sgtatham/bugs.html)] que descreve algumas dicas adicionais sobre relatórios de bugs.
+Não tenha medo se seu relatório de bug se tornar bastante extenso. Esse é um fato da vida. É melhor relatar tudo na primeira vez do que ter que extrair os fatos de você. Por outro lado, se seus arquivos de entrada são enormes, é justo perguntar primeiro se alguém está interessado em examiná-los. Aqui está um [artigo](https://www.chiark.greenend.org.uk/~sgtatham/bugs.html) que descreve algumas dicas adicionais sobre relatórios de bugs.
 
 Não passe todo o seu tempo descobrindo quais mudanças na entrada fazem o problema desaparecer. Provavelmente, isso não ajudará a resolvê-lo. Se descobrir que o erro não pode ser corrigido imediatamente, ainda terá tempo para encontrar e compartilhar sua solução. Além disso, mais uma vez, não perca tempo adivinhando por que o erro existe. Descobriremos isso em breve.
 
@@ -64,7 +64,7 @@ Ao escrever um relatório de bug, evite usar termos confusos. O pacote de softwa
 
 Em geral, envie relatórios de bugs para a lista de correio de relatórios de bugs em `<pgsql-bugs@lists.postgresql.org>`. Você é solicitado a usar um assunto descritivo para sua mensagem de e-mail, talvez partes da mensagem de erro.
 
-Outro método é preencher o formulário de relatório de bugs disponível no site do projeto [web site][(https://www.postgresql.org/account/submitbug/)]. Ao inserir um relatório de bugs dessa forma, ele é enviado por e-mail para a lista de discussão `<pgsql-bugs@lists.postgresql.org>`.
+Outro método é preencher o formulário de relatório de bugs disponível no site do projeto [web site](https://www.postgresql.org/account/submitbug/). Ao inserir um relatório de bugs dessa forma, ele é enviado por e-mail para a lista de discussão `<pgsql-bugs@lists.postgresql.org>`.
 
 Se o seu relatório de erro tiver implicações de segurança e você preferir que ele não seja imediatamente visível em arquivos públicos, não o envie para `pgsql-bugs`. Questões de segurança podem ser relatadas privadamente para `<security@postgresql.org>`.
 

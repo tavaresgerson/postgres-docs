@@ -4,7 +4,7 @@
 * [25.1.2. Uso de pg_dumpall](backup-dump.md#BACKUP-DUMP-ALL)
 * [25.1.3. Tratamento de bancos de dados grandes](backup-dump.md#BACKUP-DUMP-LARGE)
 
-A ideia por trás desse método de descarte é gerar um arquivo com comandos SQL que, quando devolvidos ao servidor, irão recriar o banco de dados no mesmo estado em que estava na época do descarte. O PostgreSQL fornece o programa de utilidade [pg_dump][(app-pgdump.md "pg_dump")] para esse propósito. O uso básico desse comando é:
+A ideia por trás desse método de descarte é gerar um arquivo com comandos SQL que, quando devolvidos ao servidor, irão recriar o banco de dados no mesmo estado em que estava na época do descarte. O PostgreSQL fornece o programa de utilidade [pg_dump](app-pgdump.md) para esse propósito. O uso básico desse comando é:
 
 ```
 pg_dump dbname > dumpfile
@@ -16,7 +16,7 @@ pg_dump é uma aplicação cliente regular do PostgreSQL (embora uma particularm
 
 Para especificar qual servidor de banco de dados o pg_dump deve contatar, use as opções de linha de comando `-h host` e `-p port`. O host padrão é o host local ou o que a sua variável de ambiente `PGHOST` especifica. Da mesma forma, a porta padrão é indicada pela variável de ambiente `PGPORT` ou, caso contrário, pelo padrão incorporado. (Convenientemente, o servidor normalmente terá o mesmo padrão incorporado.)
 
-Como qualquer outra aplicação cliente do PostgreSQL, o pg_dump, por padrão, se conecta com o nome do usuário do banco de dados que é igual ao nome do usuário do sistema operacional atual. Para ignorar isso, especifique a opção `-U` ou defina a variável de ambiente `PGUSER`. Lembre-se de que as conexões do pg_dump estão sujeitas aos mecanismos normais de autenticação do cliente (que são descritos em [Capítulo 20][(client-authentication.md "Chapter 20. Client Authentication")]).
+Como qualquer outra aplicação cliente do PostgreSQL, o pg_dump, por padrão, se conecta com o nome do usuário do banco de dados que é igual ao nome do usuário do sistema operacional atual. Para ignorar isso, especifique a opção `-U` ou defina a variável de ambiente `PGUSER`. Lembre-se de que as conexões do pg_dump estão sujeitas aos mecanismos normais de autenticação do cliente (que são descritos em [Capítulo 20](client-authentication.md)).
 
 Uma vantagem importante do pg_dump em relação aos outros métodos de backup descritos mais adiante é que a saída do pg_dump geralmente pode ser recarregada em versões mais recentes do PostgreSQL, enquanto os backups de nível de arquivo e o arquivamento contínuo são ambos extremamente específicos para a versão do servidor. O pg_dump também é o único método que funcionará ao transferir um banco de dados para uma arquitetura de máquina diferente, como de um servidor de 32 bits para um de 64 bits.
 
@@ -30,9 +30,9 @@ Os arquivos de texto criados pelo pg_dump são destinados a serem lidos pelo pro
 psql -X dbname < dumpfile
 ```
 
-onde *`dumpfile`* é o arquivo gerado pelo comando pg_dump. O banco de dados *`dbname`* não será criado por este comando, então você deve criá-lo manualmente a partir de `template0` antes de executar o psql (por exemplo, com `createdb -T template0 dbname`). Para garantir que o psql execute com suas configurações padrão, use a opção `-X` (`--no-psqlrc`). O psql suporta opções semelhantes às do pg_dump para especificar o servidor de banco de dados a ser conectado e o nome de usuário a ser usado. Consulte a página de referência [psql][(app-psql.md "psql")] para obter mais informações.
+onde *`dumpfile`* é o arquivo gerado pelo comando pg_dump. O banco de dados *`dbname`* não será criado por este comando, então você deve criá-lo manualmente a partir de `template0` antes de executar o psql (por exemplo, com `createdb -T template0 dbname`). Para garantir que o psql execute com suas configurações padrão, use a opção `-X` (`--no-psqlrc`). O psql suporta opções semelhantes às do pg_dump para especificar o servidor de banco de dados a ser conectado e o nome de usuário a ser usado. Consulte a página de referência [psql](app-psql.md) para obter mais informações.
 
-Os arquivos de dump não de texto devem ser restaurados usando o utilitário [pg_restore][(app-pgrestore.md "pg_restore")].
+Os arquivos de dump não de texto devem ser restaurados usando o utilitário [pg_restore](app-pgrestore.md).
 
 Antes de restaurar um dump SQL, todos os usuários que possuem objetos ou que receberam permissões em objetos no banco de dados descartado devem já existir. Se não existirem, o restauro não conseguirá recriar os objetos com a propriedade e/ou permissões originais. (Às vezes, isso é o que você quer, mas geralmente não é.)
 
@@ -44,7 +44,7 @@ psql -X --set ON_ERROR_STOP=on dbname < dumpfile
 
 De qualquer forma, você terá apenas um banco de dados parcialmente restaurado. Alternativamente, você pode especificar que todo o dump deve ser restaurado como uma única transação, para que o restabelecimento seja totalmente concluído ou totalmente revertido. Esse modo pode ser especificado passando as opções de linha de comando `-1` ou `--single-transaction` para o psql. Ao usar esse modo, esteja ciente de que até mesmo um erro menor pode reverter um restabelecimento que já foi executado por muitas horas. No entanto, isso ainda pode ser preferível a limpar manualmente um banco de dados complexo após um dump parcialmente restaurado.
 
-A capacidade do pg_dump e do psql de gravar ou ler de tubos permite que você descarregue um banco de dados diretamente de um servidor para outro, por exemplo:
+A capacidade do pg_dump e do psql de gravar ou ler de pipes permite que você descarregue um banco de dados diretamente de um servidor para outro, por exemplo:
 
 ```
 pg_dump -h host1 dbname | psql -X -h host2 dbname
@@ -54,11 +54,11 @@ pg_dump -h host1 dbname | psql -X -h host2 dbname
 
 Os dados de dump produzidos pelo pg_dump são relativos a `template0`. Isso significa que quaisquer idiomas, procedimentos, etc., adicionados via `template1` também serão dumpados pelo pg_dump. Como resultado, ao restaurar, se você estiver usando um `template1` personalizado, você deve criar o banco de dados vazio a partir de `template0`, como no exemplo acima.
 
-Após restaurar um backup, é prudente executar `ANALYZE`(sql-analyze.md "ANALYZE") em cada banco de dados para que o otimizador de consulta tenha estatísticas úteis; consulte [Seção 24.1.3][(routine-vacuuming.md#VACUUM-FOR-STATISTICS "24.1.3. Updating Planner Statistics")] e [Seção 24.1.6][(routine-vacuuming.md#AUTOVACUUM "24.1.6. The Autovacuum Daemon")] para mais informações. Para mais conselhos sobre como carregar grandes quantidades de dados no PostgreSQL de forma eficiente, consulte [Seção 14.4][(populate.md "14.4. Populating a Database")].
+Após restaurar um backup, é prudente executar `ANALYZE`(sql-analyze.md "ANALYZE") em cada banco de dados para que o otimizador de consulta tenha estatísticas úteis; consulte [Seção 24.1.3](routine-vacuuming.md#VACUUM-FOR-STATISTICS) e [Seção 24.1.6](routine-vacuuming.md#AUTOVACUUM) para mais informações. Para mais conselhos sobre como carregar grandes quantidades de dados no PostgreSQL de forma eficiente, consulte [Seção 14.4](populate.md).
 
 ### 25.1.2. Usando pg_dumpall [#](#BACKUP-DUMP-ALL)
 
-O pg_dump exclui apenas um único banco de dados de cada vez e não exibe informações sobre papéis ou espaços de tabela (porque essas são globais para o clúster e não por banco de dados). Para suportar o descarte conveniente de todo o conteúdo de um clúster de bancos, o programa [pg_dumpall][(app-pg-dumpall.md "pg_dumpall")] é fornecido. O pg_dumpall faz backup de cada banco de dados em um clúster dado e também preserva dados globais para o clúster, como definições de papéis e espaços de tabela. O uso básico deste comando é:
+O pg_dump exclui apenas um único banco de dados de cada vez e não exibe informações sobre papéis ou espaços de tabela (porque essas são globais para o clúster e não por banco de dados). Para suportar o descarte conveniente de todo o conteúdo de um clúster de bancos, o programa [pg_dumpall](app-pg-dumpall.md) é fornecido. O pg_dumpall faz backup de cada banco de dados em um clúster dado e também preserva dados globais para o clúster, como definições de papéis e espaços de tabela. O uso básico deste comando é:
 
 ```
 pg_dumpall > dumpfile
@@ -130,7 +130,7 @@ Um dump em formato personalizado não é um script para psql, mas, em vez disso,
 pg_restore -d dbname filename
 ```
 
-Consulte as páginas de referência [pg_dump][(app-pgdump.md "pg_dump")] e [pg_restore][(app-pgrestore.md "pg_restore")] para obter detalhes.
+Consulte as páginas de referência [pg_dump](app-pgdump.md) e [pg_restore](app-pgrestore.md) para obter detalhes.
 
 Para bancos de dados muito grandes, você pode precisar combinar `split` com uma das outras duas abordagens.
 

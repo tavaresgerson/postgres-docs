@@ -22,7 +22,7 @@ Para poder descartar uma transformação, você deve possuir o tipo e a linguage
 
 *`lang_name`*: O nome da língua do transformado.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem da transformação e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem da transformação e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Recusar a eliminação do transformador se qualquer objeto depender dele. Esse é o padrão.
 

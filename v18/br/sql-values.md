@@ -28,9 +28,9 @@ Dentro de comandos maiores, `VALUES` é permitido sintaticamente em qualquer lug
 
 *`operator`*: Um operador de ordenação. Para detalhes, consulte a cláusula [ORDEM POR](sql-select.md#SQL-ORDERBY "ORDER BY Clause") na documentação do [SELECT](sql-select.md "SELECT").
 
-*`count`*: O número máximo de linhas a serem retornadas. Para detalhes, consulte a cláusula LIMIT em [SELECT][(sql-select.md#SQL-LIMIT "LIMIT Clause")][(sql-select.md "SELECT")], na documentação.
+*`count`*: O número máximo de linhas a serem retornadas. Para detalhes, consulte a cláusula LIMIT em [SELECT](sql-select.md#SQL-LIMIT)[(sql-select.md "SELECT")], na documentação.
 
-*`start`*: O número de linhas a ignorar antes de começar a retornar as linhas. Para detalhes, consulte a cláusula LIMIT em [SELECT][(sql-select.md#SQL-LIMIT "LIMIT Clause")][(sql-select.md "SELECT")], na documentação.
+*`start`*: O número de linhas a ignorar antes de começar a retornar as linhas. Para detalhes, consulte a cláusula LIMIT em [SELECT](sql-select.md#SQL-LIMIT)[(sql-select.md "SELECT")], na documentação.
 
 ## Notas
 

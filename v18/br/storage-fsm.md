@@ -6,4 +6,4 @@ O mapa de espaço livre é organizado como uma árvore de páginas do FSM. As p�
 
 Dentro de cada página do FSM, há um triângulo binário, armazenado em um array com um byte por nó. Cada nó folha representa uma página de heap, ou uma página de FSM de nível inferior. Em cada nó não folha, o valor mais alto de seus filhos é armazenado. O valor máximo nos nós folha é, portanto, armazenado na raiz.
 
-Veja `src/backend/storage/freespace/README` para mais detalhes sobre como o FSM é estruturado e como ele é atualizado e pesquisado. O módulo [pg_freespacemap][(pgfreespacemap.md "F.27. pg_freespacemap — examine the free space map")] pode ser usado para examinar as informações armazenadas em mapas de espaço livre.
+Veja `src/backend/storage/freespace/README` para mais detalhes sobre como o FSM é estruturado e como ele é atualizado e pesquisado. O módulo [pg_freespacemap](pgfreespacemap.md) pode ser usado para examinar as informações armazenadas em mapas de espaço livre.

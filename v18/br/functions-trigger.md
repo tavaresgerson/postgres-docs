@@ -1,6 +1,6 @@
 ## 9.29. Funções de disparo [#](#FUNCTIONS-TRIGGER)
 
-Embora muitos usos de gatilhos envolvam funções de gatilho escritas pelo usuário, o PostgreSQL fornece algumas funções de gatilho pré-definidas que podem ser usadas diretamente em gatilhos definidos pelo usuário. Essas são resumidas em [Tabela 9.110][(functions-trigger.md#BUILTIN-TRIGGERS-TABLE "Table 9.110. Built-In Trigger Functions")]. (Existem outras funções de gatilho pré-definidas, que implementam restrições de chave estrangeira e restrições de índice diferido. Essas não são documentadas aqui, pois os usuários não precisam usá-las diretamente.)
+Embora muitos usos de gatilhos envolvam funções de gatilho escritas pelo usuário, o PostgreSQL fornece algumas funções de gatilho pré-definidas que podem ser usadas diretamente em gatilhos definidos pelo usuário. Essas são resumidas em [Tabela 9.110](functions-trigger.md#BUILTIN-TRIGGERS-TABLE). (Existem outras funções de gatilho pré-definidas, que implementam restrições de chave estrangeira e restrições de índice diferido. Essas não são documentadas aqui, pois os usuários não precisam usá-las diretamente.)
 
 Para mais informações sobre como criar gatilhos, consulte [CREATE TRIGGER](sql-createtrigger.md "CREATE TRIGGER").
 
@@ -9,60 +9,58 @@ Para mais informações sobre como criar gatilhos, consulte [CREATE TRIGGER](sql
 
 
 <table border="1" class="table" summary="Built-In Trigger Functions">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
      Function
     </p>
-<p>
+    <p>
      Description
     </p>
-<p>
+    <p>
      Example Usage
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       suppress_redundant_updates_trigger
      </code>
-     ( )
-        →
+     ( ) →
      <code class="returnvalue">
       trigger
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Suppresses do-nothing update operations.  See below for details.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       CREATE TRIGGER ... suppress_redundant_updates_trigger()
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       tsvector_update_trigger
      </code>
-     ( )
-        →
+     ( ) →
      <code class="returnvalue">
       trigger
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Automatically updates a
      <code class="type">
       tsvector
@@ -73,26 +71,25 @@ Para mais informações sobre como criar gatilhos, consulte [CREATE TRIGGER](sql
      </a>
      for details.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       CREATE TRIGGER ... tsvector_update_trigger(tsvcol, 'pg_catalog.swedish', title, body)
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       tsvector_update_trigger_column
      </code>
-     ( )
-        →
+     ( ) →
      <code class="returnvalue">
       trigger
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Automatically updates a
      <code class="type">
       tsvector
@@ -107,20 +104,23 @@ Para mais informações sobre como criar gatilhos, consulte [CREATE TRIGGER](sql
      </a>
      for details.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       CREATE TRIGGER ... tsvector_update_trigger_column(tsvcol, tsconfigcol, title, body)
      </code>
-</p>
-</td>
-</tr>
-</tbody>
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 A função `suppress_redundant_updates_trigger`, quando aplicada como um gatilho de nível de linha `BEFORE UPDATE`, impedirá que qualquer atualização que não mude efetivamente os dados da linha ocorra. Isso substitui o comportamento normal, que sempre realiza uma atualização física da linha, independentemente de os dados terem sido alterados ou não. (Esse comportamento normal faz com que as atualizações sejam executadas mais rapidamente, uma vez que não é necessária nenhuma verificação, e também é útil em certos casos.)
 

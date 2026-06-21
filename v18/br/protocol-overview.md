@@ -47,59 +47,82 @@ Um único servidor pode suportar múltiplas versões de protocolo. A mensagem in
 
 A negociação de protocolo foi introduzida na versão 9.3.21 do PostgreSQL. As versões anteriores rejeitariam a conexão se o cliente solicitasse uma versão menor que não fosse suportada pelo servidor.
 
-[Tabela 54.1][(protocol-overview.md#PROTOCOL-VERSIONS-TABLE "Table 54.1. Protocol Versions")] mostra as versões de protocolo atualmente suportadas.
+[Tabela 54.1](protocol-overview.md#PROTOCOL-VERSIONS-TABLE) mostra as versões de protocolo atualmente suportadas.
 
 **Tabela 54.1. Versões do protocolo**
 
 
 
 <table border="1" class="table" summary="Protocol Versions">
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Version
    </th>
-<th>Apoiado por</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+   <th>
+    Apoiado por
+   </th>
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
     3.2
    </td>
-<td>PostgreSQL 18 e versões posteriores</td>
-<td>Versão atual mais recente. A chave secreta usada na cancelamento de consulta foi ampliada de 4 bytes para um campo de comprimento variável. A mensagem BackendKeyData foi alterada para acomodar isso, e a mensagem CancelRequest foi redefinida para ter um payload de comprimento variável.</td>
-</tr>
-<tr>
-<td>
+   <td>
+    PostgreSQL 18 e versões posteriores
+   </td>
+   <td>
+    Versão atual mais recente. A chave secreta usada na cancelamento de consulta foi ampliada de 4 bytes para um campo de comprimento variável. A mensagem BackendKeyData foi alterada para acomodar isso, e a mensagem CancelRequest foi redefinida para ter um payload de comprimento variável.
+   </td>
+  </tr>
+  <tr>
+   <td>
     3.1
    </td>
-<td>
+   <td>
     -
    </td>
-<td>Reservada. A versão 3.1 não foi usada por nenhuma versão do PostgreSQL, mas foi ignorada porque versões antigas do aplicativo popular pgbouncer tinham um bug na negociação do protocolo que o fazia afirmar incorretamente que suportava a versão 3.1.</td>
-</tr>
-<tr>
-<td>
+   <td>
+    Reservada. A versão 3.1 não foi usada por nenhuma versão do PostgreSQL, mas foi ignorada porque versões antigas do aplicativo popular pgbouncer tinham um bug na negociação do protocolo que o fazia afirmar incorretamente que suportava a versão 3.1.
+   </td>
+  </tr>
+  <tr>
+   <td>
     3.0
    </td>
-<td>PostgreSQL 7.4 e versões posteriores</td>
-<td class="auto-generated">
-</td>
-</tr>
-<tr>
-<td>
+   <td>
+    PostgreSQL 7.4 e versões posteriores
+   </td>
+   <td class="auto-generated">
+   </td>
+  </tr>
+  <tr>
+   <td>
     2.0
    </td>
-<td>até PostgreSQL 13</td>
-<td>Veja as edições anteriores do<span class="productname">PostgreSQL</span>documentação para detalhes</td>
-</tr>
-</tbody>
+   <td>
+    até PostgreSQL 13
+   </td>
+   <td>
+    Veja as edições anteriores do
+    <span class="productname">
+     PostgreSQL
+    </span>
+    documentação para detalhes
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 

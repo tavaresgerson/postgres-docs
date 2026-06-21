@@ -2,7 +2,7 @@
 
 O SSPI é uma tecnologia do Windows para autenticação segura com acesso único. O PostgreSQL usará o SSPI no modo `negotiate`, que usará o Kerberos quando possível e, automaticamente, retornará ao NTLM em outros casos. O SSPI e o GSSAPI interagem como clientes e servidores, por exemplo, um cliente SSPI pode autenticar-se em um servidor GSSAPI. É recomendável usar o SSPI em clientes e servidores do Windows e o GSSAPI em plataformas que não são do Windows.
 
-Ao usar autenticação Kerberos, o SSPI funciona da mesma maneira que o GSSAPI; consulte [Seção 20.6][(gssapi-auth.md "20.6. GSSAPI Authentication")] para obter detalhes.
+Ao usar autenticação Kerberos, o SSPI funciona da mesma maneira que o GSSAPI; consulte [Seção 20.6](gssapi-auth.md) para obter detalhes.
 
 As seguintes opções de configuração são suportadas para SSPI:
 
@@ -16,6 +16,6 @@ Não desative esta opção, a menos que seu servidor esteja executando uma conta
 
 Observe que o libpq usa o nome compatível com SAM se nenhum nome de usuário explícito for especificado. Se você estiver usando o libpq ou um driver baseado nele, você deve deixar essa opção desativada ou especificar explicitamente o nome do usuário na cadeia de conexão.
 
-`map`: Permite mapear entre os nomes de usuário do sistema e do banco de dados. Consulte a [Seção 20.2][(auth-username-maps.md "20.2. User Name Maps")] para obter detalhes. Para uma principal SSPI/Kerberos, como `username@EXAMPLE.COM` (ou, menos comumente, `username/hostbased@EXAMPLE.COM`), o nome de usuário usado para mapear é `username@EXAMPLE.COM` (ou `username/hostbased@EXAMPLE.COM`, respectivamente), a menos que `include_realm` tenha sido definido como 0, caso em que `username` (ou `username/hostbased`) é o que é visto como o nome de usuário do sistema durante a mapeo.
+`map`: Permite mapear entre os nomes de usuário do sistema e do banco de dados. Consulte a [Seção 20.2](auth-username-maps.md) para obter detalhes. Para uma principal SSPI/Kerberos, como `username@EXAMPLE.COM` (ou, menos comumente, `username/hostbased@EXAMPLE.COM`), o nome de usuário usado para mapear é `username@EXAMPLE.COM` (ou `username/hostbased@EXAMPLE.COM`, respectivamente), a menos que `include_realm` tenha sido definido como 0, caso em que `username` (ou `username/hostbased`) é o que é visto como o nome de usuário do sistema durante a mapeo.
 
 `krb_realm`: Define o domínio para corresponder aos nomes principais do usuário. Se este parâmetro for definido, apenas os usuários desse domínio serão aceitos. Se não for definido, os usuários de qualquer domínio podem se conectar, sujeito a qualquer mapeamento de nome de usuário que seja feito.

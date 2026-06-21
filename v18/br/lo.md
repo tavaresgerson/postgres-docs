@@ -40,7 +40,7 @@ Para cada coluna que conterá referências únicas para grandes objetos, crie um
 
 `TRUNCATE` tem o mesmo perigo.
 
-Se você já tem, ou suspeita que tem, objetos grandes órfãos, consulte o módulo [vacuumlo][(vacuumlo.md "vacuumlo")] para ajudá-lo a limpá-los. É uma boa ideia executar o vacuumlo ocasionalmente como um backup para o gatilho `lo_manage`. * Alguns frontends podem criar suas próprias tabelas e não criar os gatilhos associados. Além disso, os usuários podem não se lembrar (ou não saber) de criar os gatilhos.
+Se você já tem, ou suspeita que tem, objetos grandes órfãos, consulte o módulo [vacuumlo](vacuumlo.md) para ajudá-lo a limpá-los. É uma boa ideia executar o vacuumlo ocasionalmente como um backup para o gatilho `lo_manage`. * Alguns frontends podem criar suas próprias tabelas e não criar os gatilhos associados. Além disso, os usuários podem não se lembrar (ou não saber) de criar os gatilhos.
 
 ### F.21.4. Autor [#](#LO-AUTHOR)
 

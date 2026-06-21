@@ -35,13 +35,13 @@ Você deve ter o privilégio `TRUNCATE` em uma tabela para truncá-la.
 
 `TRUNCATE` não disparará quaisquer `ON DELETE` que possam existir para as tabelas. Mas disparará os `ON TRUNCATE` triggers. Se os triggers `ON TRUNCATE` forem definidos para qualquer uma das tabelas, então todos os `BEFORE TRUNCATE` triggers são disparados antes que qualquer truncação ocorra, e todos os `AFTER TRUNCATE` triggers são disparados após a última truncação ser realizada e quaisquer sequências serem redefinidas. Os triggers serão disparados na ordem em que as tabelas devem ser processadas (primeiramente as listadas no comando, e depois quaisquer que tenham sido adicionadas devido ao cascata).
 
-`TRUNCATE` não é seguro para MVCC. Após a truncagem, a tabela parecerá vazia para transações concorrentes, se elas estiverem usando um instantâneo tirado antes da truncagem ter ocorrido. Consulte [Seção 13.6][(mvcc-caveats.md "13.6. Caveats")] para mais detalhes.
+`TRUNCATE` não é seguro para MVCC. Após a truncagem, a tabela parecerá vazia para transações concorrentes, se elas estiverem usando um instantâneo tirado antes da truncagem ter ocorrido. Consulte [Seção 13.6](mvcc-caveats.md) para mais detalhes.
 
 `TRUNCATE` é seguro em relação às transações dos dados nas tabelas: o truncamento será desfeito com segurança se a transação circundante não for confirmada.
 
 Quando `RESTART IDENTITY` é especificado, as operações implícitas de `ALTER SEQUENCE RESTART` também são realizadas de forma transacional; ou seja, serão revertidas se a transação circundante não for confirmada. Esteja ciente de que, se quaisquer operações adicionais de sequência forem realizadas nas sequências reativadas antes de a transação ser revertida, os efeitos dessas operações nas sequências serão revertidos, mas não seus efeitos em `currval()`; ou seja, após a transação `currval()` continuará a refletir o último valor da sequência obtido dentro da transação falha, mesmo que a própria sequência já não seja consistente com isso. Isso é semelhante ao comportamento usual de `currval()` após uma transação falha.
 
-`TRUNCATE` pode ser usado para tabelas estrangeiras se for suportado pelo wrapper de dados estrangeiro, por exemplo, veja [postgres_fdw][(postgres-fdw.md "F.38. postgres_fdw — access data stored in external PostgreSQL servers")].
+`TRUNCATE` pode ser usado para tabelas estrangeiras se for suportado pelo wrapper de dados estrangeiro, por exemplo, veja [postgres_fdw](postgres-fdw.md).
 
 ## Exemplos
 

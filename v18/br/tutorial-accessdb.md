@@ -4,7 +4,7 @@ Depois de criar um banco de dados, você pode acessá-lo da seguinte forma:
 
 * Executar o programa de terminal interativo PostgreSQL, chamado *psql*, que permite inserir, editar e executar comandos SQL de forma interativa.
 * Usar uma ferramenta gráfica existente, como pgAdmin ou uma suite de escritório com suporte a ODBC ou JDBC, para criar e manipular um banco de dados. Essas possibilidades não são abordadas neste tutorial.
-* Escrever uma aplicação personalizada, usando uma das várias vinculações de linguagem disponíveis. Essas possibilidades são discutidas mais adiante em [Parte IV][(client-interfaces.md "Part IV. Client Interfaces")].
+* Escrever uma aplicação personalizada, usando uma das várias vinculações de linguagem disponíveis. Essas possibilidades são discutidas mais adiante em [Parte IV](client-interfaces.md).
 
 Você provavelmente quer iniciar o `psql` para experimentar os exemplos neste tutorial. Ele pode ser ativado para o banco de dados `mydb` digitando o comando:
 

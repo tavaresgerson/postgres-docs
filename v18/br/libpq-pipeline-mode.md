@@ -1,8 +1,8 @@
 ## 32.5. Modo de Pipeline [#](#LIBPQ-PIPELINE-MODE)
 
-* [32.5.1. Uso do Modo Pipeline][(libpq-pipeline-mode.md#LIBPQ-PIPELINE-USING)]
-* [32.5.2. Funções Associadas ao Modo Pipeline][(libpq-pipeline-mode.md#LIBPQ-PIPELINE-FUNCTIONS)]
-* [32.5.3. Quando Usar o Modo Pipeline][(libpq-pipeline-mode.md#LIBPQ-PIPELINE-TIPS)]
+* [32.5.1. Uso do Modo Pipeline](libpq-pipeline-mode.md#LIBPQ-PIPELINE-USING)
+* [32.5.2. Funções Associadas ao Modo Pipeline](libpq-pipeline-mode.md#LIBPQ-PIPELINE-FUNCTIONS)
+* [32.5.3. Quando Usar o Modo Pipeline](libpq-pipeline-mode.md#LIBPQ-PIPELINE-TIPS)
 
 O modo pipeline do libpq permite que as aplicações enviem uma consulta sem precisar ler o resultado da consulta enviada anteriormente. Aproveitando o modo pipeline, um cliente esperará menos pelo servidor, uma vez que várias consultas/resultados podem ser enviados/recebidos em uma única transação de rede.
 
@@ -10,11 +10,11 @@ Embora o modo de pipeline ofereça um aumento significativo de desempenho, escre
 
 O modo de pipeline também consome, em geral, mais memória tanto no cliente quanto no servidor, embora uma gestão cuidadosa e agressiva da fila de envio/recebimento possa mitigar isso. Isso se aplica independentemente de a conexão estar em modo de bloqueio ou
 
-Embora a API de pipeline do libpq tenha sido introduzida no PostgreSQL 14, é uma característica do lado do cliente que não requer suporte especial do servidor e funciona em qualquer servidor que suporte o protocolo de consulta estendida v3. Para mais informações, consulte [Seção 54.2.4][(protocol-flow.md#PROTOCOL-FLOW-PIPELINING "54.2.4. Pipelining")].
+Embora a API de pipeline do libpq tenha sido introduzida no PostgreSQL 14, é uma característica do lado do cliente que não requer suporte especial do servidor e funciona em qualquer servidor que suporte o protocolo de consulta estendida v3. Para mais informações, consulte [Seção 54.2.4](protocol-flow.md#PROTOCOL-FLOW-PIPELINING).
 
 ### 32.5.1. Uso do Modo Pipeline [#](#LIBPQ-PIPELINE-USING)
 
-Para emitir pipelines, o aplicativo deve alternar a conexão para o modo pipeline, o que é feito com `PQenterPipelineMode`(libpq-pipeline-mode.md#LIBPQ-PQENTERPIPELINEMODE). `PQpipelineStatus`(libpq-pipeline-mode.md#LIBPQ-PQPIPELINESTATUS) pode ser usado para testar se o modo pipeline está ativo. No modo pipeline, apenas operações assíncronas (libpq-async.md "32.4. Asynchronous Command Processing") que utilizam o protocolo de consulta estendida são permitidas, as cadeias de comando que contêm múltiplos comandos SQL são desaconselhadas, e o mesmo vale para `COPY`. Usar funções de execução de comandos síncronas, como `PQfn`, `PQexec`, `PQexecParams`, `PQprepare`, `PQexecPrepared`, `PQdescribePrepared`, `PQdescribePortal`, `PQclosePrepared`, `PQclosePortal`, é uma condição de erro. `PQsendQuery` também é desaconselhado, porque utiliza o protocolo de consulta simples. Uma vez que todos os comandos emitidos tenham tido seus resultados processados e o resultado final do pipeline tenha sido consumido, o aplicativo pode retornar ao modo não pipeline com [`PQexitPipelineMode`(libpq-pipeline-mode.md#LIBPQ-PQEXITPIPELINEMODE).
+Para emitir pipelines, o aplicativo deve alternar a conexão para o modo pipeline, o que é feito com `PQenterPipelineMode`(libpq-pipeline-mode.md#LIBPQ-PQENTERPIPELINEMODE). `PQpipelineStatus`(libpq-pipeline-mode.md#LIBPQ-PQPIPELINESTATUS) pode ser usado para testar se o modo pipeline está ativo. No modo pipeline, apenas operações assíncronas (libpq-async.md "32.4. Asynchronous Command Processing") que utilizam o protocolo de consulta estendida são permitidas, as cadeias de comando que contêm múltiplos comandos SQL são desaconselhadas, e o mesmo vale para `COPY`. Usar funções de execução de comandos síncronas, como `PQfn`, `PQexec`, `PQexecParams`, `PQprepare`, `PQexecPrepared`, `PQdescribePrepared`, `PQdescribePortal`, `PQclosePrepared`, `PQclosePortal`, é uma condição de erro. `PQsendQuery` também é desaconselhado, porque utiliza o protocolo de consulta simples. Uma vez que todos os comandos emitidos tenham tido seus resultados processados e o resultado final do pipeline tenha sido consumido, o aplicativo pode retornar ao modo não pipeline com [`PQexitPipelineMode`](libpq-pipeline-mode.md#LIBPQ-PQEXITPIPELINEMODE).
 
 ### Nota
 
@@ -32,7 +32,7 @@ O servidor executa instruções e retorna resultados na ordem em que o cliente a
 
 Para processar o resultado de uma consulta em um pipeline, o aplicativo chama `PQgetResult` repetidamente e processa cada resultado até que `PQgetResult` retorne nulo. O resultado da próxima consulta no pipeline pode então ser recuperado novamente usando `PQgetResult` e o ciclo pode ser repetido. O aplicativo processa os resultados individuais das declarações normalmente. Quando os resultados de todas as consultas no pipeline tiverem sido retornados, `PQgetResult` retorna um resultado contendo o valor de status `PGRES_PIPELINE_SYNC`.
 
-O cliente pode optar por adiar o processamento dos resultados até que o pipeline completo tenha sido enviado, ou intercalá-lo com o envio de outras consultas no pipeline; veja [Seção 32.5.1.4][(libpq-pipeline-mode.md#LIBPQ-PIPELINE-INTERLEAVE "32.5.1.4. Interleaving Result Processing and Query Dispatch")].
+O cliente pode optar por adiar o processamento dos resultados até que o pipeline completo tenha sido enviado, ou intercalá-lo com o envio de outras consultas no pipeline; veja [Seção 32.5.1.4](libpq-pipeline-mode.md#LIBPQ-PIPELINE-INTERLEAVE).
 
 `PQgetResult` se comporta da mesma forma que para o processamento asíncrono normal, exceto que ele pode conter os novos tipos `PGresult` e `PGRES_PIPELINE_SYNC`. `PGRES_PIPELINE_SYNC` é relatado exatamente uma vez para cada `PQpipelineSync` ou `PQsendPipelineSync` no ponto correspondente na linha de produção. `PGRES_PIPELINE_ABORTED` é emitido em substituição a um resultado normal de consulta para o primeiro erro e todos os resultados subsequentes até o próximo `PGRES_PIPELINE_SYNC`; veja [Seção 32.5.1.3](libpq-pipeline-mode.md#LIBPQ-PIPELINE-ERRORS "32.5.1.3. Error Handling").
 
@@ -64,8 +64,9 @@ Um exemplo que utiliza `select()` e uma máquina simples de estado para rastrear
 
 `PQpipelineStatus` [#](#LIBPQ-PQPIPELINESTATUS): Retorna o estado atual do modo de pipeline da conexão libpq.
 
-``` PGpipelineStatus PQpipelineStatus(const PGconn *conn);
-    ```
+```
+PGpipelineStatus PQpipelineStatus(const PGconn *conn);
+```
 
 `PQpipelineStatus` pode retornar um dos seguintes valores:
 
@@ -77,64 +78,45 @@ Um exemplo que utiliza `select()` e uma máquina simples de estado para rastrear
 
 `PQenterPipelineMode` [#](#LIBPQ-PQENTERPIPELINEMODE): Faz com que a conexão entre no modo de pipeline se ela estiver atualmente parada ou já no modo de pipeline.
 
-``` int PQenterPipelineMode(PGconn *conn);
-    ```
+```
+int PQenterPipelineMode(PGconn *conn);
+```
 
-Retorna 1 para sucesso.
-Retorna 0 e não tem efeito se a conexão não estiver atualmente
-inativa, ou seja, tem um resultado pronto, ou está esperando mais
-entrada do servidor, etc.
-Esta função não envia nada para o servidor,
-apenas muda o estado da conexão libpq.
+Retorna 1 para sucesso. Retorna 0 e não tem efeito se a conexão não estiver atualmente inativa, ou seja, tem um resultado pronto, ou está esperando mais entrada do servidor, etc. Esta função não envia nada para o servidor, apenas muda o estado da conexão libpq.
 
-`PQexitPipelineMode` [#](#LIBPQ-PQEXITPIPELINEMODE)
-:   Faz com que a conexão saia do modo de pipeline se estiver atualmente no modo de pipeline com uma fila vazia e sem resultados pendentes.
+`PQexitPipelineMode` [#](#LIBPQ-PQEXITPIPELINEMODE): Faz com que a conexão saia do modo de pipeline se estiver atualmente no modo de pipeline com uma fila vazia e sem resultados pendentes.
 
-    ```
-    int PQexitPipelineMode(PGconn *conn);
-    ```
+```
+int PQexitPipelineMode(PGconn *conn);
+```
 
 Retorna 1 para sucesso. Retorna 1 e não realiza nenhuma ação se não estiver no modo pipeline. Se a declaração atual não tiver sido finalizada o processamento, ou `PQgetResult` não tiver sido chamado para coletar resultados de todas as consultas enviadas anteriormente, retorna 0 (neste caso, use [[`PQerrorMessage`](libpq-status.md#LIBPQ-PQERRORMESSAGE) para obter mais informações sobre a falha).
 
-`PQpipelineSync` [#](#LIBPQ-PQPIPELINESYNC)
-:   Marca um ponto de sincronização em uma linha de produção enviando uma
-    [mensagem de sincronização](protocol-flow.md#PROTOCOL-FLOW-EXT-QUERY "54.2.3. Extended Query")
-    e esvaziando o buffer de envio. Isso serve como
-    o delimitador de uma transação implícita e um ponto de recuperação de erro; veja [Seção 32.5.1.3](libpq-pipeline-mode.md#LIBPQ-PIPELINE-ERRORS "32.5.1.3. Error Handling").
+`PQpipelineSync` [#](#LIBPQ-PQPIPELINESYNC): Marca um ponto de sincronização em uma linha de produção enviando uma [mensagem de sincronização](protocol-flow.md#PROTOCOL-FLOW-EXT-QUERY "54.2.3. Extended Query") e esvaziando o buffer de envio. Isso serve como o delimitador de uma transação implícita e um ponto de recuperação de erro; veja [Seção 32.5.1.3](libpq-pipeline-mode.md#LIBPQ-PIPELINE-ERRORS "32.5.1.3. Error Handling").
 
-    ```
-    int PQpipelineSync(PGconn *conn);
-    ```
+```
+int PQpipelineSync(PGconn *conn);
+```
 
-Retorna 1 para sucesso. Retorna 0 se a conexão não estiver no modo de pipeline ou se a mensagem de [sincronização][(protocol-flow.md#PROTOCOL-FLOW-EXT-QUERY "54.2.3. Extended Query")] falhou.
+Retorna 1 para sucesso. Retorna 0 se a conexão não estiver no modo de pipeline ou se a mensagem de [sincronização](protocol-flow.md#PROTOCOL-FLOW-EXT-QUERY) falhou.
 
-`PQsendPipelineSync` [#](#LIBPQ-PQSENDPIPELINESYNC)
-:   Marca um ponto de sincronização em um pipeline enviando uma
-    [mensagem de sincronização](protocol-flow.md#PROTOCOL-FLOW-EXT-QUERY "54.2.3. Extended Query")
-    sem esvaziar o buffer de envio. Isso serve como
-    o delimitador de uma transação implícita e um ponto de recuperação de erro; veja [Seção 32.5.1.3](libpq-pipeline-mode.md#LIBPQ-PIPELINE-ERRORS "32.5.1.3. Error Handling").
+`PQsendPipelineSync` [#](#LIBPQ-PQSENDPIPELINESYNC): Marca um ponto de sincronização em um pipeline enviando uma [mensagem de sincronização](protocol-flow.md#PROTOCOL-FLOW-EXT-QUERY "54.2.3. Extended Query") sem esvaziar o buffer de envio. Isso serve como o delimitador de uma transação implícita e um ponto de recuperação de erro; veja [Seção 32.5.1.3](libpq-pipeline-mode.md#LIBPQ-PIPELINE-ERRORS "32.5.1.3. Error Handling").
 
-    ```
-    int PQsendPipelineSync(PGconn *conn);
-    ```
+```
+int PQsendPipelineSync(PGconn *conn);
+```
 
-Retorna 1 para sucesso. Retorna 0 se a conexão não estiver no modo de pipeline ou se a mensagem de [sincronização][(protocol-flow.md#PROTOCOL-FLOW-EXT-QUERY "54.2.3. Extended Query")] falhou. Observe que a mensagem não é automaticamente enviada ao servidor; use `PQflush` se necessário.
+Retorna 1 para sucesso. Retorna 0 se a conexão não estiver no modo de pipeline ou se a mensagem de [sincronização](protocol-flow.md#PROTOCOL-FLOW-EXT-QUERY) falhou. Observe que a mensagem não é automaticamente enviada ao servidor; use `PQflush` se necessário.
 
 `PQsendFlushRequest` [#](#LIBPQ-PQSENDFLUSHREQUEST) : Envia uma solicitação para que o servidor limpe seu buffer de saída.
 
-    ```
-    int PQsendFlushRequest(PGconn *conn);
-    ```
+```
+int PQsendFlushRequest(PGconn *conn);
+```
 
 Retorna 1 para sucesso. Retorna 0 em caso de falha.
 
-O servidor esvazia seu buffer de saída automaticamente como resultado de
-`PQpipelineSync` ser chamado, ou
-em qualquer solicitação quando não estiver no modo de pipeline; essa função é útil
-para fazer com que o servidor esvazie seu buffer de saída no modo de pipeline
-sem estabelecer um ponto de sincronização.
-Observe que a solicitação não é esvaziada automaticamente para o servidor;
-use `PQflush` se necessário.
+O servidor esvazia seu buffer de saída automaticamente como resultado de `PQpipelineSync` ser chamado, ou em qualquer solicitação quando não estiver no modo de pipeline; essa função é útil para fazer com que o servidor esvazie seu buffer de saída no modo de pipeline sem estabelecer um ponto de sincronização. Observe que a solicitação não é esvaziada automaticamente para o servidor; use `PQflush` se necessário.
 
 ### 32.5.3. Quando usar o modo Pipeline [#](#LIBPQ-PIPELINE-TIPS)
 
@@ -142,8 +124,7 @@ Assim como o modo de consulta assíncrona, não há sobrecarga significativa de 
 
 O modo pipeline é mais útil quando o servidor está distante, ou seja, quando a latência da rede (tempo de ping) é alta, e também quando muitas operações pequenas estão sendo realizadas em rápida sucessão. Geralmente, há menos benefício em usar comandos em pipeline quando cada consulta leva muitos múltiplos do tempo de ida e volta do cliente/servidor para ser executada. Uma operação de 100 declarações executada em um servidor com uma latência de ida e volta de 300 ms levaria 30 segundos apenas na latência da rede; com o pipeline, pode gastar tão pouco quanto 0,3 s esperando os resultados do servidor.
 
-Utilize comandos em pipeline quando sua aplicação realiza muitas operações pequenas `INSERT`, `UPDATE` e
-`DELETE` que não podem ser facilmente transformadas em operações em conjuntos, ou em uma operação `COPY`.
+Utilize comandos em pipeline quando sua aplicação realiza muitas operações pequenas `INSERT`, `UPDATE` e `DELETE` que não podem ser facilmente transformadas em operações em conjuntos, ou em uma operação `COPY`.
 
 O modo pipeline não é útil quando as informações de uma operação são necessárias pelo cliente para produzir a próxima operação. Nesses casos, o cliente teria que introduzir um ponto de sincronização e esperar por um percurso completo cliente/servidor para obter os resultados necessários. No entanto, muitas vezes é possível ajustar o projeto do cliente para trocar as informações necessárias pelo lado do servidor. Os ciclos de leitura-modificação-escrita são candidatos especialmente bons; por exemplo:
 
@@ -157,7 +138,7 @@ poderia ser feito de forma muito mais eficiente com:
 UPDATE mytable SET x = x + 1 WHERE id = 42;
 ```
 
-O pipelining é menos útil e mais complexo quando um único pipeline contém múltiplas transações (consulte [Seção 32.5.1.3] [(libpq-pipeline-mode.md#LIBPQ-PIPELINE-ERRORS "32.5.1.3. Error Handling")]).
+O pipelining é menos útil e mais complexo quando um único pipeline contém múltiplas transações (consulte [Seção 32.5.1.3](libpq-pipeline-mode.md#LIBPQ-PIPELINE-ERRORS)).
 
 ---
 

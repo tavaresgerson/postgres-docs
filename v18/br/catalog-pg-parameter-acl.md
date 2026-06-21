@@ -9,57 +9,74 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_parameter_acl` é comp
 
 
 <table border="1" class="table" summary="pg_parameter_acl Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">Tipo de coluna</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
+     Tipo de coluna
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       oid
      </code>
-<code class="type">
+     <code class="type">
       oid
      </code>
-</p>
-<p>Identificador da linha</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Identificador da linha
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       parname
      </code>
-<code class="type">
+     <code class="type">
       text
      </code>
-</p>
-<p>O nome de um parâmetro de configuração para o qual os privilégios são concedidos</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     O nome de um parâmetro de configuração para o qual os privilégios são concedidos
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       paracl
      </code>
-<code class="type">
+     <code class="type">
       aclitem[]
      </code>
-</p>
-<p>Privilegios de acesso; veja<a class="xref" href="ddl-priv.md" title="5.8. Privileges">Seção 5.8</a>para detalhes</p>
-</td>
-</tr>
-</tbody>
+    </p>
+    <p>
+     Privilegios de acesso; veja
+     <a class="xref" href="ddl-priv.md" title="5.8. Privileges">
+      Seção 5.8
+     </a>
+     para detalhes
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 

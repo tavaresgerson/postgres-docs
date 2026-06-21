@@ -4,7 +4,7 @@ O operador específico que é referido por uma expressão de operador é determi
 
 **Resolução do tipo de operador**
 
-1. Selecione os operadores a serem considerados do catálogo do sistema `pg_operator`. Se um nome de operador não qualificado pelo esquema foi usado (o caso usual), os operadores considerados são aqueles com o nome correspondente e o número de argumentos que são visíveis no caminho de pesquisa atual (ver [Seção 5.10.3][(ddl-schemas.md#DDL-SCHEMAS-PATH "5.10.3. The Schema Search Path")]). Se um nome de operador qualificado foi fornecido, apenas os operadores no esquema especificado são considerados.
+1. Selecione os operadores a serem considerados do catálogo do sistema `pg_operator`. Se um nome de operador não qualificado pelo esquema foi usado (o caso usual), os operadores considerados são aqueles com o nome correspondente e o número de argumentos que são visíveis no caminho de pesquisa atual (ver [Seção 5.10.3](ddl-schemas.md#DDL-SCHEMAS-PATH)). Se um nome de operador qualificado foi fornecido, apenas os operadores no esquema especificado são considerados.
 
 1. Se o caminho de busca encontrar vários operadores com tipos de argumentos idênticos, apenas o que aparece mais cedo no caminho é considerado. Operadores com tipos de argumentos diferentes são considerados em pé de igualdade, independentemente da posição no caminho de busca.
 2. Verifique se um operador aceita exatamente os tipos de argumentos de entrada. Se existir (pode haver apenas uma correspondência exata no conjunto de operadores considerados), use-o. A falta de uma correspondência exata cria um perigo de segurança ao chamar, via nome qualificado [[9]](#ftn.OP-QUALIFIED-SECURITY) (não típico), qualquer operador encontrado em um esquema que permita que usuários não confiáveis criem objetos. Nessas situações, realize uma conversão de argumentos para forçar uma correspondência exata.
@@ -40,7 +40,7 @@ Então, o analisador faz uma conversão de tipo no operando e a consulta é equi
 SELECT |/ CAST(40 AS double precision) AS "square root of 40";
 ```
 
-  
+
 
 **Exemplo 10.2. Resolução do tipo do operador de concatenação de strings**
 
@@ -72,7 +72,7 @@ SELECT 'abc' || 'def' AS "unspecified";
 
 Neste caso, não há nenhuma pista inicial para qual tipo usar, uma vez que nenhum tipo é especificado na consulta. Portanto, o analisador procura todos os operadores candidatos e descobre que há candidatos que aceitam entradas de categoria de string e categoria de string-bit. Como a categoria de string é preferida quando disponível, essa categoria é selecionada, e então o tipo preferido para strings, `text`, é usado como o tipo específico para resolver os literais de tipo desconhecido.
 
-  
+
 
 **Exemplo 10.3. Resolução do tipo de operador de valor absoluto e negação**
 
@@ -115,7 +115,7 @@ SELECT ~ CAST('20' AS int8) AS "negation";
 (1 row)
 ```
 
-  
+
 
 **Exemplo 10.4. Resolução do operador de inclusão de matriz**
 
@@ -132,7 +132,7 @@ SELECT array[1,2] <@ '{1,2,3}' as "is subset";
 
 O catálogo de operadores do PostgreSQL tem várias entradas para o operador infix `<@`, mas os únicos dois que possivelmente podem aceitar uma matriz de inteiros no lado esquerdo são a inclusão de matriz (`anyarray` `<@` `anyarray`) e a inclusão de intervalo (`anyelement` `<@` `anyrange`). Como nenhum desses pseudotípicos polimórficos (ver [Seção 8.21](datatype-pseudo.md "8.21. Pseudo-Types")) é considerado preferido, o analisador não pode resolver a ambiguidade com base nisso. No entanto, [Passo 3.f](typeconv-oper.md#OP-RESOL-LAST-UNKNOWN "Step 3.f") diz que ele deve assumir que o literal de tipo desconhecido é do mesmo tipo que os outros inputs, ou seja, matriz de inteiros. Agora, apenas um dos dois operadores pode corresponder, então a inclusão de matriz é selecionada. (Se tivesse sido selecionada a inclusão de intervalo, teríamos obtido um erro, porque a string não tem o formato certo para ser um literal de intervalo.)
 
-  
+
 
 **Exemplo 10.5. Operador personalizado em um tipo de domínio**
 
@@ -155,7 +155,7 @@ SELECT * FROM mytable WHERE val = text 'foo';
 
 para que o operador `mytext` `=` `text` seja encontrado imediatamente de acordo com a regra de correspondência exata. Se as regras de melhor correspondência forem alcançadas, elas discriminam ativamente contra operadores em tipos de domínio. Se não forem, tal operador criaria muitos falhas de operador ambíguo, porque as regras de conversão sempre consideram um domínio como convertivelmente para ou a partir de seu tipo base, e assim o operador de domínio seria considerado utilizável nos mesmos casos que um operador com o mesmo nome no tipo base.
 
-  
+
 
 ---
 

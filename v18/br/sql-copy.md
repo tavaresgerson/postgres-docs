@@ -41,7 +41,7 @@ Se uma lista de colunas for especificada, `COPY TO` copia apenas os dados nas co
 
 `COPY` com um nome de arquivo instrui o servidor PostgreSQL a ler diretamente de um arquivo ou a escrever em um arquivo. O arquivo deve ser acessível pelo usuário PostgreSQL (o ID do usuário pelo qual o servidor é executado) e o nome deve ser especificado do ponto de vista do servidor. Quando `PROGRAM` é especificado, o servidor executa o comando fornecido e lê a saída padrão do programa, ou escreve na entrada padrão do programa. O comando deve ser especificado do ponto de vista do servidor e ser executável pelo usuário PostgreSQL. Quando `STDIN` ou `STDOUT` é especificado, os dados são transmitidos através da conexão entre o cliente e o servidor.
 
-Cada backend que executa `COPY` informará seu progresso na visualização `pg_stat_progress_copy`. Consulte [Seção 27.4.3][(progress-reporting.md#COPY-PROGRESS-REPORTING "27.4.3. COPY Progress Reporting")] para obter detalhes.
+Cada backend que executa `COPY` informará seu progresso na visualização `pg_stat_progress_copy`. Consulte [Seção 27.4.3](progress-reporting.md#COPY-PROGRESS-REPORTING) para obter detalhes.
 
 Por padrão, `COPY` falhará se encontrar um erro durante o processamento. Para casos de uso em que é desejada uma tentativa de melhor esforço para carregar todo o arquivo, a cláusula `ON_ERROR` pode ser usada para especificar outro comportamento.
 
@@ -51,7 +51,7 @@ Por padrão, `COPY` falhará se encontrar um erro durante o processamento. Para 
 
 *`column_name`*: Uma lista opcional de colunas a serem copiadas. Se não for especificado nenhum catálogo de colunas, todas as colunas da tabela, exceto as colunas geradas, serão copiadas.
 
-*`query`*: Um comando [`SELECT`(sql-select.md "SELECT"), [`VALUES`(sql-values.md "VALUES"), [`INSERT`(sql-insert.md "INSERT"), [`UPDATE`(sql-update.md "UPDATE"), [`DELETE`(sql-delete.md "DELETE"), ou [`MERGE`(sql-merge.md "MERGE")]] cujos resultados devem ser copiados. Observe que as chaves de consulta são necessárias ao redor das chaves.
+*`query`*: Um comando [`SELECT`](sql-select.md), [`VALUES`](sql-values.md), [`INSERT`](sql-insert.md), [`UPDATE`](sql-update.md), [`DELETE`](sql-delete.md), ou [`MERGE`](sql-merge.md)]] cujos resultados devem ser copiados. Observe que as chaves de consulta são necessárias ao redor das chaves.
 
 Para as consultas `INSERT`, `UPDATE`, `DELETE` e `MERGE`, uma cláusula `RETURNING` deve ser fornecida, e a relação alvo não deve ter uma regra condicional, nem uma regra `ALSO` ou uma regra `INSTEAD` que se expanda para múltiplas declarações.
 
@@ -111,8 +111,9 @@ Isso é atualmente utilizado no comando `COPY FROM` quando a opção `ON_ERROR` 
 
 `WHERE`: A cláusula opcional `WHERE` tem a forma geral
 
-``` WHERE condition
-    ```
+```
+WHERE condition
+```
 
 onde *`condition`* é qualquer expressão que avalie um resultado do tipo `boolean`. Qualquer linha que não satisfaça essa condição não será inserida na tabela. Uma linha satisfaz a condição se retornar verdadeiro quando os valores reais da linha são substituídos por quaisquer referências de variáveis.
 
@@ -179,97 +180,120 @@ As seguintes sequências de barra invertida especiais são reconhecidas por `COP
 
 
 <table border="1" class="informaltable">
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Sequence
    </th>
-<th>Representa</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+   <th>
+    Representa
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      \b
     </code>
-</td>
-<td>Backspace (ASCII 8)</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Backspace (ASCII 8)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      \f
     </code>
-</td>
-<td>Retorno de formulário (ASCII 12)</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Retorno de formulário (ASCII 12)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      \n
     </code>
-</td>
-<td>Newline (ASCII 10)</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Newline (ASCII 10)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      \r
     </code>
-</td>
-<td>Retorno de carroça (ASCII 13)</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Retorno de carroça (ASCII 13)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      \t
     </code>
-</td>
-<td>Tab (ASCII 9)</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Tab (ASCII 9)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      \v
     </code>
-</td>
-<td>Guia vertical (ASCII 11)</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Guia vertical (ASCII 11)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      \
     </code>
-<em class="replaceable">
-<code>
+    <em class="replaceable">
+     <code>
       digits
      </code>
-</em>
-</td>
-<td>Backslash seguido por um a três dígitos octal especifica o byte com aquele código numérico</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+    </em>
+   </td>
+   <td>
+    Backslash seguido por um a três dígitos octal especifica o byte com aquele código numérico
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      \x
     </code>
-<em class="replaceable">
-<code>
+    <em class="replaceable">
+     <code>
       digits
      </code>
-</em>
-</td>
-<td>Barra de retorno<code class="literal">
+    </em>
+   </td>
+   <td>
+    Barra de retorno
+    <code class="literal">
      x
-    </code>seguido por um ou dois dígitos hexadecimais especifica o byte com aquele código numérico</td>
-</tr>
-</tbody>
+    </code>
+    seguido por um ou dois dígitos hexadecimais especifica o byte com aquele código numérico
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 

@@ -12,8 +12,8 @@
 + [29.2.2. Exemplos: Configuração de Replicação Lógica](logical-replication-subscription.md#LOGICAL-REPLICATION-SUBSCRIPTION-EXAMPLES)
 + [29.2.3. Exemplos: Criação de Fenda de Replicação Adiada](logical-replication-subscription.md#LOGICAL-REPLICATION-SUBSCRIPTION-EXAMPLES-DEFERRED-SLOT)
 
-* [29.3. Falha de failover de replicação lógica][(logical-replication-failover.md)]
-* [29.4. Filtros de linha][(logical-replication-row-filter.md)]
+* [29.3. Falha de failover de replicação lógica](logical-replication-failover.md)
+* [29.4. Filtros de linha](logical-replication-row-filter.md)
 
 + [29.4.1. Regras de filtro de linha](logical-replication-row-filter.md#LOGICAL-REPLICATION-ROW-FILTER-RULES)
 + [29.4.2. Restrições de expressão](logical-replication-row-filter.md#LOGICAL-REPLICATION-ROW-FILTER-RESTRICTIONS)
@@ -25,7 +25,7 @@
 
 * [29.5. Listas de Colunas](logical-replication-col-lists.md)
 
-+ [29.5.1. Exemplos][(logical-replication-col-lists.md#LOGICAL-REPLICATION-COL-LIST-EXAMPLES)]
++ [29.5.1. Exemplos](logical-replication-col-lists.md#LOGICAL-REPLICATION-COL-LIST-EXAMPLES)
 
 * [29.6. Replicação de Coluna Gerada](logical-replication-gencols.md)
 * [29.7. Conflitos](logical-replication-conflicts.md)
@@ -49,7 +49,7 @@
 
 * [29.14. Configuração Rápida](logical-replication-quick-setup.md)
 
-A replicação lógica é um método de replicação de objetos de dados e suas alterações, com base em sua identidade de replicação (geralmente uma chave primária). Usamos o termo lógico em contraste com a replicação física, que utiliza endereços exatos de bloco e replicação de byte por byte. O PostgreSQL suporta ambos os mecanismos simultaneamente, veja [Capítulo 26][(high-availability.md "Chapter 26. High Availability, Load Balancing, and Replication")]. A replicação lógica permite controle fino tanto sobre a replicação de dados quanto sobre a segurança.
+A replicação lógica é um método de replicação de objetos de dados e suas alterações, com base em sua identidade de replicação (geralmente uma chave primária). Usamos o termo lógico em contraste com a replicação física, que utiliza endereços exatos de bloco e replicação de byte por byte. O PostgreSQL suporta ambos os mecanismos simultaneamente, veja [Capítulo 26](high-availability.md). A replicação lógica permite controle fino tanto sobre a replicação de dados quanto sobre a segurança.
 
 A replicação lógica utiliza um modelo de *publicar* e *subscrição* com um ou mais *subscritores* que se submetem a uma ou mais *publicações* em um nó *editor*. Os assinantes obtêm dados das publicações às quais se submetem e, posteriormente, podem republicar os dados para permitir a replicação em cascata ou configurações mais complexas.
 

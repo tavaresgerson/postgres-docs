@@ -43,7 +43,7 @@ O usuário que cria a função se torna o proprietário da função.
 
 Para poder criar uma função, você deve ter o privilégio `USAGE` nos tipos de argumentos e no tipo de retorno.
 
-Consulte a [Seção 36.3][(xfunc.md "36.3. User-Defined Functions")] para obter mais informações sobre a escrita de funções.
+Consulte a [Seção 36.3](xfunc.md) para obter mais informações sobre a escrita de funções.
 
 ## Parâmetros
 
@@ -51,7 +51,7 @@ Consulte a [Seção 36.3][(xfunc.md "36.3. User-Defined Functions")] para obter
 
 *`argmode`*: O modo de um argumento: `IN`, `OUT`, `INOUT` ou `VARIADIC`. Se omitido, o padrão é `IN`. Apenas argumentos `OUT` podem seguir um argumento `VARIADIC`. Além disso, os argumentos `OUT` e `INOUT` não podem ser usados juntos com a notação `RETURNS TABLE`.
 
-*`argname`*: O nome de um argumento. Algumas linguagens (incluindo SQL e PL/pgSQL) permitem que você use o nome no corpo da função. Para outras linguagens, o nome de um argumento de entrada é apenas documentação adicional, no que diz respeito à própria função; mas você pode usar os nomes dos argumentos de entrada ao chamar uma função para melhorar a legibilidade (consulte [Seção 4.3][(sql-syntax-calling-funcs.md "4.3. Calling Functions")]). Em qualquer caso, o nome de um argumento de saída é significativo, porque ele define o nome da coluna no tipo da linha de resultado. (Se você omitir o nome de um argumento de saída, o sistema escolherá um nome de coluna padrão.)
+*`argname`*: O nome de um argumento. Algumas linguagens (incluindo SQL e PL/pgSQL) permitem que você use o nome no corpo da função. Para outras linguagens, o nome de um argumento de entrada é apenas documentação adicional, no que diz respeito à própria função; mas você pode usar os nomes dos argumentos de entrada ao chamar uma função para melhorar a legibilidade (consulte [Seção 4.3](sql-syntax-calling-funcs.md)). Em qualquer caso, o nome de um argumento de saída é significativo, porque ele define o nome da coluna no tipo da linha de resultado. (Se você omitir o nome de um argumento de saída, o sistema escolherá um nome de coluna padrão.)
 
 *`argtype`*: O(s) tipo(s) de dados dos argumentos da função (opcionalmente qualificados por esquema), se houver. Os tipos de argumento podem ser de base, compostos ou tipos de domínio, ou podem referenciar o tipo de uma coluna de tabela.
 
@@ -87,7 +87,7 @@ O tipo de uma coluna é referenciado escrevendo `table_name.column_name%TYPE`.
 
 `VOLATILE` indica que o valor da função pode mudar mesmo dentro de uma única varredura na tabela, portanto, não é possível fazer otimizações. Relativamente poucas funções de banco de dados são voláteis nesse sentido; alguns exemplos são `random()`, `currval()`, `timeofday()`. Mas observe que qualquer função que tenha efeitos colaterais deve ser classificada como volátil, mesmo que seu resultado seja bastante previsível, para evitar que as chamadas sejam otimizadas; um exemplo é `setval()`.
 
-Para obter informações adicionais, consulte a [Seção 36.7][(xfunc-volatility.md "36.7. Function Volatility Categories")].
+Para obter informações adicionais, consulte a [Seção 36.7](xfunc-volatility.md).
 
 `LEAKPROOF`: `LEAKPROOF` indica que a função não tem efeitos colaterais. Não revela nenhuma informação sobre seus argumentos, exceto pelo seu valor de retorno. Por exemplo, uma função que lança uma mensagem de erro para alguns valores de argumento, mas não para outros, ou que inclui os valores de argumento em qualquer mensagem de erro, não é à prova de vazamento. Isso afeta a forma como o sistema executa consultas contra visualizações criadas com a opção `security_barrier` ou tabelas com segurança de nível de linha habilitada. O sistema aplicará condições de políticas de segurança e visualizações de barreira de segurança antes de quaisquer condições fornecidas pelo usuário da própria consulta que contenham funções não à prova de vazamento, a fim de prevenir a exposição inadvertida de dados. Funções e operadores marcados como à prova de vazamento são considerados confiáveis e podem ser executados antes das condições de políticas de segurança e visualizações de barreira de segurança. Além disso, funções que não aceitam argumentos ou que não recebem quaisquer argumentos da visualização ou tabela de barreira de segurança não precisam ser marcadas como à prova de vazamento para serem executadas antes das condições de segurança. Consulte [CREATE VIEW](sql-createview.md "CREATE VIEW") e [Seção 39.5](rules-privileges.md "39.5. Rules and Privileges"). Esta opção só pode ser definida pelo superusuário.
 
@@ -107,7 +107,7 @@ As funções devem ser rotuladas como inseguras em paralelo se elas modificarem 
 
 `ROWS` *`result_rows`*: Um número positivo que indica o número estimado de linhas que o planejador deve esperar que a função retorne. Isso só é permitido quando a função é declarada para retornar um conjunto. A suposição padrão é de 1000 linhas.
 
-`SUPPORT` *`support_function`*: O nome (opcionalmente qualificado por esquema) de uma *função de suporte de planejador* a ser usada para esta função. Consulte [Seção 36.11][(xfunc-optimization.md "36.11. Function Optimization Information")] para detalhes. Você deve ser um superusuário para usar esta opção.
+`SUPPORT` *`support_function`*: O nome (opcionalmente qualificado por esquema) de uma *função de suporte de planejador* a ser usada para esta função. Consulte [Seção 36.11](xfunc-optimization.md) para detalhes. Você deve ser um superusuário para usar esta opção.
 
 *`configuration_parameter`* *`value`*: A cláusula `SET` faz com que o parâmetro de configuração especificado seja definido pelo valor especificado quando a função é executada, e então restaurado ao seu valor anterior quando a função é encerrada. `SET FROM CURRENT` salva o valor do parâmetro que é atual quando `CREATE FUNCTION` é executado como o valor a ser aplicado quando a função é executada.
 
@@ -117,28 +117,29 @@ Veja [SET](sql-set.md "SET") e [Capítulo 19](runtime-config.md "Chapter 19. S
 
 *`definition`*: Uma constante de cadeia que define a função; o significado depende do idioma. Pode ser um nome de função interna, o caminho para um arquivo de objeto, um comando SQL ou texto em uma linguagem procedural.
 
-É frequentemente útil usar citação em dólares (consulte [Seção 4.1.2.4][(sql-syntax-lexical.md#SQL-SYNTAX-DOLLAR-QUOTING "4.1.2.4. Dollar-Quoted String Constants")]) para escrever a string de definição da função, em vez da sintaxe normal de citação simples. Sem citação em dólares, quaisquer citações simples ou barras invertidas na definição da função devem ser escapadas duplicando-as.
+É frequentemente útil usar citação em dólares (consulte [Seção 4.1.2.4](sql-syntax-lexical.md#SQL-SYNTAX-DOLLAR-QUOTING)) para escrever a string de definição da função, em vez da sintaxe normal de citação simples. Sem citação em dólares, quaisquer citações simples ou barras invertidas na definição da função devem ser escapadas duplicando-as.
 
-`obj_file, link_symbol`: Esta forma da cláusula `AS` é usada para funções dinamicamente carregáveis em linguagem C, quando o nome da função no código-fonte da linguagem C não é o mesmo que o nome da função SQL. A string *`obj_file`* é o nome do arquivo da biblioteca compartilhada que contém a função C compilada, e é interpretada como para o comando [`LOAD`(sql-load.md "LOAD")]. A string *`link_symbol`* é o símbolo de ligação da função, ou seja, o nome da função no código-fonte da linguagem C. Se o símbolo de ligação for omitido, presume-se que seja o mesmo que o nome da função SQL sendo definida. Os nomes em C de todas as funções devem ser diferentes, então você deve dar funções sobrecarregadas em C nomes diferentes (por exemplo, use os tipos de argumentos como parte dos nomes em C).
+`obj_file, link_symbol`: Esta forma da cláusula `AS` é usada para funções dinamicamente carregáveis em linguagem C, quando o nome da função no código-fonte da linguagem C não é o mesmo que o nome da função SQL. A string *`obj_file`* é o nome do arquivo da biblioteca compartilhada que contém a função C compilada, e é interpretada como para o comando [`LOAD`](sql-load.md)]. A string *`link_symbol`* é o símbolo de ligação da função, ou seja, o nome da função no código-fonte da linguagem C. Se o símbolo de ligação for omitido, presume-se que seja o mesmo que o nome da função SQL sendo definida. Os nomes em C de todas as funções devem ser diferentes, então você deve dar funções sobrecarregadas em C nomes diferentes (por exemplo, use os tipos de argumentos como parte dos nomes em C).
 
 Quando chamadas repetidas `CREATE FUNCTION` se referirem ao mesmo arquivo de objeto, o arquivo só será carregado uma vez por sessão. Para descarregar e recarregar o arquivo (talvez durante o desenvolvimento), inicie uma nova sessão.
 
 *`sql_body`*: O corpo de uma função `LANGUAGE SQL`. Isso pode ser uma única declaração
 
-``` RETURN expression
-    ```
+```
+RETURN expression
+```
 
 ou um bloco
 
-    ```
-    BEGIN ATOMIC statement; statement; ... statement; END
-    ```
+```
+BEGIN ATOMIC statement; statement; ... statement; END
+```
 
 Isso é semelhante a escrever o texto do corpo da função como uma constante de string (ver *`definition`* acima), mas há algumas diferenças: Esta forma só funciona para `LANGUAGE SQL`, a forma de constante de string funciona para todos os idiomas. Esta forma é analisada no momento da definição da função, a forma de constante de string é analisada no momento da execução; portanto, esta forma não pode suportar tipos de argumentos polimórficos e outras construções que não sejam resolvíveis no momento da definição da função. Esta forma rastreia as dependências entre a função e os objetos usados no corpo da função, então `DROP ... CASCADE` funcionará corretamente, enquanto a forma que usa literais de string pode deixar funções pendentes. Finalmente, esta forma é mais compatível com o padrão SQL e outras implementações SQL.
 
 ## Sobrecarga
 
-O PostgreSQL permite a *sobrecarga de funções*; ou seja, o mesmo nome pode ser usado para várias funções diferentes, desde que elas tenham tipos de argumentos de entrada distintos. Se você o usa ou não, essa capacidade implica precauções de segurança ao chamar funções em bancos de dados onde alguns usuários desconfiam dos outros; veja [Seção 10.3][(typeconv-func.md "10.3. Functions")].
+O PostgreSQL permite a *sobrecarga de funções*; ou seja, o mesmo nome pode ser usado para várias funções diferentes, desde que elas tenham tipos de argumentos de entrada distintos. Se você o usa ou não, essa capacidade implica precauções de segurança ao chamar funções em bancos de dados onde alguns usuários desconfiam dos outros; veja [Seção 10.3](typeconv-func.md).
 
 Duas funções são consideradas iguais se tiverem os mesmos nomes e tipos de argumentos de entrada, ignorando quaisquer parâmetros `OUT`. Assim, por exemplo, essas declarações entram em conflito:
 
@@ -212,7 +213,7 @@ No entanto, uma função `TABLE` é diferente dos exemplos anteriores, porque el
 
 ## Escrever funções `SECURITY DEFINER` com segurança
 
-Como uma função `SECURITY DEFINER` é executada com os privilégios do usuário que a possui, é necessário ter cuidado para garantir que a função não seja mal utilizada. Por segurança, [search_path][(runtime-config-client.md#GUC-SEARCH-PATH)] deve ser configurada para excluir quaisquer esquemas que possam ser escritos por usuários não confiáveis. Isso impede que usuários maliciosos criem objetos (por exemplo, tabelas, funções e operadores) que ocultem objetos destinados a serem usados pela função. Particularmente importante a esse respeito é o esquema de tabela temporária, que é pesquisado como padrão, e normalmente pode ser escrito por qualquer pessoa. Uma disposição segura pode ser obtida forçando o esquema temporário a ser pesquisado por último. Para fazer isso, escreva `pg_temp` como a última entrada em `search_path`. Esta função ilustra o uso seguro:
+Como uma função `SECURITY DEFINER` é executada com os privilégios do usuário que a possui, é necessário ter cuidado para garantir que a função não seja mal utilizada. Por segurança, [search_path](runtime-config-client.md#GUC-SEARCH-PATH) deve ser configurada para excluir quaisquer esquemas que possam ser escritos por usuários não confiáveis. Isso impede que usuários maliciosos criem objetos (por exemplo, tabelas, funções e operadores) que ocultem objetos destinados a serem usados pela função. Particularmente importante a esse respeito é o esquema de tabela temporária, que é pesquisado como padrão, e normalmente pode ser escrito por qualquer pessoa. Uma disposição segura pode ser obtida forçando o esquema temporário a ser pesquisado por último. Para fazer isso, escreva `pg_temp` como a última entrada em `search_path`. Esta função ilustra o uso seguro:
 
 ```
 CREATE FUNCTION check_password(uname TEXT, pass TEXT) RETURNS BOOLEAN AS $$ DECLARE passed BOOLEAN; BEGIN SELECT  (pwd = $2) INTO passed FROM    pwds WHERE   username = $1;
@@ -224,7 +225,7 @@ A intenção desta função é acessar uma tabela `admin.pwds`. Mas sem a cláus
 
 Se a função de definição de segurança pretender criar papéis e se estiver sendo executada como um usuário não de nível de administrador, `createrole_self_grant` também deve ser definido com um valor conhecido usando a cláusula `SET`.
 
-Outro ponto a ter em mente é que, por padrão, o privilégio de execução é concedido a `PUBLIC` para funções recém-criadas (consulte [Seção 5.8][(ddl-priv.md "5.8. Privileges")] para mais informações). Frequentemente, você deseja restringir o uso de uma função de definição de segurança apenas para alguns usuários. Para fazer isso, você deve revogar os privilégios padrão de `PUBLIC` e, em seguida, conceder o privilégio de execução seletivamente. Para evitar ter uma janela onde a nova função é acessível a todos, crie-a e defina os privilégios dentro de uma única transação. Por exemplo:
+Outro ponto a ter em mente é que, por padrão, o privilégio de execução é concedido a `PUBLIC` para funções recém-criadas (consulte [Seção 5.8](ddl-priv.md) para mais informações). Frequentemente, você deseja restringir o uso de uma função de definição de segurança apenas para alguns usuários. Para fazer isso, você deve revogar os privilégios padrão de `PUBLIC` e, em seguida, conceder o privilégio de execução seletivamente. Para evitar ter uma janela onde a nova função é acessível a todos, crie-a e defina os privilégios dentro de uma única transação. Por exemplo:
 
 ```
 BEGIN; CREATE FUNCTION check_password(uname TEXT, pass TEXT) ... SECURITY DEFINER; REVOKE ALL ON FUNCTION check_password(uname TEXT, pass TEXT) FROM PUBLIC; GRANT EXECUTE ON FUNCTION check_password(uname TEXT, pass TEXT) TO admins; COMMIT;

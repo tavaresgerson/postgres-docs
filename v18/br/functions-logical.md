@@ -13,143 +13,146 @@ O SQL utiliza um sistema lógico de três valores com verdadeiro, falso e `null`
 
 
 <table border="1" class="informaltable">
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
-<em class="replaceable">
-<code>
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
+    <em class="replaceable">
+     <code>
       a
      </code>
-</em>
-</th>
-<th>
-<em class="replaceable">
-<code>
+    </em>
+   </th>
+   <th>
+    <em class="replaceable">
+     <code>
       b
      </code>
-</em>
-</th>
-<th>
-<em class="replaceable">
-<code>
+    </em>
+   </th>
+   <th>
+    <em class="replaceable">
+     <code>
       a
      </code>
-</em>
+    </em>
     AND
     <em class="replaceable">
-<code>
+     <code>
       b
      </code>
-</em>
-</th>
-<th>
-<em class="replaceable">
-<code>
+    </em>
+   </th>
+   <th>
+    <em class="replaceable">
+     <code>
       a
      </code>
-</em>
+    </em>
     OR
     <em class="replaceable">
-<code>
+     <code>
       b
      </code>
-</em>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+    </em>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
     TRUE
    </td>
-<td>
+   <td>
     TRUE
    </td>
-<td>
+   <td>
     TRUE
    </td>
-<td>
+   <td>
     TRUE
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     TRUE
    </td>
-<td>
+   <td>
     FALSE
    </td>
-<td>
+   <td>
     FALSE
    </td>
-<td>
+   <td>
     TRUE
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     TRUE
    </td>
-<td>
+   <td>
     NULL
    </td>
-<td>
+   <td>
     NULL
    </td>
-<td>
+   <td>
     TRUE
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     FALSE
    </td>
-<td>
+   <td>
     FALSE
    </td>
-<td>
+   <td>
     FALSE
    </td>
-<td>
+   <td>
     FALSE
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     FALSE
    </td>
-<td>
+   <td>
     NULL
    </td>
-<td>
+   <td>
     FALSE
    </td>
-<td>
+   <td>
     NULL
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     NULL
    </td>
-<td>
+   <td>
     NULL
    </td>
-<td>
+   <td>
     NULL
    </td>
-<td>
+   <td>
     NULL
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 
@@ -157,57 +160,60 @@ O SQL utiliza um sistema lógico de três valores com verdadeiro, falso e `null`
 
 
 <table border="1" class="informaltable">
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
-<em class="replaceable">
-<code>
+ <colgroup>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
+    <em class="replaceable">
+     <code>
       a
      </code>
-</em>
-</th>
-<th>
+    </em>
+   </th>
+   <th>
     NOT
     <em class="replaceable">
-<code>
+     <code>
       a
      </code>
-</em>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+    </em>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
     TRUE
    </td>
-<td>
+   <td>
     FALSE
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     FALSE
    </td>
-<td>
+   <td>
     TRUE
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     NULL
    </td>
-<td>
+   <td>
     NULL
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
 
 
 
-Os operadores `AND` e `OR` são compostos, ou seja, você pode trocar os operandos esquerdo e direito sem afetar o resultado. (No entanto, não é garantido que o operando esquerdo seja avaliado antes do operando direito. Consulte [Seção 4.2.14][(sql-expressions.md#SYNTAX-EXPRESS-EVAL "4.2.14. Expression Evaluation Rules")] para obter mais informações sobre a ordem de avaliação das subexpressões.)
+
+
+
+Os operadores `AND` e `OR` são compostos, ou seja, você pode trocar os operandos esquerdo e direito sem afetar o resultado. (No entanto, não é garantido que o operando esquerdo seja avaliado antes do operando direito. Consulte [Seção 4.2.14](sql-expressions.md#SYNTAX-EXPRESS-EVAL) para obter mais informações sobre a ordem de avaliação das subexpressões.)

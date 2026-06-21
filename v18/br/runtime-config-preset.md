@@ -36,7 +36,7 @@ Os seguintes "parâmetros" são apenas de leitura. Como tal, foram excluídos do
 
 `shared_memory_size_in_huge_pages` (`integer`) [#](#GUC-SHARED-MEMORY-SIZE-IN-HUGE-PAGES): Representa o número de páginas enormes que são necessárias para a área principal de memória compartilhada, com base no tamanho especificado de página enorme (runtime-config-resource.md#GUC-HUGE-PAGE-SIZE). Se as páginas enormes não forem suportadas, isso será `-1`.
 
-Este ajuste é suportado apenas no Linux. Ele é sempre definido como `-1` em outras plataformas. Para mais detalhes sobre o uso de páginas enormes no Linux, consulte [Seção 18.4.5][(kernel-resources.md#LINUX-HUGE-PAGES "18.4.5. Linux Huge Pages")].
+Este ajuste é suportado apenas no Linux. Ele é sempre definido como `-1` em outras plataformas. Para mais detalhes sobre o uso de páginas enormes no Linux, consulte [Seção 18.4.5](kernel-resources.md#LINUX-HUGE-PAGES).
 
 `ssl_library` (`string`) [#](#GUC-SSL-LIBRARY): Representa o nome da biblioteca SSL com a qual este servidor PostgreSQL foi construído (mesmo que o SSL não esteja configurado ou em uso neste momento), por exemplo, `OpenSSL`, ou uma string vazia se nenhuma.
 

@@ -6,7 +6,7 @@ Uma *publicação* pode ser definida em qualquer replicação primária física.
 
 As publicações são diferentes dos esquemas e não afetam a forma como a tabela é acessada. Cada tabela pode ser adicionada a várias publicações, se necessário. As publicações podem atualmente conter apenas tabelas e todas as tabelas do esquema. Os objetos devem ser adicionados explicitamente, exceto quando uma publicação é criada para `ALL TABLES`.
 
-As publicações podem optar por limitar as alterações que produzem a qualquer combinação de `INSERT`, `UPDATE`, `DELETE` e `TRUNCATE`, de forma semelhante à maneira como os gatilhos são disparados por tipos de eventos específicos. Por padrão, todos os tipos de operação são replicados. Essas especificações de publicação aplicam-se apenas para operações DML; elas não afetam a cópia inicial de sincronização de dados. (Os filtros de linha não têm efeito para `TRUNCATE`. Veja [Seção 29.4][(logical-replication-row-filter.md "29.4. Row Filters")]).
+As publicações podem optar por limitar as alterações que produzem a qualquer combinação de `INSERT`, `UPDATE`, `DELETE` e `TRUNCATE`, de forma semelhante à maneira como os gatilhos são disparados por tipos de eventos específicos. Por padrão, todos os tipos de operação são replicados. Essas especificações de publicação aplicam-se apenas para operações DML; elas não afetam a cópia inicial de sincronização de dados. (Os filtros de linha não têm efeito para `TRUNCATE`. Veja [Seção 29.4](logical-replication-row-filter.md)).
 
 Cada publicação pode ter vários assinantes.
 

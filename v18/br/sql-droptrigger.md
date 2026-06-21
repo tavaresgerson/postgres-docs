@@ -20,7 +20,7 @@ DROP TRIGGER [ IF EXISTS ] name ON table_name [ CASCADE | RESTRICT ]
 
 *`table_name`*: O nome (opcionalmente qualificado por esquema) da tabela para a qual o gatilho é definido.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem do gatilho e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem do gatilho e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a eliminação do gatilho se quaisquer objetos dependerem dele. Esse é o padrão.
 

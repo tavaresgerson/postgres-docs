@@ -1,8 +1,8 @@
 ## 29.5. Listas de colunas [#](#LOGICAL-REPLICATION-COL-LISTS)
 
-* [29.5.1. Exemplos][(logical-replication-col-lists.md#LOGICAL-REPLICATION-COL-LIST-EXAMPLES)]
+* [29.5.1. Exemplos](logical-replication-col-lists.md#LOGICAL-REPLICATION-COL-LIST-EXAMPLES)
 
-Cada publicação pode especificar opcionalmente quais colunas de cada tabela são replicadas para os assinantes. A tabela do lado do assinante deve ter, pelo menos, todas as colunas que são publicadas. Se nenhuma lista de colunas for especificada, então todas as colunas do editor são replicadas. Consulte [CREATE PUBLICATION][(sql-createpublication.md "CREATE PUBLICATION")] para obter detalhes sobre a sintaxe.
+Cada publicação pode especificar opcionalmente quais colunas de cada tabela são replicadas para os assinantes. A tabela do lado do assinante deve ter, pelo menos, todas as colunas que são publicadas. Se nenhuma lista de colunas for especificada, então todas as colunas do editor são replicadas. Consulte [CREATE PUBLICATION](sql-createpublication.md) para obter detalhes sobre a sintaxe.
 
 A escolha das colunas pode ser baseada em razões comportamentais ou de desempenho. No entanto, não confie nesse recurso para segurança: um assinante malicioso pode obter dados de colunas que não são publicadas especificamente. Se a segurança é uma consideração, as proteções podem ser aplicadas no lado do publicador.
 

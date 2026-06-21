@@ -11,14 +11,15 @@
 
 `log_destination` (`string`) [#](#GUC-LOG-DESTINATION): O PostgreSQL suporta vários métodos para registrar mensagens do servidor, incluindo stderr, csvlog, jsonlog e syslog. No Windows, o eventlog também é suportado. Defina este parâmetro em uma lista de destinos de registro desejados separados por vírgulas. O padrão é registrar apenas no stderr. Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor.
 
-Se o csvlog estiver incluído em `log_destination`, as entradas de log são exibidas no formato de valor separado por vírgula (CSV), o que é conveniente para carregar logs em programas. Consulte [Seção 19.8.4][(runtime-config-logging.md#RUNTIME-CONFIG-LOGGING-CSVLOG "19.8.4. Using CSV-Format Log Output")] para obter detalhes. [logging_collector][(runtime-config-logging.md#GUC-LOGGING-COLLECTOR)] deve ser habilitado para gerar saída de log no formato CSV.
+Se o csvlog estiver incluído em `log_destination`, as entradas de log são exibidas no formato de valor separado por vírgula (CSV), o que é conveniente para carregar logs em programas. Consulte [Seção 19.8.4](runtime-config-logging.md#RUNTIME-CONFIG-LOGGING-CSVLOG) para obter detalhes. [logging_collector](runtime-config-logging.md#GUC-LOGGING-COLLECTOR) deve ser habilitado para gerar saída de log no formato CSV.
 
-Se o jsonlog estiver incluído em `log_destination`, as entradas de log são exibidas em formato JSON, o que é conveniente para carregar logs em programas. Consulte [Seção 19.8.5][(runtime-config-logging.md#RUNTIME-CONFIG-LOGGING-JSONLOG "19.8.5. Using JSON-Format Log Output")] para obter detalhes. [logging_collector][(runtime-config-logging.md#GUC-LOGGING-COLLECTOR)] deve ser habilitado para gerar saída de log em formato JSON.
+Se o jsonlog estiver incluído em `log_destination`, as entradas de log são exibidas em formato JSON, o que é conveniente para carregar logs em programas. Consulte [Seção 19.8.5](runtime-config-logging.md#RUNTIME-CONFIG-LOGGING-JSONLOG) para obter detalhes. [logging_collector](runtime-config-logging.md#GUC-LOGGING-COLLECTOR) deve ser habilitado para gerar saída de log em formato JSON.
 
 Quando o stderr, csvlog ou jsonlog são incluídos, o arquivo `current_logfiles` é criado para registrar a localização do(s) arquivo(s) de log atualmente utilizado(s) pelo coletor de registro e o destino de registro associado. Isso fornece uma maneira conveniente de encontrar os logs atualmente utilizados pela instância. Aqui está um exemplo do conteúdo desse arquivo:
 
-``` stderr log/postgresql.log csvlog log/postgresql.csv jsonlog log/postgresql.json
-    ```
+```
+stderr log/postgresql.log csvlog log/postgresql.csv jsonlog log/postgresql.json
+```
 
 `current_logfiles` é recriado quando um novo arquivo de registro é criado como efeito da rotação e quando `log_destination` é recarregado. Ele é removido quando nenhum dos arquivos stderr, csvlog ou jsonlog estão incluídos em `log_destination`, e quando o coletor de registro é desativado.
 
@@ -26,13 +27,13 @@ Quando o stderr, csvlog ou jsonlog são incluídos, o arquivo `current_logfiles`
 
 Na maioria dos sistemas Unix, você precisará alterar a configuração do daemon syslog do seu sistema para poder utilizar a opção syslog para `log_destination`. O PostgreSQL pode registrar em instalações syslog `LOCAL0` através de `LOCAL7` (consulte [syslog_facility](runtime-config-logging.md#GUC-SYSLOG-FACILITY)), mas a configuração padrão de syslog na maioria das plataformas descartará todas essas mensagens. Você precisará adicionar algo como:
 
-    ```
-    local0.*    /var/log/postgresql
-    ```
+```
+local0.*    /var/log/postgresql
+```
 
 para o arquivo de configuração do daemon syslog para que ele funcione.
 
-Em Windows, quando você usa a opção `eventlog` para `log_destination`, você deve registrar uma fonte de evento e sua biblioteca com o sistema operacional para que o Visualizador de Eventos do Windows possa exibir mensagens do registro de eventos de forma limpa. Consulte [Seção 18.12][(event-log-registration.md "18.12. Registering Event Log on Windows")] para obter detalhes.
+Em Windows, quando você usa a opção `eventlog` para `log_destination`, você deve registrar uma fonte de evento e sua biblioteca com o sistema operacional para que o Visualizador de Eventos do Windows possa exibir mensagens do registro de eventos de forma limpa. Consulte [Seção 18.12](event-log-registration.md) para obter detalhes.
 
 `logging_collector` (`boolean`) [#](#GUC-LOGGING-COLLECTOR): Este parâmetro habilita o *coletador de logs*, que é um processo em segundo plano que captura mensagens de log enviadas para o stderr e as redireciona para arquivos de log. Essa abordagem é frequentemente mais útil do que fazer log no syslog, pois alguns tipos de mensagens podem não aparecer na saída do syslog. (Um exemplo comum são as mensagens de falha de dinâmica de ligação; outro são as mensagens de erro produzidas por scripts como `archive_command`.) Este parâmetro só pode ser definido no início do servidor.
 
@@ -58,7 +59,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
 
 `log_file_mode` (`integer`) [#](#GUC-LOG-FILE-MODE): Nos sistemas Unix, este parâmetro define as permissões para os arquivos de registro quando o `logging_collector` está habilitado. (Nos sistemas Microsoft Windows, este parâmetro é ignorado.) O valor do parâmetro deve ser um modo numérico especificado no formato aceito pelas chamadas de sistema `chmod` e `umask`. (Para usar o formato octal comum, o número deve começar com um `0` (zero).)
 
-Os permissões padrão são `0600`, o que significa que apenas o proprietário do servidor pode ler ou escrever os arquivos de registro. O outro ajuste comumente útil é `0640`, permitindo que membros do grupo do proprietário leiam os arquivos. No entanto, observe que, para utilizar esse ajuste, você precisará alterar [log_directory][(runtime-config-logging.md#GUC-LOG-DIRECTORY)] para armazenar os arquivos em algum lugar fora do diretório de dados do cluster. Em qualquer caso, não é prudente tornar os arquivos de registro mundialmente legíveis, pois eles podem conter dados sensíveis.
+Os permissões padrão são `0600`, o que significa que apenas o proprietário do servidor pode ler ou escrever os arquivos de registro. O outro ajuste comumente útil é `0640`, permitindo que membros do grupo do proprietário leiam os arquivos. No entanto, observe que, para utilizar esse ajuste, você precisará alterar [log_directory](runtime-config-logging.md#GUC-LOG-DIRECTORY) para armazenar os arquivos em algum lugar fora do diretório de dados do cluster. Em qualquer caso, não é prudente tornar os arquivos de registro mundialmente legíveis, pois eles podem conter dados sensíveis.
 
 Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor.
 
@@ -92,17 +93,17 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
 
 `log_min_messages` (`enum`) [#](#GUC-LOG-MIN-MESSAGES): Controla quais níveis de [mensagens](runtime-config-logging.md#RUNTIME-CONFIG-SEVERITY-LEVELS "Table 19.2. Message Severity Levels") são escritos no log do servidor. Os valores válidos são `DEBUG5`, `DEBUG4`, `DEBUG3`, `DEBUG2`, `DEBUG1`, `INFO`, `NOTICE`, `WARNING`, `ERROR`, `LOG`, `FATAL` e `PANIC`. Cada nível inclui todos os níveis que o seguem. Quanto mais recente o nível, menos mensagens são enviadas para o log. O padrão é `WARNING`. Note que `LOG` tem um rank diferente aqui do que em [client_min_messages](runtime-config-client.md#GUC-CLIENT-MIN-MESSAGES). Apenas usuários super e usuários com o privilégio apropriado `SET` podem alterar esta configuração.
 
-`log_min_error_statement` (`enum`) [#](#GUC-LOG-MIN-ERROR-STATEMENT): Controla quais instruções SQL que causam uma condição de erro são registradas no log do servidor. A instrução SQL atual é incluída na entrada do log para qualquer mensagem do [severidade][(runtime-config-logging.md#RUNTIME-CONFIG-SEVERITY-LEVELS "Table 19.2. Message Severity Levels")] ou superior. Os valores válidos são `DEBUG5`, `DEBUG4`, `DEBUG3`, `DEBUG2`, `DEBUG1`, `INFO`, `NOTICE`, `WARNING`, `ERROR`, `LOG`, `FATAL` e `PANIC`. O padrão é `ERROR`, o que significa que instruções que causam erros, mensagens de log, erros fatais ou pânico serão registradas. Para efetivamente desativar o registro de instruções que falham, defina este parâmetro para `PANIC`. Somente usuários superusuários e usuários com o privilégio apropriado `SET` podem alterar esta configuração.
+`log_min_error_statement` (`enum`) [#](#GUC-LOG-MIN-ERROR-STATEMENT): Controla quais instruções SQL que causam uma condição de erro são registradas no log do servidor. A instrução SQL atual é incluída na entrada do log para qualquer mensagem do [severidade](runtime-config-logging.md#RUNTIME-CONFIG-SEVERITY-LEVELS) ou superior. Os valores válidos são `DEBUG5`, `DEBUG4`, `DEBUG3`, `DEBUG2`, `DEBUG1`, `INFO`, `NOTICE`, `WARNING`, `ERROR`, `LOG`, `FATAL` e `PANIC`. O padrão é `ERROR`, o que significa que instruções que causam erros, mensagens de log, erros fatais ou pânico serão registradas. Para efetivamente desativar o registro de instruções que falham, defina este parâmetro para `PANIC`. Somente usuários superusuários e usuários com o privilégio apropriado `SET` podem alterar esta configuração.
 
 `log_min_duration_statement` (`integer`) [#](#GUC-LOG-MIN-DURATION-STATEMENT): Faz com que a duração de cada declaração concluída seja registrada se a declaração tiver sido executada por pelo menos o tempo especificado. Por exemplo, se você defini-lo como `250ms`, todas as declarações SQL que executam 250 ms ou mais serão registradas. Habilitar este parâmetro pode ser útil para localizar consultas não otimizadas em seus aplicativos. Se este valor for especificado sem unidades, ele é considerado em milissegundos. Definir este valor como zero imprime todas as durações das declarações. `-1` (o padrão) desabilita a registro das durações das declarações. Somente usuários super e usuários com o privilégio apropriado `SET` podem alterar esta configuração.
 
-Isso substitui [log_min_duration_sample][(runtime-config-logging.md#GUC-LOG-MIN-DURATION-SAMPLE)], o que significa que as consultas com duração que excederem essa configuração não são sujeitas a amostragem e são sempre registradas.
+Isso substitui [log_min_duration_sample](runtime-config-logging.md#GUC-LOG-MIN-DURATION-SAMPLE), o que significa que as consultas com duração que excederem essa configuração não são sujeitas a amostragem e são sempre registradas.
 
 Para clientes que utilizam o protocolo de consulta estendida, as durações das etapas de Parse, Bind e Execute são registradas de forma independente.
 
 ### Nota
 
-Ao usar esta opção juntamente com [log_statement][(runtime-config-logging.md#GUC-LOG-STATEMENT)], o texto das declarações que são registradas devido a `log_statement` não será repetido na mensagem do log de duração. Se você não estiver usando syslog, é recomendável que você registre o PID ou o ID de sessão usando [log_line_prefix][(runtime-config-logging.md#GUC-LOG-LINE-PREFIX)] para que você possa vincular a mensagem da declaração à mensagem de duração posterior usando o ID de processo ou o ID de sessão.
+Ao usar esta opção juntamente com [log_statement](runtime-config-logging.md#GUC-LOG-STATEMENT), o texto das declarações que são registradas devido a `log_statement` não será repetido na mensagem do log de duração. Se você não estiver usando syslog, é recomendável que você registre o PID ou o ID de sessão usando [log_line_prefix](runtime-config-logging.md#GUC-LOG-LINE-PREFIX) para que você possa vincular a mensagem da declaração à mensagem de duração posterior usando o ID de processo ou o ID de sessão.
 
 `log_min_duration_sample` (`integer`) [#](#GUC-LOG-MIN-DURATION-SAMPLE): Permite a amostragem da duração das declarações concluídas que foram executadas por pelo menos o período especificado. Isso produz o mesmo tipo de entradas de log que [log_min_duration_statement](runtime-config-logging.md#GUC-LOG-MIN-DURATION-STATEMENT), mas apenas para um subconjunto das declarações executadas, com a taxa de amostragem controlada por [log_statement_sample_rate](runtime-config-logging.md#GUC-LOG-STATEMENT-SAMPLE-RATE). Por exemplo, se você defini-lo como `100ms`, todas as declarações SQL que executam 100ms ou mais serão consideradas para amostragem. Ativação deste parâmetro pode ser útil quando o tráfego é muito alto para registrar todas as consultas. Se este valor for especificado sem unidades, ele é considerado em milissegundos. Definir isso como zero amostra todas as durações das declarações. `-1` (o padrão) desativa a amostragem das durações das declarações. Apenas usuários super e usuários com o privilégio apropriado `SET` podem alterar este ajuste.
 
@@ -122,190 +123,213 @@ Como todas as opções de registro de declarações, esta opção pode adicionar
 
 Por exemplo, se a sincronização do diretório de dados leva 25 segundos e, posteriormente, o restabelecimento de relações não registradas leva 8 segundos, e se essa configuração tiver o valor padrão de 10 segundos, então mensagens serão registradas para a sincronização do diretório de dados após ele ter ocorrido por 10 segundos e novamente após ter ocorrido por 20 segundos, mas nada será registrado para o restabelecimento de relações não registradas.
 
-[Tabela 19.2][(runtime-config-logging.md#RUNTIME-CONFIG-SEVERITY-LEVELS "Table 19.2. Message Severity Levels")] explica os níveis de gravidade da mensagem usados pelo PostgreSQL. Se a saída de registro for enviada para o syslog ou o registro de eventos do Windows, os níveis de gravidade são traduzidos conforme mostrado na tabela.
+[Tabela 19.2](runtime-config-logging.md#RUNTIME-CONFIG-SEVERITY-LEVELS) explica os níveis de gravidade da mensagem usados pelo PostgreSQL. Se a saída de registro for enviada para o syslog ou o registro de eventos do Windows, os níveis de gravidade são traduzidos conforme mostrado na tabela.
 
 **Tabela 19.2. Níveis de gravidade da mensagem**
 
 
 
 <table border="1" class="table" summary="Message Severity Levels">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-<col class="col4"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+  <col class="col4"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Severity
    </th>
-<th>Uso</th>
-<th>
-<span class="systemitem">
+   <th>
+    Uso
+   </th>
+   <th>
+    <span class="systemitem">
      syslog
     </span>
-</th>
-<th>
-<span class="systemitem">
+   </th>
+   <th>
+    <span class="systemitem">
      eventlog
     </span>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      DEBUG1 .. DEBUG5
     </code>
-</td>
-<td>Fornece informações sucessivamente mais detalhadas para uso por desenvolvedores.</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Fornece informações sucessivamente mais detalhadas para uso por desenvolvedores.
+   </td>
+   <td>
+    <code class="literal">
      DEBUG
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      INFORMATION
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      INFO
     </code>
-</td>
-<td>Fornece informações implicitamente solicitadas pelo usuário, por exemplo, saída de<code class="command">
+   </td>
+   <td>
+    Fornece informações implicitamente solicitadas pelo usuário, por exemplo, saída de
+    <code class="command">
      VACUUM VERBOSE
     </code>
     .
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      INFO
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      INFORMATION
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      NOTICE
     </code>
-</td>
-<td>Fornece informações que podem ser úteis para os usuários, como aviso sobre a redução de identificadores longos.</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Fornece informações que podem ser úteis para os usuários, como aviso sobre a redução de identificadores longos.
+   </td>
+   <td>
+    <code class="literal">
      NOTICE
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      INFORMATION
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      WARNING
     </code>
-</td>
-<td>Fornece avisos sobre problemas prováveis, por exemplo,<code class="command">
+   </td>
+   <td>
+    Fornece avisos sobre problemas prováveis, por exemplo,
+    <code class="command">
      COMMIT
-    </code>fora de um bloco de transação.</td>
-<td>
-<code class="literal">
+    </code>
+    fora de um bloco de transação.
+   </td>
+   <td>
+    <code class="literal">
      NOTICE
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      WARNING
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      ERROR
     </code>
-</td>
-<td>Relata um erro que causou o cancelamento do comando atual.</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Relata um erro que causou o cancelamento do comando atual.
+   </td>
+   <td>
+    <code class="literal">
      WARNING
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      ERROR
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      LOG
     </code>
-</td>
-<td>Relata informações de interesse para os administradores, como a atividade do ponto de controle.</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Relata informações de interesse para os administradores, como a atividade do ponto de controle.
+   </td>
+   <td>
+    <code class="literal">
      INFO
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      INFORMATION
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      FATAL
     </code>
-</td>
-<td>Relata um erro que causou o cancelamento da sessão atual.</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Relata um erro que causou o cancelamento da sessão atual.
+   </td>
+   <td>
+    <code class="literal">
      ERR
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      ERROR
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      PANIC
     </code>
-</td>
-<td>Relata um erro que fez com que todas as sessões do banco de dados sejam interrompidas.</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Relata um erro que fez com que todas as sessões do banco de dados sejam interrompidas.
+   </td>
+   <td>
+    <code class="literal">
      CRIT
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      ERROR
     </code>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 
@@ -313,7 +337,7 @@ Por exemplo, se a sincronização do diretório de dados leva 25 segundos e, pos
 
 ### Nota
 
-O que você escolhe registrar pode ter implicações de segurança; veja [Seção 24.3][(logfile-maintenance.md "24.3. Log File Maintenance")].
+O que você escolhe registrar pode ter implicações de segurança; veja [Seção 24.3](logfile-maintenance.md).
 
 `application_name` (`string`) [#](#GUC-APPLICATION-NAME): O `application_name` pode ser qualquer string com menos de `NAMEDATALEN` caracteres (64 caracteres em uma compilação padrão). Normalmente, é definido por uma aplicação ao se conectar ao servidor. O nome será exibido na exibição `pg_stat_activity` e incluído nas entradas de registro CSV. Também pode ser incluído em entradas de registro regulares via o parâmetro [log_line_prefix](runtime-config-logging.md#GUC-LOG-LINE-PREFIX). Apenas caracteres ASCII imprimíveis podem ser usados no valor `application_name`. Outros caracteres são substituídos por escapes hexadecimais em estilo C (sql-syntax-lexical.md#SQL-SYNTAX-STRINGS-ESCAPE "4.1.2.2. String Constants with C-Style Escapes").
 
@@ -329,73 +353,94 @@ O que você escolhe registrar pode ter implicações de segurança; veja [Seçã
 
 **Tabela 19.3. Opções de Conexão de Log**
 
-    
+
 
 <table border="1" class="table" summary="Log Connection Options">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Name
    </th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      receipt
     </code>
-</td>
-<td>Registra o recebimento de uma conexão.</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Registra o recebimento de uma conexão.
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      authentication
     </code>
-</td>
-<td>Registra a identidade original usada por um método de autenticação para identificar um usuário. Na maioria dos casos, a string de identidade corresponde à<span class="productname">PostgreSQL</span>nome de usuário, mas alguns métodos de autenticação de terceiros podem alterar o identificador original do usuário antes de o servidor armazená-lo. A autenticação falha é sempre registrada, independentemente do valor desta configuração.</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Registra a identidade original usada por um método de autenticação para identificar um usuário. Na maioria dos casos, a string de identidade corresponde à
+    <span class="productname">
+     PostgreSQL
+    </span>
+    nome de usuário, mas alguns métodos de autenticação de terceiros podem alterar o identificador original do usuário antes de o servidor armazená-lo. A autenticação falha é sempre registrada, independentemente do valor desta configuração.
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      authorization
     </code>
-</td>
-<td>Registra o sucesso da conclusão da autorização. Neste ponto, a conexão foi estabelecida, mas o backend ainda não está totalmente configurado. A mensagem de log inclui o nome de usuário autorizado, bem como o nome do banco de dados e o nome da aplicação, se aplicável.</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Registra o sucesso da conclusão da autorização. Neste ponto, a conexão foi estabelecida, mas o backend ainda não está totalmente configurado. A mensagem de log inclui o nome de usuário autorizado, bem como o nome do banco de dados e o nome da aplicação, se aplicável.
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      setup_durations
     </code>
-</td>
-<td>Registra o tempo gasto para estabelecer a conexão e configurar o backend até que a conexão esteja pronta para executar sua primeira consulta. A mensagem de log inclui três durações: a duração total de configuração (iniciando quando o postmaster aceita a conexão recebida e terminando quando a conexão está pronta para consulta), o tempo que levou para bifurcar o novo backend e o tempo que levou para autenticar o usuário.</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Registra o tempo gasto para estabelecer a conexão e configurar o backend até que a conexão esteja pronta para executar sua primeira consulta. A mensagem de log inclui três durações: a duração total de configuração (iniciando quando o postmaster aceita a conexão recebida e terminando quando a conexão está pronta para consulta), o tempo que levou para bifurcar o novo backend e o tempo que levou para autenticar o usuário.
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      all
     </code>
-</td>
-<td>Um alias de conveniência equivalente a especificar todas as opções. Se<code class="literal">
+   </td>
+   <td>
+    Um alias de conveniência equivalente a especificar todas as opções. Se
+    <code class="literal">
      all
-    </code>Se estiver especificado em uma lista de outras opções, todos os aspectos da conexão serão registrados.</td>
-</tr>
-</tbody>
+    </code>
+    Se estiver especificado em uma lista de outras opções, todos os aspectos da conexão serão registrados.
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-      
 
-O registro de desconexões é controlado separadamente por [log_disconnections][(runtime-config-logging.md#GUC-LOG-DISCONNECTIONS)].
+
+
+
+
+O registro de desconexões é controlado separadamente por [log_disconnections](runtime-config-logging.md#GUC-LOG-DISCONNECTIONS).
 
 Para fins de compatibilidade reversa, `on`, `off`, `true`, `false`, `yes`, `no`, `1` e `0` ainda são suportados. Os valores positivos são equivalentes ao especificar as opções de `receipt`, `authentication` e `authorization`.
 
@@ -423,277 +468,332 @@ A diferença entre habilitar `log_duration` e definir [log_min_duration_statemen
 
 Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor. O padrão é `'%m [%p] '`, que registra um rótulo de tempo e o ID do processo.
 
-    
+
 
 <table border="1" class="informaltable">
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Escape
    </th>
-<th>Efeito</th>
-<th>
+   <th>
+    Efeito
+   </th>
+   <th>
     Session only
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      %a
     </code>
-</td>
-<td>Nome do aplicativo</td>
-<td>
+   </td>
+   <td>
+    Nome do aplicativo
+   </td>
+   <td>
     yes
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %u
     </code>
-</td>
-<td>Nome do usuário</td>
-<td>
+   </td>
+   <td>
+    Nome do usuário
+   </td>
+   <td>
     yes
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %d
     </code>
-</td>
-<td>Nome do banco de dados</td>
-<td>
+   </td>
+   <td>
+    Nome do banco de dados
+   </td>
+   <td>
     yes
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %r
     </code>
-</td>
-<td>Nome de host remoto ou endereço IP, e porta remota</td>
-<td>
+   </td>
+   <td>
+    Nome de host remoto ou endereço IP, e porta remota
+   </td>
+   <td>
     yes
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %h
     </code>
-</td>
-<td>Nome de host remoto ou endereço IP</td>
-<td>
+   </td>
+   <td>
+    Nome de host remoto ou endereço IP
+   </td>
+   <td>
     yes
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %L
     </code>
-</td>
-<td>Endereço local (o endereço IP no servidor ao qual o cliente se conectou)</td>
-<td>
+   </td>
+   <td>
+    Endereço local (o endereço IP no servidor ao qual o cliente se conectou)
+   </td>
+   <td>
     yes
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %b
     </code>
-</td>
-<td>Tipo de backend</td>
-<td>
+   </td>
+   <td>
+    Tipo de backend
+   </td>
+   <td>
     no
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %p
     </code>
-</td>
-<td>ID do processo</td>
-<td>
+   </td>
+   <td>
+    ID do processo
+   </td>
+   <td>
     no
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %P
     </code>
-</td>
-<td>ID do processo do líder do grupo paralelo, se este processo for um trabalhador de consulta paralela</td>
-<td>
+   </td>
+   <td>
+    ID do processo do líder do grupo paralelo, se este processo for um trabalhador de consulta paralela
+   </td>
+   <td>
     no
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %t
     </code>
-</td>
-<td>Carimbo de tempo sem milissegundos</td>
-<td>
+   </td>
+   <td>
+    Carimbo de tempo sem milissegundos
+   </td>
+   <td>
     no
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %m
     </code>
-</td>
-<td>Marcador de tempo com milissegundos</td>
-<td>
+   </td>
+   <td>
+    Marcador de tempo com milissegundos
+   </td>
+   <td>
     no
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %n
     </code>
-</td>
-<td>Marca-data com milissegundos (como uma época Unix)</td>
-<td>
+   </td>
+   <td>
+    Marca-data com milissegundos (como uma época Unix)
+   </td>
+   <td>
     no
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %i
     </code>
-</td>
-<td>Tag de comando: tipo de comando atual da sessão</td>
-<td>
+   </td>
+   <td>
+    Tag de comando: tipo de comando atual da sessão
+   </td>
+   <td>
     yes
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %e
     </code>
-</td>
-<td>Código de erro SQLSTATE</td>
-<td>
+   </td>
+   <td>
+    Código de erro SQLSTATE
+   </td>
+   <td>
     no
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %c
     </code>
-</td>
-<td>ID de sessão: veja abaixo</td>
-<td>
+   </td>
+   <td>
+    ID de sessão: veja abaixo
+   </td>
+   <td>
     no
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %l
     </code>
-</td>
-<td>Número da linha de registro para cada sessão ou processo, começando em 1</td>
-<td>
+   </td>
+   <td>
+    Número da linha de registro para cada sessão ou processo, começando em 1
+   </td>
+   <td>
     no
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %s
     </code>
-</td>
-<td>Marcadores de hora de início do processo</td>
-<td>
+   </td>
+   <td>
+    Marcadores de hora de início do processo
+   </td>
+   <td>
     no
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %v
     </code>
-</td>
-<td>ID de transação virtual (procNumber/localXID); veja<a class="xref" href="transaction-id.md" title="67.1. Transactions and Identifiers">Seção 67.1</a>
-</td>
-<td>
+   </td>
+   <td>
+    ID de transação virtual (procNumber/localXID); veja
+    <a class="xref" href="transaction-id.md" title="67.1. Transactions and Identifiers">
+     Seção 67.1
+    </a>
+   </td>
+   <td>
     no
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %x
     </code>
-</td>
-<td>ID da transação (0 se nenhum for atribuído); veja<a class="xref" href="transaction-id.md" title="67.1. Transactions and Identifiers">Seção 67.1</a>
-</td>
-<td>
+   </td>
+   <td>
+    ID da transação (0 se nenhum for atribuído); veja
+    <a class="xref" href="transaction-id.md" title="67.1. Transactions and Identifiers">
+     Seção 67.1
+    </a>
+   </td>
+   <td>
     no
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %q
     </code>
-</td>
-<td>Não produz saída, mas informa aos processos não de sessão que devem parar neste ponto da cadeia; ignorado pelos processos de sessão</td>
-<td>
+   </td>
+   <td>
+    Não produz saída, mas informa aos processos não de sessão que devem parar neste ponto da cadeia; ignorado pelos processos de sessão
+   </td>
+   <td>
     no
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %Q
     </code>
-</td>
-<td>Identificador da consulta atual. Os identificadores de consulta não são calculados por padrão, portanto, este campo será zero a menos que<a class="xref" href="runtime-config-statistics.md#GUC-COMPUTE-QUERY-ID">
+   </td>
+   <td>
+    Identificador da consulta atual. Os identificadores de consulta não são calculados por padrão, portanto, este campo será zero a menos que
+    <a class="xref" href="runtime-config-statistics.md#GUC-COMPUTE-QUERY-ID">
      compute_query_id
-    </a>O parâmetro está habilitado ou um módulo de terceiros que calcula identificadores de consulta está configurado.</td>
-<td>
+    </a>
+    O parâmetro está habilitado ou um módulo de terceiros que calcula identificadores de consulta está configurado.
+   </td>
+   <td>
     yes
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      %%
     </code>
-</td>
-<td>Literal<code class="literal">
+   </td>
+   <td>
+    Literal
+    <code class="literal">
      %
     </code>
-</td>
-<td>
+   </td>
+   <td>
     no
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 
@@ -701,9 +801,9 @@ O tipo de backend corresponde à coluna `backend_type` na visualização `pg_sta
 
 O `%c` escape imprime um identificador de sessão quase único, composto por dois números hexadecimais de 4 bytes (sem zeros no início) separados por um ponto. Os números são o horário de início do processo e o ID do processo, então o `%c` também pode ser usado como uma maneira de economizar espaço ao imprimir esses itens. Por exemplo, para gerar o identificador de sessão a partir do `pg_stat_activity`, use esta consulta:
 
-    ```
-    SELECT to_hex(trunc(EXTRACT(EPOCH FROM backend_start))::integer) || '.' || to_hex(pid) FROM pg_stat_activity;
-    ```
+```
+SELECT to_hex(trunc(EXTRACT(EPOCH FROM backend_start))::integer) || '.' || to_hex(pid) FROM pg_stat_activity;
+```
 
 ### DICA
 
@@ -717,13 +817,13 @@ O Syslog produz seu próprio rótulo de tempo e informações de ID de processo,
 
 O escape `%q` é útil ao incluir informações que estão disponíveis apenas no contexto da sessão (backend), como o nome do usuário ou do banco de dados. Por exemplo:
 
-    ```
-    log_line_prefix = '%m [%p] %q%u@%d/%a '
-    ```
+```
+log_line_prefix = '%m [%p] %q%u@%d/%a '
+```
 
 ### Nota
 
-O escape `%Q` sempre reporta um identificador zero para as linhas geradas por [log_statement][(runtime-config-logging.md#GUC-LOG-STATEMENT)] porque `log_statement` gera a saída antes que um identificador possa ser calculado, incluindo declarações inválidas para as quais não pode ser calculado um identificador.
+O escape `%Q` sempre reporta um identificador zero para as linhas geradas por [log_statement](runtime-config-logging.md#GUC-LOG-STATEMENT) porque `log_statement` gera a saída antes que um identificador possa ser calculado, incluindo declarações inválidas para as quais não pode ser calculado um identificador.
 
 `log_lock_waits` (`boolean`) [#](#GUC-LOG-LOCK-WAITS): Controla se uma mensagem de log é produzida quando uma sessão espera mais tempo do que [deadlock_timeout](runtime-config-locks.md#GUC-DEADLOCK-TIMEOUT) para adquirir um bloqueio. Isso é útil para determinar se as esperas de bloqueio estão causando um desempenho ruim. O padrão é `off`. Somente usuários super e usuários com o privilégio apropriado `SET` podem alterar essa configuração.
 
@@ -735,7 +835,7 @@ O padrão é `off`. Este parâmetro só pode ser definido no arquivo `postgresql
 
 `log_parameter_max_length` (`integer`) [#](#GUC-LOG-PARAMETER-MAX-LENGTH): Se maior que zero, cada valor do parâmetro de vinculação registrado com uma mensagem de registro de log sem erro é limitado a este número de bytes. Zero desativa o registro de parâmetros de vinculação para logs de declarações sem erro. `-1` (o padrão) permite que os parâmetros de vinculação sejam registrados na íntegra. Se este valor for especificado sem unidades, ele é considerado em bytes. Somente superusuários e usuários com o privilégio apropriado `SET` podem alterar esta configuração.
 
-Essa configuração afeta apenas as mensagens de log impressas como resultado de [log_statement][(runtime-config-logging.md#GUC-LOG-STATEMENT)], [log_duration][(runtime-config-logging.md#GUC-LOG-DURATION)] e configurações relacionadas. Valores não nulos dessa configuração adicionam algum overhead, especialmente se os parâmetros forem enviados em formato binário, pois, nesse caso, é necessária a conversão para texto.
+Essa configuração afeta apenas as mensagens de log impressas como resultado de [log_statement](runtime-config-logging.md#GUC-LOG-STATEMENT), [log_duration](runtime-config-logging.md#GUC-LOG-DURATION) e configurações relacionadas. Valores não nulos dessa configuração adicionam algum overhead, especialmente se os parâmetros forem enviados em formato binário, pois, nesse caso, é necessária a conversão para texto.
 
 `log_parameter_max_length_on_error` (`integer`) [#](#GUC-LOG-PARAMETER-MAX-LENGTH-ON-ERROR): Se maior que zero, cada valor do parâmetro de vinculação relatado em mensagens de erro é limitado a quantos bytes. Zero (o padrão) desativa a inclusão de parâmetros de vinculação em mensagens de erro. `-1` permite que os parâmetros de vinculação sejam impressos na íntegra. Se este valor for especificado sem unidades, ele é considerado em bytes.
 
@@ -771,7 +871,7 @@ Para importar um arquivo de registro nesta tabela, use o comando `COPY FROM`:
 COPY postgres_log FROM '/full/path/to/logfile.csv' WITH csv;
 ```
 
-É também possível acessar o arquivo como uma tabela estrangeira, usando o módulo fornecido [file_fdw][(file-fdw.md "F.15. file_fdw — access data files in the server's file system")].
+É também possível acessar o arquivo como uma tabela estrangeira, usando o módulo fornecido [file_fdw](file-fdw.md).
 
 Há algumas coisas que você precisa fazer para simplificar a importação de arquivos de registro CSV:
 
@@ -786,351 +886,414 @@ Incluir `jsonlog` na lista `log_destination` fornece uma maneira conveniente de 
 
 Campos de texto com valores nulos são excluídos da saída. Campos adicionais podem ser adicionados no futuro. Aplicações de usuário que processam a saída `jsonlog` devem ignorar campos desconhecidos.
 
-Cada linha de registro é serializada como um objeto JSON com o conjunto de chaves e seus valores associados mostrados em [Tabela 19.4][(runtime-config-logging.md#RUNTIME-CONFIG-LOGGING-JSONLOG-KEYS-VALUES "Table 19.4. Keys and Values of JSON Log Entries")].
+Cada linha de registro é serializada como um objeto JSON com o conjunto de chaves e seus valores associados mostrados em [Tabela 19.4](runtime-config-logging.md#RUNTIME-CONFIG-LOGGING-JSONLOG-KEYS-VALUES).
 
 **Tabela 19.4. Chaves e valores das entradas de registro JSON**
 
 
 
 <table border="1" class="table" summary="Keys and Values of JSON Log Entries">
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Key name
    </th>
-<th>
+   <th>
     Type
    </th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      timestamp
     </code>
-</td>
-<td>
+   </td>
+   <td>
     string
    </td>
-<td>Marcador de tempo com milissegundos</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Marcador de tempo com milissegundos
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      user
     </code>
-</td>
-<td>
+   </td>
+   <td>
     string
    </td>
-<td>Nome do usuário</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Nome do usuário
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      dbname
     </code>
-</td>
-<td>
+   </td>
+   <td>
     string
    </td>
-<td>Nome do banco de dados</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Nome do banco de dados
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      pid
     </code>
-</td>
-<td>
+   </td>
+   <td>
     number
    </td>
-<td>ID do processo</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    ID do processo
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      remote_host
     </code>
-</td>
-<td>
+   </td>
+   <td>
     string
    </td>
-<td>anfitrião do cliente</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    anfitrião do cliente
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      remote_port
     </code>
-</td>
-<td>
+   </td>
+   <td>
     number
    </td>
-<td>Porto do cliente</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Porto do cliente
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      session_id
     </code>
-</td>
-<td>
+   </td>
+   <td>
     string
    </td>
-<td>ID de sessão</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    ID de sessão
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      line_num
     </code>
-</td>
-<td>
+   </td>
+   <td>
     number
    </td>
-<td>Número de linha por sessão</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Número de linha por sessão
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      ps
     </code>
-</td>
-<td>
+   </td>
+   <td>
     string
    </td>
-<td>Atual ps display</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Atual ps display
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      session_start
     </code>
-</td>
-<td>
+   </td>
+   <td>
     string
    </td>
-<td>Horário de início da sessão</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Horário de início da sessão
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      vxid
     </code>
-</td>
-<td>
+   </td>
+   <td>
     string
    </td>
-<td>ID de transação virtual</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    ID de transação virtual
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      txid
     </code>
-</td>
-<td>
+   </td>
+   <td>
     string
    </td>
-<td>ID de transação regular</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    ID de transação regular
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      error_severity
     </code>
-</td>
-<td>
+   </td>
+   <td>
     string
    </td>
-<td>Gravidade do erro</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Gravidade do erro
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      state_code
     </code>
-</td>
-<td>
+   </td>
+   <td>
     string
    </td>
-<td>Código SQLSTATE</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Código SQLSTATE
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      message
     </code>
-</td>
-<td>
+   </td>
+   <td>
     string
    </td>
-<td>Mensagem de erro</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Mensagem de erro
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      detail
     </code>
-</td>
-<td>
+   </td>
+   <td>
     string
    </td>
-<td>Detalhamento da mensagem de erro</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Detalhamento da mensagem de erro
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      hint
     </code>
-</td>
-<td>
+   </td>
+   <td>
     string
    </td>
-<td>Sugestão de mensagem de erro</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Sugestão de mensagem de erro
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      internal_query
     </code>
-</td>
-<td>
+   </td>
+   <td>
     string
    </td>
-<td>Consulta interna que levou ao erro</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Consulta interna que levou ao erro
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      internal_position
     </code>
-</td>
-<td>
+   </td>
+   <td>
     number
    </td>
-<td>Índice do cursor em consulta interna</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Índice do cursor em consulta interna
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      context
     </code>
-</td>
-<td>
+   </td>
+   <td>
     string
    </td>
-<td>Contexto do erro</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Contexto do erro
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      statement
     </code>
-</td>
-<td>
+   </td>
+   <td>
     string
    </td>
-<td>string de consulta fornecida pelo cliente</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    string de consulta fornecida pelo cliente
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      cursor_position
     </code>
-</td>
-<td>
+   </td>
+   <td>
     number
    </td>
-<td>Índice do cursor na string de consulta</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Índice do cursor na string de consulta
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      func_name
     </code>
-</td>
-<td>
+   </td>
+   <td>
     string
    </td>
-<td>Nome da função de localização de erro</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Nome da função de localização de erro
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      file_name
     </code>
-</td>
-<td>
+   </td>
+   <td>
     string
    </td>
-<td>Nome do arquivo da localização do erro</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Nome do arquivo da localização do erro
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      file_line_num
     </code>
-</td>
-<td>
+   </td>
+   <td>
     number
    </td>
-<td>Número de linha do arquivo do local da localização do erro</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Número de linha do arquivo do local da localização do erro
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      application_name
     </code>
-</td>
-<td>
+   </td>
+   <td>
     string
    </td>
-<td>Nome do aplicativo do cliente</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Nome do aplicativo do cliente
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      backend_type
     </code>
-</td>
-<td>
+   </td>
+   <td>
     string
    </td>
-<td>Tipo de backend</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    Tipo de backend
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      leader_pid
     </code>
-</td>
-<td>
+   </td>
+   <td>
     number
    </td>
-<td>ID de processo do líder para trabalhadores paralelos ativos</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   <td>
+    ID de processo do líder para trabalhadores paralelos ativos
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      query_id
     </code>
-</td>
-<td>
+   </td>
+   <td>
     number
    </td>
-<td>ID da consulta</td>
-</tr>
-</tbody>
+   <td>
+    ID da consulta
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 

@@ -16,7 +16,7 @@ Em caso de erro, o servidor pode abortar a autenticação em qualquer estágio e
 
 ### 54.3.1. Autenticação SCRAM-SHA-256 [#](#SASL-SCRAM-SHA-256)
 
-`SCRAM-SHA-256`, e sua variante com vinculação de canal `SCRAM-SHA-256-PLUS`, são mecanismos de autenticação baseados em senha. Eles são descritos em detalhes em [RFC 7677][(https://datatracker.ietf.org/doc/html/rfc7677)] e [RFC 5802][(https://datatracker.ietf.org/doc/html/rfc5802)].
+`SCRAM-SHA-256`, e sua variante com vinculação de canal `SCRAM-SHA-256-PLUS`, são mecanismos de autenticação baseados em senha. Eles são descritos em detalhes em [RFC 7677](https://datatracker.ietf.org/doc/html/rfc7677) e [RFC 5802](https://datatracker.ietf.org/doc/html/rfc5802).
 
 Quando o SCRAM-SHA-256 é usado no PostgreSQL, o servidor ignorará o nome do usuário que o cliente envia no `client-first-message`. O nome do usuário que já foi enviado na mensagem de inicialização é usado em vez disso. O PostgreSQL suporta múltiplos codificações de caracteres, enquanto o SCRAM dita que o UTF-8 deve ser usado para o nome do usuário, então pode ser impossível representar o nome do usuário do PostgreSQL em UTF-8.
 
@@ -38,7 +38,7 @@ O SCRAM com vinculação de canal previne ataques de homem no meio ao misturar a
 
 ### 54.3.2. Autenticação OAUTHBEARER [#](#SASL-OAUTHBEARER)
 
-`OAUTHBEARER` é um mecanismo baseado em tokens para autenticação federada. Ele é descrito em detalhes em [RFC 7628][(https://datatracker.ietf.org/doc/html/rfc7628)].
+`OAUTHBEARER` é um mecanismo baseado em tokens para autenticação federada. Ele é descrito em detalhes em [RFC 7628](https://datatracker.ietf.org/doc/html/rfc7628).
 
 Uma troca típica difere dependendo se o cliente já tem um token portador armazenado em cache para o usuário atual. Se não tiver, a troca ocorrerá em duas conexões: a primeira conexão de "descoberta" para obter metadados OAuth do servidor e a segunda conexão para enviar o token após o cliente tê-lo obtido. (O libpq atualmente não implementa um método de cache como parte de seu fluxo integrado, então ele usa a troca de duas conexões.)
 

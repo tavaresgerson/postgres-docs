@@ -1,6 +1,6 @@
 ## 43.1. Funções e Argumentos PL/Perl [#](#PLPERL-FUNCS)
 
-Para criar uma função no idioma PL/Perl, use a sintaxe padrão [CREATE FUNCTION][(sql-createfunction.md "CREATE FUNCTION")]:
+Para criar uma função no idioma PL/Perl, use a sintaxe padrão [CREATE FUNCTION](sql-createfunction.md):
 
 ```
 CREATE FUNCTION funcname (argument-types)
@@ -29,7 +29,7 @@ Um bloco de código anônimo não recebe argumentos e qualquer valor que ele pos
 
 O uso de subrotinas aninhadas nomeadas é perigoso em Perl, especialmente se elas se referirem a variáveis lexicais no escopo interno. Como uma função PL/Perl é envolvida em uma subrotina, qualquer subrotina nomeada que você colocar dentro de uma será aninhada. Em geral, é muito mais seguro criar subrotinas anônimas que você chame via um coderef. Para mais informações, consulte as entradas para `Variable "%s" will not stay shared` e `Variable "%s" is not available` na página do manual perldiag, ou pesquise na Internet por “subrotina aninhada nomeada em perl”.
 
-A sintaxe do comando `CREATE FUNCTION` exige que o corpo da função seja escrito como uma constante de string. Geralmente, é mais conveniente usar a citação em dólar (ver [Seção 4.1.2.4][(sql-syntax-lexical.md#SQL-SYNTAX-DOLLAR-QUOTING "4.1.2.4. Dollar-Quoted String Constants")]) para a constante de string. Se você optar por usar a sintaxe de string de escape `E''`, deve duplicar quaisquer aspas simples (`'`) e barras invertidas (`\`) usadas no corpo da função (ver [Seção 4.1.2.1][(sql-syntax-lexical.md#SQL-SYNTAX-STRINGS "4.1.2.1. String Constants")]).
+A sintaxe do comando `CREATE FUNCTION` exige que o corpo da função seja escrito como uma constante de string. Geralmente, é mais conveniente usar a citação em dólar (ver [Seção 4.1.2.4](sql-syntax-lexical.md#SQL-SYNTAX-DOLLAR-QUOTING)) para a constante de string. Se você optar por usar a sintaxe de string de escape `E''`, deve duplicar quaisquer aspas simples (`'`) e barras invertidas (`\`) usadas no corpo da função (ver [Seção 4.1.2.1](sql-syntax-lexical.md#SQL-SYNTAX-STRINGS)).
 
 Os argumentos e os resultados são tratados como em qualquer outra subrotina do Perl: os argumentos são passados em `@_`, e um valor de resultado é retornado com `return` ou como a última expressão avaliada na função.
 
@@ -84,7 +84,7 @@ AS $$
 $$ LANGUAGE plperl;
 ```
 
-Quando essa transformação for aplicada, os argumentos `bool` serão vistos pelo Perl como sendo `1` ou vazios, portanto, verdadeiros ou falsos, respectivamente. Se o resultado da função for do tipo `bool`, ele será verdadeiro ou falso de acordo com o fato de o Perl avaliar o valor retornado como verdadeiro. Transformações semelhantes também são realizadas para argumentos e resultados de consultas booleanas realizadas dentro da função ([Seção 43.3.1][(plperl-builtins.md#PLPERL-DATABASE "43.3.1. Database Access from PL/Perl")]).
+Quando essa transformação for aplicada, os argumentos `bool` serão vistos pelo Perl como sendo `1` ou vazios, portanto, verdadeiros ou falsos, respectivamente. Se o resultado da função for do tipo `bool`, ele será verdadeiro ou falso de acordo com o fato de o Perl avaliar o valor retornado como verdadeiro. Transformações semelhantes também são realizadas para argumentos e resultados de consultas booleanas realizadas dentro da função ([Seção 43.3.1](plperl-builtins.md#PLPERL-DATABASE)).
 
 O Perl pode retornar arrays do PostgreSQL como referências para arrays do Perl. Aqui está um exemplo:
 

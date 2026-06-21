@@ -1,8 +1,8 @@
 ## 64.2. Geradores de Recursos WAL personalizados [#](#CUSTOM-RMGR)
 
-Esta seção explica a interface entre o sistema principal do PostgreSQL e os gestores de recursos WAL personalizados, que permitem que as extensões se integrem diretamente com o [WAL][(wal.md "Chapter 28. Reliability and the Write-Ahead Log")].
+Esta seção explica a interface entre o sistema principal do PostgreSQL e os gestores de recursos WAL personalizados, que permitem que as extensões se integrem diretamente com o [WAL](wal.md).
 
-Uma extensão, especialmente um [Método de Acesso a Tabela][(tableam.md "Chapter 62. Table Access Method Interface Definition")] ou [Método de Acesso a Índice][(indexam.md "Chapter 63. Index Access Method Interface Definition")], pode precisar usar o WAL para recuperação, replicação e/ou [Decodificação Lógica][(logicaldecoding.md "Chapter 47. Logical Decoding")].
+Uma extensão, especialmente um [Método de Acesso a Tabela](tableam.md) ou [Método de Acesso a Índice](indexam.md), pode precisar usar o WAL para recuperação, replicação e/ou [Decodificação Lógica](logicaldecoding.md).
 
 Para criar um novo gerenciador de recursos personalizado WAL, primeiro defina uma estrutura `RmgrData` com implementações para os métodos do gerenciador de recursos. Consulte `src/backend/access/transam/README` e `src/include/access/xlog_internal.h` na fonte do PostgreSQL.
 
@@ -57,7 +57,7 @@ extern void RegisterCustomRmgr(RmgrId rmid, const RmgrData *rmgr);
 
 `RegisterCustomRmgr` deve ser chamado a partir da função [_PG_init](xfunc-c.md#XFUNC-C-DYNLOAD "36.10.1. Dynamic Loading") do módulo de extensão. Ao desenvolver uma nova extensão, use `RM_EXPERIMENTAL_ID` para *`rmid`*. Quando estiver pronto para liberar a extensão para os usuários, reserve um novo ID de gerenciador de recursos na página [Gerenciador de Recursos WAL Personalizado](https://wiki.postgresql.org/wiki/CustomWALResourceManagers).
 
-Coloque o módulo de extensão que implementa o gerenciador de recursos personalizado em [shared_preload_libraries][(runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES)] para que ele seja carregado cedo durante o início do PostgreSQL.
+Coloque o módulo de extensão que implementa o gerenciador de recursos personalizado em [shared_preload_libraries](runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES) para que ele seja carregado cedo durante o início do PostgreSQL.
 
 ### Nota
 

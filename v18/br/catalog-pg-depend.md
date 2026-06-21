@@ -9,136 +9,177 @@ Veja também `pg_shdepend` (catalog-pg-shdepend.md "52.48. pg_shdepend"), que r
 
 
 <table border="1" class="table" summary="pg_depend Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">Tipo de coluna</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
+     Tipo de coluna
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       classid
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
+      <code class="structname">
        pg_class
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
-     </code>)</p>
-<p>O OID do catálogo do sistema que o objeto dependente está em</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     O OID do catálogo do sistema que o objeto dependente está em
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       objid
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referência a qualquer coluna OID)</p>
-<p>O OID do objeto dependente específico</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     (referência a qualquer coluna OID)
+    </p>
+    <p>
+     O OID do objeto dependente específico
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       objsubid
      </code>
-<code class="type">
+     <code class="type">
       int4
      </code>
-</p>
-<p>Para uma coluna de tabela, este é o número da coluna (o<code class="structfield">
+    </p>
+    <p>
+     Para uma coluna de tabela, este é o número da coluna (o
+     <code class="structfield">
       objid
-     </code>e<code class="structfield">
+     </code>
+     e
+     <code class="structfield">
       classid
-     </code>refere-se à própria tabela). Para todos os outros tipos de objeto, essa coluna é zero.</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     refere-se à própria tabela). Para todos os outros tipos de objeto, essa coluna é zero.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       refclassid
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
+      <code class="structname">
        pg_class
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
-     </code>)</p>
-<p>O OID do catálogo do sistema que o objeto referenciado está em</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     O OID do catálogo do sistema que o objeto referenciado está em
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       refobjid
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referência a qualquer coluna OID)</p>
-<p>O OID do objeto específico referido</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     (referência a qualquer coluna OID)
+    </p>
+    <p>
+     O OID do objeto específico referido
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       refobjsubid
      </code>
-<code class="type">
+     <code class="type">
       int4
      </code>
-</p>
-<p>Para uma coluna de tabela, este é o número da coluna (o<code class="structfield">
+    </p>
+    <p>
+     Para uma coluna de tabela, este é o número da coluna (o
+     <code class="structfield">
       refobjid
-     </code>e<code class="structfield">
+     </code>
+     e
+     <code class="structfield">
       refclassid
-     </code>refere-se à tabela em si). Para todos os outros tipos de objeto, essa coluna é zero.</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     refere-se à tabela em si). Para todos os outros tipos de objeto, essa coluna é zero.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       deptype
      </code>
-<code class="type">
+     <code class="type">
       char
      </code>
-</p>
-<p>Um código que defina a semântica específica dessa relação de dependência; veja o texto</p>
-</td>
-</tr>
-</tbody>
+    </p>
+    <p>
+     Um código que defina a semântica específica dessa relação de dependência; veja o texto
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Em todos os casos, uma entrada `pg_depend` indica que o objeto referenciado não pode ser descartado sem também descartar o objeto dependente. No entanto, existem vários subsabores identificados por `deptype`:
 

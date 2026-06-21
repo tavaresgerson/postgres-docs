@@ -9,98 +9,98 @@
 
 O módulo `pg_stat_statements` fornece uma maneira de acompanhar as estatísticas de planejamento e execução de todas as declarações SQL executadas por um servidor.
 
-O módulo deve ser carregado adicionando `pg_stat_statements` a [shared_preload_libraries][(runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES)] em `postgresql.conf`, porque ele requer memória compartilhada adicional. Isso significa que é necessário reiniciar o servidor para adicionar ou remover o módulo. Além disso, o cálculo do identificador da consulta deve ser habilitado para que o módulo seja ativo, o que é feito automaticamente se [compute_query_id][(runtime-config-statistics.md#GUC-COMPUTE-QUERY-ID)] estiver definido como `auto` ou `on`, ou qualquer módulo de terceiros que calcule identificadores de consulta seja carregado.
+O módulo deve ser carregado adicionando `pg_stat_statements` a [shared_preload_libraries](runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES) em `postgresql.conf`, porque ele requer memória compartilhada adicional. Isso significa que é necessário reiniciar o servidor para adicionar ou remover o módulo. Além disso, o cálculo do identificador da consulta deve ser habilitado para que o módulo seja ativo, o que é feito automaticamente se [compute_query_id](runtime-config-statistics.md#GUC-COMPUTE-QUERY-ID) estiver definido como `auto` ou `on`, ou qualquer módulo de terceiros que calcule identificadores de consulta seja carregado.
 
 Quando o `pg_stat_statements` está ativo, ele rastreia estatísticas em todos os bancos de dados do servidor. Para acessar e manipular essas estatísticas, o módulo fornece as visualizações `pg_stat_statements` e `pg_stat_statements_info`, e as funções utilitárias `pg_stat_statements_reset` e `pg_stat_statements`. Essas não estão disponíveis globalmente, mas podem ser habilitadas para um banco de dados específico com `CREATE EXTENSION pg_stat_statements`.
 
 ### F.32.1. A `pg_stat_statements` [#](#PGSTATSTATEMENTS-PG-STAT-STATEMENTS)
 
-As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma visualização denominada `pg_stat_statements`. Essa visualização contém uma linha para cada combinação distinta de ID do banco de dados, ID do usuário, ID da consulta e se é uma declaração de nível superior ou não (até o número máximo de declarações distintas que o módulo pode rastrear). As colunas da visualização são mostradas em [Tabela F.22][(pgstatstatements.md#PGSTATSTATEMENTS-COLUMNS "Table F.22. pg_stat_statements Columns")].
+As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma visualização denominada `pg_stat_statements`. Essa visualização contém uma linha para cada combinação distinta de ID do banco de dados, ID do usuário, ID da consulta e se é uma declaração de nível superior ou não (até o número máximo de declarações distintas que o módulo pode rastrear). As colunas da visualização são mostradas em [Tabela F.22](pgstatstatements.md#PGSTATSTATEMENTS-COLUMNS).
 
 **Tabela F.22. Colunas `pg_stat_statements`**
 
 
 
 <table border="1" class="table" summary="pg_stat_statements Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
      Column Type
     </p>
-<p>
+    <p>
      Description
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       userid
      </code>
-<code class="type">
+     <code class="type">
       oid
      </code>
      (references
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-<code class="structname">
+      <code class="structname">
        pg_authid
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
      </code>
      )
     </p>
-<p>
+    <p>
      OID of user who executed the statement
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       dbid
      </code>
-<code class="type">
+     <code class="type">
       oid
      </code>
      (references
      <a class="link" href="catalog-pg-database.md" title="52.15. pg_database">
-<code class="structname">
+      <code class="structname">
        pg_database
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
      </code>
      )
     </p>
-<p>
+    <p>
      OID of database in which the statement was executed
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       toplevel
      </code>
-<code class="type">
+     <code class="type">
       bool
      </code>
-</p>
-<p>
+    </p>
+    <p>
      True if the query was executed as a top-level statement (always true if
      <code class="varname">
       pg_stat_statements.track
@@ -111,87 +111,87 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
      </code>
      )
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       queryid
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Hash code to identify identical normalized queries.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       query
      </code>
-<code class="type">
+     <code class="type">
       text
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Text of a representative statement
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       plans
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Number of times the statement was planned (if
      <code class="varname">
       pg_stat_statements.track_planning
      </code>
      is enabled, otherwise zero)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       total_plan_time
      </code>
-<code class="type">
+     <code class="type">
       double precision
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total time spent planning the statement, in milliseconds (if
      <code class="varname">
       pg_stat_statements.track_planning
      </code>
      is enabled, otherwise zero)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       min_plan_time
      </code>
-<code class="type">
+     <code class="type">
       double precision
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Minimum time spent planning the statement, in milliseconds. This field will be zero if
      <code class="varname">
       pg_stat_statements.track_planning
@@ -210,19 +210,19 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
      </code>
      and never been planned since.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       max_plan_time
      </code>
-<code class="type">
+     <code class="type">
       double precision
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Maximum time spent planning the statement, in milliseconds. This field will be zero if
      <code class="varname">
       pg_stat_statements.track_planning
@@ -241,87 +241,87 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
      </code>
      and never been planned since.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       mean_plan_time
      </code>
-<code class="type">
+     <code class="type">
       double precision
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Mean time spent planning the statement, in milliseconds (if
      <code class="varname">
       pg_stat_statements.track_planning
      </code>
      is enabled, otherwise zero)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       stddev_plan_time
      </code>
-<code class="type">
+     <code class="type">
       double precision
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Population standard deviation of time spent planning the statement, in milliseconds (if
      <code class="varname">
       pg_stat_statements.track_planning
      </code>
      is enabled, otherwise zero)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       calls
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Number of times the statement was executed
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       total_exec_time
      </code>
-<code class="type">
+     <code class="type">
       double precision
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total time spent executing the statement, in milliseconds
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       min_exec_time
      </code>
-<code class="type">
+     <code class="type">
       double precision
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Minimum time spent executing the statement, in milliseconds, this field will be zero until this statement is executed first time after reset performed by the
      <code class="function">
       pg_stat_statements_reset
@@ -334,20 +334,20 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
      <code class="literal">
       true
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       max_exec_time
      </code>
-<code class="type">
+     <code class="type">
       double precision
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Maximum time spent executing the statement, in milliseconds, this field will be zero until this statement is executed first time after reset performed by the
      <code class="function">
       pg_stat_statements_reset
@@ -360,584 +360,584 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
      <code class="literal">
       true
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       mean_exec_time
      </code>
-<code class="type">
+     <code class="type">
       double precision
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Mean time spent executing the statement, in milliseconds
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       stddev_exec_time
      </code>
-<code class="type">
+     <code class="type">
       double precision
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Population standard deviation of time spent executing the statement, in milliseconds
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       rows
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total number of rows retrieved or affected by the statement
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       shared_blks_hit
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total number of shared block cache hits by the statement
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       shared_blks_read
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total number of shared blocks read by the statement
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       shared_blks_dirtied
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total number of shared blocks dirtied by the statement
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       shared_blks_written
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total number of shared blocks written by the statement
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       local_blks_hit
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total number of local block cache hits by the statement
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       local_blks_read
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total number of local blocks read by the statement
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       local_blks_dirtied
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total number of local blocks dirtied by the statement
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       local_blks_written
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total number of local blocks written by the statement
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       temp_blks_read
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total number of temp blocks read by the statement
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       temp_blks_written
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total number of temp blocks written by the statement
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       shared_blk_read_time
      </code>
-<code class="type">
+     <code class="type">
       double precision
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total time the statement spent reading shared blocks, in milliseconds (if
      <a class="xref" href="runtime-config-statistics.md#GUC-TRACK-IO-TIMING">
       track_io_timing
      </a>
      is enabled, otherwise zero)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       shared_blk_write_time
      </code>
-<code class="type">
+     <code class="type">
       double precision
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total time the statement spent writing shared blocks, in milliseconds (if
      <a class="xref" href="runtime-config-statistics.md#GUC-TRACK-IO-TIMING">
       track_io_timing
      </a>
      is enabled, otherwise zero)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       local_blk_read_time
      </code>
-<code class="type">
+     <code class="type">
       double precision
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total time the statement spent reading local blocks, in milliseconds (if
      <a class="xref" href="runtime-config-statistics.md#GUC-TRACK-IO-TIMING">
       track_io_timing
      </a>
      is enabled, otherwise zero)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       local_blk_write_time
      </code>
-<code class="type">
+     <code class="type">
       double precision
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total time the statement spent writing local blocks, in milliseconds (if
      <a class="xref" href="runtime-config-statistics.md#GUC-TRACK-IO-TIMING">
       track_io_timing
      </a>
      is enabled, otherwise zero)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       temp_blk_read_time
      </code>
-<code class="type">
+     <code class="type">
       double precision
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total time the statement spent reading temporary file blocks, in milliseconds (if
      <a class="xref" href="runtime-config-statistics.md#GUC-TRACK-IO-TIMING">
       track_io_timing
      </a>
      is enabled, otherwise zero)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       temp_blk_write_time
      </code>
-<code class="type">
+     <code class="type">
       double precision
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total time the statement spent writing temporary file blocks, in milliseconds (if
      <a class="xref" href="runtime-config-statistics.md#GUC-TRACK-IO-TIMING">
       track_io_timing
      </a>
      is enabled, otherwise zero)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       wal_records
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total number of WAL records generated by the statement
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       wal_fpi
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total number of WAL full page images generated by the statement
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       wal_bytes
      </code>
-<code class="type">
+     <code class="type">
       numeric
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total amount of WAL generated by the statement in bytes
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       wal_buffers_full
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Number of times the WAL buffers became full
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       jit_functions
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total number of functions JIT-compiled by the statement
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       jit_generation_time
      </code>
-<code class="type">
+     <code class="type">
       double precision
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total time spent by the statement on generating JIT code, in milliseconds
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       jit_inlining_count
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Number of times functions have been inlined
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       jit_inlining_time
      </code>
-<code class="type">
+     <code class="type">
       double precision
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total time spent by the statement on inlining functions, in milliseconds
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       jit_optimization_count
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Number of times the statement has been optimized
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       jit_optimization_time
      </code>
-<code class="type">
+     <code class="type">
       double precision
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total time spent by the statement on optimizing, in milliseconds
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       jit_emission_count
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Number of times code has been emitted
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       jit_emission_time
      </code>
-<code class="type">
+     <code class="type">
       double precision
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total time spent by the statement on emitting code, in milliseconds
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       jit_deform_count
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total number of tuple deform functions JIT-compiled by the statement
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       jit_deform_time
      </code>
-<code class="type">
+     <code class="type">
       double precision
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Total time spent by the statement on JIT-compiling tuple deform functions, in milliseconds
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       parallel_workers_to_launch
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Number of parallel workers planned to be launched
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       parallel_workers_launched
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Number of parallel workers actually launched
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       stats_since
      </code>
-<code class="type">
+     <code class="type">
       timestamp with time zone
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Time at which statistics gathering started for this statement
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       minmax_stats_since
      </code>
-<code class="type">
+     <code class="type">
       timestamp with time zone
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Time at which min/max statistics gathering started for this statement (fields
      <code class="structfield">
       min_plan_time
@@ -956,15 +956,18 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
      </code>
      )
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Por razões de segurança, apenas superusuários e papéis com privilégios da função `pg_read_all_stats` têm permissão para ver o texto SQL e as consultas `queryid` executadas por outros usuários. Outros usuários, no entanto, podem ver as estatísticas, desde que a visualização tenha sido instalada em seu banco de dados.
 
@@ -1016,52 +1019,69 @@ As estatísticas do próprio módulo `pg_stat_statements` são acompanhadas e di
 
 
 <table border="1" class="table" summary="pg_stat_statements_info Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">Tipo de coluna</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
+     Tipo de coluna
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       dealloc
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>Número total de vezes<code class="structname">
+    </p>
+    <p>
+     Número total de vezes
+     <code class="structname">
       pg_stat_statements
-     </code>as entradas sobre as declarações menos executadas foram realocadas porque havia mais declarações distintas do que<code class="varname">
+     </code>
+     as entradas sobre as declarações menos executadas foram realocadas porque havia mais declarações distintas do que
+     <code class="varname">
       pg_stat_statements.max
-     </code>foram observados</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     foram observados
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       stats_reset
      </code>
-<code class="type">
+     <code class="type">
       timestamp with time zone
      </code>
-</p>
-<p>Tempo em que todas as estatísticas estão<code class="structname">
+    </p>
+    <p>
+     Tempo em que todas as estatísticas estão
+     <code class="structname">
       pg_stat_statements
-     </code>a vista foi a última a ser redefinida.</p>
-</td>
-</tr>
-</tbody>
+     </code>
+     a vista foi a última a ser redefinida.
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 

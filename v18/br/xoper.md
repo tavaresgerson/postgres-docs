@@ -4,7 +4,7 @@ Cada operador é um "açúcar sintático" para uma chamada a uma função subjac
 
 O PostgreSQL suporta operadores prefixo e infixo. Os operadores podem ser sobrecarregados; ou seja, o mesmo nome de operador pode ser usado para diferentes operadores que têm diferentes números e tipos de operandos. Quando uma consulta é executada, o sistema determina o operador a ser chamado a partir do número e dos tipos dos operandos fornecidos.
 
-Aqui está um exemplo de criação de um operador para adicionar dois números complexos. Suponhamos que já tenhamos criado a definição do tipo `complex` (consulte [Seção 36.13][(xtypes.md "36.13. User-Defined Types")]). Primeiro, precisamos de uma função que faça o trabalho, e depois podemos definir o operador:
+Aqui está um exemplo de criação de um operador para adicionar dois números complexos. Suponhamos que já tenhamos criado a definição do tipo `complex` (consulte [Seção 36.13](xtypes.md)). Primeiro, precisamos de uma função que faça o trabalho, e depois podemos definir o operador:
 
 ```
 CREATE FUNCTION complex_add(complex, complex)

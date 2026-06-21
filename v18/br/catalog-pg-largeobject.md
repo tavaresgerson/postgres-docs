@@ -9,72 +9,91 @@ Antes do PostgreSQL 9.0, não havia uma estrutura de permissão associada a obje
 
 
 <table border="1" class="table" summary="pg_largeobject Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">Tipo de coluna</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
+     Tipo de coluna
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       loid
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-largeobject-metadata.md" title="52.31. pg_largeobject_metadata">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-largeobject-metadata.md" title="52.31. pg_largeobject_metadata">
+      <code class="structname">
        pg_largeobject_metadata
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
-     </code>)</p>
-<p>Identificador do grande objeto que inclui esta página</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     Identificador do grande objeto que inclui esta página
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       pageno
      </code>
-<code class="type">
+     <code class="type">
       int4
      </code>
-</p>
-<p>Número da página desta página dentro de seu grande objeto (contando a partir de zero)</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Número da página desta página dentro de seu grande objeto (contando a partir de zero)
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       data
      </code>
-<code class="type">
+     <code class="type">
       bytea
      </code>
-</p>
-<p>Dados reais armazenados no grande objeto. Isso nunca será mais do que<code class="symbol">
+    </p>
+    <p>
+     Dados reais armazenados no grande objeto. Isso nunca será mais do que
+     <code class="symbol">
       LOBLKSIZE
-     </code>bytes e pode ser menos.</p>
-</td>
-</tr>
-</tbody>
+     </code>
+     bytes e pode ser menos.
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Cada linha de `pg_largeobject` contém dados para uma página de um grande objeto, começando no deslocamento de byte (`pageno * LOBLKSIZE`) dentro do objeto. A implementação permite armazenamento esparso: as páginas podem estar ausentes e podem ser menores que os `LOBLKSIZE` bytes, mesmo que não sejam a última página do objeto. Regiões ausentes dentro de um grande objeto são lidas como zeros.

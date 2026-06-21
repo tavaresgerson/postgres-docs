@@ -1,10 +1,10 @@
 ## 47.6. Plugins de decodificação lógica [#](#LOGICALDECODING-OUTPUT-PLUGIN)
 
-* [47.6.1. Função de Inicialização][(logicaldecoding-output-plugin.md#LOGICALDECODING-OUTPUT-INIT)]
-* [47.6.2. Capacidades][(logicaldecoding-output-plugin.md#LOGICALDECODING-CAPABILITIES)]
-* [47.6.3. Modos de Saída][(logicaldecoding-output-plugin.md#LOGICALDECODING-OUTPUT-MODE)]
-* [47.6.4. Chamadas de Retorno de Plugin de Saída][(logicaldecoding-output-plugin.md#LOGICALDECODING-OUTPUT-PLUGIN-CALLBACKS)]
-* [47.6.5. Funções para Produzir Saída][(logicaldecoding-output-plugin.md#LOGICALDECODING-OUTPUT-PLUGIN-OUTPUT)]
+* [47.6.1. Função de Inicialização](logicaldecoding-output-plugin.md#LOGICALDECODING-OUTPUT-INIT)
+* [47.6.2. Capacidades](logicaldecoding-output-plugin.md#LOGICALDECODING-CAPABILITIES)
+* [47.6.3. Modos de Saída](logicaldecoding-output-plugin.md#LOGICALDECODING-OUTPUT-MODE)
+* [47.6.4. Chamadas de Retorno de Plugin de Saída](logicaldecoding-output-plugin.md#LOGICALDECODING-OUTPUT-PLUGIN-CALLBACKS)
+* [47.6.5. Funções para Produzir Saída](logicaldecoding-output-plugin.md#LOGICALDECODING-OUTPUT-PLUGIN-OUTPUT)
 
 Um exemplo de plugin de saída pode ser encontrado no subdiretório `contrib/test_decoding` (test-decoding.md "F.45. test_decoding — SQL-based test/example module for WAL logical decoding") da árvore de origem do PostgreSQL.
 
@@ -92,7 +92,7 @@ typedef struct OutputPluginOptions
 } OutputPluginOptions;
 ```
 
-`output_type` tem que ser definido como `OUTPUT_PLUGIN_TEXTUAL_OUTPUT` ou `OUTPUT_PLUGIN_BINARY_OUTPUT`. Veja também [Seção 47.6.3][(logicaldecoding-output-plugin.md#LOGICALDECODING-OUTPUT-MODE "47.6.3. Output Modes")]. Se `receive_rewrites` for verdadeiro, o plugin de saída também será chamado para alterações feitas por reescritas de pilha durante certas operações de DDL. Essas são de interesse para plugins que lidam com replicação de DDL, mas elas requerem tratamento especial.
+`output_type` tem que ser definido como `OUTPUT_PLUGIN_TEXTUAL_OUTPUT` ou `OUTPUT_PLUGIN_BINARY_OUTPUT`. Veja também [Seção 47.6.3](logicaldecoding-output-plugin.md#LOGICALDECODING-OUTPUT-MODE). Se `receive_rewrites` for verdadeiro, o plugin de saída também será chamado para alterações feitas por reescritas de pilha durante certas operações de DDL. Essas são de interesse para plugins que lidam com replicação de DDL, mas elas requerem tratamento especial.
 
 O callback da inicialização deve validar as opções presentes em `ctx->output_plugin_options`. Se o plugin de saída precisar ter um estado, ele pode usar `ctx->output_plugin_private` para armazená-lo.
 
@@ -154,7 +154,7 @@ typedef void (*LogicalDecodeTruncateCB) (struct LogicalDecodingContext *ctx,
                                          ReorderBufferChange *change);
 ```
 
-Os parâmetros são análogos ao callback `change_cb`. No entanto, como as ações `TRUNCATE` em tabelas conectadas por chaves estrangeiras precisam ser executadas juntas, este callback recebe um array de relações em vez de apenas uma única. Veja a descrição da declaração [TRUNCATE][(sql-truncate.md "TRUNCATE")] para detalhes.
+Os parâmetros são análogos ao callback `change_cb`. No entanto, como as ações `TRUNCATE` em tabelas conectadas por chaves estrangeiras precisam ser executadas juntas, este callback recebe um array de relações em vez de apenas uma única. Veja a descrição da declaração [TRUNCATE](sql-truncate.md) para detalhes.
 
 #### 47.6.4.7. Chamada de retorno do filtro de origem [#](#LOGICALDECODING-OUTPUT-PLUGIN-FILTER-ORIGIN)
 
@@ -326,7 +326,7 @@ typedef void (*LogicalDecodeStreamTruncateCB) (struct LogicalDecodingContext *ct
                                                ReorderBufferChange *change);
 ```
 
-Os parâmetros são análogos ao callback `stream_change_cb`. No entanto, como as ações `TRUNCATE` em tabelas conectadas por chaves estrangeiras precisam ser executadas juntas, este callback recebe um array de relações em vez de apenas uma única. Veja a descrição da declaração [TRUNCATE][(sql-truncate.md "TRUNCATE")] para detalhes.
+Os parâmetros são análogos ao callback `stream_change_cb`. No entanto, como as ações `TRUNCATE` em tabelas conectadas por chaves estrangeiras precisam ser executadas juntas, este callback recebe um array de relações em vez de apenas uma única. Veja a descrição da declaração [TRUNCATE](sql-truncate.md) para detalhes.
 
 ### 47.6.5. Funções para Produzir Saída [#](#LOGICALDECODING-OUTPUT-PLUGIN-OUTPUT)
 

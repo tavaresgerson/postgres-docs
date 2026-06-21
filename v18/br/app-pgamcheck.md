@@ -8,13 +8,13 @@ pg_amcheck — verifica a corrupção em um ou mais bancos de dados PostgreSQL
 
 ## Descrição
 
-O pg_amcheck suporta a execução das funções de verificação de corrupção do [amcheck][(amcheck.md "F.1. amcheck — tools to verify table and index consistency")] contra um ou mais bancos de dados, com opções para selecionar quais esquemas, tabelas e índices devem ser verificados, quais tipos de verificação devem ser realizados e se devem realizar as verificações em paralelo, e, se assim for, o número de conexões paralelas a serem estabelecidas e utilizadas.
+O pg_amcheck suporta a execução das funções de verificação de corrupção do [amcheck](amcheck.md) contra um ou mais bancos de dados, com opções para selecionar quais esquemas, tabelas e índices devem ser verificados, quais tipos de verificação devem ser realizados e se devem realizar as verificações em paralelo, e, se assim for, o número de conexões paralelas a serem estabelecidas e utilizadas.
 
 Atualmente, apenas as relações comuns e de mesa de torradas, visualizações materializadas, sequências e índices btree são suportadas. Outros tipos de relação são silenciosamente ignorados.
 
 Se `dbname` for especificado, ele deve ser o nome de um único banco de dados a ser verificado, e não devem estar presentes outras opções de seleção de banco de dados. Caso contrário, se houver alguma opção de seleção de banco de dados, todos os bancos de dados correspondentes serão verificados. Se não houver tais opções, o banco de dados padrão será verificado. As opções de seleção de banco de dados incluem `--all`, `--database` e `--exclude-database`. Elas também incluem `--relation`, `--exclude-relation`, `--table`, `--exclude-table`, `--index` e `--exclude-index`, mas apenas quando tais opções são usadas com um padrão de três partes (por exemplo, `mydb*.myschema*.myrel*`). Por fim, elas incluem `--schema` e `--exclude-schema` quando tais opções são usadas com um padrão de duas partes (por exemplo, `mydb*.myschema*`).
 
-*`dbname`* também pode ser uma [string de conexão][(libpq-connect.md#LIBPQ-CONNSTRING "32.1.1. Connection Strings")].
+*`dbname`* também pode ser uma [string de conexão](libpq-connect.md#LIBPQ-CONNSTRING).
 
 ## Opções
 
@@ -136,13 +136,13 @@ O padrão é usar uma única conexão.
 
 `--install-missing` `--install-missing=schema`: Instale todas as extensões ausentes que são necessárias para verificar o(s) banco(s) de dados. Se ainda não instaladas, os objetos de cada extensão serão instalados no *`schema`* fornecido, ou, se não especificado, no esquema `pg_catalog`.
 
-Atualmente, a única extensão necessária é [amcheck][(amcheck.md "F.1. amcheck — tools to verify table and index consistency")].
+Atualmente, a única extensão necessária é [amcheck](amcheck.md).
 
 `-?` `--help`: Mostrar ajuda sobre os argumentos da linha de comando do comando pg_amcheck e sair.
 
 ## Meio Ambiente
 
-`pg_amcheck`, como a maioria das outras utilidades do PostgreSQL, também utiliza as variáveis de ambiente suportadas pelo libpq (consulte a Seção 32.15 (libpq-envars.md "32.15. Environment Variables")).
+`pg_amcheck`, como a maioria das outras utilidades do PostgreSQL, também utiliza as variáveis de ambiente suportadas pelo libpq (consulte a [Seção 32.15](libpq-envars.md)).
 
 A variável de ambiente `PG_COLOR` especifica se a cor deve ser usada nas mensagens de diagnóstico. Os valores possíveis são `always`, `auto` e `never`.
 

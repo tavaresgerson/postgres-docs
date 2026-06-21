@@ -25,7 +25,7 @@ Neste exemplo, o valor de `v_job_id` substituirá o `%` na string:
 RAISE NOTICE 'Calling cs_create_job(%)', v_job_id;
 ```
 
-Nas segunda e terceira variantes de sintaxe, *`condition_name`* e *`sqlstate`* especificam um nome de condição de erro ou um código SQLSTATE de cinco caracteres, respectivamente. Consulte [Apêndice A][(errcodes-appendix.md "Appendix A. PostgreSQL Error Codes")] para os nomes de condição de erro válidos e os códigos SQLSTATE predefinidos.
+Nas segunda e terceira variantes de sintaxe, *`condition_name`* e *`sqlstate`* especificam um nome de condição de erro ou um código SQLSTATE de cinco caracteres, respectivamente. Consulte [Apêndice A](errcodes-appendix.md) para os nomes de condição de erro válidos e os códigos SQLSTATE predefinidos.
 
 Aqui estão exemplos de uso de *`condition_name`* e *`sqlstate`*:
 

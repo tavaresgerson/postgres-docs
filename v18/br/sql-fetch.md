@@ -39,7 +39,7 @@ Os formulários que utilizam `FORWARD` e `BACKWARD` recuperam o número indicado
 
 ### Nota
 
-Esta página descreve o uso de cursor no nível do comando SQL. Se você está tentando usar cursors dentro de uma função PL/pgSQL, as regras são diferentes — veja [Seção 41.7.3][(plpgsql-cursors.md#PLPGSQL-CURSOR-USING "41.7.3. Using Cursors")].
+Esta página descreve o uso de cursor no nível do comando SQL. Se você está tentando usar cursors dentro de uma função PL/pgSQL, as regras são diferentes — veja [Seção 41.7.3](plpgsql-cursors.md#PLPGSQL-CURSOR-USING).
 
 ## Parâmetros
 

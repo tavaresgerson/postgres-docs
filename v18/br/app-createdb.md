@@ -26,7 +26,7 @@ createdb aceita os seguintes argumentos de linha de comando:
 
 `-e` `--echo`: Repita os comandos que o createb gera e envia para o servidor.
 
-`-E encoding`: Especifica o esquema de codificação de caracteres a ser utilizado neste banco de dados. Os conjuntos de caracteres suportados pelo servidor PostgreSQL são descritos em [Seção 23.3.1][(multibyte.md#MULTIBYTE-CHARSET-SUPPORTED "23.3.1. Supported Character Sets")].
+`-E encoding`: Especifica o esquema de codificação de caracteres a ser utilizado neste banco de dados. Os conjuntos de caracteres suportados pelo servidor PostgreSQL são descritos em [Seção 23.3.1](multibyte.md#MULTIBYTE-CHARSET-SUPPORTED).
 
 `-l locale` `--locale=locale`: Especifica o local a ser utilizado neste banco de dados. Isso é equivalente a especificar `--lc-collate`, `--lc-ctype` e `--icu-locale` com o mesmo valor. Alguns locais são válidos apenas para ICU e devem ser definidos com `--icu-locale`.
 
@@ -34,7 +34,7 @@ createdb aceita os seguintes argumentos de linha de comando:
 
 `--lc-ctype=locale`: Especifica o ajuste LC_CTYPE a ser utilizado neste banco de dados.
 
-`--builtin-locale=locale`: Especifica o nome do local quando o provedor incorporado é usado. O suporte ao local é descrito em [Seção 23.1][(locale.md "23.1. Locale Support")].
+`--builtin-locale=locale`: Especifica o nome do local quando o provedor incorporado é usado. O suporte ao local é descrito em [Seção 23.1](locale.md).
 
 `--icu-locale=locale`: Especifica o ID do local do ICU a ser utilizado neste banco de dados, se o provedor de localização do ICU for selecionado.
 
@@ -52,7 +52,7 @@ createdb aceita os seguintes argumentos de linha de comando:
 
 `-?` `--help`: Mostrar ajuda sobre os argumentos da linha de comando do comando createdb e sair.
 
-As opções `-D`, `-l`, `-E`, `-O` e `-T` correspondem às opções do comando SQL subjacente [`CREATE DATABASE`(sql-createdatabase.md "CREATE DATABASE"); consulte-o para obter mais informações sobre elas.
+As opções `-D`, `-l`, `-E`, `-O` e `-T` correspondem às opções do comando SQL subjacente [`CREATE DATABASE`](sql-createdatabase.md); consulte-o para obter mais informações sobre elas.
 
 O createdb também aceita os seguintes argumentos de linha de comando para parâmetros de conexão:
 
@@ -78,7 +78,7 @@ Essa opção nunca é essencial, pois o createdb solicitará automaticamente uma
 
 `PG_COLOR`: Especifica se a cor deve ser usada nas mensagens de diagnóstico. Os valores possíveis são `always`, `auto` e `never`.
 
-Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, também utiliza as variáveis de ambiente suportadas pelo libpq (consulte a Seção 32.15 [(libpq-envars.md "32.15. Environment Variables")]).
+Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, também utiliza as variáveis de ambiente suportadas pelo libpq (consulte a [Seção 32.15](libpq-envars.md)).
 
 ## Diagnósticos
 

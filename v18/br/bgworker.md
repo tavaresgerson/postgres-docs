@@ -67,4 +67,4 @@ Os trabalhadores em segundo plano podem enviar mensagens de notificação assín
 
 O módulo `src/test/modules/worker_spi` contém um exemplo funcional, que demonstra algumas técnicas úteis.
 
-O número máximo de trabalhadores de fundo registrados é limitado por [max_worker_processes][(runtime-config-resource.md#GUC-MAX-WORKER-PROCESSES)].
+O número máximo de trabalhadores de fundo registrados é limitado por [max_worker_processes](runtime-config-resource.md#GUC-MAX-WORKER-PROCESSES).

@@ -25,7 +25,7 @@ FROM pgweb
 WHERE to_tsvector(body) @@ to_tsquery('friend');
 ```
 
-Essa consulta utilizará a configuração definida por [default_text_search_config][(runtime-config-client.md#GUC-DEFAULT-TEXT-SEARCH-CONFIG)].
+Essa consulta utilizará a configuração definida por [default_text_search_config](runtime-config-client.md#GUC-DEFAULT-TEXT-SEARCH-CONFIG).
 
 Um exemplo mais complexo é selecionar os dez documentos mais recentes que contenham `create` e `table` no `title` ou `body`:
 
@@ -91,4 +91,4 @@ ORDER BY last_mod_date DESC
 LIMIT 10;
 ```
 
-Uma vantagem da abordagem de coluna separada em relação a um índice de expressão é que não é necessário especificar explicitamente a configuração de busca de texto nas consultas para fazer uso do índice. Como mostrado no exemplo acima, a consulta pode depender de `default_text_search_config`. Outra vantagem é que as pesquisas serão mais rápidas, uma vez que não será necessário fazer `to_tsvector` chamadas para verificar as correspondências do índice. (Isso é mais importante ao usar um índice GiST do que um índice GIN; veja [Seção 12.9][(textsearch-indexes.md "12.9. Preferred Index Types for Text Search")].). A abordagem de expressão-índice, no entanto, é mais simples de configurar e requer menos espaço em disco, uma vez que a representação `tsvector` não é armazenada explicitamente.
+Uma vantagem da abordagem de coluna separada em relação a um índice de expressão é que não é necessário especificar explicitamente a configuração de busca de texto nas consultas para fazer uso do índice. Como mostrado no exemplo acima, a consulta pode depender de `default_text_search_config`. Outra vantagem é que as pesquisas serão mais rápidas, uma vez que não será necessário fazer `to_tsvector` chamadas para verificar as correspondências do índice. (Isso é mais importante ao usar um índice GiST do que um índice GIN; veja [Seção 12.9](textsearch-indexes.md).). A abordagem de expressão-índice, no entanto, é mais simples de configurar e requer menos espaço em disco, uma vez que a representação `tsvector` não é armazenada explicitamente.

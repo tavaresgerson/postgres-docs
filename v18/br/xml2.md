@@ -21,44 +21,43 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
 
 
 <table border="1" class="table" summary="xml2 Functions">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
      Function
     </p>
-<p>
+    <p>
      Description
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       xml_valid
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Parses the given document and returns true if the document is well-formed XML.  (Note: this is an alias for the standard PostgreSQL function
      <code class="function">
       xml_is_well_formed()
@@ -69,388 +68,383 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
      </code>
      is technically incorrect since validity and well-formedness have different meanings in XML.)
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       xpath_string
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       text
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Evaluates the XPath query on the supplied document, and casts the result to
      <code class="type">
       text
      </code>
      .
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       xpath_number
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       real
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Evaluates the XPath query on the supplied document, and casts the result to
      <code class="type">
       real
      </code>
      .
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       xpath_bool
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Evaluates the XPath query on the supplied document, and casts the result to
      <code class="type">
       boolean
      </code>
      .
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       xpath_nodeset
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        toptag
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        itemtag
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       text
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Evaluates the query on the document and wraps the result in XML tags. If the result is multivalued, the output will look like:
     </p>
-<pre class="synopsis">
+    <pre class="synopsis">
 &lt;toptag&gt; &lt;itemtag&gt;Value 1 which could be an XML fragment&lt;/itemtag&gt; &lt;itemtag&gt;Value 2....&lt;/itemtag&gt; &lt;/toptag&gt;
 </pre>
-<p>
+    <p>
      If either
      <em class="parameter">
-<code>
+      <code>
        toptag
       </code>
-</em>
+     </em>
      or
      <em class="parameter">
-<code>
+      <code>
        itemtag
       </code>
-</em>
+     </em>
      is an empty string, the relevant tag is omitted.
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       xpath_nodeset
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        itemtag
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       text
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Like
      <code class="function">
       xpath_nodeset(document, query, toptag, itemtag)
      </code>
      but result omits
      <em class="parameter">
-<code>
+      <code>
        toptag
       </code>
-</em>
+     </em>
      .
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       xpath_nodeset
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       text
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Like
      <code class="function">
       xpath_nodeset(document, query, toptag, itemtag)
      </code>
      but result omits both tags.
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       xpath_list
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        separator
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       text
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Evaluates the query on the document and returns multiple values separated by the specified separator, for example
      <code class="literal">
       Value 1,Value 2,Value 3
      </code>
      if
      <em class="parameter">
-<code>
+      <code>
        separator
       </code>
-</em>
+     </em>
      is
      <code class="literal">
       ,
      </code>
      .
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       xpath_list
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       text
      </code>
-</p>
-<p>
+    </p>
+    <p>
      This is a wrapper for the above function that uses
      <code class="literal">
       ,
      </code>
      as the separator.
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 
@@ -460,100 +454,127 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
 xpath_table(text key, text document, text relation, text xpaths, text criteria) returns setof record
 ```
 
-`xpath_table` é uma função de tabela que avalia um conjunto de consultas XPath em cada um de um conjunto de documentos e retorna os resultados como uma tabela. O campo chave primária do documento original é retornado como a primeira coluna do resultado, para que o conjunto de resultados possa ser facilmente usado em junções. Os parâmetros são descritos em [Tabela F.38][(xml2.md#XML2-XPATH-TABLE-PARAMETERS "Table F.38. xpath_table Parameters")].
+`xpath_table` é uma função de tabela que avalia um conjunto de consultas XPath em cada um de um conjunto de documentos e retorna os resultados como uma tabela. O campo chave primária do documento original é retornado como a primeira coluna do resultado, para que o conjunto de resultados possa ser facilmente usado em junções. Os parâmetros são descritos em [Tabela F.38](xml2.md#XML2-XPATH-TABLE-PARAMETERS).
 
 **Tabela F.38. Parâmetros `xpath_table`**
 
 
 
 <table border="1" class="table" summary="xpath_table Parameters">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Parameter
    </th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<em class="parameter">
-<code>
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <em class="parameter">
+     <code>
       key
      </code>
-</em>
-</td>
-<td>
-<p>o nome do<span class="quote">“<span class="quote">chave</span>”</span>campo — este é apenas um campo que será usado como a primeira coluna da tabela de saída, ou seja, ele identifica o registro de onde cada linha de saída veio (veja a nota abaixo sobre múltiplos valores)</p>
-</td>
-</tr>
-<tr>
-<td>
-<em class="parameter">
-<code>
+    </em>
+   </td>
+   <td>
+    <p>
+     o nome do
+     <span class="quote">
+      “
+      <span class="quote">
+       chave
+      </span>
+      ”
+     </span>
+     campo — este é apenas um campo que será usado como a primeira coluna da tabela de saída, ou seja, ele identifica o registro de onde cada linha de saída veio (veja a nota abaixo sobre múltiplos valores)
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <em class="parameter">
+     <code>
       document
      </code>
-</em>
-</td>
-<td>
-<p>o nome do campo que contém o documento XML</p>
-</td>
-</tr>
-<tr>
-<td>
-<em class="parameter">
-<code>
+    </em>
+   </td>
+   <td>
+    <p>
+     o nome do campo que contém o documento XML
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <em class="parameter">
+     <code>
       relation
      </code>
-</em>
-</td>
-<td>
-<p>o nome da tabela ou visão que contém os documentos</p>
-</td>
-</tr>
-<tr>
-<td>
-<em class="parameter">
-<code>
+    </em>
+   </td>
+   <td>
+    <p>
+     o nome da tabela ou visão que contém os documentos
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <em class="parameter">
+     <code>
       xpaths
      </code>
-</em>
-</td>
-<td>
-<p>uma ou mais expressões XPath, separadas por<code class="literal">
+    </em>
+   </td>
+   <td>
+    <p>
+     uma ou mais expressões XPath, separadas por
+     <code class="literal">
       |
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td>
-<em class="parameter">
-<code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <em class="parameter">
+     <code>
       criteria
      </code>
-</em>
-</td>
-<td>
-<p>os conteúdos da cláusula WHERE. Isso não pode ser omitido, então use<code class="literal">
+    </em>
+   </td>
+   <td>
+    <p>
+     os conteúdos da cláusula WHERE. Isso não pode ser omitido, então use
+     <code class="literal">
       true
-     </code>ou<code class="literal">
+     </code>
+     ou
+     <code class="literal">
       1=1
-     </code>se você quiser processar todas as linhas na relação</p>
-</td>
-</tr>
-</tbody>
+     </code>
+     se você quiser processar todas as linhas na relação
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Esses parâmetros (exceto as cadeias de XPath) são apenas substituídos em uma declaração SQL SELECT simples, então você tem alguma flexibilidade — a declaração é
 

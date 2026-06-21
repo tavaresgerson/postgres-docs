@@ -12,7 +12,7 @@ Para testar comandos de replicação, você pode estabelecer uma conexão de rep
 psql "dbname=postgres replication=database" -c "IDENTIFY_SYSTEM;"
 ```
 
-No entanto, é frequentemente mais útil usar [pg_receivewal][(app-pgreceivewal.md "pg_receivewal")] (para replicação física) ou [pg_recvlogical][(app-pgrecvlogical.md "pg_recvlogical")] (para replicação lógica).
+No entanto, é frequentemente mais útil usar [pg_receivewal](app-pgreceivewal.md) (para replicação física) ou [pg_recvlogical](app-pgrecvlogical.md) (para replicação lógica).
 
 Os comandos de replicação são registrados no log do servidor quando [log_replication_commands][(runtime-config-logging.md#GUC-LOG-REPLICATION-COMMANDS) está habilitado.
 
@@ -30,7 +30,7 @@ Os comandos aceitos no modo de replicação são:
 
 `SHOW` *`name`* [#](#PROTOCOL-REPLICATION-SHOW): Pede ao servidor que envie a configuração atual de um parâmetro de tempo de execução. Isso é semelhante ao comando SQL [SHOW](sql-show.md "SHOW").
 
-*`name`* :   O nome de um parâmetro de tempo de execução. Os parâmetros disponíveis estão documentados em [Capítulo 19][(runtime-config.md "Chapter 19. Server Configuration")].
+*`name`* :   O nome de um parâmetro de tempo de execução. Os parâmetros disponíveis estão documentados em [Capítulo 19](runtime-config.md).
 
 `TIMELINE_HISTORY` *`tli`* [#](#PROTOCOL-REPLICATION-TIMELINE-HISTORY): Pede ao servidor que envie o arquivo de histórico da linha do tempo para a linha do tempo *`tli`*. O servidor responde com um conjunto de resultados de uma única linha, contendo dois campos. Embora os campos estejam rotulados como `text`, eles efetivamente retornam bytes brutos, sem conversão de codificação:
 
@@ -40,9 +40,9 @@ Os comandos aceitos no modo de replicação são:
 
 `CREATE_REPLICATION_SLOT` *`slot_name`* [ `TEMPORARY` ] { `PHYSICAL` | `LOGICAL` *`output_plugin`* } [ ( *`option`* [, ...] ) ] [#](#PROTOCOL-REPLICATION-CREATE-REPLICATION-SLOT): Crie um slot de replicação físico ou lógico. Consulte [Seção 26.2.6](warm-standby.md#STREAMING-REPLICATION-SLOTS "26.2.6. Replication Slots") para mais informações sobre slots de replicação.
 
-*`slot_name`* :   O nome do slot a ser criado. Deve ser um nome válido de slot de replicação (consulte [Seção 26.2.6.1][(warm-standby.md#STREAMING-REPLICATION-SLOTS-MANIPULATION "26.2.6.1. Querying and Manipulating Replication Slots")]).
+*`slot_name`* :   O nome do slot a ser criado. Deve ser um nome válido de slot de replicação (consulte [Seção 26.2.6.1](warm-standby.md#STREAMING-REPLICATION-SLOTS-MANIPULATION)).
 
-*`output_plugin`* :   O nome do plugin de saída utilizado para decodificação lógica (ver [Seção 47.6][(logicaldecoding-output-plugin.md "47.6. Logical Decoding Output Plugins")]).
+*`output_plugin`* :   O nome do plugin de saída utilizado para decodificação lógica (ver [Seção 47.6](logicaldecoding-output-plugin.md)).
 
 `TEMPORARY` : Especifique que este slot de replicação é temporário. Os slots temporários não são salvos no disco e são automaticamente descartados em caso de erro ou quando a sessão termina.
 
@@ -70,7 +70,7 @@ Em resposta a este comando, o servidor enviará um conjunto de resultados de uma
 
 `ALTER_REPLICATION_SLOT` *`slot_name`* ( *`option`* [, ...] ) [#](#PROTOCOL-REPLICATION-ALTER-REPLICATION-SLOT): Altere a definição de um slot de replicação. Consulte [Seção 26.2.6](warm-standby.md#STREAMING-REPLICATION-SLOTS "26.2.6. Replication Slots") para mais informações sobre slots de replicação. Este comando é atualmente suportado apenas para slots de replicação lógicos.
 
-*`slot_name`* :   O nome do slot a ser alterado. Deve ser um nome válido de slot de replicação (consulte [Seção 26.2.6.1][(warm-standby.md#STREAMING-REPLICATION-SLOTS-MANIPULATION "26.2.6.1. Querying and Manipulating Replication Slots")]).
+*`slot_name`* :   O nome do slot a ser alterado. Deve ser um nome válido de slot de replicação (consulte [Seção 26.2.6.1](warm-standby.md#STREAMING-REPLICATION-SLOTS-MANIPULATION)).
 
 As seguintes opções são suportadas:
 
@@ -96,7 +96,7 @@ Se o cliente solicitar uma linha do tempo que não é a mais recente, mas faz pa
 
 Após transmitir todos os WAL em uma linha de tempo que não é a mais recente, o servidor terminará a transmissão saindo do modo COPY. Quando o cliente confirma isso, também saindo do modo COPY, o servidor envia um conjunto de resultados com uma linha e duas colunas, indicando a próxima linha de tempo na história desse servidor. A primeira coluna é o ID da próxima linha de tempo (tipo `int8`), e a segunda coluna é a localização do WAL onde ocorreu a mudança (tipo `text`). Normalmente, a posição da mudança é o final do WAL que foi transmitido, mas há casos especiais em que o servidor pode enviar alguns WAL da linha de tempo antiga que ele não replicou antes de promover. Finalmente, o servidor envia duas mensagens CommandComplete (uma que termina o CopyData e a outra termina o próprio `START_REPLICATION`), e está pronto para aceitar um novo comando.
 
-Os dados do WAL são enviados como uma série de mensagens CopyData; consulte [Seção 54.6][(protocol-message-types.md "54.6. Message Data Types")] e [Seção 54.7][(protocol-message-formats.md "54.7. Message Formats")] para detalhes. (Isso permite que outras informações sejam misturadas; em particular, o servidor pode enviar uma mensagem ErrorResponse se encontrar uma falha após começar a transmitir.) O payload de cada mensagem CopyData do servidor para o cliente contém uma mensagem de um dos seguintes formatos:
+Os dados do WAL são enviados como uma série de mensagens CopyData; consulte [Seção 54.6](protocol-message-types.md) e [Seção 54.7](protocol-message-formats.md) para detalhes. (Isso permite que outras informações sejam misturadas; em particular, o servidor pode enviar uma mensagem ErrorResponse se encontrar uma falha após começar a transmitir.) O payload de cada mensagem CopyData do servidor para o cliente contém uma mensagem de um dos seguintes formatos:
 
 XLogData (B) [#](#PROTOCOL-REPLICATION-XLOGDATA) :   Byte1('w') :   Identifica a mensagem como dados WAL.
 

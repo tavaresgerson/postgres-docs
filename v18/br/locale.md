@@ -26,61 +26,76 @@ Ocasionalmente, é útil misturar regras de vários locais, por exemplo, usar re
 
 
 <table border="1" class="informaltable">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-</colgroup>
-<tbody>
-<tr>
-<td>
-<code class="envar">
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+ </colgroup>
+ <tbody>
+  <tr>
+   <td>
+    <code class="envar">
      LC_COLLATE
     </code>
-</td>
-<td>Ordem de classificação de cordas</td>
-</tr>
-<tr>
-<td>
-<code class="envar">
+   </td>
+   <td>
+    Ordem de classificação de cordas
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="envar">
      LC_CTYPE
     </code>
-</td>
-<td>Classificação de caracteres (O que é uma letra? Seu equivalente em maiúsculas?)</td>
-</tr>
-<tr>
-<td>
-<code class="envar">
+   </td>
+   <td>
+    Classificação de caracteres (O que é uma letra? Seu equivalente em maiúsculas?)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="envar">
      LC_MESSAGES
     </code>
-</td>
-<td>Idioma das mensagens</td>
-</tr>
-<tr>
-<td>
-<code class="envar">
+   </td>
+   <td>
+    Idioma das mensagens
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="envar">
      LC_MONETARY
     </code>
-</td>
-<td>Formatação de valores em moeda</td>
-</tr>
-<tr>
-<td>
-<code class="envar">
+   </td>
+   <td>
+    Formatação de valores em moeda
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="envar">
      LC_NUMERIC
     </code>
-</td>
-<td>Formatação de números</td>
-</tr>
-<tr>
-<td>
-<code class="envar">
+   </td>
+   <td>
+    Formatação de números
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="envar">
      LC_TIME
     </code>
-</td>
-<td>Formatação de datas e horários</td>
-</tr>
-</tbody>
+   </td>
+   <td>
+    Formatação de datas e horários
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 
@@ -88,7 +103,7 @@ Os nomes das categorias traduzem-se em nomes de opções do `initdb` para substi
 
 Se você deseja que o sistema se comporte como se não tivesse suporte a localização, use o nome especial de localização `C`, ou, de forma equivalente, `POSIX`.
 
-Algumas categorias de localização devem ter seus valores fixos quando o banco de dados é criado. Você pode usar diferentes configurações para diferentes bancos de dados, mas uma vez que um banco de dados é criado, você não pode mais alterá-los para esse banco de dados. `LC_COLLATE` e `LC_CTYPE` são essas categorias. Elas afetam a ordem de classificação dos índices, então elas devem ser mantidas fixas, ou os índices em colunas de texto se tornariam corrompidos. (Mas você pode aliviar essa restrição usando colatelias, como discutido em [Seção 23.2][(collation.md "23.2. Collation Support")]. Os valores padrão para essas categorias são determinados quando `initdb` é executado, e esses valores são usados quando novos bancos de dados são criados, a menos que seja especificado de outra forma no comando `CREATE DATABASE`.
+Algumas categorias de localização devem ter seus valores fixos quando o banco de dados é criado. Você pode usar diferentes configurações para diferentes bancos de dados, mas uma vez que um banco de dados é criado, você não pode mais alterá-los para esse banco de dados. `LC_COLLATE` e `LC_CTYPE` são essas categorias. Elas afetam a ordem de classificação dos índices, então elas devem ser mantidas fixas, ou os índices em colunas de texto se tornariam corrompidos. (Mas você pode aliviar essa restrição usando colatelias, como discutido em [Seção 23.2](collation.md). Os valores padrão para essas categorias são determinados quando `initdb` é executado, e esses valores são usados quando novos bancos de dados são criados, a menos que seja especificado de outra forma no comando `CREATE DATABASE`.
 
 As outras categorias de localização podem ser alteradas sempre que desejado, definindo os parâmetros de configuração do servidor que têm o mesmo nome das categorias de localização (consulte [Seção 19.11.2] para detalhes). Os valores escolhidos por (runtime-config-client.md#RUNTIME-CONFIG-CLIENT-FORMAT "19.11.2. Locale and Formatting") são, na verdade, apenas escritos no arquivo de configuração `postgresql.conf` para servir como padrões quando o servidor é iniciado. Se você remover essas atribuições de `postgresql.conf`, o servidor herdará as configurações do seu ambiente de execução.
 
@@ -114,7 +129,7 @@ As configurações de localização influenciam os seguintes recursos do SQL:
 
 O inconveniente de usar locais diferentes de `C` ou `POSIX` no PostgreSQL é o impacto em termos de desempenho. Isso reduz o manuseio de caracteres e impede que índices comuns sejam usados pelo `LIKE`. Por esse motivo, use locais apenas se você realmente precisar deles.
 
-Como uma solução para permitir que o PostgreSQL use índices com cláusulas `LIKE` em um local não C, existem várias classes de operadores personalizados. Essas permitem a criação de um índice que realiza uma comparação estrita caractere por caractere, ignorando as regras de comparação de local. Consulte [Seção 11.10][(indexes-opclass.md "11.10. Operator Classes and Operator Families")] para mais informações. Outra abordagem é criar índices usando a collation `C`, conforme discutido em [Seção 23.2][(collation.md "23.2. Collation Support")].
+Como uma solução para permitir que o PostgreSQL use índices com cláusulas `LIKE` em um local não C, existem várias classes de operadores personalizados. Essas permitem a criação de um índice que realiza uma comparação estrita caractere por caractere, ignorando as regras de comparação de local. Consulte [Seção 11.10](indexes-opclass.md) para mais informações. Outra abordagem é criar índices usando a collation `C`, conforme discutido em [Seção 23.2](collation.md).
 
 ### 23.1.3. Selecionar Locais [#](#LOCALE-SELECTING-LOCALES)
 
@@ -123,7 +138,7 @@ Os locais podem ser selecionados em diferentes escopos, dependendo das necessida
 1. Como explicado acima, o ambiente do sistema operacional fornece os padrões para as localidades de um clúster de banco de dados recém-inicializado. Em muitos casos, isso é suficiente: se o sistema operacional estiver configurado para o idioma/território desejado, o PostgreSQL também se comportará de acordo com essa localidade por padrão.
 2. Como mostrado acima, as opções de linha de comando para `initdb` especificam as configurações de localidade para um clúster de banco de dados recém-inicializado. Use isso se o sistema operacional não tiver a configuração de localidade que você deseja para seu sistema de banco de dados.
 3. Uma localidade pode ser selecionada separadamente para cada banco de dados. O comando SQL `CREATE DATABASE` e seu equivalente de linha de comando `createdb` têm opções para isso. Use isso, por exemplo, se um clúster de bancos de dados abriga bancos de dados para vários inquilinos com requisitos diferentes.
-4. As configurações de localidade podem ser feitas para colunas individuais de tabela. Isso usa um objeto SQL chamado *collation* e é explicado em [Seção 23.2][(collation.md "23.2. Collation Support")]. Use isso, por exemplo, para ordenar dados em diferentes idiomas ou personalizar a ordem de classificação de uma tabela específica.
+4. As configurações de localidade podem ser feitas para colunas individuais de tabela. Isso usa um objeto SQL chamado *collation* e é explicado em [Seção 23.2](collation.md). Use isso, por exemplo, para ordenar dados em diferentes idiomas ou personalizar a ordem de classificação de uma tabela específica.
 5. Por fim, as localidades podem ser selecionadas para uma consulta individual. Novamente, isso usa objetos de collation SQL. Isso poderia ser usado para alterar a ordem de classificação com base em escolhas em tempo real ou para experimentação ad hoc.
 
 ### 23.1.4. Fornecedores de localização [#](#LOCALE-PROVIDERS)
@@ -138,7 +153,7 @@ initdb --locale-provider=icu --icu-locale=en
 
 Veja a descrição dos respectivos comandos e programas para obter detalhes. Observe que você pode misturar provedores de localização em diferentes granularidades, por exemplo, use `libc` como padrão para o clúster, mas tenha um banco de dados que use o provedor `icu`, e, em seguida, tenha objetos de collation usando qualquer um desses provedores dentro desses bancos de dados.
 
-Independentemente do provedor de localização, o sistema operacional ainda é usado para fornecer algum comportamento sensível à localização, como mensagens (consulte [lc_messages][(runtime-config-client.md#GUC-LC-MESSAGES)]).
+Independentemente do provedor de localização, o sistema operacional ainda é usado para fornecer algum comportamento sensível à localização, como mensagens (consulte [lc_messages](runtime-config-client.md#GUC-LC-MESSAGES)).
 
 Os provedores de localização disponíveis estão listados abaixo:
 
@@ -168,7 +183,7 @@ O mesmo nome de local pode ter comportamento diferente em diferentes plataformas
 
 #### 23.1.5.1. Nomes locais do ICU [#](#ICU-LOCALE-NAMES)
 
-O formato ICU para o nome do local é um [Tag de idioma][(locale.md#ICU-LANGUAGE-TAG "23.1.5.3. Language Tag")].
+O formato ICU para o nome do local é um [Tag de idioma](locale.md#ICU-LANGUAGE-TAG).
 
 ```
 CREATE COLLATION mycollation1 (provider = icu, locale = 'ja-JP');
@@ -230,7 +245,7 @@ SELECT 'N-45' < 'N-123' COLLATE mycollation5 as result;
 (1 row)
 ```
 
-Consulte a [Seção 23.2.3][(collation.md#ICU-CUSTOM-COLLATIONS "23.2.3. ICU Custom Collations")] para obter detalhes e exemplos adicionais sobre o uso de tags de idioma com informações de ordenação personalizadas para o local.
+Consulte a [Seção 23.2.3](collation.md#ICU-CUSTOM-COLLATIONS) para obter detalhes e exemplos adicionais sobre o uso de tags de idioma com informações de ordenação personalizadas para o local.
 
 ### 23.1.6. Problemas [#](#LOCALE-PROBLEMS)
 
@@ -242,4 +257,4 @@ O diretório `src/test/locale` na distribuição de origem contém um conjunto d
 
 Os aplicativos do cliente que lidam com erros do lado do servidor, analisando o texto da mensagem de erro, obviamente terão problemas quando as mensagens do servidor estiverem em um idioma diferente. Os autores desses aplicativos são aconselhados a utilizar o esquema de código de erro em vez disso.
 
-Manter catálogos de traduções de mensagens requer os esforços contínuos de muitos voluntários que desejam ver o PostgreSQL falar bem sua língua preferida. Se as mensagens em sua língua atualmente não estiverem disponíveis ou não estiverem totalmente traduzidas, sua assistência seria apreciada. Se você quiser ajudar, consulte [Capítulo 56][(nls.md "Chapter 56. Native Language Support")] ou escreva para a lista de correio dos desenvolvedores.
+Manter catálogos de traduções de mensagens requer os esforços contínuos de muitos voluntários que desejam ver o PostgreSQL falar bem sua língua preferida. Se as mensagens em sua língua atualmente não estiverem disponíveis ou não estiverem totalmente traduzidas, sua assistência seria apreciada. Se você quiser ajudar, consulte [Capítulo 56](nls.md) ou escreva para a lista de correio dos desenvolvedores.

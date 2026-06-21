@@ -18,7 +18,7 @@ DROP TEXT SEARCH DICTIONARY [ IF EXISTS ] name [ CASCADE | RESTRICT ]
 
 *`name`*: O nome (opcionalmente qualificado por esquema) de um dicionário de pesquisa de texto existente.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem do dicionário de pesquisa de texto e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem do dicionário de pesquisa de texto e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a eliminação do dicionário de busca de texto se algum objeto depender dele. Isso é o padrão.
 

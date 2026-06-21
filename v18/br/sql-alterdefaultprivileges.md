@@ -87,7 +87,7 @@ REVOKE [ GRANT OPTION FOR ]
 
 Embora você possa alterar seus próprios privilégios padrão e os padrões dos papéis dos quais é membro, no momento da criação do objeto, as novas permissões do objeto são afetadas apenas pelos privilégios padrão do papel atual e não são herdadas de quaisquer papéis nos quais o papel atual é membro.
 
-Como explicado na [Seção 5.8][(ddl-priv.md "5.8. Privileges")], os privilégios padrão para qualquer tipo de objeto normalmente concedem todos os permissões concedíveis ao proprietário do objeto e podem conceder alguns privilégios ao `PUBLIC` também. No entanto, esse comportamento pode ser alterado alterando os privilégios padrão globais com `ALTER DEFAULT PRIVILEGES`.
+Como explicado na [Seção 5.8](ddl-priv.md), os privilégios padrão para qualquer tipo de objeto normalmente concedem todos os permissões concedíveis ao proprietário do objeto e podem conceder alguns privilégios ao `PUBLIC` também. No entanto, esse comportamento pode ser alterado alterando os privilégios padrão globais com `ALTER DEFAULT PRIVILEGES`.
 
 Atualmente, apenas os privilégios para esquemas, tabelas (incluindo vistas e tabelas externas), sequências, funções, tipos (incluindo domínios) e grandes objetos podem ser alterados. Para este comando, as funções incluem agregados e procedimentos. As palavras `FUNCTIONS` e `ROUTINES` são equivalentes neste comando. (`ROUTINES` é preferido a partir de agora como o termo padrão para funções e procedimentos tomados juntos. Em versões anteriores do PostgreSQL, apenas a palavra `FUNCTIONS` era permitida. Não é possível definir privilégios padrão para funções e procedimentos separadamente.)
 
@@ -103,7 +103,7 @@ Os privilégios padrão especificados por esquema são adicionados a qualquer pr
 
 ## Notas
 
-Utilize o comando (app-psql.md "psql") de [psql][(app-psql.md "psql")] para obter informações sobre as atribuições de privilégios padrão existentes. O significado da exibição de privilégios é o mesmo explicado para `\dp` em [Seção 5.8][(ddl-priv.md "5.8. Privileges")].
+Utilize o comando (app-psql.md "psql") de [psql](app-psql.md) para obter informações sobre as atribuições de privilégios padrão existentes. O significado da exibição de privilégios é o mesmo explicado para `\dp` em [Seção 5.8](ddl-priv.md).
 
 Se você deseja excluir um papel para o qual os privilégios padrão foram alterados, é necessário reverter as alterações nos seus privilégios padrão ou usar `DROP OWNED BY` para se livrar da entrada de privilégios padrão para o papel.
 

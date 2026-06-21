@@ -10,7 +10,7 @@ pg_recvlogical — controle de fluxos de decodificação lógica do PostgreSQL
 
 `pg_recvlogical` controla os slots de replicação de decodificação lógica e transmite dados a partir desses slots de replicação.
 
-Ele cria uma conexão em modo de replicação, portanto, está sujeito às mesmas restrições que [pg_receivewal][(app-pgreceivewal.md "pg_receivewal")], além das restrições para replicação lógica (consulte [Capítulo 47][(logicaldecoding.md "Chapter 47. Logical Decoding")]).
+Ele cria uma conexão em modo de replicação, portanto, está sujeito às mesmas restrições que [pg_receivewal](app-pgreceivewal.md), além das restrições para replicação lógica (consulte [Capítulo 47](logicaldecoding.md)).
 
 `pg_recvlogical` não tem equivalente às funções peek e get dos modos de decodificação lógica da interface SQL. Envia confirmações de replay para dados que são recebidos de forma preguiçosa e em uma saída limpa. Para examinar dados pendentes em um slot sem consumi-los, use `pg_logical_slot_peek_changes`(functions-admin.md#FUNCTIONS-REPLICATION "9.28.6. Replication Management Functions").
 
@@ -84,7 +84,7 @@ Este parâmetro é necessário para qualquer uma das ações.
 
 As opções de linha de comando a seguir controlam os parâmetros de conexão do banco de dados.
 
-`-d dbname` `--dbname=dbname`: O banco de dados a ser conectado. Veja a descrição das ações para entender o que isso significa em detalhes. O *`dbname`* pode ser uma [string de conexão][(libpq-connect.md#LIBPQ-CONNSTRING "32.1.1. Connection Strings")]. Se assim for, os parâmetros da string de conexão substituirão quaisquer opções de linha de comando conflitantes.
+`-d dbname` `--dbname=dbname`: O banco de dados a ser conectado. Veja a descrição das ações para entender o que isso significa em detalhes. O *`dbname`* pode ser uma [string de conexão](libpq-connect.md#LIBPQ-CONNSTRING). Se assim for, os parâmetros da string de conexão substituirão quaisquer opções de linha de comando conflitantes.
 
 Este parâmetro é necessário para `--create-slot` e `--start`.
 
@@ -112,7 +112,7 @@ pg_recvlogical sairá com status 0 quando encerrado pelo sinal SIGINT ou SIGTERM
 
 ## Meio Ambiente
 
-Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, utiliza as variáveis de ambiente suportadas pelo libpq (consulte a Seção 32.15 [(libpq-envars.md "32.15. Environment Variables")]).
+Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, utiliza as variáveis de ambiente suportadas pelo libpq (consulte a [Seção 32.15](libpq-envars.md)).
 
 A variável de ambiente `PG_COLOR` especifica se a cor deve ser usada nas mensagens de diagnóstico. Os valores possíveis são `always`, `auto` e `never`.
 
@@ -122,7 +122,7 @@ pg_recvlogical preservará as permissões de grupo nos arquivos WAL recebidos se
 
 ## Exemplos
 
-Veja [Seção 47.1][(logicaldecoding-example.md "47.1. Logical Decoding Examples")] para um exemplo.
+Veja [Seção 47.1](logicaldecoding-example.md) para um exemplo.
 
 ## Veja também
 

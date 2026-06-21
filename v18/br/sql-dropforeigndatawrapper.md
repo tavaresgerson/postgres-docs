@@ -18,7 +18,7 @@ DROP FOREIGN DATA WRAPPER [ IF EXISTS ] name [, ...] [ CASCADE | RESTRICT ]
 
 *`name`*: O nome de um wrapper de dados estrangeiro existente.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem do wrapper de dados externos (como tabelas e servidores externos), e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem do wrapper de dados externos (como tabelas e servidores externos), e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a eliminação do wrapper de dados estrangeiros se houver objetos que dependem dele. Esse é o padrão.
 

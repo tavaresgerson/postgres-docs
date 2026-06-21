@@ -17,6 +17,105 @@ def format_html_tables(text):
     return re.sub(r'<table\b[^>]*>.*?</table>', replacer, text, flags=re.IGNORECASE | re.DOTALL)
 
 
+def format_broken_links(text):
+    """Corrige links quebrados que ficaram com formatação inválida após tradução."""
+    # Regra original: [Texto][(url)] -> [Texto](url)
+    text = re.sub(r'\[([^\]]+)\]\s*\[\(\s*([^)\s]+)[^)]*\)\]', r'[\1](\2)', text)
+
+    # Regra 1: Falta de colchete fechando: [Texto(url "titulo") -> [Texto](url)
+    # Ex: [`CREATE DATABASE`(sql-createdatabase.md "...") -> [`CREATE DATABASE`](sql-createdatabase.md)
+    # Captura também links com âncoras (ex: .md#ancora)
+    text = re.sub(r'\[([^\]\[(]+?)\(\s*([^)\s]+\.md(?:#[^)\s]*)?)[^)]*\)', r'[\1](\2)', text)
+
+    # Padrão de prefixos de documentação
+    doc_refs = r'(?:Seção|Capítulo|Section|Chapter|Tabela|Table|Figura|Figure|Apêndice|Appendix)\s+[\d\.A-Z]+'
+
+    # Regra 2: Prefixo seguido de [(url "titulo")] -> [Prefixo](url)
+    # Ex: Seção 32.15 [(libpq-envars.md "titulo")] -> [Seção 32.15](libpq-envars.md)
+    text = re.sub(fr'({doc_refs})\s*\[\(\s*([^)\s]+\.md(?:#[^)\s]*)?)[^)]*\)\]', r'[\1](\2)', text)
+
+    # Regra 3: Prefixo seguido de (url "titulo") -> [Prefixo](url)
+    # Ex: Seção 32.15 (libpq-envars.md "titulo") -> [Seção 32.15](libpq-envars.md)
+    # O (?<!\[) garante que a regra não mexa em textos que já estão corretos como [Seção 32.15](...)
+    text = re.sub(fr'(?<!\[)({doc_refs})\s*\(\s*([^)\s]+\.md(?:#[^)\s]*)?)[^)]*\)', r'[\1](\2)', text)
+
+    return text
+
+
+def fix_unclosed_html_tags(text):
+    """
+    Identifica tags HTML comumente deixadas abertas pelo tradutor/markdownify
+    e insere as tags de fechamento para evitar warnings do Pandoc (ex: Div unclosed).
+    """
+    lines = text.split('\n')
+    in_code_block = False
+
+    global_div_balance = 0
+    out_lines = []
+
+    # Tags inline ou parciais que devem ser fechadas estritamente antes do fim de um parágrafo
+    inline_tags = ['code', 'span', 'p', 'a', 'strong', 'em', 'kbd', 'samp']
+    inline_tags_balance = {tag: 0 for tag in inline_tags}
+
+    for line in lines:
+        if line.strip().startswith('```'):
+            in_code_block = not in_code_block
+            out_lines.append(line)
+            continue
+
+        if in_code_block:
+            out_lines.append(line)
+            continue
+
+        # Cria uma versão limpa da linha para ignorar tags perfeitamente escapadas dentro de crases (`)
+        # e também ignora tags self-closing completas como <br/> ou <img/>
+        safe_line = re.sub(r'`[^`]*`', '', line)
+        safe_line = re.sub(r'<[a-zA-Z0-9]+\b[^>]*/>', '', safe_line)
+
+        # 1. Balanceamento global de DIVs
+        open_divs = len(re.findall(r'<div\b[^>]*>', safe_line, re.IGNORECASE))
+        close_divs = len(re.findall(r'</div>', safe_line, re.IGNORECASE))
+        global_div_balance += (open_divs - close_divs)
+
+        # 2. Balanceamento de tags inline (contagem e fechamento por parágrafo)
+        for tag in inline_tags:
+            open_tags = len(re.findall(fr'<{tag}\b[^>]*>', safe_line, re.IGNORECASE))
+            close_tags = len(re.findall(fr'</{tag}>', safe_line, re.IGNORECASE))
+            inline_tags_balance[tag] += (open_tags - close_tags)
+
+        out_lines.append(line)
+
+        # Ao encontrar uma linha em branco (fim do parágrafo atual)
+        if not line.strip():
+            for tag in inline_tags:
+                count = inline_tags_balance[tag]
+                if count > 0:
+                    # Sobe no array procurando a última linha que continha texto e injeta o fechamento lá
+                    for idx in range(len(out_lines) - 2, -1, -1):
+                        if out_lines[idx].strip():
+                            out_lines[idx] += f"</{tag}>" * count
+                            break
+            # Reseta o balanço de inline tags para limpar o estado antes do próximo parágrafo
+            inline_tags_balance = {tag: 0 for tag in inline_tags}
+
+    # Garantia de limpeza: fecha tags inline pendentes caso o arquivo acabe sem quebra de parágrafo
+    for tag in inline_tags:
+        count = inline_tags_balance[tag]
+        if count > 0:
+            for idx in range(len(out_lines) - 1, -1, -1):
+                if out_lines[idx].strip():
+                    out_lines[idx] += f"</{tag}>" * count
+                    break
+
+    final_text = '\n'.join(out_lines)
+
+    # Adiciona no final do documento as tags de bloco que nunca foram fechadas
+    if global_div_balance > 0:
+        final_text += "\n\n" + "</div>\n" * global_div_balance
+
+    return final_text
+
+
 def format_markdown_definitions(text):
     lines = text.split('\n')
 
@@ -157,6 +256,10 @@ def process_markdown_files():
         new_content = format_markdown_definitions(content)
         # Aplica a indentação no HTML das tabelas preservadas
         new_content = format_html_tables(new_content)
+        # Corrige links malformados
+        new_content = format_broken_links(new_content)
+        # Tenta reparar a perda de fechamento de tags do HTML que restou
+        new_content = fix_unclosed_html_tags(new_content)
 
         if content != new_content:
             with open(filepath, 'w', encoding='utf-8') as f:

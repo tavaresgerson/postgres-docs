@@ -1,6 +1,6 @@
 ## 24.2. Reindexação rotineira [#](#ROUTINE-REINDEX)
 
-Em algumas situações, vale a pena reconstruir os índices periodicamente com o comando [REINDEX][(sql-reindex.md "REINDEX")], ou uma série de etapas individuais de reconstrução.
+Em algumas situações, vale a pena reconstruir os índices periodicamente com o comando [REINDEX](sql-reindex.md), ou uma série de etapas individuais de reconstrução.
 
 As páginas de índice de árvore B que se tornaram completamente vazias são recuperadas para uso novamente. No entanto, ainda há uma possibilidade de uso ineficiente do espaço: se todas as chaves de índice, exceto algumas, tiverem sido excluídas de uma página, a página permanece alocada. Portanto, um padrão de uso em que a maioria, mas não todas, as chaves em cada intervalo sejam eventualmente excluídas verá um uso ruim do espaço. Para tais padrões de uso, é recomendado o reindexamento periódico.
 

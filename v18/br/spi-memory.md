@@ -1,14 +1,14 @@
 ## 45.3. Gerenciamento de memória [#](#SPI-MEMORY)
 
-* [SPI_palloc][(spi-spi-palloc.md)] — alocar memória no contexto do executor superior
-* [SPI_repalloc][(spi-realloc.md)] — realocar memória no contexto do executor superior
-* [SPI_pfree][(spi-spi-pfree.md)] — liberar memória no contexto do executor superior
-* [SPI_copytuple][(spi-spi-copytuple.md)] — fazer uma cópia de uma linha no contexto do executor superior
-* [SPI_returntuple][(spi-spi-returntuple.md)] — preparar para retornar uma tupla como um Datum
-* [SPI_modifytuple][(spi-spi-modifytuple.md)] — criar uma linha substituindo os campos selecionados de uma linha dada
-* [SPI_freetuple][(spi-spi-freetuple.md)] — liberar uma linha alocada no contexto do executor superior
-* [SPI_freetuptable][(spi-spi-freetupletable.md)] — liberar uma linha definida criada por `SPI_execute` ou uma função semelhante
-* [SPI_freeplan][(spi-spi-freeplan.md)] — liberar uma declaração preparada salva anteriormente
+* [SPI_palloc](spi-spi-palloc.md) — alocar memória no contexto do executor superior
+* [SPI_repalloc](spi-realloc.md) — realocar memória no contexto do executor superior
+* [SPI_pfree](spi-spi-pfree.md) — liberar memória no contexto do executor superior
+* [SPI_copytuple](spi-spi-copytuple.md) — fazer uma cópia de uma linha no contexto do executor superior
+* [SPI_returntuple](spi-spi-returntuple.md) — preparar para retornar uma tupla como um Datum
+* [SPI_modifytuple](spi-spi-modifytuple.md) — criar uma linha substituindo os campos selecionados de uma linha dada
+* [SPI_freetuple](spi-spi-freetuple.md) — liberar uma linha alocada no contexto do executor superior
+* [SPI_freetuptable](spi-spi-freetupletable.md) — liberar uma linha definida criada por `SPI_execute` ou uma função semelhante
+* [SPI_freeplan](spi-spi-freeplan.md) — liberar uma declaração preparada salva anteriormente
 
 O PostgreSQL aloca memória dentro de contextos *de memória*, que fornecem um método conveniente para gerenciar as alocações feitas em muitos lugares diferentes que precisam existir por diferentes períodos de tempo. A destruição de um contexto libera toda a memória que foi alocada nele. Assim, não é necessário acompanhar objetos individuais para evitar vazamentos de memória; em vez disso, apenas um número relativamente pequeno de contextos precisa ser gerenciado. `palloc` e funções relacionadas alocam memória do contexto “corrente”.
 

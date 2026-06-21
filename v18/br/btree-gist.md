@@ -1,7 +1,7 @@
 ## F.8. btree_gist — Classes de operadores GiST com comportamento de árvore B [#](#BTREE-GIST)
 
-* [F.8.1. Exemplo de uso][(btree-gist.md#BTREE-GIST-EXAMPLE-USAGE)]
-* [F.8.2. Autores][(btree-gist.md#BTREE-GIST-AUTHORS)]
+* [F.8.1. Exemplo de uso](btree-gist.md#BTREE-GIST-EXAMPLE-USAGE)
+* [F.8.2. Autores](btree-gist.md#BTREE-GIST-AUTHORS)
 
 `btree_gist` fornece classes de operadores de índice GiST que implementam comportamento equivalente a árvore B para os tipos de dados `int2`, `int4`, `int8`, `float4`, `float8`, `numeric`, `timestamp with time zone`, `timestamp without time zone`, `time with time zone`, `time without time zone`, `date`, `interval`, `oid`, `money`, `char`, `varchar`, `text`, `bytea`, `bit`, `varbit`, `macaddr`, `macaddr8`, `inet`, `cidr`, `uuid`, `bool` e todos os tipos `enum`.
 

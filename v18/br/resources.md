@@ -2,7 +2,7 @@
 
 Além da documentação, ou seja, este livro, há outros recursos sobre PostgreSQL:
 
-Wiki: O PostgreSQL [wiki][(https://wiki.postgresql.org)] contém a lista de [FAQ][(https://wiki.postgresql.org/wiki/Frequently_Asked_Questions)] (Perguntas Frequentes) do projeto, a lista [TODO][(https://wiki.postgresql.org/wiki/Todo)] e informações detalhadas sobre muitos outros tópicos.
+Wiki: O PostgreSQL [wiki](https://wiki.postgresql.org) contém a lista de [FAQ](https://wiki.postgresql.org/wiki/Frequently_Asked_Questions) (Perguntas Frequentes) do projeto, a lista [TODO](https://wiki.postgresql.org/wiki/Todo) e informações detalhadas sobre muitos outros tópicos.
 
 Site: O site do PostgreSQL [(https://www.postgresql.org)] traz detalhes sobre o lançamento mais recente e outras informações para tornar seu trabalho ou brincadeira com o PostgreSQL mais produtivo.
 

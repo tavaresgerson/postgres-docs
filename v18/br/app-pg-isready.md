@@ -12,7 +12,7 @@ pg_isready é uma ferramenta para verificar o estado de conexão de um servidor 
 
 ## Opções
 
-`-d dbname` `--dbname=dbname`: Especifica o nome do banco de dados a ser conectado. O *`dbname`* pode ser uma [string de conexão][(libpq-connect.md#LIBPQ-CONNSTRING "32.1.1. Connection Strings")]. Se assim for, os parâmetros da string de conexão substituirão quaisquer opções de linha de comando conflitantes.
+`-d dbname` `--dbname=dbname`: Especifica o nome do banco de dados a ser conectado. O *`dbname`* pode ser uma [string de conexão](libpq-connect.md#LIBPQ-CONNSTRING). Se assim for, os parâmetros da string de conexão substituirão quaisquer opções de linha de comando conflitantes.
 
 `-h hostname`: Especifica o nome do host da máquina em que o servidor está sendo executado. Se o valor começar com uma barra, ele é usado como o diretório para o socket de domínio Unix. `--host=hostname`: Especifica o nome do host da máquina em que o servidor está sendo executado. Se o valor começar com uma barra, ele é usado como o diretório para o socket de domínio Unix.
 
@@ -34,7 +34,7 @@ pg_isready retorna `0` para o shell se o servidor estiver aceitando conexões no
 
 ## Meio Ambiente
 
-`pg_isready`, como a maioria das outras utilidades do PostgreSQL, também utiliza as variáveis de ambiente suportadas pelo libpq (consulte a Seção 32.15 (libpq-envars.md "32.15. Environment Variables")).
+`pg_isready`, como a maioria das outras utilidades do PostgreSQL, também utiliza as variáveis de ambiente suportadas pelo libpq (consulte a [Seção 32.15](libpq-envars.md)).
 
 A variável de ambiente `PG_COLOR` especifica se a cor deve ser usada nas mensagens de diagnóstico. Os valores possíveis são `always`, `auto` e `never`.
 

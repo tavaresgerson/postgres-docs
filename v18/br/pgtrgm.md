@@ -29,26 +29,26 @@ As funções fornecidas pelo módulo `pg_trgm` são mostradas na [Tabela F.26](p
 
 
 <table border="1" class="table" summary="pg_trgm Functions">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
      Function
     </p>
-<p>
+    <p>
      Description
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       similarity
      </code>
      (
@@ -59,42 +59,40 @@ As funções fornecidas pelo módulo `pg_trgm` são mostradas na [Tabela F.26](p
      <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       real
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Returns a number that indicates how similar the two arguments are. The range of the result is zero (indicating that the two strings are completely dissimilar) to one (indicating that the two strings are identical).
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       show_trgm
      </code>
      (
      <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       text[]
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Returns an array of all the trigrams in the given string. (In practice this is seldom useful except for debugging.)
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       word_similarity
      </code>
      (
@@ -105,21 +103,20 @@ As funções fornecidas pelo módulo `pg_trgm` são mostradas na [Tabela F.26](p
      <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       real
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Returns a number that indicates the greatest similarity between the set of trigrams in the first string and any continuous extent of an ordered set of trigrams in the second string.  For details, see the explanation below.
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       strict_word_similarity
      </code>
      (
@@ -130,100 +127,100 @@ As funções fornecidas pelo módulo `pg_trgm` são mostradas na [Tabela F.26](p
      <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       real
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Same as
      <code class="function">
       word_similarity
      </code>
      , but forces extent boundaries to match word boundaries.  Since we don't have cross-word trigrams, this function actually returns greatest similarity between first string and any continuous extent of words of the second string.
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       show_limit
      </code>
-     ()
-        →
+     () →
      <code class="returnvalue">
       real
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Returns the current similarity threshold used by the
      <code class="literal">
       %
      </code>
      operator.  This sets the minimum similarity between two words for them to be considered similar enough to be misspellings of each other, for example. (
      <span class="emphasis">
-<em>
+      <em>
        Deprecated
       </em>
-</span>
+     </span>
      ; instead use
      <code class="command">
       SHOW
      </code>
-<code class="varname">
+     <code class="varname">
       pg_trgm.similarity_threshold
      </code>
      .)
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       set_limit
      </code>
      (
      <code class="type">
       real
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       real
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Sets the current similarity threshold that is used by the
      <code class="literal">
       %
      </code>
      operator.  The threshold must be between 0 and 1 (default is 0.3). Returns the same value passed in. (
      <span class="emphasis">
-<em>
+      <em>
        Deprecated
       </em>
-</span>
+     </span>
      ; instead use
      <code class="command">
       SET
      </code>
-<code class="varname">
+     <code class="varname">
       pg_trgm.similarity_threshold
      </code>
      .)
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Considere o exemplo a seguir:
 
@@ -256,246 +253,323 @@ Assim, a função `strict_word_similarity` é útil para encontrar a similaridad
 
 
 <table border="1" class="table" summary="pg_trgm Operators">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">Operador</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
+     Operador
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       text
      </code>
-<code class="literal">
+     <code class="literal">
       %
      </code>
-<code class="type">
+     <code class="type">
       text
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>Retornos<code class="literal">
+    </p>
+    <p>
+     Retornos
+     <code class="literal">
       true
-     </code>se seus argumentos tiverem uma similaridade maior do que o limite de similaridade atual definido por<code class="varname">
+     </code>
+     se seus argumentos tiverem uma similaridade maior do que o limite de similaridade atual definido por
+     <code class="varname">
       pg_trgm.similarity_threshold
      </code>
      .
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       text
      </code>
-<code class="literal">
+     <code class="literal">
       &lt;%
      </code>
-<code class="type">
+     <code class="type">
       text
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>Retornos<code class="literal">
+    </p>
+    <p>
+     Retornos
+     <code class="literal">
       true
-     </code>se a semelhança entre o trigrama definido no primeiro argumento e uma extensão contínua de um conjunto de trigramas ordenado no segundo argumento for maior que o limite atual de semelhança de palavra definido por<code class="varname">
+     </code>
+     se a semelhança entre o trigrama definido no primeiro argumento e uma extensão contínua de um conjunto de trigramas ordenado no segundo argumento for maior que o limite atual de semelhança de palavra definido por
+     <code class="varname">
       pg_trgm.word_similarity_threshold
      </code>
      parameter.
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       text
      </code>
-<code class="literal">
+     <code class="literal">
       %&gt;
      </code>
-<code class="type">
+     <code class="type">
       text
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>Comutador do<code class="literal">
+    </p>
+    <p>
+     Comutador do
+     <code class="literal">
       &lt;%
      </code>
      operator.
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       text
      </code>
-<code class="literal">
+     <code class="literal">
       &lt;&lt;%
      </code>
-<code class="type">
+     <code class="type">
       text
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>Retornos<code class="literal">
+    </p>
+    <p>
+     Retornos
+     <code class="literal">
       true
-     </code>se seu segundo argumento tiver uma extensão contínua de um conjunto de trigramas ordenado que corresponda a limites de palavra, e sua semelhança com o conjunto de trigramas do primeiro argumento seja maior que o limite atual de semelhança de palavras estrita definido pelo<code class="varname">
+     </code>
+     se seu segundo argumento tiver uma extensão contínua de um conjunto de trigramas ordenado que corresponda a limites de palavra, e sua semelhança com o conjunto de trigramas do primeiro argumento seja maior que o limite atual de semelhança de palavras estrita definido pelo
+     <code class="varname">
       pg_trgm.strict_word_similarity_threshold
      </code>
      parameter.
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       text
      </code>
-<code class="literal">
+     <code class="literal">
       %&gt;&gt;
      </code>
-<code class="type">
+     <code class="type">
       text
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>Comutador do<code class="literal">
+    </p>
+    <p>
+     Comutador do
+     <code class="literal">
       &lt;&lt;%
      </code>
      operator.
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       text
      </code>
-<code class="literal">
+     <code class="literal">
       &lt;-&gt;
      </code>
-<code class="type">
+     <code class="type">
       text
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       real
      </code>
-</p>
-<p>Retorna o<span class="quote">“<span class="quote">distância</span>”</span>entre os argumentos, ou seja, um menos o<code class="function">
+    </p>
+    <p>
+     Retorna o
+     <span class="quote">
+      “
+      <span class="quote">
+       distância
+      </span>
+      ”
+     </span>
+     entre os argumentos, ou seja, um menos o
+     <code class="function">
       similarity()
      </code>
      value.
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       text
      </code>
-<code class="literal">
+     <code class="literal">
       &lt;&lt;-&gt;
      </code>
-<code class="type">
+     <code class="type">
       text
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       real
      </code>
-</p>
-<p>Retorna o<span class="quote">“<span class="quote">distância</span>”</span>entre os argumentos, ou seja, um menos o<code class="function">
+    </p>
+    <p>
+     Retorna o
+     <span class="quote">
+      “
+      <span class="quote">
+       distância
+      </span>
+      ”
+     </span>
+     entre os argumentos, ou seja, um menos o
+     <code class="function">
       word_similarity()
      </code>
      value.
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       text
      </code>
-<code class="literal">
+     <code class="literal">
       &lt;-&gt;&gt;
      </code>
-<code class="type">
+     <code class="type">
       text
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       real
      </code>
-</p>
-<p>Comutador do<code class="literal">
+    </p>
+    <p>
+     Comutador do
+     <code class="literal">
       &lt;&lt;-&gt;
      </code>
      operator.
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       text
      </code>
-<code class="literal">
+     <code class="literal">
       &lt;&lt;&lt;-&gt;
      </code>
-<code class="type">
+     <code class="type">
       text
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       real
      </code>
-</p>
-<p>Retorna o<span class="quote">“<span class="quote">distância</span>”</span>entre os argumentos, ou seja, um menos o<code class="function">
+    </p>
+    <p>
+     Retorna o
+     <span class="quote">
+      “
+      <span class="quote">
+       distância
+      </span>
+      ”
+     </span>
+     entre os argumentos, ou seja, um menos o
+     <code class="function">
       strict_word_similarity()
      </code>
      value.
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       text
      </code>
-<code class="literal">
+     <code class="literal">
       &lt;-&gt;&gt;&gt;
      </code>
-<code class="type">
+     <code class="type">
       text
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       real
      </code>
-</p>
-<p>Comutador do<code class="literal">
+    </p>
+    <p>
+     Comutador do
+     <code class="literal">
       &lt;&lt;&lt;-&gt;
      </code>
      operator.
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 

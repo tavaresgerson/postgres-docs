@@ -46,7 +46,7 @@ O clusterdb também aceita os seguintes argumentos de linha de comando para os p
 
 Essa opção nunca é essencial, pois o clusterdb solicitará automaticamente uma senha se o servidor exigir autenticação por senha. No entanto, o clusterdb desperdiçará uma tentativa de conexão descobrindo que o servidor deseja uma senha. Em alguns casos, vale a pena digitar `-W` para evitar a tentativa extra de conexão.
 
-`--maintenance-db=dbname`: Quando o `-a`/`--all` for usado, conecte-se a este banco de dados para coletar a lista de bancos de dados para agrupar. Se não for especificado, o banco de dados `postgres` será usado, ou se este não existir, `template1` será usado. Isso pode ser uma [string de conexão][(libpq-connect.md#LIBPQ-CONNSTRING "32.1.1. Connection Strings")]. Se for assim, os parâmetros da string de conexão substituirão quaisquer opções de linha de comando conflitantes. Além disso, os parâmetros da string de conexão, exceto o próprio nome do banco de dados, serão reutilizados ao se conectar a outros bancos de dados.
+`--maintenance-db=dbname`: Quando o `-a`/`--all` for usado, conecte-se a este banco de dados para coletar a lista de bancos de dados para agrupar. Se não for especificado, o banco de dados `postgres` será usado, ou se este não existir, `template1` será usado. Isso pode ser uma [string de conexão](libpq-connect.md#LIBPQ-CONNSTRING). Se for assim, os parâmetros da string de conexão substituirão quaisquer opções de linha de comando conflitantes. Além disso, os parâmetros da string de conexão, exceto o próprio nome do banco de dados, serão reutilizados ao se conectar a outros bancos de dados.
 
 ## Meio Ambiente
 
@@ -54,11 +54,11 @@ Essa opção nunca é essencial, pois o clusterdb solicitará automaticamente um
 
 `PG_COLOR`: Especifica se a cor deve ser usada nas mensagens de diagnóstico. Os valores possíveis são `always`, `auto` e `never`.
 
-Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, também utiliza as variáveis de ambiente suportadas pelo libpq (consulte a Seção 32.15 [(libpq-envars.md "32.15. Environment Variables")]).
+Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, também utiliza as variáveis de ambiente suportadas pelo libpq (consulte a [Seção 32.15](libpq-envars.md)).
 
 ## Diagnósticos
 
-Em caso de dificuldade, consulte [CLUSTER][(sql-cluster.md "CLUSTER")] e [psql][(app-psql.md "psql")] para discussões sobre problemas potenciais e mensagens de erro. O servidor de banco de dados deve estar em execução no host alvo. Além disso, quaisquer configurações de conexão padrão e variáveis de ambiente usadas pela biblioteca de interface libpq serão aplicadas.
+Em caso de dificuldade, consulte [CLUSTER](sql-cluster.md) e [psql](app-psql.md) para discussões sobre problemas potenciais e mensagens de erro. O servidor de banco de dados deve estar em execução no host alvo. Além disso, quaisquer configurações de conexão padrão e variáveis de ambiente usadas pela biblioteca de interface libpq serão aplicadas.
 
 ## Exemplos
 

@@ -7,108 +7,108 @@ A vista `role_table_grants` identifica todos os privilégios concedidos em tabel
 
 
 <table border="1" class="table" summary="role_table_grants Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
      Column Type
     </p>
-<p>
+    <p>
      Description
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       grantor
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the role that granted the privilege
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       grantee
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the role that the privilege was granted to
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       table_catalog
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the database that contains the table (always the current database)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       table_schema
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the schema that contains the table
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       table_name
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the table
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       privilege_type
      </code>
-<code class="type">
+     <code class="type">
       character_data
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Type of the privilege:
      <code class="literal">
       SELECT
@@ -137,21 +137,21 @@ A vista `role_table_grants` identifica todos os privilégios concedidos em tabel
      <code class="literal">
       TRIGGER
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       is_grantable
      </code>
-<code class="type">
+     <code class="type">
       yes_or_no
      </code>
-</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     <code class="literal">
       YES
      </code>
      if the privilege is grantable,
@@ -160,19 +160,19 @@ A vista `role_table_grants` identifica todos os privilégios concedidos em tabel
      </code>
      if not
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       with_hierarchy
      </code>
-<code class="type">
+     <code class="type">
       yes_or_no
      </code>
-</p>
-<p>
+    </p>
+    <p>
      In the SQL standard,
      <code class="literal">
       WITH HIERARCHY OPTION
@@ -195,8 +195,11 @@ A vista `role_table_grants` identifica todos os privilégios concedidos em tabel
      </code>
      .
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 

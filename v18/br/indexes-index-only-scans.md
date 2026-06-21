@@ -7,21 +7,21 @@ Para resolver esse problema de desempenho, o PostgreSQL suporta *escaneamentos a
 1. O tipo de índice deve suportar varreduras apenas de índice. As árvores B sempre o fazem. Os índices GiST e SP-GiST suportam varreduras apenas de índice para algumas classes de operadores, mas não para outras. Outros tipos de índice não têm suporte. O requisito subjacente é que o índice deve armazenar fisicamente, ou pelo menos ser capaz de reconstruir, o valor original dos dados para cada entrada do índice. Como exemplo contrário, os índices GIN não podem suportar varreduras apenas de índice porque cada entrada do índice geralmente contém apenas parte do valor original dos dados.
 2. A consulta deve referenciar apenas as colunas armazenadas no índice. Por exemplo, dado um índice sobre as colunas `x` e `y` de uma tabela que também tem uma coluna `z`, essas consultas poderiam usar varreduras apenas de índice:
 
-   ```
-   SELECT x, y FROM tab WHERE x = 'key';
-   SELECT x FROM tab WHERE x = 'key' AND y < 42;
-   ```
+```
+SELECT x, y FROM tab WHERE x = 'key';
+SELECT x FROM tab WHERE x = 'key' AND y < 42;
+```
 
 mas essas consultas não conseguiram:
 
-   ```
-   SELECT x, z FROM tab WHERE x = 'key';
-   SELECT x FROM tab WHERE x = 'key' AND z < 42;
-   ```
+```
+SELECT x, z FROM tab WHERE x = 'key';
+SELECT x FROM tab WHERE x = 'key' AND z < 42;
+```
 
 (Os índices de expressão e os índices parciais complicam essa regra, conforme discutido abaixo.)
 
-Se esses dois requisitos fundamentais forem atendidos, então todos os valores de dados exigidos pela consulta estarão disponíveis no índice, portanto, uma varredura apenas com índice é fisicamente possível. Mas há um requisito adicional para qualquer varredura de tabela no PostgreSQL: ele deve verificar se cada linha recuperada é “visível” ao snapshot MVCC da consulta, conforme discutido em [Capítulo 13][(mvcc.md "Chapter 13. Concurrency Control")]. As informações de visibilidade não são armazenadas em entradas de índice, apenas em entradas de heap; portanto, à primeira vista, pareceria que cada recuperação de linha exigiria, de qualquer forma, um acesso ao heap. E isso é de fato o caso, se a linha da tabela tiver sido modificada recentemente. No entanto, para dados que raramente são alterados, há uma maneira de contornar esse problema. O PostgreSQL rastreia, para cada página em um heap de uma tabela, se todas as linhas armazenadas nessa página são antigas o suficiente para serem visíveis para todas as transações atuais e futuras. Essas informações são armazenadas em um bit no *mapa de visibilidade* da tabela. Uma varredura apenas com índice, após encontrar uma entrada de índice candidato, verifica o bit do mapa de visibilidade para a página de heap correspondente. Se estiver definido, a linha é conhecida como visível e, portanto, os dados podem ser retornados sem mais trabalho. Se não estiver definido, a entrada de heap deve ser visitada para descobrir se é visível, então não há vantagem de desempenho em relação a uma varredura padrão de índice. Mesmo no caso bem-sucedido, essa abordagem troca acessos ao mapa de visibilidade por acessos ao heap; mas, como o mapa de visibilidade é quatro ordens de magnitude menor que o heap que descreve, é necessário muito menos I/O físico para acessá-lo. Na maioria das situações, o mapa de visibilidade permanece cacheado na memória o tempo todo.
+Se esses dois requisitos fundamentais forem atendidos, então todos os valores de dados exigidos pela consulta estarão disponíveis no índice, portanto, uma varredura apenas com índice é fisicamente possível. Mas há um requisito adicional para qualquer varredura de tabela no PostgreSQL: ele deve verificar se cada linha recuperada é “visível” ao snapshot MVCC da consulta, conforme discutido em [Capítulo 13](mvcc.md). As informações de visibilidade não são armazenadas em entradas de índice, apenas em entradas de heap; portanto, à primeira vista, pareceria que cada recuperação de linha exigiria, de qualquer forma, um acesso ao heap. E isso é de fato o caso, se a linha da tabela tiver sido modificada recentemente. No entanto, para dados que raramente são alterados, há uma maneira de contornar esse problema. O PostgreSQL rastreia, para cada página em um heap de uma tabela, se todas as linhas armazenadas nessa página são antigas o suficiente para serem visíveis para todas as transações atuais e futuras. Essas informações são armazenadas em um bit no *mapa de visibilidade* da tabela. Uma varredura apenas com índice, após encontrar uma entrada de índice candidato, verifica o bit do mapa de visibilidade para a página de heap correspondente. Se estiver definido, a linha é conhecida como visível e, portanto, os dados podem ser retornados sem mais trabalho. Se não estiver definido, a entrada de heap deve ser visitada para descobrir se é visível, então não há vantagem de desempenho em relação a uma varredura padrão de índice. Mesmo no caso bem-sucedido, essa abordagem troca acessos ao mapa de visibilidade por acessos ao heap; mas, como o mapa de visibilidade é quatro ordens de magnitude menor que o heap que descreve, é necessário muito menos I/O físico para acessá-lo. Na maioria das situações, o mapa de visibilidade permanece cacheado na memória o tempo todo.
 
 Em suma, embora uma varredura apenas com índice seja possível, dado os dois requisitos fundamentais, será uma vitória apenas se uma fração significativa das páginas do heap da tabela tiver seus bits de mapa visíveis definidos. Mas as tabelas nas quais uma grande fração das linhas é inalterável são comuns o suficiente para tornar esse tipo de varredura muito útil na prática.
 
@@ -73,7 +73,7 @@ CREATE INDEX tab_f_x ON tab (f(x)) INCLUDE (x);
 
 Uma advertência adicional, se o objetivo for evitar a recálculo de `f(x)`, é que o planejador não necessariamente corresponderá aos usos de `f(x)` que não estão em cláusulas indexáveis `WHERE` ao coluna de índice. Geralmente, ele fará isso corretamente em consultas simples, como as mostradas acima, mas não em consultas que envolvem junções. Essas deficiências podem ser corrigidas em versões futuras do PostgreSQL.
 
-Os índices parciais também têm interações interessantes com varreduras apenas de índice. Considere o índice parcial mostrado em [Exemplo 11.3][(indexes-partial.md#INDEXES-PARTIAL-EX3 "Example 11.3. Setting up a Partial Unique Index")]:
+Os índices parciais também têm interações interessantes com varreduras apenas de índice. Considere o índice parcial mostrado em [Exemplo 11.3](indexes-partial.md#INDEXES-PARTIAL-EX3):
 
 ```
 CREATE UNIQUE INDEX tests_success_constraint ON tests (subject, target)

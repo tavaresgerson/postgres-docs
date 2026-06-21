@@ -35,7 +35,7 @@ No entanto, os formulários filtrados no Microsoft Access geram consultas que pa
 
 Observe que essa opção afeta apenas o formato exato `= NULL`, não outros operadores de comparação ou outras expressões que são computacionalmente equivalentes a alguma expressão que envolva o operador de igualdade (como `IN`). Assim, essa opção não é uma correção geral para programação ruim.
 
-Consulte a seção [9.2][(functions-comparison.md "9.2. Comparison Functions and Operators")] para informações relacionadas.
+Consulte a seção [9.2](functions-comparison.md) para informações relacionadas.
 
 `allow_alter_system` (`boolean`) [#](#GUC-ALLOW-ALTER-SYSTEM): Quando `allow_alter_system` está definido como `off`, um erro é retornado se o comando `ALTER SYSTEM` for executado. Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor. O valor padrão é `on`.
 

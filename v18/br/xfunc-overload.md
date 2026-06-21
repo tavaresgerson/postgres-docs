@@ -1,6 +1,6 @@
 ## 36.6. Sobrecarga de função [#](#XFUNC-OVERLOAD)
 
-Mais de uma função pode ser definida com o mesmo nome SQL, desde que os argumentos que eles recebam sejam diferentes. Em outras palavras, os nomes das funções podem ser *sobrecarregados*. Se você os usa ou não, essa capacidade implica precauções de segurança ao chamar funções em bancos de dados onde alguns usuários não confiam em outros usuários; veja [Seção 10.3][(typeconv-func.md "10.3. Functions")]. Quando uma consulta é executada, o servidor determinará qual função chamar a partir dos tipos de dados e do número dos argumentos fornecidos. O sobrecarregamento também pode ser usado para simular funções com um número variável de argumentos, até um número máximo finito.
+Mais de uma função pode ser definida com o mesmo nome SQL, desde que os argumentos que eles recebam sejam diferentes. Em outras palavras, os nomes das funções podem ser *sobrecarregados*. Se você os usa ou não, essa capacidade implica precauções de segurança ao chamar funções em bancos de dados onde alguns usuários não confiam em outros usuários; veja [Seção 10.3](typeconv-func.md). Quando uma consulta é executada, o servidor determinará qual função chamar a partir dos tipos de dados e do número dos argumentos fornecidos. O sobrecarregamento também pode ser usado para simular funções com um número variável de argumentos, até um número máximo finito.
 
 Ao criar uma família de funções sobrecarregadas, é importante ter cuidado para não criar ambiguidades. Por exemplo, considerando as funções:
 
@@ -9,7 +9,7 @@ CREATE FUNCTION test(int, real) RETURNS ...
 CREATE FUNCTION test(smallint, double precision) RETURNS ...
 ```
 
-Não está imediatamente claro qual função seria chamada com uma entrada trivial como `test(1, 1.5)`. As regras de resolução implementadas atualmente são descritas em [Capítulo 10][(typeconv.md "Chapter 10. Type Conversion")], mas não é prudente projetar um sistema que dependa sutilmente desse comportamento.
+Não está imediatamente claro qual função seria chamada com uma entrada trivial como `test(1, 1.5)`. As regras de resolução implementadas atualmente são descritas em [Capítulo 10](typeconv.md), mas não é prudente projetar um sistema que dependa sutilmente desse comportamento.
 
 Uma função que recebe um único argumento de um tipo composto geralmente não deve ter o mesmo nome que qualquer atributo (campo) desse tipo. Lembre-se de que `attribute(table)` é considerado equivalente a `table.attribute`. No caso de haver ambiguidade entre uma função em um tipo composto e um atributo do tipo composto, o atributo será sempre usado. É possível sobrepor essa escolha qualificando o nome da função com o esquema (ou seja, `schema.func(table)`) mas é melhor evitar o problema não escolhendo nomes conflitantes.
 

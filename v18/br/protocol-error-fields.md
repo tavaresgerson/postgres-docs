@@ -6,7 +6,7 @@ Esta seção descreve os campos que podem aparecer nas mensagens de ErrorRespons
 
 `V`: Gravidade: os conteúdos do campo são `ERROR`, `FATAL` ou `PANIC` (em uma mensagem de erro), ou `WARNING`, `NOTICE`, `DEBUG`, `INFO` ou `LOG` (em uma mensagem de aviso). Isso é idêntico ao campo `S`, exceto que os conteúdos nunca são localizados. Isso está presente apenas em mensagens geradas por versões do PostgreSQL 9.6 e posteriores.
 
-`C`: Código: o código SQLSTATE para o erro (ver [Apêndice A][(errcodes-appendix.md "Appendix A. PostgreSQL Error Codes")]). Não traduzível. Sempre presente.
+`C`: Código: o código SQLSTATE para o erro (ver [Apêndice A](errcodes-appendix.md)). Não traduzível. Sempre presente.
 
 `M`: Mensagem: a mensagem de erro primária legível pelo ser humano. Deve ser precisa, mas concisa (tipicamente uma linha). Sempre presente.
 
@@ -40,6 +40,6 @@ Esta seção descreve os campos que podem aparecer nas mensagens de ErrorRespons
 
 ### Nota
 
-Os campos para o nome do esquema, nome da tabela, nome da coluna, nome do tipo de dados e nome da restrição são fornecidos apenas para um número limitado de tipos de erro; consulte [Apêndice A][(errcodes-appendix.md "Appendix A. PostgreSQL Error Codes")]. Os frontends não devem assumir que a presença de qualquer um desses campos garanta a presença de outro campo. As fontes de erro principais observam as inter-relações mencionadas acima, mas as funções definidas pelo usuário podem usar esses campos de outras maneiras. Na mesma linha, os clientes não devem assumir que esses campos denotem objetos contemporâneos no banco de dados atual.
+Os campos para o nome do esquema, nome da tabela, nome da coluna, nome do tipo de dados e nome da restrição são fornecidos apenas para um número limitado de tipos de erro; consulte [Apêndice A](errcodes-appendix.md). Os frontends não devem assumir que a presença de qualquer um desses campos garanta a presença de outro campo. As fontes de erro principais observam as inter-relações mencionadas acima, mas as funções definidas pelo usuário podem usar esses campos de outras maneiras. Na mesma linha, os clientes não devem assumir que esses campos denotem objetos contemporâneos no banco de dados atual.
 
 O cliente é responsável por formatar as informações exibidas para atender às suas necessidades; em particular, ele deve quebrar as linhas longas conforme necessário. Caracteres de nova linha que aparecem nos campos da mensagem de erro devem ser tratados como quebra de parágrafo, e não como quebra de linha.

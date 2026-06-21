@@ -38,10 +38,11 @@ As seguintes opções são usadas apenas no modo search+bind:
 
 A opção a seguir pode ser usada como uma forma alternativa de escrever algumas das opções LDAP acima de forma mais compacta e padrão:
 
-`ldapurl`: Um URL LDAP [RFC 4516][(https://datatracker.ietf.org/doc/html/rfc4516)]. O formato é
+`ldapurl`: Um URL LDAP [RFC 4516](https://datatracker.ietf.org/doc/html/rfc4516). O formato é
 
-``` ldap[s]://host[:port]/basedn[?[attribute][?[scope][?[filter]]]]
-    ```
+```
+ldap[s]://host[:port]/basedn[?[attribute][?[scope][?[filter]]]]
+```
 
 *`scope`* deve ser um dos `base`, `one`, `sub`, normalmente o último. (O padrão é `base`, que normalmente não é útil nesta aplicação.) *`attribute`* pode nominar um único atributo, nesse caso, é usado como um valor para `ldapsearchattribute`. Se *`attribute`* estiver vazio, então *`filter`* pode ser usado como um valor para `ldapsearchfilter`.
 
@@ -55,7 +56,7 @@ Atualmente, os URLs LDAP são suportados apenas com o OpenLDAP, não no Windows.
 
 Ao usar o modo de busca+bind, a busca pode ser realizada usando um único atributo especificado com `ldapsearchattribute`, ou usando um filtro de busca personalizado especificado com `ldapsearchfilter`. Especificar `ldapsearchattribute=foo` é equivalente a especificar `ldapsearchfilter="(foo=$username)"`. Se nenhuma opção for especificada, o padrão é `ldapsearchattribute=uid`.
 
-Se o PostgreSQL foi compilado com o OpenLDAP como a biblioteca de clientes LDAP, o ajuste `ldapserver` pode ser omitido. Nesse caso, uma lista de nomes de host e portas é consultada através dos registros DNS SRV [RFC 2782][(https://datatracker.ietf.org/doc/html/rfc2782)]. O nome `_ldap._tcp.DOMAIN` é procurado, onde `DOMAIN` é extraído de `ldapbasedn`.
+Se o PostgreSQL foi compilado com o OpenLDAP como a biblioteca de clientes LDAP, o ajuste `ldapserver` pode ser omitido. Nesse caso, uma lista de nomes de host e portas é consultada através dos registros DNS SRV [RFC 2782](https://datatracker.ietf.org/doc/html/rfc2782). O nome `_ldap._tcp.DOMAIN` é procurado, onde `DOMAIN` é extraído de `ldapbasedn`.
 
 Aqui está um exemplo para uma configuração LDAP simples:
 

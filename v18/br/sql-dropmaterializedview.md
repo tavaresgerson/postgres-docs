@@ -18,7 +18,7 @@ DROP MATERIALIZED VIEW [ IF EXISTS ] name [, ...] [ CASCADE | RESTRICT ]
 
 *`name`*: O nome (opcionalmente qualificado por esquema) da visão materializada a ser removida.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem da visão materializada (como outras visões materializadas ou visões regulares), e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem da visão materializada (como outras visões materializadas ou visões regulares), e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a eliminação da visão materializada se houver algum objeto dependente dela. Esse é o padrão.
 

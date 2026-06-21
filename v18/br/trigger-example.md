@@ -88,7 +88,7 @@ trigf(PG_FUNCTION_ARGS)
 }
 ```
 
-Depois de compilar o código-fonte (consulte [Seção 36.10.5][(xfunc-c.md#DFUNC "36.10.5. Compiling and Linking Dynamically-Loaded Functions")]), declare a função e os gatilhos:
+Depois de compilar o código-fonte (consulte [Seção 36.10.5](xfunc-c.md#DFUNC)), declare a função e os gatilhos:
 
 ```
 CREATE FUNCTION trigf() RETURNS trigger

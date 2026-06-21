@@ -32,176 +32,213 @@ A função `pg_buffercache_evict_all()` permite que todos os buffers compartilha
 
 ### F.25.1. A `pg_buffercache` [#](#PGBUFFERCACHE-PG-BUFFERCACHE)
 
-As definições das colunas expostas pela visualização são mostradas em [Tabela F.14][(pgbuffercache.md#PGBUFFERCACHE-COLUMNS "Table F.14. pg_buffercache Columns")].
+As definições das colunas expostas pela visualização são mostradas em [Tabela F.14](pgbuffercache.md#PGBUFFERCACHE-COLUMNS).
 
 **Tabela F.14. Colunas `pg_buffercache`**
 
 
 
 <table border="1" class="table" summary="pg_buffercache Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">Tipo de coluna</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
+     Tipo de coluna
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       bufferid
      </code>
-<code class="type">
+     <code class="type">
       integer
      </code>
-</p>
-<p>ID, na faixa de 1 a.<code class="varname">
+    </p>
+    <p>
+     ID, na faixa de 1 a.
+     <code class="varname">
       shared_buffers
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       relfilenode
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
+      <code class="structname">
        pg_class
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       relfilenode
-     </code>)</p>
-<p>Número de arquivo da relação</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     Número de arquivo da relação
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       reltablespace
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-tablespace.md" title="52.56. pg_tablespace">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-tablespace.md" title="52.56. pg_tablespace">
+      <code class="structname">
        pg_tablespace
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
-     </code>)</p>
-<p>OID do tablespace da relação</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     OID do tablespace da relação
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       reldatabase
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-database.md" title="52.15. pg_database">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-database.md" title="52.15. pg_database">
+      <code class="structname">
        pg_database
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
-     </code>)</p>
-<p>OID do banco de dados da relação</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     OID do banco de dados da relação
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       relforknumber
      </code>
-<code class="type">
+     <code class="type">
       smallint
      </code>
-</p>
-<p>Número de garfo dentro da relação; veja<code class="filename">
+    </p>
+    <p>
+     Número de garfo dentro da relação; veja
+     <code class="filename">
       common/relpath.h
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       relblocknumber
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>Número da página dentro da relação</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Número da página dentro da relação
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       isdirty
      </code>
-<code class="type">
+     <code class="type">
       boolean
      </code>
-</p>
-<p>A página está suja?</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     A página está suja?
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       usagecount
      </code>
-<code class="type">
+     <code class="type">
       smallint
      </code>
-</p>
-<p>Contagem de acesso por varredura de relógio</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Contagem de acesso por varredura de relógio
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       pinning_backends
      </code>
-<code class="type">
+     <code class="type">
       integer
      </code>
-</p>
-<p>Número de backends que estão pressionando este buffer</p>
-</td>
-</tr>
-</tbody>
+    </p>
+    <p>
+     Número de backends que estão pressionando este buffer
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Há uma linha para cada buffer no cache compartilhado. Os buffers não utilizados são mostrados com todos os campos nulos, exceto `bufferid`. Os catálogos compartilhados do sistema são mostrados como pertencentes ao banco de dados zero.
 
@@ -211,88 +248,91 @@ Como os bloqueios do gerenciador de buffer não são tomados para copiar os dado
 
 ### F.25.2. A `pg_buffercache_numa` [#](#PGBUFFERCACHE-PG-BUFFERCACHE-NUMA)
 
-As definições das colunas expostas pela visualização são mostradas em [Tabela F.15][(pgbuffercache.md#PGBUFFERCACHE-NUMA-COLUMNS "Table F.15. pg_buffercache_numa Columns")].
+As definições das colunas expostas pela visualização são mostradas em [Tabela F.15](pgbuffercache.md#PGBUFFERCACHE-NUMA-COLUMNS).
 
 **Tabela F.15. Colunas `pg_buffercache_numa`**
 
 
 
 <table border="1" class="table" summary="pg_buffercache_numa Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
      Column Type
     </p>
-<p>
+    <p>
      Description
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       bufferid
      </code>
-<code class="type">
+     <code class="type">
       integer
      </code>
-</p>
-<p>
+    </p>
+    <p>
      ID, in the range 1..
      <code class="varname">
       shared_buffers
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       os_page_num
      </code>
-<code class="type">
+     <code class="type">
       bigint
      </code>
-</p>
-<p>
+    </p>
+    <p>
      number of OS memory page for this buffer
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       numa_node
      </code>
-<code class="type">
+     <code class="type">
       int
      </code>
-</p>
-<p>
+    </p>
+    <p>
      ID of
      <acronym class="acronym">
       NUMA
      </acronym>
      node
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Como a consulta do ID do nó NUMA para cada página exige que as páginas de memória sejam paginadas, a primeira execução desta função pode levar um tempo notável. Em todos os casos (primeira execução ou não), a recuperação dessas informações é custosa e não é recomendada consultar a visão com alta frequência.
 
@@ -302,111 +342,114 @@ Ao determinar o nó NUMA, a visão toca todas as páginas de memória do segment
 
 ### F.25.3. A função `pg_buffercache_summary()` [#](#PGBUFFERCACHE-SUMMARY)
 
-As definições das colunas expostas pela função são mostradas em [Tabela F.16][(pgbuffercache.md#PGBUFFERCACHE-SUMMARY-COLUMNS "Table F.16. pg_buffercache_summary()] Colunas de Saída").
+As definições das colunas expostas pela função são mostradas em [Tabela F.16](pgbuffercache.md#PGBUFFERCACHE-SUMMARY-COLUMNS) Colunas de Saída").
 
 **Tabela F.16. Colunas de Saída `pg_buffercache_summary()`**
 
 
 
 <table border="1" class="table" summary="pg_buffercache_summary() Output Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
      Column Type
     </p>
-<p>
+    <p>
      Description
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       buffers_used
      </code>
-<code class="type">
+     <code class="type">
       int4
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Number of used shared buffers
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       buffers_unused
      </code>
-<code class="type">
+     <code class="type">
       int4
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Number of unused shared buffers
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       buffers_dirty
      </code>
-<code class="type">
+     <code class="type">
       int4
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Number of dirty shared buffers
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       buffers_pinned
      </code>
-<code class="type">
+     <code class="type">
       int4
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Number of pinned shared buffers
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       usagecount_avg
      </code>
-<code class="type">
+     <code class="type">
       float8
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Average usage count of used shared buffers
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 A função `pg_buffercache_summary()` retorna uma única linha que resume o estado de todos os buffers compartilhados. Informações semelhantes e mais detalhadas são fornecidas pela visão `pg_buffercache`, mas a `pg_buffercache_summary()` é significativamente mais barata.
 
@@ -421,77 +464,92 @@ As definições das colunas expostas pela função são mostradas na [Tabela F.1
 
 
 <table border="1" class="table" summary="pg_buffercache_usage_counts() Output Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">Tipo de coluna</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
+     Tipo de coluna
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       usage_count
      </code>
-<code class="type">
+     <code class="type">
       int4
      </code>
-</p>
-<p>Um possível contagem de uso de buffer</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Um possível contagem de uso de buffer
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       buffers
      </code>
-<code class="type">
+     <code class="type">
       int4
      </code>
-</p>
-<p>Número de buffers com o número de uso</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Número de buffers com o número de uso
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       dirty
      </code>
-<code class="type">
+     <code class="type">
       int4
      </code>
-</p>
-<p>Número de buffers sujos com o número de uso</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Número de buffers sujos com o número de uso
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       pinned
      </code>
-<code class="type">
+     <code class="type">
       int4
      </code>
-</p>
-<p>Número de buffers fixados com o número de uso</p>
-</td>
-</tr>
-</tbody>
+    </p>
+    <p>
+     Número de buffers fixados com o número de uso
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 A função `pg_buffercache_usage_counts()` retorna um conjunto de linhas que resumem os estados de todos os buffers compartilhados, agregados pelos possíveis valores de contagem de uso. Informações semelhantes e mais detalhadas são fornecidas pela visão `pg_buffercache`, mas a `pg_buffercache_usage_counts()` é significativamente mais barata.
 

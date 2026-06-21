@@ -39,7 +39,7 @@ Lembre-se de que a própria extensão não é considerada parte de nenhum esquem
 
 ## Notas
 
-Antes de poder usar `CREATE EXTENSION` para carregar uma extensão em um banco de dados, os arquivos de suporte da extensão devem ser instalados. Informações sobre a instalação das extensões fornecidas com o PostgreSQL podem ser encontradas em [Módulos adicionais fornecidos][(contrib.md "Appendix F. Additional Supplied Modules and Extensions")].
+Antes de poder usar `CREATE EXTENSION` para carregar uma extensão em um banco de dados, os arquivos de suporte da extensão devem ser instalados. Informações sobre a instalação das extensões fornecidas com o PostgreSQL podem ser encontradas em [Módulos adicionais fornecidos](contrib.md).
 
 As extensões atualmente disponíveis para carregamento podem ser identificadas a partir das visualizações do sistema `pg_available_extensions` (view-pg-available-extensions.md "53.3. pg_available_extensions") ou `pg_available_extension_versions` (view-pg-available-extension-versions.md "53.4. pg_available_extension_versions").
 
@@ -49,11 +49,11 @@ Instalar uma extensão como superusuário exige confiar que o autor da extensão
 
 Acredita-se que as extensões fornecidas com o PostgreSQL sejam seguras contra ataques no momento da instalação desse tipo, exceto por algumas que dependem de outras extensões. Como afirmado na documentação dessas extensões, elas devem ser instaladas em esquemas seguros, ou instaladas nos mesmos esquemas das extensões das quais dependem, ou em ambos.
 
-Para informações sobre como escrever novas extensões, consulte [Seção 36.17][(extend-extensions.md "36.17. Packaging Related Objects into an Extension")].
+Para informações sobre como escrever novas extensões, consulte [Seção 36.17](extend-extensions.md).
 
 ## Exemplos
 
-Instale a extensão [hstore][(hstore.md "F.17. hstore — hstore key/value datatype")] no banco de dados atual, colocando seus objetos no esquema `addons`:
+Instale a extensão [hstore](hstore.md) no banco de dados atual, colocando seus objetos no esquema `addons`:
 
 ```
 CREATE EXTENSION hstore SCHEMA addons;

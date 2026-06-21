@@ -2,13 +2,13 @@
 
 O PostgreSQL oferece criptografia em vários níveis e oferece flexibilidade para proteger os dados contra divulgação devido ao roubo do servidor do banco de dados, administradores sem escrúpulos e redes inseguras. A criptografia também pode ser necessária para proteger dados sensíveis, como registros médicos ou transações financeiras.
 
-Encriptação da senha: As senhas dos usuários do banco de dados são armazenadas como hashes (determinados pelo ajuste [password_encryption][(runtime-config-connection.md#GUC-PASSWORD-ENCRYPTION)]), portanto, o administrador não pode determinar a senha real atribuída ao usuário. Se a encriptação SCRAM ou MD5 for usada para autenticação de cliente, a senha não encriptada nunca está presente temporariamente no servidor, porque o cliente a encripta antes de ser enviada pela rede. O SCRAM é preferido, porque é um padrão da Internet e é mais seguro do que o protocolo de autenticação MD5 específico do PostgreSQL.
+Encriptação da senha: As senhas dos usuários do banco de dados são armazenadas como hashes (determinados pelo ajuste [password_encryption](runtime-config-connection.md#GUC-PASSWORD-ENCRYPTION)), portanto, o administrador não pode determinar a senha real atribuída ao usuário. Se a encriptação SCRAM ou MD5 for usada para autenticação de cliente, a senha não encriptada nunca está presente temporariamente no servidor, porque o cliente a encripta antes de ser enviada pela rede. O SCRAM é preferido, porque é um padrão da Internet e é mais seguro do que o protocolo de autenticação MD5 específico do PostgreSQL.
 
 ### Aviso
 
-O suporte para senhas criptografadas com MD5 é desatualizado e será removido em uma versão futura do PostgreSQL. Consulte [Seção 20.5][(auth-password.md "20.5. Password Authentication")] para obter detalhes sobre a migração para outro tipo de senha.
+O suporte para senhas criptografadas com MD5 é desatualizado e será removido em uma versão futura do PostgreSQL. Consulte [Seção 20.5](auth-password.md) para obter detalhes sobre a migração para outro tipo de senha.
 
-Encriptação para colunas específicas: O módulo [pgcrypto][(pgcrypto.md "F.26. pgcrypto — cryptographic functions")] permite que certos campos sejam armazenados encriptados. Isso é útil se apenas alguns dos dados forem sensíveis. O cliente fornece a chave de descriptografia e os dados são descriptografados no servidor e, em seguida, enviados ao cliente.
+Encriptação para colunas específicas: O módulo [pgcrypto](pgcrypto.md) permite que certos campos sejam armazenados encriptados. Isso é útil se apenas alguns dos dados forem sensíveis. O cliente fornece a chave de descriptografia e os dados são descriptografados no servidor e, em seguida, enviados ao cliente.
 
 Os dados descifrados e a chave de descriptografia estão presentes no servidor por um breve período enquanto estão sendo descifrados e comunicados entre o cliente e o servidor. Isso apresenta um breve momento em que os dados e as chaves podem ser interceptados por alguém com acesso completo ao servidor de banco de dados, como o administrador do sistema.
 

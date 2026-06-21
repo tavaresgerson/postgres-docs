@@ -25,7 +25,7 @@ DROP PROCEDURE [ IF EXISTS ] name [ ( [ [ argmode ] [ argname ] argtype [, ...] 
 
 *`argtype`*: O(s) tipo(s) de dados dos argumentos do procedimento (opcionalmente qualificados por esquema), se houver. Consulte os detalhes abaixo.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem do procedimento e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem do procedimento e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Não se recusar a descartar o procedimento se algum objeto depender dele. Esse é o padrão.
 

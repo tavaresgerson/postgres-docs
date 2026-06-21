@@ -1,11 +1,11 @@
 ## 12.6. Dicionários [#](#TEXTSEARCH-DICTIONARIES)
 
-* [12.6.1. Palavras Particulares][(textsearch-dictionaries.md#TEXTSEARCH-STOPWORDS)]
-* [12.6.2. Dicionário Simples][(textsearch-dictionaries.md#TEXTSEARCH-SIMPLE-DICTIONARY)]
-* [12.6.3. Dicionário de Sinônimos][(textsearch-dictionaries.md#TEXTSEARCH-SYNONYM-DICTIONARY)]
-* [12.6.4. Dicionário de Tesauro][(textsearch-dictionaries.md#TEXTSEARCH-THESAURUS)]
-* [12.6.5. Dicionário Ispell][(textsearch-dictionaries.md#TEXTSEARCH-ISPELL-DICTIONARY)]
-* [12.6.6. Dicionário Snowball][(textsearch-dictionaries.md#TEXTSEARCH-SNOWBALL-DICTIONARY)]
+* [12.6.1. Palavras Particulares](textsearch-dictionaries.md#TEXTSEARCH-STOPWORDS)
+* [12.6.2. Dicionário Simples](textsearch-dictionaries.md#TEXTSEARCH-SIMPLE-DICTIONARY)
+* [12.6.3. Dicionário de Sinônimos](textsearch-dictionaries.md#TEXTSEARCH-SYNONYM-DICTIONARY)
+* [12.6.4. Dicionário de Tesauro](textsearch-dictionaries.md#TEXTSEARCH-THESAURUS)
+* [12.6.5. Dicionário Ispell](textsearch-dictionaries.md#TEXTSEARCH-ISPELL-DICTIONARY)
+* [12.6.6. Dicionário Snowball](textsearch-dictionaries.md#TEXTSEARCH-SNOWBALL-DICTIONARY)
 
 As dicionários são usados para eliminar palavras que não devem ser consideradas em uma pesquisa (*palavras paradas*), e para *normalizar* as palavras de modo que diferentes formas derivadas da mesma palavra se correspondam. Uma palavra normalizada com sucesso é chamada de *lexema*. Além de melhorar a qualidade da pesquisa, a normalização e a remoção de palavras paradas reduzem o tamanho da representação do `tsvector` de um documento, melhorando, assim, o desempenho. A normalização não tem sempre um significado linguístico e geralmente depende da semântica da aplicação.
 
@@ -38,7 +38,7 @@ ALTER TEXT SEARCH CONFIGURATION astro_en
     ADD MAPPING FOR asciiword WITH astrosyn, english_ispell, english_stem;
 ```
 
-Um dicionário de filtragem pode ser colocado em qualquer lugar na lista, exceto no final, onde seria inútil. Dicionários de filtragem são úteis para normalizar parcialmente as palavras para simplificar a tarefa dos dicionários posteriores. Por exemplo, um dicionário de filtragem pode ser usado para remover acentos das letras acentuadas, como feito pelo módulo [unaccent][(unaccent.md "F.48. unaccent — a text search dictionary which removes diacritics")].
+Um dicionário de filtragem pode ser colocado em qualquer lugar na lista, exceto no final, onde seria inútil. Dicionários de filtragem são úteis para normalizar parcialmente as palavras para simplificar a tarefa dos dicionários posteriores. Por exemplo, um dicionário de filtragem pode ser usado para remover acentos das letras acentuadas, como feito pelo módulo [unaccent](unaccent.md).
 
 ### 12.6.1. Palavras Particulares [#](#TEXTSEARCH-STOPWORDS)
 
@@ -151,7 +151,7 @@ O único parâmetro exigido pelo modelo `synonym` é `SYNONYMS`, que é o nome b
 
 O modelo `synonym` também tem um parâmetro opcional `CaseSensitive`, que tem como padrão `false`. Quando `CaseSensitive` é `false`, as palavras no arquivo de sinônimos são dobradas para minúsculas, assim como os tokens de entrada. Quando é `true`, as palavras e tokens não são dobrados para minúsculas, mas são comparados como estão.
 
-Um asterisco (`*`) pode ser colocado no final de um sinônimo no arquivo de configuração. Isso indica que o sinônimo é um prefixo. O asterisco é ignorado quando a entrada é usada em `to_tsvector()`, mas quando é usada em `to_tsquery()`, o resultado será um item de consulta com o marcador de correspondência de prefixo (veja [Seção 12.3.2][(textsearch-controls.md#TEXTSEARCH-PARSING-QUERIES "12.3.2. Parsing Queries")]). Por exemplo, suponha que tenhamos essas entradas em `$SHAREDIR/tsearch_data/synonym_sample.syn`:
+Um asterisco (`*`) pode ser colocado no final de um sinônimo no arquivo de configuração. Isso indica que o sinônimo é um prefixo. O asterisco é ignorado quando a entrada é usada em `to_tsvector()`, mas quando é usada em `to_tsquery()`, o resultado será um item de consulta com o marcador de correspondência de prefixo (veja [Seção 12.3.2](textsearch-controls.md#TEXTSEARCH-PARSING-QUERIES)). Por exemplo, suponha que tenhamos essas entradas em `$SHAREDIR/tsearch_data/synonym_sample.syn`:
 
 ```
 postgres        pgsql
@@ -320,7 +320,7 @@ SELECT plainto_tsquery('supernova star');
 
 O modelo de dicionário Ispell suporta *dicionários morfológicos*, que podem normalizar muitas formas linguísticas diferentes de uma palavra no mesmo lexema. Por exemplo, um dicionário Ispell em inglês pode corresponder a todas as declinações e conjugações do termo de busca `bank`, por exemplo, `banking`, `banked`, `banks`, `banks'` e `bank's`.
 
-A distribuição padrão do PostgreSQL não inclui nenhum arquivo de configuração do Ispell. Dicionários para um grande número de idiomas estão disponíveis em [Ispell][(https://www.cs.hmc.edu/~geoff/ispell.html)]. Além disso, alguns formatos de arquivo de dicionário mais modernos são suportados — [MySpell][(https://en.wikipedia.org/wiki/MySpell)] (OO < 2.0.1) and [Hunspell][[PH_LNK_130]] (OO >= 2.0.2). Uma grande lista de dicionários está disponível no [Wiki do OpenOffice][(https://wiki.openoffice.org/wiki/Dictionaries)].
+A distribuição padrão do PostgreSQL não inclui nenhum arquivo de configuração do Ispell. Dicionários para um grande número de idiomas estão disponíveis em [Ispell](https://www.cs.hmc.edu/~geoff/ispell.html). Além disso, alguns formatos de arquivo de dicionário mais modernos são suportados — [MySpell](https://en.wikipedia.org/wiki/MySpell) (OO < 2.0.1) and [Hunspell][[PH_LNK_130]] (OO >= 2.0.2). Uma grande lista de dicionários está disponível no [Wiki do OpenOffice](https://wiki.openoffice.org/wiki/Dictionaries).
 
 Para criar um dicionário Ispell, realize as etapas a seguir:
 
@@ -329,13 +329,13 @@ Para criar um dicionário Ispell, realize as etapas a seguir:
 * copie os arquivos para o diretório `$SHAREDIR/tsearch_data`
 * carregue os arquivos no PostgreSQL com o seguinte comando:
 
-  ```
-  CREATE TEXT SEARCH DICTIONARY english_hunspell (
-      TEMPLATE = ispell,
-      DictFile = en_us,
-      AffFile = en_us,
-      Stopwords = english);
-  ```
+```
+CREATE TEXT SEARCH DICTIONARY english_hunspell (
+    TEMPLATE = ispell,
+    DictFile = en_us,
+    AffFile = en_us,
+    Stopwords = english);
+```
 
 Aqui, `DictFile`, `AffFile` e `StopWords` especificam os nomes básicos dos arquivos de dicionário, afixos e palavras-stop. O arquivo de palavras-stop tem o mesmo formato explicado acima para o tipo de dicionário `simple`. O formato dos outros arquivos não é especificado aqui, mas está disponível nos sites mencionados acima.
 

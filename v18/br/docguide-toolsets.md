@@ -1,9 +1,9 @@
 ## J.2. Conjuntos de Ferramentas [#](#DOCGUIDE-TOOLSETS)
 
-* [J.2.1. Instalação no Fedora, RHEL e Derivados][(docguide-toolsets.md#DOCGUIDE-TOOLSETS-INST-FEDORA-ET-AL)]
-* [J.2.2. Instalação no FreeBSD][(docguide-toolsets.md#DOCGUIDE-TOOLSETS-INST-FREEBSD)]
-* [J.2.3. Pacotes do Debian][(docguide-toolsets.md#DOCGUIDE-TOOLSETS-INST-DEBIAN)]
-* [J.2.4. macOS][(docguide-toolsets.md#DOCGUIDE-TOOLSETS-INST-MACOS)]
+* [J.2.1. Instalação no Fedora, RHEL e Derivados](docguide-toolsets.md#DOCGUIDE-TOOLSETS-INST-FEDORA-ET-AL)
+* [J.2.2. Instalação no FreeBSD](docguide-toolsets.md#DOCGUIDE-TOOLSETS-INST-FREEBSD)
+* [J.2.3. Pacotes do Debian](docguide-toolsets.md#DOCGUIDE-TOOLSETS-INST-DEBIAN)
+* [J.2.4. macOS](docguide-toolsets.md#DOCGUIDE-TOOLSETS-INST-MACOS)
 * [J.2.5. Detecção pelo `configure`[(docguide-toolsets.md#DOCGUIDE-TOOLSETS-CONFIGURE)]
 
 Os seguintes instrumentos são utilizados para processar a documentação. Alguns podem ser opcionais, conforme indicado.
@@ -14,7 +14,7 @@ Os seguintes instrumentos são utilizados para processar a documentação. Algun
 
 A versão mínima exigida é atualmente 1.77.0, mas é recomendável usar a versão mais recente disponível para obter os melhores resultados.
 
-[Libxml2][(http://xmlsoft.org/)] para `xmllint` [#][(#DOCGUIDE-TOOLSETS-LIBXML2)]: Esta biblioteca e a ferramenta `xmllint` que ela contém são usadas para processar XML. Muitos desenvolvedores já terão o Libxml2 instalado, pois ele também é usado ao construir o código do PostgreSQL. No entanto, note que `xmllint` pode precisar ser instalada a partir de um subpacote separado.
+[Libxml2](http://xmlsoft.org/) para `xmllint` [#](#DOCGUIDE-TOOLSETS-LIBXML2): Esta biblioteca e a ferramenta `xmllint` que ela contém são usadas para processar XML. Muitos desenvolvedores já terão o Libxml2 instalado, pois ele também é usado ao construir o código do PostgreSQL. No entanto, note que `xmllint` pode precisar ser instalada a partir de um subpacote separado.
 
 [Libxslt](http://xmlsoft.org/XSLT/) para `xsltproc` [#](#DOCGUIDE-TOOLSETS-LIBXSLT): `xsltproc` é um processador XSLT, ou seja, um programa para converter XML para outros formatos usando folhas de estilo XSLT.
 

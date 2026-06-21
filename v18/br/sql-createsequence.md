@@ -21,7 +21,7 @@ CREATE [ { TEMPORARY | TEMP } | UNLOGGED ] SEQUENCE [ IF NOT EXISTS ] name
 
 Se um nome de esquema for fornecido, a sequência será criada no esquema especificado. Caso contrário, será criada no esquema atual. Sequências temporárias existem em um esquema especial, portanto, não é possível fornecer um nome de esquema ao criar uma sequência temporária. O nome da sequência deve ser distinto do nome de qualquer outra relação (tabela, sequência, índice, visão, visão materializada ou tabela externa) no mesmo esquema.
 
-Após a criação de uma sequência, você usa as funções `nextval`, `currval` e `setval` para operar na sequência. Essas funções estão documentadas em [Seção 9.17][(functions-sequence.md "9.17. Sequence Manipulation Functions")].
+Após a criação de uma sequência, você usa as funções `nextval`, `currval` e `setval` para operar na sequência. Essas funções estão documentadas em [Seção 9.17](functions-sequence.md).
 
 Embora você não possa atualizar uma sequência diretamente, você pode usar uma consulta como:
 

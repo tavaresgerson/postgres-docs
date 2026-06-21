@@ -15,11 +15,11 @@
 
 * [18.4. Gerenciamento de Recursos do Kernel](kernel-resources.md)
 
-+ [18.4.1. Memória compartilhada e semaforos][(kernel-resources.md#SYSVIPC)]
-+ [18.4.2. RemoveIPC do systemd][(kernel-resources.md#SYSTEMD-REMOVEIPC)]
-+ [18.4.3. Limites de recursos][(kernel-resources.md#KERNEL-RESOURCES-LIMITS)]
-+ [18.4.4. Sobrecommit de memória no Linux][(kernel-resources.md#LINUX-MEMORY-OVERCOMMIT)]
-+ [18.4.5. Páginas enormes no Linux][(kernel-resources.md#LINUX-HUGE-PAGES)]
++ [18.4.1. Memória compartilhada e semaforos](kernel-resources.md#SYSVIPC)
++ [18.4.2. RemoveIPC do systemd](kernel-resources.md#SYSTEMD-REMOVEIPC)
++ [18.4.3. Limites de recursos](kernel-resources.md#KERNEL-RESOURCES-LIMITS)
++ [18.4.4. Sobrecommit de memória no Linux](kernel-resources.md#LINUX-MEMORY-OVERCOMMIT)
++ [18.4.5. Páginas enormes no Linux](kernel-resources.md#LINUX-HUGE-PAGES)
 
 * [18.5. Desligar o servidor](server-shutdown.md)
 * [18.6. Atualizar um cluster PostgreSQL](upgrading.md)

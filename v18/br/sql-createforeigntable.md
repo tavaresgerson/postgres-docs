@@ -74,7 +74,7 @@ Para criar uma tabela estrangeira, você deve ter o privilégio `USAGE` no servi
 
 *`column_name`*: O nome da coluna que será criada na nova tabela.
 
-*`data_type`*: O tipo de dados da coluna. Isso pode incluir especificadores de matriz. Para mais informações sobre os tipos de dados suportados pelo PostgreSQL, consulte o [Capítulo 8][(datatype.md "Chapter 8. Data Types")].
+*`data_type`*: O tipo de dados da coluna. Isso pode incluir especificadores de matriz. Para mais informações sobre os tipos de dados suportados pelo PostgreSQL, consulte o [Capítulo 8](datatype.md).
 
 `COLLATE collation`: A cláusula `COLLATE` atribui uma correção de texto à coluna (que deve ser de um tipo de dados correção de texto). Se não for especificado, o tipo de dados da coluna usa a correção de texto padrão.
 

@@ -91,7 +91,7 @@ SELECT daitch_mokotoff('Schwartzenegger');
  {479465}
 ```
 
-Para a correspondência de nomes únicos, os arrays de texto retornados podem ser correspondidos diretamente usando o operador `&&`: qualquer sobreposição pode ser considerada uma correspondência. Um índice GIN pode ser usado para eficiência, veja [Seção 65.4][(gin.md "65.4. GIN Indexes")] e este exemplo:
+Para a correspondência de nomes únicos, os arrays de texto retornados podem ser correspondidos diretamente usando o operador `&&`: qualquer sobreposição pode ser considerada uma correspondência. Um índice GIN pode ser usado para eficiência, veja [Seção 65.4](gin.md) e este exemplo:
 
 ```
 CREATE TABLE s (nm text);
@@ -109,7 +109,7 @@ SELECT * FROM s WHERE daitch_mokotoff(nm) && daitch_mokotoff('Jane');
 SELECT * FROM s WHERE daitch_mokotoff(nm) && daitch_mokotoff('Jens');
 ```
 
-Para indexação e correspondência de qualquer número de nomes em qualquer ordem, as funcionalidades de pesquisa de texto completo podem ser usadas. Veja [Capítulo 12][(textsearch.md "Chapter 12. Full Text Search")] e este exemplo:
+Para indexação e correspondência de qualquer número de nomes em qualquer ordem, as funcionalidades de pesquisa de texto completo podem ser usadas. Veja [Capítulo 12](textsearch.md) e este exemplo:
 
 ```
 CREATE FUNCTION soundex_tsvector(v_name text) RETURNS tsvector
@@ -142,7 +142,7 @@ SELECT * FROM s WHERE soundex_tsvector(nm) @@ soundex_tsquery('besst, giorgio');
 SELECT * FROM s WHERE soundex_tsvector(nm) @@ soundex_tsquery('Jameson John');
 ```
 
-Se for desejado evitar a recálculo dos códigos soundex durante as revisões do índice, pode-se usar um índice em uma coluna separada em vez de um índice em uma expressão. Uma coluna gerada armazenada pode ser usada para isso; veja [Seção 5.4][(ddl-generated-columns.md "5.4. Generated Columns")].
+Se for desejado evitar a recálculo dos códigos soundex durante as revisões do índice, pode-se usar um índice em uma coluna separada em vez de um índice em uma expressão. Uma coluna gerada armazenada pode ser usada para isso; veja [Seção 5.4](ddl-generated-columns.md).
 
 ### F.16.3. Levenshtein [#](#FUZZYSTRMATCH-LEVENSHTEIN)
 

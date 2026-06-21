@@ -12,7 +12,7 @@ GRANT pg_signal_backend TO admin_user;
 
 Os papéis predefinidos são descritos abaixo. Observe que as permissões específicas para cada um dos papéis podem mudar no futuro, à medida que funcionalidades adicionais são adicionadas. Os administradores devem monitorar as notas de lançamento para mudanças.
 
-`pg_checkpoint` [#](#PREDEFINED-ROLE-PG-CHECKPOINT): `pg_checkpoint` permite a execução do comando [`CHECKPOINT`(sql-checkpoint.md "CHECKPOINT")].
+`pg_checkpoint` [#](#PREDEFINED-ROLE-PG-CHECKPOINT): `pg_checkpoint` permite a execução do comando [`CHECKPOINT`](sql-checkpoint.md)].
 
 `pg_create_subscription` [#](#PREDEFINED-ROLE-PG-CREATE-SUBSCRIPTION): `pg_create_subscription` permite que os usuários com permissão `CREATE` no banco de dados emitam [`CREATE SUBSCRIPTION`](sql-createsubscription.md "CREATE SUBSCRIPTION").
 

@@ -18,7 +18,7 @@ DROP TEXT SEARCH TEMPLATE [ IF EXISTS ] name [ CASCADE | RESTRICT ]
 
 *`name`*: O nome (opcionalmente qualificado por esquema) de um modelo de busca de texto existente.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem do modelo de pesquisa de texto e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem do modelo de pesquisa de texto e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a eliminação do modelo de busca de texto se houver objetos que dependem dele. Isso é o padrão.
 

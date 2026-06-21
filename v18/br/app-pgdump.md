@@ -8,13 +8,13 @@ pg_dump — exporta um banco de dados PostgreSQL como um script SQL ou em outros
 
 ## Descrição
 
-pg_dump é uma ferramenta para exportar um banco de dados PostgreSQL. Faz exportações consistentes mesmo se o banco de dados estiver sendo usado simultaneamente. O pg_dump não bloqueia outros usuários que estão acessando o banco de dados (leitores ou escritores). No entanto, observe que, exceto em casos simples, o pg_dump geralmente não é a escolha certa para fazer backups regulares de bancos de produção. Consulte [Capítulo 25][(backup.md "Chapter 25. Backup and Restore")] para uma discussão adicional.
+pg_dump é uma ferramenta para exportar um banco de dados PostgreSQL. Faz exportações consistentes mesmo se o banco de dados estiver sendo usado simultaneamente. O pg_dump não bloqueia outros usuários que estão acessando o banco de dados (leitores ou escritores). No entanto, observe que, exceto em casos simples, o pg_dump geralmente não é a escolha certa para fazer backups regulares de bancos de produção. Consulte [Capítulo 25](backup.md) para uma discussão adicional.
 
-O pg_dump só exibe um único banco de dados. Para exportar um conjunto inteiro ou para exportar objetos globais que são comuns a todos os bancos de dados em um conjunto (como papéis e espaços de tabela), use [pg_dumpall][(app-pg-dumpall.md "pg_dumpall")].
+O pg_dump só exibe um único banco de dados. Para exportar um conjunto inteiro ou para exportar objetos globais que são comuns a todos os bancos de dados em um conjunto (como papéis e espaços de tabela), use [pg_dumpall](app-pg-dumpall.md).
 
-Os backups podem ser exportados em formatos de arquivo ou de script. Os backups de script são arquivos de texto simples que contêm os comandos SQL necessários para reconstruir o banco de dados ao estado em que estava no momento em que foi salvo. Para restaurar a partir de um desses scripts, alimente-o em [psql][(app-psql.md "psql")]. Os arquivos de script podem ser usados para reconstruir o banco de dados mesmo em outras máquinas e em outras arquiteturas; com algumas modificações, até mesmo em outros produtos de banco de dados SQL.
+Os backups podem ser exportados em formatos de arquivo ou de script. Os backups de script são arquivos de texto simples que contêm os comandos SQL necessários para reconstruir o banco de dados ao estado em que estava no momento em que foi salvo. Para restaurar a partir de um desses scripts, alimente-o em [psql](app-psql.md). Os arquivos de script podem ser usados para reconstruir o banco de dados mesmo em outras máquinas e em outras arquiteturas; com algumas modificações, até mesmo em outros produtos de banco de dados SQL.
 
-Os formatos de arquivo de arquivo alternativo devem ser usados com [pg_restore][(app-pgrestore.md "pg_restore")] para reconstruir o banco de dados. Eles permitem que o pg_restore seja seletivo sobre o que é restaurado, ou até mesmo reordenar os itens antes de serem restaurados. Os formatos de arquivo de arquivo são projetados para ser portáveis em várias arquiteturas.
+Os formatos de arquivo de arquivo alternativo devem ser usados com [pg_restore](app-pgrestore.md) para reconstruir o banco de dados. Eles permitem que o pg_restore seja seletivo sobre o que é restaurado, ou até mesmo reordenar os itens antes de serem restaurados. Os formatos de arquivo de arquivo são projetados para ser portáveis em várias arquiteturas.
 
 Quando usado com um dos formatos de arquivo de arquivo e combinado com o pg_restore, o pg_dump fornece um mecanismo flexível de arquivamento e transferência. O pg_dump pode ser usado para exportar um banco de dados inteiro, então o pg_restore pode ser usado para examinar o arquivo e/ou selecionar quais partes do banco de dados devem ser restauradas. Os formatos de arquivo de saída mais flexíveis são o formato “custom” (`-Fc`) e o formato “directory” (`-Fd`). Eles permitem a seleção e a reordenação de todos os itens arquivados, suportam a restauração paralela e são comprimidos por padrão. O formato “directory” é o único formato que suporta gravações paralelas.
 
@@ -50,7 +50,7 @@ Com `--create`, a saída também inclui o comentário do banco de dados, se houv
 
 Essa opção é ignorada ao emitir um arquivo de saída de arquivo (não textual). Para os formatos de arquivo, você pode especificar a opção ao chamar `pg_restore`.
 
-`-e pattern` `--extension=pattern`: Exclua apenas as extensões que correspondem a *`pattern`*. Quando esta opção não é especificada, todas as extensões não-sistemáticas no banco de dados de destino serão excluídas. Múltiplas extensões podem ser selecionadas escrevendo vários `-e` switches. O parâmetro *`pattern`* é interpretado como um padrão de acordo com as mesmas regras usadas pelos comandos `\d` do psql (ver [Padrões][(app-psql.md#APP-PSQL-PATTERNS "Patterns")]), então múltiplas extensões também podem ser selecionadas escrevendo caracteres curinga no padrão. Ao usar caracteres curinga, tenha cuidado em citar o padrão, se necessário, para evitar que o shell expanda os caracteres curinga.
+`-e pattern` `--extension=pattern`: Exclua apenas as extensões que correspondem a *`pattern`*. Quando esta opção não é especificada, todas as extensões não-sistemáticas no banco de dados de destino serão excluídas. Múltiplas extensões podem ser selecionadas escrevendo vários `-e` switches. O parâmetro *`pattern`* é interpretado como um padrão de acordo com as mesmas regras usadas pelos comandos `\d` do psql (ver [Padrões](app-psql.md#APP-PSQL-PATTERNS)), então múltiplas extensões também podem ser selecionadas escrevendo caracteres curinga no padrão. Ao usar caracteres curinga, tenha cuidado em citar o padrão, se necessário, para evitar que o shell expanda os caracteres curinga.
 
 Qualquer relação de configuração registrada por `pg_extension_config_dump` é incluída no dump se sua extensão for especificada por `--extension`.
 
@@ -74,9 +74,9 @@ Quando `-e` é especificado, o pg_dump não faz qualquer tentativa de drenar qua
 
 `-j njobs` `--jobs=njobs`: Execute o dump em paralelo, descarregando as tabelas *`njobs`* simultaneamente. Esta opção pode reduzir o tempo necessário para realizar o dump, mas também aumenta a carga no servidor do banco de dados. Você só pode usar esta opção com o formato de saída de diretório, porque este é o único formato de saída onde vários processos podem escrever seus dados ao mesmo tempo.
 
-O pg_dump abrirá *`njobs`* + 1 conexões ao banco de dados, então certifique-se de que sua configuração [max_connections][(runtime-config-connection.md#GUC-MAX-CONNECTIONS)] é alta o suficiente para acomodar todas as conexões.
+O pg_dump abrirá *`njobs`* + 1 conexões ao banco de dados, então certifique-se de que sua configuração [max_connections](runtime-config-connection.md#GUC-MAX-CONNECTIONS) é alta o suficiente para acomodar todas as conexões.
 
-Solicitar bloqueios exclusivos em objetos de banco de dados enquanto realiza um dump paralelo pode fazer com que o dump falhe. A razão é que o processo líder do pg_dump solicita blocos compartilhados ([ACCESS SHARE][(explicit-locking.md#LOCKING-TABLES "13.3.1. Table-Level Locks")]) nos objetos que os processos de trabalho vão drenar mais tarde, a fim de garantir que ninguém os exclua e os faça desaparecer enquanto o dump está sendo executado. Se outro cliente, em seguida, solicitar um bloqueio exclusivo em uma tabela, esse bloqueio não será concedido, mas será enfileirado esperando que o bloqueio compartilhado do processo líder seja liberado. Consequentemente, qualquer outro acesso à tabela também não será concedido e será enfileirado após a solicitação do bloqueio exclusivo. Isso inclui o processo de trabalho tentando drenar a tabela. Sem quaisquer precauções, isso seria uma situação clássica de deadlock. Para detectar esse conflito, o processo de trabalho do pg_dump solicita outro bloqueio compartilhado usando a opção `NOWAIT`. Se o processo de trabalho não receber esse bloqueio compartilhado, alguém mais deve ter solicitado um bloqueio exclusivo nesse meio tempo e não há como continuar com o dump, então o pg_dump não tem escolha a não ser abortar o dump.
+Solicitar bloqueios exclusivos em objetos de banco de dados enquanto realiza um dump paralelo pode fazer com que o dump falhe. A razão é que o processo líder do pg_dump solicita blocos compartilhados ([ACCESS SHARE](explicit-locking.md#LOCKING-TABLES)) nos objetos que os processos de trabalho vão drenar mais tarde, a fim de garantir que ninguém os exclua e os faça desaparecer enquanto o dump está sendo executado. Se outro cliente, em seguida, solicitar um bloqueio exclusivo em uma tabela, esse bloqueio não será concedido, mas será enfileirado esperando que o bloqueio compartilhado do processo líder seja liberado. Consequentemente, qualquer outro acesso à tabela também não será concedido e será enfileirado após a solicitação do bloqueio exclusivo. Isso inclui o processo de trabalho tentando drenar a tabela. Sem quaisquer precauções, isso seria uma situação clássica de deadlock. Para detectar esse conflito, o processo de trabalho do pg_dump solicita outro bloqueio compartilhado usando a opção `NOWAIT`. Se o processo de trabalho não receber esse bloqueio compartilhado, alguém mais deve ter solicitado um bloqueio exclusivo nesse meio tempo e não há como continuar com o dump, então o pg_dump não tem escolha a não ser abortar o dump.
 
 Para realizar um dump paralelo, o servidor de banco de dados precisa suportar instantâneos sincronizados, uma característica que foi introduzida no PostgreSQL 9.2 para servidores primários e 10 para standby. Com essa característica, os clientes do banco de dados podem garantir que vejam o mesmo conjunto de dados, mesmo que usem conexões diferentes. O `pg_dump -j` usa múltiplas conexões de banco de dados; ele se conecta ao banco de dados uma vez com o processo líder e novamente para cada trabalho do trabalhador. Sem a característica de instantâneo sincronizado, os diferentes trabalhos do trabalhador não seriam garantidos para ver os mesmos dados em cada conexão, o que poderia levar a uma cópia inconsistente.
 
@@ -110,7 +110,7 @@ Para excluir dados de tabela apenas para um subconjunto de tabelas no banco de d
 
 `-S username` `--superuser=username`: Especifique o nome do usuário de superusuário a ser usado ao desabilitar gatilhos. Isso é relevante apenas se `--disable-triggers` for usado. (Normalmente, é melhor deixar isso de fora e, em vez disso, iniciar o script resultante como superusuário.)
 
-`-t pattern` `--table=pattern`: Exclua apenas as tabelas com nomes que correspondem a *`pattern`*. Múltiplas tabelas podem ser selecionadas escrevendo vários `-t` switches. O parâmetro *`pattern`* é interpretado como um padrão de acordo com as mesmas regras usadas pelos comandos `\d` do psql (veja [Padrões][(app-psql.md#APP-PSQL-PATTERNS "Patterns")]), então múltiplas tabelas também podem ser selecionadas escrevendo caracteres curinga no padrão. Ao usar caracteres curinga, tenha cuidado em citar o padrão, se necessário, para evitar que o shell expanda os caracteres curinga; veja [Exemplos][(app-pgdump.md#PG-DUMP-EXAMPLES "Examples")] abaixo.
+`-t pattern` `--table=pattern`: Exclua apenas as tabelas com nomes que correspondem a *`pattern`*. Múltiplas tabelas podem ser selecionadas escrevendo vários `-t` switches. O parâmetro *`pattern`* é interpretado como um padrão de acordo com as mesmas regras usadas pelos comandos `\d` do psql (veja [Padrões](app-psql.md#APP-PSQL-PATTERNS)), então múltiplas tabelas também podem ser selecionadas escrevendo caracteres curinga no padrão. Ao usar caracteres curinga, tenha cuidado em citar o padrão, se necessário, para evitar que o shell expanda os caracteres curinga; veja [Exemplos](app-pgdump.md#PG-DUMP-EXAMPLES) abaixo.
 
 Além das tabelas, essa opção pode ser usada para descartar a definição de vistas correspondentes, vistas materializadas, tabelas externas e sequências. Não descartará o conteúdo das vistas ou das vistas materializadas, e o conteúdo das tabelas externas será descartado apenas se o servidor externo correspondente for especificado com `--include-foreign-data`.
 
@@ -172,8 +172,9 @@ Para excluir dados de todas as tabelas no banco de dados, consulte `--schema-onl
 
 O arquivo lista um padrão de objeto por linha, com o seguinte formato:
 
-``` { include | exclude } { extension | foreign_data | table | table_and_children | table_data | table_data_and_children | schema } PATTERN
-    ```
+```
+{ include | exclude } { extension | foreign_data | table | table_and_children | table_data | table_data_and_children | schema } PATTERN
+```
 
 A primeira palavra-chave especifica se os objetos que correspondem ao padrão devem ser incluídos ou excluídos. A segunda palavra-chave especifica o tipo de objeto que deve ser filtrado usando o padrão:
 
@@ -187,11 +188,11 @@ A primeira palavra-chave especifica se os objetos que correspondem ao padrão de
 
 As linhas que começam com `#` são consideradas comentários e ignoradas. Comentários também podem ser colocados após uma linha de padrão de objeto. Linhas em branco também são ignoradas. Veja [Padrões](app-psql.md#APP-PSQL-PATTERNS "Patterns") para saber como realizar citação em padrões.
 
-Os arquivos de exemplo estão listados abaixo na seção [Exemplos][(app-pgdump.md#PG-DUMP-EXAMPLES "Examples")].
+Os arquivos de exemplo estão listados abaixo na seção [Exemplos](app-pgdump.md#PG-DUMP-EXAMPLES).
 
 `--if-exists`: Use os comandos `DROP ... IF EXISTS` para descartar objetos no modo `--clean`. Isso suprime os erros de "não existe" que, de outra forma, poderiam ser relatados. Esta opção não é válida, a menos que `--clean` também seja especificado.
 
-`--include-foreign-data=foreignserver`: Armazene os dados de qualquer tabela estrangeira com um servidor estrangeiro que corresponda ao padrão *`foreignserver`*. Múltiplos servidores estrangeiros podem ser selecionados escrevendo vários interruptores `--include-foreign-data`. Além disso, o parâmetro *`foreignserver`* é interpretado como um padrão de acordo com as mesmas regras usadas pelos comandos `\d` do psql (ver [Padrões][(app-psql.md#APP-PSQL-PATTERNS "Patterns")]), então múltiplos servidores estrangeiros também podem ser selecionados escrevendo caracteres curinga no padrão. Ao usar caracteres curinga, tenha cuidado em citar o padrão, se necessário, para evitar que o shell expanda os caracteres curinga; veja [Exemplos][(app-pgdump.md#PG-DUMP-EXAMPLES "Examples")] abaixo. A única exceção é que um padrão vazio é proibido.
+`--include-foreign-data=foreignserver`: Armazene os dados de qualquer tabela estrangeira com um servidor estrangeiro que corresponda ao padrão *`foreignserver`*. Múltiplos servidores estrangeiros podem ser selecionados escrevendo vários interruptores `--include-foreign-data`. Além disso, o parâmetro *`foreignserver`* é interpretado como um padrão de acordo com as mesmas regras usadas pelos comandos `\d` do psql (ver [Padrões](app-psql.md#APP-PSQL-PATTERNS)), então múltiplos servidores estrangeiros também podem ser selecionados escrevendo caracteres curinga no padrão. Ao usar caracteres curinga, tenha cuidado em citar o padrão, se necessário, para evitar que o shell expanda os caracteres curinga; veja [Exemplos](app-pgdump.md#PG-DUMP-EXAMPLES) abaixo. A única exceção é que um padrão vazio é proibido.
 
 ### Nota
 
@@ -253,15 +254,15 @@ A seção de dados contém dados reais da tabela, conteúdos de objetos grandes,
 
 `--sequence-data`: Inclua dados de sequência no dump. Este é o comportamento padrão, exceto quando são especificados `--no-data`, `--schema-only` ou `--statistics-only`.
 
-`--serializable-deferrable`: Use uma transação `serializable` para o dump, para garantir que o instantâneo utilizado esteja consistente com os estados posteriores do banco de dados; mas faça isso esperando por um ponto no fluxo de transação em que não possam estar presentes anomalias, para que não haja risco de o dump falhar ou causar o retorno de outras transações com um `serialization_failure`. Consulte o [Capítulo 13][(mvcc.md "Chapter 13. Concurrency Control")] para obter mais informações sobre isolamento de transações e controle de concorrência.
+`--serializable-deferrable`: Use uma transação `serializable` para o dump, para garantir que o instantâneo utilizado esteja consistente com os estados posteriores do banco de dados; mas faça isso esperando por um ponto no fluxo de transação em que não possam estar presentes anomalias, para que não haja risco de o dump falhar ou causar o retorno de outras transações com um `serialization_failure`. Consulte o [Capítulo 13](mvcc.md) para obter mais informações sobre isolamento de transações e controle de concorrência.
 
 Esta opção não é benéfica para um dump que é destinado apenas para recuperação em caso de desastre. Poderia ser útil para um dump usado para carregar uma cópia do banco de dados para relatórios ou outro compartilhamento de carga apenas de leitura, enquanto o banco de dados original continua sendo atualizado. Sem ela, o dump pode refletir um estado que não é consistente com qualquer execução serial das transações eventualmente comprometidas. Por exemplo, se técnicas de processamento em lote forem usadas, um lote pode ser mostrado como fechado no dump sem que todos os itens que estão no lote apareçam.
 
 Essa opção não fará diferença se não houver transações de leitura e escrita ativas quando o pg_dump for iniciado. Se as transações de leitura e escrita estiverem ativas, o início do dump pode ser adiado por um período indeterminado de tempo. Uma vez em execução, o desempenho com ou sem a chave é o mesmo.
 
-`--snapshot=snapshotname`: Use o instantâneo sincronizado especificado ao fazer um dump do banco de dados (consulte [Tabela 9.100][(functions-admin.md#FUNCTIONS-SNAPSHOT-SYNCHRONIZATION-TABLE "Table 9.100. Snapshot Synchronization Functions")] para mais detalhes).
+`--snapshot=snapshotname`: Use o instantâneo sincronizado especificado ao fazer um dump do banco de dados (consulte [Tabela 9.100](functions-admin.md#FUNCTIONS-SNAPSHOT-SYNCHRONIZATION-TABLE "Table 9.100. Snapshot Synchronization Functions") para mais detalhes).
 
-Essa opção é útil quando é necessário sincronizar o dump com um intervalo de replicação lógica (consulte [Capítulo 47][(logicaldecoding.md "Chapter 47. Logical Decoding")]) ou com uma sessão concorrente.
+Essa opção é útil quando é necessário sincronizar o dump com um intervalo de replicação lógica (consulte [Capítulo 47](logicaldecoding.md)) ou com uma sessão concorrente.
 
 No caso de uma varredura paralela, o nome do instantâneo definido por esta opção é usado em vez de criar um novo instantâneo.
 
@@ -275,7 +276,7 @@ Esta opção não afeta `--exclude-extension`, `-N`/`--exclude-schema`, `-T`/`--
 
 `--sync-method=method`: Quando configurado para `fsync`, que é o padrão, `pg_dump --format=directory` abrirá e sincronizará recursivamente todos os arquivos no diretório do arquivo.
 
-Em Linux, `syncfs` pode ser usado para pedir ao sistema operacional que sincronize todo o sistema de arquivos que contém o diretório do arquivo. Consulte [recovery_init_sync_method][(runtime-config-error-handling.md#GUC-RECOVERY-INIT-SYNC-METHOD)] para obter informações sobre as advertências a serem observadas ao usar `syncfs`.
+Em Linux, `syncfs` pode ser usado para pedir ao sistema operacional que sincronize todo o sistema de arquivos que contém o diretório do arquivo. Consulte [recovery_init_sync_method](runtime-config-error-handling.md#GUC-RECOVERY-INIT-SYNC-METHOD) para obter informações sobre as advertências a serem observadas ao usar `syncfs`.
 
 Esta opção não tem efeito quando o `--no-sync` é usado ou quando o `--format` não está definido como `directory`.
 
@@ -309,11 +310,11 @@ Essa opção nunca é essencial, pois o pg_dump solicitará automaticamente uma 
 
 `PG_COLOR`: Especifica se a cor deve ser usada em mensagens de diagnóstico. Os valores possíveis são `always`, `auto` e `never`.
 
-Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, também utiliza as variáveis de ambiente suportadas pelo libpq (consulte a Seção 32.15 [(libpq-envars.md "32.15. Environment Variables")]).
+Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, também utiliza as variáveis de ambiente suportadas pelo libpq (consulte a [Seção 32.15](libpq-envars.md)).
 
 ## Diagnósticos
 
-O pg_dump executa internamente as instruções `SELECT`. Se você tiver problemas para executar o pg_dump, certifique-se de que você pode selecionar informações do banco de dados usando, por exemplo, [psql][(app-psql.md "psql")]. Além disso, quaisquer configurações de conexão padrão e variáveis de ambiente usadas pela biblioteca de interface libpq se aplicarão.
+O pg_dump executa internamente as instruções `SELECT`. Se você tiver problemas para executar o pg_dump, certifique-se de que você pode selecionar informações do banco de dados usando, por exemplo, [psql](app-psql.md). Além disso, quaisquer configurações de conexão padrão e variáveis de ambiente usadas pela biblioteca de interface libpq se aplicarão.
 
 A atividade do banco de dados do pg_dump é normalmente coletada pelo sistema de estatísticas cumulativas. Se isso não for desejado, você pode definir o parâmetro `track_counts` para false via `PGOPTIONS` ou o comando `ALTER USER`.
 
@@ -409,7 +410,7 @@ Para descartar todos os objetos do banco de dados, exceto as tabelas cujos nomes
 $ pg_dump -T 'ts_*' mydb > db.sql
 ```
 
-Para especificar um nome em maiúsculas ou minúsculas em `-t` e switches relacionados, você precisa colocar aspas duplas no nome; caso contrário, ele será convertido para minúsculas (consulte [Padrões][(app-psql.md#APP-PSQL-PATTERNS "Patterns")]. Mas aspas são especiais para a concha, então, por sua vez, elas também devem ser citadas. Assim, para descartar uma única tabela com um nome em maiúsculas e minúsculas, você precisa de algo como
+Para especificar um nome em maiúsculas ou minúsculas em `-t` e switches relacionados, você precisa colocar aspas duplas no nome; caso contrário, ele será convertido para minúsculas (consulte [Padrões](app-psql.md#APP-PSQL-PATTERNS). Mas aspas são especiais para a concha, então, por sua vez, elas também devem ser citadas. Assim, para descartar uma única tabela com um nome em maiúsculas e minúsculas, você precisa de algo como
 
 ```
 $ pg_dump -t "\"MixedCaseName\"" mydb > mytab.sql

@@ -6,7 +6,7 @@ As duas chaves a seguir estão sempre presentes:
 
 `Size`: O tamanho esperado deste arquivo, como um número inteiro.
 
-`Last-Modified`: O horário da última modificação do arquivo conforme relatado pelo servidor no momento do backup. Ao contrário dos outros campos armazenados no backup, este campo não é utilizado pelo [pg_verifybackup][(app-pgverifybackup.md "pg_verifybackup")]. É incluído apenas para fins informativos.
+`Last-Modified`: O horário da última modificação do arquivo conforme relatado pelo servidor no momento do backup. Ao contrário dos outros campos armazenados no backup, este campo não é utilizado pelo [pg_verifybackup](app-pgverifybackup.md). É incluído apenas para fins informativos.
 
 Se o backup foi feito com verificação de checksums de arquivo habilitada, as seguintes chaves estarão presentes:
 

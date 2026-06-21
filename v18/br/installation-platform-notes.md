@@ -6,7 +6,7 @@
 * [17.7.4. Solaris][(installation-platform-notes.md#INSTALLATION-NOTES-SOLARIS)
 * [17.7.5. Visual Studio][(installation-platform-notes.md#INSTALLATION-NOTES-VISUAL-STUDIO)
 
-Esta seção documenta questões adicionais específicas da plataforma em relação à instalação e configuração do PostgreSQL. Certifique-se de ler as instruções de instalação e, em particular, [Seção 17.1][(install-requirements.md "17.1. Requirements")] também. Além disso, verifique [Capítulo 31][(regress.md "Chapter 31. Regression Tests")] em relação à interpretação dos resultados dos testes de regressão.
+Esta seção documenta questões adicionais específicas da plataforma em relação à instalação e configuração do PostgreSQL. Certifique-se de ler as instruções de instalação e, em particular, [Seção 17.1](install-requirements.md) também. Além disso, verifique [Capítulo 31](regress.md) em relação à interpretação dos resultados dos testes de regressão.
 
 As plataformas que não estão aqui mencionadas não apresentam problemas de instalação específicos da plataforma.
 
@@ -24,9 +24,9 @@ Ao construir a partir de fonte, proceda de acordo com o procedimento de instala�
 * A construção pode falhar em alguns sistemas onde um local diferente de C está em uso. Para corrigir isso, defina o local para C fazendo `export LANG=C.utf8` antes da construção, e depois definindo-o de volta para o ajuste anterior após ter instalado o PostgreSQL.
 * Os testes de regressão paralelos (`make check`) podem gerar falhas espúrias nos testes de regressão devido ao esvaziamento da fila de `listen()` de backlog, o que causa erros de conexão recusada ou travamento. Você pode limitar o número de conexões usando a variável make `MAX_CONNECTIONS` assim:
 
-  ```
-  make MAX_CONNECTIONS=5 check
-  ```
+```
+make MAX_CONNECTIONS=5 check
+```
 
 (Em alguns sistemas, você pode ter até cerca de 10 conexões simultâneas.)
 
@@ -76,7 +76,7 @@ O recurso de Proteção de Integridade do Sistema (SIP) do macOS quebra o `make 
 
 ### 17.7.3. MinGW [#](#INSTALLATION-NOTES-MINGW)
 
-O PostgreSQL para Windows pode ser construído usando MinGW, um ambiente de construção semelhante ao Unix para Windows. É recomendável usar o ambiente [MSYS2][(https://www.msys2.org/)] para isso e também instalar quaisquer pacotes pré-requisitos.
+O PostgreSQL para Windows pode ser construído usando MinGW, um ambiente de construção semelhante ao Unix para Windows. É recomendável usar o ambiente [MSYS2](https://www.msys2.org/) para isso e também instalar quaisquer pacotes pré-requisitos.
 
 #### 17.7.3.1. Coleta de Dumps de Acidente [#](#MINGW-CRASH-DUMPS)
 
@@ -110,7 +110,7 @@ Se você não tem uma razão para usar binários de 64 bits no SPARC, prefira a 
 
 #### 17.7.4.4. Usando DTrace para rastrear o PostgreSQL [#](#INSTALLATION-NOTES-SOLARIS-USING-DTRACE)
 
-Sim, é possível usar o DTrace. Consulte a Seção 27.5 [(dynamic-trace.md "27.5. Dynamic Tracing")] para obter mais informações.
+Sim, é possível usar o DTrace. Consulte a [Seção 27.5](dynamic-trace.md) para obter mais informações.
 
 Se você ver a ligação do executável `postgres` abortar com uma mensagem de erro como:
 
@@ -130,7 +130,7 @@ sua instalação DTrace é muito antiga para lidar com sondas em funções está
 
 Recomenda-se que a maioria dos usuários baixe a distribuição binária para Windows, disponível como um pacote de instalador gráfico no site do PostgreSQL em <https://www.postgresql.org/download/>. A construção a partir de fonte é destinada apenas a pessoas que estão desenvolvendo o PostgreSQL ou extensões.
 
-O PostgreSQL para Windows com o Visual Studio pode ser construído usando o Meson, conforme descrito em [Seção 17.4][(install-meson.md "17.4. Building and Installation with Meson")]. A versão nativa do Windows requer uma versão de 32 ou 64 bits do Windows 10 ou posterior.
+O PostgreSQL para Windows com o Visual Studio pode ser construído usando o Meson, conforme descrito em [Seção 17.4](install-meson.md). A versão nativa do Windows requer uma versão de 32 ou 64 bits do Windows 10 ou posterior.
 
 As versões nativas do psql não suportam edição de linha de comando. A versão do Cygwin suporta edição de linha de comando, então ela deve ser usada quando o psql é necessário para uso interativo no Windows.
 

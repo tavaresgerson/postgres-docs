@@ -107,7 +107,7 @@ Você deve possuir a tabela para usar `ALTER FOREIGN TABLE`. Para alterar o esqu
 
 *`constraint_name`*: Nome de uma restrição existente a ser descartada.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem da coluna ou restrição descartada (por exemplo, visualizações que fazem referência à coluna), e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem da coluna ou restrição descartada (por exemplo, visualizações que fazem referência à coluna), e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a eliminação da coluna ou restrição se houver quaisquer objetos dependentes. Esse é o comportamento padrão.
 

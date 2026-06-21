@@ -100,7 +100,7 @@ Se a execução do comando foi bem-sucedida, então um dos seguintes valores (n�
 
 `SPI_OK_UTILITY`: se um comando de utilidade (por exemplo, `CREATE TABLE`) foi executado
 
-`SPI_OK_REWRITTEN`: se o comando foi reescrito em outro tipo de comando (por exemplo, `UPDATE` tornou-se um `INSERT`) por uma [regra][(rules.md "Chapter 39. The Rule System")].
+`SPI_OK_REWRITTEN`: se o comando foi reescrito em outro tipo de comando (por exemplo, `UPDATE` tornou-se um `INSERT`) por uma [regra](rules.md).
 
 Em caso de erro, um dos seguintes valores negativos é retornado:
 

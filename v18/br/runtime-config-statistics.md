@@ -5,7 +5,7 @@
 
 ### 19.9.1. Estatísticas de consulta cumulativa e índice [#](#RUNTIME-CONFIG-CUMULATIVE-STATISTICS)
 
-Esses parâmetros controlam o sistema de estatísticas acumuladas em todo o servidor. Quando habilitado, os dados coletados podem ser acessados através da família de visualizações de sistema `pg_stat` e `pg_statio`. Consulte o [Capítulo 27][(monitoring.md "Chapter 27. Monitoring Database Activity")] para obter mais informações.
+Esses parâmetros controlam o sistema de estatísticas acumuladas em todo o servidor. Quando habilitado, os dados coletados podem ser acessados através da família de visualizações de sistema `pg_stat` e `pg_statio`. Consulte o [Capítulo 27](monitoring.md) para obter mais informações.
 
 `track_activities` (`boolean`) [#](#GUC-TRACK-ACTIVITIES): Habilita a coleta de informações sobre o comando atualmente em execução de cada sessão, juntamente com seu identificador e o momento em que esse comando começou a execução. Este parâmetro está ativado por padrão. Note que, mesmo quando ativado, essas informações são visíveis apenas para superusuários, papéis com privilégios do papel `pg_read_all_stats` e o usuário que possui as sessões em questão (incluindo sessões pertencentes a um papel que eles têm os privilégios), portanto, não deve representar um risco de segurança. Apenas superusuários e usuários com o privilégio apropriado `SET` podem alterar essa configuração.
 

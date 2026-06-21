@@ -7,97 +7,100 @@ A vista `foreign_table_options` contém todas as opções definidas para tabelas
 
 
 <table border="1" class="table" summary="foreign_table_options Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
      Column Type
     </p>
-<p>
+    <p>
      Description
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       foreign_table_catalog
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the database that contains the foreign table (always the current database)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       foreign_table_schema
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the schema that contains the foreign table
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       foreign_table_name
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the foreign table
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       option_name
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of an option
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       option_value
      </code>
-<code class="type">
+     <code class="type">
       character_data
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Value of the option
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 

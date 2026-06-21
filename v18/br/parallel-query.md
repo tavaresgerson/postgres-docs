@@ -2,15 +2,15 @@
 
 **Índice**
 
-* [15.1. Como funciona a consulta paralela][(how-parallel-query-works.md)]
-* [15.2. Quando a consulta paralela pode ser usada?][(when-can-parallel-query-be-used.md)]
-* [15.3. Planos paralelos][(parallel-plans.md)]
+* [15.1. Como funciona a consulta paralela](how-parallel-query-works.md)
+* [15.2. Quando a consulta paralela pode ser usada?](when-can-parallel-query-be-used.md)
+* [15.3. Planos paralelos](parallel-plans.md)
 
-+ [15.3.1. Análises paralelas][(parallel-plans.md#PARALLEL-SCANS)]
-+ [15.3.2. Conjunções paralelas][(parallel-plans.md#PARALLEL-JOINS)]
-+ [15.3.3. Agregação paralela][(parallel-plans.md#PARALLEL-AGGREGATION)]
-+ [15.3.4. Aplicação paralela][(parallel-plans.md#PARALLEL-APPEND)]
-+ [15.3.5. Dicas de plano paralelo][(parallel-plans.md#PARALLEL-PLAN-TIPS)]
++ [15.3.1. Análises paralelas](parallel-plans.md#PARALLEL-SCANS)
++ [15.3.2. Conjunções paralelas](parallel-plans.md#PARALLEL-JOINS)
++ [15.3.3. Agregação paralela](parallel-plans.md#PARALLEL-AGGREGATION)
++ [15.3.4. Aplicação paralela](parallel-plans.md#PARALLEL-APPEND)
++ [15.3.5. Dicas de plano paralelo](parallel-plans.md#PARALLEL-PLAN-TIPS)
 
 * [15.4. Segurança paralela](parallel-safety.md)
 

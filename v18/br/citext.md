@@ -1,16 +1,16 @@
 ## F.9. citext — um tipo de cadeia de caracteres não sensível a maiúsculas e minúsculas [#](#CITEXT)
 
-* [F.9.1. Razão][(citext.md#CITEXT-RATIONALE)]  
-* [F.9.2. Como usá-lo][(citext.md#CITEXT-HOW-TO-USE-IT)]  
-* [F.9.3. Comportamento de comparação de strings][(citext.md#CITEXT-STRING-COMPARISON-BEHAVIOR)]  
-* [F.9.4. Limitações][(citext.md#CITEXT-LIMITATIONS)]  
-* [F.9.5. Autor][(citext.md#CITEXT-AUTHOR)]
+* [F.9.1. Razão](citext.md#CITEXT-RATIONALE)
+* [F.9.2. Como usá-lo](citext.md#CITEXT-HOW-TO-USE-IT)
+* [F.9.3. Comportamento de comparação de strings](citext.md#CITEXT-STRING-COMPARISON-BEHAVIOR)
+* [F.9.4. Limitações](citext.md#CITEXT-LIMITATIONS)
+* [F.9.5. Autor](citext.md#CITEXT-AUTHOR)
 
 O módulo `citext` fornece um tipo de cadeia de caracteres insensível a maiúsculas e minúsculas, `citext`. Essencialmente, ele chama internamente `lower` ao comparar valores. Caso contrário, ele se comporta quase exatamente como `text`.
 
 ### DICA
 
-Considere usar *colunações não determinísticas* (consulte [Seção 23.2.2.4][(collation.md#COLLATION-NONDETERMINISTIC "23.2.2.4. Nondeterministic Collations")]) em vez deste módulo. Elas podem ser usadas para comparações não sensíveis ao caso, comparações não sensíveis ao acento e outras combinações, e elas tratam mais casos especiais do Unicode corretamente.
+Considere usar *colunações não determinísticas* (consulte [Seção 23.2.2.4](collation.md#COLLATION-NONDETERMINISTIC)) em vez deste módulo. Elas podem ser usadas para comparações não sensíveis ao caso, comparações não sensíveis ao acento e outras combinações, e elas tratam mais casos especiais do Unicode corretamente.
 
 Este módulo é considerado "confiável", ou seja, pode ser instalado por usuários não superusuários que possuem privilégio `CREATE` no banco de dados atual.
 

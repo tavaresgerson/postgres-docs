@@ -2,10 +2,10 @@
 
 PostgreSQL oferece quatro tipos de funções:
 
-* funções de linguagem de consulta (funções escritas em SQL) ([Seção 36.5][(xfunc-sql.md "36.5. Query Language (SQL)] Funções)
-* funções de linguagem procedural (funções escritas, por exemplo, em PL/pgSQL ou PL/Tcl) ([Seção 36.8][(xfunc-pl.md "36.8. Procedural Language Functions")])
-* funções internas ([Seção 36.9][(xfunc-internal.md "36.9. Internal Functions")])
-* funções em linguagem C ([Seção 36.10][(xfunc-c.md "36.10. C-Language Functions")])
+* funções de linguagem de consulta (funções escritas em SQL) ([Seção 36.5](xfunc-sql.md) Funções)
+* funções de linguagem procedural (funções escritas, por exemplo, em PL/pgSQL ou PL/Tcl) ([Seção 36.8](xfunc-pl.md))
+* funções internas ([Seção 36.9](xfunc-internal.md))
+* funções em linguagem C ([Seção 36.10](xfunc-c.md))
 
 Todo tipo de função pode receber tipos básicos, tipos compostos ou combinações desses como argumentos (parâmetros). Além disso, todo tipo de função pode retornar um tipo básico ou um tipo composto. As funções também podem ser definidas para retornar conjuntos de valores básicos ou compostos.
 

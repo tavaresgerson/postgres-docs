@@ -4,9 +4,9 @@ As seguintes regras regem a visibilidade das alterações de dados em funções 
 
 * Durante a execução de um comando SQL, quaisquer alterações de dados feitas pelo comando são invisíveis para o próprio comando. Por exemplo, em:
 
-  ```
-  INSERT INTO a SELECT * FROM a;
-  ```
+```
+INSERT INTO a SELECT * FROM a;
+```
 
 As linhas inseridas são invisíveis para a parte `SELECT`.
 * As alterações feitas por um comando C são visíveis para todos os comandos que são iniciados após C, independentemente de serem iniciados dentro de C (durante a execução de C) ou após C ter sido concluído.

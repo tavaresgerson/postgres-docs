@@ -4,7 +4,7 @@ Embora todos os módulos integrados com registro WAL tenham seus próprios tipos
 
 ### Nota
 
-Os registros genéricos do WAL são ignorados durante [Decodificação lógica][(logicaldecoding.md "Chapter 47. Logical Decoding")]. Se a decodificação lógica for necessária para sua extensão, considere um Gerenciador de Recursos de WAL Personalizado.
+Os registros genéricos do WAL são ignorados durante [Decodificação lógica](logicaldecoding.md). Se a decodificação lógica for necessária para sua extensão, considere um Gerenciador de Recursos de WAL Personalizado.
 
 A API para a construção de registros genéricos do WAL é definida em `access/generic_xlog.h` e implementada em `access/transam/generic_xlog.c`.
 

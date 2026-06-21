@@ -8,7 +8,7 @@ Como mostrado na seção anterior, a expressão de tabela no comando `SELECT` co
 
 ### 7.3.1. Itens de lista selecionada [#](#QUERIES-SELECT-LIST-ITEMS)
 
-O tipo mais simples de lista seletiva é `*`, que emite todas as colunas que a expressão da tabela produz. Caso contrário, uma lista seletiva é uma lista de expressões de valor separadas por vírgula (conforme definido na Seção 4.2 [(sql-expressions.md "4.2. Value Expressions")]). Por exemplo, pode ser uma lista de nomes de colunas:
+O tipo mais simples de lista seletiva é `*`, que emite todas as colunas que a expressão da tabela produz. Caso contrário, uma lista seletiva é uma lista de expressões de valor separadas por vírgula (conforme definido na [Seção 4.2](sql-expressions.md)). Por exemplo, pode ser uma lista de nomes de colunas:
 
 ```
 SELECT a, b, c FROM ...
@@ -28,7 +28,7 @@ Ao trabalhar com várias tabelas, também pode ser útil solicitar todas as colu
 SELECT tbl1.*, tbl2.a FROM ...
 ```
 
-Veja [Seção 8.16.5][(rowtypes.md#ROWTYPES-USAGE "8.16.5. Using Composite Types in Queries")] para mais informações sobre a notação *`table_name``.*`.
+Veja [Seção 8.16.5](rowtypes.md#ROWTYPES-USAGE) para mais informações sobre a notação *`table_name``.*`.
 
 Se uma expressão de valor arbitrário for usada na lista de seleção, ela conceitualmente adiciona uma nova coluna virtual à tabela devolvida. A expressão de valor é avaliada uma vez para cada linha de resultado, com os valores da linha substituídos por quaisquer referências de coluna. Mas as expressões na lista de seleção não precisam referenciar quaisquer colunas na expressão da tabela da cláusula `FROM`; elas podem ser expressões aritméticas constantes, por exemplo.
 
@@ -59,7 +59,7 @@ Para maior segurança contra possíveis adições futuras de palavras-chave, é 
 
 ### Nota
 
-O nome dos campos de saída aqui é diferente do que é feito na cláusula `FROM` (veja [Seção 7.2.1.2][(queries-table-expressions.md#QUERIES-TABLE-ALIASES "7.2.1.2. Table and Column Aliases")]). É possível renomear o mesmo campo duas vezes, mas o nome atribuído na lista de seleção é o que será passado.
+O nome dos campos de saída aqui é diferente do que é feito na cláusula `FROM` (veja [Seção 7.2.1.2](queries-table-expressions.md#QUERIES-TABLE-ALIASES)). É possível renomear o mesmo campo duas vezes, mas o nome atribuído na lista de seleção é o que será passado.
 
 ### 7.3.3. `DISTINCT` [#](#QUERIES-DISTINCT)
 

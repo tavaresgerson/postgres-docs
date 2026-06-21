@@ -60,83 +60,111 @@ Se o pg_waldump for encerrado por sinal SIGINT (**Controle** + **C**), o resumo 
 
 As imagens da página inteira são salvas com o seguinte formato de nome de arquivo: `TIMELINE-LSN.RELTABLESPACE.DATOID.RELNODE.BLKNO_FORK` Os nomes dos arquivos são compostos pelas seguintes partes:
 
-    
+
 
 <table border="1" class="informaltable">
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Component
    </th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
     TIMELINE
    </td>
-<td>A linha cronológica do arquivo de segmento WAL, onde o registro está localizado, formatada como um número hexadecimal de 8 caracteres<code class="literal">
+   <td>
+    A linha cronológica do arquivo de segmento WAL, onde o registro está localizado, formatada como um número hexadecimal de 8 caracteres
+    <code class="literal">
      %08X
     </code>
-</td>
-</tr>
-<tr>
-<td>
+   </td>
+  </tr>
+  <tr>
+   <td>
     LSN
    </td>
-<td>O<acronym class="acronym">LSN</acronym>do registro com esta imagem,
-formatado como dois números hexadecimais de 8 caracteres<code class="literal">
+   <td>
+    O
+    <acronym class="acronym">
+     LSN
+    </acronym>
+    do registro com esta imagem, formatado como dois números hexadecimais de 8 caracteres
+    <code class="literal">
      %08X-%08X
     </code>
-</td>
-</tr>
-<tr>
-<td>
+   </td>
+  </tr>
+  <tr>
+   <td>
     RELTABLESPACE
    </td>
-<td>índice de identificação de espaço de tabela do bloco</td>
-</tr>
-<tr>
-<td>
+   <td>
+    índice de identificação de espaço de tabela do bloco
+   </td>
+  </tr>
+  <tr>
+   <td>
     DATOID
    </td>
-<td>OID do banco de dados do bloco</td>
-</tr>
-<tr>
-<td>
+   <td>
+    OID do banco de dados do bloco
+   </td>
+  </tr>
+  <tr>
+   <td>
     RELNODE
    </td>
-<td>nó de arquivo do bloco</td>
-</tr>
-<tr>
-<td>
+   <td>
+    nó de arquivo do bloco
+   </td>
+  </tr>
+  <tr>
+   <td>
     BLKNO
    </td>
-<td>número de bloco do bloco</td>
-</tr>
-<tr>
-<td>
+   <td>
+    número de bloco do bloco
+   </td>
+  </tr>
+  <tr>
+   <td>
     FORK
    </td>
-<td>O nome do garfo de onde a imagem da página inteira veio, como<code class="literal">
+   <td>
+    O nome do garfo de onde a imagem da página inteira veio, como
+    <code class="literal">
      main
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      fsm
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      vm
-    </code>, ou<code class="literal">
+    </code>
+    , ou
+    <code class="literal">
      init
     </code>
     .
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 

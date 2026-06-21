@@ -7,105 +7,108 @@ A vista `user_mapping_options` contém todas as opções definidas para mapeamen
 
 
 <table border="1" class="table" summary="user_mapping_options Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
      Column Type
     </p>
-<p>
+    <p>
      Description
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       authorization_identifier
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the user being mapped, or
      <code class="literal">
       PUBLIC
      </code>
      if the mapping is public
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       foreign_server_catalog
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the database that the foreign server used by this mapping is defined in (always the current database)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       foreign_server_name
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the foreign server used by this mapping
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       option_name
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of an option
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       option_value
      </code>
-<code class="type">
+     <code class="type">
       character_data
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Value of the option.  This column will show as null unless the current user is the user being mapped, or the mapping is for
      <code class="literal">
       PUBLIC
      </code>
      and the current user is the server owner, or the current user is a superuser.  The intent is to protect password information stored as user mapping option.
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 

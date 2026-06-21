@@ -8,7 +8,7 @@ pg_restore — restaurar um banco de dados PostgreSQL a partir de um arquivo de 
 
 ## Descrição
 
-O pg_restore é um utilitário para restaurar um banco de dados PostgreSQL a partir de um arquivo criado pelo [pg_dump][(app-pgdump.md "pg_dump")] em um dos formatos que não são de texto plano. Ele emitirá os comandos necessários para reconstruir o banco de dados ao estado em que estava no momento em que foi salvo. Os arquivos do arquivo também permitem que o pg_restore seja seletivo sobre o que é restaurado, ou até mesmo para reorganizar os itens antes de serem restaurados. Os arquivos do arquivo são projetados para ser portáveis em várias arquiteturas.
+O pg_restore é um utilitário para restaurar um banco de dados PostgreSQL a partir de um arquivo criado pelo [pg_dump](app-pgdump.md) em um dos formatos que não são de texto plano. Ele emitirá os comandos necessários para reconstruir o banco de dados ao estado em que estava no momento em que foi salvo. Os arquivos do arquivo também permitem que o pg_restore seja seletivo sobre o que é restaurado, ou até mesmo para reorganizar os itens antes de serem restaurados. Os arquivos do arquivo são projetados para ser portáveis em várias arquiteturas.
 
 O pg_restore pode operar em dois modos. Se um nome de banco de dados for especificado, o pg_restore se conecta a esse banco de dados e restaura o conteúdo do arquivo diretamente no banco de dados. Caso contrário, um script que contém os comandos SQL necessários para reconstruir o banco de dados é criado e escrito em um arquivo ou saída padrão. A saída desse script é equivalente ao formato de saída de texto simples do pg_dump. Algumas das opções que controlam a saída são, portanto, análogas às opções do pg_dump.
 
@@ -58,7 +58,7 @@ Cada trabalho é um processo ou um fio, dependendo do sistema operacional, e uti
 
 O valor ótimo para essa opção depende da configuração do hardware do servidor, do cliente e da rede. Os fatores incluem o número de núcleos da CPU e a configuração do disco. Um bom ponto de partida é o número de núcleos da CPU no servidor, mas valores maiores que esse também podem levar a tempos de restauração mais rápidos em muitos casos. Claro, valores que são muito altos levarão a um desempenho diminuído devido ao thrashing.
 
-Apenas os formatos de arquivo de diretório e de arquivo personalizado são suportados com esta opção. O input deve ser um arquivo ou diretório regular (não, por exemplo, um tubo ou entrada padrão). Além disso, múltiplos trabalhos não podem ser usados juntos com a opção `--single-transaction`.
+Apenas os formatos de arquivo de diretório e de arquivo personalizado são suportados com esta opção. O input deve ser um arquivo ou diretório regular (não, por exemplo, um pipe ou entrada padrão). Além disso, múltiplos trabalhos não podem ser usados juntos com a opção `--single-transaction`.
 
 `-l` `--list`: Liste o índice do arquivo. A saída desta operação pode ser usada como entrada para a opção `-L`. Note que, se switches de filtragem como `-n` ou `-t` forem usados com `-l`, eles restringirão os itens listados.
 
@@ -122,8 +122,9 @@ Observe que essa opção atualmente também exige que o dump esteja no formato `
 
 O arquivo lista um padrão de banco de dados por linha, com o seguinte formato:
 
-``` { include | exclude } { function | index | schema | table | trigger } PATTERN
-    ```
+```
+{ include | exclude } { function | index | schema | table | trigger } PATTERN
+```
 
 A primeira palavra-chave especifica se os objetos que correspondem ao padrão devem ser incluídos ou excluídos. A segunda palavra-chave especifica o tipo de objeto que deve ser filtrado usando o padrão:
 
@@ -205,11 +206,11 @@ Essa opção nunca é essencial, pois o pg_restore solicitará automaticamente u
 
 `PG_COLOR`: Especifica se a cor deve ser usada em mensagens de diagnóstico. Os valores possíveis são `always`, `auto` e `never`.
 
-Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, também utiliza as variáveis de ambiente suportadas pelo libpq (consulte [Seção 32.15][(libpq-envars.md "32.15. Environment Variables")]). No entanto, ele não lê `PGDATABASE` quando o nome do banco de dados não é fornecido.
+Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, também utiliza as variáveis de ambiente suportadas pelo libpq (consulte [Seção 32.15](libpq-envars.md)). No entanto, ele não lê `PGDATABASE` quando o nome do banco de dados não é fornecido.
 
 ## Diagnósticos
 
-Quando uma conexão direta com o banco de dados é especificada usando a opção `-d`, o pg_restore executa internamente instruções SQL. Se você tiver problemas para executar o pg_restore, certifique-se de que você pode selecionar informações do banco de dados usando, por exemplo, [psql][(app-psql.md "psql")]. Além disso, quaisquer configurações de conexão padrão e variáveis de ambiente usadas pela biblioteca de interface libpq se aplicarão.
+Quando uma conexão direta com o banco de dados é especificada usando a opção `-d`, o pg_restore executa internamente instruções SQL. Se você tiver problemas para executar o pg_restore, certifique-se de que você pode selecionar informações do banco de dados usando, por exemplo, [psql](app-psql.md). Além disso, quaisquer configurações de conexão padrão e variáveis de ambiente usadas pela biblioteca de interface libpq se aplicarão.
 
 ## Notas
 
@@ -224,9 +225,9 @@ As limitações do pg_restore são detalhadas abaixo.
 * Ao restaurar dados para uma tabela pré-existente e a opção `--disable-triggers` for usada, o pg_restore emite comandos para desativar gatilhos em tabelas de usuários antes de inserir os dados, e em seguida emite comandos para reativá-los após os dados terem sido inseridos. Se o restauro for interrompido no meio do caminho, os catálogos do sistema podem ficar no estado errado.
 * O pg_restore não pode restaurar objetos grandes seletivamente; por exemplo, apenas aqueles para uma tabela específica. Se um arquivo contiver objetos grandes, todos os objetos grandes serão restaurados, ou nenhum deles se forem excluídos via `-L`, `-t` ou outras opções.
 
-Veja também a documentação do [pg_dump][(app-pgdump.md "pg_dump")] para obter detalhes sobre as limitações do pg_dump.
+Veja também a documentação do [pg_dump](app-pgdump.md) para obter detalhes sobre as limitações do pg_dump.
 
-Por padrão, `pg_restore` restaurará as estatísticas do otimizador se estiver incluído no arquivo de dump. Se todas as estatísticas não tiverem sido restauradas, pode ser útil executar `ANALYZE` em cada tabela restaurada para que o otimizador tenha estatísticas úteis; consulte [Seção 24.1.3][(routine-vacuuming.md#VACUUM-FOR-STATISTICS "24.1.3. Updating Planner Statistics")] e [Seção 24.1.6][(routine-vacuuming.md#AUTOVACUUM "24.1.6. The Autovacuum Daemon")] para obter mais informações.
+Por padrão, `pg_restore` restaurará as estatísticas do otimizador se estiver incluído no arquivo de dump. Se todas as estatísticas não tiverem sido restauradas, pode ser útil executar `ANALYZE` em cada tabela restaurada para que o otimizador tenha estatísticas úteis; consulte [Seção 24.1.3](routine-vacuuming.md#VACUUM-FOR-STATISTICS) e [Seção 24.1.6](routine-vacuuming.md#AUTOVACUUM) para obter mais informações.
 
 ## Exemplos
 

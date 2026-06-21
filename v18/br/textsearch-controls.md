@@ -197,7 +197,7 @@ As duas funções de classificação atualmente disponíveis são:
 
 `ts_rank_cd([ weights float4[], ] vector tsvector, query tsquery [, normalization integer ]) returns float4`: Esta função calcula o ranking de *densidade de cobertura* para o vetor de documento e a consulta dados, conforme descrito em "Ranking de relevância para consultas de um a três termos" de Clarke, Cormack e Tudhope na revista "Information Processing and Management", 1999. A densidade de cobertura é semelhante ao ranking `ts_rank`, exceto que a proximidade dos lexemas que correspondem entre si é considerada.
 
-Essa função requer informações posicionais do léxico para realizar seu cálculo. Portanto, ela ignora quaisquer léxicos "descascados" no `tsvector`. Se não houver léxicos não descascados na entrada, o resultado será zero. (Consulte [Seção 12.4.1] [(textsearch-features.md#TEXTSEARCH-MANIPULATE-TSVECTOR "12.4.1. Manipulating Documents")] para mais informações sobre a função `strip` e informações posicionais nos `tsvector`s.)
+Essa função requer informações posicionais do léxico para realizar seu cálculo. Portanto, ela ignora quaisquer léxicos "descascados" no `tsvector`. Se não houver léxicos não descascados na entrada, o resultado será zero. (Consulte [Seção 12.4.1](textsearch-features.md#TEXTSEARCH-MANIPULATE-TSVECTOR) para mais informações sobre a função `strip` e informações posicionais nos `tsvector`s.)
 
 Para ambas essas funções, o argumento opcional *`weights`* oferece a capacidade de pesar as instâncias das palavras de forma mais ou menos pesada, dependendo de como elas são rotuladas. Os arrays de peso especificam a importância de cada categoria de palavra, na ordem:
 

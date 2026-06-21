@@ -7,123 +7,123 @@ A vista `table_constraints` contém todas as restrições que pertencem a tabela
 
 
 <table border="1" class="table" summary="table_constraints Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
      Column Type
     </p>
-<p>
+    <p>
      Description
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       constraint_catalog
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the database that contains the constraint (always the current database)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       constraint_schema
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the schema that contains the constraint
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       constraint_name
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the constraint
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       table_catalog
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the database that contains the table (always the current database)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       table_schema
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the schema that contains the table
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       table_name
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the table
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       constraint_type
      </code>
-<code class="type">
+     <code class="type">
       character_data
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Type of the constraint:
      <code class="literal">
       CHECK
@@ -136,26 +136,25 @@ A vista `table_constraints` contém todas as restrições que pertencem a tabela
      <code class="literal">
       PRIMARY KEY
      </code>
-     ,
-       or
+     , or
      <code class="literal">
       UNIQUE
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       is_deferrable
      </code>
-<code class="type">
+     <code class="type">
       yes_or_no
      </code>
-</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     <code class="literal">
       YES
      </code>
      if the constraint is deferrable,
@@ -164,20 +163,20 @@ A vista `table_constraints` contém todas as restrições que pertencem a tabela
      </code>
      if not
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       initially_deferred
      </code>
-<code class="type">
+     <code class="type">
       yes_or_no
      </code>
-</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     <code class="literal">
       YES
      </code>
      if the constraint is deferrable and initially deferred,
@@ -186,20 +185,20 @@ A vista `table_constraints` contém todas as restrições que pertencem a tabela
      </code>
      if not
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       enforced
      </code>
-<code class="type">
+     <code class="type">
       yes_or_no
      </code>
-</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     <code class="literal">
       YES
      </code>
      if the constraint is enforced,
@@ -208,19 +207,19 @@ A vista `table_constraints` contém todas as restrições que pertencem a tabela
      </code>
      if not
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       nulls_distinct
      </code>
-<code class="type">
+     <code class="type">
       yes_or_no
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If the constraint is a unique constraint, then
      <code class="literal">
       YES
@@ -231,8 +230,11 @@ A vista `table_constraints` contém todas as restrições que pertencem a tabela
      </code>
      if it treats nulls as not distinct, otherwise null for other types of constraints.
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 

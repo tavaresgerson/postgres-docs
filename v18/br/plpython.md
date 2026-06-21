@@ -5,11 +5,11 @@
 * [44.1. Funções PL/Python](plpython-funcs.md)
 * [44.2. Valores de dados](plpython-data.md)
 
-+ [44.2.1. Mapeamento do Tipo de Dados][(plpython-data.md#PLPYTHON-DATA-TYPE-MAPPING)]
-+ [44.2.2. Nulo, Nenhum][(plpython-data.md#PLPYTHON-DATA-NULL)]
-+ [44.2.3. Arrays, Listas][(plpython-data.md#PLPYTHON-ARRAYS)]
-+ [44.2.4. Tipos Compostos][(plpython-data.md#PLPYTHON-DATA-COMPOSITE-TYPES)]
-+ [44.2.5. Funções de Conjunto que Retornam Conjuntos][(plpython-data.md#PLPYTHON-DATA-SET-RETURNING-FUNCS)]
++ [44.2.1. Mapeamento do Tipo de Dados](plpython-data.md#PLPYTHON-DATA-TYPE-MAPPING)
++ [44.2.2. Nulo, Nenhum](plpython-data.md#PLPYTHON-DATA-NULL)
++ [44.2.3. Arrays, Listas](plpython-data.md#PLPYTHON-ARRAYS)
++ [44.2.4. Tipos Compostos](plpython-data.md#PLPYTHON-DATA-COMPOSITE-TYPES)
++ [44.2.5. Funções de Conjunto que Retornam Conjuntos](plpython-data.md#PLPYTHON-DATA-SET-RETURNING-FUNCS)
 
 * [44.3. Compartilhamento de Dados](plpython-sharing.md)
 * [44.4. Blocos de Código Anônimo](plpython-do.md)
@@ -28,7 +28,7 @@
 * [44.10. Python 2 vs. Python 3](plpython-python23.md)
 * [44.11. Variáveis de Ambiente](plpython-envar.md)
 
-O PL/Python, linguagem procedural, permite que funções e procedimentos do PostgreSQL sejam escritos na linguagem [Python][(https://www.python.org)].
+O PL/Python, linguagem procedural, permite que funções e procedimentos do PostgreSQL sejam escritos na linguagem [Python](https://www.python.org).
 
 Para instalar o PL/Python em um banco de dados específico, use `CREATE EXTENSION plpython3u`.
 

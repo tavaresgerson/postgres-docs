@@ -1,16 +1,16 @@
 ## 33.3. Interfaces do Cliente [#](#LO-INTERFACES)
 
-* [33.3.1. Criando um Objeto Grande][(lo-interfaces.md#LO-CREATE)]
-* [33.3.2. Importando um Objeto Grande][(lo-interfaces.md#LO-IMPORT)]
-* [33.3.3. Exportando um Objeto Grande][(lo-interfaces.md#LO-EXPORT)]
-* [33.3.4. Abrindo um Objeto Grande Existente][(lo-interfaces.md#LO-OPEN)]
-* [33.3.5. Escrevendo Dados em um Objeto Grande][(lo-interfaces.md#LO-WRITE)]
-* [33.3.6. Lendo Dados de um Objeto Grande][(lo-interfaces.md#LO-READ)]
-* [33.3.7. Buscando em um Objeto Grande][(lo-interfaces.md#LO-SEEK)]
-* [33.3.8. Obtendo a Posição de Busca de um Objeto Grande][(lo-interfaces.md#LO-TELL)]
-* [33.3.9. Cortando um Objeto Grande][(lo-interfaces.md#LO-TRUNCATE)]
-* [33.3.10. Fechando um Descritor de Objeto Grande][(lo-interfaces.md#LO-CLOSE)]
-* [33.3.11. Removendo um Objeto Grande][(lo-interfaces.md#LO-UNLINK)]
+* [33.3.1. Criando um Objeto Grande](lo-interfaces.md#LO-CREATE)
+* [33.3.2. Importando um Objeto Grande](lo-interfaces.md#LO-IMPORT)
+* [33.3.3. Exportando um Objeto Grande](lo-interfaces.md#LO-EXPORT)
+* [33.3.4. Abrindo um Objeto Grande Existente](lo-interfaces.md#LO-OPEN)
+* [33.3.5. Escrevendo Dados em um Objeto Grande](lo-interfaces.md#LO-WRITE)
+* [33.3.6. Lendo Dados de um Objeto Grande](lo-interfaces.md#LO-READ)
+* [33.3.7. Buscando em um Objeto Grande](lo-interfaces.md#LO-SEEK)
+* [33.3.8. Obtendo a Posição de Busca de um Objeto Grande](lo-interfaces.md#LO-TELL)
+* [33.3.9. Cortando um Objeto Grande](lo-interfaces.md#LO-TRUNCATE)
+* [33.3.10. Fechando um Descritor de Objeto Grande](lo-interfaces.md#LO-CLOSE)
+* [33.3.11. Removendo um Objeto Grande](lo-interfaces.md#LO-UNLINK)
 
 Esta seção descreve as facilidades que a biblioteca de interface do cliente libpq do PostgreSQL oferece para acessar objetos grandes. A interface de objeto grande do PostgreSQL é modelada após a interface do sistema de arquivos Unix, com análogos de `open`, `read`, `write`, `lseek`, etc.
 
@@ -96,7 +96,7 @@ O argumento *`lobjId`* especifica o OID do grande objeto a ser aberto. Os bits *
 
 O servidor atualmente não distingue entre os modos `INV_WRITE` e `INV_READ` `|` `INV_WRITE`: você pode ler o descritor em qualquer um desses casos. No entanto, há uma diferença significativa entre esses modos e o modo `INV_READ` sozinho: com `INV_READ`, você não pode escrever no descritor, e os dados lidos a partir dele refletirão o conteúdo do grande objeto no momento do instantâneo de transação que estava ativo quando o `lo_open` foi executado, independentemente de escritas posteriores por essa ou outras transações. Ler de um descritor aberto com `INV_WRITE` retorna dados que refletem todas as escritas de outras transações comprometidas, bem como as escritas da transação atual. Isso é semelhante ao comportamento dos modos de transação `REPEATABLE READ` versus `READ COMMITTED` para comandos ordinários SQL `SELECT`.
 
-`lo_open` falhará se o privilégio `SELECT` não estiver disponível para o objeto grande, ou se `INV_WRITE` for especificado e o privilégio `UPDATE` não estiver disponível. (Antes do PostgreSQL 11, essas verificações de privilégio eram realizadas, em vez disso, na primeira chamada de leitura ou escrita real usando o descritor. Essas verificações de privilégio podem ser desativadas com o parâmetro de runtime [lo_compat_privileges][(runtime-config-compatible.md#GUC-LO-COMPAT-PRIVILEGES)].
+`lo_open` falhará se o privilégio `SELECT` não estiver disponível para o objeto grande, ou se `INV_WRITE` for especificado e o privilégio `UPDATE` não estiver disponível. (Antes do PostgreSQL 11, essas verificações de privilégio eram realizadas, em vez disso, na primeira chamada de leitura ou escrita real usando o descritor. Essas verificações de privilégio podem ser desativadas com o parâmetro de runtime [lo_compat_privileges](runtime-config-compatible.md#GUC-LO-COMPAT-PRIVILEGES).
 
 Um exemplo:
 

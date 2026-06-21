@@ -14,7 +14,7 @@ CREATE [ OR REPLACE ] [ TRUSTED ] [ PROCEDURAL ] LANGUAGE name
 
 `CREATE LANGUAGE` registra uma nova linguagem procedural em um banco de dados PostgreSQL. Posteriormente, funções e procedimentos podem ser definidos nessa nova linguagem.
 
-`CREATE LANGUAGE` associa efetivamente o nome da linguagem com a(s) função(ões) de manipulação que são responsáveis por executar funções escritas na linguagem. Consulte o [Capítulo 57][(plhandler.md "Chapter 57. Writing a Procedural Language Handler")] para obter mais informações sobre manipuladores de linguagem.
+`CREATE LANGUAGE` associa efetivamente o nome da linguagem com a(s) função(ões) de manipulação que são responsáveis por executar funções escritas na linguagem. Consulte o [Capítulo 57](plhandler.md) para obter mais informações sobre manipuladores de linguagem.
 
 `CREATE OR REPLACE LANGUAGE` criará uma nova linguagem ou substituirá uma definição existente. Se a linguagem já existir, seus parâmetros são atualizados de acordo com o comando, mas as configurações de propriedade e permissões da linguagem não são alteradas, e quaisquer funções existentes escritas na linguagem são assumidas como válidas.
 
@@ -42,7 +42,7 @@ Uma função de validação normalmente inspeciona o corpo da função em busca 
 
 Use `DROP LANGUAGE`(sql-droplanguage.md "DROP LANGUAGE") para descartar linguagens processuais.
 
-O catálogo do sistema `pg_language` (consulte [Seção 52.29][(catalog-pg-language.md "52.29. pg_language")]) registra informações sobre os idiomas instalados atualmente. Além disso, o comando psql `\dL` lista os idiomas instalados.
+O catálogo do sistema `pg_language` (consulte [Seção 52.29](catalog-pg-language.md)) registra informações sobre os idiomas instalados atualmente. Além disso, o comando psql `\dL` lista os idiomas instalados.
 
 Para criar funções em uma linguagem procedural, o usuário deve ter o privilégio `USAGE` para a linguagem. Por padrão, `USAGE` é concedido a `PUBLIC` (ou seja, a todos) para linguagens confiáveis. Isso pode ser revogado, se desejado.
 

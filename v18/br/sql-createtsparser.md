@@ -22,7 +22,7 @@ Se um nome de esquema for fornecido, o analisador de busca de texto é criado no
 
 Você deve ser um superusuário para usar `CREATE TEXT SEARCH PARSER`. (Essa restrição é feita porque uma definição errada do parser de busca de texto pode confundir ou até mesmo fazer o servidor falhar.)
 
-Consulte o [Capítulo 12][(textsearch.md "Chapter 12. Full Text Search")] para obter mais informações.
+Consulte o [Capítulo 12](textsearch.md) para obter mais informações.
 
 ## Parâmetros
 

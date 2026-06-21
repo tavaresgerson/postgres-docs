@@ -5,13 +5,13 @@
 
 **Data de lançamento:** 2026-05-14
 
-Esta versão contém uma variedade de correções da versão 18.3. Para informações sobre as novas funcionalidades da versão principal 18, consulte [Seção E.5][(release-18.md "E.5. Release 18")].
+Esta versão contém uma variedade de correções da versão 18.3. Para informações sobre as novas funcionalidades da versão principal 18, consulte [Seção E.5](release-18.md).
 
 ### E.1.1. Migração para a Versão 18.4 [#](#RELEASE-18-4-MIGRATION)
 
 Não é necessário fazer um descarte/restauração para aqueles que estão rodando a versão 18.X.
 
-No entanto, se você está atualizando a partir de uma versão anterior à 18.2, consulte [Seção E.3][(release-18-2.md "E.3. Release 18.2")].
+No entanto, se você está atualizando a partir de uma versão anterior à 18.2, consulte [Seção E.3](release-18-2.md).
 
 ### E.1.2. Alterações [#](#RELEASE-18-4-CHANGES)
 

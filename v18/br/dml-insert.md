@@ -2,7 +2,7 @@
 
 Quando uma tabela é criada, ela não contém dados. A primeira coisa a fazer antes que um banco de dados possa ser muito útil é inserir dados. Os dados são inseridos uma linha de cada vez. Você também pode inserir mais de uma linha em um único comando, mas não é possível inserir algo que não seja uma linha completa. Mesmo que você conheça apenas alguns valores de coluna, uma linha completa deve ser criada.
 
-Para criar uma nova linha, use o comando [INSERT][(sql-insert.md "INSERT")]. O comando requer o nome da tabela e os valores das colunas. Por exemplo, considere a tabela de produtos do [Capítulo 5][(ddl.md "Chapter 5. Data Definition")]:
+Para criar uma nova linha, use o comando [INSERT](sql-insert.md). O comando requer o nome da tabela e os valores das colunas. Por exemplo, considere a tabela de produtos do [Capítulo 5](ddl.md):
 
 ```
 CREATE TABLE products (
@@ -62,8 +62,8 @@ INSERT INTO products (product_no, name, price)
     WHERE release_date = 'today';
 ```
 
-Isso fornece todo o poder do mecanismo de consulta SQL ([Capítulo 7][(queries.md "Chapter 7. Queries")]) para calcular as linhas a serem inseridas.
+Isso fornece todo o poder do mecanismo de consulta SQL ([Capítulo 7](queries.md)) para calcular as linhas a serem inseridas.
 
 ### DICA
 
-Ao inserir um monte de dados ao mesmo tempo, considere usar o comando [COPY][(sql-copy.md "COPY")]. Não é tão flexível quanto o comando [INSERT][(sql-insert.md "INSERT")], mas é mais eficiente. Consulte [Seção 14.4][(populate.md "14.4. Populating a Database")] para obter mais informações sobre o desempenho de carregamento em massa.
+Ao inserir um monte de dados ao mesmo tempo, considere usar o comando [COPY](sql-copy.md). Não é tão flexível quanto o comando [INSERT](sql-insert.md), mas é mais eficiente. Consulte [Seção 14.4](populate.md) para obter mais informações sobre o desempenho de carregamento em massa.

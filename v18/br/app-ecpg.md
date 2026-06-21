@@ -14,7 +14,7 @@ ecpg — pré-processador de SQL C embutido
 
 Se o nome do arquivo de entrada for apenas `-`, o programa lê o `ecpg` do padrão de entrada (e escreve na saída padrão, a menos que isso seja sobrescrito com `-o`).
 
-Esta página de referência não descreve a linguagem SQL incorporada. Consulte o [Capítulo 34][(ecpg.md "Chapter 34. ECPG — Embedded SQL in C")] para obter mais informações sobre esse tópico.
+Esta página de referência não descreve a linguagem SQL incorporada. Consulte o [Capítulo 34](ecpg.md) para obter mais informações sobre esse tópico.
 
 ## Opções
 
@@ -56,7 +56,7 @@ Ao compilar os arquivos de código C pré-processados, o compilador precisa ser 
 
 Os programas que utilizam código C com SQL embutido precisam ser vinculados contra a biblioteca `libecpg`, por exemplo, usando as opções de vinculação `-L/usr/local/pgsql/lib -lecpg`.
 
-O valor de qualquer um desses diretórios que é apropriado para a instalação pode ser encontrado usando [pg_config][(app-pgconfig.md "pg_config")].
+O valor de qualquer um desses diretórios que é apropriado para a instalação pode ser encontrado usando [pg_config](app-pgconfig.md).
 
 ## Exemplos
 

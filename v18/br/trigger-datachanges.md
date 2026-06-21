@@ -10,4 +10,4 @@ Se você executar comandos SQL em sua função de gatilho e esses comandos acess
 
 Se sua função de disparo for escrita em qualquer um dos idiomas processuais padrão, então as declarações acima se aplicam apenas se a função for declarada `VOLATILE`. As funções que são declaradas `STABLE` ou `IMMUTABLE` não verão alterações feitas pelo comando de chamada em qualquer caso.
 
-Mais informações sobre as regras de visibilidade dos dados podem ser encontradas em [Seção 45.5][(spi-visibility.md "45.5. Visibility of Data Changes")]. O exemplo em [Seção 37.4][(trigger-example.md "37.4. A Complete Trigger Example")] contém uma demonstração dessas regras.
+Mais informações sobre as regras de visibilidade dos dados podem ser encontradas em [Seção 45.5](spi-visibility.md). O exemplo em [Seção 37.4](trigger-example.md) contém uma demonstração dessas regras.

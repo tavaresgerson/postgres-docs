@@ -8,7 +8,7 @@ regsvr32 pgsql_library_directory/pgevent.dll
 
 Isso cria entradas de registro usadas pelo Assistente de eventos, sob a fonte de evento padrão denominada `PostgreSQL`.
 
-Para especificar um nome de fonte de evento diferente (consulte [event_source][(runtime-config-logging.md#GUC-EVENT-SOURCE)]), use as opções `/n` e `/i`:
+Para especificar um nome de fonte de evento diferente (consulte [event_source](runtime-config-logging.md#GUC-EVENT-SOURCE)), use as opções `/n` e `/i`:
 
 ```
 regsvr32 /n /i:event_source_name pgsql_library_directory/pgevent.dll
@@ -22,4 +22,4 @@ regsvr32 /u [/i:event_source_name] pgsql_library_directory/pgevent.dll
 
 ### Nota
 
-Para habilitar o registro de eventos no servidor de banco de dados, modifique [log_destination][(runtime-config-logging.md#GUC-LOG-DESTINATION)] para incluir `eventlog` em `postgresql.conf`.
+Para habilitar o registro de eventos no servidor de banco de dados, modifique [log_destination](runtime-config-logging.md#GUC-LOG-DESTINATION) para incluir `eventlog` em `postgresql.conf`.

@@ -25,7 +25,7 @@ Quando os objetos são criados sem especificar um esquema de destino particular,
 
 O valor padrão para este parâmetro é `"$user", public`. Esta configuração suporta o uso compartilhado de um banco de dados (onde nenhum usuário tem esquemas privados e todos compartilham o uso de `public`), esquemas privados por usuário e combinações desses. Outros efeitos podem ser obtidos alterando o ajuste do caminho de busca padrão, seja globalmente ou por usuário.
 
-Para mais informações sobre o manuseio de esquemas, consulte [Seção 5.10][(ddl-schemas.md "5.10. Schemas")]. Em particular, a configuração padrão é adequada apenas quando o banco de dados tem um único usuário ou alguns usuários que se confiam mutuamente.
+Para mais informações sobre o manuseio de esquemas, consulte [Seção 5.10](ddl-schemas.md). Em particular, a configuração padrão é adequada apenas quando o banco de dados tem um único usuário ou alguns usuários que se confiam mutuamente.
 
 O valor efetivo atual do caminho de busca pode ser examinado através da função SQL `current_schemas` (ver [Seção 9.27] (functions-info.md "9.27. System Information Functions and Operators")). Isso não é exatamente o mesmo que examinar o valor de `search_path`, pois `current_schemas` mostra como os itens que aparecem em `search_path` foram resolvidos.
 
@@ -39,13 +39,13 @@ Para mais informações sobre políticas de segurança de linha, consulte [CREAT
 
 O valor é o nome de um espaço de tabela, ou uma string vazia para especificar o uso do espaço de tabela padrão do banco de dados atual. Se o valor não corresponder ao nome de qualquer espaço de tabela existente, o PostgreSQL usará automaticamente o espaço de tabela padrão do banco de dados atual. Se um espaço de tabela não padrão for especificado, o usuário deve ter o privilégio `CREATE`, ou as tentativas de criação falharão.
 
-Essa variável não é usada para tabelas temporárias; para elas, [temp_tablespaces][(runtime-config-client.md#GUC-TEMP-TABLESPACES)] é consultado em vez disso.
+Essa variável não é usada para tabelas temporárias; para elas, [temp_tablespaces](runtime-config-client.md#GUC-TEMP-TABLESPACES) é consultado em vez disso.
 
 Essa variável também não é usada ao criar bancos de dados. Por padrão, um novo banco de dados herda sua configuração de espaço de tabela do banco de dados de modelo do qual é copiado.
 
 Se este parâmetro for definido com um valor diferente da string vazia quando uma tabela dividida for criada, o espaço de tabela da tabela dividida será definido com esse valor, que será usado como o espaço de tabela padrão para as partições criadas no futuro, mesmo que `default_tablespace` tenha sido alterado desde então.
 
-Para mais informações sobre tablespaces, consulte [Seção 22.6][(manage-ag-tablespaces.md "22.6. Tablespaces")].
+Para mais informações sobre tablespaces, consulte [Seção 22.6](manage-ag-tablespaces.md).
 
 `default_toast_compression` (`enum`) [#](#GUC-DEFAULT-TOAST-COMPRESSION): Esta variável define o método de compressão padrão para valores de colunas compressivas. (Isso pode ser sobrescrito para colunas individuais definindo a opção de coluna `COMPRESSION` em `CREATE TABLE` ou `ALTER TABLE`.). Os métodos de compressão suportados são `pglz` e (se o PostgreSQL foi compilado com `--with-lz4`) `lz4`. O padrão é `pglz`.
 
@@ -57,7 +57,7 @@ Quando `temp_tablespaces` é definido interativamente, especificar um espaço de
 
 O valor padrão é uma string vazia, o que resulta na criação de todos os objetos temporários nos espaços de tabela padrão do banco de dados atual.
 
-Veja também [default_tablespace][(runtime-config-client.md#GUC-DEFAULT-TABLESPACE)].
+Veja também [default_tablespace](runtime-config-client.md#GUC-DEFAULT-TABLESPACE).
 
 `check_function_bodies` (`boolean`) [#](#GUC-CHECK-FUNCTION-BODIES): Este parâmetro está normalmente ativado. Quando definido como `off`, desativa a validação da string do corpo da rotina durante [CREATE FUNCTION](sql-createfunction.md "CREATE FUNCTION") e [CREATE PROCEDURE](sql-createprocedure.md "CREATE PROCEDURE"). Desativar a validação evita efeitos colaterais do processo de validação, em particular, impedindo falsos positivos devido a problemas como referências diretas. Defina este parâmetro como `off` antes de carregar funções em nome de outros usuários; o pg_dump faz isso automaticamente.
 
@@ -131,8 +131,9 @@ A escolha real aqui é, na maioria das vezes, uma questão de gosto, limitada ap
 
 De acordo com o padrão SQL, o comando para definir essa opção é
 
-``` SET XML OPTION { DOCUMENT | CONTENT };
-    ```
+```
+SET XML OPTION { DOCUMENT | CONTENT };
+```
 
 Essa sintaxe também está disponível no PostgreSQL.
 
@@ -152,7 +153,7 @@ O propósito desta opção é permitir que um usuário `CREATEROLE` que não é 
 
 `IntervalStyle` (`enum`) [#](#GUC-INTERVALSTYLE): Define o formato de exibição para valores de intervalo. O valor `sql_standard` produzirá saída que corresponda aos literais de intervalo padrão do SQL. O valor `postgres` (que é o padrão) produzirá saída que corresponda às versões do PostgreSQL anteriores a 8.4 quando o parâmetro `ISO` de [DateStyle] foi definido como `postgres_verbose`. O valor `postgres_verbose` produzirá saída que corresponda às versões do PostgreSQL anteriores a 8.4 quando o parâmetro `DateStyle` foi definido para saída que não seja `ISO`. O valor `iso_8601` produzirá saída que corresponda ao formato de intervalo de tempo “com designadores” definido na seção 4.4.3.2 do ISO 8601.
 
-O parâmetro `IntervalStyle` também afeta a interpretação de entradas de intervalo ambíguas. Consulte [Seção 8.5.4][(datatype-datetime.md#DATATYPE-INTERVAL-INPUT "8.5.4. Interval Input")] para obter mais informações.
+O parâmetro `IntervalStyle` também afeta a interpretação de entradas de intervalo ambíguas. Consulte [Seção 8.5.4](datatype-datetime.md#DATATYPE-INTERVAL-INPUT) para obter mais informações.
 
 `TimeZone` (`string`) [#](#GUC-TIMEZONE): Define o fuso horário para exibir e interpretar marcas de tempo. O padrão embutido é `GMT`, mas isso é normalmente substituído em `postgresql.conf`; o initdb instalará um ajuste correspondente ao seu ambiente de sistema. Consulte [Seção 8.5.3](datatype-datetime.md#DATATYPE-TIMEZONES "8.5.3. Time Zones") para mais informações.
 
@@ -160,13 +161,13 @@ O parâmetro `IntervalStyle` também afeta a interpretação de entradas de inte
 
 `extra_float_digits` (`integer`) [#](#GUC-EXTRA-FLOAT-DIGITS): Este parâmetro ajusta o número de dígitos utilizados para a saída textual de valores de ponto flutuante, incluindo os tipos de dados `float4`, `float8` e geométricos.
 
-Se o valor for 1 (padrão) ou superior, os valores flutuantes são exibidos no formato mais curto e preciso; veja [Seção 8.1.3][(datatype-numeric.md#DATATYPE-FLOAT "8.1.3. Floating-Point Types")]. O número real de dígitos gerados depende apenas do valor que está sendo exibido, não do valor deste parâmetro. No máximo, são necessários 17 dígitos para os valores de `float8`, e 9 para os valores de `float4`. Este formato é rápido e preciso, preservando o valor binário original do float exatamente quando corretamente lido. Por compatibilidade histórica, valores de até 3 são permitidos.
+Se o valor for 1 (padrão) ou superior, os valores flutuantes são exibidos no formato mais curto e preciso; veja [Seção 8.1.3](datatype-numeric.md#DATATYPE-FLOAT). O número real de dígitos gerados depende apenas do valor que está sendo exibido, não do valor deste parâmetro. No máximo, são necessários 17 dígitos para os valores de `float8`, e 9 para os valores de `float4`. Este formato é rápido e preciso, preservando o valor binário original do float exatamente quando corretamente lido. Por compatibilidade histórica, valores de até 3 são permitidos.
 
 Se o valor for zero ou negativo, a saída será arredondada para uma precisão decimal dada. A precisão usada é o número padrão de dígitos para o tipo (`FLT_DIG` ou `DBL_DIG`, conforme apropriado) reduzido de acordo com o valor deste parâmetro. (Por exemplo, especificar -1 fará com que os valores de `float4` sejam exibidos arredondados a 5 dígitos significativos, e os valores de `float8` arredondados a 14 dígitos.) Este formato é mais lento e não preserva todos os bits do valor binário do float, mas pode ser mais legível para humanos.
 
 ### Nota
 
-O significado deste parâmetro e seu valor padrão foram alterados no PostgreSQL 12; consulte [Seção 8.1.3][(datatype-numeric.md#DATATYPE-FLOAT "8.1.3. Floating-Point Types")] para uma discussão adicional.
+O significado deste parâmetro e seu valor padrão foram alterados no PostgreSQL 12; consulte [Seção 8.1.3](datatype-numeric.md#DATATYPE-FLOAT) para uma discussão adicional.
 
 `client_encoding` (`string`) [#](#GUC-CLIENT-ENCODING): Define o codificação do lado do cliente (conjunto de caracteres). O padrão é usar a codificação do banco de dados. Os conjuntos de caracteres suportados pelo servidor PostgreSQL são descritos em [Seção 23.3.1](multibyte.md#MULTIBYTE-CHARSET-SUPPORTED "23.3.1. Supported Character Sets").
 
@@ -204,19 +205,19 @@ Essa opção pode ser definida por qualquer usuário. Por isso, as bibliotecas q
 
 A intenção deste recurso é permitir que usuários não privilegiados carreguem bibliotecas de depuração ou de medição de desempenho em sessões específicas, sem exigir um comando explícito `LOAD`. Para esse fim, seria típico definir este parâmetro usando a variável de ambiente `PGOPTIONS` no cliente ou usando `ALTER ROLE SET`.
 
-No entanto, a menos que um módulo seja projetado especificamente para ser usado dessa maneira por não-superusuários, esse geralmente não é o ajuste correto a ser usado. Veja [session_preload_libraries][(runtime-config-client.md#GUC-SESSION-PRELOAD-LIBRARIES)] em vez disso.
+No entanto, a menos que um módulo seja projetado especificamente para ser usado dessa maneira por não-superusuários, esse geralmente não é o ajuste correto a ser usado. Veja [session_preload_libraries](runtime-config-client.md#GUC-SESSION-PRELOAD-LIBRARIES) em vez disso.
 
-`session_preload_libraries` (`string`) [#](#GUC-SESSION-PRELOAD-LIBRARIES): Esta variável especifica uma ou mais bibliotecas compartilhadas que devem ser pré-carregadas no início da conexão. Ela contém uma lista de nomes de bibliotecas separados por vírgula, onde cada nome é interpretado como para o comando [`LOAD`(sql-load.md "LOAD")]. Espaços em branco entre as entradas são ignorados; rode um nome de biblioteca com aspas duplas se você precisar incluir espaços em branco ou vírgulas no nome. O valor do parâmetro só tem efeito no início da conexão. Alterações subsequentes não têm efeito. Se uma biblioteca especificada não for encontrada, a tentativa de conexão falhará. Somente superusuários e usuários com o privilégio apropriado `SET` podem alterar esta configuração.
+`session_preload_libraries` (`string`) [#](#GUC-SESSION-PRELOAD-LIBRARIES): Esta variável especifica uma ou mais bibliotecas compartilhadas que devem ser pré-carregadas no início da conexão. Ela contém uma lista de nomes de bibliotecas separados por vírgula, onde cada nome é interpretado como para o comando [`LOAD`](sql-load.md)]. Espaços em branco entre as entradas são ignorados; rode um nome de biblioteca com aspas duplas se você precisar incluir espaços em branco ou vírgulas no nome. O valor do parâmetro só tem efeito no início da conexão. Alterações subsequentes não têm efeito. Se uma biblioteca especificada não for encontrada, a tentativa de conexão falhará. Somente superusuários e usuários com o privilégio apropriado `SET` podem alterar esta configuração.
 
-A intenção deste recurso é permitir que bibliotecas de depuração ou de medição de desempenho sejam carregadas em sessões específicas sem que um comando explícito `LOAD` seja dado. Por exemplo, [auto_explain][(auto-explain.md "F.3. auto_explain — log execution plans of slow queries")] pode ser habilitado para todas as sessões sob um nome de usuário dado, definindo este parâmetro com `ALTER ROLE SET`. Além disso, este parâmetro pode ser alterado sem reiniciar o servidor (mas as alterações só se tornam eficazes quando uma nova sessão é iniciada), portanto, é mais fácil adicionar novos módulos dessa maneira, mesmo que eles devam ser aplicados a todas as sessões.
+A intenção deste recurso é permitir que bibliotecas de depuração ou de medição de desempenho sejam carregadas em sessões específicas sem que um comando explícito `LOAD` seja dado. Por exemplo, [auto_explain](auto-explain.md) pode ser habilitado para todas as sessões sob um nome de usuário dado, definindo este parâmetro com `ALTER ROLE SET`. Além disso, este parâmetro pode ser alterado sem reiniciar o servidor (mas as alterações só se tornam eficazes quando uma nova sessão é iniciada), portanto, é mais fácil adicionar novos módulos dessa maneira, mesmo que eles devam ser aplicados a todas as sessões.
 
-Ao contrário de [shared_preload_libraries][(runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES)], não há uma grande vantagem de desempenho ao carregar uma biblioteca no início da sessão em vez de quando ela é usada pela primeira vez. Há, no entanto, uma vantagem quando o pooling de conexão é usado.
+Ao contrário de [shared_preload_libraries](runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES), não há uma grande vantagem de desempenho ao carregar uma biblioteca no início da sessão em vez de quando ela é usada pela primeira vez. Há, no entanto, uma vantagem quando o pooling de conexão é usado.
 
 `shared_preload_libraries` (`string`) [#](#GUC-SHARED-PRELOAD-LIBRARIES): Esta variável especifica uma ou mais bibliotecas compartilhadas a serem pré-carregadas no início do servidor. Ela contém uma lista de nomes de bibliotecas separados por vírgula, onde cada nome é interpretado como para o comando [`LOAD`](sql-load.md "LOAD"). Espaços em branco entre as entradas são ignorados; envolva o nome de uma biblioteca com aspas duplas se você precisar incluir espaços em branco ou vírgulas no nome. Este parâmetro só pode ser definido no início do servidor. Se uma biblioteca especificada não for encontrada, o servidor falhará no início.
 
 Algumas bibliotecas precisam realizar certas operações que só podem ocorrer no início do postmaster, como alocar memória compartilhada, reservar bloqueios leves ou iniciar trabalhadores em segundo plano. Essas bibliotecas devem ser carregadas no início do servidor por meio deste parâmetro. Consulte a documentação de cada biblioteca para obter detalhes.
 
-Outras bibliotecas também podem ser pré-carregadas. Ao pré-carregar uma biblioteca compartilhada, o tempo de inicialização da biblioteca é evitado quando a biblioteca é usada pela primeira vez. No entanto, o tempo para iniciar cada novo processo do servidor pode aumentar ligeiramente, mesmo que esse processo nunca use a biblioteca. Portanto, este parâmetro é recomendado apenas para bibliotecas que serão usadas na maioria das sessões. Além disso, alterar este parâmetro requer um reinício do servidor, então este não é o ajuste certo para usar em tarefas de depuração de curto prazo, por exemplo. Use [session_preload_libraries][(runtime-config-client.md#GUC-SESSION-PRELOAD-LIBRARIES)] para isso, em vez disso.
+Outras bibliotecas também podem ser pré-carregadas. Ao pré-carregar uma biblioteca compartilhada, o tempo de inicialização da biblioteca é evitado quando a biblioteca é usada pela primeira vez. No entanto, o tempo para iniciar cada novo processo do servidor pode aumentar ligeiramente, mesmo que esse processo nunca use a biblioteca. Portanto, este parâmetro é recomendado apenas para bibliotecas que serão usadas na maioria das sessões. Além disso, alterar este parâmetro requer um reinício do servidor, então este não é o ajuste certo para usar em tarefas de depuração de curto prazo, por exemplo. Use [session_preload_libraries](runtime-config-client.md#GUC-SESSION-PRELOAD-LIBRARIES) para isso, em vez disso.
 
 ### Nota
 
@@ -232,36 +233,33 @@ Se configurada para uma biblioteca não existente, o JIT não estará disponíve
 
 O valor para `dynamic_library_path` deve ser uma lista de caminhos de diretório absolutos separados por colchetes (ou pontos e vírgulas no Windows). Se um elemento da lista começar com a string especial `$libdir`, o diretório da biblioteca de pacotes do PostgreSQL integrado é substituído por `$libdir`; é onde os módulos fornecidos pela distribuição padrão do PostgreSQL são instalados. (Use `pg_config --pkglibdir` para descobrir o nome desse diretório. Por exemplo:
 
-``` dynamic_library_path = '/usr/local/lib/postgresql:/home/my_project/lib:$libdir'
-    ```
+```
+dynamic_library_path = '/usr/local/lib/postgresql:/home/my_project/lib:$libdir'
+```
 
 ou, em um ambiente Windows:
 
-    ```
-    dynamic_library_path = 'C:\tools\postgresql;H:\my_project\lib;$libdir'
-    ```
+```
+dynamic_library_path = 'C:\tools\postgresql;H:\my_project\lib;$libdir'
+```
 
 O valor padrão para este parâmetro é `'$libdir'`. Se o valor for definido como uma string vazia, a busca automática de caminho é desativada.
 
 Este parâmetro pode ser alterado em tempo real por superusuários e usuários com o privilégio apropriado `SET`, mas uma configuração feita dessa forma só persistirá até o final da conexão do cliente, portanto, esse método deve ser reservado para fins de desenvolvimento. A maneira recomendada para definir este parâmetro é no arquivo de configuração `postgresql.conf`.
 
-`extension_control_path` (`string`) [#](#GUC-EXTENSION-CONTROL-PATH)
-:   Um caminho para procurar extensões, especificamente arquivos de controle de extensão
-    (`name.control`). O restante do script de extensão e os arquivos de controle secundários são então carregados
-    do mesmo diretório onde o arquivo de controle primário foi encontrado.
-    Veja [Seção 36.17.1](extend-extensions.md#EXTEND-EXTENSIONS-FILES "36.17.1. Extension Files") para detalhes.
+`extension_control_path` (`string`) [#](#GUC-EXTENSION-CONTROL-PATH): Um caminho para procurar extensões, especificamente arquivos de controle de extensão (`name.control`). O restante do script de extensão e os arquivos de controle secundários são então carregados do mesmo diretório onde o arquivo de controle primário foi encontrado. Veja [Seção 36.17.1](extend-extensions.md#EXTEND-EXTENSIONS-FILES "36.17.1. Extension Files") para detalhes.
 
 O valor para `extension_control_path` deve ser uma lista de caminhos de diretório absolutos separados por colchetes (ou pontos e vírgulas em Windows). Se um elemento da lista começar com a string especial `$system`, o diretório da extensão PostgreSQL incorporada é substituído por `$system`; é aqui que as extensões fornecidas pela distribuição padrão do PostgreSQL são instaladas. (Use `pg_config --sharedir` para descobrir o nome desse diretório.) Por exemplo:
 
-    ```
-    extension_control_path = '/usr/local/share/postgresql:/home/my_project/share:$system'
-    ```
+```
+extension_control_path = '/usr/local/share/postgresql:/home/my_project/share:$system'
+```
 
 ou, em um ambiente Windows:
 
-    ```
-    extension_control_path = 'C:\tools\postgresql;H:\my_project\share;$system'
-    ```
+```
+extension_control_path = 'C:\tools\postgresql;H:\my_project\share;$system'
+```
 
 Observe que os elementos de caminho especificados devem ter um subdiretório `extension` que conterá os arquivos `.control` e `.sql`; o sufixo `extension` é automaticamente anexado a cada elemento de caminho.
 
@@ -271,11 +269,10 @@ Se houver extensões com nomes iguais em vários diretórios no caminho configur
 
 Este parâmetro pode ser alterado em tempo real por superusuários e usuários com o privilégio apropriado `SET`, mas uma configuração feita dessa forma só persistirá até o final da conexão do cliente, portanto, esse método deve ser reservado para fins de desenvolvimento. A maneira recomendada para definir este parâmetro é no arquivo de configuração `postgresql.conf`.
 
-Observe que, se você definir esse parâmetro para poder carregar extensões de locais não padrão, você provavelmente também precisará definir [dynamic_library_path][(runtime-config-client.md#GUC-DYNAMIC-LIBRARY-PATH)] para um local correspondente, por exemplo,
+Observe que, se você definir esse parâmetro para poder carregar extensões de locais não padrão, você provavelmente também precisará definir [dynamic_library_path](runtime-config-client.md#GUC-DYNAMIC-LIBRARY-PATH) para um local correspondente, por exemplo,
 
-    ```
-    extension_control_path = '/usr/local/share/postgresql:$system' dynamic_library_path = '/usr/local/lib/postgresql:$libdir'
-    ```
+```
+extension_control_path = '/usr/local/share/postgresql:$system' dynamic_library_path = '/usr/local/lib/postgresql:$libdir'
+```
 
-`gin_fuzzy_search_limit` (`integer`) [#](#GUC-GIN-FUZZY-SEARCH-LIMIT)
-:   Limite suave do tamanho do conjunto retornado por varreduras de índice GIN. Para mais informações, consulte [Seção 65.4.5](gin.md#GIN-TIPS "65.4.5. GIN Tips and Tricks").
+`gin_fuzzy_search_limit` (`integer`) [#](#GUC-GIN-FUZZY-SEARCH-LIMIT): Limite suave do tamanho do conjunto retornado por varreduras de índice GIN. Para mais informações, consulte [Seção 65.4.5](gin.md#GIN-TIPS "65.4.5. GIN Tips and Tricks").

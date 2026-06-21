@@ -22,7 +22,7 @@ DROP OPERATOR [ IF EXISTS ] name ( { left_type | NONE } , right_type ) [, ...] [
 
 *`right_type`*: O tipo de dados do operador do operando da direita.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem do operador (como as visualizações que o utilizam), e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem do operador (como as visualizações que o utilizam), e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Não se recusar a descartar o operador se algum objeto depender dele. Esse é o padrão.
 

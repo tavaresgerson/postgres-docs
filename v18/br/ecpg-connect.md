@@ -1,8 +1,8 @@
 ## 34.2. Gerenciamento de Conexões de Banco de Dados [#](#ECPG-CONNECT)
 
-* [34.2.1. Conectando ao servidor de banco de dados][(ecpg-connect.md#ECPG-CONNECTING)]
-* [34.2.2. Escolhendo uma conexão][(ecpg-connect.md#ECPG-SET-CONNECTION)]
-* [34.2.3. Fechar uma conexão][(ecpg-connect.md#ECPG-DISCONNECT)]
+* [34.2.1. Conectando ao servidor de banco de dados](ecpg-connect.md#ECPG-CONNECTING)
+* [34.2.2. Escolhendo uma conexão](ecpg-connect.md#ECPG-SET-CONNECTION)
+* [34.2.3. Fechar uma conexão](ecpg-connect.md#ECPG-DISCONNECT)
 
 Esta seção descreve como abrir, fechar e alternar conexões de banco de dados.
 

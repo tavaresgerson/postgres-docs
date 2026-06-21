@@ -1,58 +1,61 @@
 ## 8.2. Tipos Monetários [#](#DATATYPE-MONEY)
 
-O tipo `money` armazena um valor monetário com precisão fracionária fixa; veja [Tabela 8.3][(datatype-money.md#DATATYPE-MONEY-TABLE "Table 8.3. Monetary Types")]. A precisão fracionária é determinada pelo ajuste [lc_monetary][(runtime-config-client.md#GUC-LC-MONETARY)] do banco de dados. A faixa mostrada na tabela assume que há duas dígitos fracionários. A entrada é aceita em uma variedade de formatos, incluindo literais inteiros e de ponto flutuante, bem como formatação típica de moeda, como `'$1,000.00'`. A saída geralmente é na forma do último, mas depende do local.
+O tipo `money` armazena um valor monetário com precisão fracionária fixa; veja [Tabela 8.3](datatype-money.md#DATATYPE-MONEY-TABLE). A precisão fracionária é determinada pelo ajuste [lc_monetary](runtime-config-client.md#GUC-LC-MONETARY) do banco de dados. A faixa mostrada na tabela assume que há duas dígitos fracionários. A entrada é aceita em uma variedade de formatos, incluindo literais inteiros e de ponto flutuante, bem como formatação típica de moeda, como `'$1,000.00'`. A saída geralmente é na forma do último, mas depende do local.
 
 **Tabela 8.3. Tipos Monetários**
 
 
 
 <table border="1" class="table" summary="Monetary Types">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-<col class="col4"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+  <col class="col4"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Name
    </th>
-<th>
+   <th>
     Storage Size
    </th>
-<th>
+   <th>
     Description
    </th>
-<th>
+   <th>
     Range
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="type">
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="type">
      money
     </code>
-</td>
-<td>
+   </td>
+   <td>
     8 bytes
    </td>
-<td>
+   <td>
     currency amount
    </td>
-<td>
+   <td>
     -92233720368547758.08 to +92233720368547758.07
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Como a saída deste tipo de dados é sensível ao local, pode não funcionar carregar os dados `money` em um banco de dados que tenha um conjunto diferente de `lc_monetary`. Para evitar problemas, antes de restaurar um dump em um novo banco de dados, certifique-se de que `lc_monetary` tenha o mesmo valor ou um valor equivalente ao do banco de dados que foi exportado.
 

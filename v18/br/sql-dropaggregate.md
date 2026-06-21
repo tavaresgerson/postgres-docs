@@ -30,7 +30,7 @@ where aggregate_signature is:
 
 *`argtype`*: Um tipo de dados de entrada sobre o qual a função agregada opera. Para referenciar uma função agregada de argumento zero, escreva `*` no lugar da lista de especificações de argumento. Para referenciar uma função agregada de conjunto ordenado, escreva `ORDER BY` entre as especificações de argumento direto e agregada.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem da função agregada (como as visualizações que a utilizam), e, por sua vez, todos os objetos que dependem desses objetos (consulte a [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem da função agregada (como as visualizações que a utilizam), e, por sua vez, todos os objetos que dependem desses objetos (consulte a [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Não se recusar a descartar a função agregada se houver objetos que dependem dela. Esse é o padrão.
 

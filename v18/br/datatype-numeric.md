@@ -5,183 +5,208 @@
 * [8.1.3. Tipos de Ponto Flutuante](datatype-numeric.md#DATATYPE-FLOAT)
 * [8.1.4. Tipos de Série](datatype-numeric.md#DATATYPE-SERIAL)
 
-Os tipos numéricos consistem em inteiros de dois, quatro e oito bytes, números de ponto flutuante de quatro e oito bytes e decimais de precisão selecionável. A tabela [(datatype-numeric.md#DATATYPE-NUMERIC-TABLE "Table 8.2. Numeric Types")][(datatype-numeric.md#DATATYPE-NUMERIC-TABLE "Table 8.2. Numeric Types")] lista os tipos disponíveis.
+Os tipos numéricos consistem em inteiros de dois, quatro e oito bytes, números de ponto flutuante de quatro e oito bytes e decimais de precisão selecionável. A tabela [(datatype-numeric.md#DATATYPE-NUMERIC-TABLE "Table 8.2. Numeric Types")](datatype-numeric.md#DATATYPE-NUMERIC-TABLE) lista os tipos disponíveis.
 
 **Tabela 8.2. Tipos numéricos**
 
 
 
 <table border="1" class="table" summary="Numeric Types">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-<col class="col4"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+  <col class="col4"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Name
    </th>
-<th>
+   <th>
     Storage Size
    </th>
-<th>
+   <th>
     Description
    </th>
-<th>Gama</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="type">
+   <th>
+    Gama
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="type">
      smallint
     </code>
-</td>
-<td>
+   </td>
+   <td>
     2 bytes
    </td>
-<td>
+   <td>
     small-range integer
    </td>
-<td>-32768 a +32767</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   <td>
+    -32768 a +32767
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      integer
     </code>
-</td>
-<td>
+   </td>
+   <td>
     4 bytes
    </td>
-<td>
+   <td>
     typical choice for integer
    </td>
-<td>-2147483648 a +2147483647</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   <td>
+    -2147483648 a +2147483647
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      bigint
     </code>
-</td>
-<td>
+   </td>
+   <td>
     8 bytes
    </td>
-<td>
+   <td>
     large-range integer
    </td>
-<td>-9223372036854775808 a +9223372036854775807</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   <td>
+    -9223372036854775808 a +9223372036854775807
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      decimal
     </code>
-</td>
-<td>
+   </td>
+   <td>
     variable
    </td>
-<td>
+   <td>
     user-specified precision, exact
    </td>
-<td>até 131072 dígitos antes do ponto decimal; até 16383 dígitos após o ponto decimal</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   <td>
+    até 131072 dígitos antes do ponto decimal; até 16383 dígitos após o ponto decimal
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      numeric
     </code>
-</td>
-<td>
+   </td>
+   <td>
     variable
    </td>
-<td>
+   <td>
     user-specified precision, exact
    </td>
-<td>até 131072 dígitos antes do ponto decimal; até 16383 dígitos após o ponto decimal</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   <td>
+    até 131072 dígitos antes do ponto decimal; até 16383 dígitos após o ponto decimal
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      real
     </code>
-</td>
-<td>
+   </td>
+   <td>
     4 bytes
    </td>
-<td>
+   <td>
     variable-precision, inexact
    </td>
-<td>Precisão de 6 dígitos decimais</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   <td>
+    Precisão de 6 dígitos decimais
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      double precision
     </code>
-</td>
-<td>
+   </td>
+   <td>
     8 bytes
    </td>
-<td>
+   <td>
     variable-precision, inexact
    </td>
-<td>Precisão de 15 dígitos decimais</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   <td>
+    Precisão de 15 dígitos decimais
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      smallserial
     </code>
-</td>
-<td>
+   </td>
+   <td>
     2 bytes
    </td>
-<td>
+   <td>
     small autoincrementing integer
    </td>
-<td>1 a 32767</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   <td>
+    1 a 32767
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      serial
     </code>
-</td>
-<td>
+   </td>
+   <td>
     4 bytes
    </td>
-<td>
+   <td>
     autoincrementing integer
    </td>
-<td>1 a 2147483647</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   <td>
+    1 a 2147483647
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      bigserial
     </code>
-</td>
-<td>
+   </td>
+   <td>
     8 bytes
    </td>
-<td>
+   <td>
     large autoincrementing integer
    </td>
-<td>1 a 9223372036854775807</td>
-</tr>
-</tbody>
+   <td>
+    1 a 9223372036854775807
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
 
-A sintaxe das constantes para os tipos numéricos é descrita em [Seção 4.1.2][(sql-syntax-lexical.md#SQL-SYNTAX-CONSTANTS "4.1.2. Constants")]. Os tipos numéricos têm um conjunto completo de operadores e funções aritméticas correspondentes. Consulte [Capítulo 9][(functions.md "Chapter 9. Functions and Operators")] para mais informações. As seções a seguir descrevem os tipos em detalhes.
+
+
+
+
+A sintaxe das constantes para os tipos numéricos é descrita em [Seção 4.1.2](sql-syntax-lexical.md#SQL-SYNTAX-CONSTANTS). Os tipos numéricos têm um conjunto completo de operadores e funções aritméticas correspondentes. Consulte [Capítulo 9](functions.md) para mais informações. As seções a seguir descrevem os tipos em detalhes.
 
 ### 8.1.1. Tipos de Inteiros [#](#DATATYPE-INT)
 
@@ -219,7 +244,7 @@ sem qualquer precisão ou escala cria uma coluna "numérica não limitada" na qu
 
 ### Nota
 
-A máxima precisão que pode ser explicitamente especificada em uma declaração de tipo `numeric` é de 1000. Uma coluna `numeric` sem restrições está sujeita aos limites descritos na [Tabela 8.2][(datatype-numeric.md#DATATYPE-NUMERIC-TABLE "Table 8.2. Numeric Types")].
+A máxima precisão que pode ser explicitamente especificada em uma declaração de tipo `numeric` é de 1000. Uma coluna `numeric` sem restrições está sujeita aos limites descritos na [Tabela 8.2](datatype-numeric.md#DATATYPE-NUMERIC-TABLE).
 
 Se a escala de um valor a ser armazenado for maior que a escala declarada da coluna, o sistema arredondará o valor para o número especificado de dígitos fracionários. Em seguida, se o número de dígitos à esquerda do ponto decimal exceder a precisão declarada menos a escala declarada, um erro é gerado. Por exemplo, uma coluna declarada como
 
@@ -303,13 +328,13 @@ Por padrão, os valores de ponto flutuante são exibidos em formato de texto na 
 
 Esse formato de saída mais preciso e mais curto é muito mais rápido de gerar do que o formato arredondado histórico.
 
-Para compatibilidade com a saída gerada por versões mais antigas do PostgreSQL, e para permitir que a precisão da saída seja reduzida, o parâmetro [extra_float_digits][(runtime-config-client.md#GUC-EXTRA-FLOAT-DIGITS)] pode ser usado para selecionar saída decimal arredondada. Definir um valor de 0 restaura o valor padrão anterior de arredondamento do valor para 6 (para `float4`) ou 15 (para `float8`) dígitos decimais significativos. Definir um valor negativo reduz ainda mais o número de dígitos; por exemplo, -2 arredondaria a saída para 4 ou 13 dígitos, respectivamente.
+Para compatibilidade com a saída gerada por versões mais antigas do PostgreSQL, e para permitir que a precisão da saída seja reduzida, o parâmetro [extra_float_digits](runtime-config-client.md#GUC-EXTRA-FLOAT-DIGITS) pode ser usado para selecionar saída decimal arredondada. Definir um valor de 0 restaura o valor padrão anterior de arredondamento do valor para 6 (para `float4`) ou 15 (para `float8`) dígitos decimais significativos. Definir um valor negativo reduz ainda mais o número de dígitos; por exemplo, -2 arredondaria a saída para 4 ou 13 dígitos, respectivamente.
 
 Qualquer valor de [extra_float_digits][(runtime-config-client.md#GUC-EXTRA-FLOAT-DIGITS) maior que 0 seleciona o formato mais preciso.
 
 ### Nota
 
-Aplicações que desejavam valores precisos historicamente tiveram que definir [extra_float_digits][(runtime-config-client.md#GUC-EXTRA-FLOAT-DIGITS)] para 3 para obtê-los. Para obter a máxima compatibilidade entre as versões, elas devem continuar a fazer isso.
+Aplicações que desejavam valores precisos historicamente tiveram que definir [extra_float_digits](runtime-config-client.md#GUC-EXTRA-FLOAT-DIGITS) para 3 para obtê-los. Para obter a máxima compatibilidade entre as versões, elas devem continuar a fazer isso.
 
 Além dos valores numéricos comuns, os tipos de ponto flutuante têm vários valores especiais:
 
@@ -327,7 +352,7 @@ O PostgreSQL também suporta as notações padrão do SQL `float` e `float(p)` p
 
 ### Nota
 
-Esta seção descreve uma maneira específica do PostgreSQL para criar uma coluna de autoincremento. Outra maneira é usar a característica da coluna de identidade padrão do SQL, descrita em [Seção 5.3][(ddl-identity-columns.md "5.3. Identity Columns")].
+Esta seção descreve uma maneira específica do PostgreSQL para criar uma coluna de autoincremento. Outra maneira é usar a característica da coluna de identidade padrão do SQL, descrita em [Seção 5.3](ddl-identity-columns.md).
 
 Os tipos de dados `smallserial`, `serial` e `bigserial` não são tipos verdadeiros, mas apenas uma conveniência notarial para criar colunas de identificador único (semelhante à propriedade `AUTO_INCREMENT` suportada por alguns outros bancos de dados). Na implementação atual, especificando:
 
@@ -351,7 +376,7 @@ Assim, criamos uma coluna inteira e configuramos para que seus valores padrão s
 
 ### Nota
 
-Como `smallserial`, `serial` e `bigserial` são implementados usando sequências, pode haver "lacunas" ou lacunas na sequência de valores que aparece na coluna, mesmo que nunca sejam excluídas linhas. Um valor alocado a partir da sequência ainda é "usado" mesmo que uma linha contendo esse valor nunca seja inserida com sucesso na coluna da tabela. Isso pode acontecer, por exemplo, se a transação de inserção for revertida. Consulte `nextval()` em [Seção 9.17][(functions-sequence.md "9.17. Sequence Manipulation Functions")] para obter detalhes.
+Como `smallserial`, `serial` e `bigserial` são implementados usando sequências, pode haver "lacunas" ou lacunas na sequência de valores que aparece na coluna, mesmo que nunca sejam excluídas linhas. Um valor alocado a partir da sequência ainda é "usado" mesmo que uma linha contendo esse valor nunca seja inserida com sucesso na coluna da tabela. Isso pode acontecer, por exemplo, se a transação de inserção for revertida. Consulte `nextval()` em [Seção 9.17](functions-sequence.md) para obter detalhes.
 
 Para inserir o próximo valor da sequência na coluna `serial`, especifique que a coluna `serial` deve receber seu valor padrão. Isso pode ser feito excluindo a coluna da lista de colunas na declaração `INSERT`, ou através do uso da palavra-chave `DEFAULT`.
 

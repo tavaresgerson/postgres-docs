@@ -5,10 +5,10 @@
 * [7.1. Visão geral](queries-overview.md)
 * [7.2. Expressões de tabela](queries-table-expressions.md)
 
-+ [7.2.1. A Cláusula `FROM`(queries-table-expressions.md#QUERIES-FROM)
-+ [7.2.2. A Cláusula `WHERE`(queries-table-expressions.md#QUERIES-WHERE)
-+ [7.2.3. As Cláusulas `GROUP BY` e `HAVING`(queries-table-expressions.md#QUERIES-GROUP)
-+ [7.2.4. `GROUPING SETS`, `CUBE` e `ROLLUP`(queries-table-expressions.md#QUERIES-GROUPING-SETS)
++ [7.2.1. A Cláusula `FROM`](queries-table-expressions.md#QUERIES-FROM)
++ [7.2.2. A Cláusula `WHERE`](queries-table-expressions.md#QUERIES-WHERE)
++ [7.2.3. As Cláusulas `GROUP BY` e `HAVING`](queries-table-expressions.md#QUERIES-GROUP)
++ [7.2.4. `GROUPING SETS`, `CUBE` e `ROLLUP`](queries-table-expressions.md#QUERIES-GROUPING-SETS)
 + [7.2.5. Processamento de Função de Janela](queries-table-expressions.md#QUERIES-WINDOW)
 
 * [7.3. Selecionar listas](queries-select-lists.md)
@@ -19,7 +19,7 @@
 
 * [7.4. Combinando Consultas (`UNION`, `INTERSECT`, `EXCEPT`)](queries-union.md)
 * [7.5. Ordenando Linhas (`ORDER BY`)](queries-order.md)
-* [7.6. `LIMIT` e `OFFSET`(queries-limit.md)
+* [7.6. `LIMIT` e `OFFSET`](queries-limit.md)
 * [7.7. `VALUES` Listas](queries-values.md)
 * [7.8. `WITH` Consultas (Expressões de Tabela Comum)](queries-with.md)
 

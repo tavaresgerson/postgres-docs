@@ -25,7 +25,7 @@ Para obter um efeito semelhante ao executar uma transação no nível de isolame
 
 Se uma transação desse tipo vai alterar os dados na tabela, então ela deve usar o modo de bloqueio `SHARE ROW EXCLUSIVE` em vez do modo `SHARE`. Isso garante que apenas uma transação desse tipo execute de cada vez. Sem isso, é possível um impasse: duas transações podem adquirir o modo `SHARE`, e então não conseguem também adquirir o modo `ROW EXCLUSIVE` para realmente realizar suas atualizações. (Observe que as próprias tranças nunca entram em conflito, então uma transação pode adquirir o modo `ROW EXCLUSIVE` quando mantém o modo `SHARE`, mas não se alguém mais estiver segurando o modo `SHARE`. Para evitar impasses, certifique-se de que todas as transações adquiram blocos nos mesmos objetos na mesma ordem, e se vários modos de bloqueio estão envolvidos para um único objeto, então as transações devem sempre adquirir o modo mais restritivo primeiro.
 
-Mais informações sobre os modos de bloqueio e as estratégias de bloqueio podem ser encontradas em [Seção 13.3][(explicit-locking.md "13.3. Explicit Locking")].
+Mais informações sobre os modos de bloqueio e as estratégias de bloqueio podem ser encontradas em [Seção 13.3](explicit-locking.md).
 
 ## Parâmetros
 
@@ -33,7 +33,7 @@ Mais informações sobre os modos de bloqueio e as estratégias de bloqueio pode
 
 O comando `LOCK TABLE a, b;` é equivalente a `LOCK TABLE a; LOCK TABLE b;`. As tabelas são bloqueadas uma a uma na ordem especificada no comando `LOCK TABLE`.
 
-*`lockmode`*: O modo de bloqueio especifica quais bloqueios este bloqueio entra em conflito. Os modos de bloqueio são descritos em [Seção 13.3][(explicit-locking.md "13.3. Explicit Locking")].
+*`lockmode`*: O modo de bloqueio especifica quais bloqueios este bloqueio entra em conflito. Os modos de bloqueio são descritos em [Seção 13.3](explicit-locking.md).
 
 Se não for especificado nenhum modo de bloqueio, então `ACCESS EXCLUSIVE`, o modo mais restritivo, é utilizado.
 

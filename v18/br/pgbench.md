@@ -30,7 +30,7 @@ initial connection time = 45.758 ms
 tps = 896.967014 (without initial connection time)
 ```
 
-As primeiras sete linhas relatam algumas das configurações de parâmetros mais importantes. A sexta linha relata o número máximo de tentativas para transações com erros de serialização ou bloqueio (consulte [Falhas e Retries de Serialização/Bloqueio][(pgbench.md#FAILURES-AND-RETRIES "Failures and Serialization/Deadlock Retries")] para mais informações). A oitava linha relata o número de transações concluídas e pretendidas (estes sendo apenas o produto do número de clientes e o número de transações por cliente); estes serão iguais a menos que a execução falhou antes da conclusão ou alguns comandos SQL falharam. (No modo `-T`, apenas o número real de transações é impresso.) A próxima linha relata o número de transações falhadas devido a erros de serialização ou bloqueio (consulte [Falhas e Retries de Serialização/Bloqueio][(pgbench.md#FAILURES-AND-RETRIES "Failures and Serialization/Deadlock Retries")] para mais informações). A última linha relata o número de transações por segundo.
+As primeiras sete linhas relatam algumas das configurações de parâmetros mais importantes. A sexta linha relata o número máximo de tentativas para transações com erros de serialização ou bloqueio (consulte [Falhas e Retries de Serialização/Bloqueio](pgbench.md#FAILURES-AND-RETRIES) para mais informações). A oitava linha relata o número de transações concluídas e pretendidas (estes sendo apenas o produto do número de clientes e o número de transações por cliente); estes serão iguais a menos que a execução falhou antes da conclusão ou alguns comandos SQL falharam. (No modo `-T`, apenas o número real de transações é impresso.) A próxima linha relata o número de transações falhadas devido a erros de serialização ou bloqueio (consulte [Falhas e Retries de Serialização/Bloqueio](pgbench.md#FAILURES-AND-RETRIES) para mais informações). A última linha relata o número de transações por segundo.
 
 O teste de transação padrão semelhante ao TPC-B requer que tabelas específicas sejam configuradas previamente. O pgbench deve ser invocado com a opção `-i` (inicializar) para criar e preencher essas tabelas. (Quando você está testando um script personalizado, você não precisa desse passo, mas, em vez disso, precisará fazer qualquer configuração que seu teste precise.) A inicialização parece assim:
 
@@ -153,7 +153,7 @@ Quando a opção `--max-tries` é usada, uma transação que falha devido a uma 
 
 No modo `prepared`, o pgbench reutiliza o resultado da análise de análise a partir da segunda iteração da consulta, portanto, o pgbench é mais rápido do que em outros modos.
 
-O protocolo de consulta padrão é simples. (Consulte o [Capítulo 54] [(protocol.md "Chapter 54. Frontend/Backend Protocol")] para obter mais informações.)
+O protocolo de consulta padrão é simples. (Consulte o [Capítulo 54](protocol.md) para obter mais informações.)
 
 `-n` `--no-vacuum` [#](#PGBENCH-OPTION-NO-VACUUM-RUN): Não realize a aspiração antes de executar o teste. Esta opção é *necessária* se você estiver executando um cenário de teste personalizado que não inclui as tabelas padrão `pgbench_accounts`, `pgbench_branches`, `pgbench_history` e `pgbench_tellers`.
 
@@ -187,13 +187,13 @@ Um longo atraso no cronograma é uma indicação de que o sistema não pode proc
 
 `--exit-on-abort` [#](#PGBENCH-OPTION-EXIT-ON-ABORT): Saia imediatamente quando qualquer cliente for interrompido devido a algum erro. Sem essa opção, mesmo quando um cliente for interrompido, outros clientes podem continuar sua execução conforme especificado na opção `-t` ou `-T`, e o pgbench imprimirá resultados incompletos neste caso.
 
-Observe que as falhas de serialização ou as falhas de bloqueio não abortam o cliente, portanto, não são afetadas por essa opção. Consulte [Falhas e Repetições de Serialização/Bloqueio][(pgbench.md#FAILURES-AND-RETRIES "Failures and Serialization/Deadlock Retries")] para obter mais informações.
+Observe que as falhas de serialização ou as falhas de bloqueio não abortam o cliente, portanto, não são afetadas por essa opção. Consulte [Falhas e Repetições de Serialização/Bloqueio](pgbench.md#FAILURES-AND-RETRIES) para obter mais informações.
 
 `--failures-detailed` [#](#PGBENCH-OPTION-FAILURES-DETAILED): Relatar falhas nos logs de per-transação e agregação, bem como nos relatórios principais e por script, agrupados pelos seguintes tipos:
 
 * falhas de serialização; * falhas de bloqueio;
 
-Veja [Falhas e Serialização/Reintentos de Deadlock][(pgbench.md#FAILURES-AND-RETRIES "Failures and Serialization/Deadlock Retries")] para mais informações.
+Veja [Falhas e Serialização/Reintentos de Deadlock](pgbench.md#FAILURES-AND-RETRIES) para mais informações.
 
 `--log-prefix=prefix` [#](#PGBENCH-OPTION-LOG-PREFIX): Defina o prefixo do nome do arquivo para os arquivos de registro criados por `--log`. O padrão é `pgbench_log`.
 
@@ -237,7 +237,7 @@ Uma execução bem-sucedida sairá com o status 0. O status de saída 1 indica p
 
 `PGDATABASE` `PGHOST` `PGPORT` `PGUSER` [#](#PGBENCH-ENVIRONMENT-PGDATABASE): Parâmetros de conexão padrão.
 
-Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, utiliza as variáveis de ambiente suportadas pelo libpq (consulte a Seção 32.15 [(libpq-envars.md "32.15. Environment Variables")]).
+Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, utiliza as variáveis de ambiente suportadas pelo libpq (consulte a [Seção 32.15](libpq-envars.md)).
 
 A variável de ambiente `PG_COLOR` especifica se a cor deve ser usada nas mensagens de diagnóstico. Os valores possíveis são `always`, `auto` e `never`.
 
@@ -273,67 +273,82 @@ Antes do PostgreSQL 9.6, os comandos SQL em arquivos de script eram terminados p
 
 Assume-se que os scripts do pgbench não contenham blocos incompletos de transações SQL. Se, durante a execução, o cliente atingir o final do script sem completar o último bloco de transação, ele será abortado.
 
-Existe uma função simples de substituição de variáveis para arquivos de script. Os nomes das variáveis devem consistir em letras (incluindo letras não latinas), dígitos e sublinhados, com o primeiro caractere não sendo um dígito. As variáveis podem ser definidas pelo comando `-D` da opção de linha de comando, explicada acima, ou pelos comandos meta explicados abaixo. Além das variáveis pré-definidas por `-D` opções de linha de comando, há algumas variáveis que são pré-definidas automaticamente, listadas em [Tabela 301][(pgbench.md#PGBENCH-AUTOMATIC-VARIABLES "Table 301. pgbench Automatic Variables")]. Um valor especificado para essas variáveis usando `-D` tem precedência sobre os pré-definidos automaticamente. Uma vez definida, o valor de uma variável pode ser inserido em um comando SQL escrevendo [[`:`]*`variablename`*. Ao executar mais de uma sessão de cliente, cada sessão tem seu próprio conjunto de variáveis. O pgbench suporta até 255 usos de variáveis em uma declaração.
+Existe uma função simples de substituição de variáveis para arquivos de script. Os nomes das variáveis devem consistir em letras (incluindo letras não latinas), dígitos e sublinhados, com o primeiro caractere não sendo um dígito. As variáveis podem ser definidas pelo comando `-D` da opção de linha de comando, explicada acima, ou pelos comandos meta explicados abaixo. Além das variáveis pré-definidas por `-D` opções de linha de comando, há algumas variáveis que são pré-definidas automaticamente, listadas em [Tabela 301](pgbench.md#PGBENCH-AUTOMATIC-VARIABLES). Um valor especificado para essas variáveis usando `-D` tem precedência sobre os pré-definidos automaticamente. Uma vez definida, o valor de uma variável pode ser inserido em um comando SQL escrevendo [[`:`]*`variablename`*. Ao executar mais de uma sessão de cliente, cada sessão tem seu próprio conjunto de variáveis. O pgbench suporta até 255 usos de variáveis em uma declaração.
 
 **Tabela 301. Variáveis automáticas do pgbench**
 
 
 
 <table border="1" class="table" summary="pgbench Automatic Variables">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Variable
    </th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      client_id
     </code>
-</td>
-<td>número único que identifica a sessão do cliente (começa de zero)</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    número único que identifica a sessão do cliente (começa de zero)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      default_seed
     </code>
-</td>
-<td>semente usada em funções de permutação hash e pseudorandom por padrão</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    semente usada em funções de permutação hash e pseudorandom por padrão
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      random_seed
     </code>
-</td>
-<td>semente do gerador aleatório (a menos que seja sobrescrita<code class="option">
+   </td>
+   <td>
+    semente do gerador aleatório (a menos que seja sobrescrita
+    <code class="option">
      -D
-    </code>)</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+    </code>
+    )
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      scale
     </code>
-</td>
-<td>fator atual de escala</td>
-</tr>
-</tbody>
+   </td>
+   <td>
+    fator atual de escala
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Os comandos meta de arquivo de script começam com uma barra invertida (`\`) e normalmente se estendem até o final da linha, embora possam ser continuados para linhas adicionais escrevendo barra invertida-retorno. Os argumentos de um comando meta são separados por espaço em branco. Esses comandos meta são suportados:
 
@@ -347,8 +362,9 @@ Quando o comando `\aset` é usado, todas as consultas SQL combinadas (separadas 
 
 O exemplo a seguir coloca o saldo final da conta da primeira consulta na variável *`abalance`*, e preenche as variáveis *`p_two`* e *`p_three`* com inteiros da terceira consulta. O resultado da segunda consulta é descartado. O resultado das duas últimas consultas combinadas é armazenado nas variáveis *`four`* e *`five`*.
 
-``` UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid RETURNING abalance \gset -- compound of two queries SELECT 1 \; SELECT 2 AS two, 3 AS three \gset p_ SELECT 4 AS four \; SELECT 5 AS five \aset
-    ```
+```
+UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid RETURNING abalance \gset -- compound of two queries SELECT 1 \; SELECT 2 AS two, 3 AS three \gset p_ SELECT 4 AS four \; SELECT 5 AS five \aset
+```
 
 `\if` *`expression`* `\elif` *`expression`* `\else` `\endif` [#](#PGBENCH-METACOMMAND-IF-ELSE): Este grupo de comandos implementa blocos condicionais nestables, de forma semelhante ao `psql` de `\if` *`expression`](app-psql.md#PSQL-METACOMMAND-IF). As expressões condicionais são idênticas às de `\set`, com valores não nulos interpretados como verdadeiros.
 
@@ -364,1482 +380,1858 @@ Quando não é fornecida uma cláusula final `ELSE` para um `CASE`, o valor padr
 
 Exemplos:
 
-``` \set ntellers 10 * :scale \set aid (1021 * random(1, 100000 * :scale)) % \ (100000 * :scale) + 1 \set divx CASE WHEN :x <> 0 THEN :y/:x ELSE NULL END
-    ```
+```
+\set ntellers 10 * :scale \set aid (1021 * random(1, 100000 * :scale)) % \ (100000 * :scale) + 1 \set divx CASE WHEN :x <> 0 THEN :y/:x ELSE NULL END
+```
 
-`\sleep number [ us | ms | s ]` [#](#PGBENCH-METACOMMAND-SLEEP)
-:   Faz com que a execução do script durma por a duração especificada em
-    microsegundos (`us`), milissegundos (`ms`) ou segundos
-    (`s`). Se a unidade for omitida, então segundos são os padrões.
-    *`number`* pode ser uma constante inteira ou uma
-    `:`*`variablename`* referência a uma variável
-    que tenha um valor inteiro.
+`\sleep number [ us | ms | s ]` [#](#PGBENCH-METACOMMAND-SLEEP): Faz com que a execução do script durma por a duração especificada em microsegundos (`us`), milissegundos (`ms`) ou segundos (`s`). Se a unidade for omitida, então segundos são os padrões. *`number`* pode ser uma constante inteira ou uma `:`*`variablename`* referência a uma variável que tenha um valor inteiro.
 
 Exemplo:
 
-    ```
-    \sleep 10 ms
-    ```
+```
+\sleep 10 ms
+```
 
-`\setshell varname command [ argument ... ]` [#](#PGBENCH-METACOMMAND-SETSHELL)
-:   Define a variável *`varname`* como o resultado do comando de shell
-    *`command`* com os *`argument`*(s) fornecidos.
-    O comando deve retornar um valor inteiro através de sua saída padrão.
+`\setshell varname command [ argument ... ]` [#](#PGBENCH-METACOMMAND-SETSHELL): Define a variável *`varname`* como o resultado do comando de shell *`command`* com os *`argument`*(s) fornecidos. O comando deve retornar um valor inteiro através de sua saída padrão.
 
 *`command`* e cada *`argument`* pode ser uma constante de texto ou uma referência *`:`*`variablename`* para uma variável. Se você deseja usar um *`argument`* começando com um colon, escreva um colon adicional no início de *`argument`*.
 
 Exemplo:
 
-    ```
-    \setshell variable_to_be_assigned command literal_argument :variable ::literal_starting_with_colon
-    ```
+```
+\setshell variable_to_be_assigned command literal_argument :variable ::literal_starting_with_colon
+```
 
-`\shell command [ argument ... ]` [#](#PGBENCH-METACOMMAND-SHELL)
-:   O mesmo que `\setshell`, mas o resultado do comando é descartado.
+`\shell command [ argument ... ]` [#](#PGBENCH-METACOMMAND-SHELL): O mesmo que `\setshell`, mas o resultado do comando é descartado.
 
 Exemplo:
 
-    ```
-    \shell command literal_argument :variable ::literal_starting_with_colon
-    ```
+```
+\shell command literal_argument :variable ::literal_starting_with_colon
+```
 
-`\startpipeline` `\syncpipeline` `\endpipeline` [#](#PGBENCH-METACOMMAND-PIPELINE)
-:   Este grupo de comandos implementa a encadernação de instruções SQL.
-    Um pipeline deve começar com um `\startpipeline`
-    e terminar com um `\endpipeline`. Entre eles,
-    pode haver qualquer número de comandos `\syncpipeline`,
-    que envia uma mensagem de sincronização (protocol-flow.md#PROTOCOL-FLOW-EXT-QUERY "54.2.3. Extended Query")
-    sem encerrar o pipeline em andamento e limpar o buffer de envio.
-    No modo pipeline, as instruções são enviadas ao servidor sem esperar
-    pelos resultados das instruções anteriores. Veja
-    [Seção 32.5](libpq-pipeline-mode.md "32.5. Pipeline Mode") para mais detalhes.
-    O modo pipeline requer o uso do protocolo de consulta estendido.
+`\startpipeline` `\syncpipeline` `\endpipeline` [#](#PGBENCH-METACOMMAND-PIPELINE): Este grupo de comandos implementa a encadernação de instruções SQL. Um pipeline deve começar com um `\startpipeline` e terminar com um `\endpipeline`. Entre eles, pode haver qualquer número de comandos `\syncpipeline`, que envia uma mensagem de sincronização (protocol-flow.md#PROTOCOL-FLOW-EXT-QUERY "54.2.3. Extended Query") sem encerrar o pipeline em andamento e limpar o buffer de envio. No modo pipeline, as instruções são enviadas ao servidor sem esperar pelos resultados das instruções anteriores. Veja [Seção 32.5](libpq-pipeline-mode.md "32.5. Pipeline Mode") para mais detalhes. O modo pipeline requer o uso do protocolo de consulta estendido.
 
 ### Operadores embutidos
 
-Os operadores aritméticos, de comparação de bits, lógicos e listados na
-[Tabela 302](pgbench.md#PGBENCH-OPERATORS "Table 302. pgbench Operators") são integrados ao pgbench
-e podem ser usados em expressões que aparecem em
-[`\set`](pgbench.md#PGBENCH-METACOMMAND-SET).
-Os operadores são listados em ordem de precedência crescente.
-Exceto conforme indicado, os operadores que recebem duas entradas numéricas produzirão
-um valor duplo se qualquer uma das entradas for dupla, caso contrário, eles produzirão
-um resultado inteiro.
+Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tabela 302](pgbench.md#PGBENCH-OPERATORS "Table 302. pgbench Operators") são integrados ao pgbench e podem ser usados em expressões que aparecem em [`\set`](pgbench.md#PGBENCH-METACOMMAND-SET). Os operadores são listados em ordem de precedência crescente. Exceto conforme indicado, os operadores que recebem duas entradas numéricas produzirão um valor duplo se qualquer uma das entradas for dupla, caso contrário, eles produzirão um resultado inteiro.
 
 **Tabela 302. Operadores pgbench**
 
 
 
 <table border="1" class="table" summary="pgbench Operators">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">Operador</p>
-<p>Descrição</p>
-<p>Exemplo(s)</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<em class="replaceable">
-<code>
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
+     Operador
+    </p>
+    <p>
+     Descrição
+    </p>
+    <p>
+     Exemplo(s)
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <em class="replaceable">
+      <code>
        boolean
       </code>
-</em>
-<code class="literal">
+     </em>
+     <code class="literal">
       OR
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        boolean
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         boolean
        </code>
-</em>
-</code>
-</p>
-<p>OU lógico</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     OU lógico
+    </p>
+    <p>
+     <code class="literal">
       5 or 0
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       TRUE
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<em class="replaceable">
-<code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <em class="replaceable">
+      <code>
        boolean
       </code>
-</em>
-<code class="literal">
+     </em>
+     <code class="literal">
       AND
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        boolean
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         boolean
        </code>
-</em>
-</code>
-</p>
-<p>E lógico e</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     E lógico e
+    </p>
+    <p>
+     <code class="literal">
       3 and 0
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       FALSE
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="literal">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="literal">
       NOT
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        boolean
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         boolean
        </code>
-</em>
-</code>
-</p>
-<p>Lógico NÃO</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     Lógico NÃO
+    </p>
+    <p>
+     <code class="literal">
       not false
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       TRUE
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<em class="replaceable">
-<code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <em class="replaceable">
+      <code>
        boolean
       </code>
-</em>
-<code class="literal">
+     </em>
+     <code class="literal">
       IS [NOT] (NULL|TRUE|FALSE)
-     </code>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </code>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         boolean
        </code>
-</em>
-</code>
-</p>
-<p>Testes de valor booleano</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     Testes de valor booleano
+    </p>
+    <p>
+     <code class="literal">
       1 is null
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       FALSE
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<em class="replaceable">
-<code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <em class="replaceable">
+      <code>
        value
       </code>
-</em>
-<code class="literal">
+     </em>
+     <code class="literal">
       ISNULL|NOTNULL
-     </code>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </code>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         boolean
        </code>
-</em>
-</code>
-</p>
-<p>Testes de nulidade</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     Testes de nulidade
+    </p>
+    <p>
+     <code class="literal">
       1 notnull
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       TRUE
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<em class="replaceable">
-<code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>
-<code class="literal">
+     </em>
+     <code class="literal">
       =
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         boolean
        </code>
-</em>
-</code>
-</p>
-<p>Igual</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     Igual
+    </p>
+    <p>
+     <code class="literal">
       5 = 4
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       FALSE
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<em class="replaceable">
-<code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>
-<code class="literal">
+     </em>
+     <code class="literal">
       &lt;&gt;
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         boolean
        </code>
-</em>
-</code>
-</p>
-<p>Não igual</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     Não igual
+    </p>
+    <p>
+     <code class="literal">
       5 &lt;&gt; 4
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       TRUE
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<em class="replaceable">
-<code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>
-<code class="literal">
+     </em>
+     <code class="literal">
       !=
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         boolean
        </code>
-</em>
-</code>
-</p>
-<p>Não igual</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     Não igual
+    </p>
+    <p>
+     <code class="literal">
       5 != 5
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       FALSE
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<em class="replaceable">
-<code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>
-<code class="literal">
+     </em>
+     <code class="literal">
       &lt;
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         boolean
        </code>
-</em>
-</code>
-</p>
-<p>Menos de</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     Menos de
+    </p>
+    <p>
+     <code class="literal">
       5 &lt; 4
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       FALSE
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<em class="replaceable">
-<code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>
-<code class="literal">
+     </em>
+     <code class="literal">
       &lt;=
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         boolean
        </code>
-</em>
-</code>
-</p>
-<p>Menos ou igual a</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     Menos ou igual a
+    </p>
+    <p>
+     <code class="literal">
       5 &lt;= 4
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       FALSE
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<em class="replaceable">
-<code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>
-<code class="literal">
+     </em>
+     <code class="literal">
       &gt;
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         boolean
        </code>
-</em>
-</code>
-</p>
-<p>Superior a</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     Superior a
+    </p>
+    <p>
+     <code class="literal">
       5 &gt; 4
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       TRUE
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<em class="replaceable">
-<code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>
-<code class="literal">
+     </em>
+     <code class="literal">
       &gt;=
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         boolean
        </code>
-</em>
-</code>
-</p>
-<p>Maior que ou igual a</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     Maior que ou igual a
+    </p>
+    <p>
+     <code class="literal">
       5 &gt;= 4
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       TRUE
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<em class="replaceable">
-<code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <em class="replaceable">
+      <code>
        integer
       </code>
-</em>
-<code class="literal">
+     </em>
+     <code class="literal">
       |
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        integer
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         integer
        </code>
-</em>
-</code>
-</p>
-<p>XOR (Bitwise OU)</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     XOR (Bitwise OU)
+    </p>
+    <p>
+     <code class="literal">
       1 | 2
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       3
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<em class="replaceable">
-<code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <em class="replaceable">
+      <code>
        integer
       </code>
-</em>
-<code class="literal">
+     </em>
+     <code class="literal">
       #
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        integer
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         integer
        </code>
-</em>
-</code>
-</p>
-<p>XOR bit a bit</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     XOR bit a bit
+    </p>
+    <p>
+     <code class="literal">
       1 # 3
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       2
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<em class="replaceable">
-<code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <em class="replaceable">
+      <code>
        integer
       </code>
-</em>
-<code class="literal">
+     </em>
+     <code class="literal">
       &amp;
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        integer
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         integer
        </code>
-</em>
-</code>
-</p>
-<p>E AND bit a bit</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     E AND bit a bit
+    </p>
+    <p>
+     <code class="literal">
       1 &amp; 3
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       1
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="literal">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="literal">
       ~
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        integer
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         integer
        </code>
-</em>
-</code>
-</p>
-<p>Bitwise NOT</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     Bitwise NOT
+    </p>
+    <p>
+     <code class="literal">
       ~ 1
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       -2
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<em class="replaceable">
-<code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <em class="replaceable">
+      <code>
        integer
       </code>
-</em>
-<code class="literal">
+     </em>
+     <code class="literal">
       &lt;&lt;
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        integer
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         integer
        </code>
-</em>
-</code>
-</p>
-<p>Deslocamento à esquerda bit a bit</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     Deslocamento à esquerda bit a bit
+    </p>
+    <p>
+     <code class="literal">
       1 &lt;&lt; 2
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       4
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<em class="replaceable">
-<code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <em class="replaceable">
+      <code>
        integer
       </code>
-</em>
-<code class="literal">
+     </em>
+     <code class="literal">
       &gt;&gt;
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        integer
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         integer
        </code>
-</em>
-</code>
-</p>
-<p>Deslocamento à direita bit a bit</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     Deslocamento à direita bit a bit
+    </p>
+    <p>
+     <code class="literal">
       8 &gt;&gt; 2
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       2
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<em class="replaceable">
-<code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>
-<code class="literal">
+     </em>
+     <code class="literal">
       +
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         number
        </code>
-</em>
-</code>
-</p>
-<p>Adição</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     Adição
+    </p>
+    <p>
+     <code class="literal">
       5 + 4
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       9
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<em class="replaceable">
-<code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>
-<code class="literal">
+     </em>
+     <code class="literal">
       -
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         number
        </code>
-</em>
-</code>
-</p>
-<p>Subtração</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     Subtração
+    </p>
+    <p>
+     <code class="literal">
       3 - 2.0
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       1.0
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<em class="replaceable">
-<code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>
-<code class="literal">
+     </em>
+     <code class="literal">
       *
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         number
        </code>
-</em>
-</code>
-</p>
-<p>Multiplicação</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     Multiplicação
+    </p>
+    <p>
+     <code class="literal">
       5 * 4
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       20
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<em class="replaceable">
-<code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>
-<code class="literal">
+     </em>
+     <code class="literal">
       /
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         number
        </code>
-</em>
-</code>
-</p>
-<p>Divisão (truncando o resultado para zero se ambos os inputs forem inteiros)</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     Divisão (truncando o resultado para zero se ambos os inputs forem inteiros)
+    </p>
+    <p>
+     <code class="literal">
       5 / 3
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       1
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<em class="replaceable">
-<code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <em class="replaceable">
+      <code>
        integer
       </code>
-</em>
-<code class="literal">
+     </em>
+     <code class="literal">
       %
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        integer
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         integer
        </code>
-</em>
-</code>
-</p>
-<p>Modulo (resto)</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     Modulo (resto)
+    </p>
+    <p>
+     <code class="literal">
       3 % 2
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       1
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="literal">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="literal">
       -
      </code>
-<em class="replaceable">
-<code>
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>→<code class="returnvalue">
-<em class="replaceable">
-<code>
+     </em>
+     →
+     <code class="returnvalue">
+      <em class="replaceable">
+       <code>
         number
        </code>
-</em>
-</code>
-</p>
-<p>Negação</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     Negação
+    </p>
+    <p>
+     <code class="literal">
       - 2.0
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       -2.0
      </code>
-</p>
-</td>
-</tr>
-</tbody>
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 
 ### Funções embutidas
 
-As funções listadas na [Tabela 303][(pgbench.md#PGBENCH-FUNCTIONS "Table 303. pgbench Functions")] são incorporadas ao pgbench e podem ser usadas em expressões que aparecem em [[`\set`][(pgbench.md#PGBENCH-METACOMMAND-SET)]].
+As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorporadas ao pgbench e podem ser usadas em expressões que aparecem em [[`\set`](pgbench.md#PGBENCH-METACOMMAND-SET)].
 
 **Tabela 303. Funções pgbench**
 
 
 
 <table border="1" class="table" summary="pgbench Functions">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">Função</p>
-<p>Descrição</p>
-<p>Exemplo(s)</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
+     Função
+    </p>
+    <p>
+     Descrição
+    </p>
+    <p>
+     Exemplo(s)
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       abs
-     </code>(<em class="replaceable">
-<code>
+     </code>
+     (
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>)<code class="returnvalue">
-</code>mesmo tipo que a entrada</p>
-<p>Valor absoluto</p>
-<p>
-<code class="literal">
+     </em>
+     )
+     <code class="returnvalue">
+     </code>
+     mesmo tipo que a entrada
+    </p>
+    <p>
+     Valor absoluto
+    </p>
+    <p>
+     <code class="literal">
       abs(-17)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       17
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       debug
-     </code>(<em class="replaceable">
-<code>
+     </code>
+     (
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>)<code class="returnvalue">
-</code>mesmo tipo que a entrada</p>
-<p>Imprime o argumento para<span class="systemitem">stderr</span>, e retorna o argumento.</p>
-<p>
-<code class="literal">
+     </em>
+     )
+     <code class="returnvalue">
+     </code>
+     mesmo tipo que a entrada
+    </p>
+    <p>
+     Imprime o argumento para
+     <span class="systemitem">
+      stderr
+     </span>
+     , e retorna o argumento.
+    </p>
+    <p>
+     <code class="literal">
       debug(5432.1)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       5432.1
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
-      double
-     </code>(<em class="replaceable">
-<code>
-       number
-      </code>
-</em>)<code class="returnvalue">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       double
      </code>
-</p>
-<p>Jogos para duplicar.</p>
-<p>
-<code class="literal">
+     (
+     <em class="replaceable">
+      <code>
+       number
+      </code>
+     </em>
+     )
+     <code class="returnvalue">
+      double
+     </code>
+    </p>
+    <p>
+     Jogos para duplicar.
+    </p>
+    <p>
+     <code class="literal">
       double(5432)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       5432.0
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       exp
-     </code>(<em class="replaceable">
-<code>
+     </code>
+     (
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>)<code class="returnvalue">
+     </em>
+     )
+     <code class="returnvalue">
       double
      </code>
-</p>
-<p>Explicativa (<code class="literal">
+    </p>
+    <p>
+     Explicativa (
+     <code class="literal">
       e
-     </code>elevado à potência dada)</p>
-<p>
-<code class="literal">
+     </code>
+     elevado à potência dada)
+    </p>
+    <p>
+     <code class="literal">
       exp(1.0)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       2.718281828459045
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       greatest
-     </code>(<em class="replaceable">
-<code>
+     </code>
+     (
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>[<span class="optional">,<code class="literal">
+     </em>
+     [
+     <span class="optional">
+      ,
+      <code class="literal">
        ...
       </code>
-</span>] )<code class="returnvalue">
-</code>
-<code class="type">
+     </span>
+     ] )
+     <code class="returnvalue">
+     </code>
+     <code class="type">
       double
-     </code>se algum argumento for duplo, senão<code class="type">
+     </code>
+     se algum argumento for duplo, senão
+     <code class="type">
       integer
      </code>
-</p>
-<p>Seleciona o maior valor entre os argumentos.</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     Seleciona o maior valor entre os argumentos.
+    </p>
+    <p>
+     <code class="literal">
       greatest(5, 4, 3, 2)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       5
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       hash
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        value
       </code>
-</em>[<span class="optional">,<em class="parameter">
-<code>
+     </em>
+     [
+     <span class="optional">
+      ,
+      <em class="parameter">
+       <code>
         seed
        </code>
-</em>
-</span>] )<code class="returnvalue">
+      </em>
+     </span>
+     ] )
+     <code class="returnvalue">
       integer
      </code>
-</p>
-<p>Este é um alias para<code class="function">
+    </p>
+    <p>
+     Este é um alias para
+     <code class="function">
       hash_murmur2
      </code>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       hash(10, 5432)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       -5817877081768721676
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       hash_fnv1a
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        value
       </code>
-</em>[<span class="optional">,<em class="parameter">
-<code>
+     </em>
+     [
+     <span class="optional">
+      ,
+      <em class="parameter">
+       <code>
         seed
        </code>
-</em>
-</span>] )<code class="returnvalue">
+      </em>
+     </span>
+     ] )
+     <code class="returnvalue">
       integer
      </code>
-</p>
-<p>Calcula<a class="ulink" href="https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function" target="_top">Hash FNV-1a</a>
+    </p>
+    <p>
+     Calcula
+     <a class="ulink" href="https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function" target="_top">
+      Hash FNV-1a
+     </a>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       hash_fnv1a(10, 5432)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       -7793829335365542153
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       hash_murmur2
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        value
       </code>
-</em>[<span class="optional">,<em class="parameter">
-<code>
+     </em>
+     [
+     <span class="optional">
+      ,
+      <em class="parameter">
+       <code>
         seed
        </code>
-</em>
-</span>] )<code class="returnvalue">
+      </em>
+     </span>
+     ] )
+     <code class="returnvalue">
       integer
      </code>
-</p>
-<p>Calcula<a class="ulink" href="https://en.wikipedia.org/wiki/MurmurHash" target="_top">MurmurHash2 hash</a>
+    </p>
+    <p>
+     Calcula
+     <a class="ulink" href="https://en.wikipedia.org/wiki/MurmurHash" target="_top">
+      MurmurHash2 hash
+     </a>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       hash_murmur2(10, 5432)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       -5817877081768721676
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       int
-     </code>(<em class="replaceable">
-<code>
+     </code>
+     (
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>)<code class="returnvalue">
+     </em>
+     )
+     <code class="returnvalue">
       integer
      </code>
-</p>
-<p>Arranjos para inteiro.</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     Arranjos para inteiro.
+    </p>
+    <p>
+     <code class="literal">
       int(5.4 + 3.8)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       9
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       least
-     </code>(<em class="replaceable">
-<code>
+     </code>
+     (
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>[<span class="optional">,<code class="literal">
+     </em>
+     [
+     <span class="optional">
+      ,
+      <code class="literal">
        ...
       </code>
-</span>] )<code class="returnvalue">
-</code>
-<code class="type">
+     </span>
+     ] )
+     <code class="returnvalue">
+     </code>
+     <code class="type">
       double
-     </code>se algum argumento for duplo, senão<code class="type">
+     </code>
+     se algum argumento for duplo, senão
+     <code class="type">
       integer
      </code>
-</p>
-<p>Seleciona o menor valor entre os argumentos.</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     Seleciona o menor valor entre os argumentos.
+    </p>
+    <p>
+     <code class="literal">
       least(5, 4, 3, 2.1)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       2.1
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       ln
-     </code>(<em class="replaceable">
-<code>
+     </code>
+     (
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>)<code class="returnvalue">
+     </em>
+     )
+     <code class="returnvalue">
       double
      </code>
-</p>
-<p>Logarítmico natural</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     Logarítmico natural
+    </p>
+    <p>
+     <code class="literal">
       ln(2.718281828459045)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       1.0
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       mod
-     </code>(<em class="replaceable">
-<code>
+     </code>
+     (
+     <em class="replaceable">
+      <code>
        integer
       </code>
-</em>,<em class="replaceable">
-<code>
+     </em>
+     ,
+     <em class="replaceable">
+      <code>
        integer
       </code>
-</em>)<code class="returnvalue">
+     </em>
+     )
+     <code class="returnvalue">
       integer
      </code>
-</p>
-<p>Modulo (resto)</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     Modulo (resto)
+    </p>
+    <p>
+     <code class="literal">
       mod(54, 32)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       22
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       permute
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        i
       </code>
-</em>,<em class="parameter">
-<code>
+     </em>
+     ,
+     <em class="parameter">
+      <code>
        size
       </code>
-</em>[,<em class="parameter">
-<code>
+     </em>
+     [,
+     <em class="parameter">
+      <code>
        seed
       </code>
-</em>] )<code class="returnvalue">
+     </em>
+     ] )
+     <code class="returnvalue">
       integer
      </code>
-</p>
-<p>Valor permutado de<em class="parameter">
-<code>
+    </p>
+    <p>
+     Valor permutado de
+     <em class="parameter">
+      <code>
        i
       </code>
-</em>, na faixa<code class="literal">
+     </em>
+     , na faixa
+     <code class="literal">
       [0, size)
-     </code>. Esta é a nova posição de<em class="parameter">
-<code>
+     </code>
+     . Esta é a nova posição de
+     <em class="parameter">
+      <code>
        i
       </code>
-</em>(modulo<em class="parameter">
-<code>
+     </em>
+     (modulo
+     <em class="parameter">
+      <code>
        size
       </code>
-</em>) em uma permutação pseudorandom de inteiros<code class="literal">
+     </em>
+     ) em uma permutação pseudorandom de inteiros
+     <code class="literal">
       0...size-1
-     </code>, parametrizado por<em class="parameter">
-<code>
+     </code>
+     , parametrizado por
+     <em class="parameter">
+      <code>
        seed
       </code>
-</em>, veja abaixo.</p>
-<p>
-<code class="literal">
+     </em>
+     , veja abaixo.
+    </p>
+    <p>
+     <code class="literal">
       permute(0, 4)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       an integer between 0 and 3
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       pi
-     </code>()<code class="returnvalue">
+     </code>
+     ()
+     <code class="returnvalue">
       double
      </code>
-</p>
-<p>Valor aproximado de<span class="symbol_font">π</span>
-</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     Valor aproximado de
+     <span class="symbol_font">
+      π
+     </span>
+    </p>
+    <p>
+     <code class="literal">
       pi()
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       3.14159265358979323846
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       pow
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        x
       </code>
-</em>,<em class="parameter">
-<code>
+     </em>
+     ,
+     <em class="parameter">
+      <code>
        y
       </code>
-</em>)<code class="returnvalue">
+     </em>
+     )
+     <code class="returnvalue">
       double
      </code>
-</p>
-<p class="func_signature">
-<code class="function">
+    </p>
+    <p class="func_signature">
+     <code class="function">
       power
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        x
       </code>
-</em>,<em class="parameter">
-<code>
+     </em>
+     ,
+     <em class="parameter">
+      <code>
        y
       </code>
-</em>)<code class="returnvalue">
+     </em>
+     )
+     <code class="returnvalue">
       double
      </code>
-</p>
-<p>
-<em class="parameter">
-<code>
+    </p>
+    <p>
+     <em class="parameter">
+      <code>
        x
       </code>
-</em>elevado à potência de<em class="parameter">
-<code>
+     </em>
+     elevado à potência de
+     <em class="parameter">
+      <code>
        y
       </code>
-</em>
-</p>
-<p>
-<code class="literal">
+     </em>
+    </p>
+    <p>
+     <code class="literal">
       pow(2.0, 10)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       1024.0
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       random
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        lb
       </code>
-</em>,<em class="parameter">
-<code>
+     </em>
+     ,
+     <em class="parameter">
+      <code>
        ub
       </code>
-</em>)<code class="returnvalue">
+     </em>
+     )
+     <code class="returnvalue">
       integer
      </code>
-</p>
-<p>Calcula um número inteiro aleatório distribuído uniformemente em<code class="literal">
-      [lb,
-        ub]
+    </p>
+    <p>
+     Calcula um número inteiro aleatório distribuído uniformemente em
+     <code class="literal">
+      [lb, ub]
      </code>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       random(1, 10)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       an integer between 1 and 10
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       random_exponential
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        lb
       </code>
-</em>,<em class="parameter">
-<code>
+     </em>
+     ,
+     <em class="parameter">
+      <code>
        ub
       </code>
-</em>,<em class="parameter">
-<code>
+     </em>
+     ,
+     <em class="parameter">
+      <code>
        parameter
       </code>
-</em>)<code class="returnvalue">
+     </em>
+     )
+     <code class="returnvalue">
       integer
      </code>
-</p>
-<p>Calcula um número inteiro aleatório distribuído exponencialmente<code class="literal">
-      [lb,
-        ub]
-     </code>, veja abaixo.</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     Calcula um número inteiro aleatório distribuído exponencialmente
+     <code class="literal">
+      [lb, ub]
+     </code>
+     , veja abaixo.
+    </p>
+    <p>
+     <code class="literal">
       random_exponential(1, 10, 3.0)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       an integer between 1 and 10
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       random_gaussian
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        lb
       </code>
-</em>,<em class="parameter">
-<code>
+     </em>
+     ,
+     <em class="parameter">
+      <code>
        ub
       </code>
-</em>,<em class="parameter">
-<code>
+     </em>
+     ,
+     <em class="parameter">
+      <code>
        parameter
       </code>
-</em>)<code class="returnvalue">
+     </em>
+     )
+     <code class="returnvalue">
       integer
      </code>
-</p>
-<p>Calcula um número inteiro aleatório distribuído de forma gaussiana<code class="literal">
-      [lb,
-        ub]
-     </code>, veja abaixo.</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     Calcula um número inteiro aleatório distribuído de forma gaussiana
+     <code class="literal">
+      [lb, ub]
+     </code>
+     , veja abaixo.
+    </p>
+    <p>
+     <code class="literal">
       random_gaussian(1, 10, 2.5)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       an integer between 1 and 10
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       random_zipfian
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        lb
       </code>
-</em>,<em class="parameter">
-<code>
+     </em>
+     ,
+     <em class="parameter">
+      <code>
        ub
       </code>
-</em>,<em class="parameter">
-<code>
+     </em>
+     ,
+     <em class="parameter">
+      <code>
        parameter
       </code>
-</em>)<code class="returnvalue">
+     </em>
+     )
+     <code class="returnvalue">
       integer
      </code>
-</p>
-<p>Calcula um número inteiro aleatório distribuído de acordo com a Zipf,<code class="literal">
-      [lb,
-        ub]
-     </code>, veja abaixo.</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     Calcula um número inteiro aleatório distribuído de acordo com a Zipf,
+     <code class="literal">
+      [lb, ub]
+     </code>
+     , veja abaixo.
+    </p>
+    <p>
+     <code class="literal">
       random_zipfian(1, 10, 1.5)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       an integer between 1 and 10
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       sqrt
-     </code>(<em class="replaceable">
-<code>
+     </code>
+     (
+     <em class="replaceable">
+      <code>
        number
       </code>
-</em>)<code class="returnvalue">
+     </em>
+     )
+     <code class="returnvalue">
       double
      </code>
-</p>
-<p>raiz quadrada</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     raiz quadrada
+    </p>
+    <p>
+     <code class="literal">
       sqrt(2.0)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       1.414213562
      </code>
-</p>
-</td>
-</tr>
-</tbody>
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 A função `random` gera valores usando uma distribuição uniforme, ou seja, todos os valores são extraídos dentro do intervalo especificado com probabilidade igual. As funções `random_exponential`, `random_gaussian` e `random_zipfian` requerem um parâmetro duplo adicional que determina a forma precisa da distribuição.
 
@@ -1847,68 +2239,17 @@ A função `random` gera valores usando uma distribuição uniforme, ou seja, to
 
 f(x) = exp(-parâmetro * (x - min) / (max - min + 1)) / (1 - exp(-parâmetro))
 
-Então o valor *`i`* entre *`min`* e
-*`max`* inclusive é traçado com probabilidade de:
-`f(i) - f(i + 1)`.
+Então o valor *`i`* entre *`min`* e *`max`* inclusive é traçado com probabilidade de: `f(i) - f(i + 1)`.
 
-Intuitivamente, quanto maior o *`parameter`*, mais
-frequentemente valores próximos a *`min`* são acessados, e
-menos frequentemente valores próximos a *`max`* são acessados.
-Quanto mais próximo de 0 *`parameter`* estiver, mais
-plana (mais uniforme) será a distribuição de acesso.
-Uma aproximação grosseira da distribuição é que os valores mais
-frequentes no intervalo, próximos a *`min`*, são
-drawn *`parameter`% das vezes.
-O valor de *`parameter`* deve ser estritamente positivo.
-* Para uma distribuição gaussiana, o intervalo é mapeado para uma
-distribuição normal padrão (a curva gaussiana clássica em forma de sino)
-truncada em `-parameter` à esquerda e `+parameter`
-à direita.
-Valores no meio do intervalo têm mais probabilidade de serem
-drawn. Para ser preciso, se `PHI(x)` é a função de
-distribuição cumulativa da distribuição normal padrão, com média
-`mu` definida como `(max + min) / 2.0`, com
-*
+Intuitivamente, quanto maior o *`parameter`*, mais frequentemente valores próximos a *`min`* são acessados, e menos frequentemente valores próximos a *`max`* são acessados. Quanto mais próximo de 0 *`parameter`* estiver, mais plana (mais uniforme) será a distribuição de acesso. Uma aproximação grosseira da distribuição é que os valores mais frequentes no intervalo, próximos a *`min`*, são drawn *`parameter`% das vezes. O valor de *`parameter`* deve ser estritamente positivo.
+* Para uma distribuição gaussiana, o intervalo é mapeado para uma distribuição normal padrão (a curva gaussiana clássica em forma de sino) truncada em `-parameter` à esquerda e `+parameter` à direita. Valores no meio do intervalo têm mais probabilidade de serem drawn. Para ser preciso, se `PHI(x)` é a função de distribuição cumulativa da distribuição normal padrão, com média `mu` definida como `(max + min) / 2.0`, com *
 
 f(x) = PHI(2,0 * parâmetro * (x - μ) / (max - min + 1)) / (2,0 * PHI(parâmetro) - 1)
 
-O valor *`i`* entre *`min`* e
-*`max`* inclusive é extraído com probabilidade de:
-*`f(i + 0.5) - f(i - 0.5)`.
-Intuitivamente, quanto maior o *`parameter`*, mais
-frequentemente valores próximos ao meio do intervalo são extraídos, e
-menos frequentemente valores próximos aos limites *`min`* e
-*`max`*. Aproximadamente 67% dos valores são extraídos do
-meio *`1.0 / parameter`, ou seja, um relativo
-*`0.5 / parameter` em torno da média, e 95% no meio
-*`2.0 / parameter`, ou seja, um relativo
-*`1.0 / parameter` em torno da média; por exemplo, se
-*`parameter`* é 4,0, 67% dos valores são extraídos do
-quarto médio (1,0 / 4,0) do intervalo (ou seja, de
-*`3.0 / 8.0` a *`5.0 / 8.0`) e 95% da metade
-meio *`2.0 / 4.0` do intervalo (segundo e terceiro
-quartis). O valor mínimo permitido de *`parameter`*
-é 2,0.
-* `random_zipfian` gera uma distribuição Zipfiana
-limitada.
-*`parameter` define como enviesada a distribuição. Quanto
-maior o *`parameter`*, mais frequentemente valores
-próximos ao início do intervalo são extraídos. A distribuição é
-tal que, assumindo que a faixa começa em 1, a razão da
-probabilidade de extrair *`k`*
-em comparação com extrair *`k+1`* é
-*`((k+1)/k)**parameter`.
-Por exemplo, *`random_zipfian(1, ..., 2.5)` produz
-o valor *`1` aproximadamente *`(2/1)**2.5 =
-  5.66`
-vezes mais frequente do que *`2`, que
-por sua vez é produzido *`(3/2)**2.5 = 2.76` vezes mais
-frequente do que *`3`, e assim por diante.
+O valor *`i`* entre *`min`* e *`max`* inclusive é extraído com probabilidade de: *`f(i + 0.5) - f(i - 0.5)`. Intuitivamente, quanto maior o *`parameter`*, mais frequentemente valores próximos ao meio do intervalo são extraídos, e menos frequentemente valores próximos aos limites *`min`* e *`max`*. Aproximadamente 67% dos valores são extraídos do meio *`1.0 / parameter`, ou seja, um relativo *`0.5 / parameter` em torno da média, e 95% no meio *`2.0 / parameter`, ou seja, um relativo *`1.0 / parameter` em torno da média; por exemplo, se *`parameter`* é 4,0, 67% dos valores são extraídos do quarto médio (1,0 / 4,0) do intervalo (ou seja, de *`3.0 / 8.0` a *`5.0 / 8.0`) e 95% da metade meio *`2.0 / 4.0` do intervalo (segundo e terceiro quartis). O valor mínimo permitido de *`parameter`* é 2,0.
+* `random_zipfian` gera uma distribuição Zipfiana limitada. *`parameter` define como enviesada a distribuição. Quanto maior o *`parameter`*, mais frequentemente valores próximos ao início do intervalo são extraídos. A distribuição é tal que, assumindo que a faixa começa em 1, a razão da probabilidade de extrair *`k`* em comparação com extrair *`k+1`* é *`((k+1)/k)**parameter`. Por exemplo, *`random_zipfian(1, ..., 2.5)` produz o valor *`1` aproximadamente *`(2/1)**2.5 = 5.66` vezes mais frequente do que *`2`, que por sua vez é produzido *`(3/2)**2.5 = 2.76` vezes mais frequente do que *`3`, e assim por diante.
 
-A implementação do pgbench é baseada na
-"Geração de Variáveis Aleatórias Não Uniformes", Luc Devroye, p. 550-551,
-Springer 1986. Devido às limitações desse algoritmo,
-o valor *`parameter`* é restrito ao intervalo [1,001, 1000].
+A implementação do pgbench é baseada na "Geração de Variáveis Aleatórias Não Uniformes", Luc Devroye, p. 550-551, Springer 1986. Devido às limitações desse algoritmo, o valor *`parameter`* é restrito ao intervalo [1,001, 1000].
 
 ### Nota
 
@@ -1916,18 +2257,9 @@ Ao projetar um benchmark que seleciona linhas de forma não uniforme, esteja cie
 
 Para evitar isso, você pode querer usar a função `permute` ou algum outro passo adicional com efeito semelhante, para embaralhar as linhas selecionadas e remover tais correlações.
 
-As funções de hash `hash`, `hash_murmur2` e
-`hash_fnv1a` aceitam um valor de entrada e um parâmetro de semente opcional.
-Caso a semente não seja fornecida, o valor de `:default_seed`
-é usado, que é inicializado aleatoriamente, a menos que seja definido pela opção de linha de comando
-`-D`.
+As funções de hash `hash`, `hash_murmur2` e `hash_fnv1a` aceitam um valor de entrada e um parâmetro de semente opcional. Caso a semente não seja fornecida, o valor de `:default_seed` é usado, que é inicializado aleatoriamente, a menos que seja definido pela opção de linha de comando `-D`.
 
-`permute` aceita um valor de entrada, um tamanho e um parâmetro opcional
-seed. Ele gera uma permutação pseudorandom de inteiros no intervalo
-`[0, size)`, e retorna o índice do valor de entrada nos valores permutados. A permutação escolhida é parametrizada pelo seed, que é padrão em `:default_seed`, se não for especificado. Ao contrário das funções de hash, `permute` garante que não haja colisões ou lacunas nos valores de saída. Os valores de entrada fora do intervalo são interpretados módulo o tamanho. A função gera um erro se o tamanho não for positivo. `permute` pode ser usado para espalhar a distribuição de funções aleatórias não uniformes, como `random_zipfian` ou `random_exponential`
-para que os valores tirados com mais frequência não estejam trivialmente correlacionados. Por exemplo, o seguinte script pgbench
-simula um possível trabalho real típico de plataformas de mídia social e
-blog, onde algumas contas geram carga excessiva:
+`permute` aceita um valor de entrada, um tamanho e um parâmetro opcional seed. Ele gera uma permutação pseudorandom de inteiros no intervalo `[0, size)`, e retorna o índice do valor de entrada nos valores permutados. A permutação escolhida é parametrizada pelo seed, que é padrão em `:default_seed`, se não for especificado. Ao contrário das funções de hash, `permute` garante que não haja colisões ou lacunas nos valores de saída. Os valores de entrada fora do intervalo são interpretados módulo o tamanho. A função gera um erro se o tamanho não for positivo. `permute` pode ser usado para espalhar a distribuição de funções aleatórias não uniformes, como `random_zipfian` ou `random_exponential` para que os valores tirados com mais frequência não estejam trivialmente correlacionados. Por exemplo, o seguinte script pgbench simula um possível trabalho real típico de plataformas de mídia social e blog, onde algumas contas geram carga excessiva:
 
 ```
 \set size 1000000 \set r random_zipfian(1, :size, 1.07) \set k 1 + permute(:r, :size)
@@ -1957,24 +2289,9 @@ Este script permite que cada iteração da transação faça referência a linha
 
 ### Registro por Transação
 
-Com a opção `-l` (mas sem a opção `--aggregate-interval`),
-pgbench escreve informações sobre cada transação
-em um arquivo de registro. O arquivo de registro será nomeado
-`prefix.nnn`,
-onde *`prefix`* por padrão será `pgbench_log`, e
-*`nnn`* é o PID do
-pgbench.
-O prefixo pode ser alterado usando a opção `--log-prefix`.
-Se a opção `-j` for 2 ou superior, de modo que haja vários
-threads de trabalhador, cada um terá seu próprio arquivo de registro. O primeiro trabalhador
-usará o mesmo nome para seu arquivo de registro que no caso padrão de um trabalhador único.
-Os arquivos de registro adicionais para os outros trabalhadores serão nomeados
-`prefix.nnn.mmm`,
-onde *`mmm`* é um número sequencial para cada trabalhador começando
-com 1.
+Com a opção `-l` (mas sem a opção `--aggregate-interval`), pgbench escreve informações sobre cada transação em um arquivo de registro. O arquivo de registro será nomeado `prefix.nnn`, onde *`prefix`* por padrão será `pgbench_log`, e *`nnn`* é o PID do pgbench. O prefixo pode ser alterado usando a opção `--log-prefix`. Se a opção `-j` for 2 ou superior, de modo que haja vários threads de trabalhador, cada um terá seu próprio arquivo de registro. O primeiro trabalhador usará o mesmo nome para seu arquivo de registro que no caso padrão de um trabalhador único. Os arquivos de registro adicionais para os outros trabalhadores serão nomeados `prefix.nnn.mmm`, onde *`mmm`* é um número sequencial para cada trabalhador começando com 1.
 
-Cada linha em um arquivo de registro descreve uma transação.
-Ele contém os seguintes campos separados por espaço:
+Cada linha em um arquivo de registro descreve uma transação. Ele contém os seguintes campos separados por espaço:
 
 *`client_id`*   identifica a sessão do cliente que executou a transação
 
@@ -1982,32 +2299,17 @@ Ele contém os seguintes campos separados por espaço:
 
 *`time`* *tempo transcorrido da transação, em microsegundos
 
-*`script_no`*   identifica o arquivo de script que foi utilizado para a transação
-    (útil quando vários scripts são especificados
-    com `-f` ou `-b`)
+*`script_no`*   identifica o arquivo de script que foi utilizado para a transação (útil quando vários scripts são especificados com `-f` ou `-b`)
 
 *`time_epoch`*  *tempo de conclusão da transação, como um rótulo de data e hora em Unix*
 
-*`time_us`*
-:   fração — parte da segunda parte do tempo de conclusão da transação, em microsegundos
+*`time_us`*: fração — parte da segunda parte do tempo de conclusão da transação, em microsegundos
 
-*`schedule_lag`*
-:   delay do início da transação, ou seja, a diferença entre o horário de início programado da transação e o horário em que ela realmente começou, em microsegundos
-    (apenas presente se `--rate` for especificado)
+*`schedule_lag`*: delay do início da transação, ou seja, a diferença entre o horário de início programado da transação e o horário em que ela realmente começou, em microsegundos (apenas presente se `--rate` for especificado)
 
-*`retries`*
-:   número de tentativas após erros de serialização ou bloqueio durante a transação
-    (apresentado apenas se `--max-tries` não for igual a um)
+*`retries`*: número de tentativas após erros de serialização ou bloqueio durante a transação (apresentado apenas se `--max-tries` não for igual a um)
 
-Quando ambos os `--rate` e `--latency-limit` são utilizados,
-o *`time`* para uma transação ignorada será relatado como
-`skipped`. Se a transação terminar com um erro, seu *`time`*
-será relatado como `failed`. Se você usar a
-`--failures-detailed` opção, o
-*`time`* da transação falha será relatado como
-`serialization` ou
-`deadlock` dependendo do tipo de falha (consulte
-[Falhas e Serialização/Reintentos de Engano](pgbench.md#FAILURES-AND-RETRIES "Failures and Serialization/Deadlock Retries") para mais informações).
+Quando ambos os `--rate` e `--latency-limit` são utilizados, o *`time`* para uma transação ignorada será relatado como `skipped`. Se a transação terminar com um erro, seu *`time`* será relatado como `failed`. Se você usar a `--failures-detailed` opção, o *`time`* da transação falha será relatado como `serialization` ou `deadlock` dependendo do tipo de falha (consulte [Falhas e Serialização/Reintentos de Engano](pgbench.md#FAILURES-AND-RETRIES "Failures and Serialization/Deadlock Retries") para mais informações).
 
 Aqui está um trecho de um arquivo de registro gerado em uma execução com um único cliente:
 
@@ -2045,52 +2347,31 @@ Com a opção `--aggregate-interval`, um formato diferente é usado para os arqu
 
 *`num_transactions`*   número de transações dentro do intervalo
 
-*`sum_latency`*
-:   soma das latências das transações
+*`sum_latency`*: soma das latências das transações
 
-*`sum_latency_2`*
-:   soma dos quadrados das latências das transações
+*`sum_latency_2`*: soma dos quadrados das latências das transações
 
-*`min_latency`*
-:   latência mínima da transação
+*`min_latency`*: latência mínima da transação
 
-*`max_latency`*
-:   latência máxima da transação
+*`max_latency`*: latência máxima da transação
 
-*`sum_lag`*
-:   soma dos atrasos no início da transação
-    (zero, a menos que `--rate` seja especificado)
+*`sum_lag`*: soma dos atrasos no início da transação (zero, a menos que `--rate` seja especificado)
 
-*`sum_lag_2`*
-:   soma dos quadrados dos atrasos no início da transação
-    (zero, a menos que `--rate` seja especificado)
+*`sum_lag_2`*: soma dos quadrados dos atrasos no início da transação (zero, a menos que `--rate` seja especificado)
 
-*`min_lag`*
-:   delay mínimo para início da transação
-    (zero, a menos que `--rate` seja especificado)
+*`min_lag`*: delay mínimo para início da transação (zero, a menos que `--rate` seja especificado)
 
-*`max_lag`*
-:   delay máximo de início da transação
-    (zero, a menos que `--rate` seja especificado)
+*`max_lag`*: delay máximo de início da transação (zero, a menos que `--rate` seja especificado)
 
-*`skipped`*
-:   número de transações ignoradas porque teriam começado muito tarde
-    (zero a menos que `--rate` e `--latency-limit` sejam especificados)
+*`skipped`*: número de transações ignoradas porque teriam começado muito tarde (zero a menos que `--rate` e `--latency-limit` sejam especificados)
 
-*`retried`*
-:   número de transações repetidas
-    (zero, a menos que `--max-tries` não seja igual a um)
+*`retried`*: número de transações repetidas (zero, a menos que `--max-tries` não seja igual a um)
 
-*`retries`*
-:   número de tentativas após erros de serialização ou bloqueio (zero, a menos que `--max-tries` não seja igual a um)
+*`retries`*: número de tentativas após erros de serialização ou bloqueio (zero, a menos que `--max-tries` não seja igual a um)
 
-*`serialization_failures`*
-:   número de transações que tiveram um erro de serialização e não foram repostas posteriormente
-    (zero, a menos que `--failures-detailed` seja especificado)
+*`serialization_failures`*: número de transações que tiveram um erro de serialização e não foram repostas posteriormente (zero, a menos que `--failures-detailed` seja especificado)
 
-*`deadlock_failures`*
-:   número de transações que obtiveram um erro de deadlock e não foram repostas posteriormente
-    (zero, a menos que `--failures-detailed` seja especificado)
+*`deadlock_failures`*: número de transações que obtiveram um erro de deadlock e não foram repostas posteriormente (zero, a menos que `--failures-detailed` seja especificado)
 
 Aqui está uma saída de exemplo gerada com essa opção:
 
@@ -2106,8 +2387,7 @@ Observe que, embora o formato de registro simples (não agregada) mostre qual sc
 
 Com a opção `-r`, o pgbench coleta as seguintes estatísticas para cada declaração:
 
-* `latency` — tempo de transação concluído para cada
-  declaração. O pgbench reporta um valor médio de todas as execuções bem-sucedidas da declaração.
+* `latency` — tempo de transação concluído para cada declaração. O pgbench reporta um valor médio de todas as execuções bem-sucedidas da declaração.
 * O número de falhas nesta declaração. Consulte [Falhas e Repetições de Serialização/Retritos de Engano de Conquista](pgbench.md#FAILURES-AND-RETRIES "Failures and Serialization/Deadlock Retries") para mais informações.
 * O número de repetições após um erro de serialização ou de bloqueio de acesso nesta declaração. Consulte [Falhas e Repetições de Serialização/Retritos de Engano de Conquista](pgbench.md#FAILURES-AND-RETRIES "Failures and Serialization/Deadlock Retries") para mais informações.
 
@@ -2121,8 +2401,7 @@ Para o script padrão, a saída será semelhante a esta:
 starting vacuum...end. transaction type: <builtin: TPC-B (sort of)> scaling factor: 1 query mode: simple number of clients: 10 number of threads: 1 maximum number of tries: 1 number of transactions per client: 1000 number of transactions actually processed: 10000/10000 number of failed transactions: 0 (0.000%) number of transactions above the 50.0 ms latency limit: 1311/10000 (13.110 %) latency average = 28.488 ms latency stddev = 21.009 ms initial connection time = 69.068 ms tps = 346.224794 (without initial connection time) statement latencies in milliseconds and failures: 0.012  0  \set aid random(1, 100000 * :scale) 0.002  0  \set bid random(1, 1 * :scale) 0.002  0  \set tid random(1, 10 * :scale) 0.002  0  \set delta random(-5000, 5000) 0.319  0  BEGIN; 0.834  0  UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid; 0.641  0  SELECT abalance FROM pgbench_accounts WHERE aid = :aid; 11.126  0  UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid; 12.961  0  UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid; 0.634  0  INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP); 1.957  0  END;
 ```
 
-Outro exemplo de saída para o script padrão usando o nível de isolamento de transação padrão serializável (`PGOPTIONS='-c
-default_transaction_isolation=serializable' pgbench ...`):
+Outro exemplo de saída para o script padrão usando o nível de isolamento de transação padrão serializável (`PGOPTIONS='-c default_transaction_isolation=serializable' pgbench ...`):
 
 ```
 starting vacuum...end. transaction type: <builtin: TPC-B (sort of)> scaling factor: 1 query mode: simple number of clients: 10 number of threads: 1 maximum number of tries: 10 number of transactions per client: 1000 number of transactions actually processed: 6317/10000 number of failed transactions: 3683 (36.830%) number of transactions retried: 7667 (76.670%) total number of retries: 45339 number of transactions above the 50.0 ms latency limit: 106/6317 (1.678 %) latency average = 17.016 ms latency stddev = 13.283 ms initial connection time = 45.017 ms tps = 186.792667 (without initial connection time) statement latencies in milliseconds, failures and retries: 0.006     0      0  \set aid random(1, 100000 * :scale) 0.001     0      0  \set bid random(1, 1 * :scale) 0.001     0      0  \set tid random(1, 10 * :scale) 0.001     0      0  \set delta random(-5000, 5000) 0.385     0      0  BEGIN; 0.773     0      1  UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid; 0.624     0      0  SELECT abalance FROM pgbench_accounts WHERE aid = :aid; 1.098   320   3762  UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid; 0.582  3363  41576  UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid; 0.465     0      0  INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP); 1.933     0      0  END;
@@ -2145,12 +2424,7 @@ Ao executar o pgbench, existem três tipos principais de erros:
 * Erros quando o thread gerencia seus clientes (por exemplo, o cliente não conseguiu iniciar uma conexão com o servidor de banco de dados / o socket para conectar o cliente ao servidor de banco de dados se tornou inválido). Nesses casos, todos os clientes deste thread param enquanto outros threads continuam a funcionar. No entanto, `--exit-on-abort` é especificado, todos os threads param imediatamente neste caso.
 * Erros diretos do cliente. Levam à saída imediata do pgbench com a mensagem de erro correspondente no caso de um erro interno do pgbench (que supostamente nunca ocorrem...) ou quando `--exit-on-abort` é especificado. Caso contrário, no pior dos casos, apenas levam ao aborto do cliente falhado enquanto outros clientes continuam sua execução (mas alguns erros de cliente são tratados sem aborto do cliente e relatados separadamente, veja abaixo). Mais tarde, nesta seção, assume-se que os erros discutidos são apenas os erros diretos do cliente e não são erros internos do pgbench.
 
-O rodízio de um cliente é interrompido em caso de um erro grave; por exemplo, a conexão com o servidor de banco de dados foi perdida ou o fim do script foi alcançado sem completar a última transação. Além disso, se a execução de um comando SQL ou meta falhar por razões que não sejam erros de serialização ou bloqueio, o cliente é interrompido. Caso contrário, se um comando SQL falhar com erros de serialização ou bloqueio, o cliente não é interrompido. Nesses casos, a transação atual é revertida, o que também inclui a definição das variáveis do cliente como estavam antes do rodízio dessa transação (se assume-se que um script de transação contém apenas uma transação; consulte
-[O que é realmente realizado a "Transação" no pgbench?][(pgbench.md#TRANSACTIONS-AND-SCRIPTS "What Is the “Transaction” Actually Performed in pgbench?")] para mais informações).
-As transações com erros de serialização ou bloqueio são repetidas após os recuos até que sejam concluídas com sucesso ou atinjam o número máximo de tentativas (especificado pela opção
-`--max-tries`)/o tempo máximo de tentativas (especificado pela opção
-`--latency-limit`)/o fim do benchmark (especificado pela opção
-`--time`). Se o último ensaio falhar, essa transação será relatada como falha, mas o cliente não é interrompido e continua a funcionar.
+O rodízio de um cliente é interrompido em caso de um erro grave; por exemplo, a conexão com o servidor de banco de dados foi perdida ou o fim do script foi alcançado sem completar a última transação. Além disso, se a execução de um comando SQL ou meta falhar por razões que não sejam erros de serialização ou bloqueio, o cliente é interrompido. Caso contrário, se um comando SQL falhar com erros de serialização ou bloqueio, o cliente não é interrompido. Nesses casos, a transação atual é revertida, o que também inclui a definição das variáveis do cliente como estavam antes do rodízio dessa transação (se assume-se que um script de transação contém apenas uma transação; consulte [O que é realmente realizado a "Transação" no pgbench?](pgbench.md#TRANSACTIONS-AND-SCRIPTS) para mais informações). As transações com erros de serialização ou bloqueio são repetidas após os recuos até que sejam concluídas com sucesso ou atinjam o número máximo de tentativas (especificado pela opção `--max-tries`)/o tempo máximo de tentativas (especificado pela opção `--latency-limit`)/o fim do benchmark (especificado pela opção `--time`). Se o último ensaio falhar, essa transação será relatada como falha, mas o cliente não é interrompido e continua a funcionar.
 
 ### Nota
 
@@ -2164,13 +2438,11 @@ A latência de uma transação bem-sucedida inclui todo o tempo de execução da
 
 O relatório principal contém o número de transações não concluídas. Se a opção `--max-tries` não for igual a 1, o relatório principal também contém estatísticas relacionadas aos retentes: o número total de transações repetidas e o número total de repetições. O relatório por script herda todos esses campos do relatório principal. O relatório por declaração exibe estatísticas de repetição apenas se a opção `--max-tries` não for igual a 1.
 
-Se você deseja agrupar falhas por tipos básicos em logs de per-transação e
-agregados, bem como nos relatórios principais e por script, use a opção
-`--failures-detailed`. Se você também deseja distinguir todos os erros e falhas (erros sem tentativa de refazer) por tipo, incluindo qual limite para tentativas foi excedido e quanto foi excedido para as falhas de serialização/bloqueio, use a opção `--verbose-errors`.
+Se você deseja agrupar falhas por tipos básicos em logs de per-transação e agregados, bem como nos relatórios principais e por script, use a opção `--failures-detailed`. Se você também deseja distinguir todos os erros e falhas (erros sem tentativa de refazer) por tipo, incluindo qual limite para tentativas foi excedido e quanto foi excedido para as falhas de serialização/bloqueio, use a opção `--verbose-errors`.
 
 ### Métodos de Acesso à Tabela
 
-Você pode especificar o [Método de Acesso à Tabela][(tableam.md "Chapter 62. Table Access Method Interface Definition")] para as tabelas do pgbench. A variável de ambiente `PGOPTIONS` especifica opções de configuração do banco de dados que são passadas ao PostgreSQL via linha de comando (Veja [Seção 19.1.4][(config-setting.md#CONFIG-SETTING-SHELL "19.1.4. Parameter Interaction via the Shell")]). Por exemplo, um método hipotético de Acesso à Tabela padrão para as tabelas que o pgbench cria chamado `wuzza` pode ser especificado com:
+Você pode especificar o [Método de Acesso à Tabela](tableam.md) para as tabelas do pgbench. A variável de ambiente `PGOPTIONS` especifica opções de configuração do banco de dados que são passadas ao PostgreSQL via linha de comando (Veja [Seção 19.1.4](config-setting.md#CONFIG-SETTING-SHELL)). Por exemplo, um método hipotético de Acesso à Tabela padrão para as tabelas que o pgbench cria chamado `wuzza` pode ser especificado com:
 
 ```
 PGOPTIONS='-c default_table_access_method=wuzza'
@@ -2190,6 +2462,4 @@ Uma limitação do pgbench é que ele pode se tornar o gargalo quando se tenta t
 
 ### Segurança
 
-Se usuários não confiáveis tiverem acesso a um banco de dados que não adotou um
-[esquema de uso seguro de esquema][(ddl-schemas.md#DDL-SCHEMAS-PATTERNS "5.10.6. Usage Patterns")],
-não execute o pgbench nesse banco de dados. O pgbench usa nomes não qualificados e não manipula o caminho de busca.
+Se usuários não confiáveis tiverem acesso a um banco de dados que não adotou um [esquema de uso seguro de esquema](ddl-schemas.md#DDL-SCHEMAS-PATTERNS), não execute o pgbench nesse banco de dados. O pgbench usa nomes não qualificados e não manipula o caminho de busca.

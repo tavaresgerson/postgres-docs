@@ -7,332 +7,418 @@
 
 
 <table border="1" class="table" summary="Text Search Operators">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">Operador</p>
-<p>Descrição</p>
-<p>Exemplo(s)</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
+     Operador
+    </p>
+    <p>
+     Descrição
+    </p>
+    <p>
+     Exemplo(s)
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       tsvector
      </code>
-<code class="literal">
+     <code class="literal">
       @@
      </code>
-<code class="type">
+     <code class="type">
       tsquery
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p class="func_signature">
+     <code class="type">
       tsquery
      </code>
-<code class="literal">
+     <code class="literal">
       @@
      </code>
-<code class="type">
+     <code class="type">
       tsvector
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>Faz<code class="type">
+    </p>
+    <p>
+     Faz
+     <code class="type">
       tsvector
-     </code>jogo<code class="type">
+     </code>
+     jogo
+     <code class="type">
       tsquery
-     </code>(Os argumentos podem ser apresentados em qualquer ordem.)</p>
-<p>
-<code class="literal">
+     </code>
+     (Os argumentos podem ser apresentados em qualquer ordem.)
+    </p>
+    <p>
+     <code class="literal">
       to_tsvector('fat cats ate rats') @@ to_tsquery('cat &amp; rat')
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       t
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       text
      </code>
-<code class="literal">
+     <code class="literal">
       @@
      </code>
-<code class="type">
+     <code class="type">
       tsquery
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>Texto, após invocação implícita de<code class="function">
+    </p>
+    <p>
+     Texto, após invocação implícita de
+     <code class="function">
       to_tsvector()
-     </code>, jogo<code class="type">
+     </code>
+     , jogo
+     <code class="type">
       tsquery
-     </code>?</p>
-<p>
-<code class="literal">
+     </code>
+     ?
+    </p>
+    <p>
+     <code class="literal">
       'fat cats ate rats' @@ to_tsquery('cat &amp; rat')
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       t
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       tsvector
      </code>
-<code class="literal">
+     <code class="literal">
       ||
      </code>
-<code class="type">
-      tsvector
-     </code>→<code class="returnvalue">
+     <code class="type">
       tsvector
      </code>
-</p>
-<p>Concatenam dois<code class="type">
+     →
+     <code class="returnvalue">
       tsvector
-     </code>s. Se ambos os inputs contiverem posições de léxico, as posições do segundo input são ajustadas conforme necessário.</p>
-<p>
-<code class="literal">
+     </code>
+    </p>
+    <p>
+     Concatenam dois
+     <code class="type">
+      tsvector
+     </code>
+     s. Se ambos os inputs contiverem posições de léxico, as posições do segundo input são ajustadas conforme necessário.
+    </p>
+    <p>
+     <code class="literal">
       'a:1 b:2'::tsvector || 'c:1 d:2 b:3'::tsvector
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       'a':1 'b':2,5 'c':3 'd':4
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       tsquery
      </code>
-<code class="literal">
+     <code class="literal">
       &amp;&amp;
      </code>
-<code class="type">
-      tsquery
-     </code>→<code class="returnvalue">
+     <code class="type">
       tsquery
      </code>
-</p>
-<p>E os dois ANDs<code class="type">
+     →
+     <code class="returnvalue">
       tsquery
-     </code>juntos, produzindo uma consulta que corresponde a documentos que correspondem às duas consultas de entrada.</p>
-<p>
-<code class="literal">
+     </code>
+    </p>
+    <p>
+     E os dois ANDs
+     <code class="type">
+      tsquery
+     </code>
+     juntos, produzindo uma consulta que corresponde a documentos que correspondem às duas consultas de entrada.
+    </p>
+    <p>
+     <code class="literal">
       'fat | rat'::tsquery &amp;&amp; 'cat'::tsquery
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       ( 'fat' | 'rat' ) &amp; 'cat'
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       tsquery
      </code>
-<code class="literal">
+     <code class="literal">
       ||
      </code>
-<code class="type">
-      tsquery
-     </code>→<code class="returnvalue">
+     <code class="type">
       tsquery
      </code>
-</p>
-<p>ORs dois<code class="type">
+     →
+     <code class="returnvalue">
       tsquery
-     </code>juntos, produzindo uma consulta que corresponde a documentos que correspondem à consulta de entrada.</p>
-<p>
-<code class="literal">
+     </code>
+    </p>
+    <p>
+     ORs dois
+     <code class="type">
+      tsquery
+     </code>
+     juntos, produzindo uma consulta que corresponde a documentos que correspondem à consulta de entrada.
+    </p>
+    <p>
+     <code class="literal">
       'fat | rat'::tsquery || 'cat'::tsquery
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       'fat' | 'rat' | 'cat'
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="literal">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="literal">
       !!
      </code>
-<code class="type">
-      tsquery
-     </code>→<code class="returnvalue">
+     <code class="type">
       tsquery
      </code>
-</p>
-<p>Anula um<code class="type">
+     →
+     <code class="returnvalue">
       tsquery
-     </code>, produzindo uma consulta que corresponde a documentos que não correspondem à consulta de entrada.</p>
-<p>
-<code class="literal">
+     </code>
+    </p>
+    <p>
+     Anula um
+     <code class="type">
+      tsquery
+     </code>
+     , produzindo uma consulta que corresponde a documentos que não correspondem à consulta de entrada.
+    </p>
+    <p>
+     <code class="literal">
       !! 'cat'::tsquery
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       !'cat'
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       tsquery
      </code>
-<code class="literal">
+     <code class="literal">
       &lt;-&gt;
      </code>
-<code class="type">
-      tsquery
-     </code>→<code class="returnvalue">
+     <code class="type">
       tsquery
      </code>
-</p>
-<p>Construi uma consulta de frase, que corresponde se as duas consultas de entrada corresponderem em lexemas sucessivos.</p>
-<p>
-<code class="literal">
+     →
+     <code class="returnvalue">
+      tsquery
+     </code>
+    </p>
+    <p>
+     Construi uma consulta de frase, que corresponde se as duas consultas de entrada corresponderem em lexemas sucessivos.
+    </p>
+    <p>
+     <code class="literal">
       to_tsquery('fat') &lt;-&gt; to_tsquery('rat')
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       'fat' &lt;-&gt; 'rat'
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       tsquery
      </code>
-<code class="literal">
+     <code class="literal">
       @&gt;
      </code>
-<code class="type">
+     <code class="type">
       tsquery
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>Primeiro<code class="type">
+    </p>
+    <p>
+     Primeiro
+     <code class="type">
       tsquery
-     </code>contêm o segundo? (Isso considera apenas se todos os lexemas que aparecem em uma consulta aparecem na outra, ignorando os operadores de combinação.)</p>
-<p>
-<code class="literal">
+     </code>
+     contêm o segundo? (Isso considera apenas se todos os lexemas que aparecem em uma consulta aparecem na outra, ignorando os operadores de combinação.)
+    </p>
+    <p>
+     <code class="literal">
       'cat'::tsquery @&gt; 'cat &amp; rat'::tsquery
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       f
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       tsquery
      </code>
-<code class="literal">
+     <code class="literal">
       &lt;@
      </code>
-<code class="type">
+     <code class="type">
       tsquery
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>É o primeiro<code class="type">
+    </p>
+    <p>
+     É o primeiro
+     <code class="type">
       tsquery
-     </code>contido no segundo? (Isso considera apenas se todos os lexemas que aparecem em uma consulta aparecem no outro, ignorando os operadores de combinação.)</p>
-<p>
-<code class="literal">
+     </code>
+     contido no segundo? (Isso considera apenas se todos os lexemas que aparecem em uma consulta aparecem no outro, ignorando os operadores de combinação.)
+    </p>
+    <p>
+     <code class="literal">
       'cat'::tsquery &lt;@ 'cat &amp; rat'::tsquery
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       t
      </code>
-</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     <code class="literal">
       'cat'::tsquery &lt;@ '!cat &amp; rat'::tsquery
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       t
      </code>
-</p>
-</td>
-</tr>
-</tbody>
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
 
-Além desses operadores especializados, os operadores de comparação comuns mostrados na [Tabela 9.1] [(functions-comparison.md#FUNCTIONS-COMPARISON-OP-TABLE "Table 9.1. Comparison Operators")] estão disponíveis para os tipos `tsvector` e `tsquery`. Estes não são muito úteis para pesquisas de texto, mas permitem, por exemplo, a construção de índices únicos em colunas desses tipos.
+
+
+
+
+Além desses operadores especializados, os operadores de comparação comuns mostrados na [Tabela 9.1](functions-comparison.md#FUNCTIONS-COMPARISON-OP-TABLE) estão disponíveis para os tipos `tsvector` e `tsquery`. Estes não são muito úteis para pesquisas de texto, mas permitem, por exemplo, a construção de índices únicos em colunas desses tipos.
 
 **Tabela 9.43. Funções de pesquisa de texto**
 
 
 
 <table border="1" class="table" summary="Text Search Functions">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
      Function
     </p>
-<p>
+    <p>
      Description
     </p>
-<p>
+    <p>
      Example(s)
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       array_to_tsvector
      </code>
      (
      <code class="type">
       text[]
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       tsvector
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Converts an array of text strings to a
      <code class="type">
       tsvector
@@ -343,263 +429,254 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      </code>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       array_to_tsvector('{fat,cat,rat}'::text[])
      </code>
      →
      <code class="returnvalue">
       'cat' 'fat' 'rat'
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       get_current_ts_config
      </code>
-     ( )
-        →
+     ( ) →
      <code class="returnvalue">
       regconfig
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Returns the OID of the current default text search configuration (as set by
      <a class="xref" href="runtime-config-client.md#GUC-DEFAULT-TEXT-SEARCH-CONFIG">
       default_text_search_config
      </a>
      ).
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       get_current_ts_config()
      </code>
      →
      <code class="returnvalue">
       english
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       length
      </code>
      (
      <code class="type">
       tsvector
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       integer
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Returns the number of lexemes in the
      <code class="type">
       tsvector
      </code>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       length('fat:2,4 cat:3 rat:5A'::tsvector)
      </code>
      →
      <code class="returnvalue">
       3
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       numnode
      </code>
      (
      <code class="type">
       tsquery
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       integer
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Returns the number of lexemes plus operators in the
      <code class="type">
       tsquery
      </code>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       numnode('(fat &amp; rat) | cat'::tsquery)
      </code>
      →
      <code class="returnvalue">
       5
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       plainto_tsquery
      </code>
-     (
-        [
+     ( [
      <span class="optional">
-<em class="parameter">
-<code>
+      <em class="parameter">
+       <code>
         config
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        regconfig
       </code>
       ,
      </span>
      ]
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       tsquery
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Converts text to a
      <code class="type">
       tsquery
      </code>
      , normalizing words according to the specified or default configuration.  Any punctuation in the string is ignored (it does not determine query operators).  The resulting query matches documents containing all non-stopwords in the text.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       plainto_tsquery('english', 'The Fat Rats')
      </code>
      →
      <code class="returnvalue">
       'fat' &amp; 'rat'
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       phraseto_tsquery
      </code>
-     (
-        [
+     ( [
      <span class="optional">
-<em class="parameter">
-<code>
+      <em class="parameter">
+       <code>
         config
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        regconfig
       </code>
       ,
      </span>
      ]
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       tsquery
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Converts text to a
      <code class="type">
       tsquery
      </code>
      , normalizing words according to the specified or default configuration.  Any punctuation in the string is ignored (it does not determine query operators).  The resulting query matches phrases containing all non-stopwords in the text.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       phraseto_tsquery('english', 'The Fat Rats')
      </code>
      →
      <code class="returnvalue">
       'fat' &lt;-&gt; 'rat'
      </code>
-</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     <code class="literal">
       phraseto_tsquery('english', 'The Cat and Rats')
      </code>
      →
      <code class="returnvalue">
       'cat' &lt;2&gt; 'rat'
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       websearch_to_tsquery
      </code>
-     (
-        [
+     ( [
      <span class="optional">
-<em class="parameter">
-<code>
+      <em class="parameter">
+       <code>
         config
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        regconfig
       </code>
       ,
      </span>
      ]
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       tsquery
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Converts text to a
      <code class="type">
       tsquery
@@ -614,34 +691,33 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      </span>
      is understood as producing an OR operator, and a dash produces a NOT operator; other punctuation is ignored. This approximates the behavior of some common web search tools.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       websearch_to_tsquery('english', '"fat rat" or cat dog')
      </code>
      →
      <code class="returnvalue">
       'fat' &lt;-&gt; 'rat' | 'cat' &amp; 'dog'
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       querytree
      </code>
      (
      <code class="type">
       tsquery
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       text
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Produces a representation of the indexable portion of a
      <code class="type">
       tsquery
@@ -652,225 +728,220 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      </code>
      indicates a non-indexable query.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       querytree('foo &amp; ! bar'::tsquery)
      </code>
      →
      <code class="returnvalue">
       'foo'
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       setweight
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        vector
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       tsvector
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        weight
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       "char"
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       tsvector
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Assigns the specified
      <em class="parameter">
-<code>
+      <code>
        weight
       </code>
-</em>
+     </em>
      to each element of the
      <em class="parameter">
-<code>
+      <code>
        vector
       </code>
-</em>
+     </em>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       setweight('fat:2,4 cat:3 rat:5B'::tsvector, 'A')
      </code>
      →
      <code class="returnvalue">
       'cat':3A 'fat':2A,4A 'rat':5A
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       setweight
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        vector
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       tsvector
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        weight
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       "char"
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        lexemes
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text[]
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       tsvector
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Assigns the specified
      <em class="parameter">
-<code>
+      <code>
        weight
       </code>
-</em>
+     </em>
      to elements of the
      <em class="parameter">
-<code>
+      <code>
        vector
       </code>
-</em>
+     </em>
      that are listed in
      <em class="parameter">
-<code>
+      <code>
        lexemes
       </code>
-</em>
+     </em>
      . The strings in
      <em class="parameter">
-<code>
+      <code>
        lexemes
       </code>
-</em>
+     </em>
      are taken as lexemes as-is, without further processing.  Strings that do not match any lexeme in
      <em class="parameter">
-<code>
+      <code>
        vector
       </code>
-</em>
+     </em>
      are ignored.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       setweight('fat:2,4 cat:3 rat:5,6B'::tsvector, 'A', '{cat,rat}')
      </code>
      →
      <code class="returnvalue">
       'cat':3A 'fat':2,4 'rat':5A,6A
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       strip
      </code>
      (
      <code class="type">
       tsvector
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       tsvector
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Removes positions and weights from the
      <code class="type">
       tsvector
      </code>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       strip('fat:2,4 cat:3 rat:5A'::tsvector)
      </code>
      →
      <code class="returnvalue">
       'cat' 'fat' 'rat'
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       to_tsquery
      </code>
-     (
-        [
+     ( [
      <span class="optional">
-<em class="parameter">
-<code>
+      <em class="parameter">
+       <code>
         config
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        regconfig
       </code>
       ,
      </span>
      ]
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       tsquery
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Converts text to a
      <code class="type">
       tsquery
@@ -881,136 +952,130 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      </code>
      operators.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       to_tsquery('english', 'The &amp; Fat &amp; Rats')
      </code>
      →
      <code class="returnvalue">
       'fat' &amp; 'rat'
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       to_tsvector
      </code>
-     (
-        [
+     ( [
      <span class="optional">
-<em class="parameter">
-<code>
+      <em class="parameter">
+       <code>
         config
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        regconfig
       </code>
       ,
      </span>
      ]
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       tsvector
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Converts text to a
      <code class="type">
       tsvector
      </code>
      , normalizing words according to the specified or default configuration.  Position information is included in the result.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       to_tsvector('english', 'The Fat Rats')
      </code>
      →
      <code class="returnvalue">
       'fat':2 'rat':3
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       to_tsvector
      </code>
-     (
-        [
+     ( [
      <span class="optional">
-<em class="parameter">
-<code>
+      <em class="parameter">
+       <code>
         config
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        regconfig
       </code>
       ,
      </span>
      ]
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       json
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       tsvector
      </code>
-</p>
-<p class="func_signature">
-<code class="function">
+    </p>
+    <p class="func_signature">
+     <code class="function">
       to_tsvector
      </code>
-     (
-        [
+     ( [
      <span class="optional">
-<em class="parameter">
-<code>
+      <em class="parameter">
+       <code>
         config
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        regconfig
       </code>
       ,
      </span>
      ]
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       jsonb
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       tsvector
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Converts each string value in the JSON document to a
      <code class="type">
       tsvector
@@ -1029,117 +1094,113 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      </code>
      ; observe the difference in the examples.)
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       to_tsvector('english', '{"aa": "The Fat Rats", "b": "dog"}'::json)
      </code>
      →
      <code class="returnvalue">
       'dog':5 'fat':2 'rat':3
      </code>
-</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     <code class="literal">
       to_tsvector('english', '{"aa": "The Fat Rats", "b": "dog"}'::jsonb)
      </code>
      →
      <code class="returnvalue">
       'dog':1 'fat':4 'rat':5
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       json_to_tsvector
      </code>
-     (
-        [
+     ( [
      <span class="optional">
-<em class="parameter">
-<code>
+      <em class="parameter">
+       <code>
         config
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        regconfig
       </code>
       ,
      </span>
      ]
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       json
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        filter
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       jsonb
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       tsvector
      </code>
-</p>
-<p class="func_signature">
-<code class="function">
+    </p>
+    <p class="func_signature">
+     <code class="function">
       jsonb_to_tsvector
      </code>
-     (
-        [
+     ( [
      <span class="optional">
-<em class="parameter">
-<code>
+      <em class="parameter">
+       <code>
         config
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        regconfig
       </code>
       ,
      </span>
      ]
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       jsonb
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        filter
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       jsonb
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       tsvector
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Selects each item in the JSON document that is requested by the
      <em class="parameter">
-<code>
+      <code>
        filter
       </code>
-</em>
+     </em>
      and converts each one to a
      <code class="type">
       tsvector
@@ -1158,10 +1219,10 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      </code>
      .) The
      <em class="parameter">
-<code>
+      <code>
        filter
       </code>
-</em>
+     </em>
      must be a
      <code class="type">
       jsonb
@@ -1186,288 +1247,283 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      <code class="literal">
       "all"
      </code>
-     (to include all the above).
-        As a special case, the
+     (to include all the above). As a special case, the
      <em class="parameter">
-<code>
+      <code>
        filter
       </code>
-</em>
+     </em>
      can also be a simple JSON value that is one of these keywords.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       json_to_tsvector('english', '{"a": "The Fat Rats", "b": 123}'::json, '["string", "numeric"]')
      </code>
      →
      <code class="returnvalue">
       '123':5 'fat':2 'rat':3
      </code>
-</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     <code class="literal">
       json_to_tsvector('english', '{"cat": "The Fat Rats", "dog": 123}'::json, '"all"')
      </code>
      →
      <code class="returnvalue">
       '123':9 'cat':1 'dog':7 'fat':4 'rat':5
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       ts_delete
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        vector
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       tsvector
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        lexeme
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       tsvector
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Removes any occurrence of the given
      <em class="parameter">
-<code>
+      <code>
        lexeme
       </code>
-</em>
+     </em>
      from the
      <em class="parameter">
-<code>
+      <code>
        vector
       </code>
-</em>
+     </em>
      . The
      <em class="parameter">
-<code>
+      <code>
        lexeme
       </code>
-</em>
+     </em>
      string is treated as a lexeme as-is, without further processing.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       ts_delete('fat:2,4 cat:3 rat:5A'::tsvector, 'fat')
      </code>
      →
      <code class="returnvalue">
       'cat':3 'rat':5A
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       ts_delete
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        vector
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       tsvector
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        lexemes
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text[]
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       tsvector
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Removes any occurrences of the lexemes in
      <em class="parameter">
-<code>
+      <code>
        lexemes
       </code>
-</em>
+     </em>
      from the
      <em class="parameter">
-<code>
+      <code>
        vector
       </code>
-</em>
+     </em>
      . The strings in
      <em class="parameter">
-<code>
+      <code>
        lexemes
       </code>
-</em>
+     </em>
      are taken as lexemes as-is, without further processing.  Strings that do not match any lexeme in
      <em class="parameter">
-<code>
+      <code>
        vector
       </code>
-</em>
+     </em>
      are ignored.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       ts_delete('fat:2,4 cat:3 rat:5A'::tsvector, ARRAY['fat','rat'])
      </code>
      →
      <code class="returnvalue">
       'cat':3
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       ts_filter
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        vector
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       tsvector
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        weights
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       "char"[]
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       tsvector
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Selects only elements with the given
      <em class="parameter">
-<code>
+      <code>
        weights
       </code>
-</em>
+     </em>
      from the
      <em class="parameter">
-<code>
+      <code>
        vector
       </code>
-</em>
+     </em>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       ts_filter('fat:2,4 cat:3b,7c rat:5A'::tsvector, '{a,b}')
      </code>
      →
      <code class="returnvalue">
       'cat':3B 'rat':5A
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       ts_headline
      </code>
-     (
-        [
+     ( [
      <span class="optional">
-<em class="parameter">
-<code>
+      <em class="parameter">
+       <code>
         config
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        regconfig
       </code>
       ,
      </span>
      ]
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       tsquery
      </code>
      [
      <span class="optional">
       ,
       <em class="parameter">
-<code>
+       <code>
         options
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        text
       </code>
-</span>
+     </span>
      ] ) →
      <code class="returnvalue">
       text
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Displays, in an abbreviated form, the match(es) for the
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
+     </em>
      in the
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
+     </em>
      , which must be raw text not a
      <code class="type">
       tsvector
@@ -1476,442 +1532,435 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      <a class="xref" href="textsearch-controls.md#TEXTSEARCH-HEADLINE" title="12.3.4. Highlighting Results">
       Section 12.3.4
      </a>
-     , which also describes the
-        available
+     , which also describes the available
      <em class="parameter">
-<code>
+      <code>
        options
       </code>
-</em>
+     </em>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       ts_headline('The fat cat ate the rat.', 'cat')
      </code>
      →
      <code class="returnvalue">
       The fat &lt;b&gt;cat&lt;/b&gt; ate the rat.
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       ts_headline
      </code>
-     (
-        [
+     ( [
      <span class="optional">
-<em class="parameter">
-<code>
+      <em class="parameter">
+       <code>
         config
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        regconfig
       </code>
       ,
      </span>
      ]
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       json
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       tsquery
      </code>
      [
      <span class="optional">
       ,
       <em class="parameter">
-<code>
+       <code>
         options
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        text
       </code>
-</span>
+     </span>
      ] ) →
      <code class="returnvalue">
       text
      </code>
-</p>
-<p class="func_signature">
-<code class="function">
+    </p>
+    <p class="func_signature">
+     <code class="function">
       ts_headline
      </code>
-     (
-        [
+     ( [
      <span class="optional">
-<em class="parameter">
-<code>
+      <em class="parameter">
+       <code>
         config
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        regconfig
       </code>
       ,
      </span>
      ]
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       jsonb
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       tsquery
      </code>
      [
      <span class="optional">
       ,
       <em class="parameter">
-<code>
+       <code>
         options
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        text
       </code>
-</span>
+     </span>
      ] ) →
      <code class="returnvalue">
       text
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Displays, in an abbreviated form, match(es) for the
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
+     </em>
      that occur in string values within the JSON
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
+     </em>
      . See
      <a class="xref" href="textsearch-controls.md#TEXTSEARCH-HEADLINE" title="12.3.4. Highlighting Results">
       Section 12.3.4
      </a>
      for more details.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       ts_headline('{"cat":"raining cats and dogs"}'::jsonb, 'cat')
      </code>
      →
      <code class="returnvalue">
       {"cat": "raining &lt;b&gt;cats&lt;/b&gt; and dogs"}
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       ts_rank
      </code>
-     (
-        [
+     ( [
      <span class="optional">
-<em class="parameter">
-<code>
+      <em class="parameter">
+       <code>
         weights
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        real[]
       </code>
       ,
      </span>
      ]
      <em class="parameter">
-<code>
+      <code>
        vector
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       tsvector
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       tsquery
      </code>
      [
      <span class="optional">
       ,
       <em class="parameter">
-<code>
+       <code>
         normalization
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        integer
       </code>
-</span>
+     </span>
      ] ) →
      <code class="returnvalue">
       real
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Computes a score showing how well the
      <em class="parameter">
-<code>
+      <code>
        vector
       </code>
-</em>
+     </em>
      matches the
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
+     </em>
      .  See
      <a class="xref" href="textsearch-controls.md#TEXTSEARCH-RANKING" title="12.3.3. Ranking Search Results">
       Section 12.3.3
      </a>
      for details.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       ts_rank(to_tsvector('raining cats and dogs'), 'cat')
      </code>
      →
      <code class="returnvalue">
       0.06079271
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       ts_rank_cd
      </code>
-     (
-        [
+     ( [
      <span class="optional">
-<em class="parameter">
-<code>
+      <em class="parameter">
+       <code>
         weights
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        real[]
       </code>
       ,
      </span>
      ]
      <em class="parameter">
-<code>
+      <code>
        vector
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       tsvector
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       tsquery
      </code>
      [
      <span class="optional">
       ,
       <em class="parameter">
-<code>
+       <code>
         normalization
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        integer
       </code>
-</span>
+     </span>
      ] ) →
      <code class="returnvalue">
       real
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Computes a score showing how well the
      <em class="parameter">
-<code>
+      <code>
        vector
       </code>
-</em>
+     </em>
      matches the
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
+     </em>
      , using a cover density algorithm.  See
      <a class="xref" href="textsearch-controls.md#TEXTSEARCH-RANKING" title="12.3.3. Ranking Search Results">
       Section 12.3.3
      </a>
      for details.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       ts_rank_cd(to_tsvector('raining cats and dogs'), 'cat')
      </code>
      →
      <code class="returnvalue">
       0.1
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       ts_rewrite
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       tsquery
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        target
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       tsquery
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        substitute
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       tsquery
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       tsquery
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Replaces occurrences of
      <em class="parameter">
-<code>
+      <code>
        target
       </code>
-</em>
+     </em>
      with
      <em class="parameter">
-<code>
+      <code>
        substitute
       </code>
-</em>
+     </em>
      within the
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
+     </em>
      . See
      <a class="xref" href="textsearch-features.md#TEXTSEARCH-QUERY-REWRITING" title="12.4.2.1. Query Rewriting">
       Section 12.4.2.1
      </a>
      for details.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       ts_rewrite('a &amp; b'::tsquery, 'a'::tsquery, 'foo|bar'::tsquery)
      </code>
      →
      <code class="returnvalue">
       'b' &amp; ( 'foo' | 'bar' )
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       ts_rewrite
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       tsquery
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        select
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       tsquery
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Replaces portions of the
      <em class="parameter">
-<code>
+      <code>
        query
       </code>
-</em>
+     </em>
      according to target(s) and substitute(s) obtained by executing a
      <code class="command">
       SELECT
@@ -1922,794 +1971,786 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      </a>
      for details.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       SELECT ts_rewrite('a &amp; b'::tsquery, 'SELECT t,s FROM aliases')
      </code>
      →
      <code class="returnvalue">
       'b' &amp; ( 'foo' | 'bar' )
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       tsquery_phrase
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        query1
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       tsquery
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        query2
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       tsquery
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       tsquery
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Constructs a phrase query that searches for matches of
      <em class="parameter">
-<code>
+      <code>
        query1
       </code>
-</em>
+     </em>
      and
      <em class="parameter">
-<code>
+      <code>
        query2
       </code>
-</em>
+     </em>
      at successive lexemes (same as
      <code class="literal">
       &lt;-&gt;
      </code>
      operator).
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       tsquery_phrase(to_tsquery('fat'), to_tsquery('cat'))
      </code>
      →
      <code class="returnvalue">
       'fat' &lt;-&gt; 'cat'
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       tsquery_phrase
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        query1
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       tsquery
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        query2
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       tsquery
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        distance
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       integer
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       tsquery
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Constructs a phrase query that searches for matches of
      <em class="parameter">
-<code>
+      <code>
        query1
       </code>
-</em>
+     </em>
      and
      <em class="parameter">
-<code>
+      <code>
        query2
       </code>
-</em>
+     </em>
      that occur exactly
      <em class="parameter">
-<code>
+      <code>
        distance
       </code>
-</em>
+     </em>
      lexemes apart.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       tsquery_phrase(to_tsquery('fat'), to_tsquery('cat'), 10)
      </code>
      →
      <code class="returnvalue">
       'fat' &lt;10&gt; 'cat'
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       tsvector_to_array
      </code>
      (
      <code class="type">
       tsvector
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       text[]
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Converts a
      <code class="type">
       tsvector
      </code>
      to an array of lexemes.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       tsvector_to_array('fat:2,4 cat:3 rat:5A'::tsvector)
      </code>
      →
      <code class="returnvalue">
       {cat,fat,rat}
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       unnest
      </code>
      (
      <code class="type">
       tsvector
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       setof record
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        lexeme
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        positions
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       smallint[]
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        weights
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      )
     </p>
-<p>
+    <p>
      Expands a
      <code class="type">
       tsvector
      </code>
      into a set of rows, one per lexeme.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       select * from unnest('cat:3 fat:2,4 rat:5A'::tsvector)
      </code>
      →
      <code class="returnvalue">
-</code>
-</p>
-<pre class="programlisting">
+     </code>
+    </p>
+    <pre class="programlisting">
  lexeme | positions | weights --------+-----------+--------- cat    | {3}       | {D} fat    | {2,4}     | {D,D} rat    | {5}       | {A}
 </pre>
-<p>
-</p>
-</td>
-</tr>
-</tbody>
+    <p>
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 ### Nota
 
 Todas as funções de busca de texto que aceitam um argumento opcional `regconfig` usarão a configuração especificada por [default_text_search_config](runtime-config-client.md#GUC-DEFAULT-TEXT-SEARCH-CONFIG) quando esse argumento for omitido.
 
-As funções em [Tabela 9.44][(functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG-TABLE "Table 9.44. Text Search Debugging Functions")] são listadas separadamente porque geralmente não são usadas em operações de busca de texto no dia a dia. Elas são principalmente úteis para o desenvolvimento e depuração de novas configurações de busca de texto.
+As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG-TABLE) são listadas separadamente porque geralmente não são usadas em operações de busca de texto no dia a dia. Elas são principalmente úteis para o desenvolvimento e depuração de novas configurações de busca de texto.
 
 **Tabela 9.44. Funções de depuração de pesquisa de texto**
 
 
 
 <table border="1" class="table" summary="Text Search Debugging Functions">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
      Function
     </p>
-<p>
+    <p>
      Description
     </p>
-<p>
+    <p>
      Example(s)
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       ts_debug
      </code>
-     (
-        [
+     ( [
      <span class="optional">
-<em class="parameter">
-<code>
+      <em class="parameter">
+       <code>
         config
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        regconfig
       </code>
       ,
      </span>
      ]
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       setof record
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        alias
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        description
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        token
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        dictionaries
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       regdictionary[]
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        dictionary
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       regdictionary
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        lexemes
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text[]
      </code>
      )
     </p>
-<p>
+    <p>
      Extracts and normalizes tokens from the
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
+     </em>
      according to the specified or default text search configuration, and returns information about how each token was processed. See
      <a class="xref" href="textsearch-debugging.md#TEXTSEARCH-CONFIGURATION-TESTING" title="12.8.1. Configuration Testing">
       Section 12.8.1
      </a>
      for details.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       ts_debug('english', 'The Brightest supernovaes')
      </code>
      →
      <code class="returnvalue">
       (asciiword,"Word, all ASCII",The,{english_stem},english_stem,{}) ...
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       ts_lexize
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        dict
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       regdictionary
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        token
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       text[]
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Returns an array of replacement lexemes if the input token is known to the dictionary, or an empty array if the token is known to the dictionary but it is a stop word, or NULL if it is not a known word. See
      <a class="xref" href="textsearch-debugging.md#TEXTSEARCH-DICTIONARY-TESTING" title="12.8.3. Dictionary Testing">
       Section 12.8.3
      </a>
      for details.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       ts_lexize('english_stem', 'stars')
      </code>
      →
      <code class="returnvalue">
       {star}
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       ts_parse
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        parser_name
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       setof record
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        tokid
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       integer
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        token
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      )
     </p>
-<p>
+    <p>
      Extracts tokens from the
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
+     </em>
      using the named parser. See
      <a class="xref" href="textsearch-debugging.md#TEXTSEARCH-PARSER-TESTING" title="12.8.2. Parser Testing">
       Section 12.8.2
      </a>
      for details.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       ts_parse('default', 'foo - bar')
      </code>
      →
      <code class="returnvalue">
       (1,foo) ...
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       ts_parse
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        parser_oid
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       oid
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       setof record
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        tokid
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       integer
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        token
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      )
     </p>
-<p>
+    <p>
      Extracts tokens from the
      <em class="parameter">
-<code>
+      <code>
        document
       </code>
-</em>
+     </em>
      using a parser specified by OID. See
      <a class="xref" href="textsearch-debugging.md#TEXTSEARCH-PARSER-TESTING" title="12.8.2. Parser Testing">
       Section 12.8.2
      </a>
      for details.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       ts_parse(3722, 'foo - bar')
      </code>
      →
      <code class="returnvalue">
       (1,foo) ...
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       ts_token_type
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        parser_name
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       setof record
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        tokid
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       integer
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        alias
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        description
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      )
     </p>
-<p>
+    <p>
      Returns a table that describes each type of token the named parser can recognize. See
      <a class="xref" href="textsearch-debugging.md#TEXTSEARCH-PARSER-TESTING" title="12.8.2. Parser Testing">
       Section 12.8.2
      </a>
      for details.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       ts_token_type('default')
      </code>
      →
      <code class="returnvalue">
       (1,asciiword,"Word, all ASCII") ...
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       ts_token_type
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        parser_oid
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       oid
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       setof record
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        tokid
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       integer
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        alias
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        description
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      )
     </p>
-<p>
+    <p>
      Returns a table that describes each type of token a parser specified by OID can recognize. See
      <a class="xref" href="textsearch-debugging.md#TEXTSEARCH-PARSER-TESTING" title="12.8.2. Parser Testing">
       Section 12.8.2
      </a>
      for details.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       ts_token_type(3722)
      </code>
      →
      <code class="returnvalue">
       (1,asciiword,"Word, all ASCII") ...
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       ts_stat
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        sqlquery
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      [
      <span class="optional">
       ,
       <em class="parameter">
-<code>
+       <code>
         weights
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        text
       </code>
-</span>
+     </span>
      ] ) →
      <code class="returnvalue">
       setof record
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        word
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       text
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        ndoc
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       integer
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        nentry
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       integer
      </code>
      )
     </p>
-<p>
+    <p>
      Executes the
      <em class="parameter">
-<code>
+      <code>
        sqlquery
       </code>
-</em>
+     </em>
      , which must return a single
      <code class="type">
       tsvector
@@ -2720,17 +2761,20 @@ As funções em [Tabela 9.44][(functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBU
      </a>
      for details.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       ts_stat('SELECT vector FROM apod')
      </code>
      →
      <code class="returnvalue">
       (foo,10,15) ...
      </code>
-</p>
-</td>
-</tr>
-</tbody>
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 

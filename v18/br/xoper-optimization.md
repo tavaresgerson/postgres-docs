@@ -46,61 +46,76 @@ Escrever novas funções de estimativa de seletividade de restrição vai muito 
 
 
 <table border="0" class="simplelist" summary="Simple list">
-<tr>
-<td>
-<code class="function">
+ <tr>
+  <td>
+   <code class="function">
     eqsel
-   </code>para<code class="literal">
+   </code>
+   para
+   <code class="literal">
     =
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="function">
     neqsel
-   </code>para<code class="literal">
+   </code>
+   para
+   <code class="literal">
     &lt;&gt;
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="function">
     scalarltsel
-   </code>para<code class="literal">
+   </code>
+   para
+   <code class="literal">
     &lt;
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="function">
     scalarlesel
-   </code>para<code class="literal">
+   </code>
+   para
+   <code class="literal">
     &lt;=
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="function">
     scalargtsel
-   </code>para<code class="literal">
+   </code>
+   para
+   <code class="literal">
     &gt;
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="function">
     scalargesel
-   </code>para<code class="literal">
+   </code>
+   para
+   <code class="literal">
     &gt;=
    </code>
-</td>
-</tr>
+  </td>
+ </tr>
 </table>
+
+
+
 
 
 
@@ -127,85 +142,108 @@ Como antes, este capítulo não fará nenhuma tentativa de explicar como escreve
 
 
 <table border="0" class="simplelist" summary="Simple list">
-<tr>
-<td>
-<code class="function">
+ <tr>
+  <td>
+   <code class="function">
     eqjoinsel
-   </code>para<code class="literal">
+   </code>
+   para
+   <code class="literal">
     =
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="function">
     neqjoinsel
-   </code>para<code class="literal">
+   </code>
+   para
+   <code class="literal">
     &lt;&gt;
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="function">
     scalarltjoinsel
-   </code>para<code class="literal">
+   </code>
+   para
+   <code class="literal">
     &lt;
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="function">
     scalarlejoinsel
-   </code>para<code class="literal">
+   </code>
+   para
+   <code class="literal">
     &lt;=
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="function">
     scalargtjoinsel
-   </code>para<code class="literal">
+   </code>
+   para
+   <code class="literal">
     &gt;
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="function">
     scalargejoinsel
-   </code>para<code class="literal">
+   </code>
+   para
+   <code class="literal">
     &gt;=
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="function">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="function">
     matchingjoinsel
-   </code>para operadores de correspondência genéricos</td>
-</tr>
-<tr>
-<td>
-<code class="function">
+   </code>
+   para operadores de correspondência genéricos
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="function">
     areajoinsel
-   </code>para comparações baseadas em áreas 2D</td>
-</tr>
-<tr>
-<td>
-<code class="function">
+   </code>
+   para comparações baseadas em áreas 2D
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="function">
     positionjoinsel
-   </code>para comparações baseadas na posição 2D</td>
-</tr>
-<tr>
-<td>
-<code class="function">
+   </code>
+   para comparações baseadas na posição 2D
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="function">
     contjoinsel
-   </code>para comparações com base em contenção 2D</td>
-</tr>
+   </code>
+   para comparações com base em contenção 2D
+  </td>
+ </tr>
 </table>
+
+
+
 
 
 

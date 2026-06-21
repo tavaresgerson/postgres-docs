@@ -14,7 +14,7 @@ INSERT INTO t SELECT i % 100, i % 100 FROM generate_series(1, 10000) s(i);
 ANALYZE t;
 ```
 
-Como explicado na [Seção 14.2][(planner-stats.md "14.2. Statistics Used by the Planner")], o planejador pode determinar a cardinalidade do `t` usando o número de páginas e linhas obtidas do `pg_class`:
+Como explicado na [Seção 14.2](planner-stats.md), o planejador pode determinar a cardinalidade do `t` usando o número de páginas e linhas obtidas do `pg_class`:
 
 ```
 SELECT relpages, reltuples FROM pg_class WHERE relname = 't';
@@ -103,11 +103,11 @@ EXPLAIN (ANALYZE, TIMING OFF, BUFFERS OFF) SELECT COUNT(*) FROM t GROUP BY a, b;
 
 ### 69.2.3. Listas de MCV [#](#MCV-LISTS)
 
-Como explicado na [Seção 69.2.1][(multivariate-statistics-examples.md#FUNCTIONAL-DEPENDENCIES "69.2.1. Functional Dependencies")], as dependências funcionais são um tipo de estatísticas muito econômico e eficiente, mas sua principal limitação é sua natureza global (apenas rastreando dependências no nível da coluna, não entre valores individuais de coluna).
+Como explicado na [Seção 69.2.1](multivariate-statistics-examples.md#FUNCTIONAL-DEPENDENCIES), as dependências funcionais são um tipo de estatísticas muito econômico e eficiente, mas sua principal limitação é sua natureza global (apenas rastreando dependências no nível da coluna, não entre valores individuais de coluna).
 
 Esta seção apresenta uma variante multivariada das listas de valores MCV (valores mais comuns), uma extensão direta das estatísticas por coluna descritas em [Seção 69.1] (row-estimation-examples.md "69.1. Row Estimation Examples"). Essas estatísticas abordam a limitação ao armazenar valores individuais, mas naturalmente é mais caro, tanto em termos de construção das estatísticas em `ANALYZE`, armazenamento e tempo de planejamento.
 
-Vamos analisar a consulta da [Seção 69.2.1][(multivariate-statistics-examples.md#FUNCTIONAL-DEPENDENCIES "69.2.1. Functional Dependencies")] novamente, mas desta vez com uma lista MCV criada no mesmo conjunto de colunas (tenha certeza de que as dependências funcionais sejam descartadas, para garantir que o planejador use as estatísticas recém-criadas).
+Vamos analisar a consulta da [Seção 69.2.1](multivariate-statistics-examples.md#FUNCTIONAL-DEPENDENCIES) novamente, mas desta vez com uma lista MCV criada no mesmo conjunto de colunas (tenha certeza de que as dependências funcionais sejam descartadas, para garantir que o planejador use as estatísticas recém-criadas).
 
 ```
 DROP STATISTICS stts;

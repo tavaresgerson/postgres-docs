@@ -6,7 +6,7 @@
 * [18.9.4. Uso do Arquivo do Servidor SSL](ssl-tcp.md#SSL-SERVER-FILES)
 * [18.9.5. Criação de Certificados](ssl-tcp.md#SSL-CERTIFICATE-CREATION)
 
-O PostgreSQL tem suporte nativo para usar conexões SSL para criptografar comunicações cliente/servidor para maior segurança. Isso exige que o OpenSSL esteja instalado nos sistemas cliente e servidor e que o suporte no PostgreSQL seja habilitado na hora da construção (consulte [Capítulo 17][(installation.md "Chapter 17. Installation from Source Code")]).
+O PostgreSQL tem suporte nativo para usar conexões SSL para criptografar comunicações cliente/servidor para maior segurança. Isso exige que o OpenSSL esteja instalado nos sistemas cliente e servidor e que o suporte no PostgreSQL seja habilitado na hora da construção (consulte [Capítulo 17](installation.md)).
 
 Os termos SSL e TLS são frequentemente usados de forma intercambiável para significar uma conexão criptografada segura usando um protocolo TLS. Os protocolos SSL são os precursores dos protocolos TLS, e o termo SSL ainda é usado para conexões criptografadas, mesmo que os protocolos SSL não sejam mais suportados. SSL é usado de forma intercambiável com TLS no PostgreSQL.
 
@@ -20,7 +20,7 @@ Nos sistemas Unix, as permissões de `server.key` devem impedir qualquer acesso 
 
 Se o diretório de dados permitir acesso de leitura em grupo, os arquivos de certificado podem precisar estar localizados fora do diretório de dados, a fim de atender aos requisitos de segurança descritos acima. Geralmente, o acesso em grupo é habilitado para permitir que um usuário não privilegiado faça backup do banco de dados, e, nesse caso, o software de backup não será capaz de ler os arquivos de certificado e provavelmente apresentará erro.
 
-Se a chave privada estiver protegida com uma frase de senha, o servidor solicitará a senha e não iniciará até que ela seja inserida. O uso de uma frase de senha por padrão desativa a capacidade de alterar a configuração SSL do servidor sem um reinício do servidor, mas veja [ssl_passphrase_command_supports_reload][(runtime-config-connection.md#GUC-SSL-PASSPHRASE-COMMAND-SUPPORTS-RELOAD)]. Além disso, as chaves privadas protegidas por senha não podem ser usadas em absoluto no Windows.
+Se a chave privada estiver protegida com uma frase de senha, o servidor solicitará a senha e não iniciará até que ela seja inserida. O uso de uma frase de senha por padrão desativa a capacidade de alterar a configuração SSL do servidor sem um reinício do servidor, mas veja [ssl_passphrase_command_supports_reload](runtime-config-connection.md#GUC-SSL-PASSPHRASE-COMMAND-SUPPORTS-RELOAD). Além disso, as chaves privadas protegidas por senha não podem ser usadas em absoluto no Windows.
 
 O primeiro certificado no `server.crt` deve ser o certificado do servidor, pois ele deve corresponder à chave privada do servidor. Os certificados das autoridades de certificados intermediárias também podem ser anexados ao arquivo. Ao fazer isso, evita-se a necessidade de armazenar certificados intermediários nos clientes, assumindo que os certificados raiz e intermediários foram criados com extensões `v3_ca`. (Isso define a restrição básica do certificado no `CA` para `true`.) Isso permite uma expiração mais fácil dos certificados intermediários.
 
@@ -30,7 +30,7 @@ Não é necessário adicionar o certificado raiz ao `server.crt`. Em vez disso, 
 
 O PostgreSQL lê o arquivo de configuração do OpenSSL de nível de sistema. Por padrão, este arquivo é denominado `openssl.cnf` e está localizado no diretório informado por `openssl version -d`. Este padrão pode ser ignorado definindo a variável de ambiente `OPENSSL_CONF` com o nome do arquivo de configuração desejado.
 
-O OpenSSL suporta uma ampla gama de cifra e algoritmos de autenticação, de força variável. Embora uma lista de cifras possa ser especificada no arquivo de configuração do OpenSSL, você pode especificar cifras especificamente para uso pelo servidor de banco de dados, modificando [ssl_ciphers][(runtime-config-connection.md#GUC-SSL-CIPHERS)] em `postgresql.conf`.
+O OpenSSL suporta uma ampla gama de cifra e algoritmos de autenticação, de força variável. Embora uma lista de cifras possa ser especificada no arquivo de configuração do OpenSSL, você pode especificar cifras especificamente para uso pelo servidor de banco de dados, modificando [ssl_ciphers](runtime-config-connection.md#GUC-SSL-CIPHERS) em `postgresql.conf`.
 
 ### Nota
 
@@ -38,47 +38,51 @@ O OpenSSL suporta uma ampla gama de cifra e algoritmos de autenticação, de for
 
 ### 18.9.3. Uso de Certificados do Cliente [#](#SSL-CLIENT-CERTIFICATES)
 
-Para exigir que o cliente forneça um certificado confiável, coloque certificados das autoridades de certificação de raiz (CA) nas quais você confia em um arquivo no diretório de dados, defina o parâmetro [ssl_ca_file][(runtime-config-connection.md#GUC-SSL-CA-FILE)] em `postgresql.conf` para o novo nome do arquivo e adicione a opção de autenticação `clientcert=verify-ca` ou `clientcert=verify-full` à(s) linha(s) apropriada(s) de `hostssl` em `pg_hba.conf`. Um certificado será então solicitado ao cliente durante o início da conexão SSL. (Consulte [Seção 32.19][(libpq-ssl.md "32.19. SSL Support")] para uma descrição de como configurar certificados no cliente.)
+Para exigir que o cliente forneça um certificado confiável, coloque certificados das autoridades de certificação de raiz (CA) nas quais você confia em um arquivo no diretório de dados, defina o parâmetro [ssl_ca_file](runtime-config-connection.md#GUC-SSL-CA-FILE) em `postgresql.conf` para o novo nome do arquivo e adicione a opção de autenticação `clientcert=verify-ca` ou `clientcert=verify-full` à(s) linha(s) apropriada(s) de `hostssl` em `pg_hba.conf`. Um certificado será então solicitado ao cliente durante o início da conexão SSL. (Consulte [Seção 32.19](libpq-ssl.md) para uma descrição de como configurar certificados no cliente.)
 
 Para uma entrada `hostssl` com `clientcert=verify-ca`, o servidor verificará se o certificado do cliente foi assinado por uma das autoridades de certificado confiáveis. Se `clientcert=verify-full` for especificado, o servidor não apenas verificará a cadeia de certificados, mas também verificará se o nome de usuário ou sua correspondência corresponde ao `cn` (Nome Comum) do certificado fornecido. Note que a validação da cadeia de certificados é sempre assegurada quando o método de autenticação `cert` é usado (ver [Seção 20.12] (auth-cert.md "20.12. Certificate Authentication")).
 
-Certificados intermediários que se alinham até certificados raiz existentes também podem aparecer no arquivo [ssl_ca_file][(runtime-config-connection.md#GUC-SSL-CA-FILE)] se você deseja evitar armazená-los nos clientes (assumindo que os certificados raiz e intermediários foram criados com extensões `v3_ca`). As entradas da Lista de Revogação de Certificados (CRL) também são verificadas se o parâmetro [ssl_crl_file][(runtime-config-connection.md#GUC-SSL-CRL-FILE)] ou [ssl_crl_dir][(runtime-config-connection.md#GUC-SSL-CRL-DIR)] estiver definido.
+Certificados intermediários que se alinham até certificados raiz existentes também podem aparecer no arquivo [ssl_ca_file](runtime-config-connection.md#GUC-SSL-CA-FILE) se você deseja evitar armazená-los nos clientes (assumindo que os certificados raiz e intermediários foram criados com extensões `v3_ca`). As entradas da Lista de Revogação de Certificados (CRL) também são verificadas se o parâmetro [ssl_crl_file](runtime-config-connection.md#GUC-SSL-CRL-FILE) ou [ssl_crl_dir](runtime-config-connection.md#GUC-SSL-CRL-DIR) estiver definido.
 
 A opção de autenticação `clientcert` está disponível para todos os métodos de autenticação, mas apenas nas linhas `pg_hba.conf` especificadas como `hostssl`. Quando `clientcert` não é especificado, o servidor verifica o certificado do cliente contra seu arquivo CA apenas se um certificado do cliente for apresentado e a CA estiver configurada.
 
 Existem duas abordagens para impor que os usuários forneçam um certificado durante o login.
 
-A primeira abordagem utiliza o método de autenticação `cert` para entradas `hostssl` em `pg_hba.conf`, de modo que o próprio certificado é usado para autenticação, além de fornecer segurança na conexão ssl. Consulte [Seção 20.12][(auth-cert.md "20.12. Certificate Authentication")] para detalhes. (Não é necessário especificar explicitamente quaisquer opções `clientcert` ao usar o método de autenticação `cert`. Neste caso, o `cn` (Nome Comum) fornecido no certificado é verificado contra o nome do usuário ou um mapeamento aplicável.
+A primeira abordagem utiliza o método de autenticação `cert` para entradas `hostssl` em `pg_hba.conf`, de modo que o próprio certificado é usado para autenticação, além de fornecer segurança na conexão ssl. Consulte [Seção 20.12](auth-cert.md) para detalhes. (Não é necessário especificar explicitamente quaisquer opções `clientcert` ao usar o método de autenticação `cert`. Neste caso, o `cn` (Nome Comum) fornecido no certificado é verificado contra o nome do usuário ou um mapeamento aplicável.
 
 A segunda abordagem combina qualquer método de autenticação para as entradas do `hostssl` com a verificação de certificados do cliente, definindo a opção de autenticação do `clientcert` para `verify-ca` ou `verify-full`. A primeira opção apenas garante que o certificado é válido, enquanto a segunda também garante que o `cn` (Nome Comum) no certificado corresponda ao nome do usuário ou a um mapeamento aplicável.
 
 ### 18.9.4. Uso do arquivo do servidor SSL [#](#SSL-SERVER-FILES)
 
-[Tabela 18.2][(ssl-tcp.md#SSL-FILE-USAGE "Table 18.2. SSL Server File Usage")] resume os arquivos que são relevantes para a configuração SSL no servidor. (Os nomes de arquivo mostrados são nomes padrão. Os nomes configurados localmente podem ser diferentes.)
+[Tabela 18.2](ssl-tcp.md#SSL-FILE-USAGE) resume os arquivos que são relevantes para a configuração SSL no servidor. (Os nomes de arquivo mostrados são nomes padrão. Os nomes configurados localmente podem ser diferentes.)
 
 **Tabela 18.2. Uso do arquivo do servidor SSL**
 
 
 
 <table border="1" class="table" summary="SSL Server File Usage">
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     File
    </th>
-<th>Conteúdo</th>
-<th>Efeito</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a class="xref" href="runtime-config-connection.md#GUC-SSL-CERT-FILE">
+   <th>
+    Conteúdo
+   </th>
+   <th>
+    Efeito
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <a class="xref" href="runtime-config-connection.md#GUC-SSL-CERT-FILE">
      ssl_cert_file
     </a>
     (
@@ -87,12 +91,16 @@ A segunda abordagem combina qualquer método de autenticação para as entradas 
     </code>
     )
    </td>
-<td>certificado do servidor</td>
-<td>enviado ao cliente para indicar a identidade do servidor</td>
-</tr>
-<tr>
-<td>
-<a class="xref" href="runtime-config-connection.md#GUC-SSL-KEY-FILE">
+   <td>
+    certificado do servidor
+   </td>
+   <td>
+    enviado ao cliente para indicar a identidade do servidor
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <a class="xref" href="runtime-config-connection.md#GUC-SSL-KEY-FILE">
      ssl_key_file
     </a>
     (
@@ -101,34 +109,49 @@ A segunda abordagem combina qualquer método de autenticação para as entradas 
     </code>
     )
    </td>
-<td>chave privada do servidor</td>
-<td>prova que o certificado do servidor foi enviado pelo proprietário; não indica</td>
-</tr>
-<tr>
-<td>
-<a class="xref" href="runtime-config-connection.md#GUC-SSL-CA-FILE">
+   <td>
+    chave privada do servidor
+   </td>
+   <td>
+    prova que o certificado do servidor foi enviado pelo proprietário; não indica
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <a class="xref" href="runtime-config-connection.md#GUC-SSL-CA-FILE">
      ssl_ca_file
     </a>
-</td>
-<td>autoridades de certificação confiáveis</td>
-<td>verifica que o certificado do cliente foi assinado por uma autoridade de certificação confiável</td>
-</tr>
-<tr>
-<td>
-<a class="xref" href="runtime-config-connection.md#GUC-SSL-CRL-FILE">
+   </td>
+   <td>
+    autoridades de certificação confiáveis
+   </td>
+   <td>
+    verifica que o certificado do cliente foi assinado por uma autoridade de certificação confiável
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <a class="xref" href="runtime-config-connection.md#GUC-SSL-CRL-FILE">
      ssl_crl_file
     </a>
-</td>
-<td>certificados revogados por autoridades de certificação</td>
-<td>o certificado do cliente não deve estar nesta lista</td>
-</tr>
-</tbody>
+   </td>
+   <td>
+    certificados revogados por autoridades de certificação
+   </td>
+   <td>
+    o certificado do cliente não deve estar nesta lista
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 O servidor lê esses arquivos no início do servidor e sempre que a configuração do servidor é recarregada. Em sistemas Windows, eles também são lidos novamente sempre que um novo processo de backend é gerado para uma nova conexão do cliente.
 

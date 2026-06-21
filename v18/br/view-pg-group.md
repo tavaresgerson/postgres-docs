@@ -7,100 +7,103 @@ A vista `pg_group` existe para compatibilidade reversa: ela emula um catálogo q
 
 
 <table border="1" class="table" summary="pg_group Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
      Column Type
     </p>
-<p>
+    <p>
      Description
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       groname
      </code>
-<code class="type">
+     <code class="type">
       name
      </code>
      (references
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-<code class="structname">
+      <code class="structname">
        pg_authid
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       rolname
      </code>
      )
     </p>
-<p>
+    <p>
      Name of the group
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       grosysid
      </code>
-<code class="type">
+     <code class="type">
       oid
      </code>
      (references
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-<code class="structname">
+      <code class="structname">
        pg_authid
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
      </code>
      )
     </p>
-<p>
+    <p>
      ID of this group
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       grolist
      </code>
-<code class="type">
+     <code class="type">
       oid[]
      </code>
      (references
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-<code class="structname">
+      <code class="structname">
        pg_authid
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
      </code>
      )
     </p>
-<p>
+    <p>
      An array containing the IDs of the roles in this group
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 

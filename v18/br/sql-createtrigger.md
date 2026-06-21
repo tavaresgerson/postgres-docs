@@ -41,33 +41,37 @@ O quadro a seguir resume os tipos de gatilho que podem ser usados em tabelas, vi
 
 
 <table border="1" class="informaltable">
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     When
    </th>
-<th>
+   <th>
     Event
    </th>
-<th>Nível de linha</th>
-<th>Nível de declaração</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center" rowspan="2">
-<code class="literal">
+   <th>
+    Nível de linha
+   </th>
+   <th>
+    Nível de declaração
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td align="center" rowspan="2">
+    <code class="literal">
      BEFORE
     </code>
-</td>
-<td align="center">
-<code class="command">
+   </td>
+   <td align="center">
+    <code class="command">
      INSERT
     </code>
     /
@@ -78,29 +82,35 @@ O quadro a seguir resume os tipos de gatilho que podem ser usados em tabelas, vi
     <code class="command">
      DELETE
     </code>
-</td>
-<td align="center">Tabelas e tabelas estrangeiras</td>
-<td align="center">Tabelas, visualizações e tabelas externas</td>
-</tr>
-<tr>
-<td align="center">
-<code class="command">
+   </td>
+   <td align="center">
+    Tabelas e tabelas estrangeiras
+   </td>
+   <td align="center">
+    Tabelas, visualizações e tabelas externas
+   </td>
+  </tr>
+  <tr>
+   <td align="center">
+    <code class="command">
      TRUNCATE
     </code>
-</td>
-<td align="center">
+   </td>
+   <td align="center">
     —
    </td>
-<td align="center">Tabelas e tabelas estrangeiras</td>
-</tr>
-<tr>
-<td align="center" rowspan="2">
-<code class="literal">
+   <td align="center">
+    Tabelas e tabelas estrangeiras
+   </td>
+  </tr>
+  <tr>
+   <td align="center" rowspan="2">
+    <code class="literal">
      AFTER
     </code>
-</td>
-<td align="center">
-<code class="command">
+   </td>
+   <td align="center">
+    <code class="command">
      INSERT
     </code>
     /
@@ -111,29 +121,35 @@ O quadro a seguir resume os tipos de gatilho que podem ser usados em tabelas, vi
     <code class="command">
      DELETE
     </code>
-</td>
-<td align="center">Tabelas e tabelas estrangeiras</td>
-<td align="center">Tabelas, visualizações e tabelas externas</td>
-</tr>
-<tr>
-<td align="center">
-<code class="command">
+   </td>
+   <td align="center">
+    Tabelas e tabelas estrangeiras
+   </td>
+   <td align="center">
+    Tabelas, visualizações e tabelas externas
+   </td>
+  </tr>
+  <tr>
+   <td align="center">
+    <code class="command">
      TRUNCATE
     </code>
-</td>
-<td align="center">
+   </td>
+   <td align="center">
     —
    </td>
-<td align="center">Tabelas e tabelas estrangeiras</td>
-</tr>
-<tr>
-<td align="center" rowspan="2">
-<code class="literal">
+   <td align="center">
+    Tabelas e tabelas estrangeiras
+   </td>
+  </tr>
+  <tr>
+   <td align="center" rowspan="2">
+    <code class="literal">
      INSTEAD OF
     </code>
-</td>
-<td align="center">
-<code class="command">
+   </td>
+   <td align="center">
+    <code class="command">
      INSERT
     </code>
     /
@@ -144,23 +160,32 @@ O quadro a seguir resume os tipos de gatilho que podem ser usados em tabelas, vi
     <code class="command">
      DELETE
     </code>
-</td>
-<td align="center">Visões</td>
-<td align="center">—</td>
-</tr>
-<tr>
-<td align="center">
-<code class="command">
-     TRUNCATE
-    </code>
-</td>
-<td align="center">
+   </td>
+   <td align="center">
+    Visões
+   </td>
+   <td align="center">
     —
    </td>
-<td align="center">—</td>
-</tr>
-</tbody>
+  </tr>
+  <tr>
+   <td align="center">
+    <code class="command">
+     TRUNCATE
+    </code>
+   </td>
+   <td align="center">
+    —
+   </td>
+   <td align="center">
+    —
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 
@@ -168,13 +193,13 @@ Além disso, uma definição de gatilho pode especificar uma condição booleana
 
 Se vários gatilhos do mesmo tipo forem definidos para o mesmo evento, eles serão disparados em ordem alfabética por nome.
 
-Quando a opção `CONSTRAINT` é especificada, este comando cria um *trigger de restrição*. Isso é o mesmo que um trigger regular, exceto que o momento em que o disparo do trigger pode ser ajustado usando [`SET CONSTRAINTS`(sql-set-constraints.md "SET CONSTRAINTS")]. Os triggers de restrição devem ser triggers `AFTER ROW` em tabelas simples (não em tabelas estrangeiras). Eles podem ser disparados no final da declaração que causa o evento de disparo, ou no final da transação contendo; neste último caso, eles são ditos como *diferidos*. Um disparo de trigger diferido pendente também pode ser forçado a acontecer imediatamente usando `SET CONSTRAINTS`. Espera-se que os triggers de restrição levantem uma exceção quando as restrições que implementam são violadas.
+Quando a opção `CONSTRAINT` é especificada, este comando cria um *trigger de restrição*. Isso é o mesmo que um trigger regular, exceto que o momento em que o disparo do trigger pode ser ajustado usando [`SET CONSTRAINTS`](sql-set-constraints.md)]. Os triggers de restrição devem ser triggers `AFTER ROW` em tabelas simples (não em tabelas estrangeiras). Eles podem ser disparados no final da declaração que causa o evento de disparo, ou no final da transação contendo; neste último caso, eles são ditos como *diferidos*. Um disparo de trigger diferido pendente também pode ser forçado a acontecer imediatamente usando `SET CONSTRAINTS`. Espera-se que os triggers de restrição levantem uma exceção quando as restrições que implementam são violadas.
 
 A opção `REFERENCING` permite a coleta de *relações de transição*, que são conjuntos de linhas que incluem todas as linhas inseridas, excluídas ou modificadas pelo atual enunciado SQL. Esse recurso permite que o gatilho veja uma visão global do que o enunciado fez, não apenas uma linha de cada vez. Esta opção só é permitida para um gatilho `AFTER` em uma tabela simples (não em uma tabela estrangeira). O gatilho não deve ser um gatilho de restrição. Além disso, se o gatilho for um gatilho `UPDATE`, ele não deve especificar uma lista *`column_name`* ao usar esta opção. `OLD TABLE` só pode ser especificado uma vez e apenas para um gatilho que pode ser disparado em `UPDATE` ou `DELETE`; ele cria uma relação de transição contendo as *imagens anteriores* de todas as linhas atualizadas ou excluídas pelo enunciado. Da mesma forma, `NEW TABLE` só pode ser especificado uma vez e apenas para um gatilho que pode ser disparado em `UPDATE` ou `INSERT`; ele cria uma relação de transição contendo as *imagens posteriores* de todas as linhas atualizadas ou inseridas pelo enunciado.
 
 `SELECT` não modifica nenhuma linha, portanto, você não pode criar gatilhos `SELECT`. Regras e visualizações podem fornecer soluções viáveis para problemas que parecem precisar de gatilhos `SELECT`.
 
-Consulte o [Capítulo 37][(triggers.md "Chapter 37. Triggers")] para obter mais informações sobre gatilhos.
+Consulte o [Capítulo 37](triggers.md) para obter mais informações sobre gatilhos.
 
 ## Parâmetros
 
@@ -186,8 +211,9 @@ Consulte o [Capítulo 37][(triggers.md "Chapter 37. Triggers")] para obter mai
 
 Para eventos de `UPDATE`, é possível especificar uma lista de colunas usando essa sintaxe:
 
-``` UPDATE OF column_name1 [, column_name2 ... ]
-    ```
+```
+UPDATE OF column_name1 [, column_name2 ... ]
+```
 
 O gatilho só será disparado se pelo menos uma das colunas listadas for mencionada como alvo do comando `UPDATE` ou se uma das colunas listadas for uma coluna gerada que depende de uma coluna que é alvo do `UPDATE`.
 
@@ -249,7 +275,7 @@ Atualmente, a opção `OR REPLACE` não é suportada para gatilhos de restriçã
 
 Não é recomendado substituir um gatilho existente dentro de uma transação que já realizou ações de atualização na tabela do gatilho. As decisões de disparo do gatilho, ou partes das decisões de disparo, que já foram feitas, não serão reconsideradas, portanto, os efeitos podem ser surpreendentes.
 
-Existem algumas funções de gatilho integradas que podem ser usadas para resolver problemas comuns sem precisar escrever seu próprio código de gatilho; veja [Seção 9.29][(functions-trigger.md "9.29. Trigger Functions")].
+Existem algumas funções de gatilho integradas que podem ser usadas para resolver problemas comuns sem precisar escrever seu próprio código de gatilho; veja [Seção 9.29](functions-trigger.md).
 
 ## Exemplos
 

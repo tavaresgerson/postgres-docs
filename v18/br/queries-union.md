@@ -16,7 +16,7 @@ onde *`query1`* e *`query2`* são consultas que podem usar qualquer uma das cara
 
 `EXCEPT` retorna todas as linhas que estão no resultado de *`query1`*, mas não no resultado de *`query2`*. (Isso é chamado às vezes de *diferença* entre duas consultas.) Novamente, os duplicados são eliminados, a menos que `EXCEPT ALL` seja usado.
 
-Para calcular a união, interseção ou diferença de duas consultas, as duas consultas devem ser "compatíveis em união", o que significa que elas retornam o mesmo número de colunas e os tipos de dados correspondentes têm tipos de dados compatíveis, conforme descrito em [Seção 10.5][(typeconv-union-case.md "10.5. UNION, CASE, and Related Constructs")].
+Para calcular a união, interseção ou diferença de duas consultas, as duas consultas devem ser "compatíveis em união", o que significa que elas retornam o mesmo número de colunas e os tipos de dados correspondentes têm tipos de dados compatíveis, conforme descrito em [Seção 10.5](typeconv-union-case.md).
 
 As operações de configuração podem ser combinadas, por exemplo
 

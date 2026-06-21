@@ -35,7 +35,7 @@ mydb# select ts_lexize('intdict', '12345678');
  {123456}
 ```
 
-mas o uso no mundo real envolverá incluí-lo em uma configuração de pesquisa de texto, conforme descrito em [Capítulo 12][(textsearch.md "Chapter 12. Full Text Search")]. Isso pode parecer assim:
+mas o uso no mundo real envolverá incluí-lo em uma configuração de pesquisa de texto, conforme descrito em [Capítulo 12](textsearch.md). Isso pode parecer assim:
 
 ```
 ALTER TEXT SEARCH CONFIGURATION english

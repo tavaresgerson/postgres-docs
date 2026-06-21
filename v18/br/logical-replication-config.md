@@ -29,4 +29,4 @@ A replicação lógica walsender também é afetada por `wal_sender_timeout` (ru
 
 `max_parallel_apply_workers_per_subscription`](runtime-config-replication.md#GUC-MAX-PARALLEL-APPLY-WORKERS-PER-SUBSCRIPTION) controla a quantidade de paralelismo para o streaming de transações em andamento com o parâmetro de assinatura `streaming = parallel`.
 
-Os trabalhadores de replicação lógica também são afetados por `wal_receiver_timeout`(runtime-config-replication.md#GUC-WAL-RECEIVER-TIMEOUT), [`wal_receiver_status_interval`](runtime-config-replication.md#GUC-WAL-RECEIVER-STATUS-INTERVAL) e [`wal_retrieve_retry_interval`(runtime-config-replication.md#GUC-WAL-RETRIEVE-RETRY-INTERVAL).
+Os trabalhadores de replicação lógica também são afetados por `wal_receiver_timeout`(runtime-config-replication.md#GUC-WAL-RECEIVER-TIMEOUT), [`wal_receiver_status_interval`](runtime-config-replication.md#GUC-WAL-RECEIVER-STATUS-INTERVAL) e [`wal_retrieve_retry_interval`](runtime-config-replication.md#GUC-WAL-RETRIEVE-RETRY-INTERVAL).

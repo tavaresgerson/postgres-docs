@@ -15,92 +15,121 @@ pg_mcv_list_items ( pg_mcv_list ) → setof record
 
 
 <table border="1" class="informaltable">
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Name
    </th>
-<th>
+   <th>
     Type
    </th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      index
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      integer
     </code>
-</td>
-<td>índice do item no<acronym class="acronym">MCV</acronym>lista</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    índice do item no
+    <acronym class="acronym">
+     MCV
+    </acronym>
+    lista
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      values
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      text[]
     </code>
-</td>
-<td>valores armazenados no item MCV</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    valores armazenados no item MCV
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      nulls
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      boolean[]
     </code>
-</td>
-<td>bandeiras identificadoras<code class="literal">
+   </td>
+   <td>
+    bandeiras identificadoras
+    <code class="literal">
      NULL
-    </code>valores</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+    </code>
+    valores
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      frequency
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      double precision
     </code>
-</td>
-<td>frequência desta<acronym class="acronym">MCV</acronym>item</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    frequência desta
+    <acronym class="acronym">
+     MCV
+    </acronym>
+    item
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      base_frequency
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      double precision
     </code>
-</td>
-<td>frequência base desta<acronym class="acronym">MCV</acronym>item</td>
-</tr>
-</tbody>
+   </td>
+   <td>
+    frequência base desta
+    <acronym class="acronym">
+     MCV
+    </acronym>
+    item
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 

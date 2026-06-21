@@ -60,7 +60,7 @@ execq(PG_FUNCTION_ARGS)
 }
 ```
 
-É assim que você declara a função após compilar a mesma em uma biblioteca compartilhada (os detalhes estão em [Seção 36.10.5][(xfunc-c.md#DFUNC "36.10.5. Compiling and Linking Dynamically-Loaded Functions")]):
+É assim que você declara a função após compilar a mesma em uma biblioteca compartilhada (os detalhes estão em [Seção 36.10.5](xfunc-c.md#DFUNC)):
 
 ```
 CREATE FUNCTION execq(text, integer) RETURNS int8

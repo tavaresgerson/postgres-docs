@@ -53,110 +53,127 @@ O quadro a seguir resume o comportamento quando há colunas geradas envolvidas n
 
 
 <table border="1" class="table" summary="Replication Result Summary">
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Publish generated columns?
    </th>
-<th>
+   <th>
     Publisher table column
    </th>
-<th>
+   <th>
     Subscriber table column
    </th>
-<th>Resultado</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+   <th>
+    Resultado
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
     No
    </td>
-<td>
+   <td>
     GENERATED
    </td>
-<td>
+   <td>
     GENERATED
    </td>
-<td>A coluna da tabela de publicador não é replicada. Use o valor da coluna da tabela de assinante gerada.</td>
-</tr>
-<tr>
-<td>
+   <td>
+    A coluna da tabela de publicador não é replicada. Use o valor da coluna da tabela de assinante gerada.
+   </td>
+  </tr>
+  <tr>
+   <td>
     No
    </td>
-<td>
+   <td>
     GENERATED
    </td>
-<td>
+   <td>
     regular
    </td>
-<td>A coluna da tabela de publicador não é replicada. Use o valor padrão da coluna regular da tabela de assinante.</td>
-</tr>
-<tr>
-<td>
+   <td>
+    A coluna da tabela de publicador não é replicada. Use o valor padrão da coluna regular da tabela de assinante.
+   </td>
+  </tr>
+  <tr>
+   <td>
     No
    </td>
-<td>
+   <td>
     GENERATED
    </td>
-<td>
+   <td>
     --missing--
    </td>
-<td>A coluna da tabela do editor não é replicada. Nada acontece.</td>
-</tr>
-<tr>
-<td>
+   <td>
+    A coluna da tabela do editor não é replicada. Nada acontece.
+   </td>
+  </tr>
+  <tr>
+   <td>
     Yes
    </td>
-<td>
+   <td>
     GENERATED
    </td>
-<td>
+   <td>
     GENERATED
    </td>
-<td>ERRO. Não é suportado.</td>
-</tr>
-<tr>
-<td>
+   <td>
+    ERRO. Não é suportado.
+   </td>
+  </tr>
+  <tr>
+   <td>
     Yes
    </td>
-<td>
+   <td>
     GENERATED
    </td>
-<td>
+   <td>
     regular
    </td>
-<td>O valor da coluna da tabela de publicações é replicado para a coluna da tabela de assinantes.</td>
-</tr>
-<tr>
-<td>
+   <td>
+    O valor da coluna da tabela de publicações é replicado para a coluna da tabela de assinantes.
+   </td>
+  </tr>
+  <tr>
+   <td>
     Yes
    </td>
-<td>
+   <td>
     GENERATED
    </td>
-<td>
+   <td>
     --missing--
    </td>
-<td>ERRO. A coluna é relatada como ausente da tabela do assinante.</td>
-</tr>
-</tbody>
+   <td>
+    ERRO. A coluna é relatada como ausente da tabela do assinante.
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 ### Aviso
 
-Atualmente, não há suporte para assinaturas que compreendem várias publicações onde a mesma tabela foi publicada com diferentes listas de colunas. Veja [Seção 29.5][(logical-replication-col-lists.md "29.5. Column Lists")].
+Atualmente, não há suporte para assinaturas que compreendem várias publicações onde a mesma tabela foi publicada com diferentes listas de colunas. Veja [Seção 29.5](logical-replication-col-lists.md).
 
 Essa mesma situação pode ocorrer se uma publicação está publicando colunas geradas, enquanto outra publicação na mesma assinatura não está publicando colunas geradas para a mesma tabela.
 

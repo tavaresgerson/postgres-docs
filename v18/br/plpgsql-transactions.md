@@ -27,7 +27,7 @@ Uma nova transação começa com características de transação padrão, como o
 
 O controle de transação só é possível em invocações de `CALL` ou `DO` a partir do nível superior ou invocações aninhadas de `CALL` ou `DO` sem qualquer outro comando intermediário. Por exemplo, se o pilha de chamadas for `CALL proc1()` → `CALL proc2()` → `CALL proc3()`, então os segundo e terceiro procedimentos podem realizar ações de controle de transação. Mas se o pilha de chamadas for `CALL proc1()` → `SELECT func2()` → `CALL proc3()`, então o último procedimento não pode fazer controle de transação, devido ao `SELECT` entre eles.
 
-O PL/pgSQL não suporta comandos de savepoints (os comandos `SAVEPOINT`/`ROLLBACK TO SAVEPOINT`/`RELEASE SAVEPOINT`). Padrões típicos de uso para savepoints podem ser substituídos por blocos com manipuladores de exceções (consulte [Seção 41.6.8][(plpgsql-control-structures.md#PLPGSQL-ERROR-TRAPPING "41.6.8. Trapping Errors")]). Sob o capô, um bloco com manipuladores de exceções forma uma subtransação, o que significa que as transações não podem ser encerradas dentro de tal bloco.
+O PL/pgSQL não suporta comandos de savepoints (os comandos `SAVEPOINT`/`ROLLBACK TO SAVEPOINT`/`RELEASE SAVEPOINT`). Padrões típicos de uso para savepoints podem ser substituídos por blocos com manipuladores de exceções (consulte [Seção 41.6.8](plpgsql-control-structures.md#PLPGSQL-ERROR-TRAPPING)). Sob o capô, um bloco com manipuladores de exceções forma uma subtransação, o que significa que as transações não podem ser encerradas dentro de tal bloco.
 
 Considerações especiais se aplicam aos loops do cursor. Considere este exemplo:
 

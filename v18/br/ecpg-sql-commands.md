@@ -18,4 +18,4 @@
 * [VAR][(ecpg-sql-var.md) — definir uma variável
 * [WHENEVER][(ecpg-sql-whenever.md) — especificar a ação a ser tomada quando uma declaração SQL causa uma condição específica de classe
 
-Esta seção descreve todos os comandos SQL específicos para SQL embutido. Consulte também os comandos SQL listados em [Comandos SQL][(sql-commands.md "SQL Commands")], que também podem ser usados em SQL embutido, a menos que haja indicação em contrário.
+Esta seção descreve todos os comandos SQL específicos para SQL embutido. Consulte também os comandos SQL listados em [Comandos SQL](sql-commands.md), que também podem ser usados em SQL embutido, a menos que haja indicação em contrário.

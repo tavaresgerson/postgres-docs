@@ -8,7 +8,7 @@ pg_walsummary — imprimir conteúdos dos arquivos de resumo WAL
 
 ## Descrição
 
-O pg_walsummary é usado para imprimir o conteúdo dos arquivos de resumo WAL. Esses arquivos binários são encontrados no subdiretório `pg_wal/summaries` do diretório de dados e podem ser convertidos em texto usando essa ferramenta. Isso normalmente não é necessário, uma vez que os arquivos de resumo WAL existem principalmente para suportar [backup incremental][(continuous-archiving.md#BACKUP-INCREMENTAL-BACKUP "25.3.3. Making an Incremental Backup")], mas pode ser útil para fins de depuração.
+O pg_walsummary é usado para imprimir o conteúdo dos arquivos de resumo WAL. Esses arquivos binários são encontrados no subdiretório `pg_wal/summaries` do diretório de dados e podem ser convertidos em texto usando essa ferramenta. Isso normalmente não é necessário, uma vez que os arquivos de resumo WAL existem principalmente para suportar [backup incremental](continuous-archiving.md#BACKUP-INCREMENTAL-BACKUP), mas pode ser útil para fins de depuração.
 
 Um arquivo de resumo WAL é indexado pelo OID do espaço de tabela, pelo OID da relação e pelo fork da relação. Para cada fork da relação, ele armazena a lista de blocos que foram modificados pelo WAL dentro do intervalo resumido no arquivo. Também pode armazenar um "bloco limite", que é 0 se o fork da relação foi criado ou truncado dentro do intervalo relevante do WAL, e, caso contrário, o comprimento mais curto para o qual o fork da relação foi truncado. Se o fork da relação não foi criado, excluído ou truncado dentro do intervalo relevante do WAL, o bloco limite é indefinido ou infinito e não será impresso por esta ferramenta.
 

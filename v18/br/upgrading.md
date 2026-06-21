@@ -10,9 +10,9 @@ Os números de versão atuais do PostgreSQL consistem em um número de versão p
 
 As versões menores nunca alteram o formato de armazenamento interno e são sempre compatíveis com versões menores anteriores e posteriores do mesmo número de versão principal. Por exemplo, a versão 10.1 é compatível com a versão 10.0 e a versão 10.6. Da mesma forma, por exemplo, 9.5.3 é compatível com 9.5.0, 9.5.1 e 9.5.6. Para atualizar entre versões compatíveis, você simplesmente substitui os executáveis enquanto o servidor está fora de operação e reinicia o servidor. O diretório de dados permanece inalterado — as atualizações menores são tão simples assim.
 
-Para as versões *importantes* do PostgreSQL, o formato de armazenamento de dados interno está sujeito a alterações, o que complica as atualizações. O método tradicional para mover dados para uma nova versão importante é fazer o dump e restaurar o banco de dados, embora isso possa ser lento. Um método mais rápido é [pg_upgrade][(pgupgrade.md "pg_upgrade")]. Métodos de replicação também estão disponíveis, conforme discutido abaixo. (Se você está usando uma versão pré-embalada do PostgreSQL, ela pode fornecer scripts para auxiliar nas atualizações de versão importante. Consulte a documentação do nível do pacote para detalhes.)
+Para as versões *importantes* do PostgreSQL, o formato de armazenamento de dados interno está sujeito a alterações, o que complica as atualizações. O método tradicional para mover dados para uma nova versão importante é fazer o dump e restaurar o banco de dados, embora isso possa ser lento. Um método mais rápido é [pg_upgrade](pgupgrade.md). Métodos de replicação também estão disponíveis, conforme discutido abaixo. (Se você está usando uma versão pré-embalada do PostgreSQL, ela pode fornecer scripts para auxiliar nas atualizações de versão importante. Consulte a documentação do nível do pacote para detalhes.)
 
-Novas versões principais também geralmente introduzem algumas incompatibilidades visíveis para o usuário, portanto, podem ser necessárias mudanças na programação de aplicativos. Todas as alterações visíveis para o usuário estão listadas nas notas de lançamento ([Apêndice E][(release.md "Appendix E. Release Notes")]); preste atenção especial à seção rotulada "Migração". Embora você possa fazer a atualização de uma versão principal para outra sem fazer a atualização para versões intermediárias, você deve ler as notas de lançamento principais de todas as versões intermediárias.
+Novas versões principais também geralmente introduzem algumas incompatibilidades visíveis para o usuário, portanto, podem ser necessárias mudanças na programação de aplicativos. Todas as alterações visíveis para o usuário estão listadas nas notas de lançamento ([Apêndice E](release.md)); preste atenção especial à seção rotulada "Migração". Embora você possa fazer a atualização de uma versão principal para outra sem fazer a atualização para versões intermediárias, você deve ler as notas de lançamento principais de todas as versões intermediárias.
 
 Os usuários cautelosos desejam testar suas aplicações de cliente na nova versão antes de fazer a migração completa; portanto, é frequentemente uma boa ideia configurar instalações concorrentes das versões antigas e novas. Ao testar uma atualização importante do PostgreSQL, considere as seguintes categorias de possíveis mudanças:
 
@@ -34,47 +34,47 @@ Recomenda-se que você use os programas pg_dump e pg_dumpall da versão *mais re
 
 Essas instruções assumem que sua instalação existente está na pasta `/usr/local/pgsql`, e que a área de dados está em `/usr/local/pgsql/data`. Substitua seus caminhos conforme necessário.
 
-1. Se estiver fazendo um backup, certifique-se de que seu banco de dados não esteja sendo atualizado. Isso não afeta a integridade do backup, mas, claro, os dados alterados não seriam incluídos. Se necessário, edite as permissões no arquivo `/usr/local/pgsql/data/pg_hba.conf` (ou equivalente) para não permitir acesso de todos, exceto você. Consulte [Capítulo 20][(client-authentication.md "Chapter 20. Client Authentication")] para obter informações adicionais sobre controle de acesso.
+1. Se estiver fazendo um backup, certifique-se de que seu banco de dados não esteja sendo atualizado. Isso não afeta a integridade do backup, mas, claro, os dados alterados não seriam incluídos. Se necessário, edite as permissões no arquivo `/usr/local/pgsql/data/pg_hba.conf` (ou equivalente) para não permitir acesso de todos, exceto você. Consulte [Capítulo 20](client-authentication.md) para obter informações adicionais sobre controle de acesso.
 
 Para fazer backup da sua instalação do banco de dados, digite:
 
-   ```
-   pg_dumpall > outputfile
-   ```
+```
+pg_dumpall > outputfile
+```
 
-Para fazer o backup, você pode usar o comando pg_dumpall da versão que você está executando atualmente; consulte [Seção 25.1.2][(backup-dump.md#BACKUP-DUMP-ALL "25.1.2. Using pg_dumpall")] para mais detalhes. No entanto, para obter os melhores resultados, tente usar o comando pg_dumpall do PostgreSQL 18.4, pois essa versão contém correções de bugs e melhorias em relação às versões anteriores. Embora esse conselho possa parecer peculiar, já que você ainda não instalou a nova versão, é aconselhável segui-lo se você planeja instalar a nova versão em paralelo com a versão antiga. Nesse caso, você pode completar a instalação normalmente e transferir os dados mais tarde. Isso também diminuirá o tempo de inatividade.
+Para fazer o backup, você pode usar o comando pg_dumpall da versão que você está executando atualmente; consulte [Seção 25.1.2](backup-dump.md#BACKUP-DUMP-ALL) para mais detalhes. No entanto, para obter os melhores resultados, tente usar o comando pg_dumpall do PostgreSQL 18.4, pois essa versão contém correções de bugs e melhorias em relação às versões anteriores. Embora esse conselho possa parecer peculiar, já que você ainda não instalou a nova versão, é aconselhável segui-lo se você planeja instalar a nova versão em paralelo com a versão antiga. Nesse caso, você pode completar a instalação normalmente e transferir os dados mais tarde. Isso também diminuirá o tempo de inatividade.
 
-   ```
-   pg_ctl stop
-   ```
+```
+pg_ctl stop
+```
 
 Em sistemas que têm PostgreSQL iniciado no momento do boot, provavelmente há um arquivo de inicialização que fará a mesma coisa. Por exemplo, em um sistema Red Hat Linux, pode-se descobrir que isso funciona:
 
-   ```
-   /etc/rc.d/init.d/postgresql stop
-   ```
+```
+/etc/rc.d/init.d/postgresql stop
+```
 
-Veja [Capítulo 18][(runtime.md "Chapter 18. Server Setup and Operation")] para obter detalhes sobre como iniciar e parar o servidor.
+Veja [Capítulo 18](runtime.md) para obter detalhes sobre como iniciar e parar o servidor.
 3. Se estiver restaurando a partir de um backup, renomeie ou exclua o diretório de instalação antigo, se não for específico para a versão. É uma boa ideia renomear o diretório, em vez de excluí-lo, caso você tenha problemas e precise revertê-lo. Tenha em mente que o diretório pode consumir um espaço de disco significativo. Para renomear o diretório, use um comando como este:
 
-   ```
-   mv /usr/local/pgsql /usr/local/pgsql.old
-   ```
+```
+mv /usr/local/pgsql /usr/local/pgsql.old
+```
 
 (Certifique-se de mover o diretório como uma única unidade para que as caminhos relativos permaneçam inalterados.)
-4. Instale a nova versão do PostgreSQL conforme descrito em [Capítulo 17][(installation.md "Chapter 17. Installation from Source Code")].
+4. Instale a nova versão do PostgreSQL conforme descrito em [Capítulo 17](installation.md).
 5. Crie um novo grupo de bancos de dados, se necessário. Lembre-se de que você deve executar esses comandos enquanto estiver logado na conta de usuário de banco de dados especial (que você já tem se estiver atualizando).
 
-6. Restaure seus ```
-   /usr/local/pgsql/bin/initdb -D /usr/local/pgsql/data
-   ``` anteriores e quaisquer modificações dos `pg_hba.conf`.
+6. Restaure seus ``` /usr/local/pgsql/bin/initdb -D /usr/local/pgsql/data
+```
+anteriores e quaisquer modificações dos `pg_hba.conf`.
 7. Inicie o servidor de banco de dados, novamente usando a conta de usuário especial do banco de dados:
 
 8. Por fim, restaure seus dados do backup com:
 
-   ```
+```
    /usr/local/pgsql/bin/psql -d postgres -f outputfile
-   ```
+```
 
 usando o *novo* psql.
 
@@ -88,7 +88,7 @@ para transferir seus dados.
 
 ### 18.6.2. Atualização de dados via pg_upgrade [#](#UPGRADING-VIA-PG-UPGRADE)
 
-O módulo [pg_upgrade][(pgupgrade.md "pg_upgrade")] permite que uma instalação seja migrada in-place de uma versão principal do PostgreSQL para outra. As atualizações podem ser realizadas em minutos, particularmente com o modo `--link`. Requer etapas semelhantes às do pg_dumpall acima, por exemplo, iniciar/parar o servidor, executar initdb. A [documentação][(pgupgrade.md "pg_upgrade")] do pg_upgrade descreve as etapas necessárias.
+O módulo [pg_upgrade](pgupgrade.md) permite que uma instalação seja migrada in-place de uma versão principal do PostgreSQL para outra. As atualizações podem ser realizadas em minutos, particularmente com o modo `--link`. Requer etapas semelhantes às do pg_dumpall acima, por exemplo, iniciar/parar o servidor, executar initdb. A [documentação](pgupgrade.md) do pg_upgrade descreve as etapas necessárias.
 
 ### 18.6.3. Atualização de dados por replicação [#](#UPGRADING-VIA-REPLICATION)
 

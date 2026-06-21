@@ -47,7 +47,7 @@ Assim como no caso de `EXISTS`, não é prudente assumir que a subconsulta será
 row_constructor IN (subquery)
 ```
 
-O lado esquerdo deste formulário de `IN` é um construtor de linha, conforme descrito em [Seção 4.2.13][(sql-expressions.md#SQL-SYNTAX-ROW-CONSTRUCTORS "4.2.13. Row Constructors")]. O lado direito é uma subconsulta entre parênteses, que deve retornar exatamente tantas colunas quanto houver expressões na linha esquerda. As expressões da esquerda são avaliadas e comparadas linha a linha com cada linha do resultado da subconsulta. O resultado de `IN` é “verdadeiro” se qualquer linha da subconsulta igual for encontrada. O resultado é “falso” se nenhuma linha igual for encontrada (incluindo o caso em que a subconsulta não retorne nenhuma linha).
+O lado esquerdo deste formulário de `IN` é um construtor de linha, conforme descrito em [Seção 4.2.13](sql-expressions.md#SQL-SYNTAX-ROW-CONSTRUCTORS). O lado direito é uma subconsulta entre parênteses, que deve retornar exatamente tantas colunas quanto houver expressões na linha esquerda. As expressões da esquerda são avaliadas e comparadas linha a linha com cada linha do resultado da subconsulta. O resultado de `IN` é “verdadeiro” se qualquer linha da subconsulta igual for encontrada. O resultado é “falso” se nenhuma linha igual for encontrada (incluindo o caso em que a subconsulta não retorne nenhuma linha).
 
 Como de costume, os valores nulos nas linhas são combinados de acordo com as regras normais das expressões booleanas do SQL. Duas linhas são consideradas iguais se todos seus membros correspondentes forem não nulos e iguais; as linhas são desiguais se quaisquer membros correspondentes forem não nulos e desiguais; caso contrário, o resultado daquela comparação de linha é desconhecido (nulo). Se todos os resultados por linha forem desiguais ou nulos, com pelo menos um nulo, então o resultado de `IN` é nulo.
 
@@ -67,7 +67,7 @@ Assim como no caso de `EXISTS`, não é prudente assumir que a subconsulta será
 row_constructor NOT IN (subquery)
 ```
 
-O lado esquerdo deste formulário de `NOT IN` é um construtor de linha, conforme descrito em [Seção 4.2.13][(sql-expressions.md#SQL-SYNTAX-ROW-CONSTRUCTORS "4.2.13. Row Constructors")]. O lado direito é uma subconsulta entre parênteses, que deve retornar exatamente tantas colunas quanto houver expressões na linha esquerda. As expressões da esquerda são avaliadas e comparadas linha a linha com cada linha do resultado da subconsulta. O resultado de `NOT IN` é “verdadeiro” se apenas as linhas da subconsulta desiguais forem encontradas (incluindo o caso em que a subconsulta não retorne nenhuma linha). O resultado é “falso” se qualquer linha igual for encontrada.
+O lado esquerdo deste formulário de `NOT IN` é um construtor de linha, conforme descrito em [Seção 4.2.13](sql-expressions.md#SQL-SYNTAX-ROW-CONSTRUCTORS). O lado direito é uma subconsulta entre parênteses, que deve retornar exatamente tantas colunas quanto houver expressões na linha esquerda. As expressões da esquerda são avaliadas e comparadas linha a linha com cada linha do resultado da subconsulta. O resultado de `NOT IN` é “verdadeiro” se apenas as linhas da subconsulta desiguais forem encontradas (incluindo o caso em que a subconsulta não retorne nenhuma linha). O resultado é “falso” se qualquer linha igual for encontrada.
 
 Como de costume, os valores nulos nas linhas são combinados de acordo com as regras normais das expressões booleanas do SQL. Duas linhas são consideradas iguais se todos seus membros correspondentes forem não nulos e iguais; as linhas são desiguais se quaisquer membros correspondentes forem não nulos e desiguais; caso contrário, o resultado daquela comparação de linha é desconhecido (nulo). Se todos os resultados por linha forem desiguais ou nulos, com pelo menos um nulo, então o resultado de `NOT IN` é nulo.
 
@@ -91,9 +91,9 @@ row_constructor operator ANY (subquery)
 row_constructor operator SOME (subquery)
 ```
 
-O lado esquerdo deste formulário de `ANY` é um construtor de linha, conforme descrito em [Seção 4.2.13][(sql-expressions.md#SQL-SYNTAX-ROW-CONSTRUCTORS "4.2.13. Row Constructors")]. O lado direito é uma subconsulta entre parênteses, que deve retornar exatamente tantas colunas quanto houver expressões na linha esquerda. As expressões da esquerda são avaliadas e comparadas linha a linha com cada linha do resultado da subconsulta, usando o dado *`operator`*. O resultado de `ANY` é “verdadeiro” se a comparação retornar verdadeiro para qualquer linha da subconsulta. O resultado é “falso” se a comparação retornar falso para cada linha da subconsulta (incluindo o caso em que a subconsulta não retorne nenhuma linha). O resultado é NULL se nenhuma comparação com uma linha da subconsulta retornar verdadeiro, e pelo menos uma comparação retornar NULL.
+O lado esquerdo deste formulário de `ANY` é um construtor de linha, conforme descrito em [Seção 4.2.13](sql-expressions.md#SQL-SYNTAX-ROW-CONSTRUCTORS). O lado direito é uma subconsulta entre parênteses, que deve retornar exatamente tantas colunas quanto houver expressões na linha esquerda. As expressões da esquerda são avaliadas e comparadas linha a linha com cada linha do resultado da subconsulta, usando o dado *`operator`*. O resultado de `ANY` é “verdadeiro” se a comparação retornar verdadeiro para qualquer linha da subconsulta. O resultado é “falso” se a comparação retornar falso para cada linha da subconsulta (incluindo o caso em que a subconsulta não retorne nenhuma linha). O resultado é NULL se nenhuma comparação com uma linha da subconsulta retornar verdadeiro, e pelo menos uma comparação retornar NULL.
 
-Consulte a [Seção 9.25.5][(functions-comparisons.md#ROW-WISE-COMPARISON "9.25.5. Row Constructor Comparison")] para obter detalhes sobre o significado da comparação de um construtor de linha.
+Consulte a [Seção 9.25.5](functions-comparisons.md#ROW-WISE-COMPARISON) para obter detalhes sobre o significado da comparação de um construtor de linha.
 
 ### 9.24.5. `ALL` [#](#FUNCTIONS-SUBQUERY-ALL)
 
@@ -111,9 +111,9 @@ Assim como no caso de `EXISTS`, não é prudente assumir que a subconsulta será
 row_constructor operator ALL (subquery)
 ```
 
-O lado esquerdo deste formulário de `ALL` é um construtor de linha, conforme descrito em [Seção 4.2.13][(sql-expressions.md#SQL-SYNTAX-ROW-CONSTRUCTORS "4.2.13. Row Constructors")]. O lado direito é uma subconsulta entre parênteses, que deve retornar exatamente tantas colunas quanto houver expressões na linha esquerda. As expressões da esquerda são avaliadas e comparadas linha a linha com cada linha do resultado da subconsulta, usando o dado *`operator`*. O resultado de `ALL` é “verdadeiro” se a comparação retornar verdadeiro para todas as linhas da subconsulta (incluindo o caso em que a subconsulta não retorne nenhuma linha). O resultado é “falso” se a comparação retornar falso para qualquer linha da subconsulta. O resultado é NULL se nenhuma comparação com uma linha da subconsulta retornar falso, e pelo menos uma comparação retornar NULL.
+O lado esquerdo deste formulário de `ALL` é um construtor de linha, conforme descrito em [Seção 4.2.13](sql-expressions.md#SQL-SYNTAX-ROW-CONSTRUCTORS). O lado direito é uma subconsulta entre parênteses, que deve retornar exatamente tantas colunas quanto houver expressões na linha esquerda. As expressões da esquerda são avaliadas e comparadas linha a linha com cada linha do resultado da subconsulta, usando o dado *`operator`*. O resultado de `ALL` é “verdadeiro” se a comparação retornar verdadeiro para todas as linhas da subconsulta (incluindo o caso em que a subconsulta não retorne nenhuma linha). O resultado é “falso” se a comparação retornar falso para qualquer linha da subconsulta. O resultado é NULL se nenhuma comparação com uma linha da subconsulta retornar falso, e pelo menos uma comparação retornar NULL.
 
-Consulte a [Seção 9.25.5][(functions-comparisons.md#ROW-WISE-COMPARISON "9.25.5. Row Constructor Comparison")] para obter detalhes sobre o significado da comparação de um construtor de linha.
+Consulte a [Seção 9.25.5](functions-comparisons.md#ROW-WISE-COMPARISON) para obter detalhes sobre o significado da comparação de um construtor de linha.
 
 ### 9.24.6. Comparação de linha única [#](#FUNCTIONS-SUBQUERY-SINGLE-ROW-COMP)
 
@@ -121,6 +121,6 @@ Consulte a [Seção 9.25.5][(functions-comparisons.md#ROW-WISE-COMPARISON "9.25.
 row_constructor operator (subquery)
 ```
 
-O lado esquerdo é um construtor de linha, conforme descrito em [Seção 4.2.13][(sql-expressions.md#SQL-SYNTAX-ROW-CONSTRUCTORS "4.2.13. Row Constructors")]. O lado direito é uma subconsulta entre parênteses, que deve retornar exatamente tantas colunas quanto houver expressões na linha do lado esquerdo. Além disso, a subconsulta não pode retornar mais de uma linha. (Se ela retornar zero linhas, o resultado é considerado nulo.) O lado esquerdo é avaliado e comparado linha a linha com a única linha do resultado da subconsulta.
+O lado esquerdo é um construtor de linha, conforme descrito em [Seção 4.2.13](sql-expressions.md#SQL-SYNTAX-ROW-CONSTRUCTORS). O lado direito é uma subconsulta entre parênteses, que deve retornar exatamente tantas colunas quanto houver expressões na linha do lado esquerdo. Além disso, a subconsulta não pode retornar mais de uma linha. (Se ela retornar zero linhas, o resultado é considerado nulo.) O lado esquerdo é avaliado e comparado linha a linha com a única linha do resultado da subconsulta.
 
-Veja [Seção 9.25.5][(functions-comparisons.md#ROW-WISE-COMPARISON "9.25.5. Row Constructor Comparison")] para obter detalhes sobre o significado de uma comparação de construtor de linha.
+Veja [Seção 9.25.5](functions-comparisons.md#ROW-WISE-COMPARISON) para obter detalhes sobre o significado de uma comparação de construtor de linha.

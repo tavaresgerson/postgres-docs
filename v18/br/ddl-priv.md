@@ -4,7 +4,7 @@ Quando um objeto é criado, ele é atribuído a um proprietário. O proprietári
 
 Existem diferentes tipos de privilégios: `SELECT`, `INSERT`, `UPDATE`, `DELETE`, `TRUNCATE`, `REFERENCES`, `TRIGGER`, `CREATE`, `CONNECT`, `TEMPORARY`, `EXECUTE`, `USAGE`, `SET`, `ALTER SYSTEM` e `MAINTAIN`. Os privilégios aplicáveis a um objeto específico variam dependendo do tipo do objeto (tabela, função, etc.). Mais detalhes sobre os significados desses privilégios aparecem abaixo. As seções e capítulos seguintes também mostrarão como esses privilégios são usados.
 
-O direito de modificar ou destruir um objeto é inerente ao fato de ser o proprietário do objeto e não pode ser concedido ou revogado por si só. (No entanto, como todos os privilégios, esse direito pode ser herdado por membros do papel de proprietário; veja [Seção 21.3][(role-membership.md "21.3. Role Membership")].
+O direito de modificar ou destruir um objeto é inerente ao fato de ser o proprietário do objeto e não pode ser concedido ou revogado por si só. (No entanto, como todos os privilégios, esse direito pode ser herdado por membros do papel de proprietário; veja [Seção 21.3](role-membership.md).
 
 Um objeto pode ser atribuído a um novo proprietário com um comando `ALTER` do tipo apropriado para o objeto, por exemplo
 
@@ -14,7 +14,7 @@ ALTER TABLE table_name OWNER TO new_owner;
 
 Os superusuários sempre podem fazer isso; os papéis comuns só podem fazer isso se forem ambos os proprietários atuais do objeto (ou herdar os privilégios do papel proprietário) e capazes de `SET ROLE` para o novo papel proprietário. Todos os privilégios do objeto do antigo proprietário são transferidos para o novo proprietário juntamente com a propriedade.
 
-Para atribuir privilégios, o comando [GRANT][(sql-grant.md "GRANT")] é utilizado. Por exemplo, se `joe` é um papel existente e `accounts` é uma tabela existente, o privilégio de atualizar a tabela pode ser concedido com:
+Para atribuir privilégios, o comando [GRANT](sql-grant.md) é utilizado. Por exemplo, se `joe` é um papel existente e `accounts` é uma tabela existente, o privilégio de atualizar a tabela pode ser concedido com:
 
 ```
 GRANT UPDATE ON accounts TO joe;
@@ -22,9 +22,9 @@ GRANT UPDATE ON accounts TO joe;
 
 Escrever `ALL` no lugar de um privilégio específico concede todos os privilégios que são relevantes para o tipo de objeto.
 
-O nome especial “role” `PUBLIC` pode ser usado para conceder privilégios a todos os roles do sistema. Além disso, os roles de “grupo” podem ser configurados para ajudar a gerenciar privilégios quando há muitos usuários de um banco de dados — para detalhes, consulte [Capítulo 21][(user-manag.md "Chapter 21. Database Roles")].
+O nome especial “role” `PUBLIC` pode ser usado para conceder privilégios a todos os roles do sistema. Além disso, os roles de “grupo” podem ser configurados para ajudar a gerenciar privilégios quando há muitos usuários de um banco de dados — para detalhes, consulte [Capítulo 21](user-manag.md).
 
-Para revogar um privilégio concedido anteriormente, use o comando apropriadamente chamado [REVOKE][(sql-revoke.md "REVOKE")]:
+Para revogar um privilégio concedido anteriormente, use o comando apropriadamente chamado [REVOKE](sql-revoke.md):
 
 ```
 REVOKE ALL ON accounts FROM PUBLIC;
@@ -86,38 +86,40 @@ Os privilégios necessários para outros comandos estão listados na página de 
 
 O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por padrão quando os objetos são criados. Não são concedidos privilégios ao `PUBLIC` por padrão em tabelas, colunas de tabela, sequências, wrappers de dados externos, servidores externos, objetos grandes, esquemas, espaços de tabela ou parâmetros de configuração. Para outros tipos de objetos, os privilégios concedidos por padrão ao `PUBLIC` são os seguintes: privilégios de `CONNECT` e `TEMPORARY` (criar tabelas temporárias) para bancos de dados; privilégio de `EXECUTE` para funções e procedimentos; e privilégio de `USAGE` para linguagens e tipos de dados (incluindo domínios). O proprietário do objeto, é claro, pode `REVOKE` tanto os privilégios concedidos por padrão quanto os expressamente concedidos. (Para máxima segurança, emita o `REVOKE` na mesma transação que cria o objeto; então não há janela em que outro usuário pode usar o objeto.) Além disso, esses ajustes de privilégios padrão podem ser ignorados usando o comando [ALTER DEFAULT PRIVILEGES](sql-alterdefaultprivileges.md "ALTER DEFAULT PRIVILEGES").
 
-[Tabela 5.1][(ddl-priv.md#PRIVILEGE-ABBREVS-TABLE "Table 5.1. ACL Privilege Abbreviations")] mostra as abreviações de uma letra que são usadas para esses tipos de privilégio nos valores de *ACL*. Você verá essas letras na saída dos comandos [psql][(app-psql.md "psql")] listados abaixo, ou ao olhar nas colunas ACL dos catálogos do sistema.
+[Tabela 5.1](ddl-priv.md#PRIVILEGE-ABBREVS-TABLE) mostra as abreviações de uma letra que são usadas para esses tipos de privilégio nos valores de *ACL*. Você verá essas letras na saída dos comandos [psql](app-psql.md) listados abaixo, ou ao olhar nas colunas ACL dos catálogos do sistema.
 
 **Tabela 5.1. Abreviações de privilégios do ACL**
 
 
 
 <table border="1" class="table" summary="ACL Privilege Abbreviations">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Privilege
    </th>
-<th>
+   <th>
     Abbreviation
    </th>
-<th>Tipos de Objeto Aplicáveis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+   <th>
+    Tipos de Objeto Aplicáveis
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      SELECT
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      r
     </code>
     (
@@ -130,24 +132,29 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
     </span>
     )
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      LARGE OBJECT
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      SEQUENCE
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      TABLE
-    </code>(e objetos semelhantes a uma mesa),  
-coluna de tabela</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+    </code>
+    (e objetos semelhantes a uma mesa), coluna de tabela
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      INSERT
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      a
     </code>
     (
@@ -160,19 +167,21 @@ coluna de tabela</td>
     </span>
     )
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      TABLE
-    </code>, coluna de tabela</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+    </code>
+    , coluna de tabela
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      UPDATE
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      w
     </code>
     (
@@ -185,582 +194,613 @@ coluna de tabela</td>
     </span>
     )
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      LARGE OBJECT
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      SEQUENCE
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      TABLE
-    </code>,
-, coluna de tabela</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+    </code>
+    , , coluna de tabela
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      DELETE
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      d
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      TABLE
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      TRUNCATE
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      D
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      TABLE
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      REFERENCES
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      x
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      TABLE
-    </code>, coluna de tabela</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+    </code>
+    , coluna de tabela
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      TRIGGER
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      t
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      TABLE
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      CREATE
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      C
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      DATABASE
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      SCHEMA
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      TABLESPACE
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      CONNECT
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      c
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      DATABASE
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      TEMPORARY
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      T
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      DATABASE
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      EXECUTE
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      X
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      FUNCTION
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      PROCEDURE
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      USAGE
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      U
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      DOMAIN
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      FOREIGN DATA WRAPPER
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      FOREIGN SERVER
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      LANGUAGE
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      SCHEMA
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      SEQUENCE
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      TYPE
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      SET
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      s
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      PARAMETER
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      ALTER SYSTEM
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      A
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      PARAMETER
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      MAINTAIN
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      m
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      TABLE
     </code>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
 
-[Tabela 5.2][(ddl-priv.md#PRIVILEGES-SUMMARY-TABLE "Table 5.2. Summary of Access Privileges")] resume os privilégios disponíveis para cada tipo de objeto SQL, usando as abreviações mostradas acima. Também mostra o comando psql que pode ser usado para examinar as configurações de privilégios para cada tipo de objeto.
+
+
+
+
+[Tabela 5.2](ddl-priv.md#PRIVILEGES-SUMMARY-TABLE) resume os privilégios disponíveis para cada tipo de objeto SQL, usando as abreviações mostradas acima. Também mostra o comando psql que pode ser usado para examinar as configurações de privilégios para cada tipo de objeto.
 
 **Tabela 5.2. Resumo dos privilégios de acesso**
 
 
 
 <table border="1" class="table" summary="Summary of Access Privileges">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-<col class="col4"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+  <col class="col4"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Object Type
    </th>
-<th>
+   <th>
     All Privileges
    </th>
-<th>
+   <th>
     Default
     <code class="literal">
      PUBLIC
     </code>
     Privileges
    </th>
-<th>
-<span class="application">
+   <th>
+    <span class="application">
      psql
     </span>
     Command
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      DATABASE
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      CTc
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      Tc
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      \l
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      DOMAIN
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      U
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      U
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      \dD+
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      FUNCTION
     </code>
     or
     <code class="literal">
      PROCEDURE
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      X
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      X
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      \df+
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      FOREIGN DATA WRAPPER
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      U
     </code>
-</td>
-<td>
+   </td>
+   <td>
     none
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      \dew+
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      FOREIGN SERVER
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      U
     </code>
-</td>
-<td>
+   </td>
+   <td>
     none
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      \des+
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      LANGUAGE
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      U
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      U
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      \dL+
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      LARGE OBJECT
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      rw
     </code>
-</td>
-<td>
+   </td>
+   <td>
     none
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      \dl+
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      PARAMETER
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      sA
     </code>
-</td>
-<td>
+   </td>
+   <td>
     none
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      \dconfig+
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      SCHEMA
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      UC
     </code>
-</td>
-<td>
+   </td>
+   <td>
     none
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      \dn+
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      SEQUENCE
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      rwU
     </code>
-</td>
-<td>
+   </td>
+   <td>
     none
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      \dp
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      TABLE
     </code>
     (and table-like objects)
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      arwdDxtm
     </code>
-</td>
-<td>
+   </td>
+   <td>
     none
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      \dp
     </code>
-</td>
-</tr>
-<tr>
-<td>
+   </td>
+  </tr>
+  <tr>
+   <td>
     Table column
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      arwx
     </code>
-</td>
-<td>
+   </td>
+   <td>
     none
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      \dp
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      TABLESPACE
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      C
     </code>
-</td>
-<td>
+   </td>
+   <td>
     none
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      \db+
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      TYPE
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      U
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      U
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      \dT+
     </code>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Os privilégios que foram concedidos para um objeto específico são exibidos como uma lista de entradas `aclitem`, cada uma com o formato:
 

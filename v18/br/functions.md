@@ -2,10 +2,10 @@
 
 **Índice**
 
-* [9.1. Operadores Lógicos][(functions-logical.md)]
-* [9.2. Funções e Operadores de Comparação][(functions-comparison.md)]
-* [9.3. Funções e Operadores Matemáticos][(functions-math.md)]
-* [9.4. Funções e Operadores de String][(functions-string.md)]
+* [9.1. Operadores Lógicos](functions-logical.md)
+* [9.2. Funções e Operadores de Comparação](functions-comparison.md)
+* [9.3. Funções e Operadores Matemáticos](functions-math.md)
+* [9.4. Funções e Operadores de String](functions-string.md)
 
 + [9.4.1. `format`](functions-string.md#FUNCTIONS-STRING-FORMAT)
 
@@ -27,12 +27,12 @@
 + [9.9.5. Data/Hora Atual](functions-datetime.md#FUNCTIONS-DATETIME-CURRENT)
 + [9.9.6. Atrasos na Execução](functions-datetime.md#FUNCTIONS-DATETIME-DELAY)
 
-* [9.10. Funções de suporte de enumeração][(functions-enum.md)]]
-* [9.11. Funções e operadores geométricos][(functions-geometry.md)]]
-* [9.12. Funções e operadores de endereço de rede][(functions-net.md)]]
-* [9.13. Funções e operadores de busca de texto][(functions-textsearch.md)]]
-* [9.14. Funções UUID][(functions-uuid.md)]]
-* [9.15. Funções XML][(functions-xml.md)]
+* [9.10. Funções de suporte de enumeração](functions-enum.md)]
+* [9.11. Funções e operadores geométricos](functions-geometry.md)]
+* [9.12. Funções e operadores de endereço de rede](functions-net.md)]
+* [9.13. Funções e operadores de busca de texto](functions-textsearch.md)]
+* [9.14. Funções UUID](functions-uuid.md)]
+* [9.15. Funções XML](functions-xml.md)
 
 + [9.15.1. Produção de conteúdo XML](functions-xml.md#FUNCTIONS-PRODUCING-XML)
 + [9.15.2. Predicados XML](functions-xml.md#FUNCTIONS-XML-PREDICATES)
@@ -64,8 +64,8 @@
 + [9.24.1. `EXISTS`](functions-subquery.md#FUNCTIONS-SUBQUERY-EXISTS)
 + [9.24.2. `IN`](functions-subquery.md#FUNCTIONS-SUBQUERY-IN)
 + [9.24.3. `NOT IN`](functions-subquery.md#FUNCTIONS-SUBQUERY-NOTIN)
-+ [9.24.4. `ANY`/`SOME`(functions-subquery.md#FUNCTIONS-SUBQUERY-ANY-SOME)
-+ [9.24.5. `ALL`(functions-subquery.md#FUNCTIONS-SUBQUERY-ALL)
++ [9.24.4. `ANY`/`SOME`](functions-subquery.md#FUNCTIONS-SUBQUERY-ANY-SOME)
++ [9.24.5. `ALL`](functions-subquery.md#FUNCTIONS-SUBQUERY-ALL)
 + [9.24.6. Comparação de uma única linha](functions-subquery.md#FUNCTIONS-SUBQUERY-SINGLE-ROW-COMP)
 
 * [9.25. Comparação de linhas e arrays](functions-comparisons.md)
@@ -109,15 +109,15 @@
 * [9.29. Funções de gatilho](functions-trigger.md)
 * [9.30. Funções de gatilho de evento](functions-event-triggers.md)
 
-+ [9.30.1. Captura de alterações no final do comando][(functions-event-triggers.md#PG-EVENT-TRIGGER-DDL-COMMAND-END-FUNCTIONS)]
-+ [9.30.2. Processamento de objetos descartados por um comando DDL][(functions-event-triggers.md#PG-EVENT-TRIGGER-SQL-DROP-FUNCTIONS)]
-+ [9.30.3. Tratamento de um evento de reescrita de tabela][(functions-event-triggers.md#PG-EVENT-TRIGGER-TABLE-REWRITE-FUNCTIONS)]
++ [9.30.1. Captura de alterações no final do comando](functions-event-triggers.md#PG-EVENT-TRIGGER-DDL-COMMAND-END-FUNCTIONS)
++ [9.30.2. Processamento de objetos descartados por um comando DDL](functions-event-triggers.md#PG-EVENT-TRIGGER-SQL-DROP-FUNCTIONS)
++ [9.30.3. Tratamento de um evento de reescrita de tabela](functions-event-triggers.md#PG-EVENT-TRIGGER-TABLE-REWRITE-FUNCTIONS)
 
 * [9.31. Funções de Informação Estatística](functions-statistics.md)
 
 + [9.31.1. Inspeção de listas de MCV](functions-statistics.md#FUNCTIONS-STATISTICS-MCV)
 
-O PostgreSQL oferece um grande número de funções e operadores para os tipos de dados embutidos. Este capítulo descreve a maioria deles, embora funções especiais adicionais apareçam em seções relevantes do manual. Os usuários também podem definir suas próprias funções e operadores, conforme descrito em [Parte V][(server-programming.md "Part V. Server Programming")]. Os comandos psql `\df` e `\do` podem ser usados para listar todas as funções e operadores disponíveis, respectivamente.
+O PostgreSQL oferece um grande número de funções e operadores para os tipos de dados embutidos. Este capítulo descreve a maioria deles, embora funções especiais adicionais apareçam em seções relevantes do manual. Os usuários também podem definir suas próprias funções e operadores, conforme descrito em [Parte V](server-programming.md). Os comandos psql `\df` e `\do` podem ser usados para listar todas as funções e operadores disponíveis, respectivamente.
 
 A notação usada ao longo deste capítulo para descrever os tipos de dados de argumento e resultado de uma função ou operador é a seguinte:
 

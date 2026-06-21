@@ -1,11 +1,11 @@
 ## 5.12. Divisão de tabela [#](#DDL-PARTITIONING)
 
-* [5.12.1. Visão geral][(ddl-partitioning.md#DDL-PARTITIONING-OVERVIEW)]
-* [5.12.2. Partição declarativa][(ddl-partitioning.md#DDL-PARTITIONING-DECLARATIVE)]
-* [5.12.3. Partição usando herança][(ddl-partitioning.md#DDL-PARTITIONING-USING-INHERITANCE)]
-* [5.12.4. Remoção de partições][(ddl-partitioning.md#DDL-PARTITION-PRUNING)]
-* [5.12.5. Partição e exclusão de restrições][(ddl-partitioning.md#DDL-PARTITIONING-CONSTRAINT-EXCLUSION)]
-* [5.12.6. Práticas recomendadas para partição declarativa][(ddl-partitioning.md#DDL-PARTITIONING-DECLARATIVE-BEST-PRACTICES)]
+* [5.12.1. Visão geral](ddl-partitioning.md#DDL-PARTITIONING-OVERVIEW)
+* [5.12.2. Partição declarativa](ddl-partitioning.md#DDL-PARTITIONING-DECLARATIVE)
+* [5.12.3. Partição usando herança](ddl-partitioning.md#DDL-PARTITIONING-USING-INHERITANCE)
+* [5.12.4. Remoção de partições](ddl-partitioning.md#DDL-PARTITION-PRUNING)
+* [5.12.5. Partição e exclusão de restrições](ddl-partitioning.md#DDL-PARTITIONING-CONSTRAINT-EXCLUSION)
+* [5.12.6. Práticas recomendadas para partição declarativa](ddl-partitioning.md#DDL-PARTITIONING-DECLARATIVE-BEST-PRACTICES)
 
 O PostgreSQL suporta a partição básica de tabelas. Esta seção descreve por que e como implementar a partição como parte do projeto do seu banco de dados.
 
@@ -36,11 +36,11 @@ O PostgreSQL permite que você declare que uma tabela é dividida em partições
 
 A própria tabela dividida é uma tabela “virtual” que não possui armazenamento próprio. Em vez disso, o armazenamento pertence aos *partições*, que são tabelas comuns associadas à tabela dividida. Cada partição armazena um subconjunto dos dados, conforme definido pelos seus *limites de partição*. Todas as linhas inseridas em uma tabela dividida serão encaminhadas para a partição apropriada com base nos valores da(s) coluna(s) chave(s) de partição. A atualização da chave de partição de uma linha fará com que ela seja movida para uma partição diferente, se não mais atender aos limites de partição da sua partição original.
 
-As partições podem ser definidas como tabelas particionadas, resultando em *sub-particionamento*. Embora todas as partições devam ter as mesmas colunas que seu pai particionado, as partições podem ter seus próprios índices, restrições e valores padrão, distintos daqueles das outras partições. Consulte [CREATE TABLE][(sql-createtable.md "CREATE TABLE")] para mais detalhes sobre a criação de tabelas e partições particionadas.
+As partições podem ser definidas como tabelas particionadas, resultando em *sub-particionamento*. Embora todas as partições devam ter as mesmas colunas que seu pai particionado, as partições podem ter seus próprios índices, restrições e valores padrão, distintos daqueles das outras partições. Consulte [CREATE TABLE](sql-createtable.md) para mais detalhes sobre a criação de tabelas e partições particionadas.
 
 Não é possível transformar uma tabela comum em uma tabela particionada ou vice-versa. No entanto, é possível adicionar uma tabela existente comum ou particionada como uma partição de uma tabela particionada, ou remover uma partição de uma tabela particionada, transformando-a em uma tabela independente; isso pode simplificar e acelerar muitos processos de manutenção. Consulte [ALTER TABLE](sql-altertable.md "ALTER TABLE") para saber mais sobre os subcomandos `ATTACH PARTITION` e `DETACH PARTITION`.
 
-As partições também podem ser [tabuletas estrangeiras][(ddl-foreign-data.md "5.13. Foreign Data")], embora seja necessário bastante cuidado, pois é responsabilidade do usuário que o conteúdo da tabela estrangeira satisfaça a regra de partição. Há outras restrições também. Consulte [CREATE FOREIGN TABLE][(sql-createforeigntable.md "CREATE FOREIGN TABLE")] para obter mais informações.
+As partições também podem ser [tabuletas estrangeiras](ddl-foreign-data.md), embora seja necessário bastante cuidado, pois é responsabilidade do usuário que o conteúdo da tabela estrangeira satisfaça a regra de partição. Há outras restrições também. Consulte [CREATE FOREIGN TABLE](sql-createforeigntable.md) para obter mais informações.
 
 #### 5.12.2.1. Exemplo [#](#DDL-PARTITIONING-DECLARATIVE-EXAMPLE)
 
@@ -68,42 +68,42 @@ Para usar a partição declarativa neste caso, siga os passos a seguir:
        peaktemp        int,
        unitsales       int
    ) PARTITION BY RANGE (logdate);
-   ``` 2. Crie partições. A definição de cada partição deve especificar limites que correspondam ao método de particionamento e à chave de partição do pai. Observe que especificar limites de forma que os valores da nova partição se sobreponham com os de uma ou mais partições existentes causará um erro.
+```
 
 As partições assim criadas são, em todos os aspectos, tabelas normais do PostgreSQL (ou, possivelmente, tabelas estrangeiras). É possível especificar um espaço de tabelas e parâmetros de armazenamento para cada partição separadamente.
 
 Para o nosso exemplo, cada partição deve conter o valor de um mês de dados, para corresponder ao requisito de excluir um mês de dados de cada vez. Portanto, os comandos podem parecer assim:
 
-   ```
-   CREATE TABLE measurement_y2006m02 PARTITION OF measurement
-       FOR VALUES FROM ('2006-02-01') TO ('2006-03-01');
+```
+CREATE TABLE measurement_y2006m02 PARTITION OF measurement
+    FOR VALUES FROM ('2006-02-01') TO ('2006-03-01');
 
-   CREATE TABLE measurement_y2006m03 PARTITION OF measurement
-       FOR VALUES FROM ('2006-03-01') TO ('2006-04-01');
+CREATE TABLE measurement_y2006m03 PARTITION OF measurement
+    FOR VALUES FROM ('2006-03-01') TO ('2006-04-01');
 
-   ...
-   CREATE TABLE measurement_y2007m11 PARTITION OF measurement
-       FOR VALUES FROM ('2007-11-01') TO ('2007-12-01');
+...
+CREATE TABLE measurement_y2007m11 PARTITION OF measurement
+    FOR VALUES FROM ('2007-11-01') TO ('2007-12-01');
 
-   CREATE TABLE measurement_y2007m12 PARTITION OF measurement
-       FOR VALUES FROM ('2007-12-01') TO ('2008-01-01')
-       TABLESPACE fasttablespace;
+CREATE TABLE measurement_y2007m12 PARTITION OF measurement
+    FOR VALUES FROM ('2007-12-01') TO ('2008-01-01')
+    TABLESPACE fasttablespace;
 
-   CREATE TABLE measurement_y2008m01 PARTITION OF measurement
-       FOR VALUES FROM ('2008-01-01') TO ('2008-02-01')
-       WITH (parallel_workers = 4)
-       TABLESPACE fasttablespace;
-   ```
+CREATE TABLE measurement_y2008m01 PARTITION OF measurement
+    FOR VALUES FROM ('2008-01-01') TO ('2008-02-01')
+    WITH (parallel_workers = 4)
+    TABLESPACE fasttablespace;
+```
 
 (Lembre-se de que as partições adjacentes podem compartilhar um valor limite, uma vez que os limites superiores de intervalo são tratados como limites exclusivos.)
 
 Se você deseja implementar subpartição, especifique novamente a cláusula `PARTITION BY` nos comandos usados para criar partições individuais, por exemplo:
 
-   ```
-   CREATE TABLE measurement_y2006m02 PARTITION OF measurement
-       FOR VALUES FROM ('2006-02-01') TO ('2006-03-01')
-       PARTITION BY RANGE (peaktemp);
-   ```
+```
+CREATE TABLE measurement_y2006m02 PARTITION OF measurement
+    FOR VALUES FROM ('2006-02-01') TO ('2006-03-01')
+    PARTITION BY RANGE (peaktemp);
+```
 
 Após a criação de partições de `measurement_y2006m02`, quaisquer dados inseridos em `measurement` que estejam mapeados para `measurement_y2006m02` (ou dados que estejam diretamente inseridos em `measurement_y2006m02`, o que é permitido desde que a restrição de partição seja atendida) serão redirecionados para uma de suas partições com base na coluna `peaktemp`. A chave de partição especificada pode sobrepor-se à chave de partição do pai, embora se deva ter cuidado ao especificar os limites de uma subpartição de modo que o conjunto de dados que ela aceita constitua um subconjunto do que os próprios limites da partição permitem; o sistema não tenta verificar se isso realmente é o caso.
 
@@ -134,7 +134,7 @@ ALTER TABLE measurement DETACH PARTITION measurement_y2006m02;
 ALTER TABLE measurement DETACH PARTITION measurement_y2006m02 CONCURRENTLY;
 ```
 
-Esses permitem que operações adicionais sejam realizadas nos dados antes de serem descartados. Por exemplo, muitas vezes é um momento útil para fazer backup dos dados usando `COPY`, pg_dump ou ferramentas semelhantes. Também pode ser um momento útil para agregar dados em formatos menores, realizar outras manipulações de dados ou executar relatórios. A primeira forma do comando requer um `ACCESS EXCLUSIVE` bloqueio na tabela pai. Adicionar o qualificador `CONCURRENTLY` como na segunda forma permite que a operação de desacoplamento exija apenas `SHARE UPDATE EXCLUSIVE` bloqueio na tabela pai, mas consulte [`ALTER TABLE ... DETACH PARTITION`(sql-altertable.md#SQL-ALTERTABLE-DETACH-PARTITION) para detalhes sobre as restrições.
+Esses permitem que operações adicionais sejam realizadas nos dados antes de serem descartados. Por exemplo, muitas vezes é um momento útil para fazer backup dos dados usando `COPY`, pg_dump ou ferramentas semelhantes. Também pode ser um momento útil para agregar dados em formatos menores, realizar outras manipulações de dados ou executar relatórios. A primeira forma do comando requer um `ACCESS EXCLUSIVE` bloqueio na tabela pai. Adicionar o qualificador `CONCURRENTLY` como na segunda forma permite que a operação de desacoplamento exija apenas `SHARE UPDATE EXCLUSIVE` bloqueio na tabela pai, mas consulte [`ALTER TABLE ... DETACH PARTITION`](sql-altertable.md#SQL-ALTERTABLE-DETACH-PARTITION) para detalhes sobre as restrições.
 
 Da mesma forma, podemos adicionar uma nova partição para lidar com novos dados. Podemos criar uma partição vazia na tabela particionada, assim como as partições originais foram criadas acima:
 
@@ -199,7 +199,7 @@ As seguintes limitações se aplicam a tabelas particionadas:
 
 As partições individuais são vinculadas à sua tabela particionada usando herança nos bastidores. No entanto, não é possível usar todas as características genéricas da herança com tabelas declarativamente particionadas ou suas partições, conforme discutido abaixo. Notavelmente, uma partição não pode ter nenhum dos pais, exceto a tabela particionada da qual é uma partição, e uma tabela também não pode herdar tanto de uma tabela particionada quanto de uma tabela regular. Isso significa que as tabelas particionadas e suas partições nunca compartilham uma hierarquia de herança com tabelas regulares.
 
-Como uma hierarquia de partição que consiste na tabela particionada e suas partições ainda é uma hierarquia de herança, `tableoid` e todas as regras normais de herança se aplicam conforme descrito em [Seção 5.11][(ddl-inherit.md "5.11. Inheritance")], com algumas exceções:
+Como uma hierarquia de partição que consiste na tabela particionada e suas partições ainda é uma hierarquia de herança, `tableoid` e todas as regras normais de herança se aplicam conforme descrito em [Seção 5.11](ddl-inherit.md), com algumas exceções:
 
 * As partições não podem ter colunas que não estejam presentes no banco de dados principal. Não é possível especificar colunas ao criar partições com `CREATE TABLE`, e também não é possível adicionar colunas às partições posteriormente usando `ALTER TABLE`. As tabelas podem ser adicionadas como partições com `ALTER TABLE ... ATTACH PARTITION` apenas se suas colunas corresponderem exatamente ao banco de dados principal.
 * As restrições `CHECK` e `NOT NULL` de uma tabela particionada são sempre herdadas por todas as suas partições; não é permitido criar restrições `NO INHERIT` desses tipos. Não é possível excluir uma restrição desses tipos se a mesma restrição estiver presente na tabela principal.
@@ -227,7 +227,7 @@ Este exemplo constrói uma estrutura de partição equivalente ao exemplo de par
        peaktemp        int,
        unitsales       int
    );
-   ``` 2. Crie várias tabelas "filhas" que cada uma herde da tabela raiz. Normalmente, essas tabelas não adicionarão nenhuma coluna ao conjunto herdado da raiz. Assim como na partição declarativa, essas tabelas são, em todos os aspectos, tabelas normais do PostgreSQL (ou tabelas estrangeiras).
+```
 
 ```
    CREATE TABLE measurement_y2006m02 () INHERITS (measurement);
@@ -236,22 +236,22 @@ Este exemplo constrói uma estrutura de partição equivalente ao exemplo de par
    CREATE TABLE measurement_y2007m11 () INHERITS (measurement);
    CREATE TABLE measurement_y2007m12 () INHERITS (measurement);
    CREATE TABLE measurement_y2008m01 () INHERITS (measurement);
-   ``` 3. Adicione restrições de tabela não sobrepostas às tabelas filhas para definir os valores de chave permitidos em cada uma.
+```
 
 Exemplos típicos seriam:
 
-   ```
-   CHECK ( x = 1 )
-   CHECK ( county IN ( 'Oxfordshire', 'Buckinghamshire', 'Warwickshire' ))
-   CHECK ( outletID >= 100 AND outletID < 200 )
-   ```
+```
+CHECK ( x = 1 )
+CHECK ( county IN ( 'Oxfordshire', 'Buckinghamshire', 'Warwickshire' ))
+CHECK ( outletID >= 100 AND outletID < 200 )
+```
 
 Certifique-se de que as restrições garantam que não haja sobreposição entre os valores-chave permitidos em diferentes tabelas filhas. Um erro comum é configurar restrições de intervalo como:
 
-   ```
-   CHECK ( outletID BETWEEN 100 AND 200 )
-   CHECK ( outletID BETWEEN 200 AND 300 )
-   ```
+```
+CHECK ( outletID BETWEEN 100 AND 200 )
+CHECK ( outletID BETWEEN 200 AND 300 )
+```
 
 Isso está errado, pois não está claro em qual tabela de crianças o valor da chave 200 pertence. Em vez disso, os intervalos devem ser definidos neste estilo:
 
@@ -276,55 +276,55 @@ Isso está errado, pois não está claro em qual tabela de crianças o valor da 
    CREATE TABLE measurement_y2008m01 (
        CHECK ( logdate >= DATE '2008-01-01' AND logdate < DATE '2008-02-01' )
    ) INHERITS (measurement);
-   ``` 4. Para cada tabela de crianças, crie um índice na(s) coluna(s) chave, bem como quaisquer outros índices que você queira.
+```
 
 5. Queremos que nossa aplicação possa dizer `INSERT INTO measurement ...` e que os dados sejam redirecionados para a tabela apropriada. Podemos organizar isso anexando uma função de gatilho adequada à tabela raiz. Se os dados serão adicionados apenas à última criança, podemos usar uma função de gatilho muito simples:
 
-   ```
-   CREATE OR REPLACE FUNCTION measurement_insert_trigger()
-   RETURNS TRIGGER AS $$
-   BEGIN
-       INSERT INTO measurement_y2008m01 VALUES (NEW.*);
-       RETURN NULL;
-   END;
-   $$
-   LANGUAGE plpgsql;
-   ```
+```
+CREATE OR REPLACE FUNCTION measurement_insert_trigger()
+RETURNS TRIGGER AS $$
+BEGIN
+    INSERT INTO measurement_y2008m01 VALUES (NEW.*);
+    RETURN NULL;
+END;
+$$
+LANGUAGE plpgsql;
+```
 
 Após criar a função, criamos um gatilho que chama a função de gatilho:
 
-   ```
-   CREATE TRIGGER insert_measurement_trigger
-       BEFORE INSERT ON measurement
-       FOR EACH ROW EXECUTE FUNCTION measurement_insert_trigger();
-   ```
+```
+CREATE TRIGGER insert_measurement_trigger
+    BEFORE INSERT ON measurement
+    FOR EACH ROW EXECUTE FUNCTION measurement_insert_trigger();
+```
 
 Devemos redefinir a função de gatilho a cada mês para que ela sempre se insira na tabela atual. A definição do gatilho, no entanto, não precisa ser atualizada.
 
 Podemos querer inserir dados e fazer com que o servidor localize automaticamente a tabela secundária na qual a linha deve ser adicionada. Podemos fazer isso com uma função de gatilho mais complexa, por exemplo:
 
-   ```
-   CREATE OR REPLACE FUNCTION measurement_insert_trigger()
-   RETURNS TRIGGER AS $$
-   BEGIN
-       IF ( NEW.logdate >= DATE '2006-02-01' AND
-            NEW.logdate < DATE '2006-03-01' ) THEN
-           INSERT INTO measurement_y2006m02 VALUES (NEW.*);
-       ELSIF ( NEW.logdate >= DATE '2006-03-01' AND
-               NEW.logdate < DATE '2006-04-01' ) THEN
-           INSERT INTO measurement_y2006m03 VALUES (NEW.*);
-       ...
-       ELSIF ( NEW.logdate >= DATE '2008-01-01' AND
-               NEW.logdate < DATE '2008-02-01' ) THEN
-           INSERT INTO measurement_y2008m01 VALUES (NEW.*);
-       ELSE
-           RAISE EXCEPTION 'Date out of range.  Fix the measurement_insert_trigger() function!';
-       END IF;
-       RETURN NULL;
-   END;
-   $$
-   LANGUAGE plpgsql;
-   ```
+```
+CREATE OR REPLACE FUNCTION measurement_insert_trigger()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF ( NEW.logdate >= DATE '2006-02-01' AND
+         NEW.logdate < DATE '2006-03-01' ) THEN
+        INSERT INTO measurement_y2006m02 VALUES (NEW.*);
+    ELSIF ( NEW.logdate >= DATE '2006-03-01' AND
+            NEW.logdate < DATE '2006-04-01' ) THEN
+        INSERT INTO measurement_y2006m03 VALUES (NEW.*);
+    ...
+    ELSIF ( NEW.logdate >= DATE '2008-01-01' AND
+            NEW.logdate < DATE '2008-02-01' ) THEN
+        INSERT INTO measurement_y2008m01 VALUES (NEW.*);
+    ELSE
+        RAISE EXCEPTION 'Date out of range.  Fix the measurement_insert_trigger() function!';
+    END IF;
+    RETURN NULL;
+END;
+$$
+LANGUAGE plpgsql;
+```
 
 A definição do gatilho é a mesma que antes. Observe que cada teste `IF` deve corresponder exatamente à restrição `CHECK` da sua tabela filho.
 
@@ -336,19 +336,19 @@ Na prática, pode ser melhor verificar o filho mais novo primeiro, se a maioria 
 
 Uma abordagem diferente para redirecionar insertos para a tabela infantil apropriada é configurar regras, em vez de um gatilho, na tabela raiz. Por exemplo:
 
-   ```
-   CREATE RULE measurement_insert_y2006m02 AS
-   ON INSERT TO measurement WHERE
-       ( logdate >= DATE '2006-02-01' AND logdate < DATE '2006-03-01' )
-   DO INSTEAD
-       INSERT INTO measurement_y2006m02 VALUES (NEW.*);
-   ...
-   CREATE RULE measurement_insert_y2008m01 AS
-   ON INSERT TO measurement WHERE
-       ( logdate >= DATE '2008-01-01' AND logdate < DATE '2008-02-01' )
-   DO INSTEAD
-       INSERT INTO measurement_y2008m01 VALUES (NEW.*);
-   ```
+```
+CREATE RULE measurement_insert_y2006m02 AS
+ON INSERT TO measurement WHERE
+    ( logdate >= DATE '2006-02-01' AND logdate < DATE '2006-03-01' )
+DO INSTEAD
+    INSERT INTO measurement_y2006m02 VALUES (NEW.*);
+...
+CREATE RULE measurement_insert_y2008m01 AS
+ON INSERT TO measurement WHERE
+    ( logdate >= DATE '2008-01-01' AND logdate < DATE '2008-02-01' )
+DO INSTEAD
+    INSERT INTO measurement_y2008m01 VALUES (NEW.*);
+```
 
 Uma regra tem um overhead significativamente maior do que um gatilho, mas o overhead é pago uma vez por consulta em vez de uma vez por linha, então esse método pode ser vantajoso para situações de inserção em massa. Na maioria dos casos, no entanto, o método de gatilho oferecerá um melhor desempenho.
 
@@ -402,9 +402,9 @@ As seguintes advertências se aplicam à partição implementada usando herança
 * Os esquemas mostrados aqui assumem que os valores da(s) coluna(s) chave de uma linha nunca mudam, ou pelo menos não mudam o suficiente para exigir que ela mude para outra partição. Um `UPDATE` que tente fazer isso falhará devido às restrições do `CHECK`. Se você precisar lidar com tais casos, pode colocar gatilhos de atualização adequados nas tabelas filhas, mas isso torna a gestão da estrutura muito mais complicada.
 * Os comandos manuais `VACUUM` e `ANALYZE` processarão automaticamente todas as tabelas filhas de herança. Se isso não for desejável, pode usar a palavra-chave `ONLY`. Um comando como:
 
-  ```
-  ANALYZE ONLY measurement;
-  ```
+```
+ANALYZE ONLY measurement;
+```
 
 apenas processará a tabela raiz.
 * as declarações `INSERT` com cláusulas `ON CONFLICT` provavelmente não funcionarão conforme o esperado, pois a ação `ON CONFLICT` é realizada apenas em caso de violações únicas na relação de destino especificada, e não em suas relações filhas.
@@ -421,7 +421,7 @@ SELECT count(*) FROM measurement WHERE logdate >= DATE '2008-01-01';
 
 Sem poda de partição, a consulta acima examinaria cada uma das partições da tabela `measurement`. Com a poda de partição habilitada, o planejador examinará a definição de cada partição e provará que a partição não precisa ser examinada porque ela não poderia conter quaisquer linhas que cumprissem a cláusula `WHERE` da consulta. Quando o planejador pode provar isso, ele exclui (*prona*) a partição do plano de consulta.
 
-Usando o comando EXPLAIN e o parâmetro de configuração [enable_partition_pruning][(runtime-config-query.md#GUC-ENABLE-PARTITION-PRUNING)], é possível mostrar a diferença entre um plano para o qual as partições foram cortadas e outro para o qual elas não foram. Um plano típico não otimizado para esse tipo de configuração de tabela é:
+Usando o comando EXPLAIN e o parâmetro de configuração [enable_partition_pruning](runtime-config-query.md#GUC-ENABLE-PARTITION-PRUNING), é possível mostrar a diferença entre um plano para o qual as partições foram cortadas e outro para o qual elas não foram. Um plano típico não otimizado para esse tipo de configuração de tabela é:
 
 ```
 SET enable_partition_pruning = off;
@@ -462,7 +462,7 @@ O recorte de partições pode ser realizado não apenas durante o planejamento d
 * Durante a inicialização do plano de consulta. A poda de partições pode ser realizada aqui para valores de parâmetros que são conhecidos durante a fase de inicialização da execução. As partições que são podadas durante esta etapa não aparecerão no `EXPLAIN` ou no `EXPLAIN ANALYZE` da consulta. É possível determinar o número de partições que foram removidas durante esta fase observando a propriedade “Subplans Removedos” no `EXPLAIN` de saída. É importante notar que quaisquer partições removidas pela poda de partições realizada nesta etapa ainda estão bloqueadas no início da execução.
 * Durante a execução real do plano de consulta. A poda de partições também pode ser realizada aqui para remover partições usando valores que são conhecidos apenas durante a execução real da consulta. Isso inclui valores de subconsultas e valores de parâmetros de tempo de execução, como os de junções de laço parametrizadas. Como o valor desses parâmetros pode mudar muitas vezes durante a execução da consulta, a poda de partições é realizada sempre que um dos parâmetros de execução sendo usado pela poda de partições muda. Determinar se partições foram podadas durante esta fase requer uma inspeção cuidadosa da propriedade `loops` no `EXPLAIN ANALYZE` de saída. Subplans correspondentes a diferentes partições podem ter diferentes valores para isso, dependendo de quantas vezes cada um deles foi podado durante a execução. Alguns podem ser mostrados como `(never executed)` se foram podados todas as vezes.
 
-A poda de partição pode ser desativada usando a configuração [enable_partition_pruning][(runtime-config-query.md#GUC-ENABLE-PARTITION-PRUNING)].
+A poda de partição pode ser desativada usando a configuração [enable_partition_pruning](runtime-config-query.md#GUC-ENABLE-PARTITION-PRUNING).
 
 ### 5.12.5. Partição e Exclusão de Restrições [#](#DDL-PARTITIONING-CONSTRAINT-EXCLUSION)
 
@@ -472,7 +472,7 @@ A exclusão de restrições funciona de uma maneira muito semelhante à poda de 
 
 O fato de a exclusão de restrições usar restrições `CHECK`, o que a torna lenta em comparação com o corte de partições, às vezes pode ser usado como uma vantagem: porque as restrições podem ser definidas mesmo em tabelas declarativamente particionadas, além de seus limites internos de partição, a exclusão de restrições pode ser capaz de omitir partições adicionais do plano de consulta.
 
-A configuração padrão (e recomendada) de [constraint_exclusion][(runtime-config-query.md#GUC-CONSTRAINT-EXCLUSION)] não é nem `on` nem `off`, mas uma configuração intermediária chamada `partition`, que faz com que a técnica seja aplicada apenas em consultas que provavelmente estão funcionando em tabelas particionadas de herança. A configuração `on` faz com que o planejador examine as restrições `CHECK` em todas as consultas, mesmo as simples que provavelmente não se beneficiarão.
+A configuração padrão (e recomendada) de [constraint_exclusion](runtime-config-query.md#GUC-CONSTRAINT-EXCLUSION) não é nem `on` nem `off`, mas uma configuração intermediária chamada `partition`, que faz com que a técnica seja aplicada apenas em consultas que provavelmente estão funcionando em tabelas particionadas de herança. A configuração `on` faz com que o planejador examine as restrições `CHECK` em todas as consultas, mesmo as simples que provavelmente não se beneficiarão.
 
 As seguintes advertências se aplicam à exclusão de restrições:
 

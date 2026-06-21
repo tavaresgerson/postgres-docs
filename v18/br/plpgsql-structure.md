@@ -1,6 +1,6 @@
 ## 41.2. Estrutura do PL/pgSQL [#](#PLPGSQL-STRUCTURE)
 
-As funções escritas em PL/pgSQL são definidas para o servidor executando os comandos [CREATE FUNCTION][(sql-createfunction.md "CREATE FUNCTION")]. Um comando desse tipo normalmente se parece com, por exemplo:
+As funções escritas em PL/pgSQL são definidas para o servidor executando os comandos [CREATE FUNCTION](sql-createfunction.md). Um comando desse tipo normalmente se parece com, por exemplo:
 
 ```
 CREATE FUNCTION somefunc(integer, text) RETURNS integer
@@ -8,7 +8,7 @@ AS 'function body text'
 LANGUAGE plpgsql;
 ```
 
-O corpo da função é simplesmente uma literal de string, no que diz respeito a `CREATE FUNCTION`. É frequentemente útil usar a citação de dólar (ver [Seção 4.1.2.4][(sql-syntax-lexical.md#SQL-SYNTAX-DOLLAR-QUOTING "4.1.2.4. Dollar-Quoted String Constants")]) para escrever o corpo da função, em vez da sintaxe normal de citação simples. Sem citação de dólar, quaisquer citações simples ou barras invertidas no corpo da função devem ser escapadas duplicando-as. Quase todos os exemplos deste capítulo usam literais com citação de dólar para seus corpos de função.
+O corpo da função é simplesmente uma literal de string, no que diz respeito a `CREATE FUNCTION`. É frequentemente útil usar a citação de dólar (ver [Seção 4.1.2.4](sql-syntax-lexical.md#SQL-SYNTAX-DOLLAR-QUOTING)) para escrever o corpo da função, em vez da sintaxe normal de citação simples. Sem citação de dólar, quaisquer citações simples ou barras invertidas no corpo da função devem ser escapadas duplicando-as. Quase todos os exemplos deste capítulo usam literais com citação de dólar para seus corpos de função.
 
 PL/pgSQL é uma linguagem estruturada em blocos. O texto completo do corpo de uma função deve ser um *bloco*. Um bloco é definido da seguinte forma:
 
@@ -64,4 +64,4 @@ $$ LANGUAGE plpgsql;
 
 Na verdade, existe um "bloco externo" oculto que envolve o corpo de qualquer função PL/pgSQL. Esse bloco fornece as declarações dos parâmetros da função (se houver), bem como algumas variáveis especiais, como `FOUND` (consulte [Seção 41.5.5] (plpgsql-statements.md#PLPGSQL-STATEMENTS-DIAGNOSTICS "41.5.5. Obtaining the Result Status")). O bloco externo é marcado com o nome da função, o que significa que os parâmetros e as variáveis especiais podem ser qualificados com o nome da função.
 
-É importante não confundir o uso de `BEGIN`/`END` para agrupar declarações em PL/pgSQL com os comandos SQL com o mesmo nome para controle de transação. O `BEGIN`/`END` do PL/pgSQL são apenas para agrupamento; eles não iniciam ou encerram uma transação. Consulte [Seção 41.8][(plpgsql-transactions.md "41.8. Transaction Management")] para obter informações sobre a gestão de transações em PL/pgSQL. Além disso, um bloco contendo uma cláusula `EXCEPTION` forma efetivamente uma subtransação que pode ser revertida sem afetar a transação externa. Para mais informações sobre isso, consulte [Seção 41.6.8][(plpgsql-control-structures.md#PLPGSQL-ERROR-TRAPPING "41.6.8. Trapping Errors")].
+É importante não confundir o uso de `BEGIN`/`END` para agrupar declarações em PL/pgSQL com os comandos SQL com o mesmo nome para controle de transação. O `BEGIN`/`END` do PL/pgSQL são apenas para agrupamento; eles não iniciam ou encerram uma transação. Consulte [Seção 41.8](plpgsql-transactions.md) para obter informações sobre a gestão de transações em PL/pgSQL. Além disso, um bloco contendo uma cláusula `EXCEPTION` forma efetivamente uma subtransação que pode ser revertida sem afetar a transação externa. Para mais informações sobre isso, consulte [Seção 41.6.8](plpgsql-control-structures.md#PLPGSQL-ERROR-TRAPPING).

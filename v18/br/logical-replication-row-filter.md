@@ -28,84 +28,87 @@ Se a linha antiga satisfazer a expressão do filtro de linha (foi enviada ao ass
 
 Se a linha antiga não satisfazer a expressão do filtro de linha (não foi enviada ao assinante), mas a nova linha o faz, então, do ponto de vista da consistência dos dados, a nova linha deve ser adicionada ao assinante. Assim, o `UPDATE` é transformado em um `INSERT`.
 
-[Tabela 29.1][(logical-replication-row-filter.md#LOGICAL-REPLICATION-ROW-FILTER-TRANSFORMATIONS-SUMMARY "Table 29.1. UPDATE Transformation Summary")] resume as transformações aplicadas.
+[Tabela 29.1](logical-replication-row-filter.md#LOGICAL-REPLICATION-ROW-FILTER-TRANSFORMATIONS-SUMMARY) resume as transformações aplicadas.
 
 **Tabela 29.1. Resumo da transformação de `UPDATE`**
 
 
 
 <table border="1" class="table" summary="UPDATE Transformation Summary">
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Old row
    </th>
-<th>
+   <th>
     New row
    </th>
-<th>
+   <th>
     Transformation
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
     no match
    </td>
-<td>
+   <td>
     no match
    </td>
-<td>
+   <td>
     don't replicate
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     no match
    </td>
-<td>
+   <td>
     match
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      INSERT
     </code>
-</td>
-</tr>
-<tr>
-<td>
+   </td>
+  </tr>
+  <tr>
+   <td>
     match
    </td>
-<td>
+   <td>
     no match
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      DELETE
     </code>
-</td>
-</tr>
-<tr>
-<td>
+   </td>
+  </tr>
+  <tr>
+   <td>
     match
    </td>
-<td>
+   <td>
     match
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      UPDATE
     </code>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 
@@ -117,11 +120,11 @@ Se a publicação contiver uma tabela dividida, o parâmetro de publicação `pu
 
 Se a assinatura exigir a cópia de dados de tabela pré-existentes e uma publicação contiver cláusulas `WHERE`, apenas os dados que satisfazem as expressões de filtro de linha serão copiados para o assinante.
 
-Se a assinatura tiver várias publicações nas quais uma tabela foi publicada com diferentes cláusulas `WHERE`, as linhas que satisfazem *qualquer* das expressões serão copiadas. Consulte [Seção 29.4.6][(logical-replication-row-filter.md#LOGICAL-REPLICATION-ROW-FILTER-COMBINING "29.4.6. Combining Multiple Row Filters")] para obter detalhes.
+Se a assinatura tiver várias publicações nas quais uma tabela foi publicada com diferentes cláusulas `WHERE`, as linhas que satisfazem *qualquer* das expressões serão copiadas. Consulte [Seção 29.4.6](logical-replication-row-filter.md#LOGICAL-REPLICATION-ROW-FILTER-COMBINING) para obter detalhes.
 
 ### Aviso
 
-Como a sincronização de dados inicial não leva em conta o parâmetro `publish`(sql-createpublication.md#SQL-CREATEPUBLICATION-PARAMS-WITH-PUBLISH) ao copiar dados de tabela existentes, algumas linhas podem ser copiadas que não seriam replicadas usando DML. Consulte [Seção 29.9.1][(logical-replication-architecture.md#LOGICAL-REPLICATION-SNAPSHOT "29.9.1. Initial Snapshot")], e veja [Seção 29.2.2][(logical-replication-subscription.md#LOGICAL-REPLICATION-SUBSCRIPTION-EXAMPLES "29.2.2. Examples: Set Up Logical Replication")] para exemplos.
+Como a sincronização de dados inicial não leva em conta o parâmetro `publish`(sql-createpublication.md#SQL-CREATEPUBLICATION-PARAMS-WITH-PUBLISH) ao copiar dados de tabela existentes, algumas linhas podem ser copiadas que não seriam replicadas usando DML. Consulte [Seção 29.9.1](logical-replication-architecture.md#LOGICAL-REPLICATION-SNAPSHOT), e veja [Seção 29.2.2](logical-replication-subscription.md#LOGICAL-REPLICATION-SUBSCRIPTION-EXAMPLES) para exemplos.
 
 ### Nota
 

@@ -1,208 +1,208 @@
 ## 33.4. Funções no lado do servidor [#](#LO-FUNCS)
 
-As funções do lado do servidor, adaptadas para manipular objetos grandes a partir do SQL, estão listadas em [Tabela 33.1][(lo-funcs.md#LO-FUNCS-TABLE "Table 33.1. SQL-Oriented Large Object Functions")].
+As funções do lado do servidor, adaptadas para manipular objetos grandes a partir do SQL, estão listadas em [Tabela 33.1](lo-funcs.md#LO-FUNCS-TABLE).
 
 **Tabela 33.1. Funções de Objeto Grande Orientado a SQL**
 
 
 
 <table border="1" class="table" summary="SQL-Oriented Large Object Functions">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
      Function
     </p>
-<p>
+    <p>
      Description
     </p>
-<p>
+    <p>
      Example(s)
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       lo_from_bytea
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        loid
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       oid
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        data
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       oid
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Creates a large object and stores
      <em class="parameter">
-<code>
+      <code>
        data
       </code>
-</em>
+     </em>
      in it. If
      <em class="parameter">
-<code>
+      <code>
        loid
       </code>
-</em>
+     </em>
      is zero then the system will choose a free OID, otherwise that OID is used (with an error if some large object already has that OID).  On success, the large object's OID is returned.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       lo_from_bytea(0, '\xffffff00')
      </code>
      →
      <code class="returnvalue">
       24528
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       lo_put
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        loid
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       oid
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        offset
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bigint
      </code>
      ,
      <em class="parameter">
-<code>
+      <code>
        data
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       bytea
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       void
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Writes
      <em class="parameter">
-<code>
+      <code>
        data
       </code>
-</em>
+     </em>
      starting at the given offset within the large object; the large object is enlarged if necessary.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       lo_put(24528, 1, '\xaa')
      </code>
      →
      <code class="returnvalue">
-</code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+     </code>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       lo_get
      </code>
      (
      <em class="parameter">
-<code>
+      <code>
        loid
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       oid
      </code>
      [
      <span class="optional">
       ,
       <em class="parameter">
-<code>
+       <code>
         offset
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        bigint
       </code>
       ,
       <em class="parameter">
-<code>
+       <code>
         length
        </code>
-</em>
-<code class="type">
+      </em>
+      <code class="type">
        integer
       </code>
-</span>
-     ] )
-        →
+     </span>
+     ] ) →
      <code class="returnvalue">
       bytea
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Extracts the large object's contents, or a substring thereof.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       lo_get(24528, 0, 3)
      </code>
      →
      <code class="returnvalue">
       \xffaaff
      </code>
-</p>
-</td>
-</tr>
-</tbody>
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Existem funções adicionais no lado do servidor correspondentes a cada uma das funções do lado do cliente descritas anteriormente; de fato, na maior parte, as funções do lado do cliente são simplesmente interfaces para as funções equivalentes do lado do servidor. As que são igualmente convenientes para serem chamadas por meio de comandos SQL são `lo_creat`, `lo_create`, `lo_unlink`, `lo_import` e `lo_export`. Aqui estão exemplos de seu uso:
 

@@ -1,15 +1,15 @@
 ## 34.4. Usando variáveis de host [#](#ECPG-VARIABLES)
 
-* [34.4.1. Visão geral][(ecpg-variables.md#ECPG-VARIABLES-OVERVIEW)]
-* [34.4.2. Declarar seções][(ecpg-variables.md#ECPG-DECLARE-SECTIONS)]
-* [34.4.3. Recuperação de resultados de consulta][(ecpg-variables.md#ECPG-RETRIEVING)]
-* [34.4.4. Mapeamento de tipos de dados SQL não primitivos][(ecpg-variables.md#ECPG-VARIABLES-TYPE-MAPPING)]
-* [34.4.5. Tratamento de tipos de dados SQL não primitivos][(ecpg-variables.md#ECPG-VARIABLES-NONPRIMITIVE-SQL)]
-* [34.4.6. Indicadores][(ecpg-variables.md#ECPG-INDICATORS)]
+* [34.4.1. Visão geral](ecpg-variables.md#ECPG-VARIABLES-OVERVIEW)
+* [34.4.2. Declarar seções](ecpg-variables.md#ECPG-DECLARE-SECTIONS)
+* [34.4.3. Recuperação de resultados de consulta](ecpg-variables.md#ECPG-RETRIEVING)
+* [34.4.4. Mapeamento de tipos de dados SQL não primitivos](ecpg-variables.md#ECPG-VARIABLES-TYPE-MAPPING)
+* [34.4.5. Tratamento de tipos de dados SQL não primitivos](ecpg-variables.md#ECPG-VARIABLES-NONPRIMITIVE-SQL)
+* [34.4.6. Indicadores](ecpg-variables.md#ECPG-INDICATORS)
 
 Na [Seção 34.3] (ecpg-commands.md "34.3. Running SQL Commands") você viu como você pode executar instruções SQL a partir de um programa SQL incorporado. Algumas dessas instruções usavam apenas valores fixos e não forneciam uma maneira de inserir valores fornecidos pelo usuário nas instruções ou fazer com que o programa processasse os valores retornados pela consulta. Esse tipo de instruções não é realmente útil em aplicações reais. Esta seção explica em detalhes como você pode passar dados entre seu programa em C e as instruções SQL incorporadas usando um mecanismo simples chamado *variáveis hospedeira*. Em um programa SQL incorporado, consideramos as instruções SQL como *hóspedes* no código do programa em C, que é a *linguagem hospedeira*. Portanto, as variáveis do programa em C são chamadas de *variáveis hospedeira*.
 
-Outra maneira de trocar valores entre backends do PostgreSQL e aplicações do ECPG é o uso de descritores SQL, descritos em [Seção 34.7][(ecpg-descriptors.md "34.7. Using Descriptor Areas")].
+Outra maneira de trocar valores entre backends do PostgreSQL e aplicações do ECPG é o uso de descritores SQL, descritos em [Seção 34.7](ecpg-descriptors.md).
 
 ### 34.4.1. Visão geral [#](#ECPG-VARIABLES-OVERVIEW)
 
@@ -110,363 +110,366 @@ Aqui a cláusula `INTO` aparece após todas as cláusulas normais.
 
 Quando as aplicações ECPG trocam valores entre o servidor PostgreSQL e a aplicação C, como quando obtêm resultados de consulta do servidor ou executam declarações SQL com parâmetros de entrada, os valores precisam ser convertidos entre os tipos de dados do PostgreSQL e os tipos de variáveis da linguagem de destino (tipos de dados da linguagem C, especificamente). Um dos principais pontos da ECPG é que ela cuida disso automaticamente na maioria dos casos.
 
-Nesse sentido, existem dois tipos de dados: Alguns tipos de dados simples do PostgreSQL, como `integer` e `text`, podem ser lidos e escritos diretamente pela aplicação. Outros tipos de dados do PostgreSQL, como `timestamp` e `numeric`, só podem ser acessados por meio de funções especiais da biblioteca; veja [Seção 34.4.4.2][(ecpg-variables.md#ECPG-SPECIAL-TYPES "34.4.4.2. Accessing Special Data Types")].
+Nesse sentido, existem dois tipos de dados: Alguns tipos de dados simples do PostgreSQL, como `integer` e `text`, podem ser lidos e escritos diretamente pela aplicação. Outros tipos de dados do PostgreSQL, como `timestamp` e `numeric`, só podem ser acessados por meio de funções especiais da biblioteca; veja [Seção 34.4.4.2](ecpg-variables.md#ECPG-SPECIAL-TYPES).
 
-[Tabela 34.1][(ecpg-variables.md#ECPG-DATATYPE-HOSTVARS-TABLE "Table 34.1. Mapping Between PostgreSQL Data Types and C Variable Types")] mostra quais tipos de dados do PostgreSQL correspondem a quais tipos de dados C. Quando você deseja enviar ou receber um valor de um determinado tipo de dados do PostgreSQL, você deve declarar uma variável C do tipo de dados C correspondente na seção declare.
+[Tabela 34.1](ecpg-variables.md#ECPG-DATATYPE-HOSTVARS-TABLE) mostra quais tipos de dados do PostgreSQL correspondem a quais tipos de dados C. Quando você deseja enviar ou receber um valor de um determinado tipo de dados do PostgreSQL, você deve declarar uma variável C do tipo de dados C correspondente na seção declare.
 
 **Tabela 34.1. Mapeamento entre os tipos de dados do PostgreSQL e os tipos de variáveis em C**
 
 
 
 <table border="1" class="table" summary="Mapping Between PostgreSQL Data Types and C Variable Types">
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     PostgreSQL data type
    </th>
-<th>
+   <th>
     Host variable type
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="type">
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="type">
      smallint
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      short
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      integer
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      int
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      bigint
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      long long int
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      decimal
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      decimal
     </code>
-<a class="footnote" href="#ftn.ECPG-DATATYPE-TABLE-FN">
-<sup class="footnote" id="ECPG-DATATYPE-TABLE-FN">
+    <a class="footnote" href="#ftn.ECPG-DATATYPE-TABLE-FN">
+     <sup class="footnote" id="ECPG-DATATYPE-TABLE-FN">
       [a]
      </sup>
-</a>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+    </a>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      numeric
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      numeric
     </code>
-<a class="footnoteref" href="ecpg-variables.md#ftn.ECPG-DATATYPE-TABLE-FN">
-<sup class="footnoteref">
+    <a class="footnoteref" href="ecpg-variables.md#ftn.ECPG-DATATYPE-TABLE-FN">
+     <sup class="footnoteref">
       [a]
      </sup>
-</a>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+    </a>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      real
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      float
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      double precision
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      double
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      smallserial
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      short
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      serial
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      int
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      bigserial
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      long long int
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      oid
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      unsigned int
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      character(
      <em class="replaceable">
-<code>
+      <code>
        n
       </code>
-</em>
+     </em>
      )
     </code>
     ,
     <code class="type">
      varchar(
      <em class="replaceable">
-<code>
+      <code>
        n
       </code>
-</em>
+     </em>
      )
     </code>
     ,
     <code class="type">
      text
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      char[
      <em class="replaceable">
-<code>
+      <code>
        n
       </code>
-</em>
+     </em>
      +1]
     </code>
     ,
     <code class="type">
      VARCHAR[
      <em class="replaceable">
-<code>
+      <code>
        n
       </code>
-</em>
+     </em>
      +1]
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      name
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      char[NAMEDATALEN]
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      timestamp
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      timestamp
     </code>
-<a class="footnoteref" href="ecpg-variables.md#ftn.ECPG-DATATYPE-TABLE-FN">
-<sup class="footnoteref">
+    <a class="footnoteref" href="ecpg-variables.md#ftn.ECPG-DATATYPE-TABLE-FN">
+     <sup class="footnoteref">
       [a]
      </sup>
-</a>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+    </a>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      interval
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      interval
     </code>
-<a class="footnoteref" href="ecpg-variables.md#ftn.ECPG-DATATYPE-TABLE-FN">
-<sup class="footnoteref">
+    <a class="footnoteref" href="ecpg-variables.md#ftn.ECPG-DATATYPE-TABLE-FN">
+     <sup class="footnoteref">
       [a]
      </sup>
-</a>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+    </a>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      date
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      date
     </code>
-<a class="footnoteref" href="ecpg-variables.md#ftn.ECPG-DATATYPE-TABLE-FN">
-<sup class="footnoteref">
+    <a class="footnoteref" href="ecpg-variables.md#ftn.ECPG-DATATYPE-TABLE-FN">
+     <sup class="footnoteref">
       [a]
      </sup>
-</a>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+    </a>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      boolean
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      bool
     </code>
-<a class="footnote" href="#ftn.id-1.7.5.10.7.5.2.2.17.2.2">
-<sup class="footnote" id="id-1.7.5.10.7.5.2.2.17.2.2">
+    <a class="footnote" href="#ftn.id-1.7.5.10.7.5.2.2.17.2.2">
+     <sup class="footnote" id="id-1.7.5.10.7.5.2.2.17.2.2">
       [b]
      </sup>
-</a>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+    </a>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      bytea
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      char *
     </code>
     ,
     <code class="type">
      bytea[
      <em class="replaceable">
-<code>
+      <code>
        n
       </code>
-</em>
+     </em>
      ]
     </code>
-</td>
-</tr>
-</tbody>
-<tbody class="footnotes">
-<tr>
-<td colspan="2">
-<div class="footnote" id="ftn.ECPG-DATATYPE-TABLE-FN">
-<p>
-<a class="para" href="#ECPG-DATATYPE-TABLE-FN">
-<sup class="para">
+   </td>
+  </tr>
+ </tbody>
+ <tbody class="footnotes">
+  <tr>
+   <td colspan="2">
+    <div class="footnote" id="ftn.ECPG-DATATYPE-TABLE-FN">
+     <p>
+      <a class="para" href="#ECPG-DATATYPE-TABLE-FN">
+       <sup class="para">
         [a]
        </sup>
-</a>
+      </a>
       This type can only be accessed through special library functions; see
       <a class="xref" href="ecpg-variables.md#ECPG-SPECIAL-TYPES" title="34.4.4.2. Accessing Special Data Types">
        Section 34.4.4.2
       </a>
       .
      </p>
-</div>
-<div class="footnote" id="ftn.id-1.7.5.10.7.5.2.2.17.2.2">
-<p>
-<a class="para" href="#id-1.7.5.10.7.5.2.2.17.2.2">
-<sup class="para">
+    </div>
+    <div class="footnote" id="ftn.id-1.7.5.10.7.5.2.2.17.2.2">
+     <p>
+      <a class="para" href="#id-1.7.5.10.7.5.2.2.17.2.2">
+       <sup class="para">
         [b]
        </sup>
-</a>
+      </a>
       declared in
       <code class="filename">
        ecpglib.h
       </code>
       if not native
      </p>
-</div>
-</td>
-</tr>
-</tbody>
+    </div>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 #### 34.4.4.1. Tratamento de cadeias de caracteres [#](#ECPG-CHAR)
 
@@ -502,9 +505,9 @@ As variáveis hospedeiras `char` e `VARCHAR` também podem conter valores de out
 
 #### 34.4.4.2. Acesso a tipos de dados especiais [#](#ECPG-SPECIAL-TYPES)
 
-O ECPG contém alguns tipos especiais que ajudam você a interagir facilmente com alguns tipos de dados especiais do servidor PostgreSQL. Em particular, ele implementou suporte para os tipos `numeric`, `decimal`, `date`, `timestamp` e `interval`. Esses tipos de dados não podem ser mapeados de forma útil para tipos de variáveis hostis primitivas (como `int`, `long long int` ou `char[]`), porque eles têm uma estrutura interna complexa. As aplicações lidam com esses tipos ao declarar variáveis hostis em tipos especiais e acessá-los usando funções na biblioteca pgtypes. A biblioteca pgtypes, descrita em detalhes na [Seção 34.6] [(ecpg-pgtypes.md "34.6. pgtypes Library")] contém funções básicas para lidar com esses tipos, de modo que você não precise enviar uma consulta ao servidor SQL apenas para adicionar um intervalo a um rótulo de tempo, por exemplo.
+O ECPG contém alguns tipos especiais que ajudam você a interagir facilmente com alguns tipos de dados especiais do servidor PostgreSQL. Em particular, ele implementou suporte para os tipos `numeric`, `decimal`, `date`, `timestamp` e `interval`. Esses tipos de dados não podem ser mapeados de forma útil para tipos de variáveis hostis primitivas (como `int`, `long long int` ou `char[]`), porque eles têm uma estrutura interna complexa. As aplicações lidam com esses tipos ao declarar variáveis hostis em tipos especiais e acessá-los usando funções na biblioteca pgtypes. A biblioteca pgtypes, descrita em detalhes na [Seção 34.6](ecpg-pgtypes.md) contém funções básicas para lidar com esses tipos, de modo que você não precise enviar uma consulta ao servidor SQL apenas para adicionar um intervalo a um rótulo de tempo, por exemplo.
 
-Os subtítulos seguintes descrevem esses tipos de dados especiais. Para mais detalhes sobre as funções da biblioteca pgtypes, consulte [Seção 34.6][(ecpg-pgtypes.md "34.6. pgtypes Library")].
+Os subtítulos seguintes descrevem esses tipos de dados especiais. Para mais detalhes sobre as funções da biblioteca pgtypes, consulte [Seção 34.6](ecpg-pgtypes.md).
 
 ##### 34.4.4.2.1. data e hora de registro [#](#ECPG-SPECIAL-TYPES-TIMESTAMP-DATE)
 
@@ -538,7 +541,7 @@ Este exemplo mostrará alguns resultados como o seguinte:
 ts = 2010-06-27 18:03:56.949343
 ```
 
-Além disso, o tipo DATE pode ser tratado da mesma maneira. O programa deve incluir `pgtypes_date.h`, declarar uma variável hospedeira como o tipo de data e converter um valor DATE em um formato de texto usando a função `PGTYPESdate_to_asc()`. Para mais detalhes sobre as funções da biblioteca pgtypes, consulte [Seção 34.6][(ecpg-pgtypes.md "34.6. pgtypes Library")].
+Além disso, o tipo DATE pode ser tratado da mesma maneira. O programa deve incluir `pgtypes_date.h`, declarar uma variável hospedeira como o tipo de data e converter um valor DATE em um formato de texto usando a função `PGTYPESdate_to_asc()`. Para mais detalhes sobre as funções da biblioteca pgtypes, consulte [Seção 34.6](ecpg-pgtypes.md).
 
 ##### 34.4.4.2.2. intervalo [#](#ECPG-TYPE-INTERVAL)
 
@@ -574,7 +577,7 @@ EXEC SQL END DECLARE SECTION;
 
 ##### 34.4.4.2.3. numérico, decimal [#](#ECPG-TYPE-NUMERIC-DECIMAL)
 
-O manuseio dos tipos `numeric` e `decimal` é semelhante ao tipo `interval`: requer a definição de um ponteiro, alocação de algum espaço de memória na pilha e acesso à variável usando as funções da biblioteca pgtypes. Para mais detalhes sobre as funções da biblioteca pgtypes, consulte [Seção 34.6][(ecpg-pgtypes.md "34.6. pgtypes Library")].
+O manuseio dos tipos `numeric` e `decimal` é semelhante ao tipo `interval`: requer a definição de um ponteiro, alocação de algum espaço de memória na pilha e acesso à variável usando as funções da biblioteca pgtypes. Para mais detalhes sobre as funções da biblioteca pgtypes, consulte [Seção 34.6](ecpg-pgtypes.md).
 
 Não são fornecidas funções especificamente para o tipo `decimal`. Uma aplicação deve convertê-lo em uma variável `numeric` usando uma função da biblioteca pgtypes para realizar o processamento adicional.
 
@@ -652,7 +655,7 @@ Como uma variável hospedeira, você também pode usar arrays, typedef, estrutur
 
 ##### 34.4.4.3.1. Arrays [#](#ECPG-VARIABLES-ARRAYS)
 
-Existem dois casos de uso para arrays como variáveis hostis. O primeiro é uma maneira de armazenar uma string de texto em `char[]` ou `VARCHAR[]`, conforme explicado em [Seção 34.4.4.1][(ecpg-variables.md#ECPG-CHAR "34.4.4.1. Handling Character Strings")]. O segundo caso de uso é recuperar várias linhas de um resultado de consulta sem usar um cursor. Sem um array, para processar um resultado de consulta composto por várias linhas, é necessário usar um cursor e o comando `FETCH`. Mas com variáveis hostis de array, várias linhas podem ser recebidas de uma só vez. O comprimento do array deve ser definido para poder acomodar todas as linhas, caso contrário, é provável que ocorra um estouro de buffer.
+Existem dois casos de uso para arrays como variáveis hostis. O primeiro é uma maneira de armazenar uma string de texto em `char[]` ou `VARCHAR[]`, conforme explicado em [Seção 34.4.4.1](ecpg-variables.md#ECPG-CHAR). O segundo caso de uso é recuperar várias linhas de um resultado de consulta sem usar um cursor. Sem um array, para processar um resultado de consulta composto por várias linhas, é necessário usar um cursor e o comando `FETCH`. Mas com variáveis hostis de array, várias linhas podem ser recebidas de uma só vez. O comprimento do array deve ser definido para poder acomodar todas as linhas, caso contrário, é provável que ocorra um estouro de buffer.
 
 O exemplo a seguir examina a tabela do sistema `pg_database` e mostra todos os OIDs e nomes dos bancos de dados disponíveis:
 
@@ -806,7 +809,7 @@ EXEC SQL END DECLARE SECTION;
 EXEC SQL START TRANSACTION;
 ```
 
-A ECPG reportará um erro de sintaxe para `START TRANSACTION`, porque ele não reconhece mais `START` como uma palavra-chave SQL, apenas como um typedef. (Se você tiver um conflito como esse e o typedef parecer impraticável, você pode escrever o comando SQL usando [SQL dinâmico][(ecpg-dynamic.md "34.5. Dynamic SQL")].).
+A ECPG reportará um erro de sintaxe para `START TRANSACTION`, porque ele não reconhece mais `START` como uma palavra-chave SQL, apenas como um typedef. (Se você tiver um conflito como esse e o typedef parecer impraticável, você pode escrever o comando SQL usando [SQL dinâmico](ecpg-dynamic.md).).
 
 ### Nota
 
@@ -814,7 +817,7 @@ Em versões do PostgreSQL anteriores à v16, o uso de palavras-chave SQL como no
 
 ##### 34.4.4.3.4. Pontos [#](#ECPG-VARIABLES-NONPRIMITIVE-C-POINTERS)
 
-Você pode declarar ponteiros para os tipos mais comuns. No entanto, não pode usar ponteiros como variáveis-alvo de consultas sem auto-alocação. Consulte [Seção 34.7][(ecpg-descriptors.md "34.7. Using Descriptor Areas")] para obter mais informações sobre auto-alocação.
+Você pode declarar ponteiros para os tipos mais comuns. No entanto, não pode usar ponteiros como variáveis-alvo de consultas sem auto-alocação. Consulte [Seção 34.7](ecpg-descriptors.md) para obter mais informações sobre auto-alocação.
 
 ```
 EXEC SQL BEGIN DECLARE SECTION;
@@ -915,7 +918,7 @@ while (1)
 
 não funcionaria corretamente neste caso, porque você não pode mapear uma coluna de tipo de matriz para uma variável hospedeira de matriz diretamente.
 
-Outra solução é armazenar matrizes em sua representação de string externa em variáveis hostis do tipo `char[]` ou `VARCHAR[]`. Para mais detalhes sobre essa representação, consulte [Seção 8.15.2][(arrays.md#ARRAYS-INPUT "8.15.2. Array Value Input")]. Observe que isso significa que a matriz não pode ser acessada naturalmente como uma matriz no programa hostis (sem processamento adicional que analise a representação de texto).
+Outra solução é armazenar matrizes em sua representação de string externa em variáveis hostis do tipo `char[]` ou `VARCHAR[]`. Para mais detalhes sobre essa representação, consulte [Seção 8.15.2](arrays.md#ARRAYS-INPUT). Observe que isso significa que a matriz não pode ser acessada naturalmente como uma matriz no programa hostis (sem processamento adicional que analise a representação de texto).
 
 #### 34.4.5.2. Tipos compostos [#](#ECPG-VARIABLES-NONPRIMITIVE-SQL-COMPOSITE)
 
@@ -954,7 +957,7 @@ while (1)
 EXEC SQL CLOSE cur1;
 ```
 
-Para melhorar este exemplo, as variáveis de host para armazenar valores no comando `FETCH` podem ser reunidas em uma estrutura. Para mais detalhes sobre a variável de host na forma de estrutura, consulte [Seção 34.4.4.3.2][(ecpg-variables.md#ECPG-VARIABLES-STRUCT "34.4.4.3.2. Structures")]. Para alternar para a estrutura, o exemplo pode ser modificado conforme a seguir. As duas variáveis de host, `intval` e `textval`, tornam-se membros da estrutura `comp_t`, e a estrutura é especificada no comando `FETCH`.
+Para melhorar este exemplo, as variáveis de host para armazenar valores no comando `FETCH` podem ser reunidas em uma estrutura. Para mais detalhes sobre a variável de host na forma de estrutura, consulte [Seção 34.4.4.3.2](ecpg-variables.md#ECPG-VARIABLES-STRUCT). Para alternar para a estrutura, o exemplo pode ser modificado conforme a seguir. As duas variáveis de host, `intval` e `textval`, tornam-se membros da estrutura `comp_t`, e a estrutura é especificada no comando `FETCH`.
 
 ```
 EXEC SQL BEGIN DECLARE SECTION;

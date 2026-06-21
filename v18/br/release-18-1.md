@@ -5,7 +5,7 @@
 
 **Data de lançamento:** 2025-11-13
 
-Esta versão contém uma variedade de correções do 18.0. Para informações sobre as novas funcionalidades na versão principal 18, consulte [Seção E.5][(release-18.md "E.5. Release 18")].
+Esta versão contém uma variedade de correções do 18.0. Para informações sobre as novas funcionalidades na versão principal 18, consulte [Seção E.5](release-18.md).
 
 ### E.4.1. Migração para a Versão 18.1 [#](#RELEASE-18-1-MIGRATION)
 
@@ -114,7 +114,7 @@ Isso corrige uma falha de vazamento de memória de duração de sessão introduz
 O código para criptografar/descriptografar dados transmitidos usando GSSAPI não reconhecia corretamente as condições de erro no soquete de conexão, uma vez que o Windows reporta essas condições de forma diferente das outras plataformas. Isso levou ao fracasso na realização de conexões no Windows.
 * Correção do descarte de restrições não herdadas não nulos em colunas de tabelas herdadas (Dilip Kumar) [§](https://postgr.es/c/0fe07fa11)
 
-O pg_dump não conseguiu preservar tais restrições ao fazer o dumping de um servidor pré-v18. * Corrigir a ordenação das restrições de chave estrangeira pelo pg_dump (Álvaro Herrera) [§][(https://postgr.es/c/162e70ea0)]
+O pg_dump não conseguiu preservar tais restrições ao fazer o dumping de um servidor pré-v18. * Corrigir a ordenação das restrições de chave estrangeira pelo pg_dump (Álvaro Herrera) [§](https://postgr.es/c/162e70ea0)
 
 Assegure a ordenação consistente desses objetos do banco de dados, como já foi feito para outros tipos de objetos.
 * Repare erros variados na lógica de compressão de dados em pg_dump e pg_restore (Daniel Gustafsson, Tom Lane) [§](https://postgr.es/c/8980c724b) [§](https://postgr.es/c/6a4009747) [§](https://postgr.es/c/aa1fcd087)

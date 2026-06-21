@@ -8,9 +8,9 @@
 * [8.14.6. Transformações](datatype-json.md#DATATYPE-JSON-TRANSFORMS)
 * [8.14.7. Tipo jsonpath](datatype-json.md#DATATYPE-JSONPATH)
 
-Os tipos de dados JSON são para armazenar dados de JSON (JavaScript Object Notation), conforme especificado em [RFC 7159][(https://datatracker.ietf.org/doc/html/rfc7159)]. Esses dados também podem ser armazenados como `text`, mas os tipos de dados JSON têm a vantagem de impor que cada valor armazenado seja válido de acordo com as regras do JSON. Também existem funções e operadores específicos para JSON disponíveis para dados armazenados nesses tipos de dados; veja [Seção 9.16][(functions-json.md "9.16. JSON Functions and Operators")].
+Os tipos de dados JSON são para armazenar dados de JSON (JavaScript Object Notation), conforme especificado em [RFC 7159](https://datatracker.ietf.org/doc/html/rfc7159). Esses dados também podem ser armazenados como `text`, mas os tipos de dados JSON têm a vantagem de impor que cada valor armazenado seja válido de acordo com as regras do JSON. Também existem funções e operadores específicos para JSON disponíveis para dados armazenados nesses tipos de dados; veja [Seção 9.16](functions-json.md).
 
-O PostgreSQL oferece dois tipos para armazenar dados JSON: `json` e `jsonb`. Para implementar mecanismos de consulta eficientes para esses tipos de dados, o PostgreSQL também fornece o tipo de dados `jsonpath`, descrito na [Seção 8.14.7][(datatype-json.md#DATATYPE-JSONPATH "8.14.7. jsonpath Type")].
+O PostgreSQL oferece dois tipos para armazenar dados JSON: `json` e `jsonb`. Para implementar mecanismos de consulta eficientes para esses tipos de dados, o PostgreSQL também fornece o tipo de dados `jsonpath`, descrito na [Seção 8.14.7](datatype-json.md#DATATYPE-JSONPATH).
 
 Os tipos de dados `json` e `jsonb` aceitam *quase* conjuntos idênticos de valores como entrada. A principal diferença prática é uma questão de eficiência. O tipo de dados `json` armazena uma cópia exata do texto de entrada, que as funções de processamento devem reparsear em cada execução; enquanto o tipo de dados `jsonb` é armazenado em um formato binário decomposto que o torna ligeiramente mais lento para entrada devido ao custo adicional de conversão, mas significativamente mais rápido para processamento, uma vez que não é necessário reparsear. O `jsonb` também suporta indexação, o que pode ser uma vantagem significativa.
 
@@ -24,9 +24,9 @@ O RFC 7159 permite que as strings JSON contenham sequências de escape Unicode i
 
 ### Nota
 
-Muitas das funções de processamento de JSON descritas em [Seção 9.16][(functions-json.md "9.16. JSON Functions and Operators")] irão converter escapamentos Unicode em caracteres regulares, e, portanto, irão lançar os mesmos tipos de erros descritos anteriormente, mesmo que sua entrada seja do tipo `json`[(functions-json.md "9.16. JSON Functions and Operators")]. O fato de que a função de entrada `json` não faça essas verificações pode ser considerada um artefato histórico, embora permita o armazenamento simples (sem processamento) de escapamentos Unicode de JSON em um codificação de banco de dados que não suporte os caracteres representados.
+Muitas das funções de processamento de JSON descritas em [Seção 9.16](functions-json.md) irão converter escapamentos Unicode em caracteres regulares, e, portanto, irão lançar os mesmos tipos de erros descritos anteriormente, mesmo que sua entrada seja do tipo `json`[(functions-json.md "9.16. JSON Functions and Operators")]. O fato de que a função de entrada `json` não faça essas verificações pode ser considerada um artefato histórico, embora permita o armazenamento simples (sem processamento) de escapamentos Unicode de JSON em um codificação de banco de dados que não suporte os caracteres representados.
 
-Ao converter uma entrada textual JSON em `jsonb`, os tipos primitivos descritos pelo RFC 7159 são efetivamente mapeados em tipos nativos do PostgreSQL, conforme mostrado na [Tabela 8.23][(datatype-json.md#JSON-TYPE-MAPPING-TABLE "Table 8.23. JSON Primitive Types and Corresponding PostgreSQL Types")]. Portanto, há algumas restrições adicionais menores sobre o que constitui dados válidos de `jsonb` que não se aplicam ao tipo `json`, nem ao JSON em abstrato, correspondendo a limites sobre o que pode ser representado pelo tipo de dados subjacente. Notavelmente, `jsonb` rejeitará números que estejam fora do intervalo do tipo de dados `numeric` do PostgreSQL, enquanto `json` não o fará. Tais restrições definidas pela implementação são permitidas pelo RFC 7159. No entanto, na prática, tais problemas são muito mais prováveis de ocorrer em outras implementações, pois é comum representar o tipo primitivo `number` do JSON como ponto flutuante de precisão dupla IEEE 754 (que o RFC 7159 antecipa e permite explicitamente). Ao usar JSON como um formato de intercâmbio com tais sistemas, o perigo de perder precisão numérica em comparação com os dados originalmente armazenados pelo PostgreSQL deve ser considerado.
+Ao converter uma entrada textual JSON em `jsonb`, os tipos primitivos descritos pelo RFC 7159 são efetivamente mapeados em tipos nativos do PostgreSQL, conforme mostrado na [Tabela 8.23](datatype-json.md#JSON-TYPE-MAPPING-TABLE). Portanto, há algumas restrições adicionais menores sobre o que constitui dados válidos de `jsonb` que não se aplicam ao tipo `json`, nem ao JSON em abstrato, correspondendo a limites sobre o que pode ser representado pelo tipo de dados subjacente. Notavelmente, `jsonb` rejeitará números que estejam fora do intervalo do tipo de dados `numeric` do PostgreSQL, enquanto `json` não o fará. Tais restrições definidas pela implementação são permitidas pelo RFC 7159. No entanto, na prática, tais problemas são muito mais prováveis de ocorrer em outras implementações, pois é comum representar o tipo primitivo `number` do JSON como ponto flutuante de precisão dupla IEEE 754 (que o RFC 7159 antecipa e permite explicitamente). Ao usar JSON como um formato de intercâmbio com tais sistemas, o perigo de perder precisão numérica em comparação com os dados originalmente armazenados pelo PostgreSQL deve ser considerado.
 
 Por outro lado, conforme observado na tabela, há algumas restrições menores no formato de entrada dos tipos primitivos JSON que não se aplicam aos tipos correspondentes do PostgreSQL.
 
@@ -35,97 +35,118 @@ Por outro lado, conforme observado na tabela, há algumas restrições menores n
 
 
 <table border="1" class="table" summary="JSON Primitive Types and Corresponding PostgreSQL Types">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     JSON primitive type
    </th>
-<th>
-<span class="productname">
+   <th>
+    <span class="productname">
      PostgreSQL
     </span>
     type
    </th>
-<th>Notas</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="type">
+   <th>
+    Notas
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="type">
      string
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      text
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      \u0000
-    </code>é proibido, assim como as escapadas Unicode que representam caracteres não disponíveis no codificação do banco de dados</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+    </code>
+    é proibido, assim como as escapadas Unicode que representam caracteres não disponíveis no codificação do banco de dados
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      number
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      numeric
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      NaN
-    </code>e<code class="literal">
+    </code>
+    e
+    <code class="literal">
      infinity
-    </code>os valores não são permitidos</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+    </code>
+    os valores não são permitidos
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      boolean
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      boolean
     </code>
-</td>
-<td>Apenas minúsculas<code class="literal">
+   </td>
+   <td>
+    Apenas minúsculas
+    <code class="literal">
      true
-    </code>e<code class="literal">
+    </code>
+    e
+    <code class="literal">
      false
-    </code>as grafias são aceitas</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+    </code>
+    as grafias são aceitas
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      null
     </code>
-</td>
-<td>
+   </td>
+   <td>
     (none)
    </td>
-<td>SQL<code class="literal">
+   <td>
+    SQL
+    <code class="literal">
      NULL
-    </code>é um conceito diferente</td>
-</tr>
-</tbody>
+    </code>
+    é um conceito diferente
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 ### 8.14.1. Sintaxe de entrada e saída JSON [#](#JSON-KEYS-ELEMENTS)
 
@@ -177,7 +198,7 @@ SELECT '{"reading": 1.230e-5}'::json, '{"reading": 1.230e-5}'::jsonb;
 
 No entanto, `jsonb` preservará zeros fracionários finais, como visto neste exemplo, embora esses sejam semanticamente insignificantes para fins como verificações de igualdade.
 
-Para a lista de funções e operadores embutidos disponíveis para a construção e processamento de valores JSON, consulte [Seção 9.16][(functions-json.md "9.16. JSON Functions and Operators")].
+Para a lista de funções e operadores embutidos disponíveis para a construção e processamento de valores JSON, consulte [Seção 9.16](functions-json.md).
 
 ### 8.14.2. Projetando documentos JSON [#](#JSON-DOC-DESIGN)
 
@@ -273,13 +294,13 @@ mas essa abordagem é menos flexível e, muitas vezes, menos eficiente também.
 
 Por outro lado, o operador de existência JSON não é aninhado: ele só procurará a chave ou o elemento de matriz especificados no nível superior do valor JSON.
 
-Os vários operadores de contenção e existência, juntamente com todos os outros operadores e funções JSON, estão documentados em [Seção 9.16][(functions-json.md "9.16. JSON Functions and Operators")].
+Os vários operadores de contenção e existência, juntamente com todos os outros operadores e funções JSON, estão documentados em [Seção 9.16](functions-json.md).
 
 ### 8.14.4. `jsonb` Indicadores [#](#JSON-INDEXING)
 
 Os índices GIN podem ser usados para pesquisar eficientemente chaves ou pares chave/valor que ocorrem em um grande número de documentos `jsonb` (datums). Dois "classes de operadores" GIN são fornecidos, oferecendo diferentes compromissos em termos de desempenho e flexibilidade.
 
-A classe de operador GIN padrão para `jsonb` suporta consultas com os operadores key-exists `?`, `?|` e `?&`, o operador de contenção `@>` e os operadores de correspondência `@?` e `@@` do `jsonpath` (Para detalhes sobre a semântica que esses operadores implementam, consulte a Tabela 9.48 [(functions-json.md#FUNCTIONS-JSONB-OP-TABLE "Table 9.48. Additional jsonb Operators")]). Um exemplo de criação de um índice com essa classe de operador é:
+A classe de operador GIN padrão para `jsonb` suporta consultas com os operadores key-exists `?`, `?|` e `?&`, o operador de contenção `@>` e os operadores de correspondência `@?` e `@@` do `jsonpath` (Para detalhes sobre a semântica que esses operadores implementam, consulte a [Tabela 9.48](functions-json.md#FUNCTIONS-JSONB-OP-TABLE)). Um exemplo de criação de um índice com essa classe de operador é:
 
 ```
 CREATE INDEX idxgin ON api USING GIN (jdoc);
@@ -331,7 +352,7 @@ Ainda assim, com o uso apropriado de índices de expressão, a consulta acima po
 CREATE INDEX idxgintags ON api USING GIN ((jdoc -> 'tags'));
 ```
 
-Agora, a cláusula `WHERE` `jdoc -> 'tags' ? 'qui'` será reconhecida como uma aplicação do operador indexável `?` à expressão indexada `jdoc -> 'tags'`. (Mais informações sobre índices de expressão podem ser encontradas em [Seção 11.7][(indexes-expressional.md "11.7. Indexes on Expressions")].
+Agora, a cláusula `WHERE` `jdoc -> 'tags' ? 'qui'` será reconhecida como uma aplicação do operador indexável `?` à expressão indexada `jdoc -> 'tags'`. (Mais informações sobre índices de expressão podem ser encontradas em [Seção 11.7](indexes-expressional.md).
 
 Outra abordagem para fazer consultas é explorar a contenção, por exemplo:
 
@@ -478,251 +499,317 @@ Uma expressão de caminho SQL/JSON é normalmente escrita em uma consulta SQL co
 Uma expressão de caminho consiste em uma sequência de elementos de caminho, que podem ser qualquer um dos seguintes:
 
 * Literais de caminho de tipos primitivos JSON: texto Unicode, numérico, verdadeiro, falso ou nulo.
-* Variáveis de caminho listadas em [Tabela 8.24][(datatype-json.md#TYPE-JSONPATH-VARIABLES "Table 8.24. jsonpath Variables")].
-* Operadores de acesso listados em [Tabela 8.25][(datatype-json.md#TYPE-JSONPATH-ACCESSORS "Table 8.25. jsonpath Accessors")].
-* Operadores e métodos `jsonpath` listados em [Seção 9.16.2.3][(functions-json.md#FUNCTIONS-SQLJSON-PATH-OPERATORS "9.16.2.3. SQL/JSON Path Operators and Methods")].
+* Variáveis de caminho listadas em [Tabela 8.24](datatype-json.md#TYPE-JSONPATH-VARIABLES).
+* Operadores de acesso listados em [Tabela 8.25](datatype-json.md#TYPE-JSONPATH-ACCESSORS).
+* Operadores e métodos `jsonpath` listados em [Seção 9.16.2.3](functions-json.md#FUNCTIONS-SQLJSON-PATH-OPERATORS).
 * Parenteses, que podem ser usadas para fornecer expressões de filtro ou definir a ordem de avaliação do caminho.
 
-Para obter detalhes sobre o uso das expressões `jsonpath` com funções de consulta SQL/JSON, consulte [Seção 9.16.2][(functions-json.md#FUNCTIONS-SQLJSON-PATH "9.16.2. The SQL/JSON Path Language")].
+Para obter detalhes sobre o uso das expressões `jsonpath` com funções de consulta SQL/JSON, consulte [Seção 9.16.2](functions-json.md#FUNCTIONS-SQLJSON-PATH).
 
 **Tabela 8.24. `jsonpath` Variáveis**
 
 
 
 <table border="1" class="table" summary="jsonpath Variables">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Variable
    </th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      $
     </code>
-</td>
-<td>Uma variável que representa o valor JSON que está sendo pesquisado<em class="firstterm">item de contexto</em>
+   </td>
+   <td>
+    Uma variável que representa o valor JSON que está sendo pesquisado
+    <em class="firstterm">
+     item de contexto
+    </em>
     ).
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      $varname
     </code>
-</td>
-<td>Uma variável nomeada. Seu valor pode ser definido pelo parâmetro<em class="parameter">
-<code>
+   </td>
+   <td>
+    Uma variável nomeada. Seu valor pode ser definido pelo parâmetro
+    <em class="parameter">
+     <code>
       vars
      </code>
-</em>de várias funções de processamento de JSON;<a class="xref" href="functions-json.md#FUNCTIONS-JSON-PROCESSING-TABLE" title="Table 9.51. JSON Processing Functions">Tabela 9.51</a>para obter mais informações.</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+    </em>
+    de várias funções de processamento de JSON;
+    <a class="xref" href="functions-json.md#FUNCTIONS-JSON-PROCESSING-TABLE" title="Table 9.51. JSON Processing Functions">
+     Tabela 9.51
+    </a>
+    para obter mais informações.
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      @
     </code>
-</td>
-<td>Uma variável que representa o resultado da avaliação do caminho em expressões de filtro.</td>
-</tr>
-</tbody>
+   </td>
+   <td>
+    Uma variável que representa o resultado da avaliação do caminho em expressões de filtro.
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 **Tabela 8.25. `jsonpath` Acessórios**
 
 
 
 <table border="1" class="table" summary="jsonpath Accessors">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-</colgroup>
-<thead>
-<tr>
-<th>Operador de Acessórios</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<p>
-<code class="literal">
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
+    Operador de Acessórios
+   </th>
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <p>
+     <code class="literal">
       .
       <em class="replaceable">
-<code>
+       <code>
         key
        </code>
-</em>
-</code>
-</p>
-<p>
-<code class="literal">
+      </em>
+     </code>
+    </p>
+    <p>
+     <code class="literal">
       ."$
       <em class="replaceable">
-<code>
+       <code>
         varname
        </code>
-</em>
+      </em>
       "
      </code>
-</p>
-</td>
-<td>
-<p>Accessor de membro que retorna um membro de objeto com a chave especificada. Se o nome da chave corresponder a alguma variável nomeada que comece com<code class="literal">
+    </p>
+   </td>
+   <td>
+    <p>
+     Accessor de membro que retorna um membro de objeto com a chave especificada. Se o nome da chave corresponder a alguma variável nomeada que comece com
+     <code class="literal">
       $
-     </code>ou não atende às regras do JavaScript para um identificador, ele deve ser fechado entre aspas duplas para torná-lo um literal de string.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>
-<code class="literal">
+     </code>
+     ou não atende às regras do JavaScript para um identificador, ele deve ser fechado entre aspas duplas para torná-lo um literal de string.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     <code class="literal">
       .*
      </code>
-</p>
-</td>
-<td>
-<p>Acededor de membros wildcard que retorna os valores de todos os membros localizados no nível superior do objeto atual.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>
-<code class="literal">
+    </p>
+   </td>
+   <td>
+    <p>
+     Acededor de membros wildcard que retorna os valores de todos os membros localizados no nível superior do objeto atual.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     <code class="literal">
       .**
      </code>
-</p>
-</td>
-<td>
-<p>Acesso recursivo a membros com wildcard que processa todos os níveis da hierarquia JSON do objeto atual e retorna todos os valores dos membros, independentemente do seu nível de aninhamento. Isso é<span class="productname">PostgreSQL</span>extensão do padrão SQL/JSON.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>
-<code class="literal">
+    </p>
+   </td>
+   <td>
+    <p>
+     Acesso recursivo a membros com wildcard que processa todos os níveis da hierarquia JSON do objeto atual e retorna todos os valores dos membros, independentemente do seu nível de aninhamento. Isso é
+     <span class="productname">
+      PostgreSQL
+     </span>
+     extensão do padrão SQL/JSON.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     <code class="literal">
       .**{
       <em class="replaceable">
-<code>
+       <code>
         level
        </code>
-</em>
+      </em>
       }
      </code>
-</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     <code class="literal">
       .**{
       <em class="replaceable">
-<code>
+       <code>
         start_level
        </code>
-</em>
+      </em>
       to
       <em class="replaceable">
-<code>
+       <code>
         end_level
        </code>
-</em>
+      </em>
       }
      </code>
-</p>
-</td>
-<td>
-<p>Como<code class="literal">
+    </p>
+   </td>
+   <td>
+    <p>
+     Como
+     <code class="literal">
       .**
-     </code>, mas seleciona apenas os níveis especificados da hierarquia JSON. Os níveis de ninho são especificados como inteiros. O nível zero corresponde ao objeto atual. Para acessar o nível de ninho mais baixo, você pode usar o<code class="literal">
+     </code>
+     , mas seleciona apenas os níveis especificados da hierarquia JSON. Os níveis de ninho são especificados como inteiros. O nível zero corresponde ao objeto atual. Para acessar o nível de ninho mais baixo, você pode usar o
+     <code class="literal">
       last
-     </code>palavra-chave. Isso é<span class="productname">PostgreSQL</span>extensão do padrão SQL/JSON.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>
-<code class="literal">
+     </code>
+     palavra-chave. Isso é
+     <span class="productname">
+      PostgreSQL
+     </span>
+     extensão do padrão SQL/JSON.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     <code class="literal">
       [
       <em class="replaceable">
-<code>
+       <code>
         subscript
        </code>
-</em>
+      </em>
       , ...]
      </code>
-</p>
-</td>
-<td>
-<p>Acesso ao elemento do array.<code class="literal">
-<em class="replaceable">
-<code>
+    </p>
+   </td>
+   <td>
+    <p>
+     Acesso ao elemento do array.
+     <code class="literal">
+      <em class="replaceable">
+       <code>
         subscript
        </code>
-</em>
-</code>pode ser administrada em duas formas:<code class="literal">
-<em class="replaceable">
-<code>
+      </em>
+     </code>
+     pode ser administrada em duas formas:
+     <code class="literal">
+      <em class="replaceable">
+       <code>
         index
        </code>
-</em>
-</code>ou<code class="literal">
-<em class="replaceable">
-<code>
+      </em>
+     </code>
+     ou
+     <code class="literal">
+      <em class="replaceable">
+       <code>
         start_index
        </code>
-</em>
+      </em>
       to
       <em class="replaceable">
-<code>
+       <code>
         end_index
        </code>
-</em>
-</code>A primeira forma retorna um único elemento de array pelo seu índice. A segunda forma retorna uma fatia de array pelo intervalo de índices, incluindo os elementos que correspondem ao fornecido.<em class="replaceable">
-<code>
+      </em>
+     </code>
+     A primeira forma retorna um único elemento de array pelo seu índice. A segunda forma retorna uma fatia de array pelo intervalo de índices, incluindo os elementos que correspondem ao fornecido.
+     <em class="replaceable">
+      <code>
        start_index
       </code>
-</em>e<em class="replaceable">
-<code>
+     </em>
+     e
+     <em class="replaceable">
+      <code>
        end_index
       </code>
-</em>
+     </em>
      .
     </p>
-<p>O especificado<em class="replaceable">
-<code>
+    <p>
+     O especificado
+     <em class="replaceable">
+      <code>
        index
       </code>
-</em>pode ser um inteiro, bem como uma expressão que retorna um único valor numérico, que é automaticamente convertido para inteiro. O índice zero corresponde ao primeiro elemento da matriz. Você também pode usar o<code class="literal">
+     </em>
+     pode ser um inteiro, bem como uma expressão que retorna um único valor numérico, que é automaticamente convertido para inteiro. O índice zero corresponde ao primeiro elemento da matriz. Você também pode usar o
+     <code class="literal">
       last
-     </code>palavra-chave para denotar o último elemento da matriz, o que é útil para manipular matrizes de comprimento desconhecido.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>
-<code class="literal">
+     </code>
+     palavra-chave para denotar o último elemento da matriz, o que é útil para manipular matrizes de comprimento desconhecido.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     <code class="literal">
       [*]
      </code>
-</p>
-</td>
-<td>
-<p>Elemento de acesso de matriz com sinal de interrogação que retorna todos os elementos da matriz.</p>
-</td>
-</tr>
-</tbody>
+    </p>
+   </td>
+   <td>
+    <p>
+     Elemento de acesso de matriz com sinal de interrogação que retorna todos os elementos da matriz.
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 

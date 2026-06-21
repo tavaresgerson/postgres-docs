@@ -7,140 +7,173 @@ O catálogo `pg_sequence` contém informações sobre sequências. Algumas das i
 
 
 <table border="1" class="table" summary="pg_sequence Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">Tipo de coluna</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
+     Tipo de coluna
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       seqrelid
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
+      <code class="structname">
        pg_class
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
-     </code>)</p>
-<p>O OID do<a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-<code class="structname">
+     </code>
+     )
+    </p>
+    <p>
+     O OID do
+     <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
+      <code class="structname">
        pg_class
       </code>
-</a>entrada para esta sequência</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </a>
+     entrada para esta sequência
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       seqtypid
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
+      <code class="structname">
        pg_type
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
-     </code>)</p>
-<p>Tipo de dados da sequência</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     Tipo de dados da sequência
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       seqstart
      </code>
-<code class="type">
+     <code class="type">
       int8
      </code>
-</p>
-<p>Valor inicial da sequência</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Valor inicial da sequência
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       seqincrement
      </code>
-<code class="type">
+     <code class="type">
       int8
      </code>
-</p>
-<p>Valor incremental da sequência</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Valor incremental da sequência
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       seqmax
      </code>
-<code class="type">
+     <code class="type">
       int8
      </code>
-</p>
-<p>Valor máximo da sequência</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Valor máximo da sequência
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       seqmin
      </code>
-<code class="type">
+     <code class="type">
       int8
      </code>
-</p>
-<p>Valor mínimo da sequência</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Valor mínimo da sequência
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       seqcache
      </code>
-<code class="type">
+     <code class="type">
       int8
      </code>
-</p>
-<p>Tamanho de cache da sequência</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Tamanho de cache da sequência
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       seqcycle
      </code>
-<code class="type">
+     <code class="type">
       bool
      </code>
-</p>
-<p>Se a sequência cicla</p>
-</td>
-</tr>
-</tbody>
+    </p>
+    <p>
+     Se a sequência cicla
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 

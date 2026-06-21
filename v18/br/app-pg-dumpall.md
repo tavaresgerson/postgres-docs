@@ -8,13 +8,13 @@ pg_dumpall — extrair um cluster de banco de dados PostgreSQL em um arquivo de 
 
 ## Descrição
 
-O pg_dumpall é um utilitário para escrever todos os bancos de dados do PostgreSQL de um clúster em um arquivo de script. O arquivo de script contém comandos SQL que podem ser usados como entrada para [psql][(app-psql.md "psql")] para restaurar os bancos de dados. Isso é feito chamando [pg_dump][(app-pgdump.md "pg_dump")] para cada banco de dados no clúster. O pg_dumpall também grava objetos globais que são comuns a todos os bancos de dados, a saber, papéis de banco, espaços de tabela e concessões de privilégio para parâmetros de configuração. (O pg_dump não salva esses objetos.)
+O pg_dumpall é um utilitário para escrever todos os bancos de dados do PostgreSQL de um clúster em um arquivo de script. O arquivo de script contém comandos SQL que podem ser usados como entrada para [psql](app-psql.md) para restaurar os bancos de dados. Isso é feito chamando [pg_dump](app-pgdump.md) para cada banco de dados no clúster. O pg_dumpall também grava objetos globais que são comuns a todos os bancos de dados, a saber, papéis de banco, espaços de tabela e concessões de privilégio para parâmetros de configuração. (O pg_dump não salva esses objetos.)
 
 Como o pg_dumpall lê as tabelas de todos os bancos de dados, você provavelmente terá que se conectar como um superusuário do banco de dados para produzir um dump completo. Além disso, você precisará de privilégios de superusuário para executar o script salvo, a fim de poder adicionar funções e criar bancos de dados.
 
 O script SQL será escrito na saída padrão. Use a opção `-f`/`--file` ou operadores de shell para redirecioná-lo para um arquivo.
 
-O pg_dumpall precisa se conectar várias vezes ao servidor PostgreSQL (uma vez por banco de dados). Se você usar autenticação por senha, ele solicitará uma senha a cada vez. É conveniente ter um arquivo `~/.pgpass` nesses casos. Consulte [Seção 32.16][(libpq-pgpass.md "32.16. The Password File")] para obter mais informações.
+O pg_dumpall precisa se conectar várias vezes ao servidor PostgreSQL (uma vez por banco de dados). Se você usar autenticação por senha, ele solicitará uma senha a cada vez. É conveniente ter um arquivo `~/.pgpass` nesses casos. Consulte [Seção 32.16](libpq-pgpass.md) para obter mais informações.
 
 ### Aviso
 
@@ -68,10 +68,11 @@ Atualmente, os comandos emitidos para `--disable-triggers` devem ser feitos como
 
 O arquivo lista um padrão de banco de dados por linha, com o seguinte formato:
 
-``` exclude database PATTERN
-    ```
+```
+exclude database PATTERN
+```
 
-As linhas que começam com `#` são consideradas comentários e ignoradas. Comentários também podem ser colocados após uma linha de padrão de objeto. Linhas em branco também são ignoradas. Veja [Padrões][(app-psql.md#APP-PSQL-PATTERNS "Patterns")] para saber como realizar citação em padrões.
+As linhas que começam com `#` são consideradas comentários e ignoradas. Comentários também podem ser colocados após uma linha de padrão de objeto. Linhas em branco também são ignoradas. Veja [Padrões](app-psql.md#APP-PSQL-PATTERNS) para saber como realizar citação em padrões.
 
 `--if-exists`: Use os comandos `DROP ... IF EXISTS` para descartar objetos no modo `--clean`. Isso suprime os erros de "não existe" que, de outra forma, poderiam ser relatados. Esta opção não é válida, a menos que `--clean` também seja especificado.
 
@@ -159,7 +160,7 @@ Observe que o prompt de senha ocorrerá novamente para cada banco de dados que s
 
 `PG_COLOR`: Especifica se a cor deve ser usada nas mensagens de diagnóstico. Os valores possíveis são `always`, `auto` e `never`.
 
-Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, também utiliza as variáveis de ambiente suportadas pelo libpq (consulte a Seção 32.15 [(libpq-envars.md "32.15. Environment Variables")]).
+Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, também utiliza as variáveis de ambiente suportadas pelo libpq (consulte a [Seção 32.15](libpq-envars.md)).
 
 ## Notas
 
@@ -193,4 +194,4 @@ Não é importante qual banco de dados você se conecta aqui, uma vez que o arqu
 
 ## Veja também
 
-Consulte [pg_dump][(app-pgdump.md "pg_dump")] para obter detalhes sobre as possíveis condições de erro.
+Consulte [pg_dump](app-pgdump.md) para obter detalhes sobre as possíveis condições de erro.

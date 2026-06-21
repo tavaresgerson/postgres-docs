@@ -8,7 +8,7 @@ pg_test_fsync — determinar o mais rápido `wal_sync_method` para PostgreSQL
 
 ## Descrição
 
-O pg_test_fsync é destinado a lhe dar uma ideia razoável do que é o método de sincronização [wal_sync_method][(runtime-config-wal.md#GUC-WAL-SYNC-METHOD)] no seu sistema específico, além de fornecer informações de diagnóstico no caso de um problema identificado de I/O. No entanto, as diferenças mostradas pelo pg_test_fsync podem não fazer nenhuma diferença significativa no desempenho real do banco de dados, especialmente porque muitos servidores de banco de dados não são limitados em velocidade por seus logs de pré-escrita. O pg_test_fsync relata o tempo médio da operação de sincronização de arquivo em microsegundos para cada `wal_sync_method`, que também pode ser usado para informar esforços para otimizar o valor de [commit_delay][(runtime-config-wal.md#GUC-COMMIT-DELAY)].
+O pg_test_fsync é destinado a lhe dar uma ideia razoável do que é o método de sincronização [wal_sync_method](runtime-config-wal.md#GUC-WAL-SYNC-METHOD) no seu sistema específico, além de fornecer informações de diagnóstico no caso de um problema identificado de I/O. No entanto, as diferenças mostradas pelo pg_test_fsync podem não fazer nenhuma diferença significativa no desempenho real do banco de dados, especialmente porque muitos servidores de banco de dados não são limitados em velocidade por seus logs de pré-escrita. O pg_test_fsync relata o tempo médio da operação de sincronização de arquivo em microsegundos para cada `wal_sync_method`, que também pode ser usado para informar esforços para otimizar o valor de [commit_delay](runtime-config-wal.md#GUC-COMMIT-DELAY).
 
 ## Opções
 

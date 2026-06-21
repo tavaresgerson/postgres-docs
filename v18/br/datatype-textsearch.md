@@ -7,7 +7,7 @@ O PostgreSQL oferece dois tipos de dados projetados para suportar a pesquisa de 
 
 ### 8.11.1. `tsvector` [#](#DATATYPE-TSVECTOR)
 
-Um valor `tsvector` é uma lista ordenada de *lexemas* distintos, que são palavras que foram *normalizadas* para mesclar diferentes variantes da mesma palavra (consulte o Capítulo 12 [(textsearch.md "Chapter 12. Full Text Search")] para detalhes). A ordenação e a eliminação de duplicatas são feitas automaticamente durante a entrada, como mostrado neste exemplo:
+Um valor `tsvector` é uma lista ordenada de *lexemas* distintos, que são palavras que foram *normalizadas* para mesclar diferentes variantes da mesma palavra (consulte o [Capítulo 12](textsearch.md) para detalhes). A ordenação e a eliminação de duplicatas são feitas automaticamente durante a entrada, como mostrado neste exemplo:
 
 ```
 SELECT 'a fat cat sat on a mat and ate a fat rat'::tsvector;

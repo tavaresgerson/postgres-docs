@@ -20,7 +20,7 @@ DROP RULE [ IF EXISTS ] name ON table_name [ CASCADE | RESTRICT ]
 
 *`table_name`*: O nome (opcionalmente qualificado por esquema) da tabela ou visão a que a regra se aplica.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem da regra e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem da regra e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a eliminação da regra se houver objetos que dependem dela. Este é o padrão.
 

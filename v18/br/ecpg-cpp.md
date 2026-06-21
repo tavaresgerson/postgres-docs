@@ -9,7 +9,7 @@ O pré-processador `ecpg` recebe um arquivo de entrada escrito em C (ou algo par
 
 No geral, no entanto, o pré-processador `ecpg` só entende C; ele não lida com a sintaxe especial e as palavras reservadas da linguagem C++. Portanto, algum código SQL embutido escrito em código de aplicativo C++ que utiliza recursos complicados específicos do C++ pode não ser pré-processado corretamente ou pode não funcionar conforme o esperado.
 
-Uma maneira segura de usar o código SQL embutido em uma aplicação C++ é ocultar as chamadas ECPG em um módulo C, que o código da aplicação C++ chama para acessar o banco de dados, e vinculá-las ao resto do código C++. Veja [Seção 34.13.2][(ecpg-cpp.md#ECPG-CPP-AND-C "34.13.2. C++ Application Development with External C Module")] sobre isso.
+Uma maneira segura de usar o código SQL embutido em uma aplicação C++ é ocultar as chamadas ECPG em um módulo C, que o código da aplicação C++ chama para acessar o banco de dados, e vinculá-las ao resto do código C++. Veja [Seção 34.13.2](ecpg-cpp.md#ECPG-CPP-AND-C) sobre isso.
 
 ### 34.13.1. Âmbito das variáveis de hospedeiro [#](#ECPG-CPP-SCOPE)
 
@@ -79,7 +79,8 @@ Três tipos de arquivos devem ser criados: um arquivo C (`*.pgc`), um arquivo de
 
 `test_mod.pgc` [#](#ECPG-CPP-AND-C-TEST-MOD-PGC): Um módulo de subrotina para executar comandos SQL embutidos em C. Ele será convertido em `test_mod.c` pelo pré-processador.
 
-``` #include "test_mod.h" #include <stdio.h>
+```
+#include "test_mod.h" #include <stdio.h>
 
 void db_connect() { EXEC SQL CONNECT TO testdb1; EXEC SQL SELECT pg_catalog.set_config('search_path', '', false); EXEC SQL COMMIT; }
 
@@ -88,35 +89,35 @@ void db_test() { EXEC SQL BEGIN DECLARE SECTION; char dbname[1024]; EXEC SQL END
 EXEC SQL SELECT current_database() INTO :dbname; printf("current_database = %s\n", dbname); }
 
 void db_disconnect() { EXEC SQL DISCONNECT ALL; }
-    ```
+```
 
 `test_mod.h` [#](#ECPG-CPP-AND-C-TEST-MOD-H): Um arquivo de cabeçalho com as declarações das funções no módulo C (`test_mod.pgc`). Ele é incluído por `test_cpp.cpp`. Este arquivo deve ter um bloco `extern "C"` ao redor das declarações, porque ele será vinculado a partir do módulo C++.
 
-``` #ifdef __cplusplus extern "C" { #endif
+```
+#ifdef __cplusplus extern "C" { #endif
 
 void db_connect(); void db_test(); void db_disconnect();
 
 #ifdef __cplusplus } #endif
-    ```
+```
 
-`test_cpp.cpp` [#](#ECPG-CPP-AND-C-TEST-CPP-CPP)
-:   O código principal do aplicativo, incluindo a rotina `main`, e, neste exemplo, uma classe em C++.
+`test_cpp.cpp` [#](#ECPG-CPP-AND-C-TEST-CPP-CPP): O código principal do aplicativo, incluindo a rotina `main`, e, neste exemplo, uma classe em C++.
 
-    ```
-    #include "test_mod.h"
+```
+#include "test_mod.h"
 
-    class TestCpp { public: TestCpp(); void test(); ~TestCpp(); };
+class TestCpp { public: TestCpp(); void test(); ~TestCpp(); };
 
-    TestCpp::TestCpp() { db_connect(); }
+TestCpp::TestCpp() { db_connect(); }
 
-    void TestCpp::test() { db_test(); }
+void TestCpp::test() { db_test(); }
 
-    TestCpp::~TestCpp() { db_disconnect(); }
+TestCpp::~TestCpp() { db_disconnect(); }
 
-    int main(void) { TestCpp *t = new TestCpp();
+int main(void) { TestCpp *t = new TestCpp();
 
-        t->test(); return 0; }
-    ```
+    t->test(); return 0; }
+```
 
 Para construir o aplicativo, proceda da seguinte forma. Converte `test_mod.pgc` em `test_mod.c` executando `ecpg`, e gere `test_mod.o` compilando `test_mod.c` com o compilador C:
 
@@ -124,8 +125,7 @@ Para construir o aplicativo, proceda da seguinte forma. Converte `test_mod.pgc` 
 ecpg -o test_mod.c test_mod.pgc cc -c test_mod.c -o test_mod.o
 ```
 
-Em seguida, gere `test_cpp.o` compilando
-`test_cpp.cpp` com o compilador C++.
+Em seguida, gere `test_cpp.o` compilando `test_cpp.cpp` com o compilador C++.
 
 ```
 c++ -c test_cpp.cpp -o test_cpp.o

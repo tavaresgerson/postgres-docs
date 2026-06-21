@@ -26,32 +26,32 @@ O módulo `ltree` fornece vários tipos de dados:
 * `ltree` armazena um caminho de rótulo.
 * `lquery` representa um padrão semelhante a uma expressão regular para a correspondência de valores de `ltree`. Uma palavra simples corresponde a esse rótulo dentro de um caminho. Um símbolo estrela (`*`) corresponde a zero ou mais rótulos. Esses podem ser unidos com pontos para formar um padrão que deve corresponder a todo o caminho do rótulo. Por exemplo:
 
-  ```
-  foo         Match the exact label path foo
-  *.foo.*     Match any label path containing the label foo
-  *.foo       Match any label path whose last label is foo
-  ```
+```
+foo         Match the exact label path foo
+*.foo.*     Match any label path containing the label foo
+*.foo       Match any label path whose last label is foo
+```
 
 Tanto os símbolos de estrela quanto as palavras simples podem ser quantificados para restringir quantas etiquetas podem corresponder:
 
-  ```
-  *{n}        Match exactly n labels
-  *{n,}       Match at least n labels
-  *{n,m}      Match at least n but not more than m labels
-  *{,m}       Match at most m labels — same as *{0,m}
-  foo{n,m}    Match at least n but not more than m occurrences of foo
-  foo{,}      Match any number of occurrences of foo, including zero
-  ```
+```
+*{n}        Match exactly n labels
+*{n,}       Match at least n labels
+*{n,m}      Match at least n but not more than m labels
+*{,m}       Match at most m labels — same as *{0,m}
+foo{n,m}    Match at least n but not more than m occurrences of foo
+foo{,}      Match any number of occurrences of foo, including zero
+```
 
 Na ausência de qualquer quantificador explícito, o padrão para um símbolo estrela é corresponder a qualquer número de rótulos (ou seja, `{,}`) enquanto o padrão para um item sem estrela é corresponder exatamente uma vez (ou seja, `{1}`).
 
 Existem vários modificadores que podem ser colocados no final de um item não-estrelado `lquery` para torná-lo mais do que apenas uma correspondência exata:
 
-  ```
-  @           Match case-insensitively, for example a@ matches A
-  *           Match any label with this prefix, for example foo* matches foobar
-  %           Match initial underscore-separated words
-  ```
+```
+@           Match case-insensitively, for example a@ matches A
+*           Match any label with this prefix, for example foo* matches foobar
+%           Match initial underscore-separated words
+```
 
 O comportamento do `%` é um pouco complicado. Ele tenta corresponder a palavras em vez de toda a etiqueta. Por exemplo, o `foo_bar%` corresponde ao `foo_bar_baz`, mas não ao `foo_barbaz`. Se combinado com o `*`, a correspondência de prefixo se aplica a cada palavra separadamente, por exemplo, o `foo_bar%*` corresponde ao `foo1_bar2_baz`, mas não ao `foo1_br2_baz`.
 
@@ -59,10 +59,10 @@ Além disso, você pode escrever vários itens não-estrelados possivelmente mod
 
 Aqui está um exemplo com anotações de `lquery`:
 
-  ```
-  Top.*{0,2}.sport*@.!football|tennis{1,}.Russ*|Spain
-  a.  b.     c.      d.                   e.
-  ```
+```
+Top.*{0,2}.sport*@.!football|tennis{1,}.Russ*|Spain
+a.  b.     c.      d.                   e.
+```
 
 Essa consulta corresponderá a qualquer caminho de rótulo que:
 
@@ -75,9 +75,9 @@ Essa consulta corresponderá a qualquer caminho de rótulo que:
 
 Aqui está um exemplo `ltxtquery`:
 
-  ```
-  Europe & Russia*@ & !Transportation
-  ```
+```
+Europe & Russia*@ & !Transportation
+```
 
 Isso corresponderá a caminhos que contenham a etiqueta `Europe` e qualquer etiqueta que comece com `Russia` (independente da grafia), mas não caminhos que contenham a etiqueta `Transportation`. A localização dessas palavras dentro do caminho não é importante. Além disso, quando `%` é usado, a palavra pode ser correspondida a qualquer palavra separada por sublinhado dentro de uma etiqueta, independentemente da posição.
 
@@ -92,843 +92,1125 @@ O tipo `ltree` possui os operadores de comparação habituais `=`, `<>`, `<`, `>
 
 
 <table border="1" class="table" summary="ltree Operators">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">Operador</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
+     Operador
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       ltree
      </code>
-<code class="literal">
+     <code class="literal">
       @&gt;
      </code>
-<code class="type">
+     <code class="type">
       ltree
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>O argumento esquerdo é um antecessor do direito (ou igual)?</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p>
+     O argumento esquerdo é um antecessor do direito (ou igual)?
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       ltree
      </code>
-<code class="literal">
+     <code class="literal">
       &lt;@
      </code>
-<code class="type">
+     <code class="type">
       ltree
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>O argumento esquerdo é descendente do direito (ou é igual)?</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p>
+     O argumento esquerdo é descendente do direito (ou é igual)?
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       ltree
      </code>
-<code class="literal">
+     <code class="literal">
       ~
      </code>
-<code class="type">
+     <code class="type">
       lquery
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p class="func_signature">
+     <code class="type">
       lquery
      </code>
-<code class="literal">
+     <code class="literal">
       ~
      </code>
-<code class="type">
+     <code class="type">
       ltree
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>Faz<code class="type">
-      ltree
-     </code>jogo<code class="type">
-      lquery
-     </code>?</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p>
+     Faz
+     <code class="type">
       ltree
      </code>
-<code class="literal">
+     jogo
+     <code class="type">
+      lquery
+     </code>
+     ?
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
+      ltree
+     </code>
+     <code class="literal">
       ?
      </code>
-<code class="type">
+     <code class="type">
       lquery[]
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p class="func_signature">
+     <code class="type">
       lquery[]
      </code>
-<code class="literal">
+     <code class="literal">
       ?
      </code>
-<code class="type">
+     <code class="type">
       ltree
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>Faz<code class="type">
+    </p>
+    <p>
+     Faz
+     <code class="type">
       ltree
-     </code>corresponda a qualquer<code class="type">
+     </code>
+     corresponda a qualquer
+     <code class="type">
       lquery
-     </code>em linha?</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+     </code>
+     em linha?
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       ltree
      </code>
-<code class="literal">
+     <code class="literal">
       @
      </code>
-<code class="type">
+     <code class="type">
       ltxtquery
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p class="func_signature">
+     <code class="type">
       ltxtquery
      </code>
-<code class="literal">
+     <code class="literal">
       @
      </code>
-<code class="type">
+     <code class="type">
       ltree
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>Faz<code class="type">
-      ltree
-     </code>jogo<code class="type">
-      ltxtquery
-     </code>?</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p>
+     Faz
+     <code class="type">
       ltree
      </code>
-<code class="literal">
+     jogo
+     <code class="type">
+      ltxtquery
+     </code>
+     ?
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
+      ltree
+     </code>
+     <code class="literal">
       ||
      </code>
-<code class="type">
-      ltree
-     </code>→<code class="returnvalue">
+     <code class="type">
       ltree
      </code>
-</p>
-<p>Concatenam<code class="type">
+     →
+     <code class="returnvalue">
+      ltree
+     </code>
+    </p>
+    <p>
+     Concatenam
+     <code class="type">
       ltree
      </code>
      paths.
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       ltree
      </code>
-<code class="literal">
+     <code class="literal">
       ||
      </code>
-<code class="type">
+     <code class="type">
       text
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       ltree
      </code>
-</p>
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p class="func_signature">
+     <code class="type">
       text
      </code>
-<code class="literal">
+     <code class="literal">
       ||
      </code>
-<code class="type">
-      ltree
-     </code>→<code class="returnvalue">
+     <code class="type">
       ltree
      </code>
-</p>
-<p>Converte texto em<code class="type">
+     →
+     <code class="returnvalue">
       ltree
-     </code>e concatenam.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+     </code>
+    </p>
+    <p>
+     Converte texto em
+     <code class="type">
+      ltree
+     </code>
+     e concatenam.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       ltree[]
      </code>
-<code class="literal">
+     <code class="literal">
       @&gt;
      </code>
-<code class="type">
+     <code class="type">
       ltree
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p class="func_signature">
+     <code class="type">
       ltree
      </code>
-<code class="literal">
+     <code class="literal">
       &lt;@
      </code>
-<code class="type">
+     <code class="type">
       ltree[]
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>A matriz contém um antepassado de<code class="type">
+    </p>
+    <p>
+     A matriz contém um antepassado de
+     <code class="type">
       ltree
-     </code>?</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+     </code>
+     ?
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       ltree[]
      </code>
-<code class="literal">
+     <code class="literal">
       &lt;@
      </code>
-<code class="type">
+     <code class="type">
       ltree
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p class="func_signature">
+     <code class="type">
       ltree
      </code>
-<code class="literal">
+     <code class="literal">
       @&gt;
      </code>
-<code class="type">
+     <code class="type">
       ltree[]
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>A matriz contém um descendente de<code class="type">
+    </p>
+    <p>
+     A matriz contém um descendente de
+     <code class="type">
       ltree
-     </code>?</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+     </code>
+     ?
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       ltree[]
      </code>
-<code class="literal">
+     <code class="literal">
       ~
      </code>
-<code class="type">
+     <code class="type">
       lquery
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p class="func_signature">
+     <code class="type">
       lquery
      </code>
-<code class="literal">
+     <code class="literal">
       ~
      </code>
-<code class="type">
+     <code class="type">
       ltree[]
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>O array contém algum caminho correspondente<code class="type">
+    </p>
+    <p>
+     O array contém algum caminho correspondente
+     <code class="type">
       lquery
-     </code>?</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+     </code>
+     ?
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       ltree[]
      </code>
-<code class="literal">
+     <code class="literal">
       ?
      </code>
-<code class="type">
+     <code class="type">
       lquery[]
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p class="func_signature">
+     <code class="type">
       lquery[]
      </code>
-<code class="literal">
+     <code class="literal">
       ?
      </code>
-<code class="type">
+     <code class="type">
       ltree[]
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>Faz<code class="type">
+    </p>
+    <p>
+     Faz
+     <code class="type">
       ltree
-     </code>um array que contenha qualquer caminho que corresponda a qualquer<code class="type">
+     </code>
+     um array que contenha qualquer caminho que corresponda a qualquer
+     <code class="type">
       lquery
-     </code>?</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+     </code>
+     ?
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       ltree[]
      </code>
-<code class="literal">
+     <code class="literal">
       @
      </code>
-<code class="type">
+     <code class="type">
       ltxtquery
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p class="func_signature">
+     <code class="type">
       ltxtquery
      </code>
-<code class="literal">
+     <code class="literal">
       @
      </code>
-<code class="type">
+     <code class="type">
       ltree[]
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>O array contém algum caminho correspondente<code class="type">
+    </p>
+    <p>
+     O array contém algum caminho correspondente
+     <code class="type">
       ltxtquery
-     </code>?</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+     </code>
+     ?
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       ltree[]
      </code>
-<code class="literal">
+     <code class="literal">
       ?@&gt;
      </code>
-<code class="type">
-      ltree
-     </code>→<code class="returnvalue">
+     <code class="type">
       ltree
      </code>
-</p>
-<p>Retorna a primeira entrada do array que é um antecessor de<code class="type">
+     →
+     <code class="returnvalue">
       ltree
-     </code>, ou<code class="literal">
+     </code>
+    </p>
+    <p>
+     Retorna a primeira entrada do array que é um antecessor de
+     <code class="type">
+      ltree
+     </code>
+     , ou
+     <code class="literal">
       NULL
-     </code>nenhum.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+     </code>
+     nenhum.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       ltree[]
      </code>
-<code class="literal">
+     <code class="literal">
       ?&lt;@
      </code>
-<code class="type">
-      ltree
-     </code>→<code class="returnvalue">
+     <code class="type">
       ltree
      </code>
-</p>
-<p>Retorna a primeira entrada do array que é um descendente de<code class="type">
+     →
+     <code class="returnvalue">
       ltree
-     </code>, ou<code class="literal">
+     </code>
+    </p>
+    <p>
+     Retorna a primeira entrada do array que é um descendente de
+     <code class="type">
+      ltree
+     </code>
+     , ou
+     <code class="literal">
       NULL
-     </code>nenhum.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+     </code>
+     nenhum.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       ltree[]
      </code>
-<code class="literal">
+     <code class="literal">
       ?~
      </code>
-<code class="type">
+     <code class="type">
       lquery
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       ltree
      </code>
-</p>
-<p>Retorna a primeira entrada do array que corresponde<code class="type">
+    </p>
+    <p>
+     Retorna a primeira entrada do array que corresponde
+     <code class="type">
       lquery
-     </code>, ou<code class="literal">
+     </code>
+     , ou
+     <code class="literal">
       NULL
-     </code>nenhum.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+     </code>
+     nenhum.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       ltree[]
      </code>
-<code class="literal">
+     <code class="literal">
       ?@
      </code>
-<code class="type">
+     <code class="type">
       ltxtquery
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       ltree
      </code>
-</p>
-<p>Retorna a primeira entrada do array que corresponde<code class="type">
+    </p>
+    <p>
+     Retorna a primeira entrada do array que corresponde
+     <code class="type">
       ltxtquery
-     </code>, ou<code class="literal">
+     </code>
+     , ou
+     <code class="literal">
       NULL
-     </code>nenhum.</p>
-</td>
-</tr>
-</tbody>
+     </code>
+     nenhum.
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Os operadores `<@`, `@>`, `@` e `~` têm análogos `^<@`, `^@>`, `^@`, `^~`, que são os mesmos, exceto que não usam índices. Esses são úteis apenas para fins de teste.
 
-As funções disponíveis são mostradas na [Tabela F.13][(ltree.md#LTREE-FUNC-TABLE "Table F.13. ltree Functions")].
+As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TABLE).
 
 **Tabela F.13. `ltree` Funções**
 
 
 
 <table border="1" class="table" summary="ltree Functions">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">Função</p>
-<p>Descrição</p>
-<p>Exemplo(s)</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
+     Função
+    </p>
+    <p>
+     Descrição
+    </p>
+    <p>
+     Exemplo(s)
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       subltree
-     </code>(<code class="type">
-      ltree
-     </code>,<em class="parameter">
-<code>
-       start
-      </code>
-</em>
-<code class="type">
-      integer
-     </code>,<em class="parameter">
-<code>
-       end
-      </code>
-</em>
-<code class="type">
-      integer
-     </code>)<code class="returnvalue">
+     </code>
+     (
+     <code class="type">
       ltree
      </code>
-</p>
-<p>Retorna subcaminho de<code class="type">
-      ltree
-     </code>da posição<em class="parameter">
-<code>
+     ,
+     <em class="parameter">
+      <code>
        start
       </code>
-</em>posicionar<em class="parameter">
-<code>
+     </em>
+     <code class="type">
+      integer
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        end
       </code>
-</em>-1 (contando a partir de 0).</p>
-<p>
-<code class="literal">
+     </em>
+     <code class="type">
+      integer
+     </code>
+     )
+     <code class="returnvalue">
+      ltree
+     </code>
+    </p>
+    <p>
+     Retorna subcaminho de
+     <code class="type">
+      ltree
+     </code>
+     da posição
+     <em class="parameter">
+      <code>
+       start
+      </code>
+     </em>
+     posicionar
+     <em class="parameter">
+      <code>
+       end
+      </code>
+     </em>
+     -1 (contando a partir de 0).
+    </p>
+    <p>
+     <code class="literal">
       subltree('Top.Child1.Child2', 1, 2)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       Child1
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       subpath
-     </code>(<code class="type">
-      ltree
-     </code>,<em class="parameter">
-<code>
-       offset
-      </code>
-</em>
-<code class="type">
-      integer
-     </code>,<em class="parameter">
-<code>
-       len
-      </code>
-</em>
-<code class="type">
-      integer
-     </code>)<code class="returnvalue">
+     </code>
+     (
+     <code class="type">
       ltree
      </code>
-</p>
-<p>Retorna subcaminho de<code class="type">
+     ,
+     <em class="parameter">
+      <code>
+       offset
+      </code>
+     </em>
+     <code class="type">
+      integer
+     </code>
+     ,
+     <em class="parameter">
+      <code>
+       len
+      </code>
+     </em>
+     <code class="type">
+      integer
+     </code>
+     )
+     <code class="returnvalue">
       ltree
-     </code>a partir da posição<em class="parameter">
-<code>
+     </code>
+    </p>
+    <p>
+     Retorna subcaminho de
+     <code class="type">
+      ltree
+     </code>
+     a partir da posição
+     <em class="parameter">
+      <code>
        offset
       </code>
-</em>, com comprimento<em class="parameter">
-<code>
+     </em>
+     , com comprimento
+     <em class="parameter">
+      <code>
        len
       </code>
-</em>. Se<em class="parameter">
-<code>
+     </em>
+     . Se
+     <em class="parameter">
+      <code>
        offset
       </code>
-</em>se for negativo, o subcaminho começa muito longe do final do caminho. Se<em class="parameter">
-<code>
+     </em>
+     se for negativo, o subcaminho começa muito longe do final do caminho. Se
+     <em class="parameter">
+      <code>
        len
       </code>
-</em>É negativo, deixa muitas etiquetas no fim do caminho.</p>
-<p>
-<code class="literal">
+     </em>
+     É negativo, deixa muitas etiquetas no fim do caminho.
+    </p>
+    <p>
+     <code class="literal">
       subpath('Top.Child1.Child2', 0, 2)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       Top.Child1
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       subpath
-     </code>(<code class="type">
-      ltree
-     </code>,<em class="parameter">
-<code>
-       offset
-      </code>
-</em>
-<code class="type">
-      integer
-     </code>)<code class="returnvalue">
+     </code>
+     (
+     <code class="type">
       ltree
      </code>
-</p>
-<p>Retorna subcaminho de<code class="type">
+     ,
+     <em class="parameter">
+      <code>
+       offset
+      </code>
+     </em>
+     <code class="type">
+      integer
+     </code>
+     )
+     <code class="returnvalue">
       ltree
-     </code>a partir da posição<em class="parameter">
-<code>
+     </code>
+    </p>
+    <p>
+     Retorna subcaminho de
+     <code class="type">
+      ltree
+     </code>
+     a partir da posição
+     <em class="parameter">
+      <code>
        offset
       </code>
-</em>, estendendo-se até o final do caminho. Se<em class="parameter">
-<code>
+     </em>
+     , estendendo-se até o final do caminho. Se
+     <em class="parameter">
+      <code>
        offset
       </code>
-</em>se for negativo, o subcaminho começa muito longe do final do caminho.</p>
-<p>
-<code class="literal">
+     </em>
+     se for negativo, o subcaminho começa muito longe do final do caminho.
+    </p>
+    <p>
+     <code class="literal">
       subpath('Top.Child1.Child2', 1)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       Child1.Child2
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       nlevel
-     </code>(<code class="type">
+     </code>
+     (
+     <code class="type">
       ltree
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       integer
      </code>
-</p>
-<p>Retorna o número de rótulos no caminho.</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     Retorna o número de rótulos no caminho.
+    </p>
+    <p>
+     <code class="literal">
       nlevel('Top.Child1.Child2')
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       3
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       index
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        a
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       ltree
-     </code>,<em class="parameter">
-<code>
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        b
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       ltree
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       integer
      </code>
-</p>
-<p>Retorna a posição da primeira ocorrência de<em class="parameter">
-<code>
+    </p>
+    <p>
+     Retorna a posição da primeira ocorrência de
+     <em class="parameter">
+      <code>
        b
       </code>
-</em>em<em class="parameter">
-<code>
+     </em>
+     em
+     <em class="parameter">
+      <code>
        a
       </code>
-</em>, ou -1 se não for encontrado.</p>
-<p>
-<code class="literal">
+     </em>
+     , ou -1 se não for encontrado.
+    </p>
+    <p>
+     <code class="literal">
       index('0.1.2.3.5.4.5.6.8.5.6.8', '5.6')
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       6
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       index
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        a
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       ltree
-     </code>,<em class="parameter">
-<code>
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        b
       </code>
-</em>
-<code class="type">
+     </em>
+     <code class="type">
       ltree
-     </code>,<em class="parameter">
-<code>
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        offset
       </code>
-</em>
-<code class="type">
-      integer
-     </code>)<code class="returnvalue">
+     </em>
+     <code class="type">
       integer
      </code>
-</p>
-<p>Retorna a posição da primeira ocorrência de<em class="parameter">
-<code>
+     )
+     <code class="returnvalue">
+      integer
+     </code>
+    </p>
+    <p>
+     Retorna a posição da primeira ocorrência de
+     <em class="parameter">
+      <code>
        b
       </code>
-</em>em<em class="parameter">
-<code>
+     </em>
+     em
+     <em class="parameter">
+      <code>
        a
       </code>
-</em>, ou -1 se não for encontrado. A pesquisa começa na posição<em class="parameter">
-<code>
+     </em>
+     , ou -1 se não for encontrado. A pesquisa começa na posição
+     <em class="parameter">
+      <code>
        offset
       </code>
-</em>; negativo<em class="parameter">
-<code>
+     </em>
+     ; negativo
+     <em class="parameter">
+      <code>
        offset
       </code>
-</em>significa começar<em class="parameter">
-<code>
+     </em>
+     significa começar
+     <em class="parameter">
+      <code>
        -offset
       </code>
-</em>etiquetas do final do caminho.</p>
-<p>
-<code class="literal">
+     </em>
+     etiquetas do final do caminho.
+    </p>
+    <p>
+     <code class="literal">
       index('0.1.2.3.5.4.5.6.8.5.6.8', '5.6', -4)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       9
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       text2ltree
-     </code>(<code class="type">
+     </code>
+     (
+     <code class="type">
       text
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       ltree
      </code>
-</p>
-<p>Funduras<code class="type">
+    </p>
+    <p>
+     Funduras
+     <code class="type">
       text
-     </code>para<code class="type">
+     </code>
+     para
+     <code class="type">
       ltree
      </code>
      .
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       ltree2text
-     </code>(<code class="type">
+     </code>
+     (
+     <code class="type">
       ltree
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       text
      </code>
-</p>
-<p>Funduras<code class="type">
+    </p>
+    <p>
+     Funduras
+     <code class="type">
       ltree
-     </code>para<code class="type">
+     </code>
+     para
+     <code class="type">
       text
      </code>
      .
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       lca
-     </code>(<code class="type">
+     </code>
+     (
+     <code class="type">
       ltree
-     </code>[<span class="optional">,<code class="type">
+     </code>
+     [
+     <span class="optional">
+      ,
+      <code class="type">
        ltree
-      </code>[<span class="optional">, ...</span>]</span>] )<code class="returnvalue">
+      </code>
+      [
+      <span class="optional">
+       , ...
+      </span>
+      ]
+     </span>
+     ] )
+     <code class="returnvalue">
       ltree
      </code>
-</p>
-<p>Calcula o antepassado comum mais longo dos caminhos (até 8 argumentos são suportados).</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     Calcula o antepassado comum mais longo dos caminhos (até 8 argumentos são suportados).
+    </p>
+    <p>
+     <code class="literal">
       lca('1.2.3', '1.2.3.4.5.6')
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       1.2
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       lca
-     </code>(<code class="type">
+     </code>
+     (
+     <code class="type">
       ltree[]
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       ltree
      </code>
-</p>
-<p>Calcula o antepassado comum mais longo dos caminhos no array.</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     Calcula o antepassado comum mais longo dos caminhos no array.
+    </p>
+    <p>
+     <code class="literal">
       lca(array['1.2.3'::ltree,'1.2.3.4'])
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       1.2
      </code>
-</p>
-</td>
-</tr>
-</tbody>
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 
@@ -944,9 +1226,9 @@ As funções disponíveis são mostradas na [Tabela F.13][(ltree.md#LTREE-FUNC-T
 
 Exemplo de criação de um índice com o comprimento de assinatura padrão de 8 bytes:
 
-  ```
-  CREATE INDEX path_gist_idx ON test USING GIST (path);
-  ```
+```
+CREATE INDEX path_gist_idx ON test USING GIST (path);
+```
 
 Exemplo de criação de um índice desse tipo com uma extensão de assinatura de 100 bytes:
 
@@ -956,15 +1238,15 @@ Exemplo de criação de um índice desse tipo com uma extensão de assinatura de
 
 Exemplo de criação de um índice com o comprimento de assinatura padrão de 28 bytes:
 
-  ```
-  CREATE INDEX path_gist_idx ON test USING GIST (array_path);
-  ```
+```
+CREATE INDEX path_gist_idx ON test USING GIST (array_path);
+```
 
 Exemplo de criação de um índice desse tipo com uma extensão de assinatura de 100 bytes:
 
-  ```
-  CREATE INDEX path_gist_idx ON test USING GIST (array_path gist__ltree_ops(siglen=100));
-  ```
+```
+CREATE INDEX path_gist_idx ON test USING GIST (array_path gist__ltree_ops(siglen=100));
+```
 
 Nota: Este tipo de índice é perda de dados.
 

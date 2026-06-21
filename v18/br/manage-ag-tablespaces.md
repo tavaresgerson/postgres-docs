@@ -30,7 +30,7 @@ Tabelas, índices e bancos de dados inteiros podem ser atribuídos a tabelas esp
 CREATE TABLE foo(i int) TABLESPACE space1;
 ```
 
-Alternativamente, use o parâmetro [default_tablespace][(runtime-config-client.md#GUC-DEFAULT-TABLESPACE)]:
+Alternativamente, use o parâmetro [default_tablespace](runtime-config-client.md#GUC-DEFAULT-TABLESPACE):
 
 ```
 SET default_tablespace = space1;
@@ -39,7 +39,7 @@ CREATE TABLE foo(i int);
 
 Quando `default_tablespace` é definido como qualquer coisa, exceto uma string vazia, ele fornece uma cláusula implícita para `TABLESPACE` para comandos `CREATE TABLE` e `CREATE INDEX` que não possuem uma cláusula explícita.
 
-Existe também um parâmetro [temp_tablespaces][(runtime-config-client.md#GUC-TEMP-TABLESPACES)], que determina a colocação de tabelas e índices temporários, bem como arquivos temporários que são usados para fins como o ordenamento de grandes conjuntos de dados. Isso pode ser uma lista de nomes de tablespace, e não apenas um, para que a carga associada aos objetos temporários possa ser espalhada por vários tablespace. Um membro aleatório da lista é escolhido a cada vez que um objeto temporário deve ser criado.
+Existe também um parâmetro [temp_tablespaces](runtime-config-client.md#GUC-TEMP-TABLESPACES), que determina a colocação de tabelas e índices temporários, bem como arquivos temporários que são usados para fins como o ordenamento de grandes conjuntos de dados. Isso pode ser uma lista de nomes de tablespace, e não apenas um, para que a carga associada aos objetos temporários possa ser espalhada por vários tablespace. Um membro aleatório da lista é escolhido a cada vez que um objeto temporário deve ser criado.
 
 O tablespace associado a um banco de dados é usado para armazenar os catálogos do sistema desse banco de dados. Além disso, é o tablespace padrão usado para tabelas, índices e arquivos temporários criados dentro do banco de dados, se não houver cláusula `TABLESPACE` e nenhuma outra seleção seja especificada por `default_tablespace` ou `temp_tablespaces` (conforme apropriado). Se um banco de dados for criado sem especificar um tablespace para ele, ele usa o mesmo tablespace que o banco de dados de modelo do qual é copiado.
 
@@ -55,6 +55,6 @@ Para determinar o conjunto de espaços de tabela existentes, examine o catálogo
 SELECT spcname, spcowner::regrole, pg_tablespace_location(oid) FROM pg_tablespace;
 ```
 
-É possível descobrir quais bancos de dados utilizam quais tablespaces; veja [Tabela 9.76][(functions-info.md#FUNCTIONS-INFO-CATALOG-TABLE "Table 9.76. System Catalog Information Functions")]. O meta-comando `\db` do programa [psql][(app-psql.md "psql")] também é útil para listar os tablespaces existentes.
+É possível descobrir quais bancos de dados utilizam quais tablespaces; veja [Tabela 9.76](functions-info.md#FUNCTIONS-INFO-CATALOG-TABLE). O meta-comando `\db` do programa [psql](app-psql.md) também é útil para listar os tablespaces existentes.
 
 O diretório `$PGDATA/pg_tblspc` contém links simbólicos que apontam para cada um dos espaços de tabela não pré-definidos no clúster. Embora não seja recomendado, é possível ajustar o layout do espaço de tabela manualmente, redefinindo esses links. Em nenhuma circunstância realize essa operação enquanto o servidor estiver em execução.

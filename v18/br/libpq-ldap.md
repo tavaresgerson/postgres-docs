@@ -2,7 +2,7 @@
 
 Se o libpq foi compilado com suporte LDAP (opção `--with-ldap` para `configure`) é possível recuperar opções de conexão como `host` ou `dbname` via LDAP de um servidor central. A vantagem é que, se os parâmetros de conexão de um banco de dados forem alterados, as informações de conexão não precisam ser atualizadas em todas as máquinas cliente.
 
-A busca de parâmetros de conexão LDAP utiliza o arquivo de serviço de conexão `pg_service.conf` (consulte [Seção 32.17][(libpq-pgservice.md "32.17. The Connection Service File")]). Uma linha em uma estrofe de `pg_service.conf` que começa com `ldap://` será reconhecida como um URL LDAP e uma consulta LDAP será realizada. O resultado deve ser uma lista de pares de `keyword = value` que serão usados para definir as opções de conexão. O URL deve conformar-se com [RFC 1959][(https://datatracker.ietf.org/doc/html/rfc1959)] e ter a forma
+A busca de parâmetros de conexão LDAP utiliza o arquivo de serviço de conexão `pg_service.conf` (consulte [Seção 32.17](libpq-pgservice.md)). Uma linha em uma estrofe de `pg_service.conf` que começa com `ldap://` será reconhecida como um URL LDAP e uma consulta LDAP será realizada. O resultado deve ser uma lista de pares de `keyword = value` que serão usados para definir as opções de conexão. O URL deve conformar-se com [RFC 1959](https://datatracker.ietf.org/doc/html/rfc1959) e ter a forma
 
 ```
 ldap://[hostname[:port]]/search_base?attribute?search_scope?filter

@@ -92,7 +92,7 @@ SELECT * FROM test1 ORDER BY a || b COLLATE "fr_FR";
 
 Uma correção é um objeto do esquema SQL que mapeia um nome SQL para locais fornecidos por bibliotecas instaladas no sistema operacional. Uma definição de correção tem um * provedor * que especifica qual biblioteca fornece os dados do local. Um nome padrão do provedor é `libc`, que usa os locais fornecidos pela biblioteca C do sistema operacional. Estes são os locais usados pela maioria das ferramentas fornecidas pelo sistema operacional. Outro provedor é `icu`, que usa a biblioteca ICU externa. Os locais ICU só podem ser usados se o suporte para ICU foi configurado quando o PostgreSQL foi construído.
 
-Um objeto de correspondência fornecido por `libc` corresponde a uma combinação de configurações de `LC_COLLATE` e `LC_CTYPE`, conforme aceito pela chamada de biblioteca do sistema `setlocale()`. (Como o nome sugere, o principal propósito de uma correspondência é definir `LC_COLLATE`, que controla a ordem de classificação. Mas raramente é necessário, na prática, ter uma configuração de `LC_CTYPE` diferente de `LC_COLLATE`, então é mais conveniente coletar essas configurações sob um único conceito do que criar outra infraestrutura para definir `LC_CTYPE` por expressão.) Além disso, uma correspondência de `libc` está vinculada a um conjunto de codificação de caracteres (veja [Seção 23.3][(multibyte.md "23.3. Character Set Support")]). O mesmo nome de correspondência pode existir para diferentes codificações.
+Um objeto de correspondência fornecido por `libc` corresponde a uma combinação de configurações de `LC_COLLATE` e `LC_CTYPE`, conforme aceito pela chamada de biblioteca do sistema `setlocale()`. (Como o nome sugere, o principal propósito de uma correspondência é definir `LC_COLLATE`, que controla a ordem de classificação. Mas raramente é necessário, na prática, ter uma configuração de `LC_CTYPE` diferente de `LC_COLLATE`, então é mais conveniente coletar essas configurações sob um único conceito do que criar outra infraestrutura para definir `LC_CTYPE` por expressão.) Além disso, uma correspondência de `libc` está vinculada a um conjunto de codificação de caracteres (veja [Seção 23.3](multibyte.md)). O mesmo nome de correspondência pode existir para diferentes codificações.
 
 Um objeto de correspondência fornecido por `icu` corresponde a um coletor nomeado fornecido pela biblioteca ICU. O ICU não suporta configurações separadas de “collate” e “ctype”, então elas são sempre as mesmas. Além disso, as codificações do ICU são independentes da codificação, então sempre há apenas uma codificação ICU de um nome dado em um banco de dados.
 
@@ -169,7 +169,7 @@ CREATE COLLATION german (provider = libc, locale = 'de_DE');
 
 Os valores exatos que são aceitáveis para a cláusula `locale` neste comando dependem do sistema operacional. Em sistemas semelhantes ao Unix, o comando `locale -a` mostrará uma lista.
 
-Como as colatações pré-definidas da libc já incluem todas as colatações definidas no sistema operacional quando a instância do banco de dados é inicializada, muitas vezes não é necessário criar manualmente novas colatações. As razões podem ser se um sistema de nomenclatura diferente é desejado (neste caso, veja também [Seção 23.2.2.3.3][(collation.md#COLLATION-COPY "23.2.2.3.3. Copying Collations")]) ou se o sistema operacional foi atualizado para fornecer novas definições de local (neste caso, veja também [`pg_import_system_collations()`][(functions-admin.md#FUNCTIONS-ADMIN-COLLATION "Table 9.104. Collation Management Functions")]).
+Como as colatações pré-definidas da libc já incluem todas as colatações definidas no sistema operacional quando a instância do banco de dados é inicializada, muitas vezes não é necessário criar manualmente novas colatações. As razões podem ser se um sistema de nomenclatura diferente é desejado (neste caso, veja também [Seção 23.2.2.3.3](collation.md#COLLATION-COPY)) ou se o sistema operacional foi atualizado para fornecer novas definições de local (neste caso, veja também [`pg_import_system_collations()`](functions-admin.md#FUNCTIONS-ADMIN-COLLATION)).
 
 ##### 23.2.2.3.2. Colagens do ICU [#](#COLLATION-MANAGING-CREATE-ICU)
 
@@ -181,7 +181,7 @@ CREATE COLLATION german (provider = icu, locale = 'de-DE');
 
 As localizações de ICU são especificadas como um BCP 47 (locale.md#ICU-LANGUAGE-TAG "23.1.5.3. Language Tag"), mas também podem aceitar a maioria dos nomes de localidade estilo libc. Se possível, os nomes de localidade estilo libc são transformados em tags de idioma.
 
-Novas colatações de UTI podem personalizar extensivamente o comportamento da colatação, incluindo atributos de colatação no identificador de idioma. Consulte [Seção 23.2.3][(collation.md#ICU-CUSTOM-COLLATIONS "23.2.3. ICU Custom Collations")] para obter detalhes e exemplos.
+Novas colatações de UTI podem personalizar extensivamente o comportamento da colatação, incluindo atributos de colatação no identificador de idioma. Consulte [Seção 23.2.3](collation.md#ICU-CUSTOM-COLLATIONS) para obter detalhes e exemplos.
 
 ##### 23.2.2.3.3. Copiar colligações [#](#COLLATION-COPY)
 
@@ -194,7 +194,7 @@ CREATE COLLATION french FROM "fr-x-icu";
 
 #### 23.2.2.4. Colagens não determinísticas [#](#COLLATION-NONDETERMINISTIC)
 
-Uma ordenação é *determinística* ou *não determinística*. Uma ordenação determinística utiliza comparações determinísticas, o que significa que ela considera que as cadeias são iguais apenas se consistirem na mesma sequência de bytes. A comparação não determinística pode determinar que as cadeias são iguais mesmo que consistirem em bytes diferentes. Situações típicas incluem a comparação não sensível ao caso, a comparação não sensível ao acento, bem como a comparação de cadeias em diferentes formas normais do Unicode. Cabe ao provedor da ordenação implementar essas comparações não sensíveis; a bandeira determinística apenas determina se os empates devem ser quebrados usando comparação byte a byte. Consulte também [Padrão Técnico de Unicode 10][(https://www.unicode.org/reports/tr10)] para obter mais informações sobre a terminologia.
+Uma ordenação é *determinística* ou *não determinística*. Uma ordenação determinística utiliza comparações determinísticas, o que significa que ela considera que as cadeias são iguais apenas se consistirem na mesma sequência de bytes. A comparação não determinística pode determinar que as cadeias são iguais mesmo que consistirem em bytes diferentes. Situações típicas incluem a comparação não sensível ao caso, a comparação não sensível ao acento, bem como a comparação de cadeias em diferentes formas normais do Unicode. Cabe ao provedor da ordenação implementar essas comparações não sensíveis; a bandeira determinística apenas determina se os empates devem ser quebrados usando comparação byte a byte. Consulte também [Padrão Técnico de Unicode 10](https://www.unicode.org/reports/tr10) para obter mais informações sobre a terminologia.
 
 Para criar uma ordenação não determinística, especifique a propriedade `deterministic = false` para `CREATE COLLATION`, por exemplo:
 
@@ -235,276 +235,276 @@ SELECT 'id-45' < 'id-123' COLLATE num_ignore_punct; -- true
 SELECT 'w;x*y-z' = 'wxyz' COLLATE num_ignore_punct; -- true
 ```
 
-Muitas das opções disponíveis são descritas em [Seção 23.2.3.2][(collation.md#ICU-COLLATION-SETTINGS "23.2.3.2. Collation Settings for an ICU Locale")], ou consulte [Seção 23.2.3.5][(collation.md#ICU-EXTERNAL-REFERENCES "23.2.3.5. External References for ICU")] para mais detalhes.
+Muitas das opções disponíveis são descritas em [Seção 23.2.3.2](collation.md#ICU-COLLATION-SETTINGS), ou consulte [Seção 23.2.3.5](collation.md#ICU-EXTERNAL-REFERENCES) para mais detalhes.
 
 #### 23.2.3.1. Níveis de comparação de UTI [#](#ICU-COLLATION-COMPARISON-LEVELS)
 
-A comparação de duas cadeias de caracteres (colação) no ICU é determinada por um processo de vários níveis, onde as características textuais são agrupadas em "níveis". O tratamento de cada nível é controlado pelas configurações de [colação][(collation.md#ICU-COLLATION-SETTINGS-TABLE "Table 23.2. ICU Collation Settings")]. Níveis mais altos correspondem a características textuais mais refinadas.
+A comparação de duas cadeias de caracteres (colação) no ICU é determinada por um processo de vários níveis, onde as características textuais são agrupadas em "níveis". O tratamento de cada nível é controlado pelas configurações de [colação](collation.md#ICU-COLLATION-SETTINGS-TABLE). Níveis mais altos correspondem a características textuais mais refinadas.
 
-[Tabela 23.1][(collation.md#ICU-COLLATION-LEVELS "Table 23.1. ICU Collation Levels")] mostra quais diferenças de características textuais são consideradas significativas ao determinar a igualdade no nível dado. O caractere Unicode `U+2063` é um separador invisível e, como visto na tabela, é ignorado em todos os níveis de comparação menos que `identic`.
+[Tabela 23.1](collation.md#ICU-COLLATION-LEVELS) mostra quais diferenças de características textuais são consideradas significativas ao determinar a igualdade no nível dado. O caractere Unicode `U+2063` é um separador invisível e, como visto na tabela, é ignorado em todos os níveis de comparação menos que `identic`.
 
 **Tabela 23.1. Níveis de Colaboração de UTI**
 
 
 
 <table border="1" class="table" summary="ICU Collation Levels">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-<col class="col4"/>
-<col class="col5"/>
-<col class="col6"/>
-<col class="col7"/>
-<col class="col8"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+  <col class="col4"/>
+  <col class="col5"/>
+  <col class="col6"/>
+  <col class="col7"/>
+  <col class="col8"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Level
    </th>
-<th>
+   <th>
     Description
    </th>
-<th>
-<code class="literal">
+   <th>
+    <code class="literal">
      'f' = 'f'
     </code>
-</th>
-<th>
-<code class="literal">
+   </th>
+   <th>
+    <code class="literal">
      'ab' = U&amp;'a\2063b'
     </code>
-</th>
-<th>
-<code class="literal">
+   </th>
+   <th>
+    <code class="literal">
      'x-y' = 'x_y'
     </code>
-</th>
-<th>
-<code class="literal">
+   </th>
+   <th>
+    <code class="literal">
      'g' = 'G'
     </code>
-</th>
-<th>
-<code class="literal">
+   </th>
+   <th>
+    <code class="literal">
      'n' = 'ñ'
     </code>
-</th>
-<th>
-<code class="literal">
+   </th>
+   <th>
+    <code class="literal">
      'y' = 'z'
     </code>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
     level1
    </td>
-<td>
+   <td>
     Base Character
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      true
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      true
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      true
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      true
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      true
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      false
     </code>
-</td>
-</tr>
-<tr>
-<td>
+   </td>
+  </tr>
+  <tr>
+   <td>
     level2
    </td>
-<td>
+   <td>
     Accents
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      true
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      true
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      true
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      true
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      false
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      false
     </code>
-</td>
-</tr>
-<tr>
-<td>
+   </td>
+  </tr>
+  <tr>
+   <td>
     level3
    </td>
-<td>
+   <td>
     Case/Variants
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      true
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      true
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      true
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      false
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      false
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      false
     </code>
-</td>
-</tr>
-<tr>
-<td>
+   </td>
+  </tr>
+  <tr>
+   <td>
     level4
    </td>
-<td>
+   <td>
     Punctuation
     <a class="footnote" href="#ftn.id-1.6.10.4.6.3.4.2.10.4.2.1">
-<sup class="footnote" id="id-1.6.10.4.6.3.4.2.10.4.2.1">
+     <sup class="footnote" id="id-1.6.10.4.6.3.4.2.10.4.2.1">
       [a]
      </sup>
-</a>
-</td>
-<td>
-<code class="literal">
+    </a>
+   </td>
+   <td>
+    <code class="literal">
      true
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      true
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      false
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      false
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      false
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      false
     </code>
-</td>
-</tr>
-<tr>
-<td>
+   </td>
+  </tr>
+  <tr>
+   <td>
     identic
    </td>
-<td>
+   <td>
     All
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      true
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      false
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      false
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      false
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      false
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      false
     </code>
-</td>
-</tr>
-</tbody>
-<tbody class="footnotes">
-<tr>
-<td colspan="8">
-<div class="footnote" id="ftn.id-1.6.10.4.6.3.4.2.10.4.2.1">
-<p>
-<a class="para" href="#id-1.6.10.4.6.3.4.2.10.4.2.1">
-<sup class="para">
+   </td>
+  </tr>
+ </tbody>
+ <tbody class="footnotes">
+  <tr>
+   <td colspan="8">
+    <div class="footnote" id="ftn.id-1.6.10.4.6.3.4.2.10.4.2.1">
+     <p>
+      <a class="para" href="#id-1.6.10.4.6.3.4.2.10.4.2.1">
+       <sup class="para">
         [a]
        </sup>
-</a>
+      </a>
       only with
       <code class="literal">
        ka-shifted
@@ -513,17 +513,20 @@ A comparação de duas cadeias de caracteres (colação) no ICU é determinada p
       <a class="xref" href="collation.md#ICU-COLLATION-SETTINGS-TABLE" title="Table 23.2. ICU Collation Settings">
        Table 23.2
       </a>
-</p>
-</div>
-</td>
-</tr>
-</tbody>
+     </p>
+    </div>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Em todos os níveis, mesmo com a normalização completa desativada, a normalização básica é realizada. Por exemplo, `'á'` pode ser composto pelos pontos de código `U&'\0061\0301'` ou pelo único ponto de código `U&'\00E1'`, e essas sequências serão consideradas iguais mesmo no nível `identic`. Para tratar qualquer diferença na representação dos pontos de código como distintos, use uma ordenação criada com `deterministic` definida como `true`.
 
@@ -545,358 +548,506 @@ SELECT 'x-y' = 'x_y' COLLATE level4; -- false
 
 #### 23.2.3.2. Configurações de Colaboração para um Local de ICU [#](#ICU-COLLATION-SETTINGS)
 
-[Tabela 23.2][(collation.md#ICU-COLLATION-SETTINGS-TABLE "Table 23.2. ICU Collation Settings")] mostra as configurações de ordenação disponíveis, que podem ser usadas como parte de uma tag de idioma para personalizar uma ordenação.
+[Tabela 23.2](collation.md#ICU-COLLATION-SETTINGS-TABLE) mostra as configurações de ordenação disponíveis, que podem ser usadas como parte de uma tag de idioma para personalizar uma ordenação.
 
 **Tabela 23.2. Configurações de ordenação do ICU**
 
 
 
 <table border="1" class="table" summary="ICU Collation Settings">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-<col class="col4"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+  <col class="col4"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Key
    </th>
-<th>Valores</th>
-<th>
+   <th>
+    Valores
+   </th>
+   <th>
     Default
    </th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      co
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      emoji
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      phonebk
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      standard
-    </code>,<em class="replaceable">
-<code>
+    </code>
+    ,
+    <em class="replaceable">
+     <code>
       ...
      </code>
-</em>
-</td>
-<td>
-<code class="literal">
+    </em>
+   </td>
+   <td>
+    <code class="literal">
      standard
     </code>
-</td>
-<td>Tipo de cotação. Veja<a class="xref" href="collation.md#ICU-EXTERNAL-REFERENCES" title="23.2.3.5. External References for ICU">Seção 23.2.3.5</a>para obter opções adicionais e detalhes.</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Tipo de cotação. Veja
+    <a class="xref" href="collation.md#ICU-EXTERNAL-REFERENCES" title="23.2.3.5. External References for ICU">
+     Seção 23.2.3.5
+    </a>
+    para obter opções adicionais e detalhes.
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      ka
     </code>
-</td>
-<td>
-<code class="literal">
-     noignore
-    </code>,<code class="literal">
-     shifted
-    </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      noignore
     </code>
-</td>
-<td>Se definido como<code class="literal">
+    ,
+    <code class="literal">
      shifted
-    </code>, faz com que alguns caracteres (por exemplo, pontuação ou espaço) sejam ignorados na comparação. Chave<code class="literal">
+    </code>
+   </td>
+   <td>
+    <code class="literal">
+     noignore
+    </code>
+   </td>
+   <td>
+    Se definido como
+    <code class="literal">
+     shifted
+    </code>
+    , faz com que alguns caracteres (por exemplo, pontuação ou espaço) sejam ignorados na comparação. Chave
+    <code class="literal">
      ks
-    </code>deve ser ajustado para<code class="literal">
+    </code>
+    deve ser ajustado para
+    <code class="literal">
      level3
-    </code>ou reduza-o para entrar em vigor. Defina a chave<code class="literal">
+    </code>
+    ou reduza-o para entrar em vigor. Defina a chave
+    <code class="literal">
      kv
-    </code>para controlar quais classes de caracteres são ignoradas.</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+    </code>
+    para controlar quais classes de caracteres são ignoradas.
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      kb
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      true
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      false
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      false
     </code>
-</td>
-<td>Comparação reversa para as diferenças do nível 2. Por exemplo, local<code class="literal">
+   </td>
+   <td>
+    Comparação reversa para as diferenças do nível 2. Por exemplo, local
+    <code class="literal">
      und-u-kb
-    </code>selecione<code class="literal">
+    </code>
+    selecione
+    <code class="literal">
      'àe'
-    </code>antes<code class="literal">
+    </code>
+    antes
+    <code class="literal">
      'aé'
     </code>
     .
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      kc
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      true
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      false
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      false
     </code>
-</td>
-<td>
-<p>Separa o caso em um "nível 2.5" que fica entre acentos e outras características do nível 3.</p>
-<p>Se definido como<code class="literal">
+   </td>
+   <td>
+    <p>
+     Separa o caso em um "nível 2.5" que fica entre acentos e outras características do nível 3.
+    </p>
+    <p>
+     Se definido como
+     <code class="literal">
       true
-     </code>e<code class="literal">
+     </code>
+     e
+     <code class="literal">
       ks
-     </code>está previsto<code class="literal">
+     </code>
+     está previsto
+     <code class="literal">
       level1
-     </code>, ignorará acentos, mas levará em conta a grafia.</p>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+     </code>
+     , ignorará acentos, mas levará em conta a grafia.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      kf
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      upper
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      lower
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      false
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      false
     </code>
-</td>
-<td>Se definido como<code class="literal">
+   </td>
+   <td>
+    Se definido como
+    <code class="literal">
      upper
-    </code>, as letras maiúsculas são ordenadas antes das minúsculas. Se definido como<code class="literal">
+    </code>
+    , as letras maiúsculas são ordenadas antes das minúsculas. Se definido como
+    <code class="literal">
      lower
-    </code>, as letras minúsculas são ordenadas antes das maiúsculas. Se definido como<code class="literal">
+    </code>
+    , as letras minúsculas são ordenadas antes das maiúsculas. Se definido como
+    <code class="literal">
      false
-    </code>, o tipo depende das regras do local.</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+    </code>
+    , o tipo depende das regras do local.
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      kn
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      true
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      false
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      false
     </code>
-</td>
-<td>Se definido como<code class="literal">
+   </td>
+   <td>
+    Se definido como
+    <code class="literal">
      true
-    </code>, os números dentro de uma string são tratados como um único valor numérico, e não como uma sequência de dígitos. Por exemplo,<code class="literal">
+    </code>
+    , os números dentro de uma string são tratados como um único valor numérico, e não como uma sequência de dígitos. Por exemplo,
+    <code class="literal">
      'id-45'
-    </code>separam antes<code class="literal">
+    </code>
+    separam antes
+    <code class="literal">
      'id-123'
     </code>
     .
    </td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      kk
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      true
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      false
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      false
     </code>
-</td>
-<td>
-<p>Ative a normalização completa; pode afetar o desempenho. A normalização básica é realizada mesmo quando configurada para<code class="literal">
+   </td>
+   <td>
+    <p>
+     Ative a normalização completa; pode afetar o desempenho. A normalização básica é realizada mesmo quando configurada para
+     <code class="literal">
       false
-     </code>. Os locais para idiomas que exigem normalização completa geralmente permitem isso por padrão.</p>
-<p>A normalização completa é importante em alguns casos, como quando múltiplos acentos são aplicados a um único caractere. Por exemplo, as sequências de pontos de código<code class="literal">
+     </code>
+     . Os locais para idiomas que exigem normalização completa geralmente permitem isso por padrão.
+    </p>
+    <p>
+     A normalização completa é importante em alguns casos, como quando múltiplos acentos são aplicados a um único caractere. Por exemplo, as sequências de pontos de código
+     <code class="literal">
       U&amp;'\0065\0323\0302'
-     </code>e<code class="literal">
+     </code>
+     e
+     <code class="literal">
       U&amp;'\0065\0302\0323'
-     </code>representam<code class="literal">
+     </code>
+     representam
+     <code class="literal">
       e
-     </code>com acentos circunflexos e pontos abaixo aplicados em diferentes ordens. Com a normalização completa ativada, essas sequências de pontos de código são tratadas como iguais; caso contrário, são desiguais.</p>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+     </code>
+     com acentos circunflexos e pontos abaixo aplicados em diferentes ordens. Com a normalização completa ativada, essas sequências de pontos de código são tratadas como iguais; caso contrário, são desiguais.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      kr
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      space
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      punct
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      symbol
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      currency
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      digit
-    </code>,<em class="replaceable">
-<code>
+    </code>
+    ,
+    <em class="replaceable">
+     <code>
       script-id
      </code>
-</em>
-</td>
-<td>
-</td>
-<td>
-<p>Definido para um ou mais dos valores válidos, ou qualquer BCP 47<em class="replaceable">
-<code>
+    </em>
+   </td>
+   <td>
+   </td>
+   <td>
+    <p>
+     Definido para um ou mais dos valores válidos, ou qualquer BCP 47
+     <em class="replaceable">
+      <code>
        script-id
       </code>
-</em>, por exemplo.<code class="literal">
+     </em>
+     , por exemplo.
+     <code class="literal">
       latn
-     </code>("Latino") ou<code class="literal">
+     </code>
+     ("Latino") ou
+     <code class="literal">
       grek
-     </code>("Grego"). Múltiplos valores são separados por "<code class="literal">
+     </code>
+     ("Grego"). Múltiplos valores são separados por "
+     <code class="literal">
       -
      </code>
      ".
     </p>
-<p>Redefine a ordem das classes de caracteres; os caracteres que pertencem a uma classe mais cedo na lista são ordenados antes dos caracteres que pertencem a uma classe mais tarde na lista. Por exemplo, o valor<code class="literal">
+    <p>
+     Redefine a ordem das classes de caracteres; os caracteres que pertencem a uma classe mais cedo na lista são ordenados antes dos caracteres que pertencem a uma classe mais tarde na lista. Por exemplo, o valor
+     <code class="literal">
       digit-currency-space
-     </code>(como parte de uma tag de idioma como<code class="literal">
+     </code>
+     (como parte de uma tag de idioma como
+     <code class="literal">
       und-u-kr-digit-currency-space
-     </code>) ordena a pontuação antes dos dígitos e dos espaços.</p>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+     </code>
+     ) ordena a pontuação antes dos dígitos e dos espaços.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      ks
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      level1
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      level2
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      level3
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      level4
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      identic
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      level3
     </code>
-</td>
-<td>Sensibilidade (ou "força") ao determinar a igualdade, com<code class="literal">
+   </td>
+   <td>
+    Sensibilidade (ou "força") ao determinar a igualdade, com
+    <code class="literal">
      level1
-    </code>menos sensíveis às diferenças e<code class="literal">
+    </code>
+    menos sensíveis às diferenças e
+    <code class="literal">
      identic
-    </code>os mais sensíveis às diferenças. Veja<a class="xref" href="collation.md#ICU-COLLATION-LEVELS" title="Table 23.1. ICU Collation Levels">Tabela 23.1</a>para obter mais informações.</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+    </code>
+    os mais sensíveis às diferenças. Veja
+    <a class="xref" href="collation.md#ICU-COLLATION-LEVELS" title="Table 23.1. ICU Collation Levels">
+     Tabela 23.1
+    </a>
+    para obter mais informações.
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      kv
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      space
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      punct
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      symbol
-    </code>,<code class="literal">
+    </code>
+    ,
+    <code class="literal">
      currency
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      punct
     </code>
-</td>
-<td>Classes de caracteres ignoradas durante a comparação no nível 3. Definir um valor posterior inclui valores anteriores; por exemplo,<code class="literal">
+   </td>
+   <td>
+    Classes de caracteres ignoradas durante a comparação no nível 3. Definir um valor posterior inclui valores anteriores; por exemplo,
+    <code class="literal">
      symbol
-    </code>também inclui<code class="literal">
+    </code>
+    também inclui
+    <code class="literal">
      punct
-    </code>e<code class="literal">
+    </code>
+    e
+    <code class="literal">
      space
-    </code>em os
-          caracteres a serem ignorados. Chave<code class="literal">
+    </code>
+    em os caracteres a serem ignorados. Chave
+    <code class="literal">
      ka
-    </code>deve ser ajustado para<code class="literal">
+    </code>
+    deve ser ajustado para
+    <code class="literal">
      shifted
-    </code>e chave<code class="literal">
+    </code>
+    e chave
+    <code class="literal">
      ks
-    </code>deve ser definido<code class="literal">
+    </code>
+    deve ser definido
+    <code class="literal">
      level3
-    </code>ou inferior para entrar em vigor.</td>
-</tr>
-</tbody>
+    </code>
+    ou inferior para entrar em vigor.
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
 
-Os padrões podem depender do local. O quadro acima não pretende ser completo. Consulte [Seção 23.2.3.5][(collation.md#ICU-EXTERNAL-REFERENCES "23.2.3.5. External References for ICU")] para obter opções e detalhes adicionais.
+
+
+
+
+Os padrões podem depender do local. O quadro acima não pretende ser completo. Consulte [Seção 23.2.3.5](collation.md#ICU-EXTERNAL-REFERENCES) para obter opções e detalhes adicionais.
 
 ### Nota
 
-Para muitas configurações de collation, você deve criar a collation com `deterministic` definida como `false` para que a configuração tenha o efeito desejado (consulte [Seção 23.2.2.4][(collation.md#COLLATION-NONDETERMINISTIC "23.2.2.4. Nondeterministic Collations")]). Além disso, algumas configurações só têm efeito quando a chave `ka` é definida como `shifted` (consulte [Tabela 23.2][(collation.md#ICU-COLLATION-SETTINGS-TABLE "Table 23.2. ICU Collation Settings")]).
+Para muitas configurações de collation, você deve criar a collation com `deterministic` definida como `false` para que a configuração tenha o efeito desejado (consulte [Seção 23.2.2.4](collation.md#COLLATION-NONDETERMINISTIC)). Além disso, algumas configurações só têm efeito quando a chave `ka` é definida como `shifted` (consulte [Tabela 23.2](collation.md#ICU-COLLATION-SETTINGS-TABLE)).
 
 #### 23.2.3.3. Configurações de Colaboração Exemplos [#](#ICU-LOCALE-EXAMPLES)
 
@@ -952,7 +1103,7 @@ ORDER BY c COLLATE ebcdic;
 
 #### 23.2.3.5. Referências externas para UTI [#](#ICU-EXTERNAL-REFERENCES)
 
-Esta seção ([Seção 23.2.3][(collation.md#ICU-CUSTOM-COLLATIONS "23.2.3. ICU Custom Collations")]) é apenas uma breve visão geral do comportamento e das etiquetas de linguagem do ICU. Consulte os seguintes documentos para obter detalhes técnicos, opções adicionais e novo comportamento:
+Esta seção ([Seção 23.2.3](collation.md#ICU-CUSTOM-COLLATIONS)) é apenas uma breve visão geral do comportamento e das etiquetas de linguagem do ICU. Consulte os seguintes documentos para obter detalhes técnicos, opções adicionais e novo comportamento:
 
 * [Padrão Técnico Unicode #35](https://www.unicode.org/reports/tr35/tr35-collation.html)
 * [BCP 47](https://www.rfc-editor.org/info/bcp47)

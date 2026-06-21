@@ -28,7 +28,7 @@ Você deve ser o proprietário da agregação para usar `ALTER COLLATION`. Para 
 
 *`new_schema`*: O novo esquema para a correção.
 
-`REFRESH VERSION`: Atualize a versão da correção. Veja [Notas][(sql-altercollation.md#SQL-ALTERCOLLATION-NOTES "Notes")] abaixo.
+`REFRESH VERSION`: Atualize a versão da correção. Veja [Notas](sql-altercollation.md#SQL-ALTERCOLLATION-NOTES) abaixo.
 
 ## Notas
 

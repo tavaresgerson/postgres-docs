@@ -34,13 +34,13 @@
 
 * [8.8. Tipos geométricos](datatype-geometric.md)
 
-+ [8.8.1. Pontos][(datatype-geometric.md#DATATYPE-GEOMETRIC-POINTS)]
-+ [8.8.2. Linhas][(datatype-geometric.md#DATATYPE-LINE)]
-+ [8.8.3. Setores de linha][(datatype-geometric.md#DATATYPE-LSEG)]
-+ [8.8.4. Caixas][(datatype-geometric.md#DATATYPE-GEOMETRIC-BOXES)]
-+ [8.8.5. Caminhos][(datatype-geometric.md#DATATYPE-GEOMETRIC-PATHS)]
-+ [8.8.6. Polígonos][(datatype-geometric.md#DATATYPE-POLYGON)]
-+ [8.8.7. Círculos][(datatype-geometric.md#DATATYPE-CIRCLE)]
++ [8.8.1. Pontos](datatype-geometric.md#DATATYPE-GEOMETRIC-POINTS)
++ [8.8.2. Linhas](datatype-geometric.md#DATATYPE-LINE)
++ [8.8.3. Setores de linha](datatype-geometric.md#DATATYPE-LSEG)
++ [8.8.4. Caixas](datatype-geometric.md#DATATYPE-GEOMETRIC-BOXES)
++ [8.8.5. Caminhos](datatype-geometric.md#DATATYPE-GEOMETRIC-PATHS)
++ [8.8.6. Polígonos](datatype-geometric.md#DATATYPE-POLYGON)
++ [8.8.7. Círculos](datatype-geometric.md#DATATYPE-CIRCLE)
 
 * [8.9. Tipos de Endereços de Rede](datatype-net-types.md)
 
@@ -93,637 +93,746 @@
 
 * [8.17. Tipos de faixa](rangetypes.md)
 
-+ [8.17.1. Tipos de intervalo embutido e multiintervalo][(rangetypes.md#RANGETYPES-BUILTIN)]
-+ [8.17.2. Exemplos][(rangetypes.md#RANGETYPES-EXAMPLES)]
-+ [8.17.3. Limites inclusivos e exclusivos][(rangetypes.md#RANGETYPES-INCLUSIVITY)]
++ [8.17.1. Tipos de intervalo embutido e multiintervalo](rangetypes.md#RANGETYPES-BUILTIN)
++ [8.17.2. Exemplos](rangetypes.md#RANGETYPES-EXAMPLES)
++ [8.17.3. Limites inclusivos e exclusivos](rangetypes.md#RANGETYPES-INCLUSIVITY)
 + [8.17.4. Intervalos infinitos (sem limites)[(rangetypes.md#RANGETYPES-INFINITE)]
-+ [8.17.5. Entrada/saída de intervalo][(rangetypes.md#RANGETYPES-IO)]
-+ [8.17.6. Construção de intervalos e multiintervalos][(rangetypes.md#RANGETYPES-CONSTRUCT)]
-+ [8.17.7. Tipos de intervalo discreto][(rangetypes.md#RANGETYPES-DISCRETE)]
-+ [8.17.8. Definindo novos tipos de intervalo][(rangetypes.md#RANGETYPES-DEFINING)]
-+ [8.17.9. Indexação][(rangetypes.md#RANGETYPES-INDEXING)]
-+ [8.17.10. Restrições em intervalos][(rangetypes.md#RANGETYPES-CONSTRAINT)]
++ [8.17.5. Entrada/saída de intervalo](rangetypes.md#RANGETYPES-IO)
++ [8.17.6. Construção de intervalos e multiintervalos](rangetypes.md#RANGETYPES-CONSTRUCT)
++ [8.17.7. Tipos de intervalo discreto](rangetypes.md#RANGETYPES-DISCRETE)
++ [8.17.8. Definindo novos tipos de intervalo](rangetypes.md#RANGETYPES-DEFINING)
++ [8.17.9. Indexação](rangetypes.md#RANGETYPES-INDEXING)
++ [8.17.10. Restrições em intervalos](rangetypes.md#RANGETYPES-CONSTRAINT)
 
 * [8.18. Tipos de domínio](domains.md)
 * [8.19. Tipos de identificador de objeto](datatype-oid.md)
 * [8.20. Tipo `pg_lsn`](datatype-pg-lsn.md)
 * [8.21. Pseudo-tipos](datatype-pseudo.md)
 
-O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para os usuários. Os usuários podem adicionar novos tipos ao PostgreSQL usando o comando [CREATE TYPE][(sql-createtype.md "CREATE TYPE")].
+O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para os usuários. Os usuários podem adicionar novos tipos ao PostgreSQL usando o comando [CREATE TYPE](sql-createtype.md).
 
-[Tabela 8.1][(datatype.md#DATATYPE-TABLE "Table 8.1. Data Types")] mostra todos os tipos de dados de propósito geral integrados. A maioria dos nomes alternativos listados na coluna “Aliases” são os nomes usados internamente pelo PostgreSQL por razões históricas. Além disso, alguns tipos usados internamente ou descontinuados estão disponíveis, mas não estão listados aqui.
+[Tabela 8.1](datatype.md#DATATYPE-TABLE) mostra todos os tipos de dados de propósito geral integrados. A maioria dos nomes alternativos listados na coluna “Aliases” são os nomes usados internamente pelo PostgreSQL por razões históricas. Além disso, alguns tipos usados internamente ou descontinuados estão disponíveis, mas não estão listados aqui.
 
 **Tabela 8.1. Tipos de dados**
 
 
 
 <table border="1" class="table" summary="Data Types">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Name
    </th>
-<th>Aliases</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="type">
+   <th>
+    Aliases
+   </th>
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="type">
      bigint
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      int8
     </code>
-</td>
-<td>inteiro de oito bytes</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    inteiro de oito bytes
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      bigserial
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      serial8
     </code>
-</td>
-<td>autoincrementado inteiro de oito bytes</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    autoincrementado inteiro de oito bytes
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      bit [ (
      <em class="replaceable">
-<code>
+      <code>
        n
       </code>
-</em>
+     </em>
      ) ]
     </code>
-</td>
-<td>
-</td>
-<td>string de bits de comprimento fixo</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    string de bits de comprimento fixo
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      bit varying [ (
      <em class="replaceable">
-<code>
+      <code>
        n
       </code>
-</em>
+     </em>
      ) ]
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      varbit [ (
      <em class="replaceable">
-<code>
+      <code>
        n
       </code>
-</em>
+     </em>
      ) ]
     </code>
-</td>
-<td>string de bits de comprimento variável</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    string de bits de comprimento variável
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      boolean
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      bool
     </code>
-</td>
-<td>lógico Booleano (verdadeiro/falso)</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    lógico Booleano (verdadeiro/falso)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      box
     </code>
-</td>
-<td>
-</td>
-<td>caixa retangular em um avião</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    caixa retangular em um avião
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      bytea
     </code>
-</td>
-<td>
-</td>
-<td>dados binários (<span class="quote">“<span class="quote">matriz de bytes</span>”</span>)</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    dados binários (
+    <span class="quote">
+     “
+     <span class="quote">
+      matriz de bytes
+     </span>
+     ”
+    </span>
+    )
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      character [ (
      <em class="replaceable">
-<code>
+      <code>
        n
       </code>
-</em>
+     </em>
      ) ]
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      char [ (
      <em class="replaceable">
-<code>
+      <code>
        n
       </code>
-</em>
+     </em>
      ) ]
     </code>
-</td>
-<td>string de caracteres de comprimento fixo</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    string de caracteres de comprimento fixo
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      character varying [ (
      <em class="replaceable">
-<code>
+      <code>
        n
       </code>
-</em>
+     </em>
      ) ]
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      varchar [ (
      <em class="replaceable">
-<code>
+      <code>
        n
       </code>
-</em>
+     </em>
      ) ]
     </code>
-</td>
-<td>string de caracteres de comprimento variável</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    string de caracteres de comprimento variável
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      cidr
     </code>
-</td>
-<td>
-</td>
-<td>Endereço de rede IPv4 ou IPv6</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    Endereço de rede IPv4 ou IPv6
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      circle
     </code>
-</td>
-<td>
-</td>
-<td>círculo em um avião</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    círculo em um avião
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      date
     </code>
-</td>
-<td>
-</td>
-<td>data do calendário (ano, mês, dia)</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    data do calendário (ano, mês, dia)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      double precision
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      float
-    </code>,<code class="type">
+    </code>
+    ,
+    <code class="type">
      float8
     </code>
-</td>
-<td>número de ponto flutuante de precisão dupla (8 bytes)</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    número de ponto flutuante de precisão dupla (8 bytes)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      inet
     </code>
-</td>
-<td>
-</td>
-<td>Endereço de host IPv4 ou IPv6</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    Endereço de host IPv4 ou IPv6
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      integer
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      int
-    </code>,<code class="type">
+    </code>
+    ,
+    <code class="type">
      int4
     </code>
-</td>
-<td>inteiro de quatro bytes</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    inteiro de quatro bytes
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      interval [
      <em class="replaceable">
-<code>
+      <code>
        fields
       </code>
-</em>
+     </em>
      ] [ (
      <em class="replaceable">
-<code>
+      <code>
        p
       </code>
-</em>
+     </em>
      ) ]
     </code>
-</td>
-<td>
-</td>
-<td>período de tempo</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    período de tempo
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      json
     </code>
-</td>
-<td>
-</td>
-<td>dados JSON textuais</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    dados JSON textuais
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      jsonb
     </code>
-</td>
-<td>
-</td>
-<td>dados binários JSON, decompostos</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    dados binários JSON, decompostos
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      line
     </code>
-</td>
-<td>
-</td>
-<td>linha infinita em um plano</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    linha infinita em um plano
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      lseg
     </code>
-</td>
-<td>
-</td>
-<td>semente de linha em um plano</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    semente de linha em um plano
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      macaddr
     </code>
-</td>
-<td>
-</td>
-<td>Endereço MAC (Controle de Acesso à Mídia)</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    Endereço MAC (Controle de Acesso à Mídia)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      macaddr8
     </code>
-</td>
-<td>
-</td>
-<td>Endereço MAC (Controle de Acesso à Mídia) (formato EUI-64)</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    Endereço MAC (Controle de Acesso à Mídia) (formato EUI-64)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      money
     </code>
-</td>
-<td>
-</td>
-<td>valor em moeda</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    valor em moeda
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      numeric [ (
      <em class="replaceable">
-<code>
+      <code>
        p
       </code>
-</em>
+     </em>
      ,
      <em class="replaceable">
-<code>
+      <code>
        s
       </code>
-</em>
+     </em>
      ) ]
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      decimal [ (
      <em class="replaceable">
-<code>
+      <code>
        p
       </code>
-</em>
+     </em>
      ,
      <em class="replaceable">
-<code>
+      <code>
        s
       </code>
-</em>
+     </em>
      ) ]
     </code>
-</td>
-<td>exato número de precisão selecionável</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    exato número de precisão selecionável
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      path
     </code>
-</td>
-<td>
-</td>
-<td>caminho geométrico em um plano</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    caminho geométrico em um plano
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      pg_lsn
     </code>
-</td>
-<td>
-</td>
-<td>
-<span class="productname">PostgreSQL</span>Número de sequência do log</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    <span class="productname">
+     PostgreSQL
+    </span>
+    Número de sequência do log
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      pg_snapshot
     </code>
-</td>
-<td>
-</td>
-<td>instantâneo do ID de transação de nível de usuário</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    instantâneo do ID de transação de nível de usuário
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      point
     </code>
-</td>
-<td>
-</td>
-<td>ponto geométrico em um plano</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    ponto geométrico em um plano
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      polygon
     </code>
-</td>
-<td>
-</td>
-<td>caminho geométrico fechado em um plano</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    caminho geométrico fechado em um plano
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      real
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      float4
     </code>
-</td>
-<td>número de ponto flutuante de precisão única (4 bytes)</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    número de ponto flutuante de precisão única (4 bytes)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      smallint
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      int2
     </code>
-</td>
-<td>inteiro de dois bytes</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    inteiro de dois bytes
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      smallserial
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      serial2
     </code>
-</td>
-<td>autoincrementado inteiro de dois bytes</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    autoincrementado inteiro de dois bytes
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      serial
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      serial4
     </code>
-</td>
-<td>autoincrementado inteiro de quatro bytes</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    autoincrementado inteiro de quatro bytes
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      text
     </code>
-</td>
-<td>
-</td>
-<td>string de caracteres de comprimento variável</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    string de caracteres de comprimento variável
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      time [ (
      <em class="replaceable">
-<code>
+      <code>
        p
       </code>
-</em>
+     </em>
      ) ] [ without time zone ]
     </code>
-</td>
-<td>
-</td>
-<td>hora do dia (sem fuso horário)</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    hora do dia (sem fuso horário)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      time [ (
      <em class="replaceable">
-<code>
+      <code>
        p
       </code>
-</em>
+     </em>
      ) ] with time zone
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      timetz
     </code>
-</td>
-<td>hora do dia, incluindo fuso horário</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    hora do dia, incluindo fuso horário
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      timestamp [ (
      <em class="replaceable">
-<code>
+      <code>
        p
       </code>
-</em>
+     </em>
      ) ] [ without time zone ]
     </code>
-</td>
-<td>
-</td>
-<td>data e hora (sem fuso horário)</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    data e hora (sem fuso horário)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      timestamp [ (
      <em class="replaceable">
-<code>
+      <code>
        p
       </code>
-</em>
+     </em>
      ) ] with time zone
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      timestamptz
     </code>
-</td>
-<td>data e hora, incluindo fuso horário</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    data e hora, incluindo fuso horário
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      tsquery
     </code>
-</td>
-<td>
-</td>
-<td>consulta de pesquisa de texto</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    consulta de pesquisa de texto
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      tsvector
     </code>
-</td>
-<td>
-</td>
-<td>texto de busca de documentos</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    texto de busca de documentos
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      txid_snapshot
     </code>
-</td>
-<td>
-</td>
-<td>instantâneo do ID de transação de nível de usuário (desatualizado; veja<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    instantâneo do ID de transação de nível de usuário (desatualizado; veja
+    <code class="type">
      pg_snapshot
-    </code>)</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+    </code>
+    )
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      uuid
     </code>
-</td>
-<td>
-</td>
-<td>identificador universalmente único</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+   </td>
+   <td>
+    identificador universalmente único
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      xml
     </code>
-</td>
-<td>
-</td>
-<td>Dados XML</td>
-</tr>
-</tbody>
+   </td>
+   <td>
+   </td>
+   <td>
+    Dados XML
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 ### Compatibilidade
 

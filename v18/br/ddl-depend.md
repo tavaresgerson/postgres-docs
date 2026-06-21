@@ -2,7 +2,7 @@
 
 Quando você cria estruturas de banco de dados complexas que envolvem muitas tabelas com restrições de chave estrangeira, visualizações, gatilhos, funções, etc., você implicitamente cria uma rede de dependências entre os objetos. Por exemplo, uma tabela com uma restrição de chave estrangeira depende da tabela que ela referencia.
 
-Para garantir a integridade de toda a estrutura do banco de dados, o PostgreSQL garante que você não pode descartar objetos que outros objetos ainda dependem. Por exemplo, ao tentar descartar a tabela de produtos que consideramos no [Seção 5.5.5][(ddl-constraints.md#DDL-CONSTRAINTS-FK "5.5.5. Foreign Keys")], com a tabela de pedidos dependendo dela, resultaria em uma mensagem de erro como esta:
+Para garantir a integridade de toda a estrutura do banco de dados, o PostgreSQL garante que você não pode descartar objetos que outros objetos ainda dependem. Por exemplo, ao tentar descartar a tabela de produtos que consideramos no [Seção 5.5.5](ddl-constraints.md#DDL-CONSTRAINTS-FK), com a tabela de pedidos dependendo dela, resultaria em uma mensagem de erro como esta:
 
 ```
 DROP TABLE products;

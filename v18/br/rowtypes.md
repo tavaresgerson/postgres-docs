@@ -62,7 +62,7 @@ então, o mesmo tipo composto `inventory_item` mostrado acima seria criado como 
 
 ### 8.16.2. Construção de Valores Compostos [#](#ROWTYPES-CONSTRUCTING)
 
-Para escrever um valor composto como uma constante literal, coloque os valores do campo entre parênteses e separe-os por vírgulas. Você pode colocar aspas duplas em torno de qualquer valor do campo e deve fazê-lo se ele contiver vírgulas ou parênteses. (Mais detalhes aparecem [abaixo][(rowtypes.md#ROWTYPES-IO-SYNTAX "8.16.6. Composite Type Input and Output Syntax")].). Assim, o formato geral de uma constante composta é o seguinte:
+Para escrever um valor composto como uma constante literal, coloque os valores do campo entre parênteses e separe-os por vírgulas. Você pode colocar aspas duplas em torno de qualquer valor do campo e deve fazê-lo se ele contiver vírgulas ou parênteses. (Mais detalhes aparecem [abaixo](rowtypes.md#ROWTYPES-IO-SYNTAX).). Assim, o formato geral de uma constante composta é o seguinte:
 
 ```
 '( val1 , val2 , ... )'
@@ -104,7 +104,7 @@ A palavra-chave ROW é, na verdade, opcional, desde que você tenha mais de um c
 ('', 42, NULL)
 ```
 
-A sintaxe da expressão `ROW` é discutida em mais detalhes em [Seção 4.2.13][(sql-expressions.md#SQL-SYNTAX-ROW-CONSTRUCTORS "4.2.13. Row Constructors")].
+A sintaxe da expressão `ROW` é discutida em mais detalhes em [Seção 4.2.13](sql-expressions.md#SQL-SYNTAX-ROW-CONSTRUCTORS).
 
 ### 8.16.3. Acesso a Tipos Compostos [#](#ROWTYPES-ACCESSING)
 
@@ -136,7 +136,7 @@ SELECT (my_func(...)).field FROM ...
 
 Sem as chaves adicionais, isso gerará um erro de sintaxe.
 
-O nome especial do campo `*` significa “todos os campos”, conforme explicado mais detalhadamente em [Seção 8.16.5][(rowtypes.md#ROWTYPES-USAGE "8.16.5. Using Composite Types in Queries")].
+O nome especial do campo `*` significa “todos os campos”, conforme explicado mais detalhadamente em [Seção 8.16.5](rowtypes.md#ROWTYPES-USAGE).
 
 ### 8.16.4. Modificando tipos compostos [#](#ROWTYPES-MODIFYING)
 
@@ -187,7 +187,7 @@ Essa consulta produz uma coluna com valor composto único, então podemos obter 
 
 Observe, no entanto, que os nomes simples são correspondidos aos nomes das colunas antes dos nomes das tabelas, então este exemplo funciona apenas porque não há uma coluna com o nome `c` nas tabelas da consulta.
 
-A sintaxe comum de nome de coluna qualificada *`table_name`*`.`*`column_name`* pode ser entendida como a aplicação de [seleção de campo][(sql-expressions.md#FIELD-SELECTION "4.2.4. Field Selection")] ao valor composto da linha atual da tabela. (Por razões de eficiência, na verdade, não é implementada dessa maneira.)
+A sintaxe comum de nome de coluna qualificada *`table_name`*`.`*`column_name`* pode ser entendida como a aplicação de [seleção de campo](sql-expressions.md#FIELD-SELECTION) ao valor composto da linha atual da tabela. (Por razões de eficiência, na verdade, não é implementada dessa maneira.)
 
 Quando escrevemos
 
@@ -244,7 +244,7 @@ SELECT * FROM inventory_item c ORDER BY c.*;
 SELECT * FROM inventory_item c ORDER BY ROW(c.*);
 ```
 
-Todas essas cláusulas `ORDER BY` especificam o valor composto da linha, resultando na ordenação das linhas de acordo com as regras descritas em [Seção 9.25.6][(functions-comparisons.md#COMPOSITE-TYPE-COMPARISON "9.25.6. Composite Type Comparison")]. No entanto, se `inventory_item` contrasse uma coluna denominada `c`, o primeiro caso seria diferente dos outros, pois significaria ordenar por essa coluna apenas. Dadas as colunas de nomes mostradas anteriormente, essas consultas também são equivalentes às acima:
+Todas essas cláusulas `ORDER BY` especificam o valor composto da linha, resultando na ordenação das linhas de acordo com as regras descritas em [Seção 9.25.6](functions-comparisons.md#COMPOSITE-TYPE-COMPARISON). No entanto, se `inventory_item` contrasse uma coluna denominada `c`, o primeiro caso seria diferente dos outros, pois significaria ordenar por essa coluna apenas. Dadas as colunas de nomes mostradas anteriormente, essas consultas também são equivalentes às acima:
 
 ```
 SELECT * FROM inventory_item c ORDER BY ROW(c.name, c.supplier_id, c.price);
@@ -298,7 +298,7 @@ Lembre-se de que o que você escreve em um comando SQL será interpretado primei
 INSERT ... VALUES ('("\"\\")');
 ```
 
-O processador de caracteres de cadeia remove um nível de barras invertidas, de modo que o que chega ao analisador de valores compostos parece `("\"\\")`. Por sua vez, a cadeia de caracteres alimentada na rotina de entrada do tipo de dados `text` se torna `"\`. (Se estivessemos trabalhando com um tipo de dados cuja rotina de entrada também tratasse as barras invertidas de forma especial, `bytea`, por exemplo, precisaríamos de até oito barras invertidas no comando para obter uma barra invertida no campo composto armazenado.) A citação de dólares (ver [Seção 4.1.2.4][(sql-syntax-lexical.md#SQL-SYNTAX-DOLLAR-QUOTING "4.1.2.4. Dollar-Quoted String Constants")]) pode ser usada para evitar a necessidade de duplicar as barras invertidas.
+O processador de caracteres de cadeia remove um nível de barras invertidas, de modo que o que chega ao analisador de valores compostos parece `("\"\\")`. Por sua vez, a cadeia de caracteres alimentada na rotina de entrada do tipo de dados `text` se torna `"\`. (Se estivessemos trabalhando com um tipo de dados cuja rotina de entrada também tratasse as barras invertidas de forma especial, `bytea`, por exemplo, precisaríamos de até oito barras invertidas no comando para obter uma barra invertida no campo composto armazenado.) A citação de dólares (ver [Seção 4.1.2.4](sql-syntax-lexical.md#SQL-SYNTAX-DOLLAR-QUOTING)) pode ser usada para evitar a necessidade de duplicar as barras invertidas.
 
 ### DICA
 

@@ -10,7 +10,7 @@
 
 A decodificação lógica é o processo de extrair todas as alterações persistentes nas tabelas de um banco de dados em um formato coerente e fácil de entender, que pode ser interpretado sem conhecimento detalhado do estado interno do banco de dados.
 
-No PostgreSQL, a decodificação lógica é implementada decodificando o conteúdo do [registro de pré-aviso][(wal.md "Chapter 28. Reliability and the Write-Ahead Log")], que descrevem as alterações em um nível de armazenamento, em uma forma específica para a aplicação, como um fluxo de tuplas ou declarações SQL.
+No PostgreSQL, a decodificação lógica é implementada decodificando o conteúdo do [registro de pré-aviso](wal.md), que descrevem as alterações em um nível de armazenamento, em uma forma específica para a aplicação, como um fluxo de tuplas ou declarações SQL.
 
 ### 47.2.2. Canais de replicação [#](#LOGICALDECODING-REPLICATION-SLOTS)
 
@@ -18,11 +18,11 @@ No contexto da replicação lógica, um slot representa um fluxo de alterações
 
 ### Nota
 
-O PostgreSQL também possui slots de replicação em streaming (consulte a Seção 26.2.5 [(warm-standby.md#STREAMING-REPLICATION "26.2.5. Streaming Replication")]), mas eles são usados de maneira um pouco diferente lá.
+O PostgreSQL também possui slots de replicação em streaming (consulte a [Seção 26.2.5](warm-standby.md#STREAMING-REPLICATION)), mas eles são usados de maneira um pouco diferente lá.
 
 Um slot de replicação tem um identificador que é único em todos os bancos de dados em um clúster PostgreSQL. Os slots persistem independentemente da conexão que os utiliza e são resistentes a falhas.
 
-Um slot lógico emitirá cada alteração apenas uma vez no funcionamento normal. A posição atual de cada slot é persistida apenas no ponto de verificação, portanto, no caso de um crash, o slot pode retornar a um LSN anterior, o que fará com que as alterações recentes sejam enviadas novamente quando o servidor for reiniciado. Os clientes de decodificação lógica são responsáveis por evitar os efeitos negativos de lidar com a mesma mensagem mais de uma vez. Os clientes podem desejar registrar o último LSN que viram ao decodificar e ignorar qualquer dado repetido ou (ao usar o protocolo de replicação) solicitar que a decodificação comece a partir desse LSN, em vez de deixar o servidor determinar o ponto de início. O recurso de Rastreamento de Progresso da Replicação é projetado para esse propósito, consulte [origens de replicação][(replication-origins.md "Chapter 48. Replication Progress Tracking")].
+Um slot lógico emitirá cada alteração apenas uma vez no funcionamento normal. A posição atual de cada slot é persistida apenas no ponto de verificação, portanto, no caso de um crash, o slot pode retornar a um LSN anterior, o que fará com que as alterações recentes sejam enviadas novamente quando o servidor for reiniciado. Os clientes de decodificação lógica são responsáveis por evitar os efeitos negativos de lidar com a mesma mensagem mais de uma vez. Os clientes podem desejar registrar o último LSN que viram ao decodificar e ignorar qualquer dado repetido ou (ao usar o protocolo de replicação) solicitar que a decodificação comece a partir desse LSN, em vez de deixar o servidor determinar o ponto de início. O recurso de Rastreamento de Progresso da Replicação é projetado para esse propósito, consulte [origens de replicação](replication-origins.md).
 
 Pode haver vários slots independentes para um único banco de dados. Cada slot tem seu próprio estado, permitindo que diferentes consumidores recebam alterações de diferentes pontos no fluxo de alterações do banco de dados. Para a maioria das aplicações, será necessário um slot separado para cada consumidor.
 
@@ -34,7 +34,7 @@ A criação de um slot lógico requer informações sobre todas as transações 
 
 ### Atenção
 
-Os slots de replicação persistem mesmo em falhas e não sabem nada sobre o estado de seu(s) consumidor(es). Eles impedirão a remoção dos recursos necessários, mesmo quando não há conexão usando-os. Isso consome armazenamento porque nem o WAL necessário nem as linhas necessárias dos catálogos do sistema podem ser removidas pelo `VACUUM` enquanto ainda forem necessárias por um slot de replicação. Em casos extremos, isso pode fazer com que o banco de dados seja desligado para evitar o enrolamento de ID de transação (consulte [Seção 24.1.5][(routine-vacuuming.md#VACUUM-FOR-WRAPAROUND "24.1.5. Preventing Transaction ID Wraparound Failures")]). Portanto, se um slot não for mais necessário, ele deve ser descartado.
+Os slots de replicação persistem mesmo em falhas e não sabem nada sobre o estado de seu(s) consumidor(es). Eles impedirão a remoção dos recursos necessários, mesmo quando não há conexão usando-os. Isso consome armazenamento porque nem o WAL necessário nem as linhas necessárias dos catálogos do sistema podem ser removidas pelo `VACUUM` enquanto ainda forem necessárias por um slot de replicação. Em casos extremos, isso pode fazer com que o banco de dados seja desligado para evitar o enrolamento de ID de transação (consulte [Seção 24.1.5](routine-vacuuming.md#VACUUM-FOR-WRAPAROUND)). Portanto, se um slot não for mais necessário, ele deve ser descartado.
 
 ### 47.2.3. Sincronização do Slot de Replicação [#](#LOGICALDECODING-REPLICATION-SLOTS-SYNCHRONIZATION)
 
@@ -53,7 +53,7 @@ DETAIL:  Synchronization could lead to data loss, because the remote slot needs 
 
 Se o slot de replicação lógica estiver sendo ativamente utilizado por um consumidor, não é necessário nenhuma intervenção manual; o slot avançará automaticamente e a sincronização será retomada no próximo ciclo. No entanto, se nenhum consumidor estiver configurado, é aconselhável avançar manualmente o slot no primário usando `pg_logical_slot_get_changes`(functions-admin.md#PG-LOGICAL-SLOT-GET-CHANGES) ou `pg_logical_slot_get_binary_changes`(functions-admin.md#PG-LOGICAL-SLOT-GET-BINARY-CHANGES), permitindo que a sincronização prossiga.
 
-A capacidade de retomar a replicação lógica após o failover depende do valor de [pg_replication_slots][(view-pg-replication-slots.md "53.20. pg_replication_slots")].`synced` para os slots sincronizados no standby no momento do failover. Apenas os slots persistentes que tenham atingido o estado sincronizado como verdadeiro no standby antes do failover podem ser usados para replicação lógica após o failover. Os slots sincronizados temporários não podem ser usados para decodificação lógica, portanto, a replicação lógica para esses slots não pode ser retomada. Por exemplo, se o slot sincronizado não puder se tornar persistente no standby devido a uma assinatura desativada, então a assinatura não pode ser retomada após o failover, mesmo quando é ativada.
+A capacidade de retomar a replicação lógica após o failover depende do valor de [pg_replication_slots](view-pg-replication-slots.md).`synced` para os slots sincronizados no standby no momento do failover. Apenas os slots persistentes que tenham atingido o estado sincronizado como verdadeiro no standby antes do failover podem ser usados para replicação lógica após o failover. Os slots sincronizados temporários não podem ser usados para decodificação lógica, portanto, a replicação lógica para esses slots não pode ser retomada. Por exemplo, se o slot sincronizado não puder se tornar persistente no standby devido a uma assinatura desativada, então a assinatura não pode ser retomada após o failover, mesmo quando é ativada.
 
 Para retomar a replicação lógica após a falha do failover dos slots lógicos sincronizados, a 'conninfo' da assinatura deve ser alterada para apontar para o novo servidor primário. Isso é feito usando `ALTER SUBSCRIPTION ... CONNECTION`(sql-altersubscription.md#SQL-ALTERSUBSCRIPTION-PARAMS-CONNECTION). Recomenda-se que as assinaturas sejam desativadas primeiro antes de promover o modo standby e sejam reativadas após a alteração da cadeia de conexão.
 

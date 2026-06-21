@@ -31,7 +31,7 @@ Como esta consulta não tem cláusula `WHERE`, ela deve analisar todas as linhas
 * Número estimado de linhas produzidas por este nó do plano. Novamente, assume-se que o nó é executado até o fim.
 * Largura média estimada das linhas produzidas por este nó do plano (em bytes).
 
-Os custos são medidos em unidades arbitrárias determinadas pelos parâmetros de custo do planejador (ver [Seção 19.7.2] [(runtime-config-query.md#RUNTIME-CONFIG-QUERY-CONSTANTS "19.7.2. Planner Cost Constants")]). A prática tradicional é medir os custos em unidades de busca de página de disco; ou seja, [seq_page_cost](runtime-config-query.md#GUC-SEQ-PAGE-COST) é convencionalmente definido como `1.0` e os outros parâmetros de custo são definidos em relação a isso. Os exemplos nesta seção são executados com os parâmetros de custo padrão.
+Os custos são medidos em unidades arbitrárias determinadas pelos parâmetros de custo do planejador (ver [Seção 19.7.2](runtime-config-query.md#RUNTIME-CONFIG-QUERY-CONSTANTS)). A prática tradicional é medir os custos em unidades de busca de página de disco; ou seja, [seq_page_cost](runtime-config-query.md#GUC-SEQ-PAGE-COST) é convencionalmente definido como `1.0` e os outros parâmetros de custo são definidos em relação a isso. Os exemplos nesta seção são executados com os parâmetros de custo padrão.
 
 É importante entender que o custo de um nó de nível superior inclui o custo de todos os seus nós filhos. Também é importante perceber que o custo apenas reflete as coisas que o planejador se importa. Em particular, o custo não considera o tempo gasto para converter os valores de saída para formato de texto ou para transmiti-los ao cliente, o que poderia ser fatores importantes no tempo real; mas o planejador ignora esses custos porque não pode alterá-los alterando o plano. (Todo plano correto produzirá o mesmo conjunto de linhas, confiamos.)
 
@@ -66,7 +66,7 @@ EXPLAIN SELECT * FROM tenk1 WHERE unique1 < 7000;
    Filter: (unique1 < 7000)
 ```
 
-Observe que a saída `EXPLAIN` mostra a cláusula `WHERE` sendo aplicada como uma condição de “filtro” anexada ao nó do plano Seq Scan. Isso significa que o nó do plano verifica a condição para cada linha que ele examina e produz apenas as que passam na condição. A estimativa de linhas de saída foi reduzida devido à cláusula `WHERE`. No entanto, a varredura ainda terá que visitar todas as 10000 linhas, então o custo não diminuiu; de fato, aumentou um pouco (por 10000 * [cpu_operator_cost][(runtime-config-query.md#GUC-CPU-OPERATOR-COST)], para ser exato) para refletir o tempo extra de CPU gasto verificando a condição `WHERE`.
+Observe que a saída `EXPLAIN` mostra a cláusula `WHERE` sendo aplicada como uma condição de “filtro” anexada ao nó do plano Seq Scan. Isso significa que o nó do plano verifica a condição para cada linha que ele examina e produz apenas as que passam na condição. A estimativa de linhas de saída foi reduzida devido à cláusula `WHERE`. No entanto, a varredura ainda terá que visitar todas as 10000 linhas, então o custo não diminuiu; de fato, aumentou um pouco (por 10000 * [cpu_operator_cost](runtime-config-query.md#GUC-CPU-OPERATOR-COST), para ser exato) para refletir o tempo extra de CPU gasto verificando a condição `WHERE`.
 
 O número real de linhas que essa consulta selecionaria é de 7000, mas a estimativa do `rows` é apenas aproximada. Se você tentar duplicar essa experiência, é bem possível que você obtenha uma estimativa ligeiramente diferente; além disso, ela pode mudar após cada comando do `ANALYZE`, porque as estatísticas produzidas pelo `ANALYZE` são tiradas de uma amostra aleatória da tabela.
 
@@ -281,7 +281,7 @@ WHERE t1.unique1 < 100 AND t1.unique2 = t2.unique2;
                      Index Cond: (unique1 < 100)
 ```
 
-que mostra que o planejador acha que a junção hash seria quase 50% mais cara do que a junção de fusão para este caso. Claro, a próxima pergunta é se isso está correto. Podemos investigar isso usando `EXPLAIN ANALYZE`, conforme discutido [abaixo][(using-explain.md#USING-EXPLAIN-ANALYZE "14.1.2. EXPLAIN ANALYZE")].
+que mostra que o planejador acha que a junção hash seria quase 50% mais cara do que a junção de fusão para este caso. Claro, a próxima pergunta é se isso está correto. Podemos investigar isso usando `EXPLAIN ANALYZE`, conforme discutido [abaixo](using-explain.md#USING-EXPLAIN-ANALYZE).
 
 Ao usar as bandeiras de habilitação/desabilitação para desabilitar tipos de nós de plano, muitas das bandeiras apenas desencorajam o uso do nó de plano correspondente e não impedem completamente a capacidade do planejador de usar o tipo de nó de plano. Isso é por design, para que o planejador ainda mantenha a capacidade de formar um plano para uma consulta específica. Quando o plano resultante contém um nó desabilitado, a saída `EXPLAIN` indicará esse fato.
 
@@ -478,7 +478,7 @@ EXPLAIN ANALYZE SELECT four, unique1 FROM tenk1 WHERE four BETWEEN 1 AND 3 AND u
  Execution Time: 0.012 ms
 ```
 
-Aqui vemos um nó de varredura apenas por índice usando `tenk1_four_unique1_idx`, um índice de múltiplas colunas na coluna `four` e `unique1` da tabela `tenk1`. A varredura realiza 3 pesquisas que leem cada uma uma única página de folha do índice: “`four = 1 AND unique1 = 42`”, “`four = 2 AND unique1 = 42`” e “`four = 3 AND unique1 = 42`”. Este índice é geralmente um bom alvo para varredura de salto, pois, conforme discutido em [Seção 11.3][(indexes-multicolumn.md "11.3. Multicolumn Indexes")], sua coluna principal (a coluna `four`) contém apenas 4 valores distintos, enquanto sua segunda/última coluna (a coluna `unique1`) contém muitos valores distintos.
+Aqui vemos um nó de varredura apenas por índice usando `tenk1_four_unique1_idx`, um índice de múltiplas colunas na coluna `four` e `unique1` da tabela `tenk1`. A varredura realiza 3 pesquisas que leem cada uma uma única página de folha do índice: “`four = 1 AND unique1 = 42`”, “`four = 2 AND unique1 = 42`” e “`four = 3 AND unique1 = 42`”. Este índice é geralmente um bom alvo para varredura de salto, pois, conforme discutido em [Seção 11.3](indexes-multicolumn.md), sua coluna principal (a coluna `four`) contém apenas 4 valores distintos, enquanto sua segunda/última coluna (a coluna `unique1`) contém muitos valores distintos.
 
 Outro tipo de informação adicional é o número de linhas removidas por uma condição de filtro:
 
@@ -609,7 +609,7 @@ O tempo mostrado para o nó de nível superior não inclui qualquer tempo necess
 
 ### 14.1.3. Avisos [#](#USING-EXPLAIN-CAVEATS)
 
-Existem duas maneiras significativas pelas quais os tempos de execução medidos por `EXPLAIN ANALYZE` podem se desviar da execução normal da mesma consulta. Primeiro, uma vez que nenhuma linha de saída é entregue ao cliente, os custos de transmissão de rede não são incluídos. Os custos de conversão de I/O também não são incluídos, a menos que `SERIALIZE` seja especificado. Em segundo lugar, o custo adicional de medição adicionado por `EXPLAIN ANALYZE` pode ser significativo, especialmente em máquinas com chamadas de sistema operacional `gettimeofday()` que operam lentamente. Você pode usar a ferramenta [pg_test_timing][(pgtesttiming.md "pg_test_timing")] para medir o custo de temporização em seu sistema.
+Existem duas maneiras significativas pelas quais os tempos de execução medidos por `EXPLAIN ANALYZE` podem se desviar da execução normal da mesma consulta. Primeiro, uma vez que nenhuma linha de saída é entregue ao cliente, os custos de transmissão de rede não são incluídos. Os custos de conversão de I/O também não são incluídos, a menos que `SERIALIZE` seja especificado. Em segundo lugar, o custo adicional de medição adicionado por `EXPLAIN ANALYZE` pode ser significativo, especialmente em máquinas com chamadas de sistema operacional `gettimeofday()` que operam lentamente. Você pode usar a ferramenta [pg_test_timing](pgtesttiming.md) para medir o custo de temporização em seu sistema.
 
 Os resultados do `EXPLAIN` não devem ser extrapolados para situações muito diferentes daquela que você está realmente testando; por exemplo, os resultados em uma mesa do tamanho de um brinquedo não podem ser assumidos como aplicáveis a mesas grandes. As estimativas de custo do planejador não são lineares, e, portanto, ele pode escolher um plano diferente para uma mesa maior ou menor. Um exemplo extremo é que, em uma mesa que ocupa apenas uma página de disco, você quase sempre obterá um plano de varredura sequencial, independentemente de índices estarem disponíveis ou não. O planejador percebe que vai levar uma leitura de uma página de disco para processar a tabela de qualquer maneira, então não há valor em gastar leituras adicionais de página para olhar um índice. (Vimos isso acontecendo no exemplo acima do `polygon_tbl`.)
 

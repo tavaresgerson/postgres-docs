@@ -38,7 +38,7 @@ Para operadores binários, tanto `LEFTARG` quanto `RIGHTARG` devem ser definidos
 
 Na sintaxe do `CREATE OPERATOR`, as palavras-chave `FUNCTION` e `PROCEDURE` são equivalentes, mas a função referenciada deve, em qualquer caso, ser uma função, não um procedimento. O uso da palavra-chave `PROCEDURE` aqui é histórico e desaconselhado.
 
-As outras cláusulas especificam atributos de otimização opcional do operador. Seu significado é detalhado em [Seção 36.15][(xoper-optimization.md "36.15. Operator Optimization Information")].
+As outras cláusulas especificam atributos de otimização opcional do operador. Seu significado é detalhado em [Seção 36.15](xoper-optimization.md).
 
 Para poder criar um operador, você deve ter o privilégio `USAGE` nos tipos de argumento e no tipo de retorno, além do privilégio `EXECUTE` na função subjacente. Se um operador de commutator ou negador for especificado, você deve possuir esses operadores.
 
@@ -72,7 +72,7 @@ COMMUTATOR = OPERATOR(myschema.===) ,
 
 ## Notas
 
-Consulte a [Seção 36.14][(xoper.md "36.14. User-Defined Operators")] e a [Seção 36.15][(xoper-optimization.md "36.15. Operator Optimization Information")] para obter mais informações.
+Consulte a [Seção 36.14](xoper.md) e a [Seção 36.15](xoper-optimization.md) para obter mais informações.
 
 Quando você está definindo um operador auto-comutativo, você simplesmente o faz. Quando você está definindo um par de operadores compostos, as coisas ficam um pouco mais complicadas: como o primeiro a ser definido pode se referir ao outro, que você ainda não definiu? Existem três soluções para esse problema:
 
@@ -84,7 +84,7 @@ Em todos os três casos, você deve possuir ambos os operadores para marcá-los 
 
 Os pares de operadores negadores podem ser definidos usando os mesmos métodos que para pares de commutadores.
 
-Não é possível especificar a precedência lexical de um operador em `CREATE OPERATOR`, porque o comportamento de precedência do analisador é pré-configurado. Consulte a Seção 4.1.6 [(sql-syntax-lexical.md#SQL-PRECEDENCE "4.1.6. Operator Precedence")] para obter detalhes sobre a precedência.
+Não é possível especificar a precedência lexical de um operador em `CREATE OPERATOR`, porque o comportamento de precedência do analisador é pré-configurado. Consulte a [Seção 4.1.6](sql-syntax-lexical.md#SQL-PRECEDENCE) para obter detalhes sobre a precedência.
 
 As opções obsoletas `SORT1`, `SORT2`, `LTCMP` e `GTCMP` eram anteriormente usadas para especificar os nomes dos operadores de ordenação associados a um operador de junção. Isso não é mais necessário, uma vez que as informações sobre os operadores associados são encontradas ao analisar as famílias de operadores de árvore B. Se uma dessas opções for fornecida, ela é ignorada, exceto pelo fato de implicitamente definir `MERGES` como verdadeiro.
 

@@ -11,63 +11,82 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_shdescription` é comp
 
 
 <table border="1" class="table" summary="pg_shdescription Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">Tipo de coluna</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
+     Tipo de coluna
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       objoid
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referência a qualquer coluna OID)</p>
-<p>O OID do objeto a que esta descrição se refere</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     (referência a qualquer coluna OID)
+    </p>
+    <p>
+     O OID do objeto a que esta descrição se refere
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       classoid
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
+      <code class="structname">
        pg_class
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
-     </code>)</p>
-<p>O OID do catálogo do sistema em que esse objeto aparece</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     O OID do catálogo do sistema em que esse objeto aparece
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       description
      </code>
-<code class="type">
+     <code class="type">
       text
      </code>
-</p>
-<p>Texto arbitrário que serve como descrição deste objeto</p>
-</td>
-</tr>
-</tbody>
+    </p>
+    <p>
+     Texto arbitrário que serve como descrição deste objeto
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 

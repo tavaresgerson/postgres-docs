@@ -27,5 +27,5 @@
 
 Este capítulo descreve as funcionalidades de localização disponíveis do ponto de vista do administrador. O PostgreSQL suporta duas funcionalidades de localização:
 
-* Utilizar as funcionalidades de localização do sistema operacional para fornecer ordem de ordenação específica para a localização, formatação de números, mensagens traduzidas e outros aspectos. Isso é abordado na [Seção 23.1][(locale.md "23.1. Locale Support")] e [Seção 23.2][(collation.md "23.2. Collation Support")].
-* Fornecer vários conjuntos de caracteres diferentes para suportar o armazenamento de texto em todos os tipos de idiomas, e fornecer tradução de conjuntos de caracteres entre cliente e servidor. Isso é abordado na [Seção 23.3][(multibyte.md "23.3. Character Set Support")].
+* Utilizar as funcionalidades de localização do sistema operacional para fornecer ordem de ordenação específica para a localização, formatação de números, mensagens traduzidas e outros aspectos. Isso é abordado na [Seção 23.1](locale.md) e [Seção 23.2](collation.md).
+* Fornecer vários conjuntos de caracteres diferentes para suportar o armazenamento de texto em todos os tipos de idiomas, e fornecer tradução de conjuntos de caracteres entre cliente e servidor. Isso é abordado na [Seção 23.3](multibyte.md).

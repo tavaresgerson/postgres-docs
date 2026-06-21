@@ -31,8 +31,9 @@ Para criar uma conversão, você deve ter privilégio `EXECUTE` na função e pr
 
 A função deve ter a seguinte assinatura:
 
-``` conv_proc( integer,  -- source encoding ID integer,  -- destination encoding ID cstring,  -- source string (null terminated C string) internal, -- destination (fill with a null terminated C string) integer,  -- source string length boolean   -- if true, don't throw an error if conversion fails ) RETURNS integer;
-    ```
+```
+conv_proc( integer,  -- source encoding ID integer,  -- destination encoding ID cstring,  -- source string (null terminated C string) internal, -- destination (fill with a null terminated C string) integer,  -- source string length boolean   -- if true, don't throw an error if conversion fails ) RETURNS integer;
+```
 
 O valor de retorno é o número de bytes de origem que foram convertidos com sucesso. Se o último argumento for falso, a função deve lançar um erro em caso de entrada inválida, e o valor de retorno é sempre igual ao comprimento da string de origem.
 

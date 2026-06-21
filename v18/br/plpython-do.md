@@ -1,6 +1,6 @@
 ## 44.4. Blocos de código anônimo [#](#PLPYTHON-DO)
 
-O PL/Python também suporta blocos de código anônimos chamados com a declaração [DO][(sql-do.md "DO")]:
+O PL/Python também suporta blocos de código anônimos chamados com a declaração [DO](sql-do.md):
 
 ```
 DO $$

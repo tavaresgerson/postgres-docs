@@ -53,7 +53,7 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
 
 `TABLESPACE tablespace_name`: O *`tablespace_name` é o nome do tablespace no qual a nova tabela deve ser criada. Se não for especificado, [default_tablespace](runtime-config-client.md#GUC-DEFAULT-TABLESPACE) é consultado, ou [temp_tablespaces](runtime-config-client.md#GUC-TEMP-TABLESPACES) se a tabela for temporária.
 
-*`query`*: Um comando [`SELECT`(sql-select.md "SELECT"), [`TABLE`(sql-select.md#SQL-TABLE "TABLE Command"), ou [`VALUES`(sql-values.md "VALUES")]] ou um comando [`EXECUTE`(sql-execute.md "EXECUTE")]] que executa uma consulta preparada [`SELECT`, [`TABLE`, ou [`VALUES`]].
+*`query`*: Um comando [`SELECT`](sql-select.md), [`TABLE`](sql-select.md#SQL-TABLE), ou [`VALUES`](sql-values.md)]] ou um comando [`EXECUTE`](sql-execute.md)]] que executa uma consulta preparada [`SELECT`, [`TABLE`, ou [`VALUES`]].
 
 `WITH [ NO ] DATA`: Esta cláusula especifica se os dados produzidos pela consulta devem ser copiados para a nova tabela ou não. Se não, apenas a estrutura da tabela é copiada. O padrão é copiar os dados.
 
@@ -92,7 +92,7 @@ CREATE TEMP TABLE films_recent ON COMMIT DROP AS
 
 * O padrão exige parênteses ao redor da cláusula da subconsulta; no PostgreSQL, esses parênteses são opcionais.
 * No padrão, a cláusula `WITH [ NO ] DATA` é exigida; no PostgreSQL, ela é opcional.
-* O PostgreSQL trata as tabelas temporárias de uma maneira bastante diferente do padrão; veja [CREATE TABLE][(sql-createtable.md "CREATE TABLE")] para detalhes.
+* O PostgreSQL trata as tabelas temporárias de uma maneira bastante diferente do padrão; veja [CREATE TABLE](sql-createtable.md) para detalhes.
 * A cláusula `WITH` é uma extensão do PostgreSQL; os parâmetros de armazenamento não estão no padrão.
 * O conceito de tablespaces do PostgreSQL não faz parte do padrão. Portanto, a cláusula `TABLESPACE` é uma extensão.
 

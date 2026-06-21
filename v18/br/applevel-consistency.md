@@ -7,7 +7,7 @@
 
 Embora uma transação de Leitura Repetível tenha uma visão estável dos dados durante sua execução, há um problema sutil ao usar instantâneos MVCC para verificações de consistência de dados, envolvendo algo conhecido como *conflitos de leitura/escrita*. Se uma transação escreve dados e uma transação concorrente tenta ler os mesmos dados (seja antes ou depois da escrita), ela não pode ver o trabalho da outra transação. O leitor então parece ter executado primeiro, independentemente de qual tenha começado primeiro ou qual tenha sido executado primeiro. Se for isso, não há problema, mas se o leitor também escreve dados que são lidos por uma transação concorrente, agora há uma transação que parece ter sido executada antes de qualquer uma das transações mencionadas anteriormente. Se a transação que parece ter sido executada por último realmente comprometer primeiro, é muito fácil que um ciclo apareça em um gráfico da ordem de execução das transações. Quando tal ciclo aparece, as verificações de integridade não funcionarão corretamente sem alguma ajuda.
 
-Como mencionado na [Seção 13.2.3][(transaction-iso.md#XACT-SERIALIZABLE "13.2.3. Serializable Isolation Level")], as transações serializáveis são apenas transações de Leitura Repetível que adicionam monitoramento não bloqueável para padrões perigosos de conflitos de leitura/escrita. Quando é detectado um padrão que poderia causar um ciclo na ordem aparente de execução, uma das transações envolvidas é revertida para quebrar o ciclo.
+Como mencionado na [Seção 13.2.3](transaction-iso.md#XACT-SERIALIZABLE), as transações serializáveis são apenas transações de Leitura Repetível que adicionam monitoramento não bloqueável para padrões perigosos de conflitos de leitura/escrita. Quando é detectado um padrão que poderia causar um ciclo na ordem aparente de execução, uma das transações envolvidas é revertida para quebrar o ciclo.
 
 ### 13.4.1. Exigir Consistência com Transações Serializáveis [#](#SERIALIZABLE-CONSISTENCY)
 
@@ -15,11 +15,11 @@ Se o nível de isolamento de transação Serializable for usado para todas as es
 
 Ao usar essa técnica, evitará criar uma carga desnecessária para os programadores de aplicativos, caso o software de aplicativo passe por uma estrutura que retome automaticamente as transações que são revertidas com falha de serialização. Pode ser uma boa ideia definir `default_transaction_isolation` para `serializable`. Também seria sábio tomar algumas ações para garantir que nenhum outro nível de isolamento de transação seja usado, seja inadvertidamente ou para subverter as verificações de integridade, por meio de verificações do nível de isolamento de transação em gatilhos.
 
-Veja [Seção 13.2.3][(transaction-iso.md#XACT-SERIALIZABLE "13.2.3. Serializable Isolation Level")] para sugestões de desempenho.
+Veja [Seção 13.2.3](transaction-iso.md#XACT-SERIALIZABLE) para sugestões de desempenho.
 
 ### Aviso: Transações serializáveis e replicação de dados
 
-Esse nível de proteção de integridade usando transações serializáveis ainda não se estende ao modo standby quente ([Seção 26.4][(hot-standby.md "26.4. Hot Standby")]) ou réplicas lógicas. Por isso, aqueles que usam standby quente ou replicação lógica podem querer usar Leitura Repetível e bloqueio explícito no primário.
+Esse nível de proteção de integridade usando transações serializáveis ainda não se estende ao modo standby quente ([Seção 26.4](hot-standby.md)) ou réplicas lógicas. Por isso, aqueles que usam standby quente ou replicação lógica podem querer usar Leitura Repetível e bloqueio explícito no primário.
 
 ### 13.4.2. Exigir consistência com bloqueios explícitos [#](#NON-SERIALIZABLE-CONSISTENCY)
 

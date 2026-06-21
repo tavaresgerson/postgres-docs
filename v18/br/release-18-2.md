@@ -5,7 +5,7 @@
 
 **Data de lançamento:** 2026-02-12
 
-Esta versão contém uma variedade de correções da versão 18.1. Para informações sobre as novas funcionalidades da versão principal 18, consulte [Seção E.5][(release-18.md "E.5. Release 18")].
+Esta versão contém uma variedade de correções da versão 18.1. Para informações sobre as novas funcionalidades da versão principal 18, consulte [Seção E.5](release-18.md).
 
 ### E.3.1. Migração para a Versão 18.2 [#](#RELEASE-18-2-MIGRATION)
 

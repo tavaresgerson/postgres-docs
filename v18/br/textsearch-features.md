@@ -23,7 +23,7 @@ Observe que as etiquetas de peso se aplicam a *posições*, não a *lexemas*. Se
 
 `strip(vector tsvector) returns tsvector`: Retorna um vetor que lista os mesmos lexemas que o vetor fornecido, mas não possui nenhuma informação sobre posição ou peso. O resultado geralmente é muito menor do que um vetor não filtrado, mas também é menos útil. O ranking de relevância não funciona tão bem em vetores filtrados quanto em vetores não filtrados. Além disso, o operador `<->` (SE SEGUIDO POR) `tsquery` nunca corresponderá ao input filtrado, uma vez que não pode determinar a distância entre as ocorrências dos lexemas.
 
-Uma lista completa das funções relacionadas ao `tsvector` está disponível em [Tabela 9.43][(functions-textsearch.md#TEXTSEARCH-FUNCTIONS-TABLE "Table 9.43. Text Search Functions")].
+Uma lista completa das funções relacionadas ao `tsvector` está disponível em [Tabela 9.43](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-TABLE).
 
 ### 12.4.2. Manipulação de consultas [#](#TEXTSEARCH-MANIPULATE-TSQUERY)
 
@@ -37,64 +37,53 @@ Uma lista completa das funções relacionadas ao `tsvector` está disponível em
 
 `tsquery <-> tsquery`: Retorna uma consulta que busca uma correspondência para a primeira consulta dada imediatamente seguida por uma correspondência para a segunda consulta dada, usando o operador `<->` (FOLLOWED BY) `tsquery`. Por exemplo:
 
-``` SELECT to_tsquery('fat') <-> to_tsquery('cat | rat'); ?column? ---------------------------- 'fat' <-> ( 'cat' | 'rat' )
-    ```
+```
+SELECT to_tsquery('fat') <-> to_tsquery('cat | rat'); ?column? ---------------------------- 'fat' <-> ( 'cat' | 'rat' )
+```
 
 `tsquery_phrase(query1 tsquery, query2 tsquery [, distance integer ]) returns tsquery`: Retorna uma consulta que busca uma correspondência para a primeira consulta dada, seguida por uma correspondência para a segunda consulta dada, a uma distância de exatamente *`distance`* lexemas, usando o operador `<N>` `tsquery`. Por exemplo:
 
-``` SELECT tsquery_phrase(to_tsquery('fat'), to_tsquery('cat'), 10); tsquery_phrase ------------------ 'fat' <10> 'cat'
-    ```
+```
+SELECT tsquery_phrase(to_tsquery('fat'), to_tsquery('cat'), 10); tsquery_phrase ------------------ 'fat' <10> 'cat'
+```
 
 `numnode(query tsquery) returns integer` Retorna o número de nós (lexemas mais operadores) em um `tsquery`. Esta função é útil para determinar se o *`query`* é significativo (retorna > 0), ou contém apenas palavras de parada (retorna 0). Exemplos:
 
-    ```
-    SELECT numnode(plainto_tsquery('the any')); NOTICE:  query contains only stopword(s) or doesn't contain lexeme(s), ignored numnode --------- 0
+```
+SELECT numnode(plainto_tsquery('the any')); NOTICE:  query contains only stopword(s) or doesn't contain lexeme(s), ignored numnode --------- 0
 
-    SELECT numnode('foo & bar'::tsquery); numnode --------- 3
-    ```
+SELECT numnode('foo & bar'::tsquery); numnode --------- 3
+```
 
-`querytree(query tsquery) returns text`
-:   Retorna a parte de um `tsquery` que pode ser usada para pesquisar um índice. Essa função é útil para detectar consultas não indexáveis, por exemplo, aquelas que contêm apenas palavras-chave ou apenas termos negados. Por exemplo:
+`querytree(query tsquery) returns text`: Retorna a parte de um `tsquery` que pode ser usada para pesquisar um índice. Essa função é útil para detectar consultas não indexáveis, por exemplo, aquelas que contêm apenas palavras-chave ou apenas termos negados. Por exemplo:
 
-    ```
-    SELECT querytree(to_tsquery('defined')); querytree ----------- 'defin'
+```
+SELECT querytree(to_tsquery('defined')); querytree ----------- 'defin'
 
-    SELECT querytree(to_tsquery('!defined')); querytree ----------- T
-    ```
+SELECT querytree(to_tsquery('!defined')); querytree ----------- T
+```
 
 #### 12.4.2.1. Reescrita de consultas [#](#TEXTSEARCH-QUERY-REWRITING)
 
-A família de funções `ts_rewrite` busca um
-`tsquery` dado para encontrar ocorrências de uma subconsulta
-alvo e substitui cada ocorrência por uma subconsulta substituta. Em essência, essa operação é uma versão específica do redimensionamento de substratos, específica para `tsquery`.
-Uma combinação de alvo e substituto pode ser considerada uma *regra de reescrita de consulta*. Uma coleção de tais regras de reescrita pode ser um poderoso auxílio de pesquisa.
-Por exemplo, você pode expandir a pesquisa usando sinônimos (por exemplo, `new york`, `big apple`, `nyc`, `gotham`) ou restringir a pesquisa para direcionar o usuário para algum tópico quente. Há alguma sobreposição de funcionalidades entre essa característica e os dicionários de sinônimos ([Seção 12.6.4](textsearch-dictionaries.md#TEXTSEARCH-THESAURUS "12.6.4. Thesaurus Dictionary")).
-No entanto, você pode modificar um conjunto de regras de reescrita em tempo real sem reindexação, enquanto a atualização de um sinônimo requer reindexação para ser eficaz.
+A família de funções `ts_rewrite` busca um `tsquery` dado para encontrar ocorrências de uma subconsulta alvo e substitui cada ocorrência por uma subconsulta substituta. Em essência, essa operação é uma versão específica do redimensionamento de substratos, específica para `tsquery`. Uma combinação de alvo e substituto pode ser considerada uma *regra de reescrita de consulta*. Uma coleção de tais regras de reescrita pode ser um poderoso auxílio de pesquisa. Por exemplo, você pode expandir a pesquisa usando sinônimos (por exemplo, `new york`, `big apple`, `nyc`, `gotham`) ou restringir a pesquisa para direcionar o usuário para algum tópico quente. Há alguma sobreposição de funcionalidades entre essa característica e os dicionários de sinônimos ([Seção 12.6.4](textsearch-dictionaries.md#TEXTSEARCH-THESAURUS "12.6.4. Thesaurus Dictionary")). No entanto, você pode modificar um conjunto de regras de reescrita em tempo real sem reindexação, enquanto a atualização de um sinônimo requer reindexação para ser eficaz.
 
-`ts_rewrite (query tsquery, target tsquery, substitute tsquery) returns tsquery`
-:   Esta forma de `ts_rewrite` simplesmente aplica uma única regra de reescrita: *`target`*
-    é substituído por *`substitute`*
-    onde quer que apareça em *`query`*. Por exemplo:
+`ts_rewrite (query tsquery, target tsquery, substitute tsquery) returns tsquery`: Esta forma de `ts_rewrite` simplesmente aplica uma única regra de reescrita: *`target`* é substituído por *`substitute`* onde quer que apareça em *`query`*. Por exemplo:
 
-    ```
-    SELECT ts_rewrite('a & b'::tsquery, 'a'::tsquery, 'c'::tsquery); ts_rewrite ------------ 'b' & 'c'
-    ```
+```
+SELECT ts_rewrite('a & b'::tsquery, 'a'::tsquery, 'c'::tsquery); ts_rewrite ------------ 'b' & 'c'
+```
 
-`ts_rewrite (query tsquery, select text) returns tsquery`  :  Esta forma de `ts_rewrite` aceita um início  
-    *`query`* e um comando SQL *`select`*, que é dado como uma string de texto. O *`select`* deve gerar duas colunas do tipo `tsquery`. Para cada linha do resultado de  
-    *`select`*, as ocorrências do valor da primeira coluna (o alvo) são substituídas pelo valor da segunda coluna (o substituto) dentro do valor atual de  
-    *`query`*. Por exemplo:
+`ts_rewrite (query tsquery, select text) returns tsquery`  :  Esta forma de `ts_rewrite` aceita um início *`query`* e um comando SQL *`select`*, que é dado como uma string de texto. O *`select`* deve gerar duas colunas do tipo `tsquery`. Para cada linha do resultado de *`select`*, as ocorrências do valor da primeira coluna (o alvo) são substituídas pelo valor da segunda coluna (o substituto) dentro do valor atual de *`query`*. Por exemplo:
 
-    ```
-    CREATE TABLE aliases (t tsquery PRIMARY KEY, s tsquery); INSERT INTO aliases VALUES('a', 'c');
+```
+CREATE TABLE aliases (t tsquery PRIMARY KEY, s tsquery); INSERT INTO aliases VALUES('a', 'c');
 
-    SELECT ts_rewrite('a & b'::tsquery, 'SELECT t,s FROM aliases'); ts_rewrite ------------ 'b' & 'c'
-    ```
+SELECT ts_rewrite('a & b'::tsquery, 'SELECT t,s FROM aliases'); ts_rewrite ------------ 'b' & 'c'
+```
 
 Observe que, quando várias regras de reescrita são aplicadas dessa maneira, a ordem de aplicação pode ser importante; portanto, na prática, você vai querer que a consulta de origem `ORDER BY` tenha uma chave de ordenação.
 
-Vamos considerar um exemplo astronômico da vida real. Vamos expandir a consulta
-`supernovae` usando regras de reescrita baseadas em tabela:
+Vamos considerar um exemplo astronômico da vida real. Vamos expandir a consulta `supernovae` usando regras de reescrita baseadas em tabela:
 
 ```
 CREATE TABLE aliases (t tsquery primary key, s tsquery); INSERT INTO aliases VALUES(to_tsquery('supernovae'), to_tsquery('supernovae|sn'));
@@ -120,7 +109,7 @@ SELECT ts_rewrite('a & b'::tsquery, 'SELECT t,s FROM aliases WHERE ''a & b''::ts
 
 ### Nota
 
-O método descrito nesta seção foi obsoleto com o uso de colunas geradas armazenadas, conforme descrito em [Seção 12.2.2][(textsearch-tables.md#TEXTSEARCH-TABLES-INDEX "12.2.2. Creating Indexes")].
+O método descrito nesta seção foi obsoleto com o uso de colunas geradas armazenadas, conforme descrito em [Seção 12.2.2](textsearch-tables.md#TEXTSEARCH-TABLES-INDEX).
 
 Ao usar uma coluna separada para armazenar a representação `tsvector` dos seus documentos, é necessário criar um gatilho para atualizar a coluna `tsvector` quando as colunas de conteúdo do documento forem alteradas. Duas funções de gatilho integradas estão disponíveis para isso, ou você pode escrever a sua própria.
 
@@ -142,15 +131,9 @@ SELECT * FROM messages; title    |         body          |            tsv ------
 SELECT title, body FROM messages WHERE tsv @@ to_tsquery('title & body'); title    |         body ------------+----------------------- title here | the body text is here
 ```
 
-Tendo criado este gatilho, qualquer alteração em `title` ou
-`body` será refletida automaticamente em
-`tsv`, sem que o aplicativo precise se preocupar com isso.
+Tendo criado este gatilho, qualquer alteração em `title` ou `body` será refletida automaticamente em `tsv`, sem que o aplicativo precise se preocupar com isso.
 
-O primeiro argumento de ativação deve ser o nome da coluna `tsvector` a ser atualizada. O segundo argumento especifica a configuração de pesquisa de texto a ser usada para realizar a conversão. Para `tsvector_update_trigger`, o nome da configuração é simplesmente dado como o segundo argumento de ativação. Deve ser qualificada pelo esquema, conforme mostrado acima, para que o comportamento do gatilho não mude com mudanças em `search_path`. Para
-`tsvector_update_trigger_column`, o segundo argumento de ativação é o nome de outra coluna de tabela, que deve ser do tipo
-`regconfig`. Isso permite uma seleção por linha da configuração a ser feita. Os argumentos restantes são os nomes das colunas textuais (do tipo
-`text`, `varchar` ou
-`char`). Estes serão incluídos no documento na ordem dada. Os valores NULL serão ignorados (mas as outras colunas ainda serão indexadas).
+O primeiro argumento de ativação deve ser o nome da coluna `tsvector` a ser atualizada. O segundo argumento especifica a configuração de pesquisa de texto a ser usada para realizar a conversão. Para `tsvector_update_trigger`, o nome da configuração é simplesmente dado como o segundo argumento de ativação. Deve ser qualificada pelo esquema, conforme mostrado acima, para que o comportamento do gatilho não mude com mudanças em `search_path`. Para `tsvector_update_trigger_column`, o segundo argumento de ativação é o nome de outra coluna de tabela, que deve ser do tipo `regconfig`. Isso permite uma seleção por linha da configuração a ser feita. Os argumentos restantes são os nomes das colunas textuais (do tipo `text`, `varchar` ou `char`). Estes serão incluídos no documento na ordem dada. Os valores NULL serão ignorados (mas as outras colunas ainda serão indexadas).
 
 Uma limitação desses gatilhos embutidos é que eles tratam todas as colunas de entrada da mesma forma. Para processar colunas de forma diferente — por exemplo, para pesar o título de forma diferente do corpo — é necessário escrever um gatilho personalizado. Aqui está um exemplo usando PL/pgSQL como a linguagem do gatilho:
 
@@ -170,11 +153,7 @@ A função `ts_stat` é útil para verificar sua configuração e para encontrar
 ts_stat(sqlquery text, [ weights text, ] OUT word text, OUT ndoc integer, OUT nentry integer) returns setof record
 ```
 
-*`sqlquery`* é um valor de texto que contém uma consulta SQL
-que deve retornar uma única coluna `tsvector`.
-`ts_stat` executa a consulta e retorna estatísticas sobre
-cada léxico distinto (palavra) contido nos dados de `tsvector`.
-As colunas devolvidas são
+*`sqlquery`* é um valor de texto que contém uma consulta SQL que deve retornar uma única coluna `tsvector`. `ts_stat` executa a consulta e retorna estatísticas sobre cada léxico distinto (palavra) contido nos dados de `tsvector`. As colunas devolvidas são
 
 * *`word`* `text` — o valor de um léxico
 * *`ndoc`* `integer` — número de documentos (`tsvector`s) em que a palavra ocorreu

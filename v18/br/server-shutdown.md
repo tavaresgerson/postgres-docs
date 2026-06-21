@@ -22,4 +22,4 @@ $ kill -INT `head -1 /usr/local/pgsql/data/postmaster.pid`
 
 É melhor não usar SIGKILL para desligar o servidor. Isso impedirá o servidor de liberar memória compartilhada e semaforos. Além disso, o SIGKILL mata o processo `postgres` sem permitir que ele retransmita o sinal para seus subprocessos, portanto, pode ser necessário matar os subprocessos individuais manualmente também.
 
-Para encerrar uma sessão individual enquanto permite que outras sessões continuem, use `pg_terminate_backend()` (consulte [Tabela 9.96][(functions-admin.md#FUNCTIONS-ADMIN-SIGNAL-TABLE "Table 9.96. Server Signaling Functions")]) ou envie um sinal SIGTERM ao processo filho associado à sessão.
+Para encerrar uma sessão individual enquanto permite que outras sessões continuem, use `pg_terminate_backend()` (consulte [Tabela 9.96](functions-admin.md#FUNCTIONS-ADMIN-SIGNAL-TABLE)) ou envie um sinal SIGTERM ao processo filho associado à sessão.

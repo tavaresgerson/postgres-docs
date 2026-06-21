@@ -11,211 +11,264 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
 
 
 <table border="1" class="table" summary="Contents of PGDATA">
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Item
    </th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="filename">
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="filename">
      PG_VERSION
     </code>
-</td>
-<td>Um arquivo contendo o número da versão principal<span class="productname">PostgreSQL</span>
-</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    Um arquivo contendo o número da versão principal
+    <span class="productname">
+     PostgreSQL
+    </span>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      base
     </code>
-</td>
-<td>Subdiretório contendo subdiretórios por banco de dados</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    Subdiretório contendo subdiretórios por banco de dados
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      current_logfiles
     </code>
-</td>
-<td>Arquivo que registra o(s) arquivo(s) de registro atualmente escrito(s) pelo coletor de registro</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    Arquivo que registra o(s) arquivo(s) de registro atualmente escrito(s) pelo coletor de registro
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      global
     </code>
-</td>
-<td>Subdiretório contendo tabelas de todo o clúster, como<code class="structname">
+   </td>
+   <td>
+    Subdiretório contendo tabelas de todo o clúster, como
+    <code class="structname">
      pg_database
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      pg_commit_ts
     </code>
-</td>
-<td>Subdiretório contendo dados de marcação de confirmação de transação</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    Subdiretório contendo dados de marcação de confirmação de transação
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      pg_dynshmem
     </code>
-</td>
-<td>Subdiretório contendo arquivos usados pelo subsistema de memória compartilhada dinâmica</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    Subdiretório contendo arquivos usados pelo subsistema de memória compartilhada dinâmica
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      pg_logical
     </code>
-</td>
-<td>Subdiretório contendo dados de status para decodificação lógica</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    Subdiretório contendo dados de status para decodificação lógica
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      pg_multixact
     </code>
-</td>
-<td>Subdiretório contendo dados de status de multitransação (usado para bloqueios de linha compartilhada)</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    Subdiretório contendo dados de status de multitransação (usado para bloqueios de linha compartilhada)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      pg_notify
     </code>
-</td>
-<td>Subdiretório contendo dados de status LISTEN/NOTIFY</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    Subdiretório contendo dados de status LISTEN/NOTIFY
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      pg_replslot
     </code>
-</td>
-<td>Subdiretório contendo dados de slot de replicação</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    Subdiretório contendo dados de slot de replicação
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      pg_serial
     </code>
-</td>
-<td>Subdiretório contendo informações sobre transações serializáveis comprometidas</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    Subdiretório contendo informações sobre transações serializáveis comprometidas
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      pg_snapshots
     </code>
-</td>
-<td>Subdiretório contendo instantâneos exportados</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    Subdiretório contendo instantâneos exportados
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      pg_stat
     </code>
-</td>
-<td>Subdiretório contendo arquivos permanentes para o subsistema de estatísticas</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    Subdiretório contendo arquivos permanentes para o subsistema de estatísticas
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      pg_stat_tmp
     </code>
-</td>
-<td>Subdiretório contendo arquivos temporários para o subsistema de estatísticas</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    Subdiretório contendo arquivos temporários para o subsistema de estatísticas
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      pg_subtrans
     </code>
-</td>
-<td>Subdiretório contendo dados de status de subtransação</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    Subdiretório contendo dados de status de subtransação
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      pg_tblspc
     </code>
-</td>
-<td>Subdiretório contendo links simbólicos para espaços de tabela</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    Subdiretório contendo links simbólicos para espaços de tabela
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      pg_twophase
     </code>
-</td>
-<td>Subdiretório contendo arquivos de estado para transações preparadas</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    Subdiretório contendo arquivos de estado para transações preparadas
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      pg_wal
     </code>
-</td>
-<td>Subdiretório contendo arquivos WAL (Write Ahead Log)</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    Subdiretório contendo arquivos WAL (Write Ahead Log)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      pg_xact
     </code>
-</td>
-<td>Subdiretório contendo dados de status de compromisso de transação</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    Subdiretório contendo dados de status de compromisso de transação
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      postgresql.auto.conf
     </code>
-</td>
-<td>Um arquivo usado para armazenar parâmetros de configuração que são definidos por<code class="command">
+   </td>
+   <td>
+    Um arquivo usado para armazenar parâmetros de configuração que são definidos por
+    <code class="command">
      ALTER SYSTEM
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      postmaster.opts
     </code>
-</td>
-<td>Um arquivo que registra as opções de linha de comando com as quais o servidor foi iniciado pela última vez</td>
-</tr>
-<tr>
-<td>
-<code class="filename">
+   </td>
+   <td>
+    Um arquivo que registra as opções de linha de comando com as quais o servidor foi iniciado pela última vez
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="filename">
      postmaster.pid
     </code>
-</td>
-<td>Um arquivo de bloqueio que registra o ID atual do processo postmaster (PID), o caminho do diretório de dados do cluster, o timestamp de início do postmaster, o número de porta, o caminho do diretório do socket de domínio Unix (pode estar vazio), o primeiro endereço de escuta válido (endereço IP ou<code class="literal">
+   </td>
+   <td>
+    Um arquivo de bloqueio que registra o ID atual do processo postmaster (PID), o caminho do diretório de dados do cluster, o timestamp de início do postmaster, o número de porta, o caminho do diretório do socket de domínio Unix (pode estar vazio), o primeiro endereço de escuta válido (endereço IP ou
+    <code class="literal">
      *
-    </code>, ou vazio se não estiver ouvindo em TCP), e ID do segmento de memória compartilhada (este arquivo não está presente após o desligamento do servidor)</td>
-</tr>
-</tbody>
+    </code>
+    , ou vazio se não estiver ouvindo em TCP), e ID do segmento de memória compartilhada (este arquivo não está presente após o desligamento do servidor)
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Para cada banco de dados no clúster, há um subdiretório dentro de `PGDATA``/base`, com o nome do OID do banco de dados no `pg_database`. Este subdiretório é o local padrão para os arquivos do banco de dados; em particular, seus catálogos do sistema são armazenados lá.
 
@@ -229,9 +282,9 @@ Observe que, embora o filenode de uma tabela muitas vezes corresponda ao seu OID
 
 Quando uma tabela ou índice excede 1 GB, ele é dividido em *segmentos* de tamanho de gigabyte. O nome do arquivo do primeiro segmento é o mesmo do filenode; os segmentos subsequentes são nomeados filenode.1, filenode.2, etc. Esse arranjo evita problemas em plataformas que têm limitações de tamanho de arquivo. (Na verdade, 1 GB é apenas o tamanho padrão do segmento. O tamanho do segmento pode ser ajustado usando a opção de configuração `--with-segsize` ao construir o PostgreSQL.) Em princípio, os mapas de espaço livre e mapas de visibilidade também podem exigir múltiplos segmentos, embora isso seja improvável na prática.
 
-Uma tabela que tem colunas com entradas potencialmente grandes terá uma tabela *TOAST* associada, que é usada para armazenamento fora da linha de valores de campo que são muito grandes para serem mantidos nas próprias linhas da tabela. `pg_class`.`reltoastrelid` faz ligações de uma tabela para sua tabela TOAST, se houver. Consulte [Seção 66.2][(storage-toast.md "66.2. TOAST")] para mais informações.
+Uma tabela que tem colunas com entradas potencialmente grandes terá uma tabela *TOAST* associada, que é usada para armazenamento fora da linha de valores de campo que são muito grandes para serem mantidos nas próprias linhas da tabela. `pg_class`.`reltoastrelid` faz ligações de uma tabela para sua tabela TOAST, se houver. Consulte [Seção 66.2](storage-toast.md) para mais informações.
 
-Os conteúdos de tabelas e índices são discutidos mais adiante na [Seção 66.6][(storage-page-layout.md "66.6. Database Page Layout")].
+Os conteúdos de tabelas e índices são discutidos mais adiante na [Seção 66.6](storage-page-layout.md).
 
 Os tablespaces tornam o cenário mais complicado. Cada tablespace definido pelo usuário tem um link simbólico dentro do diretório `PGDATA``/pg_tblspc`, que aponta para o diretório do tablespace físico (ou seja, o local especificado no comando `CREATE TABLESPACE` do tablespace). Esse link simbólico é nomeado com base no OID do tablespace. Dentro do diretório do tablespace físico, há um subdiretório com um nome que depende da versão do servidor PostgreSQL, como `PG_9.0_201008051`. (O motivo de usar esse subdiretório é para que as versões sucessivas do banco de dados possam usar o mesmo valor de localização `CREATE TABLESPACE` sem conflitos.) Dentro do subdiretório específico para a versão, há um subdiretório para cada banco de dados que tem elementos no tablespace, nomeado com base no OID do banco de dados. Tabelas e índices são armazenados dentro desse diretório, usando o esquema de nomeação de filenode. O tablespace `pg_default` não é acessado através de `pg_tblspc`, mas corresponde a `PGDATA``/base`. Da mesma forma, o tablespace `pg_global` não é acessado através de `pg_tblspc`, mas corresponde a `PGDATA``/global`.
 

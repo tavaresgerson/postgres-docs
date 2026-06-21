@@ -31,11 +31,11 @@ Nas versões do PostgreSQL de 8.0 a 8.2, os efeitos de um `SET LOCAL` seriam can
 
 `LOCAL`: Especifica que o comando tem efeito apenas para a transação atual. Após `COMMIT` ou `ROLLBACK`, o ajuste do nível de sessão volta a ter efeito. Emitir isso fora de um bloco de transação emite um aviso e, de outra forma, não tem efeito.
 
-*`configuration_parameter`*: Nome de um parâmetro de execução configurável. Os parâmetros disponíveis estão documentados no [Capítulo 19][(runtime-config.md "Chapter 19. Server Configuration")] e abaixo.
+*`configuration_parameter`*: Nome de um parâmetro de execução configurável. Os parâmetros disponíveis estão documentados no [Capítulo 19](runtime-config.md) e abaixo.
 
 *`value`*: Novo valor do parâmetro. Os valores podem ser especificados como constantes de string, identificadores, números ou listas separadas por vírgula desses, conforme apropriado para o parâmetro específico. `DEFAULT` pode ser escrito para especificar o restabelecimento do parâmetro ao seu valor padrão (ou seja, qualquer valor que teria se não tivesse sido executado `SET` na sessão atual).
 
-Além dos parâmetros de configuração documentados em [Capítulo 19][(runtime-config.md "Chapter 19. Server Configuration")], há alguns que só podem ser ajustados usando o comando `SET` ou que têm uma sintaxe especial:
+Além dos parâmetros de configuração documentados em [Capítulo 19](runtime-config.md), há alguns que só podem ser ajustados usando o comando `SET` ou que têm uma sintaxe especial:
 
 `SCHEMA`: `SET SCHEMA 'value'` é um alias para `SET search_path TO value`. Apenas um esquema pode ser especificado usando essa sintaxe.
 
@@ -45,8 +45,9 @@ Além dos parâmetros de configuração documentados em [Capítulo 19][(runtime-
 
 A semente também pode ser definida ao invocar a função `setseed`:
 
-``` SELECT setseed(value);
-    ```
+```
+SELECT setseed(value);
+```
 
 `TIME ZONE`: `SET TIME ZONE 'value'` é um alias para `SET timezone TO 'value'`. A sintaxe `SET TIME ZONE` permite uma sintaxe especial para a especificação do fuso horário. Aqui estão exemplos de valores válidos:
 
@@ -66,7 +67,7 @@ As abreviações dos fusos horários não são suportadas por `SET`; consulte [S
 
 ## Notas
 
-A função `set_config` oferece funcionalidades equivalentes; veja [Seção 9.28.1](functions-admin.md#FUNCTIONS-ADMIN-SET "9.28.1. Configuration Settings Functions"). Além disso, é possível ATUALIZAR a visão do sistema [`pg_settings`(view-pg-settings.md "53.25. pg_settings") para realizar o equivalente a `SET`.
+A função `set_config` oferece funcionalidades equivalentes; veja [Seção 9.28.1](functions-admin.md#FUNCTIONS-ADMIN-SET "9.28.1. Configuration Settings Functions"). Além disso, é possível ATUALIZAR a visão do sistema [`pg_settings`](view-pg-settings.md) para realizar o equivalente a `SET`.
 
 ## Exemplos
 

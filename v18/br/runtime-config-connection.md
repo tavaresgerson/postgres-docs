@@ -9,7 +9,7 @@
 
 `listen_addresses` (`string`) [#](#GUC-LISTEN-ADDRESSES): Especifica o(s) endereço(s) TCP/IP no qual o servidor deve ouvir conexões de aplicações de cliente. O valor assume a forma de uma lista de nomes de host e/ou endereços IP numéricos separados por vírgula. A entrada especial `*` corresponde a todas as interfaces IP disponíveis. A entrada `0.0.0.0` permite ouvir todos os endereços IPv4 e `::` permite ouvir todos os endereços IPv6. Se a lista estiver vazia, o servidor não ouvirá nenhuma interface IP, no caso em que apenas conexões de Unix-domain podem ser usadas para conectá-lo. Se a lista não estiver vazia, o servidor começará se puder ouvir pelo menos um endereço TCP/IP. Um aviso será emitido para qualquer endereço TCP/IP que não possa ser aberto. O valor padrão é localhost, que permite que apenas conexões locais de "loopback" TCP/IP sejam feitas.
 
-Enquanto a autenticação do cliente ([Capítulo 20][(client-authentication.md "Chapter 20. Client Authentication")]) permite um controle detalhado sobre quem pode acessar o servidor, o `listen_addresses` controla quais interfaces aceitam tentativas de conexão, o que pode ajudar a prevenir solicitações de conexão maliciosas repetidas em interfaces de rede inseguras. Este parâmetro só pode ser definido no início do servidor.
+Enquanto a autenticação do cliente ([Capítulo 20](client-authentication.md)) permite um controle detalhado sobre quem pode acessar o servidor, o `listen_addresses` controla quais interfaces aceitam tentativas de conexão, o que pode ajudar a prevenir solicitações de conexão maliciosas repetidas em interfaces de rede inseguras. Este parâmetro só pode ser definido no início do servidor.
 
 `port` (`integer`) [#](#GUC-PORT): A porta TCP que o servidor escuta; 5432 por padrão. Observe que o mesmo número de porta é usado para todos os endereços IP que o servidor escuta. Este parâmetro só pode ser definido no início do servidor.
 
@@ -43,7 +43,7 @@ Este parâmetro não é suportado no Windows. Qualquer configuração será igno
 
 Os permissões padrão são `0777`, o que significa que qualquer pessoa pode se conectar. Alternativas razoáveis são `0770` (apenas usuário e grupo, veja também `unix_socket_group`) e `0700` (apenas usuário). (Observe que, para uma conexão de domínio Unix, apenas a permissão de escrita importa, portanto, não há sentido em definir ou revogar permissões de leitura ou execução.)
 
-Esse mecanismo de controle de acesso é independente do descrito em [Capítulo 20] [(client-authentication.md "Chapter 20. Client Authentication")].
+Esse mecanismo de controle de acesso é independente do descrito em [Capítulo 20](client-authentication.md).
 
 Este parâmetro só pode ser definido no início do servidor.
 
@@ -71,7 +71,7 @@ Essa opção depende de eventos do kernel expostos pelo Linux, macOS, illumos e 
 
 Se o valor for especificado sem unidades, ele será considerado em milissegundos. O valor padrão é `0`, que desativa as verificações de conexão. Sem verificações de conexão, o servidor detectará a perda da conexão apenas na próxima interação com o soquete, quando ele espera, recebe ou envia dados.
 
-Para que o próprio kernel detecte conexões TCP perdidas de forma confiável e dentro de um período conhecido em todos os cenários, incluindo falha na rede, também pode ser necessário ajustar as configurações de manutenção TCP do sistema operacional, ou as configurações [tcp_keepalives_idle][(runtime-config-connection.md#GUC-TCP-KEEPALIVES-IDLE)], [tcp_keepalives_interval][(runtime-config-connection.md#GUC-TCP-KEEPALIVES-INTERVAL)] e [tcp_keepalives_count][(runtime-config-connection.md#GUC-TCP-KEEPALIVES-COUNT)] do PostgreSQL.
+Para que o próprio kernel detecte conexões TCP perdidas de forma confiável e dentro de um período conhecido em todos os cenários, incluindo falha na rede, também pode ser necessário ajustar as configurações de manutenção TCP do sistema operacional, ou as configurações [tcp_keepalives_idle](runtime-config-connection.md#GUC-TCP-KEEPALIVES-IDLE), [tcp_keepalives_interval](runtime-config-connection.md#GUC-TCP-KEEPALIVES-INTERVAL) e [tcp_keepalives_count](runtime-config-connection.md#GUC-TCP-KEEPALIVES-COUNT) do PostgreSQL.
 
 ### 19.3.3. Autenticação [#](#RUNTIME-CONFIG-CONNECTION-AUTHENTICATION)
 
@@ -83,7 +83,7 @@ Observe que os clientes mais antigos podem não ter suporte para o mecanismo de 
 
 ### Aviso
 
-O suporte para senhas criptografadas com MD5 é desatualizado e será removido em uma versão futura do PostgreSQL. Consulte [Seção 20.5][(auth-password.md "20.5. Password Authentication")] para obter detalhes sobre a migração para outro tipo de senha.
+O suporte para senhas criptografadas com MD5 é desatualizado e será removido em uma versão futura do PostgreSQL. Consulte [Seção 20.5](auth-password.md) para obter detalhes sobre a migração para outro tipo de senha.
 
 `scram_iterations` (`integer`) [#](#GUC-SCRAM-ITERATIONS): O número de iterações computacionais a serem realizadas ao criptografar uma senha usando SCRAM-SHA-256. O padrão é `4096`. Um número maior de iterações oferece proteção adicional contra ataques brutais em senhas armazenadas, mas torna a autenticação mais lenta. Alterar o valor não tem efeito em senhas existentes criptografadas com SCRAM-SHA-256, pois o número de iterações é fixo no momento da criptografia. Para utilizar um valor alterado, uma nova senha deve ser definida.
 
@@ -97,11 +97,11 @@ O suporte para senhas criptografadas com MD5 é desatualizado e será removido e
 
 `oauth_validator_libraries` (`string`) [#](#GUC-OAUTH-VALIDATOR-LIBRARIES): A biblioteca/bibliotecas a serem utilizadas para validar tokens de conexão OAuth. Se apenas uma biblioteca de validação for fornecida, ela será usada por padrão para quaisquer conexões OAuth; caso contrário, todas as entradas [`oauth` HBA](auth-oauth.md "20.15. OAuth Authorization/Authentication") devem definir explicitamente um `validator` escolhido desta lista. Se definida como uma string vazia (o padrão), as conexões OAuth serão recusadas. Este parâmetro só pode ser definido no arquivo `postgresql.conf`.
 
-Os módulos de validação devem ser implementados/obtidos separadamente; o PostgreSQL não vem com nenhuma implementação padrão. Para mais informações sobre a implementação de validadores OAuth, consulte o [Capítulo 50][(oauth-validators.md "Chapter 50. OAuth Validator Modules")].
+Os módulos de validação devem ser implementados/obtidos separadamente; o PostgreSQL não vem com nenhuma implementação padrão. Para mais informações sobre a implementação de validadores OAuth, consulte o [Capítulo 50](oauth-validators.md).
 
 ### 19.3.4. SSL [#](#RUNTIME-CONFIG-CONNECTION-SSL)
 
-Consulte a [Seção 18.9][(ssl-tcp.md "18.9. Secure TCP/IP Connections with SSL")] para obter mais informações sobre a configuração do SSL. Os parâmetros de configuração para controlar a criptografia de transferência usando protocolos TLS são denominados `ssl` por razões históricas, embora o suporte ao protocolo SSL tenha sido descontinuado. O SSL é usado nesse contexto de forma intercambiável com TLS.
+Consulte a [Seção 18.9](ssl-tcp.md) para obter mais informações sobre a configuração do SSL. Os parâmetros de configuração para controlar a criptografia de transferência usando protocolos TLS são denominados `ssl` por razões históricas, embora o suporte ao protocolo SSL tenha sido descontinuado. O SSL é usado nesse contexto de forma intercambiável com TLS.
 
 `ssl` (`boolean`) [#](#GUC-SSL): Habilita conexões SSL. Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor. O padrão é `off`.
 
@@ -109,13 +109,13 @@ Consulte a [Seção 18.9][(ssl-tcp.md "18.9. Secure TCP/IP Connections with SSL
 
 `ssl_cert_file` (`string`) [#](#GUC-SSL-CERT-FILE): Especifica o nome do arquivo que contém o certificado do servidor SSL. As referências relativas são relativas ao diretório de dados. Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor. O padrão é `server.crt`.
 
-`ssl_crl_file` (`string`) [#](#GUC-SSL-CRL-FILE): Especifica o nome do arquivo que contém a lista de revogação de certificados de cliente SSL (CRL). As passagens relativas são relativas ao diretório de dados. Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor. O padrão é vazio, o que significa que nenhum arquivo CRL é carregado (a menos que [ssl_crl_dir][(runtime-config-connection.md#GUC-SSL-CRL-DIR)] seja definido).
+`ssl_crl_file` (`string`) [#](#GUC-SSL-CRL-FILE): Especifica o nome do arquivo que contém a lista de revogação de certificados de cliente SSL (CRL). As passagens relativas são relativas ao diretório de dados. Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor. O padrão é vazio, o que significa que nenhum arquivo CRL é carregado (a menos que [ssl_crl_dir](runtime-config-connection.md#GUC-SSL-CRL-DIR) seja definido).
 
-`ssl_crl_dir` (`string`) [#](#GUC-SSL-CRL-DIR): Especifica o nome do diretório que contém a lista de revogação de certificados de cliente SSL (CRL). As passagens relativas são relativas ao diretório de dados. Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor. O padrão é vazio, o que significa que não são usadas CRLs (a menos que [ssl_crl_file][(runtime-config-connection.md#GUC-SSL-CRL-FILE)] esteja definido).
+`ssl_crl_dir` (`string`) [#](#GUC-SSL-CRL-DIR): Especifica o nome do diretório que contém a lista de revogação de certificados de cliente SSL (CRL). As passagens relativas são relativas ao diretório de dados. Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor. O padrão é vazio, o que significa que não são usadas CRLs (a menos que [ssl_crl_file](runtime-config-connection.md#GUC-SSL-CRL-FILE) esteja definido).
 
 O diretório precisa ser preparado com o comando OpenSSL `openssl rehash` ou `c_rehash`. Consulte a documentação para obter detalhes.
 
-Ao usar essa configuração, as CRLs no diretório especificado são carregadas sob demanda no momento da conexão. Novos CRLs podem ser adicionados ao diretório e serão usados imediatamente. Isso é diferente de [ssl_crl_file][(runtime-config-connection.md#GUC-SSL-CRL-FILE)], que faz com que a CRL no arquivo seja carregada no momento do início do servidor ou quando a configuração é recarregada. Ambos os ajustes podem ser usados juntos.
+Ao usar essa configuração, as CRLs no diretório especificado são carregadas sob demanda no momento da conexão. Novos CRLs podem ser adicionados ao diretório e serão usados imediatamente. Isso é diferente de [ssl_crl_file](runtime-config-connection.md#GUC-SSL-CRL-FILE), que faz com que a CRL no arquivo seja carregada no momento do início do servidor ou quando a configuração é recarregada. Ambos os ajustes podem ser usados juntos.
 
 `ssl_key_file` (`string`) [#](#GUC-SSL-KEY-FILE): Especifica o nome do arquivo que contém a chave privada do servidor SSL. As referências relativas são relativas ao diretório de dados. Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor. O padrão é `server.key`.
 

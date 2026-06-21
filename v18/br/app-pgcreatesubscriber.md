@@ -8,7 +8,7 @@ pg_createsubscriber — converter uma replica física em uma nova replica lógic
 
 ## Descrição
 
-pg_createsubscriber cria uma nova replica lógica a partir de um servidor de espera físico. Todas as tabelas no banco de dados especificado estão incluídas no [replicação lógica][(logical-replication.md "Chapter 29. Logical Replication")] configuração. Um par de objetos de publicação e subscrição são criados para cada banco de dados. Deve ser executado no servidor alvo.
+pg_createsubscriber cria uma nova replica lógica a partir de um servidor de espera físico. Todas as tabelas no banco de dados especificado estão incluídas no [replicação lógica](logical-replication.md) configuração. Um par de objetos de publicação e subscrição são criados para cada banco de dados. Deve ser executado no servidor alvo.
 
 Após uma execução bem-sucedida, o estado do servidor alvo é análogo a uma configuração de replicação lógica fresca. A principal diferença entre a configuração de replicação lógica e o pg_createsubscriber é a forma como a sincronização dos dados é feita. O pg_createsubscriber não copia os dados iniciais da tabela. Ele realiza apenas a fase de sincronização, que garante que cada tabela seja trazida a um estado sincronizado.
 
@@ -64,9 +64,9 @@ Os objetos selecionados para serem descartados são registrados individualmente,
 
 Existem alguns pré-requisitos para o pg_createsubscriber converter o servidor de destino em uma replica lógica. Se esses pré-requisitos não forem atendidos, um erro será relatado. Os servidores de origem e de destino devem ter a mesma versão principal do pg_createsubscriber. O diretório de dados de destino fornecido deve ter o mesmo identificador de sistema que o diretório de dados de origem. O usuário de banco de dados fornecido para o diretório de dados de destino deve ter privilégios para criar [assinaturas](sql-createsubscription.md "CREATE SUBSCRIPTION") e usar [[`pg_replication_origin_advance()`](functions-admin.md#PG-REPLICATION-ORIGIN-ADVANCE)].
 
-O servidor-alvo deve ser usado como um standby físico. O servidor-alvo deve ter [max_active_replication_origins][(runtime-config-replication.md#GUC-MAX-ACTIVE-REPLICATION-ORIGINS)] e [max_logical_replication_workers][(runtime-config-replication.md#GUC-MAX-LOGICAL-REPLICATION-WORKERS)] configurados para um valor maior ou igual ao número de bancos de dados especificados. O servidor-alvo deve ter [max_worker_processes][(runtime-config-resource.md#GUC-MAX-WORKER-PROCESSES)] configurado para um valor maior que o número de bancos de dados especificados. O servidor-alvo deve aceitar conexões locais. Se você planeja usar o switch `--enable-two-phase`, também precisará configurar o [max_prepared_transactions][(runtime-config-resource.md#GUC-MAX-PREPARED-TRANSACTIONS)] de forma apropriada.
+O servidor-alvo deve ser usado como um standby físico. O servidor-alvo deve ter [max_active_replication_origins](runtime-config-replication.md#GUC-MAX-ACTIVE-REPLICATION-ORIGINS) e [max_logical_replication_workers](runtime-config-replication.md#GUC-MAX-LOGICAL-REPLICATION-WORKERS) configurados para um valor maior ou igual ao número de bancos de dados especificados. O servidor-alvo deve ter [max_worker_processes](runtime-config-resource.md#GUC-MAX-WORKER-PROCESSES) configurado para um valor maior que o número de bancos de dados especificados. O servidor-alvo deve aceitar conexões locais. Se você planeja usar o switch `--enable-two-phase`, também precisará configurar o [max_prepared_transactions](runtime-config-resource.md#GUC-MAX-PREPARED-TRANSACTIONS) de forma apropriada.
 
-O servidor de origem deve aceitar conexões do servidor de destino. O servidor de origem não deve estar em recuperação. O servidor de origem deve ter [wal_level][(runtime-config-wal.md#GUC-WAL-LEVEL)] como `logical`. O servidor de origem deve ter [max_replication_slots][(runtime-config-replication.md#GUC-MAX-REPLICATION-SLOTS)] configurado para um valor maior ou igual ao número de bancos de dados especificados mais os slots de replicação existentes. O servidor de origem deve ter [max_wal_senders][(runtime-config-replication.md#GUC-MAX-WAL-SENDERS)] configurado para um valor maior ou igual ao número de bancos de dados especificados e aos processos de emissor de WAL existentes.
+O servidor de origem deve aceitar conexões do servidor de destino. O servidor de origem não deve estar em recuperação. O servidor de origem deve ter [wal_level](runtime-config-wal.md#GUC-WAL-LEVEL) como `logical`. O servidor de origem deve ter [max_replication_slots](runtime-config-replication.md#GUC-MAX-REPLICATION-SLOTS) configurado para um valor maior ou igual ao número de bancos de dados especificados mais os slots de replicação existentes. O servidor de origem deve ter [max_wal_senders](runtime-config-replication.md#GUC-MAX-WAL-SENDERS) configurado para um valor maior ou igual ao número de bancos de dados especificados e aos processos de emissor de WAL existentes.
 
 ### Avisos
 
@@ -78,15 +78,15 @@ Como os comandos DDL não são replicados pela replicação lógica, evite execu
 
 Se o pg_createsubscriber falhar durante o processamento, os objetos (publicações, faixas de replicação) criados no servidor de origem são removidos. A remoção pode falhar se o servidor de destino não conseguir se conectar ao servidor de origem. Nesse caso, uma mensagem de aviso informará os objetos restantes. Se o servidor de destino estiver em execução, ele será parado.
 
-Se a replicação estiver usando [primary_slot_name][(runtime-config-replication.md#GUC-PRIMARY-SLOT-NAME)], ela será removida do servidor de origem após a configuração de replicação lógica.
+Se a replicação estiver usando [primary_slot_name](runtime-config-replication.md#GUC-PRIMARY-SLOT-NAME), ela será removida do servidor de origem após a configuração de replicação lógica.
 
 Se o servidor alvo for uma replica síncrona, os commits de transação no primário podem esperar pela replicação enquanto o pg_createsubscriber está sendo executado.
 
-A menos que o interruptor `--enable-two-phase` seja especificado, o pg_createsubscriber configura a replicação lógica com o commit de duas fases desativado. Isso significa que quaisquer transações preparadas serão replicadas no momento do `COMMIT PREPARED`, sem preparação antecipada. Uma vez que a configuração esteja completa, você pode descartar e recriar manualmente a(s) assinatura(ões) com a opção [`two_phase`(sql-createsubscription.md#SQL-CREATESUBSCRIPTION-PARAMS-WITH-TWO-PHASE)] habilitada.
+A menos que o interruptor `--enable-two-phase` seja especificado, o pg_createsubscriber configura a replicação lógica com o commit de duas fases desativado. Isso significa que quaisquer transações preparadas serão replicadas no momento do `COMMIT PREPARED`, sem preparação antecipada. Uma vez que a configuração esteja completa, você pode descartar e recriar manualmente a(s) assinatura(ões) com a opção [`two_phase`](sql-createsubscription.md#SQL-CREATESUBSCRIPTION-PARAMS-WITH-TWO-PHASE)] habilitada.
 
 O pg_createsubscriber altera o identificador do sistema usando o pg_resetwal. Isso evitaria situações em que o servidor alvo poderia usar arquivos WAL do servidor fonte. Se o servidor alvo tiver um standby, a replicação será interrompida e um novo standby deve ser criado.
 
-Falhas de replicação podem ocorrer se os arquivos WAL necessários estiverem ausentes. Para evitar isso, o servidor de origem deve definir [max_slot_wal_keep_size][(runtime-config-replication.md#GUC-MAX-SLOT-WAL-KEEP-SIZE)] para `-1` para garantir que os arquivos WAL necessários não sejam removidos prematuramente.
+Falhas de replicação podem ocorrer se os arquivos WAL necessários estiverem ausentes. Para evitar isso, o servidor de origem deve definir [max_slot_wal_keep_size](runtime-config-replication.md#GUC-MAX-SLOT-WAL-KEEP-SIZE) para `-1` para garantir que os arquivos WAL necessários não sejam removidos prematuramente.
 
 ### Como Funciona
 

@@ -7,152 +7,150 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
 
 
 <table border="1" class="table" summary="columns Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
      Column Type
     </p>
-<p>
+    <p>
      Description
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       table_catalog
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the database containing the table (always the current database)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       table_schema
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the schema containing the table
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       table_name
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the table
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       column_name
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the column
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       ordinal_position
      </code>
-<code class="type">
+     <code class="type">
       cardinal_number
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Ordinal position of the column within the table (count starts at 1)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       column_default
      </code>
-<code class="type">
+     <code class="type">
       character_data
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Default expression of the column
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       is_nullable
      </code>
-<code class="type">
+     <code class="type">
       yes_or_no
      </code>
-</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     <code class="literal">
       YES
      </code>
      if the column is possibly nullable,
      <code class="literal">
       NO
      </code>
-     if it is known not nullable.  A not-null
-       constraint is one way a column can be known not nullable, but there can be others.
+     if it is known not nullable.  A not-null constraint is one way a column can be known not nullable, but there can be others.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       data_type
      </code>
-<code class="type">
+     <code class="type">
       character_data
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Data type of the column, if it is a built-in type, or
      <code class="literal">
       ARRAY
      </code>
-     if it is some array (in that case, see
-       the view
+     if it is some array (in that case, see the view
      <code class="literal">
       element_types
      </code>
@@ -160,8 +158,7 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
      <code class="literal">
       USER-DEFINED
      </code>
-     (in that case, the type is
-       identified in
+     (in that case, the type is identified in
      <code class="literal">
       udt_name
      </code>
@@ -171,57 +168,57 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
      </code>
      and associated columns).
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       character_maximum_length
      </code>
-<code class="type">
+     <code class="type">
       cardinal_number
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If
      <code class="literal">
       data_type
      </code>
      identifies a character or bit string type, the declared maximum length; null for all other data types or if no maximum length was declared.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       character_octet_length
      </code>
-<code class="type">
+     <code class="type">
       cardinal_number
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If
      <code class="literal">
       data_type
      </code>
      identifies a character type, the maximum possible length in octets (bytes) of a datum; null for all other data types.  The maximum octet length depends on the declared character maximum length (see above) and the server encoding.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       numeric_precision
      </code>
-<code class="type">
+     <code class="type">
       cardinal_number
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If
      <code class="literal">
       data_type
@@ -230,22 +227,21 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
      <code class="literal">
       numeric_precision_radix
      </code>
-     .  For all other data
-       types, this column is null.
+     .  For all other data types, this column is null.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       numeric_precision_radix
      </code>
-<code class="type">
+     <code class="type">
       cardinal_number
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If
      <code class="literal">
       data_type
@@ -258,22 +254,21 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
      <code class="literal">
       numeric_scale
      </code>
-     are expressed.  The value is
-       either 2 or 10.  For all other data types, this column is null.
+     are expressed.  The value is either 2 or 10.  For all other data types, this column is null.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       numeric_scale
      </code>
-<code class="type">
+     <code class="type">
       cardinal_number
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If
      <code class="literal">
       data_type
@@ -282,41 +277,40 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
      <code class="literal">
       numeric_precision_radix
      </code>
-     .  For all other data
-       types, this column is null.
+     .  For all other data types, this column is null.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       datetime_precision
      </code>
-<code class="type">
+     <code class="type">
       cardinal_number
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If
      <code class="literal">
       data_type
      </code>
      identifies a date, time, timestamp, or interval type, this column contains the (declared or implicit) fractional seconds precision of the type for this column, that is, the number of decimal digits maintained following the decimal point in the seconds value.  For all other data types, this column is null.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       interval_type
      </code>
-<code class="type">
+     <code class="type">
       character_data
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If
      <code class="literal">
       data_type
@@ -331,19 +325,19 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
      </code>
      , etc.  If no field restrictions were specified (that is, the interval accepts all fields), and for all other data types, this field is null.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       interval_precision
      </code>
-<code class="type">
+     <code class="type">
       cardinal_number
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Applies to a feature not available in
      <span class="productname">
       PostgreSQL
@@ -354,313 +348,313 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
      </code>
      for the fractional seconds precision of interval type columns)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       character_set_catalog
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Applies to a feature not available in
      <span class="productname">
       PostgreSQL
      </span>
-</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       character_set_schema
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Applies to a feature not available in
      <span class="productname">
       PostgreSQL
      </span>
-</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       character_set_name
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Applies to a feature not available in
      <span class="productname">
       PostgreSQL
      </span>
-</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       collation_catalog
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the database containing the collation of the column (always the current database), null if default or the data type of the column is not collatable
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       collation_schema
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the schema containing the collation of the column, null if default or the data type of the column is not collatable
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       collation_name
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the collation of the column, null if default or the data type of the column is not collatable
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       domain_catalog
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If the column has a domain type, the name of the database that the domain is defined in (always the current database), else null.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       domain_schema
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If the column has a domain type, the name of the schema that the domain is defined in, else null.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       domain_name
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If the column has a domain type, the name of the domain, else null.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       udt_catalog
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the database that the column data type (the underlying type of the domain, if applicable) is defined in (always the current database)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       udt_schema
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the schema that the column data type (the underlying type of the domain, if applicable) is defined in
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       udt_name
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Name of the column data type (the underlying type of the domain, if applicable)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       scope_catalog
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Applies to a feature not available in
      <span class="productname">
       PostgreSQL
      </span>
-</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       scope_schema
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Applies to a feature not available in
      <span class="productname">
       PostgreSQL
      </span>
-</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       scope_name
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Applies to a feature not available in
      <span class="productname">
       PostgreSQL
      </span>
-</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       maximum_cardinality
      </code>
-<code class="type">
+     <code class="type">
       cardinal_number
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Always null, because arrays always have unlimited maximum cardinality in
      <span class="productname">
       PostgreSQL
      </span>
-</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       dtd_identifier
      </code>
-<code class="type">
+     <code class="type">
       sql_identifier
      </code>
-</p>
-<p>
+    </p>
+    <p>
      An identifier of the data type descriptor of the column, unique among the data type descriptors pertaining to the table.  This is mainly useful for joining with other instances of such identifiers.  (The specific format of the identifier is not defined and not guaranteed to remain the same in future versions.)
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       is_self_referencing
      </code>
-<code class="type">
+     <code class="type">
       yes_or_no
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Applies to a feature not available in
      <span class="productname">
       PostgreSQL
      </span>
-</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       is_identity
      </code>
-<code class="type">
+     <code class="type">
       yes_or_no
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If the column is an identity column, then
      <code class="literal">
       YES
@@ -671,19 +665,19 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
      </code>
      .
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       identity_generation
      </code>
-<code class="type">
+     <code class="type">
       character_data
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If the column is an identity column, then
      <code class="literal">
       ALWAYS
@@ -694,79 +688,79 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
      </code>
      , reflecting the definition of the column.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       identity_start
      </code>
-<code class="type">
+     <code class="type">
       character_data
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If the column is an identity column, then the start value of the internal sequence, else null.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       identity_increment
      </code>
-<code class="type">
+     <code class="type">
       character_data
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If the column is an identity column, then the increment of the internal sequence, else null.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       identity_maximum
      </code>
-<code class="type">
+     <code class="type">
       character_data
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If the column is an identity column, then the maximum value of the internal sequence, else null.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       identity_minimum
      </code>
-<code class="type">
+     <code class="type">
       character_data
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If the column is an identity column, then the minimum value of the internal sequence, else null.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       identity_cycle
      </code>
-<code class="type">
+     <code class="type">
       yes_or_no
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If the column is an identity column, then
      <code class="literal">
       YES
@@ -777,19 +771,19 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
      </code>
      if it does not; otherwise null.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       is_generated
      </code>
-<code class="type">
+     <code class="type">
       character_data
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If the column is a generated column, then
      <code class="literal">
       ALWAYS
@@ -800,52 +794,54 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
      </code>
      .
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       generation_expression
      </code>
-<code class="type">
+     <code class="type">
       character_data
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If the column is a generated column, then the generation expression, else null.
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       is_updatable
      </code>
-<code class="type">
+     <code class="type">
       yes_or_no
      </code>
-</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     <code class="literal">
       YES
      </code>
      if the column is updatable,
      <code class="literal">
       NO
      </code>
-     if not (Columns in base tables are always
-       updatable, columns in views not necessarily)
+     if not (Columns in base tables are always updatable, columns in views not necessarily)
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Como os tipos de dados podem ser definidos de várias maneiras no SQL, e o PostgreSQL contém maneiras adicionais de definir tipos de dados, sua representação no esquema de informações pode ser um tanto difícil. A coluna `data_type` é suposta identificar o tipo embutido subjacente da coluna. No PostgreSQL, isso significa que o tipo é definido no esquema de catálogo do sistema `pg_catalog`. Esta coluna pode ser útil se a aplicação puder lidar com os tipos embutidos conhecidos especialmente (por exemplo, formatar os tipos numéricos de maneira diferente ou usar os dados nas colunas de precisão). As colunas `udt_name`, `udt_schema` e `udt_catalog` sempre identificam o tipo de dados subjacente da coluna, mesmo que a coluna seja baseada em um domínio. (Como o PostgreSQL trata os tipos embutidos como tipos definidos pelo usuário, os tipos embutidos aparecem aqui também. Esta é uma extensão do padrão SQL.) Essas colunas devem ser usadas se uma aplicação quiser processar dados de maneira diferente de acordo com o tipo, porque, nesse caso, não importaria se a coluna realmente é baseada em um domínio. Se a coluna é baseada em um domínio, a identidade do domínio é armazenada nas colunas `domain_name`, `domain_schema` e `domain_catalog`. Se você quiser combinar colunas com seus tipos de dados associados e tratar os domínios como tipos separados, você poderia escrever `coalesce(domain_name, udt_name)`, etc.

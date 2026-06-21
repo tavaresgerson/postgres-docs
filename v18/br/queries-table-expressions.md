@@ -1,9 +1,9 @@
 ## 7.2. Expressões de tabela [#](#QUERIES-TABLE-EXPRESSIONS)
 
-* [7.2.1. A cláusula `FROM`(queries-table-expressions.md#QUERIES-FROM)
-* [7.2.2. A cláusula `WHERE`(queries-table-expressions.md#QUERIES-WHERE)
-* [7.2.3. As cláusulas `GROUP BY` e `HAVING`(queries-table-expressions.md#QUERIES-GROUP)
-* [7.2.4. `GROUPING SETS`, `CUBE` e `ROLLUP`(queries-table-expressions.md#QUERIES-GROUPING-SETS)
+* [7.2.1. A cláusula `FROM`](queries-table-expressions.md#QUERIES-FROM)
+* [7.2.2. A cláusula `WHERE`](queries-table-expressions.md#QUERIES-WHERE)
+* [7.2.3. As cláusulas `GROUP BY` e `HAVING`](queries-table-expressions.md#QUERIES-GROUP)
+* [7.2.4. `GROUPING SETS`, `CUBE` e `ROLLUP`](queries-table-expressions.md#QUERIES-GROUPING-SETS)
 * [7.2.5. Processamento de função de janela](queries-table-expressions.md#QUERIES-WINDOW)
 
 Uma expressão de tabela calcula uma tabela. A expressão de tabela contém uma cláusula `FROM` que é opcionalmente seguida por cláusulas `WHERE`, `GROUP BY` e `HAVING`. Expressões triviais de tabela simplesmente se referem a uma tabela em disco, uma chamada tabela base, mas expressões mais complexas podem ser usadas para modificar ou combinar tabelas base de várias maneiras.
@@ -37,7 +37,7 @@ As junções de todos os tipos podem ser encadeadas ou aninhadas: ou *`T1`* e *`
 **Tipos de Inscrição**
 
 Join cruzado: ``` T1 CROSS JOIN T2
-    ```
+```
 
 Para cada combinação possível de linhas de
 *`T1`* e
@@ -49,32 +49,32 @@ as tabelas tiverem N e M linhas respectivamente, a tabela
 unificada terá N * M linhas.
 
 `FROM T1 CROSS JOIN
-    T2` é equivalente a
-    `FROM T1 INNER JOIN
-    T2 ON TRUE` (veja abaixo).
-    É também equivalente a
-    `FROM T1,
-    T2`.
+T2` é equivalente a
+`FROM T1 INNER JOIN
+T2 ON TRUE` (veja abaixo).
+É também equivalente a
+`FROM T1,
+T2`.
 
 ### Nota
 
 Essa última equivalência não se aplica exatamente quando aparecem mais de duas tabelas, porque `JOIN` se liga mais fortemente do que vírgula. Por exemplo
 `FROM T1 CROSS JOIN
-    T2 INNER JOIN T3
-    ON condition`
+T2 INNER JOIN T3
+ON condition`
 não é o mesmo que
 `FROM T1,
-    T2 INNER JOIN T3
-    ON condition`
+T2 INNER JOIN T3
+ON condition`
 porque o *`condition`* pode
 referenciar *`T1`* no primeiro caso, mas não
 no segundo.
 
 Conexões qualificadas: ```
-    T1 { [INNER] | { LEFT | RIGHT | FULL } [OUTER] } JOIN T2 ON boolean_expression
-    T1 { [INNER] | { LEFT | RIGHT | FULL } [OUTER] } JOIN T2 USING ( join column list )
-    T1 NATURAL { [INNER] | { LEFT | RIGHT | FULL } [OUTER] } JOIN T2
-    ```
+T1 { [INNER] | { LEFT | RIGHT | FULL } [OUTER] } JOIN T2 ON boolean_expression
+T1 { [INNER] | { LEFT | RIGHT | FULL } [OUTER] } JOIN T2 USING ( join column list )
+T1 NATURAL { [INNER] | { LEFT | RIGHT | FULL } [OUTER] } JOIN T2
+```
 
 As palavras `INNER` e `OUTER` são opcionais em todas as formas. `INNER` é o padrão; `LEFT`, `RIGHT` e `FULL` implicam uma junção externa.
 
@@ -285,7 +285,7 @@ não é válido; o alias da tabela `a` não é visível fora do alias `c`.
 
 #### 7.2.1.3. Subconsultas [#](#QUERIES-SUBQUERIES)
 
-As subconsultas que especificam uma tabela derivada devem ser fechadas entre parênteses. Elas podem receber um nome de alias de tabela e, opcionalmente, nomes de alias de coluna (como em [Seção 7.2.1.2] [(queries-table-expressions.md#QUERIES-TABLE-ALIASES "7.2.1.2. Table and Column Aliases")]). Por exemplo:
+As subconsultas que especificam uma tabela derivada devem ser fechadas entre parênteses. Elas podem receber um nome de alias de tabela e, opcionalmente, nomes de alias de coluna (como em [Seção 7.2.1.2](queries-table-expressions.md#QUERIES-TABLE-ALIASES)). Por exemplo:
 
 ```
 FROM (SELECT * FROM table1) AS alias_name
@@ -300,7 +300,7 @@ FROM (VALUES ('anne', 'smith'), ('bob', 'jones'), ('joe', 'blow'))
      AS names(first, last)
 ```
 
-Novamente, um alias de tabela é opcional. Atribuir nomes de alias às colunas da lista `VALUES` é opcional, mas é uma boa prática. Para mais informações, consulte [Seção 7.7][(queries-values.md "7.7. VALUES Lists")].
+Novamente, um alias de tabela é opcional. Atribuir nomes de alias às colunas da lista `VALUES` é opcional, mas é uma boa prática. Para mais informações, consulte [Seção 7.7](queries-values.md).
 
 De acordo com o padrão SQL, um nome de alias de tabela deve ser fornecido para uma subconsulta. O PostgreSQL permite que `AS` e o alias sejam omitidos, mas escrever um é uma boa prática em código SQL que pode ser exportado para outro sistema.
 
@@ -369,7 +369,7 @@ SELECT *
     WHERE proname LIKE 'bytea%';
 ```
 
-A função [dblink][(contrib-dblink-function.md "dblink")] (parte do módulo [dblink][(dblink.md "F.11. dblink — connect to other PostgreSQL databases")]) executa uma consulta remota. Ela é declarada para retornar `record` porque pode ser usada para qualquer tipo de consulta. O conjunto de colunas reais deve ser especificado na consulta de chamada para que o analisador saiba, por exemplo, para o que `*` deve ser expandido.
+A função [dblink](contrib-dblink-function.md) (parte do módulo [dblink](dblink.md)) executa uma consulta remota. Ela é declarada para retornar `record` porque pode ser usada para qualquer tipo de consulta. O conjunto de colunas reais deve ser especificado na consulta de chamada para que o analisador saiba, por exemplo, para o que `*` deve ser expandido.
 
 Este exemplo usa `ROWS FROM`:
 
@@ -541,11 +541,11 @@ Em geral, se uma tabela for agrupada, as colunas que não estão listadas em `GR
 (3 rows)
 ```
 
-Aqui `sum` é uma função agregada que calcula um único valor sobre o grupo inteiro. Mais informações sobre as funções agregadas disponíveis podem ser encontradas em [Seção 9.21][(functions-aggregate.md "9.21. Aggregate Functions")].
+Aqui `sum` é uma função agregada que calcula um único valor sobre o grupo inteiro. Mais informações sobre as funções agregadas disponíveis podem ser encontradas em [Seção 9.21](functions-aggregate.md).
 
 ### DICA
 
-O agrupamento sem expressões agregadas calcula efetivamente o conjunto de valores distintos em uma coluna. Isso também pode ser alcançado usando a cláusula `DISTINCT` (consulte [Seção 7.3.3][(queries-select-lists.md#QUERIES-DISTINCT "7.3.3. DISTINCT")]).
+O agrupamento sem expressões agregadas calcula efetivamente o conjunto de valores distintos em uma coluna. Isso também pode ser alcançado usando a cláusula `DISTINCT` (consulte [Seção 7.3.3](queries-select-lists.md#QUERIES-DISTINCT)).
 
 Aqui está outro exemplo: calcula as vendas totais para cada produto (em vez das vendas totais de todos os produtos):
 
@@ -628,7 +628,7 @@ Operações de agrupamento mais complexas do que as descritas acima são possív
 
 Cada sublista de `GROUPING SETS` pode especificar zero ou mais colunas ou expressões e é interpretada da mesma maneira como se estivesse diretamente na cláusula `GROUP BY`. Um conjunto de agrupamento vazio significa que todas as linhas são agregadas a um único grupo (que é exibido mesmo se não houver linhas de entrada), conforme descrito acima para o caso de funções agregadas sem cláusula `GROUP BY`.
 
-As referências às colunas ou expressões de agrupamento são substituídas por valores nulos nas linhas de resultado para conjuntos de agrupamento nos quais essas colunas não aparecem. Para distinguir qual agrupamento uma determinada linha de saída resultou, consulte [Tabela 9.66][(functions-aggregate.md#FUNCTIONS-GROUPING-TABLE "Table 9.66. Grouping Operations")].
+As referências às colunas ou expressões de agrupamento são substituídas por valores nulos nas linhas de resultado para conjuntos de agrupamento nos quais essas colunas não aparecem. Para distinguir qual agrupamento uma determinada linha de saída resultou, consulte [Tabela 9.66](functions-aggregate.md#FUNCTIONS-GROUPING-TABLE).
 
 Uma notação abreviada é fornecida para especificar dois tipos comuns de conjunto de agrupamento. Uma cláusula na forma
 
@@ -778,7 +778,7 @@ O construtor `(a, b)` é normalmente reconhecido em expressões como um [constru
 
 ### 7.2.5. Processamento de função de janela [#](#QUERIES-WINDOW)
 
-Se a consulta contiver quaisquer funções de janela (consulte [Seção 3.5][(tutorial-window.md "3.5. Window Functions")], [Seção 9.22][(functions-window.md "9.22. Window Functions")] e [Seção 4.2.8][(sql-expressions.md#SYNTAX-WINDOW-FUNCTIONS "4.2.8. Window Function Calls")]), essas funções são avaliadas após qualquer agrupamento, agregação e filtragem de `HAVING` ser realizada. Ou seja, se a consulta usa quaisquer agregados, `GROUP BY` ou `HAVING`, então as linhas vistas pelas funções de janela são as linhas de grupo em vez das linhas originais da tabela de `FROM`/`WHERE`.
+Se a consulta contiver quaisquer funções de janela (consulte [Seção 3.5](tutorial-window.md), [Seção 9.22](functions-window.md) e [Seção 4.2.8](sql-expressions.md#SYNTAX-WINDOW-FUNCTIONS)), essas funções são avaliadas após qualquer agrupamento, agregação e filtragem de `HAVING` ser realizada. Ou seja, se a consulta usa quaisquer agregados, `GROUP BY` ou `HAVING`, então as linhas vistas pelas funções de janela são as linhas de grupo em vez das linhas originais da tabela de `FROM`/`WHERE`.
 
 Quando várias funções de janela são usadas, todas as funções de janela que possuem cláusulas equivalentes `PARTITION BY` e `ORDER BY` em suas definições de janela são garantidas para ver a mesma ordem das linhas de entrada, mesmo que o `ORDER BY` não determine de forma única a ordem. No entanto, não há garantias sobre a avaliação de funções que têm especificações diferentes `PARTITION BY` ou `ORDER BY`. (Nesses casos, geralmente é necessário um passo de ordenação entre as passagens das avaliações de funções de janela, e a ordenação não é garantida para preservar a ordem das linhas que seu `ORDER BY` vê como equivalentes.)
 

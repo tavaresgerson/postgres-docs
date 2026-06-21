@@ -1,14 +1,14 @@
 ## 14.4. Populando um Banco de Dados [#](#POPULATE)
 
-* [14.4.1. Desativar o Autocommit][(populate.md#DISABLE-AUTOCOMMIT)]
-* [14.4.2. Usar `COPY`][(populate.md#POPULATE-COPY-FROM)]
-* [14.4.3. Remover Índices][(populate.md#POPULATE-RM-INDEXES)]
-* [14.4.4. Remover Restrições de Chave Estrangeira][(populate.md#POPULATE-RM-FKEYS)]
-* [14.4.5. Aumentar `maintenance_work_mem`][(populate.md#POPULATE-WORK-MEM)]
-* [14.4.6. Aumentar `max_wal_size`][(populate.md#POPULATE-MAX-WAL-SIZE)]
-* [14.4.7. Desativar a Replicação Arquival e em Streaming de WAL][(populate.md#POPULATE-PITR)]
-* [14.4.8. Executar `ANALYZE` Posteriormente][(populate.md#POPULATE-ANALYZE)]
-* [14.4.9. Algumas Notas sobre pg_dump][(populate.md#POPULATE-PG-DUMP)]
+* [14.4.1. Desativar o Autocommit](populate.md#DISABLE-AUTOCOMMIT)
+* [14.4.2. Usar `COPY`](populate.md#POPULATE-COPY-FROM)
+* [14.4.3. Remover Índices](populate.md#POPULATE-RM-INDEXES)
+* [14.4.4. Remover Restrições de Chave Estrangeira](populate.md#POPULATE-RM-FKEYS)
+* [14.4.5. Aumentar `maintenance_work_mem`](populate.md#POPULATE-WORK-MEM)
+* [14.4.6. Aumentar `max_wal_size`](populate.md#POPULATE-MAX-WAL-SIZE)
+* [14.4.7. Desativar a Replicação Arquival e em Streaming de WAL](populate.md#POPULATE-PITR)
+* [14.4.8. Executar `ANALYZE` Posteriormente](populate.md#POPULATE-ANALYZE)
+* [14.4.9. Algumas Notas sobre pg_dump](populate.md#POPULATE-PG-DUMP)
 
 Pode ser necessário inserir uma grande quantidade de dados ao primeiro preenchimento de um banco de dados. Esta seção contém algumas sugestões sobre como tornar esse processo o mais eficiente possível.
 
@@ -40,11 +40,11 @@ Além disso, quando você carrega dados em uma tabela com restrições de chave 
 
 ### 14.4.5. Aumentar `maintenance_work_mem` [#](#POPULATE-WORK-MEM)
 
-Aumentar temporariamente a variável de configuração [maintenance_work_mem][(runtime-config-resource.md#GUC-MAINTENANCE-WORK-MEM)] ao carregar grandes quantidades de dados pode levar a um desempenho melhor. Isso ajudará a acelerar os comandos `CREATE INDEX` e os comandos `ALTER TABLE ADD FOREIGN KEY`. Não fará muito para o próprio `COPY`, então este conselho é útil apenas quando você está usando uma ou ambas as técnicas acima.
+Aumentar temporariamente a variável de configuração [maintenance_work_mem](runtime-config-resource.md#GUC-MAINTENANCE-WORK-MEM) ao carregar grandes quantidades de dados pode levar a um desempenho melhor. Isso ajudará a acelerar os comandos `CREATE INDEX` e os comandos `ALTER TABLE ADD FOREIGN KEY`. Não fará muito para o próprio `COPY`, então este conselho é útil apenas quando você está usando uma ou ambas as técnicas acima.
 
 ### 14.4.6. Aumentar `max_wal_size` [#](#POPULATE-MAX-WAL-SIZE)
 
-Aumentar temporariamente a variável de configuração [max_wal_size][(runtime-config-wal.md#GUC-MAX-WAL-SIZE)] também pode tornar as cargas de dados grandes mais rápidas. Isso ocorre porque carregar uma grande quantidade de dados no PostgreSQL fará com que os pontos de verificação ocorram com mais frequência do que a frequência normal de verificação (especificada pela variável de configuração `checkpoint_timeout`). Sempre que ocorre um ponto de verificação, todas as páginas sujas devem ser descarregadas no disco. Ao aumentar temporariamente [[`max_wal_size`] durante cargas de dados em massa, o número de pontos de verificação necessários pode ser reduzido.
+Aumentar temporariamente a variável de configuração [max_wal_size](runtime-config-wal.md#GUC-MAX-WAL-SIZE) também pode tornar as cargas de dados grandes mais rápidas. Isso ocorre porque carregar uma grande quantidade de dados no PostgreSQL fará com que os pontos de verificação ocorram com mais frequência do que a frequência normal de verificação (especificada pela variável de configuração `checkpoint_timeout`). Sempre que ocorre um ponto de verificação, todas as páginas sujas devem ser descarregadas no disco. Ao aumentar temporariamente [[`max_wal_size`] durante cargas de dados em massa, o número de pontos de verificação necessários pode ser reduzido.
 
 ### 14.4.7. Desativar a Replicação de Arquivo e Streaming WAL [#](#POPULATE-PITR)
 
@@ -54,7 +54,7 @@ Além de evitar que o arquivador ou o remetente WAL processe os dados do WAL, fa
 
 ### 14.4.8. Execute `ANALYZE` Posteriormente [#](#POPULATE-ANALYZE)
 
-Sempre que você tiver alterado significativamente a distribuição dos dados em uma tabela, é altamente recomendável executar `ANALYZE` (sql-analyze.md "ANALYZE"). Isso inclui o carregamento em massa de grandes quantidades de dados na tabela. Executar `ANALYZE` (ou `VACUUM ANALYZE`) garante que o planejador tenha estatísticas atualizadas sobre a tabela. Sem estatísticas ou estatísticas obsoletas, o planejador pode tomar decisões ruins durante o planejamento de consultas, levando a um desempenho ruim em quaisquer tabelas com estatísticas imprecisas ou inexistentes. Note que, se o daemon de autovazamento estiver habilitado, ele pode executar `ANALYZE` automaticamente; consulte [Seção 24.1.3][(routine-vacuuming.md#VACUUM-FOR-STATISTICS "24.1.3. Updating Planner Statistics")] e [Seção 24.1.6][(routine-vacuuming.md#AUTOVACUUM "24.1.6. The Autovacuum Daemon")] para mais informações.
+Sempre que você tiver alterado significativamente a distribuição dos dados em uma tabela, é altamente recomendável executar `ANALYZE` (sql-analyze.md "ANALYZE"). Isso inclui o carregamento em massa de grandes quantidades de dados na tabela. Executar `ANALYZE` (ou `VACUUM ANALYZE`) garante que o planejador tenha estatísticas atualizadas sobre a tabela. Sem estatísticas ou estatísticas obsoletas, o planejador pode tomar decisões ruins durante o planejamento de consultas, levando a um desempenho ruim em quaisquer tabelas com estatísticas imprecisas ou inexistentes. Note que, se o daemon de autovazamento estiver habilitado, ele pode executar `ANALYZE` automaticamente; consulte [Seção 24.1.3](routine-vacuuming.md#VACUUM-FOR-STATISTICS) e [Seção 24.1.6](routine-vacuuming.md#AUTOVACUUM) para mais informações.
 
 ### 14.4.9. Algumas notas sobre pg_dump [#](#POPULATE-PG-DUMP)
 

@@ -22,7 +22,7 @@ A partir do PostgreSQL 9.1, a maioria dos linguagens procedimentais foi transfor
 
 *`name`*: O nome de uma linguagem procedural existente.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem da linguagem (como funções na linguagem), e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem da linguagem (como funções na linguagem), e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Não se afaste do idioma se algum objeto depender dele. Esse é o padrão.
 

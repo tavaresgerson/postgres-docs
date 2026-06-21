@@ -13,4 +13,4 @@ As instruções SQL podem, intencionalmente ou não, exigir a mistura de diferen
 
 Em muitos casos, o usuário não precisa entender os detalhes do mecanismo de conversão de tipo. No entanto, as conversões implícitas realizadas pelo PostgreSQL podem afetar os resultados de uma consulta. Quando necessário, esses resultados podem ser ajustados usando *conversão explícita* de tipo.
 
-Este capítulo apresenta os mecanismos e convenções de conversão de tipos do PostgreSQL. Consulte as seções relevantes em [Capítulo 8][(datatype.md "Chapter 8. Data Types")] e [Capítulo 9][(functions.md "Chapter 9. Functions and Operators")] para obter mais informações sobre tipos de dados específicos e funções e operadores permitidos.
+Este capítulo apresenta os mecanismos e convenções de conversão de tipos do PostgreSQL. Consulte as seções relevantes em [Capítulo 8](datatype.md) e [Capítulo 9](functions.md) para obter mais informações sobre tipos de dados específicos e funções e operadores permitidos.

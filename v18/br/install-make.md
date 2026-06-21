@@ -3,7 +3,7 @@
 * [17.3.1. Versão Breve](install-make.md#INSTALL-SHORT-MAKE)
 * [17.3.2. Procedimento de Instalação](install-make.md#INSTALL-PROCEDURE-MAKE)
 * [17.3.3. Opções de `configure`](install-make.md#CONFIGURE-OPTIONS)
-* [17.3.4. Variáveis Ambientais de `configure`(install-make.md#CONFIGURE-ENVVARS)
+* [17.3.4. Variáveis Ambientais de `configure`](install-make.md#CONFIGURE-ENVVARS)
 
 ### 17.3.1. Versão Breve [#](#INSTALL-SHORT-MAKE)
 
@@ -30,96 +30,96 @@ A versão longa é o restante desta seção.
 
 O primeiro passo do procedimento de instalação é configurar a árvore de origem do seu sistema e escolher as opções que você deseja. Isso é feito executando o script `configure`. Para uma instalação padrão, basta digitar:
 
-   ```
-   ./configure
-   ```
+```
+./configure
+```
 
 Este script executará uma série de testes para determinar os valores de várias variáveis dependentes do sistema e detectará quaisquer peculiaridades do seu sistema operacional. Por fim, criará vários arquivos na árvore de construção para registrar o que encontrou.
 
 Você também pode executar `configure` em um diretório fora da árvore de origem e, em seguida, construir lá, se quiser manter o diretório de construção separado dos arquivos de origem originais. Esse procedimento é chamado de *VPATH* build. Aqui está como fazer:
 
-   ```
-   mkdir build_dir
-   cd build_dir
-   /path/to/source/tree/configure [options go here]
-   make
-   ```
+```
+mkdir build_dir
+cd build_dir
+/path/to/source/tree/configure [options go here]
+make
+```
 
 A configuração padrão irá construir o servidor e as ferramentas, bem como todas as aplicações e interfaces de cliente que requerem apenas um compilador C. Todos os arquivos serão instalados por padrão em `/usr/local/pgsql`.
 
 Você pode personalizar o processo de construção e instalação fornecendo uma ou mais opções de linha de comando para `configure`. Normalmente, você deve personalizar a localização de instalação ou o conjunto de recursos opcionais que são construídos. `configure` tem um grande número de opções, que são descritas em [Seção 17.3.3](install-make.md#CONFIGURE-OPTIONS "17.3.3. configure Options").
 
-Além disso, `configure` responde a determinadas variáveis de ambiente, conforme descrito na [Seção 17.3.4][(install-make.md#CONFIGURE-ENVVARS "17.3.4. configure Environment Variables")]. Essas variáveis oferecem maneiras adicionais de personalizar a configuração.
+Além disso, `configure` responde a determinadas variáveis de ambiente, conforme descrito na [Seção 17.3.4](install-make.md#CONFIGURE-ENVVARS). Essas variáveis oferecem maneiras adicionais de personalizar a configuração.
 
 Para iniciar a construção, digite qualquer uma das seguintes opções:
 
-   ```
-   make
-   make all
-   ```
+```
+make
+make all
+```
 
 (Lembre-se de usar o GNU make.) A construção levará alguns minutos, dependendo do seu hardware.
 
 Se você quer construir tudo o que pode ser construído, incluindo a documentação (HTML e páginas do manual) e os módulos adicionais (`contrib`), digite em vez disso:
 
-   ```
-   make world
-   ```
+```
+make world
+```
 
 Se você quer construir tudo o que pode ser construído, incluindo os módulos adicionais (`contrib`), mas sem a documentação, digite em vez disso:
 
-   ```
-   make world-bin
-   ```
+```
+make world-bin
+```
 
 Se você deseja invocar a compilação a partir de outro makefile em vez de manualmente, você deve desativar `MAKELEVEL` ou configurá-lo como zero, por exemplo, da seguinte forma:
 
-   ```
-   build-postgresql:
-           $(MAKE) -C postgresql MAKELEVEL=0 all
-   ```
+```
+build-postgresql:
+        $(MAKE) -C postgresql MAKELEVEL=0 all
+```
 
 A falha em fazer isso pode levar a mensagens de erro estranhas, geralmente sobre arquivos de cabeçalho ausentes. 3. **Testes de Regressão**
 
 Se você quiser testar o servidor recém-construído antes de instalá-lo, pode executar os testes de regressão neste ponto. Os testes de regressão são um conjunto de testes para verificar se o PostgreSQL funciona na sua máquina da maneira que os desenvolvedores esperavam. Tipo:
 
-   ```
-   make check
-   ```
+```
+make check
+```
 
-(Isso não funcionará como root; faça isso como um usuário não privilegiado.) Consulte o [Capítulo 31][(regress.md "Chapter 31. Regression Tests")] para obter informações detalhadas sobre a interpretação dos resultados do teste. Você pode repetir este teste em qualquer momento posterior, emitindo o mesmo comando.
+(Isso não funcionará como root; faça isso como um usuário não privilegiado.) Consulte o [Capítulo 31](regress.md) para obter informações detalhadas sobre a interpretação dos resultados do teste. Você pode repetir este teste em qualquer momento posterior, emitindo o mesmo comando.
 
 ### Nota
 
-Se você está atualizando um sistema existente, não se esqueça de ler [Seção 18.6][(upgrading.md "18.6. Upgrading a PostgreSQL Cluster")], que tem instruções sobre atualização de um cluster.
+Se você está atualizando um sistema existente, não se esqueça de ler [Seção 18.6](upgrading.md), que tem instruções sobre atualização de um cluster.
 
 Para instalar o PostgreSQL, digite:
 
-   ```
-   make install
-   ```
+```
+make install
+```
 
-Isso instalará os arquivos nos diretórios que foram especificados em [Passo 1] [(install-make.md#CONFIGURE "Configuration")]. Certifique-se de que você tem permissões apropriadas para escrever nessa área. Normalmente, você precisa fazer esse passo como root. Alternativamente, você pode criar os diretórios de destino com antecedência e organizar para que as permissões apropriadas sejam concedidas.
+Isso instalará os arquivos nos diretórios que foram especificados em [Passo 1](install-make.md#CONFIGURE). Certifique-se de que você tem permissões apropriadas para escrever nessa área. Normalmente, você precisa fazer esse passo como root. Alternativamente, você pode criar os diretórios de destino com antecedência e organizar para que as permissões apropriadas sejam concedidas.
 
 Para instalar a documentação (HTML e páginas do manual), digite:
 
-   ```
-   make install-docs
-   ```
+```
+make install-docs
+```
 
 Se você construiu o mundo acima, digite em vez disso:
 
-   ```
-   make install-world
-   ```
+```
+make install-world
+```
 
 Isso também instala a documentação.
 
 Se você construiu o mundo sem a documentação acima, digite em vez disso:
 
-   ```
-   make install-world-bin
-   ```
+```
+make install-world-bin
+```
 
 Você pode usar `make install-strip` em vez de `make install` para remover os arquivos executáveis e as bibliotecas conforme eles são instalados. Isso economizará algum espaço. Se você construiu com suporte de depuração, a remoção efetivamente removerá o suporte de depuração, então isso deve ser feito apenas se a depuração não for mais necessária. `install-strip` tenta fazer um trabalho razoável para economizar espaço, mas não tem conhecimento perfeito sobre como remover todos os bytes desnecessários de um arquivo executável, então se você quiser economizar todo o espaço em disco que puder, terá que fazer trabalho manual.
 
@@ -127,12 +127,12 @@ A instalação padrão fornece todos os arquivos de cabeçalho necessários para
 
 **Instalação exclusiva para cliente:** Se você deseja instalar apenas as aplicações do cliente e as bibliotecas de interface, então você pode usar esses comandos:
 
-   ```
-   make -C src/bin install
-   make -C src/include install
-   make -C src/interfaces install
-   make -C doc install
-   ```
+```
+make -C src/bin install
+make -C src/include install
+make -C src/interfaces install
+make -C doc install
+```
 
 `src/bin` tem alguns binários para uso exclusivo de servidor, mas eles são pequenos.
 
@@ -180,7 +180,7 @@ Preocupamo-nos em tornar possível instalar o PostgreSQL em locais de instalaç�
 
 #### 17.3.3.2. Características do PostgreSQL [#](#CONFIGURE-OPTIONS-FEATURES)
 
-As opções descritas nesta seção permitem a construção de várias funcionalidades do PostgreSQL que não são construídas por padrão. A maioria dessas opções não são padrão apenas porque requerem software adicional, conforme descrito em [Seção 17.1][(install-requirements.md "17.1. Requirements")].
+As opções descritas nesta seção permitem a construção de várias funcionalidades do PostgreSQL que não são construídas por padrão. A maioria dessas opções não são padrão apenas porque requerem software adicional, conforme descrito em [Seção 17.1](install-requirements.md).
 
 `--enable-nls[=LANGUAGES]` [#](#CONFIGURE-OPTION-ENABLE-NLS): Habilita o suporte a idioma nativo (NLS), ou seja, a capacidade de exibir as mensagens de um programa em um idioma diferente do inglês. *`LANGUAGES`* é uma lista opcional de códigos separados por espaço das línguas que você deseja que sejam suportados, por exemplo, `--enable-nls='de fr'`. (A interseção entre sua lista e o conjunto de traduções fornecidas automaticamente será calculada automaticamente.) Se você não especificar uma lista, todas as traduções disponíveis serão instaladas.
 
@@ -194,12 +194,13 @@ Para usar essa opção, você precisará de uma implementação da API Gettext.
 
 `--with-tclconfig=DIRECTORY` [#](#CONFIGURE-OPTION-WITH-TCLCONFIG): O Tcl instala o arquivo `tclConfig.sh`, que contém informações de configuração necessárias para construir módulos que interagem com o Tcl. Esse arquivo é normalmente encontrado automaticamente em um local bem conhecido, mas se você deseja usar uma versão diferente do Tcl, pode especificar o diretório em que procurar `tclConfig.sh`.
 
-`--with-llvm` [#](#CONFIGURE-WITH-LLVM): Construa com suporte para compilação JIT (Just-In-Time) baseada em LLVM (consulte o Capítulo 30 [(jit.md "Chapter 30. Just-in-Time Compilation (JIT)]). Isso requer que a biblioteca LLVM seja instalada. A versão mínima necessária do LLVM é atualmente 14.
+`--with-llvm` [#](#CONFIGURE-WITH-LLVM): Construa com suporte para compilação JIT (Just-In-Time) baseada em LLVM (consulte o [Capítulo 30](jit.md)). Isso requer que a biblioteca LLVM seja instalada. A versão mínima necessária do LLVM é atualmente 14.
 
 `llvm-config` será usado para encontrar as opções de compilação necessárias. `llvm-config` será procurado em seu `PATH`. Se isso não resultar no programa desejado, use `LLVM_CONFIG` para especificar um caminho para o `llvm-config` correto. Por exemplo
 
-``` ./configure ... --with-llvm LLVM_CONFIG='/path/to/llvm/bin/llvm-config'
-    ```
+```
+./configure ... --with-llvm LLVM_CONFIG='/path/to/llvm/bin/llvm-config'
+```
 
 O suporte ao LLVM requer um compilador compatível `clang` (especificado, se necessário, usando a variável de ambiente `CLANG`, e) e um compilador C++ em funcionamento (especificado, se necessário, usando a variável de ambiente `CXX`).
 
@@ -317,26 +318,23 @@ Para apontar para o programa `dtrace`, a variável de ambiente `DTRACE` pode ser
 
 Opções adicionais de linha de comando para o programa `dtrace` podem ser especificadas na variável de ambiente `DTRACEFLAGS`. Em Solaris, para incluir suporte ao DTrace em um binário de 64 bits, você deve especificar `DTRACEFLAGS="-64"`. Por exemplo, usando o compilador GCC:
 
-``` ./configure CC='gcc -m64' --enable-dtrace DTRACEFLAGS='-64' ...
-    ```
+```
+./configure CC='gcc -m64' --enable-dtrace DTRACEFLAGS='-64' ...
+```
 
 Usando o compilador da Sun:
 
-    ```
-    ./configure CC='/opt/SUNWspro/bin/cc -xtarget=native64' --enable-dtrace DTRACEFLAGS='-64' ...
-    ```
+```
+./configure CC='/opt/SUNWspro/bin/cc -xtarget=native64' --enable-dtrace DTRACEFLAGS='-64' ...
+```
 
-`--enable-injection-points` [#](#CONFIGURE-OPTION-ENABLE-INJECTION-POINTS)
-:   Compila o PostgreSQL com suporte para pontos de injeção no servidor. Os pontos de injeção permitem executar código definido pelo usuário dentro do servidor em caminhos de código pré-definidos. Isso ajuda a testar e investigar cenários de concorrência de maneira controlada. Esta opção é desativada por padrão. Consulte [Seção 36.10.14](xfunc-c.md#XFUNC-ADDIN-INJECTION-POINTS "36.10.14. Injection Points") para mais detalhes. Esta opção é destinada a ser usada apenas por desenvolvedores para testes.
+`--enable-injection-points` [#](#CONFIGURE-OPTION-ENABLE-INJECTION-POINTS): Compila o PostgreSQL com suporte para pontos de injeção no servidor. Os pontos de injeção permitem executar código definido pelo usuário dentro do servidor em caminhos de código pré-definidos. Isso ajuda a testar e investigar cenários de concorrência de maneira controlada. Esta opção é desativada por padrão. Consulte [Seção 36.10.14](xfunc-c.md#XFUNC-ADDIN-INJECTION-POINTS "36.10.14. Injection Points") para mais detalhes. Esta opção é destinada a ser usada apenas por desenvolvedores para testes.
 
-`--with-segsize-blocks=SEGSIZE_BLOCKS` [#](#CONFIGURE-OPTION-WITH-SEGSIZE-BLOCKS)
-: Especifique o tamanho do segmento de relação em blocos. Se ambos `--with-segsize` e esta opção forem especificados, esta opção vence.
-Esta opção é apenas para desenvolvedores, para testar código relacionado ao segmento.
+`--with-segsize-blocks=SEGSIZE_BLOCKS` [#](#CONFIGURE-OPTION-WITH-SEGSIZE-BLOCKS): Especifique o tamanho do segmento de relação em blocos. Se ambos `--with-segsize` e esta opção forem especificados, esta opção vence. Esta opção é apenas para desenvolvedores, para testar código relacionado ao segmento.
 
 ### 17.3.4. `configure` Variáveis de ambiente [#](#CONFIGURE-ENVVARS)
 
-Além das opções comuns de linha de comando descritas acima, o `configure` responde a uma série de variáveis de ambiente.
-Você pode especificar variáveis de ambiente na linha de comando do comando `configure`, por exemplo:
+Além das opções comuns de linha de comando descritas acima, o `configure` responde a uma série de variáveis de ambiente. Você pode especificar variáveis de ambiente na linha de comando do comando `configure`, por exemplo:
 
 ```
 ./configure CC=/opt/bin/gcc CFLAGS='-O2 -pipe'
@@ -350,82 +348,49 @@ export CC=/opt/bin/gcc export CFLAGS='-O2 -pipe' ./configure
 
 Essa utilização pode ser conveniente, pois muitos scripts de configuração de programas respondem a essas variáveis de maneira semelhante.
 
-Os mais comumente utilizados dessas variáveis de ambiente são
-`CC` e `CFLAGS`.
-Se você prefere um compilador C diferente do que o
-`configure` escolhe, pode definir a
-`CC` como o programa de sua escolha.
-Por padrão, `configure` escolherá
-`gcc` se disponível, caso contrário, a
-padrão da plataforma (geralmente `cc`). Da mesma forma, você pode substituir as
-marcas de compilação padrão, se necessário, com a
-`CFLAGS` variável.
+Os mais comumente utilizados dessas variáveis de ambiente são `CC` e `CFLAGS`. Se você prefere um compilador C diferente do que o `configure` escolhe, pode definir a `CC` como o programa de sua escolha. Por padrão, `configure` escolherá `gcc` se disponível, caso contrário, a padrão da plataforma (geralmente `cc`). Da mesma forma, você pode substituir as marcas de compilação padrão, se necessário, com a `CFLAGS` variável.
 
 Aqui está uma lista das variáveis significativas que podem ser definidas dessa maneira:
 
-`BISON` [#](#CONFIGURE-ENVVARS-BISON)
-:   Programa de bisão
+`BISON` [#](#CONFIGURE-ENVVARS-BISON): Programa de bisão
 
-`CC` [#](#CONFIGURE-ENVVARS-CC)
-:   Compilador C
+`CC` [#](#CONFIGURE-ENVVARS-CC): Compilador C
 
-`CFLAGS` [#](#CONFIGURE-ENVVARS-CFLAGS)
-:   opções para passar ao compilador C
+`CFLAGS` [#](#CONFIGURE-ENVVARS-CFLAGS): opções para passar ao compilador C
 
-`CLANG` [#](#CONFIGURE-ENVVARS-CLANG)
-:   caminho para o programa `clang` usado para processar código-fonte para inlining ao compilar com `--with-llvm`
+`CLANG` [#](#CONFIGURE-ENVVARS-CLANG): caminho para o programa `clang` usado para processar código-fonte para inlining ao compilar com `--with-llvm`
 
 `CPP` [#](#CONFIGURE-ENVVARS-CPP) : pré-processador C
 
-`CPPFLAGS` [#](#CONFIGURE-ENVVARS-CPPFLAGS)
-:   opções para passar ao pré-processador C
+`CPPFLAGS` [#](#CONFIGURE-ENVVARS-CPPFLAGS): opções para passar ao pré-processador C
 
-`CXX` [#](#CONFIGURE-ENVVARS-CXX)
-:   Compilador de C++
+`CXX` [#](#CONFIGURE-ENVVARS-CXX): Compilador de C++
 
-`CXXFLAGS` [#](#CONFIGURE-ENVVARS-CXXFLAGS)
-:   opções para passar ao compilador C++
+`CXXFLAGS` [#](#CONFIGURE-ENVVARS-CXXFLAGS): opções para passar ao compilador C++
 
-`DTRACE` [#](#CONFIGURE-ENVVARS-DTRACE)
-:   localização do programa `dtrace`
+`DTRACE` [#](#CONFIGURE-ENVVARS-DTRACE): localização do programa `dtrace`
 
-`DTRACEFLAGS` [#](#CONFIGURE-ENVVARS-DTRACEFLAGS)
-:   opções para passar para o programa `dtrace`
+`DTRACEFLAGS` [#](#CONFIGURE-ENVVARS-DTRACEFLAGS): opções para passar para o programa `dtrace`
 
-`FLEX` [#](#CONFIGURE-ENVVARS-FLEX)
-:   Programa Flex
+`FLEX` [#](#CONFIGURE-ENVVARS-FLEX): Programa Flex
 
-`LDFLAGS` [#](#CONFIGURE-ENVVARS-LDFLAGS)
-:   opções a serem usadas ao vincular execuções ou bibliotecas compartilhadas
+`LDFLAGS` [#](#CONFIGURE-ENVVARS-LDFLAGS): opções a serem usadas ao vincular execuções ou bibliotecas compartilhadas
 
-`LDFLAGS_EX` [#](#CONFIGURE-ENVVARS-LDFLAGS-EX)
-:   opções adicionais para vincular executaveis apenas
+`LDFLAGS_EX` [#](#CONFIGURE-ENVVARS-LDFLAGS-EX): opções adicionais para vincular executaveis apenas
 
-`LDFLAGS_SL` [#](#CONFIGURE-ENVVARS-LDFLAGS-SL)
-:   opções adicionais para vincular bibliotecas compartilhadas apenas
+`LDFLAGS_SL` [#](#CONFIGURE-ENVVARS-LDFLAGS-SL): opções adicionais para vincular bibliotecas compartilhadas apenas
 
-`LLVM_CONFIG` [#](#CONFIGURE-ENVVARS-LLVM-CONFIG)
-:   programa usado para localizar a instalação do LLVM
-`llvm-config`
+`LLVM_CONFIG` [#](#CONFIGURE-ENVVARS-LLVM-CONFIG): programa usado para localizar a instalação do LLVM `llvm-config`
 
-`MSGFMT` [#](#CONFIGURE-ENVVARS-MSGFMT)
-:   `msgfmt` programa de suporte ao idioma nativo
+`MSGFMT` [#](#CONFIGURE-ENVVARS-MSGFMT): `msgfmt` programa de suporte ao idioma nativo
 
-`PERL` [#](#CONFIGURE-ENVVARS-PERL)
-:   Programa do interpretador Perl. Este será usado para determinar as dependências para a construção do PL/Perl. O padrão é
-`perl`.
+`PERL` [#](#CONFIGURE-ENVVARS-PERL): Programa do interpretador Perl. Este será usado para determinar as dependências para a construção do PL/Perl. O padrão é `perl`.
 
-`PYTHON` [#](#CONFIGURE-ENVVARS-PYTHON)
-:   Programa do interpretador Python. Este será usado para determinar as dependências para a construção do PL/Python. Se não for definido, o seguinte será verificado nesta ordem:
-`python3 python`.
+`PYTHON` [#](#CONFIGURE-ENVVARS-PYTHON): Programa do interpretador Python. Este será usado para determinar as dependências para a construção do PL/Python. Se não for definido, o seguinte será verificado nesta ordem: `python3 python`.
 
-`TCLSH` [#](#CONFIGURE-ENVVARS-TCLSH)
-:   programa do interpretador Tcl. Este será usado para determinar as dependências para a construção do PL/Tcl. Se não for definido, o seguinte será verificado nesta ordem: `tclsh tcl tclsh8.6 tclsh86 tclsh8.5 tclsh85
-    tclsh8.4 tclsh84`.
+`TCLSH` [#](#CONFIGURE-ENVVARS-TCLSH): programa do interpretador Tcl. Este será usado para determinar as dependências para a construção do PL/Tcl. Se não for definido, o seguinte será verificado nesta ordem: `tclsh tcl tclsh8.6 tclsh86 tclsh8.5 tclsh85 tclsh8.4 tclsh84`.
 
-`XML2_CONFIG` [#](#CONFIGURE-ENVVARS-XML2-CONFIG)
-:   programa usado para localizar a instalação do
-    libxml2
+`XML2_CONFIG` [#](#CONFIGURE-ENVVARS-XML2-CONFIG): programa usado para localizar a instalação do libxml2
 
 Às vezes, é útil adicionar marcas do compilador após o fato ao conjunto que foi escolhido por `configure`. Um exemplo importante é que a opção `-Werror` do gcc não pode ser incluída no `CFLAGS` passado para `configure`, porque isso quebrará muitos dos testes internos do `configure`. Para adicionar tais marcas, inclua-as na variável de ambiente `COPT` enquanto executa `make`. O conteúdo de `COPT` é adicionado aos conjuntos de opções `CFLAGS`, `CXXFLAGS` e `LDFLAGS` configurados por `configure`. Por exemplo, você pode fazer
 
@@ -441,10 +406,6 @@ export COPT='-Werror' make
 
 ### Nota
 
-Se estiver usando o GCC, é melhor compilar com um nível de otimização de
-pelo menos `-O1`, porque usar nenhum nível de otimização
-(`-O0`) desativa algumas advertências importantes do compilador (como
-o uso de variáveis não inicializadas). No entanto, níveis de otimização não nulos podem complicar a depuração, porque a execução de código compilado geralmente não corresponderá de forma direta com as linhas do código-fonte. Se você ficar confuso ao tentar depurar código otimizado, recomponha os arquivos específicos de interesse com
-`-O0`. Uma maneira fácil de fazer isso é passando uma opção para o make: `make PROFILE=-O0 file.o`.
+Se estiver usando o GCC, é melhor compilar com um nível de otimização de pelo menos `-O1`, porque usar nenhum nível de otimização (`-O0`) desativa algumas advertências importantes do compilador (como o uso de variáveis não inicializadas). No entanto, níveis de otimização não nulos podem complicar a depuração, porque a execução de código compilado geralmente não corresponderá de forma direta com as linhas do código-fonte. Se você ficar confuso ao tentar depurar código otimizado, recomponha os arquivos específicos de interesse com `-O0`. Uma maneira fácil de fazer isso é passando uma opção para o make: `make PROFILE=-O0 file.o`.
 
 As variáveis de ambiente `COPT` e `PROFILE` são, na verdade, manipuladas de maneira idêntica pelos makefiles do PostgreSQL. A escolha de qual usar é uma questão de preferência, mas um hábito comum entre os desenvolvedores é usar `PROFILE` para ajustes de bandeira temporários, enquanto `COPT` pode ser mantido configurado o tempo todo.

@@ -10,9 +10,9 @@ O banco de dados de assinantes se comporta da mesma maneira que qualquer outra i
 
 Um nó de assinante pode ter múltiplas assinaturas, se desejar. É possível definir múltiplas assinaturas entre um único par de editor-assinante, e, nesse caso, é necessário ter cuidado para garantir que os objetos de publicação assinados não se sobreponham.
 
-Cada assinatura receberá as alterações por meio de um intervalo de replicação (consulte [Seção 26.2.6] [(warm-standby.md#STREAMING-REPLICATION-SLOTS "26.2.6. Replication Slots")]). Pode ser necessário adicionar intervalos de replicação adicionais para a sincronização inicial dos dados pré-existentes da tabela e esses serão descartados no final da sincronização dos dados.
+Cada assinatura receberá as alterações por meio de um intervalo de replicação (consulte [Seção 26.2.6](warm-standby.md#STREAMING-REPLICATION-SLOTS)). Pode ser necessário adicionar intervalos de replicação adicionais para a sincronização inicial dos dados pré-existentes da tabela e esses serão descartados no final da sincronização dos dados.
 
-Uma assinatura de replicação lógica pode ser uma reserva para replicação síncrona (consulte [Seção 26.2.8][(warm-standby.md#SYNCHRONOUS-REPLICATION "26.2.8. Synchronous Replication")]). O nome de reserva é, por padrão, o nome da assinatura. Um nome alternativo pode ser especificado como `application_name` nas informações de conexão da assinatura.
+Uma assinatura de replicação lógica pode ser uma reserva para replicação síncrona (consulte [Seção 26.2.8](warm-standby.md#SYNCHRONOUS-REPLICATION)). O nome de reserva é, por padrão, o nome da assinatura. Um nome alternativo pode ser especificado como `application_name` nas informações de conexão da assinatura.
 
 As assinaturas são descartadas pelo `pg_dump` se o usuário atual for um superusuário. Caso contrário, uma mensagem de alerta é escrita e as assinaturas são ignoradas, pois os usuários não superusuários não podem ler todas as informações das assinaturas do catálogo `pg_subscription`.
 
@@ -65,7 +65,7 @@ Insira dados nas tabelas do lado do editor.
 /* pub # */ INSERT INTO t3 VALUES (1, 'i'), (2, 'ii'), (3, 'iii');
 ```
 
-Crie publicações para as tabelas. As publicações `pub2` e `pub3a` não permitem algumas operações [`publish`(sql-createpublication.md#SQL-CREATEPUBLICATION-PARAMS-WITH-PUBLISH)]. A publicação `pub3b` tem um filtro de linha (consulte [Seção 29.4](logical-replication-row-filter.md "29.4. Row Filters")).
+Crie publicações para as tabelas. As publicações `pub2` e `pub3a` não permitem algumas operações [`publish`](sql-createpublication.md#SQL-CREATEPUBLICATION-PARAMS-WITH-PUBLISH)]. A publicação `pub3b` tem um filtro de linha (consulte [Seção 29.4](logical-replication-row-filter.md "29.4. Row Filters")).
 
 ```
 /* pub # */ CREATE PUBLICATION pub1 FOR TABLE t1;
@@ -199,7 +199,7 @@ Observe que, durante a replicação normal, as operações apropriadas do `publi
 
 ### 29.2.3. Exemplos: Criação de intervalo de criação de replicação diferida [#](#LOGICAL-REPLICATION-SUBSCRIPTION-EXAMPLES-DEFERRED-SLOT)
 
-Há alguns casos (por exemplo, [Seção 29.2.1][(logical-replication-subscription.md#LOGICAL-REPLICATION-SUBSCRIPTION-SLOT "29.2.1. Replication Slot Management")]) em que, se o slot de replicação remota não foi criado automaticamente, o usuário deve criá-lo manualmente antes que a assinatura possa ser ativada. As etapas para criar o slot e ativar a assinatura são mostradas nos exemplos a seguir. Esses exemplos especificam o plugin padrão de saída de decodificação lógica (`pgoutput`), que é o que a replicação lógica embutida usa.
+Há alguns casos (por exemplo, [Seção 29.2.1](logical-replication-subscription.md#LOGICAL-REPLICATION-SUBSCRIPTION-SLOT)) em que, se o slot de replicação remota não foi criado automaticamente, o usuário deve criá-lo manualmente antes que a assinatura possa ser ativada. As etapas para criar o slot e ativar a assinatura são mostradas nos exemplos a seguir. Esses exemplos especificam o plugin padrão de saída de decodificação lógica (`pgoutput`), que é o que a replicação lógica embutida usa.
 
 Primeiro, crie uma publicação para os exemplos a serem usados.
 
@@ -218,14 +218,14 @@ Exemplo 1: Onde a assinatura diz `connect = false`
   /* sub - */ WITH (connect=false);
   WARNING:  subscription was created, but is not connected
   HINT:  To initiate replication, you must manually create the replication slot, enable the subscription, and refresh the subscription.
-  ``` * Sobre o editor, crie manualmente um slot. Como o nome não foi especificado durante `CREATE SUBSCRIPTION`, o nome do slot a ser criado é o mesmo do nome da assinatura, por exemplo, "sub1".
+```
 
 * No assinante, complete a ativação da assinatura. Após isso, as tabelas de `pub1` começarão a se replicar.
 
-  ```
-  /* sub # */ ALTER SUBSCRIPTION sub1 ENABLE;
-  /* sub # */ ALTER SUBSCRIPTION sub1 REFRESH PUBLICATION;
-  ```
+```
+/* sub # */ ALTER SUBSCRIPTION sub1 ENABLE;
+/* sub # */ ALTER SUBSCRIPTION sub1 REFRESH PUBLICATION;
+```
 
 Exemplo 2: Onde a assinatura diz `connect = false`, mas também especifica a opção [`slot_name`](sql-createsubscription.md#SQL-CREATESUBSCRIPTION-PARAMS-WITH-SLOT-NAME).
 
@@ -235,10 +235,10 @@ Exemplo 2: Onde a assinatura diz `connect = false`, mas também especifica a op�
 
 * No assinante, os passos restantes para a ativação da assinatura são os mesmos que antes.
 
-  ```
-  /* sub # */ ALTER SUBSCRIPTION sub1 ENABLE;
-  /* sub # */ ALTER SUBSCRIPTION sub1 REFRESH PUBLICATION;
-  ```
+```
+/* sub # */ ALTER SUBSCRIPTION sub1 ENABLE;
+/* sub # */ ALTER SUBSCRIPTION sub1 REFRESH PUBLICATION;
+```
 
 Exemplo 3: Onde a assinatura especifica `slot_name = NONE`
 
@@ -250,7 +250,7 @@ Exemplo 3: Onde a assinatura especifica `slot_name = NONE`
 
 * Os passos restantes para ativar a assinatura são os mesmos que antes.
 
-  ```
-  /* sub # */ ALTER SUBSCRIPTION sub1 ENABLE;
-  /* sub # */ ALTER SUBSCRIPTION sub1 REFRESH PUBLICATION;
-  ```
+```
+/* sub # */ ALTER SUBSCRIPTION sub1 ENABLE;
+/* sub # */ ALTER SUBSCRIPTION sub1 REFRESH PUBLICATION;
+```

@@ -2,7 +2,7 @@
 
 O exemplo a seguir demonstra o controle da decodificação lógica usando a interface SQL.
 
-Antes de poder usar a decodificação lógica, você deve definir [wal_level][(runtime-config-wal.md#GUC-WAL-LEVEL)] para `logical` e [max_replication_slots][(runtime-config-replication.md#GUC-MAX-REPLICATION-SLOTS)] para pelo menos 1. Em seguida, você deve se conectar ao banco de dados alvo (no exemplo abaixo, `postgres`) como um superusuário.
+Antes de poder usar a decodificação lógica, você deve definir [wal_level](runtime-config-wal.md#GUC-WAL-LEVEL) para `logical` e [max_replication_slots](runtime-config-replication.md#GUC-MAX-REPLICATION-SLOTS) para pelo menos 1. Em seguida, você deve se conectar ao banco de dados alvo (no exemplo abaixo, `postgres`) como um superusuário.
 
 ```
 postgres=# -- Create a slot named 'regression_slot' using the output plugin 'test_decoding'

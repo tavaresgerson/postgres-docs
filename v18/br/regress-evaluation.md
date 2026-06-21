@@ -1,13 +1,13 @@
 ## 31.2. Avaliação de Teste [#](#REGRESS-EVALUATION)
 
-* [31.2.1. Diferenças de Mensagem de Erro][(regress-evaluation.md#REGRESS-EVALUATION-MESSAGE-DIFFERENCES)]
-* [31.2.2. Diferenças de Local][(regress-evaluation.md#REGRESS-EVALUATION-LOCALE-DIFFERENCES)]
-* [31.2.3. Diferenças de Data e Hora][(regress-evaluation.md#REGRESS-EVALUATION-DATE-TIME-DIFFERENCES)]
-* [31.2.4. Diferenças de Ponto Flutuante][(regress-evaluation.md#REGRESS-EVALUATION-FLOAT-DIFFERENCES)]
-* [31.2.5. Diferenças de Ordem de Linha][(regress-evaluation.md#REGRESS-EVALUATION-ORDERING-DIFFERENCES)]
-* [31.2.6. Insuficiente Profundidade de Pilha][(regress-evaluation.md#REGRESS-EVALUATION-STACK-DEPTH)]
-* [31.2.7. O Teste “aleatório”][(regress-evaluation.md#REGRESS-EVALUATION-RANDOM-TEST)]
-* [31.2.8. Parâmetros de Configuração][(regress-evaluation.md#REGRESS-EVALUATION-CONFIG-PARAMS)]
+* [31.2.1. Diferenças de Mensagem de Erro](regress-evaluation.md#REGRESS-EVALUATION-MESSAGE-DIFFERENCES)
+* [31.2.2. Diferenças de Local](regress-evaluation.md#REGRESS-EVALUATION-LOCALE-DIFFERENCES)
+* [31.2.3. Diferenças de Data e Hora](regress-evaluation.md#REGRESS-EVALUATION-DATE-TIME-DIFFERENCES)
+* [31.2.4. Diferenças de Ponto Flutuante](regress-evaluation.md#REGRESS-EVALUATION-FLOAT-DIFFERENCES)
+* [31.2.5. Diferenças de Ordem de Linha](regress-evaluation.md#REGRESS-EVALUATION-ORDERING-DIFFERENCES)
+* [31.2.6. Insuficiente Profundidade de Pilha](regress-evaluation.md#REGRESS-EVALUATION-STACK-DEPTH)
+* [31.2.7. O Teste “aleatório”](regress-evaluation.md#REGRESS-EVALUATION-RANDOM-TEST)
+* [31.2.8. Parâmetros de Configuração](regress-evaluation.md#REGRESS-EVALUATION-CONFIG-PARAMS)
 
 Algumas instalações de PostgreSQL adequadamente instaladas e totalmente funcionais podem "falhar" alguns desses testes de regressão devido a artefatos específicos da plataforma, como a representação variável de ponto flutuante e a formulação das mensagens. Os testes são atualmente avaliados usando uma comparação simples `diff` contra as saídas geradas em um sistema de referência, portanto, os resultados são sensíveis a pequenas diferenças no sistema. Quando um teste é relatado como "falha", sempre examine as diferenças entre os resultados esperados e os resultados reais; você pode descobrir que as diferenças não são significativas. No entanto, ainda nos esforçamos para manter arquivos de referência precisos em todas as plataformas suportadas, portanto, pode-se esperar que todos os testes passem.
 
@@ -15,7 +15,7 @@ As saídas reais dos testes de regressão estão em arquivos no diretório `src/
 
 Se você não gosta das opções `diff` que são usadas por padrão, defina a variável de ambiente `PG_REGRESS_DIFF_OPTS`, por exemplo, `PG_REGRESS_DIFF_OPTS='-c'`. (Ou você pode executar `diff` você mesmo, se preferir.)
 
-Se, por algum motivo, uma plataforma específica gerar um "erro" para um teste específico, mas a inspeção do resultado o convença de que o resultado é válido, você pode adicionar um novo arquivo de comparação para silenciar o relatório de falha em futuras execuções do teste. Consulte [Seção 31.3][(regress-variant.md "31.3. Variant Comparison Files")] para obter detalhes.
+Se, por algum motivo, uma plataforma específica gerar um "erro" para um teste específico, mas a inspeção do resultado o convença de que o resultado é válido, você pode adicionar um novo arquivo de comparação para silenciar o relatório de falha em futuras execuções do teste. Consulte [Seção 31.3](regress-variant.md) para obter detalhes.
 
 ### 31.2.1. Diferenças nos Mensagens de Erro [#](#REGRESS-EVALUATION-MESSAGE-DIFFERENCES)
 

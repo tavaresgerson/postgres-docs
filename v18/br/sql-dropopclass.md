@@ -22,7 +22,7 @@ DROP OPERATOR CLASS [ IF EXISTS ] name USING index_method [ CASCADE | RESTRICT ]
 
 *`index_method`*: O nome do método de acesso ao índice para o qual a classe do operador é destinada.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem da classe do operador (como índices) e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem da classe do operador (como índices) e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a eliminação da classe de operador se houver objetos que dependem dela. Este é o padrão.
 

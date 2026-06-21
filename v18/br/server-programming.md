@@ -4,41 +4,41 @@ Esta parte trata da extensão das funcionalidades do servidor com funções defi
 
 **Índice**
 
-* [36. Extensão do SQL][(extend.md)]
+* [36. Extensão do SQL](extend.md)
 
-+ [36.1. Como a Extensibilidade Funciona][(extend-how.md)]
-+ [36.2. O Sistema de Tipos do PostgreSQL][(extend-type-system.md)]
-+ [36.3. Funções Definidas pelo Usuário][(xfunc.md)]
-+ [36.4. Procedimentos Definidos pelo Usuário][(xproc.md)]
-+ [36.5. Funções do Idioma de Consulta (SQL)][(xfunc-sql.md)]
-+ [36.6. Sobrecarga de Funções][(xfunc-overload.md)]
-+ [36.7. Categorias de Volatilidade das Funções][(xfunc-volatility.md)]
-+ [36.8. Funções de Linguagem Procedimental][(xfunc-pl.md)]
-+ [36.9. Funções de Linguagem Interna][(xfunc-internal.md)]
-+ [36.10. Funções de Linguagem C][(xfunc-c.md)]
-+ [36.11. Informações de Otimização de Funções][(xfunc-optimization.md)]
-+ [36.12. Agregados Definidos pelo Usuário][(xaggr.md)]
-+ [36.13. Tipos Definidos pelo Usuário][(xtypes.md)]
-+ [36.14. Operadores Definidos pelo Usuário][(xoper.md)]
-+ [36.15. Informações de Otimização de Operadores][(xoper-optimization.md)]
-+ [36.16. Interação de Extensões com Índices][(xindex.md)]
-+ [36.17. Embalagem de Objetos Relacionados em uma Extensão][(extend-extensions.md)]
-+ [36.18. Infraestrutura de Construção de Extensões][(extend-pgxs.md)]
++ [36.1. Como a Extensibilidade Funciona](extend-how.md)
++ [36.2. O Sistema de Tipos do PostgreSQL](extend-type-system.md)
++ [36.3. Funções Definidas pelo Usuário](xfunc.md)
++ [36.4. Procedimentos Definidos pelo Usuário](xproc.md)
++ [36.5. Funções do Idioma de Consulta (SQL)](xfunc-sql.md)
++ [36.6. Sobrecarga de Funções](xfunc-overload.md)
++ [36.7. Categorias de Volatilidade das Funções](xfunc-volatility.md)
++ [36.8. Funções de Linguagem Procedimental](xfunc-pl.md)
++ [36.9. Funções de Linguagem Interna](xfunc-internal.md)
++ [36.10. Funções de Linguagem C](xfunc-c.md)
++ [36.11. Informações de Otimização de Funções](xfunc-optimization.md)
++ [36.12. Agregados Definidos pelo Usuário](xaggr.md)
++ [36.13. Tipos Definidos pelo Usuário](xtypes.md)
++ [36.14. Operadores Definidos pelo Usuário](xoper.md)
++ [36.15. Informações de Otimização de Operadores](xoper-optimization.md)
++ [36.16. Interação de Extensões com Índices](xindex.md)
++ [36.17. Embalagem de Objetos Relacionados em uma Extensão](extend-extensions.md)
++ [36.18. Infraestrutura de Construção de Extensões](extend-pgxs.md)
 
 * [37. Gatilhos](triggers.md)
 
-+ [37.1. Visão geral do comportamento do gatilho][(trigger-definition.md)]
-+ [37.2. Visibilidade das alterações dos dados][(trigger-datachanges.md)]
-+ [37.3. Escrever funções de gatilho em C][(trigger-interface.md)]
-+ [37.4. Um exemplo completo de gatilho][(trigger-example.md)]
++ [37.1. Visão geral do comportamento do gatilho](trigger-definition.md)
++ [37.2. Visibilidade das alterações dos dados](trigger-datachanges.md)
++ [37.3. Escrever funções de gatilho em C](trigger-interface.md)
++ [37.4. Um exemplo completo de gatilho](trigger-example.md)
 
 * [38. Gatilhos de evento](event-triggers.md)
 
-+ [38.1. Visão geral do comportamento do gatilho de evento][(event-trigger-definition.md)]
-+ [38.2. Escrever funções de gatilho de evento em C][(event-trigger-interface.md)]
-+ [38.3. Um exemplo completo de gatilho de evento][(event-trigger-example.md)]
-+ [38.4. Um exemplo de gatilho de evento de reescrita de tabela][(event-trigger-table-rewrite-example.md)]
-+ [38.5. Um exemplo de gatilho de evento de login em banco de dados][(event-trigger-database-login-example.md)]
++ [38.1. Visão geral do comportamento do gatilho de evento](event-trigger-definition.md)
++ [38.2. Escrever funções de gatilho de evento em C](event-trigger-interface.md)
++ [38.3. Um exemplo completo de gatilho de evento](event-trigger-example.md)
++ [38.4. Um exemplo de gatilho de evento de reescrita de tabela](event-trigger-table-rewrite-example.md)
++ [38.5. Um exemplo de gatilho de evento de login em banco de dados](event-trigger-database-login-example.md)
 
 * Sistema de Regras (rules.md)
 
@@ -122,16 +122,16 @@ Esta parte trata da extensão das funcionalidades do servidor com funções defi
 * [46. Processos de trabalho em segundo plano](bgworker.md)
 * [47. Decodificação lógica](logicaldecoding.md)
 
-+ [47.1. Exemplos de Decodificação Lógica][(logicaldecoding-example.md)]
-+ [47.2. Conceitos de Decodificação Lógica][(logicaldecoding-explanation.md)]
-+ [47.3. Interface do Protocolo de Replicação em Streaming][(logicaldecoding-walsender.md)]
-+ [47.4. Interface SQL de Decodificação Lógica][(logicaldecoding-sql.md)]
-+ [47.5. Catálogos do Sistema Relacionados à Decodificação Lógica][(logicaldecoding-catalogs.md)]
-+ [47.6. Plugins de Saída de Decodificação Lógica][(logicaldecoding-output-plugin.md)]
-+ [47.7. Escritores de Saída de Decodificação Lógica][(logicaldecoding-writer.md)]
-+ [47.8. Suporte a Replicação Síncrona para Decodificação Lógica][(logicaldecoding-synchronous.md)]
-+ [47.9. Streaming de Grandes Transações para Decodificação Lógica][(logicaldecoding-streaming.md)]
-+ [47.10. Suporte a Compromisso de Duas Fases para Decodificação Lógica][(logicaldecoding-two-phase-commits.md)]
++ [47.1. Exemplos de Decodificação Lógica](logicaldecoding-example.md)
++ [47.2. Conceitos de Decodificação Lógica](logicaldecoding-explanation.md)
++ [47.3. Interface do Protocolo de Replicação em Streaming](logicaldecoding-walsender.md)
++ [47.4. Interface SQL de Decodificação Lógica](logicaldecoding-sql.md)
++ [47.5. Catálogos do Sistema Relacionados à Decodificação Lógica](logicaldecoding-catalogs.md)
++ [47.6. Plugins de Saída de Decodificação Lógica](logicaldecoding-output-plugin.md)
++ [47.7. Escritores de Saída de Decodificação Lógica](logicaldecoding-writer.md)
++ [47.8. Suporte a Replicação Síncrona para Decodificação Lógica](logicaldecoding-synchronous.md)
++ [47.9. Streaming de Grandes Transações para Decodificação Lógica](logicaldecoding-streaming.md)
++ [47.10. Suporte a Compromisso de Duas Fases para Decodificação Lógica](logicaldecoding-two-phase-commits.md)
 
 * [48. Rastreamento do progresso da replicação](replication-origins.md)
 * [49. Módulos de Arquivo](archive-modules.md)
@@ -139,8 +139,8 @@ Esta parte trata da extensão das funcionalidades do servidor com funções defi
 + [49.1. Funções de Inicialização](archive-module-init.md)
 + [49.2. Retornos de chamada do módulo de arquivo](archive-module-callbacks.md)
 
-* [Módulos de Validação OAuth][(oauth-validators.md)]
+* [Módulos de Validação OAuth](oauth-validators.md)
 
-+ [50.1. Projetando com Segurança um Módulo de Validação][(oauth-validator-design.md)]
-+ [50.2. Funções de Inicialização][(oauth-validator-init.md)]
-+ [50.3. Retornos de Chamada do Validador OAuth][(oauth-validator-callbacks.md)]
++ [50.1. Projetando com Segurança um Módulo de Validação](oauth-validator-design.md)
++ [50.2. Funções de Inicialização](oauth-validator-init.md)
++ [50.3. Retornos de Chamada do Validador OAuth](oauth-validator-callbacks.md)

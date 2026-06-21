@@ -18,7 +18,7 @@ DROP COLLATION [ IF EXISTS ] name [ CASCADE | RESTRICT ]
 
 *`name`*: O nome da correção. O nome da correção pode ser qualificado pelo esquema.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem da correção, e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem da correção, e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a eliminação da agregação se quaisquer objetos dependerem dela. Esse é o padrão.
 

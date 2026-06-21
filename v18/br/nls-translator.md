@@ -89,9 +89,9 @@ Aqui estão algumas coisas que você deve ter em mente ao editar as traduções:
 * Certifique-se de que, se o original terminar com uma nova linha, a tradução também termine com uma nova linha. Da mesma forma para tabs, etc.
 * Se o original for uma string de formato `printf`, a tradução também precisa ser. A tradução também precisa ter os mesmos especificadores de formato na mesma ordem. Às vezes, as regras naturais da língua tornam isso impossível ou pelo menos inconveniente. Nesse caso, você pode modificar os especificadores de formato da seguinte forma:
 
-  ```
-  msgstr "Die Datei %2$s hat %1$u Zeichen."
-  ```
+```
+msgstr "Die Datei %2$s hat %1$u Zeichen."
+```
 
 Então, o primeiro marcador de posição usará, na verdade, o segundo argumento da lista. O `digits$` precisa seguir o % imediatamente, antes de qualquer outro manipulador de formato. (Essa característica realmente existe na família de funções `printf`. Você pode não ter ouvido falar disso antes, porque há pouco uso para isso fora da internacionalização de mensagens.)
 * Se a string original contiver um erro linguístico, informe isso (ou corrija você mesmo na fonte do programa) e traduza normalmente. A string corrigida pode ser mesclada quando as fontes do programa forem atualizadas. Se a string original contiver um erro factual, informe isso (ou corrija você mesmo) e não traduza. Em vez disso, você pode marcar a string com um comentário no arquivo PO.

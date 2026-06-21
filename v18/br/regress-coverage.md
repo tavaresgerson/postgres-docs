@@ -1,7 +1,7 @@
 ## 31.5. Exame de Cobertura de Testes [#](#REGRESS-COVERAGE)
 
-* [31.5.1. Cobertura com Autoconf e Make][(regress-coverage.md#REGRESS-COVERAGE-CONFIGURE)]
-* [31.5.2. Cobertura com Meson][(regress-coverage.md#REGRESS-COVERAGE-MESON)]
+* [31.5.1. Cobertura com Autoconf e Make](regress-coverage.md#REGRESS-COVERAGE-CONFIGURE)
+* [31.5.2. Cobertura com Meson](regress-coverage.md#REGRESS-COVERAGE-MESON)
 
 O código-fonte do PostgreSQL pode ser compilado com instrumentação de testes de cobertura, de modo que seja possível examinar quais partes do código são cobertas pelos testes de regressão ou qualquer outra suíte de teste que seja executada com o código. Isso é atualmente suportado ao compilar com o GCC e requer os pacotes `gcov` e `lcov`.
 

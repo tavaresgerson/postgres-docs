@@ -7,4 +7,4 @@ As tabelas são os objetos centrais em uma estrutura de banco de dados relaciona
 * Tipos de dados e domínios
 * Gatilhos e regras de reescrita
 
-Informações detalhadas sobre esses tópicos aparecem em [Parte V][(server-programming.md "Part V. Server Programming")].
+Informações detalhadas sobre esses tópicos aparecem em [Parte V](server-programming.md).

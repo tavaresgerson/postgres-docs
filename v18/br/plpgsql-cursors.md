@@ -1,9 +1,9 @@
 ## 41.7. Cursor [#](#PLPGSQL-CURSORS)
 
-* [41.7.1. Declarando variáveis de cursor][(plpgsql-cursors.md#PLPGSQL-CURSOR-DECLARATIONS)]
-* [41.7.2. Abrir cursors][(plpgsql-cursors.md#PLPGSQL-CURSOR-OPENING)]
-* [41.7.3. Usando cursors][(plpgsql-cursors.md#PLPGSQL-CURSOR-USING)]
-* [41.7.4. Percorrendo o resultado de um cursor][(plpgsql-cursors.md#PLPGSQL-CURSOR-FOR-LOOP)]
+* [41.7.1. Declarando variáveis de cursor](plpgsql-cursors.md#PLPGSQL-CURSOR-DECLARATIONS)
+* [41.7.2. Abrir cursors](plpgsql-cursors.md#PLPGSQL-CURSOR-OPENING)
+* [41.7.3. Usando cursors](plpgsql-cursors.md#PLPGSQL-CURSOR-USING)
+* [41.7.4. Percorrendo o resultado de um cursor](plpgsql-cursors.md#PLPGSQL-CURSOR-FOR-LOOP)
 
 Em vez de executar uma consulta inteira de uma vez, é possível configurar um *cursor* que encapsula a consulta e, em seguida, ler o resultado da consulta algumas linhas de cada vez. Uma razão para fazer isso é evitar o excesso de memória quando o resultado contém um grande número de linhas. (No entanto, os usuários do PL/pgSQL normalmente não precisam se preocupar com isso, uma vez que os loops `FOR` usam automaticamente um cursor internamente para evitar problemas de memória.) Um uso mais interessante é retornar uma referência a um cursor que uma função criou, permitindo que o chamador leia as linhas. Isso fornece uma maneira eficiente de retornar grandes conjuntos de linhas a partir de funções.
 
@@ -36,9 +36,9 @@ Antes que um cursor possa ser usado para recuperar linhas, ele deve ser *aberto*
 
 ### Nota
 
-As variáveis de cursor vinculado também podem ser usadas sem abrir explicitamente o cursor, através da declaração `FOR` descrita em [Seção 41.7.4][(plpgsql-cursors.md#PLPGSQL-CURSOR-FOR-LOOP "41.7.4. Looping through a Cursor's Result")]. Um loop `FOR` abrirá o cursor e o fechará novamente quando o loop for concluído.
+As variáveis de cursor vinculado também podem ser usadas sem abrir explicitamente o cursor, através da declaração `FOR` descrita em [Seção 41.7.4](plpgsql-cursors.md#PLPGSQL-CURSOR-FOR-LOOP). Um loop `FOR` abrirá o cursor e o fechará novamente quando o loop for concluído.
 
-Abrir um cursor envolve a criação de uma estrutura de dados interna do servidor chamada *portal*, que contém o estado de execução da consulta do cursor. Um portal tem um nome, que deve ser único dentro da sessão durante a existência do portal. Por padrão, o PL/pgSQL atribuirá um nome único a cada portal que cria. No entanto, se você atribuir um valor de cadeia de caracteres não nulo a uma variável de cursor, essa cadeia de caracteres será usada como o nome do seu portal. Esse recurso pode ser usado conforme descrito em [Seção 41.7.3.5][(plpgsql-cursors.md#PLPGSQL-CURSOR-RETURNING "41.7.3.5. Returning Cursors")].
+Abrir um cursor envolve a criação de uma estrutura de dados interna do servidor chamada *portal*, que contém o estado de execução da consulta do cursor. Um portal tem um nome, que deve ser único dentro da sessão durante a existência do portal. Por padrão, o PL/pgSQL atribuirá um nome único a cada portal que cria. No entanto, se você atribuir um valor de cadeia de caracteres não nulo a uma variável de cursor, essa cadeia de caracteres será usada como o nome do seu portal. Esse recurso pode ser usado conforme descrito em [Seção 41.7.3.5](plpgsql-cursors.md#PLPGSQL-CURSOR-RETURNING).
 
 #### 41.7.2.1. `OPEN FOR` *`query`* [#](#PLPGSQL-CURSOR-OPENING-OPEN-FOR-QUERY)
 
@@ -61,7 +61,7 @@ OPEN unbound_cursorvar [ [ NO ] SCROLL ] FOR EXECUTE query_string
                                      [ USING expression [, ... ] ];
 ```
 
-A variável cursor é aberta e dada a consulta especificada para ser executada. O cursor não pode estar aberto já, e deve ter sido declarado como uma variável de cursor não vinculada (ou seja, como uma simples variável `refcursor`). A consulta é especificada como uma expressão de string, da mesma forma que no comando `EXECUTE`. Como de costume, isso dá flexibilidade para que o plano da consulta possa variar de uma execução para a outra (ver [Seção 41.11.2][(plpgsql-implementation.md#PLPGSQL-PLAN-CACHING "41.11.2. Plan Caching")]), e também significa que a substituição de variáveis não é feita na string do comando. Como com `EXECUTE`, os valores dos parâmetros podem ser inseridos no comando dinâmico via `format()` e `USING`. As opções `SCROLL` e `NO SCROLL` têm os mesmos significados que para um cursor vinculado.
+A variável cursor é aberta e dada a consulta especificada para ser executada. O cursor não pode estar aberto já, e deve ter sido declarado como uma variável de cursor não vinculada (ou seja, como uma simples variável `refcursor`). A consulta é especificada como uma expressão de string, da mesma forma que no comando `EXECUTE`. Como de costume, isso dá flexibilidade para que o plano da consulta possa variar de uma execução para a outra (ver [Seção 41.11.2](plpgsql-implementation.md#PLPGSQL-PLAN-CACHING)), e também significa que a substituição de variáveis não é feita na string do comando. Como com `EXECUTE`, os valores dos parâmetros podem ser inseridos no comando dinâmico via `format()` e `USING`. As opções `SCROLL` e `NO SCROLL` têm os mesmos significados que para um cursor vinculado.
 
 Um exemplo:
 
@@ -81,7 +81,7 @@ Essa forma de `OPEN` é usada para abrir uma variável de cursor cuja consulta f
 
 O plano de consulta para um cursor vinculado é sempre considerado cacheável; não há um equivalente de `EXECUTE` neste caso. Observe que `SCROLL` e `NO SCROLL` não podem ser especificados em `OPEN`, pois o comportamento de rolagem do cursor já foi determinado.
 
-Os valores dos argumentos podem ser passados usando notação *posicionada* ou *denominada*. Na notação posicionada, todos os argumentos são especificados em ordem. Na notação denominada, o nome de cada argumento é especificado usando `:=` ou `=>` para separá-lo da expressão do argumento. Semelhante à chamada de funções, descrita em [Seção 4.3][(sql-syntax-calling-funcs.md "4.3. Calling Functions")], também é permitido misturar notação posicionada e denominada.
+Os valores dos argumentos podem ser passados usando notação *posicionada* ou *denominada*. Na notação posicionada, todos os argumentos são especificados em ordem. Na notação denominada, o nome de cada argumento é especificado usando `:=` ou `=>` para separá-lo da expressão do argumento. Semelhante à chamada de funções, descrita em [Seção 4.3](sql-syntax-calling-funcs.md), também é permitido misturar notação posicionada e denominada.
 
 Exemplos (estes usam os exemplos de declaração do cursor acima):
 
@@ -119,7 +119,7 @@ FETCH [ direction { FROM | IN } ] cursor INTO target;
 
 `FETCH` recupera a próxima linha (na direção indicada) do cursor para um alvo, que pode ser uma variável de linha, uma variável de registro ou uma lista de variáveis simples separadas por vírgula, assim como `SELECT INTO`. Se não houver uma linha adequada, o alvo é definido como NULL(s). Assim como em `SELECT INTO`, a variável especial `FOUND` pode ser verificada para determinar se uma linha foi obtida ou não. Se nenhuma linha for obtida, o cursor é posicionado após a última linha ou antes da primeira linha, dependendo da direção do movimento.
 
-A cláusula *`direction`* pode ser qualquer uma das variantes permitidas no comando SQL [FETCH][(sql-fetch.md "FETCH")], exceto as que podem recuperar mais de uma linha; ou seja, pode ser `NEXT`, `PRIOR`, `FIRST`, `LAST`, `ABSOLUTE` *`count`*, `RELATIVE` *`count`*, `FORWARD`, ou `BACKWARD`. O omitindo *`direction`* é o mesmo que especificar `NEXT`. Nos formulários que utilizam um *`count`*, o *`count`* pode ser qualquer expressão com valor inteiro (ao contrário do comando SQL `FETCH`, que só permite uma constante inteira). Os valores de *`direction`* que exigem recuo provavelmente falharão, a menos que o cursor tenha sido declarado ou aberto com a opção `SCROLL`.
+A cláusula *`direction`* pode ser qualquer uma das variantes permitidas no comando SQL [FETCH](sql-fetch.md), exceto as que podem recuperar mais de uma linha; ou seja, pode ser `NEXT`, `PRIOR`, `FIRST`, `LAST`, `ABSOLUTE` *`count`*, `RELATIVE` *`count`*, `FORWARD`, ou `BACKWARD`. O omitindo *`direction`* é o mesmo que especificar `NEXT`. Nos formulários que utilizam um *`count`*, o *`count`* pode ser qualquer expressão com valor inteiro (ao contrário do comando SQL `FETCH`, que só permite uma constante inteira). Os valores de *`direction`* que exigem recuo provavelmente falharão, a menos que o cursor tenha sido declarado ou aberto com a opção `SCROLL`.
 
 *`cursor`* deve ser o nome de uma variável `refcursor` que faça referência a um portal de cursor aberto.
 

@@ -14,573 +14,576 @@ Essas estruturas de dados populares foram originalmente desenvolvidas para uso e
 
 Assim como o GiST, o SP-GiST é projetado para permitir o desenvolvimento de tipos de dados personalizados com os métodos de acesso apropriados, por um especialista no domínio do tipo de dados, e não por um especialista em banco de dados.
 
-Algumas das informações aqui contidas são derivadas do Projeto de Indicação SP-GiST da Universidade Purdue [site web][(https://www.cs.purdue.edu/spgist/)]. A implementação SP-GiST no PostgreSQL é mantida principalmente por Teodor Sigaev e Oleg Bartunov, e há mais informações em seu [site web][(http://www.sai.msu.su/~megera/wiki/spgist_dev)].
+Algumas das informações aqui contidas são derivadas do Projeto de Indicação SP-GiST da Universidade Purdue [site web](https://www.cs.purdue.edu/spgist/). A implementação SP-GiST no PostgreSQL é mantida principalmente por Teodor Sigaev e Oleg Bartunov, e há mais informações em seu [site web](http://www.sai.msu.su/~megera/wiki/spgist_dev).
 
 ### 65.3.2. Classes de operador embutidas [#](#SPGIST-BUILTIN-OPCLASSES)
 
-A distribuição principal do PostgreSQL inclui as classes de operadores SP-GiST mostradas na [Tabela 65.2] [(spgist.md#SPGIST-BUILTIN-OPCLASSES-TABLE "Table 65.2. Built-in SP-GiST Operator Classes")].
+A distribuição principal do PostgreSQL inclui as classes de operadores SP-GiST mostradas na [Tabela 65.2](spgist.md#SPGIST-BUILTIN-OPCLASSES-TABLE).
 
 **Tabela 65.2. Classes de operadores SP-GiST integrados**
 
 
 
 <table border="1" class="table" summary="Built-in SP-GiST Operator Classes">
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Name
    </th>
-<th>
+   <th>
     Indexable Operators
    </th>
-<th>
+   <th>
     Ordering Operators
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td rowspan="12" valign="middle">
-<code class="literal">
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td rowspan="12" valign="middle">
+    <code class="literal">
      box_ops
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      &lt;&lt; (box,box)
     </code>
-</td>
-<td rowspan="12" valign="middle">
-<code class="literal">
+   </td>
+   <td rowspan="12" valign="middle">
+    <code class="literal">
      &lt;-&gt; (box,point)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &amp;&lt; (box,box)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &amp;&gt; (box,box)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &gt;&gt; (box,box)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &lt;@ (box,box)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      @&gt; (box,box)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      ~= (box,box)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &amp;&amp; (box,box)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &lt;&lt;| (box,box)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &amp;&lt;| (box,box)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      |&amp;&gt; (box,box)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      |&gt;&gt; (box,box)
     </code>
-</td>
-</tr>
-<tr>
-<td rowspan="11" valign="middle">
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td rowspan="11" valign="middle">
+    <code class="literal">
      inet_ops
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      &lt;&lt; (inet,inet)
     </code>
-</td>
-<td rowspan="11" valign="middle">
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td rowspan="11" valign="middle">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &lt;&lt;= (inet,inet)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &gt;&gt; (inet,inet)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &gt;&gt;= (inet,inet)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      = (inet,inet)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &lt;&gt; (inet,inet)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &lt; (inet,inet)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &lt;= (inet,inet)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &gt; (inet,inet)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &gt;= (inet,inet)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &amp;&amp; (inet,inet)
     </code>
-</td>
-</tr>
-<tr>
-<td rowspan="6" valign="middle">
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td rowspan="6" valign="middle">
+    <code class="literal">
      kd_point_ops
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      |&gt;&gt; (point,point)
     </code>
-</td>
-<td rowspan="6" valign="middle">
-<code class="literal">
+   </td>
+   <td rowspan="6" valign="middle">
+    <code class="literal">
      &lt;-&gt; (point,point)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &lt;&lt; (point,point)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &gt;&gt; (point,point)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &lt;&lt;| (point,point)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      ~= (point,point)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &lt;@ (point,box)
     </code>
-</td>
-</tr>
-<tr>
-<td rowspan="12" valign="middle">
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td rowspan="12" valign="middle">
+    <code class="literal">
      poly_ops
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      &lt;&lt; (polygon,polygon)
     </code>
-</td>
-<td rowspan="12" valign="middle">
-<code class="literal">
+   </td>
+   <td rowspan="12" valign="middle">
+    <code class="literal">
      &lt;-&gt; (polygon,point)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &amp;&lt; (polygon,polygon)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &amp;&gt; (polygon,polygon)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &gt;&gt; (polygon,polygon)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &lt;@ (polygon,polygon)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      @&gt; (polygon,polygon)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      ~= (polygon,polygon)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &amp;&amp; (polygon,polygon)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &lt;&lt;| (polygon,polygon)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &amp;&lt;| (polygon,polygon)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      |&gt;&gt; (polygon,polygon)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      |&amp;&gt; (polygon,polygon)
     </code>
-</td>
-</tr>
-<tr>
-<td rowspan="6" valign="middle">
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td rowspan="6" valign="middle">
+    <code class="literal">
      quad_point_ops
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      |&gt;&gt; (point,point)
     </code>
-</td>
-<td rowspan="6" valign="middle">
-<code class="literal">
+   </td>
+   <td rowspan="6" valign="middle">
+    <code class="literal">
      &lt;-&gt; (point,point)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &lt;&lt; (point,point)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &gt;&gt; (point,point)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &lt;&lt;| (point,point)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      ~= (point,point)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &lt;@ (point,box)
     </code>
-</td>
-</tr>
-<tr>
-<td rowspan="10" valign="middle">
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td rowspan="10" valign="middle">
+    <code class="literal">
      range_ops
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      = (anyrange,anyrange)
     </code>
-</td>
-<td rowspan="10" valign="middle">
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td rowspan="10" valign="middle">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &amp;&amp; (anyrange,anyrange)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      @&gt; (anyrange,anyelement)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      @&gt; (anyrange,anyrange)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &lt;@ (anyrange,anyrange)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &lt;&lt; (anyrange,anyrange)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &gt;&gt; (anyrange,anyrange)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &amp;&lt; (anyrange,anyrange)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &amp;&gt; (anyrange,anyrange)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      -|- (anyrange,anyrange)
     </code>
-</td>
-</tr>
-<tr>
-<td rowspan="10" valign="middle">
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td rowspan="10" valign="middle">
+    <code class="literal">
      text_ops
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      = (text,text)
     </code>
-</td>
-<td rowspan="10" valign="middle">
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td rowspan="10" valign="middle">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &lt; (text,text)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &lt;= (text,text)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &gt; (text,text)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &gt;= (text,text)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      ~&lt;~ (text,text)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      ~&lt;=~ (text,text)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      ~&gt;=~ (text,text)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      ~&gt;~ (text,text)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      ^@ (text,text)
     </code>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Das duas classes de operadores para o tipo `point`, `quad_point_ops` é o padrão. `kd_point_ops` suporta os mesmos operadores, mas utiliza uma estrutura de dados de índice diferente que pode oferecer melhor desempenho em algumas aplicações.
 
@@ -594,7 +597,7 @@ Os tuplos de folha de uma árvore SP-GiST geralmente contêm valores do mesmo ti
 
 Quando um índice SP-GiST é criado com colunas `INCLUDE`, os valores dessas colunas também são armazenados em tuplas de folha. As colunas `INCLUDE` não interessam à classe de operadores SP-GiST, portanto, não são discutidas mais detalhadamente aqui.
 
-Os tuplos internos são mais complexos, pois são pontos de ramificação no árvore de busca. Cada tuplo interno contém um conjunto de um ou mais *nós*, que representam grupos de valores de folha semelhantes. Um nó contém um link descendente que leva a outro, um nível mais baixo, tuplo interno, ou a uma lista curta de tuplos de folha que todos estão no mesmo índice. Cada nó normalmente tem um *rótulo* que o descreve; por exemplo, em uma árvore de radix, o rótulo do nó poderia ser o próximo caractere do valor da string. (Alternativamente, uma classe de operadores pode omitir os rótulos dos nós, se trabalha com um conjunto fixo de nós para todos os tuplos internos; veja [Seção 65.3.4.2][(spgist.md#SPGIST-NULL-LABELS "65.3.4.2. SP-GiST Without Node Labels")]. Opcionalmente, um tuplo interno pode ter um valor *prefixo* que descreve todos os seus membros. Em uma árvore de radix, isso poderia ser o prefixo comum das strings representadas. O valor do prefixo não é necessariamente um prefixo real, mas pode ser qualquer dado necessário pela classe de operadores; por exemplo, em uma quad-tree, pode armazenar o ponto central com o qual os quatro quadrantes são medidos. Um tuplo interno de quad-tree também conterá então quatro nós correspondentes aos quadrantes ao redor deste ponto central.
+Os tuplos internos são mais complexos, pois são pontos de ramificação no árvore de busca. Cada tuplo interno contém um conjunto de um ou mais *nós*, que representam grupos de valores de folha semelhantes. Um nó contém um link descendente que leva a outro, um nível mais baixo, tuplo interno, ou a uma lista curta de tuplos de folha que todos estão no mesmo índice. Cada nó normalmente tem um *rótulo* que o descreve; por exemplo, em uma árvore de radix, o rótulo do nó poderia ser o próximo caractere do valor da string. (Alternativamente, uma classe de operadores pode omitir os rótulos dos nós, se trabalha com um conjunto fixo de nós para todos os tuplos internos; veja [Seção 65.3.4.2](spgist.md#SPGIST-NULL-LABELS). Opcionalmente, um tuplo interno pode ter um valor *prefixo* que descreve todos os seus membros. Em uma árvore de radix, isso poderia ser o prefixo comum das strings representadas. O valor do prefixo não é necessariamente um prefixo real, mas pode ser qualquer dado necessário pela classe de operadores; por exemplo, em uma quad-tree, pode armazenar o ponto central com o qual os quatro quadrantes são medidos. Um tuplo interno de quad-tree também conterá então quatro nós correspondentes aos quadrantes ao redor deste ponto central.
 
 Alguns algoritmos de árvores exigem conhecimento do nível (ou profundidade) do conjunto atual, portanto, o núcleo SP-GiST oferece a possibilidade para as classes de operadores gerenciarem o contagem de nível ao descer a árvore. Há também suporte para reconstruir incrementalmente o valor representado quando isso for necessário, e para passar dados adicionais (chamados de *valores de travessia*) durante uma descida da árvore.
 
@@ -610,16 +613,17 @@ Os cinco métodos obrigatórios definidos pelo usuário são:
 
 A declaração SQL da função deve parecer assim:
 
-``` CREATE FUNCTION my_config(internal, internal) RETURNS void ...
-    ```
+```
+CREATE FUNCTION my_config(internal, internal) RETURNS void ...
+```
 
 O primeiro argumento é um ponteiro para uma `spgConfigIn` C struct, contendo dados de entrada para a função. O segundo argumento é um ponteiro para uma `spgConfigOut` C struct, que a função deve preencher com dados de resultado.
 
-    ```
-    typedef struct spgConfigIn { Oid         attType;        /* Data type to be indexed */ } spgConfigIn;
+```
+typedef struct spgConfigIn { Oid         attType;        /* Data type to be indexed */ } spgConfigIn;
 
-    typedef struct spgConfigOut { Oid         prefixType;     /* Data type of inner-tuple prefixes */ Oid         labelType;      /* Data type of inner-tuple node labels */ Oid         leafType;       /* Data type of leaf-tuple values */ bool        canReturnData;  /* Opclass can reconstruct original data */ bool        longValuesOK;   /* Opclass can cope with values > 1 page */ } spgConfigOut;
-    ```
+typedef struct spgConfigOut { Oid         prefixType;     /* Data type of inner-tuple prefixes */ Oid         labelType;      /* Data type of inner-tuple node labels */ Oid         leafType;       /* Data type of leaf-tuple values */ bool        canReturnData;  /* Opclass can reconstruct original data */ bool        longValuesOK;   /* Opclass can cope with values > 1 page */ } spgConfigOut;
+```
 
 `attType` é passado para suportar classes de operadores de índice polimórfico; para as classes de operadores de dados fixos comuns, ele sempre terá o mesmo valor e, portanto, pode ser ignorado.
 
@@ -633,271 +637,114 @@ Quando `attType` e `leafType` são diferentes, o método opcional `compress` dev
 
 A declaração SQL da função deve parecer assim:
 
-``` CREATE FUNCTION my_choose(internal, internal) RETURNS void ...
-    ```
+```
+CREATE FUNCTION my_choose(internal, internal) RETURNS void ...
+```
 
 O primeiro argumento é um ponteiro para uma estrutura `spgChooseIn` C, contendo dados de entrada para a função. O segundo argumento é um ponteiro para uma estrutura `spgChooseOut` C, que a função deve preencher com dados de resultado.
 
-    ```
-    typedef struct spgChooseIn { Datum       datum;          /* original datum to be indexed */ Datum       leafDatum;      /* current datum to be stored at leaf */ int         level;          /* current level (counting from zero) */
+```
+typedef struct spgChooseIn { Datum       datum;          /* original datum to be indexed */ Datum       leafDatum;      /* current datum to be stored at leaf */ int         level;          /* current level (counting from zero) */
 
-        /* Data from current inner tuple */ bool        allTheSame;     /* tuple is marked all-the-same? */ bool        hasPrefix;      /* tuple has a prefix? */ Datum       prefixDatum;    /* if so, the prefix value */ int         nNodes;         /* number of nodes in the inner tuple */ Datum      *nodeLabels;     /* node label values (NULL if none) */ } spgChooseIn;
+    /* Data from current inner tuple */ bool        allTheSame;     /* tuple is marked all-the-same? */ bool        hasPrefix;      /* tuple has a prefix? */ Datum       prefixDatum;    /* if so, the prefix value */ int         nNodes;         /* number of nodes in the inner tuple */ Datum      *nodeLabels;     /* node label values (NULL if none) */ } spgChooseIn;
 
-    typedef enum spgChooseResultType { spgMatchNode = 1,           /* descend into existing node */ spgAddNode,                 /* add a node to the inner tuple */ spgSplitTuple               /* split inner tuple (change its prefix) */ } spgChooseResultType;
+typedef enum spgChooseResultType { spgMatchNode = 1,           /* descend into existing node */ spgAddNode,                 /* add a node to the inner tuple */ spgSplitTuple               /* split inner tuple (change its prefix) */ } spgChooseResultType;
 
-    typedef struct spgChooseOut { spgChooseResultType resultType;     /* action code, see above */ union { struct                  /* results for spgMatchNode */ { int         nodeN;      /* descend to this node (index from 0) */ int         levelAdd;   /* increment level by this much */ Datum       restDatum;  /* new leaf datum */ }           matchNode; struct                  /* results for spgAddNode */ { Datum       nodeLabel;  /* new node's label */ int         nodeN;      /* where to insert it (index from 0) */ }           addNode; struct                  /* results for spgSplitTuple */ { /* Info to form new upper-level inner tuple with one child tuple */ bool        prefixHasPrefix;    /* tuple should have a prefix? */ Datum       prefixPrefixDatum;  /* if so, its value */ int         prefixNNodes;       /* number of nodes */ Datum      *prefixNodeLabels;   /* their labels (or NULL for
-                                                 * no labels) */ int         childNodeN;         /* which node gets child tuple */
+typedef struct spgChooseOut { spgChooseResultType resultType;     /* action code, see above */ union { struct                  /* results for spgMatchNode */ { int         nodeN;      /* descend to this node (index from 0) */ int         levelAdd;   /* increment level by this much */ Datum       restDatum;  /* new leaf datum */ }           matchNode; struct                  /* results for spgAddNode */ { Datum       nodeLabel;  /* new node's label */ int         nodeN;      /* where to insert it (index from 0) */ }           addNode; struct                  /* results for spgSplitTuple */ { /* Info to form new upper-level inner tuple with one child tuple */ bool        prefixHasPrefix;    /* tuple should have a prefix? */ Datum       prefixPrefixDatum;  /* if so, its value */ int         prefixNNodes;       /* number of nodes */ Datum      *prefixNodeLabels;   /* their labels (or NULL for
+                                             * no labels) */ int         childNodeN;         /* which node gets child tuple */
 
-                /* Info to form new lower-level inner tuple with all old nodes */ bool        postfixHasPrefix;   /* tuple should have a prefix? */ Datum       postfixPrefixDatum; /* if so, its value */ }           splitTuple; }           result; } spgChooseOut;
-    ```
+            /* Info to form new lower-level inner tuple with all old nodes */ bool        postfixHasPrefix;   /* tuple should have a prefix? */ Datum       postfixPrefixDatum; /* if so, its value */ }           splitTuple; }           result; } spgChooseOut;
+```
 
-`datum` é o dado original
-    `spgConfigIn`.`attType`
-    do tipo que deve ser inserido no índice.
-    `leafDatum` é um valor do
-    `spgConfigOut`.`leafType`
-    tipo, que inicialmente é resultado do método
-    `compress` aplicado ao
-    `datum` quando o método
-    `compress` é fornecido, ou o mesmo valor que
-    `datum` caso contrário.
-    `leafDatum` pode mudar em níveis inferiores da árvore
-    se os métodos
-    `choose` ou
-    `picksplit`
-    o mudarem. Quando a busca de inserção atinge uma página de folha,
-    o valor atual de
-    `leafDatum` é o que será armazenado
-    no novo par de folha criado.
-    `level` é o nível do par interno atual, começando
-    em zero para o nível da raiz.
-    `allTheSame` é verdadeiro se o par interno atual
-    está marcado como contendo múltiplos nós
-    equivalentes (ver [Seção 65.3.4.3](spgist.md#SPGIST-ALL-THE-SAME "65.3.4.3. “All-the-Same” Inner Tuples")).
-    `hasPrefix` é verdadeiro se o par interno atual
-    contém um prefixo; se assim for,
-    `prefixDatum` é seu valor.
-    `nNodes` é o número de nós filhos contidos no
-    par interno, e
-    `nodeLabels` é um array de seus valores de rótulo, ou
-    NULL se não houver rótulos.
+`datum` é o dado original `spgConfigIn`.`attType` do tipo que deve ser inserido no índice. `leafDatum` é um valor do `spgConfigOut`.`leafType` tipo, que inicialmente é resultado do método `compress` aplicado ao `datum` quando o método `compress` é fornecido, ou o mesmo valor que `datum` caso contrário. `leafDatum` pode mudar em níveis inferiores da árvore se os métodos `choose` ou `picksplit` o mudarem. Quando a busca de inserção atinge uma página de folha, o valor atual de `leafDatum` é o que será armazenado no novo par de folha criado. `level` é o nível do par interno atual, começando em zero para o nível da raiz. `allTheSame` é verdadeiro se o par interno atual está marcado como contendo múltiplos nós equivalentes (ver [Seção 65.3.4.3](spgist.md#SPGIST-ALL-THE-SAME "65.3.4.3. “All-the-Same” Inner Tuples")). `hasPrefix` é verdadeiro se o par interno atual contém um prefixo; se assim for, `prefixDatum` é seu valor. `nNodes` é o número de nós filhos contidos no par interno, e `nodeLabels` é um array de seus valores de rótulo, ou NULL se não houver rótulos.
 
 A função `choose` pode determinar que o novo valor corresponde a um dos nós filhos existentes, ou que um novo nó filho deve ser adicionado, ou que o novo valor é inconsistente com o prefixo do conjunto de tuplas e, portanto, o conjunto de tuplas interno deve ser dividido para criar um prefixo menos restritivo.
 
-Se o novo valor corresponder a um dos nós filhos existentes,
-defina `resultType` como `spgMatchNode`.
-Defina `nodeN` como o índice (a partir de zero) desse nó na
-matriz de nós.
-Defina `levelAdd` como o incremento em
-`level` causado pela descida por esse nó,
-ou deixe-o como zero se a classe do operador não usar níveis.
-Defina `restDatum` igual a `leafDatum`
-se a classe do operador não modificar datas de um nível para o
-próximo, ou, caso contrário, defina-o no valor modificado a ser
-usado como
-`leafDatum` no nível seguinte.
+Se o novo valor corresponder a um dos nós filhos existentes, defina `resultType` como `spgMatchNode`. Defina `nodeN` como o índice (a partir de zero) desse nó na matriz de nós. Defina `levelAdd` como o incremento em `level` causado pela descida por esse nó, ou deixe-o como zero se a classe do operador não usar níveis. Defina `restDatum` igual a `leafDatum` se a classe do operador não modificar datas de um nível para o próximo, ou, caso contrário, defina-o no valor modificado a ser usado como `leafDatum` no nível seguinte.
 
-Se um novo nó filho precisar ser adicionado,
-defina `resultType` como `spgAddNode`.
-Defina `nodeLabel` como o rótulo a ser usado para o novo
-nó, e defina `nodeN` como o índice (a partir de zero) em
-que inserir o nó na matriz de nós.
-Após o nó ter sido adicionado, a função `choose`
-será chamada novamente com o par interno modificado;
-Essa chamada deve resultar em um resultado `spgMatchNode`.
+Se um novo nó filho precisar ser adicionado, defina `resultType` como `spgAddNode`. Defina `nodeLabel` como o rótulo a ser usado para o novo nó, e defina `nodeN` como o índice (a partir de zero) em que inserir o nó na matriz de nós. Após o nó ter sido adicionado, a função `choose` será chamada novamente com o par interno modificado; Essa chamada deve resultar em um resultado `spgMatchNode`.
 
-Se o novo valor for inconsistente com o prefixo do tuplo,
-defina `resultType` como `spgSplitTuple`.
-Essa ação move todos os nós existentes para um novo tuplo interno de nível inferior e substitui o tuplo interno existente por um que tem um único downlink apontando para o novo tuplo interno de nível inferior.
-Defina `prefixHasPrefix` para indicar se o novo
-tuplo superior deve ter um prefixo, e, se sim, defina
-`prefixPrefixDatum` com o valor do prefixo. Esse novo
-valor de prefixo deve ser suficientemente menos restritivo que o original para aceitar o novo valor indexado.
-Defina `prefixNNodes` como o número de nós necessários no
-novo tuplo, e defina `prefixNodeLabels` como um array
-palloc que contém suas etiquetas, ou como NULL se as etiquetas dos nós não forem necessárias.
-Observe que o tamanho total do novo tuplo superior não deve ser maior que o tamanho total do tuplo que está sendo substituído; isso restringe as
-longitudes do novo prefixo e novas etiquetas.
-Defina `childNodeN` como o índice (de zero) do nó
-que fará downlink para o novo tuplo interno de nível inferior.
-Defina `postfixHasPrefix` para indicar se o novo
-tuplo interno de nível inferior deve ter um prefixo, e, se sim, defina
-`postfixPrefixDatum` com o valor do prefixo.
-A combinação desses dois prefixos e a etiqueta do nó
-(se houver) do downlink deve ter o mesmo significado que o prefixo original, porque não há oportunidade de alterar as etiquetas dos nós que são movidas para o novo tuplo de nível inferior, nem para alterar quaisquer entradas de índice de filhos.
-Após o nó ter sido dividido, a função `choose`
-será chamada novamente com o tuplo interno de substituição.
-Essa chamada pode retornar um resultado `spgAddNode`, se nenhum nó adequado foi criado pela ação `spgSplitTuple`. Eventualmente,
-`choose` deve retornar `spgMatchNode`
-para permitir a inserção descer ao próximo nível.
+Se o novo valor for inconsistente com o prefixo do tuplo, defina `resultType` como `spgSplitTuple`. Essa ação move todos os nós existentes para um novo tuplo interno de nível inferior e substitui o tuplo interno existente por um que tem um único downlink apontando para o novo tuplo interno de nível inferior. Defina `prefixHasPrefix` para indicar se o novo tuplo superior deve ter um prefixo, e, se sim, defina `prefixPrefixDatum` com o valor do prefixo. Esse novo valor de prefixo deve ser suficientemente menos restritivo que o original para aceitar o novo valor indexado. Defina `prefixNNodes` como o número de nós necessários no novo tuplo, e defina `prefixNodeLabels` como um array palloc que contém suas etiquetas, ou como NULL se as etiquetas dos nós não forem necessárias. Observe que o tamanho total do novo tuplo superior não deve ser maior que o tamanho total do tuplo que está sendo substituído; isso restringe as longitudes do novo prefixo e novas etiquetas. Defina `childNodeN` como o índice (de zero) do nó que fará downlink para o novo tuplo interno de nível inferior. Defina `postfixHasPrefix` para indicar se o novo tuplo interno de nível inferior deve ter um prefixo, e, se sim, defina `postfixPrefixDatum` com o valor do prefixo. A combinação desses dois prefixos e a etiqueta do nó (se houver) do downlink deve ter o mesmo significado que o prefixo original, porque não há oportunidade de alterar as etiquetas dos nós que são movidas para o novo tuplo de nível inferior, nem para alterar quaisquer entradas de índice de filhos. Após o nó ter sido dividido, a função `choose` será chamada novamente com o tuplo interno de substituição. Essa chamada pode retornar um resultado `spgAddNode`, se nenhum nó adequado foi criado pela ação `spgSplitTuple`. Eventualmente, `choose` deve retornar `spgMatchNode` para permitir a inserção descer ao próximo nível.
 
 `picksplit`   Decide como criar um novo tupla interna sobre um conjunto de tuplas de folha.
 
 A declaração SQL da função deve parecer assim:
 
-    ```
-    CREATE FUNCTION my_picksplit(internal, internal) RETURNS void ...
-    ```
+```
+CREATE FUNCTION my_picksplit(internal, internal) RETURNS void ...
+```
 
 O primeiro argumento é um ponteiro para uma estrutura `spgPickSplitIn` C, que contém dados de entrada para a função. O segundo argumento é um ponteiro para uma estrutura `spgPickSplitOut` C, que a função deve preencher com dados de resultado.
 
-    ```
-    typedef struct spgPickSplitIn { int         nTuples;        /* number of leaf tuples */ Datum      *datums;         /* their datums (array of length nTuples) */ int         level;          /* current level (counting from zero) */ } spgPickSplitIn;
+```
+typedef struct spgPickSplitIn { int         nTuples;        /* number of leaf tuples */ Datum      *datums;         /* their datums (array of length nTuples) */ int         level;          /* current level (counting from zero) */ } spgPickSplitIn;
 
-    typedef struct spgPickSplitOut { bool        hasPrefix;      /* new inner tuple should have a prefix? */ Datum       prefixDatum;    /* if so, its value */
+typedef struct spgPickSplitOut { bool        hasPrefix;      /* new inner tuple should have a prefix? */ Datum       prefixDatum;    /* if so, its value */
 
-        int         nNodes;         /* number of nodes for new inner tuple */ Datum      *nodeLabels;     /* their labels (or NULL for no labels) */
+    int         nNodes;         /* number of nodes for new inner tuple */ Datum      *nodeLabels;     /* their labels (or NULL for no labels) */
 
-        int        *mapTuplesToNodes;   /* node index for each leaf tuple */ Datum      *leafTupleDatums;    /* datum to store in each new leaf tuple */ } spgPickSplitOut;
-    ```
+    int        *mapTuplesToNodes;   /* node index for each leaf tuple */ Datum      *leafTupleDatums;    /* datum to store in each new leaf tuple */ } spgPickSplitOut;
+```
 
-`nTuples` é o número de tuplas de folha fornecidas.
-`datums` é um array de seus valores de dados de
-`spgConfigOut`.`leafType`
-tipo.
-`level` é o nível atual que todas as tuplas de folha compartilham, que se tornará o nível do novo tupla interna.
+`nTuples` é o número de tuplas de folha fornecidas. `datums` é um array de seus valores de dados de `spgConfigOut`.`leafType` tipo. `level` é o nível atual que todas as tuplas de folha compartilham, que se tornará o nível do novo tupla interna.
 
-Defina `hasPrefix` para indicar se o novo tuplo interno deve ter um prefixo, e, se sim, defina `prefixDatum` com o valor do prefixo.
-Defina `nNodes` para indicar o número de nós que o novo tuplo interno conterá, e
-defina `nodeLabels` como um array de seus valores de rótulo, ou como NULL se as etiquetas dos nós não forem necessárias.
-Defina `mapTuplesToNodes` como um array que forneça o índice (a partir de zero) do nó a que cada tuplo de folha deve ser atribuído.
-Defina `leafTupleDatums` como um array dos valores a serem armazenados nos novos tuplos de folha (estes serão os mesmos que o `datums` de entrada, se a classe do operador não modificar os datums de um nível para o outro).
-Observe que a função `picksplit` é responsável por alocar os arrays
-`nodeLabels`, `mapTuplesToNodes` e
-`leafTupleDatums`.
+Defina `hasPrefix` para indicar se o novo tuplo interno deve ter um prefixo, e, se sim, defina `prefixDatum` com o valor do prefixo. Defina `nNodes` para indicar o número de nós que o novo tuplo interno conterá, e defina `nodeLabels` como um array de seus valores de rótulo, ou como NULL se as etiquetas dos nós não forem necessárias. Defina `mapTuplesToNodes` como um array que forneça o índice (a partir de zero) do nó a que cada tuplo de folha deve ser atribuído. Defina `leafTupleDatums` como um array dos valores a serem armazenados nos novos tuplos de folha (estes serão os mesmos que o `datums` de entrada, se a classe do operador não modificar os datums de um nível para o outro). Observe que a função `picksplit` é responsável por alocar os arrays `nodeLabels`, `mapTuplesToNodes` e `leafTupleDatums`.
 
-Se forem fornecidas mais de uma tupla de folhas, espera-se que a função
-`picksplit` as classifique em mais de um nó; caso contrário, não é possível
-espalhar as tuplas de folhas em várias páginas, o que é o propósito final
-dessas operações. Portanto, se a função `picksplit` acabar colocando todas as
-tuplas de folhas no mesmo nó, o código central do SP-GiST substituirá essa
-decisão e gerará uma tupla interna na qual as tuplas de folhas são atribuídas
-randomicamente a vários nós com rótulos idênticos. Tal tupla é marcada
-`allTheSame` para indicar que isso aconteceu. As funções
-`choose` e `inner_consistent` devem ter cuidado adequado com tais tuplas
-internas. Consulte [Seção 65.3.4.3][(spgist.md#SPGIST-ALL-THE-SAME "65.3.4.3. “All-the-Same” Inner Tuples")] para obter mais informações.
+Se forem fornecidas mais de uma tupla de folhas, espera-se que a função `picksplit` as classifique em mais de um nó; caso contrário, não é possível espalhar as tuplas de folhas em várias páginas, o que é o propósito final dessas operações. Portanto, se a função `picksplit` acabar colocando todas as tuplas de folhas no mesmo nó, o código central do SP-GiST substituirá essa decisão e gerará uma tupla interna na qual as tuplas de folhas são atribuídas randomicamente a vários nós com rótulos idênticos. Tal tupla é marcada `allTheSame` para indicar que isso aconteceu. As funções `choose` e `inner_consistent` devem ter cuidado adequado com tais tuplas internas. Consulte [Seção 65.3.4.3](spgist.md#SPGIST-ALL-THE-SAME) para obter mais informações.
 
-`picksplit` pode ser aplicado a um único tuplo de folha apenas
-caso o conjunto de função `config` seja definido como
-verdadeiro e um valor de entrada maior que uma página tenha sido fornecido. Neste caso, o objetivo da operação é remover um prefixo e produzir um novo valor de dado de folha mais curto.
-A chamada será repetida até que um valor de dado de folha curto o suficiente para caber em uma página seja produzido. Consulte [Seção 65.3.4.1][(spgist.md#SPGIST-LIMITS "65.3.4.1. SP-GiST Limits")] para obter mais informações.
+`picksplit` pode ser aplicado a um único tuplo de folha apenas caso o conjunto de função `config` seja definido como verdadeiro e um valor de entrada maior que uma página tenha sido fornecido. Neste caso, o objetivo da operação é remover um prefixo e produzir um novo valor de dado de folha mais curto. A chamada será repetida até que um valor de dado de folha curto o suficiente para caber em uma página seja produzido. Consulte [Seção 65.3.4.1](spgist.md#SPGIST-LIMITS) para obter mais informações.
 
 `inner_consistent` : Retorna um conjunto de nós (ramos) a serem seguidos durante a busca em árvore.
 
 A declaração SQL da função deve parecer assim:
 
-    ```
-    CREATE FUNCTION my_inner_consistent(internal, internal) RETURNS void ...
-    ```
+```
+CREATE FUNCTION my_inner_consistent(internal, internal) RETURNS void ...
+```
 
 O primeiro argumento é um ponteiro para uma estrutura `spgInnerConsistentIn` C, contendo dados de entrada para a função. O segundo argumento é um ponteiro para uma estrutura `spgInnerConsistentOut` C, que a função deve preencher com dados de resultado.
 
-    ```
-    typedef struct spgInnerConsistentIn { ScanKey     scankeys;       /* array of operators and comparison values */ ScanKey     orderbys;       /* array of ordering operators and comparison
-                                     * values */ int         nkeys;          /* length of scankeys array */ int         norderbys;      /* length of orderbys array */
+```
+typedef struct spgInnerConsistentIn { ScanKey     scankeys;       /* array of operators and comparison values */ ScanKey     orderbys;       /* array of ordering operators and comparison
+                                 * values */ int         nkeys;          /* length of scankeys array */ int         norderbys;      /* length of orderbys array */
 
-        Datum       reconstructedValue;     /* value reconstructed at parent */ void       *traversalValue; /* opclass-specific traverse value */ MemoryContext traversalMemoryContext;   /* put new traverse values here */ int         level;          /* current level (counting from zero) */ bool        returnData;     /* original data must be returned? */
+    Datum       reconstructedValue;     /* value reconstructed at parent */ void       *traversalValue; /* opclass-specific traverse value */ MemoryContext traversalMemoryContext;   /* put new traverse values here */ int         level;          /* current level (counting from zero) */ bool        returnData;     /* original data must be returned? */
 
-        /* Data from current inner tuple */ bool        allTheSame;     /* tuple is marked all-the-same? */ bool        hasPrefix;      /* tuple has a prefix? */ Datum       prefixDatum;    /* if so, the prefix value */ int         nNodes;         /* number of nodes in the inner tuple */ Datum      *nodeLabels;     /* node label values (NULL if none) */ } spgInnerConsistentIn;
+    /* Data from current inner tuple */ bool        allTheSame;     /* tuple is marked all-the-same? */ bool        hasPrefix;      /* tuple has a prefix? */ Datum       prefixDatum;    /* if so, the prefix value */ int         nNodes;         /* number of nodes in the inner tuple */ Datum      *nodeLabels;     /* node label values (NULL if none) */ } spgInnerConsistentIn;
 
-    typedef struct spgInnerConsistentOut { int         nNodes;         /* number of child nodes to be visited */ int        *nodeNumbers;    /* their indexes in the node array */ int        *levelAdds;      /* increment level by this much for each */ Datum      *reconstructedValues;    /* associated reconstructed values */ void      **traversalValues;        /* opclass-specific traverse values */ double    **distances;              /* associated distances */ } spgInnerConsistentOut;
-    ```
+typedef struct spgInnerConsistentOut { int         nNodes;         /* number of child nodes to be visited */ int        *nodeNumbers;    /* their indexes in the node array */ int        *levelAdds;      /* increment level by this much for each */ Datum      *reconstructedValues;    /* associated reconstructed values */ void      **traversalValues;        /* opclass-specific traverse values */ double    **distances;              /* associated distances */ } spgInnerConsistentOut;
+```
 
-A matriz `scankeys`, de comprimento `nkeys`, descreve a(s) condição(ões) de busca do índice. Essas condições são combinadas com AND — apenas as entradas de índice que as satisfazem são interessantes. (Note que `nkeys` = 0 implica que todas as entradas de índice satisfazem a consulta.) Normalmente, a função consistente só se importa com os campos `sk_strategy` e
-`sk_argument` de cada entrada da matriz, que, respectivamente, fornecem o operador indexável e o valor de comparação.
-Em particular, não é necessário verificar `sk_flags` para ver se o valor de comparação é NULL, porque o código do núcleo SP-GiST filtrará tais condições.
-A matriz `orderbys`, de comprimento `norderbys`, descreve operadores de ordenação (se houver) da mesma maneira.
-`reconstructedValue` é o valor reconstruído para o tuplo pai; é `(Datum) 0` no nível raiz ou se a
-`inner_consistent` função não forneceu um valor no nível pai.
-`traversalValue` é um ponteiro para qualquer dado de travessia passado da chamada anterior de `inner_consistent`
-no tuplo de índice pai, ou NULL no nível raiz.
-`traversalMemoryContext` é o contexto de memória no qual armazenar os valores de travessia de saída (veja abaixo).
-`level` é o nível atual do tuplo interno, começando em zero para o nível raiz.
-`returnData` é `true` se os dados reconstruídos são necessários para esta consulta; isso só será assim se a
-`config` função tenha afirmado `canReturnData`.
-`allTheSame` é verdadeiro se o atual tuplo interno é marcado “tudo o mesmo”; nesse caso, todos os nós têm o mesmo rótulo (se houver) e, portanto, ou todos ou nenhum deles correspondem à consulta (veja [Seção 65.3.4.3][(spgist.md#SPGIST-ALL-THE-SAME "65.3.4.3. “All-the-Same” Inner Tuples")]).
-`hasPrefix` é verdadeiro se o atual tuplo interno contém um prefixo; se assim for,
-`prefixDatum` é seu valor.
-`nNodes` é o número de nós filhos contidos no tuplo interno, e
-`nodeLabels` é um array de seus valores de rótulo, ou
-NULL se os nós não tiverem rótulos.
+A matriz `scankeys`, de comprimento `nkeys`, descreve a(s) condição(ões) de busca do índice. Essas condições são combinadas com AND — apenas as entradas de índice que as satisfazem são interessantes. (Note que `nkeys` = 0 implica que todas as entradas de índice satisfazem a consulta.) Normalmente, a função consistente só se importa com os campos `sk_strategy` e `sk_argument` de cada entrada da matriz, que, respectivamente, fornecem o operador indexável e o valor de comparação. Em particular, não é necessário verificar `sk_flags` para ver se o valor de comparação é NULL, porque o código do núcleo SP-GiST filtrará tais condições. A matriz `orderbys`, de comprimento `norderbys`, descreve operadores de ordenação (se houver) da mesma maneira. `reconstructedValue` é o valor reconstruído para o tuplo pai; é `(Datum) 0` no nível raiz ou se a `inner_consistent` função não forneceu um valor no nível pai. `traversalValue` é um ponteiro para qualquer dado de travessia passado da chamada anterior de `inner_consistent` no tuplo de índice pai, ou NULL no nível raiz. `traversalMemoryContext` é o contexto de memória no qual armazenar os valores de travessia de saída (veja abaixo). `level` é o nível atual do tuplo interno, começando em zero para o nível raiz. `returnData` é `true` se os dados reconstruídos são necessários para esta consulta; isso só será assim se a `config` função tenha afirmado `canReturnData`. `allTheSame` é verdadeiro se o atual tuplo interno é marcado “tudo o mesmo”; nesse caso, todos os nós têm o mesmo rótulo (se houver) e, portanto, ou todos ou nenhum deles correspondem à consulta (veja [Seção 65.3.4.3](spgist.md#SPGIST-ALL-THE-SAME)). `hasPrefix` é verdadeiro se o atual tuplo interno contém um prefixo; se assim for, `prefixDatum` é seu valor. `nNodes` é o número de nós filhos contidos no tuplo interno, e `nodeLabels` é um array de seus valores de rótulo, ou NULL se os nós não tiverem rótulos.
 
-`nNodes` deve ser definido como o número de nós infantis que precisam ser visitados pela pesquisa, e
-`nodeNumbers` deve ser definido como um array de seus índices.
-Se a classe de operador mantém o controle de níveis, defina
-`levelAdds` como um array dos incrementos de nível
-requeridos ao descer a cada nó a ser visitado. (Muitas vezes, esses incrementos serão os mesmos para todos os nós, mas isso não é
-necessariamente o caso, então um array é usado.)
-Se a reconstrução de valor for necessária, defina
-`reconstructedValues` como um array dos valores
-reconstruídos para cada nó infantil a ser visitado; caso contrário, deixe
-`reconstructedValues` como NULL.
-Os valores reconstruídos são assumidos como do tipo
-`spgConfigOut`.`leafType`.
-(No entanto, uma vez que o sistema central não fará nada com eles, exceto possivelmente copiá-los, é suficiente que eles tenham as
-mesmas propriedades de `typlen` e `typbyval`
-do que `leafType`.).
-Se a pesquisa ordenada for realizada, defina `distances`
-como um array de valores de distância de acordo com o array `orderbys`
-(nós com distâncias mais baixas serão processados primeiro). Deixe como NULL
-caso contrário.
-Se é desejado passar informações adicionais fora da banda
-("valores de travessia") para níveis mais baixos da pesquisa da árvore,
-defina `traversalValues` como um array dos valores apropriados
-de travessia, um para cada nó infantil a ser visitado; caso contrário,
-deixe `traversalValues` como NULL.
-Note que a função `inner_consistent` é
-responsável por pallocar os
-`nodeNumbers`, `levelAdds`,
-`distances`,
-`reconstructedValues`, e
-`traversalValues` arrays no contexto de memória atual.
-No entanto, quaisquer valores de travessia de saída apontados pelo array `traversalValues`
-deverão ser alocados
-`traversalMemoryContext`.
-Cada valor de travessia deve ser um único bloco palloc.
+`nNodes` deve ser definido como o número de nós infantis que precisam ser visitados pela pesquisa, e `nodeNumbers` deve ser definido como um array de seus índices. Se a classe de operador mantém o controle de níveis, defina `levelAdds` como um array dos incrementos de nível requeridos ao descer a cada nó a ser visitado. (Muitas vezes, esses incrementos serão os mesmos para todos os nós, mas isso não é necessariamente o caso, então um array é usado.) Se a reconstrução de valor for necessária, defina `reconstructedValues` como um array dos valores reconstruídos para cada nó infantil a ser visitado; caso contrário, deixe `reconstructedValues` como NULL. Os valores reconstruídos são assumidos como do tipo `spgConfigOut`.`leafType`.
 
-`leaf_consistent`
-:   Retorna verdadeiro se um tupla de folha satisfaça uma consulta.
+(No entanto, uma vez que o sistema central não fará nada com eles, exceto possivelmente copiá-los, é suficiente que eles tenham as mesmas propriedades de `typlen` e `typbyval` do que `leafType`.). Se a pesquisa ordenada for realizada, defina `distances` como um array de valores de distância de acordo com o array `orderbys` (nós com distâncias mais baixas serão processados primeiro). Deixe como NULL caso contrário. Se é desejado passar informações adicionais fora da banda ("valores de travessia") para níveis mais baixos da pesquisa da árvore, defina `traversalValues` como um array dos valores apropriados de travessia, um para cada nó infantil a ser visitado; caso contrário, deixe `traversalValues` como NULL. Note que a função `inner_consistent` é responsável por pallocar os `nodeNumbers`, `levelAdds`, `distances`, `reconstructedValues`, e `traversalValues` arrays no contexto de memória atual. No entanto, quaisquer valores de travessia de saída apontados pelo array `traversalValues` deverão ser alocados `traversalMemoryContext`. Cada valor de travessia deve ser um único bloco palloc.
+
+`leaf_consistent`: Retorna verdadeiro se um tupla de folha satisfaça uma consulta.
 
 A declaração SQL da função deve parecer assim:
 
-    ```
-    CREATE FUNCTION my_leaf_consistent(internal, internal) RETURNS bool ...
-    ```
+```
+CREATE FUNCTION my_leaf_consistent(internal, internal) RETURNS bool ...
+```
 
 O primeiro argumento é um ponteiro para uma estrutura `spgLeafConsistentIn` C, contendo dados de entrada para a função. O segundo argumento é um ponteiro para uma estrutura `spgLeafConsistentOut` C, que a função deve preencher com dados de resultado.
 
-    ```
-    typedef struct spgLeafConsistentIn { ScanKey     scankeys;       /* array of operators and comparison values */ ScanKey     orderbys;       /* array of ordering operators and comparison
-                                     * values */ int         nkeys;          /* length of scankeys array */ int         norderbys;      /* length of orderbys array */
+```
+typedef struct spgLeafConsistentIn { ScanKey     scankeys;       /* array of operators and comparison values */ ScanKey     orderbys;       /* array of ordering operators and comparison
+                                 * values */ int         nkeys;          /* length of scankeys array */ int         norderbys;      /* length of orderbys array */
 
-        Datum       reconstructedValue;     /* value reconstructed at parent */ void       *traversalValue; /* opclass-specific traverse value */ int         level;          /* current level (counting from zero) */ bool        returnData;     /* original data must be returned? */
+    Datum       reconstructedValue;     /* value reconstructed at parent */ void       *traversalValue; /* opclass-specific traverse value */ int         level;          /* current level (counting from zero) */ bool        returnData;     /* original data must be returned? */
 
-        Datum       leafDatum;      /* datum in leaf tuple */ } spgLeafConsistentIn;
+    Datum       leafDatum;      /* datum in leaf tuple */ } spgLeafConsistentIn;
 
-    typedef struct spgLeafConsistentOut { Datum       leafValue;        /* reconstructed original data, if any */ bool        recheck;          /* set true if operator must be rechecked */ bool        recheckDistances; /* set true if distances must be rechecked */ double     *distances;        /* associated distances */ } spgLeafConsistentOut;
-    ```
+typedef struct spgLeafConsistentOut { Datum       leafValue;        /* reconstructed original data, if any */ bool        recheck;          /* set true if operator must be rechecked */ bool        recheckDistances; /* set true if distances must be rechecked */ double     *distances;        /* associated distances */ } spgLeafConsistentOut;
+```
 
-A matriz `scankeys`, de comprimento `nkeys`, descreve a(s) condição(ões) de busca do índice. Essas condições são combinadas com AND — apenas as entradas de índice que satisfazem todas elas satisfazem a consulta. (Observe que `nkeys` = 0 implica que todas as entradas de índice satisfazem a consulta.) Normalmente, a função consistente só se importa com os campos `sk_strategy` e `sk_argument` de cada entrada da matriz, que respectivamente fornecem o operador indexável e o valor de comparação. Em particular, não é necessário verificar `sk_flags` para ver se o valor de comparação é NULL, porque o código do núcleo SP-GiST filtrará tais condições.
-A matriz `orderbys`, de comprimento `norderbys`, descreve os operadores de ordenação da mesma maneira. `reconstructedValue` é o valor reconstruído para o tuplo pai; é `(Datum) 0` no nível raiz ou se a função `inner_consistent` não forneceu um valor no nível pai. `traversalValue` é um ponteiro para qualquer dado de travessia passado da chamada anterior de `inner_consistent` no tuplo de índice pai, ou NULL no nível raiz. `level` é o nível atual do tuplo folha, começando em zero para o nível raiz. `returnData` é `true` se dados reconstruídos forem necessários para esta consulta; isso só será assim se a função `config` tenha afirmado `canReturnData`. `leafDatum` é o valor da chave de `spgConfigOut`.[[`leafType`]
-armazenado na tupla atual da folha.
+A matriz `scankeys`, de comprimento `nkeys`, descreve a(s) condição(ões) de busca do índice. Essas condições são combinadas com AND — apenas as entradas de índice que satisfazem todas elas satisfazem a consulta. (Observe que `nkeys` = 0 implica que todas as entradas de índice satisfazem a consulta.) Normalmente, a função consistente só se importa com os campos `sk_strategy` e `sk_argument` de cada entrada da matriz, que respectivamente fornecem o operador indexável e o valor de comparação. Em particular, não é necessário verificar `sk_flags` para ver se o valor de comparação é NULL, porque o código do núcleo SP-GiST filtrará tais condições. A matriz `orderbys`, de comprimento `norderbys`, descreve os operadores de ordenação da mesma maneira. `reconstructedValue` é o valor reconstruído para o tuplo pai; é `(Datum) 0` no nível raiz ou se a função `inner_consistent` não forneceu um valor no nível pai. `traversalValue` é um ponteiro para qualquer dado de travessia passado da chamada anterior de `inner_consistent` no tuplo de índice pai, ou NULL no nível raiz. `level` é o nível atual do tuplo folha, começando em zero para o nível raiz. `returnData` é `true` se dados reconstruídos forem necessários para esta consulta; isso só será assim se a função `config` tenha afirmado `canReturnData`. `leafDatum` é o valor da chave de `spgConfigOut`.[[`leafType`] armazenado na tupla atual da folha.
 
-A função deve retornar `true` se o tuplo de folha corresponder à
-consulta, ou `false` se não corresponder. No caso de `true`,
-se `returnData` for `true`, então
-`leafValue` deve ser definido com o valor (do tipo
-`spgConfigIn`.`attType`)
-originalmente fornecido para ser indexado para este tuplo de folha. Além disso,
-`recheck` pode ser definido como `true` se a correspondência
-for incerta e, portanto, o(s) operador(es) deve(m) ser aplicado(s) novamente ao
-tuplo real do heap para verificar a correspondência.
-Se a busca ordenada for realizada, defina `distances`
-como um array de valores de distância de acordo com a
-matriz `orderbys`. Deixe-a NULL caso contrário. Se pelo menos uma das
-distâncias devolvidas não for exata, defina `recheckDistances` como verdadeiro.
-Neste caso, o executor calculará as distâncias exatas após
-extrair o tuplo do heap e reorganizará os tuplos, se necessário.
+A função deve retornar `true` se o tuplo de folha corresponder à consulta, ou `false` se não corresponder. No caso de `true`, se `returnData` for `true`, então `leafValue` deve ser definido com o valor (do tipo `spgConfigIn`.`attType`) originalmente fornecido para ser indexado para este tuplo de folha. Além disso, `recheck` pode ser definido como `true` se a correspondência for incerta e, portanto, o(s) operador(es) deve(m) ser aplicado(s) novamente ao tuplo real do heap para verificar a correspondência. Se a busca ordenada for realizada, defina `distances` como um array de valores de distância de acordo com a matriz `orderbys`. Deixe-a NULL caso contrário. Se pelo menos uma das distâncias devolvidas não for exata, defina `recheckDistances` como verdadeiro. Neste caso, o executor calculará as distâncias exatas após extrair o tuplo do heap e reorganizará os tuplos, se necessário.
 
 Os métodos opcionais definidos pelo usuário são:
 
@@ -905,14 +752,13 @@ Os métodos opcionais definidos pelo usuário são:
 
 Nota: o método `compress` é aplicado apenas aos valores a serem armazenados. Os métodos consistentes recebem consulta `scankeys` inalterada, sem transformação usando `compress`.
 
-`options`
-:   Define um conjunto de parâmetros visíveis para o usuário que controlam o comportamento da classe do operador.
+`options`: Define um conjunto de parâmetros visíveis para o usuário que controlam o comportamento da classe do operador.
 
 A declaração SQL da função deve parecer assim:
 
-    ```
-    CREATE OR REPLACE FUNCTION my_options(internal) RETURNS void AS 'MODULE_PATHNAME' LANGUAGE C STRICT;
-    ```
+```
+CREATE OR REPLACE FUNCTION my_options(internal) RETURNS void AS 'MODULE_PATHNAME' LANGUAGE C STRICT;
+```
 
 A função recebe um ponteiro para uma estrutura `local_relopts`, que precisa ser preenchida com um conjunto de opções específicas para a classe de operador. As opções podem ser acessadas a partir de outras funções de suporte usando as macros `PG_HAS_OPCLASS_OPTIONS()` e `PG_GET_OPCLASS_OPTIONS()`.
 
@@ -932,27 +778,13 @@ Os tuplos de folhas individuais e os tuplos internos devem caber em uma única p
 
 Da mesma forma, é responsabilidade da classe de operador que os tuplos internos não cresçam demais para caber em uma página de índice; isso limita o número de nós filhos que podem ser usados em um tuplo interno, bem como o tamanho máximo de um valor prefixo.
 
-Outra limitação é que, quando o nó de um tuplo interno aponta para um conjunto de tuplos de folha, esses tuplos devem estar todos na mesma página de índice. (Essa é uma decisão de projeto para reduzir a busca e economizar espaço nos links que unem esses tuplos.) Se o conjunto de tuplos de folha se tornar muito grande para uma página, uma divisão é realizada e um tuplo interno intermediário é inserido. Para resolver o problema, o novo tuplo interno *deve* dividir o conjunto de valores de folha em mais de um grupo de nó. Se a função `picksplit` da classe do operador não conseguir fazer isso, o núcleo SP-GiST recorre a medidas extraordinárias descritas em [Seção 65.3.4.3][(spgist.md#SPGIST-ALL-THE-SAME "65.3.4.3. “All-the-Same” Inner Tuples")].
+Outra limitação é que, quando o nó de um tuplo interno aponta para um conjunto de tuplos de folha, esses tuplos devem estar todos na mesma página de índice. (Essa é uma decisão de projeto para reduzir a busca e economizar espaço nos links que unem esses tuplos.) Se o conjunto de tuplos de folha se tornar muito grande para uma página, uma divisão é realizada e um tuplo interno intermediário é inserido. Para resolver o problema, o novo tuplo interno *deve* dividir o conjunto de valores de folha em mais de um grupo de nó. Se a função `picksplit` da classe do operador não conseguir fazer isso, o núcleo SP-GiST recorre a medidas extraordinárias descritas em [Seção 65.3.4.3](spgist.md#SPGIST-ALL-THE-SAME).
 
-Quando `longValuesOK` é verdadeiro, espera-se que os níveis sucessivos da árvore SP-GiST absorvam cada vez mais informações nos prefixos e rótulos dos nós dos tuplos internos, tornando os dados finais menores e menores, de modo que, eventualmente, eles se encaixem em uma página.
-Para evitar que bugs nas classes de operadores causem loops de inserção infinitos, o núcleo SP-GiST levantará um erro se o dado final não se tornar menor dentro de dez ciclos de chamadas do método `choose`.
+Quando `longValuesOK` é verdadeiro, espera-se que os níveis sucessivos da árvore SP-GiST absorvam cada vez mais informações nos prefixos e rótulos dos nós dos tuplos internos, tornando os dados finais menores e menores, de modo que, eventualmente, eles se encaixem em uma página. Para evitar que bugs nas classes de operadores causem loops de inserção infinitos, o núcleo SP-GiST levantará um erro se o dado final não se tornar menor dentro de dez ciclos de chamadas do método `choose`.
 
 #### 65.3.4.2. SP-GiST sem rótulos de nó [#](#SPGIST-NULL-LABELS)
 
-Alguns algoritmos de árvores utilizam um conjunto fixo de nós para cada tupla interna;
-por exemplo, em uma quad-tree, sempre há exatamente quatro nós
-correspondentes aos quatro quadrantes ao redor do ponto central
-da tupla interna. Nesse caso, o código normalmente trabalha com os nós
-pelo número, e não há necessidade de rótulos explícitos de nó. Para suprimir
-rótulos de nó (e, assim, economizar espaço), a função `picksplit`
-pode retornar NULL para o array `nodeLabels`,
-e da mesma forma, a função `choose` pode retornar NULL para
-o array `prefixNodeLabels` durante
-uma ação `spgSplitTuple`.
-Isso, por sua vez, resultará em `nodeLabels` sendo NULL durante
-chamadas subsequentes para `choose` e `inner_consistent`.
-Em princípio, rótulos de nó poderiam ser usados para algumas tuplas internas e omitidos
-para outras no mesmo índice.
+Alguns algoritmos de árvores utilizam um conjunto fixo de nós para cada tupla interna; por exemplo, em uma quad-tree, sempre há exatamente quatro nós correspondentes aos quatro quadrantes ao redor do ponto central da tupla interna. Nesse caso, o código normalmente trabalha com os nós pelo número, e não há necessidade de rótulos explícitos de nó. Para suprimir rótulos de nó (e, assim, economizar espaço), a função `picksplit` pode retornar NULL para o array `nodeLabels`, e da mesma forma, a função `choose` pode retornar NULL para o array `prefixNodeLabels` durante uma ação `spgSplitTuple`. Isso, por sua vez, resultará em `nodeLabels` sendo NULL durante chamadas subsequentes para `choose` e `inner_consistent`. Em princípio, rótulos de nó poderiam ser usados para algumas tuplas internas e omitidos para outras no mesmo índice.
 
 Ao trabalhar com um tuplo interno com nós não rotulados, é um erro que o `choose` retorne `spgAddNode`, uma vez que o conjunto de nós é suposto ser fixo nesses casos.
 
@@ -966,4 +798,4 @@ Ao lidar com um tupla `allTheSame`, a função `inner_consistent` deve retornar 
 
 ### 65.3.5. Exemplos [#](#SPGIST-EXAMPLES)
 
-A distribuição de fonte do PostgreSQL inclui vários exemplos de classes de operadores de índice para SP-GiST, conforme descrito em [Tabela 65.2] [(spgist.md#SPGIST-BUILTIN-OPCLASSES-TABLE "Table 65.2. Built-in SP-GiST Operator Classes")]. Consulte `src/backend/access/spgist/` e `src/backend/utils/adt/` para ver o código.
+A distribuição de fonte do PostgreSQL inclui vários exemplos de classes de operadores de índice para SP-GiST, conforme descrito em [Tabela 65.2](spgist.md#SPGIST-BUILTIN-OPCLASSES-TABLE). Consulte `src/backend/access/spgist/` e `src/backend/utils/adt/` para ver o código.

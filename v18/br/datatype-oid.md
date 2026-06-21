@@ -1,6 +1,6 @@
 ## 8.19. Tipos de Identificador de Objeto [#](#DATATYPE-OID)
 
-Os identificadores de objeto (OIDs) são utilizados internamente pelo PostgreSQL como chaves primárias para várias tabelas do sistema. O tipo `oid` representa um identificador de objeto. Há também vários tipos de alias para `oid`, cada um com o nome `regsomething`. A Tabela 8.26 [(datatype-oid.md#DATATYPE-OID-TABLE "Table 8.26. Object Identifier Types")] mostra uma visão geral.
+Os identificadores de objeto (OIDs) são utilizados internamente pelo PostgreSQL como chaves primárias para várias tabelas do sistema. O tipo `oid` representa um identificador de objeto. Há também vários tipos de alias para `oid`, cada um com o nome `regsomething`. A [Tabela 8.26](datatype-oid.md#DATATYPE-OID-TABLE) mostra uma visão geral.
 
 O tipo `oid` é atualmente implementado como um inteiro de quatro bytes não assinado. Portanto, não é grande o suficiente para fornecer unicidade em todo o banco de dados em grandes bancos de dados, ou até mesmo em grandes tabelas individuais.
 
@@ -26,252 +26,281 @@ Embora isso não pareça muito ruim por si só, ainda é bastante simplificado. 
 
 
 <table border="1" class="table" summary="Object Identifier Types">
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Name
    </th>
-<th>
+   <th>
     References
    </th>
-<th>Descrição</th>
-<th>
+   <th>
+    Descrição
+   </th>
+   <th>
     Value Example
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="type">
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="type">
      oid
     </code>
-</td>
-<td>
+   </td>
+   <td>
     any
    </td>
-<td>identificador de objeto numérico</td>
-<td>
-<code class="literal">
+   <td>
+    identificador de objeto numérico
+   </td>
+   <td>
+    <code class="literal">
      564182
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      regclass
     </code>
-</td>
-<td>
-<code class="structname">
+   </td>
+   <td>
+    <code class="structname">
      pg_class
     </code>
-</td>
-<td>nome da relação</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    nome da relação
+   </td>
+   <td>
+    <code class="literal">
      pg_type
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      regcollation
     </code>
-</td>
-<td>
-<code class="structname">
+   </td>
+   <td>
+    <code class="structname">
      pg_collation
     </code>
-</td>
-<td>nome da agregação</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    nome da agregação
+   </td>
+   <td>
+    <code class="literal">
      "POSIX"
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      regconfig
     </code>
-</td>
-<td>
-<code class="structname">
+   </td>
+   <td>
+    <code class="structname">
      pg_ts_config
     </code>
-</td>
-<td>configuração de pesquisa de texto</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    configuração de pesquisa de texto
+   </td>
+   <td>
+    <code class="literal">
      english
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      regdictionary
     </code>
-</td>
-<td>
-<code class="structname">
+   </td>
+   <td>
+    <code class="structname">
      pg_ts_dict
     </code>
-</td>
-<td>dicionário de busca de texto</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    dicionário de busca de texto
+   </td>
+   <td>
+    <code class="literal">
      simple
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      regnamespace
     </code>
-</td>
-<td>
-<code class="structname">
+   </td>
+   <td>
+    <code class="structname">
      pg_namespace
     </code>
-</td>
-<td>nome do espaço de nomeação</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    nome do espaço de nomeação
+   </td>
+   <td>
+    <code class="literal">
      pg_catalog
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      regoper
     </code>
-</td>
-<td>
-<code class="structname">
+   </td>
+   <td>
+    <code class="structname">
      pg_operator
     </code>
-</td>
-<td>nome do operador</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    nome do operador
+   </td>
+   <td>
+    <code class="literal">
      +
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      regoperator
     </code>
-</td>
-<td>
-<code class="structname">
+   </td>
+   <td>
+    <code class="structname">
      pg_operator
     </code>
-</td>
-<td>operador com tipos de argumento</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    operador com tipos de argumento
+   </td>
+   <td>
+    <code class="literal">
      *(integer,​integer)
     </code>
     or
     <code class="literal">
      -(NONE,​integer)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      regproc
     </code>
-</td>
-<td>
-<code class="structname">
+   </td>
+   <td>
+    <code class="structname">
      pg_proc
     </code>
-</td>
-<td>nome da função</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    nome da função
+   </td>
+   <td>
+    <code class="literal">
      sum
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      regprocedure
     </code>
-</td>
-<td>
-<code class="structname">
+   </td>
+   <td>
+    <code class="structname">
      pg_proc
     </code>
-</td>
-<td>função com tipos de argumentos</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    função com tipos de argumentos
+   </td>
+   <td>
+    <code class="literal">
      sum(int4)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      regrole
     </code>
-</td>
-<td>
-<code class="structname">
+   </td>
+   <td>
+    <code class="structname">
      pg_authid
     </code>
-</td>
-<td>nome do papel</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    nome do papel
+   </td>
+   <td>
+    <code class="literal">
      smithee
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      regtype
     </code>
-</td>
-<td>
-<code class="structname">
+   </td>
+   <td>
+    <code class="structname">
      pg_type
     </code>
-</td>
-<td>nome do tipo de dados</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    nome do tipo de dados
+   </td>
+   <td>
+    <code class="literal">
      integer
     </code>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Todos os tipos de alias OID para objetos que são agrupados por namespace aceitam nomes qualificados por esquema e exibirão nomes qualificados por esquema na saída se o objeto não for encontrado no caminho de pesquisa atual sem ser qualificado. Por exemplo, `myschema.mytable` é uma entrada aceitável para `regclass` (se houver uma tabela assim). Esse valor pode ser exibido como `myschema.mytable`, ou apenas `mytable`, dependendo do caminho de pesquisa atual. Os tipos de alias `regproc` e `regoper` só aceitam nomes de entrada que são únicos (não sobrecarregados), portanto, são de uso limitado; para a maioria dos usos, `regprocedure` ou `regoperator` são mais apropriados. Para `regoperator`, os operadores unários são identificados escrevendo `NONE` para o operador não utilizado.
 
@@ -296,7 +325,7 @@ Quando você escreve o argumento de uma função como uma string literal não or
 nextval('foo'::text)      foo is looked up at runtime
 ```
 
-A função `to_regclass()` e seus irmãos também podem ser usados para realizar pesquisas em tempo de execução. Veja [Tabela 9.76][(functions-info.md#FUNCTIONS-INFO-CATALOG-TABLE "Table 9.76. System Catalog Information Functions")].
+A função `to_regclass()` e seus irmãos também podem ser usados para realizar pesquisas em tempo de execução. Veja [Tabela 9.76](functions-info.md#FUNCTIONS-INFO-CATALOG-TABLE).
 
 Outro exemplo prático de uso do `regclass` é procurar o OID de uma tabela listada nas visualizações do `information_schema`, que não fornecem esses OIDs diretamente. Por exemplo, pode-se desejar chamar a função `pg_relation_size()`, que requer o OID da tabela. Tendo em conta as regras acima, a maneira correta de fazer isso é
 
@@ -326,4 +355,4 @@ Um terceiro tipo de identificador utilizado pelo sistema é `cid`, ou identifica
 
 Um tipo de identificador final utilizado pelo sistema é `tid`, ou identificador de tupla (identificador de linha). Este é o tipo de dados da coluna do sistema `ctid`. Um ID de tupla é um par (número de bloco, índice de tupla dentro do bloco) que identifica a localização física da linha dentro de sua tabela.
 
-(As colunas do sistema são explicadas mais detalhadamente em [Seção 5.6][(ddl-system-columns.md "5.6. System Columns")].
+(As colunas do sistema são explicadas mais detalhadamente em [Seção 5.6](ddl-system-columns.md).

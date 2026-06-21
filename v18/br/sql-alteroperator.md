@@ -53,7 +53,7 @@ Você deve ser o operador para usar `ALTER OPERATOR`. Para alterar o proprietár
 
 ## Notas
 
-Consulte a [Seção 36.14][(xoper.md "36.14. User-Defined Operators")] e a [Seção 36.15][(xoper-optimization.md "36.15. Operator Optimization Information")] para obter mais informações.
+Consulte a [Seção 36.14](xoper.md) e a [Seção 36.15](xoper-optimization.md) para obter mais informações.
 
 Como os commutatórios vêm em pares que são commutatórios uns dos outros, `ALTER OPERATOR SET COMMUTATOR` também definirá o commutatório do *`com_op`* como o operador alvo. Da mesma forma, `ALTER OPERATOR SET NEGATOR` também definirá o negador do *`neg_op`* como o operador alvo. Portanto, você deve possuir o operador de commutatório ou negador, bem como o operador alvo.
 

@@ -14,29 +14,29 @@ Uma instância `postgres` sempre gerencia os dados de exatamente um conjunto de 
 
 Por padrão, `postgres` começa em primeiro plano e imprime mensagens de log no fluxo de erro padrão. Em aplicações práticas, `postgres` deve ser iniciado como um processo em segundo plano, talvez no momento do boot.
 
-O comando `postgres` também pode ser chamado no modo de usuário único. O uso principal para este modo é durante o arranque pelo [initdb][(app-initdb.md "initdb")]. Às vezes, é usado para depuração ou recuperação em caso de desastre; observe que executar um servidor de usuário único não é realmente adequado para depuração do servidor, uma vez que não ocorrerá comunicação e bloqueio de processos realistas. Quando invocado no modo de usuário único a partir da linha de comando, o usuário pode inserir consultas e os resultados serão impressos na tela, mas de uma forma que é mais útil para desenvolvedores do que para usuários finais. No modo de usuário único, o usuário da sessão será definido para o usuário com ID 1, e poderes de superusuário implícitos serão concedidos a este usuário. Este usuário não precisa realmente existir, portanto, o modo de usuário único pode ser usado para recuperar manualmente certos tipos de danos acidentais aos catálogos do sistema.
+O comando `postgres` também pode ser chamado no modo de usuário único. O uso principal para este modo é durante o arranque pelo [initdb](app-initdb.md). Às vezes, é usado para depuração ou recuperação em caso de desastre; observe que executar um servidor de usuário único não é realmente adequado para depuração do servidor, uma vez que não ocorrerá comunicação e bloqueio de processos realistas. Quando invocado no modo de usuário único a partir da linha de comando, o usuário pode inserir consultas e os resultados serão impressos na tela, mas de uma forma que é mais útil para desenvolvedores do que para usuários finais. No modo de usuário único, o usuário da sessão será definido para o usuário com ID 1, e poderes de superusuário implícitos serão concedidos a este usuário. Este usuário não precisa realmente existir, portanto, o modo de usuário único pode ser usado para recuperar manualmente certos tipos de danos acidentais aos catálogos do sistema.
 
 ## Opções
 
-`postgres` aceita os seguintes argumentos de linha de comando. Para uma discussão detalhada das opções, consulte o [Capítulo 19][(runtime-config.md "Chapter 19. Server Configuration")]. Você pode economizar a digitação da maioria dessas opções configurando um arquivo de configuração. Algumas (seguras) opções também podem ser definidas a partir do cliente de conexão de uma maneira dependente da aplicação para aplicar apenas para essa sessão. Por exemplo, se a variável de ambiente `PGOPTIONS` estiver definida, os clientes baseados em libpq passarão essa string para o servidor, que a interpretará como opções de linha de comando `postgres`.
+`postgres` aceita os seguintes argumentos de linha de comando. Para uma discussão detalhada das opções, consulte o [Capítulo 19](runtime-config.md). Você pode economizar a digitação da maioria dessas opções configurando um arquivo de configuração. Algumas (seguras) opções também podem ser definidas a partir do cliente de conexão de uma maneira dependente da aplicação para aplicar apenas para essa sessão. Por exemplo, se a variável de ambiente `PGOPTIONS` estiver definida, os clientes baseados em libpq passarão essa string para o servidor, que a interpretará como opções de linha de comando `postgres`.
 
 ### Propósito Geral
 
-`-B nbuffers`: Define o número de buffers compartilhados para uso pelos processos do servidor. O valor padrão deste parâmetro é escolhido automaticamente pelo initdb. Especificar esta opção é equivalente a definir o parâmetro de configuração [shared_buffers][(runtime-config-resource.md#GUC-SHARED-BUFFERS)].
+`-B nbuffers`: Define o número de buffers compartilhados para uso pelos processos do servidor. O valor padrão deste parâmetro é escolhido automaticamente pelo initdb. Especificar esta opção é equivalente a definir o parâmetro de configuração [shared_buffers](runtime-config-resource.md#GUC-SHARED-BUFFERS).
 
-`-c name=value`: Define um parâmetro de execução com nome. Os parâmetros de configuração suportados pelo PostgreSQL são descritos em [Capítulo 19][(runtime-config.md "Chapter 19. Server Configuration")]. A maioria das outras opções de linha de comando são, na verdade, formas abreviadas de uma atribuição de parâmetros. `-c` pode aparecer várias vezes para definir vários parâmetros.
+`-c name=value`: Define um parâmetro de execução com nome. Os parâmetros de configuração suportados pelo PostgreSQL são descritos em [Capítulo 19](runtime-config.md). A maioria das outras opções de linha de comando são, na verdade, formas abreviadas de uma atribuição de parâmetros. `-c` pode aparecer várias vezes para definir vários parâmetros.
 
 `-C name`: Imprime o valor do parâmetro de execução nomeado e sai. (Consulte a opção `-c` acima para obter detalhes.) Isso retorna valores de `postgresql.conf`, modificados por quaisquer parâmetros fornecidos nesta invocação. Não reflete os parâmetros fornecidos quando o clúster foi iniciado.
 
 Isso pode ser usado em um servidor em execução para a maioria dos parâmetros. No entanto, o servidor deve ser desligado para alguns parâmetros calculados durante a execução (por exemplo, [shared_memory_size](runtime-config-preset.md#GUC-SHARED-MEMORY-SIZE), [shared_memory_size_in_huge_pages](runtime-config-preset.md#GUC-SHARED-MEMORY-SIZE-IN-HUGE-PAGES) e [wal_segment_size](runtime-config-preset.md#GUC-WAL-SEGMENT-SIZE)).
 
-Esta opção é destinada a outros programas que interagem com uma instância do servidor, como [pg_ctl][(app-pg-ctl.md "pg_ctl")], para consultar os valores dos parâmetros de configuração. As aplicações voltadas para o usuário devem, em vez disso, usar [`SHOW`][(sql-show.md "SHOW")] ou a visualização `pg_settings`.
+Esta opção é destinada a outros programas que interagem com uma instância do servidor, como [pg_ctl](app-pg-ctl.md), para consultar os valores dos parâmetros de configuração. As aplicações voltadas para o usuário devem, em vez disso, usar [`SHOW`](sql-show.md) ou a visualização `pg_settings`.
 
 `-d debug-level`: Define o nível de depuração. Quanto maior o valor definido, mais saída de depuração é escrita no log do servidor. Os valores variam de 1 a 5. É também possível passar `-d 0` para uma sessão específica, o que impedirá que o nível de log do servidor do processo pai `postgres` seja propagado para esta sessão.
 
-`-D datadir`: Especifica a localização do sistema de arquivos dos arquivos de configuração do banco de dados. Consulte [Seção 19.2][(runtime-config-file-locations.md "19.2. File Locations")] para obter detalhes.
+`-D datadir`: Especifica a localização do sistema de arquivos dos arquivos de configuração do banco de dados. Consulte [Seção 19.2](runtime-config-file-locations.md) para obter detalhes.
 
-`-e`: Define o estilo de data padrão como “Europeu”, ou seja, a `DMY` ordenação dos campos de data de entrada. Isso também faz com que o dia seja impresso antes do mês em certos formatos de saída de data. Consulte [Seção 8.5][(datatype-datetime.md "8.5. Date/Time Types")] para obter mais informações.
+`-e`: Define o estilo de data padrão como “Europeu”, ou seja, a `DMY` ordenação dos campos de data de entrada. Isso também faz com que o dia seja impresso antes do mês em certos formatos de saída de data. Consulte [Seção 8.5](datatype-datetime.md) para obter mais informações.
 
 `-F`: Desabilita as chamadas para melhoria do desempenho, arriscando a corrupção dos dados no caso de um travamento do sistema. Especificar esta opção é equivalente a desabilitar o parâmetro de configuração [fsync](runtime-config-wal.md#GUC-FSYNC). Leia a documentação detalhada antes de usar isso!
 
@@ -44,13 +44,13 @@ Esta opção é destinada a outros programas que interagem com uma instância do
 
 `-i`: Permite que clientes remotos se conectem por meio de conexões TCP/IP (domínio de Internet). Sem essa opção, apenas conexões locais são aceitas. Essa opção é equivalente a definir `listen_addresses` como `*` em `postgresql.conf` ou por meio de `-h`.
 
-Essa opção é desaconselhada, pois não permite o acesso à funcionalidade completa de [listen_addresses][(runtime-config-connection.md#GUC-LISTEN-ADDRESSES)]. Geralmente é melhor definir diretamente `listen_addresses`.
+Essa opção é desaconselhada, pois não permite o acesso à funcionalidade completa de [listen_addresses](runtime-config-connection.md#GUC-LISTEN-ADDRESSES). Geralmente é melhor definir diretamente `listen_addresses`.
 
 `-k directory`: Especifica o diretório do socket de domínio Unix no qual `postgres` deve ouvir conexões de aplicativos cliente. O valor também pode ser uma lista de diretórios separados por vírgula. Um valor vazio especifica não ouvir em nenhum socket de domínio Unix, nesse caso, apenas soquetes TCP/IP podem ser usados para se conectar ao servidor. O valor padrão é normalmente `/tmp`, mas isso pode ser alterado na hora da construção. Especificar esta opção é equivalente a definir o parâmetro de configuração [unix_socket_directories](runtime-config-connection.md#GUC-UNIX-SOCKET-DIRECTORIES).
 
-`-l`: Habilita conexões seguras usando SSL. O PostgreSQL deve ter sido compilado com suporte para SSL para que essa opção esteja disponível. Para mais informações sobre o uso do SSL, consulte [Seção 18.9][(ssl-tcp.md "18.9. Secure TCP/IP Connections with SSL")].
+`-l`: Habilita conexões seguras usando SSL. O PostgreSQL deve ter sido compilado com suporte para SSL para que essa opção esteja disponível. Para mais informações sobre o uso do SSL, consulte [Seção 18.9](ssl-tcp.md).
 
-`-N max-connections`: Define o número máximo de conexões de cliente que este servidor aceitará. O valor padrão deste parâmetro é escolhido automaticamente pelo initdb. Especificar esta opção é equivalente a definir o parâmetro de configuração [max_connections][(runtime-config-connection.md#GUC-MAX-CONNECTIONS)].
+`-N max-connections`: Define o número máximo de conexões de cliente que este servidor aceitará. O valor padrão deste parâmetro é escolhido automaticamente pelo initdb. Especificar esta opção é equivalente a definir o parâmetro de configuração [max_connections](runtime-config-connection.md#GUC-MAX-CONNECTIONS).
 
 `-p port`: Especifica a porta TCP/IP ou a extensão de arquivo de soquete de domínio Unix local na qual o `postgres` deve ouvir conexões de aplicações cliente. O padrão é o valor da variável de ambiente `PGPORT`, ou, se `PGPORT` não for definido, o padrão é o valor estabelecido durante a compilação (normalmente 5432). Se você especificar uma porta diferente da porta padrão, todas as aplicações cliente devem especificar a mesma porta usando opções de linha de comando ou `PGPORT`.
 
@@ -88,7 +88,7 @@ Nem as varreduras sequenciais nem as junções de laço aninhado podem ser desat
 
 ### Opções para Modo de Usuário Único
 
-As opções a seguir só se aplicam ao modo de usuário único (consulte [Modo de usuário único][(app-postgres.md#APP-POSTGRES-SINGLE-USER "Single-User Mode")] abaixo).
+As opções a seguir só se aplicam ao modo de usuário único (consulte [Modo de usuário único](app-postgres.md#APP-POSTGRES-SINGLE-USER) abaixo).
 
 `--single`: Seleciona o modo de usuário único. Este deve ser o primeiro argumento na linha de comando.
 
@@ -112,7 +112,7 @@ As opções a seguir só se aplicam ao modo de usuário único (consulte [Modo d
 
 ## Diagnósticos
 
-Uma mensagem de falha que menciona `semget` ou `shmget` provavelmente indica que você precisa configurar seu kernel para fornecer memória compartilhada e semaforos adequados. Para mais discussão, consulte [Seção 18.4][(kernel-resources.md "18.4. Managing Kernel Resources")]. Você pode ser capaz de adiar a recarga do seu kernel, diminuindo [shared_buffers][(runtime-config-resource.md#GUC-SHARED-BUFFERS)] para reduzir o consumo de memória compartilhada do PostgreSQL, e/ou reduzindo [max_connections][(runtime-config-connection.md#GUC-MAX-CONNECTIONS)] para reduzir o consumo de semaforos.
+Uma mensagem de falha que menciona `semget` ou `shmget` provavelmente indica que você precisa configurar seu kernel para fornecer memória compartilhada e semaforos adequados. Para mais discussão, consulte [Seção 18.4](kernel-resources.md). Você pode ser capaz de adiar a recarga do seu kernel, diminuindo [shared_buffers](runtime-config-resource.md#GUC-SHARED-BUFFERS) para reduzir o consumo de memória compartilhada do PostgreSQL, e/ou reduzindo [max_connections](runtime-config-connection.md#GUC-MAX-CONNECTIONS) para reduzir o consumo de semaforos.
 
 Uma mensagem de falha que sugere que outro servidor já está em execução deve ser verificada cuidadosamente, por exemplo, usando o comando
 

@@ -27,7 +27,7 @@ Você deve possuir o objeto de estatísticas para usar `ALTER STATISTICS`. Para 
 
 *`new_schema`*: O novo esquema para o objeto de estatísticas.
 
-*`new_target`*: O objetivo de coleta estatística para este objeto de estatísticas para operações subsequentes `ANALYZE` (sql-analyze.md "ANALYZE"). O objetivo pode ser definido no intervalo de 0 a 10000. Defina-o como `DEFAULT` para reverter ao uso do objetivo de estatísticas padrão do sistema ([default_statistics_target][(runtime-config-query.md#GUC-DEFAULT-STATISTICS-TARGET)]). (Definir um valor de -1 é uma maneira obsoleta de obter o mesmo resultado.) Para mais informações sobre o uso de estatísticas pelo planejador de consultas do PostgreSQL, consulte [Seção 14.2][(planner-stats.md "14.2. Statistics Used by the Planner")].
+*`new_target`*: O objetivo de coleta estatística para este objeto de estatísticas para operações subsequentes `ANALYZE` (sql-analyze.md "ANALYZE"). O objetivo pode ser definido no intervalo de 0 a 10000. Defina-o como `DEFAULT` para reverter ao uso do objetivo de estatísticas padrão do sistema ([default_statistics_target](runtime-config-query.md#GUC-DEFAULT-STATISTICS-TARGET)). (Definir um valor de -1 é uma maneira obsoleta de obter o mesmo resultado.) Para mais informações sobre o uso de estatísticas pelo planejador de consultas do PostgreSQL, consulte [Seção 14.2](planner-stats.md).
 
 ## Compatibilidade
 

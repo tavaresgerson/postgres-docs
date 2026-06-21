@@ -52,7 +52,7 @@ SELECT * INTO films_recent FROM films WHERE date_prod >= '2002-01-01';
 
 ## Compatibilidade
 
-O padrão SQL utiliza `SELECT INTO` para representar a seleção de valores em variáveis escalares de um programa hospedeiro, em vez de criar uma nova tabela. De fato, esse é o uso encontrado no ECPG (ver [Capítulo 34][(ecpg.md "Chapter 34. ECPG — Embedded SQL in C")]) e no PL/pgSQL (ver [Capítulo 41][(plpgsql.md "Chapter 41. PL/pgSQL — SQL Procedural Language")]). O uso do PostgreSQL de `SELECT INTO` para representar a criação de tabelas é histórico. Algumas outras implementações do SQL também usam `SELECT INTO` dessa maneira (mas a maioria das implementações do SQL suporta `CREATE TABLE AS` em vez disso). Além dessas considerações de compatibilidade, é melhor usar `CREATE TABLE AS` para esse propósito em código novo.
+O padrão SQL utiliza `SELECT INTO` para representar a seleção de valores em variáveis escalares de um programa hospedeiro, em vez de criar uma nova tabela. De fato, esse é o uso encontrado no ECPG (ver [Capítulo 34](ecpg.md)) e no PL/pgSQL (ver [Capítulo 41](plpgsql.md)). O uso do PostgreSQL de `SELECT INTO` para representar a criação de tabelas é histórico. Algumas outras implementações do SQL também usam `SELECT INTO` dessa maneira (mas a maioria das implementações do SQL suporta `CREATE TABLE AS` em vez disso). Além dessas considerações de compatibilidade, é melhor usar `CREATE TABLE AS` para esse propósito em código novo.
 
 ## Veja também
 

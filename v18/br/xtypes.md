@@ -2,7 +2,7 @@
 
 * [36.13.1. CONSIDERACAO DE TOAST][(xtypes.md#XTYPES-TOAST)
 
-Como descrito na [Seção 36.2][(extend-type-system.md "36.2. The PostgreSQL Type System")], o PostgreSQL pode ser estendido para suportar novos tipos de dados. Esta seção descreve como definir novos tipos básicos, que são tipos de dados definidos abaixo do nível da linguagem SQL. Criar um novo tipo básico requer a implementação de funções para operar no tipo em um idioma de baixo nível, geralmente C.
+Como descrito na [Seção 36.2](extend-type-system.md), o PostgreSQL pode ser estendido para suportar novos tipos de dados. Esta seção descreve como definir novos tipos básicos, que são tipos de dados definidos abaixo do nível da linguagem SQL. Criar um novo tipo básico requer a implementação de funções para operar no tipo em um idioma de baixo nível, geralmente C.
 
 Os exemplos desta seção podem ser encontrados em `complex.sql` e `complex.c` no diretório `src/tutorial` da distribuição de origem. Consulte o arquivo `README` nesse diretório para obter instruções sobre como executar os exemplos.
 
@@ -150,7 +150,7 @@ Para mais detalhes, consulte a descrição do comando [CREATE TYPE](sql-createty
 
 ### 36.13.1. Considerações sobre TOAST [#](#XTYPES-TOAST)
 
-Se os valores do seu tipo de dados variam em tamanho (na forma interna), geralmente é desejável tornar o tipo de dados TOAST-ável (consulte [Seção 66.2] [(storage-toast.md "66.2. TOAST")]). Você deve fazer isso mesmo que os valores sempre sejam muito pequenos para serem comprimidos ou armazenados externamente, porque o TOAST pode economizar espaço em dados pequenos também, reduzindo o overhead do cabeçalho.
+Se os valores do seu tipo de dados variam em tamanho (na forma interna), geralmente é desejável tornar o tipo de dados TOAST-ável (consulte [Seção 66.2](storage-toast.md)). Você deve fazer isso mesmo que os valores sempre sejam muito pequenos para serem comprimidos ou armazenados externamente, porque o TOAST pode economizar espaço em dados pequenos também, reduzindo o overhead do cabeçalho.
 
 Para suportar o armazenamento TOAST, as funções C que operam sobre o tipo de dados devem sempre ter cuidado ao desempacotar quaisquer valores tostados que lhes sejam entregues usando `PG_DETOAST_DATUM`. (Esse detalhe é normalmente oculto ao definir macros específicas para o tipo `GETARG_DATATYPE_P`. Em seguida, ao executar o comando `CREATE TYPE`, especifique o comprimento interno como `variable` e selecione uma opção de armazenamento apropriada, diferente de `plain`.
 

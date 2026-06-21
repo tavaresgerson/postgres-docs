@@ -4,7 +4,7 @@
 * [F.3.2. Exemplo](auto-explain.md#AUTO-EXPLAIN-EXAMPLE)
 * [F.3.3. Autor](auto-explain.md#AUTO-EXPLAIN-AUTHOR)
 
-O módulo `auto_explain` fornece uma maneira de registrar automaticamente os planos de execução de instruções lentas, sem precisar executar manualmente [EXPLAIN][(sql-explain.md "EXPLAIN")]. Isso é especialmente útil para localizar consultas não otimizadas em aplicações grandes.
+O módulo `auto_explain` fornece uma maneira de registrar automaticamente os planos de execução de instruções lentas, sem precisar executar manualmente [EXPLAIN](sql-explain.md). Isso é especialmente útil para localizar consultas não otimizadas em aplicações grandes.
 
 O módulo não oferece funções acessíveis por SQL. Para usá-lo, basta carregá-lo no servidor. Você pode carregá-lo em uma sessão individual:
 

@@ -18,7 +18,7 @@ Se um nome de esquema for fornecido, a família de operadores é criada no esque
 
 O usuário que define uma família de operadores torna-se seu proprietário. Atualmente, o usuário que está criando deve ser um superusuário. (Essa restrição é feita porque uma definição errada de família de operadores pode confundir ou até mesmo fazer o servidor falhar.)
 
-Consulte [Seção 36.16][(xindex.md "36.16. Interfacing Extensions to Indexes")] para obter mais informações.
+Consulte [Seção 36.16](xindex.md) para obter mais informações.
 
 ## Parâmetros
 

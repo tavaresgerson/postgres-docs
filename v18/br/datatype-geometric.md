@@ -1,164 +1,185 @@
 ## 8.8. Tipos geométricos [#](#DATATYPE-GEOMETRIC)
 
-* [8.8.1. Pontos][(datatype-geometric.md#DATATYPE-GEOMETRIC-POINTS)]
-* [8.8.2. Linhas][(datatype-geometric.md#DATATYPE-LINE)]
-* [8.8.3. Setores de linha][(datatype-geometric.md#DATATYPE-LSEG)]
-* [8.8.4. Caixas][(datatype-geometric.md#DATATYPE-GEOMETRIC-BOXES)]
-* [8.8.5. Caminhos][(datatype-geometric.md#DATATYPE-GEOMETRIC-PATHS)]
-* [8.8.6. Polígonos][(datatype-geometric.md#DATATYPE-POLYGON)]
-* [8.8.7. Círculos][(datatype-geometric.md#DATATYPE-CIRCLE)]
+* [8.8.1. Pontos](datatype-geometric.md#DATATYPE-GEOMETRIC-POINTS)
+* [8.8.2. Linhas](datatype-geometric.md#DATATYPE-LINE)
+* [8.8.3. Setores de linha](datatype-geometric.md#DATATYPE-LSEG)
+* [8.8.4. Caixas](datatype-geometric.md#DATATYPE-GEOMETRIC-BOXES)
+* [8.8.5. Caminhos](datatype-geometric.md#DATATYPE-GEOMETRIC-PATHS)
+* [8.8.6. Polígonos](datatype-geometric.md#DATATYPE-POLYGON)
+* [8.8.7. Círculos](datatype-geometric.md#DATATYPE-CIRCLE)
 
-Os tipos de dados geométricos representam objetos espaciais bidimensionais. [Tabela 8.20][(datatype-geometric.md#DATATYPE-GEO-TABLE "Table 8.20. Geometric Types")] mostra os tipos geométricos disponíveis no PostgreSQL.
+Os tipos de dados geométricos representam objetos espaciais bidimensionais. [Tabela 8.20](datatype-geometric.md#DATATYPE-GEO-TABLE) mostra os tipos geométricos disponíveis no PostgreSQL.
 
 **Tabela 8.20. Tipos geométricos**
 
 
 
 <table border="1" class="table" summary="Geometric Types">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-<col class="col4"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+  <col class="col4"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Name
    </th>
-<th>
+   <th>
     Storage Size
    </th>
-<th>Descrição</th>
-<th>
+   <th>
+    Descrição
+   </th>
+   <th>
     Representation
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="type">
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="type">
      point
     </code>
-</td>
-<td>
+   </td>
+   <td>
     16 bytes
    </td>
-<td>Ponto em um avião</td>
-<td>
+   <td>
+    Ponto em um avião
+   </td>
+   <td>
     (x,y)
    </td>
-</tr>
-<tr>
-<td>
-<code class="type">
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      line
     </code>
-</td>
-<td>
+   </td>
+   <td>
     24 bytes
    </td>
-<td>Linha infinita</td>
-<td>
+   <td>
+    Linha infinita
+   </td>
+   <td>
     {A,B,C}
    </td>
-</tr>
-<tr>
-<td>
-<code class="type">
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      lseg
     </code>
-</td>
-<td>
+   </td>
+   <td>
     32 bytes
    </td>
-<td>Seção de linha finita</td>
-<td>
+   <td>
+    Seção de linha finita
+   </td>
+   <td>
     [(x1,y1),(x2,y2)]
    </td>
-</tr>
-<tr>
-<td>
-<code class="type">
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      box
     </code>
-</td>
-<td>
+   </td>
+   <td>
     32 bytes
    </td>
-<td>Caixa retangular</td>
-<td>
+   <td>
+    Caixa retangular
+   </td>
+   <td>
     (x1,y1),(x2,y2)
    </td>
-</tr>
-<tr>
-<td>
-<code class="type">
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      path
     </code>
-</td>
-<td>
+   </td>
+   <td>
     16+16n bytes
    </td>
-<td>Caminho fechado (semelhante a polígono)</td>
-<td>
+   <td>
+    Caminho fechado (semelhante a polígono)
+   </td>
+   <td>
     ((x1,y1),...)
    </td>
-</tr>
-<tr>
-<td>
-<code class="type">
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      path
     </code>
-</td>
-<td>
+   </td>
+   <td>
     16+16n bytes
    </td>
-<td>Caminho aberto</td>
-<td>
+   <td>
+    Caminho aberto
+   </td>
+   <td>
     [(x1,y1),...]
    </td>
-</tr>
-<tr>
-<td>
-<code class="type">
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      polygon
     </code>
-</td>
-<td>
+   </td>
+   <td>
     40+16n bytes
    </td>
-<td>Poligonal (semelhante a um caminho fechado)</td>
-<td>
+   <td>
+    Poligonal (semelhante a um caminho fechado)
+   </td>
+   <td>
     ((x1,y1),...)
    </td>
-</tr>
-<tr>
-<td>
-<code class="type">
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      circle
     </code>
-</td>
-<td>
+   </td>
+   <td>
     24 bytes
    </td>
-<td>Círculo</td>
-<td>
+   <td>
+    Círculo
+   </td>
+   <td>
     &lt;(x,y),r&gt; (center point and radius)
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Em todos esses tipos, as coordenadas individuais são armazenadas como números `double precision` (`float8`).
 
-Um conjunto rico de funções e operadores está disponível para realizar várias operações geométricas, como escala, tradução, rotação e determinação de interseções. Eles são explicados em [Seção 9.11][(functions-geometry.md "9.11. Geometric Functions and Operators")].
+Um conjunto rico de funções e operadores está disponível para realizar várias operações geométricas, como escala, tradução, rotação e determinação de interseções. Eles são explicados em [Seção 9.11](functions-geometry.md).
 
 ### 8.8.1. Pontos [#](#DATATYPE-GEOMETRIC-POINTS)
 

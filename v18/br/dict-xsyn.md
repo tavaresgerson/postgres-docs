@@ -67,7 +67,7 @@ mydb=# SELECT ts_lexize('xsyn', 'syn1');
  {word}
 ```
 
-O uso no mundo real envolverá incluí-lo em uma configuração de pesquisa de texto, conforme descrito em [Capítulo 12][(textsearch.md "Chapter 12. Full Text Search")]. Isso pode parecer assim:
+O uso no mundo real envolverá incluí-lo em uma configuração de pesquisa de texto, conforme descrito em [Capítulo 12](textsearch.md). Isso pode parecer assim:
 
 ```
 ALTER TEXT SEARCH CONFIGURATION english

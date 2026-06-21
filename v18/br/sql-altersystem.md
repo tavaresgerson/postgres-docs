@@ -21,7 +21,7 @@ Apenas superusuários e usuários que tenham sido concedidos o privilégio `ALTE
 
 ## Parâmetros
 
-*`configuration_parameter`*: Nome de um parâmetro de configuração configurável. Os parâmetros disponíveis estão documentados em [Capítulo 19][(runtime-config.md "Chapter 19. Server Configuration")].
+*`configuration_parameter`*: Nome de um parâmetro de configuração configurável. Os parâmetros disponíveis estão documentados em [Capítulo 19](runtime-config.md).
 
 *`value`*: Novo valor do parâmetro. Os valores podem ser especificados como constantes de string, identificadores, números ou listas de vírgulas desses, conforme apropriado para o parâmetro específico. Os valores que não são números ou identificadores válidos devem ser citados. `DEFAULT` pode ser escrito para especificar a remoção do parâmetro e seu valor de `postgresql.auto.conf`.
 
@@ -29,9 +29,9 @@ Para alguns parâmetros que aceitam listas, os valores citados produzirão saíd
 
 ## Notas
 
-Este comando não pode ser usado para definir [data_directory][(runtime-config-file-locations.md#GUC-DATA-DIRECTORY)], [allow_alter_system][(runtime-config-compatible.md#GUC-ALLOW-ALTER-SYSTEM)] ou parâmetros que não são permitidos em `postgresql.conf` (por exemplo, [opções pré-definidas][(runtime-config-preset.md "19.15. Preset Options")]).
+Este comando não pode ser usado para definir [data_directory](runtime-config-file-locations.md#GUC-DATA-DIRECTORY), [allow_alter_system](runtime-config-compatible.md#GUC-ALLOW-ALTER-SYSTEM) ou parâmetros que não são permitidos em `postgresql.conf` (por exemplo, [opções pré-definidas](runtime-config-preset.md)).
 
-Veja [Seção 19.1][(config-setting.md "19.1. Setting Parameters")] para outras maneiras de definir os parâmetros.
+Veja [Seção 19.1](config-setting.md) para outras maneiras de definir os parâmetros.
 
 `ALTER SYSTEM` pode ser desativado definindo [allow_alter_system](runtime-config-compatible.md#GUC-ALLOW-ALTER-SYSTEM) como `off`, mas este não é um mecanismo de segurança (como explicado em detalhes na documentação deste parâmetro).
 

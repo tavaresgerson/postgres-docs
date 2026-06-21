@@ -31,38 +31,38 @@ A versão longa é o restante desta seção.
 
 O primeiro passo do procedimento de instalação é configurar a árvore de compilação para o seu sistema e escolher as opções que você gostaria. Para criar e configurar o diretório de compilação, você pode começar com o comando `meson setup`.
 
-   ```
-   meson setup build
-   ```
+```
+meson setup build
+```
 
 O comando de configuração aceita os argumentos `builddir` e `srcdir`. Se não for fornecido `srcdir`, o Meson deduzirá o `srcdir` com base no diretório atual e na localização de `meson.build`. O `builddir` é obrigatório.
 
 Executando `meson setup` carrega o arquivo de configuração de compilação e configura o diretório de compilação. Além disso, você também pode passar várias opções de compilação para o Meson. Algumas opções comumente usadas são mencionadas nas seções subsequentes. Por exemplo:
 
-   ```
-   # configure with a different installation prefix
-   meson setup build --prefix=/home/user/pg-install
+```
+# configure with a different installation prefix
+meson setup build --prefix=/home/user/pg-install
 
-   # configure to generate a debug build
-   meson setup build --buildtype=debug
+# configure to generate a debug build
+meson setup build --buildtype=debug
 
-   # configure to build with OpenSSL support
-   meson setup build -Dssl=openssl
-   ```
+# configure to build with OpenSSL support
+meson setup build -Dssl=openssl
+```
 
 Configurar o diretório de compilação é uma etapa única. Para reconfigurar antes de uma nova compilação, você pode simplesmente usar o comando `meson configure`
 
-   ```
-   meson configure -Dcassert=true
-   ```
+```
+meson configure -Dcassert=true
+```
 
-As opções de linha de comando comumente usadas do `meson configure` são explicadas em [Seção 17.4.3][(install-meson.md#MESON-OPTIONS "17.4.3. meson setup Options")].
+As opções de linha de comando comumente usadas do `meson configure` são explicadas em [Seção 17.4.3](install-meson.md#MESON-OPTIONS).
 
-Por padrão, o Meson usa a ferramenta de compilação [Ninja][(https://ninja-build.org/)]. Para construir o PostgreSQL a partir de fonte usando o Meson, você pode simplesmente usar o comando `ninja` no diretório de compilação.
+Por padrão, o Meson usa a ferramenta de compilação [Ninja](https://ninja-build.org/). Para construir o PostgreSQL a partir de fonte usando o Meson, você pode simplesmente usar o comando `ninja` no diretório de compilação.
 
-   ```
-   ninja
-   ```
+```
+ninja
+```
 
 O Ninja detectará automaticamente o número de CPUs no seu computador e se paralelizará conforme necessário. Você pode substituir o número de processos paralelos usados com o argumento de linha de comando `-j`.
 
@@ -72,23 +72,23 @@ Se você deseja construir com um backend diferente do ninja, pode usar configure
 
 Se você quiser testar o servidor recém-construído antes de instalá-lo, pode executar os testes de regressão neste ponto. Os testes de regressão são um conjunto de testes para verificar se o PostgreSQL funciona na sua máquina da maneira que os desenvolvedores esperavam. Tipo:
 
-   ```
-   meson test
-   ```
+```
+meson test
+```
 
-(Isso não funcionará como root; faça isso como um usuário não privilegiado.) Consulte o [Capítulo 31][(regress.md "Chapter 31. Regression Tests")] para obter informações detalhadas sobre a interpretação dos resultados do teste. Você pode repetir este teste em qualquer momento posterior, emitindo o mesmo comando.
+(Isso não funcionará como root; faça isso como um usuário não privilegiado.) Consulte o [Capítulo 31](regress.md) para obter informações detalhadas sobre a interpretação dos resultados do teste. Você pode repetir este teste em qualquer momento posterior, emitindo o mesmo comando.
 
 Para executar os testes pg_regress e pg_isolation_regress contra uma instância de postgres em execução, especifique **`--setup running`** como um argumento para **`meson test`**.
 
 ### Nota
 
-Se você está atualizando um sistema existente, não se esqueça de ler [Seção 18.6][(upgrading.md "18.6. Upgrading a PostgreSQL Cluster")], que tem instruções sobre atualização de um cluster.
+Se você está atualizando um sistema existente, não se esqueça de ler [Seção 18.6](upgrading.md), que tem instruções sobre atualização de um cluster.
 
 Uma vez que o PostgreSQL seja construído, você pode instalá-lo simplesmente executando o comando `ninja install`.
 
-   ```
-   ninja install
-   ```
+```
+ninja install
+```
 
 Isso instalará os arquivos nos diretórios que foram especificados em [Passo 1] (install-meson.md#MESON-CONFIGURE "Configuration"). Certifique-se de que você tem permissões apropriadas para escrever nessa área. Você pode precisar fazer esse passo como root. Alternativamente, você pode criar os diretórios de destino com antecedência e organizar para que as permissões apropriadas sejam concedidas. A instalação padrão fornece todos os arquivos de cabeçalho necessários para o desenvolvimento de aplicativos cliente, bem como para o desenvolvimento de programas do lado do servidor, como funções personalizadas ou tipos de dados escritos em C.
 
@@ -128,7 +128,7 @@ Preocupamo-nos em tornar possível instalar o PostgreSQL em locais de instalaç�
 
 #### 17.4.3.2. Características do PostgreSQL [#](#MESON-OPTIONS-FEATURES)
 
-As opções descritas nesta seção permitem a construção de várias funcionalidades opcionais do PostgreSQL. A maioria dessas funcionalidades requer software adicional, conforme descrito em [Seção 17.1][(install-requirements.md "17.1. Requirements")], e serão habilitadas automaticamente se o software necessário for encontrado. Você pode alterar esse comportamento definindo manualmente essas funcionalidades para `enabled` para exigí-las ou `disabled` para não serem construídas com elas.
+As opções descritas nesta seção permitem a construção de várias funcionalidades opcionais do PostgreSQL. A maioria dessas funcionalidades requer software adicional, conforme descrito em [Seção 17.1](install-requirements.md), e serão habilitadas automaticamente se o software necessário for encontrado. Você pode alterar esse comportamento definindo manualmente essas funcionalidades para `enabled` para exigí-las ou `disabled` para não serem construídas com elas.
 
 Para especificar opções específicas do PostgreSQL, o nome da opção deve ser precedido por `-D`.
 
@@ -144,7 +144,7 @@ Para especificar opções específicas do PostgreSQL, o nome da opção deve ser
 
 `-Dicu={ auto | enabled | disabled }` [#](#CONFIGURE-WITH-ICU-MESON): Construa com suporte para a biblioteca ICU, permitindo o uso das características de ordenação ICU (consulte [Seção 23.2](collation.md "23.2. Collation Support")). Os valores padrão são automáticos e exigem que o pacote ICU4C seja instalado. A versão mínima necessária do ICU4C é atualmente 4.2.
 
-`-Dllvm={ auto | enabled | disabled }` [#](#CONFIGURE-WITH-LLVM-MESON): Construa com suporte para compilação JIT (JIT) baseada em LLVM (consulte o Capítulo 30 [(jit.md "Chapter 30. Just-in-Time Compilation (JIT)]). Isso requer que a biblioteca LLVM seja instalada. A versão mínima necessária do LLVM é atualmente 14. Desabilitada por padrão.
+`-Dllvm={ auto | enabled | disabled }` [#](#CONFIGURE-WITH-LLVM-MESON): Construa com suporte para compilação JIT (JIT) baseada em LLVM (consulte o [Capítulo 30](jit.md)). Isso requer que a biblioteca LLVM seja instalada. A versão mínima necessária do LLVM é atualmente 14. Desabilitada por padrão.
 
 `llvm-config` será usado para encontrar as opções de compilação necessárias. `llvm-config`, e, em seguida, `llvm-config-$version` para todas as versões suportadas, serão pesquisados em seu `PATH`. Se isso não resultar no programa desejado, use `LLVM_CONFIG` para especificar um caminho para o `llvm-config` correto.
 
@@ -222,12 +222,13 @@ Esta opção é destinada principalmente a distribuidores de pacotes binários q
 
 `-DBINARY_NAME=PATH` [#](#CONFIGURE-BINARY-NAME-MESON): Se um programa que precisa ser instalado para construir o PostgreSQL (com ou sem opções opcionais) estiver armazenado em um caminho não padrão, você pode especiá-lo manualmente em `meson configure`. A lista completa dos programas para os quais isso é suportado pode ser encontrada executando `meson configure`. Exemplo:
 
-``` meson configure -DBISON=PATH_TO_BISON
-    ```
+```
+meson configure -DBISON=PATH_TO_BISON
+```
 
 #### 17.4.3.5. Documentação [#](#MESON-OPTIONS-DOCS)
 
-Consulte a [Seção J.2][(docguide-toolsets.md "J.2. Tool Sets")] para obter as ferramentas necessárias para a construção da documentação.
+Consulte a [Seção J.2](docguide-toolsets.md) para obter as ferramentas necessárias para a construção da documentação.
 
 `-Ddocs={ auto | enabled | disabled }` [#](#CONFIGURE-DOCS-MESON): Permite a construção da documentação em HTML e formato man. O padrão é auto.
 
@@ -255,7 +256,7 @@ Ao construir uma instalação que será usada para desenvolver código dentro do
 
 `--buildtype=BUILDTYPE` [#](#CONFIGURE-BUILDTYPE-MESON): Esta opção pode ser usada para especificar o tipo de compilação a ser utilizado; o padrão é `debugoptimized`. Se você deseja um controle mais preciso sobre os símbolos de depuração e os níveis de otimização do que esta opção oferece, você pode consultar as bandeiras `--debug` e `--optimization`.
 
-Os seguintes tipos de construção são geralmente utilizados: `plain`, `debug`, `debugoptimized` e `release`. Mais informações sobre eles podem ser encontradas na documentação do Meson [Meson documentation][(https://mesonbuild.com/Running-Meson.html#configuring-the-build-directory)].
+Os seguintes tipos de construção são geralmente utilizados: `plain`, `debug`, `debugoptimized` e `release`. Mais informações sobre eles podem ser encontradas na documentação do Meson [Meson documentation](https://mesonbuild.com/Running-Meson.html#configuring-the-build-directory).
 
 `--debug` [#](#CONFIGURE-DEBUG-MESON): Compila todos os programas e bibliotecas com símbolos de depuração. Isso significa que você pode executar os programas em um depurador para analisar problemas. Isso aumenta consideravelmente o tamanho dos executables instalados, e em compiladores que não são do GCC, geralmente também desabilita a otimização do compilador, causando lentidão. No entanto, ter os símbolos disponíveis é extremamente útil para lidar com quaisquer problemas que possam surgir. Atualmente, essa opção é recomendada apenas para instalações de produção se você usar o GCC. Mas você deve sempre tê-la se estiver fazendo trabalho de desenvolvimento ou executando uma versão beta.
 
@@ -275,7 +276,7 @@ Os seguintes tipos de construção são geralmente utilizados: `plain`, `debug`,
 
 Para apontar para o programa `dtrace`, a opção `DTRACE` pode ser definida. Isso geralmente será necessário, pois o `dtrace` é instalado normalmente sob `/usr/sbin`, que pode não estar em seu `PATH`.
 
-`-Dinjection_points={ true | false }` [#](#CONFIGURE-INJECTION-POINTS-MESON): Compila o PostgreSQL com suporte para pontos de injeção no servidor. Os pontos de injeção permitem executar código definido pelo usuário dentro do servidor em caminhos de código pré-definidos. Isso ajuda a testar e investigar cenários de concorrência de maneira controlada. Esta opção é desativada por padrão. Consulte [Seção 36.10.14][(xfunc-c.md#XFUNC-ADDIN-INJECTION-POINTS "36.10.14. Injection Points")] para mais detalhes. Esta opção é destinada a ser usada apenas por desenvolvedores para testes.
+`-Dinjection_points={ true | false }` [#](#CONFIGURE-INJECTION-POINTS-MESON): Compila o PostgreSQL com suporte para pontos de injeção no servidor. Os pontos de injeção permitem executar código definido pelo usuário dentro do servidor em caminhos de código pré-definidos. Isso ajuda a testar e investigar cenários de concorrência de maneira controlada. Esta opção é desativada por padrão. Consulte [Seção 36.10.14](xfunc-c.md#XFUNC-ADDIN-INJECTION-POINTS) para mais detalhes. Esta opção é destinada a ser usada apenas por desenvolvedores para testes.
 
 `-Dsegsize_blocks=SEGSIZE_BLOCKS` [#](#CONFIGURE-SEGSIZE-BLOCKS-MESON): Especifique o tamanho do segmento de relação em blocos. Se ambos `-Dsegsize` e esta opção forem especificados, esta opção vence. Esta opção é apenas para desenvolvedores, para testar código relacionado ao segmento.
 

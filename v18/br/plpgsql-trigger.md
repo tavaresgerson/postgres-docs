@@ -7,7 +7,7 @@ O PL/pgSQL pode ser usado para definir funções de gatilho em mudanças de dado
 
 ### 41.10.1. Gatilhos em Mudanças de Dados [#](#PLPGSQL-DML-TRIGGER)
 
-Um [elemento de mudança de dados][(triggers.md "Chapter 37. Triggers")] é declarado como uma função sem argumentos e com um tipo de retorno de `trigger`. Observe que a função deve ser declarada sem argumentos, mesmo que ela espere receber alguns argumentos especificados em `CREATE TRIGGER` — tais argumentos são passados via `TG_ARGV`, conforme descrito abaixo.
+Um [elemento de mudança de dados](triggers.md) é declarado como uma função sem argumentos e com um tipo de retorno de `trigger`. Observe que a função deve ser declarada sem argumentos, mesmo que ela espere receber alguns argumentos especificados em `CREATE TRIGGER` — tais argumentos são passados via `TG_ARGV`, conforme descrito abaixo.
 
 Quando uma função PL/pgSQL é chamada como um gatilho, várias variáveis especiais são criadas automaticamente no bloco de nível superior. Elas são:
 
@@ -43,7 +43,7 @@ Os gatilhos `INSTEAD OF` (que são sempre gatilhos de nível de linha e podem se
 
 O valor de retorno de um gatilho de nível de linha disparado `AFTER` ou um gatilho de nível de declaração disparado `BEFORE` ou `AFTER` é sempre ignorado; ele pode ser nulo. No entanto, qualquer um desses tipos de gatilhos ainda pode abortar toda a operação ao levantar um erro.
 
-[Exemplo 41.3][(plpgsql-trigger.md#PLPGSQL-TRIGGER-EXAMPLE "Example 41.3. A PL/pgSQL Trigger Function")] mostra um exemplo de uma função de gatilho no PL/pgSQL.
+[Exemplo 41.3](plpgsql-trigger.md#PLPGSQL-TRIGGER-EXAMPLE) mostra um exemplo de uma função de gatilho no PL/pgSQL.
 
 **Exemplo 41.3. Uma função de gatilho PL/pgSQL**
 
@@ -83,9 +83,9 @@ CREATE TRIGGER emp_stamp BEFORE INSERT OR UPDATE ON emp
     FOR EACH ROW EXECUTE FUNCTION emp_stamp();
 ```
 
-  
 
-Outra maneira de registrar as alterações em uma tabela é criar uma nova tabela que retém uma linha para cada inserção, atualização ou exclusão que ocorre. Essa abordagem pode ser considerada como auditoria de alterações em uma tabela. [Exemplo 41.4][(plpgsql-trigger.md#PLPGSQL-TRIGGER-AUDIT-EXAMPLE "Example 41.4. A PL/pgSQL Trigger Function for Auditing")] mostra um exemplo de uma função de gatilho de auditoria em PL/pgSQL.
+
+Outra maneira de registrar as alterações em uma tabela é criar uma nova tabela que retém uma linha para cada inserção, atualização ou exclusão que ocorre. Essa abordagem pode ser considerada como auditoria de alterações em uma tabela. [Exemplo 41.4](plpgsql-trigger.md#PLPGSQL-TRIGGER-AUDIT-EXAMPLE) mostra um exemplo de uma função de gatilho de auditoria em PL/pgSQL.
 
 **Exemplo 41.4. Uma função de gatilho PL/pgSQL para auditoria**
 
@@ -127,9 +127,9 @@ AFTER INSERT OR UPDATE OR DELETE ON emp
     FOR EACH ROW EXECUTE FUNCTION process_emp_audit();
 ```
 
-  
 
-Uma variação do exemplo anterior usa uma visão que une a tabela principal à tabela de auditoria, para mostrar quando cada entrada foi modificada pela última vez. Essa abordagem ainda registra o rastreamento completo do rastreamento de alterações na tabela, mas também apresenta uma visão simplificada do rastreamento, mostrando apenas o último timestamp modificado derivado do rastreamento de auditoria para cada entrada. [Exemplo 41.5][(plpgsql-trigger.md#PLPGSQL-VIEW-TRIGGER-AUDIT-EXAMPLE "Example 41.5. A PL/pgSQL View Trigger Function for Auditing")] mostra um exemplo de um gatilho de auditoria em uma visão em PL/pgSQL.
+
+Uma variação do exemplo anterior usa uma visão que une a tabela principal à tabela de auditoria, para mostrar quando cada entrada foi modificada pela última vez. Essa abordagem ainda registra o rastreamento completo do rastreamento de alterações na tabela, mas também apresenta uma visão simplificada do rastreamento, mostrando apenas o último timestamp modificado derivado do rastreamento de auditoria para cada entrada. [Exemplo 41.5](plpgsql-trigger.md#PLPGSQL-VIEW-TRIGGER-AUDIT-EXAMPLE) mostra um exemplo de um gatilho de auditoria em uma visão em PL/pgSQL.
 
 **Exemplo 41.5. Uma função de gatilho de visão PL/pgSQL para auditoria**
 
@@ -192,9 +192,9 @@ INSTEAD OF INSERT OR UPDATE OR DELETE ON emp_view
     FOR EACH ROW EXECUTE FUNCTION update_emp_view();
 ```
 
-  
 
-Uma utilização dos gatilhos é manter uma tabela resumida de outra tabela. O resumo resultante pode ser usado no lugar da tabela original para certas consultas — muitas vezes com tempos de execução muito reduzidos. Essa técnica é comumente usada em Data Warehousing, onde as tabelas de dados medidos ou observados (chamadas de tabelas de fato) podem ser extremamente grandes. [Exemplo 41.6][(plpgsql-trigger.md#PLPGSQL-TRIGGER-SUMMARY-EXAMPLE "Example 41.6. A PL/pgSQL Trigger Function for Maintaining a Summary Table")] mostra um exemplo de uma função de gatilho em PL/pgSQL que mantém uma tabela resumida para uma tabela de fato em um data warehouse.
+
+Uma utilização dos gatilhos é manter uma tabela resumida de outra tabela. O resumo resultante pode ser usado no lugar da tabela original para certas consultas — muitas vezes com tempos de execução muito reduzidos. Essa técnica é comumente usada em Data Warehousing, onde as tabelas de dados medidos ou observados (chamadas de tabelas de fato) podem ser extremamente grandes. [Exemplo 41.6](plpgsql-trigger.md#PLPGSQL-TRIGGER-SUMMARY-EXAMPLE) mostra um exemplo de uma função de gatilho em PL/pgSQL que mantém uma tabela resumida para uma tabela de fato em um data warehouse.
 
 **Exemplo 41.6. Uma função de gatilho PL/pgSQL para manutenção de uma tabela de resumo**
 
@@ -332,13 +332,13 @@ UPDATE sales_fact SET units_sold = units_sold * 2;
 SELECT * FROM sales_summary_bytime;
 ```
 
-  
+
 
 Os gatilhos `AFTER` também podem utilizar *tabelas de transição* para inspecionar todo o conjunto de linhas alteradas pela declaração de gatilho. O comando `CREATE TRIGGER` atribui nomes a uma ou ambas as tabelas de transição, e, em seguida, a função pode referir-se a esses nomes como se fossem tabelas temporárias somente de leitura. [Exemplo 41.7](plpgsql-trigger.md#PLPGSQL-TRIGGER-AUDIT-TRANSITION-EXAMPLE "Example 41.7. Auditing with Transition Tables") mostra um exemplo.
 
 **Exemplo 41.7. Auditoria com tabelas de transição**
 
-Este exemplo produz os mesmos resultados que o [Exemplo 41.4][(plpgsql-trigger.md#PLPGSQL-TRIGGER-AUDIT-EXAMPLE "Example 41.4. A PL/pgSQL Trigger Function for Auditing")], mas, em vez de usar um gatilho que dispara para cada linha, ele usa um gatilho que dispara uma vez por declaração, após coletar as informações relevantes em uma tabela de transição. Isso pode ser significativamente mais rápido do que a abordagem de gatilho de linha quando a declaração que está invocando modificou muitas linhas. Observe que devemos fazer uma declaração de gatilho separada para cada tipo de evento, pois as cláusulas `REFERENCING` devem ser diferentes para cada caso. Mas isso não nos impede de usar uma única função de gatilho se escolhermos. (Na prática, pode ser melhor usar três funções separadas e evitar os testes de execução em `TG_OP`).
+Este exemplo produz os mesmos resultados que o [Exemplo 41.4](plpgsql-trigger.md#PLPGSQL-TRIGGER-AUDIT-EXAMPLE), mas, em vez de usar um gatilho que dispara para cada linha, ele usa um gatilho que dispara uma vez por declaração, após coletar as informações relevantes em uma tabela de transição. Isso pode ser significativamente mais rápido do que a abordagem de gatilho de linha quando a declaração que está invocando modificou muitas linhas. Observe que devemos fazer uma declaração de gatilho separada para cada tipo de evento, pois as cláusulas `REFERENCING` devem ser diferentes para cada caso. Mas isso não nos impede de usar uma única função de gatilho se escolhermos. (Na prática, pode ser melhor usar três funções separadas e evitar os testes de execução em `TG_OP`).
 
 ```
 CREATE TABLE emp (
@@ -390,7 +390,7 @@ CREATE TRIGGER emp_audit_del
 
 ### 41.10.2. Gatilhos em Eventos [#](#PLPGSQL-EVENT-TRIGGER)
 
-O PL/pgSQL pode ser usado para definir [eventos de gatilho][(event-triggers.md "Chapter 38. Event Triggers")]. O PostgreSQL exige que uma função que deve ser chamada como um gatilho de evento seja declarada como uma função sem argumentos e com um tipo de retorno de `event_trigger`.
+O PL/pgSQL pode ser usado para definir [eventos de gatilho](event-triggers.md). O PostgreSQL exige que uma função que deve ser chamada como um gatilho de evento seja declarada como uma função sem argumentos e com um tipo de retorno de `event_trigger`.
 
 Quando uma função PL/pgSQL é chamada como um gatilho de evento, várias variáveis especiais são criadas automaticamente no bloco de nível superior. Elas são:
 
@@ -398,7 +398,7 @@ Quando uma função PL/pgSQL é chamada como um gatilho de evento, várias vari�
 
 `TG_TAG` `text` [#](#PLPGSQL-EVENT-TRIGGER-TG-TAG): etiqueta de comando para a qual o gatilho é disparado.
 
-[Exemplo 41.8][(plpgsql-trigger.md#PLPGSQL-EVENT-TRIGGER-EXAMPLE "Example 41.8. A PL/pgSQL Event Trigger Function")] mostra um exemplo de uma função de gatilho de evento no PL/pgSQL.
+[Exemplo 41.8](plpgsql-trigger.md#PLPGSQL-EVENT-TRIGGER-EXAMPLE) mostra um exemplo de uma função de gatilho de evento no PL/pgSQL.
 
 **Exemplo 41.8. Uma função de gatilho de evento PL/pgSQL**
 

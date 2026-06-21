@@ -20,7 +20,7 @@
 + [D.2. Recursos não suportados](unsupported-features-sql-standard.md)
 + [D.3. Limites XML e conformidade com SQL/XML](xml-limits-conformance.md)
 
-* [Notas de lançamento][(release.md)]
+* [Notas de lançamento](release.md)
 
 + [E.1. Versão 18.4](release-18-4.md)
 + [E.2. Versão 18.3](release-18-3.md)
@@ -76,10 +76,10 @@
 + [F.43. tablefunc — funções que retornam tabelas (`crosstab` e outros)](tablefunc.md)
 + [F.44. tcn — uma função de gatilho para notificar os ouvintes sobre alterações no conteúdo da tabela](tcn.md)
 + [F.45. test_decoding — módulo de exemplo/teste baseado em SQL para decodificação lógica de WAL](test-decoding.md)
-+ [F.46. tsm_system_rows — o método de amostragem `SYSTEM_ROWS` para `TABLESAMPLE`(tsm-system-rows.md)
-+ [F.47. tsm_system_time — o método de amostragem `SYSTEM_TIME` para `TABLESAMPLE`(tsm-system-time.md)
++ [F.46. tsm_system_rows — o método de amostragem `SYSTEM_ROWS` para `TABLESAMPLE`](tsm-system-rows.md)
++ [F.47. tsm_system_time — o método de amostragem `SYSTEM_TIME` para `TABLESAMPLE`](tsm-system-time.md)
 
-* [Programas adicionais fornecidos][(contrib-prog.md)]
+* [Programas adicionais fornecidos](contrib-prog.md)
 
 + [G.1. Aplicações de Cliente](contrib-prog-client.md)
 + [G.2. Aplicações de Servidor](contrib-prog-server.md)
@@ -91,18 +91,18 @@
 + [H.3. Linguagens Procedimentais](external-pl.md)
 + [H.4. Extensões](external-extensions.md)
 
-* [Repositório de Código-fonte][(sourcerepo.md)]
+* [Repositório de Código-fonte](sourcerepo.md)
 
 + [I.1. Obter a fonte via Git](git.md)
 
 * [Documentação](docguide.md)
 
-+ [J.1. DocBook][(docguide-docbook.md)]
-+ [J.2. Conjuntos de Ferramentas][(docguide-toolsets.md)]
-+ [J.3. Construção da Documentação com Make][(docguide-build.md)]
-+ [J.4. Construção da Documentação com Meson][(docguide-build-meson.md)]
-+ [J.5. Autoria da Documentação][(docguide-authoring.md)]
-+ [J.6. Guia de Estilo][(docguide-style.md)]
++ [J.1. DocBook](docguide-docbook.md)
++ [J.2. Conjuntos de Ferramentas](docguide-toolsets.md)
++ [J.3. Construção da Documentação com Make](docguide-build.md)
++ [J.4. Construção da Documentação com Meson](docguide-build-meson.md)
++ [J.5. Autoria da Documentação](docguide-authoring.md)
++ [J.6. Guia de Estilo](docguide-style.md)
 
 * [K. Limites do PostgreSQL](limits.md)
 * [L. Abreviações](acronyms.md)
@@ -112,7 +112,7 @@
 + [N.1. Quando a cor é usada](color-when.md)
 + [N.2. Configurando as cores](color-which.md)
 
-* [Recursos obsoletos ou renomeados][(appendix-obsolete.md)]
+* [Recursos obsoletos ou renomeados](appendix-obsolete.md)
 
 + [O.1. O arquivo `recovery.conf` foi incorporado ao `postgresql.conf`](recovery-config.md)
 + [O.2. Os papéis padrão renomeados para papéis pré-definidos](default-roles.md)

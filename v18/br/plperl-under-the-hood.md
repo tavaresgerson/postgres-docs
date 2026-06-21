@@ -11,16 +11,17 @@ Esta seção lista os parâmetros de configuração que afetam o PL/Perl.
 
 O código Perl é limitado a uma única string. Código mais longo pode ser colocado em um módulo e carregado pela string `on_init`. Exemplos:
 
-``` plperl.on_init = 'require "plperlinit.pl"' plperl.on_init = 'use lib "/my/app"; use MyApp::PgInit;'
-    ```
+```
+plperl.on_init = 'require "plperlinit.pl"' plperl.on_init = 'use lib "/my/app"; use MyApp::PgInit;'
+```
 
 Qualquer módulo carregado por `plperl.on_init`, diretamente ou indiretamente, estará disponível para uso por `plperl`. Isso pode criar um risco de segurança. Para ver quais módulos foram carregados, você pode usar:
 
-    ```
-    DO 'elog(WARNING, join ", ", sort keys %INC)' LANGUAGE plperl;
-    ```
+```
+DO 'elog(WARNING, join ", ", sort keys %INC)' LANGUAGE plperl;
+```
 
-A inicialização ocorrerá no postmaster se a biblioteca `plperl` for incluída em [shared_preload_libraries][(runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES)], no caso, deve-se dar atenção extra ao risco de desestabilizar o postmaster. A principal razão para o uso desta funcionalidade é que os módulos Perl carregados por `plperl.on_init` precisam ser carregados apenas no início do postmaster e estarão instantaneamente disponíveis sem sobrecarga de carregamento em sessões individuais do banco de dados. No entanto, tenha em mente que a sobrecarga é evitada apenas para o primeiro interpretador Perl usado por uma sessão do banco de dados — seja PL/PerlU ou PL/Perl para o primeiro papel SQL que chama uma função PL/Perl. Qualquer interpretador Perl adicional criado em uma sessão do banco de dados terá que executar `plperl.on_init` novamente. Além disso, no Windows, não haverá economia alguma na pré-carga, uma vez que o interpretador Perl criado no processo do postmaster não se propaga para processos filhos.
+A inicialização ocorrerá no postmaster se a biblioteca `plperl` for incluída em [shared_preload_libraries](runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES), no caso, deve-se dar atenção extra ao risco de desestabilizar o postmaster. A principal razão para o uso desta funcionalidade é que os módulos Perl carregados por `plperl.on_init` precisam ser carregados apenas no início do postmaster e estarão instantaneamente disponíveis sem sobrecarga de carregamento em sessões individuais do banco de dados. No entanto, tenha em mente que a sobrecarga é evitada apenas para o primeiro interpretador Perl usado por uma sessão do banco de dados — seja PL/PerlU ou PL/Perl para o primeiro papel SQL que chama uma função PL/Perl. Qualquer interpretador Perl adicional criado em uma sessão do banco de dados terá que executar `plperl.on_init` novamente. Além disso, no Windows, não haverá economia alguma na pré-carga, uma vez que o interpretador Perl criado no processo do postmaster não se propaga para processos filhos.
 
 Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha de comando do servidor.
 

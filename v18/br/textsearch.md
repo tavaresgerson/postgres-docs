@@ -37,8 +37,8 @@
 + [12.6.5. Dicionário Ispell](textsearch-dictionaries.md#TEXTSEARCH-ISPELL-DICTIONARY)
 + [12.6.6. Dicionário Snowball](textsearch-dictionaries.md#TEXTSEARCH-SNOWBALL-DICTIONARY)
 
-* [12.7. Exemplo de Configuração][(textsearch-configuration.md)]
-* [12.8. Testando e depurando a pesquisa de texto][(textsearch-debugging.md)]
+* [12.7. Exemplo de Configuração](textsearch-configuration.md)
+* [12.8. Testando e depurando a pesquisa de texto](textsearch-debugging.md)
 
 + [12.8.1. Testes de Configuração](textsearch-debugging.md#TEXTSEARCH-CONFIGURATION-TESTING)
 + [12.8.2. Testes de Parser](textsearch-debugging.md#TEXTSEARCH-PARSER-TESTING)

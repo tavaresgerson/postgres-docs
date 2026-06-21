@@ -5,7 +5,7 @@
 * [F.41.3. insert_username — Funções para rastrear quem modificou uma tabela](contrib-spi.md#CONTRIB-SPI-INSERT-USERNAME)
 * [F.41.4. moddatetime — Funções para rastrear a última hora de modificação](contrib-spi.md#CONTRIB-SPI-MODDATETIME)
 
-O módulo spi oferece vários exemplos práticos de uso da [Interface de Programação do Servidor][(spi.md "Chapter 45. Server Programming Interface")] (SPI) e gatilhos. Embora essas funções sejam úteis por si mesmas, elas são ainda mais úteis como exemplos para modificar para seus próprios propósitos. As funções são suficientemente gerais para serem usadas com qualquer tabela, mas você precisa especificar os nomes da tabela e do campo (como descrito abaixo) ao criar um gatilho.
+O módulo spi oferece vários exemplos práticos de uso da [Interface de Programação do Servidor](spi.md) (SPI) e gatilhos. Embora essas funções sejam úteis por si mesmas, elas são ainda mais úteis como exemplos para modificar para seus próprios propósitos. As funções são suficientemente gerais para serem usadas com qualquer tabela, mas você precisa especificar os nomes da tabela e do campo (como descrito abaixo) ao criar um gatilho.
 
 Cada um dos grupos de funções descritos abaixo é fornecido como uma extensão separadamente instalável.
 

@@ -1,9 +1,9 @@
 ## 49.2. Chamadas de Retorno de Arquivo do Módulo [#](#ARCHIVE-MODULE-CALLBACKS)
 
-* [49.2.1. Chamada de inicialização][(archive-module-callbacks.md#ARCHIVE-MODULE-STARTUP)]
-* [49.2.2. Verificação de chamada][(archive-module-callbacks.md#ARCHIVE-MODULE-CHECK)]
-* [49.2.3. Arquivo de chamada][(archive-module-callbacks.md#ARCHIVE-MODULE-ARCHIVE)]
-* [49.2.4. Desativação de chamada][(archive-module-callbacks.md#ARCHIVE-MODULE-SHUTDOWN)]
+* [49.2.1. Chamada de inicialização](archive-module-callbacks.md#ARCHIVE-MODULE-STARTUP)
+* [49.2.2. Verificação de chamada](archive-module-callbacks.md#ARCHIVE-MODULE-CHECK)
+* [49.2.3. Arquivo de chamada](archive-module-callbacks.md#ARCHIVE-MODULE-ARCHIVE)
+* [49.2.4. Desativação de chamada](archive-module-callbacks.md#ARCHIVE-MODULE-SHUTDOWN)
 
 Os callbacks do arquivo definem o comportamento real de arquivamento do módulo. O servidor os chamará conforme necessário para processar cada arquivo WAL individual.
 

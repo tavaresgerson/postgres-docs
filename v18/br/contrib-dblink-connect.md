@@ -19,7 +19,7 @@ A cadeia de conexão também pode ser o nome de um servidor externo existente. R
 
 *`connname`*: O nome a ser usado para essa conexão; se omitido, uma conexão sem nome é aberta, substituindo qualquer conexão sem nome existente.
 
-*`connstr`*: string de informações de conexão estilo libpq, por exemplo `hostaddr=127.0.0.1 port=5432 dbname=mydb user=postgres password=mypasswd options=-csearch_path=`. Para detalhes, consulte [Seção 32.1.1][(libpq-connect.md#LIBPQ-CONNSTRING "32.1.1. Connection Strings")]. Alternativamente, o nome de um servidor externo.
+*`connstr`*: string de informações de conexão estilo libpq, por exemplo `hostaddr=127.0.0.1 port=5432 dbname=mydb user=postgres password=mypasswd options=-csearch_path=`. Para detalhes, consulte [Seção 32.1.1](libpq-connect.md#LIBPQ-CONNSTRING). Alternativamente, o nome de um servidor externo.
 
 ## Valor de retorno
 

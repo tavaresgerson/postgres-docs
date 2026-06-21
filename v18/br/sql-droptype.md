@@ -18,7 +18,7 @@ DROP TYPE [ IF EXISTS ] name [, ...] [ CASCADE | RESTRICT ]
 
 *`name`*: O nome (opcionalmente qualificado por esquema) do tipo de dados a ser removido.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem do tipo (como colunas de tabela, funções e operadores), e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem do tipo (como colunas de tabela, funções e operadores), e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a eliminação do tipo se houver objetos que dependem dele. Esse é o padrão.
 

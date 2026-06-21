@@ -18,7 +18,7 @@ Todos os bancos de dados mencionados na linha de comando são processados.
 
 vacuumlo aceita os seguintes argumentos de linha de comando:
 
-`-l limit` `--limit=limit`: Não remova mais de *`limit`* objetos grandes por transação (padrão 1000). Como o servidor adquire um bloqueio por LO removido, remover muitos LOs em uma transação arrisca exceder [max_locks_per_transaction][(runtime-config-locks.md#GUC-MAX-LOCKS-PER-TRANSACTION)]. Defina o limite em zero se você deseja que todas as remoções sejam feitas em uma única transação.
+`-l limit` `--limit=limit`: Não remova mais de *`limit`* objetos grandes por transação (padrão 1000). Como o servidor adquire um bloqueio por LO removido, remover muitos LOs em uma transação arrisca exceder [max_locks_per_transaction](runtime-config-locks.md#GUC-MAX-LOCKS-PER-TRANSACTION). Defina o limite em zero se você deseja que todas as remoções sejam feitas em uma única transação.
 
 `-n` `--dry-run`: Não remova nada, apenas mostre o que seria feito.
 
@@ -46,7 +46,7 @@ Essa opção nunca é essencial, pois o vacuumlo solicitará automaticamente uma
 
 `PGHOST` `PGPORT` `PGUSER`: Parâmetros de conexão padrão.
 
-Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, também utiliza as variáveis de ambiente suportadas pelo libpq (consulte a Seção 32.15 [(libpq-envars.md "32.15. Environment Variables")]).
+Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, também utiliza as variáveis de ambiente suportadas pelo libpq (consulte a [Seção 32.15](libpq-envars.md)).
 
 A variável de ambiente `PG_COLOR` especifica se a cor deve ser usada nas mensagens de diagnóstico. Os valores possíveis são `always`, `auto` e `never`.
 

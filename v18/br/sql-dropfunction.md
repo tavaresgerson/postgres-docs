@@ -25,7 +25,7 @@ DROP FUNCTION [ IF EXISTS ] name [ ( [ [ argmode ] [ argname ] argtype [, ...] ]
 
 *`argtype`*: O(s) tipo(s) de dados dos argumentos da função (opcionalmente qualificados por esquema), se houver.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem da função (como operadores ou gatilhos), e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem da função (como operadores ou gatilhos), e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a eliminação da função se houver objetos que dependem dela. Esse é o padrão.
 

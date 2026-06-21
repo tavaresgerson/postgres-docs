@@ -2,7 +2,7 @@
 
 A modificação de dados que já estão no banco de dados é conhecida como atualização. Você pode atualizar linhas individuais, todas as linhas de uma tabela ou um subconjunto de todas as linhas. Cada coluna pode ser atualizada separadamente; as outras colunas não são afetadas.
 
-Para atualizar linhas existentes, use o comando [UPDATE][(sql-update.md "UPDATE")]. Isso requer três informações:
+Para atualizar linhas existentes, use o comando [UPDATE](sql-update.md). Isso requer três informações:
 
 1. O nome da tabela e da coluna a serem atualizados. 2. O novo valor da coluna. 3. Quais linhas (s) a serem atualizadas.
 
@@ -22,7 +22,7 @@ Vamos analisar esse comando em detalhes. Primeiro está a palavra-chave `UPDATE`
 UPDATE products SET price = price * 1.10;
 ```
 
-Como você pode ver, a expressão para o novo valor pode se referir aos(s) valor(es) existente(s) na(s) linha(s). Também excluímos a cláusula `WHERE`. Se ela for omitida, isso significa que todas as linhas da tabela são atualizadas. Se ela estiver presente, apenas as linhas que correspondem à condição `WHERE` são atualizadas. Note que o sinal de igual na cláusula `SET` é uma atribuição, enquanto o da cláusula `WHERE` é uma comparação, mas isso não cria nenhuma ambiguidade. Claro, a condição `WHERE` não precisa ser um teste de igualdade. Muitos outros operadores estão disponíveis (consulte [Capítulo 9][(functions.md "Chapter 9. Functions and Operators")]). Mas a expressão precisa avaliar a um resultado booleano.
+Como você pode ver, a expressão para o novo valor pode se referir aos(s) valor(es) existente(s) na(s) linha(s). Também excluímos a cláusula `WHERE`. Se ela for omitida, isso significa que todas as linhas da tabela são atualizadas. Se ela estiver presente, apenas as linhas que correspondem à condição `WHERE` são atualizadas. Note que o sinal de igual na cláusula `SET` é uma atribuição, enquanto o da cláusula `WHERE` é uma comparação, mas isso não cria nenhuma ambiguidade. Claro, a condição `WHERE` não precisa ser um teste de igualdade. Muitos outros operadores estão disponíveis (consulte [Capítulo 9](functions.md)). Mas a expressão precisa avaliar a um resultado booleano.
 
 Você pode atualizar mais de uma coluna em um comando `UPDATE` listando mais de uma atribuição na cláusula `SET`. Por exemplo:
 

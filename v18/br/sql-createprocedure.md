@@ -31,7 +31,7 @@ O usuário que cria o procedimento se torna o proprietário do procedimento.
 
 Para criar um procedimento, você deve ter o privilégio `USAGE` nos tipos de argumentos.
 
-Consulte [Seção 36.4][(xproc.md "36.4. User-Defined Procedures")] para obter informações adicionais sobre os procedimentos de escrita.
+Consulte [Seção 36.4](xproc.md) para obter informações adicionais sobre os procedimentos de escrita.
 
 ## Parâmetros
 
@@ -69,16 +69,17 @@ Consulte [SET](sql-set.md "SET") e [Capítulo 19](runtime-config.md "Chapter 19
 
 *`definition`*: Uma constante de cadeia que define o procedimento; o significado depende do idioma. Pode ser o nome de um procedimento interno, o caminho de um arquivo de objeto, um comando SQL ou texto em uma linguagem procedural.
 
-É frequentemente útil usar citação em dólares (consulte [Seção 4.1.2.4][(sql-syntax-lexical.md#SQL-SYNTAX-DOLLAR-QUOTING "4.1.2.4. Dollar-Quoted String Constants")]) para escrever a string de definição do procedimento, em vez da sintaxe normal de citação simples. Sem citação em dólares, quaisquer citações simples ou barras invertidas na definição do procedimento devem ser escapadas duplicando-as.
+É frequentemente útil usar citação em dólares (consulte [Seção 4.1.2.4](sql-syntax-lexical.md#SQL-SYNTAX-DOLLAR-QUOTING)) para escrever a string de definição do procedimento, em vez da sintaxe normal de citação simples. Sem citação em dólares, quaisquer citações simples ou barras invertidas na definição do procedimento devem ser escapadas duplicando-as.
 
-`obj_file, link_symbol`: Esta forma da cláusula `AS` é usada para procedimentos dinamicamente carregáveis em linguagem C, quando o nome do procedimento no código-fonte da linguagem C não é o mesmo que o nome do procedimento SQL. A string *`obj_file`* é o nome do arquivo da biblioteca compartilhada que contém o procedimento C compilado, e é interpretada como para o comando [`LOAD`(sql-load.md "LOAD")]. A string *`link_symbol`* é o símbolo de ligação do procedimento, ou seja, o nome do procedimento no código-fonte da linguagem C. Se o símbolo de ligação for omitido, presume-se que seja o mesmo que o nome do procedimento SQL sendo definido.
+`obj_file, link_symbol`: Esta forma da cláusula `AS` é usada para procedimentos dinamicamente carregáveis em linguagem C, quando o nome do procedimento no código-fonte da linguagem C não é o mesmo que o nome do procedimento SQL. A string *`obj_file`* é o nome do arquivo da biblioteca compartilhada que contém o procedimento C compilado, e é interpretada como para o comando [`LOAD`](sql-load.md)]. A string *`link_symbol`* é o símbolo de ligação do procedimento, ou seja, o nome do procedimento no código-fonte da linguagem C. Se o símbolo de ligação for omitido, presume-se que seja o mesmo que o nome do procedimento SQL sendo definido.
 
 Quando chamadas `CREATE PROCEDURE` repetidas referem-se ao mesmo arquivo de objeto, o arquivo é carregado apenas uma vez por sessão. Para descarregar e recarregar o arquivo (talvez durante o desenvolvimento), inicie uma nova sessão.
 
 *`sql_body`*: O corpo de um procedimento `LANGUAGE SQL`. Isso deve ser um bloco
 
-``` BEGIN ATOMIC statement; statement; ... statement; END
-    ```
+```
+BEGIN ATOMIC statement; statement; ... statement; END
+```
 
 Isso é semelhante a escrever o texto do corpo do procedimento como uma constante de string (veja *`definition`* acima), mas há algumas diferenças: Este formulário só funciona para `LANGUAGE SQL`, a forma de constante de string funciona para todos os idiomas. Este formulário é analisado no momento da definição do procedimento, a forma de constante de string é analisada no momento da execução; portanto, este formulário não pode suportar tipos de argumentos polimórficos e outras construções que não sejam resolvíveis no momento da definição do procedimento. Este formulário rastreia as dependências entre o procedimento e os objetos usados no corpo do procedimento, então `DROP ... CASCADE` funcionará corretamente, enquanto o formulário que usa literais de string pode deixar procedimentos pendentes. Finalmente, este formulário é mais compatível com o padrão SQL e outras implementações SQL.
 
@@ -108,7 +109,7 @@ CALL insert_data(1, 2);
 
 ## Compatibilidade
 
-Um comando `CREATE PROCEDURE` é definido no padrão SQL. A implementação do PostgreSQL pode ser usada de maneira compatível, mas possui muitas extensões. Para detalhes, consulte também [CREATE FUNCTION][(sql-createfunction.md "CREATE FUNCTION")].
+Um comando `CREATE PROCEDURE` é definido no padrão SQL. A implementação do PostgreSQL pode ser usada de maneira compatível, mas possui muitas extensões. Para detalhes, consulte também [CREATE FUNCTION](sql-createfunction.md).
 
 ## Veja também
 

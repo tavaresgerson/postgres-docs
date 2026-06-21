@@ -64,7 +64,7 @@ $libdir/plugins, [Pré-carga de biblioteca compartilhada](runtime-config-client.
 
 .pgpass, [O arquivo de senha](libpq-pgpass.md)
 
-.pg_service.conf, [O arquivo do serviço de conexão][(libpq-pgservice.md)]
+.pg_service.conf, [O arquivo do serviço de conexão](libpq-pgservice.md)
 
 ::, [Tipos de fundição](sql-expressions.md#SQL-SYNTAX-TYPE-CASTS)
 
@@ -92,7 +92,7 @@ acldefault, [Funções de Pesquisa de Privilegios de Acesso](functions-info.md#F
 
 aclexplode, [Funções de Pesquisa de Privilegios de Acesso](functions-info.md#FUNCTIONS-INFO-ACCESS)
 
-aclitem, [[Privilegios][(ddl-priv.md)]]
+aclitem, [[Privilegios](ddl-priv.md)]
 
 aclitemeq, [Funções de Pesquisa de Privilegios de Acesso](functions-info.md#FUNCTIONS-INFO-ACCESS)
 
@@ -124,25 +124,25 @@ funções de suporte para, [Funções de suporte para agregados](xaggr.md#XAGGR-
 
 definida pelo usuário, (xaggr.md) agregados definidos pelo usuário
 
-variadic, [[Agregados polimórficos e variadic][(xaggr.md#XAGGR-POLYMORPHIC-AGGREGATES)]]
+variadic, [[Agregados polimórficos e variadic](xaggr.md#XAGGR-POLYMORPHIC-AGGREGATES)]
 
 akeys, [Operadores e funções de hstore](hstore.md#HSTORE-OPS-FUNCS)
 
 alias, [Aliases de tabela e coluna](queries-table-expressions.md#QUERIES-TABLE-ALIASES), [Labels de coluna](queries-select-lists.md#QUERIES-COLUMN-LABELS) : para o nome da tabela na consulta, [Conjuntos entre tabelas](tutorial-join.md)
 
-na cláusula FROM, [Aliases de tabela e coluna][(queries-table-expressions.md#QUERIES-TABLE-ALIASES)]
+na cláusula FROM, [Aliases de tabela e coluna](queries-table-expressions.md#QUERIES-TABLE-ALIASES)
 
 na lista selecionada, [Labels de coluna](queries-select-lists.md#QUERIES-COLUMN-LABELS)
 
 TODOS, [[GRUPO DE UNIDADES, CUBO e ROLAMENTO]], (queries-table-expressions.md#QUERIES-GROUPING-SETS), [[DISTINCT]], (queries-select-lists.md#QUERIES-DISTINCT), Expressões de subconsultas (functions-subquery.md), Comparação de linhas e arrays (functions-comparisons.md): GROUP BY TODOS, [[GRUPO DE UNIDADES, CUBO e ROLAMENTO]] (queries-table-expressions.md#QUERIES-GROUPING-SETS)
 
-SELECIONE TODOS, [[DISTINCT][(queries-select-lists.md#QUERIES-DISTINCT)]]
+SELECIONE TODOS, [[DISTINCT](queries-select-lists.md#QUERIES-DISTINCT)]
 
 parâmetro de configuração allow_alter_system, [Compatibilidade de plataforma e cliente](runtime-config-compatible.md#RUNTIME-CONFIG-COMPATIBLE-CLIENTS)
 
-parâmetro de configuração allow_in_place_tablespaces, [Opções do desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração allow_in_place_tablespaces, [Opções do desenvolvedor](runtime-config-developer.md)
 
-parâmetro de configuração allow_system_table_mods, [Opções de desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração allow_system_table_mods, [Opções de desenvolvedor](runtime-config-developer.md)
 
 ALTER AGGREGATE, [ALTER AGGREGATE](sql-alteraggregate.md)
 
@@ -364,7 +364,7 @@ afirmações: em PL/pgSQL, [Verificando Afirmações](plpgsql-errors-and-message
 
 commit assíncrono, [Compromisso assíncrono](wal-async-commit.md)
 
-E/S assíncrona, [Glossário][(glossary.md)]
+E/S assíncrona, [Glossário](glossary.md)
 
 LOCALMENTE, [EM HORÁRIO DO FUSO E LOCALMENTE](functions-datetime.md#FUNCTIONS-DATETIME-ZONECONVERT)
 
@@ -386,7 +386,7 @@ auth_delay, [auth_delay — pausar em caso de falha na autenticação](auth-dela
 
 parâmetro de configuração auth_delay.milliseconds, [Parâmetros de configuração](auth-delay.md#AUTH-DELAY-CONFIGURATION-PARAMETERS)
 
-auto-incremento (consulte [série][(#ientry-id-1.5.7.9.9.3)])
+auto-incremento (consulte [série](#ientry-id-1.5.7.9.9.3))
 
 autocommit: carregamento em massa de dados, [Desabilitar Autocommit](populate.md#DISABLE-AUTOCOMMIT)
 
@@ -394,7 +394,7 @@ psql, [Variáveis](app-psql.md#APP-PSQL-VARIABLES)
 
 auto-resumir parâmetro de armazenamento, [Parâmetros de Armazenamento de Índice](sql-createindex.md#SQL-CREATEINDEX-STORAGE-PARAMETERS)
 
-autovacuum: informações gerais, [O daemon Autovacuum][(routine-vacuuming.md#AUTOVACUUM)]
+autovacuum: informações gerais, [O daemon Autovacuum](routine-vacuuming.md#AUTOVACUUM)
 
 parâmetro de configuração do autovacuum, [Limpeza automática](runtime-config-vacuum.md#RUNTIME-CONFIG-AUTOVACUUM)
 
@@ -474,7 +474,7 @@ parâmetro de configuração auto_explain.log_min_duration, [Parâmetros de conf
 
 parâmetro de configuração auto_explain.log_nested_statements, [Parâmetros de configuração](auto-explain.md#AUTO-EXPLAIN-CONFIGURATION-PARAMETERS)
 
-parâmetro de configuração auto_explain.log_parameter_max_length, [Parâmetros de Configuração][(auto-explain.md#AUTO-EXPLAIN-CONFIGURATION-PARAMETERS)]
+parâmetro de configuração auto_explain.log_parameter_max_length, [Parâmetros de Configuração](auto-explain.md#AUTO-EXPLAIN-CONFIGURATION-PARAMETERS)
 
 parâmetro de configuração auto_explain.log_settings, [Parâmetros de configuração](auto-explain.md#AUTO-EXPLAIN-CONFIGURATION-PARAMETERS)
 
@@ -496,7 +496,7 @@ avg, [[Funções agregadas]][(functions-aggregate.md)]
 
 ### B
 
-B-Tree (ver [índice][(#ientry-id-1.5.10.2)])
+B-Tree (ver [índice](#ientry-id-1.5.10.2))
 
 parâmetro de configuração backend_flush_after, [I/O](runtime-config-resource.md#RUNTIME-CONFIG-RESOURCE-IO)
 
@@ -504,7 +504,7 @@ Trabalhadores de segundo plano, [Processos de Trabalhadores de Segundo Plano](bg
 
 escamas de barra invertida, [[Constantes de cadeia com escapamentos de estilo C]][(sql-syntax-lexical.md#SQL-SYNTAX-STRINGS-ESCAPE)]
 
-parâmetro de configuração backslash_quote, [Versões anteriores do PostgreSQL][(runtime-config-compatible.md#RUNTIME-CONFIG-COMPATIBLE-VERSION)]
+parâmetro de configuração backslash_quote, [Versões anteriores do PostgreSQL](runtime-config-compatible.md#RUNTIME-CONFIG-COMPATIBLE-VERSION)
 
 parâmetro de configuração backtrace_functions, [Opções do desenvolvedor](runtime-config-developer.md)
 
@@ -512,7 +512,7 @@ backup, [Funções de controle de backup](functions-admin.md#FUNCTIONS-ADMIN-BAC
 
 Manifesto de backup, [Formato de manifesto de backup](backup-manifest-format.md)
 
-tipo de base, [O sistema de tipos do PostgreSQL][(extend-type-system.md)]
+tipo de base, [O sistema de tipos do PostgreSQL](extend-type-system.md)
 
 formato base64, [Funções e operadores de string binária](functions-binarystring.md)
 
@@ -520,11 +520,11 @@ basebackup_to_shell, [basebackup_to_shell — exemplo "shell" módulo pg_basebac
 
 parâmetro de configuração basebackup_to_shell.command, [Parâmetros de configuração](basebackup-to-shell.md#BASEBACKUP-TO-SHELL-CONFIGURATION-PARAMETERS)
 
-parâmetro de configuração basebackup_to_shell.required_role, [Parâmetros de configuração][(basebackup-to-shell.md#BASEBACKUP-TO-SHELL-CONFIGURATION-PARAMETERS)]
+parâmetro de configuração basebackup_to_shell.required_role, [Parâmetros de configuração](basebackup-to-shell.md#BASEBACKUP-TO-SHELL-CONFIGURATION-PARAMETERS)
 
 BASE_BACKUP, [Protocolo de Replicação em Streaming](protocol-replication.md)
 
-basic_archive, [basic_archive — um exemplo de módulo de arquivo WAL][(basic-archive.md)]
+basic_archive, [basic_archive — um exemplo de módulo de arquivo WAL](basic-archive.md)
 
 parâmetro de configuração basic_archive.archive_directory, [Parâmetros de configuração](basic-archive.md#BASIC-ARCHIVE-CONFIGURATION-PARAMETERS)
 
@@ -582,7 +582,7 @@ bit_or, [Funções agregadas](functions-aggregate.md)
 
 bit_xor, [Funções agregadas](functions-aggregate.md)
 
-BLOB (ver [grande objeto][(#ientry-id-1.7.4.2)])
+BLOB (ver [grande objeto](#ientry-id-1.7.4.2))
 
 parâmetro de configuração block_size, [Opções Predefinidas](runtime-config-preset.md)
 
@@ -700,7 +700,7 @@ conjunto de caracteres, (runtime-config-client.md#RUNTIME-CONFIG-CLIENT-FORMAT) 
 
 string de caracteres, (sql-syntax-lexical.md#SQL-SYNTAX-STRINGS), tipos de caracteres, (datatype-character.md): concatenação, funções e operadores de string, (functions-string.md)
 
-constante, [[Constantes de string][(sql-syntax-lexical.md#SQL-SYNTAX-STRINGS)]]
+constante, [[Constantes de string](sql-syntax-lexical.md#SQL-SYNTAX-STRINGS)]
 
 conversão em string binária, [Funções e operadores de string binária](functions-binarystring.md)
 
@@ -718,23 +718,23 @@ char_length, [Funções e operadores de string](functions-string.md)
 
 restrição de verificação, [Restrições de verificação](ddl-constraints.md#DDL-CONSTRAINTS-CHECK-CONSTRAINTS)
 
-VER OPÇÃO, [Crie visual][(sql-createview.md)]
+VER OPÇÃO, [Crie visual](sql-createview.md)
 
 ponto de verificação, [Configuração WAL](wal-configuration.md)
 
 CHECKPOINT, [CHECKPOINT](sql-checkpoint.md)
 
-parâmetro de configuração checkpoint_completion_target, [Pontos de verificação][(runtime-config-wal.md#RUNTIME-CONFIG-WAL-CHECKPOINTS)]
+parâmetro de configuração checkpoint_completion_target, [Pontos de verificação](runtime-config-wal.md#RUNTIME-CONFIG-WAL-CHECKPOINTS)
 
-parâmetro de configuração checkpoint_flush_after, [Pontos de verificação][(runtime-config-wal.md#RUNTIME-CONFIG-WAL-CHECKPOINTS)]
+parâmetro de configuração checkpoint_flush_after, [Pontos de verificação](runtime-config-wal.md#RUNTIME-CONFIG-WAL-CHECKPOINTS)
 
-parâmetro de configuração checkpoint_timeout, [Pontos de verificação][(runtime-config-wal.md#RUNTIME-CONFIG-WAL-CHECKPOINTS)]
+parâmetro de configuração checkpoint_timeout, [Pontos de verificação](runtime-config-wal.md#RUNTIME-CONFIG-WAL-CHECKPOINTS)
 
-parâmetro de configuração checkpoint_warning, [Pontos de verificação][(runtime-config-wal.md#RUNTIME-CONFIG-WAL-CHECKPOINTS)]
+parâmetro de configuração checkpoint_warning, [Pontos de verificação](runtime-config-wal.md#RUNTIME-CONFIG-WAL-CHECKPOINTS)
 
 checksums, [Checksums de dados](checksums.md)
 
-parâmetro de configuração check_function_bodies, [Comportamento de declaração][(runtime-config-client.md#RUNTIME-CONFIG-CLIENT-STATEMENT)]
+parâmetro de configuração check_function_bodies, [Comportamento de declaração](runtime-config-client.md#RUNTIME-CONFIG-CLIENT-STATEMENT)
 
 chr, [Funções e operadores de cadeia de caracteres](functions-string.md)
 
@@ -756,9 +756,9 @@ parâmetro de configuração client_min_messages, [Comportamento da declaração
 
 clock_timestamp, [Funções e operadores de data/hora](functions-datetime.md)
 
-FECHAR, [FECHAR][(sql-close.md)]
+FECHAR, [FECHAR](sql-close.md)
 
-cluster: de bancos de dados (consulte [banco de dados cluster][(#ientry-id-1.4.4.3.4.1)])
+cluster: de bancos de dados (consulte [banco de dados cluster](#ientry-id-1.4.4.3.4.1))
 
 CLUSTER, [CLUSTER](sql-cluster.md)
 
@@ -766,7 +766,7 @@ clusterdb, [clusterdb](app-clusterdb.md)
 
 agrupamento, [Alta disponibilidade, balanceamento de carga e replicação](high-availability.md)
 
-parâmetro de configuração cluster_name, [Título do processo][(runtime-config-logging.md#RUNTIME-CONFIG-LOGGING-PROC-TITLE)]
+parâmetro de configuração cluster_name, [Título do processo](runtime-config-logging.md#RUNTIME-CONFIG-LOGGING-PROC-TITLE)
 
 cmax, [Colunas do sistema](ddl-system-columns.md)
 
@@ -814,11 +814,11 @@ parâmetro de configuração commit_siblings, [Configurações](runtime-config-w
 
 parâmetro de configuração commit_timestamp_buffers, [Memória](runtime-config-resource.md#RUNTIME-CONFIG-RESOURCE-MEMORY)
 
-expressão comum de tabela (ver [WITH][(#ientry-id-1.5.6.12.2)])
+expressão comum de tabela (ver [WITH](#ientry-id-1.5.6.12.2))
 
 comparação, (functions-comparison.md), expressões de subconsulta, (functions-subquery.md): tipo composto, comparações de linha e matriz, (functions-comparisons.md)
 
-operadores, [Funções e operadores de comparação][(functions-comparison.md)]
+operadores, [Funções e operadores de comparação](functions-comparison.md)
 
 construtor de linha, [Comparações de linha e matriz](functions-comparisons.md)
 
@@ -868,7 +868,7 @@ arquivo de serviço de conexão, [O arquivo de serviço de conexão](libpq-pgser
 
 conninfo, [Strings de conexão](libpq-connect.md#LIBPQ-CONNSTRING)
 
-constante, [[Constantes][(sql-syntax-lexical.md#SQL-SYNTAX-CONSTANTS)]]
+constante, [[Constantes](sql-syntax-lexical.md#SQL-SYNTAX-CONSTANTS)]
 
 restrição, (ddl-constraints.md): adicionando, (ddl-alter.md#DDL-ALTER-ADDING-A-CONSTRAINT) Adicionando uma restrição
 
@@ -890,9 +890,9 @@ removendo, [Remover uma restrição](ddl-alter.md#DDL-ALTER-REMOVING-A-CONSTRAIN
 
 exclusão de restrições, (ddl-partitioning.md#DDL-PARTITIONING-CONSTRAINT-EXCLUSION) Partição e Exclusão de Restrições, (runtime-config-query.md#RUNTIME-CONFIG-QUERY-OTHER) Outras Opções do Planejador
 
-parâmetro de configuração constraint_exclusion, [Outras opções do planejador][(runtime-config-query.md#RUNTIME-CONFIG-QUERY-OTHER)]
+parâmetro de configuração constraint_exclusion, [Outras opções do planejador](runtime-config-query.md#RUNTIME-CONFIG-QUERY-OTHER)
 
-tipo de contêiner, [O sistema de tipos do PostgreSQL][(extend-type-system.md)]
+tipo de contêiner, [O sistema de tipos do PostgreSQL](extend-type-system.md)
 
 CONTINUAR: em PL/pgSQL, [CONTINUAR][(plpgsql-control-structures.md#PLPGSQL-CONTROL-STRUCTURES-LOOPS-CONTINUE)
 
@@ -936,7 +936,7 @@ covar_samp, [[Funções agregadas]] (functions-aggregate.md)
 
 parâmetro de configuração cpu_index_tuple_cost, [Constantes de Custo do Planejador](runtime-config-query.md#RUNTIME-CONFIG-QUERY-CONSTANTS)
 
-parâmetro de configuração cpu_operator_cost, [Constantes de Custo do Planejador][(runtime-config-query.md#RUNTIME-CONFIG-QUERY-CONSTANTS)]
+parâmetro de configuração cpu_operator_cost, [Constantes de Custo do Planejador](runtime-config-query.md#RUNTIME-CONFIG-QUERY-CONSTANTS)
 
 parâmetro de configuração cpu_tuple_cost, [Constantes de Custo do Planejador](runtime-config-query.md#RUNTIME-CONFIG-QUERY-CONSTANTS)
 
@@ -950,7 +950,7 @@ Crie agregado, [Crie agregado](sql-createaggregate.md)
 
 CREATE CAST, [CREATE CAST](sql-createcast.md)
 
-Crie a correlação, [Crie a correlação][(sql-createcollation.md)]
+Crie a correlação, [Crie a correlação](sql-createcollation.md)
 
 Crie conversão, [Crie conversão](sql-createconversion.md)
 
@@ -980,7 +980,7 @@ Crie operador, [Crie operador](sql-createoperator.md)
 
 Crie a classe do operador, [Crie a classe do operador](sql-createopclass.md)
 
-Crie uma família de operadores, [Crie uma família de operadores][(sql-createopfamily.md)]
+Crie uma família de operadores, [Crie uma família de operadores](sql-createopfamily.md)
 
 Crie a política, [Crie a política](sql-createpolicy.md)
 
@@ -1026,7 +1026,7 @@ Crie usuário, [Crie usuário](sql-createuser.md)
 
 Crie mapeamento de usuário, [Crie mapeamento de usuário](sql-createusermapping.md)
 
-Crie a visualização, [Crie a visualização][(sql-createview.md)]
+Crie a visualização, [Crie a visualização](sql-createview.md)
 
 createdb, [Criando um banco de dados](tutorial-createdb.md), [Criando um banco de dados](manage-ag-createdb.md), [createdb](app-createdb.md)
 
@@ -1056,9 +1056,9 @@ CTID, [Ver regras em declarações não SELECT](rules-views.md#RULES-VIEWS-NON-S
 
 CUBE, [[GRUPO DE SETES, CUBE e ROLLUP]] [(queries-table-expressions.md#QUERIES-GROUPING-SETS)]
 
-cubo (extensão), [cubo — um tipo de dados multidimensional][(cube.md)]
+cubo (extensão), [cubo — um tipo de dados multidimensional](cube.md)
 
-cume_dist, [Funções de janela][(functions-window.md)]: hipotético, [Funções agregadas][(functions-aggregate.md)]
+cume_dist, [Funções de janela](functions-window.md): hipotético, [Funções agregadas](functions-aggregate.md)
 
 current_catalog, [Funções de Informações de Sessão](functions-info.md#FUNCTIONS-INFO-SESSION)
 
@@ -1098,31 +1098,31 @@ em PL/pgSQL, [Cursors](plpgsql-cursors.md)
 
 MOVE, [MOVE](sql-move.md)
 
-apresentando o plano de consulta, [EXPLAIN][(sql-explain.md)]
+apresentando o plano de consulta, [EXPLAIN](sql-explain.md)
 
 parâmetro de configuração cursor_tuple_fraction, [Outras opções do planejador](runtime-config-query.md#RUNTIME-CONFIG-QUERY-OTHER)
 
 provedor de varredura personalizada, [Escrevendo um provedor de varredura personalizada](custom-scan.md): manipulador para, [Escrevendo um provedor de varredura personalizada](custom-scan.md)
 
-Cygwin, [Cygwin][(installation-platform-notes.md#INSTALLATION-NOTES-CYGWIN)]: instalação em, [Cygwin][(installation-platform-notes.md#INSTALLATION-NOTES-CYGWIN)]
+Cygwin, [Cygwin](installation-platform-notes.md#INSTALLATION-NOTES-CYGWIN): instalação em, [Cygwin](installation-platform-notes.md#INSTALLATION-NOTES-CYGWIN)
 
 ### D
 
 daitch_mokotoff, [Daitch-Mokotoff Soundex](fuzzystrmatch.md#FUZZYSTRMATCH-DAITCH-MOKOTOFF)
 
-área de dados (consulte [cluster de banco de dados][(#ientry-id-1.4.4.3.4.1)])
+área de dados (consulte [cluster de banco de dados](#ientry-id-1.4.4.3.4.1))
 
-partição de dados, [Alta disponibilidade, balanceamento de carga e replicação][(high-availability.md)]
+partição de dados, [Alta disponibilidade, balanceamento de carga e replicação](high-availability.md)
 
 tipo de dados, (datatype.md), tipos numéricos, (datatype-numeric.md), tipos enumerados, (datatype-enum.md), tipos de domínio, (domains.md), conversão de tipos, (typeconv.md), o sistema de tipos do PostgreSQL, (extend-type-system.md), o sistema de tipos do PostgreSQL, (extend-type-system.md), o sistema de tipos do PostgreSQL, (extend-type-system.md), tipos polimórficos, (extend-type-system.md#EXTEND-TYPES-POLYMORPHIC), tipos básicos em funções de linguagem C, (xfunc-c.md#XFUNC-C-BASETYPE), tipos definidos pelo usuário, (xtypes.md): base, o sistema de tipos do PostgreSQL, (extend-type-system.md)
 
 categoria, [[Resumo]](typeconv-overview.md)
 
-composto, [O sistema de tipos do PostgreSQL][(extend-type-system.md)]
+composto, [O sistema de tipos do PostgreSQL](extend-type-system.md)
 
 constante, [Constantes de Outros Tipos](sql-syntax-lexical.md#SQL-SYNTAX-CONSTANTS-GENERIC)
 
-container, [O sistema de tipos do PostgreSQL][(extend-type-system.md)]
+container, [O sistema de tipos do PostgreSQL](extend-type-system.md)
 
 conversão, [Tipo de conversão](typeconv.md)
 
@@ -1154,7 +1154,7 @@ parâmetro de configuração data_directory, [Localização de arquivos](runtime
 
 parâmetro de configuração data_directory_mode, [Opções Predefinidas](runtime-config-preset.md)
 
-parâmetro de configuração data_sync_retry, [Tratamento de Erro][(runtime-config-error-handling.md)]
+parâmetro de configuração data_sync_retry, [Tratamento de Erro](runtime-config-error-handling.md)
 
 data, [Tipos de data/hora](datatype-datetime.md), [Datas](datatype-datetime.md#DATATYPE-DATETIME-INPUT-DATES): constantes, [Valores especiais](datatype-datetime.md#DATATYPE-DATETIME-SPECIAL-VALUES)
 
@@ -1220,19 +1220,19 @@ DESLOCUE, [DEALLOCATE](sql-deallocate.md)
 
 desarmurar, [desarmurar(), desarmurar()](pgcrypto.md#PGCRYPTO-PGP-ENC-FUNCS-ARMOR)
 
-parâmetro de configuração debug_assertions, [Opções Predefinidas][(runtime-config-preset.md)]
+parâmetro de configuração debug_assertions, [Opções Predefinidas](runtime-config-preset.md)
 
-parâmetro de configuração debug_copy_parse_plan_trees, [Opções do desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração debug_copy_parse_plan_trees, [Opções do desenvolvedor](runtime-config-developer.md)
 
-parâmetro de configuração debug_deadlocks, [Opções do desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração debug_deadlocks, [Opções do desenvolvedor](runtime-config-developer.md)
 
-parâmetro de configuração debug_discard_caches, [Opções de desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração debug_discard_caches, [Opções de desenvolvedor](runtime-config-developer.md)
 
-parâmetro de configuração debug_io_direct, [Opções do desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração debug_io_direct, [Opções do desenvolvedor](runtime-config-developer.md)
 
-parâmetro de configuração debug_logical_replication_streaming, [Opções de desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração debug_logical_replication_streaming, [Opções de desenvolvedor](runtime-config-developer.md)
 
-parâmetro de configuração debug_parallel_query, [Opções do desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração debug_parallel_query, [Opções do desenvolvedor](runtime-config-developer.md)
 
 parâmetro de configuração debug_pretty_print, [O que registrar](runtime-config-logging.md#RUNTIME-CONFIG-LOGGING-WHAT)
 
@@ -1242,11 +1242,11 @@ parâmetro de configuração debug_print_plan, [O que registrar](runtime-config-
 
 parâmetro de configuração debug_print_rewritten, [O que registrar](runtime-config-logging.md#RUNTIME-CONFIG-LOGGING-WHAT)
 
-parâmetro de configuração debug_raw_expression_coverage_test, [Opções do desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração debug_raw_expression_coverage_test, [Opções do desenvolvedor](runtime-config-developer.md)
 
-parâmetro de configuração debug_write_read_parse_plan_trees, [Opções de desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração debug_write_read_parse_plan_trees, [Opções de desenvolvedor](runtime-config-developer.md)
 
-decimal (ver [numérico][(#ientry-id-1.5.3.5.9.9.8.3)])
+decimal (ver [numérico](#ientry-id-1.5.3.5.9.9.8.3))
 
 DECLARA, [DECLARA](sql-declare.md)
 
@@ -1296,7 +1296,7 @@ excluir, [operadores e funções de hstore](hstore.md#HSTORE-OPS-FUNCS)
 
 excluindo, [Excluindo Dados](dml-delete.md)
 
-dense_rank, [Funções de janela][(functions-window.md)]: hipotético, [Funções agregadas][(functions-aggregate.md)]
+dense_rank, [Funções de janela](functions-window.md): hipotético, [Funções agregadas](functions-aggregate.md)
 
 diagonal, [[Funções e Operadores Geométricos]][(functions-geometry.md)]
 
@@ -1328,9 +1328,9 @@ SELECT DISTINCT, (queries-select-lists.md#QUERIES-DISTINCT)
 
 div, [Funções e Operadores Matemáticos](functions-math.md)
 
-dmetafone, [Metafone Duplo][(fuzzystrmatch.md#FUZZYSTRMATCH-DOUBLE-METAPHONE)]
+dmetafone, [Metafone Duplo](fuzzystrmatch.md#FUZZYSTRMATCH-DOUBLE-METAPHONE)
 
-dmetaphone_alt, [Metafone Duplo][(fuzzystrmatch.md#FUZZYSTRMATCH-DOUBLE-METAPHONE)]
+dmetaphone_alt, [Metafone Duplo](fuzzystrmatch.md#FUZZYSTRMATCH-DOUBLE-METAPHONE)
 
 DO, (sql-do.md)
 
@@ -1370,7 +1370,7 @@ DROP GROUP, [DROP GROUP](sql-dropgroup.md)
 
 DROP INDEX, [DROP INDEX](sql-dropindex.md)
 
-DROP LANGUAGE, [[DROP LANGUAGE][(sql-droplanguage.md)]]
+DROP LANGUAGE, [[DROP LANGUAGE](sql-droplanguage.md)]
 
 DROP MATERIALIZED VIEW, [[DROP MATERIALIZED VIEW]](sql-dropmaterializedview.md)
 
@@ -1432,7 +1432,7 @@ dropdb, [Destruição de um banco de dados](manage-ag-dropdb.md), [dropdb](app-d
 
 dropuser, [Papéis de banco de dados](database-roles.md), [dropuser](app-dropuser.md)
 
-DROP_REPLICATION_SLOT, [Protocolo de Replicação em Streaming][(protocol-replication.md)]
+DROP_REPLICATION_SLOT, [Protocolo de Replicação em Streaming](protocol-replication.md)
 
 DTD, [Criando valores XML](datatype-xml.md#DATATYPE-XML-CREATING)
 
@@ -1440,19 +1440,19 @@ DTrace, [Opções de desenvolvedor](install-make.md#CONFIGURE-OPTIONS-DEVEL), [O
 
 duplicar, [Consultar uma tabela](tutorial-select.md)
 
-duplicatas, [[DISTINCT][(queries-select-lists.md#QUERIES-DISTINCT)]]
+duplicatas, [[DISTINCT](queries-select-lists.md#QUERIES-DISTINCT)]
 
 carga dinâmica, [Outros Padrões](runtime-config-client.md#RUNTIME-CONFIG-CLIENT-OTHER), [Carga Dinâmica](xfunc-c.md#XFUNC-C-DYNLOAD)
 
 caminho_de_biblioteca_dinâmica, [Carga Dinâmica](xfunc-c.md#XFUNC-C-DYNLOAD)
 
-parâmetro de configuração dynamic_library_path, [Outros Padrões][(runtime-config-client.md#RUNTIME-CONFIG-CLIENT-OTHER)]
+parâmetro de configuração dynamic_library_path, [Outros Padrões](runtime-config-client.md#RUNTIME-CONFIG-CLIENT-OTHER)
 
 parâmetro de configuração do tipo de memória compartilhada dinâmica, [Memória](runtime-config-resource.md#RUNTIME-CONFIG-RESOURCE-MEMORY)
 
 ### E
 
-cada, [operadores e funções hstore][(hstore.md#HSTORE-OPS-FUNCS)]
+cada, [operadores e funções hstore](hstore.md#HSTORE-OPS-FUNCS)
 
 terra, [Distâncias baseadas em cubo na Terra](earthdistance.md#EARTHDISTANCE-CUBE-BASED)
 
@@ -1478,7 +1478,7 @@ em PL/Tcl, [Acesso ao banco de dados a partir de PL/Tcl](pltcl-dbaccess.md)
 
 SQL embutido, [ECPG — SQL embutido em C](ecpg.md): em C, [ECPG — SQL embutido em C](ecpg.md)
 
-papel habilitado, [habilitados][(infoschema-enabled-roles.md)]
+papel habilitado, [habilitados](infoschema-enabled-roles.md)
 
 parâmetro de configuração enable_async_append, [Configuração do método do planejador](runtime-config-query.md#RUNTIME-CONFIG-QUERY-ENABLE)
 
@@ -1486,7 +1486,7 @@ parâmetro de configuração enable_bitmapscan, [Configuração do método do pl
 
 parâmetro de configuração enable_distinct_reordering, [Configuração do método do planejador](runtime-config-query.md#RUNTIME-CONFIG-QUERY-ENABLE)
 
-parâmetro de configuração enable_gathermerge, [Configuração do método do Planner][(runtime-config-query.md#RUNTIME-CONFIG-QUERY-ENABLE)]
+parâmetro de configuração enable_gathermerge, [Configuração do método do Planner](runtime-config-query.md#RUNTIME-CONFIG-QUERY-ENABLE)
 
 parâmetro de configuração enable_group_by_reordering, [Configuração do método do planejador](runtime-config-query.md#RUNTIME-CONFIG-QUERY-ENABLE)
 
@@ -1532,11 +1532,11 @@ codificar, [Funções e operadores de string binária](functions-binarystring.md
 
 construtor_de_matriz_codificada: em PL/Perl, [Funções de Utilidade em PL/Perl](plperl-builtins.md#PLPERL-UTILITY-FUNCTIONS)
 
-encode_array_literal: em PL/Perl, [Funções de Utilidade em PL/Perl][(plperl-builtins.md#PLPERL-UTILITY-FUNCTIONS)]
+encode_array_literal: em PL/Perl, [Funções de Utilidade em PL/Perl](plperl-builtins.md#PLPERL-UTILITY-FUNCTIONS)
 
 encode_bytea: em PL/Perl, [Funções de Utilidade em PL/Perl](plperl-builtins.md#PLPERL-UTILITY-FUNCTIONS)
 
-encode_typed_literal: em PL/Perl, [Funções de Utilidade em PL/Perl][(plperl-builtins.md#PLPERL-UTILITY-FUNCTIONS)]
+encode_typed_literal: em PL/Perl, [Funções de Utilidade em PL/Perl](plperl-builtins.md#PLPERL-UTILITY-FUNCTIONS)
 
 criptografar, [Funções de Criptografia Bruta](pgcrypto.md#PGCRYPTO-RAW-ENC-FUNCS)
 
@@ -1568,7 +1568,7 @@ erfc, [Funções e Operadores Matemáticos](functions-math.md)
 
 códigos de erro, [Códigos de erro do PostgreSQL](errcodes-appendix.md): libpq, [Funções principais](libpq-exec.md#LIBPQ-EXEC-MAIN)
 
-lista de, [Códigos de erro do PostgreSQL][(errcodes-appendix.md)]
+lista de, [Códigos de erro do PostgreSQL](errcodes-appendix.md)
 
 mensagem de erro: em PGcancelConn, [Funções para Enviar Solicitações de Cancelamento](libpq-cancel.md#LIBPQ-CANCEL-FUNCTIONS)
 
@@ -1578,7 +1578,7 @@ formato de fuga, [Funções e Operadores de String Binária](functions-binarystr
 
 sintaxe de string de escape, [[Constantes de cadeia com escapamentos de estilo C]] [(sql-syntax-lexical.md#SQL-SYNTAX-STRINGS-ESCAPE)]
 
-parâmetro de configuração escape_string_warning, [Versões anteriores do PostgreSQL][(runtime-config-compatible.md#RUNTIME-CONFIG-COMPATIBLE-VERSION)]
+parâmetro de configuração escape_string_warning, [Versões anteriores do PostgreSQL](runtime-config-compatible.md#RUNTIME-CONFIG-COMPATIBLE-VERSION)
 
 escapar strings, [Esclarecendo Strings para Inclusão em Comandos SQL](libpq-exec.md#LIBPQ-EXEC-ESCAPE-STRING): na libpq, [Esclarecendo Strings para Inclusão em Comandos SQL](libpq-exec.md#LIBPQ-EXEC-ESCAPE-STRING)
 
@@ -1598,7 +1598,7 @@ cada, [Funções agregadas](functions-aggregate.md)
 
 EXceto, [Combinando consultas (UNION, INTERSECT, EXCEPT)](queries-union.md)
 
-exceções: em PL/pgSQL, [Captura de erros][(plpgsql-control-structures.md#PLPGSQL-ERROR-TRAPPING)]
+exceções: em PL/pgSQL, [Captura de erros](plpgsql-control-structures.md#PLPGSQL-ERROR-TRAPPING)
 
 em PL/Tcl, [Tratamento de Erros em PL/Tcl](pltcl-error-handling.md)
 
@@ -1616,7 +1616,7 @@ parâmetro de configuração exit_on_error, [Tratamento de Erro](runtime-config-
 
 exp, [Funções e Operadores Matemáticos](functions-math.md)
 
-EXPLIQUE, [Usando EXPLIQUE][(using-explain.md), [EXPLIQUE][(sql-explain.md)]
+EXPLIQUE, [Usando EXPLIQUE][(using-explain.md), [EXPLIQUE](sql-explain.md)
 
 expressão, (sql-expressions.md): ordem de avaliação, (sql-expressions.md#SYNTAX-EXPRESS-EVAL) Regras de avaliação de expressão
 
@@ -1626,7 +1626,7 @@ extensão do SQL, [Extensão do SQL](extend.md)
 
 extensão, [Objetos relacionados ao pacote em uma extensão](extend-extensions.md): mantido externamente, [Extensões](external-extensions.md)
 
-parâmetro de configuração extension_control_path, [Outros Padrões][(runtime-config-client.md#RUNTIME-CONFIG-CLIENT-OTHER)]
+parâmetro de configuração extension_control_path, [Outros Padrões](runtime-config-client.md#RUNTIME-CONFIG-CLIENT-OTHER)
 
 parâmetro de configuração external_pid_file, [Localização de arquivos](runtime-config-file-locations.md)
 
@@ -1638,7 +1638,7 @@ parâmetro de configuração extra_float_digits, [Local e formatação](runtime-
 
 fatorial, [Funções e Operadores Matemáticos](functions-math.md)
 
-failover, [Alta disponibilidade, balanceamento de carga e replicação][(high-availability.md)]
+failover, [Alta disponibilidade, balanceamento de carga e replicação](high-availability.md)
 
 falso, [Tipo booleano](datatype-boolean.md)
 
@@ -1674,9 +1674,9 @@ primeiro_valor, [Funções de Janela](functions-window.md)
 
 flex, [Requisitos](install-requirements.md)
 
-float4 (ver [real][(#ientry-id-1.5.7.9.8.2)])
+float4 (ver [real](#ientry-id-1.5.7.9.8.2))
 
-float8 (ver [double precision][(#ientry-id-1.5.7.9.8.3)])
+float8 (ver [double precision](#ientry-id-1.5.7.9.8.3))
 
 ponto flutuante, [Tipos de Ponto Flutuante](datatype-numeric.md#DATATYPE-FLOAT)
 
@@ -1708,7 +1708,7 @@ início do script, [Iniciando o servidor de banco de dados](server-start.md)
 
 parâmetro de configuração from_collapse_limit, [Outras opções do planejador](runtime-config-query.md#RUNTIME-CONFIG-QUERY-OTHER)
 
-FSM (ver [Mapa de Espaço Livre][(#ientry-id-1.10.18.5.2)]])
+FSM (ver [Mapa de Espaço Livre](#ientry-id-1.10.18.5.2)])
 
 fsm_page_contents, [Funções Gerais](pageinspect.md#PAGEINSPECT-GENERAL-FUNCS)
 
@@ -1718,17 +1718,17 @@ pesquisa de texto completo, (datatype-textsearch.md), (datatype-textsearch.md), 
 
 funções e operadores, [Tipos de pesquisa de texto](datatype-textsearch.md)
 
-parâmetro de configuração full_page_writes, [Configurações][(runtime-config-wal.md#RUNTIME-CONFIG-WAL-SETTINGS)]
+parâmetro de configuração full_page_writes, [Configurações](runtime-config-wal.md#RUNTIME-CONFIG-WAL-SETTINGS)
 
 função, (queries-table-expressions.md#QUERIES-TABLEFUNCTIONS), funções e operadores, (functions.md), funções de informações estatísticas, (functions-statistics.md), funções, (typeconv-func.md), tipos polimórficos, (extend-type-system.md#EXTEND-TYPES-POLYMORPHIC), funções definidas pelo usuário, (xfunc.md), funções de linguagem de consulta (SQL), (xfunc-sql.md), funções internas, (xfunc-internal.md), funções de linguagem C, (xfunc-c.md): valores padrão para argumentos, funções SQL com valores padrão para argumentos, (xfunc-sql.md#XFUNC-SQL-PARAMETER-DEFAULTS)
 
-na cláusula FROM, [Funções de tabela][(queries-table-expressions.md#QUERIES-TABLEFUNCTIONS)]
+na cláusula FROM, [Funções de tabela](queries-table-expressions.md#QUERIES-TABLEFUNCTIONS)
 
 interno, [[Funções Internas]][(xfunc-internal.md)]
 
 invocação, [Chamadas de função](sql-expressions.md#SQL-EXPRESSIONS-FUNCTION-CALLS)
 
-notação mista, [Usando notação mista][(sql-syntax-calling-funcs.md#SQL-SYNTAX-CALLING-FUNCS-MIXED)]
+notação mista, [Usando notação mista](sql-syntax-calling-funcs.md#SQL-SYNTAX-CALLING-FUNCS-MIXED)
 
 argumento nomeado, [Argumentos para funções SQL](xfunc-sql.md#XFUNC-SQL-FUNCTION-ARGUMENTS)
 
@@ -1780,21 +1780,21 @@ gen_random_uuid, [Funções de UUID](functions-uuid.md), [Funções de dados ale
 
 gen_salt, [gen_salt()](pgcrypto.md#PGCRYPTO-PASSWORD-HASHING-FUNCS-GEN-SALT)
 
-GEQO (ver [otimização de consultas genéticas][(#ientry-id-1.6.6.10.4.3.1.1.3)])
+GEQO (ver [otimização de consultas genéticas](#ientry-id-1.6.6.10.4.3.1.1.3))
 
-parâmetro de configuração geqo, [Otimizador de Consulta Genética][(runtime-config-query.md#RUNTIME-CONFIG-QUERY-GEQO)]
+parâmetro de configuração geqo, [Otimizador de Consulta Genética](runtime-config-query.md#RUNTIME-CONFIG-QUERY-GEQO)
 
-parâmetro de configuração geqo_effort, [Otimizador de Consulta Genética][(runtime-config-query.md#RUNTIME-CONFIG-QUERY-GEQO)]
+parâmetro de configuração geqo_effort, [Otimizador de Consulta Genética](runtime-config-query.md#RUNTIME-CONFIG-QUERY-GEQO)
 
-parâmetro de configuração geqo_generations, [Otimizador de Consulta Genética][(runtime-config-query.md#RUNTIME-CONFIG-QUERY-GEQO)]
+parâmetro de configuração geqo_generations, [Otimizador de Consulta Genética](runtime-config-query.md#RUNTIME-CONFIG-QUERY-GEQO)
 
-parâmetro de configuração geqo_pool_size, [Otimizador de Consulta Genética][(runtime-config-query.md#RUNTIME-CONFIG-QUERY-GEQO)]
+parâmetro de configuração geqo_pool_size, [Otimizador de Consulta Genética](runtime-config-query.md#RUNTIME-CONFIG-QUERY-GEQO)
 
-parâmetro de configuração geqo_seed, [Otimizador de Consulta Genética][(runtime-config-query.md#RUNTIME-CONFIG-QUERY-GEQO)]
+parâmetro de configuração geqo_seed, [Otimizador de Consulta Genética](runtime-config-query.md#RUNTIME-CONFIG-QUERY-GEQO)
 
-parâmetro de configuração geqo_selection_bias, [Otimizador de Consulta Genética][(runtime-config-query.md#RUNTIME-CONFIG-QUERY-GEQO)]
+parâmetro de configuração geqo_selection_bias, [Otimizador de Consulta Genética](runtime-config-query.md#RUNTIME-CONFIG-QUERY-GEQO)
 
-parâmetro de configuração geqo_threshold, [Otimizador de Consulta Genética][(runtime-config-query.md#RUNTIME-CONFIG-QUERY-GEQO)]
+parâmetro de configuração geqo_threshold, [Otimizador de Consulta Genética](runtime-config-query.md#RUNTIME-CONFIG-QUERY-GEQO)
 
 get_bit, [Funções e operadores de string binária](functions-binarystring.md), [Funções e operadores de string de bits](functions-bitstring.md)
 
@@ -1808,7 +1808,7 @@ GIN (ver [índice](#ientry-id-1.5.10.2))
 
 gin_clean_pending_list, [Funções de manutenção de índice](functions-admin.md#FUNCTIONS-ADMIN-INDEX)
 
-parâmetro de configuração gin_fuzzy_search_limit, [Outros Padrões][(runtime-config-client.md#RUNTIME-CONFIG-CLIENT-OTHER)]
+parâmetro de configuração gin_fuzzy_search_limit, [Outros Padrões](runtime-config-client.md#RUNTIME-CONFIG-CLIENT-OTHER)
 
 gin_index_check, [Funções](amcheck.md#AMCHECK-FUNCTIONS)
 
@@ -1818,11 +1818,11 @@ gin_metapage_info, [Funções GIN](pageinspect.md#PAGEINSPECT-GIN-FUNCS)
 
 gin_page_opaque_info, [Funções GIN](pageinspect.md#PAGEINSPECT-GIN-FUNCS)
 
-gin_pending_list_limit: parâmetro de configuração, [Comportamento da declaração][(runtime-config-client.md#RUNTIME-CONFIG-CLIENT-STATEMENT)]
+gin_pending_list_limit: parâmetro de configuração, [Comportamento da declaração](runtime-config-client.md#RUNTIME-CONFIG-CLIENT-STATEMENT)
 
 parâmetro de armazenamento, [Parâmetros de Armazenamento de Índice](sql-createindex.md#SQL-CREATEINDEX-STORAGE-PARAMETERS)
 
-GiST (ver [índice][(#ientry-id-1.5.10.2)])
+GiST (ver [índice](#ientry-id-1.5.10.2))
 
 gist_page_items, [Funções GiST](pageinspect.md#PAGEINSPECT-GIST-FUNCS)
 
@@ -1858,15 +1858,15 @@ GUID, [Tipo de UUID](datatype-uuid.md)
 
 ### H
 
-hash (ver [índice][(#ientry-id-1.5.10.2)])
+hash (ver [índice](#ientry-id-1.5.10.2))
 
 hash_bitmap_info, [Funções de Hash](pageinspect.md#PAGEINSPECT-HASH-FUNCS)
 
 parâmetro de configuração hash_mem_multiplier, [Memória](runtime-config-resource.md#RUNTIME-CONFIG-RESOURCE-MEMORY)
 
-hash_metapage_info, [Funções de hash][(pageinspect.md#PAGEINSPECT-HASH-FUNCS)]
+hash_metapage_info, [Funções de hash](pageinspect.md#PAGEINSPECT-HASH-FUNCS)
 
-hash_page_items, [Funções de hash][(pageinspect.md#PAGEINSPECT-HASH-FUNCS)]
+hash_page_items, [Funções de hash](pageinspect.md#PAGEINSPECT-HASH-FUNCS)
 
 hash_page_stats, [Funções de Hash](pageinspect.md#PAGEINSPECT-HASH-FUNCS)
 
@@ -1878,7 +1878,7 @@ has_column_privilege, [Funções de Pesquisa de Privilegios de Acesso](functions
 
 tem_privilegio_de_banco_de_dados, [Funções de Pesquisa de Privilegio de Acesso](functions-info.md#FUNCTIONS-INFO-ACCESS)
 
-tem_privilégio_de_wrapper_de_dados_estrangeiros, [Funções de Pesquisa de Privilegio de Acesso][(functions-info.md#FUNCTIONS-INFO-ACCESS)]
+tem_privilégio_de_wrapper_de_dados_estrangeiros, [Funções de Pesquisa de Privilegio de Acesso](functions-info.md#FUNCTIONS-INFO-ACCESS)
 
 has_function_privilege, [Consulta de privilégios de acesso](functions-info.md#FUNCTIONS-INFO-ACCESS)
 
@@ -1904,9 +1904,9 @@ TENDO, [Funções Agregadas](tutorial-agg.md), [Cláusulas GROUP BY e HAVING](qu
 
 parâmetro de configuração hba_file, [Localizações de arquivo](runtime-config-file-locations.md)
 
-heap_page_items, [Funções de heap][(pageinspect.md#PAGEINSPECT-HEAP-FUNCS)]
+heap_page_items, [Funções de heap](pageinspect.md#PAGEINSPECT-HEAP-FUNCS)
 
-heap_page_item_attrs, [Funções de heap][(pageinspect.md#PAGEINSPECT-HEAP-FUNCS)]
+heap_page_item_attrs, [Funções de heap](pageinspect.md#PAGEINSPECT-HEAP-FUNCS)
 
 heap_tuple_infomask_flags, [Funções de pilha](pageinspect.md#PAGEINSPECT-HEAP-FUNCS)
 
@@ -1916,7 +1916,7 @@ formato hex, [Funções e operadores de string binária](functions-binarystring.
 
 banco de dados hierárquico, (tutorial-concepts.md) [Conceitos]
 
-alta disponibilidade, [Alta disponibilidade, balanceamento de carga e replicação][(high-availability.md)]
+alta disponibilidade, [Alta disponibilidade, balanceamento de carga e replicação](high-availability.md)
 
 história, [Uma Breve História do PostgreSQL](history.md): do PostgreSQL, [Uma Breve História do PostgreSQL](history.md)
 
@@ -1932,7 +1932,7 @@ hot standby, [Alta disponibilidade, balanceamento de carga e replicação](high-
 
 parâmetro de configuração hot_standby, [Servidores em espera](runtime-config-replication.md#RUNTIME-CONFIG-REPLICATION-STANDBY)
 
-parâmetro de configuração hot_standby_feedback, [Servidores em espera][(runtime-config-replication.md#RUNTIME-CONFIG-REPLICATION-STANDBY)]
+parâmetro de configuração hot_standby_feedback, [Servidores em espera](runtime-config-replication.md#RUNTIME-CONFIG-REPLICATION-STANDBY)
 
 hstore, [hstore — hstore chave/valor](hstore.md), [hstore Operadores e funções](hstore.md#HSTORE-OPS-FUNCS)
 
@@ -1988,11 +1988,11 @@ idx, [intarray Funções e Operadores](intarray.md#INTARRAY-FUNCS-OPS)
 
 IFNULL, [COALESCE](functions-conditional.md#FUNCTIONS-COALESCE-NVL-IFNULL)
 
-parâmetro de configuração ignore_checksum_failure, [Opções do desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração ignore_checksum_failure, [Opções do desenvolvedor](runtime-config-developer.md)
 
 parâmetro de configuração ignore_invalid_pages, [Opções de desenvolvedor](runtime-config-developer.md)
 
-parâmetro de configuração ignore_system_indexes, [Opções do desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração ignore_system_indexes, [Opções do desenvolvedor](runtime-config-developer.md)
 
 IMMUTÁVEL, [Categorias de Volatilidade de Função](xfunc-volatility.md)
 
@@ -2024,9 +2024,9 @@ examinando o uso, [Exame do Índice de Uso](indexes-examine.md)
 
 sobre expressões, [Indicadores de Expressões](indexes-expressional.md)
 
-para tipo de dados definido pelo usuário, [Extensões de interface para índices][(xindex.md)]
+para tipo de dados definido pelo usuário, [Extensões de interface para índices](xindex.md)
 
-GIN, [GIN][(indexes-types.md#INDEXES-TYPES-GIN), [Tipos de índice preferidos para pesquisa de texto][(textsearch-indexes.md), [Índices GIN][(gin.md)]:   pesquisa de texto, [Tipos de índice preferidos para pesquisa de texto][(textsearch-indexes.md)
+GIN, [GIN][(indexes-types.md#INDEXES-TYPES-GIN), [Tipos de índice preferidos para pesquisa de texto][(textsearch-indexes.md), [Índices GIN](gin.md):   pesquisa de texto, [Tipos de índice preferidos para pesquisa de texto][(textsearch-indexes.md)
 
 GiST, (indexes-types.md#INDEXES-TYPE-GIST), [Tipos de índice preferidos para pesquisa de texto][(textsearch-indexes.md), [Índices GiST][(gist.md) :   pesquisa de texto, [Tipos de índice preferidos para pesquisa de texto][(textsearch-indexes.md)
 
@@ -2076,7 +2076,7 @@ infinito: ponto flutuante, [Tipos de Ponto Flutuante](datatype-numeric.md#DATATY
 
 numérico (tipo de dados), [Números de Precisão Arbitrária](datatype-numeric.md#DATATYPE-NUMERIC-DECIMAL)
 
-esquema de informações, [O esquema de informações][(information-schema.md)]
+esquema de informações, [O esquema de informações](information-schema.md)
 
 herança, (tutorial-inheritance.md), (ddl-inherit.md) herança
 
@@ -2084,7 +2084,7 @@ initcap, [Funções e operadores de string](functions-string.md)
 
 initdb, [Criando um clúster de banco de dados](creating-cluster.md), [initdb](app-initdb.md)
 
-Espécie de faca de inicialização, [Faca de Inicialização][(storage-init.md)]
+Espécie de faca de inicialização, [Faca de Inicialização](storage-init.md)
 
 initplan, [EXPLAIN Basics](using-explain.md#USING-EXPLAIN-BASICS)
 
@@ -2098,11 +2098,11 @@ instalação, [Instalação a partir do código-fonte](installation.md): binári
 
 função instr, [Apêndice](plpgsql-porting.md#PLPGSQL-PORTING-APPENDIX)
 
-int2 (ver [smallint][(#ientry-id-1.5.7.9.6.3)]])
+int2 (ver [smallint](#ientry-id-1.5.7.9.6.3)])
 
-int4 (ver [inteiro][(#ientry-id-1.5.3.5.9.9.8.1)]])
+int4 (ver [inteiro](#ientry-id-1.5.3.5.9.9.8.1)])
 
-int8 (ver [bigint][(#ientry-id-1.5.3.5.9.9.8.2)])
+int8 (ver [bigint](#ientry-id-1.5.3.5.9.9.8.2))
 
 intagg, [intagg — agregador e enumerador inteiro](intagg.md)
 
@@ -2124,9 +2124,9 @@ Parâmetro de configuração IntervalStyle, [Local e Formatação](runtime-confi
 
 intset, [Funções e Operadores de intarray](intarray.md#INTARRAY-FUNCS-OPS)
 
-int_array_aggregate, [Funções][(intagg.md#INTAGG-FUNCTIONS)]
+int_array_aggregate, [Funções](intagg.md#INTAGG-FUNCTIONS)
 
-int_array_enum, [Funções][(intagg.md#INTAGG-FUNCTIONS)]
+int_array_enum, [Funções](intagg.md#INTAGG-FUNCTIONS)
 
 distribuição inversa, [Funções agregadas](functions-aggregate.md)
 
@@ -2208,7 +2208,7 @@ parâmetro de configuração jit_inline_above_cost, [Constantes de custo do plan
 
 parâmetro de configuração jit_optimize_above_cost, [Constantes de custo do planejador](runtime-config-query.md#RUNTIME-CONFIG-QUERY-CONSTANTS)
 
-parâmetro de configuração jit_profiling_support, [Opções do desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração jit_profiling_support, [Opções do desenvolvedor](runtime-config-developer.md)
 
 parâmetro de configuração jit_provider, [Pré-carga de biblioteca compartilhada](runtime-config-client.md#RUNTIME-CONFIG-CLIENT-PRELOAD)
 
@@ -2388,7 +2388,7 @@ json_value, [Funções de consulta SQL/JSON](functions-json.md#SQLJSON-QUERY-FUN
 
 Data juliana, [Datas julianas](datetime-julian-dates.md)
 
-Compilação Just-In-Time (ver [JIT][(#ientry-id-1.6.17.2)])
+Compilação Just-In-Time (ver [JIT](#ientry-id-1.6.17.2))
 
 justificar_dias, [Funções e operadores de data/hora](functions-datetime.md)
 
@@ -2408,7 +2408,7 @@ parâmetro de configuração do arquivo de chave do servidor krb_, [Autenticaç�
 
 ### L
 
-etiqueta (ver [alias][(#ientry-id-1.4.4.7.11)]])
+etiqueta (ver [alias](#ientry-id-1.4.4.7.11)])
 
 lag, [Funções de janela](functions-window.md)
 
@@ -2446,13 +2446,13 @@ lítio, [Funções de janela](functions-window.md)
 
 MENOS, [MAIOR e MENOS](functions-conditional.md#FUNCTIONS-GREATEST-LEAST), [UNIÃO, CASO e Construções Relacionadas](typeconv-union-case.md): determinação do tipo de resultado, [UNIÃO, CASO e Construções Relacionadas](typeconv-union-case.md)
 
-esquerda, [Funções e Operadores de String][(functions-string.md)]
+esquerda, [Funções e Operadores de String](functions-string.md)
 
 conjunção esquerda, [Tabelas Associadas](queries-table-expressions.md#QUERIES-JOIN)
 
 comprimento, [Funções e Operadores de String](functions-string.md), [Funções e Operadores de String Binária](functions-binarystring.md), [Funções e Operadores de String de Bit](functions-bitstring.md), [Funções e Operadores Geométricos](functions-geometry.md), [Funções e Operadores de Pesquisa de Texto](functions-textsearch.md) (de uma string binária (ver strings binárias, comprimento)
 
-de uma cadeia de caracteres (consulte [cadeia de caracteres, comprimento][(#ientry-id-1.5.3.5.9.4.2)])
+de uma cadeia de caracteres (consulte [cadeia de caracteres, comprimento](#ientry-id-1.5.3.5.9.4.2))
 
 comprimento(tsvector), [Manipulação de documentos](textsearch-features.md#TEXTSEARCH-MANIPULATE-TSVECTOR)
 
@@ -2484,7 +2484,7 @@ função de inicialização da biblioteca, [Carga Dinâmica](xfunc-c.md#XFUNC-C-
 
 COMO, [LIKE](functions-matching.md#FUNCTIONS-LIKE): e locais, [Comportamento](locale.md#LOCALE-BEHAVIOR)
 
-LIKE_REGEX, [Diferenças em relação ao padrão SQL e ao XQuery][(functions-matching.md#POSIX-VS-XQUERY)], [Expressões regulares SQL/JSON][(functions-json.md#JSONPATH-REGULAR-EXPRESSIONS)]: em SQL/JSON, [Expressões regulares SQL/JSON][(functions-json.md#JSONPATH-REGULAR-EXPRESSIONS)]
+LIKE_REGEX, [Diferenças em relação ao padrão SQL e ao XQuery](functions-matching.md#POSIX-VS-XQUERY), [Expressões regulares SQL/JSON](functions-json.md#JSONPATH-REGULAR-EXPRESSIONS): em SQL/JSON, [Expressões regulares SQL/JSON](functions-json.md#JSONPATH-REGULAR-EXPRESSIONS)
 
 LIMITE, [LIMITE e OFFSET](queries-limit.md)
 
@@ -2504,7 +2504,7 @@ ESCUTA, [ESCUTA](sql-listen.md)
 
 parâmetro de configuração listen_addresses, [Configurações de conexão](runtime-config-connection.md#RUNTIME-CONFIG-CONNECTION-SETTINGS)
 
-llvm-config, [Recursos do PostgreSQL][(install-make.md#CONFIGURE-OPTIONS-FEATURES)], [Recursos do PostgreSQL][(install-meson.md#MESON-OPTIONS-FEATURES)]
+llvm-config, [Recursos do PostgreSQL](install-make.md#CONFIGURE-OPTIONS-FEATURES), [Recursos do PostgreSQL](install-meson.md#MESON-OPTIONS-FEATURES)
 
 ll_to_earth, [Distâncias à Terra baseadas em cubos](earthdistance.md#EARTHDISTANCE-CUBE-BASED)
 
@@ -2522,7 +2522,7 @@ data e hora, [Funções e operadores de data/hora](functions-datetime.md)
 
 localtimestamp, [Funções e operadores de data/hora](functions-datetime.md)
 
-parâmetro de configuração local_preload_libraries, [Pré-carga de bibliotecas compartilhadas][(runtime-config-client.md#RUNTIME-CONFIG-CLIENT-PRELOAD)]
+parâmetro de configuração local_preload_libraries, [Pré-carga de bibliotecas compartilhadas](runtime-config-client.md#RUNTIME-CONFIG-CLIENT-PRELOAD)
 
 fechadura, [Fechadura explícita](explicit-locking.md), [Fechaduras recomendadas](explicit-locking.md#ADVISORY-LOCKS), [Visualização de fechaduras](monitoring-locks.md): recomendadas, [Fechaduras recomendadas](explicit-locking.md#ADVISORY-LOCKS)
 
@@ -2534,7 +2534,7 @@ parâmetro de configuração lock_timeout, [Comportamento da declaração](runti
 
 registro, [Funções e Operadores Matemáticos](functions-math.md)
 
-envio de logs, [Alta disponibilidade, balanceamento de carga e replicação][(high-availability.md)]
+envio de logs, [Alta disponibilidade, balanceamento de carga e replicação](high-availability.md)
 
 log10, [Funções e Operadores Matemáticos](functions-math.md)
 
@@ -2554,7 +2554,7 @@ log_autovacuum_min_duration: parâmetro de configuração, [O que registrar](run
 
 parâmetro de armazenamento, [Parâmetros de Armazenamento](sql-createtable.md#SQL-CREATETABLE-STORAGE-PARAMETERS)
 
-parâmetro de configuração log_btree_build_stats, [Opções do desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração log_btree_build_stats, [Opções do desenvolvedor](runtime-config-developer.md)
 
 parâmetro de configuração log_checkpoints, [O que registrar](runtime-config-logging.md#RUNTIME-CONFIG-LOGGING-WHAT)
 
@@ -2638,7 +2638,7 @@ lower_inf, [Funções e operadores de intervalo/multiintervalo](functions-range.
 
 lo_close, [Fechamento de um Descritor de Objeto Grande](lo-interfaces.md#LO-CLOSE)
 
-parâmetro de configuração lo_compat_privileges, [Versões anteriores do PostgreSQL][(runtime-config-compatible.md#RUNTIME-CONFIG-COMPATIBLE-VERSION)]
+parâmetro de configuração lo_compat_privileges, [Versões anteriores do PostgreSQL](runtime-config-compatible.md#RUNTIME-CONFIG-COMPATIBLE-VERSION)
 
 lo_creat, [Criando um Objeto Grande](lo-interfaces.md#LO-CREATE), [Funções do lado do servidor](lo-funcs.md)
 
@@ -2788,7 +2788,7 @@ parâmetro de configuração max_sync_workers_per_subscription, [Subscritores](r
 
 parâmetro de configuração max_wal_senders, [Servidores de envio](runtime-config-replication.md#RUNTIME-CONFIG-REPLICATION-SENDER)
 
-parâmetro de configuração max_wal_size, [Pontos de controle][(runtime-config-wal.md#RUNTIME-CONFIG-WAL-CHECKPOINTS)]
+parâmetro de configuração max_wal_size, [Pontos de controle](runtime-config-wal.md#RUNTIME-CONFIG-WAL-CHECKPOINTS)
 
 parâmetro de configuração max_worker_processes, [Processos de Trabalhador](runtime-config-resource.md#RUNTIME-CONFIG-RESOURCE-WORKER-PROCESSES)
 
@@ -2798,7 +2798,7 @@ MD5, [Autenticação por senha](auth-password.md)
 
 parâmetro de configuração md5_password_warnings, [Autenticação](runtime-config-connection.md#RUNTIME-CONFIG-CONNECTION-AUTHENTICATION)
 
-média, [Expressões Agregadas](sql-expressions.md#SYNTAX-AGGREGATES): (consulte também [percentil][(#ientry-id-1.5.8.27.18.2.4.2.1.1.1)]])
+média, [Expressões Agregadas](sql-expressions.md#SYNTAX-AGGREGATES): (consulte também [percentil](#ientry-id-1.5.8.27.18.2.4.2.1.1.1)])
 
 contexto de memória: em SPI, [Gestão de memória](spi-memory.md)
 
@@ -2814,7 +2814,7 @@ metafone, [Metaphone](fuzzystrmatch.md#FUZZYSTRMATCH-METAPHONE)
 
 min, [Funções Agregadas](functions-aggregate.md)
 
-MinGW, [MinGW][(installation-platform-notes.md#INSTALLATION-NOTES-MINGW)]: instalação em, [MinGW][(installation-platform-notes.md#INSTALLATION-NOTES-MINGW)]
+MinGW, [MinGW](installation-platform-notes.md#INSTALLATION-NOTES-MINGW): instalação em, [MinGW](installation-platform-notes.md#INSTALLATION-NOTES-MINGW)
 
 parâmetro de configuração min_dynamic_shared_memory, [Memória](runtime-config-resource.md#RUNTIME-CONFIG-RESOURCE-MEMORY)
 
@@ -2824,7 +2824,7 @@ parâmetro de configuração min_parallel_table_scan_size, [Constantes de Custo 
 
 min_scale, [Funções e Operadores Matemáticos](functions-math.md)
 
-parâmetro de configuração min_wal_size, [Pontos de verificação][(runtime-config-wal.md#RUNTIME-CONFIG-WAL-CHECKPOINTS)]
+parâmetro de configuração min_wal_size, [Pontos de verificação](runtime-config-wal.md#RUNTIME-CONFIG-WAL-CHECKPOINTS)
 
 mod, [[Funções e Operadores Matemáticos]][(functions-math.md)]
 
@@ -2838,7 +2838,7 @@ modo de agregado móvel, [Modo de Agregados em Movimento](xaggr.md#XAGGR-MOVING-
 
 multirange (função), [Funções e operadores de faixa/multifaixa](functions-range.md)
 
-tipo multiranged, [Tipos de faixa de medição][(rangetypes.md)]
+tipo multiranged, [Tipos de faixa de medição](rangetypes.md)
 
 Controle de Concorrência Multiversão, [Introdução](mvcc-intro.md)
 
@@ -2890,7 +2890,7 @@ leitura não repetida, [Isolamento de Transação](transaction-iso.md)
 
 normalizar, [Funções e operadores de string](functions-string.md)
 
-normalizado, [Funções e operadores de string][(functions-string.md)]
+normalizado, [Funções e operadores de string](functions-string.md)
 
 normal_rand, [normal_rand](tablefunc.md#TABLEFUNC-FUNCTIONS-NORMAL-RAND)
 
@@ -2926,7 +2926,7 @@ nth_value, [Funções de janela](functions-window.md)
 
 ntile, [Funções de janela](functions-window.md)
 
-valor nulo: com restrições de verificação, [Restrições de verificação][(ddl-constraints.md#DDL-CONSTRAINTS-CHECK-CONSTRAINTS)]
+valor nulo: com restrições de verificação, [Restrições de verificação](ddl-constraints.md#DDL-CONSTRAINTS-CHECK-CONSTRAINTS)
 
 comparando, [Funções e operadores de comparação](functions-comparison.md)
 
@@ -2952,9 +2952,9 @@ numérico (tipo de dados), [Números de Precisão Arbitrária](datatype-numeric.
 
 numnode, [Funções e operadores de pesquisa de texto](functions-textsearch.md), [Manipulação de consultas](textsearch-features.md#TEXTSEARCH-MANIPULATE-TSQUERY)
 
-num_nonnulls, [Funções e operadores de comparação][(functions-comparison.md)]
+num_nonnulls, [Funções e operadores de comparação](functions-comparison.md)
 
-num_nulls, [Funções e operadores de comparação][(functions-comparison.md)]
+num_nulls, [Funções e operadores de comparação](functions-comparison.md)
 
 parâmetro de configuração num_os_semaphores, [Opções Predefinidas](runtime-config-preset.md)
 
@@ -2986,11 +2986,11 @@ OID: em libpq, [Recuperação de outras informações do resultado](libpq-exec.m
 
 oid2name, [oid2name](oid2name.md)
 
-EM CONFLITO, [INSERT][(sql-insert.md)]
+EM CONFLITO, [INSERT](sql-insert.md)
 
 SOMENTE, [A Cláusula DE](queries-table-expressions.md#QUERIES-FROM)
 
-OOM, [Sobreposição de memória do Linux][(kernel-resources.md#LINUX-MEMORY-OVERCOMMIT)]
+OOM, [Sobreposição de memória do Linux](kernel-resources.md#LINUX-MEMORY-OVERCOMMIT)
 
 OpenBSD: Configuração IPC, [Memória compartilhada e semaforos](kernel-resources.md#SYSVIPC)
 
@@ -3008,7 +3008,7 @@ precedência, [Operador de Precedência](sql-syntax-lexical.md#SQL-PRECEDENCE)
 
 sintaxe, [Operadores](sql-syntax-lexical.md#SQL-SYNTAX-OPERATORS)
 
-resolução do tipo em uma invocação, [Operadores][(typeconv-oper.md)]
+resolução do tipo em uma invocação, [Operadores](typeconv-oper.md)
 
 definida pelo usuário, [Operadores Definidos pelo Usuário](xoper.md)
 
@@ -3022,7 +3022,7 @@ para operadores, [Informações de Otimização do Operador](xoper-optimization.
 
 OU (operador), [Operadores lógicos](functions-logical.md)
 
-Oracle, [Portando de Oracle PL/SQL][(plpgsql-porting.md)]: portando de PL/SQL para PL/pgSQL, [Portando de Oracle PL/SQL][(plpgsql-porting.md)]
+Oracle, [Portando de Oracle PL/SQL](plpgsql-porting.md): portando de PL/SQL para PL/pgSQL, [Portando de Oracle PL/SQL](plpgsql-porting.md)
 
 ORDENE POR, (tutorial-select.md) para consultar uma tabela, (queries-order.md) para ordenar as linhas (ORDENE POR), (locale.md#LOCALE-BEHAVIOR) para comportamento e locais
 
@@ -3068,7 +3068,7 @@ consulta paralela, [Consulta Paralela](parallel-query.md)
 
 parâmetro de configuração de participação de líder paralelo, [Processos de Trabalhador](runtime-config-resource.md#RUNTIME-CONFIG-RESOURCE-WORKER-PROCESSES)
 
-parâmetro de configuração de custo_configuração_paralelo, [Constantes de Custo do Planeificador][(runtime-config-query.md#RUNTIME-CONFIG-QUERY-CONSTANTS)]
+parâmetro de configuração de custo_configuração_paralelo, [Constantes de Custo do Planeificador](runtime-config-query.md#RUNTIME-CONFIG-QUERY-CONSTANTS)
 
 parâmetro de configuração parallel_tuple_cost, [Constantes de Custo do Planejador](runtime-config-query.md#RUNTIME-CONFIG-QUERY-CONSTANTS)
 
@@ -3088,7 +3088,7 @@ partição, [Partição de tabela](ddl-partitioning.md)
 
 senha, [Atributos do papel](role-attributes.md): autenticação, [Autenticação por senha](auth-password.md)
 
-do superusuário, [Criando um grupo de banco de dados][(creating-cluster.md)]
+do superusuário, [Criando um grupo de banco de dados](creating-cluster.md)
 
 arquivo de senha, [O arquivo de senha](libpq-pgpass.md)
 
@@ -3106,7 +3106,7 @@ caminho (tipo de dados), (datatype-geometric.md#DATATYPE-GEOMETRIC-PATHS) [Camin
 
 correspondência de padrões, [Correspondência de Padrões](functions-matching.md)
 
-padrões: em psql e pg_dump, [Padrões][(app-psql.md#APP-PSQL-PATTERNS)]
+padrões: em psql e pg_dump, [Padrões](app-psql.md#APP-PSQL-PATTERNS)
 
 pclose, [Funções e Operadores Geométricos](functions-geometry.md)
 
@@ -3116,7 +3116,7 @@ percentual: contínuo, [[Funções agregadas]](functions-aggregate.md)
 
 discreto, [Funções agregadas](functions-aggregate.md)
 
-percent_rank, [Funções de Janela][(functions-window.md)]: hipotético, [Funções Agregadas][(functions-aggregate.md)]
+percent_rank, [Funções de Janela](functions-window.md): hipotético, [Funções Agregadas](functions-aggregate.md)
 
 desempenho, [Dicas de desempenho](performance-tips.md)
 
@@ -3124,7 +3124,7 @@ perl, [Requisitos](install-requirements.md)
 
 Perl, [PL/Perl — Linguagem Procedimental Perl](plperl.md)
 
-permissão (ver [prerrogativa][(#ientry-id-1.5.4.10.2)])
+permissão (ver [prerrogativa](#ientry-id-1.5.4.10.2))
 
 pfree, [Escrevendo Código](xfunc-c.md#XFUNC-C-CODE)
 
@@ -3146,7 +3146,7 @@ PGCONNECT_TIMEOUT, [Variáveis de ambiente](libpq-envars.md)
 
 pgcrypto, [pgcrypto — funções criptográficas](pgcrypto.md)
 
-parâmetro de configuração pgcrypto.builtin_crypto_enabled, [Parâmetros de configuração][(pgcrypto.md#PGCRYPTO-CONFIGURATION-PARAMETERS)]
+parâmetro de configuração pgcrypto.builtin_crypto_enabled, [Parâmetros de configuração](pgcrypto.md#PGCRYPTO-CONFIGURATION-PARAMETERS)
 
 PGDATA, [Criando um clúster de banco de dados](creating-cluster.md)
 
@@ -3214,7 +3214,7 @@ PGREQUIRESSL, [[Variáveis de ambiente]] (libpq-envars.md)
 
 PGresult, [Funções principais](libpq-exec.md#LIBPQ-EXEC-MAIN)
 
-pgrowlocks, [pgrowlocks — mostre as informações de bloqueio de linha de uma tabela][(pgrowlocks.md)], [Visão geral][(pgrowlocks.md#PGROWLOCKS-OVERVIEW)]
+pgrowlocks, [pgrowlocks — mostre as informações de bloqueio de linha de uma tabela](pgrowlocks.md), [Visão geral](pgrowlocks.md#PGROWLOCKS-OVERVIEW)
 
 PGSERVICE, [Variáveis de ambiente](libpq-envars.md)
 
@@ -3340,7 +3340,7 @@ pg_cancel_backend, [Funções de Sinalização do Servidor](functions-admin.md#F
 
 pg_cast, [pg_cast](catalog-pg-cast.md)
 
-pg_char_to_encoding, [Funções de Informações do Catálogo do Sistema][(functions-info.md#FUNCTIONS-INFO-CATALOG)]
+pg_char_to_encoding, [Funções de Informações do Catálogo do Sistema](functions-info.md#FUNCTIONS-INFO-CATALOG)
 
 pg_checksums, [pg_checksums](app-pgchecksums.md)
 
@@ -3372,7 +3372,7 @@ pg_combinebackup, [pg_combinebackup](app-pgcombinebackup.md)
 
 pg_config, [pg_config](app-pgconfig.md), [pg_config](view-pg-config.md): com ecpg, [Processamento de programas de SQL embutido](ecpg-process.md)
 
-com libpq, [Construindo programas libpq][(libpq-build.md)]
+com libpq, [Construindo programas libpq](libpq-build.md)
 
 com funções C definidas pelo usuário, [Escrevendo Código](xfunc-c.md#XFUNC-C-CODE)
 
@@ -3552,7 +3552,7 @@ pg_import_system_collations, [Funções de Gerenciamento de Objetos de Banco de 
 
 pg_index, [pg_index](catalog-pg-index.md)
 
-pg_indexam_has_property, [Funções de Informações do Catálogo do Sistema][(functions-info.md#FUNCTIONS-INFO-CATALOG)]
+pg_indexam_has_property, [Funções de Informações do Catálogo do Sistema](functions-info.md#FUNCTIONS-INFO-CATALOG)
 
 pg_indexes, [pg_indexes](view-pg-indexes.md)
 
@@ -3560,7 +3560,7 @@ pg_indexes_size, [Funções de Gerenciamento de Objetos de Banco de Dados](funct
 
 pg_index_column_has_property, [Funções de informações do catálogo do sistema](functions-info.md#FUNCTIONS-INFO-CATALOG)
 
-pg_index_has_property, [Funções de Informações do Catálogo do Sistema][(functions-info.md#FUNCTIONS-INFO-CATALOG)]
+pg_index_has_property, [Funções de Informações do Catálogo do Sistema](functions-info.md#FUNCTIONS-INFO-CATALOG)
 
 pg_inherits, [pg_inherits](catalog-pg-inherits.md)
 
@@ -3588,9 +3588,9 @@ pg_largeobject_metadata, [pg_largeobject_metadata](catalog-pg-largeobject-metada
 
 pg_last_committed_xact, [Funções de Informações de Transação Comprometido](functions-info.md#FUNCTIONS-INFO-COMMIT-TIMESTAMP)
 
-pg_last_wal_receive_lsn, [Funções de controle de recuperação][(functions-admin.md#FUNCTIONS-RECOVERY-CONTROL)]
+pg_last_wal_receive_lsn, [Funções de controle de recuperação](functions-admin.md#FUNCTIONS-RECOVERY-CONTROL)
 
-pg_last_wal_replay_lsn, [Funções de Controle de Recuperação][(functions-admin.md#FUNCTIONS-RECOVERY-CONTROL)]
+pg_last_wal_replay_lsn, [Funções de Controle de Recuperação](functions-admin.md#FUNCTIONS-RECOVERY-CONTROL)
 
 pg_last_xact_replay_timestamp, [Funções de controle de recuperação](functions-admin.md#FUNCTIONS-RECOVERY-CONTROL)
 
@@ -3688,7 +3688,7 @@ pg_prepared_xacts, [pg_prepared_xacts](view-pg-prepared-xacts.md)
 
 pg_prewarm, [pg_prewarm — pré-carregar dados de relação em caches de buffer](pgprewarm.md)
 
-parâmetro de configuração pg_prewarm.autoprewarm, [Parâmetros de configuração][(pgprewarm.md#PGPREWARM-CONFIG-PARAMS)]
+parâmetro de configuração pg_prewarm.autoprewarm, [Parâmetros de configuração](pgprewarm.md#PGPREWARM-CONFIG-PARAMS)
 
 parâmetro de configuração pg_prewarm.autoprewarm_interval, [Parâmetros de configuração](pgprewarm.md#PGPREWARM-CONFIG-PARAMS)
 
@@ -3786,7 +3786,7 @@ pg_sequence, [pg_sequence](catalog-pg-sequence.md)
 
 pg_sequences, [pg_sequences](view-pg-sequences.md)
 
-pg_service.conf, [O arquivo do serviço de conexão][(libpq-pgservice.md)]
+pg_service.conf, [O arquivo do serviço de conexão](libpq-pgservice.md)
 
 pg_settings, [pg_settings](view-pg-settings.md)
 
@@ -3820,7 +3820,7 @@ pg_snapshot_xmax, [Funções de Identificação de ID de Transação e Informaç
 
 pg_snapshot_xmin, [Funções de ID de Transação e Informações de Instantâneo](functions-info.md#FUNCTIONS-INFO-SNAPSHOT)
 
-pg_split_walfile_name, [Funções de controle de backup][(functions-admin.md#FUNCTIONS-ADMIN-BACKUP)]
+pg_split_walfile_name, [Funções de controle de backup](functions-admin.md#FUNCTIONS-ADMIN-BACKUP)
 
 pg_statio_all_indexes, [Visualizando estatísticas](monitoring-stats.md#MONITORING-STATS-VIEWS), [pg_statio_all_indexes](monitoring-stats.md#MONITORING-PG-STATIO-ALL-INDEXES-VIEW)
 
@@ -3962,9 +3962,9 @@ parâmetro de configuração pg_stat_statements.save, [Parâmetros de configura�
 
 parâmetro de configuração pg_stat_statements.track, [Parâmetros de configuração](pgstatstatements.md#PGSTATSTATEMENTS-CONFIG-PARAMS)
 
-parâmetro de configuração pg_stat_statements.track_planning, [Parâmetros de configuração][(pgstatstatements.md#PGSTATSTATEMENTS-CONFIG-PARAMS)]
+parâmetro de configuração pg_stat_statements.track_planning, [Parâmetros de configuração](pgstatstatements.md#PGSTATSTATEMENTS-CONFIG-PARAMS)
 
-parâmetro de configuração pg_stat_statements.track_utility, [Parâmetros de configuração][(pgstatstatements.md#PGSTATSTATEMENTS-CONFIG-PARAMS)]
+parâmetro de configuração pg_stat_statements.track_utility, [Parâmetros de configuração](pgstatstatements.md#PGSTATSTATEMENTS-CONFIG-PARAMS)
 
 pg_stat_statements_info, [A visão pg_stat_statements_info](pgstatstatements.md#PGSTATSTATEMENTS-PG-STAT-STATEMENTS-INFO)
 
@@ -3992,7 +3992,7 @@ pg_stat_xact_all_tables, [Visualizando estatísticas](monitoring-stats.md#MONITO
 
 pg_stat_xact_sys_tables, [Visualizando estatísticas] (monitoring-stats.md#MONITORING-STATS-VIEWS)
 
-pg_stat_xact_user_functions, [Visualizando estatísticas][(monitoring-stats.md#MONITORING-STATS-VIEWS)]
+pg_stat_xact_user_functions, [Visualizando estatísticas](monitoring-stats.md#MONITORING-STATS-VIEWS)
 
 pg_stat_xact_user_tables, [Visualizando estatísticas] (monitoring-stats.md#MONITORING-STATS-VIEWS)
 
@@ -4098,7 +4098,7 @@ pg_visible_in_snapshot, [Funções de Identificação de ID de Transação e Inf
 
 pg_wait_events, [pg_wait_events](view-pg-wait-events.md)
 
-pg_waldump, [pg_waldump][(pgwaldump.md)]
+pg_waldump, [pg_waldump](pgwaldump.md)
 
 pg_walfile_name, [Funções de controle de backup](functions-admin.md#FUNCTIONS-ADMIN-BACKUP)
 
@@ -4132,7 +4132,7 @@ pi, [Funções e Operadores Matemáticos](functions-math.md)
 
 PIC, [Compilando e vinculando funções carregadas dinamicamente](xfunc-c.md#DFUNC)
 
-PID: determinar o PID do processo do servidor:   em libpq, [Funções de Status de Conexão][(libpq-status.md)]
+PID: determinar o PID do processo do servidor:   em libpq, [Funções de Status de Conexão](libpq-status.md)
 
 pipelining, [Pipeline Mode](libpq-pipeline-mode.md), [Pipelining](protocol-flow.md#PROTOCOL-FLOW-PIPELINING): em libpq, [Pipeline Mode](libpq-pipeline-mode.md)
 
@@ -4144,7 +4144,7 @@ PITR standby, [Alta disponibilidade, balanceamento de carga e replicação](high
 
 pkg-config, [Requisitos](install-requirements.md): com ecpg, [Processamento de programas de SQL embutido](ecpg-process.md)
 
-com libpq, [Construindo programas libpq][(libpq-build.md)]
+com libpq, [Construindo programas libpq](libpq-build.md)
 
 PL/Perl, [PL/Perl — Linguagem Procedimental Perl](plperl.md)
 
@@ -4190,7 +4190,7 @@ função polimórfica, [Tipos polimórficos](extend-type-system.md#EXTEND-TYPES-
 
 tipo polimórfico, [Tipos polimórficos](extend-type-system.md#EXTEND-TYPES-POLYMORPHIC)
 
-popcount (consulte [bit_count][(#ientry-id-1.5.8.11.7.2.2.1.1.1.1)])
+popcount (consulte [bit_count](#ientry-id-1.5.8.11.7.2.2.1.1.1.1))
 
 popen, Funções e Operadores Geométricos (functions-geometry.md)
 
@@ -4202,19 +4202,19 @@ parâmetro de configuração do porto, [Configurações de conexão](runtime-con
 
 portal: DECLARE, (sql-declare.md)
 
-em PL/pgSQL, [Abrir cursor][(plpgsql-cursors.md#PLPGSQL-CURSOR-OPENING)]
+em PL/pgSQL, [Abrir cursor](plpgsql-cursors.md#PLPGSQL-CURSOR-OPENING)
 
 posição, [Funções e Operadores de String](functions-string.md), [Funções e Operadores de String Binária](functions-binarystring.md), [Funções e Operadores de String de Bit](functions-bitstring.md)
 
-POSITION_REGEX, [Diferenças em relação ao padrão SQL e ao XQuery][(functions-matching.md#POSIX-VS-XQUERY)]
+POSITION_REGEX, [Diferenças em relação ao padrão SQL e ao XQuery](functions-matching.md#POSIX-VS-XQUERY)
 
-POSTGRES, [O Projeto Berkeley POSTGRES][(history.md#HISTORY-BERKELEY)]
+POSTGRES, [O Projeto Berkeley POSTGRES](history.md#HISTORY-BERKELEY)
 
 postgres, (tutorial-arch.md), (server-start.md), (manage-ag-createdb.md) (manage-ag-createdb.md) (app-postgres.md)
 
-usuário postgres, [A Conta de Usuário do PostgreSQL][(postgres-user.md)]
+usuário postgres, [A Conta de Usuário do PostgreSQL](postgres-user.md)
 
-Postgres95, [Postgres95][(history.md#HISTORY-POSTGRES95)]
+Postgres95, [Postgres95](history.md#HISTORY-POSTGRES95)
 
 postgresql.auto.conf, [Interação de parâmetros via arquivo de configuração](config-setting.md#CONFIG-SETTING-CONFIGURATION-FILE)
 
@@ -4224,11 +4224,11 @@ postgres_fdw, [postgres_fdw — acesso a dados armazenados em servidores externo
 
 parâmetro de configuração postgres_fdw.application_name, [Parâmetros de configuração](postgres-fdw.md#POSTGRES-FDW-CONFIGURATION-PARAMETERS)
 
-parâmetro de configuração post_auth_delay, [Opções do desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração post_auth_delay, [Opções do desenvolvedor](runtime-config-developer.md)
 
 potência, (functions-math.md) funções e operadores matemáticos
 
-PQAUTHDATA_OAUTH_BEARER_TOKEN, [Tipos de gancho][(libpq-oauth.md#LIBPQ-OAUTH-AUTHDATA-HOOKS-TYPES)]
+PQAUTHDATA_OAUTH_BEARER_TOKEN, [Tipos de gancho](libpq-oauth.md#LIBPQ-OAUTH-AUTHDATA-HOOKS-TYPES)
 
 PQAUTHDATA_PROMPT_OAUTH_DEVICE, [Tipos de gancho](libpq-oauth.md#LIBPQ-OAUTH-AUTHDATA-HOOKS-TYPES)
 
@@ -4314,9 +4314,9 @@ PQenterPipelineMode, [Funções associadas ao modo de pipeline](libpq-pipeline-m
 
 PQerrorMessage, [Funções de Status de Conexão](libpq-status.md)
 
-PQescapeBytea, [Emissão de cadeias de caracteres para inclusão em comandos SQL][(libpq-exec.md#LIBPQ-EXEC-ESCAPE-STRING)]
+PQescapeBytea, [Emissão de cadeias de caracteres para inclusão em comandos SQL](libpq-exec.md#LIBPQ-EXEC-ESCAPE-STRING)
 
-PQescapeByteaConn, [E escapando strings para inclusão em comandos SQL][(libpq-exec.md#LIBPQ-EXEC-ESCAPE-STRING)]
+PQescapeByteaConn, [E escapando strings para inclusão em comandos SQL](libpq-exec.md#LIBPQ-EXEC-ESCAPE-STRING)
 
 PQescapeIdentifier, [Efluxo de strings para inclusão em comandos SQL](libpq-exec.md#LIBPQ-EXEC-ESCAPE-STRING)
 
@@ -4344,7 +4344,7 @@ PQflush, [Processamento de comandos assíncrono](libpq-async.md)
 
 PQfmod, [Recuperando informações do resultado da consulta](libpq-exec.md#LIBPQ-EXEC-SELECT-INFO)
 
-PQfn, [A Interface de Caminho Rápido][(libpq-fastpath.md)]
+PQfn, [A Interface de Caminho Rápido](libpq-fastpath.md)
 
 PQfname, [Recuperando informações do resultado da consulta](libpq-exec.md#LIBPQ-EXEC-SELECT-INFO)
 
@@ -4406,7 +4406,7 @@ PQ é thread-seguro, [Comportamento em programas em paralelo](libpq-threading.md
 
 PQlibVersion, [Funções Diversas](libpq-misc.md): (consulte também [PQserverVersion](#ientry-id-1.7.3.9.5.2.6.1.2))
 
-PQmakeEmptyPGresult, [Funções Diversas][(libpq-misc.md)]
+PQmakeEmptyPGresult, [Funções Diversas](libpq-misc.md)
 
 PQnfields, [Recuperação de Informações do Resultado da Consulta](libpq-exec.md#LIBPQ-EXEC-SELECT-INFO): com COPY, [Funções Associadas ao Comando COPY](libpq-copy.md)
 
@@ -4502,7 +4502,7 @@ PQsendQueryPrepared, Processamento de comandos assíncrono (libpq-async.md)
 
 PQserverVersion, [Funções de Status de Conexão](libpq-status.md)
 
-PQsetAuthDataHook, [Ganchos de Authdata][(libpq-oauth.md#LIBPQ-OAUTH-AUTHDATA-HOOKS)]
+PQsetAuthDataHook, [Ganchos de Authdata](libpq-oauth.md#LIBPQ-OAUTH-AUTHDATA-HOOKS)
 
 PQsetChunkedRowsMode, [Recuperação de resultados de consulta em partes](libpq-single-row-mode.md)
 
@@ -4572,7 +4572,7 @@ executar, [EXECUTAR](sql-execute.md)
 
 removendo, [DEALLOCATE][(sql-deallocate.md)
 
-apresentando o plano de consulta, [EXPLAIN][(sql-explain.md)]
+apresentando o plano de consulta, [EXPLAIN](sql-explain.md)
 
 preparando uma consulta: em PL/pgSQL, [Cacheamento de Plano](plpgsql-implementation.md#PLPGSQL-PLAN-CACHING)
 
@@ -4580,11 +4580,11 @@ em PL/Python, [Funções de Acesso ao Banco de Dados](plpython-database.md#PLPYT
 
 em PL/Tcl, [Acesso ao banco de dados a partir de PL/Tcl](pltcl-dbaccess.md)
 
-parâmetro de configuração pre_auth_delay, [Opções do desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração pre_auth_delay, [Opções do desenvolvedor](runtime-config-developer.md)
 
 chave primária, [Chaves Primárias](ddl-constraints.md#DDL-CONSTRAINTS-PRIMARY-KEYS)
 
-parâmetro de configuração primary_conninfo, [Servidores de espera][(runtime-config-replication.md#RUNTIME-CONFIG-REPLICATION-STANDBY)]
+parâmetro de configuração primary_conninfo, [Servidores de espera](runtime-config-replication.md#RUNTIME-CONFIG-REPLICATION-STANDBY)
 
 parâmetro de configuração primary_slot_name, [Servidores de espera][(runtime-config-replication.md#RUNTIME-CONFIG-REPLICATION-STANDBY)
 
@@ -4600,7 +4600,7 @@ com vistas, [Regras e Privilegios](rules-privileges.md)
 
 linguagem procedural, (xplang.md), (plhandler.md) — escrever um manipulador de linguagem procedural, (external-pl.md): mantido externamente, (external-pl.md) — linguagens procedimentais
 
-manipulador para, [Escrevendo um manipulador de linguagem procedural][(plhandler.md)]
+manipulador para, [Escrevendo um manipulador de linguagem procedural](plhandler.md)
 
 procedimento, (xproc.md): definido pelo usuário, (xproc.md): definido pelo usuário
 
@@ -4622,7 +4622,7 @@ consulta, [Consultando uma tabela](tutorial-select.md), [Consultas](queries.md)
 
 cancelamento de consultas, [Cancelar consultas em andamento](libpq-cancel.md)
 
-plano de consulta, [Usando EXPLAIN][(using-explain.md)]
+plano de consulta, [Usando EXPLAIN](using-explain.md)
 
 árvore de consulta, [A Árvore de Consulta](querytree.md)
 
@@ -4630,19 +4630,19 @@ querytree, [Funções e operadores de pesquisa de texto](functions-textsearch.md
 
 aspas: e identificadores, [Identificadores e Palavras-chave](sql-syntax-lexical.md#SQL-SYNTAX-IDENTIFIERS)
 
-fugindo, [[Constantes de cadeia de caracteres][(sql-syntax-lexical.md#SQL-SYNTAX-STRINGS)]]
+fugindo, [[Constantes de cadeia de caracteres](sql-syntax-lexical.md#SQL-SYNTAX-STRINGS)]
 
-parâmetro de configuração quote_all_identifiers, [Versões anteriores do PostgreSQL][(runtime-config-compatible.md#RUNTIME-CONFIG-COMPATIBLE-VERSION)]
+parâmetro de configuração quote_all_identifiers, [Versões anteriores do PostgreSQL](runtime-config-compatible.md#RUNTIME-CONFIG-COMPATIBLE-VERSION)
 
-quote_ident, [Funções e operadores de string][(functions-string.md)]: em PL/Perl, [Funções utilitárias em PL/Perl][(plperl-builtins.md#PLPERL-UTILITY-FUNCTIONS)]
-
-uso em PL/pgSQL, [Executando comandos dinâmicos](plpgsql-statements.md#PLPGSQL-STATEMENTS-EXECUTING-DYN)
-
-citação_literal, [Funções e Operadores de String][(functions-string.md)]: em PL/Perl, [Funções de Utilidade em PL/Perl][(plperl-builtins.md#PLPERL-UTILITY-FUNCTIONS)]
+quote_ident, [Funções e operadores de string](functions-string.md): em PL/Perl, [Funções utilitárias em PL/Perl](plperl-builtins.md#PLPERL-UTILITY-FUNCTIONS)
 
 uso em PL/pgSQL, [Executando comandos dinâmicos](plpgsql-statements.md#PLPGSQL-STATEMENTS-EXECUTING-DYN)
 
-cotação_nulo, [Funções e Operadores de String][(functions-string.md)]: em PL/Perl, [Funções de Utilidade em PL/Perl][(plperl-builtins.md#PLPERL-UTILITY-FUNCTIONS)]
+citação_literal, [Funções e Operadores de String](functions-string.md): em PL/Perl, [Funções de Utilidade em PL/Perl](plperl-builtins.md#PLPERL-UTILITY-FUNCTIONS)
+
+uso em PL/pgSQL, [Executando comandos dinâmicos](plpgsql-statements.md#PLPGSQL-STATEMENTS-EXECUTING-DYN)
+
+cotação_nulo, [Funções e Operadores de String](functions-string.md): em PL/Perl, [Funções de Utilidade em PL/Perl](plperl-builtins.md#PLPERL-UTILITY-FUNCTIONS)
 
 uso em PL/pgSQL, [Executando comandos dinâmicos](plpgsql-statements.md#PLPGSQL-STATEMENTS-EXECUTING-DYN)
 
@@ -4654,7 +4654,7 @@ raio, (functions-geometry.md) Funções e operadores geométricos
 
 RADIUS, [Autenticação RADIUS](auth-radius.md)
 
-RAISE: em PL/pgSQL, [Relatar erros e mensagens][(plpgsql-errors-and-messages.md#PLPGSQL-STATEMENTS-RAISE)]
+RAISE: em PL/pgSQL, [Relatar erros e mensagens](plpgsql-errors-and-messages.md#PLPGSQL-STATEMENTS-RAISE)
 
 aleatório, [Funções e Operadores Matemáticos](functions-math.md)
 
@@ -4710,11 +4710,11 @@ parâmetro de configuração de recuperação_target, [Recuperação de alvo](ru
 
 parâmetro de configuração recovery_target_action, [Recuperação do alvo](runtime-config-wal.md#RUNTIME-CONFIG-WAL-RECOVERY-TARGET)
 
-parâmetro de configuração recovery_target_inclusive, [Objetivo de recuperação][(runtime-config-wal.md#RUNTIME-CONFIG-WAL-RECOVERY-TARGET)]
+parâmetro de configuração recovery_target_inclusive, [Objetivo de recuperação](runtime-config-wal.md#RUNTIME-CONFIG-WAL-RECOVERY-TARGET)
 
 parâmetro de configuração recovery_target_lsn, [Recuperação de alvo](runtime-config-wal.md#RUNTIME-CONFIG-WAL-RECOVERY-TARGET)
 
-parâmetro de configuração recovery_target_name, [Objetivo de recuperação][(runtime-config-wal.md#RUNTIME-CONFIG-WAL-RECOVERY-TARGET)]
+parâmetro de configuração recovery_target_name, [Objetivo de recuperação](runtime-config-wal.md#RUNTIME-CONFIG-WAL-RECOVERY-TARGET)
 
 parâmetro de configuração recovery_target_time, [Recuperação do alvo](runtime-config-wal.md#RUNTIME-CONFIG-WAL-RECOVERY-TARGET)
 
@@ -4816,15 +4816,15 @@ banco de dados relacional, (tutorial-concepts.md) [Conceitos]
 
 RELEASE SAVEPOINT, [RELEASE SAVEPOINT](sql-release-savepoint.md)
 
-parâmetro de configuração remove_temp_files_after_crash, [Opções de desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração remove_temp_files_after_crash, [Opções de desenvolvedor](runtime-config-developer.md)
 
 repetir, [Funções e Operadores de String](functions-string.md)
 
 leitura repetida, [Nível de isolamento de leitura repetida](transaction-iso.md#XACT-REPEATABLE-READ)
 
-substituir, [Funções e operadores de string][(functions-string.md)]
+substituir, [Funções e operadores de string](functions-string.md)
 
-replicação, [Alta disponibilidade, balanceamento de carga e replicação][(high-availability.md)]
+replicação, [Alta disponibilidade, balanceamento de carga e replicação](high-availability.md)
 
 Origens da replicação, [Rastreamento do progresso da replicação](replication-origins.md)
 
@@ -4834,7 +4834,7 @@ faixa de replicação: replicação lógica, (logicaldecoding-explanation.md#LOG
 
 replicação de streaming, [Slots de replicação](warm-standby.md#STREAMING-REPLICATION-SLOTS)
 
-reportagem de erros: em PL/pgSQL, [Relatar erros e mensagens][(plpgsql-errors-and-messages.md#PLPGSQL-STATEMENTS-RAISE)]
+reportagem de erros: em PL/pgSQL, [Relatar erros e mensagens](plpgsql-errors-and-messages.md#PLPGSQL-STATEMENTS-RAISE)
 
 parâmetro de configuração de conexões reservadas, [Configurações de Conexão](runtime-config-connection.md#RUNTIME-CONFIG-CONNECTION-SETTINGS)
 
@@ -4842,7 +4842,7 @@ REESTABELECER, [REESTABELECER][(sql-reset.md)
 
 restartpoint, [Configuração de WAL](wal-configuration.md)
 
-parâmetro de configuração restart_after_crash, [Tratamento de Erros][(runtime-config-error-handling.md)]
+parâmetro de configuração restart_after_crash, [Tratamento de Erros](runtime-config-error-handling.md)
 
 parâmetro de configuração restore_command, [Recuperação de Arquivo](runtime-config-wal.md#RUNTIME-CONFIG-WAL-ARCHIVE-RECOVERY)
 
@@ -4866,7 +4866,7 @@ inverso, [Funções e Operadores de String](functions-string.md), [Funções e O
 
 REVOGA, [Privilegios](ddl-priv.md), [REVOGA](sql-revoke.md)
 
-certo, [Funções e Operadores de String][(functions-string.md)]
+certo, [Funções e Operadores de String](functions-string.md)
 
 conexão correta, [Tabelas associadas](queries-table-expressions.md#QUERIES-JOIN)
 
@@ -4928,7 +4928,7 @@ rpad, [Funções e operadores de cadeia de caracteres](functions-string.md)
 
 rtrim, [Funções e Operadores de String](functions-string.md), [Funções e Operadores de String Binária](functions-binarystring.md)
 
-regra, [Sistema de Regras][(rules.md)], [Visões e o Sistema de Regras][(rules-views.md)], [Como as Regras SELECT Funcionam][(rules-views.md#RULES-SELECT)], [Visões Materializadas][(rules-materializedviews.md)], [Regras para Inserção, Atualização e Exclusão][(rules-update.md)], [Regras para Inserção, Atualização e Exclusão][(rules-update.md)], [Regras para Inserção, Atualização e Exclusão][(rules-update.md)], [Regras Contra Trigger][(rules-triggers.md)]: e visões materializadas, [Visões Materializadas][(rules-materializedviews.md)]
+regra, [Sistema de Regras](rules.md), [Visões e o Sistema de Regras](rules-views.md), [Como as Regras SELECT Funcionam](rules-views.md#RULES-SELECT), [Visões Materializadas](rules-materializedviews.md), [Regras para Inserção, Atualização e Exclusão](rules-update.md), [Regras para Inserção, Atualização e Exclusão](rules-update.md), [Regras para Inserção, Atualização e Exclusão](rules-update.md), [Regras Contra Trigger](rules-triggers.md): e visões materializadas, [Visões Materializadas](rules-materializedviews.md)
 
 e pontos de vista, [Visões e o Sistema de Regras](rules-views.md)
 
@@ -4936,7 +4936,7 @@ para DELETE, [Regras para INSERT, UPDATE e DELETE](rules-update.md)
 
 para INSERT, [Regras sobre INSERT, UPDATE e DELETE](rules-update.md)
 
-para SELECT, [Como funcionam as regras do SELECT][(rules-views.md#RULES-SELECT)]
+para SELECT, [Como funcionam as regras do SELECT](rules-views.md#RULES-SELECT)
 
 comparado aos gatilhos, [Regras versus gatilhos](rules-triggers.md)
 
@@ -4952,7 +4952,7 @@ liberando, [RELEASE SAVEPOINT](sql-release-savepoint.md)
 
 reverter, [REVERT PARA SAVEPOINT](sql-rollback-to.md)
 
-escalar (ver [expressão][(#ientry-id-1.5.3.6.2)])
+escalar (ver [expressão](#ientry-id-1.5.3.6.2))
 
 escala, [[Funções e Operadores Matemáticos]](functions-math.md)
 
@@ -4984,7 +4984,7 @@ parâmetro de configuração segment_size, [Opções Predefinidas](runtime-confi
 
 SELECT, [Consultando uma Tabela](tutorial-select.md), [Consultas](queries.md), [Colunas de Saída do SELECT](typeconv-select.md), [SELECT](sql-select.md): determinação do tipo de resultado, [Colunas de Saída do SELECT](typeconv-select.md)
 
-lista selecionada, [Selecionar listas] [(queries-select-lists.md)]
+lista selecionada, [Selecionar listas](queries-select-lists.md)
 
 SELECT INTO, [Executando um comando com um resultado de uma única linha](plpgsql-statements.md#PLPGSQL-STATEMENTS-SQL-ONEROW), [SELECT INTO](sql-selectinto.md): em PL/pgSQL, [Executando um comando com um resultado de uma única linha](plpgsql-statements.md#PLPGSQL-STATEMENTS-SQL-ONEROW)
 
@@ -5044,7 +5044,7 @@ session_user, [Funções de Informações de Sessão](functions-info.md#FUNCTION
 
 SET, [Funções de Configurações de Configuração](functions-admin.md#FUNCTIONS-ADMIN-SET), [SET](sql-set.md)
 
-DEFINIÇÕES DE RESTRIÇÕES, [[DEFINIÇÕES DE RESTRIÇÕES][(sql-set-constraints.md)]]
+DEFINIÇÕES DE RESTRIÇÕES, [[DEFINIÇÕES DE RESTRIÇÕES](sql-set-constraints.md)]
 
 diferença entre conjuntos, [Combinando consultas (UNION, INTERSECT, EXCEPT)](queries-union.md)
 
@@ -5144,7 +5144,7 @@ skeys, [Operadores e funções de hstore](hstore.md#HSTORE-OPS-FUNCS)
 
 sono, [Atrasar a execução](functions-datetime.md#FUNCTIONS-DATETIME-DELAY)
 
-corte, [operadores e funções de hstore][(hstore.md#HSTORE-OPS-FUNCS)]
+corte, [operadores e funções de hstore](hstore.md#HSTORE-OPS-FUNCS)
 
 pão fatiado (ver [TOAST](#ientry-id-1.7.4.6.2))
 
@@ -5174,7 +5174,7 @@ sort_desc, [intarray Funções e Operadores](intarray.md#INTARRAY-FUNCS-OPS)
 
 soundex, [Soundex](fuzzystrmatch.md#FUZZYSTRMATCH-SOUNDEX)
 
-SP-GiST (ver [índice][(#ientry-id-1.5.10.2)])
+SP-GiST (ver [índice](#ientry-id-1.5.10.2))
 
 SPI, [Interface de Programação de Servidor](spi.md), [spi — Interface de Programação de Servidor características/exemplos](contrib-spi.md): exemplos, [spi — Interface de Programação de Servidor características/exemplos](contrib-spi.md)
 
@@ -5242,7 +5242,7 @@ SPI_freeplan, [SPI_freeplan](spi-spi-freeplan.md)
 
 SPI_freetuple, (spi-spi-freetuple.md)
 
-SPI_freetuptable, [SPI_freetuptable][(spi-spi-freetupletable.md)]
+SPI_freetuptable, [SPI_freetuptable](spi-spi-freetupletable.md)
 
 SPI_getargcount, [SPI_getargcount](spi-spi-getargcount.md)
 
@@ -5262,7 +5262,7 @@ SPI_getvalue, [SPI_getvalue](spi-spi-getvalue.md)
 
 SPI_is_cursor_plan, (spi-spi-is-cursor-plan.md)
 
-SPI_keepplan, [SPI_keepplan][(spi-spi-keepplan.md)]
+SPI_keepplan, [SPI_keepplan](spi-spi-keepplan.md)
 
 SPI_modifytuple, [SPI_modifytuple](spi-spi-modifytuple.md)
 
@@ -5310,15 +5310,15 @@ SPI_start_transaction, [SPI_start_transaction](spi-spi-start-transaction.md)
 
 SPI_unregister_relation, [SPI_unregister_relation](spi-spi-unregister-relation.md)
 
-split_part, [Funções e operadores de string][(functions-string.md)]
+split_part, [Funções e operadores de string](functions-string.md)
 
 SQL/CLI, [Conformidade SQL](features.md)
 
-SQL/Foundation, [Conformidade SQL][(features.md)]
+SQL/Foundation, [Conformidade SQL](features.md)
 
 SQL/Framework, [Conformidade SQL](features.md)
 
-SQL/JRT, [Conformidade SQL][(features.md)]
+SQL/JRT, [Conformidade SQL](features.md)
 
 SQL/JSON, [Funções e operadores JSON](functions-json.md): funções e expressões, [Funções e operadores JSON](functions-json.md)
 
@@ -5330,7 +5330,7 @@ SQL/MED, [Conformidade SQL](features.md)
 
 SQL/OLB, [Conformidade SQL](features.md)
 
-SQL/PGQ, [Conformidade SQL][(features.md)]
+SQL/PGQ, [Conformidade SQL](features.md)
 
 SQL/PSM, [Conformidade SQL](features.md)
 
@@ -5412,7 +5412,7 @@ desvio padrão, (functions-aggregate.md): população, (functions-aggregate.md)
 
 exemplo, [[Funções Agregadas]][(functions-aggregate.md)]
 
-parâmetro de configuração padrão_conforming_strings, [Versões anteriores do PostgreSQL][(runtime-config-compatible.md#RUNTIME-CONFIG-COMPATIBLE-VERSION)]
+parâmetro de configuração padrão_conforming_strings, [Versões anteriores do PostgreSQL](runtime-config-compatible.md#RUNTIME-CONFIG-COMPATIBLE-VERSION)
 
 servidor de espera, [Alta disponibilidade, balanceamento de carga e replicação](high-availability.md)
 
@@ -5420,11 +5420,11 @@ atendimento.signal, [Recuperação de Arquivo](runtime-config-wal.md#RUNTIME-CON
 
 pg_basebackup --write-recovery-conf, [Opções](app-pgbasebackup.md#id-1.9.4.10.6)
 
-modo_de_espera (consulte [standby.signal][(#ientry-id-1.6.6.8.7.5.2)])
+modo_de_espera (consulte [standby.signal](#ientry-id-1.6.6.8.7.5.2))
 
 INICIAR TRANSAÇÃO, (sql-start-transaction.md)
 
-começa com, [Funções e operadores de string][(functions-string.md)]
+começa com, [Funções e operadores de string](functions-string.md)
 
 START_REPLICATION, [Protocolo de Replicação em Streaming](protocol-replication.md)
 
@@ -5450,25 +5450,25 @@ Replicação em Streaming, [Alta Disponibilidade, Equilibração de Carga e Repl
 
 similaridade_de_palavras_estrita, [Funções e Operadores](pgtrgm.md#PGTRGM-FUNCS-OPS)
 
-string (ver [string de caracteres][(#ientry-id-1.5.3.5.9.4.2)])
+string (ver [string de caracteres](#ientry-id-1.5.3.5.9.4.2))
 
-strings: aspas de barra, [Versões anteriores do PostgreSQL][(runtime-config-compatible.md#RUNTIME-CONFIG-COMPATIBLE-VERSION)]
+strings: aspas de barra, [Versões anteriores do PostgreSQL](runtime-config-compatible.md#RUNTIME-CONFIG-COMPATIBLE-VERSION)
 
-aviso de fuga, [Versões anteriores do PostgreSQL][(runtime-config-compatible.md#RUNTIME-CONFIG-COMPATIBLE-VERSION)]
+aviso de fuga, [Versões anteriores do PostgreSQL](runtime-config-compatible.md#RUNTIME-CONFIG-COMPATIBLE-VERSION)
 
-conforme padrão, [Versões anteriores do PostgreSQL][(runtime-config-compatible.md#RUNTIME-CONFIG-COMPATIBLE-VERSION)]
+conforme padrão, [Versões anteriores do PostgreSQL](runtime-config-compatible.md#RUNTIME-CONFIG-COMPATIBLE-VERSION)
 
 string_agg, [Funções agregadas](functions-aggregate.md)
 
-string_to_array, [Funções e operadores de string][(functions-string.md)]
+string_to_array, [Funções e operadores de string](functions-string.md)
 
-string_to_table, [Funções e operadores de string][(functions-string.md)]
+string_to_table, [Funções e operadores de string](functions-string.md)
 
 fita, [Funções e operadores de pesquisa de texto](functions-textsearch.md), [Manipulação de documentos](textsearch-features.md#TEXTSEARCH-MANIPULATE-TSVECTOR)
 
-strpos, [Funções e operadores de string][(functions-string.md)]
+strpos, [Funções e operadores de string](functions-string.md)
 
-submatriz, [funções e operadores do intarray][(intarray.md#INTARRAY-FUNCS-OPS)]
+submatriz, [funções e operadores do intarray](intarray.md#INTARRAY-FUNCS-OPS)
 
 subltree, [Operadores e Funções](ltree.md#LTREE-OPS-FUNCS)
 
@@ -5500,13 +5500,13 @@ parâmetro de configuração superuser_reserved_connections, [Configurações de
 
 funções de suporte: in_range, [Funções de Suporte de Árvore B-Tree](btree.md#BTREE-SUPPORT-FUNCS)
 
-suppress_redundant_updates_trigger, [Funções de gatilho][(functions-trigger.md)]
+suppress_redundant_updates_trigger, [Funções de gatilho](functions-trigger.md)
 
 svals, [Operadores e funções de hstore](hstore.md#HSTORE-OPS-FUNCS)
 
 parâmetro de configuração de slots de standby sincronizado, [Servidor primário](runtime-config-replication.md#RUNTIME-CONFIG-REPLICATION-PRIMARY)
 
-parâmetro de configuração synchronize_seqscans, [Versões anteriores do PostgreSQL][(runtime-config-compatible.md#RUNTIME-CONFIG-COMPATIBLE-VERSION)]
+parâmetro de configuração synchronize_seqscans, [Versões anteriores do PostgreSQL](runtime-config-compatible.md#RUNTIME-CONFIG-COMPATIBLE-VERSION)
 
 commit síncrono, [Compromisso assíncrono](wal-async-commit.md)
 
@@ -5514,7 +5514,7 @@ Replicação Síncrona, [Alta Disponibilidade, Balanceamento de Carga e Replica�
 
 parâmetro de configuração sincronização_commit, [Configurações](runtime-config-wal.md#RUNTIME-CONFIG-WAL-SETTINGS)
 
-parâmetro de configuração sincron_standby_names, [Servidor primário][(runtime-config-replication.md#RUNTIME-CONFIG-REPLICATION-PRIMARY)]
+parâmetro de configuração sincron_standby_names, [Servidor primário](runtime-config-replication.md#RUNTIME-CONFIG-REPLICATION-PRIMARY)
 
 parâmetro de configuração sync_replication_slots, [Servidores de espera](runtime-config-replication.md#RUNTIME-CONFIG-REPLICATION-STANDBY)
 
@@ -5544,7 +5544,7 @@ modificando, [Modificando tabelas](ddl-alter.md)
 
 partição, [Partição de tabela](ddl-partitioning.md)
 
-removendo, [Fundamentos da tabela][(ddl-basics.md)]
+removendo, [Fundamentos da tabela](ddl-basics.md)
 
 renomear, [Renomear uma tabela](ddl-alter.md#DDL-ALTER-RENAMING-TABLE)
 
@@ -5578,7 +5578,7 @@ tão, [Funções e Operadores Matemáticos](functions-math.md)
 
 tanh, [Funções e Operadores Matemáticos](functions-math.md)
 
-lista de alvos, [A Árvore de Consulta][(querytree.md)]
+lista de alvos, [A Árvore de Consulta](querytree.md)
 
 Tcl, [PL/Tcl — Linguagem Procedimental Tcl](pltcl.md)
 
@@ -5604,7 +5604,7 @@ parâmetro de configuração de temp_tablespaces, [Comportamento da declaração
 
 teste, [Testes de Regressão](regress.md)
 
-test_decoding, [test_decoding — módulo de teste/exemplo baseado em SQL para decodificação lógica do WAL][(test-decoding.md)]
+test_decoding, [test_decoding — módulo de teste/exemplo baseado em SQL para decodificação lógica do WAL](test-decoding.md)
 
 texto, [Tipos de Caracteres](datatype-character.md), [Funções e Operadores de Endereço de Rede](functions-net.md)
 
@@ -5616,7 +5616,7 @@ funções e operadores, [Tipos de pesquisa de texto](datatype-textsearch.md)
 
 text2ltree, [Operadores e Funções](ltree.md#LTREE-OPS-FUNCS)
 
-threads, [Comportamento em programas com múltiplos fios de execução][(libpq-threading.md)]: com libpq, [Comportamento em programas com múltiplos fios de execução][(libpq-threading.md)]
+threads, [Comportamento em programas com múltiplos threads de execução](libpq-threading.md): com libpq, [Comportamento em programas com múltiplos threads de execução](libpq-threading.md)
 
 [Tipos de Identificador de Objeto](datatype-oid.md)
 
@@ -5676,15 +5676,15 @@ parâmetro de armazenamento toast_tuple_target, [Parâmetros de armazenamento](s
 
 token, [Estrutura Lexical](sql-syntax-lexical.md)
 
-to_ascii, [Funções e operadores de string][(functions-string.md)]
+to_ascii, [Funções e operadores de string](functions-string.md)
 
-to_bin, [Funções e operadores de string][(functions-string.md)]
+to_bin, [Funções e operadores de string](functions-string.md)
 
 to_char, [Funções de formatação de tipos de dados](functions-formatting.md): e locais, [Comportamento](locale.md#LOCALE-BEHAVIOR)
 
 até o momento, [Funções de formatação de tipo de dados](functions-formatting.md)
 
-to_hex, [Funções e operadores de string][(functions-string.md)]
+to_hex, [Funções e operadores de string](functions-string.md)
 
 to_json, [Processamento e criação de dados JSON](functions-json.md#FUNCTIONS-JSON-PROCESSING)
 
@@ -5692,13 +5692,13 @@ to_jsonb, [Processamento e criação de dados JSON](functions-json.md#FUNCTIONS-
 
 to_number, [Funções de formatação de tipo de dados](functions-formatting.md)
 
-to_oct, [Funções e operadores de string][(functions-string.md)]
+to_oct, [Funções e operadores de string](functions-string.md)
 
 to_regclass, [Funções de Informações do Catálogo do Sistema](functions-info.md#FUNCTIONS-INFO-CATALOG)
 
 to_regcollation, [Funções de informações do catálogo do sistema](functions-info.md#FUNCTIONS-INFO-CATALOG)
 
-to_regnamespace, [Funções de Informações do Catálogo do Sistema][(functions-info.md#FUNCTIONS-INFO-CATALOG)]
+to_regnamespace, [Funções de Informações do Catálogo do Sistema](functions-info.md#FUNCTIONS-INFO-CATALOG)
 
 to_regoper, [Funções de Informação do Catálogo do Sistema](functions-info.md#FUNCTIONS-INFO-CATALOG)
 
@@ -5718,21 +5718,21 @@ to_timestamp, [Funções de formatação de tipo de dados de dados](functions-fo
 
 to_tsquery, [Funções e operadores de pesquisa de texto](functions-textsearch.md), [Paráfrase de consultas](textsearch-controls.md#TEXTSEARCH-PARSING-QUERIES)
 
-to_tsvector, [Funções e operadores de pesquisa de texto][(functions-textsearch.md)], [Parágrafo de documentos][(textsearch-controls.md#TEXTSEARCH-PARSING-DOCUMENTS)]
+to_tsvector, [Funções e operadores de pesquisa de texto](functions-textsearch.md), [Parágrafo de documentos](textsearch-controls.md#TEXTSEARCH-PARSING-DOCUMENTS)
 
-parâmetro de configuração trace_locks, [Opções do desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração trace_locks, [Opções do desenvolvedor](runtime-config-developer.md)
 
-parâmetro de configuração trace_lock_oidmin, [Opções do desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração trace_lock_oidmin, [Opções do desenvolvedor](runtime-config-developer.md)
 
-parâmetro de configuração trace_lock_table, [Opções do desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração trace_lock_table, [Opções do desenvolvedor](runtime-config-developer.md)
 
-parâmetro de configuração trace_lwlocks, [Opções do desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração trace_lwlocks, [Opções do desenvolvedor](runtime-config-developer.md)
 
-parâmetro de configuração trace_notify, [Opções de desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração trace_notify, [Opções de desenvolvedor](runtime-config-developer.md)
 
-parâmetro de configuração trace_sort, [Opções do desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração trace_sort, [Opções do desenvolvedor](runtime-config-developer.md)
 
-parâmetro de configuração trace_userlocks, [Opções do desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração trace_userlocks, [Opções do desenvolvedor](runtime-config-developer.md)
 
 parâmetro de configuração track_activities, [Estatísticas de consulta cumulativa e índice](runtime-config-statistics.md#RUNTIME-CONFIG-CUMULATIVE-STATISTICS)
 
@@ -5752,7 +5752,7 @@ parâmetro de configuração track_wal_io_timing, [Estatísticas de consulta cum
 
 transação, [Transações](tutorial-transactions.md)
 
-ID de transação, [Prevenindo falhas de envolvimento de ID de transação][(routine-vacuuming.md#VACUUM-FOR-WRAPAROUND)]: envolvimento, [Prevenindo falhas de envolvimento de ID de transação][(routine-vacuuming.md#VACUUM-FOR-WRAPAROUND)]
+ID de transação, [Prevenindo falhas de envolvimento de ID de transação](routine-vacuuming.md#VACUUM-FOR-WRAPAROUND): envolvimento, [Prevenindo falhas de envolvimento de ID de transação](routine-vacuuming.md#VACUUM-FOR-WRAPAROUND)
 
 isolamento de transação, [Isolamento de Transação](transaction-iso.md)
 
@@ -5766,7 +5766,7 @@ configuração, [SET TRANSACTION](sql-set-transaction.md)
 
 definição de padrão, [Comportamento da declaração](runtime-config-client.md#RUNTIME-CONFIG-CLIENT-STATEMENT)
 
-registro de transações (consulte [WAL][(#ientry-id-1.6.15.5.2)])
+registro de transações (consulte [WAL](#ientry-id-1.6.15.5.2))
 
 parâmetro de configuração de buffers de transação, [Memória](runtime-config-resource.md#RUNTIME-CONFIG-RESOURCE-MEMORY)
 
@@ -5798,7 +5798,7 @@ trigger, (datatype-pseudo.md), Triggers, (triggers.md), Funções de disparo em 
 
 construtor de restrição, [Descrição](sql-createtrigger.md#id-1.9.3.93.6)
 
-para atualizar uma coluna de tsvector derivada, [Triggers for Automatic Updates][(textsearch-features.md#TEXTSEARCH-UPDATE-TRIGGERS)]
+para atualizar uma coluna de tsvector derivada, [Triggers for Automatic Updates](textsearch-features.md#TEXTSEARCH-UPDATE-TRIGGERS)
 
 em C, [Funções de disparo de escrita em C](trigger-interface.md)
 
@@ -5822,7 +5822,7 @@ verdadeiro, [Tipo Booleano](datatype-boolean.md)
 
 trunc, (functions-math.md) funções e operadores matemáticos, (functions-net.md) funções e operadores de endereço de rede
 
-TRUNCATE, [[TRUNCATE][(sql-truncate.md)]]
+TRUNCATE, [[TRUNCATE](sql-truncate.md)]
 
 confiável, [PL/Perl confiável e não confiável](plperl-trusted.md): PL/Perl, [PL/Perl confiável e não confiável](plperl-trusted.md)
 
@@ -5844,7 +5844,7 @@ tsvector_to_array, [Funções e operadores de pesquisa de texto](functions-texts
 
 tsvector_update_trigger, [Funções de gatilho](functions-trigger.md)
 
-tsvector_update_trigger_column, [Funções de gatilho][(functions-trigger.md)]
+tsvector_update_trigger_column, [Funções de gatilho](functions-trigger.md)
 
 ts_debug, [Funções e operadores de pesquisa de texto](functions-textsearch.md), [Testes de configuração](textsearch-debugging.md#TEXTSEARCH-CONFIGURATION-TESTING)
 
@@ -5886,7 +5886,7 @@ txid_status, [Funções de Identificação de Transação e Informações de Esc
 
 txid_visible_in_snapshot, [Funções de Identificação de ID de Transação e Informações de Escaneamento](functions-info.md#FUNCTIONS-INFO-SNAPSHOT)
 
-tipo (ver [tipo de dados][(#ientry-id-1.5.3.5.9.10.2)])
+tipo (ver [tipo de dados](#ientry-id-1.5.3.5.9.10.2))
 
 tipo de cast, (sql-syntax-lexical.md#SQL-SYNTAX-CONSTANTS-NUMERIC), (sql-expressions.md#SQL-SYNTAX-TYPE-CASTS) castos de tipo, [Constantes numéricas]
 
@@ -5896,15 +5896,15 @@ typedef: em ECPG, [Definições de tipo](ecpg-variables.md#ECPG-VARIABLES-NONPRI
 
 UESCAPE, (sql-syntax-lexical.md#SQL-SYNTAX-IDENTIFIERS), (sql-syntax-lexical.md#SQL-SYNTAX-STRINGS-UESCAPE), (unaccent.md), (unaccent.md#UNACCENT-FUNCTIONS), (sql-syntax-lexical.md#SQL-SYNTAX-STRINGS-UESCAPE), (sql-syntax-lexical.md#SQL-SYNTAX-IDENTIFIERS), (sql-syntax-lexical.md#SQL-SYNTAX-STRINGS-UESCAPE), (functions-string.md), (functions-string.md), (functions-info.md#FUNCTIONS-INFO-VERSION), (queries-union.md), (typeconv-union-case.md), (typeconv-union-case.md), (intarray.md#INTARRAY-FUNCS-OPS), (ddl-constraints.md#DDL-CONSTRAINTS-UNIQUE-CONSTRAINTS), (functions-string.md), (libpq-connect.md#LIBPQ-PARAMKEYWORDS), (runtime-config-connection.md#RUNTIME-CONFIG-CONNECTION-SETTINGS), (runtime-config-connection.md#RUNTIME-CONFIG-CONNECTION-SETTINGS), (runtime-config-connection.md#RUNTIME-CONFIG-CONNECTION-SETTINGS), (datatype-pseudo.md), (sql-unlisten.md), (functions-array.md), (functions-range.md), (functions-textsearch.md), (ddl-schemas.md#DDL-SCHEMAS-PATH), (sql-createview.md#SQL-CREATEVIEW-UPDATABLE-VIEWS), (tutorial-update.md), (dml-update.md), (dml-returning.md), (sql-update.md), (dml-returning.md), (runtime-config-logging.md#RUNTIME-CONFIG-LOGGING-PROC-TITLE), (dml-update.md), (upgrading.md), (protocol-replication.md), (functions-string.md), (functions-range.md), (locale.md#LOCALE-BEHAVIOR), (functions-range.md), (functions-range.md), (sql-insert.md), (libpq-connect.md#LIBPQ-CONNSTRING), (functions-info.md#FUNCTIONS-INFO-SESSION), (database-roles.md), (functions-info.md#FUNCTIONS-INFO-SESSION), (ddl-foreign-data.md), (auth-username-maps.md), (sql-createtable.md#SQL-CREATETABLE-STORAGE-PARAMETERS), (datatype-uuid.md), (functions-uuid.md), (install-make.md#CONFIGURE-OPTIONS-FEATURES), [[PH_LNK
 
-unaccent, [unaccent — um dicionário de busca de texto que remove diacríticos][(unaccent.md)], [Funções][(unaccent.md#UNACCENT-FUNCTIONS)]
+unaccent, [unaccent — um dicionário de busca de texto que remove diacríticos](unaccent.md), [Funções](unaccent.md#UNACCENT-FUNCTIONS)
 
 E escape Unicode, [Constantes de cadeia com escapamentos Unicode](sql-syntax-lexical.md#SQL-SYNTAX-STRINGS-UESCAPE): em identificadores, [Identificadores e palavras-chave](sql-syntax-lexical.md#SQL-SYNTAX-IDENTIFIERS)
 
-em constantes de cadeia, [Constantes de cadeia com escapamentos de Unicode][(sql-syntax-lexical.md#SQL-SYNTAX-STRINGS-UESCAPE)]
+em constantes de cadeia, [Constantes de cadeia com escapamentos de Unicode](sql-syntax-lexical.md#SQL-SYNTAX-STRINGS-UESCAPE)
 
-Normalização Unicode, [Funções e Operadores de String][(functions-string.md)]
+Normalização Unicode, [Funções e Operadores de String](functions-string.md)
 
-unicode_assigned, [Funções e operadores de string][(functions-string.md)]
+unicode_assigned, [Funções e operadores de string](functions-string.md)
 
 unicode_version, [Informações sobre versão](functions-info.md#FUNCTIONS-INFO-VERSION)
 
@@ -5930,7 +5930,7 @@ DESCONECTE, [DESCONECTE](sql-unlisten.md)
 
 desfazer, [Funções e Operadores de Array](functions-array.md): para multirange, [Funções e Operadores de Intervalo/Multirange](functions-range.md)
 
-para tsvector, [Funções e operadores de pesquisa de texto][(functions-textsearch.md)]
+para tsvector, [Funções e operadores de pesquisa de texto](functions-textsearch.md)
 
 nome não qualificado, [O caminho de pesquisa do esquema](ddl-schemas.md#DDL-SCHEMAS-PATH)
 
@@ -5938,13 +5938,13 @@ visões atualizáveis, [Visões atualizáveis](sql-createview.md#SQL-CREATEVIEW-
 
 ATUALIZAÇÃO, (tutorial-update.md), (dml-update.md), Atualizando Dados, (dml-returning.md), ATUALIZAÇÃO, (sql-update.md): RETORNANDO, RETORNANDO Dados de Linhas Modificadas, (dml-returning.md)
 
-parâmetro de configuração update_process_title, [Título do processo][(runtime-config-logging.md#RUNTIME-CONFIG-LOGGING-PROC-TITLE)]
+parâmetro de configuração update_process_title, [Título do processo](runtime-config-logging.md#RUNTIME-CONFIG-LOGGING-PROC-TITLE)
 
 atualização, [Atualizando dados](dml-update.md)
 
-atualização, [Atualizando um cluster PostgreSQL][(upgrading.md)]
+atualização, [Atualizando um cluster PostgreSQL](upgrading.md)
 
-UPLOAD_MANIFEST, [Protocolo de Replicação em Streaming][(protocol-replication.md)]
+UPLOAD_MANIFEST, [Protocolo de Replicação em Streaming](protocol-replication.md)
 
 superior, [Funções e Operadores de String](functions-string.md), [Funções e Operadores de Rango/Multirango](functions-range.md) e locais, [Comportamento](locale.md#LOCALE-BEHAVIOR)
 
@@ -5954,7 +5954,7 @@ upper_inf, [Funções e operadores de intervalo/multiintervalo](functions-range.
 
 UPSERT, [INSERT](sql-insert.md)
 
-URI, [Strings de conexão][(libpq-connect.md#LIBPQ-CONNSTRING)]
+URI, [Strings de conexão](libpq-connect.md#LIBPQ-CONNSTRING)
 
 usuário, (functions-info.md#FUNCTIONS-INFO-SESSION), (database-roles.md), funções de informações de sessão, (functions-info.md#FUNCTIONS-INFO-SESSION)
 
@@ -5978,7 +5978,7 @@ uuid_extract_version, [Funções de UUID](functions-uuid.md)
 
 uuid_generate_v1, [Funções uuid-ossp](uuid-ossp.md#UUID-OSSP-FUNCTIONS-SECT)
 
-uuid_generate_v1mc, [Funções uuid-ossp][(uuid-ossp.md#UUID-OSSP-FUNCTIONS-SECT)]
+uuid_generate_v1mc, [Funções uuid-ossp](uuid-ossp.md#UUID-OSSP-FUNCTIONS-SECT)
 
 uuid_generate_v3, [Funções uuid-ossp](uuid-ossp.md#UUID-OSSP-FUNCTIONS-SECT)
 
@@ -6002,7 +6002,7 @@ parâmetro de configuração vacuum_cost_page_dirty, [Atraso de vácuo baseado e
 
 parâmetro de configuração de página de custo de vácuo, [Atraso de vácuo baseado em custo](runtime-config-vacuum.md#RUNTIME-CONFIG-RESOURCE-VACUUM-COST)
 
-parâmetro de configuração vacuum_cost_page_miss, [Atraso de vácuo baseado em custo][(runtime-config-vacuum.md#RUNTIME-CONFIG-RESOURCE-VACUUM-COST)]
+parâmetro de configuração vacuum_cost_page_miss, [Atraso de vácuo baseado em custo](runtime-config-vacuum.md#RUNTIME-CONFIG-RESOURCE-VACUUM-COST)
 
 parâmetro de configuração vacuum_failsafe_age, [Congelamento](runtime-config-vacuum.md#RUNTIME-CONFIG-VACUUM-FREEZING)
 
@@ -6012,17 +6012,17 @@ parâmetro de configuração vacuum_freeze_table_age, [Congelamento](runtime-con
 
 parâmetro de armazenamento vacuum_index_cleanup, [Parâmetros de armazenamento](sql-createtable.md#SQL-CREATETABLE-STORAGE-PARAMETERS)
 
-taxa_de_falha_de_congelamento_eager_freeze_max: parâmetro de configuração, [Congelamento][(runtime-config-vacuum.md#RUNTIME-CONFIG-VACUUM-FREEZING)]
+taxa_de_falha_de_congelamento_eager_freeze_max: parâmetro de configuração, [Congelamento](runtime-config-vacuum.md#RUNTIME-CONFIG-VACUUM-FREEZING)
 
 parâmetro de armazenamento, [Parâmetros de Armazenamento](sql-createtable.md#SQL-CREATETABLE-STORAGE-PARAMETERS)
 
-parâmetro de configuração vacuum_multixact_failsafe_age, [Congelamento][(runtime-config-vacuum.md#RUNTIME-CONFIG-VACUUM-FREEZING)]
+parâmetro de configuração vacuum_multixact_failsafe_age, [Congelamento](runtime-config-vacuum.md#RUNTIME-CONFIG-VACUUM-FREEZING)
 
-parâmetro de configuração vacuum_multixact_freeze_min_age, [Congelamento][(runtime-config-vacuum.md#RUNTIME-CONFIG-VACUUM-FREEZING)]
+parâmetro de configuração vacuum_multixact_freeze_min_age, [Congelamento](runtime-config-vacuum.md#RUNTIME-CONFIG-VACUUM-FREEZING)
 
-parâmetro de configuração vacuum_multixact_freeze_table_age, [Congelamento][(runtime-config-vacuum.md#RUNTIME-CONFIG-VACUUM-FREEZING)]
+parâmetro de configuração vacuum_multixact_freeze_table_age, [Congelamento](runtime-config-vacuum.md#RUNTIME-CONFIG-VACUUM-FREEZING)
 
-vacuum_truncate: parâmetro de configuração, [Comportamento padrão][(runtime-config-vacuum.md#RUNTIME-CONFIG-VACUUM-DEFAULT)]
+vacuum_truncate: parâmetro de configuração, [Comportamento padrão](runtime-config-vacuum.md#RUNTIME-CONFIG-VACUUM-DEFAULT)
 
 parâmetro de armazenamento, [Parâmetros de Armazenamento](sql-createtable.md#SQL-CREATETABLE-STORAGE-PARAMETERS)
 
@@ -6042,7 +6042,7 @@ var_pop, [Funções Agregadas](functions-aggregate.md)
 
 var_samp, [Funções agregadas](functions-aggregate.md)
 
-versão, [Acesse um banco de dados][(tutorial-accessdb.md)], [Funções de informações de versão][(functions-info.md#FUNCTIONS-INFO-VERSION)], [Atualização de um cluster PostgreSQL][(upgrading.md)]: compatibilidade, [Atualização de um cluster PostgreSQL][(upgrading.md)]
+versão, [Acesse um banco de dados](tutorial-accessdb.md), [Funções de informações de versão](functions-info.md#FUNCTIONS-INFO-VERSION), [Atualização de um cluster PostgreSQL](upgrading.md): compatibilidade, [Atualização de um cluster PostgreSQL](upgrading.md)
 
 visualização, (tutorial-views.md), (rules-views.md), (rules-materializedviews.md) Visões e o Sistema de Regras, (rules-update.md#RULES-UPDATE-VIEWS): implementação por meio de regras, (rules-views.md) Visões e o Sistema de Regras
 
@@ -6054,7 +6054,7 @@ Mapa de Visibilidade, [Mapa de Visibilidade](storage-vm.md)
 
 Visual Studio, [Visual Studio](installation-platform-notes.md#INSTALLATION-NOTES-VISUAL-STUDIO): instalação em, [Visual Studio](installation-platform-notes.md#INSTALLATION-NOTES-VISUAL-STUDIO)
 
-VM (ver [Mapa de Visibilidade][(#ientry-id-1.10.18.6.2)]])
+VM (ver [Mapa de Visibilidade](#ientry-id-1.10.18.6.2)])
 
 nulo, [Pseudo-Tipos](datatype-pseudo.md)
 
@@ -6086,15 +6086,15 @@ parâmetro de configuração wal_keep_size, [Servidores de envio][(runtime-confi
 
 parâmetro de configuração wal_level, [Configurações](runtime-config-wal.md#RUNTIME-CONFIG-WAL-SETTINGS)
 
-parâmetro de configuração wal_log_hints, [Configurações][(runtime-config-wal.md#RUNTIME-CONFIG-WAL-SETTINGS)]
+parâmetro de configuração wal_log_hints, [Configurações](runtime-config-wal.md#RUNTIME-CONFIG-WAL-SETTINGS)
 
 parâmetro de configuração wal_receiver_create_temp_slot, [Servidores de espera](runtime-config-replication.md#RUNTIME-CONFIG-REPLICATION-STANDBY)
 
-parâmetro de configuração wal_receiver_status_interval, [Servidores em espera][(runtime-config-replication.md#RUNTIME-CONFIG-REPLICATION-STANDBY)]
+parâmetro de configuração wal_receiver_status_interval, [Servidores em espera](runtime-config-replication.md#RUNTIME-CONFIG-REPLICATION-STANDBY)
 
 parâmetro de configuração wal_receiver_timeout, [Servidores em espera](runtime-config-replication.md#RUNTIME-CONFIG-REPLICATION-STANDBY)
 
-parâmetro de configuração wal_recycle, [Configurações][(runtime-config-wal.md#RUNTIME-CONFIG-WAL-SETTINGS)]
+parâmetro de configuração wal_recycle, [Configurações](runtime-config-wal.md#RUNTIME-CONFIG-WAL-SETTINGS)
 
 parâmetro de configuração wal_retrieve_retry_interval, [Servidores de espera](runtime-config-replication.md#RUNTIME-CONFIG-REPLICATION-STANDBY)
 
@@ -6116,7 +6116,7 @@ stand-by quente, [Alta disponibilidade, balanceamento de carga e replicação](h
 
 websearch_to_tsquery, [Funções e operadores de pesquisa de texto](functions-textsearch.md)
 
-QUANDO, [A Cláusula QUANDO][(queries-table-expressions.md#QUERIES-WHERE)]
+QUANDO, [A Cláusula QUANDO](queries-table-expressions.md#QUERIES-WHERE)
 
 onde fazer o registro, [Onde fazer o registro](runtime-config-logging.md#RUNTIME-CONFIG-LOGGING-WHERE)
 
@@ -6134,7 +6134,7 @@ ordem de execução, [Processamento de Função de Janela](queries-table-express
 
 COM, [COM Perguntas (Expressões de Tabela Comum)](queries-with.md), [SELECT](sql-select.md): em SELECT, [COM Perguntas (Expressões de Tabela Comum)](queries-with.md), [SELECT](sql-select.md)
 
-COM OPÇÃO DE VERIFICAÇÃO, [Crie visual][(sql-createview.md)]
+COM OPÇÃO DE VERIFICAÇÃO, [Crie visual](sql-createview.md)
 
 Dentro do grupo, [Expressões agregadas] (sql-expressions.md#SYNTAX-AGGREGATES)
 
@@ -6146,7 +6146,7 @@ parâmetro de configuração work_mem, [Memória](runtime-config-resource.md#RUN
 
 wraparound: de IDs multixact, [Multixacts e Wraparound](routine-vacuuming.md#VACUUM-FOR-MULTIXACT-WRAPAROUND)
 
-de IDs de transação, [Prevenção de falhas de envolvimento de IDs de transação][(routine-vacuuming.md#VACUUM-FOR-WRAPAROUND)]
+de IDs de transação, [Prevenção de falhas de envolvimento de IDs de transação](routine-vacuuming.md#VACUUM-FOR-WRAPAROUND)
 
 ### X
 
@@ -6168,7 +6168,7 @@ Opção XML, [Criando valores XML](datatype-xml.md#DATATYPE-XML-CREATING), [Comp
 
 xml2, [xml2 — consulta XPath e funcionalidades XSLT](xml2.md)
 
-xmlagg, [xmlagg][(functions-xml.md#FUNCTIONS-XML-XMLAGG)], [Funções agregadas][(functions-aggregate.md)]
+xmlagg, [xmlagg](functions-xml.md#FUNCTIONS-XML-XMLAGG), [Funções agregadas](functions-aggregate.md)
 
 parâmetro de configuração xmlbinary, [Comportamento da declaração](runtime-config-client.md#RUNTIME-CONFIG-CLIENT-STATEMENT)
 
@@ -6208,7 +6208,7 @@ xpath_exists, [xpath_exists](functions-xml.md#FUNCTIONS-XML-PROCESSING-XPATH-EXI
 
 xpath_table, [xpath_table](xml2.md#XML2-XPATH-TABLE)
 
-Expressões regulares XQuery, [Diferenças em relação ao padrão SQL e XQuery][(functions-matching.md#POSIX-VS-XQUERY)]
+Expressões regulares XQuery, [Diferenças em relação ao padrão SQL e XQuery](functions-matching.md#POSIX-VS-XQUERY)
 
 xslt_process, [xslt_process](xml2.md#XML2-XSLT-XSLT-PROCESS)
 
@@ -6218,6 +6218,6 @@ yacc, [Requisitos](install-requirements.md)
 
 ### Z
 
-parâmetro de configuração zero_damaged_pages, [Opções do desenvolvedor][(runtime-config-developer.md)]
+parâmetro de configuração zero_damaged_pages, [Opções do desenvolvedor](runtime-config-developer.md)
 
 zlib, (install-requirements.md), (install-make.md#CONFIGURE-OPTIONS-ANTI-FEATURES), (install-meson.md#MESON-OPTIONS-ANTI-FEATURES)

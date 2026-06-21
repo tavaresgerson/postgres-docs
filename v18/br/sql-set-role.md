@@ -16,7 +16,7 @@ Este comando define o identificador de usuário atual da sessão SQL atual como 
 
 O usuário atual da sessão deve ter a opção `SET` para o *`role_name` especificado, diretamente ou indiretamente por meio de uma cadeia de associações com a opção `SET`. (Se o usuário da sessão for um superusuário, qualquer papel pode ser selecionado.)
 
-Os modificadores `SESSION` e `LOCAL` atuam da mesma forma que o comando regular [`SET`(sql-set.md "SET")].
+Os modificadores `SESSION` e `LOCAL` atuam da mesma forma que o comando regular [`SET`](sql-set.md)].
 
 `SET ROLE NONE` define o identificador do usuário atual como o identificador do usuário da sessão atual, conforme retornado por `session_user`. `RESET ROLE` define o identificador do usuário atual como o ajuste do tempo de conexão especificado pelas opções de linha de comando [(libpq-connect.md#LIBPQ-CONNECT-OPTIONS), [`ALTER ROLE`](sql-alterrole.md "ALTER ROLE"), ou [`ALTER DATABASE`](sql-alterdatabase.md "ALTER DATABASE"), se houver tais configurações. Caso contrário, `RESET ROLE` define o identificador do usuário atual como o identificador do usuário da sessão atual. Esses formulários podem ser executados por qualquer usuário.
 

@@ -4,7 +4,7 @@ A função específica que é referenciada por uma chamada de função é determ
 
 **Resolução do Tipo de Função**
 
-1. Selecione as funções a serem consideradas do catálogo do sistema `pg_proc`. Se um nome de função não qualificada pelo esquema foi usado, as funções consideradas são aquelas com o nome correspondente e o número de argumentos que são visíveis no caminho de pesquisa atual (ver [Seção 5.10.3][(ddl-schemas.md#DDL-SCHEMAS-PATH "5.10.3. The Schema Search Path")]). Se um nome de função qualificada foi fornecido, apenas as funções no esquema especificado são consideradas.
+1. Selecione as funções a serem consideradas do catálogo do sistema `pg_proc`. Se um nome de função não qualificada pelo esquema foi usado, as funções consideradas são aquelas com o nome correspondente e o número de argumentos que são visíveis no caminho de pesquisa atual (ver [Seção 5.10.3](ddl-schemas.md#DDL-SCHEMAS-PATH)). Se um nome de função qualificada foi fornecido, apenas as funções no esquema especificado são consideradas.
 
 1. Se o caminho de busca encontrar múltiplas funções com tipos de argumentos idênticos, apenas a que aparece mais cedo no caminho é considerada. Funções com tipos de argumentos diferentes são consideradas em pé de igualdade, independentemente da posição no caminho de busca.
 2. Se uma função for declarada com um parâmetro de matriz `VARIADIC`, e a chamada não use a palavra-chave `VARIADIC`, então a função é tratada como se o parâmetro de matriz fosse substituído por uma ou mais ocorrências de seu tipo de elemento, conforme necessário para corresponder à chamada. Após essa expansão, a função pode ter tipos de argumento efetivos idênticos a uma função não variável. Nesse caso, a função que aparece mais cedo no caminho de busca é usada, ou, se as duas funções estiverem no mesmo esquema, a não variável é preferida.
@@ -51,7 +51,7 @@ Como as constantes numéricas com pontos decimais são inicialmente atribuídas 
 SELECT round(4.0, 4);
 ```
 
-  
+
 
 **Exemplo 10.7. Resolução de função variadic**
 
@@ -95,7 +95,7 @@ SELECT public.variadic_example(0),
 
 Dado a configuração padrão e apenas a primeira função existente, as primeiras e segundas chamadas são inseguras. Qualquer usuário poderia interceptá-las ao criar a segunda ou terceira função. Ao corresponder exatamente ao tipo de argumento e usar a palavra-chave `VARIADIC`, a terceira chamada é segura.
 
-  
+
 
 **Exemplo 10.8. Resolução do tipo de função de substring**
 
@@ -151,7 +151,7 @@ SELECT substr(CAST (1234 AS text), 3);
 (1 row)
 ```
 
-  
+
 
 ---
 

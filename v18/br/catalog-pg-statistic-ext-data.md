@@ -11,139 +11,142 @@ Assim como `pg_statistic` (catalog-pg-statistic.md "52.51. pg_statistic"), `pg_
 
 
 <table border="1" class="table" summary="pg_statistic_ext_data Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
      Column Type
     </p>
-<p>
+    <p>
      Description
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       stxoid
      </code>
-<code class="type">
+     <code class="type">
       oid
      </code>
      (references
      <a class="link" href="catalog-pg-statistic-ext.md" title="52.52. pg_statistic_ext">
-<code class="structname">
+      <code class="structname">
        pg_statistic_ext
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
      </code>
      )
     </p>
-<p>
+    <p>
      Extended statistics object containing the definition for this data
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       stxdinherit
      </code>
-<code class="type">
+     <code class="type">
       bool
      </code>
-</p>
-<p>
+    </p>
+    <p>
      If true, the stats include values from child tables, not just the values in the specified relation
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       stxdndistinct
      </code>
-<code class="type">
+     <code class="type">
       pg_ndistinct
      </code>
-</p>
-<p>
+    </p>
+    <p>
      N-distinct counts, serialized as
      <code class="structname">
       pg_ndistinct
      </code>
      type
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       stxddependencies
      </code>
-<code class="type">
+     <code class="type">
       pg_dependencies
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Functional dependency statistics, serialized as
      <code class="structname">
       pg_dependencies
      </code>
      type
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       stxdmcv
      </code>
-<code class="type">
+     <code class="type">
       pg_mcv_list
      </code>
-</p>
-<p>
+    </p>
+    <p>
      MCV (most-common values) list statistics, serialized as
      <code class="structname">
       pg_mcv_list
      </code>
      type
     </p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       stxdexpr
      </code>
-<code class="type">
+     <code class="type">
       pg_statistic[]
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Per-expression statistics, serialized as an array of
      <code class="structname">
       pg_statistic
      </code>
      type
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 

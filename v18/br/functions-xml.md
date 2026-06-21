@@ -5,7 +5,7 @@
 * [9.15.3. Processamento de XML](functions-xml.md#FUNCTIONS-XML-PROCESSING)
 * [9.15.4. Mapeamento de tabelas para XML](functions-xml.md#FUNCTIONS-XML-MAPPING)
 
-As funções e expressões semelhantes a funções descritas nesta seção operam em valores do tipo `xml`. Consulte [Seção 8.13][(datatype-xml.md "8.13. XML Type")] para informações sobre o tipo `xml`. As expressões semelhantes a funções `xmlparse` e `xmlserialize` para conversão entre os tipos `xml` são documentadas lá, não nesta seção.
+As funções e expressões semelhantes a funções descritas nesta seção operam em valores do tipo `xml`. Consulte [Seção 8.13](datatype-xml.md) para informações sobre o tipo `xml`. As expressões semelhantes a funções `xmlparse` e `xmlserialize` para conversão entre os tipos `xml` são documentadas lá, não nesta seção.
 
 O uso da maioria dessas funções exige que o PostgreSQL tenha sido construído com `configure --with-libxml`.
 
@@ -145,7 +145,7 @@ SELECT xmlelement(name foo, xmlattributes('xyz' as bar),
  <foo bar="xyz"><abc/><!--test--><xyz/></foo>
 ```
 
-O conteúdo de outros tipos será formatado em dados de caracteres XML válidos. Isso significa, em particular, que os caracteres <, > e & serão convertidos em entidades. Os dados binários (tipo de dados `bytea`) serão representados em codificação base64 ou hex, dependendo da configuração do parâmetro de configuração [xmlbinary][(runtime-config-client.md#GUC-XMLBINARY)]. O comportamento específico para tipos de dados individuais é esperado para evoluir para alinhar as mapeamentos do PostgreSQL com os especificados em SQL:2006 e posteriores, conforme discutido em [Seção D.3.1.3][(xml-limits-conformance.md#FUNCTIONS-XML-LIMITS-CASTS "D.3.1.3. Mappings between SQL and XML Data Types and Values")].
+O conteúdo de outros tipos será formatado em dados de caracteres XML válidos. Isso significa, em particular, que os caracteres <, > e & serão convertidos em entidades. Os dados binários (tipo de dados `bytea`) serão representados em codificação base64 ou hex, dependendo da configuração do parâmetro de configuração [xmlbinary](runtime-config-client.md#GUC-XMLBINARY). O comportamento específico para tipos de dados individuais é esperado para evoluir para alinhar as mapeamentos do PostgreSQL com os especificados em SQL:2006 e posteriores, conforme discutido em [Seção D.3.1.3](xml-limits-conformance.md#FUNCTIONS-XML-LIMITS-CASTS).
 
 #### 9.15.1.5. `xmlforest` [#](#FUNCTIONS-PRODUCING-XML-XMLFOREST)
 
@@ -224,7 +224,7 @@ SELECT xmlroot(xmlparse(document '<?xml version="1.1"?><content>abc</content>'),
 xmlagg ( xml ) → xml
 ```
 
-A função `xmlagg` é, ao contrário das outras funções descritas aqui, uma função agregada. Ela concatenia os valores de entrada para a chamada da função agregada, muito como a `xmlconcat` faz, exceto que a concatenação ocorre em linhas em vez de em expressões em uma única linha. Consulte [Seção 9.21][(functions-aggregate.md "9.21. Aggregate Functions")] para obter informações adicionais sobre funções agregadas.
+A função `xmlagg` é, ao contrário das outras funções descritas aqui, uma função agregada. Ela concatenia os valores de entrada para a chamada da função agregada, muito como a `xmlconcat` faz, exceto que a concatenação ocorre em linhas em vez de em expressões em uma única linha. Consulte [Seção 9.21](functions-aggregate.md) para obter informações adicionais sobre funções agregadas.
 
 Exemplo:
 
@@ -238,7 +238,7 @@ SELECT xmlagg(x) FROM test;
  <foo>abc</foo><bar/>
 ```
 
-Para determinar a ordem da concatenação, pode-se adicionar uma cláusula `ORDER BY` à chamada agregada, conforme descrito em [Seção 4.2.7][(sql-expressions.md#SYNTAX-AGGREGATES "4.2.7. Aggregate Expressions")]. Por exemplo:
+Para determinar a ordem da concatenação, pode-se adicionar uma cláusula `ORDER BY` à chamada agregada, conforme descrito em [Seção 4.2.7](sql-expressions.md#SYNTAX-AGGREGATES). Por exemplo:
 
 ```
 SELECT xmlagg(x ORDER BY y DESC) FROM test;
@@ -266,7 +266,7 @@ As expressões descritas nesta seção verificam as propriedades dos valores de 
 xml IS DOCUMENT → boolean
 ```
 
-A expressão `IS DOCUMENT` retorna verdadeiro se o valor XML do argumento for um documento XML válido, falso se não for (ou seja, se for um fragmento de conteúdo) ou nulo se o argumento for nulo. Consulte a [Seção 8.13][(datatype-xml.md "8.13. XML Type")] sobre a diferença entre documentos e fragmentos de conteúdo.
+A expressão `IS DOCUMENT` retorna verdadeiro se o valor XML do argumento for um documento XML válido, falso se não for (ou seja, se for um fragmento de conteúdo) ou nulo se o argumento for nulo. Consulte a [Seção 8.13](datatype-xml.md) sobre a diferença entre documentos e fragmentos de conteúdo.
 
 #### 9.15.2.2. `IS NOT DOCUMENT` [#](#FUNCTIONS-PRODUCING-XML-IS-NOT-DOCUMENT)
 
@@ -295,9 +295,9 @@ SELECT xmlexists('//town[text() = ''Toronto'']' PASSING BY VALUE '<towns><town>T
 (1 row)
 ```
 
-As cláusulas `BY REF` e `BY VALUE` são aceitas no PostgreSQL, mas são ignoradas, conforme discutido em [Seção D.3.2][(xml-limits-conformance.md#FUNCTIONS-XML-LIMITS-POSTGRESQL "D.3.2. Incidental Limits of the Implementation")].
+As cláusulas `BY REF` e `BY VALUE` são aceitas no PostgreSQL, mas são ignoradas, conforme discutido em [Seção D.3.2](xml-limits-conformance.md#FUNCTIONS-XML-LIMITS-POSTGRESQL).
 
-No padrão SQL, a função `xmlexists` avalia uma expressão no idioma de consulta XML, mas o PostgreSQL permite apenas uma expressão XPath 1.0, conforme discutido em [Seção D.3.1][(xml-limits-conformance.md#FUNCTIONS-XML-LIMITS-XPATH1 "D.3.1. Queries Are Restricted to XPath 1.0")].
+No padrão SQL, a função `xmlexists` avalia uma expressão no idioma de consulta XML, mas o PostgreSQL permite apenas uma expressão XPath 1.0, conforme discutido em [Seção D.3.1](xml-limits-conformance.md#FUNCTIONS-XML-LIMITS-XPATH1).
 
 #### 9.15.2.4. `xml_is_well_formed` [#](#XML-IS-WELL-FORMED)
 
@@ -307,7 +307,7 @@ xml_is_well_formed_document ( text ) → boolean
 xml_is_well_formed_content ( text ) → boolean
 ```
 
-Essas funções verificam se uma string `text` representa um XML bem formado, retornando um resultado booleano. `xml_is_well_formed_document` verifica se um documento bem formado, enquanto `xml_is_well_formed_content` verifica se o conteúdo está bem formado. `xml_is_well_formed` faz o primeiro se o parâmetro de configuração [xmloption][(runtime-config-client.md#GUC-XMLOPTION)] estiver definido como `DOCUMENT`, ou o segundo se estiver definido como `CONTENT`. Isso significa que `xml_is_well_formed` é útil para verificar se um simples cast para o tipo `xml` terá sucesso, enquanto as outras duas funções são úteis para verificar se as variantes correspondentes de `XMLPARSE` terão sucesso.
+Essas funções verificam se uma string `text` representa um XML bem formado, retornando um resultado booleano. `xml_is_well_formed_document` verifica se um documento bem formado, enquanto `xml_is_well_formed_content` verifica se o conteúdo está bem formado. `xml_is_well_formed` faz o primeiro se o parâmetro de configuração [xmloption](runtime-config-client.md#GUC-XMLOPTION) estiver definido como `DOCUMENT`, ou o segundo se estiver definido como `CONTENT`. Isso significa que `xml_is_well_formed` é útil para verificar se um simples cast para o tipo `xml` terá sucesso, enquanto as outras duas funções são úteis para verificar se as variantes correspondentes de `XMLPARSE` terão sucesso.
 
 Exemplos:
 
@@ -425,9 +425,9 @@ A cláusula opcional `XMLNAMESPACES` fornece uma lista de definições de namesp
 
 O argumento *`row_expression`* requerido é uma expressão XPath 1.0 (dada como `text`) que é avaliada, passando o valor XML *`document_expression`* como seu item de contexto, para obter um conjunto de nós XML. Esses nós são os que `xmltable` transforma em linhas de saída. Não serão produzidas linhas se o *`document_expression`* for nulo, nem se o *`row_expression`* produzir um conjunto de nós vazio ou qualquer outro valor que não seja um conjunto de nós.
 
-*`document_expression`* fornece o item de contexto para o *`row_expression`. Deve ser um documento XML bem formado; fragmentos/florestas não são aceitos. As cláusulas `BY REF` e `BY VALUE` são aceitas, mas ignoradas, conforme discutido em [Seção D.3.2][(xml-limits-conformance.md#FUNCTIONS-XML-LIMITS-POSTGRESQL "D.3.2. Incidental Limits of the Implementation")].
+*`document_expression`* fornece o item de contexto para o *`row_expression`. Deve ser um documento XML bem formado; fragmentos/florestas não são aceitos. As cláusulas `BY REF` e `BY VALUE` são aceitas, mas ignoradas, conforme discutido em [Seção D.3.2](xml-limits-conformance.md#FUNCTIONS-XML-LIMITS-POSTGRESQL).
 
-No padrão SQL, a função `xmltable` avalia expressões no idioma de consulta XML, mas o PostgreSQL permite apenas expressões XPath 1.0, conforme discutido em [Seção D.3.1][(xml-limits-conformance.md#FUNCTIONS-XML-LIMITS-XPATH1 "D.3.1. Queries Are Restricted to XPath 1.0")].
+No padrão SQL, a função `xmltable` avalia expressões no idioma de consulta XML, mas o PostgreSQL permite apenas expressões XPath 1.0, conforme discutido em [Seção D.3.1](xml-limits-conformance.md#FUNCTIONS-XML-LIMITS-XPATH1).
 
 A cláusula `COLUMNS` exigida especifica a(s) coluna(s) que serão produzidas na tabela de saída. Veja o resumo da sintaxe acima para o formato. Um nome é necessário para cada coluna, assim como um tipo de dados (a menos que `FOR ORDINALITY` seja especificado, no qual caso o tipo `integer` é implícito). As cláusulas de caminho, padrão e não nulidade são opcionais.
 
@@ -435,7 +435,7 @@ Uma coluna marcada `FOR ORDINALITY` será preenchida com números de linha, come
 
 ### Nota
 
-O XPath 1.0 não especifica uma ordem para os nós em um conjunto de nós, portanto, o código que depende de uma ordem específica dos resultados será dependente da implementação. Os detalhes podem ser encontrados em [Seção D.3.1.2][(xml-limits-conformance.md#XML-XPATH-1-SPECIFICS "D.3.1.2. Restriction of XPath to 1.0")].
+O XPath 1.0 não especifica uma ordem para os nós em um conjunto de nós, portanto, o código que depende de uma ordem específica dos resultados será dependente da implementação. Os detalhes podem ser encontrados em [Seção D.3.1.2](xml-limits-conformance.md#XML-XPATH-1-SPECIFICS).
 
 O *`column_expression`* para uma coluna é uma expressão XPath 1.0 que é avaliada para cada linha, com o nó atual do resultado do *`row_expression`* como seu item de contexto, para encontrar o valor da coluna. Se não for fornecido um *`column_expression`*, então o nome da coluna é usado como um caminho implícito.
 
@@ -447,7 +447,7 @@ Um resultado não XML atribuído a uma coluna de saída `xml` produz conteúdo, 
 
 O valor de cadeia de um elemento XML é a concatenação, em ordem de documento, de todos os nós de texto contidos nesse elemento e em seus descendentes. O valor de cadeia de um elemento sem nós de texto descendentes é uma cadeia vazia (não `NULL`). Quaisquer atributos `xsi:nil` são ignorados. Observe que o nó `text()` composto apenas por espaços em branco entre dois elementos que não são de texto é preservado, e que o espaço em branco inicial em um nó `text()` não é achatado. A função XPath 1.0 `string` pode ser consultada para as regras que definem o valor de cadeia de outros tipos de nós XML e valores não XML.
 
-As regras de conversão apresentadas aqui não são exatamente as do padrão SQL, conforme discutido em [Seção D.3.1.3][(xml-limits-conformance.md#FUNCTIONS-XML-LIMITS-CASTS "D.3.1.3. Mappings between SQL and XML Data Types and Values")].
+As regras de conversão apresentadas aqui não são exatamente as do padrão SQL, conforme discutido em [Seção D.3.1.3](xml-limits-conformance.md#FUNCTIONS-XML-LIMITS-CASTS).
 
 Se a expressão de caminho retornar um conjunto de nós vazio (tipicamente, quando não corresponde) para uma determinada linha, a coluna será definida como `NULL`, a menos que um *`default_expression`* seja especificado; então o valor resultante da avaliação dessa expressão é usado.
 
@@ -733,6 +733,9 @@ Como exemplo de uso da saída produzida por essas funções, o [Exemplo 9.1] (fu
   </tr>
  </xsl:for-each>
 </table>
+
+
+
 
       </body>
     </html>

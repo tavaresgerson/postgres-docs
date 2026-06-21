@@ -12,7 +12,7 @@ No nível SQL, um método de amostragem de tabela é representado por uma única
 method_name(internal) RETURNS tsm_handler
 ```
 
-O nome da função é o mesmo nome do método que aparece na cláusula `TABLESAMPLE`. O argumento `internal` é um dummy (sempre com valor zero) que simplesmente serve para impedir que essa função seja chamada diretamente a partir de um comando SQL. O resultado da função deve ser uma estrutura palloc'ada do tipo `TsmRoutine`, que contém ponteiros para funções de suporte ao método de amostragem. Essas funções de suporte são funções em C simples e não são visíveis ou acessíveis no nível SQL. As funções de suporte são descritas em [Seção 59.1][(tablesample-support-functions.md "59.1. Sampling Method Support Functions")].
+O nome da função é o mesmo nome do método que aparece na cláusula `TABLESAMPLE`. O argumento `internal` é um dummy (sempre com valor zero) que simplesmente serve para impedir que essa função seja chamada diretamente a partir de um comando SQL. O resultado da função deve ser uma estrutura palloc'ada do tipo `TsmRoutine`, que contém ponteiros para funções de suporte ao método de amostragem. Essas funções de suporte são funções em C simples e não são visíveis ou acessíveis no nível SQL. As funções de suporte são descritas em [Seção 59.1](tablesample-support-functions.md).
 
 Além dos ponteiros de função, a estrutura `TsmRoutine` deve fornecer esses campos adicionais:
 

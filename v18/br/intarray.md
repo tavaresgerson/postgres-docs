@@ -23,580 +23,752 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
 
 
 <table border="1" class="table" summary="intarray Functions">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">Função</p>
-<p>Descrição</p>
-<p>Exemplo(s)</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
+     Função
+    </p>
+    <p>
+     Descrição
+    </p>
+    <p>
+     Exemplo(s)
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       icount
-     </code>(<code class="type">
+     </code>
+     (
+     <code class="type">
       integer[]
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       integer
      </code>
-</p>
-<p>Retorna o número de elementos na matriz.</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     Retorna o número de elementos na matriz.
+    </p>
+    <p>
+     <code class="literal">
       icount('{1,2,3}'::integer[])
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       3
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       sort
-     </code>(<code class="type">
-      integer[]
-     </code>,<em class="parameter">
-<code>
-       dir
-      </code>
-</em>
-<code class="type">
-      text
-     </code>)<code class="returnvalue">
+     </code>
+     (
+     <code class="type">
       integer[]
      </code>
-</p>
-<p>Ordena o array em ordem crescente ou decrescente.<em class="parameter">
-<code>
+     ,
+     <em class="parameter">
+      <code>
        dir
       </code>
-</em>devem ser<code class="literal">
+     </em>
+     <code class="type">
+      text
+     </code>
+     )
+     <code class="returnvalue">
+      integer[]
+     </code>
+    </p>
+    <p>
+     Ordena o array em ordem crescente ou decrescente.
+     <em class="parameter">
+      <code>
+       dir
+      </code>
+     </em>
+     devem ser
+     <code class="literal">
       asc
-     </code>ou<code class="literal">
+     </code>
+     ou
+     <code class="literal">
       desc
      </code>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       sort('{1,3,2}'::integer[], 'desc')
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       {3,2,1}
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       sort
-     </code>(<code class="type">
-      integer[]
-     </code>)<code class="returnvalue">
+     </code>
+     (
+     <code class="type">
       integer[]
      </code>
-</p>
-<p class="func_signature">
-<code class="function">
+     )
+     <code class="returnvalue">
+      integer[]
+     </code>
+    </p>
+    <p class="func_signature">
+     <code class="function">
       sort_asc
-     </code>(<code class="type">
-      integer[]
-     </code>)<code class="returnvalue">
+     </code>
+     (
+     <code class="type">
       integer[]
      </code>
-</p>
-<p>Ordena em ordem ascendente.</p>
-<p>
-<code class="literal">
+     )
+     <code class="returnvalue">
+      integer[]
+     </code>
+    </p>
+    <p>
+     Ordena em ordem ascendente.
+    </p>
+    <p>
+     <code class="literal">
       sort(array[11,77,44])
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       {11,44,77}
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       sort_desc
-     </code>(<code class="type">
-      integer[]
-     </code>)<code class="returnvalue">
+     </code>
+     (
+     <code class="type">
       integer[]
      </code>
-</p>
-<p>Ordena em ordem decrescente.</p>
-<p>
-<code class="literal">
+     )
+     <code class="returnvalue">
+      integer[]
+     </code>
+    </p>
+    <p>
+     Ordena em ordem decrescente.
+    </p>
+    <p>
+     <code class="literal">
       sort_desc(array[11,77,44])
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       {77,44,11}
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       uniq
-     </code>(<code class="type">
-      integer[]
-     </code>)<code class="returnvalue">
+     </code>
+     (
+     <code class="type">
       integer[]
      </code>
-</p>
-<p>Remove duplicatas adjacentes. Frequentemente usado com<code class="function">
+     )
+     <code class="returnvalue">
+      integer[]
+     </code>
+    </p>
+    <p>
+     Remove duplicatas adjacentes. Frequentemente usado com
+     <code class="function">
       sort
-     </code>para remover todas as duplicatas.</p>
-<p>
-<code class="literal">
+     </code>
+     para remover todas as duplicatas.
+    </p>
+    <p>
+     <code class="literal">
       uniq('{1,2,2,3,1,1}'::integer[])
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       {1,2,3,1}
      </code>
-</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     <code class="literal">
       uniq(sort('{1,2,3,2,1}'::integer[]))
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       {1,2,3}
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       idx
-     </code>(<code class="type">
+     </code>
+     (
+     <code class="type">
       integer[]
-     </code>,<em class="parameter">
-<code>
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        item
       </code>
-</em>
-<code class="type">
-      integer
-     </code>)<code class="returnvalue">
+     </em>
+     <code class="type">
       integer
      </code>
-</p>
-<p>Retorna o índice do primeiro elemento da matriz que corresponde a<em class="parameter">
-<code>
+     )
+     <code class="returnvalue">
+      integer
+     </code>
+    </p>
+    <p>
+     Retorna o índice do primeiro elemento da matriz que corresponde a
+     <em class="parameter">
+      <code>
        item
       </code>
-</em>, ou 0 se não houver correspondência.</p>
-<p>
-<code class="literal">
+     </em>
+     , ou 0 se não houver correspondência.
+    </p>
+    <p>
+     <code class="literal">
       idx(array[11,22,33,22,11], 22)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       2
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       subarray
-     </code>(<code class="type">
-      integer[]
-     </code>,<em class="parameter">
-<code>
-       start
-      </code>
-</em>
-<code class="type">
-      integer
-     </code>,<em class="parameter">
-<code>
-       len
-      </code>
-</em>
-<code class="type">
-      integer
-     </code>)<code class="returnvalue">
+     </code>
+     (
+     <code class="type">
       integer[]
      </code>
-</p>
-<p>Extrai a porção do array que começa na posição<em class="parameter">
-<code>
+     ,
+     <em class="parameter">
+      <code>
        start
       </code>
-</em>, com<em class="parameter">
-<code>
+     </em>
+     <code class="type">
+      integer
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        len
       </code>
-</em>
+     </em>
+     <code class="type">
+      integer
+     </code>
+     )
+     <code class="returnvalue">
+      integer[]
+     </code>
+    </p>
+    <p>
+     Extrai a porção do array que começa na posição
+     <em class="parameter">
+      <code>
+       start
+      </code>
+     </em>
+     , com
+     <em class="parameter">
+      <code>
+       len
+      </code>
+     </em>
      elements.
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       subarray('{1,2,3,2,1}'::integer[], 2, 3)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       {2,3,2}
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       subarray
-     </code>(<code class="type">
-      integer[]
-     </code>,<em class="parameter">
-<code>
-       start
-      </code>
-</em>
-<code class="type">
-      integer
-     </code>)<code class="returnvalue">
+     </code>
+     (
+     <code class="type">
       integer[]
      </code>
-</p>
-<p>Extrai a porção do array que começa na posição<em class="parameter">
-<code>
+     ,
+     <em class="parameter">
+      <code>
        start
       </code>
-</em>
+     </em>
+     <code class="type">
+      integer
+     </code>
+     )
+     <code class="returnvalue">
+      integer[]
+     </code>
+    </p>
+    <p>
+     Extrai a porção do array que começa na posição
+     <em class="parameter">
+      <code>
+       start
+      </code>
+     </em>
      .
     </p>
-<p>
-<code class="literal">
+    <p>
+     <code class="literal">
       subarray('{1,2,3,2,1}'::integer[], 2)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       {2,3,2,1}
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       intset
-     </code>(<code class="type">
+     </code>
+     (
+     <code class="type">
       integer
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       integer[]
      </code>
-</p>
-<p>Faz um array de um único elemento.</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     Faz um array de um único elemento.
+    </p>
+    <p>
+     <code class="literal">
       intset(42)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       {42}
      </code>
-</p>
-</td>
-</tr>
-</tbody>
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 **Tabela F.9. Operadores `intarray`**
 
 
 
 <table border="1" class="table" summary="intarray Operators">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">Operador</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
+     Operador
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       integer[]
      </code>
-<code class="literal">
+     <code class="literal">
       &amp;&amp;
      </code>
-<code class="type">
+     <code class="type">
       integer[]
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>Os arrays se sobrepõem (têm pelo menos um elemento em comum)?</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p>
+     Os arrays se sobrepõem (têm pelo menos um elemento em comum)?
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       integer[]
      </code>
-<code class="literal">
+     <code class="literal">
       @&gt;
      </code>
-<code class="type">
+     <code class="type">
       integer[]
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>A matriz esquerda contém a matriz direita?</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p>
+     A matriz esquerda contém a matriz direita?
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       integer[]
      </code>
-<code class="literal">
+     <code class="literal">
       &lt;@
      </code>
-<code class="type">
+     <code class="type">
       integer[]
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>A matriz esquerda está contida na matriz direita?</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
-</code>
-<code class="literal">
+    </p>
+    <p>
+     A matriz esquerda está contida na matriz direita?
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
+     </code>
+     <code class="literal">
       #
      </code>
-<code class="type">
+     <code class="type">
       integer[]
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       integer
      </code>
-</p>
-<p>Retorna o número de elementos na matriz.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p>
+     Retorna o número de elementos na matriz.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       integer[]
      </code>
-<code class="literal">
+     <code class="literal">
       #
      </code>
-<code class="type">
-      integer
-     </code>→<code class="returnvalue">
+     <code class="type">
       integer
      </code>
-</p>
-<p>Retorna o índice do primeiro elemento da matriz que corresponde ao argumento correto, ou 0 se não houver correspondência. (O mesmo que<code class="function">
+     →
+     <code class="returnvalue">
+      integer
+     </code>
+    </p>
+    <p>
+     Retorna o índice do primeiro elemento da matriz que corresponde ao argumento correto, ou 0 se não houver correspondência. (O mesmo que
+     <code class="function">
       idx
      </code>
      function.)
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       integer[]
      </code>
-<code class="literal">
+     <code class="literal">
       +
      </code>
-<code class="type">
+     <code class="type">
       integer
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       integer[]
      </code>
-</p>
-<p>Adiciona um elemento ao final do array.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p>
+     Adiciona um elemento ao final do array.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       integer[]
      </code>
-<code class="literal">
+     <code class="literal">
       +
      </code>
-<code class="type">
-      integer[]
-     </code>→<code class="returnvalue">
+     <code class="type">
       integer[]
      </code>
-</p>
-<p>Concatenia os arrays.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+     →
+     <code class="returnvalue">
       integer[]
      </code>
-<code class="literal">
+    </p>
+    <p>
+     Concatenia os arrays.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
+      integer[]
+     </code>
+     <code class="literal">
       -
      </code>
-<code class="type">
+     <code class="type">
       integer
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       integer[]
      </code>
-</p>
-<p>Remove entradas que correspondem ao argumento correto do array.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p>
+     Remove entradas que correspondem ao argumento correto do array.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       integer[]
      </code>
-<code class="literal">
+     <code class="literal">
       -
      </code>
-<code class="type">
-      integer[]
-     </code>→<code class="returnvalue">
+     <code class="type">
       integer[]
      </code>
-</p>
-<p>Remove elementos da matriz da direita da matriz da esquerda.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+     →
+     <code class="returnvalue">
       integer[]
      </code>
-<code class="literal">
+    </p>
+    <p>
+     Remove elementos da matriz da direita da matriz da esquerda.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
+      integer[]
+     </code>
+     <code class="literal">
       |
      </code>
-<code class="type">
+     <code class="type">
       integer
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       integer[]
      </code>
-</p>
-<p>Calcula a união dos argumentos.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p>
+     Calcula a união dos argumentos.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       integer[]
      </code>
-<code class="literal">
+     <code class="literal">
       |
      </code>
-<code class="type">
-      integer[]
-     </code>→<code class="returnvalue">
+     <code class="type">
       integer[]
      </code>
-</p>
-<p>Calcula a união dos argumentos.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+     →
+     <code class="returnvalue">
       integer[]
      </code>
-<code class="literal">
+    </p>
+    <p>
+     Calcula a união dos argumentos.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
+      integer[]
+     </code>
+     <code class="literal">
       &amp;
      </code>
-<code class="type">
-      integer[]
-     </code>→<code class="returnvalue">
+     <code class="type">
       integer[]
      </code>
-</p>
-<p>Calcula a interseção dos argumentos.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+     →
+     <code class="returnvalue">
       integer[]
      </code>
-<code class="literal">
+    </p>
+    <p>
+     Calcula a interseção dos argumentos.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
+      integer[]
+     </code>
+     <code class="literal">
       @@
      </code>
-<code class="type">
+     <code class="type">
       query_int
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>A matriz satisfaz a consulta? (veja abaixo)</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p>
+     A matriz satisfaz a consulta? (veja abaixo)
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       query_int
      </code>
-<code class="literal">
+     <code class="literal">
       ~~
      </code>
-<code class="type">
+     <code class="type">
       integer[]
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>A matriz satisfaz a consulta? (comutativo de<code class="literal">
+    </p>
+    <p>
+     A matriz satisfaz a consulta? (comutativo de
+     <code class="literal">
       @@
-     </code>)</p>
-</td>
-</tr>
-</tbody>
+     </code>
+     )
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Os operadores `&&`, `@>` e `<@` são equivalentes aos operadores internos do PostgreSQL com os mesmos nomes, exceto que eles funcionam apenas em matrizes inteiras que não contêm nulos, enquanto os operadores internos funcionam para qualquer tipo de matriz. Essa restrição os torna mais rápidos que os operadores internos em muitos casos.
 

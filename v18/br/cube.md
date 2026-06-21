@@ -20,212 +20,239 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
 
 
 <table border="1" class="table" summary="Cube External Representations">
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>Sintaxe Externa</th>
-<th>Significado</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
-<em class="replaceable">
-<code>
+ <colgroup>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
+    Sintaxe Externa
+   </th>
+   <th>
+    Significado
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
+     <em class="replaceable">
+      <code>
        x
       </code>
-</em>
-</code>
-</td>
-<td>Um ponto unidimensional (ou intervalo unidimensional de comprimento zero)</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+     </em>
+    </code>
+   </td>
+   <td>
+    Um ponto unidimensional (ou intervalo unidimensional de comprimento zero)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      (
      <em class="replaceable">
-<code>
+      <code>
        x
       </code>
-</em>
+     </em>
      )
     </code>
-</td>
-<td>O mesmo que acima</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
-<em class="replaceable">
-<code>
+   </td>
+   <td>
+    O mesmo que acima
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
+     <em class="replaceable">
+      <code>
        x1
       </code>
-</em>
+     </em>
      ,
      <em class="replaceable">
-<code>
+      <code>
        x2
       </code>
-</em>
+     </em>
      ,...,
      <em class="replaceable">
-<code>
+      <code>
        xn
       </code>
-</em>
-</code>
-</td>
-<td>Um ponto em um espaço n-dimensional, representado internamente como um cubo de volume zero</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+     </em>
+    </code>
+   </td>
+   <td>
+    Um ponto em um espaço n-dimensional, representado internamente como um cubo de volume zero
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      (
      <em class="replaceable">
-<code>
+      <code>
        x1
       </code>
-</em>
+     </em>
      ,
      <em class="replaceable">
-<code>
+      <code>
        x2
       </code>
-</em>
+     </em>
      ,...,
      <em class="replaceable">
-<code>
+      <code>
        xn
       </code>
-</em>
+     </em>
      )
     </code>
-</td>
-<td>O mesmo que acima</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    O mesmo que acima
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      (
      <em class="replaceable">
-<code>
+      <code>
        x
       </code>
-</em>
+     </em>
      ),(
      <em class="replaceable">
-<code>
+      <code>
        y
       </code>
-</em>
+     </em>
      )
     </code>
-</td>
-<td>Um intervalo unidimensional que começa em<em class="replaceable">
-<code>
+   </td>
+   <td>
+    Um intervalo unidimensional que começa em
+    <em class="replaceable">
+     <code>
       x
      </code>
-</em>e terminando em<em class="replaceable">
-<code>
+    </em>
+    e terminando em
+    <em class="replaceable">
+     <code>
       y
      </code>
-</em>ou vice-versa; a ordem não importa</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+    </em>
+    ou vice-versa; a ordem não importa
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      [(
      <em class="replaceable">
-<code>
+      <code>
        x
       </code>
-</em>
+     </em>
      ),(
      <em class="replaceable">
-<code>
+      <code>
        y
       </code>
-</em>
+     </em>
      )]
     </code>
-</td>
-<td>O mesmo que acima</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    O mesmo que acima
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      (
      <em class="replaceable">
-<code>
+      <code>
        x1
       </code>
-</em>
+     </em>
      ,...,
      <em class="replaceable">
-<code>
+      <code>
        xn
       </code>
-</em>
+     </em>
      ),(
      <em class="replaceable">
-<code>
+      <code>
        y1
       </code>
-</em>
+     </em>
      ,...,
      <em class="replaceable">
-<code>
+      <code>
        yn
       </code>
-</em>
+     </em>
      )
     </code>
-</td>
-<td>Um cubo de n dimensões representado por um par de seus cantos opostos diagonalmente</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Um cubo de n dimensões representado por um par de seus cantos opostos diagonalmente
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      [(
      <em class="replaceable">
-<code>
+      <code>
        x1
       </code>
-</em>
+     </em>
      ,...,
      <em class="replaceable">
-<code>
+      <code>
        xn
       </code>
-</em>
+     </em>
      ),(
      <em class="replaceable">
-<code>
+      <code>
        y1
       </code>
-</em>
+     </em>
      ,...,
      <em class="replaceable">
-<code>
+      <code>
        yn
       </code>
-</em>
+     </em>
      )]
     </code>
-</td>
-<td>O mesmo que acima</td>
-</tr>
-</tbody>
+   </td>
+   <td>
+    O mesmo que acima
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Não importa a ordem em que os cantos opostos de um cubo são inseridos. As funções `cube` trocam automaticamente os valores, se necessário, para criar uma representação interna uniforme “inferior esquerdo — superior direito”. Quando os cantos coincidem, a `cube` armazena apenas um canto juntamente com uma bandeira de “é ponto” para evitar desperdício de espaço.
 
@@ -244,207 +271,264 @@ Os valores são armazenados internamente como números de ponto flutuante de 64 
 
 
 <table border="1" class="table" summary="Cube Operators">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">Operador</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
+     Operador
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       cube
      </code>
-<code class="literal">
+     <code class="literal">
       &amp;&amp;
      </code>
-<code class="type">
+     <code class="type">
       cube
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>Os cubos se sobrepõem?</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p>
+     Os cubos se sobrepõem?
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       cube
      </code>
-<code class="literal">
+     <code class="literal">
       @&gt;
      </code>
-<code class="type">
+     <code class="type">
       cube
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>O primeiro cubo contém o segundo?</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p>
+     O primeiro cubo contém o segundo?
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       cube
      </code>
-<code class="literal">
+     <code class="literal">
       &lt;@
      </code>
-<code class="type">
+     <code class="type">
       cube
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>O primeiro cubo está contido no segundo?</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p>
+     O primeiro cubo está contido no segundo?
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       cube
      </code>
-<code class="literal">
+     <code class="literal">
       -&gt;
      </code>
-<code class="type">
+     <code class="type">
       integer
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       float8
      </code>
-</p>
-<p>Extrai os<em class="parameter">
-<code>
+    </p>
+    <p>
+     Extrai os
+     <em class="parameter">
+      <code>
        n
       </code>
-</em>- a coordenada da (contando de 1) do cubo.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+     </em>
+     - a coordenada da (contando de 1) do cubo.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       cube
      </code>
-<code class="literal">
+     <code class="literal">
       ~&gt;
      </code>
-<code class="type">
+     <code class="type">
       integer
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       float8
      </code>
-</p>
-<p>Extrai os<em class="parameter">
-<code>
+    </p>
+    <p>
+     Extrai os
+     <em class="parameter">
+      <code>
        n
       </code>
-</em>- a coordenada da cuboctaedro, contando da seguinte maneira:<em class="parameter">
-<code>
+     </em>
+     - a coordenada da cuboctaedro, contando da seguinte maneira:
+     <em class="parameter">
+      <code>
        n
       </code>
-</em>= 2<em class="parameter">
-<code>
+     </em>
+     = 2
+     <em class="parameter">
+      <code>
        k
       </code>
-</em>- 1 significa limite inferior de<em class="parameter">
-<code>
+     </em>
+     - 1 significa limite inferior de
+     <em class="parameter">
+      <code>
        k
       </code>
-</em>-a dimensão,<em class="parameter">
-<code>
+     </em>
+     -a dimensão,
+     <em class="parameter">
+      <code>
        n
       </code>
-</em>= 2<em class="parameter">
-<code>
+     </em>
+     = 2
+     <em class="parameter">
+      <code>
        k
       </code>
-</em>limite superior de<em class="parameter">
-<code>
+     </em>
+     limite superior de
+     <em class="parameter">
+      <code>
        k
       </code>
-</em>-a dimensão. Negativo<em class="parameter">
-<code>
+     </em>
+     -a dimensão. Negativo
+     <em class="parameter">
+      <code>
        n
       </code>
-</em>denota o valor inverso da coordenada positiva correspondente. Este operador é projetado para suporte KNN-GiST.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+     </em>
+     denota o valor inverso da coordenada positiva correspondente. Este operador é projetado para suporte KNN-GiST.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       cube
      </code>
-<code class="literal">
+     <code class="literal">
       &lt;-&gt;
      </code>
-<code class="type">
+     <code class="type">
       cube
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       float8
      </code>
-</p>
-<p>Calcula a distância euclidiana entre os dois cubos.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p>
+     Calcula a distância euclidiana entre os dois cubos.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       cube
      </code>
-<code class="literal">
+     <code class="literal">
       &lt;#&gt;
      </code>
-<code class="type">
+     <code class="type">
       cube
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       float8
      </code>
-</p>
-<p>Calcula a distância em táxi (métrica L-1) entre os dois cubos.</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="type">
+    </p>
+    <p>
+     Calcula a distância em táxi (métrica L-1) entre os dois cubos.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="type">
       cube
      </code>
-<code class="literal">
+     <code class="literal">
       &lt;=&gt;
      </code>
-<code class="type">
+     <code class="type">
       cube
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       float8
      </code>
-</p>
-<p>Calcula a distância Chebyshev (metrica L-inf) entre os dois cubos.</p>
-</td>
-</tr>
-</tbody>
+    </p>
+    <p>
+     Calcula a distância Chebyshev (metrica L-inf) entre os dois cubos.
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
 
-Além dos operadores acima, os operadores de comparação comuns mostrados na [Tabela 9.1] [(functions-comparison.md#FUNCTIONS-COMPARISON-OP-TABLE "Table 9.1. Comparison Operators")] estão disponíveis para o tipo `cube`. Esses operadores primeiro comparam as primeiras coordenadas e, se essas forem iguais, comparam as segundas coordenadas, etc. Eles existem principalmente para suportar a classe de operador de índice de árvore b para `cube`, que pode ser útil, por exemplo, se você deseja uma restrição ÚNICA em uma coluna de `cube`. Caso contrário, esse ordenamento não é de grande utilidade prática.
+
+
+
+
+Além dos operadores acima, os operadores de comparação comuns mostrados na [Tabela 9.1](functions-comparison.md#FUNCTIONS-COMPARISON-OP-TABLE) estão disponíveis para o tipo `cube`. Esses operadores primeiro comparam as primeiras coordenadas e, se essas forem iguais, comparam as segundas coordenadas, etc. Eles existem principalmente para suportar a classe de operador de índice de árvore b para `cube`, que pode ser útil, por exemplo, se você deseja uma restrição ÚNICA em uma coluna de `cube`. Caso contrário, esse ordenamento não é de grande utilidade prática.
 
 O módulo `cube` também fornece uma classe de operador de índice GiST para valores de `cube`. Um índice GiST de `cube` pode ser usado para pesquisar valores usando os operadores `=`, `&&`, `@>` e `<@` nas cláusulas de `WHERE`.
 
@@ -473,428 +557,607 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
 
 
 <table border="1" class="table" summary="Cube Functions">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">Função</p>
-<p>Descrição</p>
-<p>Exemplo(s)</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
-      cube
-     </code>(<code class="type">
-      float8
-     </code>)<code class="returnvalue">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
+     Função
+    </p>
+    <p>
+     Descrição
+    </p>
+    <p>
+     Exemplo(s)
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       cube
      </code>
-</p>
-<p>Faz um cubo unidimensional com ambas as coordenadas iguais.</p>
-<p>
-<code class="literal">
+     (
+     <code class="type">
+      float8
+     </code>
+     )
+     <code class="returnvalue">
+      cube
+     </code>
+    </p>
+    <p>
+     Faz um cubo unidimensional com ambas as coordenadas iguais.
+    </p>
+    <p>
+     <code class="literal">
       cube(1)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       (1)
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
-      cube
-     </code>(<code class="type">
-      float8
-     </code>,<code class="type">
-      float8
-     </code>)<code class="returnvalue">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       cube
      </code>
-</p>
-<p>Faz um cubo unidimensional.</p>
-<p>
-<code class="literal">
+     (
+     <code class="type">
+      float8
+     </code>
+     ,
+     <code class="type">
+      float8
+     </code>
+     )
+     <code class="returnvalue">
+      cube
+     </code>
+    </p>
+    <p>
+     Faz um cubo unidimensional.
+    </p>
+    <p>
+     <code class="literal">
       cube(1, 2)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       (1),(2)
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
-      cube
-     </code>(<code class="type">
-      float8[]
-     </code>)<code class="returnvalue">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       cube
      </code>
-</p>
-<p>Faz um cubo de volume zero usando as coordenadas definidas pelo array.</p>
-<p>
-<code class="literal">
+     (
+     <code class="type">
+      float8[]
+     </code>
+     )
+     <code class="returnvalue">
+      cube
+     </code>
+    </p>
+    <p>
+     Faz um cubo de volume zero usando as coordenadas definidas pelo array.
+    </p>
+    <p>
+     <code class="literal">
       cube(ARRAY[1,2,3])
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       (1, 2, 3)
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
-      cube
-     </code>(<code class="type">
-      float8[]
-     </code>,<code class="type">
-      float8[]
-     </code>)<code class="returnvalue">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       cube
      </code>
-</p>
-<p>Faz um cubo com as coordenadas superior direita e inferior esquerda definidas pelos dois arrays, que devem ter o mesmo comprimento.</p>
-<p>
-<code class="literal">
+     (
+     <code class="type">
+      float8[]
+     </code>
+     ,
+     <code class="type">
+      float8[]
+     </code>
+     )
+     <code class="returnvalue">
+      cube
+     </code>
+    </p>
+    <p>
+     Faz um cubo com as coordenadas superior direita e inferior esquerda definidas pelos dois arrays, que devem ter o mesmo comprimento.
+    </p>
+    <p>
+     <code class="literal">
       cube(ARRAY[1,2], ARRAY[3,4])
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       (1, 2),(3, 4)
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
-      cube
-     </code>(<code class="type">
-      cube
-     </code>,<code class="type">
-      float8
-     </code>)<code class="returnvalue">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       cube
      </code>
-</p>
-<p>Cria um novo cubo ao adicionar uma dimensão a um cubo existente, com os mesmos valores para ambos os pontos finais da nova coordenada. Isso é útil para construir cubos peça por peça a partir de valores calculados.</p>
-<p>
-<code class="literal">
+     (
+     <code class="type">
+      cube
+     </code>
+     ,
+     <code class="type">
+      float8
+     </code>
+     )
+     <code class="returnvalue">
+      cube
+     </code>
+    </p>
+    <p>
+     Cria um novo cubo ao adicionar uma dimensão a um cubo existente, com os mesmos valores para ambos os pontos finais da nova coordenada. Isso é útil para construir cubos peça por peça a partir de valores calculados.
+    </p>
+    <p>
+     <code class="literal">
       cube('(1,2),(3,4)'::cube, 5)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       (1, 2, 5),(3, 4, 5)
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
-      cube
-     </code>(<code class="type">
-      cube
-     </code>,<code class="type">
-      float8
-     </code>,<code class="type">
-      float8
-     </code>)<code class="returnvalue">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       cube
      </code>
-</p>
-<p>Cria um novo cubo adicionando uma dimensão a um cubo existente. Isso é útil para construir cubos peça por peça a partir de valores calculados.</p>
-<p>
-<code class="literal">
+     (
+     <code class="type">
+      cube
+     </code>
+     ,
+     <code class="type">
+      float8
+     </code>
+     ,
+     <code class="type">
+      float8
+     </code>
+     )
+     <code class="returnvalue">
+      cube
+     </code>
+    </p>
+    <p>
+     Cria um novo cubo adicionando uma dimensão a um cubo existente. Isso é útil para construir cubos peça por peça a partir de valores calculados.
+    </p>
+    <p>
+     <code class="literal">
       cube('(1,2),(3,4)'::cube, 5, 6)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       (1, 2, 5),(3, 4, 6)
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       cube_dim
-     </code>(<code class="type">
+     </code>
+     (
+     <code class="type">
       cube
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       integer
      </code>
-</p>
-<p>Retorna o número de dimensões do cubo.</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     Retorna o número de dimensões do cubo.
+    </p>
+    <p>
+     <code class="literal">
       cube_dim('(1,2),(3,4)')
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       2
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       cube_ll_coord
-     </code>(<code class="type">
+     </code>
+     (
+     <code class="type">
       cube
-     </code>,<code class="type">
+     </code>
+     ,
+     <code class="type">
       integer
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       float8
      </code>
-</p>
-<p>Retorna o<em class="parameter">
-<code>
+    </p>
+    <p>
+     Retorna o
+     <em class="parameter">
+      <code>
        n
       </code>
-</em>- o valor da coordenada da diagonal que vai do canto inferior esquerdo do cubo.</p>
-<p>
-<code class="literal">
+     </em>
+     - o valor da coordenada da diagonal que vai do canto inferior esquerdo do cubo.
+    </p>
+    <p>
+     <code class="literal">
       cube_ll_coord('(1,2),(3,4)', 2)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       2
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       cube_ur_coord
-     </code>(<code class="type">
+     </code>
+     (
+     <code class="type">
       cube
-     </code>,<code class="type">
+     </code>
+     ,
+     <code class="type">
       integer
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       float8
      </code>
-</p>
-<p>Retorna o<em class="parameter">
-<code>
+    </p>
+    <p>
+     Retorna o
+     <em class="parameter">
+      <code>
        n
       </code>
-</em>- o valor da coordenada da terceira dimensão para o canto superior direito do cubo.</p>
-<p>
-<code class="literal">
+     </em>
+     - o valor da coordenada da terceira dimensão para o canto superior direito do cubo.
+    </p>
+    <p>
+     <code class="literal">
       cube_ur_coord('(1,2),(3,4)', 2)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       4
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       cube_is_point
-     </code>(<code class="type">
+     </code>
+     (
+     <code class="type">
       cube
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>Retorna verdadeiro se o cubo for um ponto, ou seja, se as duas arestas definidoras forem iguais.</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     Retorna verdadeiro se o cubo for um ponto, ou seja, se as duas arestas definidoras forem iguais.
+    </p>
+    <p>
+     <code class="literal">
       cube_is_point(cube(1,1))
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       t
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       cube_distance
-     </code>(<code class="type">
+     </code>
+     (
+     <code class="type">
       cube
-     </code>,<code class="type">
+     </code>
+     ,
+     <code class="type">
       cube
-     </code>)<code class="returnvalue">
+     </code>
+     )
+     <code class="returnvalue">
       float8
      </code>
-</p>
-<p>Retorna a distância entre dois cubos. Se ambos os cubos forem pontos, esta é a função de distância normal.</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     Retorna a distância entre dois cubos. Se ambos os cubos forem pontos, esta é a função de distância normal.
+    </p>
+    <p>
+     <code class="literal">
       cube_distance('(1,2)', '(3,4)')
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       2.8284271247461903
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       cube_subset
-     </code>(<code class="type">
-      cube
-     </code>,<code class="type">
-      integer[]
-     </code>)<code class="returnvalue">
+     </code>
+     (
+     <code class="type">
       cube
      </code>
-</p>
-<p>Faz um novo cubo a partir de um cubo existente, usando uma lista de índices de dimensão de um array. Pode ser usado para extrair os pontos finais de uma única dimensão, ou para descartar as dimensões, ou para reordená-las conforme desejado.</p>
-<p>
-<code class="literal">
+     ,
+     <code class="type">
+      integer[]
+     </code>
+     )
+     <code class="returnvalue">
+      cube
+     </code>
+    </p>
+    <p>
+     Faz um novo cubo a partir de um cubo existente, usando uma lista de índices de dimensão de um array. Pode ser usado para extrair os pontos finais de uma única dimensão, ou para descartar as dimensões, ou para reordená-las conforme desejado.
+    </p>
+    <p>
+     <code class="literal">
       cube_subset(cube('(1,3,5),(6,7,8)'), ARRAY[2])
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       (3),(7)
      </code>
-</p>
-<p>
-<code class="literal">
+    </p>
+    <p>
+     <code class="literal">
       cube_subset(cube('(1,3,5),(6,7,8)'), ARRAY[3,2,1,1])
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       (5, 3, 1, 1),(8, 7, 6, 6)
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       cube_union
-     </code>(<code class="type">
-      cube
-     </code>,<code class="type">
-      cube
-     </code>)<code class="returnvalue">
+     </code>
+     (
+     <code class="type">
       cube
      </code>
-</p>
-<p>Produz a união de dois cubos.</p>
-<p>
-<code class="literal">
+     ,
+     <code class="type">
+      cube
+     </code>
+     )
+     <code class="returnvalue">
+      cube
+     </code>
+    </p>
+    <p>
+     Produz a união de dois cubos.
+    </p>
+    <p>
+     <code class="literal">
       cube_union('(1,2)', '(3,4)')
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       (1, 2),(3, 4)
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       cube_inter
-     </code>(<code class="type">
-      cube
-     </code>,<code class="type">
-      cube
-     </code>)<code class="returnvalue">
+     </code>
+     (
+     <code class="type">
       cube
      </code>
-</p>
-<p>Produz a interseção de dois cubos.</p>
-<p>
-<code class="literal">
+     ,
+     <code class="type">
+      cube
+     </code>
+     )
+     <code class="returnvalue">
+      cube
+     </code>
+    </p>
+    <p>
+     Produz a interseção de dois cubos.
+    </p>
+    <p>
+     <code class="literal">
       cube_inter('(1,2)', '(3,4)')
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       (3, 4),(1, 2)
      </code>
-</p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       cube_enlarge
-     </code>(<em class="parameter">
-<code>
+     </code>
+     (
+     <em class="parameter">
+      <code>
        c
       </code>
-</em>
-<code class="type">
-      cube
-     </code>,<em class="parameter">
-<code>
-       r
-      </code>
-</em>
-<code class="type">
-      double
-     </code>,<em class="parameter">
-<code>
-       n
-      </code>
-</em>
-<code class="type">
-      integer
-     </code>)<code class="returnvalue">
+     </em>
+     <code class="type">
       cube
      </code>
-</p>
-<p>Aumenta o tamanho do cubo pelo raio especificado<em class="parameter">
-<code>
+     ,
+     <em class="parameter">
+      <code>
        r
       </code>
-</em>em pelo menos<em class="parameter">
-<code>
+     </em>
+     <code class="type">
+      double
+     </code>
+     ,
+     <em class="parameter">
+      <code>
        n
       </code>
-</em>Dimensões. Se o raio for negativo, o cubo é reduzido. Todas as dimensões definidas são alteradas pelo raio.<em class="parameter">
-<code>
+     </em>
+     <code class="type">
+      integer
+     </code>
+     )
+     <code class="returnvalue">
+      cube
+     </code>
+    </p>
+    <p>
+     Aumenta o tamanho do cubo pelo raio especificado
+     <em class="parameter">
+      <code>
        r
       </code>
-</em>As coordenadas da parte inferior esquerda são diminuídas por<em class="parameter">
-<code>
-       r
-      </code>
-</em>e as coordenadas superiores e à direita são aumentadas por<em class="parameter">
-<code>
-       r
-      </code>
-</em>. Se uma coordenada inferior esquerda for aumentada para mais do que a coordenada correspondente superior direita (isso só pode acontecer quando<em class="parameter">
-<code>
-       r
-      </code>
-</em>&lt; 0) do que ambas as coordenadas estejam definidas em sua média. Se<em class="parameter">
-<code>
+     </em>
+     em pelo menos
+     <em class="parameter">
+      <code>
        n
       </code>
-</em>é maior que o número de dimensões definidas e o cubo está sendo ampliado (<em class="parameter">
-<code>
+     </em>
+     Dimensões. Se o raio for negativo, o cubo é reduzido. Todas as dimensões definidas são alteradas pelo raio.
+     <em class="parameter">
+      <code>
        r
       </code>
-</em>&gt; 0), então dimensões extras são adicionadas para fazer<em class="parameter">
-<code>
+     </em>
+     As coordenadas da parte inferior esquerda são diminuídas por
+     <em class="parameter">
+      <code>
+       r
+      </code>
+     </em>
+     e as coordenadas superiores e à direita são aumentadas por
+     <em class="parameter">
+      <code>
+       r
+      </code>
+     </em>
+     . Se uma coordenada inferior esquerda for aumentada para mais do que a coordenada correspondente superior direita (isso só pode acontecer quando
+     <em class="parameter">
+      <code>
+       r
+      </code>
+     </em>
+     &lt; 0) do que ambas as coordenadas estejam definidas em sua média. Se
+     <em class="parameter">
+      <code>
        n
       </code>
-</em>em conjunto; 0 é usado como o valor inicial para as coordenadas extras. Esta função é útil para criar caixas de delimitação em torno de um ponto para a busca de pontos próximos.</p>
-<p>
-<code class="literal">
+     </em>
+     é maior que o número de dimensões definidas e o cubo está sendo ampliado (
+     <em class="parameter">
+      <code>
+       r
+      </code>
+     </em>
+     &gt; 0), então dimensões extras são adicionadas para fazer
+     <em class="parameter">
+      <code>
+       n
+      </code>
+     </em>
+     em conjunto; 0 é usado como o valor inicial para as coordenadas extras. Esta função é útil para criar caixas de delimitação em torno de um ponto para a busca de pontos próximos.
+    </p>
+    <p>
+     <code class="literal">
       cube_enlarge('(1,2),(3,4)', 0.5, 3)
-     </code>→<code class="returnvalue">
+     </code>
+     →
+     <code class="returnvalue">
       (0.5, 1.5, -0.5),(3.5, 4.5, 0.5)
      </code>
-</p>
-</td>
-</tr>
-</tbody>
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 

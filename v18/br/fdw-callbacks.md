@@ -30,7 +30,7 @@ Obtenha estimativas do tamanho da relação para uma tabela estrangeira. Isso é
 
 Essa função deve atualizar `baserel->rows` para ser o número esperado de linhas devolvidas pelo varrimento da tabela, após contabilizar o filtro realizado pelos quals de restrição. O valor inicial de `baserel->rows` é apenas uma estimativa constante padrão, que deve ser substituída, se possível. A função também pode optar por atualizar `baserel->width` se puder calcular uma melhor estimativa da largura média do resultado da linha. (O valor inicial é baseado nos tipos de dados das colunas e nos valores de largura média das colunas medidos pelo último `ANALYZE`. Além disso, essa função pode atualizar `baserel->tuples` se puder calcular uma melhor estimativa do total de linhas da tabela externa. (O valor inicial é do `pg_class`.`reltuples` que representa o total de linhas vistas pelo último `ANALYZE`; será `-1` se nenhuma `ANALYZE` tiver sido feita nesta tabela externa.)
 
-Veja [Seção 58.4][(fdw-planning.md "58.4. Foreign Data Wrapper Query Planning")] para informações adicionais.
+Veja [Seção 58.4](fdw-planning.md) para informações adicionais.
 
 ```
 void
@@ -43,7 +43,7 @@ Crie possíveis caminhos de acesso para uma varredura em uma tabela estrangeira.
 
 Essa função deve gerar pelo menos um caminho de acesso (nó `ForeignPath`) para uma varredura na tabela estrangeira e deve chamar `add_path` para adicionar cada um desses caminhos ao `baserel->pathlist`. Recomenda-se usar `create_foreignscan_path` para construir os nós `ForeignPath`. A função pode gerar múltiplos caminhos de acesso, por exemplo, um caminho que tenha `pathkeys` válido para representar um resultado pré-ordenado. Cada caminho de acesso deve conter estimativas de custo e pode conter qualquer informação privada do FDW necessária para identificar o método de varredura pretendido.
 
-Veja [Seção 58.4][(fdw-planning.md "58.4. Foreign Data Wrapper Query Planning")] para informações adicionais.
+Veja [Seção 58.4](fdw-planning.md) para informações adicionais.
 
 ```
 ForeignScan *
@@ -60,7 +60,7 @@ Crie um nó de plano `ForeignScan` a partir do caminho de acesso externo selecio
 
 Essa função deve criar e retornar um nó do plano `ForeignScan`; é recomendável usar `make_foreignscan` para construir o nó `ForeignScan`.
 
-Veja [Seção 58.4][(fdw-planning.md "58.4. Foreign Data Wrapper Query Planning")] para informações adicionais.
+Veja [Seção 58.4](fdw-planning.md) para informações adicionais.
 
 ```
 void
@@ -123,7 +123,7 @@ Se for escolhido um caminho `ForeignPath` para a junção, ele representará tod
 
 Começando com o PostgreSQL 16, `fs_relids` inclui os índices rangetable das junções externas, se houver sido envolvida alguma delas nessa junção. O novo campo `fs_base_relids` inclui apenas índices de relação de base, e, portanto, imita a semântica antiga do `fs_relids`.
 
-Veja [Seção 58.4][(fdw-planning.md "58.4. Foreign Data Wrapper Query Planning")] para informações adicionais.
+Veja [Seção 58.4](fdw-planning.md) para informações adicionais.
 
 ### 58.2.3. Rotinas FDW para o planejamento do processamento pós-scan/joinamento [#](#FDW-CALLBACKS-UPPER-PLANNING)
 
@@ -142,7 +142,7 @@ Crie possíveis caminhos de acesso para o processamento de *relação superior*,
 
 O parâmetro `stage` identifica qual etapa pós-scan/junção está sendo considerada atualmente. `output_rel` é a relação superior que deve receber caminhos representando o cálculo desta etapa, e `input_rel` é a relação que representa a entrada para esta etapa. O parâmetro `extra` fornece detalhes adicionais, atualmente, ele é definido apenas para `UPPERREL_PARTIAL_GROUP_AGG` ou `UPPERREL_GROUP_AGG`, nesse caso, ele aponta para uma estrutura `GroupPathExtraData`; ou para `UPPERREL_FINAL`, nesse caso, ele aponta para uma estrutura `FinalPathExtraData`. (Nota que os caminhos `output_rel` adicionados não teriam, normalmente, nenhuma dependência direta dos caminhos do `input_rel`, uma vez que seu processamento é esperado para ser feito externamente. No entanto, examinar caminhos gerados anteriormente para a etapa de processamento anterior pode ser útil para evitar trabalho de planejamento redundante.)
 
-Veja [Seção 58.4][(fdw-planning.md "58.4. Foreign Data Wrapper Query Planning")] para informações adicionais.
+Veja [Seção 58.4](fdw-planning.md) para informações adicionais.
 
 ### 58.2.4. Rotinas FDW para Atualização de Tabelas Estrangeiras [#](#FDW-CALLBACKS-UPDATE)
 
@@ -174,7 +174,7 @@ Realize quaisquer ações de planejamento adicionais necessárias para uma inser
 
 `root` é a informação global do planejador sobre a consulta. `plan` é o nó do plano `ModifyTable`, que é completo, exceto pelo campo `fdwPrivLists`. `resultRelation` identifica a tabela estrangeira alvo por seu índice de tabela de intervalo. `subplan_index` identifica qual alvo do nó `ModifyTable` este é, contando a partir de zero; use isso se você quiser indexar em subestruturas de relação por alvo do nó `plan`.
 
-Veja [Seção 58.4][(fdw-planning.md "58.4. Foreign Data Wrapper Query Planning")] para informações adicionais.
+Veja [Seção 58.4](fdw-planning.md) para informações adicionais.
 
 Se o ponteiro `PlanForeignModify` estiver configurado como `NULL`, não são realizadas ações adicionais de tempo de plano, e a lista `fdw_private` entregue a `BeginForeignModify` será NIL.
 
@@ -334,7 +334,7 @@ Decida se é seguro executar uma modificação direta no servidor remoto. Se sim
 
 Para executar a modificação direta no servidor remoto, essa função deve reescrever o subplano-alvo com um nó de plano `ForeignScan` que execute a modificação direta no servidor remoto. Os campos `operation` e `resultRelation` do `ForeignScan` devem ser definidos apropriadamente. `operation` deve ser definido para a enumeração `CmdType` correspondente ao tipo de declaração (ou seja, `CMD_UPDATE` para `UPDATE`, `CMD_INSERT` para `INSERT` e `CMD_DELETE` para `DELETE`), e o argumento `resultRelation` deve ser copiado para o campo `resultRelation`.
 
-Veja [Seção 58.4][(fdw-planning.md "58.4. Foreign Data Wrapper Query Planning")] para informações adicionais.
+Veja [Seção 58.4](fdw-planning.md) para informações adicionais.
 
 Se o ponteiro `PlanDirectModify` estiver configurado para `NULL`, não serão realizadas tentativas de execução de uma modificação direta no servidor remoto.
 
@@ -381,7 +381,7 @@ ExecForeignTruncate(List *rels,
                     bool restart_seqs);
 ```
 
-Retorne tabelas estrangeiras. Essa função é chamada quando [TRUNCATE][(sql-truncate.md "TRUNCATE")] é executada em uma tabela estrangeira. `rels` é uma lista de estruturas de dados `Relation` de tabelas estrangeiras a serem truncadas.
+Retorne tabelas estrangeiras. Essa função é chamada quando [TRUNCATE](sql-truncate.md) é executada em uma tabela estrangeira. `rels` é uma lista de estruturas de dados `Relation` de tabelas estrangeiras a serem truncadas.
 
 `behavior` é ou `DROP_RESTRICT` ou `DROP_CASCADE`, indicando que a opção `RESTRICT` ou `CASCADE` foi solicitada no comando original `TRUNCATE`, respectivamente.
 
@@ -395,7 +395,7 @@ Se o ponteiro `ExecForeignTruncate` estiver definido como `NULL`, as tentativas 
 
 ### 58.2.6. Rotinas FDW para bloqueio de linhas [#](#FDW-CALLBACKS-ROW-LOCKING)
 
-Se uma FDW desejar suportar o *bloqueio tardio da linha* (conforme descrito em [Seção 58.5][(fdw-row-locking.md "58.5. Row Locking in Foreign Data Wrappers")]), ela deve fornecer as seguintes funções de callback:
+Se uma FDW desejar suportar o *bloqueio tardio da linha* (conforme descrito em [Seção 58.5](fdw-row-locking.md)), ela deve fornecer as seguintes funções de callback:
 
 ```
 RowMarkType
@@ -409,7 +409,7 @@ Essa função é chamada durante o planejamento da consulta para cada tabela est
 
 Se o ponteiro `GetForeignRowMarkType` estiver definido como `NULL`, a opção `ROW_MARK_COPY` é sempre usada. (Isso implica que `RefetchForeignRow` nunca será chamado, portanto, não precisa ser fornecida também.)
 
-Veja [Seção 58.5][(fdw-row-locking.md "58.5. Row Locking in Foreign Data Wrappers")] para mais informações.
+Veja [Seção 58.5](fdw-row-locking.md) para mais informações.
 
 ```
 void
@@ -432,7 +432,7 @@ O `rowid` é o valor `ctid` previamente lido para a linha que será recuperada n
 
 Se o ponteiro `RefetchForeignRow` estiver definido como `NULL`, as tentativas de recuperar novamente as linhas falharão com uma mensagem de erro.
 
-Veja [Seção 58.5][(fdw-row-locking.md "58.5. Row Locking in Foreign Data Wrappers")] para mais informações.
+Veja [Seção 58.5](fdw-row-locking.md) para mais informações.
 
 ```
 bool
@@ -488,7 +488,7 @@ AnalyzeForeignTable(Relation relation,
                     BlockNumber *totalpages);
 ```
 
-Essa função é chamada quando [ANALYZE][(sql-analyze.md "ANALYZE")] é executada em uma tabela estrangeira. Se o FDW puder coletar estatísticas para essa tabela estrangeira, deve retornar `true`, e fornecer um ponteiro para uma função que coletará linhas de amostra da tabela em *`func`*, além do tamanho estimado da tabela em páginas em *`totalpages`*. Caso contrário, retorne `false`.
+Essa função é chamada quando [ANALYZE](sql-analyze.md) é executada em uma tabela estrangeira. Se o FDW puder coletar estatísticas para essa tabela estrangeira, deve retornar `true`, e fornecer um ponteiro para uma função que coletará linhas de amostra da tabela em *`func`*, além do tamanho estimado da tabela em páginas em *`totalpages`*. Caso contrário, retorne `false`.
 
 Se o FDW não suportar a coleta de estatísticas para quaisquer tabelas, o ponteiro `AnalyzeForeignTable` pode ser definido como `NULL`.
 
@@ -513,7 +513,7 @@ List *
 ImportForeignSchema(ImportForeignSchemaStmt *stmt, Oid serverOid);
 ```
 
-Obtenha uma lista de comandos de criação de tabelas estrangeiras. Esta função é chamada ao executar [IMPORT FOREIGN SCHEMA][(sql-importforeignschema.md "IMPORT FOREIGN SCHEMA")], e é passada a árvore de análise para essa declaração, bem como o OID do servidor estrangeiro a ser usado. Ela deve retornar uma lista de strings em C, cada uma das quais deve conter um comando [CREATE FOREIGN TABLE][(sql-createforeigntable.md "CREATE FOREIGN TABLE")]. Essas strings serão analisadas e executadas pelo servidor principal.
+Obtenha uma lista de comandos de criação de tabelas estrangeiras. Esta função é chamada ao executar [IMPORT FOREIGN SCHEMA](sql-importforeignschema.md), e é passada a árvore de análise para essa declaração, bem como o OID do servidor estrangeiro a ser usado. Ela deve retornar uma lista de strings em C, cada uma das quais deve conter um comando [CREATE FOREIGN TABLE](sql-createforeigntable.md). Essas strings serão analisadas e executadas pelo servidor principal.
 
 Dentro da estrutura `ImportForeignSchemaStmt`, `remote_schema` é o nome do esquema remoto a partir do qual as tabelas devem ser importadas. `list_type` identifica como filtrar os nomes das tabelas: `FDW_IMPORT_SCHEMA_ALL` significa que todas as tabelas no esquema remoto devem ser importadas (neste caso, `table_list` está vazio), `FDW_IMPORT_SCHEMA_LIMIT_TO` significa incluir apenas as tabelas listadas em `table_list`, e `FDW_IMPORT_SCHEMA_EXCEPT` significa excluir as tabelas listadas em `table_list`. `options` é uma lista de opções usadas para o processo de importação. Os significados das opções cabem ao FDW. Por exemplo, um FDW pode usar uma opção para definir se os atributos `NOT NULL` das colunas devem ser importados. Essas opções não precisam ter nada a ver com as suportadas pelo FDW como opções de objeto de banco de dados.
 

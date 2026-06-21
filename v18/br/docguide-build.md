@@ -17,13 +17,13 @@ doc/src/sgml$ make html
 
 Este também é o alvo padrão. A saída aparece no subdiretório `html`.
 
-Para produzir documentação HTML com o conjunto de estilos usado em [postgresql.org][(https://www.postgresql.org/docs/current/)], em vez do estilo simples padrão, use:
+Para produzir documentação HTML com o conjunto de estilos usado em [postgresql.org](https://www.postgresql.org/docs/current/), em vez do estilo simples padrão, use:
 
 ```
 doc/src/sgml$ make STYLE=website html
 ```
 
-Se a opção `STYLE=website` for usada, os arquivos HTML gerados incluem referências a folhas de estilo hospedadas em [postgresql.org][(https://www.postgresql.org/docs/current/)] e exigem acesso à rede para visualização.
+Se a opção `STYLE=website` for usada, os arquivos HTML gerados incluem referências a folhas de estilo hospedadas em [postgresql.org](https://www.postgresql.org/docs/current/) e exigem acesso à rede para visualização.
 
 ### J.3.2. Manpages [#](#DOCGUIDE-BUILD-MANPAGES)
 
@@ -41,11 +41,11 @@ Para produzir uma versão em PDF da documentação usando FOP, você pode usar u
 
 ```
   doc/src/sgml$ make postgres-A4.pdf
-  ``` * Para o formato de carta dos EUA:
+```
 
-  ```
-  doc/src/sgml$ make postgres-US.pdf
-  ```
+```
+doc/src/sgml$ make postgres-US.pdf
+```
 
 Como a documentação do PostgreSQL é bastante extensa, o FOP exigirá uma quantidade significativa de memória. Por isso, em alguns sistemas, a compilação falhará com uma mensagem de erro relacionada à memória. Isso geralmente pode ser corrigido configurando as configurações do heap do Java no arquivo de configuração `~/.foprc`, por exemplo:
 

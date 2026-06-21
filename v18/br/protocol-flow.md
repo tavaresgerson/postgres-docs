@@ -1,16 +1,16 @@
 ## 54.2. Fluxo de Mensagens [#](#PROTOCOL-FLOW)
 
-* [54.2.1. Início de sessão][(protocol-flow.md#PROTOCOL-FLOW-START-UP)]
-* [54.2.2. Consulta simples][(protocol-flow.md#PROTOCOL-FLOW-SIMPLE-QUERY)]
-* [54.2.3. Consulta estendida][(protocol-flow.md#PROTOCOL-FLOW-EXT-QUERY)]
-* [54.2.4. Pipelining][(protocol-flow.md#PROTOCOL-FLOW-PIPELINING)]
-* [54.2.5. Chamada de função][(protocol-flow.md#PROTOCOL-FLOW-FUNCTION-CALL)]
-* [54.2.6. Operações de cópia][(protocol-flow.md#PROTOCOL-COPY)]
-* [54.2.7. Operações assíncronas][(protocol-flow.md#PROTOCOL-ASYNC)]
-* [54.2.8. Cancelamento de solicitações em andamento][(protocol-flow.md#PROTOCOL-FLOW-CANCELING-REQUESTS)]
-* [54.2.9. Termina��o][(protocol-flow.md#PROTOCOL-FLOW-TERMINATION)]
-* [54.2.10. Criptografia de sessão SSL][(protocol-flow.md#PROTOCOL-FLOW-SSL)]
-* [54.2.11. Criptografia de sessão GSSAPI][(protocol-flow.md#PROTOCOL-FLOW-GSSAPI)]
+* [54.2.1. Início de sessão](protocol-flow.md#PROTOCOL-FLOW-START-UP)
+* [54.2.2. Consulta simples](protocol-flow.md#PROTOCOL-FLOW-SIMPLE-QUERY)
+* [54.2.3. Consulta estendida](protocol-flow.md#PROTOCOL-FLOW-EXT-QUERY)
+* [54.2.4. Pipelining](protocol-flow.md#PROTOCOL-FLOW-PIPELINING)
+* [54.2.5. Chamada de função](protocol-flow.md#PROTOCOL-FLOW-FUNCTION-CALL)
+* [54.2.6. Operações de cópia](protocol-flow.md#PROTOCOL-COPY)
+* [54.2.7. Operações assíncronas](protocol-flow.md#PROTOCOL-ASYNC)
+* [54.2.8. Cancelamento de solicitações em andamento](protocol-flow.md#PROTOCOL-FLOW-CANCELING-REQUESTS)
+* [54.2.9. Termina��o](protocol-flow.md#PROTOCOL-FLOW-TERMINATION)
+* [54.2.10. Criptografia de sessão SSL](protocol-flow.md#PROTOCOL-FLOW-SSL)
+* [54.2.11. Criptografia de sessão GSSAPI](protocol-flow.md#PROTOCOL-FLOW-GSSAPI)
 
 Esta seção descreve o fluxo de mensagens e a semântica de cada tipo de mensagem. (Os detalhes da representação exata de cada mensagem aparecem em [Seção 54.7] (protocol-message-formats.md "54.7. Message Formats").) Existem vários sub-protocolos diferentes, dependendo do estado da conexão: inicialização, consulta, chamada de função, `COPY` e término. Há também disposições especiais para operações assíncronas (incluindo respostas de notificação e cancelamento de comandos), que podem ocorrer a qualquer momento após a fase de inicialização.
 
@@ -36,7 +36,7 @@ AuthenticationMD5Password: O frontend deve agora enviar um PasswordMessage conte
 
 ### Aviso
 
-O suporte para senhas criptografadas com MD5 é desatualizado e será removido em uma versão futura do PostgreSQL. Consulte [Seção 20.5][(auth-password.md "20.5. Password Authentication")] para obter detalhes sobre a migração para outro tipo de senha.
+O suporte para senhas criptografadas com MD5 é desatualizado e será removido em uma versão futura do PostgreSQL. Consulte [Seção 20.5](auth-password.md) para obter detalhes sobre a migração para outro tipo de senha.
 
 Autenticação GSS: O frontend deve agora iniciar uma negociação GSSAPI. O frontend enviará uma mensagem GSSResponse com a primeira parte do fluxo de dados GSSAPI em resposta a isso. Se forem necessárias mais mensagens, o servidor responderá com AuthenticationGSSContinue.
 
@@ -44,7 +44,7 @@ Autenticação SSPI: O frontend deve agora iniciar uma negociação SSPI. O fron
 
 AutenticaçãoGSSContinue: Esta mensagem contém os dados de resposta do passo anterior da negociação GSSAPI ou SSPI (AutenticaçãoGSS, AutenticaçãoSSPI ou uma AutenticaçãoGSSContinue anterior). Se os dados GSSAPI ou SSPI nesta mensagem indicarem que são necessários mais dados para completar a autenticação, o frontend deve enviar esses dados como outra mensagem GSSResponse. Se a autenticação GSSAPI ou SSPI for concluída por esta mensagem, o servidor enviará em seguida AutenticaçãoOk para indicar autenticação bem-sucedida ou ErrorResponse para indicar falha.
 
-AutenticaçãoSASL: O frontend deve agora iniciar uma negociação SASL, usando um dos mecanismos SASL listados na mensagem. O frontend enviará um SASLInitialResponse com o nome do mecanismo selecionado, e a primeira parte do fluxo de dados SASL em resposta a isso. Se forem necessárias mais mensagens, o servidor responderá com AuthenticationSASLContinue. Consulte [Seção 54.3][(sasl-authentication.md "54.3. SASL Authentication")] para obter detalhes.
+AutenticaçãoSASL: O frontend deve agora iniciar uma negociação SASL, usando um dos mecanismos SASL listados na mensagem. O frontend enviará um SASLInitialResponse com o nome do mecanismo selecionado, e a primeira parte do fluxo de dados SASL em resposta a isso. Se forem necessárias mais mensagens, o servidor responderá com AuthenticationSASLContinue. Consulte [Seção 54.3](sasl-authentication.md) para obter detalhes.
 
 AutenticaçãoSASLContinuar: Esta mensagem contém dados de desafio do passo anterior da negociação SASL (AutenticaçãoSASL, ou uma AutenticaçãoSASLContinuar anterior). O frontend deve responder com uma mensagem SASLResponse.
 
@@ -66,7 +66,7 @@ BackendKeyData: Esta mensagem fornece dados de chave secreta que o frontend deve
 
 O servidor PostgreSQL sempre enviará essa mensagem, mas algumas implementações de terceiros do backend do protocolo que não suportam a cancelamento de consulta não são conhecidas por isso.
 
-ParameterStatus: Esta mensagem informa ao frontend sobre a configuração atual (inicial) dos parâmetros do backend, como [client_encoding][(runtime-config-client.md#GUC-CLIENT-ENCODING)] ou [DateStyle][(runtime-config-client.md#GUC-DATESTYLE)]. O frontend pode ignorar esta mensagem ou registrar as configurações para seu uso futuro; consulte [Seção 54.2.7][(protocol-flow.md#PROTOCOL-ASYNC "54.2.7. Asynchronous Operations")] para mais detalhes. O frontend não deve responder a esta mensagem, mas deve continuar ouvindo uma mensagem ReadyForQuery.
+ParameterStatus: Esta mensagem informa ao frontend sobre a configuração atual (inicial) dos parâmetros do backend, como [client_encoding](runtime-config-client.md#GUC-CLIENT-ENCODING) ou [DateStyle](runtime-config-client.md#GUC-DATESTYLE). O frontend pode ignorar esta mensagem ou registrar as configurações para seu uso futuro; consulte [Seção 54.2.7](protocol-flow.md#PROTOCOL-ASYNC) para mais detalhes. O frontend não deve responder a esta mensagem, mas deve continuar ouvindo uma mensagem ReadyForQuery.
 
 ReadyForQuery: O arranque foi concluído. O frontend pode agora emitir comandos.
 
@@ -84,9 +84,9 @@ As possíveis mensagens de resposta do backend são:
 
 CommandComplete: Um comando SQL foi completado normalmente.
 
-CopyInResponse: O backend está pronto para copiar dados do frontend para uma tabela; veja [Seção 54.2.6][(protocol-flow.md#PROTOCOL-COPY "54.2.6. COPY Operations")].
+CopyInResponse: O backend está pronto para copiar dados do frontend para uma tabela; veja [Seção 54.2.6](protocol-flow.md#PROTOCOL-COPY).
 
-CopyOutResponse: O backend está pronto para copiar dados de uma tabela para o frontend; veja [Seção 54.2.6][(protocol-flow.md#PROTOCOL-COPY "54.2.6. COPY Operations")].
+CopyOutResponse: O backend está pronto para copiar dados de uma tabela para o frontend; veja [Seção 54.2.6](protocol-flow.md#PROTOCOL-COPY).
 
 Descrição da linha: Indica que as linhas estão prestes a ser devolvidas em resposta a uma consulta `SELECT`, `FETCH`, etc. O conteúdo desta mensagem descreve o layout da coluna das linhas. Isso será seguido por uma mensagem DataRow para cada linha que será devolvida ao frontend.
 
@@ -100,7 +100,7 @@ ReadyForQuery: O processamento da string de consulta está completo. Uma mensage
 
 Aviso de resposta: Uma mensagem de alerta foi emitida em relação à consulta. Os avisos são adicionais a outras respostas, ou seja, o backend continuará processando o comando.
 
-A resposta a uma consulta `SELECT` (ou outras consultas que retornam conjuntos de linhas, como `EXPLAIN` ou `SHOW`) normalmente consiste em RowDescription, zero ou mais mensagens DataRow e, em seguida, CommandComplete. A consulta `COPY` para ou a partir do frontend invoca um protocolo especial conforme descrito em [Seção 54.2.6][(protocol-flow.md#PROTOCOL-COPY "54.2.6. COPY Operations")]. Todos os outros tipos de consulta normalmente produzem apenas uma mensagem CommandComplete.
+A resposta a uma consulta `SELECT` (ou outras consultas que retornam conjuntos de linhas, como `EXPLAIN` ou `SHOW`) normalmente consiste em RowDescription, zero ou mais mensagens DataRow e, em seguida, CommandComplete. A consulta `COPY` para ou a partir do frontend invoca um protocolo especial conforme descrito em [Seção 54.2.6](protocol-flow.md#PROTOCOL-COPY). Todos os outros tipos de consulta normalmente produzem apenas uma mensagem CommandComplete.
 
 Como uma string de consulta pode conter várias consultas (separadas por pontos e virgulas), pode haver várias sequências de resposta antes que o backend termine de processar a string de consulta. ReadyForQuery é emitido quando toda a string foi processada e o backend está pronto para aceitar uma nova string de consulta.
 
@@ -110,7 +110,7 @@ Em caso de erro, é emitida a Response de erro seguida pela ReadyForQuery. Todo 
 
 No modo de consulta simples, o formato dos valores recuperados é sempre texto, exceto quando o comando fornecido é um `FETCH` de um cursor declarado com a opção `BINARY`. Nesse caso, os valores recuperados estão no formato binário. Os códigos de formato fornecidos na mensagem RowDescription indicam qual formato está sendo usado.
 
-Um frontend deve estar preparado para aceitar mensagens ErrorResponse e NoticeResponse sempre que espera qualquer outro tipo de mensagem. Veja também [Seção 54.2.7][(protocol-flow.md#PROTOCOL-ASYNC "54.2.7. Asynchronous Operations")] sobre mensagens que o backend pode gerar devido a eventos externos.
+Um frontend deve estar preparado para aceitar mensagens ErrorResponse e NoticeResponse sempre que espera qualquer outro tipo de mensagem. Veja também [Seção 54.2.7](protocol-flow.md#PROTOCOL-ASYNC) sobre mensagens que o backend pode gerar devido a eventos externos.
 
 A prática recomendada é codificar os frontends em estilo de máquina de estado que aceitará qualquer tipo de mensagem em qualquer momento em que isso faça sentido, em vez de fazer suposições sobre a sequência exata das mensagens.
 
@@ -270,9 +270,9 @@ O modo de cópia (transferência de dados do servidor) é iniciado quando o back
 
 Caso um erro seja detectado no backend durante o modo de cópia, o backend emitirá uma mensagem de ErrorResponse e retornará ao processamento normal. O frontend deve tratar a recepção da ErrorResponse como o término do modo de cópia.
 
-É possível que as mensagens NoticeResponse e ParameterStatus sejam intercaladas entre as mensagens CopyData; os frontends devem lidar com esses casos e também estar preparados para outros tipos de mensagens assíncronas (consulte [Seção 54.2.7] [(protocol-flow.md#PROTOCOL-ASYNC "54.2.7. Asynchronous Operations")]). Caso contrário, qualquer tipo de mensagem que não seja CopyData ou CopyDone pode ser tratado como o modo de término do modo de saída de cópia.
+É possível que as mensagens NoticeResponse e ParameterStatus sejam intercaladas entre as mensagens CopyData; os frontends devem lidar com esses casos e também estar preparados para outros tipos de mensagens assíncronas (consulte [Seção 54.2.7](protocol-flow.md#PROTOCOL-ASYNC)). Caso contrário, qualquer tipo de mensagem que não seja CopyData ou CopyDone pode ser tratado como o modo de término do modo de saída de cópia.
 
-Existe outro modo relacionado ao Copy chamado copy-both, que permite a transferência de dados em massa de alta velocidade para *e* do servidor. O modo copy-both é iniciado quando um backend em modo walsender executa uma declaração `START_REPLICATION`. O backend envia uma mensagem CopyBothResponse para o frontend. O backend e o frontend podem, então, enviar mensagens CopyData até que um dos lados envie uma mensagem CopyDone. Após o cliente enviar uma mensagem CopyDone, a conexão passa do modo copy-both para o modo copy-out, e o cliente não pode enviar mais mensagens CopyData. Da mesma forma, quando o servidor envia uma mensagem CopyDone, a conexão passa para o modo copy-in, e o servidor não pode enviar mais mensagens CopyData. Após ambos os lados terem enviado uma mensagem CopyDone, o modo de cópia é terminado e o backend retorna ao modo de processamento de comandos. No caso de um erro detectado pelo backend durante o modo copy-both, o backend emitirá uma mensagem ErrorResponse, descartará as mensagens do frontend até que uma mensagem Sync seja recebida, e então emitirá ReadyForQuery e retornará ao processamento normal. O frontend deve tratar a recepção da ErrorResponse como o término da cópia em ambas as direções; não deve ser enviada nenhuma mensagem CopyDone neste caso. Consulte [Seção 54.4][(protocol-replication.md "54.4. Streaming Replication Protocol")] para mais informações sobre o subprotocolo transmitido no modo copy-both.
+Existe outro modo relacionado ao Copy chamado copy-both, que permite a transferência de dados em massa de alta velocidade para *e* do servidor. O modo copy-both é iniciado quando um backend em modo walsender executa uma declaração `START_REPLICATION`. O backend envia uma mensagem CopyBothResponse para o frontend. O backend e o frontend podem, então, enviar mensagens CopyData até que um dos lados envie uma mensagem CopyDone. Após o cliente enviar uma mensagem CopyDone, a conexão passa do modo copy-both para o modo copy-out, e o cliente não pode enviar mais mensagens CopyData. Da mesma forma, quando o servidor envia uma mensagem CopyDone, a conexão passa para o modo copy-in, e o servidor não pode enviar mais mensagens CopyData. Após ambos os lados terem enviado uma mensagem CopyDone, o modo de cópia é terminado e o backend retorna ao modo de processamento de comandos. No caso de um erro detectado pelo backend durante o modo copy-both, o backend emitirá uma mensagem ErrorResponse, descartará as mensagens do frontend até que uma mensagem Sync seja recebida, e então emitirá ReadyForQuery e retornará ao processamento normal. O frontend deve tratar a recepção da ErrorResponse como o término da cópia em ambas as direções; não deve ser enviada nenhuma mensagem CopyDone neste caso. Consulte [Seção 54.4](protocol-replication.md) para mais informações sobre o subprotocolo transmitido no modo copy-both.
 
 As mensagens CopyInResponse, CopyOutResponse e CopyBothResponse incluem campos que informam ao frontend o número de colunas por linha e os códigos de formato que estão sendo usados para cada coluna. (A partir da implementação atual, todas as colunas em uma operação dada `COPY` usarão o mesmo formato, mas o desenho da mensagem não assume isso.)
 
@@ -289,100 +289,103 @@ Atualmente, há um conjunto de parâmetros pré-definidos para os quais o Parame
 
 
 <table border="0" class="simplelist" summary="Simple list">
-<tr>
-<td>
-<code class="varname">
+ <tr>
+  <td>
+   <code class="varname">
     application_name
    </code>
-</td>
-<td>
-<code class="varname">
+  </td>
+  <td>
+   <code class="varname">
     scram_iterations
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="varname">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="varname">
     client_encoding
    </code>
-</td>
-<td>
-<code class="varname">
+  </td>
+  <td>
+   <code class="varname">
     search_path
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="varname">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="varname">
     DateStyle
    </code>
-</td>
-<td>
-<code class="varname">
+  </td>
+  <td>
+   <code class="varname">
     server_encoding
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="varname">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="varname">
     default_transaction_read_only
    </code>
-</td>
-<td>
-<code class="varname">
+  </td>
+  <td>
+   <code class="varname">
     server_version
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="varname">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="varname">
     in_hot_standby
    </code>
-</td>
-<td>
-<code class="varname">
+  </td>
+  <td>
+   <code class="varname">
     session_authorization
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="varname">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="varname">
     integer_datetimes
    </code>
-</td>
-<td>
-<code class="varname">
+  </td>
+  <td>
+   <code class="varname">
     standard_conforming_strings
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="varname">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="varname">
     IntervalStyle
    </code>
-</td>
-<td>
-<code class="varname">
+  </td>
+  <td>
+   <code class="varname">
     TimeZone
    </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="varname">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <code class="varname">
     is_superuser
    </code>
-</td>
-<td>
-</td>
-</tr>
+  </td>
+  <td>
+  </td>
+ </tr>
 </table>
+
+
+
 
 
 
@@ -420,31 +423,31 @@ Para uma terminação normal ou anormal, qualquer transação aberta é revertid
 
 ### 54.2.10. Encriptação de sessão SSL [#](#PROTOCOL-FLOW-SSL)
 
-Se o PostgreSQL foi construído com suporte SSL, as comunicações frontend/backend podem ser criptografadas usando SSL. Isso fornece segurança de comunicação em ambientes onde os atacantes podem ser capazes de capturar o tráfego da sessão. Para mais informações sobre criptografar sessões do PostgreSQL com SSL, consulte [Seção 18.9][(ssl-tcp.md "18.9. Secure TCP/IP Connections with SSL")].
+Se o PostgreSQL foi construído com suporte SSL, as comunicações frontend/backend podem ser criptografadas usando SSL. Isso fornece segurança de comunicação em ambientes onde os atacantes podem ser capazes de capturar o tráfego da sessão. Para mais informações sobre criptografar sessões do PostgreSQL com SSL, consulte [Seção 18.9](ssl-tcp.md).
 
 Para iniciar uma conexão criptografada SSL, o frontend envia inicialmente uma mensagem SSLRequest em vez de uma StartupMessage. O servidor, em seguida, responde com um único byte contendo `S` ou `N`, indicando que está disposto ou não a realizar SSL, respectivamente. O frontend pode fechar a conexão neste ponto, se estiver insatisfeito com a resposta. Para continuar após `S`, realize um aperto de mão de inicialização SSL (não descrito aqui, parte da especificação SSL) com o servidor. Se isso for bem-sucedido, continue enviando a StartupMessage usual. Neste caso, a StartupMessage e todos os dados subsequentes serão criptografados SSL. Para continuar após `N`, envie a StartupMessage usual e proceda sem criptografia. (Alternativamente, é permitido emitir uma mensagem GSSENCRequest após uma resposta `N` para tentar usar a criptografia GSSAPI em vez de SSL.)
 
 O frontend também deve estar preparado para lidar com uma resposta ErrorMessage do SSLRequest do servidor. O frontend não deve exibir essa mensagem de erro ao usuário ou aplicativo, uma vez que o servidor não foi autenticado ([CVE-2024-10977](https://www.postgresql.org/support/security/CVE-2024-10977/)). Neste caso, a conexão deve ser fechada, mas o frontend pode optar por abrir uma nova conexão e prosseguir sem solicitar SSL.
 
-Quando a criptografia SSL pode ser realizada, espera-se que o servidor envie apenas o único byte `S` e, em seguida, espere o frontend iniciar uma mão de aperto SSL. Se houver bytes adicionais disponíveis para ler neste ponto, provavelmente significa que um homem no meio está tentando realizar um ataque de enchimento de buffer ([CVE-2021-23222][(https://www.postgresql.org/support/security/CVE-2021-23222/)]). Os frontends devem ser codificados para ler exatamente um byte do socket antes de transferir o socket para sua biblioteca SSL, ou para tratá-lo como uma violação de protocolo se descobrirem que leram bytes adicionais.
+Quando a criptografia SSL pode ser realizada, espera-se que o servidor envie apenas o único byte `S` e, em seguida, espere o frontend iniciar uma mão de aperto SSL. Se houver bytes adicionais disponíveis para ler neste ponto, provavelmente significa que um homem no meio está tentando realizar um ataque de enchimento de buffer ([CVE-2021-23222](https://www.postgresql.org/support/security/CVE-2021-23222/)). Os frontends devem ser codificados para ler exatamente um byte do socket antes de transferir o socket para sua biblioteca SSL, ou para tratá-lo como uma violação de protocolo se descobrirem que leram bytes adicionais.
 
 Da mesma forma, o servidor espera que o cliente não comece a negociação SSL até receber a resposta de um único byte do servidor à solicitação SSL. Se o cliente começar a negociação SSL imediatamente sem esperar a resposta do servidor ser recebida, pode reduzir a latência da conexão em uma ida e volta. No entanto, isso ocorre às custas de não poder lidar com o caso em que o servidor envia uma resposta negativa à solicitação SSL. Nesse caso, em vez de continuar com GSSAPI ou uma conexão não criptografada ou um erro de protocolo, o servidor simplesmente se desconectará.
 
 Um SSLRequest inicial também pode ser usado em uma conexão que está sendo aberta para enviar uma mensagem CancelRequest.
 
-Uma segunda maneira alternativa de iniciar a criptografia SSL está disponível. O servidor reconhecerá conexões que imediatamente iniciam a negociação SSL sem quaisquer pacotes SSLRequest anteriores. Uma vez que a conexão SSL seja estabelecida, o servidor esperará um pacote de solicitação de inicialização normal e continuará a negociação pelo canal criptografado. Neste caso, quaisquer outras solicitações de criptografia serão recusadas. Este método não é preferido para ferramentas de uso geral, pois não pode negociar a melhor criptografia de conexão disponível ou lidar com conexões não criptografadas. No entanto, é útil para ambientes onde o servidor e o cliente são controlados juntos. Nesse caso, ele evita uma rodada de latência e permite o uso de ferramentas de rede que dependem de conexões SSL padrão. Ao usar conexões SSL neste estilo, o cliente é obrigado a usar a extensão ALPN definida por [RFC 7301][(https://tools.ietf.org/html/rfc7301)] para proteger contra ataques de confusão de protocolo. O protocolo PostgreSQL é "postgresql", conforme registrado no registro do IANA TLS ALPN Protocol IDs [(https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids)].
+Uma segunda maneira alternativa de iniciar a criptografia SSL está disponível. O servidor reconhecerá conexões que imediatamente iniciam a negociação SSL sem quaisquer pacotes SSLRequest anteriores. Uma vez que a conexão SSL seja estabelecida, o servidor esperará um pacote de solicitação de inicialização normal e continuará a negociação pelo canal criptografado. Neste caso, quaisquer outras solicitações de criptografia serão recusadas. Este método não é preferido para ferramentas de uso geral, pois não pode negociar a melhor criptografia de conexão disponível ou lidar com conexões não criptografadas. No entanto, é útil para ambientes onde o servidor e o cliente são controlados juntos. Nesse caso, ele evita uma rodada de latência e permite o uso de ferramentas de rede que dependem de conexões SSL padrão. Ao usar conexões SSL neste estilo, o cliente é obrigado a usar a extensão ALPN definida por [RFC 7301](https://tools.ietf.org/html/rfc7301) para proteger contra ataques de confusão de protocolo. O protocolo PostgreSQL é "postgresql", conforme registrado no registro do IANA TLS ALPN Protocol IDs [(https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids)].
 
 Embora o próprio protocolo não forneça uma maneira para o servidor forçar a criptografia SSL, o administrador pode configurar o servidor para rejeitar sessões não criptografadas como um subproduto da verificação de autenticação.
 
 ### 54.2.11. Encriptação de sessão GSSAPI [#](#PROTOCOL-FLOW-GSSAPI)
 
-Se o PostgreSQL foi construído com suporte GSSAPI, as comunicações frontend/backend podem ser criptografadas usando GSSAPI. Isso fornece segurança de comunicação em ambientes onde os atacantes podem ser capazes de capturar o tráfego da sessão. Para mais informações sobre criptografar sessões do PostgreSQL com GSSAPI, consulte [Seção 18.10][(gssapi-enc.md "18.10. Secure TCP/IP Connections with GSSAPI Encryption")].
+Se o PostgreSQL foi construído com suporte GSSAPI, as comunicações frontend/backend podem ser criptografadas usando GSSAPI. Isso fornece segurança de comunicação em ambientes onde os atacantes podem ser capazes de capturar o tráfego da sessão. Para mais informações sobre criptografar sessões do PostgreSQL com GSSAPI, consulte [Seção 18.10](gssapi-enc.md).
 
-Para iniciar uma conexão criptografada GSSAPI, o frontend envia inicialmente uma mensagem GSSENCRequest em vez de uma StartupMessage. O servidor, em seguida, responde com um único byte contendo `G` ou `N`, indicando que está disposto ou não a realizar a criptografia GSSAPI, respectivamente. O frontend pode fechar a conexão neste ponto, se estiver insatisfeito com a resposta. Para continuar após `G`, usando as ligações C GSSAPI conforme discutido em [RFC 2744][(https://datatracker.ietf.org/doc/html/rfc2744)] ou equivalente, realize uma inicialização GSSAPI chamando `gss_init_sec_context()` em um loop e enviando o resultado para o servidor, começando com uma entrada vazia e depois com cada resultado do servidor, até que ele retorne sem saída. Ao enviar os resultados de `gss_init_sec_context()` para o servidor, adicione o comprimento da mensagem como um inteiro de quatro bytes em ordem de bytes de rede. Para continuar após `N`, envie a StartupMessage usual e proceda sem criptografia. (Alternativamente, é permitido emitir uma mensagem SSLRequest após uma resposta de `N` para tentar usar a criptografia SSL em vez da GSSAPI.)
+Para iniciar uma conexão criptografada GSSAPI, o frontend envia inicialmente uma mensagem GSSENCRequest em vez de uma StartupMessage. O servidor, em seguida, responde com um único byte contendo `G` ou `N`, indicando que está disposto ou não a realizar a criptografia GSSAPI, respectivamente. O frontend pode fechar a conexão neste ponto, se estiver insatisfeito com a resposta. Para continuar após `G`, usando as ligações C GSSAPI conforme discutido em [RFC 2744](https://datatracker.ietf.org/doc/html/rfc2744) ou equivalente, realize uma inicialização GSSAPI chamando `gss_init_sec_context()` em um loop e enviando o resultado para o servidor, começando com uma entrada vazia e depois com cada resultado do servidor, até que ele retorne sem saída. Ao enviar os resultados de `gss_init_sec_context()` para o servidor, adicione o comprimento da mensagem como um inteiro de quatro bytes em ordem de bytes de rede. Para continuar após `N`, envie a StartupMessage usual e proceda sem criptografia. (Alternativamente, é permitido emitir uma mensagem SSLRequest após uma resposta de `N` para tentar usar a criptografia SSL em vez da GSSAPI.)
 
-O frontend também deve estar preparado para lidar com uma resposta ErrorMessage para GSSENCRequest do servidor. O frontend não deve exibir essa mensagem de erro para o usuário ou aplicativo, uma vez que o servidor não foi autenticado ([CVE-2024-10977][(https://www.postgresql.org/support/security/CVE-2024-10977/)]). Neste caso, a conexão deve ser fechada, mas o frontend pode optar por abrir uma nova conexão e prosseguir sem solicitar criptografia GSSAPI.
+O frontend também deve estar preparado para lidar com uma resposta ErrorMessage para GSSENCRequest do servidor. O frontend não deve exibir essa mensagem de erro para o usuário ou aplicativo, uma vez que o servidor não foi autenticado ([CVE-2024-10977](https://www.postgresql.org/support/security/CVE-2024-10977/)). Neste caso, a conexão deve ser fechada, mas o frontend pode optar por abrir uma nova conexão e prosseguir sem solicitar criptografia GSSAPI.
 
-Quando a criptografia GSSAPI pode ser realizada, espera-se que o servidor envie apenas o único byte `G` e, em seguida, espere o frontend iniciar um aperto GSSAPI. Se houver bytes adicionais disponíveis para ler neste ponto, provavelmente significa que um homem no meio está tentando realizar um ataque de enchimento de buffer ([CVE-2021-23222][(https://www.postgresql.org/support/security/CVE-2021-23222/)]). Os frontends devem ser codificados para ler exatamente um byte do socket antes de transferir o socket para sua biblioteca GSSAPI, ou para tratá-lo como uma violação de protocolo se descobrirem que leram bytes adicionais.
+Quando a criptografia GSSAPI pode ser realizada, espera-se que o servidor envie apenas o único byte `G` e, em seguida, espere o frontend iniciar um aperto GSSAPI. Se houver bytes adicionais disponíveis para ler neste ponto, provavelmente significa que um homem no meio está tentando realizar um ataque de enchimento de buffer ([CVE-2021-23222](https://www.postgresql.org/support/security/CVE-2021-23222/)). Os frontends devem ser codificados para ler exatamente um byte do socket antes de transferir o socket para sua biblioteca GSSAPI, ou para tratá-lo como uma violação de protocolo se descobrirem que leram bytes adicionais.
 
 Um pedido inicial GSSENCRequest também pode ser usado em uma conexão que está sendo aberta para enviar uma mensagem de CancelRequest.
 

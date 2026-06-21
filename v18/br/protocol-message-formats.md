@@ -236,7 +236,7 @@ Int32:   Comprimento do conteúdo da mensagem em bytes, incluindo self.
 
 O corpo da mensagem consiste em um ou mais campos identificados, seguido por um byte zero como terminador. Os campos podem aparecer em qualquer ordem. Para cada campo, há o seguinte:
 
-Byte1:   Um código que identifica o tipo de campo; se zero, este é o terminador da mensagem e não há uma string a seguir. Os tipos de campo atualmente definidos estão listados em [Seção 54.8][(protocol-error-fields.md "54.8. Error and Notice Message Fields")]. Como é possível que mais tipos de campo sejam adicionados no futuro, os frontends devem ignorar silenciosamente campos de tipo não reconhecido.
+Byte1:   Um código que identifica o tipo de campo; se zero, este é o terminador da mensagem e não há uma string a seguir. Os tipos de campo atualmente definidos estão listados em [Seção 54.8](protocol-error-fields.md). Como é possível que mais tipos de campo sejam adicionados no futuro, os frontends devem ignorar silenciosamente campos de tipo não reconhecido.
 
 Campo:   O valor do campo.
 
@@ -314,7 +314,7 @@ Int32:   Comprimento do conteúdo da mensagem em bytes, incluindo self.
 
 O corpo da mensagem consiste em um ou mais campos identificados, seguido por um byte zero como terminador. Os campos podem aparecer em qualquer ordem. Para cada campo, há o seguinte:
 
-Byte1:   Um código que identifica o tipo de campo; se zero, este é o terminador da mensagem e não há uma string a seguir. Os tipos de campo atualmente definidos estão listados em [Seção 54.8][(protocol-error-fields.md "54.8. Error and Notice Message Fields")]. Como pode haver mais tipos de campo no futuro, os frontends devem ignorar silenciosamente campos de tipo não reconhecido.
+Byte1:   Um código que identifica o tipo de campo; se zero, este é o terminador da mensagem e não há uma string a seguir. Os tipos de campo atualmente definidos estão listados em [Seção 54.8](protocol-error-fields.md). Como pode haver mais tipos de campo no futuro, os frontends devem ignorar silenciosamente campos de tipo não reconhecido.
 
 Campo:   O valor do campo.
 

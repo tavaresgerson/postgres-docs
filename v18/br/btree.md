@@ -1,9 +1,9 @@
 ## 65.1. Índices de B-Tree [#](#BTREE)
 
-* [65.1.1. Introdução][(btree.md#BTREE-INTRO)]
-* [65.1.2. Comportamento das classes operadoras de árvore B][(btree.md#BTREE-BEHAVIOR)]
-* [65.1.3. Funções de suporte à árvore B][(btree.md#BTREE-SUPPORT-FUNCS)]
-* [65.1.4. Implementação][(btree.md#BTREE-IMPLEMENTATION)]
+* [65.1.1. Introdução](btree.md#BTREE-INTRO)
+* [65.1.2. Comportamento das classes operadoras de árvore B](btree.md#BTREE-BEHAVIOR)
+* [65.1.3. Funções de suporte à árvore B](btree.md#BTREE-SUPPORT-FUNCS)
+* [65.1.4. Implementação](btree.md#BTREE-IMPLEMENTATION)
 
 ### 65.1.1. Introdução [#](#BTREE-INTRO)
 
@@ -13,7 +13,7 @@ Como cada classe de operador btree impõe uma ordem de classificação em seu ti
 
 ### 65.1.2. Comportamento das classes de operadores de árvore B [#](#BTREE-BEHAVIOR)
 
-Como mostrado na [Tabela 36.3][(xindex.md#XINDEX-BTREE-STRAT-TABLE "Table 36.3. B-Tree Strategies")], uma classe de operador btree deve fornecer cinco operadores de comparação, `<`, `<=`, `=`, `>=` e `>`. Pode-se esperar que `<>` também faça parte da classe de operador, mas não é o caso, porque quase nunca seria útil usar uma cláusula WHERE `<>` em uma pesquisa de índice. (Para alguns propósitos, o planejador trata `<>` como associado a uma classe de operador btree; mas ele encontra esse operador através do link negador do operador `=`, em vez de a partir de `pg_amop`.
+Como mostrado na [Tabela 36.3](xindex.md#XINDEX-BTREE-STRAT-TABLE), uma classe de operador btree deve fornecer cinco operadores de comparação, `<`, `<=`, `=`, `>=` e `>`. Pode-se esperar que `<>` também faça parte da classe de operador, mas não é o caso, porque quase nunca seria útil usar uma cláusula WHERE `<>` em uma pesquisa de índice. (Para alguns propósitos, o planejador trata `<>` como associado a uma classe de operador btree; mas ele encontra esse operador através do link negador do operador `=`, em vez de a partir de `pg_amop`.
 
 Quando vários tipos de dados compartilham uma semântica de classificação quase idêntica, suas classes de operadores podem ser agrupadas em uma família de operadores. Fazer isso é vantajoso porque permite que o planejador faça deduções sobre comparações entre tipos diferentes. Cada classe de operador dentro da família deve conter os operadores de único tipo (e as funções de suporte associadas) para seu tipo de dados de entrada, enquanto os operadores de comparação entre tipos diferentes e as funções de suporte são "soltas" na família. É recomendável que um conjunto completo de operadores entre tipos diferentes seja incluído na família, garantindo assim que o planejador possa representar quaisquer condições de comparação que deduza da transitividade.
 
@@ -44,7 +44,7 @@ Deve ser bastante claro por que um índice btree requer que essas leis sejam man
 
 ### 65.1.3. Funções de suporte a árvore B [#](#BTREE-SUPPORT-FUNCS)
 
-Como mostrado na [Tabela 36.9][(xindex.md#XINDEX-BTREE-SUPPORT-TABLE "Table 36.9. B-Tree Support Functions")], btree define uma função de suporte obrigatória e cinco opcionais. Os seis métodos definidos pelo usuário são:
+Como mostrado na [Tabela 36.9](xindex.md#XINDEX-BTREE-SUPPORT-TABLE), btree define uma função de suporte obrigatória e cinco opcionais. Os seis métodos definidos pelo usuário são:
 
 `order`: Para cada combinação de tipos de dados que uma família de operadores btree oferece operadores de comparação, ela deve fornecer uma função de suporte à comparação, registrada em `pg_amproc` com o número de função de suporte 1 e `amproclefttype`/`amprocrighttype` igual aos tipos de dados esquerda e direita para a comparação (ou seja, os mesmos tipos de dados com os quais os operadores de correspondência estão registrados em `pg_amop`). A função de comparação deve receber dois valores não nulos *`A`* e *`B`* e retornar um valor de `int32` que é `<`, `0`, `0` ou `>` `0` quando *`A`* [[`<`]*`B`, *`A`* [[`=`]*`B`*, ou *`A`* [[`>`]*`B`*, respectivamente. Um resultado nulo é desaconselhado: todos os valores do tipo de dados devem ser comparáveis. Consulte `src/backend/access/nbtree/nbtcompare.c` para exemplos.
 
@@ -56,8 +56,9 @@ Se os valores comparados forem de um tipo de dados compatível, o OID (Identific
 
 Uma função `in_range` deve ter a assinatura
 
-``` in_range(val type1, base type1, offset type2, sub bool, less bool) returns bool
-    ```
+```
+in_range(val type1, base type1, offset type2, sub bool, less bool) returns bool
+```
 
 *`val`* e *`base`* devem ser do mesmo tipo, que é um dos tipos suportados pela família de operadores (ou seja, um tipo para o qual ela fornece uma ordenação). No entanto, *`offset`* pode ser de um tipo diferente, que pode ser outro que não seja suportado pela família. Um exemplo é que a família embutida `time_ops` fornece uma função `in_range` que tem *`offset`* do tipo `interval`. Uma família pode fornecer funções `in_range` para qualquer um dos seus tipos suportados e um ou mais tipos *`offset`*. Cada função `in_range` deve ser inserida em `pg_amproc` com `amproclefttype` igual a `type1` e `amprocrighttype` igual a `type2`.
 
@@ -89,31 +90,17 @@ As funções `in_range` não precisam lidar com entradas NULL e, normalmente, se
 
 Uma função `equalimage` deve ter a assinatura
 
-``` equalimage(opcintype oid) returns bool
-    ```
+```
+equalimage(opcintype oid) returns bool
+```
 
-O valor de retorno é uma informação estática sobre uma classe de operador e uma correção. A indicação de que o `order` da função para a classe de operador é garantido para retornar apenas `0` (“os argumentos são iguais”) quando seus argumentos *`A`* e
-*`B`* também são intercambiáveis sem perda de informação semântica. Não registrar uma função `equalimage` ou retornar
-`false` indica que essa condição não pode ser assumida como válida.
+O valor de retorno é uma informação estática sobre uma classe de operador e uma correção. A indicação de que o `order` da função para a classe de operador é garantido para retornar apenas `0` (“os argumentos são iguais”) quando seus argumentos *`A`* e *`B`* também são intercambiáveis sem perda de informação semântica. Não registrar uma função `equalimage` ou retornar `false` indica que essa condição não pode ser assumida como válida.
 
-O argumento *`opcintype`* é o
-    `pg_type.oid` do tipo de dados que o operador de índice. Esta é uma conveniência que permite a reutilização da mesma função subjacente
-    `equalimage` em todas as classes de operador.
-    Se *`opcintype`* for um tipo de dados coletável, o OID (Identificador de Ordenação) apropriado será passado para a função
-    `equalimage`, usando o mecanismo padrão
-    `PG_GET_COLLATION()`.
+O argumento *`opcintype`* é o `pg_type.oid` do tipo de dados que o operador de índice. Esta é uma conveniência que permite a reutilização da mesma função subjacente `equalimage` em todas as classes de operador. Se *`opcintype`* for um tipo de dados coletável, o OID (Identificador de Ordenação) apropriado será passado para a função `equalimage`, usando o mecanismo padrão `PG_GET_COLLATION()`.
 
-No que diz respeito à classe do operador, o retorno de
-`true` indica que a deduplicação é segura (ou segura para a
-coluna de ordenação cujo OID foi passado para sua
-`equalimage` função). No entanto, o código principal só considerará a deduplicação segura para um índice quando
-*cada* coluna indexada usa uma classe do operador
-que registra uma função `equalimage`, e
-cada função realmente retorna `true` quando
-chamada.
+No que diz respeito à classe do operador, o retorno de `true` indica que a deduplicação é segura (ou segura para a coluna de ordenação cujo OID foi passado para sua `equalimage` função). No entanto, o código principal só considerará a deduplicação segura para um índice quando *cada* coluna indexada usa uma classe do operador que registra uma função `equalimage`, e cada função realmente retorna `true` quando chamada.
 
-A igualdade de imagem é *quase* a mesma condição que a simples igualdade de bits. Há uma diferença sutil: ao indexar um tipo de dados varlena, a representação no disco de dois pontos de dados iguais em termos de imagem pode não ser igual em termos de bits devido à aplicação inconsistente da compressão TOAST no input.
-Formalmente, quando a função `equalimage` de uma classe de operadores retorna `true`, é seguro assumir que a função C `datum_image_eq()` sempre concordará com a função `order` da classe de operadores (desde que o mesmo OID de collation seja passado para ambas as funções `equalimage` e `order`).
+A igualdade de imagem é *quase* a mesma condição que a simples igualdade de bits. Há uma diferença sutil: ao indexar um tipo de dados varlena, a representação no disco de dois pontos de dados iguais em termos de imagem pode não ser igual em termos de bits devido à aplicação inconsistente da compressão TOAST no input. Formalmente, quando a função `equalimage` de uma classe de operadores retorna `true`, é seguro assumir que a função C `datum_image_eq()` sempre concordará com a função `order` da classe de operadores (desde que o mesmo OID de collation seja passado para ambas as funções `equalimage` e `order`).
 
 O código central não é fundamentalmente capaz de deduzir nada sobre o status de "igualdade implica igualdade de imagem" de uma classe de operadores dentro de uma família de vários tipos de dados com base em detalhes de outras classes de operadores da mesma família. Além disso, não é sensato que uma família de operadores registre uma função de cruzamento `equalimage`, e tentar fazer isso resultará em um erro. Isso ocorre porque o status de "igualdade implica igualdade de imagem" não depende apenas da semântica de classificação/igualdade, que são mais ou menos definidas no nível da família de operadores. Em geral, a semântica que um tipo de dados específico implementa deve ser considerada separadamente.
 
@@ -123,16 +110,15 @@ A convenção seguida pelas classes de operador incluídas na distribuição pri
 
 Uma função de suporte `options` deve ter a assinatura
 
-    ```
-    options(relopts local_relopts *) returns void
-    ```
+```
+options(relopts local_relopts *) returns void
+```
 
 A função recebe um ponteiro para uma estrutura `local_relopts`, que precisa ser preenchida com um conjunto de opções específicas para a classe de operador. As opções podem ser acessadas a partir de outras funções de suporte usando as macros `PG_HAS_OPCLASS_OPTIONS()` e `PG_GET_OPCLASS_OPTIONS()`.
 
 Atualmente, nenhuma classe de operador de B-Tree tem uma função de suporte `options`. O B-Tree não permite representação flexível de chaves como GiST, SP-GiST, GIN e BRIN. Portanto, `options` provavelmente não tem muita aplicação no método atual de acesso ao índice B-Tree. No entanto, essa função de suporte foi adicionada ao B-Tree para uniformidade e provavelmente encontrará usos durante a evolução adicional do B-Tree no PostgreSQL.
 
-`skipsupport`
-: Opcionalmente, uma família de operadores btree pode fornecer uma função de *skip* de suporte, registrada sob o número de função de suporte 6. Essas funções dão ao código B-tree uma maneira de iterar por todos os valores possíveis que podem ser representados pelo tipo de entrada subjacente de uma classe de operadores, em ordem do espaço de chave. Isso é usado pelo código principal quando ele aplica a otimização de varredura de skip. As APIs envolvidas nisso são definidas em `src/include/utils/skipsupport.h`.
+`skipsupport`: Opcionalmente, uma família de operadores btree pode fornecer uma função de *skip* de suporte, registrada sob o número de função de suporte 6. Essas funções dão ao código B-tree uma maneira de iterar por todos os valores possíveis que podem ser representados pelo tipo de entrada subjacente de uma classe de operadores, em ordem do espaço de chave. Isso é usado pelo código principal quando ele aplica a otimização de varredura de skip. As APIs envolvidas nisso são definidas em `src/include/utils/skipsupport.h`.
 
 As classes de operador que não fornecem uma função de suporte para pular ainda são elegíveis para usar varredura de pular. O código principal ainda pode usar sua estratégia de fallback, embora isso possa ser subótimo para alguns tipos discretos. Geralmente não faz sentido (e pode não ser até viável) para classes de operador em tipos contínuos fornecer uma função de suporte para pular.
 
@@ -144,44 +130,29 @@ Esta seção abrange detalhes da implementação do índice B-Tree que podem ser
 
 #### 65.1.4.1. Estrutura de B-Tree [#](#BTREE-STRUCTURE)
 
-Os índices B-Tree do PostgreSQL são estruturas de árvore multi-nível, onde cada nível da árvore pode ser usado como uma lista de páginas duplamente vinculada. Uma única metapágina é armazenada em uma posição fixa no início do primeiro arquivo de segmento do índice. Todas as outras páginas são páginas de folha ou páginas internas.
-Páginas de folha são as páginas no nível mais baixo da árvore. Todos os outros níveis consistem em páginas internas. Cada página de folha contém tuplas que apontam para linhas de tabela. Cada página interna contém tuplas que apontam para o nível seguinte na árvore. Tipicamente, mais de 99% de todas as páginas são páginas de folha. Tanto as páginas internas quanto as páginas de folha usam o formato de página padrão descrito em [Seção 66.6] [(storage-page-layout.md "66.6. Database Page Layout")].
+Os índices B-Tree do PostgreSQL são estruturas de árvore multi-nível, onde cada nível da árvore pode ser usado como uma lista de páginas duplamente vinculada. Uma única metapágina é armazenada em uma posição fixa no início do primeiro arquivo de segmento do índice. Todas as outras páginas são páginas de folha ou páginas internas. Páginas de folha são as páginas no nível mais baixo da árvore. Todos os outros níveis consistem em páginas internas. Cada página de folha contém tuplas que apontam para linhas de tabela. Cada página interna contém tuplas que apontam para o nível seguinte na árvore. Tipicamente, mais de 99% de todas as páginas são páginas de folha. Tanto as páginas internas quanto as páginas de folha usam o formato de página padrão descrito em [Seção 66.6](storage-page-layout.md).
 
 Novas páginas de folha são adicionadas a um índice B-Tree quando uma página de folha existente não consegue acomodar uma tupla de entrada. Uma operação de *divisão de página* faz espaço para itens que originalmente pertenciam à página transbordante, movendo uma parte dos itens para uma nova página. As divisões de página também devem inserir um novo *downlink* na nova página na página pai, o que pode fazer com que o pai se divida por sua vez. As divisões de página "cascam para cima" de forma recursiva. Quando a página raiz finalmente não consegue acomodar um novo downlink, uma operação de *divisão de página de raiz* ocorre. Isso adiciona um novo nível à estrutura da árvore, criando uma nova página raiz que está um nível acima da página raiz original.
 
 #### 65.1.4.2. Remoção do Índice de baixo para cima [#](#BTREE-DELETION)
 
-Os índices B-Tree não são diretamente conscientes de que, sob MVCC, pode haver múltiplas versões existentes da mesma linha de tabela lógica; para um índice, cada tupla é um objeto independente que precisa de sua própria entrada de índice. As tuplas de "mudança de versão" podem, às vezes, acumular e afetar negativamente a latência e o desempenho da consulta. Isso geralmente ocorre com cargas de trabalho `UPDATE`-pesadas, onde a maioria das atualizações individuais não pode aplicar a otimização [HOT]. (storage-hot.md "66.7. Heap-Only Tuples (HOT)])
-Mudar o valor de apenas uma coluna coberta por um índice durante uma `UPDATE` *sempre* necessita de um novo conjunto de tuplas de índice — uma para *cada e todo* índice na tabela. Note, em particular, que isso inclui índices que não foram "logicamente modificados" pelo `UPDATE`. Todos os índices precisarão de uma tupla física de índice sucessor que aponte para a versão mais recente na tabela. Cada nova tupla dentro de cada índice geralmente precisará coexistir com a tupla "atualizada" original por um curto período de tempo (tipicamente até pouco depois do `UPDATE` transação
-commit).
+Os índices B-Tree não são diretamente conscientes de que, sob MVCC, pode haver múltiplas versões existentes da mesma linha de tabela lógica; para um índice, cada tupla é um objeto independente que precisa de sua própria entrada de índice. As tuplas de "mudança de versão" podem, às vezes, acumular e afetar negativamente a latência e o desempenho da consulta. Isso geralmente ocorre com cargas de trabalho `UPDATE`-pesadas, onde a maioria das atualizações individuais não pode aplicar a otimização [HOT]. (storage-hot.md "66.7. Heap-Only Tuples (HOT)]) Mudar o valor de apenas uma coluna coberta por um índice durante uma `UPDATE` *sempre* necessita de um novo conjunto de tuplas de índice — uma para *cada e todo* índice na tabela. Note, em particular, que isso inclui índices que não foram "logicamente modificados" pelo `UPDATE`. Todos os índices precisarão de uma tupla física de índice sucessor que aponte para a versão mais recente na tabela. Cada nova tupla dentro de cada índice geralmente precisará coexistir com a tupla "atualizada" original por um curto período de tempo (tipicamente até pouco depois do `UPDATE` transação commit).
 
-Os índices B-Tree excluem incrementalmente tuplos do índice de churn de versão realizando passes de *exclusão de índice de baixo para cima*. Cada passagem de exclusão é acionada em reação a uma divisão de página de "churn de versão" antecipada. Isso ocorre apenas com índices que não são logicamente modificados por declarações de `UPDATE`, onde o acúmulo concentrado de versões obsoletas em páginas específicas ocorreria de outra forma. Uma divisão de página geralmente será evitada, embora seja possível que certas heurísticas de nível de implementação não identifiquem e excluam até mesmo uma tupla de índice de lixo (nesse caso, uma passagem de divisão de página ou deduplicação resolve o problema de uma nova tupla de entrada que não cabe em uma página foliar). O número máximo de versões que qualquer varredura de índice deve percorrer (para qualquer linha lógica única) é um contribuinte importante para a responsividade e o desempenho do sistema como um todo. Uma passagem de exclusão de índice de baixo para cima visa tuplas de lixo suspeitas em uma única página foliar com base em *distinções qualitativas* envolvendo linhas lógicas e versões. Isso contrasta com a limpeza de índice "de cima para baixo" realizada pelos trabalhadores do autovacuum, que é acionada quando certos limiares *quantitativos* de nível de tabela são excedidos (ver [Seção 24.1.6][(routine-vacuuming.md#AUTOVACUUM "24.1.6. The Autovacuum Daemon")]).
+Os índices B-Tree excluem incrementalmente tuplos do índice de churn de versão realizando passes de *exclusão de índice de baixo para cima*. Cada passagem de exclusão é acionada em reação a uma divisão de página de "churn de versão" antecipada. Isso ocorre apenas com índices que não são logicamente modificados por declarações de `UPDATE`, onde o acúmulo concentrado de versões obsoletas em páginas específicas ocorreria de outra forma. Uma divisão de página geralmente será evitada, embora seja possível que certas heurísticas de nível de implementação não identifiquem e excluam até mesmo uma tupla de índice de lixo (nesse caso, uma passagem de divisão de página ou deduplicação resolve o problema de uma nova tupla de entrada que não cabe em uma página foliar). O número máximo de versões que qualquer varredura de índice deve percorrer (para qualquer linha lógica única) é um contribuinte importante para a responsividade e o desempenho do sistema como um todo. Uma passagem de exclusão de índice de baixo para cima visa tuplas de lixo suspeitas em uma única página foliar com base em *distinções qualitativas* envolvendo linhas lógicas e versões. Isso contrasta com a limpeza de índice "de cima para baixo" realizada pelos trabalhadores do autovacuum, que é acionada quando certos limiares *quantitativos* de nível de tabela são excedidos (ver [Seção 24.1.6](routine-vacuuming.md#AUTOVACUUM)).
 
 ### Nota
 
 Nem todas as operações de exclusão que são realizadas dentro de índices B-Tree são operações de exclusão de baixo para cima. Há uma categoria distinta de exclusão de tuplas de índice: *exclusão simples de tupla de índice*. Esta é uma operação de manutenção diferida que exclui tuplas de índice que são conhecidas como seguras para serem excluídas (aqueles cujo bit `LP_DEAD` do identificador do item já está definido). Assim como a exclusão de índice de baixo para cima, a exclusão simples de índice ocorre no ponto em que uma divisão de página é antecipada como uma maneira de evitar a divisão.
 
-A eliminação simples é oportunista no sentido de que só pode ocorrer quando os recentes varreduras de índice definem os bits dos itens afetados de passagem.
-Antes do PostgreSQL 14, a única categoria de eliminação de B-Tree era a eliminação simples. As principais diferenças entre ela e a eliminação de cima para baixo são que apenas a primeira é oportunisticamente impulsionada pela atividade de varreduras de índice, enquanto apenas a segunda visa especificamente a mudança de versão dos `UPDATE`s que não modificam logicamente as colunas indexadas.
+A eliminação simples é oportunista no sentido de que só pode ocorrer quando os recentes varreduras de índice definem os bits dos itens afetados de passagem. Antes do PostgreSQL 14, a única categoria de eliminação de B-Tree era a eliminação simples. As principais diferenças entre ela e a eliminação de cima para baixo são que apenas a primeira é oportunisticamente impulsionada pela atividade de varreduras de índice, enquanto apenas a segunda visa especificamente a mudança de versão dos `UPDATE`s que não modificam logicamente as colunas indexadas.
 
-A exclusão de índice de baixo para cima realiza a grande maioria de todas as limpezas de tupla de índice para índices específicos com certos encargos de trabalho.
-Isso é esperado com qualquer índice B-Tree que seja sujeito a
-mudança significativa de versões de `UPDATE`s que
-raramente ou nunca modificam logicamente as colunas que o índice cobre.
-O número médio e o pior caso de versões por linha lógica podem ser mantidos baixo puramente por meio de passes de exclusão incremental direcionados.
-É bastante possível que o tamanho em disco de certos índices nunca aumente nem mesmo uma única página/bloco, apesar
-*constante* de mudanças de versão de
-`UPDATE`s. Mesmo assim, uma "limpeza completa" por uma operação de `VACUUM` (tipicamente
-executada em um processo de trabalhador de autovazamento) será eventualmente necessária como
-parte da *limpeza coletiva* da tabela e
-cada um de seus índices.
+A exclusão de índice de baixo para cima realiza a grande maioria de todas as limpezas de tupla de índice para índices específicos com certos encargos de trabalho. Isso é esperado com qualquer índice B-Tree que seja sujeito a mudança significativa de versões de `UPDATE`s que raramente ou nunca modificam logicamente as colunas que o índice cobre. O número médio e o pior caso de versões por linha lógica podem ser mantidos baixo puramente por meio de passes de exclusão incremental direcionados. É bastante possível que o tamanho em disco de certos índices nunca aumente nem mesmo uma única página/bloco, apesar *constante* de mudanças de versão de `UPDATE`s. Mesmo assim, uma "limpeza completa" por uma operação de `VACUUM` (tipicamente executada em um processo de trabalhador de autovazamento) será eventualmente necessária como parte da *limpeza coletiva* da tabela e cada um de seus índices.
 
 Ao contrário de `VACUUM`, a exclusão de índices de baixo para cima não oferece garantias fortes sobre a idade do mais antigo tupla do índice de lixo. Nenhum índice pode ser permitido reter tuplas de índice de "lixo flutuante" que se tornaram mortas antes de um ponto de corte conservador compartilhado pela tabela e por todos os seus índices coletivamente. Esta invariável fundamental a nível de tabela torna seguro reciclar TIDs de tabela. É assim que é possível que linhas lógicas distintas reutilizem o mesmo TID ao longo do tempo (embora isso nunca possa acontecer com duas linhas lógicas cujos períodos de vida abrangem o mesmo ciclo `VACUUM`).
 
 #### 65.1.4.3. Deduplicação [#](#BTREE-DEDUPLICATION)
 
-Um duplicado é um tuplo de página de folha (um tuplo que aponta para uma linha de tabela) onde *todos* os colun
-ais de chave indexados têm valores que correspondem aos valores da coluna correspondente de pelo menos uma outra tupla de página de folha no mesmo índice. Tuples duplicados são bastante comuns na prática. Os índices B-Tree podem usar uma representação especial, eficiente em termos de espaço, para duplicados quando uma técnica opcional é habilitada: *deduplicação*.
+Um duplicado é um tuplo de página de folha (um tuplo que aponta para uma linha de tabela) onde *todos* os colun ais de chave indexados têm valores que correspondem aos valores da coluna correspondente de pelo menos uma outra tupla de página de folha no mesmo índice. Tuples duplicados são bastante comuns na prática. Os índices B-Tree podem usar uma representação especial, eficiente em termos de espaço, para duplicados quando uma técnica opcional é habilitada: *deduplicação*.
 
 A eliminação de duplicatas funciona periodicamente, unindo grupos de tuplas duplicadas juntas, formando uma única tupla de *lista de postagens* para cada grupo. O(s) valor(es) da chave da coluna aparecem apenas uma vez nessa representação. Isso é seguido por um array ordenado de TIDs que apontam para linhas na tabela. Isso reduz significativamente o tamanho de armazenamento dos índices, onde cada valor (ou cada combinação distinta de valores de coluna) aparece várias vezes em média. A latência das consultas pode ser reduzida significativamente. O desempenho geral das consultas pode aumentar significativamente. O custo operacional do rastreamento de rotina de índices também pode ser reduzido significativamente.
 
@@ -205,26 +176,18 @@ A eliminação de duplicatas não pode ser usada em todos os casos devido a rest
 
 Observe que a deduplicação é considerada insegura e não pode ser usada nos seguintes casos que envolvem diferenças semanticamente significativas entre datas iguais:
 
-* `text`, `varchar` e `char`
-não podem usar deduplicação quando uma
+* `text`, `varchar` e `char` não podem usar deduplicação quando uma
 * não determinística* é usada. As diferenças de caso e acentos devem ser preservadas entre datas iguais.
 * `numeric` não pode usar deduplicação. A escala de exibição numérica deve ser preservada entre datas iguais.
 * `jsonb` não pode usar deduplicação, uma vez que a
 * `jsonb` classe de operador B-Tree usa
 * `numeric` internamente.
-* `float4` e `float8` não podem usar
-  duplicação. Esses tipos têm representações distintas para
-  `-0` e `0`, que, no entanto, são
-  consideradas iguais. Essa diferença deve ser
-  preservada.
+* `float4` e `float8` não podem usar duplicação. Esses tipos têm representações distintas para `-0` e `0`, que, no entanto, são consideradas iguais. Essa diferença deve ser preservada.
 
-Há uma restrição adicional em nível de implementação que pode ser
-removida em uma versão futura do
-PostgreSQL:
+Há uma restrição adicional em nível de implementação que pode ser removida em uma versão futura do PostgreSQL:
 
 * Os tipos de contêiner (como tipos compostos, matrizes ou tipos de intervalo) não podem usar deduplicação.
 
-Há uma restrição adicional em nível de implementação que se aplica
-independentemente da classe do operador ou da codificação usada:
+Há uma restrição adicional em nível de implementação que se aplica independentemente da classe do operador ou da codificação usada:
 
 * Os índices `INCLUDE` nunca podem usar desduplicação.

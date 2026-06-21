@@ -5,13 +5,13 @@
 
 **Data de lançamento:** 26/02/2026
 
-Esta versão contém um pequeno número de correções da versão 18.2. Para informações sobre as novas funcionalidades da versão principal 18, consulte [Seção E.5][(release-18.md "E.5. Release 18")].
+Esta versão contém um pequeno número de correções da versão 18.2. Para informações sobre as novas funcionalidades da versão principal 18, consulte [Seção E.5](release-18.md).
 
 ### E.2.1. Migração para a Versão 18.3 [#](#RELEASE-18-3-MIGRATION)
 
 Não é necessário fazer um descarte/restauração para aqueles que estão rodando a versão 18.X.
 
-No entanto, se você está atualizando a partir de uma versão anterior à 18.2, consulte [Seção E.3][(release-18-2.md "E.3. Release 18.2")].
+No entanto, se você está atualizando a partir de uma versão anterior à 18.2, consulte [Seção E.3](release-18-2.md).
 
 ### E.2.2. Alterações [#](#RELEASE-18-3-CHANGES)
 
@@ -30,9 +30,9 @@ Essas funções sempre foram consideradas imutáveis, mas a refatoração na ver
 
 Se esse erro afetar o uso dessas funções, a correção recomendada para um clúster existente é uma atualização manual do catálogo. Como usuário superusuário, realize
 
-  ```
-  UPDATE pg_catalog.pg_proc SET provolatile = 'i' WHERE oid IN ('3261','3262');
-  ```
+```
+UPDATE pg_catalog.pg_proc SET provolatile = 'i' WHERE oid IN ('3261','3262');
+```
 
 em cada banco de dados afetado. Atualize também `template0` e `template1` para que os bancos de dados feitos no futuro tenham a correção.
 * Correção da computação do conjunto de junções externas potencialmente anuláveis para o resultado de uma subconsulta `LATERAL UNION ALL` (Richard Guo) [§](https://postgr.es/c/ed57c207c)

@@ -1,6 +1,6 @@
 # Parte IV. Interfaces do cliente
 
-Esta parte descreve as interfaces de programação do cliente distribuídas com o PostgreSQL. Cada um desses capítulos pode ser lido de forma independente. Existem muitas interfaces de programação externas para programas de cliente que são distribuídas separadamente. Elas contêm sua própria documentação ([Apêndice H][(external-projects.md "Appendix H. External Projects")] lista algumas das mais populares). Os leitores desta parte devem estar familiarizados com o uso do SQL para manipular e consultar o banco de dados (ver [Parte II][(sql.md "Part II. The SQL Language")]) e, claro, com o idioma de programação de sua escolha.
+Esta parte descreve as interfaces de programação do cliente distribuídas com o PostgreSQL. Cada um desses capítulos pode ser lido de forma independente. Existem muitas interfaces de programação externas para programas de cliente que são distribuídas separadamente. Elas contêm sua própria documentação ([Apêndice H](external-projects.md) lista algumas das mais populares). Os leitores desta parte devem estar familiarizados com o uso do SQL para manipular e consultar o banco de dados (ver [Parte II](sql.md)) e, claro, com o idioma de programação de sua escolha.
 
 **Índice**
 
@@ -32,33 +32,33 @@ Esta parte descreve as interfaces de programação do cliente distribuídas com 
 
 * Objetos grandes (largeobjects.md)
 
-+ [33.1. Introdução][(lo-intro.md)]
-+ [33.2. Recursos de implementação][(lo-implementation.md)]
-+ [33.3. Interfaces do cliente][(lo-interfaces.md)]
-+ [33.4. Funções do lado do servidor][(lo-funcs.md)]
-+ [33.5. Programa exemplo][(lo-examplesect.md)]
++ [33.1. Introdução](lo-intro.md)
++ [33.2. Recursos de implementação](lo-implementation.md)
++ [33.3. Interfaces do cliente](lo-interfaces.md)
++ [33.4. Funções do lado do servidor](lo-funcs.md)
++ [33.5. Programa exemplo](lo-examplesect.md)
 
 * [34. ECPG — SQL embutido em C](ecpg.md)
 
-+ [34.1. Conceito][(ecpg-concept.md)]
-+ [34.2. Gerenciamento de Conexões de Banco de Dados][(ecpg-connect.md)]
-+ [34.3. Execução de Comandos SQL][(ecpg-commands.md)]
-+ [34.4. Uso de Variáveis de Hospedagem][(ecpg-variables.md)]
-+ [34.5. SQL Dinâmico][(ecpg-dynamic.md)]
-+ [34.6. Biblioteca pgtypes][(ecpg-pgtypes.md)]
-+ [34.7. Uso de Áreas de Descrição][(ecpg-descriptors.md)]
-+ [34.8. Tratamento de Erros][(ecpg-errors.md)]
-+ [34.9. Diretrizes de Pré-processador][(ecpg-preproc.md)]
-+ [34.10. Processamento de Programas de SQL Integrado][(ecpg-process.md)]
-+ [34.11. Funções da Biblioteca][(ecpg-library.md)]
-+ [34.12. Objetos Grandes][(ecpg-lo.md)]
-+ [34.13. Aplicações em C++][(ecpg-cpp.md)]
-+ [34.14. Comandos SQL Integrado][(ecpg-sql-commands.md)]
-+ [34.15. Modo de Compatibilidade Informix][(ecpg-informix-compat.md)]
-+ [34.16. Modo de Compatibilidade Oracle][(ecpg-oracle-compat.md)]
-+ [34.17. Interiores][(ecpg-develop.md)]
++ [34.1. Conceito](ecpg-concept.md)
++ [34.2. Gerenciamento de Conexões de Banco de Dados](ecpg-connect.md)
++ [34.3. Execução de Comandos SQL](ecpg-commands.md)
++ [34.4. Uso de Variáveis de Hospedagem](ecpg-variables.md)
++ [34.5. SQL Dinâmico](ecpg-dynamic.md)
++ [34.6. Biblioteca pgtypes](ecpg-pgtypes.md)
++ [34.7. Uso de Áreas de Descrição](ecpg-descriptors.md)
++ [34.8. Tratamento de Erros](ecpg-errors.md)
++ [34.9. Diretrizes de Pré-processador](ecpg-preproc.md)
++ [34.10. Processamento de Programas de SQL Integrado](ecpg-process.md)
++ [34.11. Funções da Biblioteca](ecpg-library.md)
++ [34.12. Objetos Grandes](ecpg-lo.md)
++ [34.13. Aplicações em C++](ecpg-cpp.md)
++ [34.14. Comandos SQL Integrado](ecpg-sql-commands.md)
++ [34.15. Modo de Compatibilidade Informix](ecpg-informix-compat.md)
++ [34.16. Modo de Compatibilidade Oracle](ecpg-oracle-compat.md)
++ [34.17. Interiores](ecpg-develop.md)
 
-* [Schema de Informações][(information-schema.md)]
+* [Schema de Informações](information-schema.md)
 
 + [35.1. Esquema](infoschema-schema.md)
 + [35.2. Tipos de dados](infoschema-datatypes.md)

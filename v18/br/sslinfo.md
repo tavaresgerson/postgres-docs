@@ -5,7 +5,7 @@
 
 O módulo `sslinfo` fornece informações sobre o certificado SSL que o cliente atual forneceu ao se conectar ao PostgreSQL. O módulo é inútil (a maioria das funções retornará NULL) se a conexão atual não usar SSL.
 
-Algumas das informações disponíveis através deste módulo também podem ser obtidas usando a visão do sistema embutido [[`pg_stat_ssl`][(monitoring-stats.md#MONITORING-PG-STAT-SSL-VIEW "27.2.10. pg_stat_ssl")]].
+Algumas das informações disponíveis através deste módulo também podem ser obtidas usando a visão do sistema embutido [[`pg_stat_ssl`](monitoring-stats.md#MONITORING-PG-STAT-SSL-VIEW)].
 
 Essa extensão não será construída de forma alguma, a menos que a instalação tenha sido configurada com `--with-ssl=openssl`.
 
@@ -35,8 +35,9 @@ Essa função é realmente útil apenas se você tiver mais de um certificado de
 
 `ssl_client_dn_field(fieldname text) returns text`: Esta função retorna o valor do campo especificado no sujeito do certificado, ou NULL se o campo não estiver presente. Os nomes dos campos são constantes de string que são convertidas em identificadores de objeto ASN1 usando o banco de dados de objetos OpenSSL. Os seguintes valores são aceitáveis:
 
-``` commonName (alias CN) surname (alias SN) name givenName (alias GN) countryName (alias C) localityName (alias L) stateOrProvinceName (alias ST) organizationName (alias O) organizationalUnitName (alias OU) title description initials postalCode streetAddress generationQualifier description dnQualifier x500UniqueIdentifier pseudonym role emailAddress
-    ```
+```
+commonName (alias CN) surname (alias SN) name givenName (alias GN) countryName (alias C) localityName (alias L) stateOrProvinceName (alias ST) organizationName (alias O) organizationalUnitName (alias OU) title description initials postalCode streetAddress generationQualifier description dnQualifier x500UniqueIdentifier pseudonym role emailAddress
+```
 
 Todos esses campos são opcionais, exceto `commonName`. Depende inteiramente da política da sua CA qual deles será incluído e qual não será. O significado desses campos, no entanto, é estritamente definido pelas normas X.500 e X.509, então você não pode simplesmente atribuir um significado arbitrário a eles.
 

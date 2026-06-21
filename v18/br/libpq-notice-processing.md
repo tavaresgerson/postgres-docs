@@ -40,4 +40,4 @@ defaultNoticeProcessor(void *arg, const char *message)
 }
 ```
 
-Uma vez que você tenha configurado um receptor ou processador de notificações, você deve esperar que essa função possa ser chamada enquanto o objeto `PGconn` ou os objetos `PGresult` feitos a partir dele existirem. Na criação de um `PGresult`, os ponteiros atuais de manipulação de notificações do `PGconn` são copiados para o `PGresult`, para possível uso por funções como [`PQgetvalue`(libpq-exec.md#LIBPQ-PQGETVALUE)].
+Uma vez que você tenha configurado um receptor ou processador de notificações, você deve esperar que essa função possa ser chamada enquanto o objeto `PGconn` ou os objetos `PGresult` feitos a partir dele existirem. Na criação de um `PGresult`, os ponteiros atuais de manipulação de notificações do `PGconn` são copiados para o `PGresult`, para possível uso por funções como [`PQgetvalue`](libpq-exec.md#LIBPQ-PQGETVALUE)].

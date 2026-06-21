@@ -6,7 +6,7 @@ As entradas de referência também estão disponíveis como páginas tradicionai
 
 **Índice**
 
-* [Comandos SQL][(sql-commands.md)]
+* [Comandos SQL](sql-commands.md)
 
 + [ABORT](sql-abort.md) — abort the current transaction
 + [ALTER AGGREGATE](sql-alteraggregate.md) — change the definition of an aggregate function
@@ -192,7 +192,7 @@ As entradas de referência também estão disponíveis como páginas tradicionai
 + [VACUUM](sql-vacuum.md) — garbage-collect and optionally analyze a database
 + [VALUES](sql-values.md) — compute a set of rows
 
-* [II. Aplicações de cliente do PostgreSQL][(reference-client.md)]
+* [II. Aplicações de cliente do PostgreSQL](reference-client.md)
 
 + [clusterdb][(app-clusterdb.md) — agrupar um banco de dados PostgreSQL
 + [createdb][(app-createdb.md) — criar um novo banco de dados PostgreSQL
@@ -216,7 +216,7 @@ As entradas de referência também estão disponíveis como páginas tradicionai
 + [reindexdb][(app-reindexdb.md) — reindexar um banco de dados PostgreSQL
 + [vacuumdb][(app-vacuumdb.md) — coletar lixo e analisar um banco de dados PostgreSQL
 
-* [III. Aplicações do servidor PostgreSQL][(reference-server.md)]
+* [III. Aplicações do servidor PostgreSQL](reference-server.md)
 
 + [initdb](app-initdb.md) — criar um novo clúster de banco de dados PostgreSQL
 + [pg_archivecleanup](pgarchivecleanup.md) — limpar arquivos de arquivo WAL de PostgreSQL

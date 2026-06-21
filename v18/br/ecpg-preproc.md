@@ -1,8 +1,8 @@
 ## 34.9. Diretrizes do pré-processador [#](#ECPG-PREPROC)
 
-* [34.9.1. Incluir arquivos][(ecpg-preproc.md#ECPG-INCLUDE)]
-* [34.9.2. As diretivas define e undef][(ecpg-preproc.md#ECPG-DEFINE)]
-* [34.9.3. as diretivas ifdef, ifndef, elif, else e endif][(ecpg-preproc.md#ECPG-IFDEF)]
+* [34.9.1. Incluir arquivos](ecpg-preproc.md#ECPG-INCLUDE)
+* [34.9.2. As diretivas define e undef](ecpg-preproc.md#ECPG-DEFINE)
+* [34.9.3. as diretivas ifdef, ifndef, elif, else e endif](ecpg-preproc.md#ECPG-IFDEF)
 
 Existem várias diretivas do pré-processador disponíveis que modificam a forma como o pré-processador `ecpg` analisa e processa um arquivo.
 

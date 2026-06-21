@@ -37,85 +37,79 @@ O gráfico a seguir mostra o que você deve fazer ao escrever aspas sem citaçã
 
 1. Para iniciar e finalizar o corpo da função, por exemplo: [#](#PLPGSQL-QUOTE-TIPS-1-QUOT)
 
-``` CREATE FUNCTION foo() RETURNS integer AS ' .... ' LANGUAGE plpgsql;
-    ```
+```
+CREATE FUNCTION foo() RETURNS integer AS ' .... ' LANGUAGE plpgsql;
+```
 
 Em qualquer parte do corpo de uma função com aspas simples, as aspas *devem* aparecer em pares.
 
 2 aspas [#](#PLPGSQL-QUOTE-TIPS-2-QUOT): Para aspas de cadeia dentro do corpo da função, por exemplo:
 
-``` a_output := ''Blah''; SELECT * FROM users WHERE f_name=''foobar'';
-    ```
+```
+a_output := ''Blah''; SELECT * FROM users WHERE f_name=''foobar'';
+```
 
 Na abordagem de citação em dólares, você apenas escreveria:
 
-    ```
-    a_output := 'Blah'; SELECT * FROM users WHERE f_name='foobar';
-    ```
+```
+a_output := 'Blah'; SELECT * FROM users WHERE f_name='foobar';
+```
 
 que é exatamente o que o analisador PL/pgSQL veria em qualquer caso.
 
-4 aspas [#](#PLPGSQL-QUOTE-TIPS-4-QUOT)
-:   Quando você precisa de uma única aspa em uma constante de string dentro do corpo da função, por exemplo:
+4 aspas [#](#PLPGSQL-QUOTE-TIPS-4-QUOT): Quando você precisa de uma única aspa em uma constante de string dentro do corpo da função, por exemplo:
 
-    ```
-    a_output := a_output || '' AND name LIKE ''''foobar'''' AND xyz''
-    ```
+```
+a_output := a_output || '' AND name LIKE ''''foobar'''' AND xyz''
+```
 
 O valor que realmente será anexado a `a_output` seria: `AND name LIKE 'foobar' AND xyz`.
 
 Na abordagem de citação em dólares, você escreveria:
 
-    ```
-    a_output := a_output || $$ AND name LIKE 'foobar' AND xyz$$
-    ```
+```
+a_output := a_output || $$ AND name LIKE 'foobar' AND xyz$$
+```
 
 atenção para que quaisquer delimitadores de citação em dólares ao redor disso não sejam apenas `$$`.
 
-6 aspas [#](#PLPGSQL-QUOTE-TIPS-6-QUOT)
-:   Quando uma única aspa em uma string dentro do corpo da função está adjacente à extremidade dessa constante de string, por exemplo:
+6 aspas [#](#PLPGSQL-QUOTE-TIPS-6-QUOT): Quando uma única aspa em uma string dentro do corpo da função está adjacente à extremidade dessa constante de string, por exemplo:
 
-    ```
-    a_output := a_output || '' AND name LIKE ''''foobar''''''
-    ```
+```
+a_output := a_output || '' AND name LIKE ''''foobar''''''
+```
 
-O valor anexado a `a_output` seria então:
-`AND name LIKE 'foobar'`.
+O valor anexado a `a_output` seria então: `AND name LIKE 'foobar'`.
 
 Na abordagem de cotação em dólares, isso se torna:
 
-    ```
-    a_output := a_output || $$ AND name LIKE 'foobar'$$
-    ```
+```
+a_output := a_output || $$ AND name LIKE 'foobar'$$
+```
 
-10 aspas [#](#PLPGSQL-QUOTE-TIPS-10-QUOT)
-:   Quando você deseja duas aspas simples em uma constante de cadeia (que
-    representa 8 aspas) e esta é adjacente ao final dessa constante de cadeia
-    (mais 2). Você provavelmente só precisará disso se estiver escrevendo uma
-    função que gera outras funções, como em [Exemplo 41.10][(plpgsql-porting.md#PLPGSQL-PORTING-EX2 "Example 41.10. Porting a Function that Creates Another Function from PL/SQL to PL/pgSQL")].
-    Por exemplo:
+10 aspas [#](#PLPGSQL-QUOTE-TIPS-10-QUOT): Quando você deseja duas aspas simples em uma constante de cadeia (que representa 8 aspas) e esta é adjacente ao final dessa constante de cadeia (mais 2). Você provavelmente só precisará disso se estiver escrevendo uma função que gera outras funções, como em [Exemplo 41.10](plpgsql-porting.md#PLPGSQL-PORTING-EX2). Por exemplo:
 
-    ```
-    a_output := a_output || '' if v_'' || referrer_keys.kind || '' like ''''''''''
-        || referrer_keys.key_string || ''''''''''
-        then return ''''''  || referrer_keys.referrer_type
-        || ''''''; end if;'';
-    ```
+```
+a_output := a_output || '' if v_'' || referrer_keys.kind || '' like ''''''''''
+    || referrer_keys.key_string || ''''''''''
+    then return ''''''  || referrer_keys.referrer_type
+    || ''''''; end if;'';
+```
 
 O valor de `a_output` seria, então:
 
-    ```
-    if v_... like ''...'' then return ''...''; end if;
-    ```
+```
+if v_... like ''...'' then return ''...''; end if;
+```
 
 Na abordagem de cotação em dólares, isso se torna:
 
-    ```
-    a_output := a_output || $$ if v_$$ || referrer_keys.kind || $$ like '$$
-        || referrer_keys.key_string || $$'
-        then return '$$  || referrer_keys.referrer_type
-        || $$'; end if;$$;
-    ```
+```
+a_output := a_output || $$ if v_$$ || referrer_keys.kind || $$ like '$$
+    || referrer_keys.key_string || $$'
+    then return '$$  || referrer_keys.referrer_type
+    || $$'; end if;$$;
+```
 
 onde assumimos que só precisamos colocar aspas simples em `a_output`, porque será requote antes do uso.
 
@@ -125,33 +119,15 @@ Para ajudar o usuário a encontrar casos de problemas simples, mas comuns, antes
 
 É recomendado definir `plpgsql.extra_warnings`, ou `plpgsql.extra_errors`, conforme apropriado, para `"all"` em ambientes de desenvolvimento e/ou teste.
 
-Esses controles adicionais são habilitados através das variáveis de configuração
-`plpgsql.extra_warnings` para avisos e
-`plpgsql.extra_errors` para erros. Ambos podem ser definidos como
-uma lista de verificações separadas por vírgula, `"none"` ou
-`"all"`. O padrão é `"none"`. Atualmente, a lista de verificações disponíveis inclui:
+Esses controles adicionais são habilitados através das variáveis de configuração `plpgsql.extra_warnings` para avisos e `plpgsql.extra_errors` para erros. Ambos podem ser definidos como uma lista de verificações separadas por vírgula, `"none"` ou `"all"`. O padrão é `"none"`. Atualmente, a lista de verificações disponíveis inclui:
 
 `shadowed_variables` [#](#PLPGSQL-EXTRA-CHECKS-SHADOWED-VARIABLES) : Verifica se uma declaração sombreia uma variável previamente definida.
 
-`strict_multi_assignment` [#](#PLPGSQL-EXTRA-CHECKS-STRICT-MULTI-ASSIGNMENT)
-:   Alguns comandos PL/pgSQL permitem atribuir
-    valores a mais de uma variável de cada vez, como
-    `SELECT INTO`. Normalmente, o número de variáveis
-    alvo e o número de variáveis de origem devem
-    correspondere, embora o PL/pgSQL use `NULL`
-    para valores ausentes e variáveis extras são ignoradas.
-    Habilitar esta verificação fará com que o PL/pgSQL
-    lançe um
-    `WARNING` ou `ERROR` sempre que o
-    número de variáveis alvo e o número de variáveis de
-    origem forem diferentes.
+`strict_multi_assignment` [#](#PLPGSQL-EXTRA-CHECKS-STRICT-MULTI-ASSIGNMENT): Alguns comandos PL/pgSQL permitem atribuir valores a mais de uma variável de cada vez, como `SELECT INTO`. Normalmente, o número de variáveis alvo e o número de variáveis de origem devem correspondere, embora o PL/pgSQL use `NULL` para valores ausentes e variáveis extras são ignoradas. Habilitar esta verificação fará com que o PL/pgSQL lançe um `WARNING` ou `ERROR` sempre que o número de variáveis alvo e o número de variáveis de origem forem diferentes.
 
-`too_many_rows` [#](#PLPGSQL-EXTRA-CHECKS-TOO-MANY-ROWS)
-:   Ativação desta verificação fará com que o PL/pgSQL verifique se uma consulta dada retorna mais de uma linha quando uma cláusula `INTO` é usada. Como um `INTO`
-    está sendo usado apenas uma linha, ter uma consulta retornando várias linhas é geralmente ineficiente e/ou não determinístico e, portanto, é provável que seja um erro.
+`too_many_rows` [#](#PLPGSQL-EXTRA-CHECKS-TOO-MANY-ROWS): Ativação desta verificação fará com que o PL/pgSQL verifique se uma consulta dada retorna mais de uma linha quando uma cláusula `INTO` é usada. Como um `INTO` está sendo usado apenas uma linha, ter uma consulta retornando várias linhas é geralmente ineficiente e/ou não determinístico e, portanto, é provável que seja um erro.
 
-O exemplo a seguir mostra o efeito de `plpgsql.extra_warnings`
-definido como `shadowed_variables`:
+O exemplo a seguir mostra o efeito de `plpgsql.extra_warnings` definido como `shadowed_variables`:
 
 ```
 SET plpgsql.extra_warnings TO 'shadowed_variables';
@@ -159,9 +135,7 @@ SET plpgsql.extra_warnings TO 'shadowed_variables';
 CREATE FUNCTION foo(f1 int) RETURNS int AS $$ DECLARE f1 int; BEGIN RETURN f1; END; $$ LANGUAGE plpgsql; WARNING:  variable "f1" shadows a previously defined variable LINE 3: f1 int; ^ CREATE FUNCTION
 ```
 
-O exemplo abaixo mostra os efeitos de definir
-`plpgsql.extra_warnings` para
-`strict_multi_assignment`:
+O exemplo abaixo mostra os efeitos de definir `plpgsql.extra_warnings` para `strict_multi_assignment`:
 
 ```
 SET plpgsql.extra_warnings TO 'strict_multi_assignment';

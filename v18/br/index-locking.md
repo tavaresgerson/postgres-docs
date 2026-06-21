@@ -6,7 +6,7 @@ Criar um tipo de índice que suporte atualizações concorrentes geralmente requ
 
 Além dos próprios requisitos de consistência interna do índice, as atualizações concorrentes criam problemas em relação à consistência entre a tabela principal (o *heap*) e o índice. Como o PostgreSQL separa os acessos e atualizações do heap daqueles do índice, existem janelas em que o índice pode ser inconsistente com o heap. Lidamos com esse problema com as seguintes regras:
 
-* Uma nova entrada de pilha é feita antes de fazer suas entradas de índice. (Portanto, uma varredura de índice concorrente provavelmente não verá a entrada da pilha. Isso está bem, porque o leitor do índice não estaria interessado em uma linha não comprometida de qualquer maneira. Mas veja [Seção 63.5][(index-unique-checks.md "63.5. Index Uniqueness Checks")].])
+* Uma nova entrada de pilha é feita antes de fazer suas entradas de índice. (Portanto, uma varredura de índice concorrente provavelmente não verá a entrada da pilha. Isso está bem, porque o leitor do índice não estaria interessado em uma linha não comprometida de qualquer maneira. Mas veja [Seção 63.5](index-unique-checks.md).])
 * Quando uma entrada de pilha deve ser excluída (pelo `VACUUM`, todas as suas entradas de índice devem ser removidas primeiro.
 * Uma varredura de índice deve manter um pino na página de índice que contém o item que foi retornado pela última vez pelo `amgettuple`, e o `ambulkdelete` não pode excluir entradas de páginas que estão marcadas por outros backends. A necessidade desta regra é explicada abaixo.
 

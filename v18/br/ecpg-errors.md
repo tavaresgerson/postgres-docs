@@ -1,7 +1,7 @@
 ## 34.8. Gerenciamento de Erros [#](#ECPG-ERRORS)
 
-* [34.8.1. Retornos de chamada][(ecpg-errors.md#ECPG-WHENEVER)]
-* [34.8.2. sqlca][(ecpg-errors.md#ECPG-SQLCA)]
+* [34.8.1. Retornos de chamada](ecpg-errors.md#ECPG-WHENEVER)
+* [34.8.2. sqlca](ecpg-errors.md#ECPG-SQLCA)
 * [34.8.3. `SQLSTATE` vs. `SQLCODE`[(ecpg-errors.md#ECPG-SQLSTATE-SQLCODE)]
 
 Esta seção descreve como você pode lidar com condições excepcionais e avisos em um programa de SQL incorporado. Existem duas facilidades não exclusivas para isso.
@@ -163,7 +163,7 @@ sqlstate: 42P01
 
 Os campos `sqlca.sqlstate` e `sqlca.sqlcode` são dois esquemas diferentes que fornecem códigos de erro. Ambos são derivados do padrão SQL, mas `SQLCODE` foi marcado como desatualizado na edição SQL-92 do padrão e foi descartado em edições posteriores. Portanto, novas aplicações são fortemente incentivadas a usar `SQLSTATE`.
 
-`SQLSTATE` é uma matriz de cinco caracteres. Os cinco caracteres contêm dígitos ou letras maiúsculas que representam códigos de várias condições de erro e aviso. `SQLSTATE` tem um esquema hierárquico: os dois primeiros caracteres indicam a classe geral da condição, os três últimos caracteres indicam uma subclasse da condição geral. Um estado bem-sucedido é indicado pelo código `00000`. Os códigos `SQLSTATE` são, na maior parte, definidos no padrão SQL. O servidor PostgreSQL suporta nativamente os códigos de erro `SQLSTATE`, portanto, pode-se alcançar um alto grau de consistência usando este esquema de código de erro em todas as aplicações. Para mais informações, consulte [Apêndice A][(errcodes-appendix.md "Appendix A. PostgreSQL Error Codes")].
+`SQLSTATE` é uma matriz de cinco caracteres. Os cinco caracteres contêm dígitos ou letras maiúsculas que representam códigos de várias condições de erro e aviso. `SQLSTATE` tem um esquema hierárquico: os dois primeiros caracteres indicam a classe geral da condição, os três últimos caracteres indicam uma subclasse da condição geral. Um estado bem-sucedido é indicado pelo código `00000`. Os códigos `SQLSTATE` são, na maior parte, definidos no padrão SQL. O servidor PostgreSQL suporta nativamente os códigos de erro `SQLSTATE`, portanto, pode-se alcançar um alto grau de consistência usando este esquema de código de erro em todas as aplicações. Para mais informações, consulte [Apêndice A](errcodes-appendix.md).
 
 `SQLCODE`, o esquema de código de erro obsoleto, é um número simples. Um valor de 0 indica sucesso, um valor positivo indica sucesso com informações adicionais, um valor negativo indica um erro. O padrão SQL define apenas o valor positivo +100, que indica que o último comando retornou ou afetou zero linhas, e não há valores negativos específicos. Portanto, este esquema só pode alcançar uma baixa portabilidade e não tem uma atribuição de código hierárquico. Historicamente, o processador de SQL incorporado para o PostgreSQL atribuiu alguns valores específicos `SQLCODE` para seu uso, que estão listados abaixo com seu valor numérico e seu nome simbólico. Lembre-se de que esses valores não são portáveis para outras implementações de SQL. Para simplificar a portar de aplicativos para o esquema `SQLSTATE`, o `SQLSTATE` correspondente também está listado. No entanto, não há mapeamento um para um ou um para muitos entre os dois esquemas (de fato, é muitos para muitos), então você deve consultar a lista global `SQLSTATE` em [Apêndice A](errcodes-appendix.md "Appendix A. PostgreSQL Error Codes") em cada caso.
 
@@ -175,8 +175,9 @@ Estes são os valores atribuídos `SQLCODE`:
 
 Ao processar um cursor em um loop, você pode usar esse código como uma maneira de detectar quando abortar o loop, assim:
 
-``` while (1) { EXEC SQL FETCH ... ; if (sqlca.sqlcode == ECPG_NOT_FOUND) break; }
-    ```
+```
+while (1) { EXEC SQL FETCH ... ; if (sqlca.sqlcode == ECPG_NOT_FOUND) break; }
+```
 
 Mas o `WHENEVER NOT FOUND DO BREAK` faz isso efetivamente internamente, então geralmente não há vantagem em escrever isso explicitamente.
 

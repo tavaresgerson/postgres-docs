@@ -64,7 +64,7 @@ O sub-SELECT escalar vazio produzirá um valor nulo que é considerado do tipo d
 
 É muito difícil evitar tais problemas, devido à suposição geral do SQL de que um valor nulo é um valor válido de cada tipo de dado. A melhor prática, portanto, é projetar as restrições de um domínio de modo que um valor nulo seja permitido e, em seguida, aplicar as restrições da coluna `NOT NULL` às colunas do tipo do domínio conforme necessário, em vez de aplicá-las diretamente ao tipo do domínio.
 
-O PostgreSQL assume que as condições das restrições `CHECK` são imutáveis, ou seja, elas sempre darão o mesmo resultado para o mesmo valor de entrada. Essa suposição é o que justifica o exame das restrições `CHECK` apenas quando um valor é convertido pela primeira vez para um tipo de domínio, e não em outros momentos. (Isso é essencialmente o mesmo que o tratamento das restrições da tabela `CHECK`, conforme descrito na [Seção 5.5.1][(ddl-constraints.md#DDL-CONSTRAINTS-CHECK-CONSTRAINTS "5.5.1. Check Constraints")].)
+O PostgreSQL assume que as condições das restrições `CHECK` são imutáveis, ou seja, elas sempre darão o mesmo resultado para o mesmo valor de entrada. Essa suposição é o que justifica o exame das restrições `CHECK` apenas quando um valor é convertido pela primeira vez para um tipo de domínio, e não em outros momentos. (Isso é essencialmente o mesmo que o tratamento das restrições da tabela `CHECK`, conforme descrito na [Seção 5.5.1](ddl-constraints.md#DDL-CONSTRAINTS-CHECK-CONSTRAINTS).)
 
 Um exemplo de uma maneira comum de quebrar essa suposição é fazer referência a uma função definida pelo usuário em uma expressão de `CHECK` e, em seguida, alterar o comportamento dessa função. O PostgreSQL não proíbe isso, mas não notará se houver valores armazenados do tipo de domínio que agora violam a restrição `CHECK`. Isso causaria o fracasso de um próximo dump e restabelecimento do banco de dados. A maneira recomendada de lidar com essa mudança é descartar a restrição (usando `ALTER DOMAIN`), ajustar a definição da função e adicionar novamente a restrição, verificando-a novamente contra os dados armazenados.
 
@@ -95,7 +95,7 @@ CREATE TABLE us_snail_addy (
 
 O comando `CREATE DOMAIN` está de acordo com o padrão SQL.
 
-A sintaxe `NOT NULL` neste comando é uma extensão do PostgreSQL. (Uma maneira padrão de escrever o mesmo para tipos de dados não compostos seria `CHECK (VALUE IS NOT NULL)`. No entanto, de acordo com a seção chamada “Notas” (sql-createdomain.md#SQL-CREATEDOMAIN-NOTES "Notes"), essas restrições são melhor evitadas na prática, de qualquer forma.) A “restrição” `NULL` é uma extensão do PostgreSQL (consulte também [Compatibilidade][(sql-createtable.md#SQL-CREATETABLE-COMPATIBILITY "Compatibility")]).
+A sintaxe `NOT NULL` neste comando é uma extensão do PostgreSQL. (Uma maneira padrão de escrever o mesmo para tipos de dados não compostos seria `CHECK (VALUE IS NOT NULL)`. No entanto, de acordo com a seção chamada “Notas” (sql-createdomain.md#SQL-CREATEDOMAIN-NOTES "Notes"), essas restrições são melhor evitadas na prática, de qualquer forma.) A “restrição” `NULL` é uma extensão do PostgreSQL (consulte também [Compatibilidade](sql-createtable.md#SQL-CREATETABLE-COMPATIBILITY)).
 
 ## Veja também
 

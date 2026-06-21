@@ -19,7 +19,7 @@ Se um nome de esquema for fornecido, o dicionário de pesquisa de texto é criad
 
 O usuário que define um dicionário de busca de texto se torna seu proprietário.
 
-Consulte o [Capítulo 12][(textsearch.md "Chapter 12. Full Text Search")] para obter mais informações.
+Consulte o [Capítulo 12](textsearch.md) para obter mais informações.
 
 ## Parâmetros
 

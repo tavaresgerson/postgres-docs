@@ -93,7 +93,7 @@ SELECT * FROM ts_debug('public.english', 'The Brightest supernovaes');
 
 Neste exemplo, a palavra `Brightest` foi reconhecida pelo analisador como uma `ASCII word` (alias `asciiword`). Para este tipo de token, a lista do dicionário é `english_ispell` e `english_stem`. A palavra foi reconhecida pelo `english_ispell`, que a reduziu ao substantivo `bright`. A palavra `supernovaes` é desconhecida pelo dicionário `english_ispell`, então foi passada para o próximo dicionário, e, felizmente, foi reconhecida (de fato, `english_stem` é um dicionário Snowball que reconhece tudo; é por isso que foi colocada no final da lista do dicionário).
 
-A palavra `The` foi reconhecida pelo dicionário `english_ispell` como uma palavra parada ([Seção 12.6.1][(textsearch-dictionaries.md#TEXTSEARCH-STOPWORDS "12.6.1. Stop Words")]) e não será indexada. Os espaços também são descartados, uma vez que a configuração não fornece dicionários para eles.
+A palavra `The` foi reconhecida pelo dicionário `english_ispell` como uma palavra parada ([Seção 12.6.1](textsearch-dictionaries.md#TEXTSEARCH-STOPWORDS)) e não será indexada. Os espaços também são descartados, uma vez que a configuração não fornece dicionários para eles.
 
 Você pode reduzir a largura da saída, especificando explicitamente quais colunas você deseja ver:
 

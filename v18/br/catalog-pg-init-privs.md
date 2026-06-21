@@ -11,93 +11,124 @@ Os objetos que possuem privilégios iniciais definidos por initdb terão entrada
 
 
 <table border="1" class="table" summary="pg_init_privs Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">Tipo de coluna</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
+     Tipo de coluna
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       objoid
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referência a qualquer coluna OID)</p>
-<p>O OID do objeto específico</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     (referência a qualquer coluna OID)
+    </p>
+    <p>
+     O OID do objeto específico
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       classoid
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
+      <code class="structname">
        pg_class
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
-     </code>)</p>
-<p>O OID do catálogo do sistema que o objeto está em</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     O OID do catálogo do sistema que o objeto está em
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       objsubid
      </code>
-<code class="type">
+     <code class="type">
       int4
      </code>
-</p>
-<p>Para uma coluna de tabela, este é o número da coluna (o<code class="structfield">
+    </p>
+    <p>
+     Para uma coluna de tabela, este é o número da coluna (o
+     <code class="structfield">
       objoid
-     </code>e<code class="structfield">
+     </code>
+     e
+     <code class="structfield">
       classoid
-     </code>refere-se à própria tabela). Para todos os outros tipos de objeto, essa coluna é zero.</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     refere-se à própria tabela). Para todos os outros tipos de objeto, essa coluna é zero.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       privtype
      </code>
-<code class="type">
+     <code class="type">
       char
      </code>
-</p>
-<p>Um código que define o tipo de privilégio inicial deste objeto; veja o texto</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Um código que define o tipo de privilégio inicial deste objeto; veja o texto
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       initprivs
      </code>
-<code class="type">
+     <code class="type">
       aclitem[]
      </code>
-</p>
-<p>Os privilégios de acesso inicial; veja<a class="xref" href="ddl-priv.md" title="5.8. Privileges">Seção 5.8</a>para detalhes</p>
-</td>
-</tr>
-</tbody>
+    </p>
+    <p>
+     Os privilégios de acesso inicial; veja
+     <a class="xref" href="ddl-priv.md" title="5.8. Privileges">
+      Seção 5.8
+     </a>
+     para detalhes
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 

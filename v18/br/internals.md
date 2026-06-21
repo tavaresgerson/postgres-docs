@@ -4,14 +4,14 @@ Esta parte contém informações variadas que podem ser úteis para os desenvolv
 
 **Índice**
 
-* [51. Visão geral dos recursos internos do PostgreSQL][(overview.md)]
+* [51. Visão geral dos recursos internos do PostgreSQL](overview.md)
 
-+ [51.1. O Caminho de uma Consulta][(query-path.md)]
-+ [51.2. Como as Conexões São Estabelecidas][(connect-estab.md)]
-+ [51.3. A Fase do Parser][(parser-stage.md)]
-+ [51.4. O Sistema de Regras do PostgreSQL][(rule-system.md)]
-+ [51.5. Planejador/Otimizador][(planner-optimizer.md)]
-+ [51.6. Executor][(executor.md)]
++ [51.1. O Caminho de uma Consulta](query-path.md)
++ [51.2. Como as Conexões São Estabelecidas](connect-estab.md)
++ [51.3. A Fase do Parser](parser-stage.md)
++ [51.4. O Sistema de Regras do PostgreSQL](rule-system.md)
++ [51.5. Planejador/Otimizador](planner-optimizer.md)
++ [51.6. Executor](executor.md)
 
 * [Catálogo do sistema](catalogs.md)
 
@@ -83,46 +83,46 @@ Esta parte contém informações variadas que podem ser úteis para os desenvolv
 
 * [53. Visões do sistema](views.md)
 
-+ [53.1. Visão geral][(views-overview.md)]
-+ [53.2. `pg_aios`][(view-pg-aios.md)]
-+ [53.3. `pg_available_extensions`][(view-pg-available-extensions.md)]
-+ [53.4. `pg_available_extension_versions`][(view-pg-available-extension-versions.md)]
-+ [53.5. `pg_backend_memory_contexts`][(view-pg-backend-memory-contexts.md)]
-+ [53.6. `pg_config`][(view-pg-config.md)]
-+ [53.7. `pg_cursors`][(view-pg-cursors.md)]
-+ [53.8. `pg_file_settings`][(view-pg-file-settings.md)]
-+ [53.9. `pg_group`][(view-pg-group.md)]
-+ [53.10. `pg_hba_file_rules`][(view-pg-hba-file-rules.md)]
-+ [53.11. `pg_ident_file_mappings`][(view-pg-ident-file-mappings.md)]
-+ [53.12. `pg_indexes`][(view-pg-indexes.md)]
-+ [53.13. `pg_locks`][(view-pg-locks.md)]
-+ [53.14. `pg_matviews`][(view-pg-matviews.md)]
-+ [53.15. `pg_policies`][(view-pg-policies.md)]
-+ [53.16. `pg_prepared_statements`][(view-pg-prepared-statements.md)]
-+ [53.17. `pg_prepared_xacts`][(view-pg-prepared-xacts.md)]
-+ [53.18. `pg_publication_tables`][(view-pg-publication-tables.md)]
-+ [53.19. `pg_replication_origin_status`][(view-pg-replication-origin-status.md)]
-+ [53.20. `pg_replication_slots`][(view-pg-replication-slots.md)]
-+ [53.21. `pg_roles`][(view-pg-roles.md)]
-+ [53.22. `pg_rules`][(view-pg-rules.md)]
-+ [53.23. `pg_seclabels`][(view-pg-seclabels.md)]
-+ [53.24. `pg_sequences`][(view-pg-sequences.md)]
-+ [53.25. `pg_settings`][(view-pg-settings.md)]
-+ [53.26. `pg_shadow`][(view-pg-shadow.md)]
-+ [53.27. `pg_shmem_allocations`][(view-pg-shmem-allocations.md)]
-+ [53.28. `pg_shmem_allocations_numa`][(view-pg-shmem-allocations-numa.md)]
-+ [53.29. `pg_stats`][(view-pg-stats.md)]
-+ [53.30. `pg_stats_ext`][(view-pg-stats-ext.md)]
-+ [53.31. `pg_stats_ext_exprs`][(view-pg-stats-ext-exprs.md)]
-+ [53.32. `pg_tables`][(view-pg-tables.md)]
-+ [53.33. `pg_timezone_abbrevs`][(view-pg-timezone-abbrevs.md)]
-+ [53.34. `pg_timezone_names`][(view-pg-timezone-names.md)]
-+ [53.35. `pg_user`][(view-pg-user.md)]
-+ [53.36. `pg_user_mappings`][(view-pg-user-mappings.md)]
-+ [53.37. `pg_views`][(view-pg-views.md)]
-+ [53.38. `pg_wait_events`][(view-pg-wait-events.md)]
++ [53.1. Visão geral](views-overview.md)
++ [53.2. `pg_aios`](view-pg-aios.md)
++ [53.3. `pg_available_extensions`](view-pg-available-extensions.md)
++ [53.4. `pg_available_extension_versions`](view-pg-available-extension-versions.md)
++ [53.5. `pg_backend_memory_contexts`](view-pg-backend-memory-contexts.md)
++ [53.6. `pg_config`](view-pg-config.md)
++ [53.7. `pg_cursors`](view-pg-cursors.md)
++ [53.8. `pg_file_settings`](view-pg-file-settings.md)
++ [53.9. `pg_group`](view-pg-group.md)
++ [53.10. `pg_hba_file_rules`](view-pg-hba-file-rules.md)
++ [53.11. `pg_ident_file_mappings`](view-pg-ident-file-mappings.md)
++ [53.12. `pg_indexes`](view-pg-indexes.md)
++ [53.13. `pg_locks`](view-pg-locks.md)
++ [53.14. `pg_matviews`](view-pg-matviews.md)
++ [53.15. `pg_policies`](view-pg-policies.md)
++ [53.16. `pg_prepared_statements`](view-pg-prepared-statements.md)
++ [53.17. `pg_prepared_xacts`](view-pg-prepared-xacts.md)
++ [53.18. `pg_publication_tables`](view-pg-publication-tables.md)
++ [53.19. `pg_replication_origin_status`](view-pg-replication-origin-status.md)
++ [53.20. `pg_replication_slots`](view-pg-replication-slots.md)
++ [53.21. `pg_roles`](view-pg-roles.md)
++ [53.22. `pg_rules`](view-pg-rules.md)
++ [53.23. `pg_seclabels`](view-pg-seclabels.md)
++ [53.24. `pg_sequences`](view-pg-sequences.md)
++ [53.25. `pg_settings`](view-pg-settings.md)
++ [53.26. `pg_shadow`](view-pg-shadow.md)
++ [53.27. `pg_shmem_allocations`](view-pg-shmem-allocations.md)
++ [53.28. `pg_shmem_allocations_numa`](view-pg-shmem-allocations-numa.md)
++ [53.29. `pg_stats`](view-pg-stats.md)
++ [53.30. `pg_stats_ext`](view-pg-stats-ext.md)
++ [53.31. `pg_stats_ext_exprs`](view-pg-stats-ext-exprs.md)
++ [53.32. `pg_tables`](view-pg-tables.md)
++ [53.33. `pg_timezone_abbrevs`](view-pg-timezone-abbrevs.md)
++ [53.34. `pg_timezone_names`](view-pg-timezone-names.md)
++ [53.35. `pg_user`](view-pg-user.md)
++ [53.36. `pg_user_mappings`](view-pg-user-mappings.md)
++ [53.37. `pg_views`](view-pg-views.md)
++ [53.38. `pg_wait_events`](view-pg-wait-events.md)
 
-* [Protocolo de Frontend/Backend][(protocol.md)]
+* [Protocolo de Frontend/Backend](protocol.md)
 
 + [54.1. Visão Geral](protocol-overview.md)
 + [54.2. Fluxo de Mensagens](protocol-flow.md)
@@ -135,7 +135,7 @@ Esta parte contém informações variadas que podem ser úteis para os desenvolv
 + [54.9. Formatos de Mensagens de Replicação Lógico](protocol-logicalrep-message-formats.md)
 + [54.10. Resumo das Alterações desde o Protocolo 2.0](protocol-changes.md)
 
-* [55. Convenções de codificação do PostgreSQL][(source.md)]
+* [55. Convenções de codificação do PostgreSQL](source.md)
 
 + [55.1. Formatação](source-format.md)
 + [55.2. Relatar Erros Dentro do Servidor](error-message-reporting.md)
@@ -147,8 +147,8 @@ Esta parte contém informações variadas que podem ser úteis para os desenvolv
 + [56.1. Para o Tradutor](nls-translator.md)
 + [56.2. Para o Programador](nls-programmer.md)
 
-* [57. Escrever um manipulador de linguagem procedural][(plhandler.md)]
-* [58. Escrever um wrapper de dados estrangeiro][(fdwhandler.md)]
+* [57. Escrever um manipulador de linguagem procedural](plhandler.md)
+* [58. Escrever um wrapper de dados estrangeiro](fdwhandler.md)
 
 + [58.1. Funções de Wrapper de Dados Estrangeiro](fdw-functions.md)
 + [58.2. Rotinas de Callback de Wrapper de Dados Estrangeiro](fdw-callbacks.md)
@@ -162,26 +162,26 @@ Esta parte contém informações variadas que podem ser úteis para os desenvolv
 
 * [60. Escrever um provedor de varredura personalizada](custom-scan.md)
 
-+ [60.1. Criação de caminhos de varredura personalizados][(custom-scan-path.md)]
-+ [60.2. Criação de planos de varredura personalizados][(custom-scan-plan.md)]
-+ [60.3. Elaboração de varreduras personalizadas][(custom-scan-execution.md)]
++ [60.1. Criação de caminhos de varredura personalizados](custom-scan-path.md)
++ [60.2. Criação de planos de varredura personalizados](custom-scan-plan.md)
++ [60.3. Elaboração de varreduras personalizadas](custom-scan-execution.md)
 
 * [61. Otimizador de Consulta Genética](geqo.md)
 
-+ [61.1. Tratamento de consultas como um problema de otimização complexo][(geqo-intro.md)]
-+ [61.2. Algoritmos genéticos][(geqo-intro2.md)]
-+ [61.3. Otimização de consultas genéticas (GEQO) no PostgreSQL][(geqo-pg-intro.md)]
-+ [61.4. Leitura adicional][(geqo-biblio.md)]
++ [61.1. Tratamento de consultas como um problema de otimização complexo](geqo-intro.md)
++ [61.2. Algoritmos genéticos](geqo-intro2.md)
++ [61.3. Otimização de consultas genéticas (GEQO) no PostgreSQL](geqo-pg-intro.md)
++ [61.4. Leitura adicional](geqo-biblio.md)
 
 * [62. Definição da Interface do Método de Acesso à Tabela](tableam.md)
 * [63. Definição da Interface do Método de Acesso ao Índice](indexam.md)
 
-+ [63.1. Estrutura básica da API para índices][(index-api.md)]
-+ [63.2. Funções de método de acesso ao índice][(index-functions.md)]
-+ [63.3. Detecção de índice][(index-scanning.md)]
-+ [63.4. Considerações sobre o bloqueio do índice][(index-locking.md)]
-+ [63.5. Verificação de unicidade do índice][(index-unique-checks.md)]
-+ [63.6. Funções de estimativa do custo do índice][(index-cost-estimation.md)]
++ [63.1. Estrutura básica da API para índices](index-api.md)
++ [63.2. Funções de método de acesso ao índice](index-functions.md)
++ [63.3. Detecção de índice](index-scanning.md)
++ [63.4. Considerações sobre o bloqueio do índice](index-locking.md)
++ [63.5. Verificação de unicidade do índice](index-unique-checks.md)
++ [63.6. Funções de estimativa do custo do índice](index-cost-estimation.md)
 
 * Registro antecipado para extensões (wal-for-extensions.md)
 
@@ -209,25 +209,25 @@ Esta parte contém informações variadas que podem ser úteis para os desenvolv
 
 * [67. Processamento de Transações](transactions.md)
 
-+ [67.1. Transações e Identificadores][(transaction-id.md)]
-+ [67.2. Transações e Acionamento de Bloqueio][(xact-locking.md)]
-+ [67.3. Subtransações][(subxacts.md)]
-+ [67.4. Transações de Dois Fases][(two-phase.md)]
++ [67.1. Transações e Identificadores](transaction-id.md)
++ [67.2. Transações e Acionamento de Bloqueio](xact-locking.md)
++ [67.3. Subtransações](subxacts.md)
++ [67.4. Transações de Dois Fases](two-phase.md)
 
 * [68. Declarações do Catálogo do Sistema e Conteúdo Inicial](bki.md)
 
-+ [68.1. Regras de Declaração do Catálogo do Sistema][(system-catalog-declarations.md)]
-+ [68.2. Dados Iniciais do Catálogo do Sistema][(system-catalog-initial-data.md)]
-+ [68.3. Formato do Arquivo BKI][(bki-format.md)]
-+ [68.4. Comandos BKI][(bki-commands.md)]
-+ [68.5. Estrutura do Arquivo BKI do Bootstrap][(bki-structure.md)]
-+ [68.6. Exemplo BKI][(bki-example.md)]
++ [68.1. Regras de Declaração do Catálogo do Sistema](system-catalog-declarations.md)
++ [68.2. Dados Iniciais do Catálogo do Sistema](system-catalog-initial-data.md)
++ [68.3. Formato do Arquivo BKI](bki-format.md)
++ [68.4. Comandos BKI](bki-commands.md)
++ [68.5. Estrutura do Arquivo BKI do Bootstrap](bki-structure.md)
++ [68.6. Exemplo BKI](bki-example.md)
 
 * [69. Como o Planejador Usa Estatísticas](planner-stats-details.md)
 
-+ [69.1. Exemplos de Estimativa de Linha][(row-estimation-examples.md)]
-+ [69.2. Exemplos de Estatísticas Multivariadas][(multivariate-statistics-examples.md)]
-+ [69.3. Estatísticas do Planeizador e Segurança][(planner-stats-security.md)]
++ [69.1. Exemplos de Estimativa de Linha](row-estimation-examples.md)
++ [69.2. Exemplos de Estatísticas Multivariadas](multivariate-statistics-examples.md)
++ [69.3. Estatísticas do Planeizador e Segurança](planner-stats-security.md)
 
 * [70. Formato do manifesto de backup](backup-manifest-format.md)
 

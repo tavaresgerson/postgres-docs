@@ -26,8 +26,9 @@ Essas funções são usadas para enviar dados durante `COPY FROM STDIN`. Elas fa
 
 `PQputCopyData` [#](#LIBPQ-PQPUTCOPYDATA): Envia dados para o servidor durante o estado `COPY_IN`.
 
-``` int PQputCopyData(PGconn *conn, const char *buffer, int nbytes);
-    ```
+```
+int PQputCopyData(PGconn *conn, const char *buffer, int nbytes);
+```
 
 Transmite os dados `COPY` no *`buffer` especificado, com comprimento *`nbytes`*, para o servidor. O resultado é 1 se os dados estiverem em fila, zero se não estiverem em fila devido a buffers cheios (isso ocorrerá apenas no modo não bloqueante), ou -1 se ocorrer um erro. (Use `PQerrorMessage`(libpq-status.md#LIBPQ-PQERRORMESSAGE) para obter detalhes se o valor de retorno for -1. Se o valor for zero, espere pela escrita pronta e tente novamente.)
 
@@ -35,50 +36,31 @@ O aplicativo pode dividir o fluxo de dados `COPY` em cargas de buffer de qualque
 
 `PQputCopyEnd` [#](#LIBPQ-PQPUTCOPYEND): Envia indicação de fim de dados ao servidor durante o estado `COPY_IN`.
 
-``` int PQputCopyEnd(PGconn *conn, const char *errormsg);
-    ```
+```
+int PQputCopyEnd(PGconn *conn, const char *errormsg);
+```
 
-Finaliza a operação `COPY_IN` com sucesso se
-*`errormsg`* for `NULL`. Se
-*`errormsg`* não for `NULL`, então o
-`COPY` é forçado a falhar, com a string apontada por
-*`errormsg`* usada como a mensagem de erro. (Não se deve
-asumir que essa mensagem de erro exata será devolvida pelo servidor,
-no entanto, pois o servidor pode ter já falhado a
-`COPY` por suas próprias razões.)
+Finaliza a operação `COPY_IN` com sucesso se *`errormsg`* for `NULL`. Se *`errormsg`* não for `NULL`, então o `COPY` é forçado a falhar, com a string apontada por *`errormsg`* usada como a mensagem de erro. (Não se deve asumir que essa mensagem de erro exata será devolvida pelo servidor, no entanto, pois o servidor pode ter já falhado a `COPY` por suas próprias razões.)
 
 O resultado é 1 se a mensagem de término foi enviada; ou, em modo não bloqueante, isso pode indicar apenas que a mensagem de término foi colocada com sucesso na fila. (Em modo não bloqueante, para ter certeza de que os dados foram enviados, você deve esperar pela condição de escrita pronta e chamar `PQflush`(libpq-async.md#LIBPQ-PQFLUSH), repetindo até que retorne zero.) Zero indica que a função não pôde colocar a mensagem de término devido a buffers completos; isso só acontece em modo não bloqueante. (Neste caso, espere pela condição de escrita pronta e tente novamente a chamada `PQputCopyEnd`(libpq-copy.md#LIBPQ-PQPUTCOPYEND). ) Se ocorrer um erro grave, -1 é retornado; você pode usar `PQerrorMessage`(libpq-status.md#LIBPQ-PQERRORMESSAGE) para obter detalhes.
 
-Após chamar com sucesso `PQputCopyEnd`](libpq-copy.md#LIBPQ-PQPUTCOPYEND), chame
-`PQgetResult`](libpq-async.md#LIBPQ-PQGETRESULT) para obter o status final do resultado do
-comando `COPY`. Pode esperar que esse resultado esteja disponível
-de forma usual. Em seguida, volte à operação normal.
+Após chamar com sucesso `PQputCopyEnd`](libpq-copy.md#LIBPQ-PQPUTCOPYEND), chame `PQgetResult`](libpq-async.md#LIBPQ-PQGETRESULT) para obter o status final do resultado do comando `COPY`. Pode esperar que esse resultado esteja disponível de forma usual. Em seguida, volte à operação normal.
 
 ### 32.10.2. Funções para Receber Dados do `COPY` [#](#LIBPQ-COPY-RECEIVE)
 
-Essas funções são usadas para receber dados durante `COPY TO
-STDOUT`. Elas falharão se chamadas quando a conexão não estiver no estado de `COPY_OUT`.
+Essas funções são usadas para receber dados durante `COPY TO STDOUT`. Elas falharão se chamadas quando a conexão não estiver no estado de `COPY_OUT`.
 
-`PQgetCopyData` [#](#LIBPQ-PQGETCOPYDATA)
-: Recebe dados do servidor durante o estado `COPY_OUT`.
+`PQgetCopyData` [#](#LIBPQ-PQGETCOPYDATA): Recebe dados do servidor durante o estado `COPY_OUT`.
 
-    ```
-    int PQgetCopyData(PGconn *conn, char **buffer, int async);
-    ```
+```
+int PQgetCopyData(PGconn *conn, char **buffer, int async);
+```
 
-Tentados para obter outra linha de dados do servidor durante um
-`COPY`. Os dados são sempre retornados uma linha de dados de cada vez; se apenas uma linha parcial estiver disponível, ela não é retornada. O retorno bem-sucedido de uma linha de dados envolve a alocação de um pedaço de memória para armazenar os dados. O parâmetro *`buffer`* deve ser não `NULL`. *`*buffer`* é definido para apontar para a memória alocada, ou para `NULL` em casos onde nenhum buffer é retornado. Um buffer com resultado não `NULL` deve ser liberado usando [`PQfreemem`](libpq-misc.md#LIBPQ-PQFREEMEM) quando não for mais necessário.
+Tentados para obter outra linha de dados do servidor durante um `COPY`. Os dados são sempre retornados uma linha de dados de cada vez; se apenas uma linha parcial estiver disponível, ela não é retornada. O retorno bem-sucedido de uma linha de dados envolve a alocação de um pedaço de memória para armazenar os dados. O parâmetro *`buffer`* deve ser não `NULL`. *`*buffer`* é definido para apontar para a memória alocada, ou para `NULL` em casos onde nenhum buffer é retornado. Um buffer com resultado não `NULL` deve ser liberado usando [`PQfreemem`](libpq-misc.md#LIBPQ-PQFREEMEM) quando não for mais necessário.
 
 Quando uma linha é devolvida com sucesso, o valor de retorno é o número de bytes de dados na linha (este sempre será maior que zero). A string devolvida é sempre terminada com um nulo, embora isso provavelmente seja útil apenas para texto `COPY`. Um resultado de zero indica que o `COPY` ainda está em progresso, mas ainda não há uma linha disponível (isso é possível apenas quando *`async`* é verdadeiro). Um resultado de -1 indica que o `COPY` está concluído. Um resultado de -2 indica que ocorreu um erro (consulte `PQerrorMessage`(libpq-status.md#LIBPQ-PQERRORMESSAGE) para o motivo).
 
-Quando *`async`* é verdadeiro (não zero),
-[[`PQgetCopyData`](libpq-copy.md#LIBPQ-PQGETCOPYDATA) não bloqueará a espera por entrada;
-ele retornará zero se o [[`COPY`]] ainda estiver em andamento,
-mas não houver uma linha completa disponível. (Neste caso, espere pela leitura
-pronta e, em seguida, chame [[`PQconsumeInput`](libpq-async.md#LIBPQ-PQCONSUMEINPUT)]] antes de
-chamar novamente [[`PQgetCopyData`](libpq-copy.md#LIBPQ-PQGETCOPYDATA)].) Quando *`async`* é
-falso (zero), [[`PQgetCopyData`](libpq-copy.md#LIBPQ-PQGETCOPYDATA) bloqueará até que os dados
-estejam disponíveis ou a operação seja concluída.
+Quando *`async`* é verdadeiro (não zero), [[`PQgetCopyData`](libpq-copy.md#LIBPQ-PQGETCOPYDATA) não bloqueará a espera por entrada; ele retornará zero se o [[`COPY`]] ainda estiver em andamento, mas não houver uma linha completa disponível. (Neste caso, espere pela leitura pronta e, em seguida, chame [[`PQconsumeInput`](libpq-async.md#LIBPQ-PQCONSUMEINPUT)]] antes de chamar novamente [[`PQgetCopyData`](libpq-copy.md#LIBPQ-PQGETCOPYDATA)].) Quando *`async`* é falso (zero), [[`PQgetCopyData`](libpq-copy.md#LIBPQ-PQGETCOPYDATA) bloqueará até que os dados estejam disponíveis ou a operação seja concluída.
 
 Após `PQgetCopyData` retornar -1, chame (libpq-copy.md#LIBPQ-PQGETCOPYDATA) para obter o status final do resultado do comando `PQgetResult`. Pode esperar que esse resultado esteja disponível da maneira usual. Em seguida, volte à operação normal.
 
@@ -88,9 +70,9 @@ Essas funções representam métodos mais antigos de manipulação do `COPY`. Em
 
 `PQgetline` [#](#LIBPQ-PQGETLINE) :   Leia uma linha de caracteres (transmitida pelo servidor) terminada por nova linha em uma string de buffer do tamanho de *`length`*.
 
-    ```
-    int PQgetline(PGconn *conn, char *buffer, int length);
-    ```
+```
+int PQgetline(PGconn *conn, char *buffer, int length);
+```
 
 Essa função copia até *`length`*-1 caracteres no buffer e converte o caractere de nova linha final em um byte zero. `PQgetline`(libpq-copy.md#LIBPQ-PQGETLINE) retorna `EOF` no final da entrada, 0 se toda a linha tiver sido lida e 1 se o buffer estiver cheio, mas o caractere de nova linha final ainda não tiver sido lido.
 
@@ -98,24 +80,23 @@ Observe que o aplicativo deve verificar se uma nova linha consiste nos dois cara
 
 `PQgetlineAsync` [#](#LIBPQ-PQGETLINEASYNC) :   Leia uma linha de dados `COPY` (transmitida pelo servidor) em um buffer sem bloquear.
 
-    ```
-    int PQgetlineAsync(PGconn *conn, char *buffer, int bufsize);
-    ```
+```
+int PQgetlineAsync(PGconn *conn, char *buffer, int bufsize);
+```
 
 Essa função é semelhante a `PQgetline`](libpq-copy.md#LIBPQ-PQGETLINE), mas pode ser usada por aplicativos que precisam ler os dados do `COPY` de forma assíncrona, ou seja, sem bloquear. Após emitir o comando `COPY` e receber uma resposta do `PGRES_COPY_OUT`, o aplicativo deve chamar `PQconsumeInput`](libpq-async.md#LIBPQ-PQCONSUMEINPUT) e `PQgetlineAsync`](libpq-copy.md#LIBPQ-PQGETLINEASYNC) até que o sinal de fim de dados seja detectado.
 
 Ao contrário de `PQgetline`(libpq-copy.md#LIBPQ-PQGETLINE), esta função assume a responsabilidade de detectar o fim de dados.
 
-Em cada chamada, `PQgetlineAsync`(libpq-copy.md#LIBPQ-PQGETLINEASYNC) retornará dados se uma linha de dados completa estiver disponível no buffer de entrada do libpq.
-Caso contrário, nenhum dado será retornado até que o restante da linha chegue. A função retornará -1 se o marcador de fim de dados de cópia tiver sido reconhecido, ou 0 se nenhum dado estiver disponível, ou um número positivo que indique o número de bytes de dados retornados. Se -1 for retornado, o chamador deve então chamar `PQendcopy`(libpq-copy.md#LIBPQ-PQENDCOPY) e, em seguida, retornar ao processamento normal.
+Em cada chamada, `PQgetlineAsync`(libpq-copy.md#LIBPQ-PQGETLINEASYNC) retornará dados se uma linha de dados completa estiver disponível no buffer de entrada do libpq. Caso contrário, nenhum dado será retornado até que o restante da linha chegue. A função retornará -1 se o marcador de fim de dados de cópia tiver sido reconhecido, ou 0 se nenhum dado estiver disponível, ou um número positivo que indique o número de bytes de dados retornados. Se -1 for retornado, o chamador deve então chamar `PQendcopy`(libpq-copy.md#LIBPQ-PQENDCOPY) e, em seguida, retornar ao processamento normal.
 
 Os dados retornados não se estenderão além de um limite de linha de dados. Se possível, uma linha inteira será retornada de uma só vez. Mas se o buffer oferecido pelo solicitante for muito pequeno para conter uma linha enviada pelo servidor, então uma linha de dados parcial será retornada. Com dados textuais, isso pode ser detectado testando se o último byte retornado é `\n` ou não. (Em um binário `COPY`, será necessário fazer uma análise real do formato de dados `COPY` para fazer a determinação equivalente.) A string retornada não é terminada com um null. (Se você deseja adicionar um null de término, certifique-se de passar um *`bufsize`* menor que o espaço disponível.)
 
 `PQputline` [#](#LIBPQ-PQPUTLINE) :   Envia uma cadeia de caracteres terminada por nulo para o servidor. Retorna 0 se OK e `EOF` se não conseguir enviar a cadeia de caracteres.
 
-    ```
-    int PQputline(PGconn *conn, const char *string);
-    ```
+```
+int PQputline(PGconn *conn, const char *string);
+```
 
 O fluxo de dados `COPY` enviado por uma série de chamadas para `PQputline`(libpq-copy.md#LIBPQ-PQPUTLINE) tem o mesmo formato que o retornado por `PQgetlineAsync`(libpq-copy.md#LIBPQ-PQGETLINEASYNC), exceto que as aplicações não são obrigadas a enviar exatamente uma linha de dados por chamada; é permitido enviar uma linha parcial ou várias linhas por chamada.
 
@@ -125,36 +106,20 @@ Antes do protocolo PostgreSQL 3.0, era necessário que o aplicativo enviasse exp
 
 `PQputnbytes` [#](#LIBPQ-PQPUTNBYTES) : Envia uma string sem nulos para o servidor. Retorna 0 se OK e `EOF` se não conseguir enviar a string.
 
-    ```
-    int PQputnbytes(PGconn *conn, const char *buffer, int nbytes);
-    ```
+```
+int PQputnbytes(PGconn *conn, const char *buffer, int nbytes);
+```
 
 Isso é exatamente como `PQputline`(libpq-copy.md#LIBPQ-PQPUTLINE), exceto que o buffer de dados não precisa ser terminado com nulo, pois o número de bytes a serem enviados é especificado diretamente. Use este procedimento ao enviar dados binários.
 
 `PQendcopy` [#](#LIBPQ-PQENDCOPY) :  Sincroniza com o servidor.
 
-    ```
-    int PQendcopy(PGconn *conn);
-    ```
+```
+int PQendcopy(PGconn *conn);
+```
 
-Essa função aguarda até que o servidor tenha terminado a cópia.
-Deve ser emitida quando a última string tiver sido enviada ao servidor usando `PQputline`(libpq-copy.md#LIBPQ-PQPUTLINE) ou quando a última string tiver sido recebida do servidor usando `PQgetline`. Deve ser emitida ou o servidor ficará "fora de sincronia" com o cliente. Após o retorno dessa função, o servidor está pronto para receber o próximo comando SQL. O valor de retorno é 0 em caso de conclusão bem-sucedida, diferente de zero caso contrário. (Use `PQerrorMessage`(libpq-status.md#LIBPQ-PQERRORMESSAGE) para obter detalhes se o valor de retorno for diferente de zero.)
+Essa função aguarda até que o servidor tenha terminado a cópia. Deve ser emitida quando a última string tiver sido enviada ao servidor usando `PQputline`(libpq-copy.md#LIBPQ-PQPUTLINE) ou quando a última string tiver sido recebida do servidor usando `PQgetline`. Deve ser emitida ou o servidor ficará "fora de sincronia" com o cliente. Após o retorno dessa função, o servidor está pronto para receber o próximo comando SQL. O valor de retorno é 0 em caso de conclusão bem-sucedida, diferente de zero caso contrário. (Use `PQerrorMessage`(libpq-status.md#LIBPQ-PQERRORMESSAGE) para obter detalhes se o valor de retorno for diferente de zero.)
 
-Ao usar `PQgetResult`(libpq-async.md#LIBPQ-PQGETRESULT), o aplicativo deve
-responder a um resultado de `PGRES_COPY_OUT` executando
-[`PQgetline`(libpq-copy.md#LIBPQ-PQGETLINE) repetidamente, seguido por
-[`PQendcopy`(libpq-copy.md#LIBPQ-PQENDCOPY) após a linha terminadora ser vista.
-Em seguida, deve retornar ao loop de `PQgetResult`(libpq-async.md#LIBPQ-PQGETRESULT)
-até que [`PQgetResult`(libpq-async.md#LIBPQ-PQGETRESULT) retorne um ponteiro nulo.
-Da mesma forma, um resultado de `PGRES_COPY_IN` é processado
-por uma série de [`PQputline`(libpq-copy.md#LIBPQ-PQPUTLINE) chamadas seguidas por
-[`PQendcopy`(libpq-copy.md#LIBPQ-PQENDCOPY), então retorne ao
-loop de [`PQgetResult`(libpq-async.md#LIBPQ-PQGETRESULT). Esta disposição
-garantirá que um comando de `COPY` incorporado em uma
-série de comandos SQL será executado corretamente.
+Ao usar `PQgetResult`(libpq-async.md#LIBPQ-PQGETRESULT), o aplicativo deve responder a um resultado de `PGRES_COPY_OUT` executando [`PQgetline`](libpq-copy.md#LIBPQ-PQGETLINE) repetidamente, seguido por [`PQendcopy`](libpq-copy.md#LIBPQ-PQENDCOPY) após a linha terminadora ser vista. Em seguida, deve retornar ao loop de `PQgetResult`(libpq-async.md#LIBPQ-PQGETRESULT) até que [`PQgetResult`](libpq-async.md#LIBPQ-PQGETRESULT) retorne um ponteiro nulo. Da mesma forma, um resultado de `PGRES_COPY_IN` é processado por uma série de [`PQputline`](libpq-copy.md#LIBPQ-PQPUTLINE) chamadas seguidas por [`PQendcopy`](libpq-copy.md#LIBPQ-PQENDCOPY), então retorne ao loop de [`PQgetResult`](libpq-async.md#LIBPQ-PQGETRESULT). Esta disposição garantirá que um comando de `COPY` incorporado em uma série de comandos SQL será executado corretamente.
 
-Aplicativos mais antigos provavelmente enviarão um `COPY`
-via `PQexec`(libpq-exec.md#LIBPQ-PQEXEC) e assumirão que a transação
-foi realizada após `PQendcopy`(libpq-copy.md#LIBPQ-PQENDCOPY). Isso funcionará
-corretamente apenas se o `COPY` for o único
-comando SQL na string de comando.
+Aplicativos mais antigos provavelmente enviarão um `COPY` via `PQexec`(libpq-exec.md#LIBPQ-PQEXEC) e assumirão que a transação foi realizada após `PQendcopy`(libpq-copy.md#LIBPQ-PQENDCOPY). Isso funcionará corretamente apenas se o `COPY` for o único comando SQL na string de comando.

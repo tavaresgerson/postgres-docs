@@ -1,12 +1,12 @@
 ## 65.4. Índices GIN [#](#GIN)
 
-* [65.4.1. Introdução][(gin.md#GIN-INTRO)]
-* [65.4.2. Classes de Operadores Integradas][(gin.md#GIN-BUILTIN-OPCLASSES)]
-* [65.4.3. Extensibilidade][(gin.md#GIN-EXTENSIBILITY)]
-* [65.4.4. Implementação][(gin.md#GIN-IMPLEMENTATION)]
-* [65.4.5. Dicas e Truques do GIN][(gin.md#GIN-TIPS)]
-* [65.4.6. Limitações][(gin.md#GIN-LIMIT)]
-* [65.4.7. Exemplos][(gin.md#GIN-EXAMPLES)]
+* [65.4.1. Introdução](gin.md#GIN-INTRO)
+* [65.4.2. Classes de Operadores Integradas](gin.md#GIN-BUILTIN-OPCLASSES)
+* [65.4.3. Extensibilidade](gin.md#GIN-EXTENSIBILITY)
+* [65.4.4. Implementação](gin.md#GIN-IMPLEMENTATION)
+* [65.4.5. Dicas e Truques do GIN](gin.md#GIN-TIPS)
+* [65.4.6. Limitações](gin.md#GIN-LIMIT)
+* [65.4.7. Exemplos](gin.md#GIN-EXAMPLES)
 
 ### 65.4.1. Introdução [#](#GIN-INTRO)
 
@@ -20,7 +20,7 @@ GIN é generalizada no sentido de que o código do método de acesso GIN não pr
 
 Uma vantagem do GIN é que ele permite o desenvolvimento de tipos de dados personalizados com os métodos de acesso apropriados, por um especialista no domínio do tipo de dados, e não por um especialista em banco de dados. Esta é uma vantagem muito semelhante ao uso do GiST.
 
-A implementação do GIN no PostgreSQL é mantida principalmente por Teodor Sigaev e Oleg Bartunov. Há mais informações sobre o GIN em seu [site][(http://www.sai.msu.su/~megera/wiki/Gin)].
+A implementação do GIN no PostgreSQL é mantida principalmente por Teodor Sigaev e Oleg Bartunov. Há mais informações sobre o GIN em seu [site](http://www.sai.msu.su/~megera/wiki/Gin).
 
 ### 65.4.2. Classes de operador embutidas [#](#GIN-BUILTIN-OPCLASSES)
 
@@ -31,148 +31,151 @@ A distribuição principal do PostgreSQL inclui as classes de operadores GIN mos
 
 
 <table border="1" class="table" summary="Built-in GIN Operator Classes">
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Name
    </th>
-<th>
+   <th>
     Indexable Operators
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td rowspan="4" valign="middle">
-<code class="literal">
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td rowspan="4" valign="middle">
+    <code class="literal">
      array_ops
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      &amp;&amp; (anyarray,anyarray)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      @&gt; (anyarray,anyarray)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      &lt;@ (anyarray,anyarray)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      = (anyarray,anyarray)
     </code>
-</td>
-</tr>
-<tr>
-<td rowspan="6" valign="middle">
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td rowspan="6" valign="middle">
+    <code class="literal">
      jsonb_ops
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      @&gt; (jsonb,jsonb)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      @? (jsonb,jsonpath)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      @@ (jsonb,jsonpath)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      ? (jsonb,text)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      ?| (jsonb,text[])
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      ?&amp; (jsonb,text[])
     </code>
-</td>
-</tr>
-<tr>
-<td rowspan="3" valign="middle">
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td rowspan="3" valign="middle">
+    <code class="literal">
      jsonb_path_ops
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      @&gt; (jsonb,jsonb)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      @? (jsonb,jsonpath)
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      @@ (jsonb,jsonpath)
     </code>
-</td>
-</tr>
-<tr>
-<td valign="middle">
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td valign="middle">
+    <code class="literal">
      tsvector_ops
     </code>
-</td>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    <code class="literal">
      @@ (tsvector,tsquery)
     </code>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
 
-Das duas classes de operadores para o tipo `jsonb`, `jsonb_ops` é o padrão. `jsonb_path_ops` suporta menos operadores, mas oferece melhor desempenho para aqueles operadores. Veja [Seção 8.14.4][(datatype-json.md#JSON-INDEXING "8.14.4. jsonb Indexing")] para detalhes.
+
+
+
+
+Das duas classes de operadores para o tipo `jsonb`, `jsonb_ops` é o padrão. `jsonb_path_ops` suporta menos operadores, mas oferece melhor desempenho para aqueles operadores. Veja [Seção 8.14.4](datatype-json.md#JSON-INDEXING) para detalhes.
 
 ### 65.4.3. Extensibilidade [#](#GIN-EXTENSIBILITY)
 
@@ -184,7 +187,7 @@ Um operador de classe para GIN deve fornecer dois métodos:
 
 `Datum *extractValue(Datum itemValue, int32 *nkeys, bool **nullFlags)`: Retorna um array palloc de chaves dado um item a ser indexado. O número de chaves retornadas deve ser armazenado em `*nkeys`. Se alguma das chaves puder ser nula, também pallocue um array de campos `*nkeys` `bool`, armazene seu endereço em `*nullFlags` e defina esses flags nulos conforme necessário. `*nullFlags` pode ser deixado em `NULL` (seu valor inicial) se todas as chaves forem não nulos. O valor de retorno pode ser `NULL` se o item não contiver chaves.
 
-`Datum *extractQuery(Datum query, int32 *nkeys, StrategyNumber n, bool **pmatch, Pointer **extra_data, bool **nullFlags, int32 *searchMode)`: Retorna um array palloc de chaves dado um valor a ser pesquisado; ou seja, `query` é o valor do lado direito de um operador indexável, cujo lado esquerdo é a coluna indexada. `n` é o número de estratégia do operador dentro da classe de operadores (ver [Seção 36.16.2][(xindex.md#XINDEX-STRATEGIES "36.16.2. Index Method Strategies")]). Frequentemente, `extractQuery` precisará consultar `n` para determinar o tipo de dados de `query` e o método que ele deve usar para extrair os valores das chaves. O número de chaves retornadas deve ser armazenado em `*nkeys`. Se alguma das chaves puder ser nula, também pallocue um array de campos `*nkeys` `bool`, armazene seu endereço em `*nullFlags` e defina esses flags nulos conforme necessário. `*nullFlags` pode ser deixado `NULL` (seu valor inicial) se todas as chaves forem não nulos. O valor de retorno pode ser `NULL` se o `query` não contiver chaves.
+`Datum *extractQuery(Datum query, int32 *nkeys, StrategyNumber n, bool **pmatch, Pointer **extra_data, bool **nullFlags, int32 *searchMode)`: Retorna um array palloc de chaves dado um valor a ser pesquisado; ou seja, `query` é o valor do lado direito de um operador indexável, cujo lado esquerdo é a coluna indexada. `n` é o número de estratégia do operador dentro da classe de operadores (ver [Seção 36.16.2](xindex.md#XINDEX-STRATEGIES)). Frequentemente, `extractQuery` precisará consultar `n` para determinar o tipo de dados de `query` e o método que ele deve usar para extrair os valores das chaves. O número de chaves retornadas deve ser armazenado em `*nkeys`. Se alguma das chaves puder ser nula, também pallocue um array de campos `*nkeys` `bool`, armazene seu endereço em `*nullFlags` e defina esses flags nulos conforme necessário. `*nullFlags` pode ser deixado `NULL` (seu valor inicial) se todas as chaves forem não nulos. O valor de retorno pode ser `NULL` se o `query` não contiver chaves.
 
 `searchMode` é um argumento de saída que permite que `extractQuery` especifique detalhes sobre como a pesquisa será realizada. Se `*searchMode` estiver definido como `GIN_SEARCH_MODE_DEFAULT` (que é o valor com o qual é inicializado antes da chamada), apenas os itens que correspondem a pelo menos uma das chaves retornadas são considerados correspondências candidatas. Se `*searchMode` estiver definido como `GIN_SEARCH_MODE_INCLUDE_EMPTY`, então, além dos itens que contêm pelo menos uma chave correspondente, os itens que não contêm nenhuma chave são considerados correspondências candidatas. (Este modo é útil para implementar operadores de subconjunto, por exemplo.) Se `*searchMode` estiver definido como `GIN_SEARCH_MODE_ALL`, então todos os itens não nulos no índice são considerados correspondências candidatas, independentemente de corresponderem a alguma das chaves retornadas. (Este modo é muito mais lento do que as outras duas opções, pois requer a varredura essencialmente de todo o índice, mas pode ser necessário implementar casos de esquina corretamente. Um operador que precisa deste modo na maioria dos casos provavelmente não é um bom candidato para uma classe de operador GIN.) Os símbolos a serem usados para definir este modo estão definidos em `access/gin.h`.
 
@@ -220,13 +223,13 @@ A função `options` é passada um ponteiro para uma estrutura `local_relopts`, 
 
 Como a extração de chaves de valores indexados e a representação da chave no GIN são flexíveis, elas podem depender de parâmetros especificados pelo usuário.
 
-Para suportar consultas de "jogo parcial", uma classe de operador deve fornecer o método `comparePartial` e seu método `extractQuery` deve definir o parâmetro `pmatch` quando uma consulta de jogo parcial for encontrada. Veja [Seção 65.4.4.2][(gin.md#GIN-PARTIAL-MATCH "65.4.4.2. Partial Match Algorithm")] para detalhes.
+Para suportar consultas de "jogo parcial", uma classe de operador deve fornecer o método `comparePartial` e seu método `extractQuery` deve definir o parâmetro `pmatch` quando uma consulta de jogo parcial for encontrada. Veja [Seção 65.4.4.2](gin.md#GIN-PARTIAL-MATCH) para detalhes.
 
 Os tipos de dados reais dos vários valores `Datum` mencionados acima variam dependendo da classe do operador. Os valores dos itens passados para `extractValue` são sempre do tipo de entrada da classe do operador, e todos os valores chave devem ser do tipo `STORAGE` da classe. O tipo do argumento `query` passado para `extractQuery`, `consistent` e `triConsistent` é o que for o tipo de entrada do membro da classe identificado pelo número da estratégia. Isso não precisa ser o mesmo que o tipo indexado, desde que os valores chave do tipo correto possam ser extraídos dele. No entanto, é recomendável que as declarações SQL dessas três funções de suporte usem o tipo de dados indexado da opclass para o argumento `query`, mesmo que o tipo real possa ser algo diferente dependendo do operador.
 
 ### 65.4.4. Implementação [#](#GIN-IMPLEMENTATION)
 
-Internamente, um índice GIN contém um índice de árvore B construído sobre chaves, onde cada chave é um elemento de um ou mais itens indexados (um membro de uma matriz, por exemplo) e onde cada tupla em uma página de folha contém ou um ponteiro para uma árvore B de ponteiros de pilha (uma "árvore de publicação"), ou uma simples lista de ponteiros de pilha (uma "lista de publicação") quando a lista é pequena o suficiente para caber em uma única tupla de índice juntamente com o valor da chave. [Figura 65.1] [(gin.md#GIN-INTERNALS-FIGURE "Figure 65.1. GIN Internals")] ilustra esses componentes de um índice GIN.
+Internamente, um índice GIN contém um índice de árvore B construído sobre chaves, onde cada chave é um elemento de um ou mais itens indexados (um membro de uma matriz, por exemplo) e onde cada tupla em uma página de folha contém ou um ponteiro para uma árvore B de ponteiros de pilha (uma "árvore de publicação"), ou uma simples lista de ponteiros de pilha (uma "lista de publicação") quando a lista é pequena o suficiente para caber em uma única tupla de índice juntamente com o valor da chave. [Figura 65.1](gin.md#GIN-INTERNALS-FIGURE) ilustra esses componentes de um índice GIN.
 
 A partir do PostgreSQL 9.1, valores de chave nulos podem ser incluídos no índice. Além disso, os nulos de marcador são incluídos no índice para itens indexados que são nulos ou não contêm chaves de acordo com `extractValue`. Isso permite que pesquisas que devem encontrar itens vazios façam isso.
 
@@ -234,7 +237,7 @@ Os índices GIN de múltiplas colunas são implementados construindo uma única 
 
 **Figura 65.1. Interiores do GIN**
 
-  
+
 
 #### 65.4.4.1. Técnica de Atualização Rápida GIN [#](#GIN-FAST-UPDATE)
 
@@ -252,15 +255,15 @@ O GIN pode suportar consultas de "jogo parcial", nas quais a consulta não deter
 
 Criar vs. inserir: A inserção em um índice GIN pode ser lenta devido à probabilidade de muitas chaves serem inseridas para cada item. Portanto, para inserções em massa em uma tabela, é aconselhável descartar o índice GIN e recriá-lo após terminar a inserção em massa.
 
-Quando o `fastupdate` está habilitado para GIN (consulte [Seção 65.4.4.1][(gin.md#GIN-FAST-UPDATE "65.4.4.1. GIN Fast Update Technique")] para detalhes), a penalidade é menor do que quando não está habilitado. Mas, para atualizações muito grandes, ainda pode ser melhor descartar e recriar o índice.
+Quando o `fastupdate` está habilitado para GIN (consulte [Seção 65.4.4.1](gin.md#GIN-FAST-UPDATE) para detalhes), a penalidade é menor do que quando não está habilitado. Mas, para atualizações muito grandes, ainda pode ser melhor descartar e recriar o índice.
 
 [maintenance_work_mem](runtime-config-resource.md#GUC-MAINTENANCE-WORK-MEM): O tempo de construção de um índice GIN é muito sensível ao ajuste `maintenance_work_mem`; não vale a pena economizar memória de trabalho durante a criação do índice.
 
-[gin_pending_list_limit][(runtime-config-client.md#GUC-GIN-PENDING-LIST-LIMIT)]: Durante uma série de inserções em um índice GIN existente que tem `fastupdate` habilitado, o sistema limpará a lista de entradas pendentes sempre que a lista crescer maior que `gin_pending_list_limit`. Para evitar flutuações no tempo de resposta observado, é desejável que a limpeza da lista pendente ocorra em segundo plano (ou seja, via autovacuum). As operações de limpeza de plano de fundo podem ser evitadas aumentando `gin_pending_list_limit` ou tornando o autovacuum mais agressivo. No entanto, aumentar o limite da operação de limpeza significa que, se uma limpeza de plano de fundo ocorrer, levará ainda mais tempo.
+[gin_pending_list_limit](runtime-config-client.md#GUC-GIN-PENDING-LIST-LIMIT): Durante uma série de inserções em um índice GIN existente que tem `fastupdate` habilitado, o sistema limpará a lista de entradas pendentes sempre que a lista crescer maior que `gin_pending_list_limit`. Para evitar flutuações no tempo de resposta observado, é desejável que a limpeza da lista pendente ocorra em segundo plano (ou seja, via autovacuum). As operações de limpeza de plano de fundo podem ser evitadas aumentando `gin_pending_list_limit` ou tornando o autovacuum mais agressivo. No entanto, aumentar o limite da operação de limpeza significa que, se uma limpeza de plano de fundo ocorrer, levará ainda mais tempo.
 
 `gin_pending_list_limit` pode ser sobrescrito para índices GIN individuais alterando os parâmetros de armazenamento, o que permite que cada índice GIN tenha seu próprio limite de limpeza. Por exemplo, é possível aumentar o limite apenas para o índice GIN que pode ser atualizado intensamente, e diminuí-lo de outra forma.
 
-[gin_fuzzy_search_limit][(runtime-config-client.md#GUC-GIN-FUZZY-SEARCH-LIMIT)]: O principal objetivo do desenvolvimento dos índices GIN era criar suporte para pesquisas de texto completo altamente escaláveis no PostgreSQL, e muitas vezes há situações em que uma pesquisa de texto completo retorna um conjunto muito grande de resultados. Além disso, isso geralmente acontece quando a consulta contém palavras muito frequentes, de modo que o grande conjunto de resultados nem é útil. Como ler muitos tuplos do disco e ordená-los pode levar muito tempo, isso é inaceitável para produção. (Observe que a própria pesquisa de índice é muito rápida.)
+[gin_fuzzy_search_limit](runtime-config-client.md#GUC-GIN-FUZZY-SEARCH-LIMIT): O principal objetivo do desenvolvimento dos índices GIN era criar suporte para pesquisas de texto completo altamente escaláveis no PostgreSQL, e muitas vezes há situações em que uma pesquisa de texto completo retorna um conjunto muito grande de resultados. Além disso, isso geralmente acontece quando a consulta contém palavras muito frequentes, de modo que o grande conjunto de resultados nem é útil. Como ler muitos tuplos do disco e ordená-los pode levar muito tempo, isso é inaceitável para produção. (Observe que a própria pesquisa de índice é muito rápida.)
 
 Para facilitar a execução controlada dessas consultas, o GIN tem um limite suave configurável no número de linhas devolvidas: o parâmetro de configuração [[`gin_fuzzy_search_limit`]. Ele é definido como 0 (significando sem limite) por padrão. Se um limite não nulo for definido, então o conjunto devolvido é um subconjunto do conjunto de resultados completo, escolhido aleatoriamente.
 

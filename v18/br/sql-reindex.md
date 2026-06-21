@@ -20,7 +20,7 @@ where option can be one of:
 `REINDEX` reconstrui um índice usando os dados armazenados na tabela do índice, substituindo a cópia antiga do índice. Existem vários cenários em que se pode usar `REINDEX`:
 
 * Um índice tornou-se corrompido e já não contém dados válidos. Embora, em teoria, isso nunca deva acontecer, na prática, os índices podem se corromper devido a erros de software ou falhas de hardware. `REINDEX` fornece um método de recuperação.
-* Um índice tornou-se "inchado", ou seja, contém muitas páginas vazias ou quase vazias. Isso pode ocorrer com índices de árvore B no PostgreSQL em determinados padrões de acesso incomuns. `REINDEX` fornece uma maneira de reduzir o consumo de espaço do índice, escrevendo uma nova versão do índice sem as páginas mortas. Consulte [Seção 24.2][(routine-reindex.md "24.2. Routine Reindexing")] para mais informações.
+* Um índice tornou-se "inchado", ou seja, contém muitas páginas vazias ou quase vazias. Isso pode ocorrer com índices de árvore B no PostgreSQL em determinados padrões de acesso incomuns. `REINDEX` fornece uma maneira de reduzir o consumo de espaço do índice, escrevendo uma nova versão do índice sem as páginas mortas. Consulte [Seção 24.2](routine-reindex.md) para mais informações.
 * Você alterou um parâmetro de armazenamento (como fillfactor) para um índice e deseja garantir que a alteração tenha surtido efeito completo.
 * Se uma construção de índice falhar com a opção `CONCURRENTLY`, esse índice é deixado como "inválido". Tais índices são inúteis, mas pode ser conveniente usar `REINDEX` para reconstruí-los. Note que apenas `REINDEX INDEX` é capaz de realizar uma construção concorrente em um índice inválido.
 
@@ -38,7 +38,7 @@ where option can be one of:
 
 *`name`*: O nome do índice, tabela ou banco de dados específico que será reindexado. Os nomes de índice e tabela podem ser qualificados pelo esquema. Atualmente, `REINDEX DATABASE` e `REINDEX SYSTEM` só podem reindexar o banco de dados atual. Seu parâmetro é opcional e deve corresponder ao nome do banco de dados atual.
 
-`CONCURRENTLY`: Quando esta opção é usada, o PostgreSQL reconstruirá o índice sem tomar quaisquer bloqueios que impeçam inserções, atualizações ou exclusões concorrentes na tabela; enquanto um reconstrução de índice padrão bloqueia as escritas (mas não as leituras) na tabela até que ela esteja pronta. Há várias advertências a serem consideradas ao usar esta opção — veja [Reconstrução de índices concorrentemente][(sql-reindex.md#SQL-REINDEX-CONCURRENTLY "Rebuilding Indexes Concurrently")] abaixo.
+`CONCURRENTLY`: Quando esta opção é usada, o PostgreSQL reconstruirá o índice sem tomar quaisquer bloqueios que impeçam inserções, atualizações ou exclusões concorrentes na tabela; enquanto um reconstrução de índice padrão bloqueia as escritas (mas não as leituras) na tabela até que ela esteja pronta. Há várias advertências a serem consideradas ao usar esta opção — veja [Reconstrução de índices concorrentemente](sql-reindex.md#SQL-REINDEX-CONCURRENTLY) abaixo.
 
 Para tabelas temporárias, `REINDEX` é sempre não concorrente, pois nenhuma outra sessão pode acessá-las, e o reindex não concorrente é mais barato.
 
@@ -56,7 +56,7 @@ Se você suspeitar que um índice em uma tabela de usuários esteja corrompido, 
 
 As coisas são mais difíceis se você precisar recuperar de uma corrupção de um índice em uma tabela do sistema. Neste caso, é importante que o sistema não tenha usado nenhum dos índices suspeitos. (De fato, neste tipo de cenário, você pode descobrir que os processos do servidor estão travando imediatamente no início, devido à dependência dos índices corrompidos.) Para recuperar com segurança, o servidor deve ser iniciado com a opção `-P`, que o impede de usar índices para pesquisas no catálogo do sistema.
 
-Uma maneira de fazer isso é desligar o servidor e iniciar um servidor PostgreSQL de usuário único com a opção `-P` incluída em sua linha de comando. Em seguida, `REINDEX DATABASE`, `REINDEX SYSTEM`, `REINDEX TABLE` ou `REINDEX INDEX` pode ser emitido, dependendo de quanto você deseja reconstruir. Se houver dúvida, use `REINDEX SYSTEM` para selecionar a reconstrução de todos os índices do sistema no banco de dados. Em seguida, encerre a sessão do servidor de usuário único e reinicie o servidor regular. Consulte a página de referência [postgres][(app-postgres.md "postgres")] para obter mais informações sobre como interagir com a interface do servidor de usuário único.
+Uma maneira de fazer isso é desligar o servidor e iniciar um servidor PostgreSQL de usuário único com a opção `-P` incluída em sua linha de comando. Em seguida, `REINDEX DATABASE`, `REINDEX SYSTEM`, `REINDEX TABLE` ou `REINDEX INDEX` pode ser emitido, dependendo de quanto você deseja reconstruir. Se houver dúvida, use `REINDEX SYSTEM` para selecionar a reconstrução de todos os índices do sistema no banco de dados. Em seguida, encerre a sessão do servidor de usuário único e reinicie o servidor regular. Consulte a página de referência [postgres](app-postgres.md) para obter mais informações sobre como interagir com a interface do servidor de usuário único.
 
 Alternativamente, uma sessão regular do servidor pode ser iniciada com `-P` incluído em suas opções de linha de comando. O método para fazer isso varia entre os clientes, mas em todos os clientes baseados em libpq, é possível definir a variável de ambiente `PGOPTIONS` para `-P` antes de iniciar o cliente. Note que, embora este método não exija o bloqueio de outros clientes, ainda pode ser prudente impedir que outros usuários se conectem ao banco de dados danificado até que as reparações tenham sido concluídas.
 
@@ -64,7 +64,7 @@ Alternativamente, uma sessão regular do servidor pode ser iniciada com `-P` inc
 
 Enquanto o `REINDEX` está em execução, o [search_path](runtime-config-client.md#GUC-SEARCH-PATH) é temporariamente alterado para `pg_catalog, pg_temp`.
 
-Reindexar um único índice ou tabela requer ter o privilégio `MAINTAIN` na tabela. Note que, embora o `REINDEX` em um índice ou tabela particionada exija ter o privilégio `MAINTAIN` na tabela particionada, esses comandos ignoram as verificações de privilégio ao processar as partições individuais. Reindexar um esquema ou banco de dados requer ser o proprietário desse esquema ou banco de dados ou ter privilégios do papel [pg_maintain][(predefined-roles.md#PREDEFINED-ROLE-PG-MAINTAIN)]. Note especificamente que, portanto, é possível que usuários não superusuários reconstruam índices de tabelas de outros usuários. No entanto, como exceção especial, `REINDEX DATABASE`, `REINDEX SCHEMA` e `REINDEX SYSTEM` ignorarão índices em catálogos compartilhados, a menos que o usuário tenha o privilégio `MAINTAIN` no catálogo.
+Reindexar um único índice ou tabela requer ter o privilégio `MAINTAIN` na tabela. Note que, embora o `REINDEX` em um índice ou tabela particionada exija ter o privilégio `MAINTAIN` na tabela particionada, esses comandos ignoram as verificações de privilégio ao processar as partições individuais. Reindexar um esquema ou banco de dados requer ser o proprietário desse esquema ou banco de dados ou ter privilégios do papel [pg_maintain](predefined-roles.md#PREDEFINED-ROLE-PG-MAINTAIN). Note especificamente que, portanto, é possível que usuários não superusuários reconstruam índices de tabelas de outros usuários. No entanto, como exceção especial, `REINDEX DATABASE`, `REINDEX SCHEMA` e `REINDEX SYSTEM` ignorarão índices em catálogos compartilhados, a menos que o usuário tenha o privilégio `MAINTAIN` no catálogo.
 
 A reindexação de índices particionados ou tabelas particionadas é suportada com `REINDEX INDEX` ou `REINDEX TABLE`, respectivamente. Cada partição da relação particionada especificada é reindexada em uma transação separada. Esses comandos não podem ser usados dentro de um bloco de transação ao trabalhar em uma tabela ou índice particionado.
 
@@ -110,7 +110,7 @@ Como qualquer transação de longa duração, `REINDEX` em uma tabela pode afeta
 
 Além disso, os índices para restrições de exclusão não podem ser reindexados simultaneamente. Se um índice com essa restrição for nomeado diretamente neste comando, um erro será exibido. Se uma tabela ou banco de dados com índices de restrição de exclusão for reindexada simultaneamente, esses índices serão ignorados. É possível reindexar esses índices sem a opção `CONCURRENTLY`.
 
-Cada backend que executa `REINDEX` informará seu progresso na visualização `pg_stat_progress_create_index`. Consulte [Seção 27.4.4][(progress-reporting.md#CREATE-INDEX-PROGRESS-REPORTING "27.4.4. CREATE INDEX Progress Reporting")] para obter detalhes.
+Cada backend que executa `REINDEX` informará seu progresso na visualização `pg_stat_progress_create_index`. Consulte [Seção 27.4.4](progress-reporting.md#CREATE-INDEX-PROGRESS-REPORTING) para obter detalhes.
 
 ## Exemplos
 

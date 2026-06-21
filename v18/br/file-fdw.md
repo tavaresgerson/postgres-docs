@@ -50,7 +50,7 @@ Para uma tabela estrangeira que utiliza `file_fdw`, `EXPLAIN` mostra o nome do a
 
 **Exemplo F.1. Criar uma tabela estrangeira para logs CSV do PostgreSQL**
 
-Um dos usos óbvios para `file_fdw` é tornar o log de atividade do PostgreSQL disponível como uma tabela para consulta. Para isso, primeiro você deve estar [registrando em um arquivo CSV,][(runtime-config-logging.md#RUNTIME-CONFIG-LOGGING-CSVLOG "19.8.4. Using CSV-Format Log Output")], que aqui chamaremos de `pglog.csv`. Primeiro, instale `file_fdw` como uma extensão:
+Um dos usos óbvios para `file_fdw` é tornar o log de atividade do PostgreSQL disponível como uma tabela para consulta. Para isso, primeiro você deve estar [registrando em um arquivo CSV,](runtime-config-logging.md#RUNTIME-CONFIG-LOGGING-CSVLOG), que aqui chamaremos de `pglog.csv`. Primeiro, instale `file_fdw` como uma extensão:
 
 ```
 CREATE EXTENSION file_fdw;
@@ -98,7 +98,7 @@ OPTIONS ( filename 'log/pglog.csv', format 'csv' );
 
 Isso é tudo — agora você pode consultar seu log diretamente. Na produção, é claro, você precisaria definir uma maneira de lidar com a rotação do log.
 
-  
+
 
 **Exemplo F.2. Criar uma tabela estrangeira com uma opção em uma coluna**
 

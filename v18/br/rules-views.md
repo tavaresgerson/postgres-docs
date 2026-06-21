@@ -1,7 +1,7 @@
 ## 39.2. Visões e o Sistema de Regras [#](#RULES-VIEWS)
 
 * [39.2.1. Como as regras do `SELECT` funcionam](rules-views.md#RULES-SELECT)
-* [39.2.2. Visualizar regras em declarações não do `SELECT`(rules-views.md#RULES-VIEWS-NON-SELECT)
+* [39.2.2. Visualizar regras em declarações não do `SELECT`](rules-views.md#RULES-VIEWS-NON-SELECT)
 * [39.2.3. O poder das visualizações no PostgreSQL](rules-views.md#RULES-VIEWS-POWER)
 * [39.2.4. Atualizando uma visualização](rules-views.md#RULES-VIEWS-UPDATE)
 
@@ -21,7 +21,7 @@ CREATE RULE "_RETURN" AS ON SELECT TO myview DO INSTEAD
 
 embora você não possa realmente escrever isso, porque as tabelas não podem ter regras `ON SELECT`.
 
-Uma visão também pode ter outros tipos de regras `DO INSTEAD`, permitindo que os comandos `INSERT`, `UPDATE` ou `DELETE` sejam executados na visão, apesar da falta de armazenamento subjacente. Isso é discutido mais adiante, na [Seção 39.2.4][(rules-views.md#RULES-VIEWS-UPDATE "39.2.4. Updating a View")].
+Uma visão também pode ter outros tipos de regras `DO INSTEAD`, permitindo que os comandos `INSERT`, `UPDATE` ou `DELETE` sejam executados na visão, apesar da falta de armazenamento subjacente. Isso é discutido mais adiante, na [Seção 39.2.4](rules-views.md#RULES-VIEWS-UPDATE).
 
 ### 39.2.1. Como funcionam as regras do `SELECT` [#](#RULES-SELECT)
 
@@ -310,11 +310,11 @@ O que acontece se uma visão for nomeada como a relação de destino para um `IN
 
 Se a subconsulta selecionar uma única relação de base e for simples o suficiente, o reescritor pode substituir automaticamente a subconsulta pela relação de base subjacente, de modo que o `INSERT`, `UPDATE`, `DELETE` ou `MERGE` seja aplicado à relação de base da maneira apropriada. As visualizações que são “simples o suficiente” para isso são chamadas de *automaticamente atualizáveis*. Para informações detalhadas sobre os tipos de visualização que podem ser atualizados automaticamente, consulte [CREATE VIEW](sql-createview.md "CREATE VIEW").
 
-Alternativamente, a operação pode ser gerenciada por um gatilho fornecido pelo usuário `INSTEAD OF` na visualização (consulte [CREATE TRIGGER][(sql-createtrigger.md "CREATE TRIGGER")]). A reescrita funciona de maneira um pouco diferente neste caso. Para `INSERT`, o reescritor não faz nada com a visualização, deixando-a como a relação de resultado para a consulta. Para `UPDATE`, `DELETE` e `MERGE`, ainda é necessário expandir a consulta da visualização para produzir as linhas “antigas” que o comando tentará atualizar, excluir ou combinar. Portanto, a visualização é expandida normalmente, mas outra entrada de tabela não expandida é adicionada à consulta para representar a visualização em sua capacidade como a relação de resultado.
+Alternativamente, a operação pode ser gerenciada por um gatilho fornecido pelo usuário `INSTEAD OF` na visualização (consulte [CREATE TRIGGER](sql-createtrigger.md)). A reescrita funciona de maneira um pouco diferente neste caso. Para `INSERT`, o reescritor não faz nada com a visualização, deixando-a como a relação de resultado para a consulta. Para `UPDATE`, `DELETE` e `MERGE`, ainda é necessário expandir a consulta da visualização para produzir as linhas “antigas” que o comando tentará atualizar, excluir ou combinar. Portanto, a visualização é expandida normalmente, mas outra entrada de tabela não expandida é adicionada à consulta para representar a visualização em sua capacidade como a relação de resultado.
 
 O problema que agora surge é como identificar as linhas que devem ser atualizadas na visualização. Lembre-se de que, quando a relação de resultado é uma tabela, uma entrada especial de CTID é adicionada à lista de destino para identificar as localizações físicas das linhas que devem ser atualizadas. Isso não funciona se a relação de resultado for uma visualização, porque uma visualização não tem nenhum CTID, uma vez que suas linhas não têm locais físicos reais. Em vez disso, para uma operação de `UPDATE`, `DELETE` ou `MERGE`, uma entrada especial de `wholerow` é adicionada à lista de destino, que se expande para incluir todas as colunas da visualização. O executor usa esse valor para fornecer o "antigo" registro ao gatilho `INSTEAD OF`. Cabe ao gatilho determinar o que deve ser atualizado com base nos valores das linhas antigas e novas.
 
-Outra possibilidade é o usuário definir regras `INSTEAD` que especifiquem ações de substituição para os comandos `INSERT`, `UPDATE` e `DELETE` em uma visão. Essas regras reescreverão o comando, tipicamente em um comando que atualiza uma ou mais tabelas, em vez de visões. Esse é o tema do [Seção 39.4][(rules-update.md "39.4. Rules on INSERT, UPDATE, and DELETE")]. Observe que isso não funcionará com `MERGE`, que atualmente não suporta regras na relação de destino, exceto as regras `SELECT`.
+Outra possibilidade é o usuário definir regras `INSTEAD` que especifiquem ações de substituição para os comandos `INSERT`, `UPDATE` e `DELETE` em uma visão. Essas regras reescreverão o comando, tipicamente em um comando que atualiza uma ou mais tabelas, em vez de visões. Esse é o tema do [Seção 39.4](rules-update.md). Observe que isso não funcionará com `MERGE`, que atualmente não suporta regras na relação de destino, exceto as regras `SELECT`.
 
 Observe que as regras são avaliadas primeiro, reescrevendo a consulta original antes de ser planejada e executada. Portanto, se uma visão tiver gatilhos `INSTEAD OF` bem como regras em `INSERT`, `UPDATE` ou `DELETE`, então as regras serão avaliadas primeiro, e dependendo do resultado, os gatilhos podem não ser usados em absoluto.
 

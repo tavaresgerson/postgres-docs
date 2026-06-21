@@ -4,7 +4,7 @@
 * [F.5.2. Notas](basic-archive.md#BASIC-ARCHIVE-NOTES)
 * [F.5.3. Autor](basic-archive.md#BASIC-ARCHIVE-AUTHOR)
 
-`basic_archive` é um exemplo de um módulo de arquivo. Este módulo copia os arquivos de segmento WAL concluídos para o diretório especificado. Isso pode não ser especialmente útil, mas pode servir como um ponto de partida para o desenvolvimento de seu próprio módulo de arquivo. Para mais informações sobre módulos de arquivo, consulte [Capítulo 49][(archive-modules.md "Chapter 49. Archive Modules")].
+`basic_archive` é um exemplo de um módulo de arquivo. Este módulo copia os arquivos de segmento WAL concluídos para o diretório especificado. Isso pode não ser especialmente útil, mas pode servir como um ponto de partida para o desenvolvimento de seu próprio módulo de arquivo. Para mais informações sobre módulos de arquivo, consulte [Capítulo 49](archive-modules.md).
 
 Para funcionar, este módulo deve ser carregado através de [archive_library](runtime-config-wal.md#GUC-ARCHIVE-LIBRARY), e [archive_mode](runtime-config-wal.md#GUC-ARCHIVE-MODE) deve ser habilitado.
 

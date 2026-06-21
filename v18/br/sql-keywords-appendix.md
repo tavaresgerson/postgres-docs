@@ -1,15003 +1,15006 @@
 ## Apêndice C. Palavras-chave SQL
 
-[Tabela C.1][(sql-keywords-appendix.md#KEYWORDS-TABLE "Table C.1. SQL Key Words")] lista todos os tokens que são palavras-chave no padrão SQL e no PostgreSQL 18.4. Informações de fundo podem ser encontradas em [Seção 4.1.1][(sql-syntax-lexical.md#SQL-SYNTAX-IDENTIFIERS "4.1.1. Identifiers and Key Words")]. (Por razões de espaço, apenas as duas últimas versões do padrão SQL e SQL-92 para comparação histórica são incluídas. As diferenças entre essas versões e as outras versões intermediárias do padrão são pequenas.)
+[Tabela C.1](sql-keywords-appendix.md#KEYWORDS-TABLE) lista todos os tokens que são palavras-chave no padrão SQL e no PostgreSQL 18.4. Informações de fundo podem ser encontradas em [Seção 4.1.1](sql-syntax-lexical.md#SQL-SYNTAX-IDENTIFIERS). (Por razões de espaço, apenas as duas últimas versões do padrão SQL e SQL-92 para comparação histórica são incluídas. As diferenças entre essas versões e as outras versões intermediárias do padrão são pequenas.)
 
 O SQL distingue entre palavras-chave *reservadas* e *não reservadas*. De acordo com o padrão, as palavras-chave reservadas são as únicas verdadeiras; elas nunca são permitidas como identificadores. As palavras-chave não reservadas têm apenas um significado especial em contextos específicos e podem ser usadas como identificadores em outros contextos. A maioria das palavras-chave não reservadas são, na verdade, os nomes de tabelas e funções embutidas especificadas pelo SQL. O conceito de palavras-chave não reservadas essencialmente existe apenas para declarar que algum significado predefinido está anexado a uma palavra em alguns contextos.
 
 No analisador do PostgreSQL, a vida é um pouco mais complicada. Há várias classes diferentes de tokens, variando daqueles que nunca podem ser usados como identificadores aos que não têm absolutamente nenhum status especial no analisador, mas são considerados identificadores comuns. (Este último é geralmente o caso de funções especificadas pelo SQL.) Mesmo as palavras-chave reservadas não são completamente reservadas no PostgreSQL, mas podem ser usadas como rótulos de coluna (por exemplo, `SELECT 55 AS CHECK`, embora `CHECK` seja uma palavra-chave reservada).
 
-Em [Tabela C.1][(sql-keywords-appendix.md#KEYWORDS-TABLE "Table C.1. SQL Key Words")] na coluna para PostgreSQL, classificamos como “não reservados” aquelas palavras-chave que são explicitamente conhecidas pelo analisador, mas que são permitidas como nomes de colunas ou tabelas. Algumas palavras-chave que, de outra forma, não são reservadas não podem ser usadas como nomes de funções ou tipos de dados e são marcadas conforme necessário. (A maioria dessas palavras representa funções ou tipos de dados embutidos com sintaxe especial. A função ou tipo ainda está disponível, mas não pode ser redefinida pelo usuário.) As rotuladas como “reservadas” são aquelas que não são permitidas como nomes de colunas ou tabelas. Algumas palavras-chave reservadas podem ser usadas como nomes para funções ou tipos de dados; isso também é mostrado na tabela. Se não estiver assim marcado, uma palavra-chave reservada só é permitida como uma etiqueta de coluna. Uma entrada em branco nesta coluna significa que a palavra é tratada como um identificador comum pelo PostgreSQL.
+Em [Tabela C.1](sql-keywords-appendix.md#KEYWORDS-TABLE) na coluna para PostgreSQL, classificamos como “não reservados” aquelas palavras-chave que são explicitamente conhecidas pelo analisador, mas que são permitidas como nomes de colunas ou tabelas. Algumas palavras-chave que, de outra forma, não são reservadas não podem ser usadas como nomes de funções ou tipos de dados e são marcadas conforme necessário. (A maioria dessas palavras representa funções ou tipos de dados embutidos com sintaxe especial. A função ou tipo ainda está disponível, mas não pode ser redefinida pelo usuário.) As rotuladas como “reservadas” são aquelas que não são permitidas como nomes de colunas ou tabelas. Algumas palavras-chave reservadas podem ser usadas como nomes para funções ou tipos de dados; isso também é mostrado na tabela. Se não estiver assim marcado, uma palavra-chave reservada só é permitida como uma etiqueta de coluna. Uma entrada em branco nesta coluna significa que a palavra é tratada como um identificador comum pelo PostgreSQL.
 
-Além disso, embora a maioria das palavras-chave possa ser usada como rótulos de coluna “nuas” sem a escrita de `AS` antes delas (como descrito em [Seção 7.3.2][(queries-select-lists.md#QUERIES-COLUMN-LABELS "7.3.2. Column Labels")]), há algumas que exigem um `AS` para evitar ambiguidade. Essas são marcadas na tabela como “requer [[`AS`]”.
+Além disso, embora a maioria das palavras-chave possa ser usada como rótulos de coluna “nuas” sem a escrita de `AS` antes delas (como descrito em [Seção 7.3.2](queries-select-lists.md#QUERIES-COLUMN-LABELS)), há algumas que exigem um `AS` para evitar ambiguidade. Essas são marcadas na tabela como “requer [[`AS`]”.
 
 Como regra geral, se você receber erros de análise de sintaxe falsos para comandos que utilizam qualquer uma das palavras-chave listadas como identificador, você deve tentar citar o identificador para ver se o problema desaparece.
 
-É importante entender antes de estudar [Tabela C.1][(sql-keywords-appendix.md#KEYWORDS-TABLE "Table C.1. SQL Key Words")] que o fato de uma palavra-chave não estar reservada no PostgreSQL não significa que o recurso relacionado à palavra não esteja implementado. Por outro lado, a presença de uma palavra-chave não indica a existência de um recurso.
+É importante entender antes de estudar [Tabela C.1](sql-keywords-appendix.md#KEYWORDS-TABLE) que o fato de uma palavra-chave não estar reservada no PostgreSQL não significa que o recurso relacionado à palavra não esteja implementado. Por outro lado, a presença de uma palavra-chave não indica a existência de um recurso.
 
 **Tabela C.1. Palavras-chave SQL**
 
 
 
 <table border="1" class="table" summary="SQL Key Words">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-<col class="col4"/>
-<col class="col5"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+  <col class="col4"/>
+  <col class="col5"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Key Word
    </th>
-<th>
-<span class="productname">
+   <th>
+    <span class="productname">
      PostgreSQL
     </span>
-</th>
-<th>
+   </th>
+   <th>
     SQL:2023
    </th>
-<th>
+   <th>
     SQL:2016
    </th>
-<th>
+   <th>
     SQL-92
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="token">
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="token">
      A
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ABORT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ABS
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ABSENT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ABSOLUTE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ACCESS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ACCORDING
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ACOS
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ACTION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ADA
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ADD
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ADMIN
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      AFTER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      AGGREGATE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ALL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ALLOCATE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ALSO
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ALTER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ALWAYS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ANALYSE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ANALYZE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      AND
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ANY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ANY_VALUE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ARE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ARRAY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ARRAY_AGG
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ARRAY_​MAX_​CARDINALITY
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ASC
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ASENSITIVE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ASIN
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ASSERTION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ASSIGNMENT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ASYMMETRIC
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      AT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ATAN
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ATOMIC
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ATTACH
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ATTRIBUTE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ATTRIBUTES
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      AUTHORIZATION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      AVG
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      BACKWARD
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      BASE64
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      BEFORE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      BEGIN
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      BEGIN_FRAME
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      BEGIN_PARTITION
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      BERNOULLI
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      BETWEEN
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      BIGINT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      BINARY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      BIT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      BIT_LENGTH
     </code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      BLOB
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      BLOCKED
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      BOM
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      BOOLEAN
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      BOTH
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      BREADTH
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      BTRIM
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      BY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      C
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CACHE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CALL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CALLED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CARDINALITY
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CASCADE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CASCADED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CASE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CAST
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CATALOG
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CATALOG_NAME
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CEIL
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CEILING
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CHAIN
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CHAINING
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CHAR
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type), requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CHARACTER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type), requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CHARACTERISTICS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CHARACTERS
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CHARACTER_LENGTH
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CHARACTER_​SET_​CATALOG
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CHARACTER_SET_NAME
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CHARACTER_SET_SCHEMA
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CHAR_LENGTH
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CHECK
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CHECKPOINT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CLASS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CLASSIFIER
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CLASS_ORIGIN
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CLOB
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CLOSE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CLUSTER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COALESCE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COBOL
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COLLATE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COLLATION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type)
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COLLATION_CATALOG
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COLLATION_NAME
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COLLATION_SCHEMA
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COLLECT
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COLUMN
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COLUMNS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COLUMN_NAME
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COMMAND_FUNCTION
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COMMAND_​FUNCTION_​CODE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COMMENT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COMMENTS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COMMIT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COMMITTED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COMPRESSION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CONCURRENTLY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type)
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CONDITION
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CONDITIONAL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CONDITION_NUMBER
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CONFIGURATION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CONFLICT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CONNECT
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CONNECTION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CONNECTION_NAME
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CONSTRAINT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CONSTRAINTS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CONSTRAINT_CATALOG
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CONSTRAINT_NAME
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CONSTRAINT_SCHEMA
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CONSTRUCTOR
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CONTAINS
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CONTENT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CONTINUE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CONTROL
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CONVERSION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CONVERT
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COPARTITION
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COPY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CORR
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CORRESPONDING
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COS
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COSH
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COST
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COUNT
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COVAR_POP
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      COVAR_SAMP
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CREATE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CROSS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CSV
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CUBE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CUME_DIST
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CURRENT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CURRENT_CATALOG
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CURRENT_DATE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CURRENT_​DEFAULT_​TRANSFORM_​GROUP
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CURRENT_PATH
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CURRENT_ROLE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CURRENT_ROW
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CURRENT_SCHEMA
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CURRENT_TIME
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CURRENT_TIMESTAMP
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CURRENT_​TRANSFORM_​GROUP_​FOR_​TYPE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CURRENT_USER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CURSOR
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CURSOR_NAME
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      CYCLE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DATA
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DATABASE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DATALINK
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DATE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DATETIME_​INTERVAL_​CODE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DATETIME_​INTERVAL_​PRECISION
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DAY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DB
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DEALLOCATE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DEC
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DECFLOAT
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DECIMAL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DECLARE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DEFAULT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DEFAULTS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DEFERRABLE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DEFERRED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DEFINE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DEFINED
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DEFINER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DEGREE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DELETE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DELIMITER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DELIMITERS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DENSE_RANK
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DEPENDS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DEPTH
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DEREF
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DERIVED
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DESC
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DESCRIBE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DESCRIPTOR
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DETACH
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DETERMINISTIC
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DIAGNOSTICS
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DICTIONARY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DISABLE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DISCARD
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DISCONNECT
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DISPATCH
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DISTINCT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DLNEWCOPY
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DLPREVIOUSCOPY
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DLURLCOMPLETE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DLURLCOMPLETEONLY
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DLURLCOMPLETEWRITE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DLURLPATH
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DLURLPATHONLY
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DLURLPATHWRITE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DLURLSCHEME
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DLURLSERVER
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DLVALUE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DO
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DOCUMENT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DOMAIN
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DOUBLE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DROP
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DYNAMIC
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DYNAMIC_FUNCTION
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      DYNAMIC_​FUNCTION_​CODE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      EACH
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ELEMENT
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ELSE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      EMPTY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ENABLE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ENCODING
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ENCRYPTED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      END
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      END-EXEC
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      END_FRAME
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      END_PARTITION
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ENFORCED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ENUM
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      EQUALS
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ERROR
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ESCAPE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      EVENT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      EVERY
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      EXCEPT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      EXCEPTION
     </code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      EXCLUDE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      EXCLUDING
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      EXCLUSIVE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      EXEC
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      EXECUTE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      EXISTS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      EXP
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      EXPLAIN
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      EXPRESSION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      EXTENSION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      EXTERNAL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      EXTRACT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FALSE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FAMILY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FETCH
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FILE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FILTER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FINAL
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FINALIZE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FINISH
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FIRST
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FIRST_VALUE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FLAG
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FLOAT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FLOOR
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FOLLOWING
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FOR
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FORCE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FOREIGN
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FORMAT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FORTRAN
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FORWARD
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FOUND
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FRAME_ROW
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FREE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FREEZE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type)
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FROM
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FS
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FULFILL
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FULL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FUNCTION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FUNCTIONS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      FUSION
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      G
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      GENERAL
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      GENERATED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      GET
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      GLOBAL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      GO
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      GOTO
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      GRANT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      GRANTED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      GREATEST
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      GROUP
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      GROUPING
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      GROUPS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      HANDLER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      HAVING
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      HEADER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      HEX
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      HIERARCHY
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      HOLD
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      HOUR
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ID
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      IDENTITY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      IF
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      IGNORE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ILIKE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type)
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      IMMEDIATE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      IMMEDIATELY
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      IMMUTABLE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      IMPLEMENTATION
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      IMPLICIT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      IMPORT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      IN
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INCLUDE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INCLUDING
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INCREMENT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INDENT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INDEX
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INDEXES
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INDICATOR
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INHERIT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INHERITS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INITIAL
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INITIALLY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INLINE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INNER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INOUT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INPUT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INSENSITIVE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INSERT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INSTANCE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INSTANTIABLE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INSTEAD
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INTEGER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INTEGRITY
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INTERSECT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INTERSECTION
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INTERVAL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INTO
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      INVOKER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      IS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ISNULL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type), requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ISOLATION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      JOIN
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      JSON
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      JSON_ARRAY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      JSON_ARRAYAGG
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      JSON_EXISTS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      JSON_OBJECT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      JSON_OBJECTAGG
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      JSON_QUERY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      JSON_SCALAR
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      JSON_SERIALIZE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      JSON_TABLE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      JSON_TABLE_PRIMITIVE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      JSON_VALUE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      K
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      KEEP
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      KEY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      KEYS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      KEY_MEMBER
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      KEY_TYPE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LABEL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LAG
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LANGUAGE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LARGE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LAST
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LAST_VALUE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LATERAL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LEAD
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LEADING
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LEAKPROOF
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LEAST
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LEFT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LENGTH
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LEVEL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LIBRARY
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LIKE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LIKE_REGEX
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LIMIT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LINK
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LISTAGG
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LISTEN
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LN
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LOAD
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LOCAL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LOCALTIME
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LOCALTIMESTAMP
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LOCATION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LOCATOR
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LOCK
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LOCKED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LOG
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LOG10
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LOGGED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LOWER
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LPAD
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      LTRIM
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      M
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MAP
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MAPPING
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MATCH
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MATCHED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MATCHES
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MATCH_NUMBER
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MATCH_RECOGNIZE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MATERIALIZED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MAX
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MAXVALUE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MEASURES
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MEMBER
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MERGE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MERGE_ACTION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MESSAGE_LENGTH
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MESSAGE_OCTET_LENGTH
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MESSAGE_TEXT
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      METHOD
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MIN
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MINUTE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MINVALUE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MOD
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MODE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MODIFIES
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MODULE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MONTH
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MORE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MOVE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MULTISET
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      MUMPS
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NAME
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NAMES
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NAMESPACE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NATIONAL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NATURAL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NCHAR
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NCLOB
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NESTED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NESTING
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NEW
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NEXT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NFC
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NFD
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NFKC
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NFKD
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NIL
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NO
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NONE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NORMALIZE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NORMALIZED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NOT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NOTHING
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NOTIFY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NOTNULL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type), requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NOWAIT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NTH_VALUE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NTILE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NULL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NULLABLE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NULLIF
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NULLS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NULL_ORDERING
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NUMBER
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      NUMERIC
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OBJECT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OBJECTS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OCCURRENCE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OCCURRENCES_REGEX
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OCTETS
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OCTET_LENGTH
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OF
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OFF
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OFFSET
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OIDS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OLD
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OMIT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ON
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ONE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ONLY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OPEN
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OPERATOR
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OPTION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OPTIONS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OR
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ORDER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ORDERING
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ORDINALITY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OTHERS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OUT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OUTER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OUTPUT
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OVER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OVERFLOW
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OVERLAPS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type), requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OVERLAY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OVERRIDING
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OWNED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      OWNER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      P
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PAD
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PARALLEL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PARAMETER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PARAMETER_MODE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PARAMETER_NAME
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PARAMETER_​ORDINAL_​POSITION
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PARAMETER_​SPECIFIC_​CATALOG
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PARAMETER_​SPECIFIC_​NAME
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PARAMETER_​SPECIFIC_​SCHEMA
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PARSER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PARTIAL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PARTITION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PASCAL
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PASS
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PASSING
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PASSTHROUGH
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PASSWORD
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PAST
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PATH
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PATTERN
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PER
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PERCENT
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PERCENTILE_CONT
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PERCENTILE_DISC
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PERCENT_RANK
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PERIOD
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PERMISSION
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PERMUTE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PIPE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PLACING
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PLAN
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PLANS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PLI
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      POLICY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PORTION
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      POSITION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      POSITION_REGEX
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      POWER
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PRECEDES
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PRECEDING
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PRECISION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type), requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PREPARE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PREPARED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PRESERVE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PREV
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PRIMARY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PRIOR
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PRIVATE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PRIVILEGES
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PROCEDURAL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PROCEDURE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PROCEDURES
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PROGRAM
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PRUNE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PTF
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PUBLIC
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      PUBLICATION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      QUOTE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      QUOTES
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RANGE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RANK
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      READ
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      READS
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      REAL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      REASSIGN
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RECOVERY
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RECURSIVE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      REF
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      REFERENCES
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      REFERENCING
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      REFRESH
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      REGR_AVGX
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      REGR_AVGY
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      REGR_COUNT
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      REGR_INTERCEPT
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      REGR_R2
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      REGR_SLOPE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      REGR_SXX
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      REGR_SXY
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      REGR_SYY
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      REINDEX
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RELATIVE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RELEASE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RENAME
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      REPEATABLE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      REPLACE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      REPLICA
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      REQUIRING
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RESET
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RESPECT
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RESTART
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RESTORE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RESTRICT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RESULT
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RETURN
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RETURNED_CARDINALITY
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RETURNED_LENGTH
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RETURNED_​OCTET_​LENGTH
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RETURNED_SQLSTATE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RETURNING
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RETURNS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      REVOKE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RIGHT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ROLE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ROLLBACK
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ROLLUP
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ROUTINE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ROUTINES
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ROUTINE_CATALOG
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ROUTINE_NAME
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ROUTINE_SCHEMA
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ROW
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ROWS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ROW_COUNT
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ROW_NUMBER
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RPAD
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RTRIM
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RULE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      RUNNING
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SAVEPOINT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SCALAR
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SCALE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SCHEMA
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SCHEMAS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SCHEMA_NAME
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SCOPE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SCOPE_CATALOG
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SCOPE_NAME
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SCOPE_SCHEMA
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SCROLL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SEARCH
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SECOND
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SECTION
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SECURITY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SEEK
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SELECT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SELECTIVE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SELF
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SEMANTICS
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SENSITIVE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SEQUENCE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SEQUENCES
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SERIALIZABLE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SERVER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SERVER_NAME
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SESSION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SESSION_USER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SET
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SETOF
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SETS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SHARE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SHOW
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SIMILAR
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SIMPLE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SIN
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SINH
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SIZE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SKIP
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SMALLINT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SNAPSHOT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SOME
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SORT_DIRECTION
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SOURCE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SPACE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SPECIFIC
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SPECIFICTYPE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SPECIFIC_NAME
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SQL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SQLCODE
     </code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SQLERROR
     </code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SQLEXCEPTION
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SQLSTATE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SQLWARNING
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SQRT
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      STABLE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      STANDALONE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      START
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      STATE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      STATEMENT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      STATIC
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      STATISTICS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      STDDEV_POP
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      STDDEV_SAMP
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      STDIN
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      STDOUT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      STORAGE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      STORED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      STRICT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      STRING
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      STRIP
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      STRUCTURE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      STYLE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SUBCLASS_ORIGIN
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SUBMULTISET
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SUBSCRIPTION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SUBSET
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SUBSTRING
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SUBSTRING_REGEX
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SUCCEEDS
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SUM
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SUPPORT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SYMMETRIC
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SYSID
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SYSTEM
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SYSTEM_TIME
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      SYSTEM_USER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      T
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TABLE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TABLES
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TABLESAMPLE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TABLESPACE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TABLE_NAME
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TAN
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TANH
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TARGET
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TEMP
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TEMPLATE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TEMPORARY
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TEXT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      THEN
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      THROUGH
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TIES
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TIME
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TIMESTAMP
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TIMEZONE_HOUR
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TIMEZONE_MINUTE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TO
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TOKEN
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TOP_LEVEL_COUNT
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TRAILING
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TRANSACTION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TRANSACTIONS_​COMMITTED
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TRANSACTIONS_​ROLLED_​BACK
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TRANSACTION_ACTIVE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TRANSFORM
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TRANSFORMS
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TRANSLATE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TRANSLATE_REGEX
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TRANSLATION
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TREAT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TRIGGER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TRIGGER_CATALOG
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TRIGGER_NAME
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TRIGGER_SCHEMA
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TRIM
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TRIM_ARRAY
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TRUE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TRUNCATE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TRUSTED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TYPE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      TYPES
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UESCAPE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UNBOUNDED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UNCOMMITTED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UNCONDITIONAL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UNDER
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UNENCRYPTED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UNION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UNIQUE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UNKNOWN
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UNLINK
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UNLISTEN
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UNLOGGED
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UNMATCHED
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UNNAMED
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UNNEST
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UNTIL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UNTYPED
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UPDATE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UPPER
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      URI
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      USAGE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      USER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      USER_​DEFINED_​TYPE_​CATALOG
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      USER_​DEFINED_​TYPE_​CODE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      USER_​DEFINED_​TYPE_​NAME
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      USER_​DEFINED_​TYPE_​SCHEMA
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      USING
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UTF16
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UTF32
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      UTF8
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      VACUUM
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      VALID
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      VALIDATE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      VALIDATOR
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      VALUE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      VALUES
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      VALUE_OF
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      VARBINARY
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      VARCHAR
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      VARIADIC
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      VARYING
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      VAR_POP
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      VAR_SAMP
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      VERBOSE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved (can be function or type)
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      VERSION
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      VERSIONING
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      VIEW
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      VIEWS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      VIRTUAL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      VOLATILE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      WHEN
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      WHENEVER
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      WHERE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      WHITESPACE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      WIDTH_BUCKET
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      WINDOW
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      WITH
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      WITHIN
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      WITHOUT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      WORK
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      WRAPPER
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      WRITE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XML
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLAGG
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLATTRIBUTES
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLBINARY
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLCAST
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLCOMMENT
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLCONCAT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLDECLARATION
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLDOCUMENT
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLELEMENT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLEXISTS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLFOREST
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLITERATE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLNAMESPACES
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLPARSE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLPI
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLQUERY
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLROOT
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLSCHEMA
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLSERIALIZE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLTABLE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved (cannot be function or type)
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLTEXT
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      XMLVALIDATE
     </code>
-</td>
-<td>
-</td>
-<td>
+   </td>
+   <td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      YEAR
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved, requires
     <code class="literal">
      AS
     </code>
-</td>
-<td>
+   </td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-<tr>
-<td>
-<code class="token">
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      YES
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code class="token">
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="token">
      ZONE
     </code>
-</td>
-<td>
+   </td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     non-reserved
    </td>
-<td>
+   <td>
     reserved
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
+
+
+
 

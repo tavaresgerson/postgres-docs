@@ -8,11 +8,11 @@ pg_combinebackup — reconstruir um backup completo a partir de um backup increm
 
 ## Descrição
 
-O pg_combinebackup é usado para reconstruir um backup completo sintético a partir de um [backup incremental][(continuous-archiving.md#BACKUP-INCREMENTAL-BACKUP "25.3.3. Making an Incremental Backup")] e dos backups anteriores dos quais depende.
+O pg_combinebackup é usado para reconstruir um backup completo sintético a partir de um [backup incremental](continuous-archiving.md#BACKUP-INCREMENTAL-BACKUP) e dos backups anteriores dos quais depende.
 
 Especifique todos os backups necessários na linha de comando, do mais antigo ao mais recente. Ou seja, o primeiro diretório de backup deve ser o caminho para o backup completo, e o último deve ser o caminho para o backup incremental final que você deseja restaurar. O backup reconstruído será escrito no diretório de saída especificado pela opção `-o`.
 
-O pg_combinebackup tentará verificar se os backups que você especifica formam uma cadeia de backups legal a partir da qual um backup completo correto pode ser reconstruído. No entanto, ele não é projetado para ajudá-lo a acompanhar quais backups dependem de quais outros backups. Se você remover um ou mais dos backups anteriores nos quais seu backup incremental depende, não poderá restaurá-lo. Além disso, o pg_combinebackup apenas tenta verificar se os backups têm a relação correta entre si, não se cada backup individual está intacto; para isso, use [pg_verifybackup][(app-pgverifybackup.md "pg_verifybackup")].
+O pg_combinebackup tentará verificar se os backups que você especifica formam uma cadeia de backups legal a partir da qual um backup completo correto pode ser reconstruído. No entanto, ele não é projetado para ajudá-lo a acompanhar quais backups dependem de quais outros backups. Se você remover um ou mais dos backups anteriores nos quais seu backup incremental depende, não poderá restaurá-lo. Além disso, o pg_combinebackup apenas tenta verificar se os backups têm a relação correta entre si, não se cada backup individual está intacto; para isso, use [pg_verifybackup](app-pgverifybackup.md).
 
 Como a saída do pg_combinebackup é um backup completo sintético, ele pode ser usado como entrada para uma futura invocação do pg_combinebackup. O backup completo sintético seria especificado na linha de comando em vez da cadeia de backups de que foi reconstruído.
 
@@ -52,7 +52,7 @@ Se um manifesto de backup não estiver disponível ou não contiver o checksum d
 
 `--sync-method=method`: Quando configurado para `fsync`, que é o padrão, `pg_combinebackup` abrirá e sincronizará recursivamente todos os arquivos no diretório de backup. Quando o formato simples é usado, a busca por arquivos seguirá links simbólicos para o diretório WAL e cada espaço de tabela configurado.
 
-Em Linux, `syncfs` pode ser usado para pedir ao sistema operacional que sincronize todo o sistema de arquivos que contém o diretório de backup. Quando o formato simples é usado, `pg_combinebackup` também sincronizará os sistemas de arquivos que contêm os arquivos WAL e cada espaço de tabela. Consulte [recovery_init_sync_method][(runtime-config-error-handling.md#GUC-RECOVERY-INIT-SYNC-METHOD)] para obter informações sobre as advertências a serem consideradas ao usar `syncfs`.
+Em Linux, `syncfs` pode ser usado para pedir ao sistema operacional que sincronize todo o sistema de arquivos que contém o diretório de backup. Quando o formato simples é usado, `pg_combinebackup` também sincronizará os sistemas de arquivos que contêm os arquivos WAL e cada espaço de tabela. Consulte [recovery_init_sync_method](runtime-config-error-handling.md#GUC-RECOVERY-INIT-SYNC-METHOD) para obter informações sobre as advertências a serem consideradas ao usar `syncfs`.
 
 Esta opção não tem efeito quando o `--no-sync` é usado.
 
@@ -64,11 +64,11 @@ Esta opção não tem efeito quando o `--no-sync` é usado.
 
 `pg_combinebackup` não recompõe os checksums de página ao escrever o diretório de saída. Portanto, se algum dos backups usados para reconstrução foram feitos com checksums desativados, mas o backup final foi feito com checksums ativados, o diretório resultante pode conter páginas com checksums inválidos.
 
-Para evitar esse problema, é recomendável fazer um novo backup completo após alterar o estado do checksum do clúster usando [pg_checksums][(app-pgchecksums.md "pg_checksums")]. Caso contrário, você pode desativar e, em seguida, reativá-los opcionalmente os checksums no diretório produzido por `pg_combinebackup` para corrigir o problema.
+Para evitar esse problema, é recomendável fazer um novo backup completo após alterar o estado do checksum do clúster usando [pg_checksums](app-pgchecksums.md). Caso contrário, você pode desativar e, em seguida, reativá-los opcionalmente os checksums no diretório produzido por `pg_combinebackup` para corrigir o problema.
 
 ## Meio Ambiente
 
-Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, utiliza as variáveis de ambiente suportadas pelo libpq (consulte a Seção 32.15 [(libpq-envars.md "32.15. Environment Variables")]).
+Esse utilitário, como a maioria dos outros utilitários do PostgreSQL, utiliza as variáveis de ambiente suportadas pelo libpq (consulte a [Seção 32.15](libpq-envars.md)).
 
 A variável de ambiente `PG_COLOR` especifica se a cor deve ser usada nas mensagens de diagnóstico. Os valores possíveis são `always`, `auto` e `never`.
 

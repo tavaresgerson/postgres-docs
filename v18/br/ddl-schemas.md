@@ -1,12 +1,12 @@
 ## 5.10. Esquemas [#](#DDL-SCHEMAS)
 
-* [5.10.1. Criando um Esquema][(ddl-schemas.md#DDL-SCHEMAS-CREATE)]
-* [5.10.2. O Esquema Público][(ddl-schemas.md#DDL-SCHEMAS-PUBLIC)]
-* [5.10.3. O Caminho de Pesquisa do Esquema][(ddl-schemas.md#DDL-SCHEMAS-PATH)]
-* [5.10.4. Esquemas e Privilegios][(ddl-schemas.md#DDL-SCHEMAS-PRIV)]
-* [5.10.5. O Esquema do Catálogo do Sistema][(ddl-schemas.md#DDL-SCHEMAS-CATALOG)]
-* [5.10.6. Padrões de Uso][(ddl-schemas.md#DDL-SCHEMAS-PATTERNS)]
-* [5.10.7. Portabilidade][(ddl-schemas.md#DDL-SCHEMAS-PORTABILITY)]
+* [5.10.1. Criando um Esquema](ddl-schemas.md#DDL-SCHEMAS-CREATE)
+* [5.10.2. O Esquema Público](ddl-schemas.md#DDL-SCHEMAS-PUBLIC)
+* [5.10.3. O Caminho de Pesquisa do Esquema](ddl-schemas.md#DDL-SCHEMAS-PATH)
+* [5.10.4. Esquemas e Privilegios](ddl-schemas.md#DDL-SCHEMAS-PRIV)
+* [5.10.5. O Esquema do Catálogo do Sistema](ddl-schemas.md#DDL-SCHEMAS-CATALOG)
+* [5.10.6. Padrões de Uso](ddl-schemas.md#DDL-SCHEMAS-PATTERNS)
+* [5.10.7. Portabilidade](ddl-schemas.md#DDL-SCHEMAS-PORTABILITY)
 
 Um clúster de banco de dados PostgreSQL contém um ou mais bancos de dados nomeados. Papéis e alguns outros tipos de objetos são compartilhados em todo o clúster. Uma conexão de cliente com o servidor só pode acessar dados em um único banco de dados, o especificado na solicitação de conexão.
 
@@ -68,7 +68,7 @@ Para descartar um esquema que inclui todos os objetos contidos, use:
 DROP SCHEMA myschema CASCADE;
 ```
 
-Veja [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")] para uma descrição do mecanismo geral por trás disso.
+Veja [Seção 5.15](ddl-depend.md) para uma descrição do mecanismo geral por trás disso.
 
 Muitas vezes, você vai querer criar um esquema de propriedade de outra pessoa (já que essa é uma das maneiras de restringir as atividades dos seus usuários a namespaces bem definidos). A sintaxe para isso é:
 
@@ -142,7 +142,7 @@ SET search_path TO myschema;
 
 Então, não temos mais acesso ao esquema público sem qualificação explícita. Não há nada de especial sobre o esquema público, exceto que ele existe por padrão. Ele também pode ser descartado.
 
-Veja também [Seção 9.27][(functions-info.md "9.27. System Information Functions and Operators")] para outras maneiras de manipular o caminho de pesquisa do esquema.
+Veja também [Seção 9.27](functions-info.md) para outras maneiras de manipular o caminho de pesquisa do esquema.
 
 O caminho de busca funciona da mesma maneira para nomes de tipos de dados, nomes de funções e nomes de operadores, assim como para nomes de tabelas. Os nomes de tipo de dados e de função podem ser qualificados exatamente da mesma maneira que os nomes de tabelas. Se você precisar escrever um nome de operador qualificado em uma expressão, há uma disposição especial: você deve escrever
 
@@ -162,13 +162,13 @@ Na prática, geralmente se baseia no caminho de busca para operadores, para não
 
 Por padrão, os usuários não podem acessar quaisquer objetos em esquemas que não possuam. Para permitir isso, o proprietário do esquema deve conceder o privilégio `USAGE` no esquema. Por padrão, todos têm esse privilégio no esquema `public`. Para permitir que os usuários usem os objetos em um esquema, podem ser necessários privilégios adicionais, conforme apropriado para o objeto.
 
-Também é possível permitir que um usuário crie objetos em um esquema de outra pessoa. Para permitir isso, o privilégio `CREATE` no esquema precisa ser concedido. Em bancos de dados atualizados a partir do PostgreSQL 14 ou versões anteriores, todos têm esse privilégio no esquema `public`. Alguns [padrões de uso][(ddl-schemas.md#DDL-SCHEMAS-PATTERNS "5.10.6. Usage Patterns")] exigem a revogação desse privilégio:
+Também é possível permitir que um usuário crie objetos em um esquema de outra pessoa. Para permitir isso, o privilégio `CREATE` no esquema precisa ser concedido. Em bancos de dados atualizados a partir do PostgreSQL 14 ou versões anteriores, todos têm esse privilégio no esquema `public`. Alguns [padrões de uso](ddl-schemas.md#DDL-SCHEMAS-PATTERNS) exigem a revogação desse privilégio:
 
 ```
 REVOKE CREATE ON SCHEMA public FROM PUBLIC;
 ```
 
-(O primeiro "público" é o esquema, o segundo "público" significa "todos os usuários". No primeiro sentido, é um identificador, no segundo sentido, é uma palavra-chave, daí a diferenciação da grafia; lembre-se das diretrizes do [Seção 4.1.1][(sql-syntax-lexical.md#SQL-SYNTAX-IDENTIFIERS "4.1.1. Identifiers and Key Words")].])
+(O primeiro "público" é o esquema, o segundo "público" significa "todos os usuários". No primeiro sentido, é um identificador, no segundo sentido, é uma palavra-chave, daí a diferenciação da grafia; lembre-se das diretrizes do [Seção 4.1.1](sql-syntax-lexical.md#SQL-SYNTAX-IDENTIFIERS).])
 
 ### 5.10.5. O Esquema do Catálogo do Sistema [#](#DDL-SCHEMAS-CATALOG)
 

@@ -1,6 +1,6 @@
 ## 1. O que é PostgreSQL? [#](#INTRO-WHATIS)
 
-O PostgreSQL é um sistema de gerenciamento de banco de dados orientado a objetos (ORDBMS) baseado em [POSTGRES, Versão 4.2][(https://dsf.berkeley.edu/postgres.html)], desenvolvido pelo Departamento de Ciência da Computação da Universidade da Califórnia em Berkeley. O PostgreSQL foi pioneiro em muitos conceitos que só se tornaram disponíveis em alguns sistemas de banco de dados comerciais muito mais tarde.
+O PostgreSQL é um sistema de gerenciamento de banco de dados orientado a objetos (ORDBMS) baseado em [POSTGRES, Versão 4.2](https://dsf.berkeley.edu/postgres.html), desenvolvido pelo Departamento de Ciência da Computação da Universidade da Califórnia em Berkeley. O PostgreSQL foi pioneiro em muitos conceitos que só se tornaram disponíveis em alguns sistemas de banco de dados comerciais muito mais tarde.
 
 O PostgreSQL é um descendente de código original de Berkeley de código aberto. Ele suporta uma grande parte do padrão SQL e oferece muitas funcionalidades modernas:
 

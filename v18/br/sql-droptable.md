@@ -20,7 +20,7 @@ DROP TABLE [ IF EXISTS ] name [, ...] [ CASCADE | RESTRICT ]
 
 *`name`*: O nome (opcionalmente qualificado por esquema) da tabela a ser excluída.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem da tabela (como vistas), e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem da tabela (como vistas), e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Não se recusar a descartar a tabela se algum objeto depender dela. Esse é o padrão.
 

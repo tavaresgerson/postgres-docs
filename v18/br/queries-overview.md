@@ -20,7 +20,7 @@ Supondo que haja uma tabela chamada `table1`, este comando recuperaria todas as 
 SELECT a, b + c FROM table1;
 ```
 
-(assumindo que `b` e `c` são de um tipo de dados numérico). Veja [Seção 7.3][(queries-select-lists.md "7.3. Select Lists")] para mais detalhes.
+(assumindo que `b` e `c` são de um tipo de dados numérico). Veja [Seção 7.3](queries-select-lists.md) para mais detalhes.
 
 `FROM table1` é um tipo simples de expressão de tabela: ele lê apenas uma tabela. Em geral, as expressões de tabela podem ser construções complexas de tabelas base, junções e subconsultas. Mas você também pode omitir a expressão de tabela inteiramente e usar o comando `SELECT` como um calculador:
 

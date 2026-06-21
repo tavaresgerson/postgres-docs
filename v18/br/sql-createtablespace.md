@@ -21,7 +21,7 @@ Um usuário com privilégios apropriados pode passar *`tablespace_name`* para `C
 
 ### Aviso
 
-Um espaço de tabela não pode ser usado de forma independente do clúster no qual é definido; veja [Seção 22.6][(manage-ag-tablespaces.md "22.6. Tablespaces")].
+Um espaço de tabela não pode ser usado de forma independente do clúster no qual é definido; veja [Seção 22.6](manage-ag-tablespaces.md).
 
 ## Parâmetros
 

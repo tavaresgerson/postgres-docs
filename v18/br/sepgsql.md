@@ -14,7 +14,7 @@
 
 ### Aviso
 
-A implementação atual tem limitações significativas e não aplica o controle de acesso obrigatório para todas as ações. Veja [Seção F.40.7][(sepgsql.md#SEPGSQL-LIMITATIONS "F.40.7. Limitations")].
+A implementação atual tem limitações significativas e não aplica o controle de acesso obrigatório para todas as ações. Veja [Seção F.40.7](sepgsql.md#SEPGSQL-LIMITATIONS).
 
 ### F.40.1. Visão geral [#](#SEPGSQL-OVERVIEW)
 
@@ -44,7 +44,7 @@ Se o SELinux estiver desativado ou não instalado, você deve configurá-lo prim
 
 Para construir este módulo, especifique `--with-selinux` (install-make.md#CONFIGURE-OPTION-WITH-SEPGSQL) (ao usar [make e autoconf](install-make.md "17.3. Building and Installation with Autoconf and Make")) ou `-Dselinux={ auto | enabled | disabled }` (install-meson.md#CONFIGURE-WITH-SEPGSQL-MESON) (ao usar [meson](install-meson.md "17.4. Building and Installation with Meson")). Certifique-se de que o RPM `libselinux-devel` esteja instalado no momento da construção.
 
-Para usar este módulo, você deve incluir `sepgsql` no parâmetro [shared_preload_libraries][(runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES)] em `postgresql.conf`. O módulo não funcionará corretamente se carregado de qualquer outra maneira. Uma vez que o módulo seja carregado, você deve executar `sepgsql.sql` em cada banco de dados. Isso instalará as funções necessárias para a gestão de etiquetas de segurança e atribuirá etiquetas de segurança iniciais.
+Para usar este módulo, você deve incluir `sepgsql` no parâmetro [shared_preload_libraries](runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES) em `postgresql.conf`. O módulo não funcionará corretamente se carregado de qualquer outra maneira. Uma vez que o módulo seja carregado, você deve executar `sepgsql.sql` em cada banco de dados. Isso instalará as funções necessárias para a gestão de etiquetas de segurança e atribuirá etiquetas de segurança iniciais.
 
 Aqui está um exemplo que mostra como inicializar um novo cluster de banco de dados com funções `sepgsql` e rótulos de segurança instalados. Ajuste as permissões mostradas conforme necessário para sua instalação:
 
@@ -79,13 +79,13 @@ Se o processo de instalação for concluído sem erros, você pode começar a us
 
 ### F.40.3. Testes de Regressão [#](#SEPGSQL-REGRESSION)
 
-A `sepgsql` é executada se `PG_TEST_EXTRA` contém `sepgsql` (consulte [Seção 31.1.3][(regress-run.md#REGRESS-ADDITIONAL "31.1.3. Additional Test Suites")]). Este método é adequado durante o desenvolvimento do PostgreSQL. Alternativamente, há uma maneira de executar os testes para verificar se uma instância do banco de dados foi configurada corretamente para `sepgsql`.
+A `sepgsql` é executada se `PG_TEST_EXTRA` contém `sepgsql` (consulte [Seção 31.1.3](regress-run.md#REGRESS-ADDITIONAL)). Este método é adequado durante o desenvolvimento do PostgreSQL. Alternativamente, há uma maneira de executar os testes para verificar se uma instância do banco de dados foi configurada corretamente para `sepgsql`.
 
 Devido à natureza do SELinux, a execução dos testes de regressão para `sepgsql` requer várias etapas de configuração adicionais, algumas das quais devem ser feitas como root.
 
 Os testes manuais devem ser executados no diretório `contrib/sepgsql` de uma árvore de construção configurada do PostgreSQL. Embora eles exijam uma árvore de construção, os testes são projetados para serem executados contra um servidor instalado, ou seja, são comparáveis a `make installcheck` e não a `make check`.
 
-Primeiro, configure o `sepgsql` em um banco de dados funcional de acordo com as instruções na [Seção F.40.2][(sepgsql.md#SEPGSQL-INSTALLATION "F.40.2. Installation")]. Observe que o usuário do sistema operacional atual deve ser capaz de se conectar ao banco de dados como superusuário sem autenticação por senha.
+Primeiro, configure o `sepgsql` em um banco de dados funcional de acordo com as instruções na [Seção F.40.2](sepgsql.md#SEPGSQL-INSTALLATION). Observe que o usuário do sistema operacional atual deve ser capaz de se conectar ao banco de dados como superusuário sem autenticação por senha.
 
 Em segundo lugar, construa e instale o pacote de políticas para o teste de regressão. O pacote de políticas `sepgsql-regtest` é um pacote de políticas com finalidade específica que fornece um conjunto de regras que devem ser permitidas durante os testes de regressão. Ele deve ser construído a partir do arquivo de fonte de políticas `sepgsql-regtest.te`, que é feito usando `make` com um Makefile fornecido pelo SELinux. Você precisará localizar o Makefile apropriado em seu sistema; o caminho mostrado abaixo é apenas um exemplo. (Este Makefile é geralmente fornecido pelo `selinux-policy-devel` ou `selinux-policy` RPM.) Uma vez construído, instale este pacote de políticas usando o comando `semodule`, que carrega os pacotes de políticas fornecidos no kernel. Se o pacote for instalado corretamente, `semodule -l` deve listar `sepgsql-regtest` como um pacote de políticas disponível:
 
@@ -112,7 +112,7 @@ $ id -Z
 unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
 ```
 
-Consulte [Seção F.40.8][(sepgsql.md#SEPGSQL-RESOURCES "F.40.8. External Resources")] para obter detalhes sobre a configuração do seu domínio de trabalho, se necessário.
+Consulte [Seção F.40.8](sepgsql.md#SEPGSQL-RESOURCES) para obter detalhes sobre a configuração do seu domínio de trabalho, se necessário.
 
 Por fim, execute o script de teste de regressão:
 
@@ -280,133 +280,131 @@ Recusamos o comando `LOAD`(sql-load.md "LOAD") em todos os casos, porque qualque
 
 
 <table border="1" class="table" summary="Sepgsql Functions">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
      Function
     </p>
-<p>
+    <p>
      Description
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       sepgsql_getcon
      </code>
-     ()
-        →
+     () →
      <code class="returnvalue">
       text
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Returns the client domain, the current security label of the client.
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       sepgsql_setcon
      </code>
      (
      <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Switches the client domain of the current session to the new domain, if allowed by the security policy. It also accepts
      <code class="literal">
       NULL
      </code>
      input as a request to transition to the client's original domain.
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       sepgsql_mcstrans_in
      </code>
      (
      <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       text
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Translates the given qualified MLS/MCS range into raw format if the mcstrans daemon is running.
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       sepgsql_mcstrans_out
      </code>
      (
      <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       text
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Translates the given raw MLS/MCS range into qualified format if the mcstrans daemon is running.
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       sepgsql_restorecon
      </code>
      (
      <code class="type">
       text
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Sets up initial security labels for all objects within the current database. The argument may be
      <code class="literal">
       NULL
      </code>
      , or the name of a specfile to be used as alternative of the system default.
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 
@@ -422,11 +420,11 @@ Canais ocultos: `sepgsql` não tenta esconder a existência de um determinado ob
 
 ### F.40.8. Recursos externos [#](#SEPGSQL-RESOURCES)
 
-[Introdução ao PostgreSQL][(https://wiki.postgresql.org/wiki/SEPostgreSQL_Introduction)]: Esta página do wiki fornece uma breve visão geral, projeto de segurança, arquitetura, administração e recursos futuros.
+[Introdução ao PostgreSQL](https://wiki.postgresql.org/wiki/SEPostgreSQL_Introduction): Esta página do wiki fornece uma breve visão geral, projeto de segurança, arquitetura, administração e recursos futuros.
 
 [Guia do Usuário e do Administrador do SELinux](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/index): Este documento fornece um amplo espectro de conhecimento para administrar o SELinux em seus sistemas. Ele se concentra principalmente em sistemas operacionais Red Hat, mas não se limita a eles.
 
-[FAQ do SELinux do Fedora][(https://fedoraproject.org/wiki/SELinux_FAQ)]: Este documento responde a perguntas frequentes sobre o SELinux. Ele se concentra principalmente no Fedora, mas não se limita ao Fedora.
+[FAQ do SELinux do Fedora](https://fedoraproject.org/wiki/SELinux_FAQ): Este documento responde a perguntas frequentes sobre o SELinux. Ele se concentra principalmente no Fedora, mas não se limita ao Fedora.
 
 ### F.40.9. Autor [#](#SEPGSQL-AUTHOR)
 

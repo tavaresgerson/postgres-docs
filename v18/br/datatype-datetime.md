@@ -13,196 +13,215 @@ O PostgreSQL suporta o conjunto completo dos tipos de data e hora do SQL, mostra
 
 
 <table border="1" class="table" summary="Date/Time Types">
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>Nome</th>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
+    Nome
+   </th>
+   <th>
     Storage Size
    </th>
-<th>Descrição</th>
-<th>
+   <th>
+    Descrição
+   </th>
+   <th>
     Low Value
    </th>
-<th>
+   <th>
     High Value
    </th>
-<th>
+   <th>
     Resolution
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="type">
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="type">
      timestamp [ (
      <em class="replaceable">
-<code>
+      <code>
        p
       </code>
-</em>
+     </em>
      ) ] [ without time zone ]
     </code>
-</td>
-<td>
+   </td>
+   <td>
     8 bytes
    </td>
-<td>data e hora (sem fuso horário)</td>
-<td>
+   <td>
+    data e hora (sem fuso horário)
+   </td>
+   <td>
     4713 BC
    </td>
-<td>
+   <td>
     294276 AD
    </td>
-<td>
+   <td>
     1 microsecond
    </td>
-</tr>
-<tr>
-<td>
-<code class="type">
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      timestamp [ (
      <em class="replaceable">
-<code>
+      <code>
        p
       </code>
-</em>
+     </em>
      ) ] with time zone
     </code>
-</td>
-<td>
+   </td>
+   <td>
     8 bytes
    </td>
-<td>data e hora, com fuso horário</td>
-<td>
+   <td>
+    data e hora, com fuso horário
+   </td>
+   <td>
     4713 BC
    </td>
-<td>
+   <td>
     294276 AD
    </td>
-<td>
+   <td>
     1 microsecond
    </td>
-</tr>
-<tr>
-<td>
-<code class="type">
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      date
     </code>
-</td>
-<td>
+   </td>
+   <td>
     4 bytes
    </td>
-<td>data (sem horário do dia)</td>
-<td>
+   <td>
+    data (sem horário do dia)
+   </td>
+   <td>
     4713 BC
    </td>
-<td>
+   <td>
     5874897 AD
    </td>
-<td>
+   <td>
     1 day
    </td>
-</tr>
-<tr>
-<td>
-<code class="type">
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      time [ (
      <em class="replaceable">
-<code>
+      <code>
        p
       </code>
-</em>
+     </em>
      ) ] [ without time zone ]
     </code>
-</td>
-<td>
+   </td>
+   <td>
     8 bytes
    </td>
-<td>hora do dia (sem data)</td>
-<td>
+   <td>
+    hora do dia (sem data)
+   </td>
+   <td>
     00:00:00
    </td>
-<td>
+   <td>
     24:00:00
    </td>
-<td>
+   <td>
     1 microsecond
    </td>
-</tr>
-<tr>
-<td>
-<code class="type">
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      time [ (
      <em class="replaceable">
-<code>
+      <code>
        p
       </code>
-</em>
+     </em>
      ) ] with time zone
     </code>
-</td>
-<td>
+   </td>
+   <td>
     12 bytes
    </td>
-<td>hora do dia (sem data), com fuso horário</td>
-<td>
+   <td>
+    hora do dia (sem data), com fuso horário
+   </td>
+   <td>
     00:00:00+1559
    </td>
-<td>
+   <td>
     24:00:00-1559
    </td>
-<td>
+   <td>
     1 microsecond
    </td>
-</tr>
-<tr>
-<td>
-<code class="type">
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      interval [
      <em class="replaceable">
-<code>
+      <code>
        fields
       </code>
-</em>
+     </em>
      ] [ (
      <em class="replaceable">
-<code>
+      <code>
        p
       </code>
-</em>
+     </em>
      ) ]
     </code>
-</td>
-<td>
+   </td>
+   <td>
     16 bytes
    </td>
-<td>intervalo de tempo</td>
-<td>
+   <td>
+    intervalo de tempo
+   </td>
+   <td>
     -178000000 years
    </td>
-<td>
+   <td>
     178000000 years
    </td>
-<td>
+   <td>
     1 microsecond
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 ### Nota
 
@@ -234,11 +253,11 @@ O tipo `time with time zone` é definido pelo padrão SQL, mas a definição apr
 
 ### 8.5.1. Entrada de data/hora [#](#DATATYPE-DATETIME-INPUT)
 
-A entrada de data e hora é aceita em quase qualquer formato razoável, incluindo ISO 8601, compatível com SQL, POSTGRES tradicional e outros. Para alguns formatos, a ordem do dia, mês e ano na entrada de data é ambígua e há suporte para especificar a ordem esperada desses campos. Defina o parâmetro [DateStyle][(runtime-config-client.md#GUC-DATESTYLE)] para `MDY` para selecionar a interpretação mês-dia-ano, `DMY` para selecionar a interpretação dia-mês-ano ou `YMD` para selecionar a interpretação ano-mês-dia.
+A entrada de data e hora é aceita em quase qualquer formato razoável, incluindo ISO 8601, compatível com SQL, POSTGRES tradicional e outros. Para alguns formatos, a ordem do dia, mês e ano na entrada de data é ambígua e há suporte para especificar a ordem esperada desses campos. Defina o parâmetro [DateStyle](runtime-config-client.md#GUC-DATESTYLE) para `MDY` para selecionar a interpretação mês-dia-ano, `DMY` para selecionar a interpretação dia-mês-ano ou `YMD` para selecionar a interpretação ano-mês-dia.
 
 O PostgreSQL é mais flexível ao lidar com a entrada de data/hora do que o padrão SQL exige. Consulte o [Apêndice B] para as regras exatas de análise da entrada de data/hora e para os campos de texto reconhecidos, incluindo meses, dias da semana e fusos horários.
 
-Lembre-se de que qualquer entrada literal de data ou hora deve ser fechada entre aspas, como strings de texto. Consulte [Seção 4.1.2.7][(sql-syntax-lexical.md#SQL-SYNTAX-CONSTANTS-GENERIC "4.1.2.7. Constants of Other Types")] para obter mais informações. O SQL requer a seguinte sintaxe
+Lembre-se de que qualquer entrada literal de data ou hora deve ser fechada entre aspas, como strings de texto. Consulte [Seção 4.1.2.7](sql-syntax-lexical.md#SQL-SYNTAX-CONSTANTS-GENERIC) para obter mais informações. O SQL requer a seguinte sintaxe
 
 ```
 type [ (p) ] 'value'
@@ -248,145 +267,201 @@ onde *`p`* é uma especificação opcional de precisão que fornece o número de
 
 #### 8.5.1.1. Datas [#](#DATATYPE-DATETIME-INPUT-DATES)
 
-[Tabela 8.10][(datatype-datetime.md#DATATYPE-DATETIME-DATE-TABLE "Table 8.10. Date Input")] mostra alguns possíveis inputs para o tipo `date`.
+[Tabela 8.10](datatype-datetime.md#DATATYPE-DATETIME-DATE-TABLE) mostra alguns possíveis inputs para o tipo `date`.
 
 **Tabela 8.10. Data de entrada**
 
 
 
 <table border="1" class="table" summary="Date Input">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Example
    </th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
     1999-01-08
    </td>
-<td>ISO 8601; 8 de janeiro em qualquer modo
-(formato recomendado)</td>
-</tr>
-<tr>
-<td>
+   <td>
+    ISO 8601; 8 de janeiro em qualquer modo (formato recomendado)
+   </td>
+  </tr>
+  <tr>
+   <td>
     January 8, 1999
    </td>
-<td>ambiguoso em qualquer<code class="varname">
+   <td>
+    ambiguoso em qualquer
+    <code class="varname">
      datestyle
-    </code>modo de entrada</td>
-</tr>
-<tr>
-<td>
+    </code>
+    modo de entrada
+   </td>
+  </tr>
+  <tr>
+   <td>
     1/8/1999
    </td>
-<td>8 de janeiro em<code class="literal">
+   <td>
+    8 de janeiro em
+    <code class="literal">
      MDY
-    </code>modo; 1º de agosto<code class="literal">
+    </code>
+    modo; 1º de agosto
+    <code class="literal">
      DMY
-    </code>modo</td>
-</tr>
-<tr>
-<td>
+    </code>
+    modo
+   </td>
+  </tr>
+  <tr>
+   <td>
     1/18/1999
    </td>
-<td>18 de janeiro em<code class="literal">
+   <td>
+    18 de janeiro em
+    <code class="literal">
      MDY
-    </code>modo; rejeitado em outros modos</td>
-</tr>
-<tr>
-<td>
+    </code>
+    modo; rejeitado em outros modos
+   </td>
+  </tr>
+  <tr>
+   <td>
     01/02/03
    </td>
-<td>2 de janeiro de 2003 em<code class="literal">
+   <td>
+    2 de janeiro de 2003 em
+    <code class="literal">
      MDY
-    </code>modo; 1 de fevereiro de 2003 em<code class="literal">
+    </code>
+    modo; 1 de fevereiro de 2003 em
+    <code class="literal">
      DMY
-    </code>modo; 3 de fevereiro de 2001 em<code class="literal">
+    </code>
+    modo; 3 de fevereiro de 2001 em
+    <code class="literal">
      YMD
-    </code>modo</td>
-</tr>
-<tr>
-<td>
+    </code>
+    modo
+   </td>
+  </tr>
+  <tr>
+   <td>
     1999-Jan-08
    </td>
-<td>8 de janeiro em qualquer modo</td>
-</tr>
-<tr>
-<td>
+   <td>
+    8 de janeiro em qualquer modo
+   </td>
+  </tr>
+  <tr>
+   <td>
     Jan-08-1999
    </td>
-<td>8 de janeiro em qualquer modo</td>
-</tr>
-<tr>
-<td>
+   <td>
+    8 de janeiro em qualquer modo
+   </td>
+  </tr>
+  <tr>
+   <td>
     08-Jan-1999
    </td>
-<td>8 de janeiro em qualquer modo</td>
-</tr>
-<tr>
-<td>
+   <td>
+    8 de janeiro em qualquer modo
+   </td>
+  </tr>
+  <tr>
+   <td>
     99-Jan-08
    </td>
-<td>8 de janeiro em<code class="literal">
+   <td>
+    8 de janeiro em
+    <code class="literal">
      YMD
-    </code>modo, caso contrário, erro</td>
-</tr>
-<tr>
-<td>
+    </code>
+    modo, caso contrário, erro
+   </td>
+  </tr>
+  <tr>
+   <td>
     08-Jan-99
    </td>
-<td>8 de janeiro, exceto erro em<code class="literal">
+   <td>
+    8 de janeiro, exceto erro em
+    <code class="literal">
      YMD
-    </code>modo</td>
-</tr>
-<tr>
-<td>
+    </code>
+    modo
+   </td>
+  </tr>
+  <tr>
+   <td>
     Jan-08-99
    </td>
-<td>8 de janeiro, exceto erro em<code class="literal">
+   <td>
+    8 de janeiro, exceto erro em
+    <code class="literal">
      YMD
-    </code>modo</td>
-</tr>
-<tr>
-<td>
+    </code>
+    modo
+   </td>
+  </tr>
+  <tr>
+   <td>
     19990108
    </td>
-<td>ISO 8601; 8 de janeiro de 1999 em qualquer modo</td>
-</tr>
-<tr>
-<td>
+   <td>
+    ISO 8601; 8 de janeiro de 1999 em qualquer modo
+   </td>
+  </tr>
+  <tr>
+   <td>
     990108
    </td>
-<td>ISO 8601; 8 de janeiro de 1999 em qualquer modo</td>
-</tr>
-<tr>
-<td>
+   <td>
+    ISO 8601; 8 de janeiro de 1999 em qualquer modo
+   </td>
+  </tr>
+  <tr>
+   <td>
     1999.008
    </td>
-<td>ano e dia do ano</td>
-</tr>
-<tr>
-<td>
+   <td>
+    ano e dia do ano
+   </td>
+  </tr>
+  <tr>
+   <td>
     J2451187
    </td>
-<td>Data juliana</td>
-</tr>
-<tr>
-<td>
+   <td>
+    Data juliana
+   </td>
+  </tr>
+  <tr>
+   <td>
     January 8, 99 BC
    </td>
-<td>ano 99 a.C.</td>
-</tr>
-</tbody>
+   <td>
+    ano 99 a.C.
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 
@@ -401,240 +476,298 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
 
 
 <table border="1" class="table" summary="Time Input">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Example
    </th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      04:05:06.789
     </code>
-</td>
-<td>ISO 8601</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    ISO 8601
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      04:05:06
     </code>
-</td>
-<td>ISO 8601</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    ISO 8601
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      04:05
     </code>
-</td>
-<td>ISO 8601</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    ISO 8601
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      040506
     </code>
-</td>
-<td>ISO 8601</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    ISO 8601
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      04:05 AM
     </code>
-</td>
-<td>mesmo que 04:05; AM não afeta o valor</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    mesmo que 04:05; AM não afeta o valor
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      04:05 PM
     </code>
-</td>
-<td>mesmo que às 16:05; a hora de entrada deve ser &lt;= 12</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    mesmo que às 16:05; a hora de entrada deve ser &lt;= 12
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      04:05:06.789-8
     </code>
-</td>
-<td>ISO 8601, com fuso horário como deslocamento UTC</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    ISO 8601, com fuso horário como deslocamento UTC
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      04:05:06-08:00
     </code>
-</td>
-<td>ISO 8601, com fuso horário como deslocamento UTC</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    ISO 8601, com fuso horário como deslocamento UTC
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      04:05-08:00
     </code>
-</td>
-<td>ISO 8601, com fuso horário como deslocamento UTC</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    ISO 8601, com fuso horário como deslocamento UTC
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      040506-08
     </code>
-</td>
-<td>ISO 8601, com fuso horário como deslocamento UTC</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    ISO 8601, com fuso horário como deslocamento UTC
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      040506+0730
     </code>
-</td>
-<td>ISO 8601, com fuso horário de hora fracionária como deslocamento UTC</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    ISO 8601, com fuso horário de hora fracionária como deslocamento UTC
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      040506+07:30:00
     </code>
-</td>
-<td>Deslocamento UTC especificado em segundos (não permitido no ISO 8601)</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Deslocamento UTC especificado em segundos (não permitido no ISO 8601)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      04:05:06 PST
     </code>
-</td>
-<td>fuso horário especificado por abreviação</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    fuso horário especificado por abreviação
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      2003-04-12 04:05:06 America/New_York
     </code>
-</td>
-<td>fuso horário especificado pelo nome completo</td>
-</tr>
-</tbody>
+   </td>
+   <td>
+    fuso horário especificado pelo nome completo
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 **Tabela 8.12. Entrada de fuso horário**
 
 
 
 <table border="1" class="table" summary="Time Zone Input">
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Example
    </th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      PST
     </code>
-</td>
-<td>Abreviação (para Pacific Standard Time)</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Abreviação (para Pacific Standard Time)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      America/New_York
     </code>
-</td>
-<td>Nome completo do fuso horário</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Nome completo do fuso horário
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      PST8PDT
     </code>
-</td>
-<td>Especificação de fuso horário em estilo POSIX</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Especificação de fuso horário em estilo POSIX
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      -8:00:00
     </code>
-</td>
-<td>Deslocamento UTC para PST</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Deslocamento UTC para PST
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      -8:00
     </code>
-</td>
-<td>Deslocamento UTC para PST (formato estendido ISO 8601)</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Deslocamento UTC para PST (formato estendido ISO 8601)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      -800
     </code>
-</td>
-<td>Deslocamento UTC para PST (formato básico ISO 8601)</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Deslocamento UTC para PST (formato básico ISO 8601)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      -8
     </code>
-</td>
-<td>Deslocamento UTC para PST (formato básico ISO 8601)</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Deslocamento UTC para PST (formato básico ISO 8601)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      zulu
     </code>
-</td>
-<td>Abreviação militar para UTC</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Abreviação militar para UTC
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      z
     </code>
-</td>
-<td>Forma abreviada de<code class="literal">
+   </td>
+   <td>
+    Forma abreviada de
+    <code class="literal">
      zulu
-    </code>(também no ISO 8601)</td>
-</tr>
-</tbody>
+    </code>
+    (também no ISO 8601)
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
 
-Consulte [Seção 8.5.3][(datatype-datetime.md#DATATYPE-TIMEZONES "8.5.3. Time Zones")] para obter mais informações sobre como especificar fusos horários.
+
+
+
+
+Consulte [Seção 8.5.3](datatype-datetime.md#DATATYPE-TIMEZONES) para obter mais informações sobre como especificar fusos horários.
 
 #### 8.5.1.3. Marcadores de tempo [#](#DATATYPE-DATETIME-INPUT-TIME-STAMPS)
 
@@ -680,173 +813,222 @@ Em um valor que foi determinado como `timestamp without time zone`, o PostgreSQL
 
 Para os valores de `timestamp with time zone`, uma string de entrada que inclui um fuso horário explícito será convertida para UTC ([*[Tempo Universal Coordenado](glossary.md#GLOSSARY-UTC "UTC")*](glossário.md#GLÓSSARIO-UTC)) usando o deslocamento apropriado para esse fuso horário. Se nenhuma zona horária for declarada na string de entrada, então é assumido que ela está na zona horária indicada pelo parâmetro de [TimeZone](runtime-config-client.md#GUC-TIMEZONE) do sistema, e é convertida para UTC usando o deslocamento para a zona de `timezone`. Em qualquer caso, o valor é armazenado internamente como UTC, e a zona horária originalmente declarada ou assumida não é retida.
 
-Quando um valor de `timestamp with time zone` é exibido, ele é sempre convertido do UTC para a zona atual de `timezone` e exibido como hora local nessa zona. Para ver a hora em outra zona horária, altere `timezone` ou use a construção `AT TIME ZONE` (consulte [Seção 9.9.4][(functions-datetime.md#FUNCTIONS-DATETIME-ZONECONVERT "9.9.4. AT TIME ZONE and AT LOCAL")]).
+Quando um valor de `timestamp with time zone` é exibido, ele é sempre convertido do UTC para a zona atual de `timezone` e exibido como hora local nessa zona. Para ver a hora em outra zona horária, altere `timezone` ou use a construção `AT TIME ZONE` (consulte [Seção 9.9.4](functions-datetime.md#FUNCTIONS-DATETIME-ZONECONVERT)).
 
 As conversões entre `timestamp without time zone` e `timestamp with time zone` normalmente assumem que o valor do `timestamp without time zone` deve ser tomado ou fornecido como a hora local do `timezone`. Um fuso horário diferente pode ser especificado para a conversão usando `AT TIME ZONE`.
 
 #### 8.5.1.4. Valores especiais [#](#DATATYPE-DATETIME-SPECIAL-VALUES)
 
-O PostgreSQL suporta vários valores especiais de data/hora para conveniência, conforme mostrado na [Tabela 8.13][(datatype-datetime.md#DATATYPE-DATETIME-SPECIAL-TABLE "Table 8.13. Special Date/Time Inputs")]. Os valores (datatype-datetime.md#DATATYPE-DATETIME-SPECIAL-TABLE "Table 8.13. Special Date/Time Inputs") e [[PH_LNK_103]] são representados especialmente dentro do sistema e serão exibidos inalterados; mas os outros são simplesmente abreviações anotacionais que serão convertidas em valores normais de data/hora quando lidos. (Em particular, (datatype-datetime.md#DATATYPE-DATETIME-SPECIAL-TABLE "Table 8.13. Special Date/Time Inputs") e as strings relacionadas são convertidas em um valor específico de hora assim que são lidas.) Todos esses valores precisam ser fechados entre aspas quando usados como constantes em comandos SQL.
+O PostgreSQL suporta vários valores especiais de data/hora para conveniência, conforme mostrado na [Tabela 8.13](datatype-datetime.md#DATATYPE-DATETIME-SPECIAL-TABLE). Os valores (datatype-datetime.md#DATATYPE-DATETIME-SPECIAL-TABLE "Table 8.13. Special Date/Time Inputs") e [[PH_LNK_103]] são representados especialmente dentro do sistema e serão exibidos inalterados; mas os outros são simplesmente abreviações anotacionais que serão convertidas em valores normais de data/hora quando lidos. (Em particular, (datatype-datetime.md#DATATYPE-DATETIME-SPECIAL-TABLE "Table 8.13. Special Date/Time Inputs") e as strings relacionadas são convertidas em um valor específico de hora assim que são lidas.) Todos esses valores precisam ser fechados entre aspas quando usados como constantes em comandos SQL.
 
 **Tabela 8.13. Datas/horários especiais**
 
 
 
 <table border="1" class="table" summary="Special Date/Time Inputs">
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Input String
    </th>
-<th>Tipos válidos</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+   <th>
+    Tipos válidos
+   </th>
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      epoch
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      date
-    </code>,<code class="type">
+    </code>
+    ,
+    <code class="type">
      timestamp
     </code>
-</td>
-<td>1970-01-01 00:00:00+00 (horário do sistema Unix zero)</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    1970-01-01 00:00:00+00 (horário do sistema Unix zero)
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      infinity
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      date
-    </code>,<code class="type">
+    </code>
+    ,
+    <code class="type">
      timestamp
-    </code>,<code class="type">
+    </code>
+    ,
+    <code class="type">
      interval
     </code>
-</td>
-<td>mais tarde do que todos os outros marcadores de tempo</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    mais tarde do que todos os outros marcadores de tempo
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      -infinity
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      date
-    </code>,<code class="type">
+    </code>
+    ,
+    <code class="type">
      timestamp
-    </code>,<code class="type">
+    </code>
+    ,
+    <code class="type">
      interval
     </code>
-</td>
-<td>antes de todos os outros marcadores de tempo</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    antes de todos os outros marcadores de tempo
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      now
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      date
-    </code>,<code class="type">
+    </code>
+    ,
+    <code class="type">
      time
-    </code>,<code class="type">
+    </code>
+    ,
+    <code class="type">
      timestamp
     </code>
-</td>
-<td>horário de início da transação atual</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    horário de início da transação atual
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      today
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      date
-    </code>,<code class="type">
+    </code>
+    ,
+    <code class="type">
      timestamp
     </code>
-</td>
-<td>meia-noite (<code class="literal">
+   </td>
+   <td>
+    meia-noite (
+    <code class="literal">
      00:00
-    </code>) de hoje</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+    </code>
+    ) de hoje
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      tomorrow
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      date
-    </code>,<code class="type">
+    </code>
+    ,
+    <code class="type">
      timestamp
     </code>
-</td>
-<td>meia-noite (<code class="literal">
+   </td>
+   <td>
+    meia-noite (
+    <code class="literal">
      00:00
-    </code>) amanhã</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+    </code>
+    ) amanhã
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      yesterday
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      date
-    </code>,<code class="type">
+    </code>
+    ,
+    <code class="type">
      timestamp
     </code>
-</td>
-<td>meia-noite (<code class="literal">
+   </td>
+   <td>
+    meia-noite (
+    <code class="literal">
      00:00
-    </code>) ontem</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+    </code>
+    ) ontem
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      allballs
     </code>
-</td>
-<td>
-<code class="type">
+   </td>
+   <td>
+    <code class="type">
      time
     </code>
-</td>
-<td>00:00:00,00 UTC</td>
-</tr>
-</tbody>
+   </td>
+   <td>
+    00:00:00,00 UTC
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
 
-As seguintes funções compatíveis com SQL também podem ser usadas para obter o valor da hora atual para o tipo de dados correspondente: `CURRENT_DATE`, `CURRENT_TIME`, `CURRENT_TIMESTAMP`, `LOCALTIME`, `LOCALTIMESTAMP`. (Veja [Seção 9.9.5][(functions-datetime.md#FUNCTIONS-DATETIME-CURRENT "9.9.5. Current Date/Time")]. Observe que essas são funções SQL e *não* são reconhecidas em strings de entrada de dados.
+
+
+
+
+As seguintes funções compatíveis com SQL também podem ser usadas para obter o valor da hora atual para o tipo de dados correspondente: `CURRENT_DATE`, `CURRENT_TIME`, `CURRENT_TIMESTAMP`, `LOCALTIME`, `LOCALTIMESTAMP`. (Veja [Seção 9.9.5](functions-datetime.md#FUNCTIONS-DATETIME-CURRENT). Observe que essas são funções SQL e *não* são reconhecidas em strings de entrada de dados.
 
 ### Atenção
 
@@ -861,228 +1043,238 @@ O formato de saída dos tipos de data/hora pode ser definido como um dos quatro 
 
 
 <table border="1" class="table" summary="Date/Time Output Styles">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Style Specification
    </th>
-<th>
+   <th>
     Description
    </th>
-<th>Exemplo</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+   <th>
+    Exemplo
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      ISO
     </code>
-</td>
-<td>
+   </td>
+   <td>
     ISO 8601, SQL standard
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      1997-12-17 07:37:16-08
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      SQL
     </code>
-</td>
-<td>
+   </td>
+   <td>
     traditional style
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      12/17/1997 07:37:16.00 PST
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      Postgres
     </code>
-</td>
-<td>
+   </td>
+   <td>
     original style
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      Wed Dec 17 07:37:16 1997 PST
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      German
     </code>
-</td>
-<td>
+   </td>
+   <td>
     regional style
    </td>
-<td>
-<code class="literal">
+   <td>
+    <code class="literal">
      17.12.1997 07:37:16.00 PST
     </code>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 ### Nota
 
-A ISO 8601 especifica o uso da letra maiúscula `T` para separar a data e a hora. O PostgreSQL aceita esse formato na entrada, mas na saída ele usa um espaço em vez de `T`, como mostrado acima. Isso é para legibilidade e para consistência com [RFC 3339][(https://datatracker.ietf.org/doc/html/rfc3339)], bem como em alguns outros sistemas de banco de dados.
+A ISO 8601 especifica o uso da letra maiúscula `T` para separar a data e a hora. O PostgreSQL aceita esse formato na entrada, mas na saída ele usa um espaço em vez de `T`, como mostrado acima. Isso é para legibilidade e para consistência com [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339), bem como em alguns outros sistemas de banco de dados.
 
-Nos estilos SQL e POSTGRES, o dia aparece antes do mês se o campo de ordenação DMY tiver sido especificado, caso contrário, o mês aparece antes do dia. (Veja [Seção 8.5.1] para saber como essa configuração também afeta a interpretação dos valores de entrada. A Tabela 8.15 [(datatype-datetime.md#DATATYPE-DATETIME-OUTPUT2-TABLE "Table 8.15. Date Order Conventions")] mostra exemplos.)
+Nos estilos SQL e POSTGRES, o dia aparece antes do mês se o campo de ordenação DMY tiver sido especificado, caso contrário, o mês aparece antes do dia. (Veja [Seção 8.5.1] para saber como essa configuração também afeta a interpretação dos valores de entrada. A [Tabela 8.15](datatype-datetime.md#DATATYPE-DATETIME-OUTPUT2-TABLE) mostra exemplos.)
 
 **Tabela 8.15. Convenções de data de ordem**
 
 
 
 <table border="1" class="table" summary="Date Order Conventions">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-<col class="col3"/>
-</colgroup>
-<thead>
-<tr>
-<th>
-<code class="varname">
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+  <col class="col3"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
+    <code class="varname">
      datestyle
     </code>
     Setting
    </th>
-<th>
+   <th>
     Input Ordering
    </th>
-<th>Exemplo de Saída</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+   <th>
+    Exemplo de Saída
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      SQL, DMY
     </code>
-</td>
-<td>
-<em class="replaceable">
-<code>
+   </td>
+   <td>
+    <em class="replaceable">
+     <code>
       day
      </code>
-</em>
+    </em>
     /
     <em class="replaceable">
-<code>
+     <code>
       month
      </code>
-</em>
+    </em>
     /
     <em class="replaceable">
-<code>
+     <code>
       year
      </code>
-</em>
-</td>
-<td>
-<code class="literal">
+    </em>
+   </td>
+   <td>
+    <code class="literal">
      17/12/1997 15:37:16.00 CET
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      SQL, MDY
     </code>
-</td>
-<td>
-<em class="replaceable">
-<code>
+   </td>
+   <td>
+    <em class="replaceable">
+     <code>
       month
      </code>
-</em>
+    </em>
     /
     <em class="replaceable">
-<code>
+     <code>
       day
      </code>
-</em>
+    </em>
     /
     <em class="replaceable">
-<code>
+     <code>
       year
      </code>
-</em>
-</td>
-<td>
-<code class="literal">
+    </em>
+   </td>
+   <td>
+    <code class="literal">
      12/17/1997 07:37:16.00 PST
     </code>
-</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      Postgres, DMY
     </code>
-</td>
-<td>
-<em class="replaceable">
-<code>
+   </td>
+   <td>
+    <em class="replaceable">
+     <code>
       day
      </code>
-</em>
+    </em>
     /
     <em class="replaceable">
-<code>
+     <code>
       month
      </code>
-</em>
+    </em>
     /
     <em class="replaceable">
-<code>
+     <code>
       year
      </code>
-</em>
-</td>
-<td>
-<code class="literal">
+    </em>
+   </td>
+   <td>
+    <code class="literal">
      Wed 17 Dec 07:37:16 1997 PST
     </code>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 No estilo ISO, o fuso horário é sempre mostrado como um deslocamento numérico assinado em relação ao UTC, com sinal positivo usado para zonas a leste de Greenwich. O deslocamento será mostrado como *`hh`* (apenas horas) se for um número inteiro de horas, caso contrário como *`hh`*:*`mm`* se for um número inteiro de minutos, caso contrário como *`hh`*:*`mm`*:*`ss`*. (O terceiro caso não é possível com qualquer padrão moderno de fuso horário, mas pode aparecer ao trabalhar com timestamps que precedem a adoção de fusos horários padronizados.) Nos outros estilos de data, o fuso horário é mostrado como uma abreviação alfabética se uma estiver em uso comum na zona atual. Caso contrário, aparece como um deslocamento numérico assinado no formato básico do ISO (*`hh`* ou *`hhmm`*). As abreviações alfabéticas mostradas nesses estilos são retiradas da entrada do banco de dados de fuso horário da IANA atualmente selecionada pelo parâmetro de tempo de execução [TimeZone](runtime-config-client.md#GUC-TIMEZONE); elas não são afetadas pelo ajuste [timezone_abbreviations](runtime-config-client.md#GUC-TIMEZONE-ABBREVIATIONS).
 
 O estilo de data/hora pode ser selecionado pelo usuário usando o comando `SET datestyle`, o parâmetro [DateStyle](runtime-config-client.md#GUC-DATESTYLE) no arquivo de configuração `postgresql.conf` ou a variável de ambiente `PGDATESTYLE` no servidor ou no cliente.
 
-A função de formatação `to_char` (ver [Seção 9.8][(functions-formatting.md "9.8. Data Type Formatting Functions")]) também está disponível como uma maneira mais flexível de formatar a saída de data/hora.
+A função de formatação `to_char` (ver [Seção 9.8](functions-formatting.md)) também está disponível como uma maneira mais flexível de formatar a saída de data/hora.
 
 ### 8.5.3. Fuso Horário [#](#DATATYPE-TIMEZONES)
 
@@ -1099,9 +1291,9 @@ Todas as datas e horários que consideram a fusão horária são armazenados int
 
 O PostgreSQL permite que você especifique fusos horários em três formas diferentes:
 
-* Um nome de fuso horário completo, por exemplo, `America/New_York`. Os nomes de fuso horário reconhecidos estão listados na visão `pg_timezone_names` (ver [Seção 53.34][(view-pg-timezone-names.md "53.34. pg_timezone_names")]). O PostgreSQL usa os dados de fuso horário amplamente utilizados pela IANA para esse propósito, portanto, os mesmos nomes de fuso horário são reconhecidos também por outros softwares.
-* Uma abreviação de fuso horário, por exemplo, `PST`. Essa especificação simplesmente define um deslocamento particular em relação ao UTC, em contraste com os nomes de fuso horário completos que podem implicar um conjunto de regras de transição de poupança de luz solar. Os nomes reconhecidos estão listados na visão `pg_timezone_abbrevs` (ver [Seção 53.33][(view-pg-timezone-abbrevs.md "53.33. pg_timezone_abbrevs")]). Você não pode definir os parâmetros de configuração [TimeZone][(runtime-config-client.md#GUC-TIMEZONE)] ou [log_timezone][(runtime-config-logging.md#GUC-LOG-TIMEZONE)] para uma abreviação de fuso horário, mas você pode usar abreviações em valores de entrada de data/hora e com o operador `AT TIME ZONE`.
-* Além dos nomes e abreviações de fuso horário, o PostgreSQL aceitará especificações de fuso horário em estilo POSIX, conforme descrito em [Seção B.5][(datetime-posix-timezone-specs.md "B.5. POSIX Time Zone Specifications")]. Esta opção normalmente não é preferível ao uso de um fuso horário nomeado, mas pode ser necessária se não houver uma entrada de fuso horário IANA adequada disponível.
+* Um nome de fuso horário completo, por exemplo, `America/New_York`. Os nomes de fuso horário reconhecidos estão listados na visão `pg_timezone_names` (ver [Seção 53.34](view-pg-timezone-names.md)). O PostgreSQL usa os dados de fuso horário amplamente utilizados pela IANA para esse propósito, portanto, os mesmos nomes de fuso horário são reconhecidos também por outros softwares.
+* Uma abreviação de fuso horário, por exemplo, `PST`. Essa especificação simplesmente define um deslocamento particular em relação ao UTC, em contraste com os nomes de fuso horário completos que podem implicar um conjunto de regras de transição de poupança de luz solar. Os nomes reconhecidos estão listados na visão `pg_timezone_abbrevs` (ver [Seção 53.33](view-pg-timezone-abbrevs.md)). Você não pode definir os parâmetros de configuração [TimeZone](runtime-config-client.md#GUC-TIMEZONE) ou [log_timezone](runtime-config-logging.md#GUC-LOG-TIMEZONE) para uma abreviação de fuso horário, mas você pode usar abreviações em valores de entrada de data/hora e com o operador `AT TIME ZONE`.
+* Além dos nomes e abreviações de fuso horário, o PostgreSQL aceitará especificações de fuso horário em estilo POSIX, conforme descrito em [Seção B.5](datetime-posix-timezone-specs.md). Esta opção normalmente não é preferível ao uso de um fuso horário nomeado, mas pode ser necessária se não houver uma entrada de fuso horário IANA adequada disponível.
 
 Em suma, essa é a diferença entre abreviações e nomes completos: as abreviações representam um deslocamento específico em relação ao UTC, enquanto muitos dos nomes completos implicam uma regra local de horário de verão, e, portanto, têm dois deslocamentos possíveis em relação ao UTC. Como exemplo, `2014-06-04 12:00 America/New_York` representa a hora local do meio-dia em Nova York, que, para esta data específica, foi o Horário de Verão do Leste (UTC-4). Portanto, `2014-06-04 12:00 EDT` especifica o mesmo instante de tempo. Mas `2014-06-04 12:00 EST` especifica o meio-dia do Horário Padrão do Leste (UTC-5), independentemente de o horário de verão ter sido nominalmente em vigor nessa data.
 
@@ -1113,7 +1305,7 @@ Para complicar ainda mais, algumas jurisdições usaram a mesma abreviação de 
 
 Em todos os casos, os nomes e abreviações de fuso horário são reconhecidos de forma sensível ao caso (Essa é uma mudança em relação às versões do PostgreSQL anteriores a 8.2, que eram sensíveis ao caso em alguns contextos, mas não em outros).
 
-Nem os nomes dos fusos horários nem as abreviações estão embutidos no servidor; eles são obtidos a partir de arquivos de configuração armazenados sob `.../share/timezone/` e `.../share/timezonesets/` do diretório de instalação (consulte [Seção B.4][(datetime-config-files.md "B.4. Date/Time Configuration Files")]).
+Nem os nomes dos fusos horários nem as abreviações estão embutidos no servidor; eles são obtidos a partir de arquivos de configuração armazenados sob `.../share/timezone/` e `.../share/timezonesets/` do diretório de instalação (consulte [Seção B.4](datetime-config-files.md)).
 
 O parâmetro de configuração [TimeZone](runtime-config-client.md#GUC-TIMEZONE) pode ser definido no arquivo `postgresql.conf`, ou de qualquer outra maneira padrão descrita em [Capítulo 19](runtime-config.md "Chapter 19. Server Configuration"). Há também algumas maneiras especiais de defini-lo:
 
@@ -1145,84 +1337,87 @@ A string deve começar com um `P`, e pode incluir um `T` que introduz as unidade
 
 
 <table border="1" class="table" summary="ISO 8601 Interval Unit Abbreviations">
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Abbreviation
    </th>
-<th>
+   <th>
     Meaning
    </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
     Y
    </td>
-<td>
+   <td>
     Years
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     M
    </td>
-<td>
+   <td>
     Months (in the date part)
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     W
    </td>
-<td>
+   <td>
     Weeks
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     D
    </td>
-<td>
+   <td>
     Days
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     H
    </td>
-<td>
+   <td>
     Hours
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     M
    </td>
-<td>
+   <td>
     Minutes (in the time part)
    </td>
-</tr>
-<tr>
-<td>
+  </tr>
+  <tr>
+   <td>
     S
    </td>
-<td>
+   <td>
     Seconds
    </td>
-</tr>
-</tbody>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 No formato alternativo:
 
@@ -1249,66 +1444,99 @@ Aqui, as semanas, que são entendidas como “7 dias”, foram mantidas separada
 
 Os valores dos campos de entrada podem ter partes fracionárias, por exemplo, `'1.5 weeks'` ou `'01:02:03.45'`. No entanto, porque `interval` armazena internamente apenas campos inteiros, os valores fracionários devem ser convertidos em unidades menores. As partes fracionárias de unidades maiores que meses são arredondadas para um número inteiro de meses, por exemplo, `'1.5 years'` se torna `'1 year 6 mons'`. As partes fracionárias de semanas e dias são calculadas para um número inteiro de dias e microsegundos, assumindo 30 dias por mês e 24 horas por dia, por exemplo, `'1.75 months'` se torna `1 mon 22 days 12:00:00`. Apenas segundos serão exibidos como fracionários na saída.
 
-[Tabela 8.17][(datatype-datetime.md#DATATYPE-INTERVAL-INPUT-EXAMPLES "Table 8.17. Interval Input")] mostra alguns exemplos de entrada válida do `interval`.
+[Tabela 8.17](datatype-datetime.md#DATATYPE-INTERVAL-INPUT-EXAMPLES) mostra alguns exemplos de entrada válida do `interval`.
 
 **Tabela 8.17. Entrada de intervalo**
 
 
 
 <table border="1" class="table" summary="Interval Input">
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>Exemplo</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+ <colgroup>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
+    Exemplo
+   </th>
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      1-2
     </code>
-</td>
-<td>Formato padrão do SQL: 1 ano e 2 meses</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Formato padrão do SQL: 1 ano e 2 meses
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      3 4:05:06
     </code>
-</td>
-<td>Formato padrão do SQL: 3 dias 4 horas 5 minutos 6 segundos</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Formato padrão do SQL: 3 dias 4 horas 5 minutos 6 segundos
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      1 year 2 months 3 days 4 hours 5 minutes 6 seconds
     </code>
-</td>
-<td>Formato tradicional de Postgres: 1 ano 2 meses 3 dias 4 horas 5 minutos 6 segundos</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    Formato tradicional de Postgres: 1 ano 2 meses 3 dias 4 horas 5 minutos 6 segundos
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      P1Y2M3DT4H5M6S
     </code>
-</td>
-<td>ISO 8601<span class="quote">“<span class="quote">formato com designadores</span>”</span>: o mesmo significado que acima</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    ISO 8601
+    <span class="quote">
+     “
+     <span class="quote">
+      formato com designadores
+     </span>
+     ”
+    </span>
+    : o mesmo significado que acima
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      P0001-02-03T04:05:06
     </code>
-</td>
-<td>ISO 8601<span class="quote">“<span class="quote">formato alternativo</span>”</span>: o mesmo significado que acima</td>
-</tr>
-</tbody>
+   </td>
+   <td>
+    ISO 8601
+    <span class="quote">
+     “
+     <span class="quote">
+      formato alternativo
+     </span>
+     ”
+    </span>
+    : o mesmo significado que acima
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 
@@ -1331,63 +1559,96 @@ A saída do estilo `iso_8601` corresponde ao "formato com designações" descrit
 
 
 <table border="1" class="table" summary="Interval Output Style Examples">
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col/>
+  <col/>
+  <col/>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Style Specification
    </th>
-<th>Intervalo de Ano-Mês</th>
-<th>Intervalo diurno</th>
-<th>Intervalo misto</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="literal">
+   <th>
+    Intervalo de Ano-Mês
+   </th>
+   <th>
+    Intervalo diurno
+   </th>
+   <th>
+    Intervalo misto
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="literal">
      sql_standard
     </code>
-</td>
-<td>1-2</td>
-<td>3 4:05:06</td>
-<td>-1-2 +3 -4:05:06</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    1-2
+   </td>
+   <td>
+    3 4:05:06
+   </td>
+   <td>
+    -1-2 +3 -4:05:06
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      postgres
     </code>
-</td>
-<td>1 ano e 2 meses</td>
-<td>3 dias 04:05:06</td>
-<td>-1 ano -2 meses +3 dias -04:05:06</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    1 ano e 2 meses
+   </td>
+   <td>
+    3 dias 04:05:06
+   </td>
+   <td>
+    -1 ano -2 meses +3 dias -04:05:06
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      postgres_verbose
     </code>
-</td>
-<td>@ 1 ano e 2 meses</td>
-<td>@ 3 dias 4 horas 5 mins 6 secs</td>
-<td>@ 1 ano e 2 meses -3 dias 4 horas 5 minutos 6 segundos atrás</td>
-</tr>
-<tr>
-<td>
-<code class="literal">
+   </td>
+   <td>
+    @ 1 ano e 2 meses
+   </td>
+   <td>
+    @ 3 dias 4 horas 5 mins 6 secs
+   </td>
+   <td>
+    @ 1 ano e 2 meses -3 dias 4 horas 5 minutos 6 segundos atrás
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="literal">
      iso_8601
     </code>
-</td>
-<td>P1Y2M</td>
-<td>P3DT4H5M6S</td>
-<td>P-1Y-2M3D​T-4H-5M-6S</td>
-</tr>
-</tbody>
+   </td>
+   <td>
+    P1Y2M
+   </td>
+   <td>
+    P3DT4H5M6S
+   </td>
+   <td>
+    P-1Y-2M3D​T-4H-5M-6S
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 

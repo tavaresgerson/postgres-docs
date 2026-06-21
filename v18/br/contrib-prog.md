@@ -4,7 +4,7 @@
 
 * [G.1. Aplicações do Cliente](contrib-prog-client.md)
 
-+ [oid2name](oid2name.md) — resolve OIDs e nós de arquivos em um diretório de dados do PostgreSQL  
++ [oid2name](oid2name.md) — resolve OIDs e nós de arquivos em um diretório de dados do PostgreSQL
 + [vacuumlo](vacuumlo.md) — remova objetos grandes órfãos de um banco de dados do PostgreSQL
 
 * [G.2. Aplicações de servidor](contrib-prog-server.md)

@@ -54,7 +54,7 @@ SELECT a,
  3 | other
 ```
 
-Os tipos de dados de todas as expressões *`result`* devem ser convertidos em um único tipo de saída. Consulte a Seção 10.5 [(typeconv-union-case.md "10.5. UNION, CASE, and Related Constructs")] para obter mais detalhes.
+Os tipos de dados de todas as expressões *`result`* devem ser convertidos em um único tipo de saída. Consulte a [Seção 10.5](typeconv-union-case.md) para obter mais detalhes.
 
 Existe uma forma “simples” de expressão de `CASE` que é uma variante da forma geral acima:
 
@@ -93,7 +93,7 @@ SELECT ... WHERE CASE WHEN x <> 0 THEN y/x > 1.5 ELSE false END;
 
 ### Nota
 
-Como descrito na [Seção 4.2.14][(sql-expressions.md#SYNTAX-EXPRESS-EVAL "4.2.14. Expression Evaluation Rules")], existem várias situações em que subexpressiones de uma expressão são avaliadas em diferentes momentos, de modo que o princípio de que “`CASE` avalia apenas as subexpressiones necessárias” não é absoluto. Por exemplo, uma constante subexpressão `1/0` geralmente resultará em uma falha de divisão por zero no momento do planejamento, mesmo que esteja dentro de um braço `CASE` que nunca seria acessado no momento da execução.
+Como descrito na [Seção 4.2.14](sql-expressions.md#SYNTAX-EXPRESS-EVAL), existem várias situações em que subexpressiones de uma expressão são avaliadas em diferentes momentos, de modo que o princípio de que “`CASE` avalia apenas as subexpressiones necessárias” não é absoluto. Por exemplo, uma constante subexpressão `1/0` geralmente resultará em uma falha de divisão por zero no momento do planejamento, mesmo que esteja dentro de um braço `CASE` que nunca seria acessado no momento da execução.
 
 ### 9.18.2. `COALESCE` [#](#FUNCTIONS-COALESCE-NVL-IFNULL)
 
@@ -141,6 +141,6 @@ GREATEST(value [, ...])
 LEAST(value [, ...])
 ```
 
-As funções `GREATEST` e `LEAST` selecionam o maior ou menor valor de uma lista de qualquer número de expressões. As expressões devem ser todas convertidas em um tipo de dados comum, que será o tipo do resultado (consulte [Seção 10.5][(typeconv-union-case.md "10.5. UNION, CASE, and Related Constructs")] para detalhes).
+As funções `GREATEST` e `LEAST` selecionam o maior ou menor valor de uma lista de qualquer número de expressões. As expressões devem ser todas convertidas em um tipo de dados comum, que será o tipo do resultado (consulte [Seção 10.5](typeconv-union-case.md) para detalhes).
 
 Os valores nulos na lista de argumentos são ignorados. O resultado será nulo apenas se todas as expressões forem avaliadas como nulos. (Isso é uma exceção ao padrão SQL. De acordo com o padrão, o valor de retorno é nulo se qualquer argumento for nulo. Algumas outras bases de dados se comportam dessa maneira.)

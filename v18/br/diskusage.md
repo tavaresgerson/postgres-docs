@@ -7,9 +7,9 @@ Esta seção discute como monitorar o uso do disco de um sistema de banco de dad
 
 ### 27.6.1. Determinação do uso do disco [#](#DISK-USAGE)
 
-Cada tabela tem um arquivo principal de disco de pilha onde a maioria dos dados é armazenada. Se a tabela tiver quaisquer colunas com valores potencialmente amplos, também pode haver um arquivo TOAST associado à tabela, que é usado para armazenar valores que são muito amplos para caber confortavelmente na tabela principal (ver [Seção 66.2] [(storage-toast.md "66.2. TOAST")]). Haverá um índice válido na tabela TOAST, se estiver presente. Também pode haver índices associados à tabela de base. Cada tabela e índice são armazenados em um arquivo de disco separado — possivelmente mais de um arquivo, se o arquivo exceder um gigabyte. As convenções de nomeação para esses arquivos são descritas em [Seção 66.1] [(storage-file-layout.md "66.1. Database File Layout")].
+Cada tabela tem um arquivo principal de disco de pilha onde a maioria dos dados é armazenada. Se a tabela tiver quaisquer colunas com valores potencialmente amplos, também pode haver um arquivo TOAST associado à tabela, que é usado para armazenar valores que são muito amplos para caber confortavelmente na tabela principal (ver [Seção 66.2](storage-toast.md)). Haverá um índice válido na tabela TOAST, se estiver presente. Também pode haver índices associados à tabela de base. Cada tabela e índice são armazenados em um arquivo de disco separado — possivelmente mais de um arquivo, se o arquivo exceder um gigabyte. As convenções de nomeação para esses arquivos são descritas em [Seção 66.1](storage-file-layout.md).
 
-Você pode monitorar o espaço em disco de três maneiras: usando as funções SQL listadas em [Tabela 9.102][(functions-admin.md#FUNCTIONS-ADMIN-DBSIZE "Table 9.102. Database Object Size Functions")], usando o módulo [oid2name][(oid2name.md "oid2name")] ou usando inspeção manual dos catálogos do sistema. As funções SQL são as mais fáceis de usar e geralmente são recomendadas. O restante desta seção mostra como fazer isso por inspeção dos catálogos do sistema.
+Você pode monitorar o espaço em disco de três maneiras: usando as funções SQL listadas em [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-DBSIZE), usando o módulo [oid2name](oid2name.md) ou usando inspeção manual dos catálogos do sistema. As funções SQL são as mais fáceis de usar e geralmente são recomendadas. O restante desta seção mostra como fazer isso por inspeção dos catálogos do sistema.
 
 Usando o psql em um banco de dados recentemente aspirado ou analisado, você pode emitir consultas para ver o uso do disco de qualquer tabela:
 
@@ -76,7 +76,7 @@ ORDER BY relpages DESC;
 
 A tarefa mais importante de monitoramento de disco de um administrador de banco de dados é garantir que o disco não fique cheio. Um disco de dados cheio não resultará em corrupção de dados, mas pode impedir que atividades úteis ocorram. Se o disco que contém os arquivos WAL ficar cheio, o servidor de banco de dados pode entrar em pânico e sofrer um desligamento consequente.
 
-Se você não conseguir liberar espaço adicional no disco, excluindo outras coisas, pode mover alguns dos arquivos do banco de dados para outros sistemas de arquivos, utilizando tablespaces. Consulte [Seção 22.6][(manage-ag-tablespaces.md "22.6. Tablespaces")] para obter mais informações sobre isso.
+Se você não conseguir liberar espaço adicional no disco, excluindo outras coisas, pode mover alguns dos arquivos do banco de dados para outros sistemas de arquivos, utilizando tablespaces. Consulte [Seção 22.6](manage-ag-tablespaces.md) para obter mais informações sobre isso.
 
 ### DICA
 

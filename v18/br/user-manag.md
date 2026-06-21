@@ -13,4 +13,4 @@ O PostgreSQL gerencia as permissões de acesso ao banco de dados usando o concei
 
 O conceito de papéis subsume os conceitos de “usuários” e “grupos”. Nas versões do PostgreSQL anteriores à versão 8.1, os usuários e os grupos eram tipos distintos de entidades, mas agora existem apenas papéis. Qualquer papel pode atuar como um usuário, um grupo ou ambos.
 
-Este capítulo descreve como criar e gerenciar papéis. Mais informações sobre os efeitos dos privilégios de papel em vários objetos do banco de dados podem ser encontradas em [Seção 5.8][(ddl-priv.md "5.8. Privileges")].
+Este capítulo descreve como criar e gerenciar papéis. Mais informações sobre os efeitos dos privilégios de papel em vários objetos do banco de dados podem ser encontradas em [Seção 5.8](ddl-priv.md).

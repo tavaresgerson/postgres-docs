@@ -8,6 +8,6 @@ Observe que, por razões históricas, os arquivos de fonte da documentação sã
 
 ### J.5.1. Emacs [#](#DOCGUIDE-AUTHORING-EMACS)
 
-O modo nXML, que vem com o Emacs, é o modo mais comum para editar documentos XML com o Emacs. Ele permitirá que você use o Emacs para inserir tags e verificar a consistência do marcado, e suporta DocBook de forma pré-definida. Verifique o manual [nXML][(https://www.gnu.org/software/emacs/manual/html_mono/nxml-mode.html)] para documentação detalhada.
+O modo nXML, que vem com o Emacs, é o modo mais comum para editar documentos XML com o Emacs. Ele permitirá que você use o Emacs para inserir tags e verificar a consistência do marcado, e suporta DocBook de forma pré-definida. Verifique o manual [nXML](https://www.gnu.org/software/emacs/manual/html_mono/nxml-mode.html) para documentação detalhada.
 
 `src/tools/editors/emacs.samples` contém configurações recomendadas para este modo.

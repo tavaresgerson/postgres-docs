@@ -14,7 +14,7 @@ EXECUTE name [ ( parameter [, ...] ) ]
 
 Se a declaração `PREPARE` que criou a declaração especificar alguns parâmetros, um conjunto compatível de parâmetros deve ser passado para a declaração `EXECUTE`, caso contrário, um erro é exibido. Observe que (ao contrário das funções) as declarações preparadas não são sobrecarregadas com base no tipo ou no número de seus parâmetros; o nome de uma declaração preparada deve ser único dentro de uma sessão do banco de dados.
 
-Para mais informações sobre a criação e o uso de declarações preparadas, consulte [PREPARE][(sql-prepare.md "PREPARE")].
+Para mais informações sobre a criação e o uso de declarações preparadas, consulte [PREPARE](sql-prepare.md).
 
 ## Parâmetros
 

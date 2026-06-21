@@ -5,7 +5,7 @@
 
 ### 30.4.1. Suporte para Extensões Inlineadas [#](#JIT-EXTENSIBILITY-BITCODE)
 
-A implementação JIT do PostgreSQL pode incluir os corpos das funções dos tipos `C` e `internal`, bem como operadores baseados nessas funções. Para fazer isso para funções em extensões, as definições dessas funções precisam ser disponibilizadas. Ao usar [PGXS][(extend-pgxs.md "36.18. Extension Building Infrastructure")] para construir uma extensão contra um servidor que foi compilado com suporte JIT do LLVM, os arquivos relevantes serão construídos e instalados automaticamente.
+A implementação JIT do PostgreSQL pode incluir os corpos das funções dos tipos `C` e `internal`, bem como operadores baseados nessas funções. Para fazer isso para funções em extensões, as definições dessas funções precisam ser disponibilizadas. Ao usar [PGXS](extend-pgxs.md) para construir uma extensão contra um servidor que foi compilado com suporte JIT do LLVM, os arquivos relevantes serão construídos e instalados automaticamente.
 
 Os arquivos relevantes devem ser instalados em `$pkglibdir/bitcode/$extension/` e um resumo deles em `$pkglibdir/bitcode/$extension.index.bc`, onde `$pkglibdir` é o diretório retornado por `pg_config --pkglibdir` e `$extension` é o nome base da biblioteca compartilhada da extensão.
 

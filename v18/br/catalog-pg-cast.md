@@ -9,144 +9,191 @@ Deve-se notar que `pg_cast` não representa todo o tipo de conversão que o sist
 
 
 <table border="1" class="table" summary="pg_cast Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">Tipo de coluna</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
+     Tipo de coluna
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       oid
      </code>
-<code class="type">
+     <code class="type">
       oid
      </code>
-</p>
-<p>Identificador da linha</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Identificador da linha
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       castsource
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
+      <code class="structname">
        pg_type
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
-     </code>)</p>
-<p>OID do tipo de dados de origem</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     OID do tipo de dados de origem
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       casttarget
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
+      <code class="structname">
        pg_type
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
-     </code>)</p>
-<p>OID do tipo de dados-alvo</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     OID do tipo de dados-alvo
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       castfunc
      </code>
-<code class="type">
+     <code class="type">
       oid
-     </code>(referências<a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-<code class="structname">
+     </code>
+     (referências
+     <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
+      <code class="structname">
        pg_proc
       </code>
-</a>
+     </a>
      .
      <code class="structfield">
       oid
-     </code>)</p>
-<p>O OID da função a ser usada para realizar essa conversão. Zero é armazenado se o método de conversão não exigir uma função.</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     )
+    </p>
+    <p>
+     O OID da função a ser usada para realizar essa conversão. Zero é armazenado se o método de conversão não exigir uma função.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       castcontext
      </code>
-<code class="type">
+     <code class="type">
       char
      </code>
-</p>
-<p>Indica em quais contextos o cast pode ser invocado.<code class="literal">
+    </p>
+    <p>
+     Indica em quais contextos o cast pode ser invocado.
+     <code class="literal">
       e
-     </code>significa apenas como um elenco explícito (usando<code class="literal">
+     </code>
+     significa apenas como um elenco explícito (usando
+     <code class="literal">
       CAST
-     </code>ou<code class="literal">
+     </code>
+     ou
+     <code class="literal">
       ::
      </code>
      syntax).
      <code class="literal">
       a
-     </code>significa implicitamente na atribuição a uma coluna de destino, bem como explicitamente.<code class="literal">
+     </code>
+     significa implicitamente na atribuição a uma coluna de destino, bem como explicitamente.
+     <code class="literal">
       i
-     </code>significa implicitamente em expressões, bem como em outros casos.</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+     </code>
+     significa implicitamente em expressões, bem como em outros casos.
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       castmethod
      </code>
-<code class="type">
+     <code class="type">
       char
      </code>
-</p>
-<p>Indica como o elenco é realizado.<code class="literal">
+    </p>
+    <p>
+     Indica como o elenco é realizado.
+     <code class="literal">
       f
-     </code>significa que a função especificada no<code class="structfield">
+     </code>
+     significa que a função especificada no
+     <code class="structfield">
       castfunc
-     </code>campo é utilizado.<code class="literal">
+     </code>
+     campo é utilizado.
+     <code class="literal">
       i
-     </code>significa que as funções de entrada/saída são utilizadas.<code class="literal">
+     </code>
+     significa que as funções de entrada/saída são utilizadas.
+     <code class="literal">
       b
-     </code>Isso significa que os tipos são binariamente coeríveis, portanto, nenhuma conversão é necessária.</p>
-</td>
-</tr>
-</tbody>
+     </code>
+     Isso significa que os tipos são binariamente coeríveis, portanto, nenhuma conversão é necessária.
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 As funções de cast listadas em `pg_cast` devem sempre receber o tipo de fonte de cast como seu primeiro tipo de argumento e retornar o tipo de destino de cast como seu tipo de resultado. Uma função de cast pode ter até três argumentos. O segundo argumento, se presente, deve ser do tipo `integer`; ele recebe o modificador de tipo associado ao tipo de destino, ou -1 se não houver nenhum. O terceiro argumento, se presente, deve ser do tipo `boolean`; ele recebe `true` se a cast for uma cast explícita, `false` caso contrário.
 

@@ -5,15 +5,15 @@
 * [26.1. Comparação de diferentes soluções](different-replication-solutions.md)
 * [26.2. Servidores de espera de envio de logs](warm-standby.md)
 
-+ [26.2.1. Planejamento][(warm-standby.md#STANDBY-PLANNING)]
-+ [26.2.2. Operação de servidor em espera][(warm-standby.md#STANDBY-SERVER-OPERATION)]
-+ [26.2.3. Preparação do primário para servidores em espera][(warm-standby.md#PREPARING-PRIMARY-FOR-STANDBY)]
-+ [26.2.4. Configuração de um servidor em espera][(warm-standby.md#STANDBY-SERVER-SETUP)]
-+ [26.2.5. Replicação em fluxo][(warm-standby.md#STREAMING-REPLICATION)]
-+ [26.2.6. Fissuras de replicação][(warm-standby.md#STREAMING-REPLICATION-SLOTS)]
-+ [26.2.7. Replicação em cascata][(warm-standby.md#CASCADING-REPLICATION)]
-+ [26.2.8. Replicação síncrona][(warm-standby.md#SYNCHRONOUS-REPLICATION)]
-+ [26.2.9. Arquivamento contínuo em espera][(warm-standby.md#CONTINUOUS-ARCHIVING-IN-STANDBY)]
++ [26.2.1. Planejamento](warm-standby.md#STANDBY-PLANNING)
++ [26.2.2. Operação de servidor em espera](warm-standby.md#STANDBY-SERVER-OPERATION)
++ [26.2.3. Preparação do primário para servidores em espera](warm-standby.md#PREPARING-PRIMARY-FOR-STANDBY)
++ [26.2.4. Configuração de um servidor em espera](warm-standby.md#STANDBY-SERVER-SETUP)
++ [26.2.5. Replicação em fluxo](warm-standby.md#STREAMING-REPLICATION)
++ [26.2.6. Fissuras de replicação](warm-standby.md#STREAMING-REPLICATION-SLOTS)
++ [26.2.7. Replicação em cascata](warm-standby.md#CASCADING-REPLICATION)
++ [26.2.8. Replicação síncrona](warm-standby.md#SYNCHRONOUS-REPLICATION)
++ [26.2.9. Arquivamento contínuo em espera](warm-standby.md#CONTINUOUS-ARCHIVING-IN-STANDBY)
 
 * [26.3. Failover](warm-standby-failover.md)
 * [26.4. Hot Standby](hot-standby.md)

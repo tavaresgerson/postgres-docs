@@ -282,4 +282,4 @@ INSERT INTO distributors (did, dname) VALUES (10, 'Conrad International')
 
 O padrão SQL especifica que `OVERRIDING SYSTEM VALUE` só pode ser especificado se uma coluna de identidade que é gerada sempre existir. O PostgreSQL permite a cláusula em qualquer caso e a ignora se não for aplicável.
 
-Possíveis limitações da cláusula *`query`* estão documentadas em [SELECT][(sql-select.md "SELECT")].
+Possíveis limitações da cláusula *`query`* estão documentadas em [SELECT](sql-select.md).

@@ -19,7 +19,7 @@ Se um nome de esquema for fornecido, o modelo de busca de texto é criado no esq
 
 Você deve ser um superusuário para usar `CREATE TEXT SEARCH TEMPLATE`. Esta restrição é feita porque uma definição errada do modelo de busca de texto pode confundir ou até mesmo fazer o servidor falhar. A razão para separar os modelos dos dicionários é que um modelo encapsula os aspectos "inseguros" de definir um dicionário. Os parâmetros que podem ser definidos ao definir um dicionário são seguros para usuários não privilegiados, e, portanto, criar um dicionário não precisa ser uma operação privilegiada.
 
-Consulte o [Capítulo 12][(textsearch.md "Chapter 12. Full Text Search")] para obter mais informações.
+Consulte o [Capítulo 12](textsearch.md) para obter mais informações.
 
 ## Parâmetros
 

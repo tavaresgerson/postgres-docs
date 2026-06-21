@@ -7,63 +7,76 @@ A vista `pg_timezone_abbrevs` fornece uma lista de abreviações de fuso horári
 
 
 <table border="1" class="table" summary="pg_timezone_abbrevs Columns">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="catalog_table_entry">
-<p class="column_definition">Tipo de coluna</p>
-<p>Descrição</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="catalog_table_entry">
+    <p class="column_definition">
+     Tipo de coluna
+    </p>
+    <p>
+     Descrição
+    </p>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       abbrev
      </code>
-<code class="type">
+     <code class="type">
       text
      </code>
-</p>
-<p>Abreviação do fuso horário</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Abreviação do fuso horário
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       utc_offset
      </code>
-<code class="type">
+     <code class="type">
       interval
      </code>
-</p>
-<p>Deslocamento em relação ao UTC (positivo significa leste de Greenwich)</p>
-</td>
-</tr>
-<tr>
-<td class="catalog_table_entry">
-<p class="column_definition">
-<code class="structfield">
+    </p>
+    <p>
+     Deslocamento em relação ao UTC (positivo significa leste de Greenwich)
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class="catalog_table_entry">
+    <p class="column_definition">
+     <code class="structfield">
       is_dst
      </code>
-<code class="type">
+     <code class="type">
       bool
      </code>
-</p>
-<p>Verdadeiro se esta é uma abreviação de horário de verão</p>
-</td>
-</tr>
-</tbody>
+    </p>
+    <p>
+     Verdadeiro se esta é uma abreviação de horário de verão
+    </p>
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Enquanto a maioria das abreviações de fuso horário representam desvios fixos em relação ao UTC, há algumas que historicamente variaram em valor (consulte a Seção B.4 para mais informações). Nesses casos, essa visão apresenta seu significado atual.

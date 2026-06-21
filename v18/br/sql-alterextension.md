@@ -60,7 +60,7 @@ and aggregate_signature is:
 
 `DROP member_object`: Este formulário remove um objeto de extensão do membro. Isso é principalmente útil em scripts de atualização de extensão. O objeto não é descartado, apenas desassociado da extensão.
 
-Consulte a [Seção 36.17][(extend-extensions.md "36.17. Packaging Related Objects into an Extension")] para obter mais informações sobre essas operações.
+Consulte a [Seção 36.17](extend-extensions.md) para obter mais informações sobre essas operações.
 
 Você deve possuir a extensão para usar `ALTER EXTENSION`. Os formulários `ADD`/`DROP` também exigem a posse do objeto adicionado/removido.
 

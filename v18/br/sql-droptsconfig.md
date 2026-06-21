@@ -18,7 +18,7 @@ DROP TEXT SEARCH CONFIGURATION [ IF EXISTS ] name [ CASCADE | RESTRICT ]
 
 *`name`*: O nome (opcionalmente qualificado por esquema) de uma configuração de busca de texto existente.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem da configuração de pesquisa de texto e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem da configuração de pesquisa de texto e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Rejeitar a eliminação da configuração de busca de texto se algum objeto depender dela. Isso é o padrão.
 

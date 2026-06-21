@@ -43,11 +43,11 @@ O significado dos campos é o seguinte:
 
 ### Nota
 
-As conexões remotas TCP/IP não serão possíveis, a menos que o servidor seja iniciado com um valor apropriado para o parâmetro de configuração [listen_addresses][(runtime-config-connection.md#GUC-LISTEN-ADDRESSES)], uma vez que o comportamento padrão é ouvir conexões TCP/IP apenas no endereço local de bucle `localhost`.
+As conexões remotas TCP/IP não serão possíveis, a menos que o servidor seja iniciado com um valor apropriado para o parâmetro de configuração [listen_addresses](runtime-config-connection.md#GUC-LISTEN-ADDRESSES), uma vez que o comportamento padrão é ouvir conexões TCP/IP apenas no endereço local de bucle `localhost`.
 
 `hostssl`: Este registro corresponde a tentativas de conexão feitas usando TCP/IP, mas apenas quando a conexão é feita com criptografia SSL.
 
-Para utilizar essa opção, o servidor deve ser construído com suporte SSL. Além disso, o SSL deve ser habilitado definindo o parâmetro de configuração [ssl][(runtime-config-connection.md#GUC-SSL)] (consulte [Seção 18.9][(ssl-tcp.md "18.9. Secure TCP/IP Connections with SSL")] para obter mais informações). Caso contrário, o registro `hostssl` é ignorado, exceto para registrar um aviso de que ele não pode corresponder a nenhuma conexão.
+Para utilizar essa opção, o servidor deve ser construído com suporte SSL. Além disso, o SSL deve ser habilitado definindo o parâmetro de configuração [ssl](runtime-config-connection.md#GUC-SSL) (consulte [Seção 18.9](ssl-tcp.md) para obter mais informações). Caso contrário, o registro `hostssl` é ignorado, exceto para registrar um aviso de que ele não pode corresponder a nenhuma conexão.
 
 `hostnossl`: Este tipo de registro tem comportamento oposto ao de `hostssl`; ele só corresponde a tentativas de conexão feitas por meio de TCP/IP que não utilizam SSL.
 
@@ -59,13 +59,13 @@ Para utilizar essa opção, o servidor deve ser construído com suporte ao GSSAP
 
 *`database`*: Especifica qual(is) nome(s) do banco de dados este registro corresponde. O valor `all` especifica que corresponde a todos os bancos de dados. O valor `sameuser` especifica que o registro corresponde se o banco de dados solicitado tiver o mesmo nome que o usuário solicitado. O valor `samerole` especifica que o usuário solicitado deve ser membro do papel com o mesmo nome que o banco de dados solicitado. (`samegroup` é uma ortografia obsoleta, mas ainda aceita, de `samerole`.) Superusuários não são considerados membros de um papel para os propósitos de `samerole`, a menos que sejam membros explícitos do papel, diretamente ou indiretamente, e não apenas em virtude de serem superusuários. O valor `replication` especifica que o registro corresponde se uma conexão de replicação física for solicitada, no entanto, não corresponde com conexões de replicação lógica. Note que as conexões de replicação física não especificam nenhum banco de dados particular, enquanto as conexões de replicação lógica especificam. Caso contrário, este é o nome de um banco de dados PostgreSQL específico ou uma expressão regular. Múltiplos nomes de banco de dados e/ou expressões regulares podem ser fornecidos, separando-os com vírgulas.
 
-Se o nome do banco de dados começar com um traço (`/`), o restante do nome é tratado como uma expressão regular. (Consulte a [Seção 9.7.3.1][(functions-matching.md#POSIX-SYNTAX-DETAILS "9.7.3.1. Regular Expression Details")] para obter detalhes sobre a sintaxe de expressão regular do PostgreSQL.)
+Se o nome do banco de dados começar com um traço (`/`), o restante do nome é tratado como uma expressão regular. (Consulte a [Seção 9.7.3.1](functions-matching.md#POSIX-SYNTAX-DETAILS) para obter detalhes sobre a sintaxe de expressão regular do PostgreSQL.)
 
 Um arquivo separado contendo nomes de bancos de dados e/ou expressões regulares pode ser especificado precedendo o nome do arquivo com `@`.
 
 *`user`*: Especifica qual(is) nome(s) de usuário(s) do banco de dados este registro corresponde. O valor `all` especifica que corresponde a todos os usuários. Caso contrário, este é o nome de um usuário específico do banco de dados, uma expressão regular (quando começa com uma barra (`/`, ou o nome de um grupo precedido por `+`. (Lembre-se de que não há uma verdadeira distinção entre usuários e grupos no PostgreSQL; uma marca `+` realmente significa “corresponder a qualquer um dos papéis que são membros diretamente ou indiretamente deste papel”, enquanto um nome sem uma marca `+` corresponde apenas a esse papel específico.) Para este propósito, um superusuário é considerado membro de um papel apenas se for explicitamente um membro do papel, diretamente ou indiretamente, e não apenas em virtude de ser um superusuário. Múltiplos nomes de usuário e/ou expressões regulares podem ser fornecidos separando-os com vírgulas.
 
-Se o nome do usuário começar com uma barra (`/`), o restante do nome é tratado como uma expressão regular. (Consulte [Seção 9.7.3.1][(functions-matching.md#POSIX-SYNTAX-DETAILS "9.7.3.1. Regular Expression Details")] para obter detalhes sobre a sintaxe de expressão regular do PostgreSQL.)
+Se o nome do usuário começar com uma barra (`/`), o restante do nome é tratado como uma expressão regular. (Consulte [Seção 9.7.3.1](functions-matching.md#POSIX-SYNTAX-DETAILS) para obter detalhes sobre a sintaxe de expressão regular do PostgreSQL.)
 
 Um arquivo separado contendo nomes de usuários e/ou expressões regulares pode ser especificado ao antecipar o nome do arquivo com `@`.
 
@@ -101,48 +101,49 @@ Esses campos não se aplicam aos registros `local`.
 
 *`auth-method`*: Especifica o método de autenticação a ser utilizado quando uma conexão corresponder a este registro. As opções possíveis são resumidas aqui; os detalhes estão em [Seção 20.3](auth-methods.md "20.3. Authentication Methods"). Todas as opções são minúsculas e tratadas sensatamente, portanto, até mesmo siglas como `ldap` devem ser especificadas em minúsculas.
 
-`trust` :   Permitir a conexão incondicionalmente. Esse método permite que qualquer pessoa que possa se conectar ao servidor de banco de dados PostgreSQL faça login como qualquer usuário do PostgreSQL que desejar, sem a necessidade de uma senha ou qualquer outra autenticação. Consulte [Seção 20.4][(auth-trust.md "20.4. Trust Authentication")] para obter detalhes.
+`trust` :   Permitir a conexão incondicionalmente. Esse método permite que qualquer pessoa que possa se conectar ao servidor de banco de dados PostgreSQL faça login como qualquer usuário do PostgreSQL que desejar, sem a necessidade de uma senha ou qualquer outra autenticação. Consulte [Seção 20.4](auth-trust.md) para obter detalhes.
 
 `reject` :   Recusar a conexão incondicionalmente. Isso é útil para "filtrar" certos hosts de um grupo, por exemplo, uma linha `reject` pode bloquear um host específico de se conectar, enquanto uma linha posterior permite que os hosts restantes em uma rede específica se conectem.
 
-`scram-sha-256` : Realize a autenticação SCRAM-SHA-256 para verificar a senha do usuário. Consulte a [Seção 20.5][(auth-password.md "20.5. Password Authentication")] para obter detalhes.
+`scram-sha-256` : Realize a autenticação SCRAM-SHA-256 para verificar a senha do usuário. Consulte a [Seção 20.5](auth-password.md) para obter detalhes.
 
-`md5` : Realize autenticação SCRAM-SHA-256 ou MD5 para verificar a senha do usuário. Consulte a [Seção 20.5][(auth-password.md "20.5. Password Authentication")] para obter detalhes.
+`md5` : Realize autenticação SCRAM-SHA-256 ou MD5 para verificar a senha do usuário. Consulte a [Seção 20.5](auth-password.md) para obter detalhes.
 
 ### Aviso
 
-O suporte para senhas criptografadas com MD5 é desatualizado e será removido em uma versão futura do PostgreSQL. Consulte [Seção 20.5][(auth-password.md "20.5. Password Authentication")] para obter detalhes sobre a migração para outro tipo de senha.
+O suporte para senhas criptografadas com MD5 é desatualizado e será removido em uma versão futura do PostgreSQL. Consulte [Seção 20.5](auth-password.md) para obter detalhes sobre a migração para outro tipo de senha.
 
-`password` :   Exija que o cliente forneça uma senha não criptografada para autenticação. Como a senha é enviada em texto claro pela rede, isso não deve ser usado em redes não confiáveis. Consulte [Seção 20.5][(auth-password.md "20.5. Password Authentication")] para obter detalhes.
+`password` :   Exija que o cliente forneça uma senha não criptografada para autenticação. Como a senha é enviada em texto claro pela rede, isso não deve ser usado em redes não confiáveis. Consulte [Seção 20.5](auth-password.md) para obter detalhes.
 
-`gss` :   Use o GSSAPI para autenticar o usuário. Isso está disponível apenas para conexões TCP/IP. Consulte a [Seção 20.6][(gssapi-auth.md "20.6. GSSAPI Authentication")] para obter detalhes. Pode ser usado em conjunto com criptografia GSSAPI.
+`gss` :   Use o GSSAPI para autenticar o usuário. Isso está disponível apenas para conexões TCP/IP. Consulte a [Seção 20.6](gssapi-auth.md) para obter detalhes. Pode ser usado em conjunto com criptografia GSSAPI.
 
-`sspi` :   Utilize SSPI para autenticar o usuário. Isso está disponível apenas no Windows. Consulte a [Seção 20.7][(sspi-auth.md "20.7. SSPI Authentication")] para obter detalhes.
+`sspi` :   Utilize SSPI para autenticar o usuário. Isso está disponível apenas no Windows. Consulte a [Seção 20.7](sspi-auth.md) para obter detalhes.
 
-`ident` :   Obtenha o nome do usuário do sistema operacional do cliente, entrando em contato com o servidor ident no cliente e verificando se ele corresponde ao nome de usuário do banco de dados solicitado. A autenticação Ident só pode ser usada em conexões TCP/IP. Quando especificada para conexões locais, a autenticação de pares será usada em vez disso. Veja [Seção 20.8][(auth-ident.md "20.8. Ident Authentication")] para detalhes.
+`ident` :   Obtenha o nome do usuário do sistema operacional do cliente, entrando em contato com o servidor ident no cliente e verificando se ele corresponde ao nome de usuário do banco de dados solicitado. A autenticação Ident só pode ser usada em conexões TCP/IP. Quando especificada para conexões locais, a autenticação de pares será usada em vez disso. Veja [Seção 20.8](auth-ident.md) para detalhes.
 
-`peer` :   Obtenha o nome do usuário do sistema operacional do cliente a partir do sistema operacional e verifique se ele corresponde ao nome do usuário do banco de dados solicitado. Isso está disponível apenas para conexões locais. Consulte [Seção 20.9][(auth-peer.md "20.9. Peer Authentication")] para obter detalhes.
+`peer` :   Obtenha o nome do usuário do sistema operacional do cliente a partir do sistema operacional e verifique se ele corresponde ao nome do usuário do banco de dados solicitado. Isso está disponível apenas para conexões locais. Consulte [Seção 20.9](auth-peer.md) para obter detalhes.
 
-`ldap` :   Autentique usando um servidor LDAP. Consulte a [Seção 20.10][(auth-ldap.md "20.10. LDAP Authentication")] para obter detalhes.
+`ldap` :   Autentique usando um servidor LDAP. Consulte a [Seção 20.10](auth-ldap.md) para obter detalhes.
 
-`radius` :   Autentique usando um servidor RADIUS. Consulte a [Seção 20.11][(auth-radius.md "20.11. RADIUS Authentication")] para obter detalhes.
+`radius` :   Autentique usando um servidor RADIUS. Consulte a [Seção 20.11](auth-radius.md) para obter detalhes.
 
-`cert` :   Autentique usando certificados de cliente SSL. Consulte [Seção 20.12][(auth-cert.md "20.12. Certificate Authentication")] para detalhes.
+`cert` :   Autentique usando certificados de cliente SSL. Consulte [Seção 20.12](auth-cert.md) para detalhes.
 
-`pam` :   Autentique usando o serviço de Módulos de Autenticação Conectam-se (PAM) fornecido pelo sistema operacional. Consulte a [Seção 20.13][(auth-pam.md "20.13. PAM Authentication")] para obter detalhes.
+`pam` :   Autentique usando o serviço de Módulos de Autenticação Conectam-se (PAM) fornecido pelo sistema operacional. Consulte a [Seção 20.13](auth-pam.md) para obter detalhes.
 
-`bsd` :   Autentique usando o serviço de autenticação BSD fornecido pelo sistema operacional. Consulte [Seção 20.14][(auth-bsd.md "20.14. BSD Authentication")] para obter detalhes.
+`bsd` :   Autentique usando o serviço de autenticação BSD fornecido pelo sistema operacional. Consulte [Seção 20.14](auth-bsd.md) para obter detalhes.
 
-`oauth` :   Autorizar e, opcionalmente, autenticar usando um provedor de identidade OAuth 2.0 de terceiros. Consulte a [Seção 20.15][(auth-oauth.md "20.15. OAuth Authorization/Authentication")] para obter detalhes.
+`oauth` :   Autorizar e, opcionalmente, autenticar usando um provedor de identidade OAuth 2.0 de terceiros. Consulte a [Seção 20.15](auth-oauth.md) para obter detalhes.
 
 *`auth-options`*: Após o campo *`auth-method`*, pode haver(em) campo(s) na forma *`name`*`=`*`value`* que especificam opções para o método de autenticação. Os detalhes sobre quais opções estão disponíveis para quais métodos de autenticação aparecem abaixo.
 
-Além das opções específicas do método listadas abaixo, há uma opção de autenticação independente do método `clientcert`, que pode ser especificada em qualquer registro `hostssl`. Esta opção pode ser definida para `verify-ca` ou `verify-full`. Ambas as opções exigem que o cliente apresente um certificado SSL válido (confiável), enquanto `verify-full` reforça adicionalmente que o `cn` (Nome Comum) no certificado corresponda ao nome de usuário ou a um mapeamento aplicável. Esse comportamento é semelhante ao método de autenticação `cert` (ver [Seção 20.12][(auth-cert.md "20.12. Certificate Authentication")]) mas permite a combinação da verificação de certificados do cliente com qualquer método de autenticação que suporte entradas `hostssl`.
+Além das opções específicas do método listadas abaixo, há uma opção de autenticação independente do método `clientcert`, que pode ser especificada em qualquer registro `hostssl`. Esta opção pode ser definida para `verify-ca` ou `verify-full`. Ambas as opções exigem que o cliente apresente um certificado SSL válido (confiável), enquanto `verify-full` reforça adicionalmente que o `cn` (Nome Comum) no certificado corresponda ao nome de usuário ou a um mapeamento aplicável. Esse comportamento é semelhante ao método de autenticação `cert` (ver [Seção 20.12](auth-cert.md)) mas permite a combinação da verificação de certificados do cliente com qualquer método de autenticação que suporte entradas `hostssl`.
 
 Em qualquer registro que utilize autenticação com certificado do cliente (ou seja, um que utilize o método de autenticação `cert` ou um que utilize a opção `clientcert`, você pode especificar qual parte das credenciais do certificado do cliente deve ser correspondida usando a opção `clientname`. Esta opção pode ter um dos dois valores. Se você especificar `clientname=CN`, que é o padrão, o nome de usuário é correspondido ao `Common Name (CN)` do certificado. Se, em vez disso, você especificar `clientname=DN`, o nome de usuário é correspondido ao `Distinguished Name (DN)` inteiro do certificado. Esta opção é provavelmente a melhor usada em conjunto com um mapa de nome de usuário. A comparação é feita com o `DN` no formato [RFC 2253](https://datatracker.ietf.org/doc/html/rfc2253). Para ver o `DN` de um certificado do cliente neste formato, faça
 
-``` openssl x509 -in myclient.crt -noout -subject -nameopt RFC2253 | sed "s/^subject=//"
-    ```
+```
+openssl x509 -in myclient.crt -noout -subject -nameopt RFC2253 | sed "s/^subject=//"
+```
 
 É preciso ter cuidado ao usar essa opção, especialmente ao usar correspondência com expressão regular contra o `DN`.
 
@@ -160,7 +161,7 @@ Como os registros do `pg_hba.conf` são examinados sequencialmente para cada ten
 
 Para se conectar a um banco de dados específico, o usuário não deve apenas passar pelos `pg_hba.conf` de verificação, mas deve ter o `CONNECT` privilégio para o banco de dados. Se você deseja restringir quais usuários podem se conectar a quais bancos de dados, geralmente é mais fácil controlar isso concedendo/revocando o `CONNECT` privilégio do que colocar as regras nas entradas do `pg_hba.conf`.
 
-Alguns exemplos de entradas do `pg_hba.conf` são mostrados em [Exemplo 20.1][(auth-pg-hba-conf.md#EXAMPLE-PG-HBA.CONF "Example 20.1. Example pg_hba.conf Entries")]. Veja a próxima seção para obter detalhes sobre os diferentes métodos de autenticação.
+Alguns exemplos de entradas do `pg_hba.conf` são mostrados em [Exemplo 20.1](auth-pg-hba-conf.md#EXAMPLE-PG-HBA.CONF). Veja a próxima seção para obter detalhes sobre os diferentes métodos de autenticação.
 
 **Exemplo 20.1. Exemplos de entradas `pg_hba.conf`**
 

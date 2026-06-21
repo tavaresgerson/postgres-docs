@@ -20,7 +20,7 @@ Você deve possuir a extensão para usar `DROP EXTENSION`.
 
 *`name`*: O nome de uma extensão instalada.
 
-`CASCADE`: Descarte automaticamente os objetos que dependem da extensão e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15][(ddl-depend.md "5.15. Dependency Tracking")]).
+`CASCADE`: Descarte automaticamente os objetos que dependem da extensão e, por sua vez, todos os objetos que dependem desses objetos (consulte [Seção 5.15](ddl-depend.md)).
 
 `RESTRICT`: Esta opção impede que as extensões especificadas sejam descartadas se outros objetos, além dessas extensões, seus membros e suas rotinas explicitamente dependentes, dependam delas. Esta é a opção padrão.
 

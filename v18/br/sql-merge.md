@@ -174,7 +174,7 @@ Se uma cláusula `WHEN` omitir uma subcláusula `AND`, ela se torna a cláusula 
 
 A ordem em que as linhas são geradas a partir da fonte de dados é indeterminada por padrão. Um *`source_query`* pode ser usado para especificar uma ordem consistente, se necessário, o que pode ser necessário para evitar deadlocks entre transações concorrentes.
 
-Quando o `MERGE` é executado simultaneamente com outros comandos que modificam a tabela de destino, as regras usuais de isolamento de transação se aplicam; consulte [Seção 13.2][(transaction-iso.md "13.2. Transaction Isolation")] para uma explicação sobre o comportamento em cada nível de isolamento. Você também pode desejar considerar o uso do `INSERT ... ON CONFLICT` como uma declaração alternativa que oferece a capacidade de executar um `UPDATE` se ocorrer uma `INSERT` concorrente. Há uma variedade de diferenças e restrições entre os dois tipos de declarações e eles não são intercambiáveis.
+Quando o `MERGE` é executado simultaneamente com outros comandos que modificam a tabela de destino, as regras usuais de isolamento de transação se aplicam; consulte [Seção 13.2](transaction-iso.md) para uma explicação sobre o comportamento em cada nível de isolamento. Você também pode desejar considerar o uso do `INSERT ... ON CONFLICT` como uma declaração alternativa que oferece a capacidade de executar um `UPDATE` se ocorrer uma `INSERT` concorrente. Há uma variedade de diferenças e restrições entre os dois tipos de declarações e eles não são intercambiáveis.
 
 ## Exemplos
 

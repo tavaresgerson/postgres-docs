@@ -1,8 +1,8 @@
 ## 34.5. SQL dinâmico [#](#ECPG-DYNAMIC)
 
-* [34.5.1. Executar declarações sem um conjunto de resultados][(ecpg-dynamic.md#ECPG-DYNAMIC-WITHOUT-RESULT)]
-* [34.5.2. Executar uma declaração com parâmetros de entrada][(ecpg-dynamic.md#ECPG-DYNAMIC-INPUT)]
-* [34.5.3. Executar uma declaração com um conjunto de resultados][(ecpg-dynamic.md#ECPG-DYNAMIC-WITH-RESULT)]
+* [34.5.1. Executar declarações sem um conjunto de resultados](ecpg-dynamic.md#ECPG-DYNAMIC-WITHOUT-RESULT)
+* [34.5.2. Executar uma declaração com parâmetros de entrada](ecpg-dynamic.md#ECPG-DYNAMIC-INPUT)
+* [34.5.3. Executar uma declaração com um conjunto de resultados](ecpg-dynamic.md#ECPG-DYNAMIC-WITH-RESULT)
 
 Em muitos casos, as instruções SQL específicas que uma aplicação precisa executar são conhecidas no momento em que a aplicação é escrita. Em alguns casos, no entanto, as instruções SQL são compostas em tempo de execução ou fornecidas por uma fonte externa. Nesses casos, você não pode incorporar as instruções SQL diretamente no código-fonte C, mas há uma facilidade que permite que você chame instruções SQL arbitrárias que você fornece em uma variável de string.
 

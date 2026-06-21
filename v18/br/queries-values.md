@@ -6,7 +6,7 @@
 VALUES ( expression [, ...] ) [, ...]
 ```
 
-Cada lista entre parênteses de expressões gera uma linha na tabela. Todas as listas devem ter o mesmo número de elementos (ou seja, o número de colunas na tabela), e as entradas correspondentes em cada lista devem ter tipos de dados compatíveis. O tipo de dados real atribuído a cada coluna do resultado é determinado usando as mesmas regras que para `UNION` (consulte [Seção 10.5][(typeconv-union-case.md "10.5. UNION, CASE, and Related Constructs")]).
+Cada lista entre parênteses de expressões gera uma linha na tabela. Todas as listas devem ter o mesmo número de elementos (ou seja, o número de colunas na tabela), e as entradas correspondentes em cada lista devem ter tipos de dados compatíveis. O tipo de dados real atribuído a cada coluna do resultado é determinado usando as mesmas regras que para `UNION` (consulte [Seção 10.5](typeconv-union-case.md)).
 
 Como exemplo:
 

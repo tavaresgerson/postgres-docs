@@ -15,4 +15,4 @@
 * [42.11. Configuração de PL/Tcl](pltcl-config.md)
 * [42.12. Nomes de procedimentos Tcl](pltcl-procnames.md)
 
-PL/Tcl é uma linguagem procedural carregável para o sistema de banco de dados PostgreSQL que permite que o [Tcl language][(https://www.tcl.tk/)] seja usado para escrever funções e procedimentos do PostgreSQL.
+PL/Tcl é uma linguagem procedural carregável para o sistema de banco de dados PostgreSQL que permite que o [Tcl language](https://www.tcl.tk/) seja usado para escrever funções e procedimentos do PostgreSQL.

@@ -60,7 +60,7 @@ Agora, os catálogos também fornecem um cast de `numeric` para `integer`. Se es
 
 ### Nota
 
-Às vezes, é necessário, por razões de usabilidade ou conformidade com padrões, fornecer múltiplos casts implícitos entre um conjunto de tipos, resultando em ambiguidade que não pode ser evitada como acima. O analisador tem uma heurística de fallback baseada em *categorias de tipo* e *tipos preferidos* que podem ajudar a fornecer o comportamento desejado em tais casos. Consulte [CREATE TYPE][(sql-createtype.md "CREATE TYPE")] para obter mais informações.
+Às vezes, é necessário, por razões de usabilidade ou conformidade com padrões, fornecer múltiplos casts implícitos entre um conjunto de tipos, resultando em ambiguidade que não pode ser evitada como acima. O analisador tem uma heurística de fallback baseada em *categorias de tipo* e *tipos preferidos* que podem ajudar a fornecer o comportamento desejado em tais casos. Consulte [CREATE TYPE](sql-createtype.md) para obter mais informações.
 
 Para poder criar um cast, você deve possuir o tipo de dados fonte ou alvo e ter o privilégio `USAGE` no outro tipo. Para criar um cast binário coerível, você deve ser um superusuário. (Essa restrição é feita porque uma conversão errada de cast binária coerível pode facilmente fazer o servidor falhar.)
 

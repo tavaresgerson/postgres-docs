@@ -2,7 +2,7 @@
 
 ---
 
-Esta parte contém informações de referência para aplicações de servidor PostgreSQL e utilitários de suporte. Esses comandos só podem ser executados de forma útil no host onde o servidor de banco de dados reside. Outros programas de utilitário estão listados em [Aplicações de cliente PostgreSQL][(reference-client.md "PostgreSQL Client Applications")].
+Esta parte contém informações de referência para aplicações de servidor PostgreSQL e utilitários de suporte. Esses comandos só podem ser executados de forma útil no host onde o servidor de banco de dados reside. Outros programas de utilitário estão listados em [Aplicações de cliente PostgreSQL](reference-client.md).
 
 **Índice**
 

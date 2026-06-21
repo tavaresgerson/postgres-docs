@@ -43,6 +43,6 @@
 
 Além dos catálogos do sistema, o PostgreSQL oferece vários pontos de vista integrados. Alguns pontos de vista do sistema fornecem acesso conveniente a algumas consultas comumente usadas nos catálogos do sistema. Outros pontos de vista fornecem acesso ao estado interno do servidor.
 
-O esquema de informações ([Capítulo 35][(information-schema.md "Chapter 35. The Information Schema")]) oferece um conjunto alternativo de visualizações que sobrepõem a funcionalidade das visualizações do sistema. Como o esquema de informações é padrão SQL, enquanto as visualizações descritas aqui são específicas do PostgreSQL, geralmente é melhor usar o esquema de informações se ele fornecer todas as informações de que você precisa.
+O esquema de informações ([Capítulo 35](information-schema.md)) oferece um conjunto alternativo de visualizações que sobrepõem a funcionalidade das visualizações do sistema. Como o esquema de informações é padrão SQL, enquanto as visualizações descritas aqui são específicas do PostgreSQL, geralmente é melhor usar o esquema de informações se ele fornecer todas as informações de que você precisa.
 
 [Tabela 53.1](views-overview.md#VIEW-TABLE "Table 53.1. System Views") lista as visualizações do sistema descritas aqui. Mais documentação detalhada de cada visualização segue abaixo. Existem algumas visualizações adicionais que fornecem acesso a estatísticas acumuladas; elas são descritas em [Tabela 27.2](monitoring-stats.md#MONITORING-STATS-VIEWS-TABLE "Table 27.2. Collected Statistics Views").

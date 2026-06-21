@@ -19,7 +19,7 @@ O PL/pgSQL é semelhante ao PL/SQL em muitos aspectos. É uma linguagem estrutur
 
 ### 41.13.1. Exemplos de portação [#](#PLPGSQL-PORTING-EXAMPLES)
 
-[Exemplo 41.9][(plpgsql-porting.md#PGSQL-PORTING-EX1 "Example 41.9. Porting a Simple Function from PL/SQL to PL/pgSQL")] mostra como portar uma função simples do PL/SQL para o PL/pgSQL.
+[Exemplo 41.9](plpgsql-porting.md#PGSQL-PORTING-EX1) mostra como portar uma função simples do PL/SQL para o PL/pgSQL.
 
 **Exemplo 41.9. Portando uma função simples de PL/SQL para PL/pgSQL**
 
@@ -61,9 +61,9 @@ END;
 $$ LANGUAGE plpgsql;
 ```
 
-  
 
-[Exemplo 41.10][(plpgsql-porting.md#PLPGSQL-PORTING-EX2 "Example 41.10. Porting a Function that Creates Another Function from PL/SQL to PL/pgSQL")] mostra como portar uma função que cria outra função e como lidar com os problemas de citação que surgem.
+
+[Exemplo 41.10](plpgsql-porting.md#PLPGSQL-PORTING-EX2) mostra como portar uma função que cria outra função e como lidar com os problemas de citação que surgem.
 
 **Exemplo 41.10. Portando uma função que cria outra função a partir de PL/SQL para PL/pgSQL**
 
@@ -135,9 +135,9 @@ $func$ LANGUAGE plpgsql;
 
 Observe como o corpo da função é construído separadamente e passado por `quote_literal` para duplicar quaisquer aspas nele. Essa técnica é necessária porque não podemos usar com segurança a citação em dólar para definir a nova função: não sabemos com certeza quais strings serão interpoladas do campo `referrer_key.key_string`. (Estamos assumindo aqui que `referrer_key.kind` pode ser confiável para sempre ser `host`, `domain` ou `url`, mas `referrer_key.key_string` pode ser qualquer coisa, em particular, pode conter sinais de dólar.) Esta função é, na verdade, uma melhoria em relação ao original da Oracle, porque não gerará código quebrado quando `referrer_key.key_string` ou `referrer_key.referrer_type` contêm aspas.
 
-  
 
-[Exemplo 41.11][(plpgsql-porting.md#PLPGSQL-PORTING-EX3 "Example 41.11. Porting a Procedure With String Manipulation and OUT Parameters from PL/SQL to PL/pgSQL")] mostra como portar uma função com parâmetros `OUT` e manipulação de strings. O PostgreSQL não tem uma função embutida `instr`, mas você pode criar uma usando uma combinação de outras funções. Na [Seção 41.13.3][(plpgsql-porting.md#PLPGSQL-PORTING-APPENDIX "41.13.3. Appendix")] há uma implementação PL/pgSQL de `instr` que você pode usar para facilitar sua portar.
+
+[Exemplo 41.11](plpgsql-porting.md#PLPGSQL-PORTING-EX3) mostra como portar uma função com parâmetros `OUT` e manipulação de strings. O PostgreSQL não tem uma função embutida `instr`, mas você pode criar uma usando uma combinação de outras funções. Na [Seção 41.13.3](plpgsql-porting.md#PLPGSQL-PORTING-APPENDIX) há uma implementação PL/pgSQL de `instr` que você pode usar para facilitar sua portar.
 
 **Exemplo 41.11. Portagem de um procedimento com manipulação de strings e parâmetros `OUT` de PL/SQL para PL/pgSQL**
 
@@ -233,9 +233,9 @@ Essa função pode ser usada da seguinte forma:
 SELECT * FROM cs_parse_url('http://foobar.com/query.cgi?baz');
 ```
 
-  
 
-[Exemplo 41.12][(plpgsql-porting.md#PLPGSQL-PORTING-EX4 "Example 41.12. Porting a Procedure from PL/SQL to PL/pgSQL")] mostra como portar um procedimento que utiliza várias características específicas da Oracle.
+
+[Exemplo 41.12](plpgsql-porting.md#PLPGSQL-PORTING-EX4) mostra como portar um procedimento que utiliza várias características específicas da Oracle.
 
 **Exemplo 41.12. Portando um procedimento de PL/SQL para PL/pgSQL**
 
@@ -302,16 +302,16 @@ $$ LANGUAGE plpgsql;
 
 
 <table border="0" summary="Callout list">
-<tr>
-<td align="left" valign="top" width="5%">
-<p>
-<a href="#co.plpgsql-porting-raise">
+ <tr>
+  <td align="left" valign="top" width="5%">
+   <p>
+    <a href="#co.plpgsql-porting-raise">
      (1)
     </a>
-</p>
-</td>
-<td align="left" valign="top">
-<p>
+   </p>
+  </td>
+  <td align="left" valign="top">
+   <p>
     The syntax of
     <code class="literal">
      RAISE
@@ -320,26 +320,25 @@ $$ LANGUAGE plpgsql;
     <code class="literal">
      RAISE
     </code>
-<em class="replaceable">
-<code>
+    <em class="replaceable">
+     <code>
       exception_name
      </code>
-</em>
-    works
-       similarly.
+    </em>
+    works similarly.
    </p>
-</td>
-</tr>
-<tr>
-<td align="left" valign="top" width="5%">
-<p>
-<a href="#co.plpgsql-porting-exception">
+  </td>
+ </tr>
+ <tr>
+  <td align="left" valign="top" width="5%">
+   <p>
+    <a href="#co.plpgsql-porting-exception">
      (2)
     </a>
-</p>
-</td>
-<td align="left" valign="top">
-<p>
+   </p>
+  </td>
+  <td align="left" valign="top">
+   <p>
     The exception names supported by
     <span class="application">
      PL/pgSQL
@@ -350,9 +349,12 @@ $$ LANGUAGE plpgsql;
     </a>
     ).  There is not currently a way to declare user-defined exception names, although you can throw user-chosen SQLSTATE values instead.
    </p>
-</td>
-</tr>
+  </td>
+ </tr>
 </table>
+
+
+
 
 
 
@@ -386,7 +388,7 @@ A versão PL/pgSQL do `EXECUTE` funciona de maneira semelhante à versão PL/SQL
 
 #### 41.13.2.3. Otimizando funções PL/pgSQL [#](#PLPGSQL-PORTING-OPTIMIZATION)
 
-O PostgreSQL oferece dois modificadores de criação de função para otimizar a execução: “volatilidade” (se a função sempre retorna o mesmo resultado quando recebe os mesmos argumentos) e “strictness” (se a função retorna null se qualquer argumento for nulo). Consulte a página de referência [CREATE FUNCTION][(sql-createfunction.md "CREATE FUNCTION")] para obter detalhes.
+O PostgreSQL oferece dois modificadores de criação de função para otimizar a execução: “volatilidade” (se a função sempre retorna o mesmo resultado quando recebe os mesmos argumentos) e “strictness” (se a função retorna null se qualquer argumento for nulo). Consulte a página de referência [CREATE FUNCTION](sql-createfunction.md) para obter detalhes.
 
 Ao utilizar esses atributos de otimização, sua declaração `CREATE FUNCTION` pode parecer algo assim:
 

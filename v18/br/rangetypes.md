@@ -53,7 +53,7 @@ SELECT int4range(10, 20) * int4range(15, 25);
 SELECT isempty(numrange(1, 5));
 ```
 
-Consulte as tabelas [Tabela 9.58][(functions-range.md#RANGE-OPERATORS-TABLE "Table 9.58. Range Operators")] e [Tabela 9.60][(functions-range.md#RANGE-FUNCTIONS-TABLE "Table 9.60. Range Functions")] para obter listas completas dos operadores e funções sobre os tipos de intervalo.
+Consulte as tabelas [Tabela 9.58](functions-range.md#RANGE-OPERATORS-TABLE) e [Tabela 9.60](functions-range.md#RANGE-FUNCTIONS-TABLE) para obter listas completas dos operadores e funções sobre os tipos de intervalo.
 
 ### 8.17.3. Limites inclusivos e exclusivos [#](#RANGETYPES-INCLUSIVITY)
 
@@ -206,7 +206,7 @@ Os índices GiST e SP-GiST podem ser criados para colunas de tabela de tipos de 
 CREATE INDEX reservation_idx ON reservation USING GIST (during);
 ```
 
-Um índice GiST ou SP-GiST em intervalos pode acelerar consultas que envolvem esses operadores de intervalo: `=`, `&&`, `<@`, `@>`, `<<`, `>>`, `-|-`, `&<` e `&>`. Um índice GiST em intervalos múltiplos pode acelerar consultas que envolvem o mesmo conjunto de operadores de intervalo múltiplos. Um índice GiST em intervalos e um índice GiST em intervalos múltiplos também pode acelerar consultas que envolvem esses operadores de tipo cruzado de intervalo para múltiplos e de múltiplos para intervalo, respectivamente: `&&`, `<@`, `@>`, `<<`, `>>`, `-|-`, `&<` e `&>`. Consulte [Tabela 9.58][(functions-range.md#RANGE-OPERATORS-TABLE "Table 9.58. Range Operators")] para mais informações.
+Um índice GiST ou SP-GiST em intervalos pode acelerar consultas que envolvem esses operadores de intervalo: `=`, `&&`, `<@`, `@>`, `<<`, `>>`, `-|-`, `&<` e `&>`. Um índice GiST em intervalos múltiplos pode acelerar consultas que envolvem o mesmo conjunto de operadores de intervalo múltiplos. Um índice GiST em intervalos e um índice GiST em intervalos múltiplos também pode acelerar consultas que envolvem esses operadores de tipo cruzado de intervalo para múltiplos e de múltiplos para intervalo, respectivamente: `&&`, `<@`, `@>`, `<<`, `>>`, `-|-`, `&<` e `&>`. Consulte [Tabela 9.58](functions-range.md#RANGE-OPERATORS-TABLE) para mais informações.
 
 Além disso, índices de árvore B e de hash podem ser criados para as colunas de tabelas de tipos de intervalo. Para esses tipos de índice, basicamente a única operação de intervalo útil é a igualdade. Existe uma ordenação de classificação de árvore B definida para valores de intervalo, com operadores correspondentes `<` e `>`, mas a ordenação é bastante arbitrária e geralmente não é útil no mundo real. O suporte de árvore B e de hash dos tipos de intervalo é destinado principalmente a permitir a classificação e a hashing internamente em consultas, em vez da criação de índices reais.
 
@@ -235,7 +235,7 @@ DETAIL:  Key (during)=(["2010-01-01 14:45:00","2010-01-01 15:45:00")) conflicts
 with existing key (during)=(["2010-01-01 11:30:00","2010-01-01 15:00:00")).
 ```
 
-Você pode usar a extensão `btree_gist`(btree-gist.md "F.8. btree_gist — GiST operator classes with B-tree behavior") para definir restrições de exclusão em tipos de dados escalares simples, que podem ser combinadas com exclusões de intervalo para máxima flexibilidade. Por exemplo, após o `btree_gist` ser instalado, a seguinte restrição rejeitará os intervalos sobrepostos apenas se os números das salas de reunião forem iguais:
+Você pode usar a extensão `btree_gist`](btree-gist.md) para definir restrições de exclusão em tipos de dados escalares simples, que podem ser combinadas com exclusões de intervalo para máxima flexibilidade. Por exemplo, após o `btree_gist` ser instalado, a seguinte restrição rejeitará os intervalos sobrepostos apenas se os números das salas de reunião forem iguais:
 
 ```
 CREATE EXTENSION btree_gist;

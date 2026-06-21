@@ -1,10 +1,10 @@
 ## 15.3. Planos paralelos [#](#PARALLEL-PLANS)
 
-* [15.3.1. Estradas paralelas][(parallel-plans.md#PARALLEL-SCANS)]
-* [15.3.2. Conexões paralelas][(parallel-plans.md#PARALLEL-JOINS)]
-* [15.3.3. Agregação paralela][(parallel-plans.md#PARALLEL-AGGREGATION)]
-* [15.3.4. Aplicação paralela][(parallel-plans.md#PARALLEL-APPEND)]
-* [15.3.5. Dicas de plano paralelo][(parallel-plans.md#PARALLEL-PLAN-TIPS)]
+* [15.3.1. Estradas paralelas](parallel-plans.md#PARALLEL-SCANS)
+* [15.3.2. Conexões paralelas](parallel-plans.md#PARALLEL-JOINS)
+* [15.3.3. Agregação paralela](parallel-plans.md#PARALLEL-AGGREGATION)
+* [15.3.4. Aplicação paralela](parallel-plans.md#PARALLEL-APPEND)
+* [15.3.5. Dicas de plano paralelo](parallel-plans.md#PARALLEL-PLAN-TIPS)
 
 Como cada trabalhador executa a porção paralela do plano até o fim, não é possível simplesmente tomar um plano de consulta comum e executá-lo usando vários trabalhadores. Cada trabalhador produzirá uma cópia completa do conjunto de resultados de saída, portanto, a consulta não correrá mais rápido do que o normal, mas produzirá resultados incorretos. Em vez disso, a porção paralela do plano deve ser o que é conhecido internamente pelo otimizador de consultas como um *plano parcial*; ou seja, deve ser construído de modo que cada processo que executa o plano gere apenas um subconjunto das linhas de saída, de tal forma que cada linha de saída necessária seja garantida para ser gerada exatamente por um dos processos cooperativos. Geralmente, isso significa que a varredura na tabela de condução da consulta deve ser uma varredura consciente de paralelo.
 
@@ -32,7 +32,7 @@ O PostgreSQL suporta agregação paralela ao agregação em duas etapas. Primeir
 
 Como o nó `Finalize Aggregate` funciona no processo líder, as consultas que produzem um número relativamente grande de grupos em comparação ao número de linhas de entrada aparecerão menos favoráveis ao planejador de consultas. Por exemplo, no pior cenário, o número de grupos vistos pelo nó `Finalize Aggregate` pode ser tão grande quanto o número de linhas de entrada que foram vistas por todos os processos de trabalho na etapa `Partial Aggregate`. Para esses casos, é claro que não haverá nenhum benefício de desempenho ao usar agregação paralela. O planejador de consultas leva isso em consideração durante o processo de planejamento e é improvável que escolha agregação paralela nesse cenário.
 
-A agregação paralela não é suportada em todas as situações. Cada agregado deve ser [seguro][(parallel-safety.md "15.4. Parallel Safety")] para o paralelismo e deve ter uma função de combinação. Se o agregado tiver um estado de transição do tipo `internal`, deve ter funções de serialização e deserialização. Consulte [CREATE AGGREGATE][(sql-createaggregate.md "CREATE AGGREGATE")] para mais detalhes. A agregação paralela não é suportada se qualquer chamada de função agregada contiver a cláusula `DISTINCT` ou `ORDER BY` e também não é suportada para agregados de conjuntos ordenados ou quando a consulta envolve `GROUPING SETS`. Pode ser usada apenas quando todas as junções envolvidas na consulta também fazem parte da porção paralela do plano.
+A agregação paralela não é suportada em todas as situações. Cada agregado deve ser [seguro](parallel-safety.md) para o paralelismo e deve ter uma função de combinação. Se o agregado tiver um estado de transição do tipo `internal`, deve ter funções de serialização e deserialização. Consulte [CREATE AGGREGATE](sql-createaggregate.md) para mais detalhes. A agregação paralela não é suportada se qualquer chamada de função agregada contiver a cláusula `DISTINCT` ou `ORDER BY` e também não é suportada para agregados de conjuntos ordenados ou quando a consulta envolve `GROUPING SETS`. Pode ser usada apenas quando todas as junções envolvidas na consulta também fazem parte da porção paralela do plano.
 
 ### 15.3.4. Apêndice paralelo [#](#PARALLEL-APPEND)
 
@@ -42,7 +42,7 @@ Quando um nó `Append` é usado em um plano paralelo, cada processo executará o
 
 Além disso, ao contrário de um nó `Append` comum, que só pode ter filhos parciais quando usado em um plano paralelo, um nó `Parallel Append` pode ter planos de filhos tanto parciais quanto não parciais. Os filhos não parciais serão analisados por apenas um único processo, pois analisar-os mais de uma vez produziria resultados duplicados. Portanto, os planos que envolvem a adição de vários conjuntos de resultados podem alcançar paralelismo grosseiro mesmo quando planos parciais eficientes não estão disponíveis. Por exemplo, considere uma consulta contra uma tabela particionada que só pode ser implementada de forma eficiente usando um índice que não suporte varreduras paralelas. O planejador pode optar por um `Parallel Append` de planos regulares `Index Scan`; cada varredura de índice individual teria que ser executada até o término por um único processo, mas diferentes varreduras poderiam ser realizadas ao mesmo tempo por diferentes processos.
 
-[enable_parallel_append][(runtime-config-query.md#GUC-ENABLE-PARALLEL-APPEND)] pode ser usado para desabilitar este recurso.
+[enable_parallel_append](runtime-config-query.md#GUC-ENABLE-PARALLEL-APPEND) pode ser usado para desabilitar este recurso.
 
 ### 15.3.5. Dicas para o Plano Paralelo [#](#PARALLEL-PLAN-TIPS)
 

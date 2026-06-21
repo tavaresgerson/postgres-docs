@@ -13,13 +13,13 @@ CREATE EVENT TRIGGER name
 
 ## Descrição
 
-`CREATE EVENT TRIGGER` cria um novo gatilho de evento. Sempre que o evento designado ocorrer e a condição `WHEN` associada ao gatilho, se houver, for satisfeita, a função do gatilho será executada. Para uma introdução geral sobre gatilhos de evento, consulte o [Capítulo 38][(event-triggers.md "Chapter 38. Event Triggers")]. O usuário que cria um gatilho de evento se torna seu proprietário.
+`CREATE EVENT TRIGGER` cria um novo gatilho de evento. Sempre que o evento designado ocorrer e a condição `WHEN` associada ao gatilho, se houver, for satisfeita, a função do gatilho será executada. Para uma introdução geral sobre gatilhos de evento, consulte o [Capítulo 38](event-triggers.md). O usuário que cria um gatilho de evento se torna seu proprietário.
 
 ## Parâmetros
 
 *`name`*: O nome que se deseja dar ao novo gatilho. Esse nome deve ser único dentro do banco de dados.
 
-*`event`*: O nome do evento que aciona a chamada à função especificada. Consulte a [Seção 38.1][(event-trigger-definition.md "38.1. Overview of Event Trigger Behavior")] para obter mais informações sobre os nomes dos eventos.
+*`event`*: O nome do evento que aciona a chamada à função especificada. Consulte a [Seção 38.1](event-trigger-definition.md) para obter mais informações sobre os nomes dos eventos.
 
 *`filter_variable`*: O nome de uma variável usada para filtrar eventos. Isso permite restringir o disparo do gatilho a um subconjunto dos casos em que ele é suportado. Atualmente, o único *`filter_variable`* suportado é `TAG`.
 
@@ -33,11 +33,11 @@ Na sintaxe do `CREATE EVENT TRIGGER`, as palavras-chave `FUNCTION` e `PROCEDURE`
 
 Apenas superusuários podem criar gatilhos de evento.
 
-Os gatilhos de evento são desativados no modo de usuário único (consulte [postgres][(app-postgres.md "postgres")]) e também quando [event_triggers][(runtime-config-client.md#GUC-EVENT-TRIGGERS)] está definido como `false`. Se um gatilho de evento errôneo desabilitar o banco de dados tanto que você não consegue até mesmo descartar o gatilho, reinicie com [event_triggers][(runtime-config-client.md#GUC-EVENT-TRIGGERS)] definido como `false` para desabilitar temporariamente os gatilhos de evento, ou no modo de usuário único, e você poderá fazer isso.
+Os gatilhos de evento são desativados no modo de usuário único (consulte [postgres](app-postgres.md)) e também quando [event_triggers](runtime-config-client.md#GUC-EVENT-TRIGGERS) está definido como `false`. Se um gatilho de evento errôneo desabilitar o banco de dados tanto que você não consegue até mesmo descartar o gatilho, reinicie com [event_triggers](runtime-config-client.md#GUC-EVENT-TRIGGERS) definido como `false` para desabilitar temporariamente os gatilhos de evento, ou no modo de usuário único, e você poderá fazer isso.
 
 ## Exemplos
 
-Proíba a execução de qualquer comando [DDL][(ddl.md "Chapter 5. Data Definition")]
+Proíba a execução de qualquer comando [DDL](ddl.md)
 
 ```
 CREATE OR REPLACE FUNCTION abort_any_command()

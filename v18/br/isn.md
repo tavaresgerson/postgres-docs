@@ -21,100 +21,115 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
 
 
 <table border="1" class="table" summary="isn Data Types">
-<colgroup>
-<col class="col1"/>
-<col class="col2"/>
-</colgroup>
-<thead>
-<tr>
-<th>
+ <colgroup>
+  <col class="col1"/>
+  <col class="col2"/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th>
     Data Type
    </th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code class="type">
+   <th>
+    Descrição
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    <code class="type">
      EAN13
     </code>
-</td>
-<td>Números de artigos europeus, sempre exibidos no formato de exibição EAN13</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    Números de artigos europeus, sempre exibidos no formato de exibição EAN13
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      ISBN13
     </code>
-</td>
-<td>Números internacionais padrão de livro a serem exibidos no novo formato de exibição EAN13</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    Números internacionais padrão de livro a serem exibidos no novo formato de exibição EAN13
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      ISMN13
     </code>
-</td>
-<td>Números internacionais padrão de música serão exibidos no novo formato de exibição EAN13</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    Números internacionais padrão de música serão exibidos no novo formato de exibição EAN13
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      ISSN13
     </code>
-</td>
-<td>Números de série serial internacional a serem exibidos no novo formato de exibição EAN13</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    Números de série serial internacional a serem exibidos no novo formato de exibição EAN13
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      ISBN
     </code>
-</td>
-<td>Números internacionais padrão de livro a serem exibidos no antigo formato de exibição curta</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    Números internacionais padrão de livro a serem exibidos no antigo formato de exibição curta
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      ISMN
     </code>
-</td>
-<td>Números internacionais de música padrão serão exibidos no antigo formato de exibição curta</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    Números internacionais de música padrão serão exibidos no antigo formato de exibição curta
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      ISSN
     </code>
-</td>
-<td>Números de série serial internacional a serem exibidos no antigo formato de exibição curta</td>
-</tr>
-<tr>
-<td>
-<code class="type">
+   </td>
+   <td>
+    Números de série serial internacional a serem exibidos no antigo formato de exibição curta
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <code class="type">
      UPC
     </code>
-</td>
-<td>Códigos de Produto Universal</td>
-</tr>
-</tbody>
+   </td>
+   <td>
+    Códigos de Produto Universal
+   </td>
+  </tr>
+ </tbody>
 </table>
 
 
 
 
-  
+
+
+
+
 
 Algumas notas:
 
-Os números ISBN13, ISMN13 e ISSN13 são todos números EAN13.
-Os números EAN13 nem sempre são ISBN13, ISMN13 ou ISSN13 (alguns são).
-Alguns números ISBN13 podem ser exibidos como ISBN.
-Alguns números ISMN13 podem ser exibidos como ISMN.
-Alguns números ISSN13 podem ser exibidos como ISSN.
-Os números UPC são um subconjunto dos números EAN13 (eles são basicamente EAN13 sem o primeiro dígito `0`).
-Todos os números UPC, ISBN, ISMN e ISSN podem ser representados como números EAN13.
+Os números ISBN13, ISMN13 e ISSN13 são todos números EAN13. Os números EAN13 nem sempre são ISBN13, ISMN13 ou ISSN13 (alguns são). Alguns números ISBN13 podem ser exibidos como ISBN. Alguns números ISMN13 podem ser exibidos como ISMN. Alguns números ISSN13 podem ser exibidos como ISSN. Os números UPC são um subconjunto dos números EAN13 (eles são basicamente EAN13 sem o primeiro dígito `0`). Todos os números UPC, ISBN, ISMN e ISSN podem ser representados como números EAN13.
 
 Internamente, todos esses tipos utilizam a mesma representação (um inteiro de 64 bits) e todos são intercambiáveis. Múltiplos tipos são fornecidos para controlar a formatação de exibição e para permitir uma verificação mais rigorosa da validade da entrada que deve denotar um tipo particular de número.
 
@@ -124,134 +139,133 @@ Os tipos `ISBN`, `ISMN` e `ISSN` exibirão a versão curta do número (ISxN 10) 
 
 O módulo `isn` fornece os seguintes pares de tipos de conversão:
 
-* ISBN13 <=> EAN13  
-* ISMN13 <=> EAN13  
-* ISSN13 <=> EAN13  
-* ISBN <=> EAN13  
-* ISMN <=> EAN13  
-* ISSN <=> EAN13  
-* UPC <=> EAN13  
-* ISBN <=> ISBN13  
-* ISMN <=> ISMN13  
+* ISBN13 <=> EAN13
+* ISMN13 <=> EAN13
+* ISSN13 <=> EAN13
+* ISBN <=> EAN13
+* ISMN <=> EAN13
+* ISSN <=> EAN13
+* UPC <=> EAN13
+* ISBN <=> ISBN13
+* ISMN <=> ISMN13
 * ISSN <=> ISSN13
 
 Ao fazer uma conversão de `EAN13` para outro tipo, há uma verificação de tempo de execução de que o valor está dentro do domínio do outro tipo, e um erro é lançado se não estiver. Os outros tipos de conversão são simplesmente redefinições que sempre terão sucesso.
 
 ### F.20.3. Funções e Operadores [#](#ISN-FUNCS-OPS)
 
-O módulo `isn` fornece os operadores de comparação padrão, além do suporte a índice B-tree e hash para todos esses tipos de dados. Além disso, há várias funções especializadas, mostradas na [Tabela F.11][(isn.md#ISN-FUNCTIONS "Table F.11. isn Functions")]. Nesta tabela, `isn` significa qualquer um dos tipos de dados do módulo.
+O módulo `isn` fornece os operadores de comparação padrão, além do suporte a índice B-tree e hash para todos esses tipos de dados. Além disso, há várias funções especializadas, mostradas na [Tabela F.11](isn.md#ISN-FUNCTIONS). Nesta tabela, `isn` significa qualquer um dos tipos de dados do módulo.
 
 **Tabela F.11. `isn` Funções**
 
 
 
 <table border="1" class="table" summary="isn Functions">
-<colgroup>
-<col/>
-</colgroup>
-<thead>
-<tr>
-<th class="func_table_entry">
-<p class="func_signature">
+ <colgroup>
+  <col/>
+ </colgroup>
+ <thead>
+  <tr>
+   <th class="func_table_entry">
+    <p class="func_signature">
      Function
     </p>
-<p>
+    <p>
      Description
     </p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       make_valid
      </code>
      (
      <code class="type">
       isn
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       isn
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Clears the invalid-check-digit flag of the value.
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       is_valid
      </code>
      (
      <code class="type">
       isn
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Checks for the presence of the invalid-check-digit flag.
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       isn_weak
      </code>
      (
      <code class="type">
       boolean
      </code>
-     )
-        →
+     ) →
      <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Sets the weak input mode, and returns the new setting. This function is retained for backward compatibility. The recommended way to set weak mode is via the
      <code class="varname">
       isn.weak
      </code>
      configuration parameter.
     </p>
-</td>
-</tr>
-<tr>
-<td class="func_table_entry">
-<p class="func_signature">
-<code class="function">
+   </td>
+  </tr>
+  <tr>
+   <td class="func_table_entry">
+    <p class="func_signature">
+     <code class="function">
       isn_weak
      </code>
-     ()
-        →
+     () →
      <code class="returnvalue">
       boolean
      </code>
-</p>
-<p>
+    </p>
+    <p>
      Returns the current status of the weak mode. This function is retained for backward compatibility. The recommended way to check weak mode is via the
      <code class="varname">
       isn.weak
      </code>
      configuration parameter.
     </p>
-</td>
-</tr>
-</tbody>
+   </td>
+  </tr>
+ </tbody>
 </table>
+
+
+
 
 
 

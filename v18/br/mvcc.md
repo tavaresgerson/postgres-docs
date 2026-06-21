@@ -19,8 +19,8 @@
 
 * [13.4. Verificação de Consistência de Dados no Nível da Aplicação](applevel-consistency.md)
 
-+ [13.4.1. Exigir consistência com transações serializáveis][(applevel-consistency.md#SERIALIZABLE-CONSISTENCY)]
-+ [13.4.2. Exigir consistência com bloqueios explícitos][(applevel-consistency.md#NON-SERIALIZABLE-CONSISTENCY)]
++ [13.4.1. Exigir consistência com transações serializáveis](applevel-consistency.md#SERIALIZABLE-CONSISTENCY)
++ [13.4.2. Exigir consistência com bloqueios explícitos](applevel-consistency.md#NON-SERIALIZABLE-CONSISTENCY)
 
 * [13.5. Tratamento de falha de serialização](mvcc-serialization-failure-handling.md)
 * [13.6. Observações](mvcc-caveats.md)
