@@ -1,16 +1,14 @@
 # PostgreSQL 18.4 Documentation
 
-### The PostgreSQL Global Development Group
+The PostgreSQL Global Development Group
 
 Copyright © 1996–2026 The PostgreSQL Global Development Group
 
 [Legal Notice](legalnotice.md)
 
----
-
 **Table of Contents**
 
-* [Preface](preface.md)
+## [Preface](preface.md)
 
 + [1. What Is PostgreSQL?](intro-whatis.md)
 + [2. A Brief History of PostgreSQL](history.md)
@@ -18,13 +16,13 @@ Copyright © 1996–2026 The PostgreSQL Global Development Group
 + [4. Further Information](resources.md)
 + [5. Bug Reporting Guidelines](bug-reporting.md)
 
-* [I. Tutorial](tutorial.md)
+## [I. Tutorial](tutorial.md)
 
 + [1. Getting Started](tutorial-start.md)
 + [2. The SQL Language](tutorial-sql.md)
 + [3. Advanced Features](tutorial-advanced.md)
 
-* [II. The SQL Language](sql.md)
+## [II. The SQL Language](sql.md)
 
 + [4. SQL Syntax](sql-syntax.md)
 + [5. Data Definition](ddl.md)
@@ -39,7 +37,7 @@ Copyright © 1996–2026 The PostgreSQL Global Development Group
 + [14. Performance Tips](performance-tips.md)
 + [15. Parallel Query](parallel-query.md)
 
-* [III. Server Administration](admin.md)
+## [III. Server Administration](admin.md)
 
 + [16. Installation from Binaries](install-binaries.md)
 + [17. Installation from Source Code](installation.md)
@@ -58,14 +56,14 @@ Copyright © 1996–2026 The PostgreSQL Global Development Group
 + [30. Just-in-Time Compilation (JIT)](jit.md)
 + [31. Regression Tests](regress.md)
 
-* [IV. Client Interfaces](client-interfaces.md)
+## [IV. Client Interfaces](client-interfaces.md)
 
 + [32. libpq — C Library](libpq.md)
 + [33. Large Objects](largeobjects.md)
 + [34. ECPG — Embedded SQL in C](ecpg.md)
 + [35. The Information Schema](information-schema.md)
 
-* [V. Server Programming](server-programming.md)
+## [V. Server Programming](server-programming.md)
 
 + [36. Extending SQL](extend.md)
 + [37. Triggers](triggers.md)
@@ -83,13 +81,13 @@ Copyright © 1996–2026 The PostgreSQL Global Development Group
 + [49. Archive Modules](archive-modules.md)
 + [50. OAuth Validator Modules](oauth-validators.md)
 
-* [VI. Reference](reference.md)
+## [VI. Reference](reference.md)
 
 + [I. SQL Commands](sql-commands.md)
 + [II. PostgreSQL Client Applications](reference-client.md)
 + [III. PostgreSQL Server Applications](reference-server.md)
 
-* [VII. Internals](internals.md)
+## [VII. Internals](internals.md)
 
 + [51. Overview of PostgreSQL Internals](overview.md)
 + [52. System Catalogs](catalogs.md)
@@ -112,7 +110,7 @@ Copyright © 1996–2026 The PostgreSQL Global Development Group
 + [69. How the Planner Uses Statistics](planner-stats-details.md)
 + [70. Backup Manifest Format](backup-manifest-format.md)
 
-* [VIII. Appendixes](appendixes.md)
+## [VIII. Appendixes](appendixes.md)
 
 + [A. PostgreSQL Error Codes](errcodes-appendix.md)
 + [B. Date/Time Support](datetime-appendix.md)
@@ -130,5 +128,5 @@ Copyright © 1996–2026 The PostgreSQL Global Development Group
 + [N. Color Support](color.md)
 + [O. Obsolete or Renamed Features](appendix-obsolete.md)
 
-* [Bibliography](biblio.md)
-* [Index](bookindex.md)
+## [Bibliography](biblio.md)
+## [Index](bookindex.md)

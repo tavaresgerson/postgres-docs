@@ -21,12 +21,17 @@ def rastrear_links(arquivo_md):
     with open(caminho_completo, 'r', encoding='utf-8') as f:
         conteudo = f.read()
 
-    # Regex heurística: Captura apenas links locais (.md) que iniciam como itens de lista.
-    # Ex: * [Texto](arquivo.md) ou 1. [Texto](arquivo.md#ancora)
-    padrao_toc = r'^[ \t]*[\*\-\+0-9\.]+\s+.*?(?:\[.*?\]\(([\w\.-]+\.md)(?:#.*?)?\))'
+    # REGEX CORRIGIDA:
+    # 1. ^[ \t]* : Aceita indentação inicial.
+    # 2. (?:(?:[\*\-\+]+|\d+(?:\.\d+)*\.?)\s*)? : Torna marcadores de lista (*, -, 1., 1.2., etc) opcionais.
+    # 3. (?:[*_`]*|<[^>]+>)* : Aceita formatação (negrito, itálico) ou HTML envolvendo o link.
+    # 4. \[.*?\] : Lê o texto visível do link.
+    # 5. \(([\w\.-]+\.md)[^\)]*\) : Captura rigorosamente apenas o arquivo .md, ignorando tudo o que vier depois (âncoras e títulos) até fechar o parêntese.
+    padrao_toc = r'^[ \t]*(?:(?:[\*\-\+]+|\d+(?:\.\d+)*\.?)\s*)?(?:[*_`]*|<[^>]+>)*\[.*?\]\(([\w\.-]+\.md)[^\)]*\)'
+
     links_no_toc = re.findall(padrao_toc, conteudo, flags=re.MULTILINE)
 
-    # Entra recursivamente em cada arquivo referenciado no sumário
+    # Entra recursivamente em cada arquivo referenciado no sumário local
     for link in links_no_toc:
         rastrear_links(link)
 
@@ -35,7 +40,7 @@ if __name__ == "__main__":
     print("Mapeando a estrutura do livro a partir do index.md...")
     rastrear_links("index.md")
 
-    # Garante que nenhum arquivo fique de fora (orfãos que não estão em nenhum TOC)
+    # Garante que nenhum arquivo fique de fora (órfãos que não estão em nenhum TOC)
     todos = [f for f in os.listdir(MD_DIR) if f.endswith('.md')]
     for arq in sorted(todos):
         if arq not in visitados:
