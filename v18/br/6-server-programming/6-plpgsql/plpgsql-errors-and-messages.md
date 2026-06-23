@@ -70,13 +70,13 @@ Como mostrado na quarta variante de sintaxe, também é possível escrever `RAIS
 
 A última variante de `RAISE` não tem nenhum parâmetro. Este formulário só pode ser usado dentro da cláusula `EXCEPTION` de um bloco `BEGIN`; ele faz com que o erro atualmente sendo tratado seja relançado.
 
-### Nota
+Nota
 
 Antes do PostgreSQL 9.1, `RAISE` sem parâmetros era interpretado como relançar o erro do bloco que contém o manipulador de exceção ativo. Assim, uma cláusula `EXCEPTION` aninhada nesse manipulador não conseguia capturá-lo, mesmo que a `RAISE` estivesse dentro do bloco da cláusula aninhada `EXCEPTION`. Isso foi considerado surpreendente e incompatível com o PL/SQL da Oracle.
 
 Se nenhum nome de condição ou SQLSTATE for especificado em um comando `RAISE EXCEPTION`, o padrão é usar `raise_exception` (`P0001`). Se nenhum texto de mensagem for especificado, o padrão é usar o nome da condição ou SQLSTATE como texto de mensagem.
 
-### Nota
+Nota
 
 Ao especificar um código de erro pelo código SQLSTATE, você não está limitado aos códigos de erro predefinidos, mas pode selecionar qualquer código de erro composto por cinco dígitos e/ou letras maiúsculas ASCII, exceto `00000`. É recomendável que você evite lançar códigos de erro que terminem em três zeros, porque esses são códigos de categoria e só podem ser capturados ao capturar toda a categoria.
 

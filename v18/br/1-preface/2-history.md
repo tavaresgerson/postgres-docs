@@ -1,9 +1,5 @@
 ## 2. Uma Breve História do PostgreSQL [#](#HISTORY)
 
-* [2.1. O Projeto Berkeley POSTGRES](history.md#HISTORY-BERKELEY)
-* [2.2. Postgres95](history.md#HISTORY-POSTGRES95)
-* [2.3. PostgreSQL](history.md#HISTORY-POSTGRESQL)
-
 O sistema de gerenciamento de banco de dados orientado a objetos, agora conhecido como PostgreSQL, é derivado do pacote POSTGRES escrito na Universidade da Califórnia em Berkeley. Com décadas de desenvolvimento por trás, o PostgreSQL é agora o banco de dados de código aberto mais avançado disponível em qualquer lugar.
 
 Outra abordagem sobre a história apresentada aqui pode ser encontrada no artigo do Dr. Joe Hellerstein “Olhando para trás no Postgres” [[hell18]](biblio.md#HELL18).

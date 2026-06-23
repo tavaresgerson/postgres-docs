@@ -80,7 +80,7 @@ meson test
 
 Para executar os testes pg_regress e pg_isolation_regress contra uma instância de postgres em execução, especifique **`--setup running`** como um argumento para **`meson test`**.
 
-### Nota
+Nota
 
 Se você está atualizando um sistema existente, não se esqueça de ler [Seção 18.6](upgrading.md), que tem instruções sobre atualização de um cluster.
 
@@ -122,7 +122,7 @@ Essas opções controlam onde o `ninja install` (ou `meson install`) colocará o
 
 `--mandir=DIRECTORY` [#](#CONFIGURE-MANDIR-MESON): As páginas do manual que vêm com o PostgreSQL serão instaladas neste diretório, em suas respectivas subdiretórios `manx`. O padrão é `DATADIR/man`.
 
-### Nota
+Nota
 
 Preocupamo-nos em tornar possível instalar o PostgreSQL em locais de instalação compartilhados (como `/usr/local/include`) sem interferir no espaço de nomes do resto do sistema. Primeiro, a string “`/postgresql`” é automaticamente anexada a `datadir`, `sysconfdir` e `docdir`, a menos que o nome de diretório totalmente expandido já contenha a string “`postgres`” ou “`pgsql`”. Por exemplo, se você escolher `/usr/local` como prefixo, a documentação será instalada em `/usr/local/doc/postgresql`, mas se o prefixo for `/opt/postgres`, então ela estará em `/opt/postgres/doc`. Os arquivos de cabeçalho C públicos das interfaces do cliente são instalados em `includedir` e são limpos em termos de espaço de nomes. Os arquivos de cabeçalho internos e os arquivos de cabeçalho do servidor são instalados em diretórios privados sob `includedir`. Consulte a documentação de cada interface para obter informações sobre como acessar seus arquivos de cabeçalho. Finalmente, se apropriado, um subdiretório privado também será criado sob [[`libdir`] para módulos carregáveis dinamicamente.
 

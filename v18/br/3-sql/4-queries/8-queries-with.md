@@ -54,7 +54,7 @@ A forma geral de uma consulta recursiva `WITH` é sempre um *termo não recursiv
 1. Avalie o termo recursivo, substituindo o conteúdo atual da tabela de trabalho pela autoreferência recursiva. Para `UNION` (mas não `UNION ALL`), descarte as linhas duplicadas e as linhas que dupliquem qualquer linha de resultado anterior. Inclua todas as linhas restantes no resultado da consulta recursiva e, também, coloque-as em uma *tabela intermediária* temporária.
 2. Substitua o conteúdo da tabela de trabalho pelo conteúdo da tabela intermediária, em seguida, limpe a tabela intermediária.
 
-### Nota
+Nota
 
 Embora o `RECURSIVE` permita que as consultas sejam especificadas recursivamente, internamente, essas consultas são avaliadas iterativamente.
 

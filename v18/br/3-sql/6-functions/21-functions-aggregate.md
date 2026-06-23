@@ -1630,7 +1630,7 @@ SELECT xmlagg(x) FROM (SELECT x FROM test ORDER BY y DESC) AS tab;
 
 Cuidado, pois essa abordagem pode falhar se o nível da consulta externa contiver processamento adicional, como uma junção, porque isso pode fazer com que a saída da subconsulta seja reordenada antes de o agregado ser calculado.
 
-### Nota
+Nota
 
 Os agregados booleanos `bool_and` e `bool_or` correspondem aos agregados padrão SQL `every` e `any` ou `some`. O PostgreSQL suporta `every`, mas não `any` ou `some`, porque há uma ambiguidade embutida na sintaxe padrão:
 
@@ -1640,7 +1640,7 @@ SELECT b1 = ANY((SELECT b2 FROM t2 ...)) FROM t1 ...;
 
 Aqui `ANY` pode ser considerado como introduzindo uma subconsulta, ou como sendo uma função agregada, se a subconsulta retornar uma única linha com um valor booleano. Assim, o nome padrão não pode ser dado a esses agregados.
 
-### Nota
+Nota
 
 Os usuários acostumados a trabalhar com outros sistemas de gerenciamento de banco de dados SQL podem ficar desapontados com o desempenho do agregado `count` quando aplicado a toda a tabela. Uma consulta como:
 

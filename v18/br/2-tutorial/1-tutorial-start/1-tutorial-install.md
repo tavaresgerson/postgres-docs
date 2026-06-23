@@ -1,4 +1,4 @@
-## 1.1. Instalação [#](#TUTORIAL-INSTALL)
+### 1.1. Instalação [#](#TUTORIAL-INSTALL)
 
 Antes de poder usar o PostgreSQL, é claro, você precisa instalá-lo. É possível que o PostgreSQL já esteja instalado em seu site, seja porque foi incluído na distribuição do seu sistema operacional ou porque o administrador do sistema já o instalou. Se esse for o caso, você deve obter informações da documentação do sistema operacional ou do administrador do sistema sobre como acessar o PostgreSQL.
 

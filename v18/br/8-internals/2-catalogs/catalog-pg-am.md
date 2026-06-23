@@ -113,6 +113,6 @@ O catálogo `pg_am` armazena informações sobre os métodos de acesso à relaç
 
 
 
-### Nota
+Nota
 
 Antes do PostgreSQL 9.6, `pg_am` continha muitas colunas adicionais que representavam propriedades dos métodos de acesso ao índice. Esses dados agora são visíveis apenas diretamente no nível do código C. No entanto, `pg_index_column_has_property()` e as funções relacionadas foram adicionadas para permitir que consultas SQL inspecionem as propriedades dos métodos de acesso ao índice; veja [Tabela 9.76](functions-info.md#FUNCTIONS-INFO-CATALOG-TABLE).

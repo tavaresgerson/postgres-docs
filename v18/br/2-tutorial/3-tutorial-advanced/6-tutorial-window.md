@@ -1,4 +1,4 @@
-## 3.5. Funções de janela [#](#TUTORIAL-WINDOW)
+### 3.5. Funções de janela [#](#TUTORIAL-WINDOW)
 
 Uma *função de janela* realiza um cálculo em um conjunto de linhas de tabela que estão de alguma forma relacionadas à linha atual. Isso é comparável ao tipo de cálculo que pode ser feito com uma função agregada. No entanto, as funções de janela não fazem com que as linhas sejam agrupadas em uma única linha de saída, como as chamadas agregadas não de janela faria. Em vez disso, as linhas retêm suas identidades separadas. Nos bastidores, a função de janela é capaz de acessar mais do que apenas a linha atual do resultado da consulta.
 

@@ -91,7 +91,7 @@ Cada valor vinculado pode ser citado usando caracteres `"` (aspas duplas). Isso 
 
 Espaços em branco são permitidos antes e depois do valor da faixa, mas quaisquer espaços em branco entre os parênteses ou chaves são considerados parte do valor da faixa inferior ou superior. (Dependendo do tipo de elemento, pode ou não ser significativo.)
 
-### Nota
+Nota
 
 Essas regras são muito semelhantes às que se aplicam à escrita de valores de campo em literais de tipo composto. Consulte [Seção 8.16.6] para comentários adicionais.
 

@@ -26,7 +26,7 @@ Você pode criar a ilusão de uma visão atualizável definindo as regras `ON IN
 
 Há uma ressalva se você tentar usar regras condicionais para atualizações de visualização complexas: *deve* haver uma regra `INSTEAD` incondicional para cada ação que você deseja permitir na visualização. Se a regra for condicional ou não for `INSTEAD`, o sistema ainda rejeitará as tentativas de realizar a ação de atualização, porque pensa que, em alguns casos, pode acabar tentando realizar a ação na tabela fictícia da visualização. Se você deseja lidar com todos os casos úteis em regras condicionais, adicione uma regra `DO INSTEAD NOTHING` incondicional para garantir que o sistema entenda que nunca será chamado para atualizar a tabela fictícia. Em seguida, faça as regras condicionais não `INSTEAD`; nos casos em que elas são aplicadas, elas adicionam à ação padrão `INSTEAD NOTHING`. (Este método atualmente não funciona para suportar consultas `RETURNING`, no entanto.)
 
-### Nota
+Nota
 
 Uma visão que é simples o suficiente para ser automaticamente atualizável (consulte [CREATE VIEW](sql-createview.md "CREATE VIEW")) não requer uma regra criada pelo usuário para ser atualizável. Embora você possa criar uma regra explícita de qualquer maneira, a transformação de atualização automática geralmente supera uma regra explícita.
 

@@ -9,7 +9,7 @@ A implementação JIT do PostgreSQL pode incluir os corpos das funções dos tip
 
 Os arquivos relevantes devem ser instalados em `$pkglibdir/bitcode/$extension/` e um resumo deles em `$pkglibdir/bitcode/$extension.index.bc`, onde `$pkglibdir` é o diretório retornado por `pg_config --pkglibdir` e `$extension` é o nome base da biblioteca compartilhada da extensão.
 
-### Nota
+Nota
 
 Para funções embutidas no próprio PostgreSQL, o bitcode é instalado em `$pkglibdir/bitcode/postgres`.
 

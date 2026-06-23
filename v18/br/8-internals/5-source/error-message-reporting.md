@@ -59,7 +59,7 @@ As rotinas auxiliares disponíveis para `ereport` são:
 * `errtablecol(Relation rel, int attnum)` pode ser chamado para especificar a supressão da parte `STATEMENT:` de uma mensagem no log do postmaster. Geralmente, isso é apropriado se o texto da mensagem inclui a declaração atual já.
 * `errhidecontext(bool hide_ctx)` pode ser chamado para especificar a supressão da parte `CONTEXT:` de uma mensagem no log do postmaster. Isso deve ser usado apenas para mensagens de depuração verbose onde a inclusão repetida do contexto faria o log ficar muito grande.
 
-### Nota
+Nota
 
 No máximo, uma das funções `errtable`, `errtablecol`, `errtableconstraint`, `errdatatype` ou `errdomainconstraint` deve ser usada em uma chamada `ereport`. Essas funções existem para permitir que as aplicações extraiam o nome de um objeto de banco de dados associado à condição de erro sem ter que examinar o texto do erro potencialmente localizado. Essas funções devem ser usadas em relatórios de erro para os quais é provável que as aplicações desejem ter tratamento automático de erros. A partir do PostgreSQL 9.3, a cobertura completa existe apenas para erros na classe SQLSTATE 23 (violação de restrição de integridade), mas isso provavelmente será expandido no futuro.
 

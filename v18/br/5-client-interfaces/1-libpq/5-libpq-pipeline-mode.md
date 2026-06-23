@@ -16,7 +16,7 @@ Embora a API de pipeline do libpq tenha sido introduzida no PostgreSQL 14, é um
 
 Para emitir pipelines, o aplicativo deve alternar a conexão para o modo pipeline, o que é feito com `PQenterPipelineMode`(libpq-pipeline-mode.md#LIBPQ-PQENTERPIPELINEMODE). `PQpipelineStatus`(libpq-pipeline-mode.md#LIBPQ-PQPIPELINESTATUS) pode ser usado para testar se o modo pipeline está ativo. No modo pipeline, apenas operações assíncronas (libpq-async.md "32.4. Asynchronous Command Processing") que utilizam o protocolo de consulta estendida são permitidas, as cadeias de comando que contêm múltiplos comandos SQL são desaconselhadas, e o mesmo vale para `COPY`. Usar funções de execução de comandos síncronas, como `PQfn`, `PQexec`, `PQexecParams`, `PQprepare`, `PQexecPrepared`, `PQdescribePrepared`, `PQdescribePortal`, `PQclosePrepared`, `PQclosePortal`, é uma condição de erro. `PQsendQuery` também é desaconselhado, porque utiliza o protocolo de consulta simples. Uma vez que todos os comandos emitidos tenham tido seus resultados processados e o resultado final do pipeline tenha sido consumido, o aplicativo pode retornar ao modo não pipeline com [`PQexitPipelineMode`](libpq-pipeline-mode.md#LIBPQ-PQEXITPIPELINEMODE).
 
-### Nota
+Nota
 
 É melhor usar o modo de canal com o libpq em modo não bloqueante (libpq-async.md#LIBPQ-PQSETNONBLOCKING). Se usado em modo bloqueante, é possível ocorrer um bloqueio entre cliente e servidor. [[15]](#ftn.id-1.7.3.12.9.3.1.3)
 
@@ -48,7 +48,7 @@ O cliente *deve* processar resultados com `PQgetResult` durante a recuperação 
 
 Se o pipeline tiver utilizado uma transação implícita, as operações que já foram executadas serão revertidas e as operações que estavam em fila para seguir a operação falha serão ignoradas completamente. O mesmo comportamento ocorre se o pipeline iniciar e confirmar uma única transação explícita (ou seja, a primeira declaração é `BEGIN` e a última é `COMMIT`) exceto que a sessão permaneça em um estado de transação abortado no final do pipeline. Se um pipeline contiver *múltiplas transações explícitas*, todas as transações que foram confirmadas antes do erro permanecem confirmadas, a transação atualmente em andamento é abortada e todas as operações subsequentes são ignoradas completamente, incluindo as transações subsequentes. Se um ponto de sincronização de pipeline ocorrer com um bloco de transação explícita em estado abortado, o próximo pipeline se tornará abortado imediatamente, a menos que o próximo comando coloque a transação no modo normal com `ROLLBACK`.
 
-### Nota
+Nota
 
 O cliente não deve assumir que o trabalho está comprometido quando *envia* um `COMMIT` — apenas quando o resultado correspondente é recebido para confirmar que o compromisso está completo. Como os erros chegam de forma assíncrona, o aplicativo precisa ser capaz de reiniciar a partir da última mudança *recebida* e reenviar o trabalho feito após esse ponto, se algo der errado.
 

@@ -1,4 +1,4 @@
-## 3.3. Chaves Estrangeiras [#](#TUTORIAL-FK)
+### 3.3. Chaves Estrangeiras [#](#TUTORIAL-FK)
 
 Recorde as tabelas `weather` e `cities` de [Capítulo 2](tutorial-sql.md "Chapter 2. The SQL Language"). Considere o seguinte problema: você quer garantir que ninguém possa inserir linhas na tabela `weather` que não tenham uma entrada correspondente na tabela `cities`. Isso é chamado de manutenção da *integridade referencial* dos seus dados. Em sistemas de banco de dados simplificados, isso seria implementado (se for) primeiro, olhando para a tabela `cities` para verificar se existe um registro correspondente, e então inserindo ou rejeitando os novos registros `weather`. Essa abordagem tem vários problemas e é muito inconveniente, então o PostgreSQL pode fazer isso por você.
 

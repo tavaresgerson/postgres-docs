@@ -25,7 +25,7 @@ $$ LANGUAGE plperl;
 
 Um bloco de código anônimo não recebe argumentos e qualquer valor que ele possa retornar é descartado. Caso contrário, ele se comporta exatamente como uma função.
 
-### Nota
+Nota
 
 O uso de subrotinas aninhadas nomeadas é perigoso em Perl, especialmente se elas se referirem a variáveis lexicais no escopo interno. Como uma função PL/Perl é envolvida em uma subrotina, qualquer subrotina nomeada que você colocar dentro de uma será aninhada. Em geral, é muito mais seguro criar subrotinas anônimas que você chame via um coderef. Para mais informações, consulte as entradas para `Variable "%s" will not stay shared` e `Variable "%s" is not available` na página do manual perldiag, ou pesquise na Internet por “subrotina aninhada nomeada em perl”.
 
@@ -42,7 +42,7 @@ CREATE FUNCTION perl_max (integer, integer) RETURNS integer AS $$
 $$ LANGUAGE plperl;
 ```
 
-### Nota
+Nota
 
 Os argumentos serão convertidos do codificação do banco de dados para UTF-8 para uso dentro do PL/Perl, e então convertidos de UTF-8 de volta para a codificação do banco de dados ao retornar.
 
@@ -119,7 +119,7 @@ $$ LANGUAGE plperl;
 SELECT concat_array_elements(ARRAY['PL','/','Perl']);
 ```
 
-### Nota
+Nota
 
 Matrizes multidimensionais são representadas como referências a matrizes de dimensão inferior, de forma comum a todos os programadores Perl.
 

@@ -239,7 +239,7 @@ Os seguintes códigos de campo estão disponíveis:
 
 `PG_DIAG_SOURCE_FUNCTION` [#](#LIBPQ-PG-DIAG-SOURCE-FUNCTION) :   O nome da função de código-fonte que reporta o erro.
 
-### Nota
+Nota
 
 Os campos para o nome do esquema, nome da tabela, nome da coluna, nome do tipo de dados e nome da restrição são fornecidos apenas para um número limitado de tipos de erro; veja [Apêndice A](errcodes-appendix.md). Não assuma que a presença de qualquer um desses campos garanta a presença de outro campo. As fontes de erro principais observam as inter-relações mencionadas acima, mas as funções definidas pelo usuário podem usar esses campos de outras maneiras. Da mesma forma, não assuma que esses campos denotem objetos contemporâneos no banco de dados atual.
 

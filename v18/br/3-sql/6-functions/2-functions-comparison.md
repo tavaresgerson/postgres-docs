@@ -202,7 +202,7 @@ Os operadores de comparação comuns estão disponíveis, conforme mostrado na [
 
 
 
-### Nota
+Nota
 
 `<>` é a notação SQL padrão para “não igual”. `!=` é um alias, que é convertido para `<>` em uma fase muito inicial do parsing. Portanto, não é possível implementar os operadores `!=` e `<>` que fazem coisas diferentes.
 
@@ -913,7 +913,7 @@ Observe que `BETWEEN` trata os valores do ponto final como incluídos no interva
 
 As várias variantes de `BETWEEN` são implementadas em termos dos operadores de comparação ordinários, e, portanto, funcionarão para qualquer tipo de dados que possa ser comparado.
 
-### Nota
+Nota
 
 O uso de `AND` na sintaxe de `BETWEEN` cria uma ambiguidade com o uso de `AND` como operador lógico. Para resolver isso, apenas um conjunto limitado de tipos de expressão são permitidos como o segundo argumento de uma cláusula de `BETWEEN`. Se você precisar escrever uma subexpressão mais complexa em `BETWEEN`, escreva parênteses ao redor da subexpressão.
 

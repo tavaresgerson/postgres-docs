@@ -98,7 +98,7 @@ CREATE VIEW shoe_ready AS
 
 O comando `CREATE VIEW` para a visualização `shoelace` (que é a mais simples que temos) criará uma relação `shoelace` e uma entrada em `pg_rewrite` que indica que há uma regra de reescrita que deve ser aplicada sempre que a relação `shoelace` seja referenciada em uma tabela de intervalo de consulta. A regra não tem qualificação de regra (discutida mais tarde, com as regras não `SELECT`, uma vez que as regras `SELECT` atualmente não podem tê-las) e é `INSTEAD`. Note que as qualificações de regra não são as mesmas que as qualificações de consulta. A ação da nossa regra tem uma qualificação de consulta. A ação da regra é uma árvore de consulta que é uma cópia da declaração `SELECT` no comando de criação da visualização.
 
-### Nota
+Nota
 
 As duas entradas de tabela de intervalo adicional para `NEW` e `OLD` que você pode ver na entrada `pg_rewrite` não são de interesse para as regras de `SELECT`.
 

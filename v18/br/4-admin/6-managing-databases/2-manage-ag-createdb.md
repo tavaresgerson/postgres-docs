@@ -24,7 +24,7 @@ createdb dbname
 
 `createdb` não faz mágica. Ele se conecta ao banco de dados `postgres` e emite o comando `CREATE DATABASE`, exatamente como descrito acima. A página de referência [createdb](app-createdb.md "createdb") contém os detalhes de invocação. Note que `createdb` sem quaisquer argumentos criará um banco de dados com o nome do usuário atual.
 
-### Nota
+Nota
 
 [Capítulo 20](client-authentication.md "Chapter 20. Client Authentication") contém informações sobre como restringir quem pode se conectar a um banco de dados específico.
 

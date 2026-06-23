@@ -54,7 +54,7 @@ Essa opção é ignorada ao emitir um arquivo de saída de arquivo (não textual
 
 Qualquer relação de configuração registrada por `pg_extension_config_dump` é incluída no dump se sua extensão for especificada por `--extension`.
 
-### Nota
+Nota
 
 Quando `-e` é especificado, o pg_dump não faz qualquer tentativa de drenar quaisquer outros objetos de banco de dados que a(s) extensão(ões) selecionada(s) possa(m) depender. Portanto, não há garantia de que os resultados de um dump de extensão específica possam ser restaurados com sucesso em um banco de dados limpo.
 
@@ -82,11 +82,11 @@ Para realizar um dump paralelo, o servidor de banco de dados precisa suportar in
 
 `-n pattern` `--schema=pattern`: Exclua apenas os esquemas que correspondem a *`pattern`*; isso seleciona tanto o próprio esquema quanto todos os objetos contidos nele. Quando esta opção não é especificada, todos os esquemas não-sistemáticos no banco de dados de destino serão excluídos. Múltiplos esquemas podem ser selecionados escrevendo vários `-n` switches. O parâmetro *`pattern`* é interpretado como um padrão de acordo com as mesmas regras usadas pelos comandos `\d` do psql (veja [Padrões](app-psql.md#APP-PSQL-PATTERNS "Patterns")), então múltiplos esquemas também podem ser selecionados escrevendo caracteres curinga no padrão. Ao usar caracteres curinga, tenha cuidado em citar o padrão, se necessário, para evitar que o shell expanda os caracteres curinga; veja [Exemplos](app-pgdump.md#PG-DUMP-EXAMPLES "Examples") abaixo.
 
-### Nota
+Nota
 
 Quando o `-n` é especificado, o pg_dump não faz qualquer tentativa de drenar quaisquer outros objetos de banco de dados que os esquemas selecionados possam depender. Portanto, não há garantia de que os resultados de um dump de esquema específico possam ser restaurados com sucesso em um banco de dados limpo.
 
-### Nota
+Nota
 
 Objetos não esquemáticos, como objetos grandes, não são descarregados quando o `-n` é especificado. Você pode adicionar objetos grandes de volta ao descarregamento com o interruptor `--large-objects`.
 
@@ -116,7 +116,7 @@ Além das tabelas, essa opção pode ser usada para descartar a definição de v
 
 Os interruptores `-n` e `-N` não têm efeito quando o `-t` é usado, porque as tabelas selecionadas por `-t` serão descarregadas independentemente desses interruptores, e os objetos que não são tabelas não serão descarregados.
 
-### Nota
+Nota
 
 Quando `-t` é especificado, o pg_dump não faz qualquer tentativa de drenar quaisquer outros objetos de banco de dados que as tabelas selecionadas possam depender. Portanto, não há garantia de que os resultados de um dump de uma tabela específica possam ser restaurados com sucesso em um banco de dados limpo.
 
@@ -194,11 +194,11 @@ Os arquivos de exemplo estão listados abaixo na seção [Exemplos](app-pgdump.m
 
 `--include-foreign-data=foreignserver`: Armazene os dados de qualquer tabela estrangeira com um servidor estrangeiro que corresponda ao padrão *`foreignserver`*. Múltiplos servidores estrangeiros podem ser selecionados escrevendo vários interruptores `--include-foreign-data`. Além disso, o parâmetro *`foreignserver`* é interpretado como um padrão de acordo com as mesmas regras usadas pelos comandos `\d` do psql (ver [Padrões](app-psql.md#APP-PSQL-PATTERNS)), então múltiplos servidores estrangeiros também podem ser selecionados escrevendo caracteres curinga no padrão. Ao usar caracteres curinga, tenha cuidado em citar o padrão, se necessário, para evitar que o shell expanda os caracteres curinga; veja [Exemplos](app-pgdump.md#PG-DUMP-EXAMPLES) abaixo. A única exceção é que um padrão vazio é proibido.
 
-### Nota
+Nota
 
 O uso de caracteres especiais em `--include-foreign-data` pode resultar em acesso a servidores estrangeiros inesperados. Além disso, para usar essa opção com segurança, certifique-se de que o servidor nomeado deve ter um proprietário de confiança.
 
-### Nota
+Nota
 
 Quando `--include-foreign-data` é especificado, o pg_dump não verifica se a tabela externa é legível. Portanto, não há garantia de que os resultados de um dump de tabela externa possam ser restaurados com sucesso.
 

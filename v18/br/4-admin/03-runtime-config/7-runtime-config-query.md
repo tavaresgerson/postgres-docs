@@ -61,7 +61,7 @@ Esses parâmetros de configuração fornecem um método rudimentar para influenc
 
 As variáveis de *custo* descritas nesta seção são medidas em uma escala arbitrária. Apenas seus valores relativos importam, portanto, escalá-las todas para cima ou para baixo pelo mesmo fator não resultará em nenhuma mudança nas escolhas do planejador. Por padrão, essas variáveis de custo são baseadas no custo de buscas sequenciais de página; ou seja, `seq_page_cost` é convencionalmente definido como `1.0` e as outras variáveis de custo são definidas com referência a isso. Mas você pode usar uma escala diferente se preferir, como tempos de execução reais em milissegundos em uma máquina específica.
 
-### Nota
+Nota
 
 Infelizmente, não há um método bem definido para determinar os valores ideais para as variáveis de custo. Eles são melhor tratados como médias sobre toda a mistura de consultas que uma instalação específica receberá. Isso significa que mudá-los com base apenas em alguns experimentos é muito arriscado.
 

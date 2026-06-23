@@ -59,6 +59,6 @@ extern void RegisterCustomRmgr(RmgrId rmid, const RmgrData *rmgr);
 
 Coloque o módulo de extensão que implementa o gerenciador de recursos personalizado em [shared_preload_libraries](runtime-config-client.md#GUC-SHARED-PRELOAD-LIBRARIES) para que ele seja carregado cedo durante o início do PostgreSQL.
 
-### Nota
+Nota
 
 A extensão deve permanecer em `shared_preload_libraries` enquanto houver quaisquer registros personalizados do WAL no sistema. Caso contrário, o PostgreSQL não poderá aplicar ou decodificar os registros personalizados do WAL, o que pode impedir o início do servidor.

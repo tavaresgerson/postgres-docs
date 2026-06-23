@@ -1,4 +1,4 @@
-## 1.3. Criando um banco de dados [#](#TUTORIAL-CREATEDB)
+### 1.3. Criando um banco de dados [#](#TUTORIAL-CREATEDB)
 
 O primeiro teste para verificar se você pode acessar o servidor de banco de dados é tentar criar um banco de dados. Um servidor PostgreSQL em execução pode gerenciar muitos bancos de dados. Normalmente, um banco de dados separado é usado para cada projeto ou para cada usuário.
 

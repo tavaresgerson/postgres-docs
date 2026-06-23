@@ -84,7 +84,7 @@ Quando esta opção é usada, o psql se conectará ao banco de dados `postgres`,
 
 `-S` `--single-line` [#](#APP-PSQL-OPTION-SINGLE-LINE): Funciona no modo de linha única, onde uma nova linha termina um comando SQL, assim como um ponto e vírgula.
 
-### Nota
+Nota
 
 Este modo é fornecido para aqueles que insistem em usá-lo, mas você não é necessariamente encorajado a usá-lo. Em particular, se você misturar SQL e comandos meta em uma linha, a ordem de execução pode não ser sempre clara para o usuário inexperiente.
 
@@ -284,7 +284,7 @@ O formulário de comando `\d+` é idêntico, exceto que: são exibidas mais info
 
 Por padrão, apenas os objetos criados pelo usuário são mostrados; forneça um padrão ou o modificador `S` para incluir objetos do sistema.
 
-### Nota
+Nota
 
 Se `\d` for usado sem um argumento *`pattern`*, é equivalente a `\dtvmsE`, que mostrará uma lista de todas as tabelas, visualizações, visualizações materializadas, sequências e tabelas externas visíveis. Essa é uma medida de conveniência.
 
@@ -506,7 +506,7 @@ Se o buffer de consulta atual estiver vazio, a consulta enviada mais recentement
 
 Ao contrário da maioria dos outros meta-comandos, todo o resto da linha é sempre considerado o(s) argumento(s) de `\help`, e nem a interpolação de variáveis nem a expansão de aspas duplas são realizadas nos argumentos.
 
-### Nota
+Nota
 
 Para simplificar a digitação, comandos que consistem em várias palavras não precisam ser citados. Assim, é permitido digitar **`\help alter table`**.
 
@@ -516,7 +516,7 @@ Para simplificar a digitação, comandos que consistem em várias palavras não 
 
 Se *`filename`* for `-` (com hífen), então a entrada padrão é lida até uma indicação de EOF ou `\q` meta-comando. Isso pode ser usado para intercalar a entrada interativa com a entrada de arquivos. Observe que o comportamento do Readline será usado apenas se estiver ativo no nível mais externo.
 
-### Nota
+Nota
 
 Se você deseja ver as linhas no ecrã conforme são lidas, deve definir a variável `ECHO` para `all`.
 
@@ -704,7 +704,7 @@ Os nomes de variáveis válidos podem conter letras, dígitos e sublinhados. Con
 
 Algumas variáveis são especiais, pois controlam o comportamento do psql ou são automaticamente definidas para refletir o estado da conexão. Essas variáveis são documentadas em [Variáveis](app-psql.md#APP-PSQL-VARIABLES), abaixo.
 
-### Nota
+Nota
 
 Este comando não está relacionado ao comando SQL `SET` (sql-set.md "SET").
 
@@ -836,7 +836,7 @@ Isso funciona tanto em comandos SQL regulares quanto em meta-comandos; há mais 
 
 Se você chamar `\set` sem um segundo argumento, a variável é definida com um valor de cadeia vazia. Para desdefinir (ou seja, excluir) uma variável, use o comando `\unset`. Para mostrar os valores de todas as variáveis, chame `\set` sem qualquer argumento.
 
-### Nota
+Nota
 
 Os argumentos de `\set` estão sujeitos às mesmas regras de substituição que com outros comandos. Assim, você pode construir referências interessantes, como `\set :foo 'something'`, e obter "links suaves" ou "variáveis variáveis" de fama de Perl ou PHP, respectivamente. Infelizmente (ou por sorte?), não há como fazer algo útil com esses construtos. Por outro lado, `\set bar :foo` é uma maneira perfeitamente válida de copiar uma variável.
 
@@ -848,11 +848,11 @@ As variáveis especialmente tratadas são:
 
 `AUTOCOMMIT` [#](#APP-PSQL-VARIABLES-AUTOCOMMIT): Quando `on` (padrão), cada comando SQL é automaticamente commitado após a conclusão bem-sucedida. Para adiar o commit nesse modo, você deve inserir um comando SQL de `BEGIN` ou `START TRANSACTION`. Quando `off` ou não definido, os comandos SQL não são comprometidos até que você emita explicitamente `COMMIT` ou `END`. O modo off autocommit funciona emitindo um `BEGIN` implícito para você, logo antes de qualquer comando que não esteja em um bloco de transação e não seja ele mesmo um `BEGIN` ou outro comando de controle de transação, nem um comando que não possa ser executado dentro de um bloco de transação (como `VACUUM`).
 
-### Nota
+Nota
 
 No modo de autocommit-off, você deve explicitamente abandonar qualquer transação falha, inserindo `ABORT` ou `ROLLBACK`. Além disso, lembre-se de que, se você sair da sessão sem cometer, seu trabalho será perdido.
 
-### Nota
+Nota
 
 O modo autocommit-on é o comportamento tradicional do PostgreSQL, mas o autocommit-off está mais próximo da especificação SQL. Se você prefere o autocommit-off, pode querer configurá-lo no arquivo de nível de sistema `psqlrc` ou no seu arquivo `~/.psqlrc`.
 
@@ -880,7 +880,7 @@ Embora você possa usar qualquer formato de saída com este recurso, o formato p
 
 `HISTCONTROL` [#](#APP-PSQL-VARIABLES-HISTCONTROL) : Se esta variável estiver definida como `ignorespace`, linhas que começam com um espaço não são inseridas na lista de histórico. Se definida como um valor de `ignoredups`, linhas que correspondem à linha de histórico anterior não são inseridas. Um valor de `ignoreboth` combina as duas opções. Se definida como `none` (padrão), todas as linhas lidas no modo interativo são salvas na lista de histórico.
 
-### Nota
+Nota
 
 Essa característica foi plágio descarado do Bash.
 
@@ -892,13 +892,13 @@ Essa característica foi plágio descarado do Bash.
 
 Em `~/.psqlrc`, isso fará com que o psql mantenha um histórico separado para cada banco de dados.
 
-### Nota
+Nota
 
 Essa característica foi plágio descarado do Bash.
 
 `HISTSIZE` [#](#APP-PSQL-VARIABLES-HISTSIZE): O número máximo de comandos para armazenar no histórico de comandos (padrão 500). Se definido como um valor negativo, não há limite aplicado.
 
-### Nota
+Nota
 
 Essa característica foi plágio descarado do Bash.
 
@@ -906,7 +906,7 @@ Essa característica foi plágio descarado do Bash.
 
 `IGNOREEOF` [#](#APP-PSQL-VARIABLES-IGNOREEOF): Se definido como 1 ou menos, enviar um caractere EOF (geralmente **Ctrl**+**D**) para uma sessão interativa do psql terminará o aplicativo. Se definido como um valor numérico maior, esse número consecutivo de caracteres EOF deve ser digitado para terminar uma sessão interativa. Se a variável for definida como um valor não numérico, ela será interpretada como 10. O padrão é 0.
 
-### Nota
+Nota
 
 Essa característica foi plágio descarado do Bash.
 
@@ -1046,7 +1046,7 @@ resulta em um prompt em amarelo sobre preto (`1;`) em `33;40` em terminais VT100
 
 Para inserir um sinal de porcentagem em seu prompt, escreva `%%`. Os prompts padrão são `'%/%R%x%# '` para os prompts 1 e 2, e `'>> '` para o prompt 3.
 
-### Nota
+Nota
 
 Esse recurso foi plágio descarado de tcsh.
 

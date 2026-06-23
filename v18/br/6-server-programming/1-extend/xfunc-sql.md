@@ -72,7 +72,7 @@ mas isso não vai funcionar:
 INSERT INTO $1 VALUES (42);
 ```
 
-### Nota
+Nota
 
 A capacidade de usar nomes para referenciar argumentos de funções SQL foi adicionada no PostgreSQL 9.2. As funções que devem ser usadas em servidores mais antigos devem usar a notação `$n`.
 
@@ -660,11 +660,11 @@ SELECT x, CASE WHEN x > 0 THEN generate_series(1, 5) ELSE 0 END FROM tab;
 
 Pode parecer que isso deve produzir cinco repetições de linhas de entrada que têm `x > 0`, e uma única repetição das que não têm; mas, na verdade, porque `generate_series(1, 5)` seria executado em um item implícito `LATERAL FROM` antes que a expressão `CASE` seja avaliada, ele produziria cinco repetições de cada linha de entrada. Para reduzir a confusão, esses casos produzem um erro de tempo de análise em vez disso.
 
-### Nota
+Nota
 
 Se o último comando de uma função for `INSERT`, `UPDATE`, `DELETE` ou `MERGE` com `RETURNING`, esse comando será sempre executado até o final, mesmo que a função não seja declarada com `SETOF` ou se a consulta que a chama não extrair todas as linhas do resultado. Quaisquer linhas extras produzidas pela cláusula `RETURNING` são silenciosamente descartadas, mas as modificações de tabela comandadas ainda acontecem (e todas são concluídas antes de retornar da função).
 
-### Nota
+Nota
 
 Antes do PostgreSQL 10, colocar mais de uma função que retorna um conjunto na mesma lista de seleção não se comportava de forma sensível, a menos que elas sempre produzissem números iguais de linhas. Caso contrário, o que você obteve foi um número de linhas de saída igual ao mínimo múltiplo comum dos números de linhas produzidos pelas funções que retornam um conjunto. Além disso, as funções que retornam um conjunto aninhadas não funcionavam como descrito acima; em vez disso, uma função que retorna um conjunto poderia ter no máximo um argumento que retorna um conjunto, e cada ninho de funções que retornam um conjunto era executado de forma independente. Além disso, a execução condicional (funções que retornam um conjunto dentro de `CASE` etc.) era anteriormente permitida, complicando ainda mais as coisas. É recomendado o uso da sintaxe `LATERAL` ao escrever consultas que precisam funcionar em versões anteriores do PostgreSQL, porque isso dará resultados consistentes em diferentes versões. Se você tem uma consulta que depende da execução condicional de uma função que retorna um conjunto, você pode ser capaz de corrigir isso movendo o teste condicional para uma função que retorna um conjunto personalizada. Por exemplo,
 

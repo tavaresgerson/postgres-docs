@@ -1,4 +1,4 @@
-## 2.9. Deletações [#](#TUTORIAL-DELETE)
+### 2.9. Deletações [#](#TUTORIAL-DELETE)
 
 As linhas podem ser removidas de uma tabela usando o comando `DELETE`. Suponha que você não esteja mais interessado no clima de Hayward. Então, você pode fazer o seguinte para excluir essas linhas da tabela:
 

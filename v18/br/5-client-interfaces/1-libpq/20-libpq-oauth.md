@@ -20,7 +20,7 @@ Os aplicativos do cliente podem implementar seus próprios fluxos para personali
 
 Para que um fluxo de cliente OAuth possa ser utilizado, a string de conexão deve, no mínimo, conter [oauth_issuer](libpq-connect.md#LIBPQ-CONNECT-OAUTH-ISSUER) e [oauth_client_id](libpq-connect.md#LIBPQ-CONNECT-OAUTH-CLIENT-ID). (Essas configurações são determinadas pelo provedor de OAuth da sua organização.) O fluxo integrado também exige que o servidor de autorização OAuth publique um endpoint de autorização de dispositivo.
 
-### Nota
+Nota
 
 O fluxo de autorização de dispositivo integrado atualmente não é suportado no Windows. Fluxo de cliente personalizado ainda pode ser implementado.
 

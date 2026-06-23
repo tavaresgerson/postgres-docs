@@ -57,11 +57,11 @@ NextSampleTuple (SampleScanState *node,
 
 Retorna o número de deslocamento do próximo tuplo a ser amostrado na página especificada, ou `InvalidOffsetNumber` se não houver tuplos a serem amostrados. `maxoffset` é o maior número de deslocamento em uso na página.
 
-### Nota
+Nota
 
 `NextSampleTuple` não é explicitamente informado quais dos números de deslocamento na faixa `1 .. maxoffset` realmente contêm tuplas válidas. Isso normalmente não é um problema, uma vez que o código principal ignora solicitações para amostrar tuplas ausentes ou invisíveis; isso não deve resultar em qualquer viés na amostra. No entanto, se necessário, a função pode usar `node->donetuples` para examinar quantas das tuplas que ela retornou foram válidas e visíveis.
 
-### Nota
+Nota
 
 `NextSampleTuple` não deve *não* assumir que `blockno` seja o mesmo número de página retornado pela chamada mais recente de `NextSampleBlock`. Foi retornado por alguma chamada anterior de `NextSampleBlock`, mas o código principal é permitido chamar `NextSampleBlock` antes de realmente digitalizar as páginas, a fim de suportar o pré-enchimento. É OK assumir que, uma vez que a amostragem de uma página dada começa, as chamadas consecutivas de `NextSampleTuple` todas se referem à mesma página até que `InvalidOffsetNumber` seja retornado.
 

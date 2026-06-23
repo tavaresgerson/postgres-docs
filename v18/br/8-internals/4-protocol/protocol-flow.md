@@ -176,11 +176,11 @@ O protocolo de consulta estendido desmembra o protocolo de consulta simples desc
 
 No protocolo estendido, o frontend envia primeiro uma mensagem Parse, que contém uma string de consulta textual, opcionalmente algumas informações sobre os tipos de dados dos placeholders de parâmetros e o nome de um objeto de declaração preparada de destino (uma string vazia seleciona a declaração preparada sem nome). A resposta é ParseComplete ou ErrorResponse. Os tipos de dados dos parâmetros podem ser especificados por OID; se não forem fornecidos, o analisador tenta inferir os tipos de dados da mesma maneira que faria para constantes de string literal não tipadas.
 
-### Nota
+Nota
 
 Um tipo de dado de parâmetro pode ser deixado não especificado ao ser definido como zero ou ao fazer o array de tipos de OID do tipo de parâmetro ser menor que o número de símbolos de parâmetro (`$`*`n`*) usados na string de consulta. Outro caso especial é que o tipo de um parâmetro pode ser especificado como `void` (ou seja, o OID do pseudo-tipo `void`). Isso é para permitir que os símbolos de parâmetro sejam usados para parâmetros de função que são realmente parâmetros OUT. Normalmente, não há contexto em que um parâmetro `void` poderia ser usado, mas se tal símbolo de parâmetro aparecer na lista de parâmetros de uma função, ele é efetivamente ignorado. Por exemplo, uma chamada de função como `foo($1,$2,$3,$4)` poderia corresponder a uma função com dois argumentos IN e dois OUT, se `$3` e `$4` forem especificados como tendo tipo `void`.
 
-### Nota
+Nota
 
 A string de consulta contida em uma mensagem Parse não pode incluir mais de uma declaração SQL; caso contrário, um erro de sintaxe é relatado. Essa restrição não existe no protocolo de consulta simples, mas existe no protocolo estendido, porque permitir que declarações preparadas ou portais contenham vários comandos complicaria indevidamente o protocolo.
 
@@ -188,7 +188,7 @@ Se criado com sucesso, um objeto de declaração preparada nomeada dura até o f
 
 Uma vez que uma declaração preparada exista, ela pode ser preparada para execução usando uma mensagem de Bind. A mensagem Bind fornece o nome da declaração preparada de origem (string vazia denota a declaração preparada sem nome), o nome do portal de destino (string vazia denota o portal sem nome) e os valores a serem usados para quaisquer marcadores de parâmetro presentes na declaração preparada. O conjunto de parâmetros fornecido deve corresponder àqueles necessários pela declaração preparada. (Se você declarou quaisquer parâmetros `void` na mensagem Parse, passe valores NULL para eles na mensagem Bind.) Bind também especifica o formato a ser usado para quaisquer dados retornados pela consulta; o formato pode ser especificado de forma geral ou por coluna. A resposta é BindComplete ou ErrorResponse.
 
-### Nota
+Nota
 
 A escolha entre saída de texto e binária é determinada pelos códigos de formato fornecidos em Bind, independentemente do comando SQL envolvido. O atributo `BINARY` nas declarações de cursor é irrelevante ao usar o protocolo de consulta estendida.
 
@@ -202,7 +202,7 @@ Se o Execute terminar antes de completar a execução de um portal (por atingir 
 
 Após a conclusão de cada série de mensagens de consulta estendida, o frontend deve emitir uma mensagem de sincronização. Esta mensagem sem parâmetros faz com que o backend feche a transação atual se não estiver dentro de um bloco de transação `BEGIN`/`COMMIT` (“fechar” significa cometer se não houver erro, ou reverter se houver erro). Em seguida, é emitida uma resposta ReadyForQuery. O propósito do Sync é fornecer um ponto de resincronização para recuperação de erros. Quando um erro é detectado durante o processamento de qualquer mensagem de consulta estendida, o backend emite ErrorResponse, depois lê e descarta mensagens até que um Sync seja alcançado, em seguida, emite ReadyForQuery e retorna ao processamento de mensagens normal. (Mas note que não ocorre nenhum desvio se um erro for detectado *durante* o processamento do Sync — isso garante que haja um e apenas um ReadyForQuery enviado para cada Sync.)
 
-### Nota
+Nota
 
 O Sync não faz com que um bloco de transação aberto com `BEGIN` seja fechado. É possível detectar essa situação, pois a mensagem ReadyForQuery inclui informações sobre o status da transação.
 
@@ -220,7 +220,7 @@ A mensagem Fechar fecha uma declaração ou portal preparado existente e libera 
 
 A mensagem Flush não gera nenhuma saída específica, mas obriga o backend a entregar quaisquer dados pendentes em seus buffers de saída. Um Flush deve ser enviado após qualquer comando de consulta estendida, exceto Sync, se o frontend desejar examinar os resultados desse comando antes de emitir mais comandos. Sem Flush, as mensagens devolvidas pelo backend serão combinadas no número mínimo possível de pacotes para minimizar o overhead de rede.
 
-### Nota
+Nota
 
 A mensagem simples Query é aproximadamente equivalente à série Parse, Bind, portal Describe, Execute, Close, Sync, usando a declaração preparada sem nome e objetos do portal e sem parâmetros. Uma diferença é que ela aceitará múltiplas declarações SQL no string de consulta, realizando automaticamente a sequência de bind/describe/execute para cada uma delas em sucessão. Outra diferença é que ela não retornará mensagens ParseComplete, BindComplete, CloseComplete ou NoData.
 
@@ -240,7 +240,7 @@ Ao usar esse método, a conclusão do pipeline deve ser determinada contando as 
 
 O subprotocolo Chamada de Função permite que o cliente solicite uma chamada direta de qualquer função que exista no catálogo do sistema `pg_proc` do banco de dados. O cliente deve ter permissão de execução para a função.
 
-### Nota
+Nota
 
 O subprotocolo Chamada de função é uma característica antiga que provavelmente deve ser evitada em novos códigos. Resultados semelhantes podem ser alcançados configurando uma declaração preparada que faça `SELECT function($1, ...)`. O ciclo Chamada de função pode então ser substituído por Bindir/Executar.
 
@@ -394,7 +394,7 @@ Atualmente, há um conjunto de parâmetros pré-definidos para os quais o Parame
 
 Se um frontend emitir o comando `LISTEN`, o backend enviará uma mensagem NotificationResponse (não confundir com NoticeResponse!) sempre que um comando `NOTIFY` for executado para o mesmo nome de canal.
 
-### Nota
+Nota
 
 Atualmente, a NotificationResponse só pode ser enviada fora de uma transação, e, portanto, não ocorrerá no meio de uma série de comandos e respostas, embora possa ocorrer logo antes do ReadyForQuery. Não é prudente projetar lógica de frontend que presuma isso. A boa prática é ser capaz de aceitar NotificationResponse em qualquer ponto do protocolo.
 

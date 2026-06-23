@@ -1,4 +1,4 @@
-## 3.6. Herança [#](#TUTORIAL-INHERITANCE)
+### 3.6. Herança [#](#TUTORIAL-INHERITANCE)
 
 A herança é um conceito de bancos de dados orientado a objetos. Ela abre novas possibilidades interessantes de projeto de banco de dados.
 
@@ -79,6 +79,6 @@ SELECT name, elevation
 
 Aqui, o `ONLY` antes do `cities` indica que a consulta deve ser executada apenas na tabela `cities`, e não em tabelas abaixo do `cities` na hierarquia de herança. Muitos dos comandos que já discutimos — `SELECT`, `UPDATE` e `DELETE` — suportam essa notação `ONLY`.
 
-### Nota
+Nota
 
 Embora a herança seja frequentemente útil, ela não foi integrada com restrições únicas ou chaves estrangeiras, o que limita sua utilidade. Veja [Seção 5.11] para mais detalhes.

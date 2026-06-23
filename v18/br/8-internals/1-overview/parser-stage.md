@@ -17,7 +17,7 @@ O analisador é definido no arquivo `gram.y` e consiste em um conjunto de *regra
 
 O arquivo `scan.l` é transformado no arquivo de fonte C `scan.c` usando o programa flex e o `gram.y` é transformado para `gram.c` usando bison. Após essas transformações terem sido realizadas, um compilador de C normal pode ser usado para criar o analisador. Nunca faça quaisquer alterações nos arquivos C gerados, pois eles serão sobrescritos na próxima vez que o flex ou o bison forem chamados.
 
-### Nota
+Nota
 
 As transformações e compilações mencionadas são normalmente feitas automaticamente usando os *makefiles* fornecidos com a distribuição de código-fonte do PostgreSQL.
 

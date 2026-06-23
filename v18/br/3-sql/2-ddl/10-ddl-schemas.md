@@ -10,7 +10,7 @@
 
 Um clúster de banco de dados PostgreSQL contém um ou mais bancos de dados nomeados. Papéis e alguns outros tipos de objetos são compartilhados em todo o clúster. Uma conexão de cliente com o servidor só pode acessar dados em um único banco de dados, o especificado na solicitação de conexão.
 
-### Nota
+Nota
 
 Os usuários de um clúster não têm necessariamente o privilégio de acessar todos os bancos de dados no clúster. A partilha de nomes de papéis significa que não podem haver diferentes papéis com nomes, por exemplo, `joe` em dois bancos de dados no mesmo clúster; mas o sistema pode ser configurado para permitir o acesso de `joe` apenas a alguns dos bancos de dados.
 

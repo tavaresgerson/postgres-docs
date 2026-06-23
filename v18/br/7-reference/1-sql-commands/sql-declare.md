@@ -13,7 +13,7 @@ DECLARE name [ BINARY ] [ ASENSITIVE | INSENSITIVE ] [ [ NO ] SCROLL ]
 
 `DECLARE` permite que um usuário crie cursor, que podem ser usados para recuperar um pequeno número de linhas de cada vez a partir de uma consulta maior. Após o cursor ser criado, as linhas são obtidas a partir dele usando `FETCH`(sql-fetch.md "FETCH").
 
-### Nota
+Nota
 
 Esta página descreve o uso de cursor no nível do comando SQL. Se você está tentando usar cursors dentro de uma função PL/pgSQL, as regras são diferentes — veja [Seção 41.7](plpgsql-cursors.md).
 
@@ -41,7 +41,7 @@ Os cursors normais retornam dados em formato de texto, da mesma forma que um `SE
 
 Os cursors binários devem ser usados com cuidado. Muitas aplicações, incluindo o psql, não estão preparadas para lidar com cursors binários e esperam que os dados retornem no formato de texto.
 
-### Nota
+Nota
 
 Quando o aplicativo cliente usa o protocolo de "consulta estendida" para emitir um comando `FETCH`, a mensagem do protocolo Bind especifica se os dados devem ser recuperados em formato de texto ou binário. Essa escolha substitui a maneira como o cursor é definido. O conceito de cursor binário como tal é, portanto, obsoleto ao usar o protocolo de consulta estendida — qualquer cursor pode ser tratado como texto ou binário.
 

@@ -1,4 +1,4 @@
-## 1.4. Acessando um banco de dados [#](#TUTORIAL-ACCESSDB)
+### 1.4. Acessando um banco de dados [#](#TUTORIAL-ACCESSDB)
 
 Depois de criar um banco de dados, você pode acessá-lo da seguinte forma:
 

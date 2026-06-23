@@ -48,7 +48,7 @@ O nome do próximo arquivo de segmento WAL deve ser maior que qualquer nome de a
 
 Observe que, ao usar tamanhos de segmento WAL não padrão, os números nos nomes dos arquivos WAL são diferentes dos LSNs que são relatados por funções do sistema e visualizações do sistema. Esta opção recebe um nome de arquivo WAL, não um LSN.
 
-### Nota
+Nota
 
 O próprio `pg_resetwal` analisa os arquivos no `pg_wal` e escolhe uma configuração padrão do `-l` além do último nome de arquivo existente. Portanto, o ajuste manual do `-l` só deve ser necessário se você estiver ciente de arquivos de segmento WAL que não estão atualmente presentes no `pg_wal`, como entradas em um arquivo offline; ou se o conteúdo do `pg_wal` tiver sido perdido completamente.
 
@@ -80,7 +80,7 @@ Para um conjunto de bancos de dados que `pg_upgrade` atualizou a partir de uma v
 
 Essa opção também pode ser usada para alterar o tamanho do segmento WAL de um clúster de banco de dados existente, evitando a necessidade de re-`initdb`.
 
-### Nota
+Nota
 
 Embora o `pg_resetwal` defina o endereço inicial do WAL além do último arquivo de segmento WAL existente, algumas mudanças no tamanho do segmento podem fazer com que os nomes dos arquivos WAL anteriores sejam reutilizados. Recomenda-se o uso do `-l` juntamente com esta opção para definir manualmente o endereço inicial do WAL, se a sobreposição dos nomes dos arquivos WAL causar problemas com sua estratégia de arquivamento.
 

@@ -1805,7 +1805,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
 
 Observe que o operador “igual a”, `~=`, representa a noção usual de igualdade para os tipos `point`, `box`, `polygon` e `circle`. Alguns dos tipos geométricos também têm um operador `=`, mas `=` compara apenas por *áreas* iguais. Os outros operadores de comparação escalar (`<=` e assim por diante), onde disponíveis para esses tipos, também comparam áreas.
 
-### Nota
+Nota
 
 Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estritamente `point` `<<|` `point` e `point` `|>>` `point` eram respectivamente chamados `<^` e `>^`. Esses nomes ainda estão disponíveis, mas são desaconselhados e, eventualmente, serão removidos.
 

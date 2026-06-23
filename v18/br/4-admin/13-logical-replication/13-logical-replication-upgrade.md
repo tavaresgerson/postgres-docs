@@ -35,7 +35,7 @@ Existem alguns pré-requisitos para o pg_upgrade poder atualizar as assinaturas.
 
 Ao atualizar um assinante, as operações de escrita podem ser realizadas no editor. Essas alterações serão replicadas para o assinante assim que a atualização do assinante for concluída.
 
-### Nota
+Nota
 
 As restrições de replicação lógica também se aplicam a atualizações de clúster de replicação lógica. Consulte [Seção 29.8](logical-replication-restrictions.md) para obter detalhes.
 
@@ -93,7 +93,7 @@ usando [`node2`](sql-altersubscription.md#SQL-ALTERSUBSCRIPTION-PARAMS-REFRESH-P
     /* node2 # */ ALTER SUBSCRIPTION sub1_node1_node2 REFRESH PUBLICATION;
 ```
 
-### Nota
+Nota
 
 Nos passos descritos acima, o editor é atualizado primeiro, seguido pelo assinante. Alternativamente, o usuário pode usar passos semelhantes para atualizar o assinante primeiro, seguido pelo editor.
 

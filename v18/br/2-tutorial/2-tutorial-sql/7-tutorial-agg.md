@@ -1,4 +1,4 @@
-## 2.7. Funções agregadas [#](#TUTORIAL-AGG)
+### 2.7. Funções agregadas [#](#TUTORIAL-AGG)
 
 Como a maioria dos outros produtos de banco de dados relacionais, o PostgreSQL suporta funções agregadas. Uma função agregada calcula um único resultado a partir de várias linhas de entrada. Por exemplo, existem agregados para calcular o `count`, `sum`, `avg` (média), `max` (máximo) e `min` (mínimo) sobre um conjunto de linhas.
 
@@ -102,11 +102,7 @@ SELECT city, count(*), max(temp_lo)
     <code class="literal">
      LIKE
     </code>
-    o operador faz correspondência de padrões e é explicado em
-    <a class="xref" href="functions-matching.md" title="9.7. Pattern Matching">
-     Seção 9.7
-    </a>
-    .
+    o operador faz correspondência de padrões e é explicado na Seção 9.7
    </p>
   </td>
  </tr>

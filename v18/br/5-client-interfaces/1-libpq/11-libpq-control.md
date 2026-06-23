@@ -56,7 +56,7 @@ void PQtrace(PGconn *conn, FILE *stream);
 
 Cada linha consiste em: um marcador de tempo opcional, um indicador de direção (`F` para mensagens do cliente para o servidor ou `B` para mensagens do servidor para o cliente), comprimento da mensagem, tipo de mensagem e conteúdo da mensagem. Os campos de conteúdo não-mensagem (marcador de tempo, direção, comprimento e tipo de mensagem) são separados por uma tabulação. O conteúdo da mensagem é separado por um espaço. As strings de protocolo são encerradas em aspas duplas, enquanto as strings usadas como valores de dados são encerradas em aspas simples. Os caracteres não imprimíveis são impressos como escapamentos hexadecimais. Mais detalhes específicos sobre o tipo de mensagem podem ser encontrados em [Seção 54.7](protocol-message-formats.md).
 
-### Nota
+Nota
 
 Em Windows, se a biblioteca libpq e um aplicativo forem compilados com diferentes flags, essa chamada de função irá falhar o aplicativo porque a representação interna dos ponteiros `FILE` é diferente. Especificamente, as flags multithread/single-threaded, release/debug e estática/dinâmica devem ser as mesmas para a biblioteca e todos os aplicativos que utilizam essa biblioteca.
 

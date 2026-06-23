@@ -113,7 +113,7 @@ LANGUAGE plpgsql;
 SELECT * FROM get_available_flightid(CURRENT_DATE);
 ```
 
-### Nota
+Nota
 
 A implementação atual de `RETURN NEXT` e `RETURN QUERY` armazena todo o conjunto de resultados antes de retornar da função, conforme discutido acima. Isso significa que, se uma função PL/pgSQL produzir um conjunto de resultados muito grande, o desempenho pode ser ruim: os dados serão escritos em disco para evitar o esgotamento da memória, mas a própria função não retornará até que todo o conjunto de resultados tenha sido gerado. Uma versão futura do PL/pgSQL pode permitir que os usuários definam funções que retornam conjuntos e que não tenham essa limitação. Atualmente, o ponto em que os dados começam a ser escritos em disco é controlado pela variável de configuração [work_mem](runtime-config-resource.md#GUC-WORK-MEM). Os administradores que têm memória suficiente para armazenar conjuntos de resultados maiores na memória devem considerar aumentar esse parâmetro.
 

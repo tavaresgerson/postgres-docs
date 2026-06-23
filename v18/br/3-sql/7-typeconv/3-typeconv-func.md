@@ -127,7 +127,7 @@ Isso é transformado pelo analisador para se tornar efetivamente:
 SELECT substr(CAST (varchar '1234' AS text), 3);
 ```
 
-### Nota
+Nota
 
 O analisador aprende do catálogo `pg_cast` que `text` e `varchar` são binariamente compatíveis, o que significa que um deles pode ser passado para uma função que aceita o outro sem realizar nenhuma conversão física. Portanto, não há realmente chamada de conversão de tipo neste caso.
 

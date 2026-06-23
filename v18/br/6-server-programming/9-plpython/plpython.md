@@ -38,6 +38,6 @@ Se uma língua for instalada no `template1`, todas as bases de dados posteriorme
 
 PL/Python está disponível apenas como uma linguagem “não confiável”, o que significa que não oferece nenhuma maneira de restringir o que os usuários podem fazer nela e, portanto, é denominada `plpython3u`. Uma variante confiável `plpython` pode se tornar disponível no futuro se um mecanismo de execução seguro for desenvolvido no Python. O autor de uma função em PL/Python não confiável deve ter cuidado para que a função não possa ser usada para fazer algo indesejado, uma vez que ela poderá fazer qualquer coisa que um usuário conectado como administrador do banco de dados possa fazer. Apenas superusuários podem criar funções em linguagens não confiáveis, como `plpython3u`.
 
-### Nota
+Nota
 
 Os usuários dos pacotes de fonte devem habilitar especialmente a construção do PL/Python durante o processo de instalação. (Consulte as instruções de instalação para mais informações.) Os usuários dos pacotes binários podem encontrar o PL/Python em um subpacote separado.

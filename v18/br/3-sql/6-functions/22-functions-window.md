@@ -480,6 +480,6 @@ Observe que `first_value`, `last_value` e `nth_value` consideram apenas as linha
 
 Quando uma função agregada é usada como uma função de janela, ela agrega as linhas dentro do quadro de janela da linha atual. Um agregado usado com `ORDER BY` e a definição padrão do quadro de janela produz um comportamento de tipo "soma em curso", que pode ou não ser o que se deseja. Para obter agregação sobre toda a partição, omita `ORDER BY` ou use `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`. Outras especificações de quadro podem ser usadas para obter outros efeitos.
 
-### Nota
+Nota
 
 O padrão SQL define uma opção `RESPECT NULLS` ou `IGNORE NULLS` para `lead`, `lag`, `first_value`, `last_value` e `nth_value`. Isso não é implementado no PostgreSQL: o comportamento é sempre o mesmo que o padrão, ou seja, `RESPECT NULLS`. Da mesma forma, a opção `FROM FIRST` ou `FROM LAST` do padrão para `nth_value` não é implementada: apenas o comportamento padrão `FROM FIRST` é suportado. (Você pode obter o resultado de `FROM LAST` ao inverter a ordem do `ORDER BY`.)

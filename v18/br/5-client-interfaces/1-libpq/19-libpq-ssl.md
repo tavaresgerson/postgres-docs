@@ -20,7 +20,7 @@ Uma vez que uma cadeia de confiança tenha sido estabelecida, há duas maneiras 
 
 No modo `verify-full`, o nome do host é comparado com o(s) atributo(s) de Nome Alternativo do Certificado (SAN), ou com o atributo de Nome Comum se não houver nenhum SAN do tipo `dNSName`. Se o atributo de nome do certificado começar com um asterisco (`*`,), o asterisco será tratado como um caractere wildcard, que corresponderá a todos os caracteres *exceto* um ponto (`.`). Isso significa que o certificado não corresponderá a subdomínios. Se a conexão for feita usando um endereço IP em vez de um nome de host, o endereço IP será comparado (sem fazer qualquer pesquisa DNS) com SANs do tipo `iPAddress` ou `dNSName`. Se não houver nenhum SAN `iPAddress` e não houver nenhum SAN de correspondência `dNSName`, o endereço IP do host será comparado com o atributo de Nome Comum.
 
-### Nota
+Nota
 
 Para compatibilidade reversa com versões anteriores do PostgreSQL, o endereço IP do host é verificado de uma maneira diferente de [RFC 6125](https://datatracker.ietf.org/doc/html/rfc6125). O endereço IP do host é sempre verificado contra SANs `dNSName` e `iPAddress`, e pode ser verificado contra o atributo Common Name se não houver SANs relevantes.
 
@@ -30,7 +30,7 @@ As entradas da Lista de Revogação de Certificado (CRL) também são verificada
 
 A localização do arquivo de certificado raiz e do CRL pode ser alterada definindo os parâmetros de conexão `sslrootcert` e `sslcrl` ou as variáveis de ambiente `PGSSLROOTCERT` e `PGSSLCRL`. `sslcrldir` ou a variável de ambiente `PGSSLCRLDIR` também pode ser usada para especificar um diretório que contenha arquivos de CRL.
 
-### Nota
+Nota
 
 Para compatibilidade reversa com versões anteriores do PostgreSQL, se um arquivo de CA raiz existir, o comportamento do `sslmode=require` será o mesmo do `verify-ca`, o que significa que o certificado do servidor é validado contra a CA. Confiar nesse comportamento é desencorajado, e as aplicações que precisam de validação de certificado devem sempre usar `verify-ca` ou `verify-full`.
 

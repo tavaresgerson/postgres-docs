@@ -28,6 +28,6 @@ Para instalar PL/Perl em um banco de dados específico, use `CREATE EXTENSION pl
 
 Se uma língua for instalada no `template1`, todas as bases de dados posteriormente criadas terão a língua instalada automaticamente.
 
-### Nota
+Nota
 
 Os usuários dos pacotes de fonte devem habilitar especialmente a construção do PL/Perl durante o processo de instalação. (Consulte [Capítulo 17] para mais informações.) Os usuários dos pacotes binários podem encontrar o PL/Perl em um subpacote separado.

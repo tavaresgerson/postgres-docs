@@ -48,7 +48,7 @@ Faça um backup de base conforme descrito em [Seção 25.3.2](continuous-archivi
 
 Para configurar o servidor de espera, restaure o backup de base retirado do servidor primário (consulte [Seção 25.3.5](continuous-archiving.md#BACKUP-PITR-RECOVERY)). Crie um arquivo [[`standby.signal`](warm-standby.md#FILE-STANDBY-SIGNAL)] no diretório de dados do clúster do servidor de espera. Defina [restore_command](runtime-config-wal.md#GUC-RESTORE-COMMAND) com um comando simples para copiar arquivos do arquivo WAL. Se você planeja ter vários servidores de espera para fins de alta disponibilidade, certifique-se de que [[`recovery_target_timeline`][`latest`]] (o padrão) esteja definido, para que o servidor de espera siga a alteração do cronograma que ocorre durante a falha para outro servidor de espera.
 
-### Nota
+Nota
 
 [comando de restauração](runtime-config-wal.md#GUC-RESTORE-COMMAND) deve retornar imediatamente se o arquivo não existir; o servidor tentará o comando novamente, se necessário.
 

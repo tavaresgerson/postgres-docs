@@ -38,7 +38,7 @@ Esta seção descreve os campos que podem aparecer nas mensagens de ErrorRespons
 
 `R`: Routine: o nome da rotina de código-fonte que relata o erro.
 
-### Nota
+Nota
 
 Os campos para o nome do esquema, nome da tabela, nome da coluna, nome do tipo de dados e nome da restrição são fornecidos apenas para um número limitado de tipos de erro; consulte [Apêndice A](errcodes-appendix.md). Os frontends não devem assumir que a presença de qualquer um desses campos garanta a presença de outro campo. As fontes de erro principais observam as inter-relações mencionadas acima, mas as funções definidas pelo usuário podem usar esses campos de outras maneiras. Na mesma linha, os clientes não devem assumir que esses campos denotem objetos contemporâneos no banco de dados atual.
 

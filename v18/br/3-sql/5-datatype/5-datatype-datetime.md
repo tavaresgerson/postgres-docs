@@ -224,7 +224,7 @@ O PostgreSQL suporta o conjunto completo dos tipos de data e hora do SQL, mostra
 
 
 
-### Nota
+Nota
 
 O padrão SQL exige que a escrita apenas `timestamp` seja equivalente a `timestamp without time zone`, e o PostgreSQL respeita esse comportamento. `timestamptz` é aceito como uma abreviação para `timestamp with time zone`; essa é uma extensão do PostgreSQL.
 
@@ -1139,7 +1139,7 @@ O formato de saída dos tipos de data/hora pode ser definido como um dos quatro 
 
 
 
-### Nota
+Nota
 
 A ISO 8601 especifica o uso da letra maiúscula `T` para separar a data e a hora. O PostgreSQL aceita esse formato na entrada, mas na saída ele usa um espaço em vez de `T`, como mostrado acima. Isso é para legibilidade e para consistência com [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339), bem como em alguns outros sistemas de banco de dados.
 
@@ -1304,7 +1304,7 @@ O PostgreSQL permite que você especifique fusos horários em três formas difer
 
 Em suma, essa é a diferença entre abreviações e nomes completos: as abreviações representam um deslocamento específico em relação ao UTC, enquanto muitos dos nomes completos implicam uma regra local de horário de verão, e, portanto, têm dois deslocamentos possíveis em relação ao UTC. Como exemplo, `2014-06-04 12:00 America/New_York` representa a hora local do meio-dia em Nova York, que, para esta data específica, foi o Horário de Verão do Leste (UTC-4). Portanto, `2014-06-04 12:00 EDT` especifica o mesmo instante de tempo. Mas `2014-06-04 12:00 EST` especifica o meio-dia do Horário Padrão do Leste (UTC-5), independentemente de o horário de verão ter sido nominalmente em vigor nessa data.
 
-### Nota
+Nota
 
 O sinal nas especificações de fuso horário em estilo POSIX tem o significado oposto ao sinal nos valores de data e hora ISO-8601. Por exemplo, o fuso horário POSIX para `2014-06-04 12:00+04` seria UTC-4.
 

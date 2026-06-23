@@ -104,7 +104,7 @@ Os índices de árvore B também aceitam este parâmetro:
 
 `deduplicate_items` (`boolean`) [#](#INDEX-RELOPTION-DEDUPLICATE-ITEMS): Controla o uso da técnica de deduplicação de árvore B descrita em [Seção 65.1.4.3](btree.md#BTREE-DEDUPLICATION "65.1.4.3. Deduplication"). Defina para `ON` ou `OFF` para habilitar ou desabilitar a otimização. ([Seção 19.1](config-setting.md "19.1. Setting Parameters") descreve que são permitidas as ortografias alternativas de `ON` e `OFF`). O padrão é `ON`.
 
-### Nota
+Nota
 
 Desligar `deduplicate_items` através de `ALTER INDEX` impede que inserções futuras desencadeiem a deduplicação, mas, por si só, não faz com que os tuplos da lista de postagens usem a representação padrão de tupla.
 
@@ -116,7 +116,7 @@ Os índices GIN aceitam esses parâmetros:
 
 `fastupdate` (`boolean`) [#](#INDEX-RELOPTION-FASTUPDATE): Controla o uso da técnica de atualização rápida descrita em [Seção 65.4.4.1](gin.md#GIN-FAST-UPDATE "65.4.4.1. GIN Fast Update Technique"). `ON` habilita a atualização rápida, `OFF` a desativa. O padrão é `ON`.
 
-### Nota
+Nota
 
 Desligar `fastupdate` através de `ALTER INDEX` impede que futuras inserções sejam adicionadas à lista de entradas de índice pendentes, mas não apaga as entradas existentes por si só. Você pode `VACUUM` a tabela ou chamar a função `gin_clean_pending_list` posteriormente para garantir que a lista pendente seja esvaziada.
 

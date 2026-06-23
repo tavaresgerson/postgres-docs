@@ -22,7 +22,7 @@ e todos os objetos dependentes serão removidos, assim como quaisquer objetos qu
 
 Quase todos os comandos `DROP` no PostgreSQL suportam a especificação de `CASCADE`. Claro, a natureza das possíveis dependências varia com o tipo do objeto. Você também pode escrever `RESTRICT` em vez de `CASCADE` para obter o comportamento padrão, que é impedir a eliminação de objetos que qualquer outro objeto depende.
 
-### Nota
+Nota
 
 De acordo com o padrão SQL, especificar `RESTRICT` ou `CASCADE` é necessário em um comando `DROP`. Nenhum sistema de banco de dados realmente aplica essa regra, mas se o comportamento padrão é `RESTRICT` ou `CASCADE` varia entre os sistemas.
 

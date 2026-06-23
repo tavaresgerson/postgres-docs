@@ -188,7 +188,7 @@ As colunas de saída são descritas em [Tabela F.24](pgstattuple.md#PGSTATTUPLE-
 
 
 
-### Nota
+Nota
 
 O `table_len` será sempre maior que a soma dos `tuple_len`, `dead_tuple_len` e `free_space`. A diferença é contabilizada pelo overhead fixo da página, a tabela de per página de ponteiros para tuplas e o preenchimento para garantir que as tuplas estejam corretamente alinhadas.
 

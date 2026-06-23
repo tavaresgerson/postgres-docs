@@ -101,7 +101,7 @@ Se `transaction_timeout` for mais curto ou igual a `idle_in_transaction_session_
 
 Não é recomendado definir `transaction_timeout` em `postgresql.conf`, pois isso afetaria todas as sessões.
 
-### Nota
+Nota
 
 As transações preparadas não estão sujeitas a esse limite de tempo.
 
@@ -165,7 +165,7 @@ Se o valor for 1 (padrão) ou superior, os valores flutuantes são exibidos no f
 
 Se o valor for zero ou negativo, a saída será arredondada para uma precisão decimal dada. A precisão usada é o número padrão de dígitos para o tipo (`FLT_DIG` ou `DBL_DIG`, conforme apropriado) reduzido de acordo com o valor deste parâmetro. (Por exemplo, especificar -1 fará com que os valores de `float4` sejam exibidos arredondados a 5 dígitos significativos, e os valores de `float8` arredondados a 14 dígitos.) Este formato é mais lento e não preserva todos os bits do valor binário do float, mas pode ser mais legível para humanos.
 
-### Nota
+Nota
 
 O significado deste parâmetro e seu valor padrão foram alterados no PostgreSQL 12; consulte [Seção 8.1.3](datatype-numeric.md#DATATYPE-FLOAT) para uma discussão adicional.
 
@@ -219,7 +219,7 @@ Algumas bibliotecas precisam realizar certas operações que só podem ocorrer n
 
 Outras bibliotecas também podem ser pré-carregadas. Ao pré-carregar uma biblioteca compartilhada, o tempo de inicialização da biblioteca é evitado quando a biblioteca é usada pela primeira vez. No entanto, o tempo para iniciar cada novo processo do servidor pode aumentar ligeiramente, mesmo que esse processo nunca use a biblioteca. Portanto, este parâmetro é recomendado apenas para bibliotecas que serão usadas na maioria das sessões. Além disso, alterar este parâmetro requer um reinício do servidor, então este não é o ajuste certo para usar em tarefas de depuração de curto prazo, por exemplo. Use [session_preload_libraries](runtime-config-client.md#GUC-SESSION-PRELOAD-LIBRARIES) para isso, em vez disso.
 
-### Nota
+Nota
 
 Em hosts Windows, o pré-carregamento de uma biblioteca no início do servidor não reduzirá o tempo necessário para iniciar cada novo processo do servidor; cada processo do servidor recarregará todas as bibliotecas pré-carregadas. No entanto, `shared_preload_libraries` ainda é útil em hosts Windows para bibliotecas que precisam realizar operações no momento do início do postmaster.
 

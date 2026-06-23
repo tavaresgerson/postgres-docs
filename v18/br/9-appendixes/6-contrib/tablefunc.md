@@ -502,7 +502,7 @@ AS ct(row_name text, category_1 text, category_2 text, category_3 text);
 
 Você pode evitar a necessidade de sempre escrever uma cláusula `FROM` para definir as colunas de saída, configurando uma função de cruzamento personalizada que tenha o tipo de linha de saída desejado integrado à sua definição. Isso é descrito na próxima seção. Outra possibilidade é incorporar a cláusula `FROM` necessária em uma definição de visualização.
 
-### Nota
+Nota
 
 Veja também o comando `\crosstabview` em psql, que oferece funcionalidades semelhantes ao `crosstab()`.
 

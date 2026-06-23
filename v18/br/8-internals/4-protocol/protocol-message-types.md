@@ -8,7 +8,7 @@ Int*`n`*[*`k`*]: Uma matriz de *`k`* *`n`*-bits inteiros, cada um no formato de 
 
 String(*`s`*): Uma string terminada por nulo (string estilo C). Não há limitação específica de comprimento para strings. Se *`s`* for especificado, é o valor exato que aparecerá, caso contrário, o valor é variável. Exemplo: String, String("user").
 
-### Nota
+Nota
 
 *Não há um limite pré-definido* para o comprimento de uma string que pode ser devolvida pelo backend. Uma boa estratégia de codificação para um frontend é usar um buffer expansível para que qualquer coisa que cabe na memória possa ser aceita. Se isso não for viável, leia a string completa e descarte os caracteres finais que não cabem no seu buffer de tamanho fixo.
 

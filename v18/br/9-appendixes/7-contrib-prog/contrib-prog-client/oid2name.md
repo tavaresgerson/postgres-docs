@@ -10,7 +10,7 @@ oid2name — resolva OIDs e nós de arquivos em um diretório de dados do Postgr
 
 oid2name é um programa utilitário que ajuda os administradores a examinar a estrutura de arquivo usada pelo PostgreSQL. Para usá-lo, você precisa estar familiarizado com a estrutura de arquivo do banco de dados, que é descrita em [Capítulo 66](storage.md).
 
-### Nota
+Nota
 
 O nome “oid2name” é histórico e, na verdade, é bastante enganoso, pois, na maioria das vezes, quando você o usa, você realmente estará preocupado com os números de filenode das tabelas (que são os nomes de arquivo visíveis nos diretórios do banco de dados). Certifique-se de entender a diferença entre OIDs de tabela e filenodes de tabela!
 

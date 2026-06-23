@@ -62,7 +62,7 @@
 
 A *Interface de Programação do Servidor* (SPI) permite que os autores de funções C definidas pelo usuário executem comandos SQL dentro de suas funções ou procedimentos. A SPI é um conjunto de funções de interface para simplificar o acesso ao analisador, planejador e executor. A SPI também realiza alguma gestão de memória.
 
-### Nota
+Nota
 
 Os idiomas processuais disponíveis oferecem vários meios para executar comandos SQL a partir de funções. A maioria dessas facilidades é baseada no SPI, portanto, essa documentação pode ser útil também para usuários desses idiomas.
 

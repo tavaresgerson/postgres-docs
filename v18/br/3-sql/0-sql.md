@@ -1,4 +1,4 @@
-# Parte II. A Linguagem SQL
+## Parte II. A Linguagem SQL
 
 Esta parte descreve o uso da linguagem SQL no PostgreSQL. Começamos descrevendo a sintaxe geral do SQL, depois como criar tabelas, como preencher o banco de dados e como consultá-lo. A parte do meio lista os tipos de dados disponíveis e as funções para uso em comandos SQL. Por último, abordamos vários aspectos importantes para ajustar um banco de dados.
 

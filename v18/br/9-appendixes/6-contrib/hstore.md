@@ -42,7 +42,7 @@ key => NULL
 
 A palavra-chave `NULL` é sensível a maiúsculas e minúsculas. Double-quote o `NULL` para tratá-lo como a string comum “NULL”.
 
-### Nota
+Nota
 
 Tenha em mente que o formato de texto `hstore` aplicado ao inserir, aplica-se *antes* de qualquer citação ou escapagem necessária. Se você estiver passando um literal `hstore` por meio de um parâmetro, então nenhum processamento adicional é necessário. Mas se você está passando como uma constante literal citada, então quaisquer caracteres de aspas simples e (dependendo da configuração do parâmetro de configuração `standard_conforming_strings`), caracteres de barra invertida precisam ser escaçados corretamente. Consulte [Seção 4.1.2.1](sql-syntax-lexical.md#SQL-SYNTAX-STRINGS) para mais informações sobre o manuseio de constantes de string.
 

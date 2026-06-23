@@ -61,7 +61,7 @@ A correspondência de padrões `LIKE` sempre cobre toda a string. Portanto, se d
 
 Para corresponder a um underscore literal ou sinal de porcentagem sem corresponder a outros caracteres, o respectivo caractere em *`pattern`* deve ser precedido pelo caractere de escape. O caractere de escape padrão é a barra invertida, mas um diferente pode ser selecionado usando a cláusula `ESCAPE`. Para corresponder ao próprio caractere de escape, escreva dois caracteres de escape.
 
-### Nota
+Nota
 
 Se você tiver desativado [standard_conforming_strings](runtime-config-compatible.md#GUC-STANDARD-CONFORMING-STRINGS), qualquer barra insira que você escrever em constantes de string literal precisará ser duplicada. Consulte [Seção 4.1.2.1](sql-syntax-lexical.md#SQL-SYNTAX-STRINGS) para mais informações.
 
@@ -512,7 +512,7 @@ As expressões regulares do PostgreSQL são implementadas usando um pacote de so
 
 As expressões regulares (ERs), conforme definidas no POSIX 1003.2, vêm em duas formas: ERs *extendidas* ou EREs (aproximadamente as de `egrep`) e ERs *básicas* ou BREs (aproximadamente as de `ed`). O PostgreSQL suporta ambas as formas, e também implementa algumas extensões que não estão no padrão POSIX, mas que se tornaram amplamente utilizadas devido à sua disponibilidade em linguagens de programação como Perl e Tcl. As ERs que usam essas extensões não-POSIX são chamadas de ERs *avançadas* ou AREs nesta documentação. As AREs são quase um conjunto superconjunto exato das EREs, mas as BREs têm várias incompatibilidades de notação (bem como sendo muito mais limitadas). Primeiro descrevemos as formas de ARE e ERE, observando características que se aplicam apenas às AREs, e depois descrevemos como as BREs diferem.
 
-### Nota
+Nota
 
 O PostgreSQL sempre presume que uma expressão regular segue as regras do ARE. No entanto, as regras mais limitadas ERE ou BRE podem ser escolhidas ao prependicar uma opção *incorporada* ao padrão RE, conforme descrito em [Seção 9.7.3.4](functions-matching.md#POSIX-METASYNTAX). Isso pode ser útil para compatibilidade com aplicativos que esperam exatamente as regras do POSIX 1003.2.
 
@@ -754,7 +754,7 @@ Uma *restrição* corresponde a uma cadeia vazia, mas só corresponde quando con
 
 Um RE não pode terminar com uma barra invertida (`\`).
 
-### Nota
+Nota
 
 Se você tiver desativado [standard_conforming_strings](runtime-config-compatible.md#GUC-STANDARD-CONFORMING-STRINGS), qualquer barra insira que você escrever em constantes de string literal precisará ser duplicada. Consulte [Seção 4.1.2.1](sql-syntax-lexical.md#SQL-SYNTAX-STRINGS) para obter mais informações.
 
@@ -1063,7 +1063,7 @@ Os formulários que utilizam `{`*`...`*`}` são conhecidos como *limites*. Os n�
 
 Os quantificadores (*não-ganídicos*) (disponíveis apenas em AREs) correspondem às mesmas possibilidades que seus equivalentes normais (*ganídicos*) correspondentes, mas preferem o menor número em vez do maior número de correspondências. Veja [Seção 9.7.3.5] para mais detalhes.
 
-### Nota
+Nota
 
 Um quantificador não pode seguir imediatamente outro quantificador, por exemplo, `**` é inválido. Um quantificador não pode iniciar uma expressão ou subexpressão ou seguir `^` ou `|`.
 
@@ -1237,7 +1237,7 @@ Para incluir um literal `]` na lista, faça com que seja o primeiro caractere (a
 
 Dentro de uma expressão de colchetes, um elemento de cotação (um caractere, uma sequência de vários caracteres que se cota como se fosse um único caractere, ou um nome de sequência de cotação para qualquer um deles) encerrado em `[.` e `.]` representa a sequência de caracteres desse elemento de cotação. A sequência é tratada como um único elemento da lista da expressão de colchetes. Isso permite que uma expressão de colchetes que contenha um elemento de cotação de vários caracteres corresponda a mais de um caractere, por exemplo, se a sequência de cotação incluir um elemento de cotação `ch`, então o RE `[[.ch.]]*c` corresponderá aos primeiros cinco caracteres de `chchcc`.
 
-### Nota
+Nota
 
 Atualmente, o PostgreSQL não suporta elementos de ordenação de vários caracteres. Esta informação descreve um comportamento possível no futuro.
 
@@ -1913,7 +1913,7 @@ Uma palavra é definida conforme especificado nos padrões de `[[:<:]]` e `[[:>:
 
 
 
-### Nota
+Nota
 
 Há uma ambiguidade inerente entre as saídas de entrada de caracteres octal e as referências de volta, que é resolvida pelas seguintes heurísticas, conforme mencionado acima. Um zero inicial sempre indica uma saída de escape octal. Um único dígito não nulo, não seguido por outro dígito, é sempre considerado uma referência de volta. Uma sequência de vários dígitos que não começa com um zero é considerada uma referência de volta se vier após uma subexpressão adequada (ou seja, o número está na faixa legal para uma referência de volta), e, caso contrário, é considerada octal.
 

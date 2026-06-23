@@ -80,7 +80,7 @@ END;
 $$ LANGUAGE plpgsql;
 ```
 
-### Nota
+Nota
 
 Esses dois exemplos não são perfeitamente equivalentes. No primeiro caso, `subtotal` poderia ser referenciado como `sales_tax.subtotal`, mas no segundo caso não poderia. (Se tivéssemos anexado uma etiqueta ao bloco interno, `subtotal` poderia ser qualificado com essa etiqueta, em vez disso.)
 

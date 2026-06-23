@@ -1,4 +1,4 @@
-## 4.1. Estrutura lexical [#](#SQL-SYNTAX-LEXICAL)
+#### 4.1. Estrutura lexical [#](#SQL-SYNTAX-LEXICAL)
 
 * [4.1.1. Identificadores e Palavras-chave](sql-syntax-lexical.md#SQL-SYNTAX-IDENTIFIERS)
 * [4.1.2. Constantes](sql-syntax-lexical.md#SQL-SYNTAX-CONSTANTS)
@@ -25,7 +25,7 @@ Além disso, os *comentários* podem ocorrer na entrada SQL. Eles não são toke
 
 A sintaxe SQL não é muito consistente em relação ao que os tokens identificam como comandos e quais são operadores ou parâmetros. Os primeiros tokens são geralmente o nome do comando, então, no exemplo acima, geralmente falamos em um comando de “SELECT”, “UPDATE” e “INSERT”. Mas, por exemplo, o comando `UPDATE` sempre requer que um token `SET` apareça em uma certa posição, e esta variação específica de `INSERT` também requer um `VALUES` para ser completa. As regras precisas de sintaxe para cada comando são descritas em [Parte VI](reference.md).
 
-### 4.1.1. Identificadores e Palavras-Chave [#](#SQL-SYNTAX-IDENTIFIERS)
+##### 4.1.1. Identificadores e Palavras-Chave [#](#SQL-SYNTAX-IDENTIFIERS)
 
 Títulos como `SELECT`, `UPDATE` ou `VALUES` no exemplo acima são exemplos de *palavras-chave*, ou seja, palavras que têm um significado fixo na linguagem SQL. Os títulos `MY_TABLE` e `A` são exemplos de *identificadores*. Eles identificam nomes de tabelas, colunas ou outros objetos de banco de dados, dependendo do comando em que são usados. Portanto, às vezes são simplesmente chamados de “nomes”. Palavras-chave e identificadores têm a mesma estrutura lexical, o que significa que não se pode saber se um título é um identificador ou uma palavra-chave sem conhecer a linguagem. Uma lista completa de palavras-chave pode ser encontrada em [Apêndice C](sql-keywords-appendix.md).
 
@@ -87,11 +87,11 @@ Pode-se usar a forma de escape de 4 dígitos ou de 6 dígitos para especificar p
 
 Se o codificação do servidor não for UTF-8, o ponto de código Unicode identificado por uma dessas sequências de escape é convertido para a codificação real do servidor; um erro é relatado se isso não for possível.
 
-### 4.1.2. Constantes [#](#SQL-SYNTAX-CONSTANTS)
+##### 4.1.2. Constantes [#](#SQL-SYNTAX-CONSTANTS)
 
 Existem três tipos de constantes *implicitamente digitadas* no PostgreSQL: strings, strings de bits e números. As constantes também podem ser especificadas com tipos explícitos, o que pode permitir uma representação mais precisa e um tratamento mais eficiente pelo sistema. Essas alternativas são discutidas nas seções a seguir.
 
-#### 4.1.2.1. Constantes de cadeia [#](#SQL-SYNTAX-STRINGS)
+###### 4.1.2.1. Constantes de cadeia [#](#SQL-SYNTAX-STRINGS)
 
 Uma constante de cadeia em SQL é uma sequência arbitrária de caracteres limitada por aspas simples (`'`), por exemplo, `'This is a string'`. Para incluir um caractere de aspas simples dentro de uma constante de cadeia, escreva duas aspas simples adjacentes, por exemplo, `'Dianne''s horse'`. Observe que isso *não* é o mesmo que um caractere de aspas duplas (`"`).
 
@@ -116,13 +116,11 @@ SELECT 'foo'      'bar';
 
 não é sintaxe válida. (Esse comportamento ligeiramente bizarro é especificado pelo SQL; o PostgreSQL está seguindo o padrão.)
 
-#### 4.1.2.2. Constantes de cadeia com escapamentos em estilo C [#](#SQL-SYNTAX-STRINGS-ESCAPE)
+###### 4.1.2.2. Constantes de cadeia com escapamentos em estilo C [#](#SQL-SYNTAX-STRINGS-ESCAPE)
 
 O PostgreSQL também aceita constantes de cadeia de "escape", que são uma extensão do padrão SQL. Uma constante de cadeia de escape é especificada escrevendo a letra `E` (maiúscula ou minúscula) logo antes da primeira citação aberta, por exemplo, `E'foo'`. (Ao continuar uma constante de cadeia de escape em linhas, escreva `E` apenas antes da primeira citação aberta.) Dentro de uma cadeia de escape, um caractere barra (`\`) inicia uma sequência de escape *barra de escape* semelhante ao C, na qual a combinação de barra e caracteres subsequentes representa um valor de byte especial, conforme mostrado em [Tabela 4.1](sql-syntax-lexical.md#SQL-BACKSLASH-TABLE).
 
 **Tabela 4.1. Sequências de Escape de Backslash**
-
-
 
 <table border="1" class="table" summary="Backslash Escape Sequences">
  <colgroup>
@@ -295,20 +293,11 @@ O PostgreSQL também aceita constantes de cadeia de "escape", que são uma exten
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Qualquer outro caractere que siga uma barra invertida é tomado literalmente. Assim, para incluir um caractere de barra invertida, escreva duas barras invertidas (`\\`). Além disso, uma única citação pode ser incluída em uma string de escape escrevendo `\'`, além da maneira normal de `''`.
 
 É sua responsabilidade garantir que as sequências de bytes que você cria, especialmente ao usar escapamentos octal ou hexadecimal, comportem caracteres válidos no conjunto de caracteres do servidor. Uma alternativa útil é usar escapamentos Unicode ou a sintaxe de escapamento Unicode alternativa, explicada em [Seção 4.1.2.3](sql-syntax-lexical.md#SQL-SYNTAX-STRINGS-UESCAPE); então o servidor verificará se a conversão de caracteres é possível.
 
-### Atenção
+Atenção
 
 Se o parâmetro de configuração [standard_conforming_strings](runtime-config-compatible.md#GUC-STANDARD-CONFORMING-STRINGS) for `off`, o PostgreSQL reconhece escapamentos de barra insira em constantes de strings regulares e de escape. No entanto, a partir do PostgreSQL 9.1, o padrão é `on`, o que significa que os escapamentos de barra são reconhecidos apenas em constantes de strings de escape. Esse comportamento é mais compatível com os padrões, mas pode quebrar aplicações que dependem do comportamento histórico, onde os escapamentos de barra eram sempre reconhecidos. Como uma solução, você pode definir esse parâmetro para `off`, mas é melhor migrar para não usar escapamentos de barra. Se você precisar usar um escapamento de barra para representar um caractere especial, escreva a constante de string com `E`.
 
@@ -316,7 +305,7 @@ Além do `standard_conforming_strings`, os parâmetros de configuração [escape
 
 O caractere com o código zero não pode estar em uma constante de string.
 
-#### 4.1.2.3. Constantes de cadeia com escapamentos Unicode [#](#SQL-SYNTAX-STRINGS-UESCAPE)
+###### 4.1.2.3. Constantes de cadeia com escapamentos Unicode [#](#SQL-SYNTAX-STRINGS-UESCAPE)
 
 O PostgreSQL também suporta outro tipo de sintaxe de escape para strings que permite especificar caracteres Unicode arbitrários por ponto de código. Uma constante de cadeia de caracteres de escape Unicode começa com `U&` (letra maiúscula ou minúscula U seguida de e seguido de um símbolo de ampersand) imediatamente antes da citação de abertura, sem espaços entre eles, por exemplo, `U&'foo'`. (Observe que isso cria uma ambiguidade com o operador `&`. Use espaços ao redor do operador para evitar esse problema.) Dentro das citações, os caracteres Unicode podem ser especificados em forma escapada escrevendo uma barra invertida seguida pelo número hexadecimal de quatro dígitos ou, alternativamente, uma barra invertida seguida de um sinal de mais seguido de um número hexadecimal de seis dígitos. Por exemplo, a string `'data'` poderia ser escrita como
 
@@ -346,7 +335,7 @@ Se o codificação do servidor não for UTF-8, o ponto de código Unicode identi
 
 Além disso, a sintaxe de escape Unicode para constantes de string só funciona quando o parâmetro de configuração [standard_conforming_strings](runtime-config-compatible.md#GUC-STANDARD-CONFORMING-STRINGS) está ativado. Isso ocorre porque, caso contrário, essa sintaxe poderia confundir os clientes que analisam as declarações SQL ao ponto de poder levar a injeções SQL e problemas de segurança semelhantes. Se o parâmetro estiver definido como desligado, essa sintaxe será rejeitada com uma mensagem de erro.
 
-#### 4.1.2.4. Constantes de cadeia com valores citados em dólares [#](#SQL-SYNTAX-DOLLAR-QUOTING)
+###### 4.1.2.4. Constantes de cadeia com valores citados em dólares [#](#SQL-SYNTAX-DOLLAR-QUOTING)
 
 Embora a sintaxe padrão para especificar constantes de cadeia seja geralmente conveniente, pode ser difícil de entender quando a cadeia desejada contém muitas aspas simples, uma vez que cada uma delas deve ser duplicada. Para permitir consultas mais legíveis nessas situações, o PostgreSQL fornece outra maneira, chamada “cotação em dólar”, para escrever constantes de cadeia. Uma constante de cadeia cotada em dólar consiste em um sinal de dólar (`$`), um “etiqueta” opcional de zero ou mais caracteres, outro sinal de dólar, uma sequência arbitrária de caracteres que compõe o conteúdo da cadeia, um sinal de dólar, a mesma etiqueta que começou esta citação em dólar e um sinal de dólar. Por exemplo, aqui estão duas maneiras diferentes de especificar a cadeia “Cavalo de Dianne” usando cotação em dólar:
 
@@ -375,7 +364,7 @@ Uma cadeia de caracteres citada em dólares que segue uma palavra-chave ou ident
 
 A citação de dólares não faz parte do padrão SQL, mas é frequentemente uma maneira mais conveniente de escrever literais de string complicados do que a sintaxe de citação única compatível com o padrão. É particularmente útil ao representar constantes de string dentro de outras constantes, como muitas vezes é necessário nas definições de funções processuais. Com a sintaxe de citação única, cada barra invertida no exemplo acima teria que ser escrita como quatro barras invertidas, o que seria reduzido a duas barras invertidas na análise da constante de string original, e depois a uma quando a constante de string interna é analisada novamente durante a execução da função.
 
-#### 4.1.2.5. Constantes de cadeia de bits [#](#SQL-SYNTAX-BIT-STRINGS)
+###### 4.1.2.5. Constantes de cadeia de bits [#](#SQL-SYNTAX-BIT-STRINGS)
 
 As constantes de cadeia de bits parecem constantes de cadeia regulares com `B` (maiúscula ou minúscula) imediatamente antes da citação de abertura (sem espaços em branco intermediários), por exemplo, `B'1001'`. Os únicos caracteres permitidos dentro das constantes de cadeia de bits são `0` e `1`.
 
@@ -383,7 +372,7 @@ Alternativamente, as constantes de cadeia de bits podem ser especificadas em not
 
 Ambas as formas de constante de cadeia de bits podem ser continuadas em linhas da mesma maneira que as constantes de cadeia de caracteres regulares. A citação de dólar não pode ser usada em uma constante de cadeia de bits.
 
-#### 4.1.2.6. Constantes numéricas [#](#SQL-SYNTAX-CONSTANTS-NUMERIC)
+###### 4.1.2.6. Constantes numéricas [#](#SQL-SYNTAX-CONSTANTS-NUMERIC)
 
 As constantes numéricas são aceitas nessas formas gerais:
 
@@ -431,7 +420,7 @@ REAL '1.23'  -- string style
 
 Na verdade, esses são apenas casos especiais das anotações de lançamento gerais discutidas a seguir.
 
-#### 4.1.2.7. Constantes de Outros Tipos [#](#SQL-SYNTAX-CONSTANTS-GENERIC)
+###### 4.1.2.7. Constantes de Outros Tipos [#](#SQL-SYNTAX-CONSTANTS-GENERIC)
 
 Uma constante de um tipo *arbitrário* pode ser inserida usando qualquer uma das seguintes notações:
 
@@ -457,7 +446,7 @@ As sintaxes `::`, `CAST()` e de chamada de função também podem ser usadas par
 
 A sintaxe `CAST()` é conforme com a SQL. A sintaxe `type 'string'` é uma generalização do padrão: a SQL especifica essa sintaxe apenas para alguns tipos de dados, mas o PostgreSQL permite isso para todos os tipos. A sintaxe com `::` é o uso histórico do PostgreSQL, assim como a sintaxe de chamada de função.
 
-### 4.1.3. Operadores [#](#SQL-SYNTAX-OPERATORS)
+##### 4.1.3. Operadores [#](#SQL-SYNTAX-OPERATORS)
 
 Um nome de operador é uma sequência de até `NAMEDATALEN` caracteres (63 por padrão) da lista a seguir:
 
@@ -474,13 +463,13 @@ Por exemplo, `@-` é um nome de operador permitido, mas `*-` não é. Essa restr
 
 Ao trabalhar com nomes de operadores que não são padrão para SQL, geralmente você precisará separar operadores adjacentes com espaços para evitar ambiguidade. Por exemplo, se você definiu um operador prefixo chamado `@`, não pode escrever `X*@Y`; você deve escrever `X* @Y` para garantir que o PostgreSQL o leia como dois nomes de operador, não um.
 
-### 4.1.4. Caracteres especiais [#](#SQL-SYNTAX-SPECIAL-CHARS)
+##### 4.1.4. Caracteres especiais [#](#SQL-SYNTAX-SPECIAL-CHARS)
 
 Alguns caracteres que não são alfanuméricos têm um significado especial que é diferente de ser um operador. Os detalhes sobre o uso podem ser encontrados no local onde o respectivo elemento de sintaxe é descrito. Esta seção existe apenas para avisar sobre a existência e resumir os propósitos desses caracteres.
 
 Um símbolo de dólar (`$`) seguido por dígitos é usado para representar um parâmetro posicional no corpo de uma definição de função ou uma declaração preparada. Em outros contextos, o símbolo de dólar pode fazer parte de um identificador ou uma constante de cadeia citada por dólar. Parenteses (`()`) têm seu significado usual para agrupar expressões e impor precedência. Em alguns casos, as parenteses são necessárias como parte da sintaxe fixa de um comando SQL específico. Colchetes (`[]`) são usados para selecionar os elementos de um array. Consulte [Seção 8.15](arrays.md "8.15. Arrays") para mais informações sobre arrays. Vírgula (`,`) são usadas em algumas construções sintáticas para separar os elementos de uma lista. O ponto e vírgula (`;`) termina um comando SQL. Não pode aparecer em qualquer lugar dentro de um comando, exceto dentro de uma constante de cadeia ou identificador citado. O colon (`:`) é usado para selecionar “cortes” de arrays. (Veja [Seção 8.15](arrays.md "8.15. Arrays").). Em certos dialetos SQL (como Embedded SQL), o colon é usado para prefixar nomes de variáveis. O asterisco (`*`) é usado em alguns contextos para denotar todos os campos de uma linha de tabela ou valor composto. Também tem um significado especial quando usado como argumento de uma função agregada, ou seja, o agregado não requer nenhum parâmetro explícito. O ponto (`.`) é usado em constantes numéricas e para separar nomes de esquema, tabela e coluna.
 
-### 4.1.5. Comentários [#](#SQL-SYNTAX-COMMENTS)
+##### 4.1.5. Comentários [#](#SQL-SYNTAX-COMMENTS)
 
 Um comentário é uma sequência de caracteres que começa com duas barras e se estende até o final da linha, por exemplo:
 
@@ -500,13 +489,11 @@ onde o comentário começa com `/*` e se estende até a ocorrência corresponden
 
 Um comentário é removido do fluxo de entrada antes de uma análise sintática adicional e é efetivamente substituído por espaço em branco.
 
-### 4.1.6. Precedência do Operador [#](#SQL-PRECEDENCE)
+##### 4.1.6. Precedência do Operador [#](#SQL-PRECEDENCE)
 
 [Tabela 4.2](sql-syntax-lexical.md#SQL-PRECEDENCE-TABLE "Table 4.2. Operator Precedence (highest to lowest)") mostra a precedência e a associatividade dos operadores no PostgreSQL. A maioria dos operadores tem a mesma precedência e são associativos à esquerda. A precedência e a associatividade dos operadores estão embutidos no analisador. Adicione parênteses se você deseja que uma expressão com vários operadores seja analisada de alguma outra maneira do que o que as regras de precedência implicam.
 
 **Tabela 4.2. Prioridade do operador (da maior para a menor)**
-
-
 
 <table border="1" class="table" summary="Operator Precedence (highest to lowest)">
  <colgroup>
@@ -806,15 +793,6 @@ Um comentário é removido do fluxo de entrada antes de uma análise sintática 
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Observe que as regras de precedência do operador também se aplicam a operadores definidos pelo usuário que tenham os mesmos nomes dos operadores internos mencionados acima. Por exemplo, se você definir um operador "+" para algum tipo de dados personalizado, ele terá a mesma precedência que o operador interno "+" interno, independentemente do que o seu fizer.
 
 Quando um nome de operador qualificado por esquema é usado na sintaxe do `OPERATOR`, como, por exemplo, em:
@@ -825,6 +803,6 @@ SELECT 3 OPERATOR(pg_catalog.+) 4;
 
 o `OPERATOR` é considerado ter a precedência padrão mostrada em [Tabela 4.2](sql-syntax-lexical.md#SQL-PRECEDENCE-TABLE)) para “qualquer outro operador”. Isso é verdadeiro, independentemente de qual operador específico aparecer dentro de `OPERATOR()`.
 
-### Nota
+Nota
 
 As versões do PostgreSQL anteriores a 9.5 utilizavam regras de precedência de operadores ligeiramente diferentes. Em particular, `<=` `>=` e `<>` costumavam ser tratados como operadores genéricos; os testes `IS` costumavam ter uma prioridade mais alta; e `NOT BETWEEN` e construções relacionadas agiam de forma inconsistente, sendo tomadas em alguns casos como tendo a precedência de `NOT` em vez de `BETWEEN`. Essas regras foram alteradas para melhor conformidade com o padrão SQL e para reduzir a confusão decorrente do tratamento inconsistente de construções logicamente equivalentes. Na maioria dos casos, essas mudanças não resultarão em nenhuma mudança comportamental, ou talvez em falhas de "nenhum operador" que podem ser resolvidas adicionando parênteses. No entanto, existem casos especiais em que uma consulta pode mudar o comportamento sem que nenhum erro de análise seja relatado.

@@ -1,4 +1,4 @@
-## 2.2. Conceitos [#](#TUTORIAL-CONCEPTS)
+### 2.2. Conceitos [#](#TUTORIAL-CONCEPTS)
 
 O PostgreSQL é um *sistema de gerenciamento de banco de dados relacional* (RDBMS). Isso significa que é um sistema para gerenciar dados armazenados em *relações*. Relação é essencialmente um termo matemático para *tabela*. A noção de armazenar dados em tabelas é tão comum hoje que pode parecer inerentemente óbvio, mas há várias outras maneiras de organizar bancos de dados. Arquivos e diretórios em sistemas operacionais semelhantes ao Unix formam um exemplo de um banco de dados hierárquico. Um desenvolvimento mais moderno é o banco de dados orientado a objetos.
 

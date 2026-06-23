@@ -59,7 +59,7 @@ Observe que o pg_dump configurará `row_security` para `OFF` por padrão, para g
 
 [[`ENCRYPTED`]] `PASSWORD` '*`password`*' `PASSWORD NULL`: Define a senha do papel. (Uma senha só é útil para papéis que possuem o atributo `LOGIN`, mas você pode definir uma para papéis sem esse atributo.) Se você não planeja usar autenticação por senha, pode omitir essa opção. Se não for especificado nenhuma senha, a senha será definida como nulo e a autenticação por senha sempre falhará para esse usuário. Uma senha nula pode ser escrita explicitamente como `PASSWORD NULL`, opcionalmente.
 
-### Nota
+Nota
 
 Especificar uma string vazia também definirá a senha como nulo, mas isso não era o caso antes da versão 10 do PostgreSQL. Em versões anteriores, uma string vazia poderia ser usada, ou não, dependendo do método de autenticação e da versão exata, e o libpq se recusaria a usá-la em qualquer caso. Para evitar a ambiguidade, a especificação de uma string vazia deve ser evitada.
 

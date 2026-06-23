@@ -12,6 +12,6 @@ Quando um índice é declarado como único, não é permitido que múltiplas lin
 
 O PostgreSQL cria automaticamente um índice exclusivo quando uma restrição exclusiva ou chave primária é definida para uma tabela. O índice cobre as colunas que compõem a chave primária ou restrição exclusiva (um índice multicoluna, se apropriado) e é o mecanismo que impõe a restrição.
 
-### Nota
+Nota
 
 Não há necessidade de criar manualmente índices em colunas únicas; fazer isso apenas duplicaria o índice criado automaticamente.

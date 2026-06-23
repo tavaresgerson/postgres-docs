@@ -1,9 +1,5 @@
 ## 5. Diretrizes para Relatar Bugs [#](#BUG-REPORTING)
 
-* [5.1. Identificando Bugs](bug-reporting.md#BUG-REPORTING-IDENTIFYING-BUGS)
-* [5.2. O que Relatar](bug-reporting.md#BUG-REPORTING-WHAT-TO-REPORT)
-* [5.3. Onde Relatar Bugs](bug-reporting.md#BUG-REPORTING-WHERE-TO-REPORT-BUGS)
-
 Quando você encontrar um erro no PostgreSQL, queremos saber sobre isso. Seus relatórios de bugs desempenham um papel importante em tornar o PostgreSQL mais confiável, porque nem o cuidado máximo pode garantir que cada parte do PostgreSQL funcione em todas as plataformas em todas as circunstâncias.
 
 As sugestões a seguir visam ajudá-lo a formular relatórios de bugs que podem ser tratados de maneira eficaz. Ninguém é obrigado a segui-las, mas fazê-lo tende a ser a vantagem de todos.
@@ -39,11 +35,11 @@ O melhor formato para um caso de teste para problemas relacionados a SQL é um a
 Se o seu aplicativo usa outra interface de cliente, como PHP, tente isolar as consultas que geram o problema. Provavelmente não configuraremos um servidor web para reproduzir o seu problema. Em qualquer caso, lembre-se de fornecer os arquivos de entrada exatos; não pense que o problema ocorre com "arquivos grandes" ou "bancos de dados de tamanho médio", etc., pois essas informações são muito inexatas para serem úteis.
 * A saída que você obteve. Não diga que "não funcionou" ou "quebrou". Se houver uma mensagem de erro, mostre-a, mesmo que você não a entenda. Se o programa terminar com um erro do sistema operacional, diga qual. Se nada aconteça, diga isso. Mesmo que o resultado do seu caso de teste seja um programa quebrado ou de outra forma óbvio, pode não acontecer na nossa plataforma. A coisa mais fácil é copiar a saída do terminal, se possível.
 
-### Nota
+Nota
 
 Se você está relatando uma mensagem de erro, obtenha a forma mais detalhada da mensagem. Em psql, diga `\set VERBOSITY verbose` previamente. Se você está extraindo a mensagem do log do servidor, defina o parâmetro de tempo de execução [log_error_verbosity](runtime-config-logging.md#GUC-LOG-ERROR-VERBOSITY) para `verbose` para que todos os detalhes sejam registrados.
 
-### Nota
+Nota
 
 Em caso de erros fatais, a mensagem de erro relatada pelo cliente pode não conter todas as informações disponíveis. Além disso, consulte a saída do log do servidor de banco de dados. Se você não manter a saída do log do seu servidor, seria um bom momento para começar a fazer isso.
 * A saída que você espera é muito importante de ser declarada. Se você apenas escrever “Este comando me dá essa saída.” ou “Isso não é o que eu esperava.”, podemos executar o comando nós mesmos, analisar a saída e pensar que ela parece OK e é exatamente o que esperávamos. Não devemos ter que gastar tempo para decodificar a semântica exata por trás dos seus comandos. Especialmente, não se afaste apenas dizendo que “Isso não é o que diz o SQL ou o Oracle.” Descobrir o comportamento correto do SQL não é uma tarefa divertida, e nem todos nós sabemos como todos os outros bancos relacionais lá fora se comportam. (Se o seu problema é um travamento do programa, você pode obviamente omitir este item.)
@@ -76,6 +72,6 @@ Se você tiver um problema com a documentação, o melhor lugar para relatar é 
 
 Se o seu problema for um problema de portabilidade em uma plataforma não suportada, envie um e-mail para `<pgsql-hackers@lists.postgresql.org>`, para que nós (e você) possamos trabalhar na portabilidade do PostgreSQL para sua plataforma.
 
-### Nota
+Nota
 
 Devido à quantidade infeliz de spam que circula, todos os listados acima serão moderados, a menos que você esteja inscrito. Isso significa que haverá um certo atraso antes do e-mail ser entregue. Se você deseja se inscrever nas listas, por favor, visite <https://lists.postgresql.org/> para obter instruções.

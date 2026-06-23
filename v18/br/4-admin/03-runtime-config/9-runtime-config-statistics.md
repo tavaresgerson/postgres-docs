@@ -21,13 +21,13 @@ Esses parâmetros controlam o sistema de estatísticas acumuladas em todo o serv
 
 `track_functions` (`enum`) [#](#GUC-TRACK-FUNCTIONS): Permite o rastreamento de contagem de chamadas de função e tempo utilizado. Especifique `pl` para rastrear apenas funções de linguagem procedural, `all` para também rastrear funções de SQL e linguagem C. O padrão é `none`, que desativa o rastreamento de estatísticas de função. Somente superusuários e usuários com o privilégio apropriado `SET` podem alterar essa configuração.
 
-### Nota
+Nota
 
 As funções em linguagem SQL que são simples o suficiente para serem "injetadas" na consulta que as chama não serão rastreadas, independentemente desta configuração.
 
 `stats_fetch_consistency` (`enum`) [#](#GUC-STATS-FETCH-CONSISTENCY): Determina o comportamento quando estatísticas cumulativas são acessadas várias vezes dentro de uma transação. Quando definido como `none`, cada acesso recupera novamente os contadores da memória compartilhada. Quando definido como `cache`, o primeiro acesso às estatísticas para um objeto armazena essas estatísticas até o final da transação, a menos que `pg_stat_clear_snapshot()` seja chamado. Quando definido como `snapshot`, o primeiro acesso às estatísticas armazena todas as estatísticas acessíveis no banco de dados atual, até o final da transação, a menos que `pg_stat_clear_snapshot()` seja chamado. Alterar este parâmetro em uma transação descarta o instantâneo de estatísticas. O padrão é `cache`.
 
-### Nota
+Nota
 
 `none` é mais adequado para sistemas de monitoramento. Se os valores forem acessados apenas uma vez, é o mais eficiente. `cache` garante que acessos repetidos produzam os mesmos valores, o que é importante para consultas que envolvem, por exemplo, auto-juntas. `snapshot` pode ser útil ao inspecionar interativamente as estatísticas, mas tem um custo maior, especialmente se houver muitos objetos de banco de dados.
 
@@ -35,7 +35,7 @@ As funções em linguagem SQL que são simples o suficiente para serem "injetada
 
 `compute_query_id` (`enum`) [#](#GUC-COMPUTE-QUERY-ID): Habilita a computação interna de um identificador de consulta. Os identificadores de consulta podem ser exibidos na visualização [`pg_stat_activity`](monitoring-stats.md#MONITORING-PG-STAT-ACTIVITY-VIEW "27.2.3. pg_stat_activity"), usando `EXPLAIN`, ou emitidos no log se configurados via o parâmetro [log_line_prefix](runtime-config-logging.md#GUC-LOG-LINE-PREFIX). A extensão [pg_stat_statements](pgstatstatements.md "F.32. pg_stat_statements — track statistics of SQL planning and execution") também requer que um identificador de consulta seja computado. Note que um módulo externo pode ser usado como alternativa se o método de computação interna de identificador de consulta não for aceitável. Neste caso, a computação interna deve ser sempre desativada. Os valores válidos são `off` (sempre desativado), `on` (sempre ativado), `auto`, que permite que módulos como [pg_stat_statements](pgstatstatements.md "F.32. pg_stat_statements — track statistics of SQL planning and execution") a ativem automaticamente, e `regress` que tem o mesmo efeito que `auto`, exceto que o identificador de consulta não é mostrado na saída `EXPLAIN` para facilitar o teste de regressão automatizado. O padrão é `auto`.
 
-### Nota
+Nota
 
 Para garantir que apenas um identificador de consulta seja calculado e exibido, as extensões que calculam identificadores de consulta devem lançar um erro se um identificador de consulta já tiver sido calculado.
 

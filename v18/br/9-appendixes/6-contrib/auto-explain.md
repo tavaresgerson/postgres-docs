@@ -24,7 +24,7 @@ Existem vários parâmetros de configuração que controlam o comportamento do `
 
 `auto_explain.log_analyze` (`boolean`) [#](#AUTO-EXPLAIN-CONFIGURATION-PARAMETERS-LOG-ANALYZE): `auto_explain.log_analyze` faz com que a saída `EXPLAIN ANALYZE` seja impressa, em vez de apenas a saída `EXPLAIN`, quando um plano de execução é registrado. Este parâmetro está desativado por padrão. Somente os usuários superusuários podem alterar esta configuração.
 
-### Nota
+Nota
 
 Quando este parâmetro está ativado, o temporizador por plano de nó ocorre para todas as declarações executadas, independentemente de elas rodarem o tempo suficiente para serem realmente registradas. Isso pode ter um impacto extremamente negativo no desempenho. Desativar `auto_explain.log_timing` melhora o custo de desempenho, no preço de obter menos informações.
 

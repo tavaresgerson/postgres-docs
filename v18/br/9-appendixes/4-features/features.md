@@ -39,6 +39,6 @@ O PostgreSQL suporta a maioria das principais características do SQL:2023. Das 
 
 Nas duas seções seguintes, fornecemos uma lista dessas funcionalidades que o PostgreSQL suporta, seguida de uma lista das funcionalidades definidas no SQL:2023 que ainda não são suportadas no PostgreSQL. Ambas as listas são aproximadas: Pode haver detalhes menores que não são conformes para uma funcionalidade que é listada como suportada, e grandes partes de uma funcionalidade não suportada podem, de fato, ser implementadas. O corpo principal da documentação sempre contém as informações mais precisas sobre o que funciona e o que não funciona.
 
-### Nota
+Nota
 
 Os códigos de recurso que contêm um hífen são subrecursos. Portanto, se um recurso específico não for suportado, o recurso principal é listado como não suportado, mesmo que alguns outros subrecursos sejam suportados.

@@ -196,7 +196,7 @@ SELECT ts_lexize('english_stem', 'a');
  {}
 ```
 
-### Nota
+Nota
 
 A função `ts_lexize` espera um único *token*, não texto. Aqui está um caso em que isso pode ser confuso:
 

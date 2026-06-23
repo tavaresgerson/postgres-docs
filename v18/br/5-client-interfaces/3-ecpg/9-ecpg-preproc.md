@@ -37,7 +37,7 @@ Observe que `EXEC SQL INCLUDE` *não* é o mesmo que:
 
 porque esse arquivo não seria sujeito à pré-processamento de comandos SQL. Naturalmente, você pode continuar a usar a diretiva C `#include` para incluir outros arquivos de cabeçalho.
 
-### Nota
+Nota
 
 O nome do arquivo do arquivo de inclusão é sensível ao caso, embora o resto do comando `EXEC SQL INCLUDE` siga as regras normais de sensibilidade ao caso do SQL.
 

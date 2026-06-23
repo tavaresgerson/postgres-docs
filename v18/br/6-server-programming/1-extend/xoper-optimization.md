@@ -261,11 +261,11 @@ Para ser marcado `HASHES`, o operador de junção deve aparecer em uma família 
 
 Um operador que pode ser associado a hash deve ter um commutator (ele mesmo se os dois tipos de dados dos operandos forem os mesmos, ou um operador de igualdade relacionado se forem diferentes) que apareça na mesma família de operadores. Se este não for o caso, podem ocorrer erros no planejador quando o operador é usado. Além disso, é uma boa ideia (mas não é estritamente necessária) para uma família de operadores de hash que suporta vários tipos de dados fornecer operadores de igualdade para cada combinação dos tipos de dados; isso permite uma melhor otimização.
 
-### Nota
+Nota
 
 A função subjacente a um operador que pode ser associado por junção de hash deve ser marcada como imutável ou estável. Se for volátil, o sistema nunca tentará usar o operador para uma junção de hash.
 
-### Nota
+Nota
 
 Se um operador que pode ser associado por hash tiver uma função subjacente marcada como estrita, a função também deve ser completa: ou seja, deve retornar verdadeiro ou falso, nunca nulo, para quaisquer dois inputs não nulos. Se essa regra não for seguida, a otimização de `IN` das operações pode gerar resultados errados. (Especificamente, `IN` pode retornar falso onde a resposta correta, de acordo com o padrão, seria nulo; ou pode gerar um erro que reclama que não foi preparado para um resultado nulo.)
 
@@ -279,6 +279,6 @@ Para ser marcado `MERGES`, o operador de junção deve aparecer como membro de i
 
 Um operador que pode ser fundido e unido deve ter um commutator (ele mesmo se os dois tipos de dados dos operandos forem os mesmos, ou um operador de igualdade relacionado se forem diferentes) que apareça na mesma família de operadores. Se este não for o caso, podem ocorrer erros no planejador quando o operador é usado. Além disso, é uma boa ideia (mas não é estritamente necessária) para uma família de operadores `btree` que suporta vários tipos de dados fornecer operadores de igualdade para cada combinação dos tipos de dados; isso permite uma melhor otimização.
 
-### Nota
+Nota
 
 A função subjacente a um operador que pode ser fundido e unido deve ser marcada como imutável ou estável. Se for volátil, o sistema nunca tentará usar o operador para uma junção de fusão.

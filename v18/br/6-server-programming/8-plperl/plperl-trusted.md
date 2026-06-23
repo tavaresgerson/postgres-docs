@@ -29,10 +29,10 @@ Se a função acima foi criada por um superusuário usando a linguagem `plperlu`
 
 Da mesma forma, blocos de código anônimos escritos em Perl podem usar operações restritas se a linguagem for especificada como `plperlu` em vez de `plperl`, mas o chamador deve ser um superusuário.
 
-### Nota
+Nota
 
 Enquanto as funções PL/Perl funcionam em um interpretador Perl separado para cada papel SQL, todas as funções PL/PerlU executadas em uma sessão dada funcionam em um único interpretador Perl (que não é nenhum dos usados para funções PL/Perl). Isso permite que as funções PL/PerlU compartilhem dados livremente, mas nenhuma comunicação pode ocorrer entre as funções PL/Perl e PL/PerlU.
 
-### Nota
+Nota
 
 O Perl não pode suportar vários intérpretes dentro de um único processo, a menos que tenha sido construído com as bandeiras apropriadas, ou seja, `usemultiplicity` ou `useithreads`. (`usemultiplicity` é preferido, a menos que você realmente precise usar threads. Para mais detalhes, consulte a página do manual perlembed.) Se o PL/Perl for usado com uma cópia do Perl que não foi construída dessa maneira, então é possível ter apenas um intérprete Perl por sessão, e, portanto, qualquer sessão só pode executar funções PL/PerlU ou funções PL/Perl que são chamadas por todos os mesmos papéis de SQL.

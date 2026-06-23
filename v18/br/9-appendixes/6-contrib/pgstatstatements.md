@@ -974,7 +974,7 @@ Por razões de segurança, apenas superusuários e papéis com privilégios da f
 
 As consultas planejáveis (ou seja, `SELECT`, `INSERT`, `UPDATE`, `DELETE` e `MERGE`) e os comandos de utilidade são combinados em uma única entrada `pg_stat_statements` sempre que tiverem estruturas de consulta idênticas de acordo com um cálculo de hash interno. Tipicamente, duas consultas serão consideradas iguais para este propósito se forem semanticamente equivalentes, exceto pelos valores das constantes literais que aparecem na consulta.
 
-### Nota
+Nota
 
 Os seguintes detalhes sobre substituição constante e `queryid` só se aplicam quando [compute_query_id](runtime-config-statistics.md#GUC-COMPUTE-QUERY-ID) está habilitado. Se você usar um módulo externo em vez disso para calcular `queryid`, você deve consultar a documentação dele para obter detalhes.
 

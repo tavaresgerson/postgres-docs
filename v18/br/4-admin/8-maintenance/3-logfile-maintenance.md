@@ -2,7 +2,7 @@
 
 É uma boa ideia salvar a saída do log do servidor de banco de dados em algum lugar, em vez de simplesmente descartá-la via `/dev/null`. A saída do log é inestimável ao diagnosticar problemas.
 
-### Nota
+Nota
 
 O log do servidor pode conter informações sensíveis e precisa ser protegido, independentemente de como ou onde ele é armazenado, ou do destino para o qual ele é encaminhado. Por exemplo, algumas declarações DDL podem conter senhas em texto plano ou outros detalhes de autenticação. Declarações registradas no nível `ERROR` podem mostrar o código-fonte do SQL para aplicativos e também podem conter algumas partes das linhas de dados. O registro de dados, eventos e informações relacionadas é a função pretendida desta facilidade, então isso não é uma vazamento ou um bug. Por favor, garanta que os logs do servidor sejam visíveis apenas para pessoas apropriadamente autorizadas.
 
@@ -20,7 +20,7 @@ pg_ctl start | rotatelogs /var/log/pgsql_log 86400
 
 Você pode combinar essas abordagens configurando o logrotate para coletar os arquivos de registro produzidos pelo coletor de registro integrado do PostgreSQL. Neste caso, o coletor de registro define os nomes e a localização dos arquivos de registro, enquanto o logrotate arquivia periodicamente esses arquivos. Ao iniciar a rotação de log, o logrotate deve garantir que o aplicativo envie mais saída para o novo arquivo. Isso é comumente feito com um script `postrotate` que envia um sinal `SIGHUP` ao aplicativo, que então reabre o arquivo de log. No PostgreSQL, você pode executar `pg_ctl` com a opção `logrotate`. Quando o servidor recebe esse comando, o servidor ou troca para um novo arquivo de log ou reabre o arquivo existente, dependendo da configuração de registro (veja [Seção 19.8.1] (runtime-config-logging.md#RUNTIME-CONFIG-LOGGING-WHERE "19.8.1. Where to Log")).
 
-### Nota
+Nota
 
 Ao usar nomes estáticos de arquivos de registro, o servidor pode falhar ao reabrir o arquivo de registro se o limite máximo de arquivos abertos for atingido ou ocorrer um overflow na tabela de arquivos. Neste caso, as mensagens de log são enviadas para o arquivo de log antigo até que ocorra uma rotação de log bem-sucedida. Se o logrotate for configurado para comprimir o arquivo de log e excluí-lo, o servidor pode perder as mensagens registradas nesse período. Para evitar esse problema, você pode configurar o coletor de registro para atribuir dinamicamente nomes de arquivos de registro e usar um script `prerotate` para ignorar arquivos de log abertos.
 

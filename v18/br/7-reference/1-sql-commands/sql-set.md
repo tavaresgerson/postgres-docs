@@ -21,7 +21,7 @@ Os efeitos de `SET` ou `SET LOCAL` também são cancelados ao retornar a um pont
 
 Se `SET LOCAL` for usado dentro de uma função que tem uma opção [[PH_LNK_24]] para a mesma variável (ver [CREATE FUNCTION](sql-createfunction.md "CREATE FUNCTION")), os efeitos do comando `SET LOCAL` desaparecem ao sair da função; ou seja, o valor em vigor quando a função foi chamada é restaurado de qualquer forma. Isso permite que `SET LOCAL` seja usado para mudanças dinâmicas ou repetidas de um parâmetro dentro de uma função, mantendo a conveniência de usar a opção `SET` para salvar e restaurar o valor do chamador. No entanto, um comando regular `SET` substitui qualquer opção `SET` de função circundante; seus efeitos persistirão a menos que sejam revertidos.
 
-### Nota
+Nota
 
 Nas versões do PostgreSQL de 8.0 a 8.2, os efeitos de um `SET LOCAL` seriam cancelados ao liberar um ponto de salvamento anterior ou ao sair com sucesso de um bloco de exceção PL/pgSQL. Esse comportamento foi alterado porque foi considerado pouco intuitivo.
 

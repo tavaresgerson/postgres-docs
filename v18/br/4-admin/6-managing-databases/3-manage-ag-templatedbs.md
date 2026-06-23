@@ -26,7 +26,7 @@ da casca.
 
 Existem duas bandeiras úteis em `pg_database` para cada banco de dados: as colunas `datistemplate` e `datallowconn`. `datistemplate` pode ser definido para indicar que um banco de dados é destinado como um modelo para `CREATE DATABASE`. Se esta bandeira for definida, o banco de dados pode ser clonado por qualquer usuário com privilégios de `CREATEDB`; se não for definida, apenas os superusuários e o proprietário do banco de dados podem cloná-lo. Se `datallowconn` for falso, então nenhuma nova conexão com esse banco de dados será permitida (mas as sessões existentes não serão terminadas simplesmente ao definir a bandeira como falsa). O banco de dados `template0` é normalmente marcado `datallowconn = false` para evitar sua modificação. Tanto `template0` quanto `template1` devem ser sempre marcados com `datistemplate = true`.
 
-### Nota
+Nota
 
 `template1` e `template0` não têm nenhum status especial além do fato de que o nome `template1` é o nome padrão do banco de dados de origem para `CREATE DATABASE`. Por exemplo, é possível excluir `template1` e recriá-lo a partir de `template0` sem quaisquer efeitos negativos. Este curso de ação pode ser aconselhável se alguém tiver adicionado descuidadamente um monte de lixo em `template1`. (Para excluir `template1`, ele deve ter `pg_database.datistemplate = false`.)
 

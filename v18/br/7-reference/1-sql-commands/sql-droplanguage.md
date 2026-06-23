@@ -12,7 +12,7 @@ DROP [ PROCEDURAL ] LANGUAGE [ IF EXISTS ] name [ CASCADE | RESTRICT ]
 
 `DROP LANGUAGE` remove a definição de um idioma de procedimento previamente registrado. Você deve ser um superusuário ou o proprietário do idioma para usar `DROP LANGUAGE`.
 
-### Nota
+Nota
 
 A partir do PostgreSQL 9.1, a maioria dos linguagens procedimentais foi transformada em “extensões” e, portanto, deve ser removida com `DROP EXTENSION` não (sql-dropextension.md "DROP EXTENSION") `DROP LANGUAGE`.
 

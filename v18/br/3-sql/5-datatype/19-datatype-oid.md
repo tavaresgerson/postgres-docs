@@ -318,7 +318,7 @@ nextval('"myschema".foo')   same as above
 nextval('foo')              searches search path for foo
 ```
 
-### Nota
+Nota
 
 Quando você escreve o argumento de uma função como uma string literal não ornamentada, ela se torna uma constante do tipo `regclass` (ou o tipo apropriado). Como essa é realmente apenas um OID, ela rastreará o objeto originalmente identificado, apesar de posterior renomeação, reatribuição de esquema, etc. Esse comportamento de "ligação precoce" é geralmente desejável para referências de objetos em padrões de coluna e visualizações. Mas, às vezes, você pode querer "ligação tardia" onde a referência do objeto é resolvida no tempo de execução. Para obter comportamento de ligação tardia, force a constante a ser armazenada como uma constante `text` em vez de `regclass`:
 

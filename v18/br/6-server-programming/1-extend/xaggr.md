@@ -49,7 +49,7 @@ CREATE AGGREGATE avg (float8)
 );
 ```
 
-### Nota
+Nota
 
 `float8_accum` exige um array de três elementos, não apenas dois elementos, porque acumula a soma dos quadrados, bem como a soma e o número de entradas. Isso é para que ele possa ser usado para alguns outros agregados, assim como `avg`.
 
@@ -166,7 +166,7 @@ Aqui, a opção `finalfunc_extra` especifica que a função final recebe, além 
 
 Uma função agregada pode ser feita para aceitar um número variável de argumentos, declarando seu último argumento como um array `VARIADIC`, de maneira muito semelhante à de funções regulares; veja [Seção 36.5.6](xfunc-sql.md#XFUNC-SQL-VARIADIC-FUNCTIONS). A(s) função(ões) de transição da agregação deve ter o mesmo tipo de array que seu(s) último(s) argumento(s). A(s) função(ões) de transição normalmente também seria marcada `VARIADIC`, mas isso não é estritamente necessário.
 
-### Nota
+Nota
 
 Os agregados variadic são facilmente mal utilizados em conexão com a opção `ORDER BY` (consulte [Seção 4.2.7](sql-expressions.md#SYNTAX-AGGREGATES)), pois o analisador não pode determinar se o número errado de argumentos reais foi dado em tal combinação. Tenha em mente que tudo à direita de `ORDER BY` é uma chave de classificação, não um argumento para o agregado. Por exemplo, em
 

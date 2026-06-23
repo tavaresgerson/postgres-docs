@@ -330,7 +330,7 @@ A definição do gatilho é a mesma que antes. Observe que cada teste `IF` deve 
 
 Embora essa função seja mais complexa do que o caso de um mês, não precisa ser atualizada com tanta frequência, uma vez que os ramos podem ser adicionados antes de serem necessários.
 
-### Nota
+Nota
 
 Na prática, pode ser melhor verificar o filho mais novo primeiro, se a maioria dos registros for nesse filho. Por simplicidade, mostramos os testes do gatilho na mesma ordem que em outras partes deste exemplo.
 

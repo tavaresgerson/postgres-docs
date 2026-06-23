@@ -60,7 +60,7 @@ PERFORM query;
 
 Isso executa *`query`* e descarta o resultado. Escreva *`query`* da mesma maneira que você escreveria um comando SQL `SELECT`, mas substitua a palavra-chave inicial `SELECT` por `PERFORM`. Para consultas `WITH`, use `PERFORM` e, em seguida, coloque a consulta entre parênteses. (Neste caso, a consulta só pode retornar uma linha.) As variáveis PL/pgSQL serão substituídas na consulta da mesma maneira descrita acima, e o plano é armazenado em cache da mesma maneira. Além disso, a variável especial `FOUND` é definida como verdadeira se a consulta produziu pelo menos uma linha, ou falsa se não produziu nenhuma linha (consulte [Seção 41.5.5](plpgsql-statements.md#PLPGSQL-STATEMENTS-DIAGNOSTICS "41.5.5. Obtaining the Result Status")).
 
-### Nota
+Nota
 
 Pode-se esperar que escrever `SELECT` diretamente consiga alcançar esse resultado, mas, atualmente, a única maneira aceita de fazer isso é `PERFORM`. Um comando SQL que pode retornar linhas, como `SELECT`, será rejeitado como um erro, a menos que tenha uma cláusula `INTO`, conforme discutido na próxima seção.
 
@@ -142,7 +142,7 @@ DETAIL:  parameters: username = 'nosuchuser'
 CONTEXT:  PL/pgSQL function get_userid(text) line 6 at SQL statement
 ```
 
-### Nota
+Nota
 
 A opção `STRICT` corresponde ao comportamento do `SELECT INTO` do Oracle PL/SQL e das declarações relacionadas.
 
@@ -199,7 +199,7 @@ Um `EXECUTE` com uma string de comando constante simples e alguns parâmetros `U
 
 `SELECT INTO` não é atualmente suportado dentro de `EXECUTE`; em vez disso, execute um comando simples `SELECT` e especifique `INTO` como parte do próprio `EXECUTE`.
 
-### Nota
+Nota
 
 A declaração PL/pgSQL `EXECUTE` não está relacionada à declaração SQL `EXECUTE`(sql-execute.md "EXECUTE") suportada pelo servidor PostgreSQL. A declaração do servidor `EXECUTE` não pode ser usada diretamente dentro das funções PL/pgSQL (e não é necessária).
 
@@ -427,6 +427,6 @@ END;
 
 O que é preferível é uma questão de gosto.
 
-### Nota
+Nota
 
 No PL/SQL da Oracle, listas de declarações vazias não são permitidas, e, portanto, as declarações `NULL` são *requeridas* para situações como essa. O PL/pgSQL permite que você simplesmente não escreva nada, em vez disso.

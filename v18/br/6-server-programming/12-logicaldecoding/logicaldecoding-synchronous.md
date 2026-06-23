@@ -7,7 +7,7 @@
 
 A decodificação lógica pode ser usada para construir soluções de [[replicação síncrona]] com a mesma interface de usuário da replicação síncrona para [[replicação em fluxo]] (warm-standby.md#SYNCHRONOUS-REPLICATION "26.2.8. Synchronous Replication"). Para isso, a interface de replicação em fluxo (consulte [Seção 47.3] (logicaldecoding-walsender.md "47.3. Streaming Replication Protocol Interface")) deve ser usada para transmitir dados. Os clientes devem enviar mensagens `Standby status update (F)` (consulte [Seção 54.4] (protocol-replication.md "54.4. Streaming Replication Protocol")) assim como os clientes de replicação em fluxo.
 
-### Nota
+Nota
 
 Uma replica síncrona que recebe alterações por meio de decodificação lógica funcionará no escopo de um único banco de dados. Como, em contraste, *`synchronous_standby_names`* atualmente é utilizado em todo o servidor, isso significa que essa técnica não funcionará corretamente se mais de um banco de dados estiver sendo utilizado ativamente.
 

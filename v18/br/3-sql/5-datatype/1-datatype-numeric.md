@@ -243,7 +243,7 @@ NUMERIC
 
 sem qualquer precisão ou escala cria uma coluna "numérica não limitada" na qual valores numéricos de qualquer comprimento podem ser armazenados, até os limites de implementação. Uma coluna desse tipo não coagirá os valores de entrada para qualquer escala específica, enquanto as colunas `numeric` com uma escala declarada coagirão os valores de entrada para essa escala. (O padrão SQL exige uma escala padrão de 0, ou seja, coerência para precisão inteira. Acreditamos que isso é um pouco inútil. Se você está preocupado com a portabilidade, especifique sempre a precisão e a escala explicitamente.)
 
-### Nota
+Nota
 
 A máxima precisão que pode ser explicitamente especificada em uma declaração de tipo `numeric` é de 1000. Uma coluna `numeric` sem restrições está sujeita aos limites descritos na [Tabela 8.2](datatype-numeric.md#DATATYPE-NUMERIC-TABLE).
 
@@ -269,7 +269,7 @@ NUMERIC(3, 5)
 
 os valores serão arredondados para 5 casas decimais e poderão armazenar valores entre -0,00999 e 0,00999, inclusive.
 
-### Nota
+Nota
 
 O PostgreSQL permite que a escala em uma declaração de tipo `numeric` seja qualquer valor no intervalo de -1000 a 1000. No entanto, o padrão SQL exige que a escala esteja no intervalo de 0 a *`precision`*. Usar escalas fora desse intervalo pode não ser portátil para outros sistemas de banco de dados.
 
@@ -285,7 +285,7 @@ Os valores infinitos se comportam conforme as expectativas matemáticas. Por exe
 
 O valor `NaN` (não é um número) é usado para representar resultados de cálculo indefinidos. Em geral, qualquer operação com uma entrada `NaN` resulta em outro `NaN`. A única exceção é quando as outras entradas da operação são tais que a mesma saída seria obtida se o `NaN` fosse substituído por qualquer valor numérico finito ou infinito; então, esse valor de saída é usado para `NaN` também. (Um exemplo desse princípio é que `NaN` elevado ao poder zero resulta em um.)
 
-### Nota
+Nota
 
 Na maioria das implementações do conceito de “não é um número”, `NaN` não é considerado igual a qualquer outro valor numérico (incluindo `NaN`). Para permitir que os valores de `numeric` sejam ordenados e utilizados em índices baseados em árvore, o PostgreSQL trata os valores de `NaN` como iguais e maiores que todos os valores que não são `NaN`.
 
@@ -325,7 +325,7 @@ Em todas as plataformas atualmente suportadas, o tipo `real` tem um intervalo de
 
 Por padrão, os valores de ponto flutuante são exibidos em formato de texto na sua representação decimal mais precisa e curta; o valor decimal produzido está mais próximo do verdadeiro valor binário armazenado do que de qualquer outro valor que possa ser representado na mesma precisão binária. (No entanto, o valor de saída atualmente nunca é exatamente no meio entre dois valores representáveis, a fim de evitar um bug generalizado em que as rotinas de entrada não respeitam adequadamente a regra de arredondamento para o número par mais próximo.) Este valor usará, no máximo, 17 dígitos decimais significativos para os valores de `float8` e, no máximo, 9 dígitos para os valores de `float4`.
 
-### Nota
+Nota
 
 Esse formato de saída mais preciso e mais curto é muito mais rápido de gerar do que o formato arredondado histórico.
 
@@ -333,7 +333,7 @@ Para compatibilidade com a saída gerada por versões mais antigas do PostgreSQL
 
 Qualquer valor de [extra_float_digits][(runtime-config-client.md#GUC-EXTRA-FLOAT-DIGITS) maior que 0 seleciona o formato mais preciso.
 
-### Nota
+Nota
 
 Aplicações que desejavam valores precisos historicamente tiveram que definir [extra_float_digits](runtime-config-client.md#GUC-EXTRA-FLOAT-DIGITS) para 3 para obtê-los. Para obter a máxima compatibilidade entre as versões, elas devem continuar a fazer isso.
 
@@ -343,7 +343,7 @@ Além dos valores numéricos comuns, os tipos de ponto flutuante têm vários va
 
 Estes representam os valores especiais IEEE 754 “infinitas”, “infinitas negativas” e “não um número”, respectivamente. Ao escrever esses valores como constantes em um comando SQL, você deve colocá-los entre aspas, por exemplo, `UPDATE table SET x = '-Infinity'`. Na entrada, essas strings são reconhecidas de forma insensível ao caso. Os valores infinitos podem ser escritos como `inf` e `-inf`, como alternativa.
 
-### Nota
+Nota
 
 A IEEE 754 especifica que `NaN` não deve ser comparado a qualquer outro valor de ponto flutuante (incluindo `NaN`). Para permitir que os valores de ponto flutuante sejam ordenados e utilizados em índices baseados em árvores, o PostgreSQL trata os valores de `NaN` como iguais e maiores que todos os valores que não são `NaN`.
 
@@ -351,7 +351,7 @@ O PostgreSQL também suporta as notações padrão do SQL `float` e `float(p)` p
 
 ### 8.1.4. Tipos de série [#](#DATATYPE-SERIAL)
 
-### Nota
+Nota
 
 Esta seção descreve uma maneira específica do PostgreSQL para criar uma coluna de autoincremento. Outra maneira é usar a característica da coluna de identidade padrão do SQL, descrita em [Seção 5.3](ddl-identity-columns.md).
 
@@ -375,7 +375,7 @@ ALTER SEQUENCE tablename_colname_seq OWNED BY tablename.colname;
 
 Assim, criamos uma coluna inteira e configuramos para que seus valores padrão sejam atribuídos a partir de um gerador de sequência. Uma restrição `NOT NULL` é aplicada para garantir que um valor nulo não possa ser inserido. (Na maioria dos casos, você também deseja anexar uma restrição `UNIQUE` ou `PRIMARY KEY` para evitar que valores duplicados sejam inseridos acidentalmente, mas isso não é automático.) Por último, a sequência é marcada como “de propriedade” da coluna, para que seja descartada se a coluna ou a tabela forem descartadas.
 
-### Nota
+Nota
 
 Como `smallserial`, `serial` e `bigserial` são implementados usando sequências, pode haver "lacunas" ou lacunas na sequência de valores que aparece na coluna, mesmo que nunca sejam excluídas linhas. Um valor alocado a partir da sequência ainda é "usado" mesmo que uma linha contendo esse valor nunca seja inserida com sucesso na coluna da tabela. Isso pode acontecer, por exemplo, se a transação de inserção for revertida. Consulte `nextval()` em [Seção 9.17](functions-sequence.md) para obter detalhes.
 

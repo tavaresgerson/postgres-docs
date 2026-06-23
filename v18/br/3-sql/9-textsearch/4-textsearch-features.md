@@ -107,7 +107,7 @@ SELECT ts_rewrite('a & b'::tsquery, 'SELECT t,s FROM aliases WHERE ''a & b''::ts
 
 ### 12.4.3. Gatilhos para Atualizações Automáticas [#](#TEXTSEARCH-UPDATE-TRIGGERS)
 
-### Nota
+Nota
 
 O método descrito nesta seção foi obsoleto com o uso de colunas geradas armazenadas, conforme descrito em [Seção 12.2.2](textsearch-tables.md#TEXTSEARCH-TABLES-INDEX).
 

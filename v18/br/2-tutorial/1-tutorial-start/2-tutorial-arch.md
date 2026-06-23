@@ -1,4 +1,4 @@
-## 1.2. Fundamentos arquitetônicos [#](#TUTORIAL-ARCH)
+### 1.2. Fundamentos arquitetônicos [#](#TUTORIAL-ARCH)
 
 Antes de prosseguir, você deve entender a arquitetura básica do sistema PostgreSQL. Entender como as partes do PostgreSQL interagem tornará este capítulo um pouco mais claro.
 

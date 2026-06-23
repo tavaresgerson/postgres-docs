@@ -1,4 +1,4 @@
-## 4.2. Expressões de Valor [#](#SQL-EXPRESSIONS)
+#### 4.2. Expressões de Valor [#](#SQL-EXPRESSIONS)
 
 * [4.2.1. Referências de Coluna](sql-expressions.md#SQL-EXPRESSIONS-COLUMN-REFS)
 * [4.2.2. Parâmetros Posicionais](sql-expressions.md#SQL-EXPRESSIONS-PARAMETERS-POSITIONAL)
@@ -39,7 +39,7 @@ Além dessa lista, há vários construtos que podem ser classificados como expre
 
 Já discutimos as constantes em [Seção 4.1.2](sql-syntax-lexical.md#SQL-SYNTAX-CONSTANTS). As seções seguintes discutem as opções restantes.
 
-### 4.2.1. Referências de coluna [#](#SQL-EXPRESSIONS-COLUMN-REFS)
+##### 4.2.1. Referências de coluna [#](#SQL-EXPRESSIONS-COLUMN-REFS)
 
 Uma coluna pode ser referenciada na forma:
 
@@ -49,7 +49,7 @@ correlation.columnname
 
 *`correlation`* é o nome de uma tabela (possivelmente qualificada com o nome de um esquema), ou um alias para uma tabela definida por meio de uma cláusula `FROM`. O nome de correlação e o ponto de separação podem ser omitidos se o nome da coluna for único em todas as tabelas utilizadas na consulta atual. (Veja também [Capítulo 7](queries.md).)
 
-### 4.2.2. Parâmetros Posicionais [#](#SQL-EXPRESSIONS-PARAMETERS-POSITIONAL)
+##### 4.2.2. Parâmetros Posicionais [#](#SQL-EXPRESSIONS-PARAMETERS-POSITIONAL)
 
 Uma referência de parâmetro posicional é usada para indicar um valor que é fornecido externamente a uma declaração SQL. Os parâmetros são usados em definições de funções SQL e em consultas preparadas. Algumas bibliotecas de cliente também suportam especificar valores de dados separadamente da string de comando SQL, nesse caso, os parâmetros são usados para referenciar os valores de dados fora da linha. A forma de uma referência de parâmetro é:
 
@@ -67,7 +67,7 @@ CREATE FUNCTION dept(text) RETURNS dept
 
 Aqui, o `$1` refere-se ao valor do primeiro argumento da função sempre que a função é invocada.
 
-### 4.2.3. Subscripts [#](#SQL-EXPRESSIONS-SUBSCRIPTS)
+##### 4.2.3. Subscripts [#](#SQL-EXPRESSIONS-SUBSCRIPTS)
 
 Se uma expressão produzir um valor de um tipo de matriz, então um elemento específico do valor da matriz pode ser extraído escrevendo
 
@@ -94,7 +94,7 @@ $1[10:42]
 
 As chaves na última expressão são necessárias. Consulte [Seção 8.15](arrays.md) para mais informações sobre arrays.
 
-### 4.2.4. Seleção do campo [#](#FIELD-SELECTION)
+##### 4.2.4. Seleção do campo [#](#FIELD-SELECTION)
 
 Se uma expressão produzir um valor de um tipo composto (tipo de linha), então um campo específico da linha pode ser extraído escrevendo
 
@@ -127,11 +127,9 @@ Você pode solicitar todos os campos de um valor composto escrevendo `.*`:
 
 Essa notação se comporta de maneira diferente, dependendo do contexto; consulte [Seção 8.16.5](rowtypes.md#ROWTYPES-USAGE) para obter detalhes.
 
-### 4.2.5. Invocações do Operador [#](#SQL-EXPRESSIONS-OPERATOR-CALLS)
+##### 4.2.5. Invocações do Operador [#](#SQL-EXPRESSIONS-OPERATOR-CALLS)
 
 Existem duas possíveis sintaxes para uma invocação de operador:
-
-
 
 <table border="0" class="simplelist" summary="Simple list">
  <tr>
@@ -171,12 +169,6 @@ Existem duas possíveis sintaxes para uma invocação de operador:
  </tr>
 </table>
 
-
-
-
-
-
-
 onde o *`operator`* segue as regras de sintaxe do [Seção 4.1.3](sql-syntax-lexical.md#SQL-SYNTAX-OPERATORS), ou é uma das palavras-chave `AND`, `OR` e `NOT`, ou é um nome de operador qualificado na forma:
 
 ```
@@ -185,7 +177,7 @@ OPERATOR(schema.operatorname)
 
 Quais operadores específicos existem e se são unários ou binários depende do que os operadores foram definidos pelo sistema ou pelo usuário. [Capítulo 9] (functions.md "Chapter 9. Functions and Operators") descreve os operadores embutidos.
 
-### 4.2.6. Chamadas de função [#](#SQL-EXPRESSIONS-FUNCTION-CALLS)
+##### 4.2.6. Chamadas de função [#](#SQL-EXPRESSIONS-FUNCTION-CALLS)
 
 A sintaxe para uma chamada de função é o nome de uma função (possivelmente qualificada com o nome de um esquema), seguido de sua lista de argumentos entre parênteses:
 
@@ -205,11 +197,11 @@ Ao emitir consultas em um banco de dados onde alguns usuários desconfiam dos ou
 
 Os argumentos podem ter nomes opcionais. Consulte a Seção 4.3 para obter detalhes. [(sql-syntax-calling-funcs.md "4.3. Calling Functions")]
 
-### Nota
+Nota
 
 Uma função que recebe um único argumento de tipo composto pode ser chamada opcionalmente usando a sintaxe de seleção de campo, e, reciprocamente, a seleção de campo pode ser escrita em estilo funcional. Ou seja, as notações `col(table)` e `table.col` são intercambiáveis. Esse comportamento não é padrão SQL, mas é fornecido no PostgreSQL porque permite o uso de funções para emular “campos calculados”. Para mais informações, consulte [Seção 8.16.5](rowtypes.md#ROWTYPES-USAGE).
 
-### 4.2.7. Expressões agregadas [#](#SYNTAX-AGGREGATES)
+##### 4.2.7. Expressões agregadas [#](#SYNTAX-AGGREGATES)
 
 Uma expressão agregada representa a aplicação de uma função agregada nas linhas selecionadas por uma consulta. Uma função agregada reduz múltiplos inputs a um único valor de saída, como a soma ou a média dos inputs. A sintaxe de uma expressão agregada é uma das seguintes:
 
@@ -305,7 +297,7 @@ Uma expressão agregada só pode aparecer na lista de resultados ou na cláusula
 
 Quando uma expressão agregada aparece em uma subconsulta (ver [Seção 4.2.11] e [Seção 9.24] (sql-expressions.md#SQL-SYNTAX-SCALAR-SUBQUERIES "4.2.11. Scalar Subqueries") e [(functions-subquery.md "9.24. Subquery Expressions")]), o agregado é normalmente avaliado sobre as linhas da subconsulta. Mas uma exceção ocorre se os argumentos do agregado (e *`filter_clause`* se houver algum) contiverem apenas variáveis de nível externo: o agregado pertence então ao nível externo mais próximo, e é avaliado sobre as linhas dessa consulta. A expressão agregada como um todo é então uma referência externa para a subconsulta em que aparece, e atua como uma constante em qualquer avaliação dessa subconsulta. A restrição de aparecer apenas na lista de resultados ou na cláusula `HAVING` se aplica em relação ao nível de consulta ao qual o agregado pertence.
 
-### 4.2.8. Chamadas de função de janela [#](#SYNTAX-WINDOW-FUNCTIONS)
+##### 4.2.8. Chamadas de função de janela [#](#SYNTAX-WINDOW-FUNCTIONS)
 
 Uma chamada de função de janela representa a aplicação de uma função semelhante a agregada sobre uma parte das linhas selecionadas por uma consulta. Ao contrário das chamadas de agregação não de janela, essa não está vinculada à agrupamento das linhas selecionadas em uma única linha de saída — cada linha permanece separada na saída da consulta. No entanto, a função de janela tem acesso a todas as linhas que seriam parte do grupo da linha atual de acordo com a especificação de agrupamento (lista `PARTITION BY`) da chamada de função de janela. A sintaxe de uma chamada de função de janela é uma das seguintes:
 
@@ -389,7 +381,7 @@ As chamadas de função de janela são permitidas apenas na lista `SELECT` e na 
 
 Mais informações sobre as funções de janela podem ser encontradas em [Seção 3.5](tutorial-window.md), [Seção 9.22](functions-window.md) e [Seção 7.2.5](queries-table-expressions.md#QUERIES-WINDOW).
 
-### 4.2.9. Moldagem por Tipo [#](#SQL-SYNTAX-TYPE-CASTS)
+##### 4.2.9. Moldagem por Tipo [#](#SQL-SYNTAX-TYPE-CASTS)
 
 Uma cast de tipo especifica uma conversão de um tipo de dados para outro. O PostgreSQL aceita dois sintaxe equivalentes para casts de tipo:
 
@@ -412,11 +404,11 @@ typename ( expression )
 
 No entanto, isso só funciona para tipos cujos nomes também são válidos como nomes de função. Por exemplo, `double precision` não pode ser usado dessa maneira, mas o equivalente `float8` pode. Além disso, os nomes `interval`, `time` e `timestamp` só podem ser usados dessa maneira se forem citados em duplicado, devido a conflitos sintáticos. Portanto, o uso da sintaxe de cast semelhante a uma função leva a inconsistências e provavelmente deve ser evitado.
 
-### Nota
+Nota
 
 A sintaxe semelhante a uma função, na verdade, é apenas uma chamada de função. Quando uma das duas sintaxes padrão de conversão de tempo de execução é usada para realizar uma conversão, ela internamente invoca uma função registrada para realizar a conversão. Por convenção, essas funções de conversão têm o mesmo nome que seu tipo de saída, e, portanto, a “sintaxe semelhante a uma função” não é nada mais do que uma invocação direta da função de conversão subjacente. Obviamente, isso não é algo que uma aplicação portátil deve depender. Para mais detalhes, consulte [CREATE CAST](sql-createcast.md).
 
-### 4.2.10. Expressões de colagem [#](#SQL-SYNTAX-COLLATE-EXPRS)
+##### 4.2.10. Expressões de colagem [#](#SQL-SYNTAX-COLLATE-EXPRS)
 
 A cláusula `COLLATE` substitui a ordenação de uma expressão. Ela é anexada à expressão a que se aplica:
 
@@ -454,7 +446,7 @@ SELECT * FROM tbl WHERE (a > 'foo') COLLATE "C";
 
 porque tenta aplicar uma ordenação ao resultado do operador `>`, que é do tipo de dados não ordenável `boolean`.
 
-### 4.2.11. Subconsultas escalares [#](#SQL-SYNTAX-SCALAR-SUBQUERIES)
+##### 4.2.11. Subconsultas escalares [#](#SQL-SYNTAX-SCALAR-SUBQUERIES)
 
 Uma subconsulta escalar é uma consulta comum `SELECT` entre parênteses que retorna exatamente uma linha com uma coluna. (Veja [Capítulo 7](queries.md) para informações sobre como escrever consultas. A consulta `SELECT` é executada e o único valor retornado é usado na expressão de valor circundante. É um erro usar uma consulta que retorne mais de uma linha ou mais de uma coluna como uma subconsulta escalar. (Mas se, durante uma execução específica, a subconsulta não retornar nenhuma linha, não há erro; o resultado escalar é considerado nulo.) A subconsulta pode referenciar variáveis da consulta circundante, que atuará como constantes durante qualquer avaliação da subconsulta. Veja também [Seção 9.24](functions-subquery.md) para outras expressões que envolvem subconsultas.
 
@@ -465,7 +457,7 @@ SELECT name, (SELECT max(pop) FROM cities WHERE cities.state = states.name)
     FROM states;
 ```
 
-### 4.2.12. Construtores de matriz [#](#SQL-SYNTAX-ARRAY-CONSTRUCTORS)
+##### 4.2.12. Construtores de matriz [#](#SQL-SYNTAX-ARRAY-CONSTRUCTORS)
 
 Um construtor de matriz é uma expressão que constrói um valor de matriz usando valores para seus elementos membros. Um construtor de matriz simples consiste na palavra-chave `ARRAY`, um parêntese esquerdo `[`, uma lista de expressões (separadas por vírgulas) para os valores dos elementos da matriz e, finalmente, um parêntese direito `]`. Por exemplo:
 
@@ -479,7 +471,7 @@ SELECT ARRAY[1,2,3+4];
 
 Por padrão, o tipo do elemento da matriz é o tipo comum das expressões de membro, determinado usando as mesmas regras que para os construtos `UNION` ou `CASE` (consulte [Seção 10.5](typeconv-union-case.md)). Você pode ignorar isso explicitamente, lançando o construtor da matriz para o tipo desejado, por exemplo:
 
-```
+```sql
 SELECT ARRAY[1,2,22.7]::integer[];
   array
 ----------
@@ -491,7 +483,7 @@ Isso tem o mesmo efeito que lançar cada expressão no tipo de elemento da matri
 
 Os valores de matriz multidimensional podem ser construídos mediante a criação de construtores de matriz em camadas. Nas camadas internas, a palavra-chave `ARRAY` pode ser omitida. Por exemplo, estes produzem o mesmo resultado:
 
-```
+```sql
 SELECT ARRAY[ARRAY[1,2], ARRAY[3,4]];
      array
 ---------------
@@ -509,7 +501,7 @@ Como matrizes multidimensionais devem ser retangulares, os construtores internos
 
 Os elementos do construtor de matriz multidimensional podem ser qualquer coisa que produza uma matriz do tipo correto, não apenas um sub-`ARRAY`. Por exemplo:
 
-```
+```sql
 CREATE TABLE arr(f1 int[], f2 int[]);
 
 INSERT INTO arr VALUES (ARRAY[[1,2],[3,4]], ARRAY[[5,6],[7,8]]);
@@ -523,7 +515,7 @@ SELECT ARRAY[f1, f2, '{{9,10},{11,12}}'::int[]] FROM arr;
 
 Você pode construir um array vazio, mas, como é impossível ter um array sem tipo, você deve converter explicitamente seu array vazio para o tipo desejado. Por exemplo:
 
-```
+```sql
 SELECT ARRAY[]::integer[];
  array
 -------
@@ -533,7 +525,7 @@ SELECT ARRAY[]::integer[];
 
 É também possível construir um array a partir dos resultados de uma subconsulta. Nesta forma, o construtor de array é escrito com a palavra-chave `ARRAY` seguida de uma subconsulta entre parênteses (não entre chaves). Por exemplo:
 
-```
+```sql
 SELECT ARRAY(SELECT oid FROM pg_proc WHERE proname LIKE 'bytea%');
                               array
 ------------------------------------------------------------------
@@ -551,11 +543,11 @@ A subconsulta deve retornar uma única coluna. Se a coluna de saída da subconsu
 
 Os subíndices de um valor de matriz construído com `ARRAY` sempre começam com um. Para mais informações sobre matrizes, consulte [Seção 8.15](arrays.md).
 
-### 4.2.13. Construtores de linhas [#](#SQL-SYNTAX-ROW-CONSTRUCTORS)
+##### 4.2.13. Construtores de linhas [#](#SQL-SYNTAX-ROW-CONSTRUCTORS)
 
 Um construtor de linha é uma expressão que constrói um valor de linha (também chamado de valor composto) usando valores para seus campos membros. Um construtor de linha consiste na palavra-chave `ROW`, um parêntese esquerdo, zero ou mais expressões (separadas por vírgulas) para os valores dos campos da linha e, finalmente, um parêntese direito. Por exemplo:
 
-```
+```sql
 SELECT ROW(1,2.5,'this is a test');
 ```
 
@@ -563,18 +555,18 @@ A palavra-chave `ROW` é opcional quando há mais de uma expressão na lista.
 
 Um construtor de linha pode incluir a sintaxe *`rowvalue`*`.*`, que será expandida para uma lista dos elementos do valor da linha, assim como ocorre quando a sintaxe `.*` é usada no nível superior de uma lista `SELECT` (ver [Seção 8.16.5](rowtypes.md#ROWTYPES-USAGE "8.16.5. Using Composite Types in Queries")). Por exemplo, se a tabela `t` tiver as colunas `f1` e `f2`, estas são as mesmas:
 
-```
+```sql
 SELECT ROW(t.*, 42) FROM t;
 SELECT ROW(t.f1, t.f2, 42) FROM t;
 ```
 
-### Nota
+Nota
 
 Antes do PostgreSQL 8.2, a sintaxe `.*` não era expandida em construtores de linha, de modo que escrever `ROW(t.*, 42)` criava uma linha de dois campos cujo primeiro campo era outro valor de linha. O novo comportamento geralmente é mais útil. Se você precisa do comportamento antigo de valores de linha aninhados, escreva o valor da linha interna sem `.*`, por exemplo `ROW(t, 42)`.
 
 Por padrão, o valor criado por uma expressão `ROW` é de um tipo de registro anônimo. Se necessário, ele pode ser convertido para um tipo composto nomeado — seja o tipo de linha de uma tabela, ou um tipo composto criado com `CREATE TYPE AS`. Pode ser necessário um cast explícito para evitar ambiguidade. Por exemplo:
 
-```
+```sql
 CREATE TABLE mytable(f1 int, f2 float, f3 text);
 
 CREATE FUNCTION getf1(mytable) RETURNS int AS 'SELECT $1.f1' LANGUAGE SQL;
@@ -609,19 +601,19 @@ SELECT getf1(CAST(ROW(11,'this is a test',2.5) AS myrowtype));
 
 Os construtores de linha podem ser usados para construir valores compostos a serem armazenados em uma coluna de tabela de tipo composto, ou para serem passados para uma função que aceita um parâmetro composto. Além disso, é possível testar linhas usando os operadores de comparação padrão, conforme descrito em [Seção 9.2](functions-comparison.md), para comparar uma linha contra outra, conforme descrito em [Seção 9.25](functions-comparisons.md), e usá-los em conexão com subconsultas, conforme discutido em [Seção 9.24](functions-subquery.md).
 
-### 4.2.14. Regras de Avaliação de Expressão [#](#SYNTAX-EXPRESS-EVAL)
+##### 4.2.14. Regras de Avaliação de Expressão [#](#SYNTAX-EXPRESS-EVAL)
 
 A ordem de avaliação das subexpressões não é definida. Em particular, as entradas de um operador ou função não são necessariamente avaliadas de esquerda para direita ou em qualquer outra ordem fixa.
 
 Além disso, se o resultado de uma expressão pode ser determinado pela avaliação de apenas algumas de suas partes, então outras subexpressões podem não ser avaliadas em absoluto. Por exemplo, se alguém escrevesse:
 
-```
+```sql
 SELECT true OR somefunc();
 ```
 
 então `somefunc()` (provavelmente) não seria chamado de forma alguma. O mesmo aconteceria se alguém escrevesse:
 
-```
+```sql
 SELECT somefunc() OR true;
 ```
 
@@ -631,13 +623,13 @@ Como consequência, não é prudente usar funções com efeitos colaterais como 
 
 Quando é essencial forçar a ordem de avaliação, pode ser utilizado um `CASE` (consulte a [Seção 9.18](functions-conditional.md)). Por exemplo, essa é uma maneira pouco confiável de tentar evitar a divisão por zero em uma cláusula `WHERE`:
 
-```
+```sql
 SELECT ... WHERE x > 0 AND y/x > 1.5;
 ```
 
 Mas isso é seguro:
 
-```
+```sql
 SELECT ... WHERE CASE WHEN x > 0 THEN y/x > 1.5 ELSE false END;
 ```
 
@@ -645,7 +637,7 @@ Uma construção `CASE` usada dessa maneira derrotará as tentativas de otimiza�
 
 `CASE` não é uma solução para todos os problemas, no entanto. Uma limitação da técnica ilustrada acima é que ela não previne a avaliação precoce de subexpressões constantes. Como descrito em [Seção 36.7](xfunc-volatility.md), funções e operadores marcados `IMMUTABLE` podem ser avaliados quando a consulta é planejada, e não quando é executada. Assim, por exemplo
 
-```
+```sql
 SELECT CASE WHEN x > 0 THEN x ELSE 1/0 END FROM tab;
 ```
 
@@ -655,7 +647,7 @@ Embora esse exemplo específico possa parecer bobo, casos relacionados que não 
 
 Outra limitação do mesmo tipo é que um `CASE` não pode impedir a avaliação de uma expressão agregada contida nele, porque as expressões agregadas são calculadas antes de outras expressões em uma lista `SELECT` ou cláusula `HAVING` serem consideradas. Por exemplo, a seguinte consulta pode causar um erro de divisão por zero, apesar de aparentemente ter protegido contra isso:
 
-```
+```sql
 SELECT CASE WHEN min(employees) > 0
             THEN avg(expenses / employees)
        END

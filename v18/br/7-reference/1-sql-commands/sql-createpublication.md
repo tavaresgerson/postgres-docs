@@ -64,7 +64,7 @@ O padrão é `none`, o que significa que as colunas geradas presentes nas tabela
 
 Se configurado como `stored`, as colunas geradas armazenadas presentes nas tabelas associadas à publicação serão replicadas.
 
-### Nota
+Nota
 
 Se o assinante tiver uma versão anterior a 18, a sincronização inicial da tabela não copiará as colunas geradas, mesmo que o parâmetro `publish_generated_columns` seja `stored` no editor.
 

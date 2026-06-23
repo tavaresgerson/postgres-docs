@@ -16,7 +16,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
 
 Um trigrama é um grupo de três caracteres consecutivos tomados de uma cadeia. Podemos medir a semelhança entre duas cadeias contando o número de trigramas que elas compartilham. Essa ideia simples acaba sendo muito eficaz para medir a semelhança de palavras em muitas línguas naturais.
 
-### Nota
+Nota
 
 `pg_trgm` ignora caracteres não alfanuméricos ao extrair trigramas de uma string. Cada palavra é considerada ter dois espaços prefixados e um espaço sufixado ao determinar o conjunto de trigramas contidos na string. Por exemplo, o conjunto de trigramas na string “`cat`” é “ `c`”, “ `ca`”, “`cat`” e “`at` ”. O conjunto de trigramas na string “`foo|bar`” é “ `f`”, “ `fo`”, “`foo`”, “`oo` ”, “ `b`”, “ `ba`”, “`bar`” e “`ar` ”.
 
@@ -708,7 +708,7 @@ CREATE INDEX words_idx ON words USING GIN (word gin_trgm_ops);
 
 Agora, uma consulta `SELECT` semelhante ao exemplo anterior pode ser usada para sugerir ortografias para palavras mal escritas nos termos de busca do usuário. Um teste extra útil é exigir que as palavras selecionadas também tenham comprimento semelhante à palavra mal escrita.
 
-### Nota
+Nota
 
 Como a tabela `words` foi gerada como uma tabela separada e estática, ela precisará ser regenerada periodicamente para permanecer razoavelmente atualizada com a coleção de documentos. Manter-a exatamente atualizada geralmente não é necessário.
 

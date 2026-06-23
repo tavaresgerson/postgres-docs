@@ -499,7 +499,7 @@ Não há uma variável de ambiente equivalente a esta opção, e não há facili
 
 `require` :   O servidor *deve* solicitar um certificado. A conexão falhará se o cliente não enviar um certificado e o servidor autenticar o cliente de qualquer forma.
 
-### Nota
+Nota
 
 `sslcertmode=require` não adiciona nenhuma segurança adicional, uma vez que não há garantia de que o servidor esteja validando o certificado corretamente; os servidores PostgreSQL geralmente solicitam certificados TLS dos clientes, independentemente de eles os validar ou não. A opção pode ser útil ao solucionar problemas em configurações TLS mais complicadas.
 
@@ -507,7 +507,7 @@ Não há uma variável de ambiente equivalente a esta opção, e não há facili
 
 O valor especial `system` pode ser especificado em vez disso, nesse caso, as raízes de CA confiáveis da implementação SSL serão carregadas. As localizações exatas desses certificados raiz diferem de acordo com a implementação SSL e a plataforma. Para o OpenSSL, em particular, as localizações podem ser modificadas ainda mais pelas variáveis de ambiente `SSL_CERT_DIR` e `SSL_CERT_FILE`.
 
-### Nota
+Nota
 
 Ao usar `sslrootcert=system`, o padrão `sslmode` é alterado para `verify-full`, e qualquer configuração mais fraca resultará em um erro. Na maioria dos casos, é trivial para qualquer pessoa obter um certificado confiável pelo sistema para um nome de domínio que controla, tornando `verify-ca` e todos os modos mais fracos inúteis.
 

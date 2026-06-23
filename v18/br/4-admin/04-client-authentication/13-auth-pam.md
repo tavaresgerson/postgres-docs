@@ -8,6 +8,6 @@ As seguintes opções de configuração são suportadas para o PAM:
 
 `pam_use_hostname`: Determina se o endereço IP remoto ou o nome do host é fornecido aos módulos PAM através do item `PAM_RHOST`. Por padrão, o endereço IP é usado. Defina esta opção para 1 para usar o nome do host resolvido em vez disso. A resolução do nome do host pode levar a atrasos no login. (A maioria das configurações PAM não usa essas informações, portanto, é necessário considerar apenas esse ajuste se uma configuração PAM foi especificamente criada para usá-la.)
 
-### Nota
+Nota
 
 Se o PAM estiver configurado para ler `/etc/shadow`, a autenticação falhará porque o servidor PostgreSQL é iniciado por um usuário que não é root. No entanto, isso não é um problema quando o PAM está configurado para usar LDAP ou outros métodos de autenticação.

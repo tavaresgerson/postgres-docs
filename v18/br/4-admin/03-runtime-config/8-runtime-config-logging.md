@@ -23,7 +23,7 @@ stderr log/postgresql.log csvlog log/postgresql.csv jsonlog log/postgresql.json
 
 `current_logfiles` é recriado quando um novo arquivo de registro é criado como efeito da rotação e quando `log_destination` é recarregado. Ele é removido quando nenhum dos arquivos stderr, csvlog ou jsonlog estão incluídos em `log_destination`, e quando o coletor de registro é desativado.
 
-### Nota
+Nota
 
 Na maioria dos sistemas Unix, você precisará alterar a configuração do daemon syslog do seu sistema para poder utilizar a opção syslog para `log_destination`. O PostgreSQL pode registrar em instalações syslog `LOCAL0` através de `LOCAL7` (consulte [syslog_facility](runtime-config-logging.md#GUC-SYSLOG-FACILITY)), mas a configuração padrão de syslog na maioria das plataformas descartará todas essas mensagens. Você precisará adicionar algo como:
 
@@ -37,11 +37,11 @@ Em Windows, quando você usa a opção `eventlog` para `log_destination`, você 
 
 `logging_collector` (`boolean`) [#](#GUC-LOGGING-COLLECTOR): Este parâmetro habilita o *coletador de logs*, que é um processo em segundo plano que captura mensagens de log enviadas para o stderr e as redireciona para arquivos de log. Essa abordagem é frequentemente mais útil do que fazer log no syslog, pois alguns tipos de mensagens podem não aparecer na saída do syslog. (Um exemplo comum são as mensagens de falha de dinâmica de ligação; outro são as mensagens de erro produzidas por scripts como `archive_command`.) Este parâmetro só pode ser definido no início do servidor.
 
-### Nota
+Nota
 
 É possível fazer log no stderr sem usar o coletor de log; as mensagens de log irão para onde o stderr do servidor está direcionado. No entanto, esse método é adequado apenas para volumes de log baixos, pois não oferece nenhuma maneira conveniente de rotação de arquivos de log. Além disso, em algumas plataformas que não usam o coletor de log, pode resultar em saída de log perdida ou distorcida, porque vários processos escrevendo simultaneamente no mesmo arquivo de log podem sobrepor a saída dos outros.
 
-### Nota
+Nota
 
 O coletor de registro é projetado para nunca perder mensagens. Isso significa que, em caso de carga extremamente alta, os processos do servidor podem ser bloqueados enquanto tenta enviar mensagens de registro adicionais quando o coletor fica para trás. Em contraste, o syslog prefere descartar mensagens se não conseguir escrevê-las, o que significa que pode falhar em registrar algumas mensagens nesses casos, mas não bloqueará o resto do sistema.
 
@@ -101,7 +101,7 @@ Isso substitui [log_min_duration_sample](runtime-config-logging.md#GUC-LOG-MIN-D
 
 Para clientes que utilizam o protocolo de consulta estendida, as durações das etapas de Parse, Bind e Execute são registradas de forma independente.
 
-### Nota
+Nota
 
 Ao usar esta opção juntamente com [log_statement](runtime-config-logging.md#GUC-LOG-STATEMENT), o texto das declarações que são registradas devido a `log_statement` não será repetido na mensagem do log de duração. Se você não estiver usando syslog, é recomendável que você registre o PID ou o ID de sessão usando [log_line_prefix](runtime-config-logging.md#GUC-LOG-LINE-PREFIX) para que você possa vincular a mensagem da declaração à mensagem de duração posterior usando o ID de processo ou o ID de sessão.
 
@@ -115,7 +115,7 @@ Outras notas para `log_min_duration_statement` também se aplicam a este ajuste.
 
 `log_transaction_sample_rate` (`floating point`) [#](#GUC-LOG-TRANSACTION-SAMPLE-RATE): Define a fração de transações cujas declarações estão todas registradas, além das declarações registradas por outros motivos. Aplica-se a cada nova transação, independentemente da duração de suas declarações. A amostragem é estocástica, por exemplo, `0.1` significa que há estatisticamente uma chance em dez de que qualquer transação dada seja registrada. `log_transaction_sample_rate` pode ser útil para construir uma amostra de transações. O padrão é `0`, o que significa não registrar declarações de quaisquer transações adicionais. Definir isso para `1` registra todas as declarações de todas as transações. Apenas superusuários e usuários com o privilégio apropriado `SET` podem alterar essa configuração.
 
-### Nota
+Nota
 
 Como todas as opções de registro de declarações, esta opção pode adicionar um custo significativo.
 
@@ -336,7 +336,7 @@ Por exemplo, se a sincronização do diretório de dados leva 25 segundos e, pos
 
 ### 19.8.3. O que registrar [#](#RUNTIME-CONFIG-LOGGING-WHAT)
 
-### Nota
+Nota
 
 O que você escolhe registrar pode ter implicações de segurança; veja [Seção 24.3](logfile-maintenance.md).
 
@@ -448,7 +448,7 @@ Para fins de compatibilidade reversa, `on`, `off`, `true`, `false`, `yes`, `no`,
 
 Apenas superusuários e usuários com o privilégio apropriado `SET` podem alterar este parâmetro no início da sessão, e não pode ser alterado em nenhuma hipótese dentro de uma sessão.
 
-### Nota
+Nota
 
 Alguns programas de cliente, como o psql, tentam se conectar duas vezes para determinar se é necessária uma senha, portanto, mensagens duplicadas de "conexão recebida" não indicam necessariamente um problema.
 
@@ -458,7 +458,7 @@ Alguns programas de cliente, como o psql, tentam se conectar duas vezes para det
 
 Para clientes que utilizam o protocolo de consulta estendida, as durações das etapas de Parse, Bind e Execute são registradas de forma independente.
 
-### Nota
+Nota
 
 A diferença entre habilitar `log_duration` e definir [log_min_duration_statement](runtime-config-logging.md#GUC-LOG-MIN-DURATION-STATEMENT) como zero é que exceder `log_min_duration_statement` obriga o texto da consulta a ser registrado, mas essa opção não faz isso. Assim, se `log_duration` for `on` e `log_min_duration_statement` tiver um valor positivo, todas as durações são registradas, mas o texto da consulta é incluído apenas para declarações que excedem o limite. Esse comportamento pode ser útil para coletar estatísticas em instalações com alto tráfego.
 
@@ -824,7 +824,7 @@ O escape `%q` é útil ao incluir informações que estão disponíveis apenas n
 log_line_prefix = '%m [%p] %q%u@%d/%a '
 ```
 
-### Nota
+Nota
 
 O escape `%Q` sempre reporta um identificador zero para as linhas geradas por [log_statement](runtime-config-logging.md#GUC-LOG-STATEMENT) porque `log_statement` gera a saída antes que um identificador possa ser calculado, incluindo declarações inválidas para as quais não pode ser calculado um identificador.
 
@@ -848,7 +848,7 @@ Valores não nulos deste ajuste adicionam sobrecarga, pois o PostgreSQL precisar
 
 O padrão é `none`. Somente usuários superusuários e usuários com o privilégio apropriado `SET` podem alterar essa configuração.
 
-### Nota
+Nota
 
 As declarações que contêm erros de sintaxe simples não são registradas, mesmo com a configuração `log_statement` = `all`, porque a mensagem de log é emitida apenas após a análise básica ter sido realizada para determinar o tipo de declaração. No caso do protocolo de consulta estendida, essa configuração também não registra declarações que falham antes da fase Execute (ou seja, durante a análise ou planejamento de análise). Defina `log_min_error_statement` para `ERROR` (ou menor) para registrar tais declarações.
 

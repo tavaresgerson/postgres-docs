@@ -18,7 +18,7 @@ CREATE TABLESPACE fastspace LOCATION '/ssd1/postgresql/data';
 
 O local deve ser um diretório existente e vazio que seja de propriedade do usuário do sistema operacional PostgreSQL. Todos os objetos posteriormente criados dentro do espaço de tabelas serão armazenados em arquivos abaixo deste diretório. O local não deve estar em armazenamento removível ou transitório, pois o clúster pode não funcionar corretamente se o espaço de tabelas estiver ausente ou perdido.
 
-### Nota
+Nota
 
 Geralmente, não há muito sentido em criar mais de um espaço de tabela por sistema de arquivos lógico, uma vez que você não pode controlar a localização dos arquivos individuais dentro de um sistema de arquivos lógico. No entanto, o PostgreSQL não impõe nenhuma limitação desse tipo e, de fato, não está diretamente consciente dos limites do sistema de arquivos em seu sistema. Ele apenas armazena arquivos nos diretórios que você lhe diz para usar.
 

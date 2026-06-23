@@ -62,7 +62,7 @@
 
 O esquema de informações consiste em um conjunto de visualizações que contêm informações sobre os objetos definidos no banco de dados atual. O esquema de informações é definido no padrão SQL e, portanto, pode ser esperado que seja portátil e permanecer estável — ao contrário dos catálogos do sistema, que são específicos para o PostgreSQL e são modelados com base em preocupações de implementação. As visualizações do esquema de informações, no entanto, não contêm informações sobre recursos específicos do PostgreSQL; para inquirir sobre esses recursos, é necessário consultar os catálogos do sistema ou outras visualizações específicas do PostgreSQL.
 
-### Nota
+Nota
 
 Ao consultar o banco de dados em busca de informações sobre restrições, é possível que uma consulta que segue o padrão e espera retornar uma única linha retorne várias. Isso ocorre porque o padrão SQL exige que os nomes das restrições sejam únicos dentro de um esquema, mas o PostgreSQL não aplica essa restrição. Os nomes de restrições gerados automaticamente pelo PostgreSQL evitam duplicatas no mesmo esquema, mas os usuários podem especificar tais nomes duplicados.
 

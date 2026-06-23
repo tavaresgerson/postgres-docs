@@ -36,7 +36,7 @@ Para os desenvolvedores familiarizados com XQuery e XPath 2.0 ou versões poster
 * O tipo fundamental de uma expressão XQuery/XPath, o `sequence`, que pode conter nós XML, valores atômicos ou ambos, não existe no XPath 1.0. Uma expressão 1.0 pode produzir apenas um conjunto de nós (contendo zero ou mais nós XML) ou um único valor atômico.
 * Ao contrário de uma sequência XQuery/XPath, que pode conter quaisquer itens desejados em qualquer ordem desejada, um conjunto de nós XPath 1.0 não tem ordem garantida e, como qualquer conjunto, não permite múltiplas aparições do mesmo item.
 
-### Nota
+Nota
 
 A biblioteca libxml2 parece sempre retornar conjuntos de nós ao PostgreSQL com seus membros na mesma ordem relativa que tinham no documento de entrada. Sua documentação não se compromete com esse comportamento, e uma expressão XPath 1.0 não pode controlá-lo.
 * Embora o XQuery/XPath forneça todos os tipos definidos no XML Schema e muitos operadores e funções sobre esses tipos, o XPath 1.0 tem apenas conjuntos de nós e os três tipos atômicos `boolean`, `double` e `string`.

@@ -26,6 +26,6 @@ Todas as operações em uma tabela estrangeira são manipuladas através de seu 
 
 Os wrappers de dados estrangeiros incluídos na distribuição padrão são boas referências ao tentar escrever a sua própria. Consulte o subdiretório `contrib` da árvore de origem. A página de referência [CREATE FOREIGN DATA WRAPPER](sql-createforeigndatawrapper.md "CREATE FOREIGN DATA WRAPPER") também tem alguns detalhes úteis.
 
-### Nota
+Nota
 
 O padrão SQL especifica uma interface para escrever wrappers de dados externos. No entanto, o PostgreSQL não implementa essa API, porque o esforço para acomodá-la no PostgreSQL seria grande, e a API padrão não ganhou ampla adoção de qualquer maneira.

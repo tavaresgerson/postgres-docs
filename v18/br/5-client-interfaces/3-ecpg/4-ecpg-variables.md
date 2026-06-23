@@ -646,7 +646,7 @@ struct bytea_var { int len; char arr[180]; } var;
 
 O membro `arr` hospeda dados em formato binário. Ele também pode lidar com `'\0'` como parte dos dados, ao contrário de `VARCHAR`. Os dados são convertidos de/para formato hexadecimal e enviados/recebidos pelo ecpglib.
 
-### Nota
+Nota
 
 A variável `bytea` pode ser usada apenas quando [bytea_output](runtime-config-client.md#GUC-BYTEA-OUTPUT) está definido como `hex`.
 
@@ -812,7 +812,7 @@ EXEC SQL START TRANSACTION;
 
 A ECPG reportará um erro de sintaxe para `START TRANSACTION`, porque ele não reconhece mais `START` como uma palavra-chave SQL, apenas como um typedef. (Se você tiver um conflito como esse e o typedef parecer impraticável, você pode escrever o comando SQL usando [SQL dinâmico](ecpg-dynamic.md).).
 
-### Nota
+Nota
 
 Em versões do PostgreSQL anteriores à v16, o uso de palavras-chave SQL como nomes de typedef provavelmente resultaria em erros de sintaxe associados ao uso do próprio typedef, e não ao uso do nome como uma palavra-chave SQL. O novo comportamento é menos propenso a causar problemas quando uma aplicação existente do ECPG é recompilando em uma nova versão do PostgreSQL com novas palavras-chave.
 

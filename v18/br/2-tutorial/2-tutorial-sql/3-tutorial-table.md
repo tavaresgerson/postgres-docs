@@ -1,4 +1,4 @@
-## 2.3. Criando uma Nova Tabela [#](#TUTORIAL-TABLE)
+### 2.3. Criando uma Nova Tabela [#](#TUTORIAL-TABLE)
 
 Você pode criar uma nova tabela, especificando o nome da tabela, juntamente com todos os nomes de coluna e seus tipos:
 

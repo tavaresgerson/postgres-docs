@@ -51,11 +51,11 @@ SET ROLE NONE;
 RESET ROLE;
 ```
 
-### Nota
+Nota
 
 O comando `SET ROLE` sempre permite selecionar qualquer papel que o papel de login original seja diretamente ou indiretamente um membro, desde que haja uma cadeia de concessões de membros, cada uma das quais tenha `SET TRUE` (que é o padrão). Assim, no exemplo acima, não é necessário se tornar `admin` antes de se tornar `wheel`. Por outro lado, não é possível se tornar `island` de forma alguma; `joe` pode acessar esses privilégios apenas por herança.
 
-### Nota
+Nota
 
 No padrão SQL, há uma distinção clara entre usuários e papéis, e os usuários não herdam automaticamente privilégios enquanto os papéis o fazem. Esse comportamento pode ser obtido no PostgreSQL ao atribuir aos papéis usados como papéis SQL o atributo `INHERIT`, enquanto atribui aos papéis usados como usuários SQL o atributo `NOINHERIT`. No entanto, o PostgreSQL, por padrão, atribui a todos os papéis o atributo `INHERIT`, para compatibilidade reversa com versões anteriores à versão 8.1, nas quais os usuários sempre tinham acesso a permissões concedidas aos grupos dos quais eram membros.
 

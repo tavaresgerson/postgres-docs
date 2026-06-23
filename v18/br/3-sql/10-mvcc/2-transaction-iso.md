@@ -202,7 +202,7 @@ O modo de leitura repetida oferece uma garantia rigorosa de que cada transação
 
 O nível de isolamento de leitura repetida é implementado usando uma técnica conhecida na literatura acadêmica de banco de dados e em alguns outros produtos de banco de dados como *Snapshot Isolation*. Diferenças de comportamento e desempenho podem ser observadas quando comparadas com sistemas que utilizam uma técnica de bloqueio tradicional que reduz a concorrência. Alguns outros sistemas podem até oferecer Leitura Repetida e Snapshot Isolation como níveis de isolamento distintos com comportamento diferente. Os fenômenos permitidos que distinguem as duas técnicas não foram formalizados pelos pesquisadores de banco de dados até após o desenvolvimento do padrão SQL, e estão fora do escopo deste manual. Para um tratamento completo, consulte [[berenson95]](biblio.md#BERENSON95).
 
-### Nota
+Nota
 
 Antes da versão 9.1 do PostgreSQL, um pedido para o nível de isolamento de transação Serializable fornecia exatamente o mesmo comportamento descrito aqui. Para manter o comportamento Serializable herdado, o Repeatable Read deve ser solicitado agora.
 

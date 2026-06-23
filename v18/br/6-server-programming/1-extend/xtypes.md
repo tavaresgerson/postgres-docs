@@ -156,7 +156,7 @@ Para suportar o armazenamento TOAST, as funções C que operam sobre o tipo de d
 
 Se o alinhamento de dados não for importante (seja apenas para uma função específica ou porque o tipo de dados especifica alinhamento de byte de qualquer maneira), é possível evitar alguns dos custos adicionais do `PG_DETOAST_DATUM`. É possível usar o `PG_DETOAST_DATUM_PACKED` (comumente oculto definindo um `GETARG_DATATYPE_PP` macro) e usar as macros `VARSIZE_ANY_EXHDR` e `VARDATA_ANY` para acessar um dado potencialmente embalado. Novamente, os dados retornados por essas macros não são alinhados, mesmo que a definição do tipo de dados especifique um alinhamento. Se o alinhamento for importante, você deve seguir a interface regular do `PG_DETOAST_DATUM`.
 
-### Nota
+Nota
 
 O código mais antigo frequentemente declara `vl_len_` como um campo `int32` em vez de `char[4]`. Isso está bem, desde que a definição da estrutura tenha outros campos que tenham pelo menos alinhamento `int32`. Mas é perigoso usar uma definição de estrutura desse tipo ao trabalhar com um dado potencialmente desalinhado; o compilador pode assumir que o dado está realmente alinhado, levando a depurações de núcleo em arquiteturas que são rigorosas em relação ao alinhamento.
 

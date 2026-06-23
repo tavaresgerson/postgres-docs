@@ -12,6 +12,6 @@ Quando o `SELECT` é um dos braços de um `UNION` (ou `INTERSECT` ou `EXCEPT`) c
 
 As listas de `RETURNING` são tratadas da mesma forma que as listas de saída de `SELECT` para esse propósito.
 
-### Nota
+Nota
 
 Antes do PostgreSQL 10, essa regra não existia, e os literais de tipo não especificado em uma lista de saída `SELECT` eram deixados como tipo `unknown`. Isso teve várias consequências ruins, então foi alterado.

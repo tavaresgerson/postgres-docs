@@ -20,7 +20,7 @@ Como alternativa, você poderia modificar `passwordcheck` para rejeitar senhas p
 
 `passwordcheck.min_password_length` (`integer`): O comprimento mínimo aceitável da senha em bytes. O padrão é 8. Somente os usuários super podem alterar essa configuração.
 
-### Nota
+Nota
 
 Este parâmetro não tem efeito se o usuário fornecer uma senha pré-encriptada.
 

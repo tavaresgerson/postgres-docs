@@ -56,7 +56,7 @@ T2 ON TRUE` (veja abaixo).
 `FROM T1,
 T2`.
 
-### Nota
+Nota
 
 Essa última equivalência não se aplica exatamente quando aparecem mais de duas tabelas, porque `JOIN` se liga mais fortemente do que vírgula. Por exemplo
 `FROM T1 CROSS JOIN
@@ -98,7 +98,7 @@ Além disso, a saída de `JOIN USING` suprime colunas redundantes: não há nece
 
 Finalmente, `NATURAL` é uma forma abreviada de `USING`: ele forma uma lista `USING` composta por todos os nomes de coluna que aparecem em ambas as tabelas de entrada. Como com `USING`, essas colunas aparecem apenas uma vez na tabela de saída. Se não houver nomes de coluna comuns, `NATURAL JOIN` se comporta como `CROSS JOIN`.
 
-### Nota
+Nota
 
 `USING` é razoavelmente seguro em relação a alterações de coluna nas relações unidas, uma vez que apenas as colunas listadas são combinadas. `NATURAL` é consideravelmente mais arriscado, pois quaisquer alterações no esquema em qualquer uma das relações que causem a presença de um novo nome de coluna de correspondência farão com que a junção combine essa nova coluna também.
 
@@ -455,7 +455,7 @@ onde *`search_condition`* é qualquer expressão de valor (ver [Seção 4.2][(sq
 
 Após o processamento da cláusula `FROM` ser concluído, cada linha da tabela virtual derivada é verificada em relação à condição de busca. Se o resultado da condição for verdadeiro, a linha é mantida na tabela de saída; caso contrário (ou seja, se o resultado for falso ou nulo), ela é descartada. A condição de busca geralmente faz referência a pelo menos uma coluna da tabela gerada na cláusula `FROM`; isso não é necessário, mas, caso contrário, a cláusula `WHERE` será bastante inútil.
 
-### Nota
+Nota
 
 A condição de junção de uma junção interna pode ser escrita na cláusula `WHERE` ou na cláusula `JOIN`. Por exemplo, essas expressões de tabela são equivalentes:
 
@@ -772,7 +772,7 @@ GROUP BY GROUPING SETS (
 
 Isso não é o mesmo que usar `SELECT DISTINCT`, porque as linhas de saída ainda podem conter duplicatas. Se alguma das colunas não agrupadas contiver NULL, ela será indistinguível do NULL usado quando essa mesma coluna é agrupada.
 
-### Nota
+Nota
 
 O construtor `(a, b)` é normalmente reconhecido em expressões como um [construtor de linha](sql-expressions.md#SQL-SYNTAX-ROW-CONSTRUCTORS "4.2.13. Row Constructors"). Dentro da cláusula `GROUP BY`, isso não se aplica nos níveis superiores das expressões, e `(a, b)` é analisado como uma lista de expressões, conforme descrito acima. Se, por algum motivo, você *precisa* de um construtor de linha em uma expressão de agrupamento, use `ROW(a, b)`.
 

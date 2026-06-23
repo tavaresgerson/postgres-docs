@@ -21,7 +21,7 @@
 
 Quando um aplicativo de cliente se conecta ao servidor de banco de dados, ele especifica qual nome de usuário do banco de dados PostgreSQL deseja se conectar como, da mesma forma que se inicia em um computador Unix como um usuário específico. Dentro do ambiente SQL, o nome de usuário do banco de dados ativo determina os privilégios de acesso aos objetos do banco de dados — consulte [Capítulo 21](user-manag.md) para mais informações. Portanto, é essencial restringir quais usuários do banco de dados podem se conectar.
 
-### Nota
+Nota
 
 Como explicado no [Capítulo 21](user-manag.md), o PostgreSQL, na verdade, realiza a gestão de privilégios em termos de “rolos”. Neste capítulo, usamos consistentemente *usuário do banco de dados* para significar “rol com o privilégio [[`LOGIN`]”.
 

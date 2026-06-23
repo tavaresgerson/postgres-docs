@@ -140,7 +140,7 @@ Os índices B-Tree não são diretamente conscientes de que, sob MVCC, pode have
 
 Os índices B-Tree excluem incrementalmente tuplos do índice de churn de versão realizando passes de *exclusão de índice de baixo para cima*. Cada passagem de exclusão é acionada em reação a uma divisão de página de "churn de versão" antecipada. Isso ocorre apenas com índices que não são logicamente modificados por declarações de `UPDATE`, onde o acúmulo concentrado de versões obsoletas em páginas específicas ocorreria de outra forma. Uma divisão de página geralmente será evitada, embora seja possível que certas heurísticas de nível de implementação não identifiquem e excluam até mesmo uma tupla de índice de lixo (nesse caso, uma passagem de divisão de página ou deduplicação resolve o problema de uma nova tupla de entrada que não cabe em uma página foliar). O número máximo de versões que qualquer varredura de índice deve percorrer (para qualquer linha lógica única) é um contribuinte importante para a responsividade e o desempenho do sistema como um todo. Uma passagem de exclusão de índice de baixo para cima visa tuplas de lixo suspeitas em uma única página foliar com base em *distinções qualitativas* envolvendo linhas lógicas e versões. Isso contrasta com a limpeza de índice "de cima para baixo" realizada pelos trabalhadores do autovacuum, que é acionada quando certos limiares *quantitativos* de nível de tabela são excedidos (ver [Seção 24.1.6](routine-vacuuming.md#AUTOVACUUM)).
 
-### Nota
+Nota
 
 Nem todas as operações de exclusão que são realizadas dentro de índices B-Tree são operações de exclusão de baixo para cima. Há uma categoria distinta de exclusão de tuplas de índice: *exclusão simples de tupla de índice*. Esta é uma operação de manutenção diferida que exclui tuplas de índice que são conhecidas como seguras para serem excluídas (aqueles cujo bit `LP_DEAD` do identificador do item já está definido). Assim como a exclusão de índice de baixo para cima, a exclusão simples de índice ocorre no ponto em que uma divisão de página é antecipada como uma maneira de evitar a divisão.
 
@@ -156,7 +156,7 @@ Um duplicado é um tuplo de página de folha (um tuplo que aponta para uma linha
 
 A eliminação de duplicatas funciona periodicamente, unindo grupos de tuplas duplicadas juntas, formando uma única tupla de *lista de postagens* para cada grupo. O(s) valor(es) da chave da coluna aparecem apenas uma vez nessa representação. Isso é seguido por um array ordenado de TIDs que apontam para linhas na tabela. Isso reduz significativamente o tamanho de armazenamento dos índices, onde cada valor (ou cada combinação distinta de valores de coluna) aparece várias vezes em média. A latência das consultas pode ser reduzida significativamente. O desempenho geral das consultas pode aumentar significativamente. O custo operacional do rastreamento de rotina de índices também pode ser reduzido significativamente.
 
-### Nota
+Nota
 
 A deduplicação de B-Tree é igualmente eficaz com “duplicatas” que contêm um valor NULL, embora os valores NULL nunca sejam iguais entre si de acordo com o membro `=` de qualquer classe de operador de B-Tree. No que diz respeito a qualquer parte da implementação que compreenda a estrutura de B-Tree em disco, NULL é apenas outro valor do domínio de valores indexados.
 

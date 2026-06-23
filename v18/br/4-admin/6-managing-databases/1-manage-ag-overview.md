@@ -16,6 +16,6 @@ SELECT datname FROM pg_database;
 
 O comando meta (app-psql.md "psql") do programa [psql](app-psql.md) e a opção de linha de comando `\l` também são úteis para listar os bancos de dados existentes.
 
-### Nota
+Nota
 
 O padrão SQL chama os bancos de dados de "catálogos", mas na prática não há diferença.

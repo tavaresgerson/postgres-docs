@@ -1,4 +1,4 @@
-## 3.4. Transações [#](#TUTORIAL-TRANSACTIONS)
+### 3.4. Transações [#](#TUTORIAL-TRANSACTIONS)
 
 *Transações* são um conceito fundamental de todos os sistemas de banco de dados. O ponto essencial de uma transação é que ela agrupa múltiplos passos em uma operação única, tudo ou nada. Os estados intermediários entre os passos não são visíveis para outras transações concorrentes, e se ocorrer algum erro que impeça a conclusão da transação, então nenhum dos passos afeta o banco de dados.
 
@@ -35,7 +35,7 @@ Se, em meio à transação, decidirmos que não queremos comprometer (talvez ten
 
 O PostgreSQL, na verdade, trata cada declaração SQL como se ela fosse executada dentro de uma transação. Se você não emitir um comando `BEGIN`, então cada declaração individual tem um `BEGIN` implícito e (se bem-sucedido) `COMMIT` envolto nela. Um grupo de declarações cercadas por `BEGIN` e `COMMIT` é às vezes chamado de *bloco de transação*.
 
-### Nota
+Nota
 
 Algumas bibliotecas de cliente emitem os comandos `BEGIN` e `COMMIT` automaticamente, de modo que você pode obter o efeito dos blocos de transação sem precisar perguntar. Verifique a documentação da interface que você está usando.
 

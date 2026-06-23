@@ -2385,7 +2385,7 @@ Ao processar um valor de `interval`, a função `extract` produz valores de camp
 SELECT INTERVAL '80 minutes'; Result: 01:20:00 SELECT EXTRACT(MINUTES FROM INTERVAL '80 minutes'); Result: 20
 ```
 
-### Nota
+Nota
 
 Quando o valor de entrada é +/-Infinity, `extract` retorna +/-Infinity para campos que são estritamente crescentes (`epoch`, `julian`, `year`, `isoyear`, `decade`, `century` e `millennium` para entradas de `timestamp`; `epoch`, `hour`, `day`, `year`, `decade`, `century` e `millennium` para `interval`. Para outros campos, é retornado NULL. As versões do PostgreSQL antes de 9.6 retornavam zero para todos os casos de entrada infinita.
 
@@ -2897,7 +2897,7 @@ SELECT CURRENT_TIME; Result: 14:39:53.662522-05 SELECT CURRENT_DATE; Result: 201
 
 Como essas funções retornam o horário de início da transação atual, seus valores não mudam durante a transação. Isso é considerado uma característica: a intenção é permitir que uma única transação tenha uma noção consistente do tempo "atual", de modo que múltiplas modificações dentro da mesma transação tenham o mesmo selo de tempo.
 
-### Nota
+Nota
 
 Outros sistemas de banco de dados podem avançar esses valores com mais frequência.
 
@@ -2935,7 +2935,7 @@ pg_sleep ( double precision ) pg_sleep_for ( interval ) pg_sleep_until ( timesta
 SELECT pg_sleep(1.5); SELECT pg_sleep_for('5 minutes'); SELECT pg_sleep_until('tomorrow 03:00');
 ```
 
-### Nota
+Nota
 
 A resolução efetiva do intervalo de sono é específica da plataforma; 0,01 segundos é um valor comum. O atraso de sono será pelo menos tão longo quanto especificado. Pode ser mais longo, dependendo de fatores como a carga do servidor. Em particular, `pg_sleep_until` não é garantido que acorde exatamente na hora especificada, mas não acordará mais cedo.
 

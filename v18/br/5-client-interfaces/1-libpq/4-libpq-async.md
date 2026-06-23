@@ -85,7 +85,7 @@ PGresult *PQgetResult(PGconn *conn);
 
 No modo de pipeline, `PQgetResult` retornará normalmente, a menos que ocorra um erro; para qualquer consulta subsequente enviada após aquela que causou o erro até (e excluindo) o próximo ponto de sincronização, um resultado especial do tipo `PGRES_PIPELINE_ABORTED` será retornado, e um ponteiro nulo será retornado após ele. Quando o ponto de sincronização do pipeline for alcançado, um resultado do tipo `PGRES_PIPELINE_SYNC` será retornado. O resultado da próxima consulta após o ponto de sincronização segue imediatamente (ou seja, não é retornado um ponteiro nulo após o ponto de sincronização).
 
-### Nota
+Nota
 
 Mesmo quando `PQresultStatus` indica um erro fatal, (libpq-exec.md#LIBPQ-PQRESULTSTATUS) deve ser chamado até que ele retorne um ponteiro nulo, para permitir que o libpq processe completamente as informações do erro.
 

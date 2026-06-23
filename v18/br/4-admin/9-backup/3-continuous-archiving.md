@@ -16,7 +16,7 @@ Em todos os momentos, o PostgreSQL mantém um *registro de escrita antecipada* (
 * Não é necessário replayar as entradas do WAL até o final. Podemos parar o replay em qualquer ponto e ter um instantâneo consistente do banco de dados como estava naquela época. Assim, essa técnica suporta a *recuperação em um ponto no tempo*: é possível restaurar o banco de dados ao seu estado em qualquer momento desde que seu backup de base foi feito.
 * Se alimentarmos continuamente a série de arquivos WAL em outra máquina que tenha sido carregada com o mesmo arquivo de backup de base, temos um sistema de *standby quente*: em qualquer ponto, podemos colocar a segunda máquina e ela terá uma cópia quase atual do banco de dados.
 
-### Nota
+Nota
 
 pg_dump e pg_dumpall não produzem backups em nível de sistema de arquivos e não podem ser usados como parte de uma solução de arquivamento contínuo. Esses backups são *lógicos* e não contêm informações suficientes para serem usados pelo replay do WAL.
 
@@ -183,7 +183,7 @@ Normalmente, a recuperação prosseguirá por todos os segmentos WAL disponívei
 
 Se você deseja recuperar a um ponto anterior (digamos, logo antes de o DBA júnior ter descartado sua tabela de transação principal), basta especificar o ponto de parada necessário (runtime-config-wal.md#RUNTIME-CONFIG-WAL-RECOVERY-TARGET "19.5.6. Recovery Target"). Você pode especificar o ponto de parada, conhecido como "ponto de recuperação", por data/hora, ponto de restauração nomeado ou pelo término de um ID de transação específico. A partir deste texto, as opções de data/hora e ponto de restauração nomeado são muito úteis, pois não há ferramentas que ajudem a identificar com precisão qual ID de transação deve ser usado.
 
-### Nota
+Nota
 
 O ponto de parada deve ser após o horário de término do backup básico, ou seja, o horário de término de `pg_backup_stop`. Você não pode usar um backup básico para recuperar um momento em que esse backup estava em andamento. (Para recuperar para esse momento, você deve voltar ao seu backup básico anterior e avançar a partir daí.)
 

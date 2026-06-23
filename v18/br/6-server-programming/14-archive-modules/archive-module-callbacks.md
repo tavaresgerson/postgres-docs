@@ -31,7 +31,7 @@ WARNING:  archive_mode enabled, yet archiving is not configured
 
 No último caso, o servidor chamará periodicamente essa função, e o arquivamento prosseguirá apenas quando ela retornar `true`.
 
-### Nota
+Nota
 
 Ao retornar `false`, pode ser útil anexar algumas informações adicionais à mensagem de aviso genérica. Para fazer isso, forneça uma mensagem ao macro `arch_module_check_errdetail` antes de retornar `false`. Assim como `errdetail()`, este macro aceita uma string de formato seguida por uma lista opcional de argumentos. A string resultante será emitida como a linha `DETAIL` da mensagem de aviso.
 
@@ -45,7 +45,7 @@ typedef bool (*ArchiveFileCB) (ArchiveModuleState *state, const char *file, cons
 
 Se `true` for retornado, o servidor prossegue como se o arquivo tivesse sido arquivado com sucesso, o que pode incluir reciclagem ou remoção do arquivo WAL original. Se `false` for retornado ou um erro for lançado, o servidor manterá o arquivo WAL original e tentará arquivar novamente mais tarde. *`file`* conterá apenas o nome do arquivo do arquivo WAL a ser arquivado, enquanto *`path`* contém o caminho completo do arquivo WAL (incluindo o nome do arquivo).
 
-### Nota
+Nota
 
 O callback `archive_file_cb` é chamado em um contexto de memória de curta duração que será redefinido entre as chamadas. Se você precisar de armazenamento de maior duração, crie um contexto de memória no callback `startup_cb` do módulo.
 

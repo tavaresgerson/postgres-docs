@@ -602,7 +602,7 @@ Os tuplos internos são mais complexos, pois são pontos de ramificação no ár
 
 Alguns algoritmos de árvores exigem conhecimento do nível (ou profundidade) do conjunto atual, portanto, o núcleo SP-GiST oferece a possibilidade para as classes de operadores gerenciarem o contagem de nível ao descer a árvore. Há também suporte para reconstruir incrementalmente o valor representado quando isso for necessário, e para passar dados adicionais (chamados de *valores de travessia*) durante uma descida da árvore.
 
-### Nota
+Nota
 
 O código-fonte do SP-GiST cuida das entradas nulos. Embora os índices do SP-GiST armazenem entradas para nulos em colunas indexadas, isso é oculto do código da classe do operador de índice: nenhuma entrada de índice nulo ou condições de busca serão passadas para os métodos da classe do operador. (Assume-se que os operadores SP-GiST são estritos e, portanto, não podem ter sucesso para valores nulos.) Valores nulos, portanto, não são discutidos mais aqui.
 

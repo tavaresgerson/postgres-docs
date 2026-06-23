@@ -1047,7 +1047,7 @@ SELECT 'x-y' = 'x_y' COLLATE level4; -- false
 
 Os padrões podem depender do local. O quadro acima não pretende ser completo. Consulte [Seção 23.2.3.5](collation.md#ICU-EXTERNAL-REFERENCES) para obter opções e detalhes adicionais.
 
-### Nota
+Nota
 
 Para muitas configurações de collation, você deve criar a collation com `deterministic` definida como `false` para que a configuração tenha o efeito desejado (consulte [Seção 23.2.2.4](collation.md#COLLATION-NONDETERMINISTIC)). Além disso, algumas configurações só têm efeito quando a chave `ka` é definida como `shifted` (consulte [Tabela 23.2](collation.md#ICU-COLLATION-SETTINGS-TABLE)).
 

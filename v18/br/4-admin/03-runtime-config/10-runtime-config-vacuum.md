@@ -71,7 +71,7 @@ Ao usar a aspiração baseada em custo, os valores apropriados para `vacuum_cost
 
 `vacuum_cost_limit` (`integer`) [#](#GUC-VACUUM-COST-LIMIT): Este é o custo acumulado que fará com que o processo de aspiração durma por `vacuum_cost_delay`. O padrão é `200`.
 
-### Nota
+Nota
 
 Existem certas operações que possuem bloqueios críticos e, portanto, devem ser concluídas o mais rapidamente possível. Os atrasos de vácuo baseados no custo não ocorrem durante tais operações. Portanto, é possível que o custo se acumule muito mais alto do que o limite especificado. Para evitar atrasos desnecessariamente longos, em tais casos, o atraso real é calculado como `vacuum_cost_delay` * `accumulated_balance` / `vacuum_cost_limit` com um máximo de `vacuum_cost_delay` * 4.
 

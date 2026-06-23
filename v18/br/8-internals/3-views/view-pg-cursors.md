@@ -8,7 +8,7 @@ A vista `pg_cursors` lista os cursors que estão disponíveis atualmente. Os cur
 
 A vista `pg_cursors` exibe os cursors criados por qualquer um desses meios. Os cursors existem apenas durante a transação que os define, a menos que tenham sido declarados `WITH HOLD`. Portanto, os cursors não mantidos estão presentes apenas na vista até o final da transação que os criou.
 
-### Nota
+Nota
 
 Os cursors são usados internamente para implementar alguns dos componentes do PostgreSQL, como linguagens procedimentais. Portanto, a vista `pg_cursors` pode incluir cursors que não foram explicitamente criados pelo usuário.
 

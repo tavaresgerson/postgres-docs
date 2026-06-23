@@ -2,7 +2,7 @@
 
 A vista `view_table_usage` identifica todas as tabelas que são usadas na expressão de consulta de uma vista (a declaração `SELECT` que define a vista). Uma tabela só é incluída se essa tabela for de propriedade de um papel atualmente habilitado.
 
-### Nota
+Nota
 
 As tabelas do sistema não estão incluídas. Isso deve ser corrigido em algum momento.
 

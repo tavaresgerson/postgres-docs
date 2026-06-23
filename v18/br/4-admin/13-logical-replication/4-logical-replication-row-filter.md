@@ -127,7 +127,7 @@ Se a assinatura tiver várias publicações nas quais uma tabela foi publicada c
 
 Como a sincronização de dados inicial não leva em conta o parâmetro `publish`(sql-createpublication.md#SQL-CREATEPUBLICATION-PARAMS-WITH-PUBLISH) ao copiar dados de tabela existentes, algumas linhas podem ser copiadas que não seriam replicadas usando DML. Consulte [Seção 29.9.1](logical-replication-architecture.md#LOGICAL-REPLICATION-SNAPSHOT), e veja [Seção 29.2.2](logical-replication-subscription.md#LOGICAL-REPLICATION-SUBSCRIPTION-EXAMPLES) para exemplos.
 
-### Nota
+Nota
 
 Se o assinante estiver em uma versão anterior a 15, a cópia de dados pré-existentes não usa filtros de linha, mesmo que eles estejam definidos na publicação. Isso ocorre porque as versões antigas só podem copiar os dados completos da tabela.
 

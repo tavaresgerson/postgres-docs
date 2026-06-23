@@ -34,7 +34,7 @@ A opção `SCROLL` não pode ser usada quando a consulta do cursor usa `FOR UPDA
 
 Antes que um cursor possa ser usado para recuperar linhas, ele deve ser *aberto*. (Essa é a ação equivalente ao comando SQL `DECLARE CURSOR` (sql-declare.md "DECLARE"). PL/pgSQL tem três formas da declaração `OPEN`, das quais duas usam variáveis de cursor não vinculadas, enquanto a terceira usa uma variável de cursor vinculada.
 
-### Nota
+Nota
 
 As variáveis de cursor vinculado também podem ser usadas sem abrir explicitamente o cursor, através da declaração `FOR` descrita em [Seção 41.7.4](plpgsql-cursors.md#PLPGSQL-CURSOR-FOR-LOOP). Um loop `FOR` abrirá o cursor e o fechará novamente quando o loop for concluído.
 
@@ -184,7 +184,7 @@ As funções PL/pgSQL podem retornar cursors para o chamador. Isso é útil para
 
 O nome do portal utilizado para um cursor pode ser especificado pelo programador ou gerado automaticamente. Para especificar um nome de portal, basta atribuir uma string à variável `refcursor` antes de abri-la. O valor da string da variável `refcursor` será utilizado por `OPEN` como o nome do portal subjacente. No entanto, se o valor da variável `refcursor` for nulo (como será por padrão), então `OPEN` gera automaticamente um nome que não conflita com nenhum portal existente e o atribui à variável `refcursor`.
 
-### Nota
+Nota
 
 Antes do PostgreSQL 16, as variáveis de cursor vinculadas eram inicializadas para conter seus próprios nomes, em vez de serem deixadas como nulos, para que o nome do portal subjacente fosse o mesmo que o nome da variável de cursor por padrão. Isso foi alterado porque isso criava um risco excessivo de conflitos entre cursors com nomes semelhantes em diferentes funções.
 

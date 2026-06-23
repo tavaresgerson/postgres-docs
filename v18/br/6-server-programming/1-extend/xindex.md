@@ -1412,7 +1412,7 @@ Os índices GiST, SP-GiST e GIN não têm nenhuma noção explícita de operaç�
 
 Em BRIN, os requisitos dependem da estrutura que fornece as classes de operador. Para as classes de operador baseadas em `minmax`, o comportamento exigido é o mesmo para as famílias de operadores B-tree: todos os operadores da família devem ser compatíveis, e os casts não devem alterar a ordem de classificação associada.
 
-### Nota
+Nota
 
 Antes do PostgreSQL 8.3, não havia o conceito de famílias de operadores, e, portanto, quaisquer operadores cruzados de dados que fossem destinados a serem usados com um índice tinham que ser vinculados diretamente à classe de operadores do índice. Embora essa abordagem ainda funcione, ela é desaconselhada porque torna as dependências de um índice muito amplas e porque o planejador pode lidar com comparações de dados cruzados de forma mais eficaz quando ambos os tipos de dados têm operadores na mesma família de operadores.
 
@@ -1426,7 +1426,7 @@ Se não houver uma classe de operador B-tree padrão para um tipo de dados, o si
 
 Quando não há uma classe de operador padrão para um tipo de dados, você receberá erros como “não foi possível identificar um operador de ordenação” se você tentar usar essas funcionalidades do SQL com o tipo de dados.
 
-### Nota
+Nota
 
 Nas versões do PostgreSQL anteriores à 7.4, as operações de ordenação e agrupamento usariam implicitamente operadores com os nomes `=`, `<` e `>`. O novo comportamento de depender das classes de operadores padrão evita a necessidade de fazer qualquer suposição sobre o comportamento dos operadores com nomes específicos.
 

@@ -196,7 +196,7 @@ Após a execução deste comando, o índice é “devido” à restrição, da m
 
 Este formulário não é atualmente suportado em tabelas particionadas.
 
-### Nota
+Nota
 
 Adicionar uma restrição usando um índice existente pode ser útil em situações em que uma nova restrição precisa ser adicionada sem bloquear as atualizações da tabela por um longo período. Para fazer isso, crie o índice usando `CREATE UNIQUE INDEX CONCURRENTLY`, e, em seguida, converta-o em uma restrição usando este sintaxe. Veja o exemplo abaixo.
 

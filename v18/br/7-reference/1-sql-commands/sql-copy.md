@@ -77,7 +77,7 @@ Observe que todas as outras sessões poderão visualizar os dados imediatamente 
 
 `NULL`: Especifica a string que representa um valor nulo. O padrão é `\N` (backslash-N) no formato de texto, e uma string vazia não citada em formato `CSV`. Você pode preferir uma string vazia mesmo no formato de texto para casos em que você não quer distinguir nulos de strings vazias. Esta opção não é permitida ao usar o formato `binary`.
 
-### Nota
+Nota
 
 Ao usar `COPY FROM`, qualquer item de dados que corresponda a essa string será armazenado como um valor nulo, portanto, você deve garantir que você use a mesma string que você usou com `COPY TO`.
 
@@ -129,7 +129,7 @@ COPY count
 
 O *`count`* é o número de linhas copiadas.
 
-### Nota
+Nota
 
 O psql imprimirá essa marca de comando apenas se o comando não for `COPY ... TO STDOUT`, ou o equivalente ao meta-comando psql `\copy ... to stdout`. Isso é para evitar confundir a marca de comando com os dados que foram impressos.
 
@@ -318,19 +318,19 @@ O formato `CSV` não tem uma maneira padrão de distinguir um valor `NULL` de um
 
 Como o backslash não é um caractere especial no formato `CSV`, o marcador de fim de dados usado no modo de texto (`\.`) não é normalmente tratado como especial ao ler dados do `CSV`. Uma exceção é que o psql terminará uma operação `COPY FROM STDIN` (ou seja, a leitura de dados `COPY` em linha em um script SQL) em uma linha que contenha apenas `\.`, seja em modo de texto ou `CSV`.
 
-### Nota
+Nota
 
 As versões do PostgreSQL anteriores à v18 sempre reconheceram o `\.` não citado como um marcador de fim de dados, mesmo ao ler de um arquivo separado. Para compatibilidade com versões mais antigas, o `COPY TO` irá citar o `\.` quando estiver sozinho em uma linha, embora isso não seja mais necessário.
 
-### Nota
+Nota
 
 No formato `CSV`, todos os caracteres são significativos. Um valor citado cercado por espaço em branco, ou quaisquer outros caracteres que não sejam `DELIMITER`, incluirão esses caracteres. Isso pode causar erros se você importar dados de um sistema que preench a `CSV` linhas com espaço em branco até uma largura fixa. Se tal situação surgir, você pode precisar pré-processar o arquivo `CSV` para remover o espaço em branco final, antes de importar os dados no PostgreSQL.
 
-### Nota
+Nota
 
 O formato `CSV` reconhecerá e produzirá arquivos `CSV` com valores citados que contêm retornos de carro e rodízio de linha embutidos. Assim, os arquivos não são estritamente uma linha por linha de tabela, como os arquivos de formato de texto.
 
-### Nota
+Nota
 
 Muitos programas produzem arquivos estranhos e, por vezes, perversos `CSV`, portanto, o formato do arquivo é mais uma convenção do que um padrão. Assim, você pode encontrar alguns arquivos que não podem ser importados usando esse mecanismo, e o `COPY` pode produzir arquivos que outros programas não podem processar.
 
@@ -340,7 +340,7 @@ A opção de formato `binary` faz com que todos os dados sejam armazenados/lidos
 
 O formato de arquivo `binary` consiste em um cabeçalho de arquivo, zero ou mais tuplas contendo os dados da linha e um trailer de arquivo. Os cabeçalhos e os dados estão no formato de byte da rede.
 
-### Nota
+Nota
 
 Os releases do PostgreSQL anteriores à versão 7.4 utilizavam um formato de arquivo binário diferente.
 

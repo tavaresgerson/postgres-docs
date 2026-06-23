@@ -418,7 +418,7 @@ large/RSPMYT
 largehearted
 ```
 
-### Nota
+Nota
 
 MySpell não suporta palavras compostas. O Hunspell tem um suporte sofisticado para palavras compostas. Atualmente, o PostgreSQL implementa apenas as operações básicas de palavras compostas do Hunspell.
 

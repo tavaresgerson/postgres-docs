@@ -1,4 +1,4 @@
-## 2.5. Consultando uma tabela [#](#TUTORIAL-SELECT)
+### 2.5. Consultando uma tabela [#](#TUTORIAL-SELECT)
 
 Para recuperar dados de uma tabela, a tabela é *consultada*. Uma declaração SQL `SELECT` é usada para isso. A declaração é dividida em uma lista de seleção (a parte que lista as colunas a serem retornadas), uma lista de tabelas (a parte que lista as tabelas de onde se deve recuperar os dados) e uma qualificação opcional (a parte que especifica quaisquer restrições). Por exemplo, para recuperar todas as linhas da tabela `weather`, digite:
 

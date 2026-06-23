@@ -1,4 +1,4 @@
-## 2.6. Conexões entre tabelas [#](#TUTORIAL-JOIN)
+### 2.6. Conexões entre tabelas [#](#TUTORIAL-JOIN)
 
 Até agora, nossas consultas só acessaram uma tabela de cada vez. As consultas podem acessar múltiplas tabelas de uma vez, ou acessar a mesma tabela de uma maneira que várias linhas da tabela estão sendo processadas ao mesmo tempo. As consultas que acessam múltiplas tabelas (ou múltiplas instâncias da mesma tabela) de uma vez são chamadas de consultas de *join*. Elas combinam linhas de uma tabela com linhas de uma segunda tabela, com uma expressão que especifica quais linhas devem ser emparelhadas. Por exemplo, para retornar todos os registros meteorológicos junto com a localização da cidade associada, o banco de dados precisa comparar a coluna `city` de cada linha da tabela `weather` com a coluna `name` de todas as linhas na tabela `cities`, e selecionar os pares de linhas onde esses valores correspondem.[[4]](#ftn.id-1.4.4.7.3.6) Isso seria realizado pela seguinte consulta:
 

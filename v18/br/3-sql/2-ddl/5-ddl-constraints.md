@@ -95,13 +95,13 @@ CREATE TABLE products (
 
 Deve-se notar que uma restrição de verificação é atendida se a expressão de verificação avaliar para verdadeiro ou para o valor nulo. Como a maioria das expressões avaliará para o valor nulo se qualquer operando for nulo, elas não impedirão valores nulos nas colunas restritas. Para garantir que uma coluna não contenha valores nulos, a restrição não-nulo descrita na próxima seção pode ser usada.
 
-### Nota
+Nota
 
 O PostgreSQL não suporta restrições `CHECK` que fazem referência a dados de tabela que não sejam a nova ou a atualização da linha verificada. Embora uma restrição `CHECK` que viole essa regra possa parecer funcionar em testes simples, não pode garantir que o banco de dados não atinja um estado em que a condição da restrição seja falsa (devido a mudanças subsequentes nas outras linhas envolvidas). Isso causaria o fracasso de uma varredura e restauração do banco de dados. A restauração poderia falhar mesmo quando o estado completo do banco de dados é consistente com a restrição, devido a linhas que não são carregadas em uma ordem que satisfará a restrição. Se possível, use as restrições `UNIQUE`, `EXCLUDE` ou `FOREIGN KEY` para expressar restrições entre linhas e entre tabelas.
 
 Se o que você deseja é uma verificação única contra outras linhas na inserção de uma linha, em vez de uma garantia de consistência mantida continuamente, pode-se usar um [trigger] personalizado para implementar isso. (Essa abordagem evita o problema de dump/restore, pois o pg_dump não reinstalará os gatilhos até após a restauração dos dados, de modo que a verificação não será aplicada durante um dump/restore.)
 
-### Nota
+Nota
 
 O PostgreSQL assume que as condições das restrições `CHECK` são imutáveis, ou seja, elas sempre darão o mesmo resultado para a mesma linha de entrada. Essa suposição é o que justifica o exame das restrições `CHECK` apenas quando as linhas são inseridas ou atualizadas, e não em outros momentos. (O aviso acima sobre não referenciar outros dados da tabela é realmente um caso especial dessa restrição.)
 

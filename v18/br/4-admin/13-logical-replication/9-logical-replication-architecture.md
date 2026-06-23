@@ -12,10 +12,10 @@ O processo de replicação lógica atualmente só aciona gatilhos de linha, não
 
 Os dados iniciais das tabelas já subscritas são capturados e copiados em instâncias paralelas de um tipo especial de processo de aplicação. Esses processos de sincronização de tabelas especiais são trabalhadores dedicados à sincronização de tabelas, gerados para cada tabela a ser sincronizada. Cada processo de sincronização de tabela criará seu próprio slot de replicação e copiará os dados existentes. Assim que a cópia for concluída, o conteúdo da tabela se tornará visível para outros backends. Uma vez que os dados existentes forem copiados, o trabalhador entrará no modo de sincronização, o que garante que a tabela seja trazida a um estado sincronizado com o processo de aplicação principal, ao transmitir quaisquer alterações que ocorreram durante a cópia dos dados iniciais usando replicação lógica padrão. Durante essa fase de sincronização, as alterações são aplicadas e comprometidas na mesma ordem em que ocorreram no publicador. Uma vez concluída a sincronização, o controle da replicação da tabela é devolvido ao processo de aplicação principal, onde a replicação continua normalmente.
 
-### Nota
+Nota
 
 O parâmetro da publicação `publish`(sql-createpublication.md#SQL-CREATEPUBLICATION-PARAMS-WITH-PUBLISH) afeta apenas quais operações de DML serão replicadas. A sincronização inicial de dados não leva em conta este parâmetro ao copiar os dados da tabela existente.
 
-### Nota
+Nota
 
 Se um trabalhador de sincronização de tabela falhar durante a cópia, o trabalhador de aplicação detecta o erro e refaz o trabalhador de sincronização de tabela para continuar o processo de sincronização. Esse comportamento garante que os erros transitórios não interrompam permanentemente a configuração de replicação. Veja também `wal_retrieve_retry_interval`(runtime-config-replication.md#GUC-WAL-RETRIEVE-RETRY-INTERVAL).

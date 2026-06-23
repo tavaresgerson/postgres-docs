@@ -4,7 +4,7 @@
 
 A tarefa do *planificador/optimizador* é criar um plano de execução ótimo. Uma consulta SQL dada (e, portanto, uma árvore de consulta) pode ser executada de várias maneiras diferentes, cada uma das quais produzirá o mesmo conjunto de resultados. Se for computacionalmente viável, o otimizador de consulta examinará cada um desses planos de execução possíveis, selecionando, em última análise, o plano de execução que se espera que seja o mais rápido.
 
-### Nota
+Nota
 
 Em algumas situações, examinar cada maneira possível de executar uma consulta pode levar um tempo e memória excessivos. Isso ocorre, em particular, quando se executam consultas que envolvem um grande número de operações de junção. Para determinar um plano de consulta razoável (não necessariamente ótimo) em um tempo razoável, o PostgreSQL usa um *Otimizador de Consulta Genético* (consulte [Capítulo 61](geqo.md)) quando o número de junções excede um limite (consulte [geqo_threshold](runtime-config-query.md#GUC-GEQO-THRESHOLD)).
 

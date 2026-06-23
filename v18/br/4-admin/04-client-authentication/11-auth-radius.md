@@ -12,7 +12,7 @@ As seguintes opções de configuração são suportadas para RADIUS:
 
 `radiussecrets`: Os segredos compartilhados usados ao se comunicar de forma segura com os servidores RADIUS. Isso deve ter exatamente o mesmo valor nos servidores PostgreSQL e RADIUS. É recomendável que essa seja uma string com pelo menos 16 caracteres. Este parâmetro é obrigatório.
 
-### Nota
+Nota
 
 O vetor de criptografia utilizado será apenas criptograficamente forte se o PostgreSQL for construído com suporte para OpenSSL. Em outros casos, a transmissão para o servidor RADIUS só deve ser considerada ofuscada, não protegida, e medidas de segurança externas devem ser aplicadas, se necessário.
 

@@ -119,7 +119,7 @@ Observe também que o conjunto de cláusulas de junção a serem aplicadas à ju
 
 Se for escolhido um caminho `ForeignPath` para a junção, ele representará todo o processo de junção; os caminhos gerados para as tabelas de componentes e as junções subsidiárias não serão utilizados. O processamento subsequente do caminho de junção procede da mesma forma que o de um caminho que analisa uma única tabela estrangeira. Uma diferença é que o `scanrelid` do nó do plano resultante `ForeignScan` deve ser definido como zero, uma vez que não há uma relação única que ele represente; em vez disso, o campo `fs_relids` do nó `ForeignScan` representa o conjunto de relações que foram juncionadas. (Este último campo é configurado automaticamente pelo código do planejador principal e não precisa ser preenchido pelo FDW.) Outra diferença é que, como a lista de colunas para uma junção remota não pode ser encontrada nos catálogos do sistema, o FDW deve preencher `fdw_scan_tlist` com uma lista apropriada de nós `TargetEntry`, representando o conjunto de colunas que ele fornecerá no momento da execução nos tuplos que retorna.
 
-### Nota
+Nota
 
 Começando com o PostgreSQL 16, `fs_relids` inclui os índices rangetable das junções externas, se houver sido envolvida alguma delas nessa junção. O novo campo `fs_base_relids` inclui apenas índices de relação de base, e, portanto, imita a semântica antiga do `fs_relids`.
 

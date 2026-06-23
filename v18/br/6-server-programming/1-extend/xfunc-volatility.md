@@ -16,7 +16,7 @@ Há relativamente pouca diferença entre as categorias `STABLE` e `IMMUTABLE` qu
 
 Para funções escritas em SQL ou em qualquer um dos idiomas processuais padrão, há uma segunda propriedade importante determinada pela categoria de volatilidade, a saber, a visibilidade de quaisquer alterações de dados que tenham sido feitas pelo comando SQL que está chamando a função. Uma função `VOLATILE` verá tais alterações, uma função `STABLE` ou `IMMUTABLE` não verá. Esse comportamento é implementado usando o comportamento de instantâneo do MVCC (ver [Capítulo 13](mvcc.md)): as funções `STABLE` e `IMMUTABLE` utilizam um instantâneo estabelecido no início da consulta que está chamando, enquanto as funções `VOLATILE` obtêm um instantâneo fresco no início de cada consulta que executam.
 
-### Nota
+Nota
 
 As funções escritas em C podem gerenciar instantâneos da maneira que desejam, mas geralmente é uma boa ideia fazer com que as funções em C também funcionem dessa maneira.
 
@@ -26,6 +26,6 @@ O mesmo comportamento de captura de instantâneo é usado para comandos `SELECT`
 
 Um erro comum é rotular uma função `IMMUTABLE` quando seus resultados dependem de um parâmetro de configuração. Por exemplo, uma função que manipula timestamps pode ter resultados que dependem da configuração de [TimeZone](runtime-config-client.md#GUC-TIMEZONE). Por segurança, essas funções devem ser rotuladas `STABLE` em vez disso.
 
-### Nota
+Nota
 
 O PostgreSQL exige que as funções `STABLE` e `IMMUTABLE` não contenham comandos SQL, exceto `SELECT`, para evitar a modificação de dados. (Este não é um teste completamente à prova de balas, pois tais funções ainda poderiam chamar funções `VOLATILE` que modificam o banco de dados. Se você fizer isso, descobrirá que a função `STABLE` ou `IMMUTABLE` não notará as alterações no banco de dados aplicadas pela função chamada, uma vez que elas são ocultas de seu instantâneo.)

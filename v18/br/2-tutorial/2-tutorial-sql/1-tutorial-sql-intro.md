@@ -1,4 +1,4 @@
-## 2.1. Introdução [#](#TUTORIAL-SQL-INTRO)
+### 2.1. Introdução [#](#TUTORIAL-SQL-INTRO)
 
 Este capítulo fornece uma visão geral de como usar o SQL para realizar operações simples. Este tutorial destina-se apenas a fornecer uma introdução e não é de forma alguma um tutorial completo sobre SQL. Vários livros foram escritos sobre SQL, incluindo [[melt93]](biblio.md#MELT93 "Understanding the New SQL") e [[date97]](biblio.md#DATE97 "A Guide to the SQL Standard"). Você deve estar ciente de que algumas características da linguagem do PostgreSQL são extensões do padrão.
 

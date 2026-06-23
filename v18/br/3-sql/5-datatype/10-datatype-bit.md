@@ -4,7 +4,7 @@ As strings de bits são cadeias de 1's e 0's. Elas podem ser usadas para armazen
 
 Os dados do tipo `bit` devem corresponder exatamente ao comprimento *`n`*; é um erro tentar armazenar cadeias de bits mais curtas ou mais longas. Os dados do tipo `bit varying` têm comprimento variável, até o comprimento máximo *`n`*; cadeias mais longas serão rejeitadas. Escrever `bit` sem uma especificação de comprimento é equivalente a `bit(1)`, enquanto `bit varying` sem uma especificação de comprimento significa comprimento ilimitado.
 
-### Nota
+Nota
 
 Se um valor de cadeia de bits for explicitamente convertido para `bit(n)`, ele será truncado ou preenchido com zeros à direita para ser exatamente *`n`* bits, sem gerar um erro. Da mesma forma, se um valor de cadeia de bits for explicitamente convertido para `bit varying(n)`, ele será truncado à direita se for mais de *`n`* bits.
 

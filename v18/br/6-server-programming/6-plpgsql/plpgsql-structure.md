@@ -60,7 +60,7 @@ END;
 $$ LANGUAGE plpgsql;
 ```
 
-### Nota
+Nota
 
 Na verdade, existe um "bloco externo" oculto que envolve o corpo de qualquer função PL/pgSQL. Esse bloco fornece as declarações dos parâmetros da função (se houver), bem como algumas variáveis especiais, como `FOUND` (consulte [Seção 41.5.5] (plpgsql-statements.md#PLPGSQL-STATEMENTS-DIAGNOSTICS "41.5.5. Obtaining the Result Status")). O bloco externo é marcado com o nome da função, o que significa que os parâmetros e as variáveis especiais podem ser qualificados com o nome da função.
 

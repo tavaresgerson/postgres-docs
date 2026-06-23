@@ -4,7 +4,7 @@ A autenticação do cliente é controlada por um arquivo de configuração, que 
 
 O arquivo `pg_hba.conf` é lido ao iniciar o sistema e quando o processo do servidor principal recebe um sinal SIGHUP. Se você editar o arquivo em um sistema ativo, você precisará sinalizar o postmaster (usando `pg_ctl reload`, chamando a função SQL `pg_reload_conf()`, ou usando `kill -HUP`) para fazer com que ele leia o arquivo novamente.
 
-### Nota
+Nota
 
 A afirmação anterior não é verdadeira no Microsoft Windows: lá, quaisquer alterações no arquivo `pg_hba.conf` são aplicadas imediatamente pelas novas conexões subsequentes.
 
@@ -41,7 +41,7 @@ O significado dos campos é o seguinte:
 
 `host`: Este registro corresponde às tentativas de conexão feitas usando TCP/IP. Os registros `host` correspondem a tentativas de conexão SSL ou não SSL, bem como tentativas de conexão criptografadas GSSAPI ou não criptografadas GSSAPI.
 
-### Nota
+Nota
 
 As conexões remotas TCP/IP não serão possíveis, a menos que o servidor seja iniciado com um valor apropriado para o parâmetro de configuração [listen_addresses](runtime-config-connection.md#GUC-LISTEN-ADDRESSES), uma vez que o comportamento padrão é ouvir conexões TCP/IP apenas no endereço local de bucle `localhost`.
 
@@ -87,7 +87,7 @@ Quando os nomes de host são especificados em `pg_hba.conf`, você deve garantir
 
 Esses campos não se aplicam aos registros de `local`.
 
-### Nota
+Nota
 
 Os usuários às vezes se perguntam por que os nomes de host são tratados dessa maneira aparentemente complicada, com duas resoluções de nome, incluindo uma pesquisa reversa do endereço IP do cliente. Isso complica o uso do recurso no caso de a entrada de DNS reversa do cliente não estar configurada ou gerar algum nome de host indesejado. Isso é feito principalmente por eficiência: dessa forma, uma tentativa de conexão requer, no máximo, duas pesquisas de resolver, uma reversa e uma para frente. Se houver um problema de resolver com algum endereço, torna-se apenas o problema do cliente. Uma implementação alternativa hipotética que realizasse apenas pesquisas para frente teria que resolver cada nome de host mencionado em `pg_hba.conf` durante cada tentativa de conexão. Isso poderia ser bastante lento se muitos nomes estiverem listados. E se houver um problema de resolver com um dos nomes de host, torna-se o problema de todos.
 

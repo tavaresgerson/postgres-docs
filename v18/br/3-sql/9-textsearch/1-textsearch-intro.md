@@ -44,7 +44,7 @@ FROM messages m, docs d
 WHERE m.mid = d.did AND m.mid = 12;
 ```
 
-### Nota
+Nota
 
 Na verdade, nesses exemplos de consultas, `coalesce` deve ser usado para evitar que um único atributo `NULL` cause um resultado `NULL` para todo o documento.
 

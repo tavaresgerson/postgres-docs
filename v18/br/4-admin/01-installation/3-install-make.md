@@ -89,7 +89,7 @@ make check
 
 (Isso não funcionará como root; faça isso como um usuário não privilegiado.) Consulte o [Capítulo 31](regress.md) para obter informações detalhadas sobre a interpretação dos resultados do teste. Você pode repetir este teste em qualquer momento posterior, emitindo o mesmo comando.
 
-### Nota
+Nota
 
 Se você está atualizando um sistema existente, não se esqueça de ler [Seção 18.6](upgrading.md), que tem instruções sobre atualização de um cluster.
 
@@ -174,7 +174,7 @@ Essas opções controlam onde o `make install` colocará os arquivos. A opção 
 
 `--htmldir=DIRECTORY` [#](#CONFIGURE-OPTION-HTMLDIR): A documentação formatada em HTML para PostgreSQL será instalada neste diretório. O padrão é `DATAROOTDIR`.
 
-### Nota
+Nota
 
 Preocupamo-nos em tornar possível instalar o PostgreSQL em locais de instalação compartilhados (como `/usr/local/include`) sem interferir no espaço de nomes do resto do sistema. Primeiro, a string “`/postgresql`” é automaticamente anexada a `datadir`, `sysconfdir` e `docdir`, a menos que o nome de diretório totalmente expandido já contenha a string “`postgres`” ou “`pgsql`”. Por exemplo, se você escolher `/usr/local` como prefixo, a documentação será instalada em `/usr/local/doc/postgresql`, mas se o prefixo for `/opt/postgres`, então ela estará em `/opt/postgres/doc`. Os arquivos de cabeçalho C públicos das interfaces do cliente são instalados em `includedir` e são limpos em termos de espaço de nomes. Os arquivos de cabeçalho internos e os arquivos de cabeçalho do servidor são instalados em diretórios privados sob `includedir`. Consulte a documentação de cada interface para obter informações sobre como acessar seus arquivos de cabeçalho. Finalmente, se apropriado, um subdiretório privado também será criado sob `libdir` para módulos carregáveis dinamicamente.
 
@@ -404,7 +404,7 @@ ou
 export COPT='-Werror' make
 ```
 
-### Nota
+Nota
 
 Se estiver usando o GCC, é melhor compilar com um nível de otimização de pelo menos `-O1`, porque usar nenhum nível de otimização (`-O0`) desativa algumas advertências importantes do compilador (como o uso de variáveis não inicializadas). No entanto, níveis de otimização não nulos podem complicar a depuração, porque a execução de código compilado geralmente não corresponderá de forma direta com as linhas do código-fonte. Se você ficar confuso ao tentar depurar código otimizado, recomponha os arquivos específicos de interesse com `-O0`. Uma maneira fácil de fazer isso é passando uma opção para o make: `make PROFILE=-O0 file.o`.
 

@@ -37,7 +37,7 @@ Os formulários que utilizam `FORWARD` e `BACKWARD` recuperam o número indicado
 
 `RELATIVE 0`, `FORWARD 0` e `BACKWARD 0` solicitam que a linha atual seja recuperada sem mover o cursor, ou seja, que a linha mais recentemente recuperada seja refeita. Isso será bem-sucedido, a menos que o cursor esteja posicionado antes da primeira linha ou após a última linha; nesse caso, nenhuma linha é devolvida.
 
-### Nota
+Nota
 
 Esta página descreve o uso de cursor no nível do comando SQL. Se você está tentando usar cursors dentro de uma função PL/pgSQL, as regras são diferentes — veja [Seção 41.7.3](plpgsql-cursors.md#PLPGSQL-CURSOR-USING).
 

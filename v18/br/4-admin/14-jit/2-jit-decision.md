@@ -6,7 +6,7 @@ Para determinar se a compilação JIT deve ser usada, o custo total estimado de 
 
 Essas decisões baseadas nos custos serão tomadas no momento do planejamento, e não no momento da execução. Isso significa que, quando as declarações preparadas estão em uso e um plano genérico é usado (consulte [PREPARE](sql-prepare.md)), os valores dos parâmetros de configuração em vigor no momento da preparação controlam as decisões, e não os ajustes no momento da execução.
 
-### Nota
+Nota
 
 Se [jit][(runtime-config-query.md#GUC-JIT) estiver definido como `off`, ou se nenhuma implementação JIT estiver disponível (por exemplo, porque o servidor foi compilado sem `--with-llvm`, o JIT não será executado, mesmo que isso seja benéfico com base nos critérios acima. Definir [jit][(runtime-config-query.md#GUC-JIT) como `off` tem efeitos tanto no tempo de planejamento quanto na execução.
 

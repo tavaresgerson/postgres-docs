@@ -433,7 +433,7 @@ A cláusula `COLUMNS` exigida especifica a(s) coluna(s) que serão produzidas na
 
 Uma coluna marcada `FOR ORDINALITY` será preenchida com números de linha, começando com 1, na ordem dos nós recuperados do conjunto de nós de resultado do *`row_expression`*. No máximo, uma coluna pode ser marcada `FOR ORDINALITY`.
 
-### Nota
+Nota
 
 O XPath 1.0 não especifica uma ordem para os nós em um conjunto de nós, portanto, o código que depende de uma ordem específica dos resultados será dependente da implementação. Os detalhes podem ser encontrados em [Seção D.3.1.2](xml-limits-conformance.md#XML-XPATH-1-SPECIFICS).
 

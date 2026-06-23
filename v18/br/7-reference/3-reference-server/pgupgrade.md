@@ -96,7 +96,7 @@ Esta opção não tem efeito quando o `--no-sync` é usado.
 
 Estes são os passos para realizar uma atualização com o pg_upgrade:
 
-### Nota
+Nota
 
 Os passos para atualizar [*[clusters de replicação lógica][(glossary.md#GLOSSARY-LOGICAL-REPLICATION-CLUSTER "Logical replication cluster")*]](glossário.md#GLÓSSICA-REPLICAÇÃO-CLUSTERS) não são abordados aqui; consulte [Seção 29.13](logical-replication-upgrade.md) para obter detalhes.
 

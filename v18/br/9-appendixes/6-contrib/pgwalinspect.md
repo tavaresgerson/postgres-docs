@@ -7,7 +7,7 @@ O módulo `pg_walinspect` fornece funções SQL que permitem inspecionar o conte
 
 Todas as funções deste módulo fornecerão as informações do WAL usando o ID atual da linha de tempo do servidor.
 
-### Nota
+Nota
 
 As funções `pg_walinspect` são frequentemente chamadas usando um argumento LSN que especifica a localização em que um registro WAL conhecido de interesse *começa*. No entanto, algumas funções, como `pg_logical_emit_message`, retornam o LSN *após* o registro que foi inserido.
 

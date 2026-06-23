@@ -1115,7 +1115,7 @@ Commit                                         70
 Total time (ns)                        2312105013
 ```
 
-### Nota
+Nota
 
 O SystemTap utiliza uma notação diferente para scripts de rastreamento em comparação com o DTrace, embora os pontos de rastreamento subjacentes sejam compatíveis. Um ponto que vale a pena notar é que, neste texto, os scripts do SystemTap devem referenciar os nomes dos sondas usando dois underscores em vez de hífens. Espera-se que isso seja corrigido em futuras versões do SystemTap.
 

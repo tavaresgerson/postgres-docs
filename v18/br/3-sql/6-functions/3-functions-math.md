@@ -3274,7 +3274,7 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
 
 
 
-### Nota
+Nota
 
 Outra maneira de trabalhar com ângulos medidos em graus é usar as funções de transformação de unidade `radians()` e `degrees()`, mostradas anteriormente. No entanto, é preferível usar as funções trigonométricas baseadas em graus, pois dessa forma é evitado o erro de arredondamento para casos especiais, como `sind(30)`.
 

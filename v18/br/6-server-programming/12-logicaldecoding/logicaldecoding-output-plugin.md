@@ -68,7 +68,7 @@ Um plugin de saída é notificado sobre as mudanças que estão ocorrendo por me
 
 As transações concorrentes são decodificadas na ordem do commit, e apenas as alterações pertencentes a uma transação específica são decodificadas entre os callbacks `begin` e `commit`. As transações que foram revertidas explicitamente ou implicitamente nunca são decodificadas. Os pontos de salvamento bem-sucedidos são incorporados à transação que os contém na ordem em que foram executados dentro dessa transação. Uma transação que é preparada para um compromisso de duas fases usando `PREPARE TRANSACTION` também será decodificada se os callbacks dos plugins de saída necessários para a decodificação forem fornecidos. É possível que a transação atualmente preparada que está sendo decodificada seja abortada concorrentemente via um comando `ROLLBACK PREPARED`. Nesse caso, a decodificação lógica dessa transação também será abortada. Todas as alterações dessa transação são ignoradas uma vez que o aborto é detectado e o callback `prepare_cb` é invocado. Assim, mesmo em caso de aborto concorrente, há informações suficientes fornecidas ao plugin de saída para que ele lidere adequadamente com `ROLLBACK PREPARED` uma vez que essa transação seja decodificada.
 
-### Nota
+Nota
 
 Apenas as transações que já foram descarregadas com segurança no disco serão decodificadas. Isso pode levar a um `COMMIT` que não seja decodificado imediatamente em um `pg_logical_slot_get_changes()` diretamente subsequente quando o `synchronous_commit` está configurado como `off`.
 
@@ -138,7 +138,7 @@ typedef void (*LogicalDecodeChangeCB) (struct LogicalDecodingContext *ctx,
 
 Os parâmetros *`ctx`* e *`txn` têm o mesmo conteúdo que os dos callbacks `begin_cb` e `commit_cb`, mas, adicionalmente, o descritor de relação *`relation`* aponta para a relação a que a linha pertence e uma estrutura *`change`* que descreve a modificação da linha são passados.
 
-### Nota
+Nota
 
 Apenas as alterações em tabelas definidas pelo usuário que não estejam não registradas (consulte `UNLOGGED` (sql-createtable.md#SQL-CREATETABLE-UNLOGGED)) e não temporárias (consulte `TEMPORARY` ou `TEMP` (sql-createtable.md#SQL-CREATETABLE-TEMPORARY)) podem ser extraídas usando decodificação lógica.
 

@@ -13,6 +13,6 @@ CREATE FUNCTION square_root(double precision) RETURNS double precision
 
 (A maioria das funções internas espera ser declarada como “estricta”.
 
-### Nota
+Nota
 
 Nem todas as funções "pré-definidas" são "internas" no sentido acima mencionado. Algumas funções pré-definidas são escritas em SQL.

@@ -57,7 +57,7 @@ SELECT a "from", b + c AS sum FROM ...
 
 Para maior segurança contra possíveis adições futuras de palavras-chave, é recomendável que você sempre escreva `AS` ou coloque aspas duplas no nome da coluna de saída.
 
-### Nota
+Nota
 
 O nome dos campos de saída aqui é diferente do que é feito na cláusula `FROM` (veja [Seção 7.2.1.2](queries-table-expressions.md#QUERIES-TABLE-ALIASES)). É possível renomear o mesmo campo duas vezes, mas o nome atribuído na lista de seleção é o que será passado.
 

@@ -1,4 +1,4 @@
-## 3.7. Conclusão [#](#TUTORIAL-CONCLUSION)
+### 3.7. Conclusão [#](#TUTORIAL-CONCLUSION)
 
 O PostgreSQL tem muitas características que não foram abordadas nesta introdução ao tutorial, que foi orientada para usuários mais novos do SQL. Essas características são discutidas com mais detalhes no restante deste livro.
 

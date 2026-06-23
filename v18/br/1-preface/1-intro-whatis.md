@@ -13,11 +13,11 @@ O PostgreSQL é um descendente de código original de Berkeley de código aberto
 
 Além disso, o PostgreSQL pode ser ampliado pelo usuário de várias maneiras, por exemplo, adicionando novos
 
-* [tipos de dados](datatype.md "Chapter 8. Data Types")
-* [funções](functions.md "Chapter 9. Functions and Operators")
-* [operadores](functions.md "Chapter 9. Functions and Operators")
-* [funções agregadas](functions-aggregate.md "9.21. Aggregate Functions")
-* [métodos de índice](indexes.md "Chapter 11. Indexes")
-* [linguagens procedimentais](server-programming.md "Part V. Server Programming")
+* [tipos de dados](datatype.md)
+* [funções](functions.md)
+* [operadores](functions.md)
+* [funções agregadas](functions-aggregate.md)
+* [métodos de índice](indexes.md)
+* [linguagens procedimentais](server-programming.md)
 
 E, devido à licença liberal, o PostgreSQL pode ser usado, modificado e distribuído por qualquer pessoa gratuitamente para qualquer propósito, seja privado, comercial ou acadêmico.

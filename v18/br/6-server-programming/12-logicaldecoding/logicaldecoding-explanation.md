@@ -16,7 +16,7 @@ No PostgreSQL, a decodificação lógica é implementada decodificando o conteú
 
 No contexto da replicação lógica, um slot representa um fluxo de alterações que podem ser reproduzidos para um cliente na ordem em que foram feitas no servidor de origem. Cada slot transmite uma sequência de alterações de um único banco de dados.
 
-### Nota
+Nota
 
 O PostgreSQL também possui slots de replicação em streaming (consulte a [Seção 26.2.5](warm-standby.md#STREAMING-REPLICATION)), mas eles são usados de maneira um pouco diferente lá.
 
@@ -40,7 +40,7 @@ Os slots de replicação persistem mesmo em falhas e não sabem nada sobre o est
 
 Os slots de replicação lógica no primário podem ser sincronizados com o standby quente usando o parâmetro `failover` da opção (functions-admin.md#PG-CREATE-LOGICAL-REPLICATION-SLOT), ou usando a opção [`failover`](sql-createsubscription.md#SQL-CREATESUBSCRIPTION-PARAMS-WITH-FAILOVER) do `CREATE SUBSCRIPTION` durante a criação do slot. Além disso, é necessário habilitar [`sync_replication_slots`](runtime-config-replication.md#GUC-SYNC-REPLICATION-SLOTS) no standby. Ao habilitar [`sync_replication_slots`](runtime-config-replication.md#GUC-SYNC-REPLICATION-SLOTS) no standby, os slots de falha podem ser sincronizados periodicamente no trabalhador slotsync. Para que a sincronização funcione, é obrigatório ter um slot de replicação física entre o primário e o standby (ou seja, [`primary_slot_name`](runtime-config-replication.md#GUC-PRIMARY-SLOT-NAME) deve ser configurado no standby), e [`hot_standby_feedback`](runtime-config-replication.md#GUC-HOT-STANDBY-FEEDBACK) deve ser habilitado no standby. Também é necessário especificar um `dbname` válido no [`primary_conninfo`](runtime-config-replication.md#GUC-PRIMARY-CONNINFO). É altamente recomendável que o referido slot de replicação física seja nomeado na lista [`synchronized_standby_slots`](runtime-config-replication.md#GUC-SYNCHRONIZED-STANDBY-SLOTS) no primário, para evitar que o assinante consuma as alterações mais rápido do que o standby quente. Mesmo quando corretamente configurado, espera-se alguma latência ao enviar alterações para assinantes lógicos devido à espera em slots nomeados em [`synchronized_standby_slots`](runtime-config-replication.md#GUC-SYNCHRONIZED-STANDBY-SLOTS). Quando o `synchronized_standby_slots` é utilizado, o servidor primário não será completamente desligado até que os correspondentes standby, associados aos slots de replicação física especificados em `synchronized_standby_slots`, tenham confirmado a recepção do WAL até a posição mais recente esvaziada no servidor primário.
 
-### Nota
+Nota
 
 Embora a habilitação de `sync_replication_slots` permita a sincronização periódica automática dos slots de falha, eles também podem ser sincronizados manualmente usando a função `pg_sync_replication_slots` no modo standby. No entanto, essa função é destinada principalmente a testes e depuração e deve ser usada com cautela. Ao contrário da sincronização automática, ela não inclui tentativas cíclicas, tornando-a mais propensa a falhas de sincronização, particularmente durante cenários de sincronização inicial, onde os arquivos WAL ou as linhas do catálogo necessários para o slot podem já ter sido removidos ou estão em risco de serem removidos no modo standby. Em contraste, a sincronização automática via `sync_replication_slots` fornece atualizações contínuas de slots, permitindo uma falha de falha sem problemas e suportando alta disponibilidade. Portanto, é o método recomendado para sincronizar slots.
 

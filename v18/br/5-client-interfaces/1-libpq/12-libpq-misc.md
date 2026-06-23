@@ -126,7 +126,7 @@ Antes da versão principal 10, o PostgreSQL usava números de versão de três p
 
 Portanto, para fins de determinação da compatibilidade de recursos, as aplicações devem dividir o resultado de `PQlibVersion`(libpq-misc.md#LIBPQ-PQLIBVERSION) por 100 e não por 10000 para determinar um número lógico de versão principal. Em todas as séries de lançamento, apenas os dois últimos dígitos diferem entre as versões menores (releases de correção de bugs).
 
-### Nota
+Nota
 
 Essa função apareceu na versão 9.1 do PostgreSQL, portanto, não pode ser usada para detectar funcionalidades necessárias em versões anteriores, pois chamá-la criará uma dependência de vínculo na versão 9.1 ou posterior.
 

@@ -764,7 +764,7 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
 
 
 
-### Nota
+Nota
 
 `current_catalog`, `current_role`, `current_schema`, `current_user`, `session_user` e `user` têm um status sintático especial no SQL: eles devem ser chamados sem parênteses finais. No PostgreSQL, os parênteses podem ser usados opcionalmente com `current_schema`, mas não com os outros.
 

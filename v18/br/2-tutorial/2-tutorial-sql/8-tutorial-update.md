@@ -1,4 +1,4 @@
-## 2.8. Atualizações [#](#TUTORIAL-UPDATE)
+### 2.8. Atualizações [#](#TUTORIAL-UPDATE)
 
 Você pode atualizar as linhas existentes usando o comando `UPDATE`. Suponha que você descubra que as leituras de temperatura estão todas erradas em 2 graus após 28 de novembro. Você pode corrigir os dados da seguinte forma:
 

@@ -110,7 +110,7 @@ As outras categorias de localização podem ser alteradas sempre que desejado, d
 
 Observe que o comportamento do local do servidor é determinado pelas variáveis de ambiente que o servidor vê, e não pelo ambiente de qualquer cliente. Portanto, tenha cuidado para configurar as configurações de local corretos antes de iniciar o servidor. Uma consequência disso é que, se o cliente e o servidor estiverem configurados em locais diferentes, as mensagens podem aparecer em diferentes idiomas, dependendo de onde elas se originaram.
 
-### Nota
+Nota
 
 Quando falamos em herdar o local do ambiente de execução, isso significa o seguinte na maioria dos sistemas operacionais: Para uma categoria de local específica, digamos a correção de texto, as seguintes variáveis de ambiente são consultadas nesta ordem até que uma seja encontrada para ser definida: `LC_ALL`, `LC_COLLATE` (ou a variável correspondente à respectiva categoria), `LANG`. Se nenhuma dessas variáveis de ambiente estiver definida, o local padrão é `C`.
 
@@ -170,13 +170,13 @@ O local `PG_UNICODE_FAST` está disponível apenas quando o codificação do ban
 
 O ICU fornece comportamento de classificação e classificação de caracteres que é independente do sistema operacional e do codificação do banco de dados, o que é preferível se você espera fazer uma transição para outras plataformas sem qualquer alteração nos resultados. `LC_COLLATE` e `LC_CTYPE` podem ser definidos independentemente do local do ICU.
 
-### Nota
+Nota
 
 Para o provedor de ICU, os resultados podem depender da versão da biblioteca de ICU utilizada, pois ela é atualizada para refletir as mudanças no idioma natural ao longo do tempo.
 
 `libc`: O provedor `libc` utiliza a biblioteca C do sistema operacional. O comportamento de classificação e classificação de caracteres é controlado pelas configurações `LC_COLLATE` e `LC_CTYPE`, portanto, não podem ser configuradas de forma independente.
 
-### Nota
+Nota
 
 O mesmo nome de local pode ter comportamento diferente em diferentes plataformas ao usar o provedor libc.
 

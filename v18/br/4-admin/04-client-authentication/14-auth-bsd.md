@@ -4,6 +4,6 @@ Este método de autenticação funciona de forma semelhante ao `password`, excet
 
 A autenticação BSD no PostgreSQL utiliza o tipo de login `auth-postgresql` e autentica com a classe de login `postgresql` se essa for definida em `login.conf`. Por padrão, essa classe de login não existe, e o PostgreSQL usará a classe de login padrão.
 
-### Nota
+Nota
 
 Para usar a Autenticação BSD, a conta de usuário do PostgreSQL (ou seja, o usuário do sistema operacional que executa o servidor) deve primeiro ser adicionada ao grupo `auth`. O grupo `auth` existe por padrão em sistemas OpenBSD.

@@ -370,7 +370,7 @@ Para saber mais sobre o padrão SQL/JSON, consulte [[sqltr-19075-6]] (biblio.md#
 
 
 
-### Nota
+Nota
 
 Os operadores de extração de campo/elemento/caminho retornam NULL, em vez de falhar, se a entrada JSON não tiver a estrutura correta para corresponder à solicitação; por exemplo, se não existir tal chave ou elemento de matriz.
 
@@ -861,7 +861,7 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
 
 
 
-### Nota
+Nota
 
 Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou elemento de matriz de objeto ausente, tipo inesperado de item JSON, erros de data e número. As funções relacionadas ao `jsonpath` descritas abaixo também podem ser informadas para suprimir esses tipos de erros. Esse comportamento pode ser útil ao pesquisar coleções de documentos JSON de estrutura variável.
 
@@ -4581,7 +4581,7 @@ A expressão de verificação de predicado semelhante simplesmente retorna `true
  true
 ```
 
-### Nota
+Nota
 
 As expressões de verificação de predicado são necessárias no operador `@@` (e na função `jsonb_path_match`), e não devem ser usadas com o operador `@?` (ou na função `jsonb_path_exists`).
 
@@ -5959,7 +5959,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
 
 
 
-### Nota
+Nota
 
 O tipo de resultado dos métodos `datetime()` e `datetime(template)` pode ser `date`, `timetz`, `time`, `timestamptz` ou `timestamp`. Ambos os métodos determinam seu tipo de resultado dinamicamente.
 
@@ -7157,11 +7157,11 @@ ERROR:  malformed array literal: "[1, 2]" DETAIL:  Missing "]" after array dimen
 
 
 
-### Nota
+Nota
 
 A expressão *`context_item`* é convertida para `jsonb` por uma conversão implícita se a expressão não estiver já do tipo `jsonb`. No entanto, observe que quaisquer erros de análise que ocorram durante essa conversão são lançados incondicionalmente, ou seja, não são tratados de acordo com a cláusula (especificada ou implícita) `ON ERROR`.
 
-### Nota
+Nota
 
 `JSON_VALUE()` retorna um NULL SQL se *`path_expression`* retornar um JSON `null`, enquanto `JSON_QUERY()` retorna o JSON `null` como está.
 
@@ -7218,7 +7218,7 @@ Opcionalmente, você pode especificar as cláusulas `WRAPPER` e `QUOTES` para fo
 
 Opcionalmente, você pode usar as cláusulas `ON EMPTY` e `ON ERROR` para especificar se deve ser lançado o erro ou retornar o valor especificado quando o resultado da avaliação do caminho JSON estiver vazio e quando ocorrer um erro durante a avaliação do caminho JSON ou quando a coerção do valor SQL/JSON para o tipo especificado, respectivamente. O padrão para ambas é retornar um valor `NULL`.
 
-### Nota
+Nota
 
 Esta cláusula é internamente convertida e tem a mesma semântica que `JSON_VALUE` ou `JSON_QUERY`. Esta última se o tipo especificado não for um tipo escalar ou se alguma das cláusulas `FORMAT JSON`, `WRAPPER` ou `QUOTES` estiver presente.
 
@@ -7230,7 +7230,7 @@ O especificado *`type`* deve ter um molde do tipo `boolean`.
 
 Opcionalmente, você pode usar `ON ERROR` para especificar se deve ser lançada a erro ou retornado o valor especificado quando ocorre um erro durante a avaliação do caminho JSON ou quando o valor SQL/JSON é coercido para o tipo especificado. O padrão é retornar um valor booleano `FALSE`.
 
-### Nota
+Nota
 
 Esta cláusula é internamente convertida e tem a mesma semântica que `JSON_EXISTS`.
 
@@ -7238,7 +7238,7 @@ Esta cláusula é internamente convertida e tem a mesma semântica que `JSON_EXI
 
 A sintaxe `NESTED PATH` é recursiva, então você pode descer vários níveis aninhados, especificando várias subcláusulas `NESTED PATH` dentro uma da outra. Isso permite desanidar a hierarquia de objetos e arrays JSON em uma única invocação de função, em vez de concatenar várias expressões `JSON_TABLE` em uma declaração SQL.
 
-### Nota
+Nota
 
 Em cada variante de *`json_table_column`* descrito acima, se a cláusula `PATH` for omitida, a expressão de caminho `$.name` é usada, onde *`name`* é o nome da coluna fornecida.
 

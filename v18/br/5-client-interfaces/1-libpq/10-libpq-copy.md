@@ -100,7 +100,7 @@ int PQputline(PGconn *conn, const char *string);
 
 O fluxo de dados `COPY` enviado por uma série de chamadas para `PQputline`(libpq-copy.md#LIBPQ-PQPUTLINE) tem o mesmo formato que o retornado por `PQgetlineAsync`(libpq-copy.md#LIBPQ-PQGETLINEASYNC), exceto que as aplicações não são obrigadas a enviar exatamente uma linha de dados por chamada; é permitido enviar uma linha parcial ou várias linhas por chamada.
 
-### Nota
+Nota
 
 Antes do protocolo PostgreSQL 3.0, era necessário que o aplicativo enviasse explicitamente os dois caracteres `\.` como uma linha final para indicar ao servidor que ele havia terminado de enviar os dados `COPY`. Embora isso ainda funcione, ele é desaconselhável e o significado especial de `\.` pode ser esperado para ser removido em um lançamento futuro. (Ele já vai se comportar mal no modo `CSV`.) É suficiente chamar `PQendcopy`(libpq-copy.md#LIBPQ-PQENDCOPY) após ter enviado os dados reais.
 

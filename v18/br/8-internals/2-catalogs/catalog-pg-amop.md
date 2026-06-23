@@ -248,7 +248,7 @@ Uma entrada de operador de pesquisa indica que um índice dessa família de oper
 
 Uma entrada de operador de "ordem" indica que um índice desta família de operadores pode ser percorrido para retornar linhas na ordem representada por `ORDER BY` *`indexed_column`* *`operator`* *`constant`*. Tal operador pode retornar qualquer tipo de dados ordenável, embora, novamente, seu tipo de entrada à esquerda deve corresponder ao tipo de dados da coluna do índice. A semântica exata do `ORDER BY` é especificada pela coluna `amopsortfamily`, que deve referenciar uma família de operadores de árvore B para o tipo de resultado do operador.
 
-### Nota
+Nota
 
 Atualmente, assume-se que a ordem de classificação para um operador de classificação é a padrão para a família de operadores referenciada, ou seja, `ASC NULLS LAST`. Isso pode ser relaxado algum dia, adicionando colunas adicionais para especificar opções de classificação explicitamente.
 

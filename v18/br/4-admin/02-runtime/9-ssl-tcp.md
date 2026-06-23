@@ -32,7 +32,7 @@ O PostgreSQL lê o arquivo de configuração do OpenSSL de nível de sistema. Po
 
 O OpenSSL suporta uma ampla gama de cifra e algoritmos de autenticação, de força variável. Embora uma lista de cifras possa ser especificada no arquivo de configuração do OpenSSL, você pode especificar cifras especificamente para uso pelo servidor de banco de dados, modificando [ssl_ciphers](runtime-config-connection.md#GUC-SSL-CIPHERS) em `postgresql.conf`.
 
-### Nota
+Nota
 
 É possível ter autenticação sem sobrecarga de criptografia usando os cifradores `NULL-SHA` ou `NULL-MD5`. No entanto, um homem no meio pode ler e passar comunicações entre cliente e servidor. Além disso, a sobrecarga de criptografia é mínima em comparação com a sobrecarga da autenticação. Por essas razões, os cifradores NULL não são recomendados.
 

@@ -67,7 +67,7 @@ A entrada especial `*` corresponde a qualquer nome de espera.
 
 Não há mecanismo para impor a unicidade dos nomes de standby. Em caso de duplicatas, um dos standby correspondentes será considerado de maior prioridade, embora exatamente qual seja indeterminado.
 
-### Nota
+Nota
 
 Cada *`standby_name`* deve ter a forma de um identificador SQL válido, a menos que seja `*`. Você pode usar aspas duplas, se necessário. Mas observe que os *`standby_name`* são comparados aos nomes de aplicativos de espera de forma insensível ao caso, seja com aspas duplas ou
 

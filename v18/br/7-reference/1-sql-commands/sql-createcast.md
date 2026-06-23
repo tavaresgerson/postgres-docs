@@ -58,7 +58,7 @@ Agora, os catálogos também fornecem um cast de `numeric` para `integer`. Se es
 
 É prudente ser conservador ao marcar casts como implícitos. Uma abundância excessiva de caminhos de casting implícito pode fazer com que o PostgreSQL escolha interpretações surpreendentes dos comandos, ou que não consiga resolver comandos de todo, porque há múltiplas interpretações possíveis. Uma boa regra é fazer um cast implicitamente invocable apenas para transformações que preservam a informação entre tipos na mesma categoria de tipo geral. Por exemplo, o cast de `int2` para `int4` pode ser razoavelmente implícito, mas o cast de `float8` para `int4` provavelmente deve ser apenas de atribuição. Casts entre categorias de tipo, como `text` para `int4`, devem ser feitos apenas explicitamente.
 
-### Nota
+Nota
 
 Às vezes, é necessário, por razões de usabilidade ou conformidade com padrões, fornecer múltiplos casts implícitos entre um conjunto de tipos, resultando em ambiguidade que não pode ser evitada como acima. O analisador tem uma heurística de fallback baseada em *categorias de tipo* e *tipos preferidos* que podem ajudar a fornecer o comportamento desejado em tais casos. Consulte [CREATE TYPE](sql-createtype.md) para obter mais informações.
 
@@ -100,11 +100,11 @@ Normalmente, não é necessário criar casts entre tipos definidos pelo usuário
 
 Embora não seja obrigatório, é recomendável que você continue a seguir essa antiga convenção de nomear as funções de implementação de cast após o tipo de dados alvo. Muitos usuários estão acostumados a poder realizar casts de tipos de dados usando uma notação em estilo de função, ou seja, *`typename`*(*`x`*) . Essa notação, na verdade, não é nada mais do que uma chamada da função de implementação de cast; não é tratada especialmente como um cast. Se suas funções de conversão não forem nomeadas para suportar essa convenção, você terá usuários surpresos. Como o PostgreSQL permite a sobrecarga do mesmo nome de função com diferentes tipos de argumentos, não há dificuldade em ter várias funções de conversão de diferentes tipos que usam o nome do tipo alvo.
 
-### Nota
+Nota
 
 Na verdade, o parágrafo anterior é uma simplificação excessiva: há dois casos em que uma construção de chamada de função será tratada como uma solicitação de cast sem ter sido correspondida a uma função real. Se uma chamada de função *`name`*(*`x`*) não corresponder exatamente a nenhuma função existente, mas *`name`* é o nome de um tipo de dados e `pg_cast` fornece uma cast binária-coercível para este tipo a partir do tipo de *`x`*, então a chamada será interpretada como uma cast binária-coercível. Esta exceção é feita para que casts binária-coercíveis possam ser invocados usando sintaxe funcional, mesmo que não tenham nenhuma função. Da mesma forma, se não houver uma entrada em `pg_cast` mas a cast seria para ou a partir de um tipo de string, a chamada será interpretada como uma cast de conversão de E/S. Esta exceção permite que casts de conversão de E/S sejam invocados usando sintaxe funcional.
 
-### Nota
+Nota
 
 Há também uma exceção à exceção: as conversões de saída/entrada de tipos compostos para tipos de string não podem ser invocadas usando a sintaxe funcional, mas devem ser escritas em sintaxe de cast explícita (ou seja, a notação `CAST` ou `::`). Essa exceção foi adicionada porque, após a introdução de conversões de saída/entrada fornecidas automaticamente, foi descoberto que era muito fácil invocar acidentalmente tal conversão quando uma referência a uma função ou coluna era pretendida.
 

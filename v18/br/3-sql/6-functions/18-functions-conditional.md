@@ -11,7 +11,7 @@ Esta seção descreve as expressões condicionais compatíveis com SQL disponív
 
 Se suas necessidades vão além das capacidades dessas expressões condicionais, você pode querer considerar a escrita de uma função no lado do servidor em uma linguagem de programação mais expressiva.
 
-### Nota
+Nota
 
 Embora `COALESCE`, `GREATEST` e `LEAST` sejam sintaticamente semelhantes a funções, não são funções comuns e, portanto, não podem ser usadas com argumentos explícitos de matriz `VARIADIC`.
 
@@ -91,7 +91,7 @@ Uma expressão `CASE` não avalia nenhuma subexpressão que não seja necessári
 SELECT ... WHERE CASE WHEN x <> 0 THEN y/x > 1.5 ELSE false END;
 ```
 
-### Nota
+Nota
 
 Como descrito na [Seção 4.2.14](sql-expressions.md#SYNTAX-EXPRESS-EVAL), existem várias situações em que subexpressiones de uma expressão são avaliadas em diferentes momentos, de modo que o princípio de que “`CASE` avalia apenas as subexpressiones necessárias” não é absoluto. Por exemplo, uma constante subexpressão `1/0` geralmente resultará em uma falha de divisão por zero no momento do planejamento, mesmo que esteja dentro de um braço `CASE` que nunca seria acessado no momento da execução.
 

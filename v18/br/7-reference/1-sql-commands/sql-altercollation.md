@@ -44,7 +44,7 @@ Uma mudança nas definições de ordenação pode levar a índices corrompidos e
 
 Ao usar as codificações fornecidas por `libc`, as informações sobre a versão são registradas em sistemas que utilizam a biblioteca GNU C (a maioria dos sistemas Linux), FreeBSD e Windows. Ao usar as codificações fornecidas por ICU, as informações sobre a versão são fornecidas pela biblioteca ICU e estão disponíveis em todas as plataformas.
 
-### Nota
+Nota
 
 Ao usar a biblioteca GNU C para colagens, a versão da biblioteca C é usada como um proxy para a versão da colagem. Muitas distribuições Linux alteram as definições de colagem apenas ao atualizar a biblioteca C, mas essa abordagem é imperfeita, pois os mantenedores têm liberdade para retropor definições de colagem mais recentes para versões mais antigas da biblioteca C.
 

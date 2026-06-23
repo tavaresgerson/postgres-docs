@@ -40,7 +40,7 @@ O ID do usuário pelo qual o servidor PostgreSQL é executado deve ser capaz de 
 
 De qualquer forma, o nome do arquivo que é dado no comando `CREATE FUNCTION` é registrado literalmente nos catálogos do sistema, então, se o arquivo precisar ser carregado novamente, o mesmo procedimento é aplicado.
 
-### Nota
+Nota
 
 O PostgreSQL não compilará uma função C automaticamente. O arquivo objeto deve ser compilado antes de ser referenciado em um comando `CREATE FUNCTION`. Consulte [Seção 36.10.5](xfunc-c.md#DFUNC) para obter informações adicionais.
 
@@ -1058,7 +1058,7 @@ passando a mesma estrutura `fcinfo` passada para a função chamada própria. (I
 
 `get_call_result_type` pode resolver o tipo real de um resultado de função polimórfica; portanto, é útil em funções que retornam resultados escalares polimórficos, não apenas em funções que retornam compostos. A saída `resultTypeId` é principalmente útil para funções que retornam escalares polimórficos.
 
-### Nota
+Nota
 
 `get_call_result_type` tem um irmão `get_expr_result_type`, que pode ser usado para resolver o tipo de saída esperado para uma chamada de função representada por uma árvore de expressão. Isso pode ser usado quando se tenta determinar o tipo de resultado de fora da própria função. Também existe `get_func_result_type`, que pode ser usado quando apenas o OID da função está disponível. No entanto, essas funções não podem lidar com funções declaradas para retornar `record`, e `get_func_result_type` não pode resolver tipos polimórficos, portanto, você deve preferencialmente usar `get_call_result_type`.
 

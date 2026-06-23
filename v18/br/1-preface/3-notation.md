@@ -1,4 +1,4 @@
-## 3. Convênios [#](#NOTATION)
+## 3. Notação [#](#NOTATION)
 
 As seguintes convenções são usadas no resumo de um comando: colchetes (`[` e `]`) indicam partes opcionais. Braços (`{` e `}`) e linhas verticais (`|`) indicam que você deve escolher uma alternativa. Pontos (`...`) significam que o elemento anterior pode ser repetido. Todos os outros símbolos, incluindo parênteses, devem ser tomados literalmente.
 

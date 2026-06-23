@@ -296,7 +296,7 @@ Em vez de uma expressão, `*` pode ser escrito na lista de saída como uma abrev
 
 De acordo com o padrão SQL, as expressões na lista de saída devem ser calculadas antes de aplicar `DISTINCT`, `ORDER BY` ou `LIMIT`. Isso é obviamente necessário ao usar `DISTINCT`, pois, caso contrário, não fica claro quais valores estão sendo distinguidos. No entanto, em muitos casos, é conveniente se as expressões de saída forem calculadas após `ORDER BY` e `LIMIT`; particularmente se a lista de saída contiver funções voláteis ou caras. Com esse comportamento, a ordem das avaliações das funções é mais intuitiva e não haverá avaliações correspondentes a linhas que nunca aparecem na saída. O PostgreSQL avaliará efetivamente as expressões de saída após o ordenamento e o limite, desde que essas expressões não sejam referenciadas em `DISTINCT`, `ORDER BY` ou `GROUP BY`. (Como exemplo, `SELECT f(x) FROM tab ORDER BY 1` deve claramente avaliar `f(x)` antes do ordenamento.) As expressões de saída que contêm funções que retornam conjuntos são avaliadas efetivamente após o ordenamento e antes do limite, de modo que `LIMIT` atuará para cortar a saída de uma função que retorna um conjunto.
 
-### Nota
+Nota
 
 As versões do PostgreSQL anteriores à 9.6 não forneciam garantias sobre o momento da avaliação de expressões de saída em relação à ordenação e limitação; isso dependia da forma do plano de consulta escolhido.
 

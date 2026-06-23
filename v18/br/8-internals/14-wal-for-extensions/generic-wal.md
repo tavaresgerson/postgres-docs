@@ -2,7 +2,7 @@
 
 Embora todos os módulos integrados com registro WAL tenham seus próprios tipos de registros WAL, também existe um tipo genérico de registro WAL, que descreve as alterações em páginas de maneira genérica.
 
-### Nota
+Nota
 
 Os registros genéricos do WAL são ignorados durante [Decodificação lógica](logicaldecoding.md). Se a decodificação lógica for necessária para sua extensão, considere um Gerenciador de Recursos de WAL Personalizado.
 

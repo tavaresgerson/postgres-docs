@@ -1,4 +1,4 @@
-## 4.3. Chamando funções [#](#SQL-SYNTAX-CALLING-FUNCS)
+### 4.3. Chamando funções [#](#SQL-SYNTAX-CALLING-FUNCS)
 
 * [4.3.1. Usando notação posicional](sql-syntax-calling-funcs.md#SQL-SYNTAX-CALLING-FUNCS-POSITIONAL)
 * [4.3.2. Usando notação nomeada](sql-syntax-calling-funcs.md#SQL-SYNTAX-CALLING-FUNCS-NAMED)
@@ -12,7 +12,7 @@ O PostgreSQL também suporta a notação *misturada*, que combina a notação po
 
 Os exemplos a seguir ilustrarão o uso de todas as três notações, utilizando a seguinte definição de função:
 
-```
+```sql
 CREATE FUNCTION concat_lower_or_upper(a text, b text, uppercase boolean DEFAULT false)
 RETURNS text
 AS
@@ -27,11 +27,11 @@ LANGUAGE SQL IMMUTABLE STRICT;
 
 A função `concat_lower_or_upper` tem dois parâmetros obrigatórios, `a` e `b`. Além disso, há um parâmetro opcional `uppercase`, que tem como padrão `false`. As entradas `a` e `b` serão concatenadas e forçadas a maiúsculas ou minúsculas, dependendo do parâmetro `uppercase`. Os detalhes restantes desta definição da função não são importantes aqui (consulte [Capítulo 36](extend.md) para mais informações).
 
-### 4.3.1. Uso da notação posicional [#](#SQL-SYNTAX-CALLING-FUNCS-POSITIONAL)
+##### 4.3.1. Uso da notação posicional [#](#SQL-SYNTAX-CALLING-FUNCS-POSITIONAL)
 
 A notação posicional é o mecanismo tradicional para passar argumentos para funções no PostgreSQL. Um exemplo é:
 
-```
+```sql
 SELECT concat_lower_or_upper('Hello', 'World', true);
  concat_lower_or_upper
 -----------------------
@@ -41,7 +41,7 @@ SELECT concat_lower_or_upper('Hello', 'World', true);
 
 Todos os argumentos são especificados em ordem. O resultado é maiúsculo, pois `uppercase` é especificado como `true`. Outro exemplo é:
 
-```
+```sql
 SELECT concat_lower_or_upper('Hello', 'World');
  concat_lower_or_upper
 -----------------------
@@ -51,11 +51,11 @@ SELECT concat_lower_or_upper('Hello', 'World');
 
 Aqui, o parâmetro `uppercase` é omitido, então ele recebe seu valor padrão de `false`, resultando em saída em minúsculas. Na notação posicional, os argumentos podem ser omitidos de direita para esquerda, desde que tenham valores padrão.
 
-### 4.3.2. Uso de notação nomeada [#](#SQL-SYNTAX-CALLING-FUNCS-NAMED)
+##### 4.3.2. Uso de notação nomeada [#](#SQL-SYNTAX-CALLING-FUNCS-NAMED)
 
 Na notação nomeada, o nome de cada argumento é especificado usando `=>` para separá-lo da expressão do argumento. Por exemplo:
 
-```
+```sql
 SELECT concat_lower_or_upper(a => 'Hello', b => 'World');
  concat_lower_or_upper
 -----------------------
@@ -65,7 +65,7 @@ SELECT concat_lower_or_upper(a => 'Hello', b => 'World');
 
 Novamente, o argumento `uppercase` foi omitido, então ele é definido implicitamente como `false`. Uma vantagem de usar notação nomeada é que os argumentos podem ser especificados em qualquer ordem, por exemplo:
 
-```
+```sql
 SELECT concat_lower_or_upper(a => 'Hello', b => 'World', uppercase => true);
  concat_lower_or_upper
 -----------------------
@@ -81,7 +81,7 @@ SELECT concat_lower_or_upper(a => 'Hello', uppercase => true, b => 'World');
 
 Uma sintaxe mais antiga baseada em ":=" é suportada para compatibilidade reversa:
 
-```
+```sql
 SELECT concat_lower_or_upper(a := 'Hello', uppercase := true, b := 'World');
  concat_lower_or_upper
 -----------------------
@@ -89,11 +89,11 @@ SELECT concat_lower_or_upper(a := 'Hello', uppercase := true, b := 'World');
 (1 row)
 ```
 
-### 4.3.3. Uso de notação mista [#](#SQL-SYNTAX-CALLING-FUNCS-MIXED)
+##### 4.3.3. Uso de notação mista [#](#SQL-SYNTAX-CALLING-FUNCS-MIXED)
 
 A notação mista combina a notação posicional e a notação por nome. No entanto, como já mencionado, os argumentos por nome não podem preceder os argumentos posicionais. Por exemplo:
 
-```
+```sql
 SELECT concat_lower_or_upper('Hello', 'World', uppercase => true);
  concat_lower_or_upper
 -----------------------
@@ -103,6 +103,6 @@ SELECT concat_lower_or_upper('Hello', 'World', uppercase => true);
 
 Na consulta acima, os argumentos `a` e `b` são especificados positivamente, enquanto `uppercase` é especificado pelo nome. Neste exemplo, isso adiciona pouco, exceto documentação. Com uma função mais complexa que tem vários parâmetros que têm valores padrão, a notação nomeada ou mista pode economizar uma grande quantidade de escrita e reduzir as chances de erro.
 
-### Nota
+Nota
 
 As notações de chamada nomeadas e misturadas atualmente não podem ser usadas ao chamar uma função agregada (mas elas funcionam quando uma função agregada é usada como uma função de janela).

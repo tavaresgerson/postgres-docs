@@ -75,7 +75,7 @@ EXEC SQL COMMIT;
 
 Para mais detalhes sobre a declaração de um cursor, consulte [DECLARE](ecpg-sql-declare.md "DECLARE"); para mais detalhes sobre a obtenção de linhas de um cursor, consulte [FETCH](sql-fetch.md "FETCH").
 
-### Nota
+Nota
 
 O comando ECPG `DECLARE` não realmente faz com que uma declaração seja enviada ao backend do PostgreSQL. O cursor é aberto no backend (usando o comando `DECLARE` do backend) no ponto em que o comando `OPEN` é executado.
 

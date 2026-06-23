@@ -18,7 +18,7 @@ Servidor de Autorização: O sistema que recebe solicitações e emite tokens de
 
 Emissor: Um identificador para um servidor de autorização, impresso como um URL `https://`, que fornece um "namespace" confiável para clientes e aplicativos OAuth. O identificador do emissor permite que um único servidor de autorização fale com os clientes de entidades mutuamente desconfiadas, desde que mantenham emissores separados.
 
-### Nota
+Nota
 
 Para implantações pequenas, pode não haver uma distinção significativa entre o "provedor", o "servidor de autorização" e o "emissor". No entanto, para configurações mais complicadas, pode haver uma relação de um para muitos (ou muitos para muitos): um provedor pode alugar vários identificadores de emissor para inquilinos separados, e, em seguida, fornecer vários servidores de autorização, possivelmente com diferentes conjuntos de recursos suportados, para interagir com seus clientes.
 

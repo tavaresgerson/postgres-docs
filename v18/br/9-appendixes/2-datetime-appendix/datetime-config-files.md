@@ -34,7 +34,7 @@ Em uma instalação não modificada, o arquivo `Default` contém todas as abrevi
 
 Para referência, uma instalação padrão também contém arquivos `Africa.txt`, `America.txt`, etc., contendo informações sobre cada abreviação de fuso horário conhecida que esteja em uso de acordo com o banco de dados de fuso horário da IANA. As definições de nome de zona encontradas nesses arquivos podem ser copiadas e coladas em um arquivo de configuração personalizado conforme necessário. Note que esses arquivos não podem ser referenciados diretamente como configurações `timezone_abbreviations`, devido ao ponto embutido em seus nomes.
 
-### Nota
+Nota
 
 Se ocorrer um erro ao ler a abreviação do fuso horário definida, nenhum novo valor é aplicado e o conjunto antigo é mantido. Se o erro ocorrer ao iniciar o banco de dados, a inicialização falha.
 

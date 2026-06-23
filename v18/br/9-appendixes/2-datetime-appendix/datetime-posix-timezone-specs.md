@@ -34,7 +34,7 @@ dstdate [ / dsttime ] , stddate [ / stdtime ]
 
 `M`*`m`*`.`*`n`*`.`*`d`*: Este formulário especifica uma transição que sempre acontece no mesmo mês e no mesmo dia da semana. *`m`* identifica o mês, de 1 a 12. *`n`* especifica a *`n`'ª ocorrência do dia da semana identificada por *`d`*. *`n`* é um número entre 1 e 4, ou 5, o que significa a última ocorrência desse dia da semana no mês (que poderia ser o quarto ou o quinto). *`d`* é um número entre 0 e 6, com 0 indicando domingo. Por exemplo, `M3.2.0` significa “o segundo domingo de março”.
 
-### Nota
+Nota
 
 O formato `M` é suficiente para descrever muitas leis comuns de transição de horário de verão. Mas observe que nenhuma dessas variantes pode lidar com mudanças na lei de horário de verão, portanto, na prática, os dados históricos armazenados para fusos horários nominais (no banco de dados de fusos horários da IANA) são necessários para interpretar corretamente os marcadores de tempo do passado.
 

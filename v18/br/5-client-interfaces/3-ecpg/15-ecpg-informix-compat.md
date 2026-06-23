@@ -16,7 +16,7 @@ $INSERT INTO test(i, j) VALUES (7, :j);
 $COMMIT;
 ```
 
-### Nota
+Nota
 
 Não deve haver espaço em branco entre o `$` e uma directiva de pré-processador subsequente, ou seja, `include`, `define`, `ifdef`, etc. Caso contrário, o pré-processador analisará o token como uma variável de host.
 

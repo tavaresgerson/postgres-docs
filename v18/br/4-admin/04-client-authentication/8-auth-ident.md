@@ -2,7 +2,7 @@
 
 O método de autenticação ident funciona obtendo o nome do usuário do sistema operacional do cliente de um servidor ident e usando-o como o nome do usuário permitido do banco de dados (com um mapeamento opcional de nome de usuário). Isso é suportado apenas em conexões TCP/IP.
 
-### Nota
+Nota
 
 Quando o ident é especificado para uma conexão local (não TCP/IP), a autenticação de pares (consulte [Seção 20.9](auth-peer.md)) será usada em vez disso.
 

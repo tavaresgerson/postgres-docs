@@ -290,7 +290,7 @@ Um valor de campo completamente vazio (sem caracteres entre as vírgulas ou par�
 
 A rotina de saída composta colocará aspas duplas ao redor dos valores do campo se eles forem cadeias vazias ou contenham parênteses, vírgulas, aspas duplas, barras invertidas ou espaços em branco. (Fazer isso para espaços em branco não é essencial, mas ajuda na legibilidade.) Aspas duplas e barras invertidas incorporadas nos valores do campo serão duplicadas.
 
-### Nota
+Nota
 
 Lembre-se de que o que você escreve em um comando SQL será interpretado primeiro como um literal de string e, em seguida, como um composto. Isso dobra o número de barras invertidas que você precisa (assumindo que a sintaxe de string de escape é usada). Por exemplo, para inserir um campo `text` contendo uma citação dupla e uma barra invertida em um valor composto, você precisaria escrever:
 

@@ -22,7 +22,7 @@ O RFC 7159 especifica que as strings JSON devem ser codificadas em UTF8. Portant
 
 O RFC 7159 permite que as strings JSON contenham sequências de escape Unicode indicadas por `\uXXXX`. Na função de entrada para o tipo `json`, as escapas Unicode são permitidas, independentemente do codificação do banco de dados, e são verificadas apenas quanto à correção sintática (ou seja, que quatro dígitos hexadecimais sigam `\u`). No entanto, a função de entrada para o tipo `jsonb` é mais rigorosa: ela não permite escapas Unicode para caracteres que não podem ser representados na codificação do banco de dados. O tipo `jsonb` também rejeita `\u0000` (porque isso não pode ser representado no tipo `text` do PostgreSQL), e insiste que qualquer uso de pares de surogato Unicode para designar caracteres fora da Plane Multilíngue Básica Unicode seja correto. As escapas Unicode válidas são convertidas no caractere único equivalente para armazenamento; isso inclui a dobragem de pares de surogato em um único caractere.
 
-### Nota
+Nota
 
 Muitas das funções de processamento de JSON descritas em [Seção 9.16](functions-json.md) irão converter escapamentos Unicode em caracteres regulares, e, portanto, irão lançar os mesmos tipos de erros descritos anteriormente, mesmo que sua entrada seja do tipo `json`[(functions-json.md "9.16. JSON Functions and Operators")]. O fato de que a função de entrada `json` não faça essas verificações pode ser considerada um artefato histórico, embora permita o armazenamento simples (sem processamento) de escapamentos Unicode de JSON em um codificação de banco de dados que não suporte os caracteres representados.
 

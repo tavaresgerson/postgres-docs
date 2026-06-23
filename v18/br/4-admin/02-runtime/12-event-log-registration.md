@@ -20,6 +20,6 @@ Para desinscrever a biblioteca do registro de eventos do sistema operacional, ex
 regsvr32 /u [/i:event_source_name] pgsql_library_directory/pgevent.dll
 ```
 
-### Nota
+Nota
 
 Para habilitar o registro de eventos no servidor de banco de dados, modifique [log_destination](runtime-config-logging.md#GUC-LOG-DESTINATION) para incluir `eventlog` em `postgresql.conf`.

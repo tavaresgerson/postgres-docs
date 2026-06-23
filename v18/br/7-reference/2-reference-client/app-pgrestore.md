@@ -88,15 +88,15 @@ Esta opção não pode ser usada com `--data-only` ou `--statistics-only`. É se
 
 `-t table` `--table=table`: Restaure a definição e/ou os dados apenas da tabela especificada. Para este propósito, “tabela” inclui visualizações, visualizações materializadas, sequências e tabelas externas. Múltiplas tabelas podem ser selecionadas escrevendo vários interruptores `-t`. Esta opção pode ser combinada com a opção `-n` para especificar(es) a(s) tabela(s) em um esquema específico.
 
-### Nota
+Nota
 
 Quando o `-t` é especificado, o pg_restore não faz qualquer tentativa de restaurar quaisquer outros objetos do banco de dados que as tabelas selecionadas possam depender. Portanto, não há garantia de que um restauro específico em uma base de dados limpa terá sucesso.
 
-### Nota
+Nota
 
 Essa bandeira não se comporta de maneira idêntica à bandeira `-t` do pg_dump. Atualmente, não há nenhuma disposição para correspondência de wildcard no pg_restore, e você também não pode incluir um nome de esquema em seu `-t`. E, embora a bandeira `-t` do pg_dump também descarregue objetos subsidiários (como índices) da(s) tabela(s) selecionada(s), a bandeira `-t` do pg_restore não inclui tais objetos subsidiários.
 
-### Nota
+Nota
 
 Em versões anteriores ao PostgreSQL 9.6, essa bandeira correspondia apenas a tabelas, e não a qualquer outro tipo de relação.
 

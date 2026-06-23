@@ -41,7 +41,7 @@ where aggregate_signature is:
 
 `SECURITY LABEL` aplica uma etiqueta de segurança a um objeto de banco de dados. Um número arbitrário de etiquetas de segurança, uma por fornecedor de etiquetas, pode ser associado a um objeto de banco de dados dado. Os fornecedores de etiquetas são módulos carregáveis que se registram usando a função `register_label_provider`.
 
-### Nota
+Nota
 
 `register_label_provider` não é uma função SQL; ela só pode ser chamada a partir de código C carregado no backend.
 

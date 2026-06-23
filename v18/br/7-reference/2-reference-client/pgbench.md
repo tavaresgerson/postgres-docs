@@ -267,7 +267,7 @@ O pgbench tem suporte para executar cenários de benchmark personalizados, subst
 
 Um arquivo de script contém um ou mais comandos SQL terminados por pontos e vírgulas. Linhas vazias e linhas que começam com `--` são ignoradas. Arquivos de script também podem conter “comandos meta”, que são interpretados pelo próprio pgbench, conforme descrito abaixo.
 
-### Nota
+Nota
 
 Antes do PostgreSQL 9.6, os comandos SQL em arquivos de script eram terminados por novas linhas, e, portanto, não podiam ser continuados em várias linhas. Agora, um ponto e vírgula é *requisitado* para separar comandos SQL consecutivos (embora um comando SQL não precise de um se for seguido por um comando meta). Se você precisa criar um arquivo de script que funcione tanto com versões antigas quanto com novas do pgbench, certifique-se de escrever cada comando SQL em uma única linha que termine com um ponto e vírgula.
 
@@ -2254,7 +2254,7 @@ O valor *`i`* entre *`min`* e *`max`* inclusive é extraído com probabilidade d
 
 A implementação do pgbench é baseada na "Geração de Variáveis Aleatórias Não Uniformes", Luc Devroye, p. 550-551, Springer 1986. Devido às limitações desse algoritmo, o valor *`parameter`* é restrito ao intervalo [1,001, 1000].
 
-### Nota
+Nota
 
 Ao projetar um benchmark que seleciona linhas de forma não uniforme, esteja ciente de que as linhas escolhidas podem estar correlacionadas com outros dados, como IDs de uma sequência ou a ordem física das linhas, o que pode distorcer as medições de desempenho.
 
@@ -2429,7 +2429,7 @@ Ao executar o pgbench, existem três tipos principais de erros:
 
 O rodízio de um cliente é interrompido em caso de um erro grave; por exemplo, a conexão com o servidor de banco de dados foi perdida ou o fim do script foi alcançado sem completar a última transação. Além disso, se a execução de um comando SQL ou meta falhar por razões que não sejam erros de serialização ou bloqueio, o cliente é interrompido. Caso contrário, se um comando SQL falhar com erros de serialização ou bloqueio, o cliente não é interrompido. Nesses casos, a transação atual é revertida, o que também inclui a definição das variáveis do cliente como estavam antes do rodízio dessa transação (se assume-se que um script de transação contém apenas uma transação; consulte [O que é realmente realizado a "Transação" no pgbench?](pgbench.md#TRANSACTIONS-AND-SCRIPTS) para mais informações). As transações com erros de serialização ou bloqueio são repetidas após os recuos até que sejam concluídas com sucesso ou atinjam o número máximo de tentativas (especificado pela opção `--max-tries`)/o tempo máximo de tentativas (especificado pela opção `--latency-limit`)/o fim do benchmark (especificado pela opção `--time`). Se o último ensaio falhar, essa transação será relatada como falha, mas o cliente não é interrompido e continua a funcionar.
 
-### Nota
+Nota
 
 Sem especificar a opção `--max-tries`, uma transação nunca será retente após um erro de serialização ou bloqueio, porque seu valor padrão é 1. Use um número ilimitado de tentativas (`--max-tries=0`) e a opção `--latency-limit` para limitar apenas o tempo máximo de tentativas. Você também pode usar a opção `--time` para limitar a duração do benchmark sob um número ilimitado de tentativas.
 

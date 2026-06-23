@@ -381,7 +381,7 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
 
 
 
-### Nota
+Nota
 
 Observe que, quando o `ANALYZE` é executado em uma tabela particionada sem a palavra-chave `ONLY`, todas as suas particionamentos também são analisados recursivamente. Nesse caso, o progresso do `ANALYZE` é relatado primeiro para a tabela principal, onde suas estatísticas de herança são coletadas, seguido por cada particionamento.
 

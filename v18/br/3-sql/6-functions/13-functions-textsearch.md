@@ -2222,7 +2222,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
 
 
 
-### Nota
+Nota
 
 Todas as funções de busca de texto que aceitam um argumento opcional `regconfig` usarão a configuração especificada por [default_text_search_config](runtime-config-client.md#GUC-DEFAULT-TEXT-SEARCH-CONFIG) quando esse argumento for omitido.
 

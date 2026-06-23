@@ -6,7 +6,7 @@ Esta seção descreve funções e operadores para examinar e manipular valores d
 
 O SQL define algumas funções de cadeia que utilizam palavras-chave, em vez de vírgulas, para separar os argumentos. Os detalhes estão em [Tabela 9.9](functions-string.md#FUNCTIONS-STRING-SQL). O PostgreSQL também fornece versões dessas funções que utilizam a sintaxe de invocação de função regular (consulte [Tabela 9.10](functions-string.md#FUNCTIONS-STRING-OTHER)).
 
-### Nota
+Nota
 
 O operador de concatenação de strings (`||`) aceitará entrada não de tipo de string, desde que pelo menos uma entrada seja de tipo de string, conforme mostrado em [Tabela 9.9](functions-string.md#FUNCTIONS-STRING-SQL). Para outros casos, pode-se inserir uma coerção explícita para `text` para aceitar entrada não de tipo de string.
 

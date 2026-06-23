@@ -2,7 +2,7 @@
 
 A vista `view_column_usage` identifica todas as colunas que são usadas na expressão de consulta de uma vista (a declaração `SELECT` que define a vista). Uma coluna só é incluída se a tabela que contém a coluna for de propriedade de um papel atualmente habilitado.
 
-### Nota
+Nota
 
 As colunas das tabelas do sistema não estão incluídas. Isso deve ser corrigido em algum momento.
 
