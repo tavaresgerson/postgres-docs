@@ -157,7 +157,7 @@ Os arquivos incluídos pelos construtos `@` são lidos como listas de nomes, que
 
 Como os registros do `pg_hba.conf` são examinados sequencialmente para cada tentativa de conexão, a ordem dos registros é significativa. Tipicamente, os registros anteriores terão parâmetros de correspondência de conexão mais apertados e métodos de autenticação mais fracos, enquanto os registros posteriores terão parâmetros de correspondência mais laços e métodos de autenticação mais fortes. Por exemplo, pode-se desejar usar a autenticação do `trust` para conexões locais TCP/IP, mas exigir uma senha para conexões remotas TCP/IP. Neste caso, um registro que especifique a autenticação do `trust` para conexões a partir de 127.0.0.1 apareceria antes de um registro que especifique a autenticação por senha para uma gama mais ampla de endereços IP de clientes permitidos.
 
-### DICA
+DICA
 
 Para se conectar a um banco de dados específico, o usuário não deve apenas passar pelos `pg_hba.conf` de verificação, mas deve ter o `CONNECT` privilégio para o banco de dados. Se você deseja restringir quais usuários podem se conectar a quais bancos de dados, geralmente é mais fácil controlar isso concedendo/revocando o `CONNECT` privilégio do que colocar as regras nas entradas do `pg_hba.conf`.
 

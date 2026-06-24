@@ -23,6 +23,6 @@ As strings de entrada de data/hora são decodificadas usando o procedimento a se
 4. Se o BC foi especificado, negue o ano e adicione um para armazenamento interno. (Não há ano zero no calendário gregoriano, então numericamente 1 a.C. se torna ano zero.)
 5. Caso o BC não tenha sido especificado e o campo de ano tenha sido de dois dígitos, ajuste o ano para quatro dígitos. Se o campo tiver menos de 70, adicione 2000, caso contrário, adicione 1900.
 
-### DICA
+DICA
 
 Os anos gregorianos de 1 a 99 AD podem ser inseridos usando 4 dígitos com zeros na frente (por exemplo, `0099` é AD 99).

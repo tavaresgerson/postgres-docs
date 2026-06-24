@@ -217,7 +217,7 @@ SELECT (myfunc(x)).* FROM some_table;
 SELECT (myfunc(x)).a, (myfunc(x)).b, (myfunc(x)).c FROM some_table;
 ```
 
-### DICA
+DICA
 
 O PostgreSQL trata a expansão de colunas, transformando efetivamente a primeira forma na segunda. Assim, neste exemplo, `myfunc()` seria invocado três vezes por linha com qualquer sintaxe. Se for uma função cara, você pode querer evitá-la, o que pode ser feito com uma consulta como:
 
@@ -270,7 +270,7 @@ SELECT c.somefunc FROM inventory_item c;
 
 Essa equivalência entre a notação funcional e a notação de campo permite que funções sejam aplicadas a tipos compostos para implementar "campos calculados". Uma aplicação que utilize a última consulta acima não precisaria estar diretamente ciente de que `somefunc` não é uma coluna real da tabela.
 
-### DICA
+DICA
 
 Devido a esse comportamento, não é prudente dar a uma função que recebe um argumento de tipo composto o mesmo nome que qualquer um dos campos desse tipo composto. Se houver ambiguidade, a interpretação do nome do campo será escolhida se a sintaxe do nome do campo for usada, enquanto a função será escolhida se a sintaxe da chamada for usada. No entanto, as versões do PostgreSQL anteriores à versão 11 sempre escolheram a interpretação do nome do campo, a menos que a sintaxe da chamada exigisse que fosse uma chamada de função. Uma maneira de forçar a interpretação da função em versões mais antigas é qualificar o nome da função no esquema, ou seja, escrever `schema.func(compositevalue)`.
 
@@ -300,6 +300,6 @@ INSERT ... VALUES ('("\"\\")');
 
 O processador de caracteres de cadeia remove um nível de barras invertidas, de modo que o que chega ao analisador de valores compostos parece `("\"\\")`. Por sua vez, a cadeia de caracteres alimentada na rotina de entrada do tipo de dados `text` se torna `"\`. (Se estivessemos trabalhando com um tipo de dados cuja rotina de entrada também tratasse as barras invertidas de forma especial, `bytea`, por exemplo, precisaríamos de até oito barras invertidas no comando para obter uma barra invertida no campo composto armazenado.) A citação de dólares (ver [Seção 4.1.2.4](sql-syntax-lexical.md#SQL-SYNTAX-DOLLAR-QUOTING)) pode ser usada para evitar a necessidade de duplicar as barras invertidas.
 
-### DICA
+DICA
 
 A sintaxe do construtor `ROW` geralmente é mais fácil de trabalhar do que a sintaxe de literal composto ao escrever valores compostos em comandos SQL. Em `ROW`, os valores individuais dos campos são escritos da mesma maneira que seriam escritos quando não fossem membros de um composto.

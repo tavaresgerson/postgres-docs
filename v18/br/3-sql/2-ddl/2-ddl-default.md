@@ -1,4 +1,4 @@
-## 5.2. Valores padrão [#](#DDL-DEFAULT)
+### 5.2. Valores padrão [#](#DDL-DEFAULT)
 
 Uma coluna pode ser atribuída um valor padrão. Quando uma nova linha é criada e não são especificados valores para algumas das colunas, essas colunas serão preenchidas com seus respectivos valores padrão. Um comando de manipulação de dados também pode solicitar explicitamente que uma coluna seja definida com seu valor padrão, sem precisar saber qual é esse valor. (Detalhes sobre comandos de manipulação de dados estão em [Capítulo 6] (dml.md "Chapter 6. Data Manipulation").)
 

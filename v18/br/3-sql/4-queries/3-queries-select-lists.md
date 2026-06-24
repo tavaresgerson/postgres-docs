@@ -1,4 +1,4 @@
-## 7.3. Selecionar listas [#](#QUERIES-SELECT-LISTS)
+### 7.3. Selecionar listas [#](#QUERIES-SELECT-LISTS)
 
 * [7.3.1. Selecionar itens da lista](queries-select-lists.md#QUERIES-SELECT-LIST-ITEMS)
 * [7.3.2. Rótulos de coluna](queries-select-lists.md#QUERIES-COLUMN-LABELS)
@@ -6,11 +6,11 @@
 
 Como mostrado na seção anterior, a expressão de tabela no comando `SELECT` constrói uma tabela virtual intermediária, combinando tabelas, vistas, eliminando linhas, agrupando, etc. Essa tabela é finalmente passada para o processamento pela *lista de seleção*. A lista de seleção determina quais *colunas* da tabela intermediária são realmente exibidas.
 
-### 7.3.1. Itens de lista selecionada [#](#QUERIES-SELECT-LIST-ITEMS)
+#### 7.3.1. Itens de lista selecionada [#](#QUERIES-SELECT-LIST-ITEMS)
 
 O tipo mais simples de lista seletiva é `*`, que emite todas as colunas que a expressão da tabela produz. Caso contrário, uma lista seletiva é uma lista de expressões de valor separadas por vírgula (conforme definido na [Seção 4.2](sql-expressions.md)). Por exemplo, pode ser uma lista de nomes de colunas:
 
-```
+```sql
 SELECT a, b, c FROM ...
 ```
 
@@ -18,13 +18,13 @@ Os nomes das colunas `a`, `b` e `c` são os nomes reais das colunas das tabelas 
 
 Se mais de uma tabela tiver uma coluna com o mesmo nome, o nome da tabela também deve ser fornecido, como em:
 
-```
+```sql
 SELECT tbl1.a, tbl2.a, tbl1.b FROM ...
 ```
 
 Ao trabalhar com várias tabelas, também pode ser útil solicitar todas as colunas de uma tabela específica:
 
-```
+```sql
 SELECT tbl1.*, tbl2.a FROM ...
 ```
 
@@ -32,11 +32,11 @@ Veja [Seção 8.16.5](rowtypes.md#ROWTYPES-USAGE) para mais informações sobre 
 
 Se uma expressão de valor arbitrário for usada na lista de seleção, ela conceitualmente adiciona uma nova coluna virtual à tabela devolvida. A expressão de valor é avaliada uma vez para cada linha de resultado, com os valores da linha substituídos por quaisquer referências de coluna. Mas as expressões na lista de seleção não precisam referenciar quaisquer colunas na expressão da tabela da cláusula `FROM`; elas podem ser expressões aritméticas constantes, por exemplo.
 
-### 7.3.2. Rótulos de Coluna [#](#QUERIES-COLUMN-LABELS)
+#### 7.3.2. Rótulos de Coluna [#](#QUERIES-COLUMN-LABELS)
 
 As entradas na lista selecionada podem receber nomes para processamento subsequente, como para uso em uma cláusula `ORDER BY` ou para exibição pelo aplicativo do cliente. Por exemplo:
 
-```
+```sql
 SELECT a AS value, b + c AS sum FROM ...
 ```
 
@@ -44,13 +44,13 @@ Se não for especificado um nome de coluna de saída usando `AS`, o sistema atri
 
 A palavra-chave `AS` é geralmente opcional, mas em alguns casos, quando o nome da coluna desejada corresponde a uma palavra-chave do PostgreSQL, você deve escrever `AS` ou colocar aspas duplas no nome da coluna para evitar ambiguidade. ([Apêndice C](sql-keywords-appendix.md "Appendix C. SQL Key Words") mostra quais palavras-chave exigem que `AS` seja usado como rótulo de coluna.) Por exemplo, `FROM` é uma dessas palavras-chave, então isso não funciona:
 
-```
+```sql
 SELECT a from, b + c AS sum FROM ...
 ```
 
 mas qualquer uma dessas coisas:
 
-```
+```sql
 SELECT a AS from, b + c AS sum FROM ...
 SELECT a "from", b + c AS sum FROM ...
 ```
@@ -61,11 +61,11 @@ Nota
 
 O nome dos campos de saída aqui é diferente do que é feito na cláusula `FROM` (veja [Seção 7.2.1.2](queries-table-expressions.md#QUERIES-TABLE-ALIASES)). É possível renomear o mesmo campo duas vezes, mas o nome atribuído na lista de seleção é o que será passado.
 
-### 7.3.3. `DISTINCT` [#](#QUERIES-DISTINCT)
+#### 7.3.3. `DISTINCT` [#](#QUERIES-DISTINCT)
 
 Após a lista selecionada ter sido processada, a tabela de resultados pode, opcionalmente, ser sujeita à eliminação de linhas duplicadas. A palavra-chave `DISTINCT` é escrita diretamente após `SELECT` para especificar isso:
 
-```
+```sql
 SELECT DISTINCT select_list ...
 ```
 
@@ -75,7 +75,7 @@ Obviamente, duas linhas são consideradas distintas se diferirem em pelo menos u
 
 Alternativamente, uma expressão arbitrária pode determinar quais linhas devem ser consideradas distintas:
 
-```
+```sql
 SELECT DISTINCT ON (expression [, expression ...]) select_list ...
 ```
 

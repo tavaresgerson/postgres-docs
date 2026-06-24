@@ -1,4 +1,4 @@
-## 5.9. Políticas de Segurança de Linha [#](#DDL-ROWSECURITY)
+### 5.9. Políticas de Segurança de Linha [#](#DDL-ROWSECURITY)
 
 Além do sistema de privilégios padrão SQL [(ddl-priv.md "5.8. Privileges")], disponível através de [GRANT][(sql-grant.md "GRANT"), as tabelas podem ter *políticas de segurança de linha* que restringem, em uma base por usuário, quais linhas podem ser devolvidas por consultas normais ou inseridas, atualizadas ou excluídas por comandos de modificação de dados. Esse recurso também é conhecido como *Segurança de Nível de Linha*. Por padrão, as tabelas não têm nenhuma política, de modo que, se um usuário tiver privilégios de acesso a uma tabela de acordo com o sistema de privilégios SQL, todas as linhas dentro dela estarão igualmente disponíveis para consulta ou atualização.
 

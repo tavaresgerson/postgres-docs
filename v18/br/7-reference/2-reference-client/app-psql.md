@@ -228,7 +228,7 @@ Exemplos:
 
 `\cd [ directory ]` [#](#APP-PSQL-META-COMMAND-CD) Altera o diretório de trabalho atual para *`directory`*. Sem argumento, altera o diretório de usuário atual. Para obter detalhes sobre como os diretórios de usuário são encontrados, consulte [Seção 32.16](libpq-pgpass.md "32.16. The Password File").
 
-### DICA
+DICA
 
 Para imprimir o diretório de trabalho atual, use `\! pwd`.
 
@@ -254,11 +254,11 @@ Para `\copy ... from stdin`, as linhas de dados são lidas da mesma fonte que em
 
 A sintaxe deste comando é semelhante à do comando `COPY`(sql-copy.md "COPY"). Todas as opções, exceto a fonte/destino dos dados, são especificadas para `COPY`. Por isso, regras de análise especiais se aplicam ao comando `\copy` meta. Ao contrário da maioria dos outros comandos meta, todo o restante da linha é sempre considerado os argumentos de `\copy`, e nem a interpolação de variáveis nem a expansão de aspas são realizadas nos argumentos.
 
-### DICA
+DICA
 
 Outra maneira de obter o mesmo resultado que `\copy ... to` é usar o comando SQL `COPY ... TO STDOUT` e terminá-lo com `\g filename` ou `\g |program`. Ao contrário de `\copy`, este método permite que o comando abranja várias linhas; também, a interpolação de variáveis e a expansão de aspas podem ser usadas.
 
-### DICA
+DICA
 
 Essas operações não são tão eficientes quanto o comando `COPY` com uma fonte de dados de arquivo ou programa, ou destino, porque todos os dados devem passar pela conexão cliente/servidor. Para grandes quantidades de dados, o comando SQL pode ser preferível.
 
@@ -408,7 +408,7 @@ Tratar o buffer como uma única linha afeta principalmente comandos meta: o(s) c
 
 Se um número de linha for especificado, o psql posicionará o cursor na linha especificado do buffer de arquivo ou consulta. Observe que, se um argumento único com todos os dígitos for fornecido, o psql assume que é um número de linha, não um nome de arquivo.
 
-### DICA
+DICA
 
 Veja [Ambiente](app-psql.md#APP-PSQL-ENVIRONMENT "Environment"), abaixo, para saber como configurar e personalizar seu editor.
 
@@ -420,7 +420,7 @@ Veja [Ambiente](app-psql.md#APP-PSQL-ENVIRONMENT "Environment"), abaixo, para sa
 
 Se o primeiro argumento for um `-n` não citado, a última linha não é escrita (nem o primeiro argumento).
 
-### DICA
+DICA
 
 Se você usa o comando `\o` para redirecionar a saída da sua consulta, talvez queira usar `\qecho` em vez deste comando. Veja também `\warn`.
 
@@ -434,7 +434,7 @@ Se um número de linha for especificado, o psql posicionará o cursor na linha e
 
 Ao contrário da maioria dos outros meta-comandos, todo o resto da linha é sempre considerado o(s) argumento(s) de `\ef`, e nem a interpolação de variáveis nem a expansão de aspas duplas são realizadas nos argumentos.
 
-### DICA
+DICA
 
 Veja [Ambiente](app-psql.md#APP-PSQL-ENVIRONMENT "Environment"), abaixo, para saber como configurar e personalizar seu editor.
 
@@ -546,7 +546,7 @@ Aqui está um exemplo:
 
 `\lo_export loid filename` [#](#APP-PSQL-META-COMMAND-LO-EXPORT) :   Leia o grande objeto com OID *`loid`* do banco de dados e escreva-o em *`filename`*. Observe que isso é sutilmente diferente da função do servidor `lo_export`, que atua com as permissões do usuário que o servidor de banco de dados executa e no sistema de arquivos do servidor.
 
-### DICA
+DICA
 
 Use `\lo_list` para descobrir o OID do objeto grande.
 
@@ -564,7 +564,7 @@ Observe que este comando é sutilmente diferente do lado do servidor `lo_import`
 
 `\lo_unlink loid` [#](#APP-PSQL-META-COMMAND-LO-UNLINK): Exclui o grande objeto com OID *`loid`* do banco de dados.
 
-### DICA
+DICA
 
 Use `\lo_list` para descobrir o OID do objeto grande.
 
@@ -574,7 +574,7 @@ Se o argumento começar com `|`, então todo o restante da linha é considerado 
 
 “Resultados da consulta” inclui todas as tabelas, respostas de comando e avisos obtidos do servidor de banco de dados, bem como a saída de vários comandos de barra invertida que consultam o banco de dados (como `\d`); mas não mensagens de erro.
 
-### DICA
+DICA
 
 Para intercalar a saída de texto entre os resultados da consulta, use `\qecho`.
 
@@ -680,7 +680,7 @@ Em formato `latex-longtable`, este controla a largura proporcional de cada colun
 
 Ilustrações de como esses diferentes formatos se parecem podem ser vistas em [Exemplos](app-psql.md#APP-PSQL-EXAMPLES "Examples"), abaixo.
 
-### DICA
+DICA
 
 Existem vários comandos atalhos para `\pset`. Veja `\a`, `\C`, `\f`, `\H`, `\t`, `\T`, e `\x`.
 
@@ -870,7 +870,7 @@ O modo autocommit-on é o comportamento tradicional do PostgreSQL, mas o autocom
 
 `FETCH_COUNT` [#](#APP-PSQL-VARIABLES-FETCH-COUNT) : Se essa variável for definida com um valor inteiro maior que zero, os resultados das consultas de `SELECT` são obtidos e exibidos em grupos com tantas linhas quanto o número definido, em vez do comportamento padrão de coletar todo o conjunto de resultados antes da exibição. Portanto, apenas uma quantidade limitada de memória é usada, independentemente do tamanho do conjunto de resultados. Configurações de 100 a 1000 são comumente usadas ao habilitar essa funcionalidade. Lembre-se de que, ao usar essa funcionalidade, uma consulta pode falhar após ter exibido algumas linhas.
 
-### DICA
+DICA
 
 Embora você possa usar qualquer formato de saída com este recurso, o formato padrão `aligned` tende a parecer ruim porque cada grupo de linhas `FETCH_COUNT` será formatado separadamente, levando a diferentes larguras de coluna nos grupos de linhas. Os outros formatos de saída funcionam melhor.
 

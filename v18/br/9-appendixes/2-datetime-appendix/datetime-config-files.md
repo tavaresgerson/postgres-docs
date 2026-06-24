@@ -22,7 +22,7 @@ Um *`zone_abbreviation`* é apenas uma abreviação que está sendo definida. Um
 
 Alternativamente, pode ser dada uma *`time_zone_name`*, referenciando um nome de zona definido no banco de dados de fuso horário IANA. A definição da zona é consultada para verificar se a abreviação está ou esteve em uso nessa zona, e, se estiver, o significado apropriado é usado — ou seja, o significado que estava em uso atualmente no timestamp cujo valor está sendo determinado, ou o significado em uso imediatamente antes disso, se não estiver em uso naquele momento, ou o significado mais antigo, se foi usado apenas após esse momento. Esse comportamento é essencial para lidar com abreviações cujo significado historicamente variou. Também é permitido definir uma abreviação em termos de um nome de zona em que essa abreviação não aparece; então, usar a abreviação é apenas equivalente a escrever o nome da zona.
 
-### DICA
+DICA
 
 É preferível usar um número inteiro simples *`offset`* ao definir uma abreviação cujo deslocamento em relação ao UTC nunca tenha mudado, pois tais abreviações são muito mais baratas de processar do que aquelas que exigem consulta a uma definição de fuso horário.
 

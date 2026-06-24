@@ -34,6 +34,6 @@ ssh -L 63333:db.foo.com:5432 joe@shell.foo.com
 
 Observe que, dessa forma, a conexão de `shell.foo.com` para `db.foo.com` não será criptografada pelo túnel SSH. O SSH oferece várias possibilidades de configuração quando a rede é restrita de várias maneiras. Consulte a documentação do SSH para obter detalhes.
 
-### DICA
+DICA
 
 Existem várias outras aplicações que podem fornecer túneis seguros usando um procedimento semelhante ao que foi descrito.

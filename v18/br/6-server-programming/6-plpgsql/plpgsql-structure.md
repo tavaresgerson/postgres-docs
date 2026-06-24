@@ -23,7 +23,7 @@ END [ label ];
 
 Cada declaração e cada afirmação dentro de um bloco é finalizada por um ponto e vírgula. Um bloco que aparece dentro de outro bloco deve ter um ponto e vírgula após `END`, como mostrado acima; no entanto, o `END` final que conclui o corpo de uma função não requer um ponto e vírgula.
 
-### DICA
+DICA
 
 Um erro comum é escrever um ponto e vírgula imediatamente após `BEGIN`. Isso é incorreto e resultará em um erro de sintaxe.
 

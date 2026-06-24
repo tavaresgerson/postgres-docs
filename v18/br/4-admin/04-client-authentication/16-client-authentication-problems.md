@@ -26,6 +26,6 @@ FATAL:  database "testdb" does not exist
 
 O banco de dados ao qual você está tentando se conectar não existe. Observe que, se você não especificar um nome de banco de dados, ele será predefinido com o nome do usuário do banco de dados.
 
-### DICA
+DICA
 
 O log do servidor pode conter mais informações sobre uma falha de autenticação do que as relatadas ao cliente. Se você está confuso sobre o motivo de uma falha, verifique o log do servidor.

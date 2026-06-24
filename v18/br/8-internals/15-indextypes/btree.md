@@ -168,7 +168,7 @@ Trabalhos pesados que não se beneficiam da desduplicação devido ao fato de te
 
 Às vezes, é possível que índices únicos (assim como restrições únicas) utilizem a deduplicação. Isso permite que as páginas de folha "absorvam" temporariamente duplicatas extras de churn de versão. A deduplicação em índices únicos aumenta a eliminação de índice de baixo para cima, especialmente em casos em que uma transação de longa duração mantém um instantâneo que bloqueia a coleta de lixo. O objetivo é comprar tempo para que a estratégia de eliminação de índice de baixo para cima se torne eficaz novamente. Aguardar as divisões de página até que uma única transação de longa duração desapareça naturalmente pode permitir que uma passagem de eliminação de baixo para cima seja bem-sucedida onde uma passagem de eliminação anterior falhou.
 
-### DICA
+DICA
 
 Uma heurística especial é aplicada para determinar se uma passagem de descaracterização em um índice único deve ocorrer. Ela pode, muitas vezes, pular diretamente para a divisão de uma página de folha, evitando uma penalização de desempenho ao desperdiçar ciclos em passagens de descaracterização inúteis. Se você está preocupado com o custo da descaracterização, considere definir `deduplicate_items = off` seletivamente. Deixar a descaracterização habilitada em índices únicos tem pouca desvantagem.
 

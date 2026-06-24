@@ -1,4 +1,4 @@
-## 6.4. Retornar dados de linhas modificadas [#](#DML-RETURNING)
+### 6.4. Retornar dados de linhas modificadas [#](#DML-RETURNING)
 
 Às vezes, é útil obter dados de linhas modificadas enquanto elas estão sendo manipuladas. Os comandos `INSERT`, `UPDATE`, `DELETE` e `MERGE` têm uma cláusula opcional `RETURNING` que suporta isso. O uso de `RETURNING` evita a realização de uma consulta extra ao banco de dados para coletar os dados, e é especialmente valioso quando, de outra forma, seria difícil identificar as linhas modificadas de forma confiável.
 

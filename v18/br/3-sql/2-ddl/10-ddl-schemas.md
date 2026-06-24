@@ -1,4 +1,4 @@
-## 5.10. Esquemas [#](#DDL-SCHEMAS)
+### 5.10. Esquemas [#](#DDL-SCHEMAS)
 
 * [5.10.1. Criando um Esquema](ddl-schemas.md#DDL-SCHEMAS-CREATE)
 * [5.10.2. O Esquema Público](ddl-schemas.md#DDL-SCHEMAS-PUBLIC)
@@ -24,7 +24,7 @@ Há várias razões pelas quais alguém pode querer usar esquemas:
 
 Os esquemas são análogos aos diretórios no nível do sistema operacional, exceto que os esquemas não podem ser aninhados.
 
-### 5.10.1. Criar um Esquema [#](#DDL-SCHEMAS-CREATE)
+#### 5.10.1. Criar um Esquema [#](#DDL-SCHEMAS-CREATE)
 
 Para criar um esquema, use o comando [CREATE SCHEMA](sql-createschema.md "CREATE SCHEMA"). Dê ao esquema um nome de sua escolha. Por exemplo:
 
@@ -80,7 +80,7 @@ Você pode até omitir o nome do esquema, nesse caso, o nome do esquema será o 
 
 Os nomes de esquema que começam com `pg_` são reservados para fins de sistema e não podem ser criados por usuários.
 
-### 5.10.2. O Esquema Público [#](#DDL-SCHEMAS-PUBLIC)
+#### 5.10.2. O Esquema Público [#](#DDL-SCHEMAS-PUBLIC)
 
 Nas seções anteriores, criamos tabelas sem especificar quaisquer nomes de esquema. Por padrão, tais tabelas (e outros objetos) são colocados automaticamente em um esquema chamado “public”. Cada nova base de dados contém tal esquema. Assim, o seguinte é equivalente:
 
@@ -94,7 +94,7 @@ e:
 CREATE TABLE public.products ( ... );
 ```
 
-### 5.10.3. O caminho de pesquisa do esquema [#](#DDL-SCHEMAS-PATH)
+#### 5.10.3. O caminho de pesquisa do esquema [#](#DDL-SCHEMAS-PATH)
 
 Os nomes qualificados são tediosos de escrever, e muitas vezes é melhor não inserir um nome específico de esquema em aplicativos de qualquer maneira. Portanto, as tabelas são frequentemente referenciadas por *nomes não qualificados*, que consistem apenas no nome da tabela. O sistema determina qual tabela é a pretendida seguindo um *caminho de busca*, que é uma lista de esquemas a serem verificados. A primeira tabela que corresponde ao caminho de busca é considerada a desejada. Se não houver correspondência no caminho de busca, um erro é relatado, mesmo que nomes de tabelas correspondentes existam em outros esquemas no banco de dados.
 
@@ -158,7 +158,7 @@ SELECT 3 OPERATOR(pg_catalog.+) 4;
 
 Na prática, geralmente se baseia no caminho de busca para operadores, para não ter que escrever algo tão feio quanto isso.
 
-### 5.10.4. Esquemas e Privilegios [#](#DDL-SCHEMAS-PRIV)
+#### 5.10.4. Esquemas e Privilegios [#](#DDL-SCHEMAS-PRIV)
 
 Por padrão, os usuários não podem acessar quaisquer objetos em esquemas que não possuam. Para permitir isso, o proprietário do esquema deve conceder o privilégio `USAGE` no esquema. Por padrão, todos têm esse privilégio no esquema `public`. Para permitir que os usuários usem os objetos em um esquema, podem ser necessários privilégios adicionais, conforme apropriado para o objeto.
 
@@ -170,13 +170,13 @@ REVOKE CREATE ON SCHEMA public FROM PUBLIC;
 
 (O primeiro "público" é o esquema, o segundo "público" significa "todos os usuários". No primeiro sentido, é um identificador, no segundo sentido, é uma palavra-chave, daí a diferenciação da grafia; lembre-se das diretrizes do [Seção 4.1.1](sql-syntax-lexical.md#SQL-SYNTAX-IDENTIFIERS).])
 
-### 5.10.5. O Esquema do Catálogo do Sistema [#](#DDL-SCHEMAS-CATALOG)
+#### 5.10.5. O Esquema do Catálogo do Sistema [#](#DDL-SCHEMAS-CATALOG)
 
 Além dos esquemas criados pelo usuário `public` e `pg_catalog`, cada banco de dados contém um esquema `pg_catalog`, que contém as tabelas do sistema e todos os tipos de dados, funções e operadores embutidos. `pg_catalog` sempre faz parte efetivamente do caminho de busca. Se não for nomeado explicitamente no caminho, ele é pesquisado implicitamente *antes* de pesquisar os esquemas do caminho. Isso garante que os nomes embutidos sempre serão encontrados. No entanto, você pode colocar explicitamente `pg_catalog` no final do seu caminho de busca, se preferir que os nomes definidos pelo usuário substituam os nomes embutidos.
 
 Como os nomes das tabelas do sistema começam com `pg_`, é melhor evitar tais nomes para garantir que você não sofra um conflito se alguma versão futura definir uma tabela do sistema com o mesmo nome que sua tabela. (Com o caminho de busca padrão, uma referência não qualificada ao nome da sua tabela seria resolvida como a tabela do sistema em vez disso.) As tabelas do sistema continuarão a seguir a convenção de ter nomes que começam com `pg_`, para que não haja conflito com nomes de tabela de usuário não qualificados, desde que os usuários evitem o prefixo `pg_`.
 
-### 5.10.6. Padrões de Uso [#](#DDL-SCHEMAS-PATTERNS)
+#### 5.10.6. Padrões de Uso [#](#DDL-SCHEMAS-PATTERNS)
 
 Os esquemas podem ser usados para organizar seus dados de várias maneiras. Um *padrão seguro de uso de esquema* impede que usuários não confiáveis mudem o comportamento das consultas de outros usuários. Quando um banco de dados não usa um padrão seguro de uso de esquema, os usuários que desejam consultar esse banco de dados de forma segura teriam que tomar medidas de proteção no início de cada sessão. Especificamente, eles começariam cada sessão definindo `search_path` como uma string vazia ou, de outra forma, removendo esquemas que são legítimos por usuários não superusuários de `search_path`. Existem alguns padrões de uso facilmente suportados pela configuração padrão:
 
@@ -188,7 +188,7 @@ Em PostgreSQL 15 e versões posteriores, a configuração padrão suporta esse p
 
 Para qualquer padrão, para instalar aplicações compartilhadas (tabelas que serão usadas por todos, funções adicionais fornecidas por terceiros, etc.), coloque-as em esquemas separados. Lembre-se de conceder privilégios apropriados para permitir que os outros usuários acessem-nas. Os usuários podem então se referir a esses objetos adicionais qualificando os nomes com o nome do esquema, ou podem colocar os esquemas adicionais em seu caminho de pesquisa, conforme sua escolha.
 
-### 5.10.7. Portabilidade [#](#DDL-SCHEMAS-PORTABILITY)
+#### 5.10.7. Portabilidade [#](#DDL-SCHEMAS-PORTABILITY)
 
 No padrão SQL, a noção de objetos no mesmo esquema pertencentes a diferentes usuários não existe. Além disso, algumas implementações não permitem que você crie esquemas que tenham um nome diferente do de seu proprietário. De fato, os conceitos de esquema e usuário são quase equivalentes em um sistema de banco de dados que implementa apenas o suporte básico de esquema especificado no padrão. Portanto, muitos usuários consideram que nomes qualificados realmente consistem em `user_name.table_name`. É assim que o PostgreSQL se comportará efetivamente se você criar um esquema por usuário para cada usuário.
 

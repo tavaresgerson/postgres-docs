@@ -77,7 +77,7 @@ $$ LANGUAGE pltcl;
 CALL tcl_triple(5, 10);
 ```
 
-### DICA
+DICA
 
 A lista de resultados pode ser feita a partir de uma representação de matriz do conjunto desejado com o comando Tcl `array get`. Por exemplo:
 

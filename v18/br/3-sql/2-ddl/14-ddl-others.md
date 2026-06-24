@@ -1,4 +1,4 @@
-## 5.14. Outros objetos de banco de dados [#](#DDL-OTHERS)
+### 5.14. Outros objetos de banco de dados [#](#DDL-OTHERS)
 
 As tabelas são os objetos centrais em uma estrutura de banco de dados relacional, porque elas retêm seus dados. Mas elas não são os únicos objetos que existem em um banco de dados. Muitos outros tipos de objetos podem ser criados para tornar o uso e a gestão dos dados mais eficientes ou convenientes. Eles não são discutidos neste capítulo, mas damos uma lista aqui para que você esteja ciente do que é possível:
 

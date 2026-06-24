@@ -212,7 +212,7 @@ A mensagem Descrever (variante do portal) especifica o nome de um portal existen
 
 A mensagem Descriver mensagem (variante de declaração) especifica o nome de uma declaração preparada existente (ou uma string vazia para a declaração preparada sem nome). A resposta é uma mensagem ParameterDescription que descreve os parâmetros necessários pela declaração, seguida por uma mensagem RowDescription que descreve as linhas que serão devolvidas quando a declaração for executada (ou uma mensagem NoData se a declaração não devolver linhas). A ErrorResponse é emitida se não houver tal declaração preparada. Note que, uma vez que Bind ainda não foi emitida, os formatos a serem usados para as colunas devolvidas ainda não são conhecidos pelo backend; os campos de código de formato na mensagem RowDescription serão zeros neste caso.
 
-### DICA
+DICA
 
 Na maioria dos cenários, o frontend deve emitir uma ou outra variante de Descrever antes de emitir Executar, para garantir que ele saiba como interpretar os resultados que receberá.
 

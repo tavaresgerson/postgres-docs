@@ -8,7 +8,7 @@
 
 O módulo `citext` fornece um tipo de cadeia de caracteres insensível a maiúsculas e minúsculas, `citext`. Essencialmente, ele chama internamente `lower` ao comparar valores. Caso contrário, ele se comporta quase exatamente como `text`.
 
-### DICA
+DICA
 
 Considere usar *colunações não determinísticas* (consulte [Seção 23.2.2.4](collation.md#COLLATION-NONDETERMINISTIC)) em vez deste módulo. Elas podem ser usadas para comparações não sensíveis ao caso, comparações não sensíveis ao acento e outras combinações, e elas tratam mais casos especiais do Unicode corretamente.
 

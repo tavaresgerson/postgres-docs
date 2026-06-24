@@ -242,7 +242,7 @@ Exemplos de requisitos que podem ser resolvidos dentro de um script incluem:
 * Interagir com outros softwares de backup e recuperação
 * Interagir com software de monitoramento para relatar erros
 
-### DICA
+DICA
 
 Ao usar um script `archive_command`, é desejável habilitar [logging_collector](runtime-config-logging.md#GUC-LOGGING-COLLECTOR). Quaisquer mensagens escritas no stderr do script aparecerão, então, no log do servidor de banco de dados, permitindo que configurações complexas sejam diagnosticadas facilmente se elas falharem.
 

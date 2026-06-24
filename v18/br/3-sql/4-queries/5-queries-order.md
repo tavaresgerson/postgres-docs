@@ -4,7 +4,7 @@ Após uma consulta produzir uma tabela de saída (após a lista de seleção ter
 
 A cláusula `ORDER BY` especifica a ordem de classificação:
 
-```
+```sql
 SELECT select_list
     FROM table_expression
     ORDER BY sort_expression1 [ASC | DESC] [NULLS { FIRST | LAST }]
@@ -13,7 +13,7 @@ SELECT select_list
 
 A(s) expressão(ões) de ordenação pode(m) ser qualquer expressão que seja válida na lista de seleção da consulta. Um exemplo é:
 
-```
+```sql
 SELECT a, b FROM table1 ORDER BY a + b, c;
 ```
 
@@ -25,14 +25,14 @@ Observe que as opções de ordenação são consideradas de forma independente p
 
 Um *`sort_expression`* também pode ser o rótulo da coluna ou o número de uma coluna de saída, como em:
 
-```
+```sql
 SELECT a + b AS sum, c FROM table1 ORDER BY sum;
 SELECT a, max(b) FROM table1 GROUP BY a ORDER BY 1;
 ```
 
 ambos que ordenam pela primeira coluna de saída. Observe que o nome de uma coluna de saída deve ser usado sozinho, ou seja, não pode ser usado em uma expressão — por exemplo, isso não é correto:
 
-```
+```sql
 SELECT a + b AS sum, c FROM table1 ORDER BY sum + c;          -- wrong
 ```
 

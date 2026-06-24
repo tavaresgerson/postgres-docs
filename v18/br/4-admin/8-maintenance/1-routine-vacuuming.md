@@ -36,11 +36,11 @@ Alguns administradores preferem agendar a limpeza de vácuo eles mesmos, por exe
 
 Para aqueles que não usam autovacuum, uma abordagem típica é agendar um `VACUUM` em todo o banco de dados uma vez por dia durante um período de baixo uso, complementado por um rastreamento mais frequente de tabelas com muitas atualizações, conforme necessário. (Algumas instalações com taxas de atualização extremamente altas rastreamento suas tabelas mais movimentadas tão frequentemente quanto uma vez a cada poucos minutos.) Se você tem vários bancos de dados em um clúster, não se esqueça de `VACUUM` cada um; o programa [vacuumdb](app-vacuumdb.md) pode ser útil.
 
-### DICA
+DICA
 
 A opção `VACUUM` simples pode não ser satisfatória quando uma tabela contém um grande número de versões de linha morta como resultado de uma atividade de atualização ou exclusão massiva. Se você tem uma tabela desse tipo e precisa recuperar o espaço em disco excedente que ela ocupa, você precisará usar `VACUUM FULL`, ou, como alternativa, `CLUSTER`(sql-cluster.md "CLUSTER") ou uma das variantes de reescrita de tabela de `ALTER TABLE`(sql-altertable.md "ALTER TABLE"). Esses comandos reescrevem uma nova cópia inteira da tabela e constroem novos índices para ela. Todas essas opções exigem um `ACCESS EXCLUSIVE` lock. Note que elas também usam temporariamente espaço em disco extra aproximadamente igual ao tamanho da tabela, uma vez que as cópias antigas da tabela e dos índices não podem ser liberadas até que as novas estejam completas.
 
-### DICA
+DICA
 
 Se você tem uma tabela cujo conteúdo inteiro é excluído periodicamente, considere fazer isso com `TRUNCATE` em vez de usar (sql-truncate.md "TRUNCATE") seguido de `DELETE` e `VACUUM`. `TRUNCATE` remove o conteúdo inteiro da tabela imediatamente, sem exigir um `VACUUM` ou `VACUUM FULL` subsequente para recuperar o espaço de disco agora não utilizado. A desvantagem é que as restrições de semântica MVCC são violadas.
 
@@ -56,17 +56,17 @@ Assim como a limpeza com aspirador de pó para recuperação de espaço, atualiz
 
 É possível executar `ANALYZE` em tabelas específicas e até mesmo em colunas específicas de uma tabela, portanto, a flexibilidade existe para atualizar algumas estatísticas com mais frequência do que outras, se sua aplicação o exigir. Na prática, no entanto, geralmente é melhor analisar todo o banco de dados, porque é uma operação rápida. `ANALYZE` usa uma amostragem aleatória estatística das linhas de uma tabela, em vez de ler cada linha individualmente.
 
-### DICA
+DICA
 
 Embora o ajuste por coluna da frequência de `ANALYZE` possa não ser muito produtivo, você pode achar que vale a pena fazer o ajuste por coluna do nível de detalhe das estatísticas coletadas por `ANALYZE`. Colunas que são muito utilizadas em cláusulas de `WHERE` e que têm distribuições de dados altamente irregulares podem exigir um histograma de dados com grânulos mais finos do que outras colunas. Veja `ALTER TABLE SET STATISTICS`, ou altere o padrão padrão em toda a base de dados usando o parâmetro de configuração [default_statistics_target](runtime-config-query.md#GUC-DEFAULT-STATISTICS-TARGET)
 
 Além disso, por padrão, há informações limitadas disponíveis sobre a seletividade das funções. No entanto, se você criar um objeto de estatísticas ou um índice de expressão que utilize uma chamada de função, estatísticas úteis serão coletadas sobre a função, o que pode melhorar significativamente os planos de consulta que utilizam o índice de expressão.
 
-### DICA
+DICA
 
 O daemon autovacuum não emite comandos `ANALYZE` para tabelas estrangeiras, uma vez que não possui meios para determinar quantas vezes isso pode ser útil. Se suas consultas exigem estatísticas sobre tabelas estrangeiras para um planejamento adequado, é uma boa ideia executar comandos manualmente gerenciados `ANALYZE` nessas tabelas em um cronograma adequado.
 
-### DICA
+DICA
 
 O daemon autovacuum não emite comandos `ANALYZE` para tabelas particionadas. Os pais de herança serão analisados apenas se o próprio pai for alterado — as alterações nas tabelas de filho não desencadeiam o autoanalyze na tabela pai. Se suas consultas exigem estatísticas sobre as tabelas pai para um planejamento adequado, é necessário executar periodicamente um `ANALYZE` manual nessas tabelas para manter as estatísticas atualizadas.
 
@@ -120,7 +120,7 @@ SELECT datname, age(datfrozenxid) FROM pg_database;
 
 A coluna `age` mede o número de transações do XID de corte até o XID da transação atual.
 
-### DICA
+DICA
 
 Quando o parâmetro `VERBOSE` do comando `VACUUM` é especificado, o `VACUUM` exibe várias estatísticas sobre a tabela. Isso inclui informações sobre como os `relfrozenxid` e `relminmxid` avançaram e o número de páginas recém-congeladas. Os mesmos detalhes aparecem no log do servidor quando o registro do autovacuum (controlado por [log_autovacuum_min_duration](runtime-config-logging.md#GUC-LOG-AUTOVACUUM-MIN-DURATION)) relata uma operação `VACUUM` executada pelo autovacuum.
 

@@ -1,4 +1,4 @@
-## 5.4. Colunas Geradas [#](#DDL-GENERATED-COLUMNS)
+### 5.4. Colunas Geradas [#](#DDL-GENERATED-COLUMNS)
 
 Uma coluna gerada é uma coluna especial que é sempre calculada a partir de outras colunas. Assim, é o que uma visão é para tabelas. Existem dois tipos de colunas geradas: armazenadas e virtuais. Uma coluna gerada armazenada é calculada quando é escrita (inserida ou atualizada) e ocupa armazenamento como se fosse uma coluna normal. Uma coluna gerada virtual não ocupa armazenamento e é calculada quando é lida. Assim, uma coluna gerada virtual é semelhante a uma visão e uma coluna gerada armazenada é semelhante a uma visão materializada (exceto que é sempre atualizada automaticamente).
 

@@ -34,7 +34,7 @@ removerá a parte do domínio para usuários com nomes de usuário do sistema qu
 
 Se o campo *`database-username`* começar com uma barra (`/`), o restante do campo é tratado como uma expressão regular. Quando o campo *`database-username`* é uma expressão regular, não é possível usar `\1` dentro dela para se referir a uma captura do campo *`system-username`*.
 
-### DICA
+DICA
 
 Tenha em mente que, por padrão, uma expressão regular pode corresponder apenas a parte de uma string. Geralmente é prudente usar `^` e `$`, como mostrado no exemplo acima, para forçar a correspondência a ser ao nome completo do usuário do sistema.
 

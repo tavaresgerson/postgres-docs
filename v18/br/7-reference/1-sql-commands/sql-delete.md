@@ -17,7 +17,7 @@ DELETE FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
 
 `DELETE` exclui linhas que satisfazem a cláusula `WHERE` da tabela especificada. Se a cláusula `WHERE` estiver ausente, o efeito é excluir todas as linhas da tabela. O resultado é uma tabela válida, mas vazia.
 
-### DICA
+DICA
 
 `TRUNCATE`](sql-truncate.md "TRUNCATE") oferece um mecanismo mais rápido para remover todas as linhas de uma tabela.
 

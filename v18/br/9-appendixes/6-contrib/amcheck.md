@@ -35,7 +35,7 @@ A verificação adicional do `bt_index_parent_check` é mais provável de detect
 
 `gin_index_check(index regclass) returns void`: `gin_index_check` testa que o índice GIN alvo tenha relações consistentes de tuplas pai-filho (nenhuma tupla pai requer ajuste de tupla) e que o gráfico de página respeite os invariantes de árvore balanceada (páginas internas referenciam apenas a página de folha ou apenas páginas internas).
 
-### DICA
+DICA
 
 `bt_index_check` e `bt_index_parent_check` emitem mensagens de log sobre o processo de verificação em níveis de gravidade `DEBUG1` e `DEBUG2`. Essas mensagens fornecem informações detalhadas sobre o processo de verificação que podem ser de interesse para os desenvolvedores do PostgreSQL. Usuários avançados também podem achar essa informação útil, pois fornece contexto adicional caso a verificação realmente detecte uma inconsistência.
 

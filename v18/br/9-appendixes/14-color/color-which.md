@@ -14,6 +14,6 @@ As seguintes teclas estão atualmente em uso:
 
 O valor padrão é `error=01;31:warning=01;35:note=01;36:locus=01` (`01;31` = vermelho em negrito, `01;35` = magenta em negrito, `01;36` = ciano em negrito, `01` = cor padrão em negrito).
 
-### DICA
+DICA
 
 Esse formato de especificação de cor também é usado por outros pacotes de software, como GCC, GNU coreutils e GNU grep.

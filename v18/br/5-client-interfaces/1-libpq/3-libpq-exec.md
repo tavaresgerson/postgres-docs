@@ -51,7 +51,7 @@ A principal vantagem do `PQexecParams` sobre (libpq-exec.md#LIBPQ-PQEXECPARAMS) 
 
 Ao contrário de `PQexec`](libpq-exec.md#LIBPQ-PQEXEC), [`PQexecParams`](libpq-exec.md#LIBPQ-PQEXECPARAMS) permite no máximo um comando SQL na string dada. (Pode haver pontos e vírgulas nela, mas não mais de um comando não vazio.) Esta é uma limitação do protocolo subjacente, mas tem alguma utilidade como uma defesa extra contra ataques de injeção SQL.
 
-### DICA
+DICA
 
 Especificar tipos de parâmetros via OIDs é tedioso, especialmente se você prefere não vincular valores específicos de OID ao seu programa. No entanto, você pode evitar fazer isso mesmo nos casos em que o servidor por si só não pode determinar o tipo do parâmetro ou escolhe um tipo diferente do que você deseja. No texto do comando SQL, adicione uma cast explícita ao símbolo do parâmetro para mostrar qual tipo de dados você enviará. Por exemplo:
 
@@ -458,7 +458,7 @@ char *PQoidStatus(const PGresult *res);
 
 Em caso de erro, `PQescapeLiteral`(libpq-exec.md#LIBPQ-PQESCAPELITERAL) retorna `NULL` e uma mensagem adequada é armazenada no objeto *`conn`*.
 
-### DICA
+DICA
 
 É especialmente importante fazer a devida escapamento ao manipular strings que foram recebidas de uma fonte não confiável. Caso contrário, há um risco de segurança: você é vulnerável a ataques de "injeção SQL", nos quais comandos SQL indesejados são alimentados em seu banco de dados.
 
@@ -473,7 +473,7 @@ Observe que não é necessário nem correto realizar escapamento quando um valor
 
 Em caso de erro, `PQescapeIdentifier`(libpq-exec.md#LIBPQ-PQESCAPEIDENTIFIER) retorna `NULL` e uma mensagem adequada é armazenada no objeto *`conn`*.
 
-### DICA
+DICA
 
 Assim como as cadeias de caracteres, para evitar ataques de injeção SQL, os identificadores SQL devem ser escamados quando recebidos de uma fonte não confiável.
 

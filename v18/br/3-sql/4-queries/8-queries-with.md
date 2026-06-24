@@ -1,4 +1,4 @@
-## 7.8. `WITH` Consultas (Expressões de Tabela Comum] [#](#QUERIES-WITH)
+### 7.8. `WITH` Consultas (Expressões de Tabela Comum] [#](#QUERIES-WITH)
 
 * [7.8.1. `SELECT` em `WITH`](queries-with.md#QUERIES-WITH-SELECT)
 * [7.8.2. Consultas recursivas](queries-with.md#QUERIES-WITH-RECURSIVE)
@@ -7,11 +7,11 @@
 
 `WITH` fornece uma maneira de escrever declarações auxiliares para uso em uma consulta maior. Essas declarações, que são frequentemente referidas como Expressões de Tabela Comum ou CTEs, podem ser consideradas como definindo tabelas temporárias que existem apenas para uma consulta. Cada declaração auxiliar em uma cláusula `WITH` pode ser um `SELECT`, `INSERT`, `UPDATE`, `DELETE` ou `MERGE`; e a própria cláusula `WITH` é anexada a uma declaração principal que também pode ser um `SELECT`, `INSERT`, `UPDATE`, `DELETE` ou `MERGE`.
 
-### 7.8.1. `SELECT` em `WITH` [#](#QUERIES-WITH-SELECT)
+#### 7.8.1. `SELECT` em `WITH` [#](#QUERIES-WITH-SELECT)
 
 O valor básico de `SELECT` em `WITH` é de quebrar consultas complicadas em partes mais simples. Um exemplo é:
 
-```
+```sql
 WITH regional_sales AS (
     SELECT region, SUM(amount) AS total_sales
     FROM orders
@@ -32,11 +32,11 @@ GROUP BY region, product;
 
 que exibe os totais de vendas por produto apenas nas regiões de maior venda. A cláusula `WITH` define duas declarações auxiliares chamadas `regional_sales` e `top_regions`, onde a saída de `regional_sales` é usada em `top_regions` e a saída de `top_regions` é usada na consulta primária `SELECT`. Este exemplo poderia ter sido escrito sem `WITH`, mas precisaríamos de dois níveis de sub`SELECT`s aninhados. É um pouco mais fácil seguir essa maneira.
 
-### 7.8.2. Consultas recursivas [#](#QUERIES-WITH-RECURSIVE)
+#### 7.8.2. Consultas recursivas [#](#QUERIES-WITH-RECURSIVE)
 
 O modificador opcional `RECURSIVE` transforma `WITH` de uma mera conveniência sintática em uma característica que realiza coisas que não são possíveis de outra forma no SQL padrão. Usando `RECURSIVE`, uma consulta `WITH` pode se referir à própria saída. Um exemplo muito simples é esta consulta para somar os inteiros de 1 até 100:
 
-```
+```sql
 WITH RECURSIVE t(n) AS (
     VALUES (1)
   UNION ALL
@@ -62,7 +62,7 @@ No exemplo acima, a tabela de trabalho tem apenas uma única linha em cada etapa
 
 As consultas recursivas são tipicamente usadas para lidar com dados hierárquicos ou estruturados em forma de árvore. Um exemplo útil é esta consulta para encontrar todas as subpartes diretas e indiretas de um produto, dado apenas uma tabela que mostra inclusões imediatas:
 
-```
+```sql
 WITH RECURSIVE included_parts(sub_part, part, quantity) AS (
     SELECT sub_part, part, quantity FROM parts WHERE part = 'our_product'
   UNION ALL
@@ -75,13 +75,13 @@ FROM included_parts
 GROUP BY sub_part
 ```
 
-#### 7.8.2.1. Ordem de pesquisa [#](#QUERIES-WITH-SEARCH)
+##### 7.8.2.1. Ordem de pesquisa [#](#QUERIES-WITH-SEARCH)
 
 Ao calcular uma travessia de árvore usando uma consulta recursiva, você pode querer ordenar os resultados em ordem de primeiro-visitado ou de primeiro-escaneado. Isso pode ser feito calculando uma coluna de ordenação ao lado das outras colunas de dados e usando isso para ordenar os resultados no final. Note que isso não controla realmente em que ordem a avaliação da consulta visita as linhas; isso é sempre dependente da implementação do SQL. Essa abordagem simplesmente fornece uma maneira conveniente de ordenar os resultados posteriormente.
 
 Para criar uma ordem de profundidade, calculamos para cada linha de resultado um array de linhas que visitamos até agora. Por exemplo, considere a seguinte consulta que pesquisa uma tabela `tree` usando um campo `link`:
 
-```
+```sql
 WITH RECURSIVE search_tree(id, link, data) AS (
     SELECT t.id, t.link, t.data
     FROM tree t
@@ -95,7 +95,7 @@ SELECT * FROM search_tree;
 
 Para adicionar informações de ordenação de profundidade, você pode escrever o seguinte:
 
-```
+```sql
 WITH RECURSIVE search_tree(id, link, data, path) AS (
     SELECT t.id, t.link, t.data, ARRAY[t.id]
     FROM tree t
@@ -109,7 +109,7 @@ SELECT * FROM search_tree ORDER BY path;
 
 No caso geral, quando mais de um campo precisa ser usado para identificar uma linha, use um array de linhas. Por exemplo, se precisássemos rastrear os campos `f1` e `f2`:
 
-```
+```sql
 WITH RECURSIVE search_tree(id, link, data, path) AS (
     SELECT t.id, t.link, t.data, ARRAY[ROW(t.f1, t.f2)]
     FROM tree t
@@ -121,13 +121,13 @@ WITH RECURSIVE search_tree(id, link, data, path) AS (
 SELECT * FROM search_tree ORDER BY path;
 ```
 
-### DICA
+DICA
 
 Omitam a sintaxe `ROW()` no caso comum em que apenas um campo precisa ser rastreado. Isso permite que um array simples, em vez de um array de tipo composto, seja usado, obtendo eficiência.
 
 Para criar uma ordem de largura, você pode adicionar uma coluna que acompanhe a profundidade da pesquisa, por exemplo:
 
-```
+```sql
 WITH RECURSIVE search_tree(id, link, data, depth) AS (
     SELECT t.id, t.link, t.data, 0
     FROM tree t
@@ -141,13 +141,13 @@ SELECT * FROM search_tree ORDER BY depth;
 
 Para obter uma classificação estável, adicione as colunas de dados como colunas de classificação secundárias.
 
-### DICA
+DICA
 
 O algoritmo de avaliação de consultas recursivas produz sua saída na ordem de pesquisa de largura, no entanto, essa é uma questão de implementação e talvez não seja seguro confiar nela. A ordem das linhas dentro de cada nível é certamente indefinida, portanto, em qualquer caso, pode ser desejada uma ordenação explícita.
 
 Há sintaxe embutida para calcular uma coluna de ordenação de profundidade ou de largura. Por exemplo:
 
-```
+```sql
 WITH RECURSIVE search_tree(id, link, data) AS (
     SELECT t.id, t.link, t.data
     FROM tree t
@@ -171,11 +171,11 @@ SELECT * FROM search_tree ORDER BY ordercol;
 
 Essa sintaxe é expandida internamente para algo semelhante às formas escritas à mão acima. A cláusula `SEARCH` especifica se a busca de profundidade ou de largura deve ser desejada, a lista de colunas a serem rastreadas para ordenação e um nome de coluna que conterá os dados de resultado que podem ser usados para ordenação. Essa coluna será implicitamente adicionada às linhas de saída do CTE.
 
-#### 7.8.2.2. Detecção de ciclo [#](#QUERIES-WITH-CYCLE)
+##### 7.8.2.2. Detecção de ciclo [#](#QUERIES-WITH-CYCLE)
 
 Ao trabalhar com consultas recursivas, é importante ter certeza de que a parte recursiva da consulta eventualmente retornará nenhum tupla, caso contrário, a consulta entrará em um loop indefinidamente. Às vezes, usar `UNION` em vez de `UNION ALL` pode realizar isso, descartando as linhas que duplicam as linhas de saída anteriores. No entanto, muitas vezes, um ciclo não envolve linhas de saída que são completamente duplicadas: pode ser necessário verificar apenas um ou alguns campos para ver se o mesmo ponto já foi alcançado antes. O método padrão para lidar com tais situações é calcular um array dos valores já visitados. Por exemplo, considere novamente a seguinte consulta que busca uma tabela `graph` usando um campo `link`:
 
-```
+```sql
 WITH RECURSIVE search_graph(id, link, data, depth) AS (
     SELECT g.id, g.link, g.data, 0
     FROM graph g
@@ -189,7 +189,7 @@ SELECT * FROM search_graph;
 
 Essa consulta irá repetir se as relações `link` contiverem ciclos. Como precisamos de uma saída de “profundidade”, simplesmente alterar `UNION ALL` para `UNION` não eliminaria a repetição. Em vez disso, precisamos reconhecer se chegamos à mesma linha novamente ao seguir um caminho específico de links. Adicionamos duas colunas `is_cycle` e `path` à consulta propensa a ciclos:
 
-```
+```sql
 WITH RECURSIVE search_graph(id, link, data, depth, is_cycle, path) AS (
     SELECT g.id, g.link, g.data, 0,
       false,
@@ -209,7 +209,7 @@ Além de prevenir ciclos, o valor da matriz é frequentemente útil por si só, 
 
 No caso geral, quando mais de um campo precisa ser verificado para reconhecer um ciclo, use um array de linhas. Por exemplo, se precisássemos comparar os campos `f1` e `f2`:
 
-```
+```sql
 WITH RECURSIVE search_graph(id, link, data, depth, is_cycle, path) AS (
     SELECT g.id, g.link, g.data, 0,
       false,
@@ -225,13 +225,13 @@ WITH RECURSIVE search_graph(id, link, data, depth, is_cycle, path) AS (
 SELECT * FROM search_graph;
 ```
 
-### DICA
+DICA
 
 Omitam a sintaxe `ROW()` no caso comum em que apenas um campo precisa ser verificado para reconhecer um ciclo. Isso permite que um array simples, em vez de um array de tipo composto, seja usado, ganhando eficiência.
 
 Há sintaxe embutida para simplificar a detecção de ciclos. A consulta acima também pode ser escrita da seguinte forma:
 
-```
+```sql
 WITH RECURSIVE search_graph(id, link, data, depth) AS (
     SELECT g.id, g.link, g.data, 1
     FROM graph g
@@ -245,13 +245,13 @@ SELECT * FROM search_graph;
 
 e será reescrita internamente para a forma acima. A cláusula `CYCLE` especifica primeiro a lista de colunas a serem rastreadas para detecção de ciclo, em seguida, um nome de coluna que mostrará se um ciclo foi detectado, e, finalmente, o nome de outra coluna que rastreará o caminho. As colunas ciclo e caminho serão implicitamente adicionadas às linhas de saída do CTE.
 
-### DICA
+DICA
 
 A coluna de ciclo é calculada da mesma maneira que a coluna de ordenação de ordem primeiro, mostrada na seção anterior. Uma consulta pode ter tanto uma cláusula `SEARCH` quanto uma cláusula `CYCLE`, mas uma especificação de pesquisa de ordem primeiro e uma especificação de detecção de ciclo criariam cálculos redundantes, então é mais eficiente apenas usar a cláusula `CYCLE` e ordenar pela coluna de caminho. Se a ordenação de largura primeiro é desejada, então especificar tanto `SEARCH` quanto `CYCLE` pode ser útil.
 
 Um truque útil para testar consultas quando você não tem certeza se elas podem repetir é colocar um `LIMIT` na consulta principal. Por exemplo, esta consulta iria repetir para sempre sem o `LIMIT`:
 
-```
+```sql
 WITH RECURSIVE t(n) AS (
     SELECT 1
   UNION ALL
@@ -262,7 +262,7 @@ SELECT n FROM t LIMIT 100;
 
 Isso funciona porque a implementação do PostgreSQL avalia apenas tantas linhas de uma consulta `WITH` quanto são realmente obtidas pela consulta pai. Usar esse truque em produção não é recomendado, porque outros sistemas podem funcionar de maneira diferente. Além disso, geralmente não funcionará se você fizer a consulta externa ordenar os resultados da consulta recursiva ou combiná-los com outra tabela, porque, nesse caso, a consulta externa geralmente tentará obter todas as saídas da consulta `WITH` de qualquer maneira.
 
-### 7.8.3. Materialização da Expressão de Tabela Comum [#](#QUERIES-WITH-CTE-MATERIALIZATION)
+#### 7.8.3. Materialização da Expressão de Tabela Comum [#](#QUERIES-WITH-CTE-MATERIALIZATION)
 
 Uma propriedade útil das consultas `WITH` é que elas são normalmente avaliadas apenas uma vez por execução da consulta pai, mesmo que sejam referenciadas mais de uma vez pela consulta pai ou pelas consultas `WITH` irmãs. Assim, cálculos caros que são necessários em vários lugares podem ser colocados dentro de uma consulta `WITH`, para evitar trabalho redundante. Outra aplicação possível é prevenir avaliações múltiplas indesejadas de funções com efeitos colaterais. No entanto, o outro lado dessa moeda é que o otimizador não é capaz de empurrar restrições da consulta pai para uma consulta `WITH` com múltiplas referências, pois isso pode afetar todas as utilizações da saída da consulta `WITH` quando ela deve afetar apenas uma. A consulta `WITH` com múltiplas referências será avaliada conforme escrito, sem supressão de linhas que a consulta pai pode descartar posteriormente. (Mas, como mencionado acima, a avaliação pode parar precocemente se as referências à consulta demandarem apenas um número limitado de linhas.)
 
@@ -270,7 +270,7 @@ No entanto, se uma consulta `WITH` for não recursiva e sem efeitos colaterais (
 
 Um exemplo simples dessas regras é
 
-```
+```sql
 WITH w AS (
     SELECT * FROM big_table
 )
@@ -279,13 +279,13 @@ SELECT * FROM w WHERE key = 123;
 
 Essa consulta `WITH` será preenchida, produzindo o mesmo plano de execução que
 
-```
+```sql
 SELECT * FROM big_table WHERE key = 123;
 ```
 
 Em particular, se houver um índice em `key`, ele provavelmente será usado para obter apenas as linhas que possuem `key = 123`. Por outro lado, em
 
-```
+```sql
 WITH w AS (
     SELECT * FROM big_table
 )
@@ -295,7 +295,7 @@ WHERE w2.key = 123;
 
 a consulta `WITH` será materializada, produzindo uma cópia temporária de `big_table` que é então associada a si mesma — sem o benefício de qualquer índice. Essa consulta será executada de forma muito mais eficiente se escrita como
 
-```
+```sql
 WITH w AS NOT MATERIALIZED (
     SELECT * FROM big_table
 )
@@ -307,7 +307,7 @@ para que as restrições da consulta principal possam ser aplicadas diretamente 
 
 Um exemplo em que `NOT MATERIALIZED` poderia ser indesejável é
 
-```
+```sql
 WITH w AS (
     SELECT key, very_expensive_function(val) as f FROM some_table
 )
@@ -318,11 +318,11 @@ Aqui, a materialização da consulta `WITH` garante que `very_expensive_function
 
 Os exemplos acima mostram apenas o uso do `WITH` com o `SELECT`, mas ele pode ser anexado da mesma maneira ao `INSERT`, `UPDATE`, `DELETE` ou `MERGE`. Em cada caso, ele efetivamente fornece uma ou mais tabelas temporárias que podem ser referenciadas no comando principal.
 
-### 7.8.4. Declarações que modificam dados em `WITH` [#](#QUERIES-WITH-MODIFYING)
+#### 7.8.4. Declarações que modificam dados em `WITH` [#](#QUERIES-WITH-MODIFYING)
 
 Você pode usar declarações que modificam dados (`INSERT`, `UPDATE`, `DELETE` ou `MERGE`) em `WITH`. Isso permite que você realize várias operações diferentes na mesma consulta. Um exemplo é:
 
-```
+```sql
 WITH moved_rows AS (
     DELETE FROM products
     WHERE
@@ -340,7 +340,7 @@ Um ponto importante do exemplo acima é que a cláusula `WITH` está anexada ao 
 
 As declarações que modificam dados em `WITH` geralmente têm cláusulas `RETURNING` (veja [Seção 6.4](dml-returning.md)), como mostrado no exemplo acima. É a saída da cláusula `RETURNING`, *não* a tabela-alvo da declaração que modifica dados, que forma a tabela temporária que pode ser referenciada pelo resto da consulta. Se uma declaração que modifica dados em `WITH` não tiver uma cláusula `RETURNING`, então ela não forma nenhuma tabela temporária e não pode ser referenciada no resto da consulta. Tal declaração será executada, não obstante. Um exemplo que não é particularmente útil é:
 
-```
+```sql
 WITH t AS (
     DELETE FROM foo
 )
@@ -351,7 +351,7 @@ Esse exemplo removeria todas as linhas das tabelas `foo` e `bar`. O número de l
 
 As referências recursivas em declarações que modificam dados não são permitidas. Em alguns casos, é possível contornar essa limitação referenciando o resultado de um `WITH` recursivo, por exemplo:
 
-```
+```sql
 WITH RECURSIVE included_parts(sub_part, part) AS (
     SELECT sub_part, part FROM parts WHERE part = 'our_product'
   UNION ALL
@@ -369,7 +369,7 @@ As declarações que modificam dados em `WITH` são executadas exatamente uma ve
 
 As sub-declarações em `WITH` são executadas simultaneamente entre si e com a consulta principal. Portanto, ao usar declarações que modificam dados em `WITH`, a ordem em que as atualizações especificadas realmente ocorrem é imprevisível. Todas as declarações são executadas com o mesmo *instantâneo* (ver [Capítulo 13](mvcc.md)), então elas não podem "ver" os efeitos uns dos outros nas tabelas de destino. Isso alivia os efeitos da imprevisibilidade da ordem real das atualizações de linha, e significa que os dados de `RETURNING` são a única maneira de comunicar mudanças entre diferentes sub-declarações de `WITH` e a consulta principal. Um exemplo disso é que em
 
-```
+```sql
 WITH t AS (
     UPDATE products SET price = price * 1.05
     RETURNING *
@@ -379,7 +379,7 @@ SELECT * FROM products;
 
 o valor externo `SELECT` retornaria os preços originais antes da ação do `UPDATE`, enquanto em
 
-```
+```sql
 WITH t AS (
     UPDATE products SET price = price * 1.05
     RETURNING *

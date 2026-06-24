@@ -337,7 +337,7 @@ O tipo `cidr` contém uma especificação de rede IPv4 ou IPv6. Os formatos de e
 
 A diferença essencial entre os tipos de dados `inet` e `cidr` é que o `inet` aceita valores com bits não nulos à direita da máscara de rede, enquanto o `cidr` não. Por exemplo, o `192.168.0.1/24` é válido para `inet`, mas não para `cidr`.
 
-### DICA
+DICA
 
 Se você não gosta do formato de saída para os valores de `inet` ou `cidr`, tente as funções `host`, `text` e `abbrev`.
 

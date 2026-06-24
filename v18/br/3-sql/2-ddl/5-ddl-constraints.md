@@ -1,4 +1,4 @@
-## 5.5. Restrições [#](#DDL-CONSTRAINTS)
+### 5.5. Restrições [#](#DDL-CONSTRAINTS)
 
 * [5.5.1. Verificação de restrições](ddl-constraints.md#DDL-CONSTRAINTS-CHECK-CONSTRAINTS)
 * [5.5.2. Restrições não nulos](ddl-constraints.md#DDL-CONSTRAINTS-NOT-NULL)
@@ -11,7 +11,7 @@ Os tipos de dados são uma maneira de limitar o tipo de dados que podem ser arma
 
 Para esse fim, o SQL permite que você defina restrições em colunas e tabelas. As restrições lhe dão todo o controle sobre os dados em suas tabelas que você deseja. Se um usuário tentar armazenar dados em uma coluna que violaria uma restrição, um erro é exibido. Isso se aplica mesmo se o valor vier da definição do valor padrão.
 
-### 5.5.1. Verificar restrições [#](#DDL-CONSTRAINTS-CHECK-CONSTRAINTS)
+#### 5.5.1. Verificar restrições [#](#DDL-CONSTRAINTS-CHECK-CONSTRAINTS)
 
 Uma restrição de verificação é o tipo de restrição mais genérico. Ela permite que você especifique que o valor em uma certa coluna deve satisfazer uma expressão booleana (verdadeiro ou falso). Por exemplo, para exigir preços de produtos positivos, você pode usar:
 
@@ -107,7 +107,7 @@ O PostgreSQL assume que as condições das restrições `CHECK` são imutáveis,
 
 Um exemplo de uma maneira comum de quebrar essa suposição é fazer referência a uma função definida pelo usuário em uma expressão `CHECK`, e depois alterar o comportamento dessa função. O PostgreSQL não proíbe isso, mas não notará se houver linhas na tabela que agora violam a restrição `CHECK`. Isso causaria o fracasso de um próximo dump e restabelecimento do banco de dados. A maneira recomendada de lidar com essa mudança é descartar a restrição (usando `ALTER TABLE`), ajustar a definição da função e adicionar novamente a restrição, verificando-a novamente contra todas as linhas da tabela.
 
-### 5.5.2. Restrições de não nulidade [#](#DDL-CONSTRAINTS-NOT-NULL)
+#### 5.5.2. Restrições de não nulidade [#](#DDL-CONSTRAINTS-NOT-NULL)
 
 Uma restrição não nula simplesmente especifica que uma coluna não pode assumir o valor nulo. Um exemplo de sintaxe:
 
@@ -171,11 +171,11 @@ CREATE TABLE products (
 
 e, em seguida, insira a palavra-chave `NOT` onde desejar.
 
-### DICA
+DICA
 
 Na maioria dos projetos de banco de dados, a maioria das colunas deve ser marcada como não nula.
 
-### 5.5.3. Restrições Únicas [#](#DDL-CONSTRAINTS-UNIQUE-CONSTRAINTS)
+#### 5.5.3. Restrições Únicas [#](#DDL-CONSTRAINTS-UNIQUE-CONSTRAINTS)
 
 Restrições únicas garantem que os dados contidos em uma coluna ou em um grupo de colunas sejam únicos entre todas as linhas da tabela. A sintaxe é:
 
@@ -248,7 +248,7 @@ CREATE TABLE products (
 
 O comportamento padrão pode ser especificado explicitamente usando `NULLS DISTINCT`. O tratamento padrão nulo em restrições exclusivas é definido pela implementação de acordo com o padrão SQL, e outras implementações têm um comportamento diferente. Portanto, tenha cuidado ao desenvolver aplicativos que devem ser portáveis.
 
-### 5.5.4. Chaves primárias [#](#DDL-CONSTRAINTS-PRIMARY-KEYS)
+#### 5.5.4. Chaves primárias [#](#DDL-CONSTRAINTS-PRIMARY-KEYS)
 
 Uma restrição de chave primária indica que uma coluna ou um grupo de colunas pode ser usado como um identificador único para as linhas na tabela. Isso exige que os valores sejam únicos e não nulos. Portanto, as seguintes duas definições de tabela aceitam os mesmos dados:
 
@@ -285,7 +285,7 @@ Uma tabela pode ter, no máximo, uma chave primária. (Pode haver qualquer núme
 
 As chaves primárias são úteis tanto para fins de documentação quanto para aplicações de clientes. Por exemplo, um aplicativo de GUI que permite modificar os valores das linhas provavelmente precisa saber a chave primária de uma tabela para ser capaz de identificar as linhas de forma única. Há também várias maneiras pelas quais o sistema de banco de dados faz uso de uma chave primária, se uma tiver sido declarada; por exemplo, a chave primária define as colunas alvo padrão(s) para chaves estrangeiras que fazem referência à sua tabela.
 
-### 5.5.5. Chaves estrangeiras [#](#DDL-CONSTRAINTS-FK)
+#### 5.5.5. Chaves estrangeiras [#](#DDL-CONSTRAINTS-FK)
 
 Uma restrição de chave estrangeira especifica que os valores em uma coluna (ou um grupo de colunas) devem corresponder aos valores que aparecem em alguma linha de outra tabela. Dizemos que isso mantém a *integridade referencial* entre duas tabelas relacionadas.
 
@@ -449,7 +449,7 @@ Uma chave estrangeira deve fazer referência a colunas que sejam uma chave prim�
 
 Mais informações sobre atualização e exclusão de dados estão no [Capítulo 6](dml.md). Veja também a descrição da sintaxe de restrição de chave estrangeira na documentação de referência para [CREATE TABLE](sql-createtable.md).
 
-### 5.5.6. Restrições de Exclusão [#](#DDL-CONSTRAINTS-EXCLUSION)
+#### 5.5.6. Restrições de Exclusão [#](#DDL-CONSTRAINTS-EXCLUSION)
 
 As restrições de exclusão garantem que, se quaisquer duas linhas forem comparadas nas colunas ou expressões especificadas usando os operadores especificados, pelo menos uma dessas comparações de operador retornará falso ou nulo. A sintaxe é:
 

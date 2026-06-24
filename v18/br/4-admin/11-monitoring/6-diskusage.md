@@ -78,7 +78,7 @@ A tarefa mais importante de monitoramento de disco de um administrador de banco 
 
 Se você não conseguir liberar espaço adicional no disco, excluindo outras coisas, pode mover alguns dos arquivos do banco de dados para outros sistemas de arquivos, utilizando tablespaces. Consulte [Seção 22.6](manage-ag-tablespaces.md) para obter mais informações sobre isso.
 
-### DICA
+DICA
 
 Alguns sistemas de arquivos apresentam desempenho ruim quando estão quase cheios, então não espere até que o disco esteja completamente cheio para tomar medidas.
 

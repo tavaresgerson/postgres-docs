@@ -6,7 +6,7 @@
 
 Existem três abordagens separadas para correspondência de padrões fornecidas pelo PostgreSQL: o operador SQL tradicional `LIKE`, o operador mais recente `SIMILAR TO` (adicionado no SQL: 1999) e expressões regulares em estilo POSIX. Além dos operadores básicos “esta string corresponde a este padrão?”, funções estão disponíveis para extrair ou substituir substratos correspondentes e para dividir uma string em locais de correspondência.
 
-### DICA
+DICA
 
 Se você tem necessidades de correspondência de padrões que vão além disso, considere escrever uma função definida pelo usuário em Perl ou Tcl.
 
@@ -387,7 +387,7 @@ SELECT regexp_match('foobarbequebaz', '(bar)(beque)');
 (1 row)
 ```
 
-### DICA
+DICA
 
 No caso comum em que você apenas deseja a subcadeia de caracteres correspondente inteira ou `NULL` sem correspondência, a melhor solução é usar `regexp_substr()`. No entanto, `regexp_substr()` existe apenas na versão PostgreSQL 15 e superior. Ao trabalhar em versões mais antigas, você pode extrair o primeiro elemento do resultado de `regexp_match()`, por exemplo:
 
@@ -417,7 +417,7 @@ SELECT regexp_matches('foobarbequebazilbarfbonk', '(b[^b]+)(b[^b]+)', 'g');
 (2 rows)
 ```
 
-### DICA
+DICA
 
 Na maioria dos casos, `regexp_matches()` deve ser usado com a bandeira `g`, pois, se você só deseja a primeira correspondência, é mais fácil e eficiente usar `regexp_match()`. No entanto, `regexp_match()` existe apenas na versão PostgreSQL 10 e superior. Ao trabalhar em versões mais antigas, um truque comum é colocar uma chamada `regexp_matches()` em um sub-seletor, por exemplo:
 

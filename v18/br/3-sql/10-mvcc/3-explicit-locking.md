@@ -48,7 +48,7 @@ Adquirida por `REFRESH MATERIALIZED VIEW CONCURRENTLY`.
 
 Os comandos adquiridos pelos `DROP TABLE`, `TRUNCATE`, `REINDEX`, `CLUSTER`, `VACUUM FULL` e `REFRESH MATERIALIZED VIEW` (sem `CONCURRENTLY`) também adquirem um bloqueio nesse nível. Esse também é o modo de bloqueio padrão para as declarações `ALTER INDEX` e `ALTER TABLE` que não especificam um modo explicitamente.
 
-### DICA
+DICA
 
 Apenas um bloqueio `ACCESS EXCLUSIVE` bloqueia uma declaração `SELECT` (sem `FOR UPDATE/SHARE`).
 

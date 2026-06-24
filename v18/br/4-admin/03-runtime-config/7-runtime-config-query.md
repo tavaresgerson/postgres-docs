@@ -75,7 +75,7 @@ O acesso aleatório a armazenamento durável normalmente é muito mais caro do q
 
 Se você acredita que o armazenamento de cache é menos frequente do que o valor padrão reflete, e a latência da rede é mínima, você pode aumentar o random_page_cost para refletir melhor o verdadeiro custo das leituras de armazenamento aleatórias. O armazenamento que tem um custo de leitura aleatória mais alto em relação à seqüencial, como discos magnéticos, também pode ser melhor modelado com um valor mais alto para random_page_cost. Da mesma forma, se seus dados provavelmente estarão completamente em cache, como quando o banco de dados é menor que a memória total do servidor, ou a latência da rede é alta, pode ser apropriado diminuir o random_page_cost.
 
-### DICA
+DICA
 
 Embora o sistema permita que você defina `random_page_cost` para menos que `seq_page_cost`, não é sensato fazê-lo fisicamente. No entanto, definir-os iguais faz sentido se o banco de dados estiver totalmente cacheado na RAM, uma vez que, nesse caso, não há penalidade por tocar em páginas fora de sequência. Além disso, em um banco de dados fortemente cacheado, você deve diminuir ambos os valores em relação aos parâmetros da CPU, uma vez que o custo de buscar uma página já na RAM é muito menor do que o normal.
 

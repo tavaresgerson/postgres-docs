@@ -1,4 +1,4 @@
-## 5.7. Modificando tabelas [#](#DDL-ALTER)
+### 5.7. Modificando tabelas [#](#DDL-ALTER)
 
 * [5.7.1. Adicionar uma Coluna](ddl-alter.md#DDL-ALTER-ADDING-A-COLUMN)
 * [5.7.2. Remover uma Coluna](ddl-alter.md#DDL-ALTER-REMOVING-A-COLUMN)
@@ -24,7 +24,7 @@ Você pode:
 
 Todas essas ações são realizadas usando o comando [ALTER TABLE](sql-altertable.md), cuja página de referência contém detalhes além dos dados fornecidos aqui.
 
-### 5.7.1. Adicionar uma coluna [#](#DDL-ALTER-ADDING-A-COLUMN)
+#### 5.7.1. Adicionar uma coluna [#](#DDL-ALTER-ADDING-A-COLUMN)
 
 Para adicionar uma coluna, use um comando como:
 
@@ -34,7 +34,7 @@ ALTER TABLE products ADD COLUMN description text;
 
 A nova coluna é preenchida inicialmente com qualquer valor padrão fornecido (nulo se você não especificar uma cláusula `DEFAULT`).
 
-### DICA
+DICA
 
 Adicionar uma coluna com um valor padrão constante não exige que cada linha da tabela seja atualizada quando a instrução `ALTER TABLE` for executada. Em vez disso, o valor padrão será retornado na próxima vez que a linha for acessada e aplicado quando a tabela for reescrita, tornando o `ALTER TABLE` muito rápido, mesmo em tabelas grandes.
 
@@ -48,7 +48,7 @@ ALTER TABLE products ADD COLUMN description text CHECK (description <> '');
 
 De fato, todas as opções que podem ser aplicadas a uma descrição de coluna em `CREATE TABLE` podem ser usadas aqui. No entanto, tenha em mente que o valor padrão deve satisfazer as restrições dadas, ou o `ADD` falhará. Alternativamente, você pode adicionar restrições mais tarde (veja abaixo) depois de preencher a nova coluna corretamente.
 
-### 5.7.2. Remoção de uma coluna [#](#DDL-ALTER-REMOVING-A-COLUMN)
+#### 5.7.2. Remoção de uma coluna [#](#DDL-ALTER-REMOVING-A-COLUMN)
 
 Para remover uma coluna, use um comando como:
 
@@ -64,7 +64,7 @@ ALTER TABLE products DROP COLUMN description CASCADE;
 
 Veja [Seção 5.15](ddl-depend.md) para uma descrição do mecanismo geral por trás disso.
 
-### 5.7.3. Adicionar uma restrição [#](#DDL-ALTER-ADDING-A-CONSTRAINT)
+#### 5.7.3. Adicionar uma restrição [#](#DDL-ALTER-ADDING-A-CONSTRAINT)
 
 Para adicionar uma restrição, é usada a sintaxe de restrição de tabela. Por exemplo:
 
@@ -84,7 +84,7 @@ Este comando não faz nada em silêncio se a coluna já tiver uma restrição de
 
 A restrição será verificada imediatamente, portanto, os dados da tabela devem satisfazer a restrição antes de poderem ser adicionados.
 
-### 5.7.4. Remoção de uma Restrição [#](#DDL-ALTER-REMOVING-A-CONSTRAINT)
+#### 5.7.4. Remoção de uma Restrição [#](#DDL-ALTER-REMOVING-A-CONSTRAINT)
 
 Para remover uma restrição, você precisa saber seu nome. Se você deu um nome, é fácil. Caso contrário, o sistema atribuiu um nome gerado, que você precisa descobrir. O comando psql `\d tablename` pode ser útil aqui; outras interfaces também podem fornecer uma maneira de inspecionar os detalhes da tabela. Então, o comando é:
 
@@ -102,7 +102,7 @@ ALTER TABLE products ALTER COLUMN product_no DROP NOT NULL;
 
 Isso reflete a sintaxe `SET NOT NULL` para adicionar uma restrição não nula. Este comando não fará nada em silêncio se a coluna não tiver uma restrição não nula. (Lembre-se de que uma coluna pode ter no máximo uma restrição não nula, então nunca é ambíguo qual restrição esse comando afeta.)
 
-### 5.7.5. Alterar o valor padrão de uma coluna [#](#DDL-ALTER-COLUMN-DEFAULT)
+#### 5.7.5. Alterar o valor padrão de uma coluna [#](#DDL-ALTER-COLUMN-DEFAULT)
 
 Para definir um novo padrão para uma coluna, use um comando como:
 
@@ -120,7 +120,7 @@ ALTER TABLE products ALTER COLUMN price DROP DEFAULT;
 
 Isso é efetivamente o mesmo que definir o padrão como nulo. Como consequência, não é um erro descartar um padrão onde não havia sido definido, porque o padrão é implicitamente o valor nulo.
 
-### 5.7.6. Altering o Tipo de Dados de uma Coluna [#](#DDL-ALTER-COLUMN-TYPE)
+#### 5.7.6. Altering o Tipo de Dados de uma Coluna [#](#DDL-ALTER-COLUMN-TYPE)
 
 Para converter uma coluna para um tipo de dados diferente, use um comando como:
 
@@ -132,7 +132,7 @@ Isso só será possível se cada entrada existente na coluna puder ser convertid
 
 O PostgreSQL tentará converter o valor padrão da coluna (se houver) para o novo tipo, bem como quaisquer restrições que envolvam a coluna. Mas essas conversões podem falhar ou produzir resultados surpreendentes. É frequentemente melhor descartar quaisquer restrições na coluna antes de alterar seu tipo e, em seguida, adicionar restrições adequadamente modificadas posteriormente.
 
-### 5.7.7. Renomear uma coluna [#](#DDL-ALTER-RENAMING-COLUMN)
+#### 5.7.7. Renomear uma coluna [#](#DDL-ALTER-RENAMING-COLUMN)
 
 Para renomear uma coluna:
 
@@ -140,7 +140,7 @@ Para renomear uma coluna:
 ALTER TABLE products RENAME COLUMN product_no TO product_number;
 ```
 
-### 5.7.8. Renomear uma tabela [#](#DDL-ALTER-RENAMING-TABLE)
+#### 5.7.8. Renomear uma tabela [#](#DDL-ALTER-RENAMING-TABLE)
 
 Para renomear uma tabela:
 

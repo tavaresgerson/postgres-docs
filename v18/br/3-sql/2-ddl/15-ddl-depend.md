@@ -1,4 +1,4 @@
-## 5.15. Rastreamento de dependências [#](#DDL-DEPEND)
+### 5.15. Rastreamento de dependências [#](#DDL-DEPEND)
 
 Quando você cria estruturas de banco de dados complexas que envolvem muitas tabelas com restrições de chave estrangeira, visualizações, gatilhos, funções, etc., você implicitamente cria uma rede de dependências entre os objetos. Por exemplo, uma tabela com uma restrição de chave estrangeira depende da tabela que ela referencia.
 

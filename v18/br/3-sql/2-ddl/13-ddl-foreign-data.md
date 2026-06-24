@@ -1,4 +1,4 @@
-## 5.13. Dados estrangeiros [#](#DDL-FOREIGN-DATA)
+### 5.13. Dados estrangeiros [#](#DDL-FOREIGN-DATA)
 
 O PostgreSQL implementa partes da especificação SQL/MED, permitindo que você acesse dados que residem fora do PostgreSQL usando consultas SQL regulares. Esses dados são referenciados como *dados externos*. (Observe que esse uso não deve ser confundido com chaves externas, que são um tipo de restrição dentro do banco de dados.)
 

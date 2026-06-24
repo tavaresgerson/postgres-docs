@@ -129,6 +129,6 @@ Os scripts listados na variável `ISOLATION` são usados para testes que enfatiz
 
 `TAP_TESTS` permite o uso de testes TAP. Os dados de cada execução estão presentes em um subdiretório denominado `tmp_check/`. Consulte também [Seção 31.4](regress-tap.md "31.4. TAP Tests") para mais detalhes.
 
-### DICA
+DICA
 
 A maneira mais fácil de criar os arquivos esperados é criar arquivos vazios, depois realizar uma execução de teste (que, claro, reportará diferenças). Inspecione os arquivos de resultado reais encontrados no diretório `results/` (para testes em `REGRESS`), ou no diretório `output_iso/results/` (para testes em `ISOLATION`), e depois copie-os para `expected/` se eles corresponderem ao que você espera do teste.

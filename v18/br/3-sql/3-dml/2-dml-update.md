@@ -1,4 +1,4 @@
-## 6.2. Atualização de Dados [#](#DML-UPDATE)
+### 6.2. Atualização de Dados [#](#DML-UPDATE)
 
 A modificação de dados que já estão no banco de dados é conhecida como atualização. Você pode atualizar linhas individuais, todas as linhas de uma tabela ou um subconjunto de todas as linhas. Cada coluna pode ser atualizada separadamente; as outras colunas não são afetadas.
 

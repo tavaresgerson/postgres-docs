@@ -1,8 +1,8 @@
-## 7.6. `LIMIT` e `OFFSET` [#](#QUERIES-LIMIT)
+### 7.6. `LIMIT` e `OFFSET` [#](#QUERIES-LIMIT)
 
 `LIMIT` e `OFFSET` permitem que você retorne apenas uma parte das linhas geradas pelo resto da consulta:
 
-```
+```sql
 SELECT select_list
     FROM table_expression
     [ ORDER BY ... ]

@@ -808,15 +808,15 @@ O `%c` escape imprime um identificador de sessão quase único, composto por doi
 SELECT to_hex(trunc(EXTRACT(EPOCH FROM backend_start))::integer) || '.' || to_hex(pid) FROM pg_stat_activity;
 ```
 
-### DICA
+DICA
 
 Se você definir um valor não vazio para `log_line_prefix`, geralmente deve deixar seu último caractere como um espaço, para fornecer uma separação visual do resto da linha de registro. Um caractere de pontuação também pode ser usado.
 
-### DICA
+DICA
 
 O Syslog produz seu próprio rótulo de tempo e informações de ID de processo, então você provavelmente não quer incluir essas escapadas se estiver registrando no syslog.
 
-### DICA
+DICA
 
 O escape `%q` é útil ao incluir informações que estão disponíveis apenas no contexto da sessão (backend), como o nome do usuário ou do banco de dados. Por exemplo:
 

@@ -24,7 +24,7 @@ A principal vantagem de usar PL/Perl é que isso permite o uso, dentro de funç�
 
 Para instalar PL/Perl em um banco de dados específico, use `CREATE EXTENSION plperl`.
 
-### DICA
+DICA
 
 Se uma língua for instalada no `template1`, todas as bases de dados posteriormente criadas terão a língua instalada automaticamente.
 

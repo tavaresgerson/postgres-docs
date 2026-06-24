@@ -610,7 +610,7 @@ END;
 
 Quando o controle atingir a atribuição para `y`, ele falhará com um erro `division_by_zero`. Isso será detectado pela cláusula `EXCEPTION`. O valor retornado na declaração `RETURN` será o valor incrementado de `x`, mas os efeitos do comando `UPDATE` terão sido revertidos. O comando `INSERT` que precede o bloco, no entanto, não é revertido, portanto, o resultado final é que o banco de dados contém `Tom Jones` e não `Joe Jones`.
 
-### DICA
+DICA
 
 Um bloco que contém uma cláusula `EXCEPTION` é significativamente mais caro para entrar e sair do que um bloco sem uma. Portanto, não use `EXCEPTION` sem necessidade.
 

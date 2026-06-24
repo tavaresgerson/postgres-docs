@@ -1,4 +1,4 @@
-## 5.3. Colunas de Identidade [#](#DDL-IDENTITY-COLUMNS)
+### 5.3. Colunas de Identidade [#](#DDL-IDENTITY-COLUMNS)
 
 Uma coluna de identidade é uma coluna especial que é gerada automaticamente a partir de uma sequência implícita. Ela pode ser usada para gerar valores de chave.
 

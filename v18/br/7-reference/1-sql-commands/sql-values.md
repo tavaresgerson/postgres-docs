@@ -90,7 +90,7 @@ SELECT * FROM machines
 WHERE ip_address IN (VALUES('192.168.0.1'::inet), ('192.168.0.10'), ('192.168.1.43'));
 ```
 
-### DICA
+DICA
 
 Para testes simples de `IN`, é melhor confiar na forma de (functions-comparisons.md#FUNCTIONS-COMPARISONS-IN-SCALAR "9.25.1. IN") da lista de escalares `IN` do que escrever uma consulta `VALUES` como mostrado acima. O método de lista de escalares exige menos escrita e é frequentemente mais eficiente.
 

@@ -1,4 +1,4 @@
-## 7.2. Expressões de tabela [#](#QUERIES-TABLE-EXPRESSIONS)
+### 7.2. Expressões de tabela [#](#QUERIES-TABLE-EXPRESSIONS)
 
 * [7.2.1. A cláusula `FROM`](queries-table-expressions.md#QUERIES-FROM)
 * [7.2.2. A cláusula `WHERE`](queries-table-expressions.md#QUERIES-WHERE)
@@ -10,7 +10,7 @@ Uma expressão de tabela calcula uma tabela. A expressão de tabela contém uma 
 
 As cláusulas opcionais `WHERE`, `GROUP BY` e `HAVING` na expressão de tabela especificam um pipeline de transformações sucessivas realizadas na tabela derivada na cláusula `FROM`. Todas essas transformações produzem uma tabela virtual que fornece as linhas que são passadas para a lista de seleção para calcular as linhas de saída da consulta.
 
-### 7.2.1. A Cláusula `FROM` [#](#QUERIES-FROM)
+#### 7.2.1. A Cláusula `FROM` [#](#QUERIES-FROM)
 
 A cláusula `FROM`(sql-select.md#SQL-FROM "FROM Clause") deriva uma tabela a partir de uma ou mais outras tabelas, fornecidas em uma lista de referência de tabela separada por vírgula.
 
@@ -24,7 +24,7 @@ Quando uma referência de tabela nomeia uma tabela que é a tabela principal de 
 
 Em vez de escrever `ONLY` antes do nome da tabela, você pode escrever `*` após o nome da tabela para especificar explicitamente que as tabelas descendentes são incluídas. Não há uma razão real para usar essa sintaxe mais, porque a busca de tabelas descendentes é agora sempre o comportamento padrão. No entanto, é suportada para compatibilidade com versões mais antigas.
 
-#### 7.2.1.1. Tabelas unidas [#](#QUERIES-JOIN)
+##### 7.2.1.1. Tabelas unidas [#](#QUERIES-JOIN)
 
 Uma tabela unificada é uma tabela derivada de outras duas (reais ou derivadas) de acordo com as regras do tipo de junção específico. As junções internas, externas e cruzadas estão disponíveis. A sintaxe geral de uma tabela unificada é
 
@@ -36,41 +36,22 @@ As junções de todos os tipos podem ser encadeadas ou aninhadas: ou *`T1`* e *`
 
 **Tipos de Inscrição**
 
-Join cruzado: ``` T1 CROSS JOIN T2
+Join cruzado:
+```sql
+T1 CROSS JOIN T2
 ```
 
-Para cada combinação possível de linhas de
-*`T1`* e
-*`T2`* (ou seja, um produto cartesiano),
-a tabela unificada conterá uma
-linha composta por todas as colunas de *`T1`*
-seguidas por todas as colunas de *`T2`*. Se
-as tabelas tiverem N e M linhas respectivamente, a tabela
-unificada terá N * M linhas.
+Para cada combinação possível de linhas de *`T1`* e *`T2`* (ou seja, um produto cartesiano), a tabela unificada conterá uma linha composta por todas as colunas de *`T1`* seguidas por todas as colunas de *`T2`*. Se as tabelas tiverem N e M linhas respectivamente, a tabela unificada terá N * M linhas.
 
-`FROM T1 CROSS JOIN
-T2` é equivalente a
-`FROM T1 INNER JOIN
-T2 ON TRUE` (veja abaixo).
-É também equivalente a
-`FROM T1,
-T2`.
+`FROM T1 CROSS JOIN T2` é equivalente a `FROM T1 INNER JOIN T2 ON TRUE` (veja abaixo). É também equivalente a `FROM T1, T2`.
 
 Nota
 
-Essa última equivalência não se aplica exatamente quando aparecem mais de duas tabelas, porque `JOIN` se liga mais fortemente do que vírgula. Por exemplo
-`FROM T1 CROSS JOIN
-T2 INNER JOIN T3
-ON condition`
-não é o mesmo que
-`FROM T1,
-T2 INNER JOIN T3
-ON condition`
-porque o *`condition`* pode
-referenciar *`T1`* no primeiro caso, mas não
-no segundo.
+Essa última equivalência não se aplica exatamente quando aparecem mais de duas tabelas, porque `JOIN` se liga mais fortemente do que vírgula. Por exemplo `FROM T1 CROSS JOIN T2 INNER JOIN T3 ON condition` não é o mesmo que `FROM T1, T2 INNER JOIN T3 ON condition` porque o *`condition`* pode referenciar *`T1`* no primeiro caso, mas não no segundo.
 
-Conexões qualificadas: ```
+Conexões qualificadas: 
+
+```sql
 T1 { [INNER] | { LEFT | RIGHT | FULL } [OUTER] } JOIN T2 ON boolean_expression
 T1 { [INNER] | { LEFT | RIGHT | FULL } [OUTER] } JOIN T2 USING ( join column list )
 T1 NATURAL { [INNER] | { LEFT | RIGHT | FULL } [OUTER] } JOIN T2
@@ -82,13 +63,13 @@ A condição de junção é especificada na cláusula `ON` ou `USING`, ou implic
 
 Os tipos possíveis de junção qualificada são:
 
-`INNER JOIN` :   Para cada linha R1 de T1, a tabela unificada tem uma linha para cada linha de T2 que satisfaça a condição de junção com R1.
+`INNER JOIN`: Para cada linha R1 de T1, a tabela unificada tem uma linha para cada linha de T2 que satisfaça a condição de junção com R1.
 
-`LEFT OUTER JOIN` :   Primeiro, uma junção interna é realizada. Em seguida, para cada linha de T1 que não satisfaça a condição de junção com qualquer linha de T2, uma linha juncionada é adicionada com valores nulos nas colunas de T2. Assim, a tabela juncionada sempre tem pelo menos uma linha para cada linha de T1.
+`LEFT OUTER JOIN`: Primeiro, uma junção interna é realizada. Em seguida, para cada linha de T1 que não satisfaça a condição de junção com qualquer linha de T2, uma linha juncionada é adicionada com valores nulos nas colunas de T2. Assim, a tabela juncionada sempre tem pelo menos uma linha para cada linha de T1.
 
-`RIGHT OUTER JOIN` :   Primeiro, uma junção interna é realizada. Em seguida, para cada linha de T2 que não satisfaça a condição de junção com qualquer linha de T1, uma linha juncionada é adicionada com valores nulos nas colunas de T1. Isso é o contrário de uma junção esquerda: a tabela de resultado sempre terá uma linha para cada linha de T2.
+`RIGHT OUTER JOIN`: Primeiro, uma junção interna é realizada. Em seguida, para cada linha de T2 que não satisfaça a condição de junção com qualquer linha de T1, uma linha juncionada é adicionada com valores nulos nas colunas de T1. Isso é o contrário de uma junção esquerda: a tabela de resultado sempre terá uma linha para cada linha de T2.
 
-`FULL OUTER JOIN` :   Primeiro, uma junção interna é realizada. Em seguida, para cada linha de T1 que não satisfaça a condição de junção com qualquer linha de T2, uma linha juncionada é adicionada com valores nulos nas colunas de T2. Além disso, para cada linha de T2 que não satisfaça a condição de junção com qualquer linha de T1, uma linha juncionada com valores nulos nas colunas de T1 é adicionada.
+`FULL OUTER JOIN`: Primeiro, uma junção interna é realizada. Em seguida, para cada linha de T1 que não satisfaça a condição de junção com qualquer linha de T2, uma linha juncionada é adicionada com valores nulos nas colunas de T2. Além disso, para cada linha de T2 que não satisfaça a condição de junção com qualquer linha de T1, uma linha juncionada com valores nulos nas colunas de T1 é adicionada.
 
 A cláusula `ON` é o tipo mais geral de condição de junção: ela aceita uma expressão de valor booleano do mesmo tipo que é usada em uma cláusula `WHERE`. Um par de linhas de *`T1`* e *`T2`* se correspondem se a expressão `ON` for avaliada como verdadeira.
 
@@ -104,7 +85,7 @@ Nota
 
 Para montar isso, vamos supor que temos as tabelas `t1`:
 
-```
+```sql
  num | name
 -----+------
    1 | a
@@ -114,7 +95,7 @@ Para montar isso, vamos supor que temos as tabelas `t1`:
 
 e `t2`:
 
-```
+```sql
  num | value
 -----+-------
    1 | xxx
@@ -124,7 +105,7 @@ e `t2`:
 
 então obtemos os seguintes resultados para as várias junções:
 
-```
+```sql
 => SELECT * FROM t1 CROSS JOIN t2;
  num | name | num | value
 -----+------+-----+-------
@@ -196,7 +177,7 @@ então obtemos os seguintes resultados para as várias junções:
 
 A condição de junção especificada com `ON` também pode conter condições que não se relacionam diretamente com a junção. Isso pode ser útil para algumas consultas, mas precisa ser pensado cuidadosamente. Por exemplo:
 
-```
+```sql
 => SELECT * FROM t1 LEFT JOIN t2 ON t1.num = t2.num AND t2.value = 'xxx';
  num | name | num | value
 -----+------+-----+-------
@@ -208,7 +189,7 @@ A condição de junção especificada com `ON` também pode conter condições q
 
 Observe que, ao colocar a restrição na cláusula `WHERE`, obtém-se um resultado diferente:
 
-```
+```sql
 => SELECT * FROM t1 LEFT JOIN t2 ON t1.num = t2.num WHERE t2.value = 'xxx';
  num | name | num | value
 -----+------+-----+-------
@@ -218,19 +199,19 @@ Observe que, ao colocar a restrição na cláusula `WHERE`, obtém-se um resulta
 
 Isso ocorre porque uma restrição colocada na cláusula `ON` é processada *antes* do join, enquanto uma restrição colocada na cláusula `WHERE` é processada *depois* do join. Isso não importa com junções internas, mas é muito importante com junções externas.
 
-#### 7.2.1.2. Símbolos de tabela e coluna [#](#QUERIES-TABLE-ALIASES)
+##### 7.2.1.2. Símbolos de tabela e coluna [#](#QUERIES-TABLE-ALIASES)
 
 Um nome temporário pode ser dado a tabelas e referências complexas de tabela para serem usadas em referências à tabela derivada no restante da consulta. Isso é chamado de *alias de tabela*.
 
 Para criar um alias de tabela, escreva
 
-```
+```sql
 FROM table_reference AS alias
 ```
 
 ou
 
-```
+```sql
 FROM table_reference alias
 ```
 
@@ -238,32 +219,32 @@ A palavra-chave `AS` é ruído opcional. *`alias`* pode ser qualquer identificad
 
 Uma aplicação típica de aliases de tabela é atribuir identificadores curtos a nomes de tabelas longos para manter as cláusulas de junção legíveis. Por exemplo:
 
-```
+```sql
 SELECT * FROM some_very_long_table_name s JOIN another_fairly_long_name a ON s.id = a.num;
 ```
 
 O alias se torna o novo nome da referência da tabela, na medida em que se refere à consulta atual — não é permitido referir-se à tabela pelo nome original em qualquer outra parte da consulta. Assim, isso não é válido:
 
-```
+```sql
 SELECT * FROM my_table AS m WHERE my_table.a > 5;    -- wrong
 ```
 
 Os aliases de tabela são principalmente para conveniência de notação, mas é necessário usá-los ao unir uma tabela a si mesma, por exemplo:
 
-```
+```sql
 SELECT * FROM people AS mother JOIN people AS child ON mother.id = child.mother_id;
 ```
 
 As parênteses são usadas para resolver ambiguidades. No exemplo a seguir, a primeira declaração atribui o alias `b` à segunda instância de `my_table`, mas a segunda declaração atribui o alias ao resultado da junção:
 
-```
+```sql
 SELECT * FROM my_table AS a CROSS JOIN my_table AS b ...
 SELECT * FROM (my_table AS a CROSS JOIN my_table) AS b ...
 ```
 
 Outra forma de aliasing de tabela dá nomes temporários às colunas da tabela, bem como à própria tabela:
 
-```
+```sql
 FROM table_reference [AS] alias ( column1 [, column2 [, ...]] )
 ```
 
@@ -271,23 +252,23 @@ Se forem especificados menos aliases de coluna do que as colunas que a tabela re
 
 Quando um alias é aplicado à saída de uma cláusula `JOIN`, o alias oculta o(s) nome(s) original(is) dentro do `JOIN`. Por exemplo:
 
-```
+```sql
 SELECT a.* FROM my_table AS a JOIN your_table AS b ON ...
 ```
 
 é válido SQL, mas:
 
-```
+```sql
 SELECT a.* FROM (my_table AS a JOIN your_table AS b ON ...) AS c
 ```
 
 não é válido; o alias da tabela `a` não é visível fora do alias `c`.
 
-#### 7.2.1.3. Subconsultas [#](#QUERIES-SUBQUERIES)
+##### 7.2.1.3. Subconsultas [#](#QUERIES-SUBQUERIES)
 
 As subconsultas que especificam uma tabela derivada devem ser fechadas entre parênteses. Elas podem receber um nome de alias de tabela e, opcionalmente, nomes de alias de coluna (como em [Seção 7.2.1.2](queries-table-expressions.md#QUERIES-TABLE-ALIASES)). Por exemplo:
 
-```
+```sql
 FROM (SELECT * FROM table1) AS alias_name
 ```
 
@@ -295,7 +276,7 @@ Este exemplo é equivalente a `FROM table1 AS alias_name`. Casos mais interessan
 
 Uma subconsulta também pode ser uma lista `VALUES`:
 
-```
+```sql
 FROM (VALUES ('anne', 'smith'), ('bob', 'jones'), ('joe', 'blow'))
      AS names(first, last)
 ```
@@ -304,13 +285,13 @@ Novamente, um alias de tabela é opcional. Atribuir nomes de alias às colunas d
 
 De acordo com o padrão SQL, um nome de alias de tabela deve ser fornecido para uma subconsulta. O PostgreSQL permite que `AS` e o alias sejam omitidos, mas escrever um é uma boa prática em código SQL que pode ser exportado para outro sistema.
 
-#### 7.2.1.4. Funções de tabela [#](#QUERIES-TABLEFUNCTIONS)
+##### 7.2.1.4. Funções de tabela [#](#QUERIES-TABLEFUNCTIONS)
 
 As funções de tabela são funções que produzem um conjunto de linhas, composto por tipos de dados básicos (tipos escalares) ou tipos de dados compostos (linhas de tabela). Elas são usadas como uma tabela, uma visão ou uma subconsulta na cláusula `FROM` de uma consulta. As colunas devolvidas por funções de tabela podem ser incluídas nas cláusulas `SELECT`, `JOIN` ou `WHERE` da mesma maneira que as colunas de uma tabela, uma visão ou uma subconsulta.
 
 As funções da tabela também podem ser combinadas usando a sintaxe `ROWS FROM`, com os resultados retornados em colunas paralelas; o número de linhas de resultado, neste caso, é o maior resultado da função, com resultados menores preenchidos com valores nulos para corresponder.
 
-```
+```sql
 function_call [WITH ORDINALITY] [[AS] table_alias [(column_alias [, ... ])]]
 ROWS FROM( function_call [, ... ] ) [WITH ORDINALITY] [[AS] table_alias [(column_alias [, ... ])]]
 ```
@@ -319,7 +300,7 @@ Se a cláusula `WITH ORDINALITY` for especificada, uma coluna adicional do tipo 
 
 A função especial da tabela `UNNEST` pode ser chamada com qualquer número de parâmetros de matriz, e ela retorna um número correspondente de colunas, como se `UNNEST` ([Seção 9.19](functions-array.md "9.19. Array Functions and Operators")) tivesse sido chamada em cada parâmetro separadamente e combinada usando a construção `ROWS FROM`.
 
-```
+```sql
 UNNEST( array_expression [, ... ] ) [WITH ORDINALITY] [[AS] table_alias [(column_alias [, ... ])]]
 ```
 
@@ -329,7 +310,7 @@ Se não forem fornecidos aliases de coluna, para uma função que retorna um tip
 
 Alguns exemplos:
 
-```
+```sql
 CREATE TABLE foo (fooid int, foosubid int, fooname text);
 
 CREATE FUNCTION getfoo(int) RETURNS SETOF foo AS $$
@@ -352,7 +333,7 @@ SELECT * FROM vw_getfoo;
 
 Em alguns casos, é útil definir funções de tabela que possam retornar diferentes conjuntos de colunas dependendo de como são invocadas. Para suportar isso, a função de tabela pode ser declarada como retornando o pseudo-tipo `record` sem parâmetros `OUT`. Quando tal função é usada em uma consulta, a estrutura de linha esperada deve ser especificada na própria consulta, para que o sistema saiba como analisar e planejar a consulta. Essa sintaxe parece assim:
 
-```
+```sql
 function_call [AS] alias (column_definition [, ... ])
 function_call AS [alias] (column_definition [, ... ])
 ROWS FROM( ... function_call AS (column_definition [, ... ]) [, ... ] )
@@ -362,7 +343,7 @@ Quando não se utiliza a sintaxe `ROWS FROM()`, a lista *`column_definition`* su
 
 Considere este exemplo:
 
-```
+```sql
 SELECT *
     FROM dblink('dbname=mydb', 'SELECT proname, prosrc FROM pg_proc')
       AS t1(proname name, prosrc text)
@@ -373,7 +354,7 @@ A função [dblink](contrib-dblink-function.md) (parte do módulo [dblink](dblin
 
 Este exemplo usa `ROWS FROM`:
 
-```
+```sql
 SELECT *
 FROM ROWS FROM
     (
@@ -392,7 +373,7 @@ ORDER BY p;
 
 Ele une duas funções em um único alvo `FROM`. `json_to_recordset()` é instruído a retornar duas colunas, a primeira `integer` e a segunda `text`. O resultado de `generate_series()` é usado diretamente. A cláusula `ORDER BY` ordena os valores das colunas como inteiros.
 
-#### 7.2.1.5. `LATERAL` Subconsultas [#](#QUERIES-LATERAL)
+##### 7.2.1.5. `LATERAL` Subconsultas [#](#QUERIES-LATERAL)
 
 As subconsultas que aparecem em `FROM` podem ser precedidas pela palavra-chave `LATERAL`. Isso permite que elas refiram-se a colunas fornecidas por itens anteriores em `FROM`. (Sem `LATERAL`, cada subconsulta é avaliada de forma independente e, portanto, não pode fazer referência cruzada a qualquer outro item em `FROM`.)
 
@@ -404,19 +385,19 @@ Quando um item `FROM` contém referências cruzadas `LATERAL`, a avaliação é 
 
 Um exemplo trivial de `LATERAL` é
 
-```
+```sql
 SELECT * FROM foo, LATERAL (SELECT * FROM bar WHERE bar.id = foo.bar_id) ss;
 ```
 
 Isso não é especialmente útil, pois tem exatamente o mesmo resultado que o mais convencional
 
-```
+```sql
 SELECT * FROM foo, bar WHERE bar.id = foo.bar_id;
 ```
 
 `LATERAL` é principalmente útil quando a coluna cruzada é necessária para calcular as(s) linha(s) a serem unidas. Uma aplicação comum é fornecer um valor de argumento para uma função que retorna um conjunto. Por exemplo, supondo que `vertices(polygon)` retorne o conjunto de vértices de um polígono, poderíamos identificar vértices próximos uns dos outros de polígonos armazenados em uma tabela com:
 
-```
+```sql
 SELECT p1.id, p2.id, v1, v2
 FROM polygons p1, polygons p2,
      LATERAL vertices(p1.poly) v1,
@@ -426,7 +407,7 @@ WHERE (v1 <-> v2) < 10 AND p1.id != p2.id;
 
 Essa consulta também poderia ser escrita
 
-```
+```sql
 SELECT p1.id, p2.id, v1, v2
 FROM polygons p1 CROSS JOIN LATERAL vertices(p1.poly) v1,
      polygons p2 CROSS JOIN LATERAL vertices(p2.poly) v2
@@ -437,17 +418,17 @@ ou em várias outras formulações equivalentes. (Como já mencionado, a palavra
 
 É frequentemente especialmente útil `LEFT JOIN` para uma subconsulta `LATERAL`, de modo que as linhas de origem apareçam no resultado mesmo que a subconsulta `LATERAL` não produza nenhuma linha para elas. Por exemplo, se `get_product_names()` retorna os nomes dos produtos fabricados por um fabricante, mas alguns fabricantes em nossa tabela atualmente não fabricam nenhum produto, podemos descobrir quais são esses:
 
-```
+```sql
 SELECT m.name
 FROM manufacturers m LEFT JOIN LATERAL get_product_names(m.id) pname ON true
 WHERE pname IS NULL;
 ```
 
-### 7.2.2. A cláusula `WHERE` [#](#QUERIES-WHERE)
+#### 7.2.2. A cláusula `WHERE` [#](#QUERIES-WHERE)
 
 A sintaxe da cláusula `WHERE`(sql-select.md#SQL-WHERE "WHERE Clause") é
 
-```
+```sql
 WHERE search_condition
 ```
 
@@ -459,19 +440,19 @@ Nota
 
 A condição de junção de uma junção interna pode ser escrita na cláusula `WHERE` ou na cláusula `JOIN`. Por exemplo, essas expressões de tabela são equivalentes:
 
-```
+```sql
 FROM a, b WHERE a.id = b.id AND b.val > 5
 ```
 
 e:
 
-```
+```sql
 FROM a INNER JOIN b ON (a.id = b.id) WHERE b.val > 5
 ```
 
 ou talvez até:
 
-```
+```sql
 FROM a NATURAL JOIN b WHERE b.val > 5
 ```
 
@@ -479,7 +460,7 @@ Qual desses você usa é principalmente uma questão de estilo. A sintaxe `JOIN`
 
 Aqui estão alguns exemplos de cláusulas `WHERE`:
 
-```
+```sql
 SELECT ... FROM fdt WHERE c1 > 5
 
 SELECT ... FROM fdt WHERE c1 IN (1, 2, 3)
@@ -495,11 +476,11 @@ SELECT ... FROM fdt WHERE EXISTS (SELECT c1 FROM t2 WHERE c2 > fdt.c1)
 
 `fdt` é a tabela derivada na cláusula `FROM`. As linhas que não atendem à condição de busca da cláusula `WHERE` são eliminadas de `fdt`. Observe o uso de subconsultas escalares como expressões de valor. Assim como qualquer outra consulta, as subconsultas podem empregar expressões complexas de tabela. Observe também como `fdt` é referenciado nas subconsultas. Qualificar `c1` como `fdt.c1` é necessário apenas se `c1` também é o nome de uma coluna na tabela de entrada derivada da subconsulta. Mas qualificar o nome da coluna adiciona clareza mesmo quando não é necessário. Este exemplo mostra como o escopo de nomeação de coluna de uma consulta externa se estende para suas consultas internas.
 
-### 7.2.3. As cláusulas `GROUP BY` e `HAVING` [#](#QUERIES-GROUP)
+#### 7.2.3. As cláusulas `GROUP BY` e `HAVING` [#](#QUERIES-GROUP)
 
 Após passar pelo filtro `WHERE`, a tabela de entrada derivada pode ser sujeita a agrupamento, usando a cláusula `GROUP BY`, e eliminação de linhas de grupo usando a cláusula `HAVING`.
 
-```
+```sql
 SELECT select_list
     FROM ...
     [WHERE ...]
@@ -508,7 +489,7 @@ SELECT select_list
 
 A cláusula `GROUP BY`(sql-select.md#SQL-GROUPBY "GROUP BY Clause") é usada para agrupar as linhas de uma tabela que possuem os mesmos valores em todas as colunas listadas. A ordem em que as colunas são listadas não importa. O efeito é combinar cada conjunto de linhas com valores comuns em uma única linha de grupo que representa todas as linhas do grupo. Isso é feito para eliminar a redundância na saída e/ou calcular agregados que se aplicam a esses grupos. Por exemplo:
 
-```
+```sql
 => SELECT * FROM test1;
  x | y
 ---+---
@@ -531,7 +512,7 @@ Na segunda consulta, não poderíamos ter escrito `SELECT * FROM test1 GROUP BY 
 
 Em geral, se uma tabela for agrupada, as colunas que não estão listadas em `GROUP BY` não podem ser referenciadas, exceto em expressões agregadas. Um exemplo com expressões agregadas é:
 
-```
+```sql
 => SELECT x, sum(y) FROM test1 GROUP BY x;
  x | sum
 ---+-----
@@ -543,13 +524,13 @@ Em geral, se uma tabela for agrupada, as colunas que não estão listadas em `GR
 
 Aqui `sum` é uma função agregada que calcula um único valor sobre o grupo inteiro. Mais informações sobre as funções agregadas disponíveis podem ser encontradas em [Seção 9.21](functions-aggregate.md).
 
-### DICA
+DICA
 
 O agrupamento sem expressões agregadas calcula efetivamente o conjunto de valores distintos em uma coluna. Isso também pode ser alcançado usando a cláusula `DISTINCT` (consulte [Seção 7.3.3](queries-select-lists.md#QUERIES-DISTINCT)).
 
 Aqui está outro exemplo: calcula as vendas totais para cada produto (em vez das vendas totais de todos os produtos):
 
-```
+```sql
 SELECT product_id, p.name, (sum(s.units) * p.price) AS sales
     FROM products p LEFT JOIN sales s USING (product_id)
     GROUP BY product_id, p.name, p.price;
@@ -563,7 +544,7 @@ Em SQL estrito, `GROUP BY` pode agrupar apenas por colunas da tabela de origem, 
 
 Se uma tabela tiver sido agrupada usando `GROUP BY`, mas apenas certos grupos interessam, a cláusula `HAVING` pode ser usada, de forma semelhante a uma cláusula `WHERE`, para eliminar grupos do resultado. A sintaxe é:
 
-```
+```sql
 SELECT select_list FROM ... [WHERE ...] GROUP BY ... HAVING boolean_expression
 ```
 
@@ -571,7 +552,7 @@ As expressões na cláusula `HAVING` podem se referir tanto a expressões agrupa
 
 Exemplo:
 
-```
+```sql
 => SELECT x, sum(y) FROM test1 GROUP BY x HAVING sum(y) > 3;
  x | sum
 ---+-----
@@ -589,7 +570,7 @@ Exemplo:
 
 Mais uma vez, um exemplo mais realista:
 
-```
+```sql
 SELECT product_id, p.name, (sum(s.units) * (p.price - p.cost)) AS profit
     FROM products p LEFT JOIN sales s USING (product_id)
     WHERE s.date > CURRENT_DATE - INTERVAL '4 weeks'
@@ -601,11 +582,11 @@ No exemplo acima, a cláusula `WHERE` está selecionando linhas por uma coluna q
 
 Se uma consulta contiver chamadas a funções agregadas, mas nenhuma cláusula `GROUP BY`, o agrupamento ainda ocorre: o resultado é uma única linha de grupo (ou talvez nenhuma linha, se a única linha for então eliminada por `HAVING`). O mesmo é verdadeiro se contiver uma cláusula `HAVING`, mesmo sem quaisquer chamadas a funções agregadas ou cláusula `GROUP BY`.
 
-### 7.2.4. `GROUPING SETS`, `CUBE` e `ROLLUP` [#](#QUERIES-GROUPING-SETS)
+#### 7.2.4. `GROUPING SETS`, `CUBE` e `ROLLUP` [#](#QUERIES-GROUPING-SETS)
 
 Operações de agrupamento mais complexas do que as descritas acima são possíveis usando o conceito de *conjuntos de agrupamento*. Os dados selecionados pelas cláusulas `FROM` e `WHERE` são agrupados separadamente por cada conjunto de agrupamento especificado, agregados calculados para cada grupo, da mesma forma que para as cláusulas simples `GROUP BY`, e os resultados são então retornados. Por exemplo:
 
-```
+```sql
 => SELECT * FROM items_sold;
  brand | size | sales
 -------+------+-------
@@ -632,13 +613,13 @@ As referências às colunas ou expressões de agrupamento são substituídas por
 
 Uma notação abreviada é fornecida para especificar dois tipos comuns de conjunto de agrupamento. Uma cláusula na forma
 
-```
+```sql
 ROLLUP ( e1, e2, e3, ... )
 ```
 
 representa a lista dada de expressões e todos os prefixos da lista, incluindo a lista vazia; assim, é equivalente a
 
-```
+```sql
 GROUPING SETS (
     ( e1, e2, e3, ... ),
     ...
@@ -652,19 +633,19 @@ Isso é comumente usado para análise de dados hierárquicos; por exemplo, salá
 
 Uma cláusula na forma
 
-```
+```sql
 CUBE ( e1, e2, ... )
 ```
 
 representa a lista dada e todos os seus subconjuntos possíveis (ou seja, o conjunto de potência). Assim
 
-```
+```sql
 CUBE ( a, b, c )
 ```
 
 é equivalente a
 
-```
+```sql
 GROUPING SETS (
     ( a, b, c ),
     ( a, b    ),
@@ -679,13 +660,13 @@ GROUPING SETS (
 
 Os elementos individuais de uma cláusula `CUBE` ou `ROLLUP` podem ser expressões individuais ou sublistas de elementos entre parênteses. Neste último caso, as sublistas são tratadas como unidades únicas para os fins de geração dos conjuntos de agrupamento individual. Por exemplo:
 
-```
+```sql
 CUBE ( (a, b), (c, d) )
 ```
 
 é equivalente a
 
-```
+```sql
 GROUPING SETS (
     ( a, b, c, d ),
     ( a, b       ),
@@ -696,13 +677,13 @@ GROUPING SETS (
 
 e
 
-```
+```sql
 ROLLUP ( a, (b, c), d )
 ```
 
 é equivalente a
 
-```
+```sql
 GROUPING SETS (
     ( a, b, c, d ),
     ( a, b, c    ),
@@ -715,13 +696,13 @@ Os construtos `CUBE` e `ROLLUP` podem ser usados diretamente na cláusula `GROUP
 
 Se vários itens de agrupamento forem especificados em uma única cláusula `GROUP BY`, a lista final dos conjuntos de agrupamento é o produto cartesiano dos itens individuais. Por exemplo:
 
-```
+```sql
 GROUP BY a, CUBE (b, c), GROUPING SETS ((d), (e))
 ```
 
 é equivalente a
 
-```
+```sql
 GROUP BY GROUPING SETS (
     (a, b, c, d), (a, b, c, e),
     (a, b, d),    (a, b, e),
@@ -732,13 +713,13 @@ GROUP BY GROUPING SETS (
 
 Ao especificar vários itens agrupados juntos, o conjunto final de conjuntos de agrupamento pode conter duplicatas. Por exemplo:
 
-```
+```sql
 GROUP BY ROLLUP (a, b), ROLLUP (a, c)
 ```
 
 é equivalente a
 
-```
+```sql
 GROUP BY GROUPING SETS (
     (a, b, c),
     (a, b),
@@ -754,13 +735,13 @@ GROUP BY GROUPING SETS (
 
 Se esses duplicados forem indesejados, eles podem ser removidos usando a cláusula `DISTINCT` diretamente no `GROUP BY`. Portanto:
 
-```
+```sql
 GROUP BY DISTINCT ROLLUP (a, b), ROLLUP (a, c)
 ```
 
 é equivalente a
 
-```
+```sql
 GROUP BY GROUPING SETS (
     (a, b, c),
     (a, b),
@@ -776,7 +757,7 @@ Nota
 
 O construtor `(a, b)` é normalmente reconhecido em expressões como um [construtor de linha](sql-expressions.md#SQL-SYNTAX-ROW-CONSTRUCTORS "4.2.13. Row Constructors"). Dentro da cláusula `GROUP BY`, isso não se aplica nos níveis superiores das expressões, e `(a, b)` é analisado como uma lista de expressões, conforme descrito acima. Se, por algum motivo, você *precisa* de um construtor de linha em uma expressão de agrupamento, use `ROW(a, b)`.
 
-### 7.2.5. Processamento de função de janela [#](#QUERIES-WINDOW)
+#### 7.2.5. Processamento de função de janela [#](#QUERIES-WINDOW)
 
 Se a consulta contiver quaisquer funções de janela (consulte [Seção 3.5](tutorial-window.md), [Seção 9.22](functions-window.md) e [Seção 4.2.8](sql-expressions.md#SYNTAX-WINDOW-FUNCTIONS)), essas funções são avaliadas após qualquer agrupamento, agregação e filtragem de `HAVING` ser realizada. Ou seja, se a consulta usa quaisquer agregados, `GROUP BY` ou `HAVING`, então as linhas vistas pelas funções de janela são as linhas de grupo em vez das linhas originais da tabela de `FROM`/`WHERE`.
 

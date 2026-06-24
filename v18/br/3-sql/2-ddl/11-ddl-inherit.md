@@ -1,4 +1,4 @@
-## 5.11. Herança [#](#DDL-INHERIT)
+### 5.11. Herança [#](#DDL-INHERIT)
 
 * [5.11.1. Observações](ddl-inherit.md#DDL-INHERIT-CAVEATS)
 
@@ -132,7 +132,7 @@ As consultas herdadas realizam verificações de permissão de acesso apenas na 
 
 As tabelas externas (consulte a [Seção 5.13](ddl-foreign-data.md)) também podem fazer parte de hierarquias de herança, seja como tabelas pai ou filho, assim como as tabelas regulares podem. Se uma tabela externa faz parte de uma hierarquia de herança, então quaisquer operações que não sejam suportadas pela tabela externa também não são suportadas na hierarquia como um todo.
 
-### 5.11.1. Avisos [#](#DDL-INHERIT-CAVEATS)
+#### 5.11.1. Avisos [#](#DDL-INHERIT-CAVEATS)
 
 Observe que nem todos os comandos SQL podem funcionar em hierarquias de herança. Os comandos que são usados para consulta de dados, modificação de dados ou modificação de esquema (por exemplo, `SELECT`, `UPDATE`, `DELETE`, a maioria das variantes de `ALTER TABLE`, mas não `INSERT` ou `ALTER TABLE ... RENAME`) geralmente têm como padrão incluir tabelas de filhos e suportar a notação `ONLY` para excluí-los. A maioria dos comandos que realizam manutenção e ajuste de banco de dados (por exemplo, `REINDEX`) funcionam apenas em tabelas individuais e físicas e não suportam a recursão em hierarquias de herança. No entanto, tanto os comandos `VACUUM` quanto `ANALYZE` têm como padrão incluir tabelas de filhos e a notação `ONLY` é suportada para permitir que elas sejam excluídas. O comportamento respectivo de cada comando individual é documentado em sua página de referência ([Comandos SQL](sql-commands.md "SQL Commands")).
 

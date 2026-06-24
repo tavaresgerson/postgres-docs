@@ -1,8 +1,8 @@
-## 7.7. `VALUES` Listas [#](#QUERIES-VALUES)
+### 7.7. `VALUES` Listas [#](#QUERIES-VALUES)
 
 `VALUES` fornece uma maneira de gerar uma "tabela constante" que pode ser usada em uma consulta sem a necessidade de criar e preencher uma tabela no disco. A sintaxe é
 
-```
+```sql
 VALUES ( expression [, ...] ) [, ...]
 ```
 
@@ -10,13 +10,13 @@ Cada lista entre parênteses de expressões gera uma linha na tabela. Todas as l
 
 Como exemplo:
 
-```
+```sql
 VALUES (1, 'one'), (2, 'two'), (3, 'three');
 ```
 
 retornará uma tabela com duas colunas e três linhas. É efetivamente equivalente a:
 
-```
+```sql
 SELECT 1 AS column1, 'one' AS column2
 UNION ALL
 SELECT 2, 'two'
@@ -26,7 +26,7 @@ SELECT 3, 'three';
 
 Por padrão, o PostgreSQL atribui os nomes `column1`, `column2`, etc., às colunas de uma tabela `VALUES`. Os nomes das colunas não são especificados pelo padrão SQL e diferentes sistemas de banco de dados fazem isso de maneira diferente, então geralmente é melhor substituir os nomes padrão com uma lista de aliases de tabela, como este:
 
-```
+```sql
 => SELECT * FROM (VALUES (1, 'one'), (2, 'two'), (3, 'three')) AS t (num,letter);
  num | letter
 -----+--------
@@ -38,7 +38,7 @@ Por padrão, o PostgreSQL atribui os nomes `column1`, `column2`, etc., às colun
 
 Sintaticamente, `VALUES` seguido de listas de expressão é tratado como equivalente a:
 
-```
+```sql
 SELECT select_list FROM table_expression
 ```
 

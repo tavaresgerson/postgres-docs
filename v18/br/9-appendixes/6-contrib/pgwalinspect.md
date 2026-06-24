@@ -11,7 +11,7 @@ Nota
 
 As funções `pg_walinspect` são frequentemente chamadas usando um argumento LSN que especifica a localização em que um registro WAL conhecido de interesse *começa*. No entanto, algumas funções, como `pg_logical_emit_message`, retornam o LSN *após* o registro que foi inserido.
 
-### DICA
+DICA
 
 Todas as funções do `pg_walinspect` que mostram informações sobre registros que estão dentro de um determinado intervalo de LSN são permissivas em relação ao recebimento de argumentos *`end_lsn`* que estão após o LSN atual do servidor. Usar um *`end_lsn`* “do futuro” não causará um erro.
 
@@ -49,7 +49,7 @@ Muita das informações exibidas aqui correspondem à saída que `pg_get_wal_rec
 
 Os parâmetros `reltablespace`, `reldatabase` e `relfilenode` referem-se a [`pg_tablespace`](catalog-pg-tablespace.md "52.56. pg_tablespace").`oid`, [`pg_database`](catalog-pg-database.md "52.15. pg_database").`oid` e [`pg_class`](catalog-pg-class.md "52.11. pg_class").`relfilenode`, respectivamente. O campo `relforknumber` é o número de bifurcação dentro da relação para a referência do bloco; consulte `common/relpath.h` para detalhes.
 
-### DICA
+DICA
 
 A função `pg_filenode_relation` (consulte a [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-DBLOCATION)) pode ajudá-lo a determinar qual relação foi modificada durante a execução original.
 

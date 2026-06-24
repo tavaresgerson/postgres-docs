@@ -7,7 +7,7 @@
 
 Esta seção descreve as expressões condicionais compatíveis com SQL disponíveis no PostgreSQL.
 
-### DICA
+DICA
 
 Se suas necessidades vão além das capacidades dessas expressões condicionais, você pode querer considerar a escrita de uma função no lado do servidor em uma linguagem de programação mais expressiva.
 

@@ -182,7 +182,7 @@ As construções de índice paralelas podem se beneficiar do aumento de `mainten
 
 Definir um valor para `parallel_workers` via [`ALTER TABLE`](sql-altertable.md "ALTER TABLE") controla diretamente quantos processos de trabalhador paralelo serão solicitados por um `CREATE INDEX` contra a tabela. Isso elimina completamente o modelo de custo e impede que `maintenance_work_mem` afete quantos trabalhadores paralelos são solicitados. Definir `parallel_workers` para 0 via `ALTER TABLE` desabilitará a construção de índices paralelos na tabela em todos os casos.
 
-### DICA
+DICA
 
 Você pode querer redefinir `parallel_workers` após configurá-lo como parte da configuração de uma construção de índice. Isso evita mudanças acidentais nos planos de consulta, uma vez que `parallel_workers` afeta *todas* as varreduras paralelas de tabela.
 

@@ -126,7 +126,7 @@ Observe que as restrições de exclusão não são suportadas como arbitradores 
 
 Observe que, atualmente, não é suportada para a cláusula `ON CONFLICT DO UPDATE` de uma `INSERT` aplicada a uma tabela particionada para atualizar a chave de partição de uma linha em conflito, de modo que seja necessário mover a linha para uma nova partição.
 
-### DICA
+DICA
 
 É frequentemente preferível usar a inferência de índice único em vez de nomear uma restrição diretamente usando `ON CONFLICT ON CONSTRAINT` *`constraint_name`*. A inferência continuará a funcionar corretamente quando o índice subjacente for substituído por outro índice mais ou menos equivalente de maneira sobreposta, por exemplo, ao usar `CREATE UNIQUE INDEX ... CONCURRENTLY` antes de descartar o índice que está sendo substituído.
 

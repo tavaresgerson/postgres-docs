@@ -38,6 +38,6 @@ postgres   27093  0.0  0.0  30096  2752 ?        Ss   11:34   0:00 postgres: ser
 
 Se você desativou [update_process_title](runtime-config-logging.md#GUC-UPDATE-PROCESS-TITLE), o indicador de atividade não é atualizado; o título do processo é definido apenas uma vez quando um novo processo é iniciado. Em algumas plataformas, isso economiza uma quantidade mensurável de sobrecarga por comando; em outras, é insignificante.
 
-### DICA
+DICA
 
 O Solaris exige um manuseio especial. Você deve usar `/usr/ucb/ps`, em vez de `/bin/ps`. Além disso, você deve usar duas `w` flags, não apenas uma. Além disso, sua invocação original do comando `postgres` deve ter um display de status `ps` mais curto do que o fornecido por cada processo do servidor. Se você não fizer todas as três coisas, a saída `ps` para cada processo do servidor será a linha de comando original `postgres`.

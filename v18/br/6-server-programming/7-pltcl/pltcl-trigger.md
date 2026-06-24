@@ -28,7 +28,7 @@ As informações do gerenciador de gatilho são passadas para o corpo da funçã
 
 O valor de retorno de uma função de gatilho pode ser uma das strings `OK` ou `SKIP`, ou uma lista de pares de nome de coluna/valor. Se o valor de retorno for `OK`, a operação (`INSERT`/`UPDATE`/`DELETE`) que acionou o gatilho prosseguirá normalmente. `SKIP` indica ao gerente de gatilho que deve silenciar a operação para essa linha. Se for retornada uma lista, ela indica ao PL/Tcl que deve retornar uma linha modificada ao gerente de gatilho; o conteúdo da linha modificada é especificado pelos nomes e valores das colunas na lista. Quaisquer colunas não mencionadas na lista são definidas como nulos. Retornar uma linha modificada é significativo apenas para gatilhos de nível de linha `BEFORE` `INSERT` ou `UPDATE`, para os quais a linha modificada será inserida em vez daquela dada em `$NEW`; ou para gatilhos de nível de linha `INSTEAD OF` `INSERT` ou `UPDATE` onde a linha retornada é usada como dados de origem para as cláusulas `INSERT RETURNING` ou `UPDATE RETURNING`. Em gatilhos de nível de linha `BEFORE` `DELETE` ou `INSTEAD OF` `DELETE`, retornar uma linha modificada tem o mesmo efeito que retornar `OK`, ou seja, a operação prossegue. O valor de retorno do gatilho é ignorado para todos os outros tipos de gatilhos.
 
-### DICA
+DICA
 
 A lista de resultados pode ser feita a partir de uma representação de matriz do tuplo modificado com o comando Tcl `array get`.
 

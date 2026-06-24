@@ -1,4 +1,4 @@
-## 5.1. Fundamentos da tabela [#](#DDL-BASICS)
+### 5.1. Fundamentos da tabela [#](#DDL-BASICS)
 
 Uma tabela em um banco de dados relacional é muito semelhante a uma tabela em papel: ela consiste em linhas e colunas. O número e a ordem das colunas são fixos, e cada coluna tem um nome. O número de linhas é variável — reflete quanto dados são armazenados em um momento dado. O SQL não oferece garantias sobre a ordem das linhas em uma tabela. Quando uma tabela é lida, as linhas aparecerão em uma ordem não especificada, a menos que a ordenação seja solicitada explicitamente. Isso é coberto em [Capítulo 7](queries.md). Além disso, o SQL não atribui identificadores únicos às linhas, portanto, é possível ter várias linhas completamente idênticas em uma tabela. Esta é uma consequência do modelo matemático que sustenta o SQL, mas geralmente não é desejável. Mais adiante neste capítulo, veremos como lidar com essa questão.
 
@@ -29,7 +29,7 @@ CREATE TABLE products (
 
 (O tipo `numeric` pode armazenar componentes fracionários, como seria típico em valores monetários.)
 
-### DICA
+DICA
 
 Quando você cria muitas tabelas inter-relacionadas, é prudente escolher um padrão de nomeação consistente para as tabelas e colunas. Por exemplo, há a opção de usar substantivos singulares ou plurais para os nomes das tabelas, ambos favorecidos por algum teórico ou outro.
 

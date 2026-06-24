@@ -1,4 +1,4 @@
-## 5.12. Divisão de tabela [#](#DDL-PARTITIONING)
+### 5.12. Divisão de tabela [#](#DDL-PARTITIONING)
 
 * [5.12.1. Visão geral](ddl-partitioning.md#DDL-PARTITIONING-OVERVIEW)
 * [5.12.2. Partição declarativa](ddl-partitioning.md#DDL-PARTITIONING-DECLARATIVE)
@@ -9,7 +9,7 @@
 
 O PostgreSQL suporta a partição básica de tabelas. Esta seção descreve por que e como implementar a partição como parte do projeto do seu banco de dados.
 
-### 5.12.1. Visão geral [#](#DDL-PARTITIONING-OVERVIEW)
+#### 5.12.1. Visão geral [#](#DDL-PARTITIONING-OVERVIEW)
 
 A partição refere-se à divisão de uma tabela grande em partes físicas menores. A partição pode oferecer vários benefícios:
 
@@ -30,7 +30,7 @@ Partitionamento de Hash [#](#DDL-PARTITIONING-OVERVIEW-HASH): A tabela é dividi
 
 Se a sua aplicação precisar usar outros tipos de particionamento que não estão listados acima, métodos alternativos, como herança e vistas `UNION ALL`, podem ser usados em vez disso. Esses métodos oferecem flexibilidade, mas não possuem alguns dos benefícios de desempenho do particionamento declarativo embutido.
 
-### 5.12.2. Partição Declarativa [#](#DDL-PARTITIONING-DECLARATIVE)
+#### 5.12.2. Partição Declarativa [#](#DDL-PARTITIONING-DECLARATIVE)
 
 O PostgreSQL permite que você declare que uma tabela é dividida em partições. A tabela que é dividida é referida como uma *tabela particionada*. A declaração inclui o *método de particionamento* conforme descrito acima, além de uma lista de colunas ou expressões a serem usadas como *chave de partição*.
 
@@ -42,7 +42,7 @@ Não é possível transformar uma tabela comum em uma tabela particionada ou vic
 
 As partições também podem ser [tabuletas estrangeiras](ddl-foreign-data.md), embora seja necessário bastante cuidado, pois é responsabilidade do usuário que o conteúdo da tabela estrangeira satisfaça a regra de partição. Há outras restrições também. Consulte [CREATE FOREIGN TABLE](sql-createforeigntable.md) para obter mais informações.
 
-#### 5.12.2.1. Exemplo [#](#DDL-PARTITIONING-DECLARATIVE-EXAMPLE)
+##### 5.12.2.1. Exemplo [#](#DDL-PARTITIONING-DECLARATIVE-EXAMPLE)
 
 Suponha que estamos construindo um banco de dados para uma grande empresa de sorvete. A empresa mede as temperaturas máximas todos os dias, bem como as vendas de sorvete em cada região. Concetualmente, queremos uma tabela como:
 
@@ -115,7 +115,7 @@ Não é necessário criar manualmente restrições de tabela que descrevam as co
 
 No exemplo acima, criaria uma nova partição a cada mês, então seria sábio escrever um script que gere o DDL necessário automaticamente.
 
-#### 5.12.2.2. Manutenção de Partições [#](#DDL-PARTITIONING-DECLARATIVE-MAINTENANCE)
+##### 5.12.2.2. Manutenção de Partições [#](#DDL-PARTITIONING-DECLARATIVE-MAINTENANCE)
 
 Normalmente, o conjunto de partições estabelecido ao definir a tabela inicialmente não é destinado a permanecer estático. É comum querer remover partições que contêm dados antigos e, periodicamente, adicionar novas partições para novos dados. Uma das vantagens mais importantes da partição é justamente permitir que essa tarefa, que de outra forma seria dolorosa, seja executada quase instantaneamente, manipulando a estrutura da partição, em vez de mover fisicamente grandes quantidades de dados.
 
@@ -188,7 +188,7 @@ ALTER INDEX measurement_city_id_logdate_key
 ...
 ```
 
-#### 5.12.2.3. Limitações [#](#DDL-PARTITIONING-DECLARATIVE-LIMITATIONS)
+##### 5.12.2.3. Limitações [#](#DDL-PARTITIONING-DECLARATIVE-LIMITATIONS)
 
 As seguintes limitações se aplicam a tabelas particionadas:
 
@@ -206,7 +206,7 @@ Como uma hierarquia de partição que consiste na tabela particionada e suas par
 * Usar `ONLY` para adicionar ou excluir uma restrição apenas na tabela particionada é suportado, desde que não existam partições. Uma vez que as partições existam, o uso de `ONLY` resultará em um erro para quaisquer restrições, exceto `UNIQUE` e `PRIMARY KEY`. Em vez disso, as restrições próprias das partições podem ser adicionadas e (se não estiverem presentes na tabela principal) excluídas.
 * Como uma tabela particionada não tem dados próprios, as tentativas de usar `TRUNCATE` `ONLY` em uma tabela particionada sempre retornarão um erro.
 
-### 5.12.3. Partição usando Herança [#](#DDL-PARTITIONING-USING-INHERITANCE)
+#### 5.12.3. Partição usando Herança [#](#DDL-PARTITIONING-USING-INHERITANCE)
 
 Embora a partição declarativa integrada seja adequada para a maioria dos casos de uso comuns, há algumas circunstâncias em que uma abordagem mais flexível pode ser útil. A partição pode ser implementada usando a herança de tabela, que permite várias funcionalidades que não são suportadas pela partição declarativa, como:
 
@@ -214,7 +214,7 @@ Embora a partição declarativa integrada seja adequada para a maioria dos casos
 * A herança de tabela permite a herança múltipla.
 * O particionamento declarativo só suporta particionamento de intervalo, lista e hash, enquanto que a herança de tabela permite que os dados sejam divididos da maneira que o usuário escolhe. (Observe, no entanto, que se a exclusão de restrição não for capaz de podar as tabelas filhas de forma eficaz, o desempenho da consulta pode ser ruim.)
 
-#### 5.12.3.1. Exemplo [#](#DDL-PARTITIONING-INHERITANCE-EXAMPLE)
+##### 5.12.3.1. Exemplo [#](#DDL-PARTITIONING-INHERITANCE-EXAMPLE)
 
 Este exemplo constrói uma estrutura de partição equivalente ao exemplo de partição declarativa acima. Use as seguintes etapas:
 

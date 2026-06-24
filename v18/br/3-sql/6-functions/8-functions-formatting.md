@@ -301,7 +301,7 @@ As funções de formatação do PostgreSQL fornecem um conjunto poderoso de ferr
 
 
 
-### DICA
+DICA
 
 `to_timestamp` e `to_date` existem para lidar com formatos de entrada que não podem ser convertidos por simples casting. Para a maioria dos formatos padrão de data/hora, simplesmente converter a string de origem para o tipo de dado necessário funciona e é muito mais fácil. Da mesma forma, `to_number` é desnecessário para representações numéricas padrão.
 
@@ -1171,7 +1171,7 @@ Se `FX` for especificado, um separador na string de modelo corresponde exatament
 * Um padrão de modelo `TZH` pode corresponder a um número assinado. Sem a opção `FX`, os sinais de menos podem ser ambíguos e poderiam ser interpretados como um separador. Essa ambiguidade é resolvida da seguinte forma: Se o número de separadores antes de `TZH` na string de modelo for menor que o número de separadores antes do sinal de menos na string de entrada, o sinal de menos é interpretado como parte de `TZH`. Caso contrário, o sinal de menos é considerado um separador entre valores. Por exemplo, `to_timestamp('2000 -10', 'YYYY TZH')` corresponde a `-10` até `TZH`, mas `to_timestamp('2000 -10', 'YYYY  TZH')` corresponde a `10` até `TZH`.
 * Texto comum é permitido em modelos `to_char` e será emitido literalmente. Você pode colocar uma substring em aspas duplas para forçar que seja interpretada como texto literal, mesmo que contenha padrões de modelo. Por exemplo, em `'"Hello Year "YYYY'`, o `YYYY` será substituído pelos dados do ano, mas o único `Y` em `Year` não será. Em `to_date`, `to_number` e `to_timestamp`, texto literal e strings com aspas duplas resultam na omissão do número de caracteres contidos na string; por exemplo, `"XX"` omite dois caracteres de entrada (seja ou não eles sejam `XX`).
 
-### DICA
+DICA
 
 Antes do PostgreSQL 12, era possível ignorar texto arbitrário na string de entrada usando caracteres não letra ou não dígito. Por exemplo, `to_timestamp('2000y6m1d', 'yyyy-MM-DD')` costumava funcionar. Agora, você só pode usar caracteres letra para esse propósito. Por exemplo, `to_timestamp('2000y6m1d', 'yyyytMMtDDt')` e `to_timestamp('2000y6m1d', 'yyyy"y"MM"m"DD"d"')` ignoram `y`, `m` e `d`.
 * Se você quiser ter uma citação dupla na saída, deve precedê-la com uma barra invertida, por exemplo, `'\"YYYY Month\"'`. Barras invertidas não são especiais de outra forma, exceto em strings com citações duplas. Dentro de uma string com citações duplas, uma barra invertida faz com que o próximo caractere seja tomado literalmente, o que quer que seja (mas isso não tem efeito especial a menos que o próximo caractere seja uma citação dupla ou outra barra invertida).

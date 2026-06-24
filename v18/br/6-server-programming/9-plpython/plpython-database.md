@@ -93,7 +93,7 @@ return len(rows) $$ LANGUAGE plpython3u;
 
 Os ponteiros são automaticamente descartados. Mas se você quiser liberar explicitamente todos os recursos mantidos por um ponteiro, use o método `close`. Uma vez fechado, um ponteiro não pode ser recuperado mais.
 
-### DICA
+DICA
 
 Não confunda objetos criados por `plpy.cursor` com cursor da DB-API conforme definido pela especificação da [API de banco de dados do Python](https://www.python.org/dev/peps/pep-0249/). Eles não têm nada em comum, exceto pelo nome.
 

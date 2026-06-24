@@ -275,7 +275,7 @@ SELECT '"foo"'::jsonb ? 'foo';
 
 Os objetos JSON são mais adequados do que os arrays para testar a contenção ou existência quando há muitos elementos ou chaves envolvidos, porque, ao contrário dos arrays, eles são otimizados internamente para pesquisa e não precisam ser pesquisados linearmente.
 
-### DICA
+DICA
 
 Como o conteúdo JSON é aninhado, uma consulta apropriada pode ignorar a seleção explícita de subobjetos. Como exemplo, suponha que tenhamos uma coluna `doc` contendo objetos no nível superior, com a maioria dos objetos contendo campos `tags` que contêm matrizes de subobjetos. Esta consulta encontra entradas nas quais subobjetos contendo tanto `"term":"paris"` quanto `"term":"food"` aparecem, ignorando quaisquer chaves desse tipo fora da matriz `tags`:
 

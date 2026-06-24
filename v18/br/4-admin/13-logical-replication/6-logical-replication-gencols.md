@@ -31,7 +31,7 @@ De fato, antes da versão 18.0, a replicação lógica não publica as colunas `
 
 Mas, replicar uma coluna gerada para uma coluna comum pode, às vezes, ser desejável.
 
-### DICA
+DICA
 
 Essa funcionalidade pode ser útil ao replicar dados para um banco de dados que não é do PostgreSQL via plugin de saída, especialmente se o banco de dados de destino não suportar colunas geradas.
 

@@ -1,10 +1,8 @@
-## 8.2. Tipos Monetários [#](#DATATYPE-MONEY)
+### 8.2. Tipos Monetários [#](#DATATYPE-MONEY)
 
 O tipo `money` armazena um valor monetário com precisão fracionária fixa; veja [Tabela 8.3](datatype-money.md#DATATYPE-MONEY-TABLE). A precisão fracionária é determinada pelo ajuste [lc_monetary](runtime-config-client.md#GUC-LC-MONETARY) do banco de dados. A faixa mostrada na tabela assume que há duas dígitos fracionários. A entrada é aceita em uma variedade de formatos, incluindo literais inteiros e de ponto flutuante, bem como formatação típica de moeda, como `'$1,000.00'`. A saída geralmente é na forma do último, mas depende do local.
 
 **Tabela 8.3. Tipos Monetários**
-
-
 
 <table border="1" class="table" summary="Monetary Types">
  <colgroup>
@@ -49,20 +47,11 @@ O tipo `money` armazena um valor monetário com precisão fracionária fixa; vej
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Como a saída deste tipo de dados é sensível ao local, pode não funcionar carregar os dados `money` em um banco de dados que tenha um conjunto diferente de `lc_monetary`. Para evitar problemas, antes de restaurar um dump em um novo banco de dados, certifique-se de que `lc_monetary` tenha o mesmo valor ou um valor equivalente ao do banco de dados que foi exportado.
 
 Os valores dos tipos de dados `numeric`, `int` e `bigint` podem ser convertidos para `money`. A conversão dos tipos de dados `real` e `double precision` pode ser feita por conversão para `numeric` primeiro, por exemplo:
 
-```
+```sql
 SELECT '12.34'::float8::numeric::money;
 ```
 
@@ -70,7 +59,7 @@ No entanto, isso não é recomendado. Números em ponto flutuante não devem ser
 
 Um valor de `money` pode ser convertido para `numeric` sem perda de precisão. A conversão para outros tipos pode potencialmente perder precisão, e também deve ser feita em duas etapas:
 
-```
+```sql
 SELECT '52093.89'::money::numeric::float8;
 ```
 

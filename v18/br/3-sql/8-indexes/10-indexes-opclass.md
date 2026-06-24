@@ -58,6 +58,6 @@ SELECT am.amname AS index_method,
     ORDER BY index_method, opfamily_name, opfamily_operator;
 ```
 
-### DICA
+DICA
 
 [psql](app-psql.md "psql") possui comandos `\dAc`, `\dAf` e `\dAo`, que oferecem versões um pouco mais sofisticadas dessas consultas.

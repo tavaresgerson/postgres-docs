@@ -51,7 +51,7 @@ Pode ser substituído definindo [*`lc_collate`](sql-createdatabase.md#CREATE-DAT
 
 Se [*`locale_provider`](sql-createdatabase.md#CREATE-DATABASE-LOCALE-PROVIDER) é [[PH_LNK_49]], então *`builtin`* ou *`locale`* deve ser especificado e definido como `C`, `C.UTF-8` ou `PG_UNICODE_FAST`.
 
-### DICA
+DICA
 
 Os outros ajustes de localização [lc_messages](runtime-config-client.md#GUC-LC-MESSAGES), [lc_monetary](runtime-config-client.md#GUC-LC-MONETARY), [lc_numeric](runtime-config-client.md#GUC-LC-NUMERIC) e [lc_time](runtime-config-client.md#GUC-LC-TIME) não são fixos por banco de dados e não são definidos por este comando. Se você deseja torná-los padrão para um banco de dados específico, pode usar `ALTER DATABASE ... SET`.
 

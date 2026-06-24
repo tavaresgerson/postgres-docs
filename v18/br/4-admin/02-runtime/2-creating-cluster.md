@@ -17,7 +17,7 @@ $ initdb -D /usr/local/pgsql/data
 
 Observe que você deve executar este comando enquanto estiver logado na conta do usuário PostgreSQL, que é descrita na seção anterior.
 
-### DICA
+DICA
 
 Como alternativa à opção `-D`, você pode definir a variável de ambiente `PGDATA`.
 

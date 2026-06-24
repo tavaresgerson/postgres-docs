@@ -211,7 +211,7 @@ CREATE COLLATION ignore_accents (provider = icu, locale = 'und-u-ks-level1-kc-tr
 
 Todas as colatões padrão e pré-definidas são determinísticas, todas as colatões definidas pelo usuário são determinísticas por padrão. Embora as colatões não determinísticas ofereçam um comportamento mais “correto”, especialmente quando se considera o poder total do Unicode e seus muitos casos especiais, elas também têm algumas desvantagens. Em primeiro lugar, seu uso leva a uma penalização de desempenho. Note, em particular, que a árvore B não pode usar a deduplicação com índices que utilizam uma colatão não determinística. Além disso, certas operações não são possíveis com colatões não determinísticas, como algumas operações de correspondência de padrões. Portanto, elas devem ser usadas apenas em casos em que sejam especificamente desejadas.
 
-### DICA
+DICA
 
 Para lidar com texto em diferentes formas de normalização Unicode, também é uma opção usar as funções/expressões `normalize` e `is normalized` para pré-processar ou verificar as strings, em vez de usar colunas não determinísticas. Há diferentes compromissos para cada abordagem.
 

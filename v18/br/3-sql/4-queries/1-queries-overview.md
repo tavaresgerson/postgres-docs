@@ -1,4 +1,4 @@
-## 7.1. Visão geral [#](#QUERIES-OVERVIEW)
+### 7.1. Visão geral [#](#QUERIES-OVERVIEW)
 
 O processo de recuperação ou o comando para recuperar dados de um banco de dados é chamado de *consulta*. No SQL, o comando `SELECT`(sql-select.md "SELECT") é usado para especificar consultas. A sintaxe geral do comando `SELECT` é
 

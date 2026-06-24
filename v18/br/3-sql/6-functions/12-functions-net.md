@@ -947,7 +947,7 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
 
 
 
-### DICA
+DICA
 
 As funções `abbrev`, `host` e `text` são, principalmente, destinadas a oferecer formatos de exibição alternativos para endereços IP.
 

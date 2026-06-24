@@ -138,7 +138,7 @@ O fluxo geral de um programa que utiliza SQLDA é:
 
 O SQLDA utiliza três tipos de estruturas de dados: `sqlda_t`, `sqlvar_t` e `struct sqlname`.
 
-### DICA
+DICA
 
 O SQLDA do PostgreSQL tem uma estrutura de dados semelhante à do IBM DB2 Universal Database, então algumas informações técnicas sobre o SQLDA do DB2 podem ajudar a entender melhor o do PostgreSQL.
 

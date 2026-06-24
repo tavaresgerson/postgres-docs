@@ -945,7 +945,7 @@ ou
 gcc -fPIC -c foo.c gcc -G -o foo.so foo.o
 ```
 
-### DICA
+DICA
 
 Se isso é muito complicado para você, você deve considerar o uso de [GNU Libtool](https://www.gnu.org/software/libtool/), que esconde as diferenças de plataforma por trás de uma interface uniforme.
 
@@ -1054,7 +1054,7 @@ TypeFuncClass get_call_result_type(FunctionCallInfo fcinfo, Oid *resultTypeId, T
 
 passando a mesma estrutura `fcinfo` passada para a função chamada própria. (Isso, claro, exige que você use as convenções de chamada da versão 1.) `resultTypeId` pode ser especificado como `NULL` ou como o endereço de uma variável local para receber o tipo OID do resultado da função. `resultTupleDesc` deve ser o endereço de uma variável local `TupleDesc`. Verifique se o resultado é `TYPEFUNC_COMPOSITE`; se sim, `resultTupleDesc` foi preenchido com o necessário `TupleDesc`. (Se não for, você pode relatar um erro na linha do tipo “registro de retorno da função chamado em contexto que não pode aceitar registro de tipo”).
 
-### DICA
+DICA
 
 `get_call_result_type` pode resolver o tipo real de um resultado de função polimórfica; portanto, é útil em funções que retornam resultados escalares polimórficos, não apenas em funções que retornam compostos. A saída `resultTypeId` é principalmente útil para funções que retornam escalares polimórficos.
 

@@ -2,7 +2,7 @@
 
 Essas funções podem ser usadas para interrogar o status de um objeto de conexão de banco de dados existente.
 
-### DICA
+DICA
 
 Os programadores de aplicativos libpq devem ter cuidado para manter a abstração `PGconn`. Use as funções de acesso descritas abaixo para acessar o conteúdo de `PGconn`. Não é recomendado fazer referência a campos internos de `PGconn` usando `libpq-int.h`, pois eles estão sujeitos a mudanças no futuro.
 

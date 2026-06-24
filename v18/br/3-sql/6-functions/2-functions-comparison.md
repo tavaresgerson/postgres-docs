@@ -942,7 +942,7 @@ expression NOTNULL
 
 Não escreva `expression = NULL` porque `NULL` não é “igual a” `NULL`. (O valor nulo representa um valor desconhecido, e não se sabe se dois valores desconhecidos são iguais.)
 
-### DICA
+DICA
 
 Algumas aplicações podem esperar que `expression = NULL` retorne verdadeiro se *`expression`* avalia o valor nulo. É altamente recomendável que essas aplicações sejam modificadas para atender ao padrão SQL. No entanto, se isso não puder ser feito, a variável de configuração [transform_null_equals](runtime-config-compatible.md#GUC-TRANSFORM-NULL-EQUALS) está disponível. Se estiver habilitada, o PostgreSQL converterá as cláusulas `x = NULL` para `x IS NULL`.
 

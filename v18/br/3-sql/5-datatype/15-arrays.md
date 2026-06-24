@@ -451,7 +451,7 @@ SELECT array_positions(ARRAY[1, 4, 3, 1, 3, 4, 2, 1], 1);
 (1 row)
 ```
 
-### DICA
+DICA
 
 Os arrays não são conjuntos; procurar por elementos específicos de um array pode ser um sinal de um mau projeto de banco de dados. Considere usar uma tabela separada com uma linha para cada item que seria um elemento do array. Isso será mais fácil de pesquisar e provavelmente escalará melhor para um grande número de elementos.
 
@@ -481,6 +481,6 @@ Como mostrado anteriormente, ao escrever um valor de matriz, você pode usar asp
 
 Você pode adicionar espaços em branco antes de uma brace esquerda ou após uma brace direita. Você também pode adicionar espaços em branco antes ou depois de qualquer item de cadeia individual. Em todos esses casos, os espaços em branco serão ignorados. No entanto, os espaços em branco dentro de elementos com aspas duplas, ou cercados em ambos os lados por caracteres não-espaçados de um elemento, não são ignorados.
 
-### DICA
+DICA
 
 A sintaxe do construtor `ARRAY` (ver [Seção 4.2.12](sql-expressions.md#SQL-SYNTAX-ARRAY-CONSTRUCTORS)) é frequentemente mais fácil de trabalhar do que a sintaxe de literal de matriz ao escrever valores de matriz em comandos SQL. Em `ARRAY`, os valores de elementos individuais são escritos da mesma maneira que seriam escritos quando não são membros de uma matriz.

@@ -84,7 +84,7 @@ MERGE ... RETURNING expressions INTO [STRICT] target;
 
 onde *`target`* pode ser uma variável de registro, uma variável de linha ou uma lista de variáveis simples e campos de registro/linha separados por vírgula. As variáveis PL/pgSQL serão substituídas no resto do comando (ou seja, tudo, exceto a cláusula `INTO`) da mesma forma descrita acima, e o plano será armazenado na cache da mesma maneira. Isso funciona para `SELECT`, `INSERT`/`UPDATE`/`DELETE`/`MERGE` com `RETURNING`, e certos comandos utilitários que retornam conjuntos de linhas, como `EXPLAIN`. Exceto pela cláusula `INTO`, o comando SQL é o mesmo que seria escrito fora do PL/pgSQL.
 
-### DICA
+DICA
 
 Observe que essa interpretação de `SELECT` com `INTO` é bastante diferente do comando regular `SELECT INTO` do PostgreSQL, no qual o alvo `INTO` é uma tabela recém-criada. Se você deseja criar uma tabela a partir de um resultado de `SELECT` dentro de uma função PL/pgSQL, use a sintaxe `CREATE TABLE ... AS SELECT`.
 

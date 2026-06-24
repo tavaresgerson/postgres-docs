@@ -102,6 +102,6 @@ Aqui está um exemplo para uma configuração de busca e vinculação que utiliz
 host ... ldap ldapbasedn="dc=example,dc=net"
 ```
 
-### DICA
+DICA
 
 Como o LDAP frequentemente usa vírgulas e espaços para separar as diferentes partes de um DN, é frequentemente necessário usar valores de parâmetros com aspas duplas ao configurar opções LDAP, conforme mostrado nos exemplos.

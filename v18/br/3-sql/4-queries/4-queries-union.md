@@ -1,8 +1,8 @@
-## 7.4. Combinando Perguntas (`UNION`, `INTERSECT`, `EXCEPT`) [#](#QUERIES-UNION)
+### 7.4. Combinando Perguntas (`UNION`, `INTERSECT`, `EXCEPT`) [#](#QUERIES-UNION)
 
 Os resultados de duas consultas podem ser combinados usando as operações de conjunto união, interseção e diferença. A sintaxe é
 
-```
+```sql
 query1 UNION [ALL] query2
 query1 INTERSECT [ALL] query2
 query1 EXCEPT [ALL] query2
@@ -20,42 +20,42 @@ Para calcular a união, interseção ou diferença de duas consultas, as duas co
 
 As operações de configuração podem ser combinadas, por exemplo
 
-```
+```sql
 query1 UNION query2 EXCEPT query3
 ```
 
 que é equivalente a
 
-```
+```sql
 (query1 UNION query2) EXCEPT query3
 ```
 
 Como mostrado aqui, você pode usar parênteses para controlar a ordem de avaliação. Sem parênteses, `UNION` e `EXCEPT` associam da esquerda para a direita, mas `INTERSECT` se liga mais firmemente do que esses dois operadores. Assim
 
-```
+```sql
 query1 UNION query2 INTERSECT query3
 ```
 
 significa
 
-```
+```sql
 query1 UNION (query2 INTERSECT query3)
 ```
 
 Você também pode envolver um indivíduo *`query`* entre parênteses. Isso é importante se o *`query`* precisar usar alguma das cláusulas discutidas nas seções seguintes, como `LIMIT`. Sem parênteses, você receberá um erro de sintaxe, ou, caso contrário, a cláusula será entendida como aplicando-se à saída da operação de conjunto, e não a um de seus inputs. Por exemplo,
 
-```
+```sql
 SELECT a FROM b UNION SELECT x FROM y LIMIT 10
 ```
 
 é aceito, mas isso significa
 
-```
+```sql
 (SELECT a FROM b UNION SELECT x FROM y) LIMIT 10
 ```
 
 não
 
-```
+```sql
 SELECT a FROM b UNION (SELECT x FROM y LIMIT 10)
 ```

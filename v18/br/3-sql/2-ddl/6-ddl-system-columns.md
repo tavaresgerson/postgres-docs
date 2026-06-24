@@ -1,4 +1,4 @@
-## 5.6. Colunas do sistema [#](#DDL-SYSTEM-COLUMNS)
+### 5.6. Colunas do sistema [#](#DDL-SYSTEM-COLUMNS)
 
 Cada tabela tem várias *colunas do sistema* que são implicitamente definidas pelo sistema. Portanto, esses nomes não podem ser usados como nomes de colunas definidas pelo usuário. (Observe que essas restrições são separadas de acordo com o fato de o nome ser uma palavra-chave ou não; citar um nome não permitirá que você escape dessas restrições.) Você realmente não precisa se preocupar com essas colunas; apenas saiba que elas existem.
 

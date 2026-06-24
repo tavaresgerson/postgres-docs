@@ -76,7 +76,7 @@ Observe que o `--missing-stats-only` requer privilégios do `SELECT` no [`pg_sta
 
 `-t table [ (column [,...]) ]` `--table=table [ (column [,...]) ]`: Limpe ou analise apenas *`table`*. Os nomes das colunas só podem ser especificados em conjunto com as opções `--analyze` ou `--analyze-only`. Várias tabelas podem ser limpas escrevendo múltiplos interruptores `-t`.
 
-### DICA
+DICA
 
 Se você especificar colunas, provavelmente terá que escapar as chaves da shell. (Veja os exemplos abaixo.)
 

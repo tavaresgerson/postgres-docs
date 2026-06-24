@@ -9274,7 +9274,7 @@ As varreduras de índice podem, às vezes, realizar múltiplas pesquisas de índ
 
 Isso pode acontecer com consultas que utilizam certas construções SQL para procurar linhas que correspondem a qualquer valor de uma lista ou matriz de múltiplos valores escalares (consulte [Seção 9.25](functions-comparisons.md)). Também pode acontecer com consultas que possuem uma construção `column_name = value1 OR column_name = value2 ...`, embora apenas quando o otimizador transforme a construção em uma representação equivalente de matriz de múltiplos valores. Da mesma forma, quando as varreduras de índice B-tree utilizam a otimização de varredura de salto, uma pesquisa de índice é realizada cada vez que a varredura é reposicionada para a próxima página da folha de índice que pode ter tuplas correspondentes (consulte [Seção 11.3](indexes-multicolumn.md)).
 
-### DICA
+DICA
 
 `EXPLAIN ANALYZE` exibe o número total de pesquisas de índice realizadas por cada nó de varredura de índice. Consulte [Seção 14.1.2](using-explain.md#USING-EXPLAIN-ANALYZE) para um exemplo que demonstra como isso funciona.
 

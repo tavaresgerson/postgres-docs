@@ -2,7 +2,7 @@
 
 O *Registro antecipado* (WAL) é um método padrão para garantir a integridade dos dados. Uma descrição detalhada pode ser encontrada na maioria (se não em todos) dos livros sobre processamento de transações. Em resumo, o conceito central do WAL é que as alterações nos arquivos de dados (onde residem as tabelas e índices) devem ser escritas apenas após essas alterações terem sido registradas, ou seja, após os registros do WAL que descrevem as alterações terem sido descarregados para o armazenamento permanente. Se seguirmos esse procedimento, não precisamos descarregar páginas de dados no disco em cada commit de transação, porque sabemos que, em caso de falha, poderemos recuperar o banco de dados usando o log: quaisquer alterações que não tenham sido aplicadas às páginas de dados podem ser refeitas a partir dos registros do WAL. (Isso é recuperação de avanço, também conhecida como REDO.)
 
-### DICA
+DICA
 
 Como o WAL restaura o conteúdo dos arquivos do banco de dados após um crash, os sistemas de arquivos com diário não são necessários para o armazenamento confiável dos arquivos de dados ou dos arquivos WAL. De fato, o overhead do diário pode reduzir o desempenho, especialmente se o diário causar o *dados* do sistema de arquivos a serem apagados no disco. Felizmente, o apagamento de dados durante o diário pode ser desativado frequentemente com uma opção de montagem do sistema de arquivos, por exemplo, `data=writeback` em um sistema de arquivos ext3 Linux. Os sistemas de arquivos com diário melhoram a velocidade de inicialização após um crash.
 

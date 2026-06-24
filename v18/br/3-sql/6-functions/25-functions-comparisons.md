@@ -45,7 +45,7 @@ AND
 
 Observe que, se a expressão da mão esquerda resultar em nulo, ou se não houver valores iguais na mão direita e pelo menos uma expressão da mão direita resultar em nulo, o resultado da construção `NOT IN` será nulo, e não verdadeiro, como se poderia esperar ingenuamente. Isso está de acordo com as regras normais do SQL para combinações booleanas de valores nulos.
 
-### DICA
+DICA
 
 `x NOT IN y` é equivalente a `NOT (x IN y)` em todos os casos. No entanto, valores nulos têm muito mais probabilidade de confundir o novato ao trabalhar com `NOT IN` do que ao trabalhar com `IN`. É melhor expressar sua condição positivamente, se possível.
 

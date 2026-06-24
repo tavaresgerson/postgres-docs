@@ -32,7 +32,7 @@ O PL/Python, linguagem procedural, permite que funções e procedimentos do Post
 
 Para instalar o PL/Python em um banco de dados específico, use `CREATE EXTENSION plpython3u`.
 
-### DICA
+DICA
 
 Se uma língua for instalada no `template1`, todas as bases de dados posteriormente criadas terão a língua instalada automaticamente.
 

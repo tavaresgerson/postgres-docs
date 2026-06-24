@@ -1,4 +1,4 @@
-## 5.8. Privilegios [#](#DDL-PRIV)
+### 5.8. Privilegios [#](#DDL-PRIV)
 
 Quando um objeto é criado, ele é atribuído a um proprietário. O proprietário é normalmente o papel que executou a declaração de criação. Para a maioria dos tipos de objetos, o estado inicial é que apenas o proprietário (ou um superusuário) pode fazer qualquer coisa com o objeto. Para permitir que outros papéis o usem, *privilegios* devem ser concedidos.
 
@@ -89,8 +89,6 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
 [Tabela 5.1](ddl-priv.md#PRIVILEGE-ABBREVS-TABLE) mostra as abreviações de uma letra que são usadas para esses tipos de privilégio nos valores de *ACL*. Você verá essas letras na saída dos comandos [psql](app-psql.md) listados abaixo, ou ao olhar nas colunas ACL dos catálogos do sistema.
 
 **Tabela 5.1. Abreviações de privilégios do ACL**
-
-
 
 <table border="1" class="table" summary="ACL Privilege Abbreviations">
  <colgroup>
@@ -453,20 +451,9 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 [Tabela 5.2](ddl-priv.md#PRIVILEGES-SUMMARY-TABLE) resume os privilégios disponíveis para cada tipo de objeto SQL, usando as abreviações mostradas acima. Também mostra o comando psql que pode ser usado para examinar as configurações de privilégios para cada tipo de objeto.
 
 **Tabela 5.2. Resumo dos privilégios de acesso**
-
-
 
 <table border="1" class="table" summary="Summary of Access Privileges">
  <colgroup>
@@ -794,15 +781,6 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
   </tr>
  </tbody>
 </table>
-
-
-
-
-
-
-
-
-
 
 Os privilégios que foram concedidos para um objeto específico são exibidos como uma lista de entradas `aclitem`, cada uma com o formato:
 

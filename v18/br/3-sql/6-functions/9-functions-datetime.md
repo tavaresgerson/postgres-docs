@@ -2915,7 +2915,7 @@ Todos os tipos de dados de data/hora também aceitam o valor literal especial `n
 SELECT CURRENT_TIMESTAMP; SELECT now(); SELECT TIMESTAMP 'now';  -- but see tip below
 ```
 
-### DICA
+DICA
 
 Não use a terceira forma ao especificar um valor a ser avaliado mais tarde, por exemplo, em uma cláusula `DEFAULT` para uma coluna de tabela. O sistema converterá `now` para um `timestamp` assim que a constante for analisada, para que, quando o valor padrão seja necessário, o momento da criação da tabela seja usado! As duas primeiras formas não serão avaliadas até que o valor padrão seja usado, porque são chamadas de função. Assim, elas darão o comportamento desejado de retornar ao momento da inserção da linha.
 

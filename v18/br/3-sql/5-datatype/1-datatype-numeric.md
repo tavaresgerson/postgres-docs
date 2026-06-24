@@ -1,4 +1,4 @@
-## 8.1. Tipos Numéricos [#](#DATATYPE-NUMERIC)
+### 8.1. Tipos Numéricos [#](#DATATYPE-NUMERIC)
 
 * [8.1.1. Tipos de Inteiros](datatype-numeric.md#DATATYPE-INT)
 * [8.1.2. Números de Precisão Arbitrária](datatype-numeric.md#DATATYPE-NUMERIC-DECIMAL)
@@ -8,8 +8,6 @@
 Os tipos numéricos consistem em inteiros de dois, quatro e oito bytes, números de ponto flutuante de quatro e oito bytes e decimais de precisão selecionável. A tabela [(datatype-numeric.md#DATATYPE-NUMERIC-TABLE "Table 8.2. Numeric Types")](datatype-numeric.md#DATATYPE-NUMERIC-TABLE) lista os tipos disponíveis.
 
 **Tabela 8.2. Tipos numéricos**
-
-
 
 <table border="1" class="table" summary="Numeric Types">
  <colgroup>
@@ -198,18 +196,9 @@ Os tipos numéricos consistem em inteiros de dois, quatro e oito bytes, números
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 A sintaxe das constantes para os tipos numéricos é descrita em [Seção 4.1.2](sql-syntax-lexical.md#SQL-SYNTAX-CONSTANTS). Os tipos numéricos têm um conjunto completo de operadores e funções aritméticas correspondentes. Consulte [Capítulo 9](functions.md) para mais informações. As seções a seguir descrevem os tipos em detalhes.
 
-### 8.1.1. Tipos de Inteiros [#](#DATATYPE-INT)
+#### 8.1.1. Tipos de Inteiros [#](#DATATYPE-INT)
 
 Os tipos `smallint`, `integer` e `bigint` armazenam números inteiros, ou seja, números sem componentes fracionários, de vários intervalos. Tentativas de armazenar valores fora do intervalo permitido resultarão em um erro.
 
@@ -217,7 +206,7 @@ O tipo `integer` é a escolha mais comum, pois oferece o melhor equilíbrio entr
 
 O SQL especifica apenas os tipos de número inteiro `integer` (ou `int`), `smallint` e `bigint`. Os nomes dos tipos `int2`, `int4` e `int8` são extensões, que também são usadas por outros sistemas de banco de dados SQL.
 
-### 8.1.2. Números com precisão arbitrária [#](#DATATYPE-NUMERIC-DECIMAL)
+#### 8.1.2. Números com precisão arbitrária [#](#DATATYPE-NUMERIC-DECIMAL)
 
 O tipo `numeric` pode armazenar números com um número muito grande de dígitos. É especialmente recomendado para armazenar quantias monetárias e outras quantidades onde a exatidão é necessária. Os cálculos com valores de `numeric` produzem resultados exatos quando possível, por exemplo, adição, subtração, multiplicação. No entanto, os cálculos com valores de `numeric` são muito lentos em comparação com os tipos inteiros ou com os tipos de ponto flutuante descritos na próxima seção.
 
@@ -225,19 +214,19 @@ Usamos os termos a seguir abaixo: A *precisão* de um `numeric` é o número tot
 
 Tanto a precisão máxima quanto a escala máxima de uma coluna `numeric` podem ser configuradas. Para declarar uma coluna do tipo `numeric`, use a sintaxe:
 
-```
+```sql
 NUMERIC(precision, scale)
 ```
 
 A precisão deve ser positiva, enquanto a escala pode ser positiva ou negativa (veja abaixo). Alternativamente:
 
-```
+```sql
 NUMERIC(precision)
 ```
 
 seleciona uma escala de 0. Especificando:
 
-```
+```sql
 NUMERIC
 ```
 
@@ -249,7 +238,7 @@ A máxima precisão que pode ser explicitamente especificada em uma declaração
 
 Se a escala de um valor a ser armazenado for maior que a escala declarada da coluna, o sistema arredondará o valor para o número especificado de dígitos fracionários. Em seguida, se o número de dígitos à esquerda do ponto decimal exceder a precisão declarada menos a escala declarada, um erro é gerado. Por exemplo, uma coluna declarada como
 
-```
+```sql
 NUMERIC(3, 1)
 ```
 
@@ -257,13 +246,13 @@ os valores serão arredondados para 1 casa decimal e poderão armazenar valores 
 
 A partir do PostgreSQL 15, é permitido declarar uma coluna `numeric` com uma escala negativa. Em seguida, os valores serão arredondados à esquerda do ponto decimal. A precisão ainda representa o número máximo de dígitos não arredondados. Assim, uma coluna declarada como
 
-```
+```sql
 NUMERIC(2, -3)
 ```
 
 irá arredondar os valores para o próximo mil e poderá armazenar valores entre -99000 e 99000, inclusive. Também é permitido declarar uma escala maior que a precisão declarada. Tal coluna só pode conter valores fracionários, e exige que o número de dígitos nulos logo à direita do ponto decimal seja, no mínimo, a escala declarada menos a precisão declarada. Por exemplo, uma coluna declarada como
 
-```
+```sql
 NUMERIC(3, 5)
 ```
 
@@ -293,7 +282,7 @@ Os tipos `decimal` e `numeric` são equivalentes. Ambos os tipos fazem parte do 
 
 Ao arredondar valores, o tipo `numeric` arredonda os empates para longe de zero, enquanto (na maioria das máquinas) os tipos `real` e `double precision` arredondam os empates para o número par mais próximo. Por exemplo:
 
-```
+```sql
 SELECT x,
   round(x::numeric) AS num_round,
   round(x::double precision) AS dbl_round
@@ -311,7 +300,7 @@ FROM generate_series(-3.5, 3.5, 1) as x;
 (8 rows)
 ```
 
-### 8.1.3. Tipos de Ponto Flutuante [#](#DATATYPE-FLOAT)
+#### 8.1.3. Tipos de Ponto Flutuante [#](#DATATYPE-FLOAT)
 
 Os tipos de dados `real` e `double precision` são tipos numéricos de precisão variável inexatos. Em todas as plataformas atualmente suportadas, esses tipos são implementações do Padrão IEEE 754 para Aritmética de Ponto Flutuante Binária (precisão simples e dupla, respectivamente), na medida em que o processador subjacente, o sistema operacional e o compilador o suportem.
 
@@ -349,7 +338,7 @@ A IEEE 754 especifica que `NaN` não deve ser comparado a qualquer outro valor d
 
 O PostgreSQL também suporta as notações padrão do SQL `float` e `float(p)` para especificar tipos numéricos inexatos. Aqui, *`p`* especifica a precisão mínima aceitável em *dígitos binários*. O PostgreSQL aceita `float(1)` a `float(24)` como seleção do tipo `real`, enquanto `float(25)` a `float(53)` selecionam `double precision`. Os valores de *`p`* fora do intervalo permitido geram um erro. `float` sem precisão especificada é interpretado como `double precision`.
 
-### 8.1.4. Tipos de série [#](#DATATYPE-SERIAL)
+#### 8.1.4. Tipos de série [#](#DATATYPE-SERIAL)
 
 Nota
 
@@ -357,7 +346,7 @@ Esta seção descreve uma maneira específica do PostgreSQL para criar uma colun
 
 Os tipos de dados `smallserial`, `serial` e `bigserial` não são tipos verdadeiros, mas apenas uma conveniência notarial para criar colunas de identificador único (semelhante à propriedade `AUTO_INCREMENT` suportada por alguns outros bancos de dados). Na implementação atual, especificando:
 
-```
+```sql
 CREATE TABLE tablename (
     colname SERIAL
 );
@@ -365,7 +354,7 @@ CREATE TABLE tablename (
 
 é equivalente a especificar:
 
-```
+```sql
 CREATE SEQUENCE tablename_colname_seq AS integer;
 CREATE TABLE tablename (
     colname integer NOT NULL DEFAULT nextval('tablename_colname_seq')
