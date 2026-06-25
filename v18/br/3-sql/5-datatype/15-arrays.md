@@ -1,4 +1,4 @@
-## 8.15. Arrays [#](#ARRAYS)
+### 8.15. Arrays [#](#ARRAYS)
 
 * [8.15.1. Declaração de Tipos de Array](arrays.md#ARRAYS-DECLARATION)
 * [8.15.2. Entrada de Valor de Array](arrays.md#ARRAYS-INPUT)
@@ -9,11 +9,11 @@
 
 O PostgreSQL permite que as colunas de uma tabela sejam definidas como matrizes multidimensionais de comprimento variável. Pode-se criar matrizes de qualquer tipo de base embutido ou definido pelo usuário, tipo enum, tipo composto, tipo de intervalo ou domínio.
 
-### 8.15.1. Declaração de tipos de matriz [#](#ARRAYS-DECLARATION)
+#### 8.15.1. Declaração de tipos de matriz [#](#ARRAYS-DECLARATION)
 
 Para ilustrar o uso dos tipos de matriz, criamos esta tabela:
 
-```
+```sql
 CREATE TABLE sal_emp (
     name            text,
     pay_by_quarter  integer[],
@@ -25,7 +25,7 @@ Como mostrado, um tipo de dados de matriz é nomeado anexando-se chaves quadrada
 
 A sintaxe para `CREATE TABLE` permite especificar o tamanho exato dos arrays, por exemplo:
 
-```
+```sql
 CREATE TABLE tictactoe (
     squares   integer[3][3]
 );
@@ -49,17 +49,17 @@ Ou, se não se deseja especificar o tamanho do array:
 
 Como antes, no entanto, o PostgreSQL não aplica a restrição de tamanho em nenhum caso.
 
-### 8.15.2. Entrada de valor de matriz [#](#ARRAYS-INPUT)
+#### 8.15.2. Entrada de valor de matriz [#](#ARRAYS-INPUT)
 
 Para escrever um valor de matriz como uma constante literal, coloque os valores dos elementos entre chaves angulares e separe-os por vírgulas. (Se você conhece C, isso não é diferente da sintaxe C para inicializar estruturas.) Você pode colocar aspas duplas em torno de qualquer valor de elemento e deve fazê-lo se ele contiver vírgulas ou chaves angulares. (Mais detalhes aparecem abaixo.) Assim, o formato geral de uma constante de matriz é o seguinte:
 
-```
+```sql
 '{ val1 delim val2 delim ... }'
 ```
 
 onde *`delim`* é o caractere delimitador para o tipo, conforme registrado em sua entrada `pg_type`. Entre os tipos de dados padrão fornecidos na distribuição PostgreSQL, todos usam uma vírgula (`,`), exceto pelo tipo `box`, que usa um ponto e vírgula (`;`). Cada *`val`* é uma constante do tipo do elemento da matriz, ou um submatriz. Um exemplo de uma constante de matriz é:
 
-```
+```sql
 '{{1,2,3},{4,5,6},{7,8,9}}'
 ```
 
@@ -71,7 +71,7 @@ Para definir um elemento de um array como constante NULL, escreva `NULL` para o 
 
 Agora podemos mostrar algumas declarações `INSERT`:
 
-```
+```sql
 INSERT INTO sal_emp
     VALUES ('Bill',
     '{10000, 10000, 10000, 10000}',
@@ -85,7 +85,7 @@ INSERT INTO sal_emp
 
 O resultado dos dois insertos anteriores é o seguinte:
 
-```
+```sql
 SELECT * FROM sal_emp;
  name  |      pay_by_quarter       |                 schedule
 -------+---------------------------+-------------------------------------------
@@ -96,7 +96,7 @@ SELECT * FROM sal_emp;
 
 Os arrays multidimensionais devem ter extensões correspondentes para cada dimensão. Uma incompatibilidade causa um erro, por exemplo:
 
-```
+```sql
 INSERT INTO sal_emp
     VALUES ('Bill',
     '{10000, 10000, 10000, 10000}',
@@ -107,7 +107,7 @@ DETAIL:  Multidimensional arrays must have sub-arrays with matching dimensions.
 
 A sintaxe do construtor `ARRAY` também pode ser usada:
 
-```
+```sql
 INSERT INTO sal_emp
     VALUES ('Bill',
     ARRAY[10000, 10000, 10000, 10000],
@@ -121,11 +121,11 @@ INSERT INTO sal_emp
 
 Observe que os elementos da matriz são constantes ou expressões comuns do SQL; por exemplo, as literais de string são citadas com aspas simples, em vez de aspas duplas, como faria em uma literal de matriz. A sintaxe do construtor `ARRAY` é discutida com mais detalhes em [Seção 4.2.12](sql-expressions.md#SQL-SYNTAX-ARRAY-CONSTRUCTORS).
 
-### 8.15.3. Acessando Arrays [#](#ARRAYS-ACCESSING)
+#### 8.15.3. Acessando Arrays [#](#ARRAYS-ACCESSING)
 
 Agora, podemos executar algumas consultas na tabela. Primeiro, mostramos como acessar um único elemento de um array. Essa consulta recupera os nomes dos funcionários cuja remuneração mudou no segundo trimestre:
 
-```
+```sql
 SELECT name FROM sal_emp WHERE pay_by_quarter[1] <> pay_by_quarter[2];
 
  name
@@ -138,7 +138,7 @@ Os números dos subíndices da matriz são escritos entre colchetes. Por padrão
 
 Essa consulta recupera o pagamento do terceiro trimestre de todos os funcionários:
 
-```
+```sql
 SELECT pay_by_quarter[3] FROM sal_emp;
 
  pay_by_quarter
@@ -150,7 +150,7 @@ SELECT pay_by_quarter[3] FROM sal_emp;
 
 Também podemos acessar fatias retangulares arbitrárias de uma matriz ou submatrizes. Uma fatia de matriz é indicada escrevendo `lower-bound:upper-bound` para uma ou mais dimensões da matriz. Por exemplo, esta consulta recupera o primeiro item no cronograma de Bill nos dois primeiros dias da semana:
 
-```
+```sql
 SELECT schedule[1:2][1:1] FROM sal_emp WHERE name = 'Bill';
 
         schedule
@@ -161,7 +161,7 @@ SELECT schedule[1:2][1:1] FROM sal_emp WHERE name = 'Bill';
 
 Se qualquer dimensão for escrita como uma fatia, ou seja, contém um colon, todas as dimensões são tratadas como fatias. Qualquer dimensão que tenha apenas um único número (sem colon) é tratada como sendo de 1 até o número especificado. Por exemplo, `[2]` é tratado como `[1:2]`, como neste exemplo:
 
-```
+```sql
 SELECT schedule[1:2][2] FROM sal_emp WHERE name = 'Bill';
 
                  schedule
@@ -174,7 +174,7 @@ Para evitar confusão com o caso sem fatias, é melhor usar a sintaxe de fatias 
 
 É possível omitir o *`lower-bound`* e/ou *`upper-bound`* de um especificador de fatias; o limite ausente é substituído pelo limite inferior ou superior dos subíndices da matriz. Por exemplo:
 
-```
+```sql
 SELECT schedule[:2][2:] FROM sal_emp WHERE name = 'Bill';
 
         schedule
@@ -196,7 +196,7 @@ Uma expressão de fatiamento de matriz também retorna null se a própria matriz
 
 As dimensões atuais de qualquer valor da matriz podem ser recuperadas com a função `array_dims`:
 
-```
+```sql
 SELECT array_dims(schedule) FROM sal_emp WHERE name = 'Carol';
 
  array_dims
@@ -207,7 +207,7 @@ SELECT array_dims(schedule) FROM sal_emp WHERE name = 'Carol';
 
 `array_dims` produz um resultado `text`, que é conveniente para as pessoas lerem, mas talvez inconveniente para os programas. As dimensões também podem ser recuperadas com `array_upper` e `array_lower`, que retornam o limite superior e inferior de uma dimensão de matriz especificada, respectivamente:
 
-```
+```sql
 SELECT array_upper(schedule, 1) FROM sal_emp WHERE name = 'Carol';
 
  array_upper
@@ -218,7 +218,7 @@ SELECT array_upper(schedule, 1) FROM sal_emp WHERE name = 'Carol';
 
 `array_length` retornará o comprimento de uma dimensão de matriz especificada:
 
-```
+```sql
 SELECT array_length(schedule, 1) FROM sal_emp WHERE name = 'Carol';
 
  array_length
@@ -229,7 +229,7 @@ SELECT array_length(schedule, 1) FROM sal_emp WHERE name = 'Carol';
 
 `cardinality` retorna o número total de elementos em um array em todas as dimensões. É efetivamente o número de linhas que uma chamada a `unnest` produziria:
 
-```
+```sql
 SELECT cardinality(schedule) FROM sal_emp WHERE name = 'Carol';
 
  cardinality
@@ -242,28 +242,28 @@ SELECT cardinality(schedule) FROM sal_emp WHERE name = 'Carol';
 
 Um valor de matriz pode ser substituído completamente:
 
-```
+```sql
 UPDATE sal_emp SET pay_by_quarter = '{25000,25000,27000,27000}'
     WHERE name = 'Carol';
 ```
 
 ou usando a sintaxe da expressão `ARRAY`:
 
-```
+```sql
 UPDATE sal_emp SET pay_by_quarter = ARRAY[25000,25000,27000,27000]
     WHERE name = 'Carol';
 ```
 
 Uma matriz também pode ser atualizada em um único elemento:
 
-```
+```sql
 UPDATE sal_emp SET pay_by_quarter[4] = 15000
     WHERE name = 'Bill';
 ```
 
 ou atualizado em uma fatia:
 
-```
+```sql
 UPDATE sal_emp SET pay_by_quarter[1:2] = '{27000,27000}'
     WHERE name = 'Carol';
 ```
@@ -276,7 +276,7 @@ A atribuição com índice permite a criação de matrizes que não utilizam ín
 
 Novos valores de matriz também podem ser construídos usando o operador de concatenação, `||`:
 
-```
+```sql
 SELECT ARRAY[1,2] || ARRAY[3,4];
  ?column?
 -----------
@@ -294,7 +294,7 @@ O operador de concatenação permite que um único elemento seja empurrado para 
 
 Quando um único elemento é empurrado para o início ou para o final de uma matriz unidimensional, o resultado é uma matriz com o mesmo índice de limite inferior que o operando da matriz. Por exemplo:
 
-```
+```sql
 SELECT array_dims(1 || '[0:1]={2,3}'::int[]);
  array_dims
 ------------
@@ -310,7 +310,7 @@ SELECT array_dims(ARRAY[1,2] || 3);
 
 Quando dois arrays com um número igual de dimensões são concatenados, o resultado mantém o índice de índice inferior do operador externo do operador de mão esquerda. O resultado é um array que compreende cada elemento do operador de mão esquerda seguido por cada elemento do operador de mão direita. Por exemplo:
 
-```
+```sql
 SELECT array_dims(ARRAY[1,2] || ARRAY[3,4,5]);
  array_dims
 ------------
@@ -326,7 +326,7 @@ SELECT array_dims(ARRAY[[1,2],[3,4]] || ARRAY[[5,6],[7,8],[9,0]]);
 
 Quando uma matriz *`N`*-dimensional é empurrada para o início ou para o fim de uma matriz *`N+1`*-dimensional, o resultado é análogo ao caso da matriz de elementos acima. Cada submatriz *`N`*-dimensional é essencialmente um elemento da dimensão externa da matriz *`N+1`*-dimensional. Por exemplo:
 
-```
+```sql
 SELECT array_dims(ARRAY[1,2] || ARRAY[[3,4],[5,6]]);
  array_dims
 ------------
@@ -336,7 +336,7 @@ SELECT array_dims(ARRAY[1,2] || ARRAY[[3,4],[5,6]]);
 
 Uma matriz também pode ser construída usando as funções `array_prepend`, `array_append` ou `array_cat`. As duas primeiras apenas suportam matrizes unidimensionais, mas `array_cat` suporta matrizes multidimensionais. Alguns exemplos:
 
-```
+```sql
 SELECT array_prepend(1, ARRAY[2,3]);
  array_prepend
 ---------------
@@ -369,7 +369,7 @@ SELECT array_cat(ARRAY[5,6], ARRAY[[1,2],[3,4]]);
 
 Em casos simples, o operador de concatenação discutido acima é preferido em relação ao uso direto dessas funções. No entanto, como o operador de concatenação é sobrecarregado para atender a todos os três casos, há situações em que o uso de uma das funções é útil para evitar ambiguidade. Por exemplo, considere:
 
-```
+```sql
 SELECT ARRAY[1, 2] || '{3, 4}';  -- the untyped literal is taken as an array
  ?column?
 -----------
@@ -392,11 +392,11 @@ SELECT array_append(ARRAY[1, 2], NULL);    -- this might have been meant
 
 Nos exemplos acima, o analisador vê um array de inteiros de um lado do operador de concatenação e uma constante de tipo indeterminado do outro. A heurística que ele usa para resolver o tipo da constante é assumir que é do mesmo tipo que a outra entrada do operador — neste caso, array de inteiros. Portanto, presume-se que o operador de concatenação represente `array_cat`, não `array_append`. Quando essa é a escolha errada, ela pode ser corrigida ao converter a constante para o tipo do elemento do array; mas o uso explícito de `array_append` pode ser uma solução preferível.
 
-### 8.15.5. Pesquisando em Arrays [#](#ARRAYS-SEARCHING)
+#### 8.15.5. Pesquisando em Arrays [#](#ARRAYS-SEARCHING)
 
 Para procurar um valor em um array, cada valor deve ser verificado. Isso pode ser feito manualmente, se você conhece o tamanho do array. Por exemplo:
 
-```
+```sql
 SELECT * FROM sal_emp WHERE pay_by_quarter[1] = 10000 OR
                             pay_by_quarter[2] = 10000 OR
                             pay_by_quarter[3] = 10000 OR
@@ -405,19 +405,19 @@ SELECT * FROM sal_emp WHERE pay_by_quarter[1] = 10000 OR
 
 No entanto, isso rapidamente se torna tedioso para grandes matrizes e não é útil se o tamanho da matriz é desconhecido. Um método alternativo é descrito em [Seção 9.25](functions-comparisons.md). A consulta acima pode ser substituída por:
 
-```
+```sql
 SELECT * FROM sal_emp WHERE 10000 = ANY (pay_by_quarter);
 ```
 
 Além disso, você pode encontrar linhas onde o array tem todos os valores iguais a 10000 com:
 
-```
+```sql
 SELECT * FROM sal_emp WHERE 10000 = ALL (pay_by_quarter);
 ```
 
 Como alternativa, pode ser usada a função `generate_subscripts`. Por exemplo:
 
-```
+```sql
 SELECT * FROM
    (SELECT pay_by_quarter,
            generate_subscripts(pay_by_quarter, 1) AS s
@@ -429,7 +429,7 @@ Essa função é descrita em [Tabela 9.70](functions-srf.md#FUNCTIONS-SRF-SUBSCR
 
 Você também pode pesquisar um array usando o operador `&&`, que verifica se o operando esquerdo sobrepõe-se ao operando direito. Por exemplo:
 
-```
+```sql
 SELECT * FROM sal_emp WHERE pay_by_quarter && ARRAY[10000];
 ```
 
@@ -437,7 +437,7 @@ Isso e outros operadores de matriz são descritos mais adiante na [Seção 9.19]
 
 Você também pode procurar valores específicos em um array usando as funções `array_position` e `array_positions`. A primeira delas retorna o índice da primeira ocorrência de um valor em um array; a segunda retorna um array com os índices de todas as ocorrências do valor no array. Por exemplo:
 
-```
+```sql
 SELECT array_position(ARRAY['sun','mon','tue','wed','thu','fri','sat'], 'mon');
  array_position
 ----------------
@@ -455,7 +455,7 @@ DICA
 
 Os arrays não são conjuntos; procurar por elementos específicos de um array pode ser um sinal de um mau projeto de banco de dados. Considere usar uma tabela separada com uma linha para cada item que seria um elemento do array. Isso será mais fácil de pesquisar e provavelmente escalará melhor para um grande número de elementos.
 
-### 8.15.6. Sintaxe de entrada e saída de matriz [#](#ARRAYS-IO)
+#### 8.15.6. Sintaxe de entrada e saída de matriz [#](#ARRAYS-IO)
 
 A representação textual externa de um valor de matriz consiste em itens que são interpretados de acordo com as regras de conversão de E/S para o tipo de elemento da matriz, além de uma decoração que indica a estrutura da matriz. A decoração consiste em chaves angulares (`{` e `}`) ao redor do valor da matriz, além de caracteres de delimitador entre itens adjacentes. O caractere de delimitador é geralmente uma vírgula (`,`, mas pode ser algo mais: é determinado pelo ajuste `typdelim` para o tipo de elemento da matriz. Entre os tipos de dados padrão fornecidos na distribuição PostgreSQL, todos usam uma vírgula, exceto pelo tipo `box`, que usa um ponto e vírgula (`;`). Em uma matriz multidimensional, cada dimensão (linha, plano, cubo, etc.) recebe seu próprio nível de chaves angulares, e os delimitadores devem ser escritos entre entidades angulares adjacentes do mesmo nível.
 
@@ -463,7 +463,7 @@ A rotina de saída da matriz colocará aspas duplas nas valores dos elementos se
 
 Por padrão, o valor inferior do índice de uma dimensão de um array é definido como um. Para representar arrays com outros limites inferiores, os intervalos de subscrito de array podem ser especificados explicitamente antes de escrever o conteúdo do array. Essa decoração consiste em chaves quadradas (`[]`) ao redor dos limites inferiores e superiores de cada dimensão do array, com um caractere de delimitador de colon (`:`). A decoração da dimensão do array é seguida por um sinal de igual (`=`). Por exemplo:
 
-```
+```sql
 SELECT f1[1][-2][3] AS e1, f1[1][-1][5] AS e2
  FROM (SELECT '[1:1][-2:-1][3:5]={{{1,2,3},{4,5,6}}}'::int[] AS f1) AS ss;
 

@@ -1,10 +1,8 @@
-## 8.21. Pseudo-tipos [#](#DATATYPE-PSEUDO)
+### 8.21. Pseudo-tipos [#](#DATATYPE-PSEUDO)
 
 O sistema de tipos do PostgreSQL contém várias entradas de propósito especial que são coletivamente chamadas de *pseudo-tipos*. Um pseudo-tipo não pode ser usado como um tipo de dados de coluna, mas pode ser usado para declarar o tipo de argumento ou resultado de uma função. Cada um dos pseudo-tipos disponíveis é útil em situações em que o comportamento de uma função não corresponde a simplesmente tomar ou retornar um valor de um tipo de dados específico do SQL. [Tabela 8.27](datatype-pseudo.md#DATATYPE-PSEUDOTYPES-TABLE) lista os pseudo-tipos existentes.
 
 **Tabela 8.27. Pseudo-tipos**
-
-
 
 <table border="1" class="table" summary="Pseudo-Types">
  <colgroup>
@@ -364,15 +362,6 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
  </tbody>
 </table>
-
-
-
-
-
-
-
-
-
 
 As funções codificadas em C (seja embutidas ou carregadas dinamicamente) podem ser declaradas para aceitar ou retornar qualquer um desses pseudotípicos. Cabe ao autor da função garantir que a função se comporte de forma segura quando um pseudotípico é usado como tipo de argumento.
 

@@ -1,4 +1,4 @@
-## 8.20. `pg_lsn` Tipo [#](#DATATYPE-PG-LSN)
+### 8.20. `pg_lsn` Tipo [#](#DATATYPE-PG-LSN)
 
 O tipo de dados `pg_lsn` pode ser usado para armazenar dados LSN (Número de Sequência de Registro) que é um ponteiro para uma localização no WAL. Esse tipo é uma representação do `XLogRecPtr` e um tipo interno do sistema do PostgreSQL.
 

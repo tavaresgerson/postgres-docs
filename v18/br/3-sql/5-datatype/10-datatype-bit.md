@@ -1,4 +1,4 @@
-## 8.10. Tipos de String de Bits [#](#DATATYPE-BIT)
+### 8.10. Tipos de String de Bits [#](#DATATYPE-BIT)
 
 As strings de bits são cadeias de 1's e 0's. Elas podem ser usadas para armazenar ou visualizar máscaras de bits. Existem dois tipos de bits SQL: `bit(n)` e `bit varying(n)`, onde *`n`* é um inteiro positivo.
 
@@ -12,7 +12,7 @@ Consulte [Seção 4.1.2.5](sql-syntax-lexical.md#SQL-SYNTAX-BIT-STRINGS) para ob
 
 **Exemplo 8.3. Uso dos tipos de string de bits**
 
-```
+```sql
 CREATE TABLE test (a BIT(3), b BIT VARYING(5));
 INSERT INTO test VALUES (B'101', B'00');
 INSERT INTO test VALUES (B'10', B'101');
@@ -27,7 +27,5 @@ SELECT * FROM test;
  101 | 00
  100 | 101
 ```
-
-
 
 Um valor de cadeia de bits requer 1 byte para cada grupo de 8 bits, além de 5 ou 8 bytes de sobrecarga, dependendo do comprimento da cadeia (mas valores longos podem ser comprimidos ou removidos fora da linha, conforme explicado na [Seção 8.3](datatype-character.md) para cadeias de caracteres).

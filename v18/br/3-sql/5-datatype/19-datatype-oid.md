@@ -1,4 +1,4 @@
-## 8.19. Tipos de Identificador de Objeto [#](#DATATYPE-OID)
+### 8.19. Tipos de Identificador de Objeto [#](#DATATYPE-OID)
 
 Os identificadores de objeto (OIDs) são utilizados internamente pelo PostgreSQL como chaves primárias para várias tabelas do sistema. O tipo `oid` representa um identificador de objeto. Há também vários tipos de alias para `oid`, cada um com o nome `regsomething`. A [Tabela 8.26](datatype-oid.md#DATATYPE-OID-TABLE) mostra uma visão geral.
 
@@ -8,7 +8,7 @@ O próprio tipo `oid` tem poucas operações além da comparação. No entanto, 
 
 Os tipos de alias OID não possuem operações próprias, exceto para rotinas de entrada e saída especializadas. Essas rotinas são capazes de aceitar e exibir nomes simbólicos para objetos do sistema, em vez do valor numérico bruto que o tipo `oid` usaria. Os tipos de alias permitem uma busca simplificada dos valores OID para objetos. Por exemplo, para examinar as linhas `pg_attribute` relacionadas a uma tabela `mytable`, é possível escrever:
 
-```
+```sql
 SELECT * FROM pg_attribute WHERE attrelid = 'mytable'::regclass;
 ```
 
@@ -22,8 +22,6 @@ SELECT * FROM pg_attribute
 Embora isso não pareça muito ruim por si só, ainda é bastante simplificado. Seria necessário um subconjunto muito mais complicado para selecionar o OID correto se houver várias tabelas com o nome `mytable` em diferentes esquemas. O conversor de entrada `regclass` lida com a pesquisa de tabela de acordo com a configuração do caminho do esquema, e assim faz o "coisa certa" automaticamente. Da mesma forma, a conversão do OID de uma tabela para `regclass` é útil para a exibição simbólica de um OID numérico.
 
 **Tabela 8.26. Tipos de Identificador de Objeto**
-
-
 
 <table border="1" class="table" summary="Object Identifier Types">
  <colgroup>
@@ -294,22 +292,13 @@ Embora isso não pareça muito ruim por si só, ainda é bastante simplificado. 
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Todos os tipos de alias OID para objetos que são agrupados por namespace aceitam nomes qualificados por esquema e exibirão nomes qualificados por esquema na saída se o objeto não for encontrado no caminho de pesquisa atual sem ser qualificado. Por exemplo, `myschema.mytable` é uma entrada aceitável para `regclass` (se houver uma tabela assim). Esse valor pode ser exibido como `myschema.mytable`, ou apenas `mytable`, dependendo do caminho de pesquisa atual. Os tipos de alias `regproc` e `regoper` só aceitam nomes de entrada que são únicos (não sobrecarregados), portanto, são de uso limitado; para a maioria dos usos, `regprocedure` ou `regoperator` são mais apropriados. Para `regoperator`, os operadores unários são identificados escrevendo `NONE` para o operador não utilizado.
 
 As funções de entrada para esses tipos permitem espaço em branco entre os tokens e transformarão as letras maiúsculas em minúsculas, exceto dentro de aspas duplas; isso é feito para tornar as regras de sintaxe semelhantes à maneira como os nomes dos objetos são escritos em SQL. Por outro lado, as funções de saída usarão aspas duplas, se necessário, para que a saída seja um identificador SQL válido. Por exemplo, o OID de uma função chamada `Foo` (com a letra maiúscula `F`) que leva dois argumentos inteiros pode ser inserido como `' "Foo" ( int, integer ) '::regprocedure`. A saída ficaria como `"Foo"(integer,integer)`. Tanto o nome da função quanto os nomes dos tipos de argumento também poderiam ser qualificados pelo esquema.
 
 Muitas funções incorporadas do PostgreSQL aceitam o OID de uma tabela ou outro tipo de objeto de banco de dados, e, por conveniência, são declaradas como aceitando `regclass` (ou o tipo de alias OID apropriado). Isso significa que você não precisa procurar o OID do objeto manualmente, mas pode simplesmente inserir seu nome como uma literal de string. Por exemplo, a função `nextval(regclass)` aceita o OID de uma relação de sequência, então você poderia chamá-la assim:
 
-```
+```sql
 nextval('foo')              operates on sequence foo
 nextval('FOO')              same as above
 nextval('"Foo"')            operates on sequence Foo
@@ -322,7 +311,7 @@ Nota
 
 Quando você escreve o argumento de uma função como uma string literal não ornamentada, ela se torna uma constante do tipo `regclass` (ou o tipo apropriado). Como essa é realmente apenas um OID, ela rastreará o objeto originalmente identificado, apesar de posterior renomeação, reatribuição de esquema, etc. Esse comportamento de "ligação precoce" é geralmente desejável para referências de objetos em padrões de coluna e visualizações. Mas, às vezes, você pode querer "ligação tardia" onde a referência do objeto é resolvida no tempo de execução. Para obter comportamento de ligação tardia, force a constante a ser armazenada como uma constante `text` em vez de `regclass`:
 
-```
+```sql
 nextval('foo'::text)      foo is looked up at runtime
 ```
 
@@ -330,7 +319,7 @@ A função `to_regclass()` e seus irmãos também podem ser usados para realizar
 
 Outro exemplo prático de uso do `regclass` é procurar o OID de uma tabela listada nas visualizações do `information_schema`, que não fornecem esses OIDs diretamente. Por exemplo, pode-se desejar chamar a função `pg_relation_size()`, que requer o OID da tabela. Tendo em conta as regras acima, a maneira correta de fazer isso é
 
-```
+```sql
 SELECT table_schema, table_name,
        pg_relation_size((quote_ident(table_schema) || '.' ||
                          quote_ident(table_name))::regclass)
@@ -340,7 +329,7 @@ WHERE ...
 
 A função `quote_ident()` cuidará da citação dupla dos identificadores, quando necessário. Aparenta ser mais fácil
 
-```
+```sql
 SELECT pg_relation_size(table_name)
 FROM information_schema.tables
 WHERE ...

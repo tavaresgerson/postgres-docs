@@ -1,4 +1,4 @@
-## 8.14. Tipos de JSON [#](#DATATYPE-JSON)
+### 8.14. Tipos de JSON [#](#DATATYPE-JSON)
 
 * [8.14.1. Sintaxe de entrada e saída JSON](datatype-json.md#JSON-KEYS-ELEMENTS)
 * [8.14.2. Projeto de documentos JSON](datatype-json.md#JSON-DOC-DESIGN)
@@ -31,8 +31,6 @@ Ao converter uma entrada textual JSON em `jsonb`, os tipos primitivos descritos 
 Por outro lado, conforme observado na tabela, há algumas restrições menores no formato de entrada dos tipos primitivos JSON que não se aplicam aos tipos correspondentes do PostgreSQL.
 
 **Tabela 8.23. Tipos primitivos JSON e tipos correspondentes do PostgreSQL**
-
-
 
 <table border="1" class="table" summary="JSON Primitive Types and Corresponding PostgreSQL Types">
  <colgroup>
@@ -140,22 +138,13 @@ Por outro lado, conforme observado na tabela, há algumas restrições menores n
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
-### 8.14.1. Sintaxe de entrada e saída JSON [#](#JSON-KEYS-ELEMENTS)
+#### 8.14.1. Sintaxe de entrada e saída JSON [#](#JSON-KEYS-ELEMENTS)
 
 A sintaxe de entrada/saída para os tipos de dados JSON é conforme especificado no RFC 7159.
 
 As seguintes expressões são válidas para `json` (ou `jsonb`):
 
-```
+```sql
 -- Simple scalar/primitive value
 -- Primitive values can be numbers, quoted strings, true, false, or null
 SELECT '5'::json;
@@ -173,7 +162,7 @@ SELECT '{"foo": [true, "bar"], "tags": {"a": 1, "b": null}}'::json;
 
 Como já mencionado anteriormente, quando um valor JSON é inserido e, em seguida, impresso sem qualquer processamento adicional, `json` exibe o mesmo texto que foi inserido, enquanto `jsonb` não preserva detalhes sem importância semântica, como espaços em branco. Por exemplo, observe as diferenças aqui:
 
-```
+```sql
 SELECT '{"bar": "baz", "balance": 7.77, "active":false}'::json;
                       json
 -------------------------------------------------
@@ -189,7 +178,7 @@ SELECT '{"bar": "baz", "balance": 7.77, "active":false}'::jsonb;
 
 Um detalhe sem importância semântica que vale a pena notar é que, em `jsonb`, os números serão impressos de acordo com o comportamento do tipo subjacente `numeric`. Na prática, isso significa que os números inseridos com a notação `E` serão impressos sem ela, por exemplo:
 
-```
+```sql
 SELECT '{"reading": 1.230e-5}'::json, '{"reading": 1.230e-5}'::jsonb;
          json          |          jsonb
 -----------------------+-------------------------
@@ -201,17 +190,17 @@ No entanto, `jsonb` preservará zeros fracionários finais, como visto neste exe
 
 Para a lista de funções e operadores embutidos disponíveis para a construção e processamento de valores JSON, consulte [Seção 9.16](functions-json.md).
 
-### 8.14.2. Projetando documentos JSON [#](#JSON-DOC-DESIGN)
+#### 8.14.2. Projetando documentos JSON [#](#JSON-DOC-DESIGN)
 
 Representar dados como JSON pode ser consideravelmente mais flexível do que o modelo de dados relacional tradicional, o que é convincente em ambientes onde os requisitos são fluidos. É perfeitamente possível que ambas as abordagens coexistem e se complementem dentro da mesma aplicação. No entanto, mesmo para aplicações onde a flexibilidade máxima é desejada, ainda é recomendado que os documentos JSON tenham uma estrutura um tanto fixa. A estrutura geralmente não é imposta (embora seja possível impor algumas regras comerciais declarativamente), mas ter uma estrutura previsível facilita a escrita de consultas que resumem de forma útil um conjunto de “documentos” (pontos de referência) em uma tabela.
 
 Os dados JSON estão sujeitos às mesmas considerações de controle de concorrência que qualquer outro tipo de dados quando armazenados em uma tabela. Embora seja possível armazenar documentos grandes, lembre-se de que qualquer atualização adquire um bloqueio de nível de linha em toda a linha. Considere limitar os documentos JSON a um tamanho gerenciável para diminuir a concorrência de bloqueio entre as transações de atualização. Idealmente, os documentos JSON devem representar cada um um dado atômico que as regras comerciais ditam que não podem razoavelmente ser subdivididos em menores dados que poderiam ser modificados independentemente.
 
-### 8.14.3. `jsonb` Contenimento e Existência [#](#JSON-CONTAINMENT)
+#### 8.14.3. `jsonb` Contenimento e Existência [#](#JSON-CONTAINMENT)
 
 Testar o *contenimento* é uma capacidade importante do `jsonb`. Não há um conjunto paralelo de instalações para o tipo `json`. O contenimento verifica se um documento `jsonb` contém outro documento. Esses exemplos retornam verdadeiro, exceto conforme indicado:
 
-```
+```sql
 -- Simple scalar/primitive values contain only the identical value:
 SELECT '"foo"'::jsonb @> '"foo"'::jsonb;
 
@@ -246,7 +235,7 @@ O princípio geral é que o objeto contido deve corresponder ao objeto contendo 
 
 Como exceção especial ao princípio geral de que as estruturas devem corresponder, uma matriz pode conter um valor primitivo:
 
-```
+```sql
 -- This array contains the primitive string value:
 SELECT '["foo", "bar"]'::jsonb @> '"bar"'::jsonb;
 
@@ -256,7 +245,7 @@ SELECT '"bar"'::jsonb @> '["bar"]'::jsonb;  -- yields false
 
 `jsonb` também tem um operador de *existência*, que é uma variação do tema de contenção: ele testa se uma string (dada como um valor `text` ) aparece como uma chave de objeto ou elemento de matriz no nível superior do valor `jsonb`. Esses exemplos retornam verdadeiro, exceto conforme observado:
 
-```
+```sql
 -- String exists as array element:
 SELECT '["foo", "bar", "baz"]'::jsonb ? 'bar';
 
@@ -279,14 +268,14 @@ DICA
 
 Como o conteúdo JSON é aninhado, uma consulta apropriada pode ignorar a seleção explícita de subobjetos. Como exemplo, suponha que tenhamos uma coluna `doc` contendo objetos no nível superior, com a maioria dos objetos contendo campos `tags` que contêm matrizes de subobjetos. Esta consulta encontra entradas nas quais subobjetos contendo tanto `"term":"paris"` quanto `"term":"food"` aparecem, ignorando quaisquer chaves desse tipo fora da matriz `tags`:
 
-```
+```sql
 SELECT doc->'site_name' FROM websites
   WHERE doc @> '{"tags":[{"term":"paris"}, {"term":"food"}]}';
 ```
 
 Se se quisesse, poderia-se fazer a mesma coisa com, por exemplo,
 
-```
+```sql
 SELECT doc->'site_name' FROM websites
   WHERE doc->'tags' @> '[{"term":"paris"}, {"term":"food"}]';
 ```
@@ -297,25 +286,25 @@ Por outro lado, o operador de existência JSON não é aninhado: ele só procura
 
 Os vários operadores de contenção e existência, juntamente com todos os outros operadores e funções JSON, estão documentados em [Seção 9.16](functions-json.md).
 
-### 8.14.4. `jsonb` Indicadores [#](#JSON-INDEXING)
+#### 8.14.4. `jsonb` Indicadores [#](#JSON-INDEXING)
 
 Os índices GIN podem ser usados para pesquisar eficientemente chaves ou pares chave/valor que ocorrem em um grande número de documentos `jsonb` (datums). Dois "classes de operadores" GIN são fornecidos, oferecendo diferentes compromissos em termos de desempenho e flexibilidade.
 
 A classe de operador GIN padrão para `jsonb` suporta consultas com os operadores key-exists `?`, `?|` e `?&`, o operador de contenção `@>` e os operadores de correspondência `@?` e `@@` do `jsonpath` (Para detalhes sobre a semântica que esses operadores implementam, consulte a [Tabela 9.48](functions-json.md#FUNCTIONS-JSONB-OP-TABLE)). Um exemplo de criação de um índice com essa classe de operador é:
 
-```
+```sql
 CREATE INDEX idxgin ON api USING GIN (jdoc);
 ```
 
 A classe de operadores GIN não padrão `jsonb_path_ops` não suporta os operadores key-exists, mas suporta `@>`, `@?` e `@@`. Um exemplo de criação de um índice com essa classe de operadores é:
 
-```
+```sql
 CREATE INDEX idxginp ON api USING GIN (jdoc jsonb_path_ops);
 ```
 
 Considere o exemplo de uma tabela que armazena documentos JSON recuperados de um serviço web de terceiros, com uma definição de esquema documentada. Um documento típico é:
 
-```
+```json
 {
     "guid": "9c36adc1-7fb5-4d5b-83b4-90356a46061a",
     "name": "Angela Barton",
@@ -335,21 +324,21 @@ Considere o exemplo de uma tabela que armazena documentos JSON recuperados de um
 
 Armazenamos esses documentos em uma tabela chamada `api`, em uma coluna `jsonb` chamada `jdoc`. Se um índice GIN for criado nesta coluna, consultas como as seguintes podem utilizar o índice:
 
-```
+```sql
 -- Find documents in which the key "company" has value "Magnafone"
 SELECT jdoc->'guid', jdoc->'name' FROM api WHERE jdoc @> '{"company": "Magnafone"}';
 ```
 
 No entanto, o índice não pode ser usado para consultas como as seguintes, porque, embora o operador `?` seja indexável, ele não é aplicado diretamente à coluna indexada `jdoc`:
 
-```
+```sql
 -- Find documents in which the key "tags" contains key or array element "qui"
 SELECT jdoc->'guid', jdoc->'name' FROM api WHERE jdoc -> 'tags' ? 'qui';
 ```
 
 Ainda assim, com o uso apropriado de índices de expressão, a consulta acima pode usar um índice. Se a consulta a itens específicos dentro da chave `"tags"` é comum, definir um índice assim pode ser útil:
 
-```
+```sql
 CREATE INDEX idxgintags ON api USING GIN ((jdoc -> 'tags'));
 ```
 
@@ -357,7 +346,7 @@ Agora, a cláusula `WHERE` `jdoc -> 'tags' ? 'qui'` será reconhecida como uma a
 
 Outra abordagem para fazer consultas é explorar a contenção, por exemplo:
 
-```
+```sql
 -- Find documents in which the key "tags" contains array element "qui"
 SELECT jdoc->'guid', jdoc->'name' FROM api WHERE jdoc @> '{"tags": ["qui"]}';
 ```
@@ -366,11 +355,11 @@ Um índice GIN simples na coluna `jdoc` pode suportar essa consulta. Mas observe
 
 Os índices GIN também suportam os operadores `@?` e `@@`, que realizam a correspondência `jsonpath`. Exemplos são
 
-```
+```sql
 SELECT jdoc->'guid', jdoc->'name' FROM api WHERE jdoc @? '$.tags[*] ? (@ == "qui")';
 ```
 
-```
+```sql
 SELECT jdoc->'guid', jdoc->'name' FROM api WHERE jdoc @@ '$.tags[*] == "qui"';
 ```
 
@@ -400,7 +389,7 @@ key-1, value-1, key-2 ...
 
 Observe que as chaves dos objetos são comparadas em sua ordem de armazenamento; em particular, uma vez que as chaves mais curtas são armazenadas antes das mais longas, isso pode levar a resultados que podem ser pouco intuitivos, como:
 
-```
+```json
 { "aa": 1, "c": 1} > {"b": 1, "d": 1}
 ```
 
@@ -412,7 +401,7 @@ element-1, element-2 ...
 
 Os valores primitivos do JSON são comparados usando as mesmas regras de comparação que para o tipo de dados subjacente do PostgreSQL. As cadeias são comparadas usando a collation padrão do banco de dados.
 
-### 8.14.5. Subscrito [#](#JSONB-SUBSCRIPTING)
+#### 8.14.5. Subscrito [#](#JSONB-SUBSCRIPTING)
 
 O tipo de dados `jsonb` suporta expressões de índice em estilo de matriz para extrair e modificar elementos. Valores aninhados podem ser indicados concatenando expressões de índice, seguindo as mesmas regras do argumento `path` na função `jsonb_set`. Se um valor `jsonb` for uma matriz, os índices numéricos começam em zero, e os inteiros negativos contam para trás a partir do último elemento da matriz. Expressões de fatiamento não são suportadas. O resultado de uma expressão de índice é sempre do tipo de dados jsonb.
 
@@ -420,7 +409,7 @@ As declarações `UPDATE` podem usar subscrito na cláusula `SET` para modificar
 
 Um exemplo de sintaxe de subscrito:
 
-```
+```sql
 -- Extract object value by key
 SELECT ('{"a": 1}'::jsonb)['a'];
 
@@ -447,7 +436,7 @@ SELECT * FROM table_name WHERE jsonb_field['key'] = '"value"';
 
 A atribuição via subscrito lida alguns casos de borda de maneira diferente da `jsonb_set`. Quando o valor da fonte `jsonb` é `NULL`, a atribuição via subscrito procederá como se fosse um valor JSON vazio do tipo (objeto ou matriz) implícito pela chave de subscrito:
 
-```
+```sql
 -- Where jsonb_field was NULL, it is now {"a": 1}
 UPDATE table_name SET jsonb_field['a'] = '1';
 
@@ -457,7 +446,7 @@ UPDATE table_name SET jsonb_field[0] = '1';
 
 Se um índice for especificado para um array que contém poucos elementos, os elementos `NULL` serão anexados até que o índice seja alcançável e o valor possa ser definido.
 
-```
+```sql
 -- Where jsonb_field was [], it is now [null, null, 2];
 -- where jsonb_field was [0], it is now [0, null, 2]
 UPDATE table_name SET jsonb_field[2] = '2';
@@ -465,7 +454,7 @@ UPDATE table_name SET jsonb_field[2] = '2';
 
 Um valor `jsonb` aceitará atribuições a caminhos de subscrito inexistentes, desde que o último elemento existente a ser percorrido seja um objeto ou uma matriz, conforme implícito pelo subscrito correspondente (o elemento indicado pelo último subscrito no caminho não é percorrido e pode ser qualquer coisa). Estruturas de matriz e objeto aninhadas serão criadas, e no primeiro caso, `null` preenchidas, conforme especificado pelo caminho de subscrito até que o valor atribuído possa ser colocado.
 
-```
+```sql
 -- Where jsonb_field was {}, it is now {"a": [{"b": 1}]}
 UPDATE table_name SET jsonb_field['a'][0]['b'] = '1';
 
@@ -473,7 +462,7 @@ UPDATE table_name SET jsonb_field['a'][0]['b'] = '1';
 UPDATE table_name SET jsonb_field[1]['a'] = '1';
 ```
 
-### 8.14.6. Transformações [#](#DATATYPE-JSON-TRANSFORMS)
+#### 8.14.6. Transformações [#](#DATATYPE-JSON-TRANSFORMS)
 
 Existem extensões adicionais disponíveis que implementam transformações para o tipo `jsonb` para diferentes linguagens processuais.
 
@@ -483,7 +472,7 @@ A extensão para PL/Python é chamada de `jsonb_plpython3u`. Se você a usar, os
 
 Desses extensões, a `jsonb_plperl` é considerada “confiável”, ou seja, pode ser instalada por usuários não superusuários que possuem privilégio `CREATE` no banco de dados atual. O restante requer privilégio de superusuário para instalação.
 
-### 8.14.7. jsonpath Tipo [#](#DATATYPE-JSONPATH)
+#### 8.14.7. jsonpath Tipo [#](#DATATYPE-JSONPATH)
 
 O tipo `jsonpath` implementa suporte para o idioma de caminho SQL/JSON no PostgreSQL para consultar eficientemente dados JSON. Ele fornece uma representação binária da expressão de caminho SQL/JSON analisada que especifica os itens que devem ser recuperados pelo motor de caminho a partir dos dados JSON para processamento adicional com as funções de consulta SQL/JSON.
 
@@ -508,8 +497,6 @@ Uma expressão de caminho consiste em uma sequência de elementos de caminho, qu
 Para obter detalhes sobre o uso das expressões `jsonpath` com funções de consulta SQL/JSON, consulte [Seção 9.16.2](functions-json.md#FUNCTIONS-SQLJSON-PATH).
 
 **Tabela 8.24. `jsonpath` Variáveis**
-
-
 
 <table border="1" class="table" summary="jsonpath Variables">
  <colgroup>
@@ -574,18 +561,7 @@ Para obter detalhes sobre o uso das expressões `jsonpath` com funções de cons
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 **Tabela 8.25. `jsonpath` Acessórios**
-
-
 
 <table border="1" class="table" summary="jsonpath Accessors">
  <colgroup>
@@ -809,13 +785,6 @@ Para obter detalhes sobre o uso das expressões `jsonpath` com funções de cons
   </tr>
  </tbody>
 </table>
-
-
-
-
-
-
-
 
 ---
 

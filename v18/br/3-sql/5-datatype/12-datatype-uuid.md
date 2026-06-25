@@ -1,4 +1,4 @@
-## 8.12. Tipo de UUID [#](#DATATYPE-UUID)
+### 8.12. Tipo de UUID [#](#DATATYPE-UUID)
 
 O tipo de dados `uuid` armazena Identificadores Únicos Universalmente (UUID) conforme definido por [RFC 9562](https://datatracker.ietf.org/doc/html/rfc9562), ISO/IEC 9834-8:2005 e normas relacionadas. (Alguns sistemas referem-se a este tipo de dados como um identificador globalmente único, ou GUID, em vez disso.) Este identificador é uma quantidade de 128 bits que é gerada por um algoritmo escolhido para torná-lo muito improvável que o mesmo identificador seja gerado por qualquer outra pessoa no universo conhecido usando o mesmo algoritmo. Portanto, para sistemas distribuídos, esses identificadores fornecem uma garantia de unicidade melhor do que os geradores de sequência, que são únicos apenas dentro de um único banco de dados.
 

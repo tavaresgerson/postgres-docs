@@ -1,4 +1,4 @@
-## 8.17. Tipos de intervalo [#](#RANGETYPES)
+### 8.17. Tipos de intervalo [#](#RANGETYPES)
 
 * [8.17.1. Tipos de intervalo embutido e multiintervalo][(rangetypes.md#RANGETYPES-BUILTIN)
 * [8.17.2. Exemplos][(rangetypes.md#RANGETYPES-EXAMPLES)
@@ -17,7 +17,7 @@ Os tipos de intervalo são úteis porque representam muitos valores de elementos
 
 Cada tipo de intervalo tem um tipo correspondente de multiintervalo. Um multiintervalo é uma lista ordenada de intervalos não contíguos, não vazios e não nulos. A maioria dos operadores de intervalo também funciona em multiintervalos, e eles têm algumas funções próprias.
 
-### 8.17.1. Tipos de faixa integrada e multifaixa [#](#RANGETYPES-BUILTIN)
+#### 8.17.1. Tipos de faixa integrada e multifaixa [#](#RANGETYPES-BUILTIN)
 
 O PostgreSQL vem com os seguintes tipos de intervalo embutidos:
 
@@ -32,7 +32,7 @@ Além disso, você pode definir seus próprios tipos de intervalo; consulte [CRE
 
 ### 8.17.2. Exemplos [#](#RANGETYPES-EXAMPLES)
 
-```
+```sql
 CREATE TABLE reservation (room int, during tsrange);
 INSERT INTO reservation VALUES
     (1108, '[2010-01-01 14:30, 2010-01-01 15:30)');
@@ -55,7 +55,7 @@ SELECT isempty(numrange(1, 5));
 
 Consulte as tabelas [Tabela 9.58](functions-range.md#RANGE-OPERATORS-TABLE) e [Tabela 9.60](functions-range.md#RANGE-FUNCTIONS-TABLE) para obter listas completas dos operadores e funções sobre os tipos de intervalo.
 
-### 8.17.3. Limites inclusivos e exclusivos [#](#RANGETYPES-INCLUSIVITY)
+#### 8.17.3. Limites inclusivos e exclusivos [#](#RANGETYPES-INCLUSIVITY)
 
 Cada intervalo não vazio tem dois limites, o limite inferior e o limite superior. Todos os pontos entre esses valores estão incluídos no intervalo. Um limite inclusivo significa que o próprio ponto de limite está incluído no intervalo, enquanto um limite exclusivo significa que o ponto de limite não está incluído no intervalo.
 
@@ -63,7 +63,7 @@ Na forma textual de uma faixa, uma faixa inferior inclusiva é representada por 
 
 As funções `lower_inc` e `upper_inc` testam a inclusividade dos limites inferior e superior de um valor de intervalo, respectivamente.
 
-### 8.17.4. Intervalos infinitos (sem limites) [#](#RANGETYPES-INFINITE)
+#### 8.17.4. Intervalos infinitos (sem limites) [#](#RANGETYPES-INFINITE)
 
 O limite inferior de uma faixa pode ser omitido, o que significa que todos os valores menores que o limite superior são incluídos na faixa, por exemplo, `(,3]`. Da mesma forma, se o limite superior da faixa for omitido, então todos os valores maiores que o limite inferior são incluídos na faixa. Se ambos os limites inferior e superior forem omitidos, todos os valores do tipo de elemento são considerados na faixa. Especificar um limite ausente como inclusivo é automaticamente convertido para exclusivo, por exemplo, `[,]` é convertido para `(,)`. Você pode pensar nesses valores ausentes como +/-infinito, mas eles são valores especiais do tipo de faixa e são considerados além de quaisquer valores +/-infinito de qualquer tipo de elemento de faixa.
 
@@ -71,11 +71,11 @@ Os tipos de elemento que possuem a noção de “infinito” podem usá-los como
 
 As funções `lower_inf` e `upper_inf` testam limites inferiores e superiores infinitos, respectivamente.
 
-### 8.17.5. Entrada/Saída de alcance [#](#RANGETYPES-IO)
+#### 8.17.5. Entrada/Saída de alcance [#](#RANGETYPES-IO)
 
 A entrada para um valor de intervalo deve seguir um dos seguintes padrões:
 
-```
+```sql
 (lower-bound,upper-bound)
 (lower-bound,upper-bound]
 [lower-bound,upper-bound)
@@ -97,7 +97,7 @@ Essas regras são muito semelhantes às que se aplicam à escrita de valores de 
 
 Exemplos:
 
-```
+```sql
 -- includes 3, does not include 7, and does include all points in between
 SELECT '[3,7)'::int4range;
 
@@ -115,7 +115,7 @@ A entrada para um multirange é entre chaves espirais (`{` e `}`) que contêm ze
 
 Exemplos:
 
-```
+```sql
 SELECT '{}'::int4multirange;
 SELECT '{[3,7)}'::int4multirange;
 SELECT '{[3,7), [8,9)}'::int4multirange;
@@ -125,7 +125,7 @@ SELECT '{[3,7), [8,9)}'::int4multirange;
 
 Cada tipo de intervalo tem uma função construtor com o mesmo nome que o tipo de intervalo. Usar a função construtor é frequentemente mais conveniente do que escrever uma constante literal de intervalo, pois evita a necessidade de citação extra dos valores de limite. A função construtor aceita dois ou três argumentos. A forma de dois argumentos constrói um intervalo na forma padrão (limite inferior inclusivo, limite superior exclusivo), enquanto a forma de três argumentos constrói um intervalo com limites da forma especificada pelo terceiro argumento. O terceiro argumento deve ser uma das strings “`()`”, “`(]`”, “`[)`” ou “`[]`”. Por exemplo:
 
-```
+```sql
 -- The full form is: lower bound, upper bound, and text argument indicating
 -- inclusivity/exclusivity of bounds.
 SELECT numrange(1.0, 14.0, '(]');
@@ -143,13 +143,13 @@ SELECT numrange(NULL, 2.2);
 
 Cada tipo de intervalo também tem um construtor multirange com o mesmo nome que o tipo multirange. A função construtor recebe zero ou mais argumentos, que são todos os intervalos do tipo apropriado. Por exemplo:
 
-```
+```sql
 SELECT nummultirange();
 SELECT nummultirange(numrange(1.0, 14.0));
 SELECT nummultirange(numrange(1.0, 14.0), numrange(20.0, 25.0));
 ```
 
-### 8.17.7. Tipos de intervalo discreto [#](#RANGETYPES-DISCRETE)
+#### 8.17.7. Tipos de intervalo discreto [#](#RANGETYPES-DISCRETE)
 
 Uma faixa discreta é aquela cujo tipo de elemento tem um "passo" bem definido, como `integer` ou `date`. Nesses tipos, pode-se dizer que dois elementos são adjacentes quando não há valores válidos entre eles. Isso contrasta com as faixas contínuas, onde é sempre (ou quase sempre) possível identificar outros valores de elementos entre dois valores dados. Por exemplo, uma faixa sobre o tipo `numeric` é contínua, assim como uma faixa sobre `timestamp`. (Embora `timestamp` tenha precisão limitada, e portanto, teoricamente, possa ser tratado como discreto, é melhor considerá-lo contínuo, uma vez que o tamanho do passo normalmente não é de interesse.)
 
@@ -159,11 +159,11 @@ Um tipo de intervalo discreto deve ter uma função de *canonicização* que est
 
 Os tipos de intervalo embutidos `int4range`, `int8range` e `daterange` utilizam uma forma canônica que inclui o limite inferior e exclui o limite superior; ou seja, `[)`. No entanto, os tipos de intervalo definidos pelo usuário podem utilizar outras convenções.
 
-### 8.17.8. Definindo novos tipos de faixa [#](#RANGETYPES-DEFINING)
+#### 8.17.8. Definindo novos tipos de faixa [#](#RANGETYPES-DEFINING)
 
 Os usuários podem definir seus próprios tipos de intervalo. A razão mais comum para fazer isso é usar intervalos sobre subtipos que não estão fornecidos entre os tipos de intervalo pré-definidos. Por exemplo, para definir um novo tipo de intervalo de subtipo `float8`:
 
-```
+```sql
 CREATE TYPE floatrange AS RANGE (
     subtype = float8,
     subtype_diff = float8mi
@@ -184,7 +184,7 @@ Além disso, qualquer tipo de intervalo que seja destinado a ser usado com índi
 
 Um exemplo menos simplificado de uma função `subtype_diff` é:
 
-```
+```sql
 CREATE FUNCTION time_subtype_diff(x time, y time) RETURNS float8 AS
 'SELECT EXTRACT(EPOCH FROM (x - y))' LANGUAGE sql STRICT IMMUTABLE;
 
@@ -202,7 +202,7 @@ Veja [CREATE TYPE](sql-createtype.md "CREATE TYPE") para mais informações sobr
 
 Os índices GiST e SP-GiST podem ser criados para colunas de tabela de tipos de intervalo. Os índices GiST também podem ser criados para colunas de tabela de tipos de multiintervalo. Por exemplo, para criar um índice GiST:
 
-```
+```sql
 CREATE INDEX reservation_idx ON reservation USING GIST (during);
 ```
 
@@ -210,11 +210,11 @@ Um índice GiST ou SP-GiST em intervalos pode acelerar consultas que envolvem es
 
 Além disso, índices de árvore B e de hash podem ser criados para as colunas de tabelas de tipos de intervalo. Para esses tipos de índice, basicamente a única operação de intervalo útil é a igualdade. Existe uma ordenação de classificação de árvore B definida para valores de intervalo, com operadores correspondentes `<` e `>`, mas a ordenação é bastante arbitrária e geralmente não é útil no mundo real. O suporte de árvore B e de hash dos tipos de intervalo é destinado principalmente a permitir a classificação e a hashing internamente em consultas, em vez da criação de índices reais.
 
-### 8.17.10. Restrições em intervalos [#](#RANGETYPES-CONSTRAINT)
+#### 8.17.10. Restrições em intervalos [#](#RANGETYPES-CONSTRAINT)
 
 Embora `UNIQUE` seja uma restrição natural para valores escalares, geralmente é inadequado para tipos de intervalo. Em vez disso, uma restrição de exclusão é frequentemente mais apropriada (consulte [CREATE TABLE ... CONSTRAINT ... EXCLUDE](sql-createtable.md#SQL-CREATETABLE-EXCLUDE)). As restrições de exclusão permitem a especificação de restrições, como "não sobreposição", em um tipo de intervalo. Por exemplo:
 
-```
+```sql
 CREATE TABLE reservation (
     during tsrange,
     EXCLUDE USING GIST (during WITH &&)
@@ -223,7 +223,7 @@ CREATE TABLE reservation (
 
 Essa restrição impedirá que valores sobrepostos existam na tabela ao mesmo tempo:
 
-```
+```sql
 INSERT INTO reservation VALUES
     ('[2010-01-01 11:30, 2010-01-01 15:00)');
 INSERT 0 1
@@ -237,7 +237,7 @@ with existing key (during)=(["2010-01-01 11:30:00","2010-01-01 15:00:00")).
 
 Você pode usar a extensão `btree_gist`](btree-gist.md) para definir restrições de exclusão em tipos de dados escalares simples, que podem ser combinadas com exclusões de intervalo para máxima flexibilidade. Por exemplo, após o `btree_gist` ser instalado, a seguinte restrição rejeitará os intervalos sobrepostos apenas se os números das salas de reunião forem iguais:
 
-```
+```sql
 CREATE EXTENSION btree_gist;
 CREATE TABLE room_reservation (
     room text,

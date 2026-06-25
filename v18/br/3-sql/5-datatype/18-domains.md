@@ -1,10 +1,10 @@
-## 8.18. Tipos de domínio [#](#DOMAINS)
+### 8.18. Tipos de domínio [#](#DOMAINS)
 
 Um *domínio* é um tipo de dados definido pelo usuário que é baseado em outro *tipo subjacente*. Opcionalmente, ele pode ter restrições que restringem seus valores válidos a um subconjunto do que o tipo subjacente permitiria. Caso contrário, ele se comporta como o tipo subjacente — por exemplo, qualquer operador ou função que pode ser aplicada ao tipo subjacente funcionará no tipo de domínio. O tipo subjacente pode ser qualquer tipo de base embutido ou definido pelo usuário, tipo enum, tipo de matriz, tipo composto, tipo de intervalo ou outro domínio.
 
 Por exemplo, poderíamos criar um domínio sobre inteiros que aceita apenas inteiros positivos:
 
-```
+```sql
 CREATE DOMAIN posint AS integer CHECK (VALUE > 0);
 CREATE TABLE mytable (id posint);
 INSERT INTO mytable VALUES(1);   -- works
