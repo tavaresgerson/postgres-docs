@@ -4,7 +4,7 @@ O PostgreSQL fornece o tipo padrão SQL `boolean`; veja [Tabela 8.19](datatype-b
 
 **Tabela 8.19. Tipo de dados booleano**
 
-<table border="1" class="table" summary="Boolean Data Type">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -26,7 +26,7 @@ O PostgreSQL fornece o tipo padrão SQL `boolean`; veja [Tabela 8.19](datatype-b
  <tbody>
   <tr>
    <td>
-    <code class="type">
+    <code>
      boolean
     </code>
    </td>
@@ -44,31 +44,31 @@ As constantes booleanas podem ser representadas em consultas SQL pelos termos-ch
 
 A função de entrada de tipo de dados do tipo `boolean` aceita essas representações de string para o estado “verdadeiro”:
 
-<table border="0" class="simplelist" summary="Simple list">
+<table>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     true
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     yes
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     on
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     1
    </code>
   </td>
@@ -77,31 +77,31 @@ A função de entrada de tipo de dados do tipo `boolean` aceita essas representa
 
 e essas representações para o estado “falso”:
 
-<table border="0" class="simplelist" summary="Simple list">
+<table>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     false
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     no
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     off
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     0
    </code>
   </td>

@@ -62,11 +62,7 @@ As imagens da página inteira são salvas com o seguinte formato de nome de arqu
 
 
 
-<table border="1" class="informaltable">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -84,7 +80,7 @@ As imagens da página inteira são salvas com o seguinte formato de nome de arqu
    </td>
    <td>
     A linha cronológica do arquivo de segmento WAL, onde o registro está localizado, formatada como um número hexadecimal de 8 caracteres
-    <code class="literal">
+    <code>
      %08X
     </code>
    </td>
@@ -99,7 +95,7 @@ As imagens da página inteira são salvas com o seguinte formato de nome de arqu
      LSN
     </acronym>
     do registro com esta imagem, formatado como dois números hexadecimais de 8 caracteres
-    <code class="literal">
+    <code>
      %08X-%08X
     </code>
    </td>
@@ -142,19 +138,19 @@ As imagens da página inteira são salvas com o seguinte formato de nome de arqu
    </td>
    <td>
     O nome do garfo de onde a imagem da página inteira veio, como
-    <code class="literal">
+    <code>
      main
     </code>
     ,
-    <code class="literal">
+    <code>
      fsm
     </code>
     ,
-    <code class="literal">
+    <code>
      vm
     </code>
     , ou
-    <code class="literal">
+    <code>
      init
     </code>
     .

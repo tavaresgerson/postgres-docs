@@ -52,7 +52,7 @@ O quadro a seguir resume o comportamento quando há colunas geradas envolvidas n
 
 
 
-<table border="1" class="table" summary="Replication Result Summary">
+<table>
  <colgroup>
   <col/>
   <col/>

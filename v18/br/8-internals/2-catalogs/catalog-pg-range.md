@@ -6,7 +6,7 @@ O catálogo `pg_range` armazena informações sobre os tipos de faixa. Isso é a
 
 
 
-<table border="1" class="table" summary="pg_range Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,20 +26,20 @@ O catálogo `pg_range` armazena informações sobre os tipos de faixa. Isso é a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rngtypid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (references
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -52,20 +52,20 @@ O catálogo `pg_range` armazena informações sobre os tipos de faixa. Isso é a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rngsubtype
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (references
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -78,20 +78,20 @@ O catálogo `pg_range` armazena informações sobre os tipos de faixa. Isso é a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rngmultitypid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (references
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -104,20 +104,20 @@ O catálogo `pg_range` armazena informações sobre os tipos de faixa. Isso é a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rngcollation
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (references
      <a class="link" href="catalog-pg-collation.md" title="52.12. pg_collation">
-      <code class="structname">
+      <code>
        pg_collation
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -130,20 +130,20 @@ O catálogo `pg_range` armazena informações sobre os tipos de faixa. Isso é a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rngsubopc
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (references
      <a class="link" href="catalog-pg-opclass.md" title="52.33. pg_opclass">
-      <code class="structname">
+      <code>
        pg_opclass
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -156,20 +156,20 @@ O catálogo `pg_range` armazena informações sobre os tipos de faixa. Isso é a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rngcanonical
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (references
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -182,27 +182,27 @@ O catálogo `pg_range` armazena informações sobre os tipos de faixa. Isso é a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rngsubdiff
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (references
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
     </p>
     <p>
      OID of the function to return the difference between two element values as
-     <code class="type">
+     <code>
       double precision
      </code>
      , or zero if none

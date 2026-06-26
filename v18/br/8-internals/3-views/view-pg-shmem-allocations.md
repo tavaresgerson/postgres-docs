@@ -8,7 +8,7 @@ Observe que essa visão não inclui a memória alocada usando a infraestrutura d
 
 
 
-<table border="1" class="table" summary="pg_shmem_allocations Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,16 +28,16 @@ Observe que essa visão não inclui a memória alocada usando a infraestrutura d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       name
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      O nome da alocação de memória compartilhada. NULL para memória não utilizada e
-     <code class="literal">
+     <code>
       &lt;anonymous&gt;
      </code>
      para alocações anônimas.
@@ -47,10 +47,10 @@ Observe que essa visão não inclui a memória alocada usando a infraestrutura d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       off
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
@@ -62,10 +62,10 @@ Observe que essa visão não inclui a memória alocada usando a infraestrutura d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       size
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
@@ -77,20 +77,20 @@ Observe que essa visão não inclui a memória alocada usando a infraestrutura d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       allocated_size
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
     <p>
      Tamanho da alocação em bytes, incluindo o preenchimento. Para alocações anônimas, não há informações sobre o preenchimento, então
-     <code class="literal">
+     <code>
       size
      </code>
      e
-     <code class="literal">
+     <code>
       allocated_size
      </code>
      As colunas sempre serão iguais. O preenchimento não é significativo para memória livre, então as colunas serão iguais nesse caso também.

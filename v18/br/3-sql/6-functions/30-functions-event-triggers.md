@@ -18,7 +18,7 @@ pg_event_trigger_ddl_commands () → setof record
 
 
 
-<table border="1" class="informaltable">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -40,12 +40,12 @@ pg_event_trigger_ddl_commands () → setof record
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      classid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      oid
     </code>
    </td>
@@ -55,12 +55,12 @@ pg_event_trigger_ddl_commands () → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      objid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      oid
     </code>
    </td>
@@ -70,12 +70,12 @@ pg_event_trigger_ddl_commands () → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      objsubid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
@@ -85,12 +85,12 @@ pg_event_trigger_ddl_commands () → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      command_tag
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
@@ -100,12 +100,12 @@ pg_event_trigger_ddl_commands () → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      object_type
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
@@ -115,18 +115,18 @@ pg_event_trigger_ddl_commands () → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      schema_name
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
    <td>
     Nome do esquema ao qual o objeto pertence, se houver; caso contrário
-    <code class="literal">
+    <code>
      NULL
     </code>
     . Não há citação aplicada.
@@ -134,12 +134,12 @@ pg_event_trigger_ddl_commands () → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      object_identity
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
@@ -149,12 +149,12 @@ pg_event_trigger_ddl_commands () → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      in_extension
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      boolean
     </code>
    </td>
@@ -164,12 +164,12 @@ pg_event_trigger_ddl_commands () → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      command
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      pg_ddl_command
     </code>
    </td>
@@ -196,7 +196,7 @@ pg_event_trigger_dropped_objects () → setof record
 
 
 
-<table border="1" class="informaltable">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -218,12 +218,12 @@ pg_event_trigger_dropped_objects () → setof record
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      classid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      oid
     </code>
    </td>
@@ -233,12 +233,12 @@ pg_event_trigger_dropped_objects () → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      objid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      oid
     </code>
    </td>
@@ -248,12 +248,12 @@ pg_event_trigger_dropped_objects () → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      objsubid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
@@ -263,12 +263,12 @@ pg_event_trigger_dropped_objects () → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      original
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      boolean
     </code>
    </td>
@@ -278,12 +278,12 @@ pg_event_trigger_dropped_objects () → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      normal
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      boolean
     </code>
    </td>
@@ -293,12 +293,12 @@ pg_event_trigger_dropped_objects () → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      is_temporary
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      boolean
     </code>
    </td>
@@ -308,12 +308,12 @@ pg_event_trigger_dropped_objects () → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      object_type
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
@@ -323,18 +323,18 @@ pg_event_trigger_dropped_objects () → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      schema_name
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
    <td>
     Nome do esquema ao qual o objeto pertencia, se houver; caso contrário
-    <code class="literal">
+    <code>
      NULL
     </code>
     . Não há citação aplicada.
@@ -342,18 +342,18 @@ pg_event_trigger_dropped_objects () → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      object_name
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
    <td>
     Nome do objeto, se a combinação de esquema e nome puder ser usada como um identificador único para o objeto; caso contrário
-    <code class="literal">
+    <code>
      NULL
     </code>
     . Não há citação aplicada, e o nome nunca é qualificada por esquema.
@@ -361,12 +361,12 @@ pg_event_trigger_dropped_objects () → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      object_identity
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
@@ -376,26 +376,26 @@ pg_event_trigger_dropped_objects () → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      address_names
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text[]
     </code>
    </td>
    <td>
     Uma série que, juntamente com
-    <code class="literal">
+    <code>
      object_type
     </code>
     e
-    <code class="literal">
+    <code>
      address_args
     </code>
     , pode ser utilizado por
-    <code class="function">
+    <code>
      pg_get_object_address
     </code>
     função para recriar o endereço do objeto em um servidor remoto que contenha um objeto com o mesmo nome e do mesmo tipo.
@@ -403,18 +403,18 @@ pg_event_trigger_dropped_objects () → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      address_args
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text[]
     </code>
    </td>
    <td>
     Complemento para
-    <code class="literal">
+    <code>
      address_names
     </code>
    </td>
@@ -460,7 +460,7 @@ As funções mostradas na [Tabela 9.111](functions-event-triggers.md#FUNCTIONS-E
 
 
 
-<table border="1" class="table" summary="Table Rewrite Information Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -480,11 +480,11 @@ As funções mostradas na [Tabela 9.111](functions-event-triggers.md#FUNCTIONS-E
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_event_trigger_table_rewrite_oid
      </code>
      ()
-     <code class="returnvalue">
+     <code>
       oid
      </code>
     </p>
@@ -496,29 +496,29 @@ As funções mostradas na [Tabela 9.111](functions-event-triggers.md#FUNCTIONS-E
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_event_trigger_table_rewrite_reason
      </code>
      ()
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Retorna um código que explica a(s) razão(ões) para a reescrita. O valor é uma bitmap construída a partir dos seguintes valores:
-     <code class="literal">
+     <code>
       1
      </code>
      (a tabela mudou sua persistência),
-     <code class="literal">
+     <code>
       2
      </code>
      (o valor padrão de uma coluna foi alterado),
-     <code class="literal">
+     <code>
       4
      </code>
      (uma coluna tem um novo tipo de dados) e
-     <code class="literal">
+     <code>
       8
      </code>
      (o método de acesso à tabela foi alterado).

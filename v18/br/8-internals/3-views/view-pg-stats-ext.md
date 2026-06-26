@@ -8,7 +8,7 @@ A vista `pg_stats_ext` fornece acesso a informações sobre cada objeto de estat
 
 
 
-<table border="1" class="table" summary="pg_stats_ext Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,20 +28,20 @@ A vista `pg_stats_ext` fornece acesso a informações sobre cada objeto de estat
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       schemaname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (references
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       nspname
      </code>
      )
@@ -54,20 +54,20 @@ A vista `pg_stats_ext` fornece acesso a informações sobre cada objeto de estat
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tablename
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (references
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       relname
      </code>
      )
@@ -80,20 +80,20 @@ A vista `pg_stats_ext` fornece acesso a informações sobre cada objeto de estat
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       statistics_schemaname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (references
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       nspname
      </code>
      )
@@ -106,20 +106,20 @@ A vista `pg_stats_ext` fornece acesso a informações sobre cada objeto de estat
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       statistics_name
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (references
      <a class="link" href="catalog-pg-statistic-ext.md" title="52.52. pg_statistic_ext">
-      <code class="structname">
+      <code>
        pg_statistic_ext
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       stxname
      </code>
      )
@@ -132,20 +132,20 @@ A vista `pg_stats_ext` fornece acesso a informações sobre cada objeto de estat
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       statistics_owner
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (references
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       rolname
      </code>
      )
@@ -158,20 +158,20 @@ A vista `pg_stats_ext` fornece acesso a informações sobre cada objeto de estat
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attnames
      </code>
-     <code class="type">
+     <code>
       name[]
      </code>
      (references
      <a class="link" href="catalog-pg-attribute.md" title="52.7. pg_attribute">
-      <code class="structname">
+      <code>
        pg_attribute
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       attname
      </code>
      )
@@ -184,10 +184,10 @@ A vista `pg_stats_ext` fornece acesso a informações sobre cada objeto de estat
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       exprs
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>
@@ -199,10 +199,10 @@ A vista `pg_stats_ext` fornece acesso a informações sobre cada objeto de estat
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       kinds
      </code>
-     <code class="type">
+     <code>
       char[]
      </code>
     </p>
@@ -214,20 +214,20 @@ A vista `pg_stats_ext` fornece acesso a informações sobre cada objeto de estat
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       inherited
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
      (references
      <a class="link" href="catalog-pg-statistic-ext-data.md" title="52.53. pg_statistic_ext_data">
-      <code class="structname">
+      <code>
        pg_statistic_ext_data
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       stxdinherit
      </code>
      )
@@ -240,16 +240,16 @@ A vista `pg_stats_ext` fornece acesso a informações sobre cada objeto de estat
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       n_distinct
      </code>
-     <code class="type">
+     <code>
       pg_ndistinct
      </code>
     </p>
     <p>
      N-distinct counts for combinations of column values. If greater than zero, the estimated number of distinct values in the combination. If less than zero, the negative of the number of distinct values divided by the number of rows. (The negated form is used when
-     <code class="command">
+     <code>
       ANALYZE
      </code>
      believes that the number of distinct values is likely to increase as the table grows; the positive form is used when the column seems to have a fixed number of possible values.)  For example, -1 indicates a unique combination of columns in which the number of distinct combinations is the same as the number of rows.
@@ -259,10 +259,10 @@ A vista `pg_stats_ext` fornece acesso a informações sobre cada objeto de estat
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       dependencies
      </code>
-     <code class="type">
+     <code>
       pg_dependencies
      </code>
     </p>
@@ -274,10 +274,10 @@ A vista `pg_stats_ext` fornece acesso a informações sobre cada objeto de estat
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       most_common_vals
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>
@@ -289,16 +289,16 @@ A vista `pg_stats_ext` fornece acesso a informações sobre cada objeto de estat
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       most_common_val_nulls
      </code>
-     <code class="type">
+     <code>
       bool[]
      </code>
     </p>
     <p>
      A list of NULL flags for the most common combinations of values. (Null when
-     <code class="structfield">
+     <code>
       most_common_vals
      </code>
      is.)
@@ -308,16 +308,16 @@ A vista `pg_stats_ext` fornece acesso a informações sobre cada objeto de estat
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       most_common_freqs
      </code>
-     <code class="type">
+     <code>
       float8[]
      </code>
     </p>
     <p>
      A list of the frequencies of the most common combinations, i.e., number of occurrences of each divided by total number of rows. (Null when
-     <code class="structfield">
+     <code>
       most_common_vals
      </code>
      is.)
@@ -327,16 +327,16 @@ A vista `pg_stats_ext` fornece acesso a informações sobre cada objeto de estat
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       most_common_base_freqs
      </code>
-     <code class="type">
+     <code>
       float8[]
      </code>
     </p>
     <p>
      A list of the base frequencies of the most common combinations, i.e., product of per-value frequencies. (Null when
-     <code class="structfield">
+     <code>
       most_common_vals
      </code>
      is.)

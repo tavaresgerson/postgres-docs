@@ -32,7 +32,7 @@ PostgreSQL não oferece esse tipo de replicação, embora o PostgreSQL com dois 
 
 
 
-<table border="1" class="table" summary="High Availability, Load Balancing, and Replication Feature Matrix">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>

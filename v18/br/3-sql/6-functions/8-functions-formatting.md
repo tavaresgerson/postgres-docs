@@ -1,12 +1,10 @@
-## 9.8. Funções de formatação de tipos de dados [#](#FUNCTIONS-FORMATTING)
+### 9.8. Funções de formatação de tipos de dados [#](#FUNCTIONS-FORMATTING)
 
 As funções de formatação do PostgreSQL fornecem um conjunto poderoso de ferramentas para converter vários tipos de dados (data/hora, inteiro, ponto flutuante, numérico) em strings formatadas e para converter de strings formatadas para tipos de dados específicos. [Tabela 9.26](functions-formatting.md#FUNCTIONS-FORMATTING-TABLE) as lista. Todas essas funções seguem uma convenção de chamada comum: o primeiro argumento é o valor a ser formatado e o segundo argumento é um modelo que define o formato de saída ou entrada.
 
 **Tabela 9.26. Funções de formatação**
 
-
-
-<table border="1" class="table" summary="Formatting Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -29,36 +27,36 @@ As funções de formatação do PostgreSQL fornecem um conjunto poderoso de ferr
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_char
      </code>
      (
-     <code class="type">
+     <code>
       timestamp
      </code>
      ,
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_char
      </code>
      (
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      ,
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -66,11 +64,11 @@ As funções de formatação do PostgreSQL fornecem um conjunto poderoso de ferr
      Converts time stamp to string according to the given format.
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_char(timestamp '2002-04-20 17:31:12.66', 'HH12:MI:SS')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       05:31:12
      </code>
     </p>
@@ -79,19 +77,19 @@ As funções de formatação do PostgreSQL fornecem um conjunto poderoso de ferr
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_char
      </code>
      (
-     <code class="type">
+     <code>
       interval
      </code>
      ,
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -99,11 +97,11 @@ As funções de formatação do PostgreSQL fornecem um conjunto poderoso de ferr
      Converts interval to string according to the given format.
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_char(interval '15h 2m 12s', 'HH24:MI:SS')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       15:02:12
      </code>
     </p>
@@ -112,7 +110,7 @@ As funções de formatação do PostgreSQL fornecem um conjunto poderoso de ferr
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_char
      </code>
      (
@@ -122,61 +120,61 @@ As funções de formatação do PostgreSQL fornecem um conjunto poderoso de ferr
       </code>
      </em>
      ,
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Converts number to string according to the given format; available for
-     <code class="type">
+     <code>
       integer
      </code>
      ,
-     <code class="type">
+     <code>
       bigint
      </code>
      ,
-     <code class="type">
+     <code>
       numeric
      </code>
      ,
-     <code class="type">
+     <code>
       real
      </code>
      ,
-     <code class="type">
+     <code>
       double precision
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_char(125, '999')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       125
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_char(125.8::real, '999D9')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       125.8
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_char(-125.8, '999D99S')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       125.80-
      </code>
     </p>
@@ -185,19 +183,19 @@ As funções de formatação do PostgreSQL fornecem um conjunto poderoso de ferr
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_date
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ,
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       date
      </code>
     </p>
@@ -205,11 +203,11 @@ As funções de formatação do PostgreSQL fornecem um conjunto poderoso de ferr
      Converts string to date according to the given format.
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_date('05 Dec 2000', 'DD Mon YYYY')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2000-12-05
      </code>
     </p>
@@ -218,19 +216,19 @@ As funções de formatação do PostgreSQL fornecem um conjunto poderoso de ferr
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_number
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ,
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
@@ -238,11 +236,11 @@ As funções de formatação do PostgreSQL fornecem um conjunto poderoso de ferr
      Converts string to numeric according to the given format.
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_number('12,454.8-', '99G999D9S')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       -12454.8
      </code>
     </p>
@@ -251,25 +249,25 @@ As funções de formatação do PostgreSQL fornecem um conjunto poderoso de ferr
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_timestamp
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ,
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
     <p>
      Converts string to time stamp according to the given format. (See also
-     <code class="function">
+     <code>
       to_timestamp(double precision)
      </code>
      in
@@ -279,11 +277,11 @@ As funções de formatação do PostgreSQL fornecem um conjunto poderoso de ferr
      .)
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_timestamp('05 Dec 2000', 'DD Mon YYYY')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2000-12-05 00:00:00-05
      </code>
     </p>
@@ -291,15 +289,6 @@ As funções de formatação do PostgreSQL fornecem um conjunto poderoso de ferr
   </tr>
  </tbody>
 </table>
-
-
-
-
-
-
-
-
-
 
 DICA
 
@@ -311,13 +300,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
 
 **Tabela 9.27. Padrões de modelo para formatação de data/hora**
 
-
-
-<table border="1" class="table" summary="Template Patterns for Date/Time Formatting">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -331,7 +314,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HH
     </code>
    </td>
@@ -341,7 +324,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HH12
     </code>
    </td>
@@ -351,7 +334,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HH24
     </code>
    </td>
@@ -361,7 +344,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      MI
     </code>
    </td>
@@ -371,7 +354,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SS
     </code>
    </td>
@@ -381,7 +364,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      MS
     </code>
    </td>
@@ -391,7 +374,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      US
     </code>
    </td>
@@ -401,7 +384,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      FF1
     </code>
    </td>
@@ -411,7 +394,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      FF2
     </code>
    </td>
@@ -421,7 +404,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      FF3
     </code>
    </td>
@@ -431,7 +414,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      FF4
     </code>
    </td>
@@ -441,7 +424,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      FF5
     </code>
    </td>
@@ -451,7 +434,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      FF6
     </code>
    </td>
@@ -461,11 +444,11 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SSSS
     </code>
     ,
-    <code class="literal">
+    <code>
      SSSSS
     </code>
    </td>
@@ -475,19 +458,19 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      AM
     </code>
     ,
-    <code class="literal">
+    <code>
      am
     </code>
     ,
-    <code class="literal">
+    <code>
      PM
     </code>
     or
-    <code class="literal">
+    <code>
      pm
     </code>
    </td>
@@ -497,19 +480,19 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      A.M.
     </code>
     ,
-    <code class="literal">
+    <code>
      a.m.
     </code>
     ,
-    <code class="literal">
+    <code>
      P.M.
     </code>
     or
-    <code class="literal">
+    <code>
      p.m.
     </code>
    </td>
@@ -519,7 +502,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      Y,YYY
     </code>
    </td>
@@ -529,7 +512,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      YYYY
     </code>
    </td>
@@ -539,7 +522,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      YYY
     </code>
    </td>
@@ -549,7 +532,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      YY
     </code>
    </td>
@@ -559,7 +542,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      Y
     </code>
    </td>
@@ -569,7 +552,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      IYYY
     </code>
    </td>
@@ -579,7 +562,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      IYY
     </code>
    </td>
@@ -589,7 +572,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      IY
     </code>
    </td>
@@ -599,7 +582,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      I
     </code>
    </td>
@@ -609,19 +592,19 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BC
     </code>
     ,
-    <code class="literal">
+    <code>
      bc
     </code>
     ,
-    <code class="literal">
+    <code>
      AD
     </code>
     or
-    <code class="literal">
+    <code>
      ad
     </code>
    </td>
@@ -631,19 +614,19 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      B.C.
     </code>
     ,
-    <code class="literal">
+    <code>
      b.c.
     </code>
     ,
-    <code class="literal">
+    <code>
      A.D.
     </code>
     or
-    <code class="literal">
+    <code>
      a.d.
     </code>
    </td>
@@ -653,7 +636,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      MONTH
     </code>
    </td>
@@ -663,7 +646,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      Month
     </code>
    </td>
@@ -673,7 +656,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      month
     </code>
    </td>
@@ -683,7 +666,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      MON
     </code>
    </td>
@@ -693,7 +676,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      Mon
     </code>
    </td>
@@ -703,7 +686,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mon
     </code>
    </td>
@@ -713,7 +696,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      MM
     </code>
    </td>
@@ -723,7 +706,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DAY
     </code>
    </td>
@@ -733,7 +716,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      Day
     </code>
    </td>
@@ -743,7 +726,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      day
     </code>
    </td>
@@ -753,7 +736,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DY
     </code>
    </td>
@@ -763,7 +746,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      Dy
     </code>
    </td>
@@ -773,7 +756,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      dy
     </code>
    </td>
@@ -783,7 +766,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DDD
     </code>
    </td>
@@ -793,7 +776,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      IDDD
     </code>
    </td>
@@ -803,7 +786,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DD
     </code>
    </td>
@@ -813,17 +796,17 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      D
     </code>
    </td>
    <td>
     dia da semana, domingo (
-    <code class="literal">
+    <code>
      1
     </code>
     ) até sábado (
-    <code class="literal">
+    <code>
      7
     </code>
     )
@@ -831,17 +814,17 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ID
     </code>
    </td>
    <td>
     dia da semana segundo o ISO 8601, segunda-feira (
-    <code class="literal">
+    <code>
      1
     </code>
     ) até domingo (
-    <code class="literal">
+    <code>
      7
     </code>
     )
@@ -849,7 +832,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      W
     </code>
    </td>
@@ -859,7 +842,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WW
     </code>
    </td>
@@ -869,7 +852,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      IW
     </code>
    </td>
@@ -879,7 +862,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      CC
     </code>
    </td>
@@ -889,7 +872,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      J
     </code>
    </td>
@@ -903,7 +886,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      Q
     </code>
    </td>
@@ -913,7 +896,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      RM
     </code>
    </td>
@@ -923,7 +906,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      rm
     </code>
    </td>
@@ -933,7 +916,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TZ
     </code>
    </td>
@@ -943,7 +926,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      tz
     </code>
    </td>
@@ -953,7 +936,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TZH
     </code>
    </td>
@@ -963,7 +946,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TZM
     </code>
    </td>
@@ -973,7 +956,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      OF
     </code>
    </td>
@@ -990,7 +973,7 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
       HH
      </code>
     </em>
-    <code class="literal">
+    <code>
      :
     </code>
     <em class="replaceable">
@@ -1004,22 +987,11 @@ Em uma string de modelo de saída do `to_char`, existem certos padrões que são
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Modificadores podem ser aplicados a qualquer padrão de modelo para alterar seu comportamento. Por exemplo, `FMMonth` é o padrão `Month` com o modificador `FM`. [Tabela 9.28](functions-formatting.md#FUNCTIONS-FORMATTING-DATETIMEMOD-TABLE) mostra os padrões de modificadores para formatação de data/hora.
 
 **Tabela 9.28. Modificadores de Padrão de Modelo para Formatação de Data/Hora**
 
-
-
-<table border="1" class="table" summary="Template Pattern Modifiers for Date/Time Formatting">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -1041,7 +1013,7 @@ Modificadores podem ser aplicados a qualquer padrão de modelo para alterar seu 
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      FM
     </code>
     prefix
@@ -1050,14 +1022,14 @@ Modificadores podem ser aplicados a qualquer padrão de modelo para alterar seu 
     modo de preenchimento (supressão de zeros iniciais e espaços de preenchimento)
    </td>
    <td>
-    <code class="literal">
+    <code>
      FMMonth
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TH
     </code>
     suffix
@@ -1066,18 +1038,18 @@ Modificadores podem ser aplicados a qualquer padrão de modelo para alterar seu 
     sufixo de número ordinal maiúsculo
    </td>
    <td>
-    <code class="literal">
+    <code>
      DDTH
     </code>
     , e.g.,
-    <code class="literal">
+    <code>
      12TH
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      th
     </code>
     suffix
@@ -1086,18 +1058,18 @@ Modificadores podem ser aplicados a qualquer padrão de modelo para alterar seu 
     sufixo de número ordinal em letra minúscula
    </td>
    <td>
-    <code class="literal">
+    <code>
      DDth
     </code>
     , e.g.,
-    <code class="literal">
+    <code>
      12th
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      FX
     </code>
     prefix
@@ -1106,14 +1078,14 @@ Modificadores podem ser aplicados a qualquer padrão de modelo para alterar seu 
     opção de formato fixo global (consulte as notas de uso)
    </td>
    <td>
-    <code class="literal">
+    <code>
      FX Month DD Day
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TM
     </code>
     prefix
@@ -1126,14 +1098,14 @@ Modificadores podem ser aplicados a qualquer padrão de modelo para alterar seu 
     )
    </td>
    <td>
-    <code class="literal">
+    <code>
      TMMonth
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SP
     </code>
     suffix
@@ -1142,22 +1114,13 @@ Modificadores podem ser aplicados a qualquer padrão de modelo para alterar seu 
     modo de digitação (não implementado)
    </td>
    <td>
-    <code class="literal">
+    <code>
      DDSP
     </code>
    </td>
   </tr>
  </tbody>
 </table>
-
-
-
-
-
-
-
-
-
 
 Observações de uso para formatação de data/hora:
 
@@ -1187,7 +1150,7 @@ Antes do PostgreSQL 12, era possível ignorar texto arbitrário na string de ent
 
 Tentar inserir uma data usando uma mistura de campos de numeração de semana ISO 8601 e campos de data gregoriana é sem sentido e causará um erro. No contexto de um ano de numeração de semana ISO 8601, o conceito de "mês" ou "dia do mês" não tem significado. No contexto de um ano gregoriano, a semana ISO não tem significado.
 
-### Atenção
+Atenção
 
 Embora `to_date` rejeite uma mistura de campos de data com numeração de semana gregoriana e ISO, `to_char` não o fará, uma vez que as especificações de formato de saída, como `YYYY-MM-DD (IYYY-IDDD)`, podem ser úteis. Mas evite escrever algo como `IYYY-MM-DD`; isso resultaria em resultados surpreendentes perto do início do ano. (Veja [Seção 9.9.1](functions-datetime.md#FUNCTIONS-DATETIME-EXTRACT) para mais informações.)
 * Em `to_timestamp`, campos de milissegundo (`MS`) ou microssegundo (`US`) são usados como dígitos de segundos após o ponto decimal. Por exemplo, `to_timestamp('12.3', 'SS.MS')` não é de 3 milissegundos, mas sim 300, porque a conversão o trata como 12 + 0,3 segundos. Portanto, para o formato `SS.MS`, os valores de entrada `12.3`, `12.30` e `12.300` especificam o mesmo número de milissegundos. Para obter três milissegundos, é necessário escrever `12.003`, que a conversão trata como 12 + 0,003 = 12,003 segundos.
@@ -1200,13 +1163,7 @@ Aqui está um exemplo mais complexo: `to_timestamp('15:12:02.020.001230', 'HH24:
 
 **Tabela 9.29. Padrões de modelo para formatação numérica**
 
-
-
-<table border="1" class="table" summary="Template Patterns for Numeric Formatting">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -1220,7 +1177,7 @@ Aqui está um exemplo mais complexo: `to_timestamp('15:12:02.020.001230', 'HH24:
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      9
     </code>
    </td>
@@ -1230,7 +1187,7 @@ Aqui está um exemplo mais complexo: `to_timestamp('15:12:02.020.001230', 'HH24:
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      0
     </code>
    </td>
@@ -1240,7 +1197,7 @@ Aqui está um exemplo mais complexo: `to_timestamp('15:12:02.020.001230', 'HH24:
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      .
     </code>
     (period)
@@ -1251,7 +1208,7 @@ Aqui está um exemplo mais complexo: `to_timestamp('15:12:02.020.001230', 'HH24:
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ,
     </code>
     (comma)
@@ -1262,7 +1219,7 @@ Aqui está um exemplo mais complexo: `to_timestamp('15:12:02.020.001230', 'HH24:
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PR
     </code>
    </td>
@@ -1272,7 +1229,7 @@ Aqui está um exemplo mais complexo: `to_timestamp('15:12:02.020.001230', 'HH24:
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      S
     </code>
    </td>
@@ -1282,7 +1239,7 @@ Aqui está um exemplo mais complexo: `to_timestamp('15:12:02.020.001230', 'HH24:
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      L
     </code>
    </td>
@@ -1292,7 +1249,7 @@ Aqui está um exemplo mais complexo: `to_timestamp('15:12:02.020.001230', 'HH24:
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      D
     </code>
    </td>
@@ -1302,7 +1259,7 @@ Aqui está um exemplo mais complexo: `to_timestamp('15:12:02.020.001230', 'HH24:
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      G
     </code>
    </td>
@@ -1312,7 +1269,7 @@ Aqui está um exemplo mais complexo: `to_timestamp('15:12:02.020.001230', 'HH24:
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      MI
     </code>
    </td>
@@ -1322,7 +1279,7 @@ Aqui está um exemplo mais complexo: `to_timestamp('15:12:02.020.001230', 'HH24:
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PL
     </code>
    </td>
@@ -1332,7 +1289,7 @@ Aqui está um exemplo mais complexo: `to_timestamp('15:12:02.020.001230', 'HH24:
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SG
     </code>
    </td>
@@ -1342,11 +1299,11 @@ Aqui está um exemplo mais complexo: `to_timestamp('15:12:02.020.001230', 'HH24:
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      RN
     </code>
     or
-    <code class="literal">
+    <code>
      rn
     </code>
    </td>
@@ -1356,11 +1313,11 @@ Aqui está um exemplo mais complexo: `to_timestamp('15:12:02.020.001230', 'HH24:
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TH
     </code>
     or
-    <code class="literal">
+    <code>
      th
     </code>
    </td>
@@ -1370,7 +1327,7 @@ Aqui está um exemplo mais complexo: `to_timestamp('15:12:02.020.001230', 'HH24:
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      V
     </code>
    </td>
@@ -1380,7 +1337,7 @@ Aqui está um exemplo mais complexo: `to_timestamp('15:12:02.020.001230', 'HH24:
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      EEEE
     </code>
    </td>
@@ -1390,15 +1347,6 @@ Aqui está um exemplo mais complexo: `to_timestamp('15:12:02.020.001230', 'HH24:
   </tr>
  </tbody>
 </table>
-
-
-
-
-
-
-
-
-
 
 Observações de uso para formatação numérica:
 
@@ -1418,9 +1366,7 @@ Certos modificadores podem ser aplicados a qualquer padrão de modelo para alter
 
 **Tabela 9.30. Modificadores de Padrão de Modelo para Formatação Numérica**
 
-
-
-<table border="1" class="table" summary="Template Pattern Modifiers for Numeric Formatting">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -1442,7 +1388,7 @@ Certos modificadores podem ser aplicados a qualquer padrão de modelo para alter
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      FM
     </code>
     prefix
@@ -1451,14 +1397,14 @@ Certos modificadores podem ser aplicados a qualquer padrão de modelo para alter
     modo de preenchimento (supressão de zeros finais e espaços de preenchimento)
    </td>
    <td>
-    <code class="literal">
+    <code>
      FM99.99
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TH
     </code>
     suffix
@@ -1467,14 +1413,14 @@ Certos modificadores podem ser aplicados a qualquer padrão de modelo para alter
     sufixo de número ordinal maiúsculo
    </td>
    <td>
-    <code class="literal">
+    <code>
      999TH
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      th
     </code>
     suffix
@@ -1483,7 +1429,7 @@ Certos modificadores podem ser aplicados a qualquer padrão de modelo para alter
     sufixo de número ordinal em letra minúscula
    </td>
    <td>
-    <code class="literal">
+    <code>
      999th
     </code>
    </td>
@@ -1491,26 +1437,11 @@ Certos modificadores podem ser aplicados a qualquer padrão de modelo para alter
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 [Tabela 9.31](functions-formatting.md#FUNCTIONS-FORMATTING-EXAMPLES-TABLE) mostra alguns exemplos do uso da função `to_char`.
 
 **Tabela 9.31. Exemplos de `to_char`**
 
-
-
-<table border="1" class="table" summary="to_char Examples">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -1524,36 +1455,36 @@ Certos modificadores podem ser aplicados a qualquer padrão de modelo para alter
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(current_timestamp, 'Day, DD  HH12:MI:SS')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      'Tuesday  , 06  05:39:18'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(current_timestamp, 'FMDay, FMDD  HH12:MI:SS')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      'Tuesday, 6  05:39:18'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(current_timestamp AT TIME ZONE 'UTC', 'YYYY-MM-DD"T"HH24:MI:SS"Z"')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '2022-12-06T05:39:18Z'
     </code>
     ,
@@ -1565,440 +1496,435 @@ Certos modificadores podem ser aplicados a qualquer padrão de modelo para alter
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(-0.1, '99.99')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '  -.10'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(-0.1, 'FM9.99')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '-.1'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(-0.1, 'FM90.99')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '-0.1'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(0.1, '0.9')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ' 0.1'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(12, '9990999.9')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '    0012.0'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(12, 'FM9990999.9')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '0012.'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(485, '999')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ' 485'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(-485, '999')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '-485'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(485, '9 9 9')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ' 4 8 5'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(1485, '9,999')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ' 1,485'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(1485, '9G999')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ' 1 485'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(148.5, '999.999')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ' 148.500'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(148.5, 'FM999.999')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '148.5'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(148.5, 'FM999.990')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '148.500'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(148.5, '999D999')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ' 148,500'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(3148.5, '9G999D999')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ' 3 148,500'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(-485, '999S')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '485-'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(-485, '999MI')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '485-'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(485, '999MI')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '485 '
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(485, 'FM999MI')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '485'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(485, 'PL999')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '+485'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(485, 'SG999')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '+485'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(-485, 'SG999')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '-485'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(-485, '9SG99')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '4-85'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(-485, '999PR')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '&lt;485&gt;'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(485, 'L999')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      'DM 485'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(485, 'RN')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '        CDLXXXV'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(485, 'FMRN')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      'CDLXXXV'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(5.2, 'FMRN')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      'V'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(482, '999th')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ' 482nd'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(485, '"Good number:"999')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      'Good number: 485'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(485.8, '"Pre:"999" Post:" .999')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      'Pre: 485 Post: .800'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(12, '99V999')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ' 12000'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(12.4, '99V999')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ' 12400'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(12.45, '99V9')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ' 125'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      to_char(0.0004859, '9.99EEEE')
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ' 4.86e-04'
     </code>
    </td>
   </tr>
  </tbody>
 </table>
-
-
-
-
-

@@ -60,7 +60,7 @@ A segunda abordagem combina qualquer método de autenticação para as entradas 
 
 
 
-<table border="1" class="table" summary="SSL Server File Usage">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -86,7 +86,7 @@ A segunda abordagem combina qualquer método de autenticação para as entradas 
      ssl_cert_file
     </a>
     (
-    <code class="filename">
+    <code>
      $PGDATA/server.crt
     </code>
     )
@@ -104,7 +104,7 @@ A segunda abordagem combina qualquer método de autenticação para as entradas 
      ssl_key_file
     </a>
     (
-    <code class="filename">
+    <code>
      $PGDATA/server.key
     </code>
     )

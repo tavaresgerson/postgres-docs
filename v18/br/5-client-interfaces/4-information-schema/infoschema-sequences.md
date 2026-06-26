@@ -6,7 +6,7 @@ A vista `sequences` contém todas as sequências definidas no banco de dados atu
 
 
 
-<table border="1" class="table" summary="sequences Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `sequences` contém todas as sequências definidas no banco de dados atu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sequence_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `sequences` contém todas as sequências definidas no banco de dados atu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sequence_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `sequences` contém todas as sequências definidas no banco de dados atu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sequence_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,10 +71,10 @@ A vista `sequences` contém todas as sequências definidas no banco de dados atu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       data_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -86,16 +86,16 @@ A vista `sequences` contém todas as sequências definidas no banco de dados atu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numeric_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
     <p>
      This column contains the (declared or implicit) precision of the sequence data type (see above).  The precision indicates the number of significant digits.  It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column
-     <code class="literal">
+     <code>
       numeric_precision_radix
      </code>
      .
@@ -105,20 +105,20 @@ A vista `sequences` contém todas as sequências definidas no banco de dados atu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numeric_precision_radix
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
     <p>
      This column indicates in which base the values in the columns
-     <code class="literal">
+     <code>
       numeric_precision
      </code>
      and
-     <code class="literal">
+     <code>
       numeric_scale
      </code>
      are expressed.  The value is either 2 or 10.
@@ -128,16 +128,16 @@ A vista `sequences` contém todas as sequências definidas no banco de dados atu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numeric_scale
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
     <p>
      This column contains the (declared or implicit) scale of the sequence data type (see above).  The scale indicates the number of significant digits to the right of the decimal point.  It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column
-     <code class="literal">
+     <code>
       numeric_precision_radix
      </code>
      .
@@ -147,10 +147,10 @@ A vista `sequences` contém todas as sequências definidas no banco de dados atu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       start_value
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -162,10 +162,10 @@ A vista `sequences` contém todas as sequências definidas no banco de dados atu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       minimum_value
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -177,10 +177,10 @@ A vista `sequences` contém todas as sequências definidas no banco de dados atu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       maximum_value
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -192,10 +192,10 @@ A vista `sequences` contém todas as sequências definidas no banco de dados atu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       increment
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -207,19 +207,19 @@ A vista `sequences` contém todas as sequências definidas no banco de dados atu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       cycle_option
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       YES
      </code>
      if the sequence cycles, else
-     <code class="literal">
+     <code>
       NO
      </code>
     </p>

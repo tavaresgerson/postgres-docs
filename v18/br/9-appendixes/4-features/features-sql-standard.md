@@ -2,7 +2,7 @@
 
 
 
-<table border="1" class="informaltable">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>

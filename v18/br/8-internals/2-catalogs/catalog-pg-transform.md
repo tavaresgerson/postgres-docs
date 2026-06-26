@@ -6,7 +6,7 @@ O catálogo `pg_transform` armazena informações sobre transformações, que s�
 
 
 
-<table border="1" class="table" summary="pg_transform Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_transform` armazena informações sobre transformações, que s�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,20 +41,20 @@ O catálogo `pg_transform` armazena informações sobre transformações, que s�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       trftype
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -67,20 +67,20 @@ O catálogo `pg_transform` armazena informações sobre transformações, que s�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       trflang
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-language.md" title="52.29. pg_language">
-      <code class="structname">
+      <code>
        pg_language
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -93,20 +93,20 @@ O catálogo `pg_transform` armazena informações sobre transformações, que s�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       trffromsql
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -119,20 +119,20 @@ O catálogo `pg_transform` armazena informações sobre transformações, que s�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       trftosql
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )

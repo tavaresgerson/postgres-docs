@@ -22,7 +22,7 @@ Os níveis de isolamento de transação implementados no padrão SQL e no Postgr
 
 
 
-<table border="1" class="table" summary="Transaction Isolation Levels">
+<table>
  <colgroup>
   <col/>
   <col/>

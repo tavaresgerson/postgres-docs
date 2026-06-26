@@ -670,7 +670,7 @@ Cada *`item`* é uma palavra-chave que identifica um valor de status a ser atrib
 
 
 
-<table border="1" class="table" summary="Error Diagnostics Items">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -692,12 +692,12 @@ Cada *`item`* é uma palavra-chave que identifica um valor de status a ser atrib
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      RETURNED_SQLSTATE
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
@@ -707,12 +707,12 @@ Cada *`item`* é uma palavra-chave que identifica um valor de status a ser atrib
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      COLUMN_NAME
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
@@ -722,12 +722,12 @@ Cada *`item`* é uma palavra-chave que identifica um valor de status a ser atrib
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      CONSTRAINT_NAME
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
@@ -737,12 +737,12 @@ Cada *`item`* é uma palavra-chave que identifica um valor de status a ser atrib
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PG_DATATYPE_NAME
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
@@ -752,12 +752,12 @@ Cada *`item`* é uma palavra-chave que identifica um valor de status a ser atrib
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      MESSAGE_TEXT
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
@@ -767,12 +767,12 @@ Cada *`item`* é uma palavra-chave que identifica um valor de status a ser atrib
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TABLE_NAME
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
@@ -782,12 +782,12 @@ Cada *`item`* é uma palavra-chave que identifica um valor de status a ser atrib
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SCHEMA_NAME
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
@@ -797,12 +797,12 @@ Cada *`item`* é uma palavra-chave que identifica um valor de status a ser atrib
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PG_EXCEPTION_DETAIL
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
@@ -812,12 +812,12 @@ Cada *`item`* é uma palavra-chave que identifica um valor de status a ser atrib
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PG_EXCEPTION_HINT
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
@@ -827,12 +827,12 @@ Cada *`item`* é uma palavra-chave que identifica um valor de status a ser atrib
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PG_EXCEPTION_CONTEXT
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>

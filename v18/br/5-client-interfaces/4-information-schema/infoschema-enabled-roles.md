@@ -8,7 +8,7 @@ Para a verificação de permissão, o conjunto de “rolos aplicáveis” é apl
 
 
 
-<table border="1" class="table" summary="enabled_roles Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ Para a verificação de permissão, o conjunto de “rolos aplicáveis” é apl
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       role_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>

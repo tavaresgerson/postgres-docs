@@ -6,7 +6,7 @@ O catálogo `pg_collation` descreve as colatões disponíveis, que são essencia
 
 
 
-<table border="1" class="table" summary="pg_collation Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_collation` descreve as colatões disponíveis, que são essencia
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,10 +41,10 @@ O catálogo `pg_collation` descreve as colatões disponíveis, que são essencia
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -56,20 +56,20 @@ O catálogo `pg_collation` descreve as colatões disponíveis, que são essencia
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collnamespace
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -82,20 +82,20 @@ O catálogo `pg_collation` descreve as colatões disponíveis, que são essencia
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collowner
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -108,28 +108,28 @@ O catálogo `pg_collation` descreve as colatões disponíveis, que são essencia
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collprovider
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      Fornecedora da coleta:
-     <code class="literal">
+     <code>
       d
      </code>
      = banco de dados padrão,
-     <code class="literal">
+     <code>
       b
      </code>
      = embutido,
-     <code class="literal">
+     <code>
       c
      </code>
      = libc,
-     <code class="literal">
+     <code>
       i
      </code>
      = icu
@@ -139,10 +139,10 @@ O catálogo `pg_collation` descreve as colatões disponíveis, que são essencia
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collisdeterministic
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -154,10 +154,10 @@ O catálogo `pg_collation` descreve as colatões disponíveis, que são essencia
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collencoding
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -169,31 +169,31 @@ O catálogo `pg_collation` descreve as colatões disponíveis, que são essencia
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collcollate
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
-     <code class="symbol">
+     <code>
       LC_COLLATE
      </code>
      para este objeto de agregação. Se o provedor não
-     <code class="literal">
+     <code>
       libc
      </code>
      ,
-     <code class="structfield">
+     <code>
       collcollate
      </code>
      é
-     <code class="literal">
+     <code>
       NULL
      </code>
      e
-     <code class="structfield">
+     <code>
       colllocale
      </code>
      é usado em vez disso.
@@ -203,31 +203,31 @@ O catálogo `pg_collation` descreve as colatões disponíveis, que são essencia
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collctype
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
-     <code class="symbol">
+     <code>
       LC_CTYPE
      </code>
      para este objeto de agregação. Se o provedor não
-     <code class="literal">
+     <code>
       libc
      </code>
      ,
-     <code class="structfield">
+     <code>
       collctype
      </code>
      é
-     <code class="literal">
+     <code>
       NULL
      </code>
      e
-     <code class="structfield">
+     <code>
       colllocale
      </code>
      é usado em vez disso.
@@ -237,32 +237,32 @@ O catálogo `pg_collation` descreve as colatões disponíveis, que são essencia
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       colllocale
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      Nome do local do fornecedor de collation para este objeto de collation. Se o fornecedor for
-     <code class="literal">
+     <code>
       libc
      </code>
      ,
-     <code class="structfield">
+     <code>
       colllocale
      </code>
      é
-     <code class="literal">
+     <code>
       NULL
      </code>
      ;
-     <code class="structfield">
+     <code>
       collcollate
      </code>
      e
-     <code class="structfield">
+     <code>
       collctype
      </code>
      são utilizados em vez disso.
@@ -272,10 +272,10 @@ O catálogo `pg_collation` descreve as colatões disponíveis, que são essencia
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collicurules
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -287,10 +287,10 @@ O catálogo `pg_collation` descreve as colatões disponíveis, que são essencia
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collversion
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>

@@ -6,7 +6,7 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
 
 
 
-<table border="1" class="table" summary="pg_class Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,10 +41,10 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -56,20 +56,20 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relnamespace
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -82,27 +82,27 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       reltype
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
     </p>
     <p>
      O OID do tipo de dados que corresponde ao tipo de linha desta tabela, se houver; zero para índices, sequências e tabelas de toast, que não têm
-     <code class="structname">
+     <code>
       pg_type
      </code>
      entrada
@@ -112,20 +112,20 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       reloftype
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -138,20 +138,20 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relowner
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -164,27 +164,27 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relam
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-am.md" title="52.3. pg_am">
-      <code class="structname">
+      <code>
        pg_am
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
     </p>
     <p>
      O método de acesso usado para acessar esta tabela ou índice. Não é significativo se a relação for uma sequência ou não tiver um arquivo no disco, exceto para tabelas particionadas, onde, se definido, ele tem precedência sobre
-     <code class="varname">
+     <code>
       default_table_access_method
      </code>
      ao determinar o método de acesso a ser utilizado para partições criadas quando não é especificado no comando de criação.
@@ -194,10 +194,10 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relfilenode
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -217,20 +217,20 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       reltablespace
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-tablespace.md" title="52.56. pg_tablespace">
-      <code class="structname">
+      <code>
        pg_tablespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -243,33 +243,33 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relpages
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
      Tamanho da representação em disco desta tabela em páginas (do tamanho de
-     <code class="symbol">
+     <code>
       BLCKSZ
      </code>
      ). Esse é apenas uma estimativa usada pelo planejador. Ela é atualizada por
      <a class="link" href="sql-vacuum.md" title="VACUUM">
-      <code class="command">
+      <code>
        VACUUM
       </code>
      </a>
      ,
      <a class="link" href="sql-analyze.md" title="ANALYZE">
-      <code class="command">
+      <code>
        ANALYZE
       </code>
      </a>
      , e alguns comandos DDL, como
      <a class="link" href="sql-createindex.md" title="CREATE INDEX">
-      <code class="command">
+      <code>
        CREATE INDEX
       </code>
      </a>
@@ -280,38 +280,38 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       reltuples
      </code>
-     <code class="type">
+     <code>
       float4
      </code>
     </p>
     <p>
      Número de linhas vivas na tabela. Isso é apenas uma estimativa usada pelo planejador. É atualizado por
      <a class="link" href="sql-vacuum.md" title="VACUUM">
-      <code class="command">
+      <code>
        VACUUM
       </code>
      </a>
      ,
      <a class="link" href="sql-analyze.md" title="ANALYZE">
-      <code class="command">
+      <code>
        ANALYZE
       </code>
      </a>
      , e alguns comandos DDL, como
      <a class="link" href="sql-createindex.md" title="CREATE INDEX">
-      <code class="command">
+      <code>
        CREATE INDEX
       </code>
      </a>
      Se a tabela ainda não tiver sido aspirada ou analisada,
-     <code class="structfield">
+     <code>
       reltuples
      </code>
      contem
-     <code class="literal">
+     <code>
       -1
      </code>
      indicando que o número de linhas é desconhecido.
@@ -321,29 +321,29 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relallvisible
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
      Número de páginas marcadas como totalmente visíveis no mapa de visibilidade da tabela. Esse é apenas uma estimativa usada pelo planejador. É atualizado por
      <a class="link" href="sql-vacuum.md" title="VACUUM">
-      <code class="command">
+      <code>
        VACUUM
       </code>
      </a>
      ,
      <a class="link" href="sql-analyze.md" title="ANALYZE">
-      <code class="command">
+      <code>
        ANALYZE
       </code>
      </a>
      , e alguns comandos DDL, como
      <a class="link" href="sql-createindex.md" title="CREATE INDEX">
-      <code class="command">
+      <code>
        CREATE INDEX
       </code>
      </a>
@@ -354,16 +354,16 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relallfrozen
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
      Número de páginas marcadas como totalmente congeladas no mapa de visibilidade da tabela. Esse é apenas uma estimativa usada para acionar autovacuos. Também pode ser usado juntamente com
-     <code class="structfield">
+     <code>
       relallvisible
      </code>
      para agendamento de aspiradores manuais e ajuste
@@ -372,19 +372,19 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
      </a>
      . É atualizado por
      <a class="link" href="sql-vacuum.md" title="VACUUM">
-      <code class="command">
+      <code>
        VACUUM
       </code>
      </a>
      ,
      <a class="link" href="sql-analyze.md" title="ANALYZE">
-      <code class="command">
+      <code>
        ANALYZE
       </code>
      </a>
      , e alguns comandos DDL, como
      <a class="link" href="sql-createindex.md" title="CREATE INDEX">
-      <code class="command">
+      <code>
        CREATE INDEX
       </code>
      </a>
@@ -395,20 +395,20 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       reltoastrelid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -429,10 +429,10 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relhasindex
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -444,17 +444,17 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relisshared
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Verdadeiro se esta tabela for compartilhada em todos os bancos de dados do clúster. Apenas certos catálogos do sistema (como
      <a class="link" href="catalog-pg-database.md" title="52.15. pg_database">
-      <code class="structname">
+      <code>
        pg_database
       </code>
      </a>
@@ -465,23 +465,23 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relpersistence
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       p
      </code>
      = tabela/sequência permanente
-     <code class="literal">
+     <code>
       u
      </code>
      = tabela/sequência não registrada,
-     <code class="literal">
+     <code>
       t
      </code>
      = tabela/sequência temporária
@@ -491,51 +491,51 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relkind
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       r
      </code>
      = mesa comum,
-     <code class="literal">
+     <code>
       i
      </code>
      = índice,
-     <code class="literal">
+     <code>
       S
      </code>
      = sequência,
-     <code class="literal">
+     <code>
       t
      </code>
      mesa TOAST
-     <code class="literal">
+     <code>
       v
      </code>
      = visualizar,
-     <code class="literal">
+     <code>
       m
      </code>
      = visão materializada,
-     <code class="literal">
+     <code>
       c
      </code>
      = tipo composto,
-     <code class="literal">
+     <code>
       f
      </code>
      = mesa estrangeira,
-     <code class="literal">
+     <code>
       p
      </code>
      = tabela dividida
-     <code class="literal">
+     <code>
       I
      </code>
      = índice particionado
@@ -545,26 +545,26 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relnatts
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
     <p>
      Número de colunas de usuário na relação (colunas do sistema não contadas). Deve haver tantas entradas correspondentes quanto o número de colunas de usuário na relação.
      <a class="link" href="catalog-pg-attribute.md" title="52.7. pg_attribute">
-      <code class="structname">
+      <code>
        pg_attribute
       </code>
      </a>
      Veja também
-     <code class="structname">
+     <code>
       pg_attribute
      </code>
      .
-     <code class="structfield">
+     <code>
       attnum
      </code>
      .
@@ -574,21 +574,21 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relchecks
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
     <p>
      Número de
-     <code class="literal">
+     <code>
       CHECK
      </code>
      restrições na tabela; veja
      <a class="link" href="catalog-pg-constraint.md" title="52.13. pg_constraint">
-      <code class="structname">
+      <code>
        pg_constraint
       </code>
      </a>
@@ -599,17 +599,17 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relhasrules
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Verdadeiro se a tabela tem (ou teve) regras; veja
      <a class="link" href="catalog-pg-rewrite.md" title="52.45. pg_rewrite">
-      <code class="structname">
+      <code>
        pg_rewrite
       </code>
      </a>
@@ -620,17 +620,17 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relhastriggers
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Verdadeiro se a tabela tiver (ou tiver tido) gatilhos; veja
      <a class="link" href="catalog-pg-trigger.md" title="52.58. pg_trigger">
-      <code class="structname">
+      <code>
        pg_trigger
       </code>
      </a>
@@ -641,10 +641,10 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relhassubclass
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -656,17 +656,17 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relrowsecurity
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Verdadeiro se a tabela tiver segurança de nível de linha habilitada; veja
      <a class="link" href="catalog-pg-policy.md" title="52.38. pg_policy">
-      <code class="structname">
+      <code>
        pg_policy
       </code>
      </a>
@@ -677,17 +677,17 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relforcerowsecurity
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Verdadeiro se a segurança de nível de linha (quando habilitada) também se aplicará ao proprietário da tabela; veja
      <a class="link" href="catalog-pg-policy.md" title="52.38. pg_policy">
-      <code class="structname">
+      <code>
        pg_policy
       </code>
      </a>
@@ -698,10 +698,10 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relispopulated
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -713,10 +713,10 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relreplident
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
@@ -730,23 +730,23 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
       ”
      </span>
      para linhas:
-     <code class="literal">
+     <code>
       d
      </code>
      = padrão (chave primária, se houver),
-     <code class="literal">
+     <code>
       n
      </code>
      = nada,
-     <code class="literal">
+     <code>
       f
      </code>
      = todas as colunas,
-     <code class="literal">
+     <code>
       i
      </code>
      = índice com
-     <code class="structfield">
+     <code>
       indisreplident
      </code>
      set (mesmo que nada se o índice usado tenha sido descartado)
@@ -756,10 +756,10 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relispartition
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -771,20 +771,20 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relrewrite
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -797,10 +797,10 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relfrozenxid
      </code>
-     <code class="type">
+     <code>
       xid
      </code>
     </p>
@@ -814,11 +814,11 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
       ”
      </span>
      ) ID de transação nesta tabela. Isso é usado para rastrear se a tabela precisa ser limpa para evitar o enrolamento do ID de transação ou para permitir
-     <code class="literal">
+     <code>
       pg_xact
      </code>
      para ser reduzido. Zero (
-     <code class="symbol">
+     <code>
       InvalidTransactionId
      </code>
      ) se a relação não for uma tabela.
@@ -828,20 +828,20 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relminmxid
      </code>
-     <code class="type">
+     <code>
       xid
      </code>
     </p>
     <p>
      Todos os IDs multixact anteriores a este foram substituídos por um ID de transação nesta tabela. Isso é usado para rastrear se a tabela precisa ser limpa para evitar o envolvimento de IDs multixact ou para permitir
-     <code class="literal">
+     <code>
       pg_multixact
      </code>
      para ser reduzido. Zero (
-     <code class="symbol">
+     <code>
       InvalidMultiXactId
      </code>
      ) se a relação não for uma tabela.
@@ -851,10 +851,10 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relacl
      </code>
-     <code class="type">
+     <code>
       aclitem[]
      </code>
     </p>
@@ -870,10 +870,10 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       reloptions
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>
@@ -893,16 +893,16 @@ O catálogo `pg_class` descreve tabelas e outros objetos que possuem colunas ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relpartbound
      </code>
-     <code class="type">
+     <code>
       pg_node_tree
      </code>
     </p>
     <p>
      Se a tabela for uma partição (consulte
-     <code class="structfield">
+     <code>
       relispartition
      </code>
      ), representação interna do limite da partição

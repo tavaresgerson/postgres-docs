@@ -6,7 +6,7 @@ A vista `transforms` contém informações sobre as transformações definidas n
 
 
 
-<table border="1" class="table" summary="transforms Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `transforms` contém informações sobre as transformações definidas n
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `transforms` contém informações sobre as transformações definidas n
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `transforms` contém informações sobre as transformações definidas n
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,10 +71,10 @@ A vista `transforms` contém informações sobre as transformações definidas n
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       specific_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -86,10 +86,10 @@ A vista `transforms` contém informações sobre as transformações definidas n
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       specific_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -101,10 +101,10 @@ A vista `transforms` contém informações sobre as transformações definidas n
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       specific_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -128,10 +128,10 @@ A vista `transforms` contém informações sobre as transformações definidas n
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       group_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -151,19 +151,19 @@ A vista `transforms` contém informações sobre as transformações definidas n
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       transform_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       FROM SQL
      </code>
      or
-     <code class="literal">
+     <code>
       TO SQL
      </code>
     </p>

@@ -8,7 +8,7 @@ As classes de operador são descritas em detalhes na [Seção 36.16](xindex.md).
 
 
 
-<table border="1" class="table" summary="pg_opclass Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ As classes de operador são descritas em detalhes na [Seção 36.16](xindex.md).
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -43,20 +43,20 @@ As classes de operador são descritas em detalhes na [Seção 36.16](xindex.md).
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       opcmethod
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-am.md" title="52.3. pg_am">
-      <code class="structname">
+      <code>
        pg_am
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -69,10 +69,10 @@ As classes de operador são descritas em detalhes na [Seção 36.16](xindex.md).
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       opcname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -84,20 +84,20 @@ As classes de operador são descritas em detalhes na [Seção 36.16](xindex.md).
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       opcnamespace
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -110,20 +110,20 @@ As classes de operador são descritas em detalhes na [Seção 36.16](xindex.md).
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       opcowner
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -136,20 +136,20 @@ As classes de operador são descritas em detalhes na [Seção 36.16](xindex.md).
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       opcfamily
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-opfamily.md" title="52.35. pg_opfamily">
-      <code class="structname">
+      <code>
        pg_opfamily
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -162,20 +162,20 @@ As classes de operador são descritas em detalhes na [Seção 36.16](xindex.md).
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       opcintype
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -188,16 +188,16 @@ As classes de operador são descritas em detalhes na [Seção 36.16](xindex.md).
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       opcdefault
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Verdadeiro se esta classe de operador é a padrão para
-     <code class="structfield">
+     <code>
       opcintype
      </code>
     </p>
@@ -206,27 +206,27 @@ As classes de operador são descritas em detalhes na [Seção 36.16](xindex.md).
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       opckeytype
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
     </p>
     <p>
      Tipo de dados armazenados no índice, ou zero se for igual a
-     <code class="structfield">
+     <code>
       opcintype
      </code>
     </p>

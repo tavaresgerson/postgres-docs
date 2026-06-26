@@ -6,7 +6,7 @@ A vista `collations` contém as colações disponíveis no banco de dados atual.
 
 
 
-<table border="1" class="table" summary="collations Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `collations` contém as colações disponíveis no banco de dados atual.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collation_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `collations` contém as colações disponíveis no banco de dados atual.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collation_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `collations` contém as colações disponíveis no banco de dados atual.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collation_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,20 +71,20 @@ A vista `collations` contém as colações disponíveis no banco de dados atual.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pad_attribute
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Always
-     <code class="literal">
+     <code>
       NO PAD
      </code>
      (The alternative
-     <code class="literal">
+     <code>
       PAD SPACE
      </code>
      is not supported by PostgreSQL.)

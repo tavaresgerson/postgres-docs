@@ -6,11 +6,7 @@
 
 
 
-<table border="1" class="table" summary="Month Names">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -135,11 +131,7 @@
 
 
 
-<table border="1" class="table" summary="Day of the Week Names">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -225,11 +217,7 @@
 
 
 
-<table border="1" class="table" summary="Date/Time Field Modifiers">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -243,7 +231,7 @@
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      AM
     </code>
    </td>
@@ -253,7 +241,7 @@
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      AT
     </code>
    </td>
@@ -263,15 +251,15 @@
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      JULIAN
     </code>
     ,
-    <code class="literal">
+    <code>
      JD
     </code>
     ,
-    <code class="literal">
+    <code>
      J
     </code>
    </td>
@@ -281,7 +269,7 @@
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ON
     </code>
    </td>
@@ -291,7 +279,7 @@
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PM
     </code>
    </td>
@@ -301,7 +289,7 @@
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      T
     </code>
    </td>

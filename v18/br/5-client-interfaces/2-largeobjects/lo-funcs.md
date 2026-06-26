@@ -6,7 +6,7 @@ As funções do lado do servidor, adaptadas para manipular objetos grandes a par
 
 
 
-<table border="1" class="table" summary="SQL-Oriented Large Object Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -29,7 +29,7 @@ As funções do lado do servidor, adaptadas para manipular objetos grandes a par
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       lo_from_bytea
      </code>
      (
@@ -38,7 +38,7 @@ As funções do lado do servidor, adaptadas para manipular objetos grandes a par
        loid
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -47,11 +47,11 @@ As funções do lado do servidor, adaptadas para manipular objetos grandes a par
        data
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       oid
      </code>
     </p>
@@ -71,11 +71,11 @@ As funções do lado do servidor, adaptadas para manipular objetos grandes a par
      is zero then the system will choose a free OID, otherwise that OID is used (with an error if some large object already has that OID).  On success, the large object's OID is returned.
     </p>
     <p>
-     <code class="literal">
+     <code>
       lo_from_bytea(0, '\xffffff00')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       24528
      </code>
     </p>
@@ -84,7 +84,7 @@ As funções do lado do servidor, adaptadas para manipular objetos grandes a par
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       lo_put
      </code>
      (
@@ -93,7 +93,7 @@ As funções do lado do servidor, adaptadas para manipular objetos grandes a par
        loid
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -102,7 +102,7 @@ As funções do lado do servidor, adaptadas para manipular objetos grandes a par
        offset
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ,
@@ -111,11 +111,11 @@ As funções do lado do servidor, adaptadas para manipular objetos grandes a par
        data
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -129,11 +129,11 @@ As funções do lado do servidor, adaptadas para manipular objetos grandes a par
      starting at the given offset within the large object; the large object is enlarged if necessary.
     </p>
     <p>
-     <code class="literal">
+     <code>
       lo_put(24528, 1, '\xaa')
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
    </td>
@@ -141,7 +141,7 @@ As funções do lado do servidor, adaptadas para manipular objetos grandes a par
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       lo_get
      </code>
      (
@@ -150,7 +150,7 @@ As funções do lado do servidor, adaptadas para manipular objetos grandes a par
        loid
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      [
@@ -161,7 +161,7 @@ As funções do lado do servidor, adaptadas para manipular objetos grandes a par
         offset
        </code>
       </em>
-      <code class="type">
+      <code>
        bigint
       </code>
       ,
@@ -170,12 +170,12 @@ As funções do lado do servidor, adaptadas para manipular objetos grandes a par
         length
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
@@ -183,11 +183,11 @@ As funções do lado do servidor, adaptadas para manipular objetos grandes a par
      Extracts the large object's contents, or a substring thereof.
     </p>
     <p>
-     <code class="literal">
+     <code>
       lo_get(24528, 0, 3)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       \xffaaff
      </code>
     </p>

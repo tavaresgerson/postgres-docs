@@ -10,11 +10,7 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
 
 
 
-<table border="1" class="table" summary="Contents of PGDATA">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -28,7 +24,7 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
  <tbody>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      PG_VERSION
     </code>
    </td>
@@ -41,7 +37,7 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      base
     </code>
    </td>
@@ -51,7 +47,7 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      current_logfiles
     </code>
    </td>
@@ -61,20 +57,20 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      global
     </code>
    </td>
    <td>
     Subdiretório contendo tabelas de todo o clúster, como
-    <code class="structname">
+    <code>
      pg_database
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      pg_commit_ts
     </code>
    </td>
@@ -84,7 +80,7 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      pg_dynshmem
     </code>
    </td>
@@ -94,7 +90,7 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      pg_logical
     </code>
    </td>
@@ -104,7 +100,7 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      pg_multixact
     </code>
    </td>
@@ -114,7 +110,7 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      pg_notify
     </code>
    </td>
@@ -124,7 +120,7 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      pg_replslot
     </code>
    </td>
@@ -134,7 +130,7 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      pg_serial
     </code>
    </td>
@@ -144,7 +140,7 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      pg_snapshots
     </code>
    </td>
@@ -154,7 +150,7 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      pg_stat
     </code>
    </td>
@@ -164,7 +160,7 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      pg_stat_tmp
     </code>
    </td>
@@ -174,7 +170,7 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      pg_subtrans
     </code>
    </td>
@@ -184,7 +180,7 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      pg_tblspc
     </code>
    </td>
@@ -194,7 +190,7 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      pg_twophase
     </code>
    </td>
@@ -204,7 +200,7 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      pg_wal
     </code>
    </td>
@@ -214,7 +210,7 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      pg_xact
     </code>
    </td>
@@ -224,20 +220,20 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      postgresql.auto.conf
     </code>
    </td>
    <td>
     Um arquivo usado para armazenar parâmetros de configuração que são definidos por
-    <code class="command">
+    <code>
      ALTER SYSTEM
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      postmaster.opts
     </code>
    </td>
@@ -247,13 +243,13 @@ O diretório `PGDATA` contém vários subdiretórios e arquivos de controle, con
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      postmaster.pid
     </code>
    </td>
    <td>
     Um arquivo de bloqueio que registra o ID atual do processo postmaster (PID), o caminho do diretório de dados do cluster, o timestamp de início do postmaster, o número de porta, o caminho do diretório do socket de domínio Unix (pode estar vazio), o primeiro endereço de escuta válido (endereço IP ou
-    <code class="literal">
+    <code>
      *
     </code>
     , ou vazio se não estiver ouvindo em TCP), e ID do segmento de memória compartilhada (este arquivo não está presente após o desligamento do servidor)

@@ -211,11 +211,7 @@ Observe que a função sempre assume datas formatadas MDY e, atualmente, não h�
 
 
 
-<table border="1" class="table" summary="Valid Input Formats for PGTYPESdate_from_asc">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -229,204 +225,204 @@ Observe que a função sempre assume datas formatadas MDY e, atualmente, não h�
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      January 8, 1999
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      January 8, 1999
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      1999-01-08
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      January 8, 1999
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      1/8/1999
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      January 8, 1999
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      1/18/1999
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      January 18, 1999
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      01/02/03
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      February 1, 2003
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      1999-Jan-08
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      January 8, 1999
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      Jan-08-1999
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      January 8, 1999
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      08-Jan-1999
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      January 8, 1999
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      99-Jan-08
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      January 8, 1999
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      08-Jan-99
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      January 8, 1999
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      08-Jan-06
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      January 8, 2006
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      Jan-08-99
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      January 8, 1999
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      19990108
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO 8601; January 8, 1999
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      990108
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO 8601; January 8, 1999
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      1999.008
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      year and day of year
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      J2451187
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      Julian day
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      January 8, 99 BC
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      year 99 before the Common Era
     </code>
    </td>
@@ -515,11 +511,7 @@ Todos os outros caracteres são copiados 1:1 para a string de saída.
 
 
 
-<table border="1" class="table" summary="Valid Input Formats for PGTYPESdate_fmt_asc">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -533,144 +525,144 @@ Todos os outros caracteres são copiados 1:1 para a string de saída.
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mmddyy
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      112359
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ddmmyy
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      231159
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      yymmdd
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      591123
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      yy/mm/dd
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      59/11/23
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      yy mm dd
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      59 11 23
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      yy.mm.dd
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      59.11.23
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      .mm.yyyy.dd.
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      .11.1959.23.
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mmm. dd, yyyy
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      Nov. 23, 1959
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mmm dd yyyy
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      Nov 23 1959
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      yyyy dd mm
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      1959 23 11
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ddd, mmm. dd, yyyy
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      Mon, Nov. 23, 1959
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      (ddd) mmm. dd, yyyy
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (Mon) Nov. 23, 1959
     </code>
    </td>
@@ -698,7 +690,7 @@ A função recebe um ponteiro para o valor da data que deve conter o resultado d
 
 
 
-<table border="1" class="table" summary="Valid Input Formats for rdefmtdate">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -720,221 +712,221 @@ A função recebe um ponteiro para o valor da data que deve conter o resultado d
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ddmmyy
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      21-2-54
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      1954-02-21
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ddmmyy
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      2-12-54
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      1954-12-02
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ddmmyy
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      20111954
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      1954-11-20
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ddmmyy
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      130464
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      1964-04-13
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mmm.dd.yyyy
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MAR-12-1967
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      1967-03-12
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      yy/mm/dd
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      1954, February 3rd
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      1954-02-03
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mmm.dd.yyyy
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      041269
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      1969-04-12
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      yy/mm/dd
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      In the year 2525, in the month of July, mankind will be alive on the 28th day
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      2525-07-28
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      dd-mm-yy
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      I said on the 28th of July in the year 2525
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      2525-07-28
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mmm.dd.yyyy
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      9/14/58
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      1958-09-14
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      yy/mm/dd
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      47/03/29
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      1947-03-29
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mmm.dd.yyyy
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      oct 28 1975
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      1975-10-28
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mmddyy
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      Nov 14th, 1985
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      1985-11-14
     </code>
    </td>
@@ -972,11 +964,7 @@ Em geral, a string de entrada pode conter qualquer combinação de uma especific
 
 
 
-<table border="1" class="table" summary="Valid Input Formats for PGTYPEStimestamp_from_asc">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -990,48 +978,48 @@ Em geral, a string de entrada pode conter qualquer combinação de uma especific
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      1999-01-08 04:05:06
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      1999-01-08 04:05:06
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      January 8 04:05:06 1999 PST
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      1999-01-08 04:05:06
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      1999-Jan-08 04:05:06.789-8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      1999-01-08 04:05:06.789 (time zone specifier ignored)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      J2451187 04:05-08:00
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      1999-01-08 04:05:00 (time zone specifier ignored)
     </code>
    </td>

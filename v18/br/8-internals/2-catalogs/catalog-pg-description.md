@@ -8,7 +8,7 @@ Veja também `pg_shdescription` (catalog-pg-shdescription.md "52.49. pg_shdescr
 
 
 
-<table border="1" class="table" summary="pg_description Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ Veja também `pg_shdescription` (catalog-pg-shdescription.md "52.49. pg_shdescr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       objoid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referência a qualquer coluna OID)
@@ -44,20 +44,20 @@ Veja também `pg_shdescription` (catalog-pg-shdescription.md "52.49. pg_shdescr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       classoid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -70,20 +70,20 @@ Veja também `pg_shdescription` (catalog-pg-shdescription.md "52.49. pg_shdescr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       objsubid
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
      Para um comentário em uma coluna de tabela, este é o número da coluna (o
-     <code class="structfield">
+     <code>
       objoid
      </code>
      e
-     <code class="structfield">
+     <code>
       classoid
      </code>
      refere-se à própria tabela). Para todos os outros tipos de objeto, essa coluna é zero.
@@ -93,10 +93,10 @@ Veja também `pg_shdescription` (catalog-pg-shdescription.md "52.49. pg_shdescr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       description
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>

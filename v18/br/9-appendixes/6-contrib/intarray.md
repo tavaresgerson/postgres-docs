@@ -22,7 +22,7 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
 
 
 
-<table border="1" class="table" summary="intarray Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -45,15 +45,15 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       icount
      </code>
      (
-     <code class="type">
+     <code>
       integer[]
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -61,11 +61,11 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
      Retorna o número de elementos na matriz.
     </p>
     <p>
-     <code class="literal">
+     <code>
       icount('{1,2,3}'::integer[])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3
      </code>
     </p>
@@ -74,11 +74,11 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       sort
      </code>
      (
-     <code class="type">
+     <code>
       integer[]
      </code>
      ,
@@ -87,11 +87,11 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
        dir
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer[]
      </code>
     </p>
@@ -103,21 +103,21 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
       </code>
      </em>
      devem ser
-     <code class="literal">
+     <code>
       asc
      </code>
      ou
-     <code class="literal">
+     <code>
       desc
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       sort('{1,3,2}'::integer[], 'desc')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {3,2,1}
      </code>
     </p>
@@ -126,28 +126,28 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       sort
      </code>
      (
-     <code class="type">
+     <code>
       integer[]
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer[]
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       sort_asc
      </code>
      (
-     <code class="type">
+     <code>
       integer[]
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer[]
      </code>
     </p>
@@ -155,11 +155,11 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
      Ordena em ordem ascendente.
     </p>
     <p>
-     <code class="literal">
+     <code>
       sort(array[11,77,44])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {11,44,77}
      </code>
     </p>
@@ -168,15 +168,15 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       sort_desc
      </code>
      (
-     <code class="type">
+     <code>
       integer[]
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer[]
      </code>
     </p>
@@ -184,11 +184,11 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
      Ordena em ordem decrescente.
     </p>
     <p>
-     <code class="literal">
+     <code>
       sort_desc(array[11,77,44])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {77,44,11}
      </code>
     </p>
@@ -197,40 +197,40 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       uniq
      </code>
      (
-     <code class="type">
+     <code>
       integer[]
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer[]
      </code>
     </p>
     <p>
      Remove duplicatas adjacentes. Frequentemente usado com
-     <code class="function">
+     <code>
       sort
      </code>
      para remover todas as duplicatas.
     </p>
     <p>
-     <code class="literal">
+     <code>
       uniq('{1,2,2,3,1,1}'::integer[])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {1,2,3,1}
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       uniq(sort('{1,2,3,2,1}'::integer[]))
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {1,2,3}
      </code>
     </p>
@@ -239,11 +239,11 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       idx
      </code>
      (
-     <code class="type">
+     <code>
       integer[]
      </code>
      ,
@@ -252,11 +252,11 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
        item
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -270,11 +270,11 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
      , ou 0 se não houver correspondência.
     </p>
     <p>
-     <code class="literal">
+     <code>
       idx(array[11,22,33,22,11], 22)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -283,11 +283,11 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       subarray
      </code>
      (
-     <code class="type">
+     <code>
       integer[]
      </code>
      ,
@@ -296,7 +296,7 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
        start
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -305,11 +305,11 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
        len
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer[]
      </code>
     </p>
@@ -329,11 +329,11 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
      elements.
     </p>
     <p>
-     <code class="literal">
+     <code>
       subarray('{1,2,3,2,1}'::integer[], 2, 3)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {2,3,2}
      </code>
     </p>
@@ -342,11 +342,11 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       subarray
      </code>
      (
-     <code class="type">
+     <code>
       integer[]
      </code>
      ,
@@ -355,11 +355,11 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
        start
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer[]
      </code>
     </p>
@@ -373,11 +373,11 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       subarray('{1,2,3,2,1}'::integer[], 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {2,3,2,1}
      </code>
     </p>
@@ -386,15 +386,15 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       intset
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer[]
      </code>
     </p>
@@ -402,11 +402,11 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
      Faz um array de um único elemento.
     </p>
     <p>
-     <code class="literal">
+     <code>
       intset(42)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {42}
      </code>
     </p>
@@ -428,7 +428,7 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
 
 
 
-<table border="1" class="table" summary="intarray Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -448,17 +448,17 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       integer[]
      </code>
-     <code class="literal">
+     <code>
       &amp;&amp;
      </code>
-     <code class="type">
+     <code>
       integer[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -470,17 +470,17 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       integer[]
      </code>
-     <code class="literal">
+     <code>
       @&gt;
      </code>
-     <code class="type">
+     <code>
       integer[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -492,17 +492,17 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       integer[]
      </code>
-     <code class="literal">
+     <code>
       &lt;@
      </code>
-     <code class="type">
+     <code>
       integer[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -514,16 +514,16 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
      </code>
-     <code class="literal">
+     <code>
       #
      </code>
-     <code class="type">
+     <code>
       integer[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -535,23 +535,23 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       integer[]
      </code>
-     <code class="literal">
+     <code>
       #
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
      →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Retorna o índice do primeiro elemento da matriz que corresponde ao argumento correto, ou 0 se não houver correspondência. (O mesmo que
-     <code class="function">
+     <code>
       idx
      </code>
      function.)
@@ -561,17 +561,17 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       integer[]
      </code>
-     <code class="literal">
+     <code>
       +
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
      →
-     <code class="returnvalue">
+     <code>
       integer[]
      </code>
     </p>
@@ -583,17 +583,17 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       integer[]
      </code>
-     <code class="literal">
+     <code>
       +
      </code>
-     <code class="type">
+     <code>
       integer[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       integer[]
      </code>
     </p>
@@ -605,17 +605,17 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       integer[]
      </code>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
      →
-     <code class="returnvalue">
+     <code>
       integer[]
      </code>
     </p>
@@ -627,17 +627,17 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       integer[]
      </code>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       integer[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       integer[]
      </code>
     </p>
@@ -649,17 +649,17 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       integer[]
      </code>
-     <code class="literal">
+     <code>
       |
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
      →
-     <code class="returnvalue">
+     <code>
       integer[]
      </code>
     </p>
@@ -671,17 +671,17 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       integer[]
      </code>
-     <code class="literal">
+     <code>
       |
      </code>
-     <code class="type">
+     <code>
       integer[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       integer[]
      </code>
     </p>
@@ -693,17 +693,17 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       integer[]
      </code>
-     <code class="literal">
+     <code>
       &amp;
      </code>
-     <code class="type">
+     <code>
       integer[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       integer[]
      </code>
     </p>
@@ -715,17 +715,17 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       integer[]
      </code>
-     <code class="literal">
+     <code>
       @@
      </code>
-     <code class="type">
+     <code>
       query_int
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -737,23 +737,23 @@ As funções fornecidas pelo módulo `intarray` são mostradas na [Tabela F.8](i
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       query_int
      </code>
-     <code class="literal">
+     <code>
       ~~
      </code>
-     <code class="type">
+     <code>
       integer[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      A matriz satisfaz a consulta? (comutativo de
-     <code class="literal">
+     <code>
       @@
      </code>
      )

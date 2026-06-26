@@ -32,7 +32,7 @@ Por outro lado, conforme observado na tabela, há algumas restrições menores n
 
 **Tabela 8.23. Tipos primitivos JSON e tipos correspondentes do PostgreSQL**
 
-<table border="1" class="table" summary="JSON Primitive Types and Corresponding PostgreSQL Types">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -57,17 +57,17 @@ Por outro lado, conforme observado na tabela, há algumas restrições menores n
  <tbody>
   <tr>
    <td>
-    <code class="type">
+    <code>
      string
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      \u0000
     </code>
     é proibido, assim como as escapadas Unicode que representam caracteres não disponíveis no codificação do banco de dados
@@ -75,21 +75,21 @@ Por outro lado, conforme observado na tabela, há algumas restrições menores n
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      number
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      numeric
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      NaN
     </code>
     e
-    <code class="literal">
+    <code>
      infinity
     </code>
     os valores não são permitidos
@@ -97,22 +97,22 @@ Por outro lado, conforme observado na tabela, há algumas restrições menores n
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      boolean
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      boolean
     </code>
    </td>
    <td>
     Apenas minúsculas
-    <code class="literal">
+    <code>
      true
     </code>
     e
-    <code class="literal">
+    <code>
      false
     </code>
     as grafias são aceitas
@@ -120,7 +120,7 @@ Por outro lado, conforme observado na tabela, há algumas restrições menores n
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      null
     </code>
    </td>
@@ -129,7 +129,7 @@ Por outro lado, conforme observado na tabela, há algumas restrições menores n
    </td>
    <td>
     SQL
-    <code class="literal">
+    <code>
      NULL
     </code>
     é um conceito diferente
@@ -498,7 +498,7 @@ Para obter detalhes sobre o uso das expressões `jsonpath` com funções de cons
 
 **Tabela 8.24. `jsonpath` Variáveis**
 
-<table border="1" class="table" summary="jsonpath Variables">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -516,7 +516,7 @@ Para obter detalhes sobre o uso das expressões `jsonpath` com funções de cons
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      $
     </code>
    </td>
@@ -530,7 +530,7 @@ Para obter detalhes sobre o uso das expressões `jsonpath` com funções de cons
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      $varname
     </code>
    </td>
@@ -550,7 +550,7 @@ Para obter detalhes sobre o uso das expressões `jsonpath` com funções de cons
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @
     </code>
    </td>
@@ -563,7 +563,7 @@ Para obter detalhes sobre o uso das expressões `jsonpath` com funções de cons
 
 **Tabela 8.25. `jsonpath` Acessórios**
 
-<table border="1" class="table" summary="jsonpath Accessors">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -582,7 +582,7 @@ Para obter detalhes sobre o uso das expressões `jsonpath` com funções de cons
   <tr>
    <td>
     <p>
-     <code class="literal">
+     <code>
       .
       <em class="replaceable">
        <code>
@@ -592,7 +592,7 @@ Para obter detalhes sobre o uso das expressões `jsonpath` com funções de cons
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       ."$
       <em class="replaceable">
        <code>
@@ -606,7 +606,7 @@ Para obter detalhes sobre o uso das expressões `jsonpath` com funções de cons
    <td>
     <p>
      Accessor de membro que retorna um membro de objeto com a chave especificada. Se o nome da chave corresponder a alguma variável nomeada que comece com
-     <code class="literal">
+     <code>
       $
      </code>
      ou não atende às regras do JavaScript para um identificador, ele deve ser fechado entre aspas duplas para torná-lo um literal de string.
@@ -616,7 +616,7 @@ Para obter detalhes sobre o uso das expressões `jsonpath` com funções de cons
   <tr>
    <td>
     <p>
-     <code class="literal">
+     <code>
       .*
      </code>
     </p>
@@ -630,7 +630,7 @@ Para obter detalhes sobre o uso das expressões `jsonpath` com funções de cons
   <tr>
    <td>
     <p>
-     <code class="literal">
+     <code>
       .**
      </code>
     </p>
@@ -648,7 +648,7 @@ Para obter detalhes sobre o uso das expressões `jsonpath` com funções de cons
   <tr>
    <td>
     <p>
-     <code class="literal">
+     <code>
       .**{
       <em class="replaceable">
        <code>
@@ -659,7 +659,7 @@ Para obter detalhes sobre o uso das expressões `jsonpath` com funções de cons
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       .**{
       <em class="replaceable">
        <code>
@@ -679,11 +679,11 @@ Para obter detalhes sobre o uso das expressões `jsonpath` com funções de cons
    <td>
     <p>
      Como
-     <code class="literal">
+     <code>
       .**
      </code>
      , mas seleciona apenas os níveis especificados da hierarquia JSON. Os níveis de ninho são especificados como inteiros. O nível zero corresponde ao objeto atual. Para acessar o nível de ninho mais baixo, você pode usar o
-     <code class="literal">
+     <code>
       last
      </code>
      palavra-chave. Isso é
@@ -697,7 +697,7 @@ Para obter detalhes sobre o uso das expressões `jsonpath` com funções de cons
   <tr>
    <td>
     <p>
-     <code class="literal">
+     <code>
       [
       <em class="replaceable">
        <code>
@@ -711,7 +711,7 @@ Para obter detalhes sobre o uso das expressões `jsonpath` com funções de cons
    <td>
     <p>
      Acesso ao elemento do array.
-     <code class="literal">
+     <code>
       <em class="replaceable">
        <code>
         subscript
@@ -719,7 +719,7 @@ Para obter detalhes sobre o uso das expressões `jsonpath` com funções de cons
       </em>
      </code>
      pode ser administrada em duas formas:
-     <code class="literal">
+     <code>
       <em class="replaceable">
        <code>
         index
@@ -727,7 +727,7 @@ Para obter detalhes sobre o uso das expressões `jsonpath` com funções de cons
       </em>
      </code>
      ou
-     <code class="literal">
+     <code>
       <em class="replaceable">
        <code>
         start_index
@@ -762,7 +762,7 @@ Para obter detalhes sobre o uso das expressões `jsonpath` com funções de cons
       </code>
      </em>
      pode ser um inteiro, bem como uma expressão que retorna um único valor numérico, que é automaticamente convertido para inteiro. O índice zero corresponde ao primeiro elemento da matriz. Você também pode usar o
-     <code class="literal">
+     <code>
       last
      </code>
      palavra-chave para denotar o último elemento da matriz, o que é útil para manipular matrizes de comprimento desconhecido.
@@ -772,7 +772,7 @@ Para obter detalhes sobre o uso das expressões `jsonpath` com funções de cons
   <tr>
    <td>
     <p>
-     <code class="literal">
+     <code>
       [*]
      </code>
     </p>

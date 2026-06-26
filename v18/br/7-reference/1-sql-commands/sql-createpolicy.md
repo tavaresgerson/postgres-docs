@@ -87,7 +87,7 @@ Uma política `DELETE` não pode ter uma expressão `WITH CHECK`, pois ela só s
 
 
 
-<table border="1" class="table" summary="Policies Applied by Command Type">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -102,49 +102,49 @@ Uma política `DELETE` não pode ter uma expressão `WITH CHECK`, pois ela só s
     Comando
    </th>
    <th>
-    <code class="literal">
+    <code>
      SELECT/ALL policy
     </code>
    </th>
    <th>
-    <code class="literal">
+    <code>
      INSERT/ALL policy
     </code>
    </th>
    <th colspan="2">
-    <code class="literal">
+    <code>
      UPDATE/ALL policy
     </code>
    </th>
    <th>
-    <code class="literal">
+    <code>
      DELETE/ALL policy
     </code>
    </th>
   </tr>
   <tr>
    <th>
-    <code class="literal">
+    <code>
      USING expression
     </code>
    </th>
    <th>
-    <code class="literal">
+    <code>
      WITH CHECK expression
     </code>
    </th>
    <th>
-    <code class="literal">
+    <code>
      USING expression
     </code>
    </th>
    <th>
-    <code class="literal">
+    <code>
      WITH CHECK expression
     </code>
    </th>
    <th>
-    <code class="literal">
+    <code>
      USING expression
     </code>
    </th>
@@ -153,11 +153,11 @@ Uma política `DELETE` não pode ter uma expressão `WITH CHECK`, pois ela só s
  <tbody>
   <tr>
    <td>
-    <code class="command">
+    <code>
      SELECT
     </code>
     /
-    <code class="command">
+    <code>
      COPY ... TO
     </code>
    </td>
@@ -179,7 +179,7 @@ Uma política `DELETE` não pode ter uma expressão `WITH CHECK`, pois ela só s
   </tr>
   <tr>
    <td>
-    <code class="command">
+    <code>
      SELECT FOR UPDATE/SHARE
     </code>
    </td>
@@ -201,7 +201,7 @@ Uma política `DELETE` não pode ter uma expressão `WITH CHECK`, pois ela só s
   </tr>
   <tr>
    <td>
-    <code class="command">
+    <code>
      INSERT
     </code>
    </td>
@@ -228,7 +228,7 @@ Uma política `DELETE` não pode ter uma expressão `WITH CHECK`, pois ela só s
   </tr>
   <tr>
    <td>
-    <code class="command">
+    <code>
      UPDATE
     </code>
    </td>
@@ -261,7 +261,7 @@ Uma política `DELETE` não pode ter uma expressão `WITH CHECK`, pois ela só s
   </tr>
   <tr>
    <td>
-    <code class="command">
+    <code>
      DELETE
     </code>
    </td>
@@ -288,7 +288,7 @@ Uma política `DELETE` não pode ter uma expressão `WITH CHECK`, pois ela só s
   </tr>
   <tr>
    <td>
-    <code class="command">
+    <code>
      INSERT ... ON CONFLICT
     </code>
    </td>
@@ -325,7 +325,7 @@ Uma política `DELETE` não pode ter uma expressão `WITH CHECK`, pois ela só s
   </tr>
   <tr>
    <td>
-    <code class="command">
+    <code>
      ON CONFLICT DO UPDATE
     </code>
    </td>
@@ -357,7 +357,7 @@ Uma política `DELETE` não pode ter uma expressão `WITH CHECK`, pois ela só s
   </tr>
   <tr>
    <td>
-    <code class="command">
+    <code>
      MERGE
     </code>
    </td>
@@ -379,7 +379,7 @@ Uma política `DELETE` não pode ter uma expressão `WITH CHECK`, pois ela só s
   </tr>
   <tr>
    <td>
-    <code class="command">
+    <code>
      MERGE ... THEN INSERT
     </code>
    </td>
@@ -406,7 +406,7 @@ Uma política `DELETE` não pode ter uma expressão `WITH CHECK`, pois ela só s
   </tr>
   <tr>
    <td>
-    <code class="command">
+    <code>
      MERGE ... THEN UPDATE
     </code>
    </td>
@@ -428,7 +428,7 @@ Uma política `DELETE` não pode ter uma expressão `WITH CHECK`, pois ela só s
   </tr>
   <tr>
    <td>
-    <code class="command">
+    <code>
      MERGE ... THEN DELETE
     </code>
    </td>
@@ -460,11 +460,11 @@ Uma política `DELETE` não pode ter uma expressão `WITH CHECK`, pois ela só s
        </sup>
       </a>
       Se for necessário acesso de leitura para a linha existente ou nova (por exemplo, uma
-      <code class="literal">
+      <code>
        WHERE
       </code>
       ou
-      <code class="literal">
+      <code>
        RETURNING
       </code>
       cláusula que se refere a colunas da relação).
@@ -498,11 +498,11 @@ Uma política `DELETE` não pode ter uma expressão `WITH CHECK`, pois ela só s
        </sup>
       </a>
       Nova linha do auxiliar
-      <code class="command">
+      <code>
        UPDATE
       </code>
       comando, que pode ser diferente da nova linha do original
-      <code class="command">
+      <code>
        INSERT
       </code>
       command.

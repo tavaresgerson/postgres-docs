@@ -40,7 +40,7 @@ Alguns pseudotipos de interesse especial são os *tipos polimórficos*, que são
 
 
 
-<table border="1" class="table" summary="Polymorphic Types">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -62,7 +62,7 @@ Alguns pseudotipos de interesse especial são os *tipos polimórficos*, que são
  <tbody>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anyelement
     </code>
    </td>
@@ -75,7 +75,7 @@ Alguns pseudotipos de interesse especial são os *tipos polimórficos*, que são
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anyarray
     </code>
    </td>
@@ -88,7 +88,7 @@ Alguns pseudotipos de interesse especial são os *tipos polimórficos*, que são
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anynonarray
     </code>
    </td>
@@ -101,7 +101,7 @@ Alguns pseudotipos de interesse especial são os *tipos polimórficos*, que são
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anyenum
     </code>
    </td>
@@ -118,7 +118,7 @@ Alguns pseudotipos de interesse especial são os *tipos polimórficos*, que são
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anyrange
     </code>
    </td>
@@ -135,7 +135,7 @@ Alguns pseudotipos de interesse especial são os *tipos polimórficos*, que são
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anymultirange
     </code>
    </td>
@@ -152,7 +152,7 @@ Alguns pseudotipos de interesse especial são os *tipos polimórficos*, que são
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anycompatible
     </code>
    </td>
@@ -165,7 +165,7 @@ Alguns pseudotipos de interesse especial são os *tipos polimórficos*, que são
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anycompatiblearray
     </code>
    </td>
@@ -178,7 +178,7 @@ Alguns pseudotipos de interesse especial são os *tipos polimórficos*, que são
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anycompatiblenonarray
     </code>
    </td>
@@ -191,7 +191,7 @@ Alguns pseudotipos de interesse especial são os *tipos polimórficos*, que são
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anycompatiblerange
     </code>
    </td>
@@ -204,7 +204,7 @@ Alguns pseudotipos de interesse especial são os *tipos polimórficos*, que são
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anycompatiblemultirange
     </code>
    </td>

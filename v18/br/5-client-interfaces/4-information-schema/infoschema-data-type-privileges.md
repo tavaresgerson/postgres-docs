@@ -6,7 +6,7 @@ A vista `data_type_privileges` identifica todos os descritores de tipo de dados 
 
 
 
-<table border="1" class="table" summary="data_type_privileges Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `data_type_privileges` identifica todos os descritores de tipo de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       object_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `data_type_privileges` identifica todos os descritores de tipo de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       object_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `data_type_privileges` identifica todos os descritores de tipo de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       object_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,24 +71,24 @@ A vista `data_type_privileges` identifica todos os descritores de tipo de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       object_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      The type of the described object: one of
-     <code class="literal">
+     <code>
       TABLE
      </code>
      (the data type descriptor pertains to a column of that table),
-     <code class="literal">
+     <code>
       DOMAIN
      </code>
      (the data type descriptors pertains to that domain),
-     <code class="literal">
+     <code>
       ROUTINE
      </code>
      (the data type descriptor pertains to a parameter or the return data type of that function).
@@ -98,10 +98,10 @@ A vista `data_type_privileges` identifica todos os descritores de tipo de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       dtd_identifier
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>

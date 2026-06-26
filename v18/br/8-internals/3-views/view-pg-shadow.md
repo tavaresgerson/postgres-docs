@@ -8,7 +8,7 @@ O nome decorre do fato de que essa tabela não deve ser legível pelo público, 
 
 
 
-<table border="1" class="table" summary="pg_shadow Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,20 +28,20 @@ O nome decorre do fato de que essa tabela não deve ser legível pelo público, 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       usename
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       rolname
      </code>
      )
@@ -54,20 +54,20 @@ O nome decorre do fato de que essa tabela não deve ser legível pelo público, 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       usesysid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -80,10 +80,10 @@ O nome decorre do fato de que essa tabela não deve ser legível pelo público, 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       usecreatedb
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -95,10 +95,10 @@ O nome decorre do fato de que essa tabela não deve ser legível pelo público, 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       usesuper
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -110,10 +110,10 @@ O nome decorre do fato de que essa tabela não deve ser legível pelo público, 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       userepl
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -125,10 +125,10 @@ O nome decorre do fato de que essa tabela não deve ser legível pelo público, 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       usebypassrls
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -144,17 +144,17 @@ O nome decorre do fato de que essa tabela não deve ser legível pelo público, 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       passwd
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      Senha criptografada; nulo se não houver. Veja
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
@@ -165,10 +165,10 @@ O nome decorre do fato de que essa tabela não deve ser legível pelo público, 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       valuntil
      </code>
-     <code class="type">
+     <code>
       timestamptz
      </code>
     </p>
@@ -180,10 +180,10 @@ O nome decorre do fato de que essa tabela não deve ser legível pelo público, 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       useconfig
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>

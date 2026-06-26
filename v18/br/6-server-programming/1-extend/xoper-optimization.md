@@ -45,69 +45,69 @@ Escrever novas funções de estimativa de seletividade de restrição vai muito 
 
 
 
-<table border="0" class="simplelist" summary="Simple list">
+<table>
  <tr>
   <td>
-   <code class="function">
+   <code>
     eqsel
    </code>
    para
-   <code class="literal">
+   <code>
     =
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="function">
+   <code>
     neqsel
    </code>
    para
-   <code class="literal">
+   <code>
     &lt;&gt;
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="function">
+   <code>
     scalarltsel
    </code>
    para
-   <code class="literal">
+   <code>
     &lt;
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="function">
+   <code>
     scalarlesel
    </code>
    para
-   <code class="literal">
+   <code>
     &lt;=
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="function">
+   <code>
     scalargtsel
    </code>
    para
-   <code class="literal">
+   <code>
     &gt;
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="function">
+   <code>
     scalargesel
    </code>
    para
-   <code class="literal">
+   <code>
     &gt;=
    </code>
   </td>
@@ -142,76 +142,76 @@ Como antes, este capítulo não fará nenhuma tentativa de explicar como escreve
 
 
 
-<table border="0" class="simplelist" summary="Simple list">
+<table>
  <tr>
   <td>
-   <code class="function">
+   <code>
     eqjoinsel
    </code>
    para
-   <code class="literal">
+   <code>
     =
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="function">
+   <code>
     neqjoinsel
    </code>
    para
-   <code class="literal">
+   <code>
     &lt;&gt;
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="function">
+   <code>
     scalarltjoinsel
    </code>
    para
-   <code class="literal">
+   <code>
     &lt;
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="function">
+   <code>
     scalarlejoinsel
    </code>
    para
-   <code class="literal">
+   <code>
     &lt;=
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="function">
+   <code>
     scalargtjoinsel
    </code>
    para
-   <code class="literal">
+   <code>
     &gt;
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="function">
+   <code>
     scalargejoinsel
    </code>
    para
-   <code class="literal">
+   <code>
     &gt;=
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="function">
+   <code>
     matchingjoinsel
    </code>
    para operadores de correspondência genéricos
@@ -219,7 +219,7 @@ Como antes, este capítulo não fará nenhuma tentativa de explicar como escreve
  </tr>
  <tr>
   <td>
-   <code class="function">
+   <code>
     areajoinsel
    </code>
    para comparações baseadas em áreas 2D
@@ -227,7 +227,7 @@ Como antes, este capítulo não fará nenhuma tentativa de explicar como escreve
  </tr>
  <tr>
   <td>
-   <code class="function">
+   <code>
     positionjoinsel
    </code>
    para comparações baseadas na posição 2D
@@ -235,7 +235,7 @@ Como antes, este capítulo não fará nenhuma tentativa de explicar como escreve
  </tr>
  <tr>
   <td>
-   <code class="function">
+   <code>
     contjoinsel
    </code>
    para comparações com base em contenção 2D

@@ -30,11 +30,7 @@ A distribuição principal do PostgreSQL inclui as classes de operadores GIN mos
 
 
 
-<table border="1" class="table" summary="Built-in GIN Operator Classes">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -48,118 +44,118 @@ A distribuição principal do PostgreSQL inclui as classes de operadores GIN mos
  <tbody>
   <tr>
    <td rowspan="4" valign="middle">
-    <code class="literal">
+    <code>
      array_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      &amp;&amp; (anyarray,anyarray)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @&gt; (anyarray,anyarray)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;@ (anyarray,anyarray)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      = (anyarray,anyarray)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="6" valign="middle">
-    <code class="literal">
+    <code>
      jsonb_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      @&gt; (jsonb,jsonb)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @? (jsonb,jsonpath)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @@ (jsonb,jsonpath)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ? (jsonb,text)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ?| (jsonb,text[])
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ?&amp; (jsonb,text[])
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="3" valign="middle">
-    <code class="literal">
+    <code>
      jsonb_path_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      @&gt; (jsonb,jsonb)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @? (jsonb,jsonpath)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @@ (jsonb,jsonpath)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      tsvector_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      @@ (tsvector,tsquery)
     </code>
    </td>

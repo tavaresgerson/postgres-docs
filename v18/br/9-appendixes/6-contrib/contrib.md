@@ -344,7 +344,7 @@ As seguintes extensões são confiáveis em uma instalação padrão:
 
 
 
-<table border="0" class="simplelist" summary="Simple list">
+<table>
  <tr>
   <td>
    <a class="xref" href="btree-gin.md" title="F.7. btree_gin — GIN operator classes with B-tree behavior">

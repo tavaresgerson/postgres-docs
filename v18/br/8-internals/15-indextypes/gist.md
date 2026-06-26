@@ -22,7 +22,7 @@ A distribuição principal do PostgreSQL inclui as classes de operadores GiST mo
 
 
 
-<table border="1" class="table" summary="Built-in GiST Operator Classes">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -44,200 +44,200 @@ A distribuição principal do PostgreSQL inclui as classes de operadores GiST mo
  <tbody>
   <tr>
    <td rowspan="12" valign="middle">
-    <code class="literal">
+    <code>
      box_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt; (box, box)
     </code>
    </td>
    <td rowspan="12" valign="middle">
-    <code class="literal">
+    <code>
      &lt;-&gt; (box, point)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&lt; (box, box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&amp; (box, box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&gt; (box, box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;&gt; (box, box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ~= (box, box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @&gt; (box, box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;@ (box, box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&lt;| (box, box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt;| (box, box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      |&gt;&gt; (box, box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      |&amp;&gt; (box, box)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="12" valign="middle">
-    <code class="literal">
+    <code>
      circle_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt; (circle, circle)
     </code>
    </td>
    <td rowspan="12" valign="middle">
-    <code class="literal">
+    <code>
      &lt;-&gt; (circle, point)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&lt; (circle, circle)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&gt; (circle, circle)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;&gt; (circle, circle)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;@ (circle, circle)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @&gt; (circle, circle)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ~= (circle, circle)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&amp; (circle, circle)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      |&gt;&gt; (circle, circle)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt;| (circle, circle)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&lt;| (circle, circle)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      |&amp;&gt; (circle, circle)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="11" valign="middle">
-    <code class="literal">
+    <code>
      inet_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt; (inet, inet)
     </code>
    </td>
@@ -246,82 +246,82 @@ A distribuição principal do PostgreSQL inclui as classes de operadores GiST mo
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt;= (inet, inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;&gt; (inet, inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;&gt;= (inet, inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      = (inet, inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&gt; (inet, inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (inet, inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (inet, inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (inet, inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (inet, inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&amp; (inet, inet)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="18" valign="middle">
-    <code class="literal">
+    <code>
      multirange_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (anymultirange, anymultirange)
     </code>
    </td>
@@ -330,291 +330,291 @@ A distribuição principal do PostgreSQL inclui as classes de operadores GiST mo
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&amp; (anymultirange, anymultirange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&amp; (anymultirange, anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @&gt; (anymultirange, anyelement)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @&gt; (anymultirange, anymultirange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @&gt; (anymultirange, anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;@ (anymultirange, anymultirange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;@ (anymultirange, anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt; (anymultirange, anymultirange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt; (anymultirange, anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;&gt; (anymultirange, anymultirange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;&gt; (anymultirange, anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&lt; (anymultirange, anymultirange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&lt; (anymultirange, anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&gt; (anymultirange, anymultirange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&gt; (anymultirange, anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      -|- (anymultirange, anymultirange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      -|- (anymultirange, anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="8" valign="middle">
-    <code class="literal">
+    <code>
      point_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      |&gt;&gt; (point, point)
     </code>
    </td>
    <td rowspan="8" valign="middle">
-    <code class="literal">
+    <code>
      &lt;-&gt; (point, point)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt; (point, point)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;&gt; (point, point)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt;| (point, point)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ~= (point, point)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;@ (point, box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;@ (point, polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;@ (point, circle)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="12" valign="middle">
-    <code class="literal">
+    <code>
      poly_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt; (polygon, polygon)
     </code>
    </td>
    <td rowspan="12" valign="middle">
-    <code class="literal">
+    <code>
      &lt;-&gt; (polygon, point)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&lt; (polygon, polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&gt; (polygon, polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;&gt; (polygon, polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;@ (polygon, polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @&gt; (polygon, polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ~= (polygon, polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&amp; (polygon, polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt;| (polygon, polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&lt;| (polygon, polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      |&amp;&gt; (polygon, polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      |&gt;&gt; (polygon, polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="18" valign="middle">
-    <code class="literal">
+    <code>
      range_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (anyrange, anyrange)
     </code>
    </td>
@@ -623,131 +623,131 @@ A distribuição principal do PostgreSQL inclui as classes de operadores GiST mo
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&amp; (anyrange, anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&amp; (anyrange, anymultirange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @&gt; (anyrange, anyelement)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @&gt; (anyrange, anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @&gt; (anyrange, anymultirange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;@ (anyrange, anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;@ (anyrange, anymultirange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt; (anyrange, anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt; (anyrange, anymultirange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;&gt; (anyrange, anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;&gt; (anyrange, anymultirange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&lt; (anyrange, anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&lt; (anyrange, anymultirange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&gt; (anyrange, anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&gt; (anyrange, anymultirange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      -|- (anyrange, anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      -|- (anyrange, anymultirange)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="2" valign="middle">
-    <code class="literal">
+    <code>
      tsquery_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      &lt;@ (tsquery, tsquery)
     </code>
    </td>
@@ -756,19 +756,19 @@ A distribuição principal do PostgreSQL inclui as classes de operadores GiST mo
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @&gt; (tsquery, tsquery)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      tsvector_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      @@ (tsvector, tsquery)
     </code>
    </td>

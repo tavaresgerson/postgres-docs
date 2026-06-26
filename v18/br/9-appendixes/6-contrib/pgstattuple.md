@@ -21,7 +21,7 @@ As colunas de saída são descritas em [Tabela F.24](pgstattuple.md#PGSTATTUPLE-
 
 
 
-<table border="1" class="table" summary="pgstattuple Output Columns">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -43,12 +43,12 @@ As colunas de saída são descritas em [Tabela F.24](pgstattuple.md#PGSTATTUPLE-
  <tbody>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      table_len
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -58,12 +58,12 @@ As colunas de saída são descritas em [Tabela F.24](pgstattuple.md#PGSTATTUPLE-
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      tuple_count
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -73,12 +73,12 @@ As colunas de saída são descritas em [Tabela F.24](pgstattuple.md#PGSTATTUPLE-
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      tuple_len
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -88,12 +88,12 @@ As colunas de saída são descritas em [Tabela F.24](pgstattuple.md#PGSTATTUPLE-
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      tuple_percent
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      float8
     </code>
    </td>
@@ -103,12 +103,12 @@ As colunas de saída são descritas em [Tabela F.24](pgstattuple.md#PGSTATTUPLE-
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      dead_tuple_count
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -118,12 +118,12 @@ As colunas de saída são descritas em [Tabela F.24](pgstattuple.md#PGSTATTUPLE-
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      dead_tuple_len
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -133,12 +133,12 @@ As colunas de saída são descritas em [Tabela F.24](pgstattuple.md#PGSTATTUPLE-
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      dead_tuple_percent
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      float8
     </code>
    </td>
@@ -148,12 +148,12 @@ As colunas de saída são descritas em [Tabela F.24](pgstattuple.md#PGSTATTUPLE-
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      free_space
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -163,12 +163,12 @@ As colunas de saída são descritas em [Tabela F.24](pgstattuple.md#PGSTATTUPLE-
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      free_percent
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      float8
     </code>
    </td>
@@ -208,7 +208,7 @@ As colunas de saída são:
 
 
 
-<table border="1" class="informaltable">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -230,12 +230,12 @@ As colunas de saída são:
  <tbody>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      version
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
@@ -245,12 +245,12 @@ As colunas de saída são:
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      tree_level
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
@@ -260,12 +260,12 @@ As colunas de saída são:
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      index_size
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -275,12 +275,12 @@ As colunas de saída são:
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      root_block_no
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -290,12 +290,12 @@ As colunas de saída são:
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      internal_pages
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -313,12 +313,12 @@ As colunas de saída são:
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      leaf_pages
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -328,12 +328,12 @@ As colunas de saída são:
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      empty_pages
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -343,12 +343,12 @@ As colunas de saída são:
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      deleted_pages
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -358,12 +358,12 @@ As colunas de saída são:
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      avg_leaf_density
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      float8
     </code>
    </td>
@@ -373,12 +373,12 @@ As colunas de saída são:
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      leaf_fragmentation
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      float8
     </code>
    </td>
@@ -411,7 +411,7 @@ As colunas de saída são:
 
 
 
-<table border="1" class="informaltable">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -433,12 +433,12 @@ As colunas de saída são:
  <tbody>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      version
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
@@ -448,12 +448,12 @@ As colunas de saída são:
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      pending_pages
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
@@ -463,12 +463,12 @@ As colunas de saída são:
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      pending_tuples
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -495,7 +495,7 @@ As colunas de saída são:
 
 
 
-<table border="1" class="informaltable">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -517,12 +517,12 @@ As colunas de saída são:
  <tbody>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      version
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
@@ -532,12 +532,12 @@ As colunas de saída são:
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      bucket_pages
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -547,12 +547,12 @@ As colunas de saída são:
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      overflow_pages
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -562,12 +562,12 @@ As colunas de saída são:
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      bitmap_pages
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -577,12 +577,12 @@ As colunas de saída são:
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      unused_pages
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -592,12 +592,12 @@ As colunas de saída são:
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      live_items
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -607,12 +607,12 @@ As colunas de saída são:
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      dead_tuples
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -622,12 +622,12 @@ As colunas de saída são:
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      free_percent
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      float
     </code>
    </td>
@@ -666,7 +666,7 @@ Para as páginas que não podem ser ignoradas, ele digitaliza cada tupla, regist
 
 
 
-<table border="1" class="table" summary="pgstattuple_approx Output Columns">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -688,12 +688,12 @@ Para as páginas que não podem ser ignoradas, ele digitaliza cada tupla, regist
  <tbody>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      table_len
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -703,12 +703,12 @@ Para as páginas que não podem ser ignoradas, ele digitaliza cada tupla, regist
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      scanned_percent
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      float8
     </code>
    </td>
@@ -718,12 +718,12 @@ Para as páginas que não podem ser ignoradas, ele digitaliza cada tupla, regist
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      approx_tuple_count
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -733,12 +733,12 @@ Para as páginas que não podem ser ignoradas, ele digitaliza cada tupla, regist
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      approx_tuple_len
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -748,12 +748,12 @@ Para as páginas que não podem ser ignoradas, ele digitaliza cada tupla, regist
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      approx_tuple_percent
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      float8
     </code>
    </td>
@@ -763,12 +763,12 @@ Para as páginas que não podem ser ignoradas, ele digitaliza cada tupla, regist
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      dead_tuple_count
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -778,12 +778,12 @@ Para as páginas que não podem ser ignoradas, ele digitaliza cada tupla, regist
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      dead_tuple_len
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -793,12 +793,12 @@ Para as páginas que não podem ser ignoradas, ele digitaliza cada tupla, regist
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      dead_tuple_percent
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      float8
     </code>
    </td>
@@ -808,12 +808,12 @@ Para as páginas que não podem ser ignoradas, ele digitaliza cada tupla, regist
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      approx_free_space
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -823,12 +823,12 @@ Para as páginas que não podem ser ignoradas, ele digitaliza cada tupla, regist
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      approx_free_percent
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      float8
     </code>
    </td>

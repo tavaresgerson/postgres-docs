@@ -10,7 +10,7 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
 
 
 
-<table border="1" class="table" summary="General-Purpose Window Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -30,11 +30,11 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       row_number
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
@@ -46,17 +46,17 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       rank
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Returns the rank of the current row, with gaps; that is, the
-     <code class="function">
+     <code>
       row_number
      </code>
      of the first row in its peer group.
@@ -66,11 +66,11 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       dense_rank
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
@@ -82,17 +82,17 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       percent_rank
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Returns the relative rank of the current row, that is (
-     <code class="function">
+     <code>
       rank
      </code>
      - 1) / (total partition rows - 1). The value thus ranges from 0 to 1 inclusive.
@@ -102,11 +102,11 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cume_dist
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -124,7 +124,7 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ntile
      </code>
      (
@@ -133,11 +133,11 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
        num_buckets
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -149,7 +149,7 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       lag
      </code>
      (
@@ -158,7 +158,7 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       anycompatible
      </code>
      [
@@ -169,7 +169,7 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
         offset
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
       [
@@ -180,14 +180,14 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
          default
         </code>
        </em>
-       <code class="type">
+       <code>
         anycompatible
        </code>
       </span>
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       anycompatible
      </code>
     </p>
@@ -241,7 +241,7 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
       </code>
      </em>
      to
-     <code class="literal">
+     <code>
       NULL
      </code>
      .
@@ -251,7 +251,7 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       lead
      </code>
      (
@@ -260,7 +260,7 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       anycompatible
      </code>
      [
@@ -271,7 +271,7 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
         offset
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
       [
@@ -282,14 +282,14 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
          default
         </code>
        </em>
-       <code class="type">
+       <code>
         anycompatible
        </code>
       </span>
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       anycompatible
      </code>
     </p>
@@ -343,7 +343,7 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
       </code>
      </em>
      to
-     <code class="literal">
+     <code>
       NULL
      </code>
      .
@@ -353,7 +353,7 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       first_value
      </code>
      (
@@ -362,11 +362,11 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       anyelement
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anyelement
      </code>
     </p>
@@ -384,7 +384,7 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       last_value
      </code>
      (
@@ -393,11 +393,11 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       anyelement
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anyelement
      </code>
     </p>
@@ -415,7 +415,7 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       nth_value
      </code>
      (
@@ -424,7 +424,7 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       anyelement
      </code>
      ,
@@ -433,11 +433,11 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
        n
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anyelement
      </code>
     </p>
@@ -455,7 +455,7 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
       </code>
      </em>
      'th row of the window frame (counting from 1); returns
-     <code class="literal">
+     <code>
       NULL
      </code>
      if there is no such row.

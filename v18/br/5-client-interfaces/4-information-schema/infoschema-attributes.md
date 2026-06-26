@@ -6,7 +6,7 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
 
 
 
-<table border="1" class="table" summary="attributes Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,10 +71,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attribute_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -86,10 +86,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       ordinal_position
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -101,10 +101,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attribute_default
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -116,19 +116,19 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_nullable
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       YES
      </code>
      if the attribute is possibly nullable,
-     <code class="literal">
+     <code>
       NO
      </code>
      if it is known not nullable.
@@ -138,28 +138,28 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       data_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Data type of the attribute, if it is a built-in type, or
-     <code class="literal">
+     <code>
       ARRAY
      </code>
      if it is some array (in that case, see the view
-     <code class="literal">
+     <code>
       element_types
      </code>
      ), else
-     <code class="literal">
+     <code>
       USER-DEFINED
      </code>
      (in that case, the type is identified in
-     <code class="literal">
+     <code>
       attribute_udt_name
      </code>
      and associated columns).
@@ -169,16 +169,16 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_maximum_length
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
     <p>
      If
-     <code class="literal">
+     <code>
       data_type
      </code>
      identifies a character or bit string type, the declared maximum length; null for all other data types or if no maximum length was declared.
@@ -188,16 +188,16 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_octet_length
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
     <p>
      If
-     <code class="literal">
+     <code>
       data_type
      </code>
      identifies a character type, the maximum possible length in octets (bytes) of a datum; null for all other data types.  The maximum octet length depends on the declared character maximum length (see above) and the server encoding.
@@ -207,10 +207,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_set_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -225,10 +225,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_set_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -243,10 +243,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_set_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -261,10 +261,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collation_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -276,10 +276,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collation_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -291,10 +291,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collation_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -306,20 +306,20 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numeric_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
     <p>
      If
-     <code class="literal">
+     <code>
       data_type
      </code>
      identifies a numeric type, this column contains the (declared or implicit) precision of the type for this attribute.  The precision indicates the number of significant digits.  It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column
-     <code class="literal">
+     <code>
       numeric_precision_radix
      </code>
      .  For all other data types, this column is null.
@@ -329,24 +329,24 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numeric_precision_radix
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
     <p>
      If
-     <code class="literal">
+     <code>
       data_type
      </code>
      identifies a numeric type, this column indicates in which base the values in the columns
-     <code class="literal">
+     <code>
       numeric_precision
      </code>
      and
-     <code class="literal">
+     <code>
       numeric_scale
      </code>
      are expressed.  The value is either 2 or 10.  For all other data types, this column is null.
@@ -356,20 +356,20 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numeric_scale
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
     <p>
      If
-     <code class="literal">
+     <code>
       data_type
      </code>
      identifies an exact numeric type, this column contains the (declared or implicit) scale of the type for this attribute.  The scale indicates the number of significant digits to the right of the decimal point.  It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column
-     <code class="literal">
+     <code>
       numeric_precision_radix
      </code>
      .  For all other data types, this column is null.
@@ -379,16 +379,16 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datetime_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
     <p>
      If
-     <code class="literal">
+     <code>
       data_type
      </code>
      identifies a date, time, timestamp, or interval type, this column contains the (declared or implicit) fractional seconds precision of the type for this attribute, that is, the number of decimal digits maintained following the decimal point in the seconds value.  For all other data types, this column is null.
@@ -398,24 +398,24 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       interval_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      If
-     <code class="literal">
+     <code>
       data_type
      </code>
      identifies an interval type, this column contains the specification which fields the intervals include for this attribute, e.g.,
-     <code class="literal">
+     <code>
       YEAR TO MONTH
      </code>
      ,
-     <code class="literal">
+     <code>
       DAY TO SECOND
      </code>
      , etc.  If no field restrictions were specified (that is, the interval accepts all fields), and for all other data types, this field is null.
@@ -425,10 +425,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       interval_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -438,7 +438,7 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
       PostgreSQL
      </span>
      (see
-     <code class="literal">
+     <code>
       datetime_precision
      </code>
      for the fractional seconds precision of interval type attributes)
@@ -448,10 +448,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attribute_udt_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -463,10 +463,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attribute_udt_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -478,10 +478,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attribute_udt_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -493,10 +493,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       scope_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -511,10 +511,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       scope_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -529,10 +529,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       scope_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -547,10 +547,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       maximum_cardinality
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -565,10 +565,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       dtd_identifier
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -580,10 +580,10 @@ A vista `attributes` contém informações sobre os atributos dos tipos de dados
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_derived_reference_attribute
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>

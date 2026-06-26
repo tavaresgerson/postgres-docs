@@ -34,7 +34,7 @@ Se a linha antiga não satisfazer a expressão do filtro de linha (não foi envi
 
 
 
-<table border="1" class="table" summary="UPDATE Transformation Summary">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -73,7 +73,7 @@ Se a linha antiga não satisfazer a expressão do filtro de linha (não foi envi
     match
    </td>
    <td>
-    <code class="literal">
+    <code>
      INSERT
     </code>
    </td>
@@ -86,7 +86,7 @@ Se a linha antiga não satisfazer a expressão do filtro de linha (não foi envi
     no match
    </td>
    <td>
-    <code class="literal">
+    <code>
      DELETE
     </code>
    </td>
@@ -99,7 +99,7 @@ Se a linha antiga não satisfazer a expressão do filtro de linha (não foi envi
     match
    </td>
    <td>
-    <code class="literal">
+    <code>
      UPDATE
     </code>
    </td>

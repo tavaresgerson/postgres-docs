@@ -6,7 +6,7 @@
 
 
 
-<table border="1" class="table" summary="Array Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -29,37 +29,37 @@
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyarray
      </code>
-     <code class="literal">
+     <code>
       @&gt;
      </code>
-     <code class="type">
+     <code>
       anyarray
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      O primeiro array contém o segundo, ou seja, cada elemento que aparece no segundo array é igual a algum elemento do primeiro array? (Os duplicados não são tratados de forma especial, portanto
-     <code class="literal">
+     <code>
       ARRAY[1]
      </code>
      e
-     <code class="literal">
+     <code>
       ARRAY[1,1]
      </code>
      são considerados que cada um contém o outro.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       ARRAY[1,4,3] @&gt; ARRAY[3,1,3]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -68,17 +68,17 @@
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyarray
      </code>
-     <code class="literal">
+     <code>
       &lt;@
      </code>
-     <code class="type">
+     <code>
       anyarray
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -86,11 +86,11 @@
      O primeiro array está contido pelo segundo?
     </p>
     <p>
-     <code class="literal">
+     <code>
       ARRAY[2,2,7] &lt;@ ARRAY[1,7,4,2,6]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -99,17 +99,17 @@
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyarray
      </code>
-     <code class="literal">
+     <code>
       &amp;&amp;
      </code>
-     <code class="type">
+     <code>
       anyarray
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -117,11 +117,11 @@
      Os arrays se sobrepõem, ou seja, têm algum elemento em comum?
     </p>
     <p>
-     <code class="literal">
+     <code>
       ARRAY[1,4,3] &amp;&amp; ARRAY[2,1]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -130,17 +130,17 @@
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anycompatiblearray
      </code>
-     <code class="literal">
+     <code>
       ||
      </code>
-     <code class="type">
+     <code>
       anycompatiblearray
      </code>
      →
-     <code class="returnvalue">
+     <code>
       anycompatiblearray
      </code>
     </p>
@@ -152,20 +152,20 @@
      ).
     </p>
     <p>
-     <code class="literal">
+     <code>
       ARRAY[1,2,3] || ARRAY[4,5,6,7]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {1,2,3,4,5,6,7}
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       ARRAY[1,2,3] || ARRAY[[4,5,6],[7,8,9.9]]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {{1,2,3},{4,5,6},{7,8,9.9}}
      </code>
     </p>
@@ -174,17 +174,17 @@
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anycompatible
      </code>
-     <code class="literal">
+     <code>
       ||
      </code>
-     <code class="type">
+     <code>
       anycompatiblearray
      </code>
      →
-     <code class="returnvalue">
+     <code>
       anycompatiblearray
      </code>
     </p>
@@ -192,11 +192,11 @@
      Concatenia um elemento na frente de uma matriz (que deve estar vazia ou unidimensional).
     </p>
     <p>
-     <code class="literal">
+     <code>
       3 || ARRAY[4,5,6]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {3,4,5,6}
      </code>
     </p>
@@ -205,17 +205,17 @@
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anycompatiblearray
      </code>
-     <code class="literal">
+     <code>
       ||
      </code>
-     <code class="type">
+     <code>
       anycompatible
      </code>
      →
-     <code class="returnvalue">
+     <code>
       anycompatiblearray
      </code>
     </p>
@@ -223,11 +223,11 @@
      Concatenia um elemento no final de uma matriz (que deve estar vazia ou unidimensional).
     </p>
     <p>
-     <code class="literal">
+     <code>
       ARRAY[4,5,6] || 7
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {4,5,6,7}
      </code>
     </p>
@@ -253,7 +253,7 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
 
 
 
-<table border="1" class="table" summary="Array Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -276,41 +276,41 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_append
      </code>
      (
-     <code class="type">
+     <code>
       anycompatiblearray
      </code>
      ,
-     <code class="type">
+     <code>
       anycompatible
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anycompatiblearray
      </code>
     </p>
     <p>
      Appends an element to the end of an array (same as the
-     <code class="type">
+     <code>
       anycompatiblearray
      </code>
-     <code class="literal">
+     <code>
       ||
      </code>
-     <code class="type">
+     <code>
       anycompatible
      </code>
      operator).
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_append(ARRAY[1,2], 3)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {1,2,3}
      </code>
     </p>
@@ -319,41 +319,41 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_cat
      </code>
      (
-     <code class="type">
+     <code>
       anycompatiblearray
      </code>
      ,
-     <code class="type">
+     <code>
       anycompatiblearray
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anycompatiblearray
      </code>
     </p>
     <p>
      Concatenates two arrays (same as the
-     <code class="type">
+     <code>
       anycompatiblearray
      </code>
-     <code class="literal">
+     <code>
       ||
      </code>
-     <code class="type">
+     <code>
       anycompatiblearray
      </code>
      operator).
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_cat(ARRAY[1,2,3], ARRAY[4,5])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {1,2,3,4,5}
      </code>
     </p>
@@ -362,15 +362,15 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_dims
      </code>
      (
-     <code class="type">
+     <code>
       anyarray
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -378,11 +378,11 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
      Returns a text representation of the array's dimensions.
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_dims(ARRAY[[1,2,3], [4,5,6]])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [1:2][1:3]
      </code>
     </p>
@@ -391,51 +391,51 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_fill
      </code>
      (
-     <code class="type">
+     <code>
       anyelement
      </code>
      ,
-     <code class="type">
+     <code>
       integer[]
      </code>
      [
      <span class="optional">
       ,
-      <code class="type">
+      <code>
        integer[]
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       anyarray
      </code>
     </p>
     <p>
      Returns an array filled with copies of the given value, having dimensions of the lengths specified by the second argument. The optional third argument supplies lower-bound values for each dimension (which default to all
-     <code class="literal">
+     <code>
       1
      </code>
      ).
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_fill(11, ARRAY[2,3])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {{11,11,11},{11,11,11}}
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_fill(7, ARRAY[3], ARRAY[2])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [2:4]={7,7,7}
      </code>
     </p>
@@ -444,19 +444,19 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_length
      </code>
      (
-     <code class="type">
+     <code>
       anyarray
      </code>
      ,
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -464,29 +464,29 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
      Returns the length of the requested array dimension. (Produces NULL instead of 0 for empty or missing array dimensions.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_length(array[1,2,3], 1)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_length(array[]::int[], 1)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       NULL
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_length(array['text'], 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       NULL
      </code>
     </p>
@@ -495,19 +495,19 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_lower
      </code>
      (
-     <code class="type">
+     <code>
       anyarray
      </code>
      ,
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -515,11 +515,11 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
      Returns the lower bound of the requested array dimension.
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_lower('[0:2]={1,2,3}'::integer[], 1)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0
      </code>
     </p>
@@ -528,15 +528,15 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_ndims
      </code>
      (
-     <code class="type">
+     <code>
       anyarray
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -544,11 +544,11 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
      Returns the number of dimensions of the array.
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_ndims(ARRAY[[1,2,3], [4,5,6]])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -557,50 +557,50 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_position
      </code>
      (
-     <code class="type">
+     <code>
       anycompatiblearray
      </code>
      ,
-     <code class="type">
+     <code>
       anycompatible
      </code>
      [
      <span class="optional">
       ,
-      <code class="type">
+      <code>
        integer
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Returns the subscript of the first occurrence of the second argument in the array, or
-     <code class="literal">
+     <code>
       NULL
      </code>
      if it's not present. If the third argument is given, the search begins at that subscript. The array must be one-dimensional. Comparisons are done using
-     <code class="literal">
+     <code>
       IS NOT DISTINCT FROM
      </code>
      semantics, so it is possible to search for
-     <code class="literal">
+     <code>
       NULL
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_position(ARRAY['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'], 'mon')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -609,47 +609,47 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_positions
      </code>
      (
-     <code class="type">
+     <code>
       anycompatiblearray
      </code>
      ,
-     <code class="type">
+     <code>
       anycompatible
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer[]
      </code>
     </p>
     <p>
      Returns an array of the subscripts of all occurrences of the second argument in the array given as first argument. The array must be one-dimensional. Comparisons are done using
-     <code class="literal">
+     <code>
       IS NOT DISTINCT FROM
      </code>
      semantics, so it is possible to search for
-     <code class="literal">
+     <code>
       NULL
      </code>
      .
-     <code class="literal">
+     <code>
       NULL
      </code>
      is returned only if the array is
-     <code class="literal">
+     <code>
       NULL
      </code>
      ; if the value is not found in the array, an empty array is returned.
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_positions(ARRAY['A','A','B','A'], 'A')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {1,2,4}
      </code>
     </p>
@@ -658,41 +658,41 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_prepend
      </code>
      (
-     <code class="type">
+     <code>
       anycompatible
      </code>
      ,
-     <code class="type">
+     <code>
       anycompatiblearray
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anycompatiblearray
      </code>
     </p>
     <p>
      Prepends an element to the beginning of an array (same as the
-     <code class="type">
+     <code>
       anycompatible
      </code>
-     <code class="literal">
+     <code>
       ||
      </code>
-     <code class="type">
+     <code>
       anycompatiblearray
      </code>
      operator).
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_prepend(1, ARRAY[2,3])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {1,2,3}
      </code>
     </p>
@@ -701,39 +701,39 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_remove
      </code>
      (
-     <code class="type">
+     <code>
       anycompatiblearray
      </code>
      ,
-     <code class="type">
+     <code>
       anycompatible
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anycompatiblearray
      </code>
     </p>
     <p>
      Removes all elements equal to the given value from the array. The array must be one-dimensional. Comparisons are done using
-     <code class="literal">
+     <code>
       IS NOT DISTINCT FROM
      </code>
      semantics, so it is possible to remove
-     <code class="literal">
+     <code>
       NULL
      </code>
      s.
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_remove(ARRAY[1,2,3,2], 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {1,3}
      </code>
     </p>
@@ -742,23 +742,23 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_replace
      </code>
      (
-     <code class="type">
+     <code>
       anycompatiblearray
      </code>
      ,
-     <code class="type">
+     <code>
       anycompatible
      </code>
      ,
-     <code class="type">
+     <code>
       anycompatible
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anycompatiblearray
      </code>
     </p>
@@ -766,11 +766,11 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
      Replaces each array element equal to the second argument with the third argument.
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_replace(ARRAY[1,2,5,4], 5, 3)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {1,2,3,4}
      </code>
     </p>
@@ -779,15 +779,15 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_reverse
      </code>
      (
-     <code class="type">
+     <code>
       anyarray
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anyarray
      </code>
     </p>
@@ -795,11 +795,11 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
      Reverses the first dimension of the array.
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_reverse(ARRAY[[1,2],[3,4],[5,6]])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {{5,6},{3,4},{1,2}}
      </code>
     </p>
@@ -808,7 +808,7 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_sample
      </code>
      (
@@ -817,7 +817,7 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
        array
       </code>
      </em>
-     <code class="type">
+     <code>
       anyarray
      </code>
      ,
@@ -826,11 +826,11 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
        n
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anyarray
      </code>
     </p>
@@ -876,20 +876,20 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
      is a slice having a given first subscript.
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_sample(ARRAY[1,2,3,4,5,6], 3)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {2,6,1}
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_sample(ARRAY[[1,2],[3,4],[5,6]], 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {{5,6},{1,2}}
      </code>
     </p>
@@ -898,15 +898,15 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_shuffle
      </code>
      (
-     <code class="type">
+     <code>
       anyarray
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anyarray
      </code>
     </p>
@@ -914,11 +914,11 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
      Randomly shuffles the first dimension of the array.
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_shuffle(ARRAY[[1,2],[3,4],[5,6]])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {{5,6},{1,2},{3,4}}
      </code>
     </p>
@@ -927,7 +927,7 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_sort
      </code>
      (
@@ -936,7 +936,7 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
        array
       </code>
      </em>
-     <code class="type">
+     <code>
       anyarray
      </code>
      [
@@ -947,7 +947,7 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
         descending
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
       [
@@ -958,20 +958,20 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
          nulls_first
         </code>
        </em>
-       <code class="type">
+       <code>
         boolean
        </code>
       </span>
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       anyarray
      </code>
     </p>
     <p>
      Sorts the first dimension of the array. The sort order is determined by the default sort ordering of the array's element type; however, if the element type is collatable, the collation to use can be specified by adding a
-     <code class="literal">
+     <code>
       COLLATE
      </code>
      clause to the
@@ -1010,11 +1010,11 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_sort(ARRAY[[2,4],[2,1],[6,5]])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {{2,1},{2,4},{6,5}}
      </code>
     </p>
@@ -1023,7 +1023,7 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_to_string
      </code>
      (
@@ -1032,7 +1032,7 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
        array
       </code>
      </em>
-     <code class="type">
+     <code>
       anyarray
      </code>
      ,
@@ -1041,7 +1041,7 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
        delimiter
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -1052,12 +1052,12 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
         null_string
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -1075,27 +1075,27 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
       </code>
      </em>
      is given and is not
-     <code class="literal">
+     <code>
       NULL
      </code>
      , then
-     <code class="literal">
+     <code>
       NULL
      </code>
      array entries are represented by that string; otherwise, they are omitted. See also
      <a class="link" href="functions-string.md#FUNCTION-STRING-TO-ARRAY">
-      <code class="function">
+      <code>
        string_to_array
       </code>
      </a>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_to_string(ARRAY[1, 2, 3, NULL, 5], ',', '*')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1,2,3,*,5
      </code>
     </p>
@@ -1104,19 +1104,19 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_upper
      </code>
      (
-     <code class="type">
+     <code>
       anyarray
      </code>
      ,
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -1124,11 +1124,11 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
      Returns the upper bound of the requested array dimension.
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_upper(ARRAY[1,8,3,7], 1)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       4
      </code>
     </p>
@@ -1137,15 +1137,15 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cardinality
      </code>
      (
-     <code class="type">
+     <code>
       anyarray
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -1153,11 +1153,11 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
      Returns the total number of elements in the array, or 0 if the array is empty.
     </p>
     <p>
-     <code class="literal">
+     <code>
       cardinality(ARRAY[[1,2],[3,4]])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       4
      </code>
     </p>
@@ -1166,7 +1166,7 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       trim_array
      </code>
      (
@@ -1175,7 +1175,7 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
        array
       </code>
      </em>
-     <code class="type">
+     <code>
       anyarray
      </code>
      ,
@@ -1184,11 +1184,11 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
        n
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anyarray
      </code>
     </p>
@@ -1202,11 +1202,11 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
      elements. If the array is multidimensional, only the first dimension is trimmed.
     </p>
     <p>
-     <code class="literal">
+     <code>
       trim_array(ARRAY[1,2,3,4,5,6], 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {1,2,3,4}
      </code>
     </p>
@@ -1215,15 +1215,15 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       unnest
      </code>
      (
-     <code class="type">
+     <code>
       anyarray
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof anyelement
      </code>
     </p>
@@ -1231,11 +1231,11 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
      Expands an array into a set of rows. The array's elements are read out in storage order.
     </p>
     <p>
-     <code class="literal">
+     <code>
       unnest(ARRAY[1,2])
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -1244,11 +1244,11 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
     <p>
     </p>
     <p>
-     <code class="literal">
+     <code>
       unnest(ARRAY[['foo','bar'],['baz','quux']])
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -1261,15 +1261,15 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       unnest
      </code>
      (
-     <code class="type">
+     <code>
       anyarray
      </code>
      ,
-     <code class="type">
+     <code>
       anyarray
      </code>
      [
@@ -1277,13 +1277,13 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
       , ...
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       setof anyelement, anyelement [, ... ]
      </code>
     </p>
     <p>
      Expands multiple arrays (possibly of different data types) into a set of rows.  If the arrays are not all the same length then the shorter ones are padded with
-     <code class="literal">
+     <code>
       NULL
      </code>
      s.  This form is only allowed in a query's FROM clause; see
@@ -1293,11 +1293,11 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       select * from unnest(ARRAY[1,2], ARRAY['foo','bar','baz']) as x(a,b)
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">

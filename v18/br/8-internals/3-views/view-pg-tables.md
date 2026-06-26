@@ -6,7 +6,7 @@ A vista `pg_tables` fornece acesso a informações úteis sobre cada tabela no b
 
 
 
-<table border="1" class="table" summary="pg_tables Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,20 +26,20 @@ A vista `pg_tables` fornece acesso a informações úteis sobre cada tabela no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       schemaname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (references
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       nspname
      </code>
      )
@@ -52,20 +52,20 @@ A vista `pg_tables` fornece acesso a informações úteis sobre cada tabela no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tablename
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (references
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       relname
      </code>
      )
@@ -78,20 +78,20 @@ A vista `pg_tables` fornece acesso a informações úteis sobre cada tabela no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tableowner
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (references
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       rolname
      </code>
      )
@@ -104,20 +104,20 @@ A vista `pg_tables` fornece acesso a informações úteis sobre cada tabela no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tablespace
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (references
      <a class="link" href="catalog-pg-tablespace.md" title="52.56. pg_tablespace">
-      <code class="structname">
+      <code>
        pg_tablespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       spcname
      </code>
      )
@@ -130,20 +130,20 @@ A vista `pg_tables` fornece acesso a informações úteis sobre cada tabela no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       hasindexes
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
      (references
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       relhasindex
      </code>
      )
@@ -156,20 +156,20 @@ A vista `pg_tables` fornece acesso a informações úteis sobre cada tabela no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       hasrules
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
      (references
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       relhasrules
      </code>
      )
@@ -182,20 +182,20 @@ A vista `pg_tables` fornece acesso a informações úteis sobre cada tabela no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       hastriggers
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
      (references
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       relhastriggers
      </code>
      )
@@ -208,20 +208,20 @@ A vista `pg_tables` fornece acesso a informações úteis sobre cada tabela no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rowsecurity
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
      (references
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       relrowsecurity
      </code>
      )

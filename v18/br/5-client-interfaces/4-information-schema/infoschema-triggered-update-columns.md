@@ -6,7 +6,7 @@ Para gatilhos no banco de dados atual que especificam uma lista de colunas (como
 
 
 
-<table border="1" class="table" summary="triggered_update_columns Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ Para gatilhos no banco de dados atual que especificam uma lista de colunas (como
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       trigger_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ Para gatilhos no banco de dados atual que especificam uma lista de colunas (como
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       trigger_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ Para gatilhos no banco de dados atual que especificam uma lista de colunas (como
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       trigger_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,10 +71,10 @@ Para gatilhos no banco de dados atual que especificam uma lista de colunas (como
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       event_object_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -86,10 +86,10 @@ Para gatilhos no banco de dados atual que especificam uma lista de colunas (como
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       event_object_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -101,10 +101,10 @@ Para gatilhos no banco de dados atual que especificam uma lista de colunas (como
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       event_object_table
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -116,10 +116,10 @@ Para gatilhos no banco de dados atual que especificam uma lista de colunas (como
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       event_object_column
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>

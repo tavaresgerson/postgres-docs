@@ -192,7 +192,7 @@ As colunas de saída são descritas em [Tabela F.28](postgres-fdw.md#POSTGRES-FD
 
 
 
-<table border="1" class="table" summary="postgres_fdw_get_connections Output Columns">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -214,18 +214,18 @@ As colunas de saída são descritas em [Tabela F.28](postgres-fdw.md#POSTGRES-FD
  <tbody>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      server_name
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
    <td>
     O nome do servidor estrangeiro desta conexão. Se o servidor for descartado, mas a conexão permanecer aberta (ou seja, marcada como inválida), isso será
-    <code class="literal">
+    <code>
      NULL
     </code>
     .
@@ -233,22 +233,22 @@ As colunas de saída são descritas em [Tabela F.28](postgres-fdw.md#POSTGRES-FD
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      user_name
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
    <td>
     Nome do usuário local mapeado para o servidor estrangeiro desta conexão, ou
-    <code class="literal">
+    <code>
      public
     </code>
     se uma mapear público for usada. Se a mapear do usuário for descartada, mas a conexão permanecer aberta (ou seja, marcada como inválida), isso será
-    <code class="literal">
+    <code>
      NULL
     </code>
     .
@@ -256,12 +256,12 @@ As colunas de saída são descritas em [Tabela F.28](postgres-fdw.md#POSTGRES-FD
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      valid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      boolean
     </code>
    </td>
@@ -271,12 +271,12 @@ As colunas de saída são descritas em [Tabela F.28](postgres-fdw.md#POSTGRES-FD
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      used_in_xact
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      boolean
     </code>
    </td>
@@ -286,26 +286,26 @@ As colunas de saída são descritas em [Tabela F.28](postgres-fdw.md#POSTGRES-FD
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      closed
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      boolean
     </code>
    </td>
    <td>
     Verdadeiro se essa conexão for fechada, falso caso contrário.
-    <code class="literal">
+    <code>
      NULL
     </code>
     é devolvida se
-    <code class="literal">
+    <code>
      check_conn
     </code>
     está previsto
-    <code class="literal">
+    <code>
      false
     </code>
     ou se o controle de status de conexão não estiver disponível nesta plataforma.
@@ -313,22 +313,22 @@ As colunas de saída são descritas em [Tabela F.28](postgres-fdw.md#POSTGRES-FD
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      remote_backend_pid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      int4
     </code>
    </td>
    <td>
     ID do processo do backend remoto, no servidor estrangeiro, que lida com a conexão. Se o backend remoto for encerrado e a conexão for fechada (com
-    <code class="literal">
+    <code>
      closed
     </code>
     prontos para
-    <code class="literal">
+    <code>
      true
     </code>
     ), isso ainda mostra o ID do processo do backend terminado.
@@ -422,11 +422,7 @@ Outra limitação é que, ao executar as instruções `INSERT` com uma cláusula
 
 
 
-<table border="1" class="informaltable">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -440,7 +436,7 @@ Outra limitação é que, ao executar as instruções `INSERT` com uma cláusula
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %a
     </code>
    </td>
@@ -450,7 +446,7 @@ Outra limitação é que, ao executar as instruções `INSERT` com uma cláusula
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %c
     </code>
    </td>
@@ -464,7 +460,7 @@ Outra limitação é que, ao executar as instruções `INSERT` com uma cláusula
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %C
     </code>
    </td>
@@ -478,7 +474,7 @@ Outra limitação é que, ao executar as instruções `INSERT` com uma cláusula
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %u
     </code>
    </td>
@@ -488,7 +484,7 @@ Outra limitação é que, ao executar as instruções `INSERT` com uma cláusula
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %d
     </code>
    </td>
@@ -498,7 +494,7 @@ Outra limitação é que, ao executar as instruções `INSERT` com uma cláusula
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %p
     </code>
    </td>
@@ -508,7 +504,7 @@ Outra limitação é que, ao executar as instruções `INSERT` com uma cláusula
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %%
     </code>
    </td>

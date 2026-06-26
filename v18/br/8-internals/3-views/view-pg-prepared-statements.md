@@ -8,7 +8,7 @@ A vista `pg_prepared_statements` exibe todas as declarações preparadas dispon�
 
 
 
-<table border="1" class="table" summary="pg_prepared_statements Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ A vista `pg_prepared_statements` exibe todas as declarações preparadas dispon�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       name
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -43,16 +43,16 @@ A vista `pg_prepared_statements` exibe todas as declarações preparadas dispon�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       statement
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      The query string submitted by the client to create this prepared statement. For prepared statements created via SQL, this is the
-     <code class="command">
+     <code>
       PREPARE
      </code>
      statement submitted by the client. For prepared statements created via the frontend/backend protocol, this is the text of the prepared statement itself.
@@ -62,10 +62,10 @@ A vista `pg_prepared_statements` exibe todas as declarações preparadas dispon�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prepare_time
      </code>
-     <code class="type">
+     <code>
       timestamptz
      </code>
     </p>
@@ -77,24 +77,24 @@ A vista `pg_prepared_statements` exibe todas as declarações preparadas dispon�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       parameter_types
      </code>
-     <code class="type">
+     <code>
       regtype[]
      </code>
     </p>
     <p>
      The expected parameter types for the prepared statement in the form of an array of
-     <code class="type">
+     <code>
       regtype
      </code>
      . The OID corresponding to an element of this array can be obtained by casting the
-     <code class="type">
+     <code>
       regtype
      </code>
      value to
-     <code class="type">
+     <code>
       oid
      </code>
      .
@@ -104,24 +104,24 @@ A vista `pg_prepared_statements` exibe todas as declarações preparadas dispon�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_types
      </code>
-     <code class="type">
+     <code>
       regtype[]
      </code>
     </p>
     <p>
      The types of the columns returned by the prepared statement in the form of an array of
-     <code class="type">
+     <code>
       regtype
      </code>
      . The OID corresponding to an element of this array can be obtained by casting the
-     <code class="type">
+     <code>
       regtype
      </code>
      value to
-     <code class="type">
+     <code>
       oid
      </code>
      . If the prepared statement does not provide a result (e.g., a DML statement), then this field will be null.
@@ -131,23 +131,23 @@ A vista `pg_prepared_statements` exibe todas as declarações preparadas dispon�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       from_sql
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       true
      </code>
      if the prepared statement was created via the
-     <code class="command">
+     <code>
       PREPARE
      </code>
      SQL command;
-     <code class="literal">
+     <code>
       false
      </code>
      if the statement was prepared via the frontend/backend protocol
@@ -157,10 +157,10 @@ A vista `pg_prepared_statements` exibe todas as declarações preparadas dispon�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       generic_plans
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
@@ -172,10 +172,10 @@ A vista `pg_prepared_statements` exibe todas as declarações preparadas dispon�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       custom_plans
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>

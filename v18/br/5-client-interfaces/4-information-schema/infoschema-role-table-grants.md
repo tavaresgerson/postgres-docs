@@ -6,7 +6,7 @@ A vista `role_table_grants` identifica todos os privilégios concedidos em tabel
 
 
 
-<table border="1" class="table" summary="role_table_grants Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `role_table_grants` identifica todos os privilégios concedidos em tabel
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       grantor
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `role_table_grants` identifica todos os privilégios concedidos em tabel
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       grantee
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `role_table_grants` identifica todos os privilégios concedidos em tabel
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,10 +71,10 @@ A vista `role_table_grants` identifica todos os privilégios concedidos em tabel
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -86,10 +86,10 @@ A vista `role_table_grants` identifica todos os privilégios concedidos em tabel
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -101,40 +101,40 @@ A vista `role_table_grants` identifica todos os privilégios concedidos em tabel
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       privilege_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Type of the privilege:
-     <code class="literal">
+     <code>
       SELECT
      </code>
      ,
-     <code class="literal">
+     <code>
       INSERT
      </code>
      ,
-     <code class="literal">
+     <code>
       UPDATE
      </code>
      ,
-     <code class="literal">
+     <code>
       DELETE
      </code>
      ,
-     <code class="literal">
+     <code>
       TRUNCATE
      </code>
      ,
-     <code class="literal">
+     <code>
       REFERENCES
      </code>
      , or
-     <code class="literal">
+     <code>
       TRIGGER
      </code>
     </p>
@@ -143,19 +143,19 @@ A vista `role_table_grants` identifica todos os privilégios concedidos em tabel
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_grantable
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       YES
      </code>
      if the privilege is grantable,
-     <code class="literal">
+     <code>
       NO
      </code>
      if not
@@ -165,32 +165,32 @@ A vista `role_table_grants` identifica todos os privilégios concedidos em tabel
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       with_hierarchy
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
      In the SQL standard,
-     <code class="literal">
+     <code>
       WITH HIERARCHY OPTION
      </code>
      is a separate (sub-)privilege allowing certain operations on table inheritance hierarchies.  In PostgreSQL, this is included in the
-     <code class="literal">
+     <code>
       SELECT
      </code>
      privilege, so this column shows
-     <code class="literal">
+     <code>
       YES
      </code>
      if the privilege is
-     <code class="literal">
+     <code>
       SELECT
      </code>
      , else
-     <code class="literal">
+     <code>
       NO
      </code>
      .

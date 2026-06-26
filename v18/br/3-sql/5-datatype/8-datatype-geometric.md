@@ -12,7 +12,7 @@ Os tipos de dados geométricos representam objetos espaciais bidimensionais. [Ta
 
 **Tabela 8.20. Tipos geométricos**
 
-<table border="1" class="table" summary="Geometric Types">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -38,7 +38,7 @@ Os tipos de dados geométricos representam objetos espaciais bidimensionais. [Ta
  <tbody>
   <tr>
    <td>
-    <code class="type">
+    <code>
      point
     </code>
    </td>
@@ -54,7 +54,7 @@ Os tipos de dados geométricos representam objetos espaciais bidimensionais. [Ta
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      line
     </code>
    </td>
@@ -70,7 +70,7 @@ Os tipos de dados geométricos representam objetos espaciais bidimensionais. [Ta
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      lseg
     </code>
    </td>
@@ -86,7 +86,7 @@ Os tipos de dados geométricos representam objetos espaciais bidimensionais. [Ta
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      box
     </code>
    </td>
@@ -102,7 +102,7 @@ Os tipos de dados geométricos representam objetos espaciais bidimensionais. [Ta
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      path
     </code>
    </td>
@@ -118,7 +118,7 @@ Os tipos de dados geométricos representam objetos espaciais bidimensionais. [Ta
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      path
     </code>
    </td>
@@ -134,7 +134,7 @@ Os tipos de dados geométricos representam objetos espaciais bidimensionais. [Ta
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      polygon
     </code>
    </td>
@@ -150,7 +150,7 @@ Os tipos de dados geométricos representam objetos espaciais bidimensionais. [Ta
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      circle
     </code>
    </td>

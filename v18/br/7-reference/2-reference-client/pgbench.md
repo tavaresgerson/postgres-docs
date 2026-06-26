@@ -279,7 +279,7 @@ Existe uma função simples de substituição de variáveis para arquivos de scr
 
 
 
-<table border="1" class="table" summary="pgbench Automatic Variables">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -297,7 +297,7 @@ Existe uma função simples de substituição de variáveis para arquivos de scr
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      client_id
     </code>
    </td>
@@ -307,7 +307,7 @@ Existe uma função simples de substituição de variáveis para arquivos de scr
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      default_seed
     </code>
    </td>
@@ -317,13 +317,13 @@ Existe uma função simples de substituição de variáveis para arquivos de scr
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      random_seed
     </code>
    </td>
    <td>
     semente do gerador aleatório (a menos que seja sobrescrita
-    <code class="option">
+    <code>
      -D
     </code>
     )
@@ -331,7 +331,7 @@ Existe uma função simples de substituição de variáveis para arquivos de scr
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      scale
     </code>
    </td>
@@ -421,7 +421,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
 
 
 
-<table border="1" class="table" summary="pgbench Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -449,7 +449,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
        boolean
       </code>
      </em>
-     <code class="literal">
+     <code>
       OR
      </code>
      <em class="replaceable">
@@ -458,7 +458,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         boolean
@@ -470,11 +470,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      OU lógico
     </p>
     <p>
-     <code class="literal">
+     <code>
       5 or 0
      </code>
      →
-     <code class="returnvalue">
+     <code>
       TRUE
      </code>
     </p>
@@ -488,7 +488,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
        boolean
       </code>
      </em>
-     <code class="literal">
+     <code>
       AND
      </code>
      <em class="replaceable">
@@ -497,7 +497,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         boolean
@@ -509,11 +509,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      E lógico e
     </p>
     <p>
-     <code class="literal">
+     <code>
       3 and 0
      </code>
      →
-     <code class="returnvalue">
+     <code>
       FALSE
      </code>
     </p>
@@ -522,7 +522,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       NOT
      </code>
      <em class="replaceable">
@@ -531,7 +531,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         boolean
@@ -543,11 +543,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      Lógico NÃO
     </p>
     <p>
-     <code class="literal">
+     <code>
       not false
      </code>
      →
-     <code class="returnvalue">
+     <code>
       TRUE
      </code>
     </p>
@@ -561,11 +561,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
        boolean
       </code>
      </em>
-     <code class="literal">
+     <code>
       IS [NOT] (NULL|TRUE|FALSE)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         boolean
@@ -577,11 +577,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      Testes de valor booleano
     </p>
     <p>
-     <code class="literal">
+     <code>
       1 is null
      </code>
      →
-     <code class="returnvalue">
+     <code>
       FALSE
      </code>
     </p>
@@ -595,11 +595,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
        value
       </code>
      </em>
-     <code class="literal">
+     <code>
       ISNULL|NOTNULL
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         boolean
@@ -611,11 +611,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      Testes de nulidade
     </p>
     <p>
-     <code class="literal">
+     <code>
       1 notnull
      </code>
      →
-     <code class="returnvalue">
+     <code>
       TRUE
      </code>
     </p>
@@ -629,7 +629,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
        number
       </code>
      </em>
-     <code class="literal">
+     <code>
       =
      </code>
      <em class="replaceable">
@@ -638,7 +638,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         boolean
@@ -650,11 +650,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      Igual
     </p>
     <p>
-     <code class="literal">
+     <code>
       5 = 4
      </code>
      →
-     <code class="returnvalue">
+     <code>
       FALSE
      </code>
     </p>
@@ -668,7 +668,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
        number
       </code>
      </em>
-     <code class="literal">
+     <code>
       &lt;&gt;
      </code>
      <em class="replaceable">
@@ -677,7 +677,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         boolean
@@ -689,11 +689,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      Não igual
     </p>
     <p>
-     <code class="literal">
+     <code>
       5 &lt;&gt; 4
      </code>
      →
-     <code class="returnvalue">
+     <code>
       TRUE
      </code>
     </p>
@@ -707,7 +707,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
        number
       </code>
      </em>
-     <code class="literal">
+     <code>
       !=
      </code>
      <em class="replaceable">
@@ -716,7 +716,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         boolean
@@ -728,11 +728,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      Não igual
     </p>
     <p>
-     <code class="literal">
+     <code>
       5 != 5
      </code>
      →
-     <code class="returnvalue">
+     <code>
       FALSE
      </code>
     </p>
@@ -746,7 +746,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
        number
       </code>
      </em>
-     <code class="literal">
+     <code>
       &lt;
      </code>
      <em class="replaceable">
@@ -755,7 +755,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         boolean
@@ -767,11 +767,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      Menos de
     </p>
     <p>
-     <code class="literal">
+     <code>
       5 &lt; 4
      </code>
      →
-     <code class="returnvalue">
+     <code>
       FALSE
      </code>
     </p>
@@ -785,7 +785,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
        number
       </code>
      </em>
-     <code class="literal">
+     <code>
       &lt;=
      </code>
      <em class="replaceable">
@@ -794,7 +794,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         boolean
@@ -806,11 +806,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      Menos ou igual a
     </p>
     <p>
-     <code class="literal">
+     <code>
       5 &lt;= 4
      </code>
      →
-     <code class="returnvalue">
+     <code>
       FALSE
      </code>
     </p>
@@ -824,7 +824,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
        number
       </code>
      </em>
-     <code class="literal">
+     <code>
       &gt;
      </code>
      <em class="replaceable">
@@ -833,7 +833,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         boolean
@@ -845,11 +845,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      Superior a
     </p>
     <p>
-     <code class="literal">
+     <code>
       5 &gt; 4
      </code>
      →
-     <code class="returnvalue">
+     <code>
       TRUE
      </code>
     </p>
@@ -863,7 +863,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
        number
       </code>
      </em>
-     <code class="literal">
+     <code>
       &gt;=
      </code>
      <em class="replaceable">
@@ -872,7 +872,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         boolean
@@ -884,11 +884,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      Maior que ou igual a
     </p>
     <p>
-     <code class="literal">
+     <code>
       5 &gt;= 4
      </code>
      →
-     <code class="returnvalue">
+     <code>
       TRUE
      </code>
     </p>
@@ -902,7 +902,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
        integer
       </code>
      </em>
-     <code class="literal">
+     <code>
       |
      </code>
      <em class="replaceable">
@@ -911,7 +911,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         integer
@@ -923,11 +923,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      XOR (Bitwise OU)
     </p>
     <p>
-     <code class="literal">
+     <code>
       1 | 2
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3
      </code>
     </p>
@@ -941,7 +941,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
        integer
       </code>
      </em>
-     <code class="literal">
+     <code>
       #
      </code>
      <em class="replaceable">
@@ -950,7 +950,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         integer
@@ -962,11 +962,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      XOR bit a bit
     </p>
     <p>
-     <code class="literal">
+     <code>
       1 # 3
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -980,7 +980,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
        integer
       </code>
      </em>
-     <code class="literal">
+     <code>
       &amp;
      </code>
      <em class="replaceable">
@@ -989,7 +989,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         integer
@@ -1001,11 +1001,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      E AND bit a bit
     </p>
     <p>
-     <code class="literal">
+     <code>
       1 &amp; 3
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1
      </code>
     </p>
@@ -1014,7 +1014,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       ~
      </code>
      <em class="replaceable">
@@ -1023,7 +1023,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         integer
@@ -1035,11 +1035,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      Bitwise NOT
     </p>
     <p>
-     <code class="literal">
+     <code>
       ~ 1
      </code>
      →
-     <code class="returnvalue">
+     <code>
       -2
      </code>
     </p>
@@ -1053,7 +1053,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
        integer
       </code>
      </em>
-     <code class="literal">
+     <code>
       &lt;&lt;
      </code>
      <em class="replaceable">
@@ -1062,7 +1062,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         integer
@@ -1074,11 +1074,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      Deslocamento à esquerda bit a bit
     </p>
     <p>
-     <code class="literal">
+     <code>
       1 &lt;&lt; 2
      </code>
      →
-     <code class="returnvalue">
+     <code>
       4
      </code>
     </p>
@@ -1092,7 +1092,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
        integer
       </code>
      </em>
-     <code class="literal">
+     <code>
       &gt;&gt;
      </code>
      <em class="replaceable">
@@ -1101,7 +1101,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         integer
@@ -1113,11 +1113,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      Deslocamento à direita bit a bit
     </p>
     <p>
-     <code class="literal">
+     <code>
       8 &gt;&gt; 2
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -1131,7 +1131,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
        number
       </code>
      </em>
-     <code class="literal">
+     <code>
       +
      </code>
      <em class="replaceable">
@@ -1140,7 +1140,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         number
@@ -1152,11 +1152,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      Adição
     </p>
     <p>
-     <code class="literal">
+     <code>
       5 + 4
      </code>
      →
-     <code class="returnvalue">
+     <code>
       9
      </code>
     </p>
@@ -1170,7 +1170,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
        number
       </code>
      </em>
-     <code class="literal">
+     <code>
       -
      </code>
      <em class="replaceable">
@@ -1179,7 +1179,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         number
@@ -1191,11 +1191,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      Subtração
     </p>
     <p>
-     <code class="literal">
+     <code>
       3 - 2.0
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1.0
      </code>
     </p>
@@ -1209,7 +1209,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
        number
       </code>
      </em>
-     <code class="literal">
+     <code>
       *
      </code>
      <em class="replaceable">
@@ -1218,7 +1218,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         number
@@ -1230,11 +1230,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      Multiplicação
     </p>
     <p>
-     <code class="literal">
+     <code>
       5 * 4
      </code>
      →
-     <code class="returnvalue">
+     <code>
       20
      </code>
     </p>
@@ -1248,7 +1248,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
        number
       </code>
      </em>
-     <code class="literal">
+     <code>
       /
      </code>
      <em class="replaceable">
@@ -1257,7 +1257,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         number
@@ -1269,11 +1269,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      Divisão (truncando o resultado para zero se ambos os inputs forem inteiros)
     </p>
     <p>
-     <code class="literal">
+     <code>
       5 / 3
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1
      </code>
     </p>
@@ -1287,7 +1287,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
        integer
       </code>
      </em>
-     <code class="literal">
+     <code>
       %
      </code>
      <em class="replaceable">
@@ -1296,7 +1296,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         integer
@@ -1308,11 +1308,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      Modulo (resto)
     </p>
     <p>
-     <code class="literal">
+     <code>
       3 % 2
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1
      </code>
     </p>
@@ -1321,7 +1321,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       -
      </code>
      <em class="replaceable">
@@ -1330,7 +1330,7 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         number
@@ -1342,11 +1342,11 @@ Os operadores aritméticos, de comparação de bits, lógicos e listados na [Tab
      Negação
     </p>
     <p>
-     <code class="literal">
+     <code>
       - 2.0
      </code>
      →
-     <code class="returnvalue">
+     <code>
       -2.0
      </code>
     </p>
@@ -1369,7 +1369,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
 
 
 
-<table border="1" class="table" summary="pgbench Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -1392,7 +1392,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       abs
      </code>
      (
@@ -1402,7 +1402,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
      </code>
      mesmo tipo que a entrada
     </p>
@@ -1410,11 +1410,11 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
      Valor absoluto
     </p>
     <p>
-     <code class="literal">
+     <code>
       abs(-17)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       17
      </code>
     </p>
@@ -1423,7 +1423,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       debug
      </code>
      (
@@ -1433,7 +1433,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
      </code>
      mesmo tipo que a entrada
     </p>
@@ -1445,11 +1445,11 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
      , e retorna o argumento.
     </p>
     <p>
-     <code class="literal">
+     <code>
       debug(5432.1)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       5432.1
      </code>
     </p>
@@ -1458,7 +1458,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       double
      </code>
      (
@@ -1468,7 +1468,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
       double
      </code>
     </p>
@@ -1476,11 +1476,11 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
      Jogos para duplicar.
     </p>
     <p>
-     <code class="literal">
+     <code>
       double(5432)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       5432.0
      </code>
     </p>
@@ -1489,7 +1489,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       exp
      </code>
      (
@@ -1499,23 +1499,23 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
       double
      </code>
     </p>
     <p>
      Explicativa (
-     <code class="literal">
+     <code>
       e
      </code>
      elevado à potência dada)
     </p>
     <p>
-     <code class="literal">
+     <code>
       exp(1.0)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2.718281828459045
      </code>
     </p>
@@ -1524,7 +1524,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       greatest
      </code>
      (
@@ -1536,18 +1536,18 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
      [
      <span class="optional">
       ,
-      <code class="literal">
+      <code>
        ...
       </code>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
      </code>
-     <code class="type">
+     <code>
       double
      </code>
      se algum argumento for duplo, senão
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
@@ -1555,11 +1555,11 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
      Seleciona o maior valor entre os argumentos.
     </p>
     <p>
-     <code class="literal">
+     <code>
       greatest(5, 4, 3, 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       5
      </code>
     </p>
@@ -1568,7 +1568,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       hash
      </code>
      (
@@ -1587,23 +1587,23 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
       </em>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Este é um alias para
-     <code class="function">
+     <code>
       hash_murmur2
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       hash(10, 5432)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       -5817877081768721676
      </code>
     </p>
@@ -1612,7 +1612,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       hash_fnv1a
      </code>
      (
@@ -1631,7 +1631,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
       </em>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -1643,11 +1643,11 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       hash_fnv1a(10, 5432)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       -7793829335365542153
      </code>
     </p>
@@ -1656,7 +1656,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       hash_murmur2
      </code>
      (
@@ -1675,7 +1675,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
       </em>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -1687,11 +1687,11 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       hash_murmur2(10, 5432)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       -5817877081768721676
      </code>
     </p>
@@ -1700,7 +1700,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       int
      </code>
      (
@@ -1710,7 +1710,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -1718,11 +1718,11 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
      Arranjos para inteiro.
     </p>
     <p>
-     <code class="literal">
+     <code>
       int(5.4 + 3.8)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       9
      </code>
     </p>
@@ -1731,7 +1731,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       least
      </code>
      (
@@ -1743,18 +1743,18 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
      [
      <span class="optional">
       ,
-      <code class="literal">
+      <code>
        ...
       </code>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
      </code>
-     <code class="type">
+     <code>
       double
      </code>
      se algum argumento for duplo, senão
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
@@ -1762,11 +1762,11 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
      Seleciona o menor valor entre os argumentos.
     </p>
     <p>
-     <code class="literal">
+     <code>
       least(5, 4, 3, 2.1)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2.1
      </code>
     </p>
@@ -1775,7 +1775,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ln
      </code>
      (
@@ -1785,7 +1785,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
       double
      </code>
     </p>
@@ -1793,11 +1793,11 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
      Logarítmico natural
     </p>
     <p>
-     <code class="literal">
+     <code>
       ln(2.718281828459045)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1.0
      </code>
     </p>
@@ -1806,7 +1806,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       mod
      </code>
      (
@@ -1822,7 +1822,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -1830,11 +1830,11 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
      Modulo (resto)
     </p>
     <p>
-     <code class="literal">
+     <code>
       mod(54, 32)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       22
      </code>
     </p>
@@ -1843,7 +1843,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       permute
      </code>
      (
@@ -1865,7 +1865,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
       </code>
      </em>
      ] )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -1877,7 +1877,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
       </code>
      </em>
      , na faixa
-     <code class="literal">
+     <code>
       [0, size)
      </code>
      . Esta é a nova posição de
@@ -1893,7 +1893,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
       </code>
      </em>
      ) em uma permutação pseudorandom de inteiros
-     <code class="literal">
+     <code>
       0...size-1
      </code>
      , parametrizado por
@@ -1905,11 +1905,11 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
      , veja abaixo.
     </p>
     <p>
-     <code class="literal">
+     <code>
       permute(0, 4)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       an integer between 0 and 3
      </code>
     </p>
@@ -1918,11 +1918,11 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pi
      </code>
      ()
-     <code class="returnvalue">
+     <code>
       double
      </code>
     </p>
@@ -1933,11 +1933,11 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
      </span>
     </p>
     <p>
-     <code class="literal">
+     <code>
       pi()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3.14159265358979323846
      </code>
     </p>
@@ -1946,7 +1946,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pow
      </code>
      (
@@ -1962,12 +1962,12 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
       double
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       power
      </code>
      (
@@ -1983,7 +1983,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
       double
      </code>
     </p>
@@ -2001,11 +2001,11 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
      </em>
     </p>
     <p>
-     <code class="literal">
+     <code>
       pow(2.0, 10)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1024.0
      </code>
     </p>
@@ -2014,7 +2014,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       random
      </code>
      (
@@ -2030,23 +2030,23 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Calcula um número inteiro aleatório distribuído uniformemente em
-     <code class="literal">
+     <code>
       [lb, ub]
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       random(1, 10)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       an integer between 1 and 10
      </code>
     </p>
@@ -2055,7 +2055,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       random_exponential
      </code>
      (
@@ -2077,23 +2077,23 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Calcula um número inteiro aleatório distribuído exponencialmente
-     <code class="literal">
+     <code>
       [lb, ub]
      </code>
      , veja abaixo.
     </p>
     <p>
-     <code class="literal">
+     <code>
       random_exponential(1, 10, 3.0)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       an integer between 1 and 10
      </code>
     </p>
@@ -2102,7 +2102,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       random_gaussian
      </code>
      (
@@ -2124,23 +2124,23 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Calcula um número inteiro aleatório distribuído de forma gaussiana
-     <code class="literal">
+     <code>
       [lb, ub]
      </code>
      , veja abaixo.
     </p>
     <p>
-     <code class="literal">
+     <code>
       random_gaussian(1, 10, 2.5)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       an integer between 1 and 10
      </code>
     </p>
@@ -2149,7 +2149,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       random_zipfian
      </code>
      (
@@ -2171,23 +2171,23 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Calcula um número inteiro aleatório distribuído de acordo com a Zipf,
-     <code class="literal">
+     <code>
       [lb, ub]
      </code>
      , veja abaixo.
     </p>
     <p>
-     <code class="literal">
+     <code>
       random_zipfian(1, 10, 1.5)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       an integer between 1 and 10
      </code>
     </p>
@@ -2196,7 +2196,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       sqrt
      </code>
      (
@@ -2206,7 +2206,7 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
       double
      </code>
     </p>
@@ -2214,11 +2214,11 @@ As funções listadas na [Tabela 303](pgbench.md#PGBENCH-FUNCTIONS) são incorpo
      raiz quadrada
     </p>
     <p>
-     <code class="literal">
+     <code>
       sqrt(2.0)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1.414213562
      </code>
     </p>

@@ -8,7 +8,7 @@ As famílias de operadores são descritas em detalhes na [Seção 36.16](xindex.
 
 
 
-<table border="1" class="table" summary="pg_opfamily Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ As famílias de operadores são descritas em detalhes na [Seção 36.16](xindex.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -43,20 +43,20 @@ As famílias de operadores são descritas em detalhes na [Seção 36.16](xindex.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       opfmethod
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-am.md" title="52.3. pg_am">
-      <code class="structname">
+      <code>
        pg_am
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -69,10 +69,10 @@ As famílias de operadores são descritas em detalhes na [Seção 36.16](xindex.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       opfname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -84,20 +84,20 @@ As famílias de operadores são descritas em detalhes na [Seção 36.16](xindex.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       opfnamespace
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -110,20 +110,20 @@ As famílias de operadores são descritas em detalhes na [Seção 36.16](xindex.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       opfowner
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )

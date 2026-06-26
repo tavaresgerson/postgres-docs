@@ -56,7 +56,7 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
 
 
 
-<table border="1" class="table" summary="hstore Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -79,33 +79,33 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       hstore
      </code>
-     <code class="literal">
+     <code>
       -&gt;
      </code>
-     <code class="type">
+     <code>
       text
      </code>
      →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Retorna o valor associado à chave fornecida, ou
-     <code class="literal">
+     <code>
       NULL
      </code>
      se não estiver presente.
     </p>
     <p>
-     <code class="literal">
+     <code>
       'a=&gt;x, b=&gt;y'::hstore -&gt; 'a'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       x
      </code>
     </p>
@@ -114,33 +114,33 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       hstore
      </code>
-     <code class="literal">
+     <code>
       -&gt;
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       text[]
      </code>
     </p>
     <p>
      Retorna valores associados a chaves específicas, ou
-     <code class="literal">
+     <code>
       NULL
      </code>
      se não estiver presente.
     </p>
     <p>
-     <code class="literal">
+     <code>
       'a=&gt;x, b=&gt;y, c=&gt;z'::hstore -&gt; ARRAY['c','a']
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"z","x"}
      </code>
     </p>
@@ -149,33 +149,33 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       hstore
      </code>
-     <code class="literal">
+     <code>
       ||
      </code>
-     <code class="type">
+     <code>
       hstore
      </code>
      →
-     <code class="returnvalue">
+     <code>
       hstore
      </code>
     </p>
     <p>
      Concatenam dois
-     <code class="type">
+     <code>
       hstore
      </code>
      s.
     </p>
     <p>
-     <code class="literal">
+     <code>
       'a=&gt;b, c=&gt;d'::hstore || 'c=&gt;x, d=&gt;q'::hstore
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "a"=&gt;"b", "c"=&gt;"x", "d"=&gt;"q"
      </code>
     </p>
@@ -184,33 +184,33 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       hstore
      </code>
-     <code class="literal">
+     <code>
       ?
      </code>
-     <code class="type">
+     <code>
       text
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Faz
-     <code class="type">
+     <code>
       hstore
      </code>
      contêm chave?
     </p>
     <p>
-     <code class="literal">
+     <code>
       'a=&gt;1'::hstore ? 'a'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -219,33 +219,33 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       hstore
      </code>
-     <code class="literal">
+     <code>
       ?&amp;
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Faz
-     <code class="type">
+     <code>
       hstore
      </code>
      contêm todas as chaves especificadas?
     </p>
     <p>
-     <code class="literal">
+     <code>
       'a=&gt;1,b=&gt;2'::hstore ?&amp; ARRAY['a','b']
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -254,33 +254,33 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       hstore
      </code>
-     <code class="literal">
+     <code>
       ?|
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Faz
-     <code class="type">
+     <code>
       hstore
      </code>
      contêm alguma das chaves especificadas?
     </p>
     <p>
-     <code class="literal">
+     <code>
       'a=&gt;1,b=&gt;2'::hstore ?| ARRAY['b','c']
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -289,17 +289,17 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       hstore
      </code>
-     <code class="literal">
+     <code>
       @&gt;
      </code>
-     <code class="type">
+     <code>
       hstore
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -307,11 +307,11 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
      O lado esquerdo do operador contém o lado direito?
     </p>
     <p>
-     <code class="literal">
+     <code>
       'a=&gt;b, b=&gt;1, c=&gt;NULL'::hstore @&gt; 'b=&gt;1'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -320,17 +320,17 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       hstore
      </code>
-     <code class="literal">
+     <code>
       &lt;@
      </code>
-     <code class="type">
+     <code>
       hstore
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -338,11 +338,11 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
      O operador esquerdo está contido no direito?
     </p>
     <p>
-     <code class="literal">
+     <code>
       'a=&gt;c'::hstore &lt;@ 'a=&gt;b, b=&gt;1, c=&gt;NULL'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
@@ -351,17 +351,17 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       hstore
      </code>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       text
      </code>
      →
-     <code class="returnvalue">
+     <code>
       hstore
      </code>
     </p>
@@ -369,11 +369,11 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
      Exclui a chave do operando esquerdo.
     </p>
     <p>
-     <code class="literal">
+     <code>
       'a=&gt;1, b=&gt;2, c=&gt;3'::hstore - 'b'::text
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "a"=&gt;"1", "c"=&gt;"3"
      </code>
     </p>
@@ -382,17 +382,17 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       hstore
      </code>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       hstore
      </code>
     </p>
@@ -400,11 +400,11 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
      Exclui as chaves do operando esquerdo.
     </p>
     <p>
-     <code class="literal">
+     <code>
       'a=&gt;1, b=&gt;2, c=&gt;3'::hstore - ARRAY['a','b']
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "c"=&gt;"3"
      </code>
     </p>
@@ -413,17 +413,17 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       hstore
      </code>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       hstore
      </code>
      →
-     <code class="returnvalue">
+     <code>
       hstore
      </code>
     </p>
@@ -431,11 +431,11 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
      Exclui pares do operador esquerdo que correspondem aos pares do operador direito.
     </p>
     <p>
-     <code class="literal">
+     <code>
       'a=&gt;1, b=&gt;2, c=&gt;3'::hstore - 'a=&gt;4, b=&gt;2'::hstore
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "a"=&gt;"1", "c"=&gt;"3"
      </code>
     </p>
@@ -444,33 +444,33 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyelement
      </code>
-     <code class="literal">
+     <code>
       #=
      </code>
-     <code class="type">
+     <code>
       hstore
      </code>
      →
-     <code class="returnvalue">
+     <code>
       anyelement
      </code>
     </p>
     <p>
      Substitui os campos no operando esquerdo (que deve ser um tipo composto) com valores correspondentes de
-     <code class="type">
+     <code>
       hstore
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       ROW(1,3) #= 'f1=&gt;11'::hstore
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (11,3)
      </code>
     </p>
@@ -479,30 +479,30 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       %%
      </code>
-     <code class="type">
+     <code>
       hstore
      </code>
      →
-     <code class="returnvalue">
+     <code>
       text[]
      </code>
     </p>
     <p>
      Convertidos
-     <code class="type">
+     <code>
       hstore
      </code>
      para um array de chaves e valores alternados.
     </p>
     <p>
-     <code class="literal">
+     <code>
       %% 'a=&gt;foo, b=&gt;bar'::hstore
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {a,foo,b,bar}
      </code>
     </p>
@@ -511,30 +511,30 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       %#
      </code>
-     <code class="type">
+     <code>
       hstore
      </code>
      →
-     <code class="returnvalue">
+     <code>
       text[]
      </code>
     </p>
     <p>
      Convertidos
-     <code class="type">
+     <code>
       hstore
      </code>
      para um array de chave/valor bidimensional.
     </p>
     <p>
-     <code class="literal">
+     <code>
       %# 'a=&gt;foo, b=&gt;bar'::hstore
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {{a,foo},{b,bar}}
      </code>
     </p>
@@ -556,7 +556,7 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
 
 
 
-<table border="1" class="table" summary="hstore Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -579,31 +579,31 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       hstore
      </code>
      (
-     <code class="type">
+     <code>
       record
      </code>
      )
-     <code class="returnvalue">
+     <code>
       hstore
      </code>
     </p>
     <p>
      constrói
-     <code class="type">
+     <code>
       hstore
      </code>
      de um registro ou linha.
     </p>
     <p>
-     <code class="literal">
+     <code>
       hstore(ROW(1,2))
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "f1"=&gt;"1", "f2"=&gt;"2"
      </code>
     </p>
@@ -612,40 +612,40 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       hstore
      </code>
      (
-     <code class="type">
+     <code>
       text[]
      </code>
      )
-     <code class="returnvalue">
+     <code>
       hstore
      </code>
     </p>
     <p>
      constrói
-     <code class="type">
+     <code>
       hstore
      </code>
      de uma matriz, que pode ser uma matriz chave/valor ou uma matriz bidimensional.
     </p>
     <p>
-     <code class="literal">
+     <code>
       hstore(ARRAY['a','1','b','2'])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "a"=&gt;"1", "b"=&gt;"2"
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       hstore(ARRAY[['c','3'],['d','4']])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "c"=&gt;"3", "d"=&gt;"4"
      </code>
     </p>
@@ -654,35 +654,35 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       hstore
      </code>
      (
-     <code class="type">
+     <code>
       text[]
      </code>
      ,
-     <code class="type">
+     <code>
       text[]
      </code>
      )
-     <code class="returnvalue">
+     <code>
       hstore
      </code>
     </p>
     <p>
      constrói
-     <code class="type">
+     <code>
       hstore
      </code>
      de arrays de chave e valor separados.
     </p>
     <p>
-     <code class="literal">
+     <code>
       hstore(ARRAY['a','b'], ARRAY['1','2'])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "a"=&gt;"1", "b"=&gt;"2"
      </code>
     </p>
@@ -691,35 +691,35 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       hstore
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ,
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       hstore
      </code>
     </p>
     <p>
      Faz um único item
-     <code class="type">
+     <code>
       hstore
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       hstore('a', 'b')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "a"=&gt;"b"
      </code>
     </p>
@@ -728,31 +728,31 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       akeys
      </code>
      (
-     <code class="type">
+     <code>
       hstore
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text[]
      </code>
     </p>
     <p>
      Extrai extratos
-     <code class="type">
+     <code>
       hstore
      </code>
      As chaves como um array.
     </p>
     <p>
-     <code class="literal">
+     <code>
       akeys('a=&gt;1,b=&gt;2')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {a,b}
      </code>
     </p>
@@ -761,31 +761,31 @@ Os operadores fornecidos pelo módulo `hstore` são mostrados na [Tabela F.6](hs
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       skeys
      </code>
      (
-     <code class="type">
+     <code>
       hstore
      </code>
      )
-     <code class="returnvalue">
+     <code>
       setof text
      </code>
     </p>
     <p>
      Extrai extratos
-     <code class="type">
+     <code>
       hstore
      </code>
      As chaves do 's como um conjunto.
     </p>
     <p>
-     <code class="literal">
+     <code>
       skeys('a=&gt;1,b=&gt;2')
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -798,31 +798,31 @@ a b
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       avals
      </code>
      (
-     <code class="type">
+     <code>
       hstore
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text[]
      </code>
     </p>
     <p>
      Extrai extratos
-     <code class="type">
+     <code>
       hstore
      </code>
      Os valores de 's como um array.
     </p>
     <p>
-     <code class="literal">
+     <code>
       avals('a=&gt;1,b=&gt;2')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {1,2}
      </code>
     </p>
@@ -831,31 +831,31 @@ a b
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       svals
      </code>
      (
-     <code class="type">
+     <code>
       hstore
      </code>
      )
-     <code class="returnvalue">
+     <code>
       setof text
      </code>
     </p>
     <p>
      Extrai extratos
-     <code class="type">
+     <code>
       hstore
      </code>
      valores do 's como um conjunto.
     </p>
     <p>
-     <code class="literal">
+     <code>
       svals('a=&gt;1,b=&gt;2')
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -868,31 +868,31 @@ a b
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       hstore_to_array
      </code>
      (
-     <code class="type">
+     <code>
       hstore
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text[]
      </code>
     </p>
     <p>
      Extrai extratos
-     <code class="type">
+     <code>
       hstore
      </code>
      As chaves e seus valores como um array de chaves e valores alternados.
     </p>
     <p>
-     <code class="literal">
+     <code>
       hstore_to_array('a=&gt;1,b=&gt;2')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {a,1,b,2}
      </code>
     </p>
@@ -901,31 +901,31 @@ a b
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       hstore_to_matrix
      </code>
      (
-     <code class="type">
+     <code>
       hstore
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text[]
      </code>
     </p>
     <p>
      Extrai extratos
-     <code class="type">
+     <code>
       hstore
      </code>
      As chaves e valores são apresentados como uma matriz bidimensional.
     </p>
     <p>
-     <code class="literal">
+     <code>
       hstore_to_matrix('a=&gt;1,b=&gt;2')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {{a,1},{b,2}}
      </code>
     </p>
@@ -934,46 +934,46 @@ a b
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       hstore_to_json
      </code>
      (
-     <code class="type">
+     <code>
       hstore
      </code>
      )
-     <code class="returnvalue">
+     <code>
       json
      </code>
     </p>
     <p>
      Converte um
-     <code class="type">
+     <code>
       hstore
      </code>
      para
-     <code class="type">
+     <code>
       json
      </code>
      valor, convertendo todos os valores não nulos em strings JSON.
     </p>
     <p>
      Essa função é usada implicitamente quando um
-     <code class="type">
+     <code>
       hstore
      </code>
      o valor é lançado
-     <code class="type">
+     <code>
       json
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       hstore_to_json('"a key"=&gt;1, b=&gt;t, c=&gt;null, d=&gt;12345, e=&gt;012345, f=&gt;1.234, g=&gt;2.345e+4')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"a key": "1", "b": "t", "c": null, "d": "12345", "e": "012345", "f": "1.234", "g": "2.345e+4"}
      </code>
     </p>
@@ -982,46 +982,46 @@ a b
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       hstore_to_jsonb
      </code>
      (
-     <code class="type">
+     <code>
       hstore
      </code>
      )
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
     <p>
      Converte um
-     <code class="type">
+     <code>
       hstore
      </code>
      para
-     <code class="type">
+     <code>
       jsonb
      </code>
      valor, convertendo todos os valores não nulos em strings JSON.
     </p>
     <p>
      Essa função é usada implicitamente quando um
-     <code class="type">
+     <code>
       hstore
      </code>
      o valor é lançado
-     <code class="type">
+     <code>
       jsonb
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       hstore_to_jsonb('"a key"=&gt;1, b=&gt;t, c=&gt;null, d=&gt;12345, e=&gt;012345, f=&gt;1.234, g=&gt;2.345e+4')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"a key": "1", "b": "t", "c": null, "d": "12345", "e": "012345", "f": "1.234", "g": "2.345e+4"}
      </code>
     </p>
@@ -1030,35 +1030,35 @@ a b
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       hstore_to_json_loose
      </code>
      (
-     <code class="type">
+     <code>
       hstore
      </code>
      )
-     <code class="returnvalue">
+     <code>
       json
      </code>
     </p>
     <p>
      Converte um
-     <code class="type">
+     <code>
       hstore
      </code>
      para
-     <code class="type">
+     <code>
       json
      </code>
      O valor, mas tenta distinguir valores numéricos e booleanos para que não sejam citados no JSON.
     </p>
     <p>
-     <code class="literal">
+     <code>
       hstore_to_json_loose('"a key"=&gt;1, b=&gt;t, c=&gt;null, d=&gt;12345, e=&gt;012345, f=&gt;1.234, g=&gt;2.345e+4')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"a key": 1, "b": true, "c": null, "d": 12345, "e": "012345", "f": 1.234, "g": 2.345e+4}
      </code>
     </p>
@@ -1067,35 +1067,35 @@ a b
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       hstore_to_jsonb_loose
      </code>
      (
-     <code class="type">
+     <code>
       hstore
      </code>
      )
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
     <p>
      Converte um
-     <code class="type">
+     <code>
       hstore
      </code>
      para
-     <code class="type">
+     <code>
       jsonb
      </code>
      O valor, mas tenta distinguir valores numéricos e booleanos para que não sejam citados no JSON.
     </p>
     <p>
-     <code class="literal">
+     <code>
       hstore_to_jsonb_loose('"a key"=&gt;1, b=&gt;t, c=&gt;null, d=&gt;12345, e=&gt;012345, f=&gt;1.234, g=&gt;2.345e+4')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"a key": 1, "b": true, "c": null, "d": 12345, "e": "012345", "f": 1.234, "g": 2.345e+4}
      </code>
     </p>
@@ -1104,35 +1104,35 @@ a b
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       slice
      </code>
      (
-     <code class="type">
+     <code>
       hstore
      </code>
      ,
-     <code class="type">
+     <code>
       text[]
      </code>
      )
-     <code class="returnvalue">
+     <code>
       hstore
      </code>
     </p>
     <p>
      Extrai um subconjunto de um
-     <code class="type">
+     <code>
       hstore
      </code>
      contendo apenas as chaves especificadas.
     </p>
     <p>
-     <code class="literal">
+     <code>
       slice('a=&gt;1,b=&gt;2,c=&gt;3'::hstore, ARRAY['b','c','x'])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "b"=&gt;"2", "c"=&gt;"3"
      </code>
     </p>
@@ -1141,15 +1141,15 @@ a b
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       each
      </code>
      (
-     <code class="type">
+     <code>
       hstore
      </code>
      )
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -1158,7 +1158,7 @@ a b
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -1167,24 +1167,24 @@ a b
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
     </p>
     <p>
      Extrai extratos
-     <code class="type">
+     <code>
       hstore
      </code>
      As chaves e valores como um conjunto de registros.
     </p>
     <p>
-     <code class="literal">
+     <code>
       select * from each('a=&gt;1,b=&gt;2')
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -1197,35 +1197,35 @@ a b
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       exist
      </code>
      (
-     <code class="type">
+     <code>
       hstore
      </code>
      ,
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Faz
-     <code class="type">
+     <code>
       hstore
      </code>
      contêm chave?
     </p>
     <p>
-     <code class="literal">
+     <code>
       exist('a=&gt;1', 'a')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1234,39 +1234,39 @@ a b
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       defined
      </code>
      (
-     <code class="type">
+     <code>
       hstore
      </code>
      ,
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Faz
-     <code class="type">
+     <code>
       hstore
      </code>
      contenham um não
-     <code class="literal">
+     <code>
       NULL
      </code>
      valor para chave?
     </p>
     <p>
-     <code class="literal">
+     <code>
       defined('a=&gt;NULL', 'a')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
@@ -1275,19 +1275,19 @@ a b
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       delete
      </code>
      (
-     <code class="type">
+     <code>
       hstore
      </code>
      ,
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       hstore
      </code>
     </p>
@@ -1295,11 +1295,11 @@ a b
      Exclui o par com a chave correspondente.
     </p>
     <p>
-     <code class="literal">
+     <code>
       delete('a=&gt;1,b=&gt;2', 'b')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "a"=&gt;"1"
      </code>
     </p>
@@ -1308,19 +1308,19 @@ a b
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       delete
      </code>
      (
-     <code class="type">
+     <code>
       hstore
      </code>
      ,
-     <code class="type">
+     <code>
       text[]
      </code>
      )
-     <code class="returnvalue">
+     <code>
       hstore
      </code>
     </p>
@@ -1328,11 +1328,11 @@ a b
      Exclui pares com chaves correspondentes.
     </p>
     <p>
-     <code class="literal">
+     <code>
       delete('a=&gt;1,b=&gt;2,c=&gt;3', ARRAY['a','b'])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "c"=&gt;"3"
      </code>
     </p>
@@ -1341,19 +1341,19 @@ a b
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       delete
      </code>
      (
-     <code class="type">
+     <code>
       hstore
      </code>
      ,
-     <code class="type">
+     <code>
       hstore
      </code>
      )
-     <code class="returnvalue">
+     <code>
       hstore
      </code>
     </p>
@@ -1361,11 +1361,11 @@ a b
      Exclui pares que correspondem aos do segundo argumento.
     </p>
     <p>
-     <code class="literal">
+     <code>
       delete('a=&gt;1,b=&gt;2', 'a=&gt;4,b=&gt;2'::hstore)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "a"=&gt;"1"
      </code>
     </p>
@@ -1374,35 +1374,35 @@ a b
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       populate_record
      </code>
      (
-     <code class="type">
+     <code>
       anyelement
      </code>
      ,
-     <code class="type">
+     <code>
       hstore
      </code>
      )
-     <code class="returnvalue">
+     <code>
       anyelement
      </code>
     </p>
     <p>
      Substitui os campos no operando esquerdo (que deve ser um tipo composto) com valores correspondentes de
-     <code class="type">
+     <code>
       hstore
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       populate_record(ROW(1,2), 'f1=&gt;42'::hstore)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (42,2)
      </code>
     </p>

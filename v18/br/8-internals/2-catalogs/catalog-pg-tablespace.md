@@ -8,7 +8,7 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_tablespace` é compart
 
 
 
-<table border="1" class="table" summary="pg_tablespace Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_tablespace` é compart
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -43,10 +43,10 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_tablespace` é compart
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       spcname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -58,20 +58,20 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_tablespace` é compart
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       spcowner
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -84,10 +84,10 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_tablespace` é compart
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       spcacl
      </code>
-     <code class="type">
+     <code>
       aclitem[]
      </code>
     </p>
@@ -103,10 +103,10 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_tablespace` é compart
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       spcoptions
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>

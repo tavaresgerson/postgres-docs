@@ -4,7 +4,7 @@ O tipo `money` armazena um valor monetário com precisão fracionária fixa; vej
 
 **Tabela 8.3. Tipos Monetários**
 
-<table border="1" class="table" summary="Monetary Types">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -30,7 +30,7 @@ O tipo `money` armazena um valor monetário com precisão fracionária fixa; vej
  <tbody>
   <tr>
    <td>
-    <code class="type">
+    <code>
      money
     </code>
    </td>

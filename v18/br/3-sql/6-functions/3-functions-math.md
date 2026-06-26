@@ -8,7 +8,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
 
 
 
-<table border="1" class="table" summary="Mathematical Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -36,7 +36,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        numeric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       +
      </code>
      <em class="replaceable">
@@ -45,7 +45,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         numeric_type
@@ -57,11 +57,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Addition
     </p>
     <p>
-     <code class="literal">
+     <code>
       2 + 3
      </code>
      →
-     <code class="returnvalue">
+     <code>
       5
      </code>
     </p>
@@ -70,7 +70,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       +
      </code>
      <em class="replaceable">
@@ -79,7 +79,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         numeric_type
@@ -91,11 +91,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Unary plus (no operation)
     </p>
     <p>
-     <code class="literal">
+     <code>
       + 3.5
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3.5
      </code>
     </p>
@@ -109,7 +109,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        numeric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       -
      </code>
      <em class="replaceable">
@@ -118,7 +118,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         numeric_type
@@ -130,11 +130,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Subtraction
     </p>
     <p>
-     <code class="literal">
+     <code>
       2 - 3
      </code>
      →
-     <code class="returnvalue">
+     <code>
       -1
      </code>
     </p>
@@ -143,7 +143,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       -
      </code>
      <em class="replaceable">
@@ -152,7 +152,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         numeric_type
@@ -164,11 +164,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Negation
     </p>
     <p>
-     <code class="literal">
+     <code>
       - (-4)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       4
      </code>
     </p>
@@ -182,7 +182,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        numeric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       *
      </code>
      <em class="replaceable">
@@ -191,7 +191,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         numeric_type
@@ -203,11 +203,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Multiplication
     </p>
     <p>
-     <code class="literal">
+     <code>
       2 * 3
      </code>
      →
-     <code class="returnvalue">
+     <code>
       6
      </code>
     </p>
@@ -221,7 +221,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        numeric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       /
      </code>
      <em class="replaceable">
@@ -230,7 +230,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         numeric_type
@@ -242,29 +242,29 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Division (for integral types, division truncates the result towards zero)
     </p>
     <p>
-     <code class="literal">
+     <code>
       5.0 / 2
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2.5000000000000000
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       5 / 2
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       (-5) / 2
      </code>
      →
-     <code class="returnvalue">
+     <code>
       -2
      </code>
     </p>
@@ -278,7 +278,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        numeric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       %
      </code>
      <em class="replaceable">
@@ -287,7 +287,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         numeric_type
@@ -297,28 +297,28 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
     </p>
     <p>
      Modulo (remainder); available for
-     <code class="type">
+     <code>
       smallint
      </code>
      ,
-     <code class="type">
+     <code>
       integer
      </code>
      ,
-     <code class="type">
+     <code>
       bigint
      </code>
      , and
-     <code class="type">
+     <code>
       numeric
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       5 % 4
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1
      </code>
     </p>
@@ -327,32 +327,32 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       numeric
      </code>
-     <code class="literal">
+     <code>
       ^
      </code>
-     <code class="type">
+     <code>
       numeric
      </code>
      →
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
     <p class="func_signature">
-     <code class="type">
+     <code>
       double precision
      </code>
-     <code class="literal">
+     <code>
       ^
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
      →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -360,36 +360,36 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Exponentiation
     </p>
     <p>
-     <code class="literal">
+     <code>
       2 ^ 3
      </code>
      →
-     <code class="returnvalue">
+     <code>
       8
      </code>
     </p>
     <p>
      Unlike typical mathematical practice, multiple uses of
-     <code class="literal">
+     <code>
       ^
      </code>
      will associate left to right by default:
     </p>
     <p>
-     <code class="literal">
+     <code>
       2 ^ 3 ^ 3
      </code>
      →
-     <code class="returnvalue">
+     <code>
       512
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       2 ^ (3 ^ 3)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       134217728
      </code>
     </p>
@@ -398,14 +398,14 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       |/
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
      →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -413,11 +413,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Square root
     </p>
     <p>
-     <code class="literal">
+     <code>
       |/ 25.0
      </code>
      →
-     <code class="returnvalue">
+     <code>
       5
      </code>
     </p>
@@ -426,14 +426,14 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       ||/
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
      →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -441,11 +441,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Cube root
     </p>
     <p>
-     <code class="literal">
+     <code>
       ||/ 64.0
      </code>
      →
-     <code class="returnvalue">
+     <code>
       4
      </code>
     </p>
@@ -454,7 +454,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       @
      </code>
      <em class="replaceable">
@@ -463,7 +463,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         numeric_type
@@ -475,11 +475,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Absolute value
     </p>
     <p>
-     <code class="literal">
+     <code>
       @ -5.0
      </code>
      →
-     <code class="returnvalue">
+     <code>
       5.0
      </code>
     </p>
@@ -493,7 +493,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        integral_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       &amp;
      </code>
      <em class="replaceable">
@@ -502,7 +502,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         integral_type
@@ -514,11 +514,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Bitwise AND
     </p>
     <p>
-     <code class="literal">
+     <code>
       91 &amp; 15
      </code>
      →
-     <code class="returnvalue">
+     <code>
       11
      </code>
     </p>
@@ -532,7 +532,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        integral_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       |
      </code>
      <em class="replaceable">
@@ -541,7 +541,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         integral_type
@@ -553,11 +553,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Bitwise OR
     </p>
     <p>
-     <code class="literal">
+     <code>
       32 | 3
      </code>
      →
-     <code class="returnvalue">
+     <code>
       35
      </code>
     </p>
@@ -571,7 +571,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        integral_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       #
      </code>
      <em class="replaceable">
@@ -580,7 +580,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         integral_type
@@ -592,11 +592,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Bitwise exclusive OR
     </p>
     <p>
-     <code class="literal">
+     <code>
       17 # 5
      </code>
      →
-     <code class="returnvalue">
+     <code>
       20
      </code>
     </p>
@@ -605,7 +605,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       ~
      </code>
      <em class="replaceable">
@@ -614,7 +614,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         integral_type
@@ -626,11 +626,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Bitwise NOT
     </p>
     <p>
-     <code class="literal">
+     <code>
       ~1
      </code>
      →
-     <code class="returnvalue">
+     <code>
       -2
      </code>
     </p>
@@ -644,14 +644,14 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        integral_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       &lt;&lt;
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         integral_type
@@ -663,11 +663,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Bitwise shift left
     </p>
     <p>
-     <code class="literal">
+     <code>
       1 &lt;&lt; 4
      </code>
      →
-     <code class="returnvalue">
+     <code>
       16
      </code>
     </p>
@@ -681,14 +681,14 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        integral_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       &gt;&gt;
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         integral_type
@@ -700,11 +700,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Bitwise shift right
     </p>
     <p>
-     <code class="literal">
+     <code>
       8 &gt;&gt; 2
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -728,7 +728,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
 
 
 
-<table border="1" class="table" summary="Mathematical Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -751,7 +751,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       abs
      </code>
      (
@@ -761,7 +761,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         numeric_type
@@ -773,11 +773,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Valor absoluto
     </p>
     <p>
-     <code class="literal">
+     <code>
       abs(-17.4)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       17.4
      </code>
     </p>
@@ -786,15 +786,15 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cbrt
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -802,11 +802,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Raiz cúbica
     </p>
     <p>
-     <code class="literal">
+     <code>
       cbrt(64.0)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       4
      </code>
     </p>
@@ -815,28 +815,28 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ceil
      </code>
      (
-     <code class="type">
+     <code>
       numeric
      </code>
      )
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       ceil
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -844,20 +844,20 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Número inteiro mais próximo do argumento ou igual a ele
     </p>
     <p>
-     <code class="literal">
+     <code>
       ceil(42.2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       43
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       ceil(-42.8)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       -42
      </code>
     </p>
@@ -866,44 +866,44 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ceiling
      </code>
      (
-     <code class="type">
+     <code>
       numeric
      </code>
      )
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       ceiling
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Número inteiro mais próximo do argumento (mesmo que igual) (o mesmo que
-     <code class="function">
+     <code>
       ceil
      </code>
      )
     </p>
     <p>
-     <code class="literal">
+     <code>
       ceiling(95.3)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       96
      </code>
     </p>
@@ -912,15 +912,15 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       degrees
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -928,11 +928,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Converte radianos em graus
     </p>
     <p>
-     <code class="literal">
+     <code>
       degrees(0.5)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       28.64788975654116
      </code>
     </p>
@@ -941,7 +941,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       div
      </code>
      (
@@ -950,7 +950,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        y
       </code>
      </em>
-     <code class="type">
+     <code>
       numeric
      </code>
      ,
@@ -959,11 +959,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        x
       </code>
      </em>
-     <code class="type">
+     <code>
       numeric
      </code>
      )
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
@@ -983,11 +983,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      (truncado em direção a zero)
     </p>
     <p>
-     <code class="literal">
+     <code>
       div(9, 4)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -996,15 +996,15 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       erf
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -1012,11 +1012,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Função de erro
     </p>
     <p>
-     <code class="literal">
+     <code>
       erf(1.0)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0.8427007929497149
      </code>
     </p>
@@ -1025,31 +1025,31 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       erfc
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Função de erro complementar (
-     <code class="literal">
+     <code>
       1 - erf(x)
      </code>
      , sem perda de precisão para grandes entradas)
     </p>
     <p>
-     <code class="literal">
+     <code>
       erfc(1.0)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0.15729920705028513
      </code>
     </p>
@@ -1058,44 +1058,44 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       exp
      </code>
      (
-     <code class="type">
+     <code>
       numeric
      </code>
      )
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       exp
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Explicativa (
-     <code class="literal">
+     <code>
       e
      </code>
      elevado à potência dada)
     </p>
     <p>
-     <code class="literal">
+     <code>
       exp(1.0)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2.7182818284590452
      </code>
     </p>
@@ -1104,15 +1104,15 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       factorial
      </code>
      (
-     <code class="type">
+     <code>
       bigint
      </code>
      )
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
@@ -1120,11 +1120,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Fatorial
     </p>
     <p>
-     <code class="literal">
+     <code>
       factorial(5)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       120
      </code>
     </p>
@@ -1133,28 +1133,28 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       floor
      </code>
      (
-     <code class="type">
+     <code>
       numeric
      </code>
      )
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       floor
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -1162,20 +1162,20 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Número inteiro mais próximo, menor ou igual ao argumento
     </p>
     <p>
-     <code class="literal">
+     <code>
       floor(42.8)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       42
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       floor(-42.8)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       -43
      </code>
     </p>
@@ -1184,15 +1184,15 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       gamma
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -1200,20 +1200,20 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Função gama
     </p>
     <p>
-     <code class="literal">
+     <code>
       gamma(0.5)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1.772453850905516
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       gamma(6)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       120
      </code>
     </p>
@@ -1222,7 +1222,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       gcd
      </code>
      (
@@ -1238,7 +1238,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         numeric_type
@@ -1248,28 +1248,28 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
     </p>
     <p>
      Mínimo comum múltiplo (o maior número positivo que divide ambos os valores sem deixar resto); retorna
-     <code class="literal">
+     <code>
       0
      </code>
      se ambos os inputs forem zero; disponível para
-     <code class="type">
+     <code>
       integer
      </code>
      ,
-     <code class="type">
+     <code>
       bigint
      </code>
      , e
-     <code class="type">
+     <code>
       numeric
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       gcd(1071, 462)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       21
      </code>
     </p>
@@ -1278,7 +1278,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       lcm
      </code>
      (
@@ -1294,7 +1294,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         numeric_type
@@ -1304,28 +1304,28 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
     </p>
     <p>
      Mínimo múltiplo comum (o menor número estritamente positivo que é um múltiplo integral de ambos os inputs); retorna
-     <code class="literal">
+     <code>
       0
      </code>
      se qualquer uma das entradas for zero; disponível para
-     <code class="type">
+     <code>
       integer
      </code>
      ,
-     <code class="type">
+     <code>
       bigint
      </code>
      , e
-     <code class="type">
+     <code>
       numeric
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       lcm(1071, 462)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       23562
      </code>
     </p>
@@ -1334,15 +1334,15 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       lgamma
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -1350,11 +1350,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Logarítmico natural do valor absoluto da função gama
     </p>
     <p>
-     <code class="literal">
+     <code>
       lgamma(1000)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       5905.220423209181
      </code>
     </p>
@@ -1363,28 +1363,28 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ln
      </code>
      (
-     <code class="type">
+     <code>
       numeric
      </code>
      )
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       ln
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -1392,11 +1392,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Logarítmico natural
     </p>
     <p>
-     <code class="literal">
+     <code>
       ln(2.0)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0.6931471805599453
      </code>
     </p>
@@ -1405,28 +1405,28 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       log
      </code>
      (
-     <code class="type">
+     <code>
       numeric
      </code>
      )
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       log
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -1434,11 +1434,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Logaritmo de base 10
     </p>
     <p>
-     <code class="literal">
+     <code>
       log(100)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -1447,44 +1447,44 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       log10
      </code>
      (
-     <code class="type">
+     <code>
       numeric
      </code>
      )
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       log10
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Logaritmo de base 10 (mesmo que
-     <code class="function">
+     <code>
       log
      </code>
      )
     </p>
     <p>
-     <code class="literal">
+     <code>
       log10(1000)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3
      </code>
     </p>
@@ -1493,7 +1493,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       log
      </code>
      (
@@ -1502,7 +1502,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        b
       </code>
      </em>
-     <code class="type">
+     <code>
       numeric
      </code>
      ,
@@ -1511,11 +1511,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        x
       </code>
      </em>
-     <code class="type">
+     <code>
       numeric
      </code>
      )
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
@@ -1534,11 +1534,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      </em>
     </p>
     <p>
-     <code class="literal">
+     <code>
       log(2.0, 64.0)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       6.0000000000000000
      </code>
     </p>
@@ -1547,15 +1547,15 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       min_scale
      </code>
      (
-     <code class="type">
+     <code>
       numeric
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -1563,11 +1563,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Escala mínima (número de dígitos decimais fracionários) necessária para representar o valor fornecido com precisão
     </p>
     <p>
-     <code class="literal">
+     <code>
       min_scale(8.4100)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -1576,7 +1576,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       mod
      </code>
      (
@@ -1602,7 +1602,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         numeric_type
@@ -1624,28 +1624,28 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      ; disponível para
-     <code class="type">
+     <code>
       smallint
      </code>
      ,
-     <code class="type">
+     <code>
       integer
      </code>
      ,
-     <code class="type">
+     <code>
       bigint
      </code>
      , e
-     <code class="type">
+     <code>
       numeric
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       mod(9, 4)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1
      </code>
     </p>
@@ -1654,11 +1654,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pi
      </code>
      (  )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -1669,11 +1669,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      </span>
     </p>
     <p>
-     <code class="literal">
+     <code>
       pi()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3.141592653589793
      </code>
     </p>
@@ -1682,7 +1682,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       power
      </code>
      (
@@ -1691,7 +1691,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        a
       </code>
      </em>
-     <code class="type">
+     <code>
       numeric
      </code>
      ,
@@ -1700,16 +1700,16 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        b
       </code>
      </em>
-     <code class="type">
+     <code>
       numeric
      </code>
      )
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       power
      </code>
      (
@@ -1718,7 +1718,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        a
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ,
@@ -1727,11 +1727,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        b
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -1749,11 +1749,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      </em>
     </p>
     <p>
-     <code class="literal">
+     <code>
       power(9, 3)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       729
      </code>
     </p>
@@ -1762,15 +1762,15 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       radians
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -1778,11 +1778,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Converte graus em radianos
     </p>
     <p>
-     <code class="literal">
+     <code>
       radians(45.0)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0.7853981633974483
      </code>
     </p>
@@ -1791,38 +1791,38 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       round
      </code>
      (
-     <code class="type">
+     <code>
       numeric
      </code>
      )
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       round
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Arredonda para o número inteiro mais próximo. Para
-     <code class="type">
+     <code>
       numeric
      </code>
      , os laços são quebrados arredondando para longe de zero. Para
-     <code class="type">
+     <code>
       double precision
      </code>
      , o comportamento de resolução de empate depende da plataforma, mas
@@ -1836,11 +1836,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      é a regra mais comum.
     </p>
     <p>
-     <code class="literal">
+     <code>
       round(42.4)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       42
      </code>
     </p>
@@ -1849,7 +1849,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       round
      </code>
      (
@@ -1858,7 +1858,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        v
       </code>
      </em>
-     <code class="type">
+     <code>
       numeric
      </code>
      ,
@@ -1867,11 +1867,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        s
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
@@ -1891,20 +1891,20 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Os decimais são quebrados arredondando-se para longe de zero.
     </p>
     <p>
-     <code class="literal">
+     <code>
       round(42.4382, 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       42.44
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       round(1234.56, -1)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1230
      </code>
     </p>
@@ -1913,15 +1913,15 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       scale
      </code>
      (
-     <code class="type">
+     <code>
       numeric
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -1929,11 +1929,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Escala do argumento (número de dígitos decimais na parte fracionária)
     </p>
     <p>
-     <code class="literal">
+     <code>
       scale(8.4100)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       4
      </code>
     </p>
@@ -1942,28 +1942,28 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       sign
      </code>
      (
-     <code class="type">
+     <code>
       numeric
      </code>
      )
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       sign
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -1971,11 +1971,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Sinal do argumento (-1, 0 ou +1)
     </p>
     <p>
-     <code class="literal">
+     <code>
       sign(-8.4)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       -1
      </code>
     </p>
@@ -1984,28 +1984,28 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       sqrt
      </code>
      (
-     <code class="type">
+     <code>
       numeric
      </code>
      )
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       sqrt
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -2013,11 +2013,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      raiz quadrada
     </p>
     <p>
-     <code class="literal">
+     <code>
       sqrt(2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1.4142135623730951
      </code>
     </p>
@@ -2026,15 +2026,15 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       trim_scale
      </code>
      (
-     <code class="type">
+     <code>
       numeric
      </code>
      )
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
@@ -2042,11 +2042,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Reduz a escala do valor (número de dígitos decimais fracionários) removendo zeros finais
     </p>
     <p>
-     <code class="literal">
+     <code>
       trim_scale(8.4100)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       8.41
      </code>
     </p>
@@ -2055,28 +2055,28 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       trunc
      </code>
      (
-     <code class="type">
+     <code>
       numeric
      </code>
      )
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       trunc
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -2084,20 +2084,20 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Trunca para inteiro (em direção a zero)
     </p>
     <p>
-     <code class="literal">
+     <code>
       trunc(42.8)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       42
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       trunc(-42.8)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       -42
      </code>
     </p>
@@ -2106,7 +2106,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       trunc
      </code>
      (
@@ -2115,7 +2115,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        v
       </code>
      </em>
-     <code class="type">
+     <code>
       numeric
      </code>
      ,
@@ -2124,11 +2124,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        s
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
@@ -2148,11 +2148,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      decismais
     </p>
     <p>
-     <code class="literal">
+     <code>
       trunc(42.4382, 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       42.43
      </code>
     </p>
@@ -2161,7 +2161,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       width_bucket
      </code>
      (
@@ -2170,7 +2170,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        operand
       </code>
      </em>
-     <code class="type">
+     <code>
       numeric
      </code>
      ,
@@ -2179,7 +2179,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        low
       </code>
      </em>
-     <code class="type">
+     <code>
       numeric
      </code>
      ,
@@ -2188,7 +2188,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        high
       </code>
      </em>
-     <code class="type">
+     <code>
       numeric
      </code>
      ,
@@ -2197,16 +2197,16 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        count
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       width_bucket
      </code>
      (
@@ -2215,7 +2215,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        operand
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ,
@@ -2224,7 +2224,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        low
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ,
@@ -2233,7 +2233,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        high
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ,
@@ -2242,11 +2242,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        count
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -2276,7 +2276,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      . Os buckets têm limites inferiores inclusivos e limites superiores exclusivos. Retornos
-     <code class="literal">
+     <code>
       0
      </code>
      para uma entrada menor que
@@ -2286,7 +2286,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      , ou
-     <code class="literal">
+     <code>
       <em class="parameter">
        <code>
         count
@@ -2313,7 +2313,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      , o comportamento é invertido no espelho, com balde
-     <code class="literal">
+     <code>
       1
      </code>
      agora sendo a única logo abaixo
@@ -2325,20 +2325,20 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      , e os limites inclusivos estão agora no lado superior.
     </p>
     <p>
-     <code class="literal">
+     <code>
       width_bucket(5.35, 0.024, 10.06, 5)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       width_bucket(9, 10, 0, 10)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -2347,7 +2347,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       width_bucket
      </code>
      (
@@ -2356,7 +2356,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        operand
       </code>
      </em>
-     <code class="type">
+     <code>
       anycompatible
      </code>
      ,
@@ -2365,11 +2365,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        thresholds
       </code>
      </em>
-     <code class="type">
+     <code>
       anycompatiblearray
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -2381,7 +2381,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      devolve uma lista de quedas que indicam os limites inferiores inclusivos dos buckets. Devolve
-     <code class="literal">
+     <code>
       0
      </code>
      para uma entrada menor que a primeira faixa inferior.
@@ -2405,11 +2405,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      , da menor para a maior, ou resultados inesperados serão obtidos.
     </p>
     <p>
-     <code class="literal">
+     <code>
       width_bucket(now(), array['yesterday', 'today', 'tomorrow']::timestamptz[])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -2433,7 +2433,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
 
 
 
-<table border="1" class="table" summary="Random Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -2456,11 +2456,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       random
      </code>
      ( )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -2468,11 +2468,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      Retorna um valor aleatório no intervalo 0,0 &lt;= x &lt; 1,0
     </p>
     <p>
-     <code class="literal">
+     <code>
       random()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0.897124072839091
      </code>
     </p>
@@ -2481,7 +2481,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       random
      </code>
      (
@@ -2490,7 +2490,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        min
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -2499,16 +2499,16 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        max
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       random
      </code>
      (
@@ -2517,7 +2517,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        min
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ,
@@ -2526,16 +2526,16 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        max
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      )
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       random
      </code>
      (
@@ -2544,7 +2544,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        min
       </code>
      </em>
-     <code class="type">
+     <code>
       numeric
      </code>
      ,
@@ -2553,11 +2553,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
        max
       </code>
      </em>
-     <code class="type">
+     <code>
       numeric
      </code>
      )
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
@@ -2575,7 +2575,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
       </code>
      </em>
      . Para o tipo
-     <code class="type">
+     <code>
       numeric
      </code>
      , o resultado terá o mesmo número de dígitos decimais fracionários que
@@ -2593,20 +2593,20 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      , aquela que tiver mais.
     </p>
     <p>
-     <code class="literal">
+     <code>
       random(1, 10)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       7
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       random(-0.499, 0.499)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0.347
      </code>
     </p>
@@ -2615,7 +2615,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       random_normal
      </code>
      ( [ ] )
@@ -2625,7 +2625,7 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
         mean
        </code>
       </em>
-      <code class="type">
+      <code>
        double precision
       </code>
       [
@@ -2636,14 +2636,14 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
          stddev
         </code>
        </em>
-       <code class="type">
+       <code>
         double precision
        </code>
       </span>
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -2663,11 +2663,11 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
      o padrão é 1,0
     </p>
     <p>
-     <code class="literal">
+     <code>
       random_normal(0.0, 1.0)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0.051285419
      </code>
     </p>
@@ -2676,31 +2676,31 @@ Operadores matemáticos são fornecidos para muitos tipos do PostgreSQL. Para ti
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       setseed
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
     <p>
      Define a semente para o subsequente
-     <code class="literal">
+     <code>
       random()
      </code>
      e
-     <code class="literal">
+     <code>
       random_normal()
      </code>
      chamadas; o argumento deve estar entre -1,0 e 1,0, inclusive
     </p>
     <p>
-     <code class="literal">
+     <code>
       setseed(0.12345)
      </code>
     </p>
@@ -2726,7 +2726,7 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
 
 
 
-<table border="1" class="table" summary="Trigonometric Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -2749,15 +2749,15 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       acos
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -2765,11 +2765,11 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
      Cosseno inverso, resulta em radianos
     </p>
     <p>
-     <code class="literal">
+     <code>
       acos(1)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0
      </code>
     </p>
@@ -2778,15 +2778,15 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       acosd
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -2794,11 +2794,11 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
      Cosseno inverso, em graus
     </p>
     <p>
-     <code class="literal">
+     <code>
       acosd(0.5)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       60
      </code>
     </p>
@@ -2807,15 +2807,15 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       asin
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -2823,11 +2823,11 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
      Senos inversos, em radianos
     </p>
     <p>
-     <code class="literal">
+     <code>
       asin(1)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1.5707963267948966
      </code>
     </p>
@@ -2836,15 +2836,15 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       asind
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -2852,11 +2852,11 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
      Senos inversos, em graus
     </p>
     <p>
-     <code class="literal">
+     <code>
       asind(0.5)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       30
      </code>
     </p>
@@ -2865,15 +2865,15 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       atan
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -2881,11 +2881,11 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
      Tangente inversa, resultado em radianos
     </p>
     <p>
-     <code class="literal">
+     <code>
       atan(1)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0.7853981633974483
      </code>
     </p>
@@ -2894,15 +2894,15 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       atand
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -2910,11 +2910,11 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
      Tangente inversa, em graus
     </p>
     <p>
-     <code class="literal">
+     <code>
       atand(1)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       45
      </code>
     </p>
@@ -2923,7 +2923,7 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       atan2
      </code>
      (
@@ -2932,7 +2932,7 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
        y
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ,
@@ -2941,11 +2941,11 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
        x
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -2965,11 +2965,11 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
      , resulta em radianos
     </p>
     <p>
-     <code class="literal">
+     <code>
       atan2(1, 0)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1.5707963267948966
      </code>
     </p>
@@ -2978,7 +2978,7 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       atan2d
      </code>
      (
@@ -2987,7 +2987,7 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
        y
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ,
@@ -2996,11 +2996,11 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
        x
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -3020,11 +3020,11 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
      , resultando em graus
     </p>
     <p>
-     <code class="literal">
+     <code>
       atan2d(1, 0)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       90
      </code>
     </p>
@@ -3033,15 +3033,15 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cos
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -3049,11 +3049,11 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
      Cosseno, argumento em radianos
     </p>
     <p>
-     <code class="literal">
+     <code>
       cos(0)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1
      </code>
     </p>
@@ -3062,15 +3062,15 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cosd
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -3078,11 +3078,11 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
      Coseno, argumento em graus
     </p>
     <p>
-     <code class="literal">
+     <code>
       cosd(60)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0.5
      </code>
     </p>
@@ -3091,15 +3091,15 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cot
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -3107,11 +3107,11 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
      Cotangente, argumento em radianos
     </p>
     <p>
-     <code class="literal">
+     <code>
       cot(0.5)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1.830487721712452
      </code>
     </p>
@@ -3120,15 +3120,15 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cotd
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -3136,11 +3136,11 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
      Cotangente, argumento em graus
     </p>
     <p>
-     <code class="literal">
+     <code>
       cotd(45)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1
      </code>
     </p>
@@ -3149,15 +3149,15 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       sin
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -3165,11 +3165,11 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
      Sine, argumento em radianos
     </p>
     <p>
-     <code class="literal">
+     <code>
       sin(1)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0.8414709848078965
      </code>
     </p>
@@ -3178,15 +3178,15 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       sind
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -3194,11 +3194,11 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
      Sine, argumento em graus
     </p>
     <p>
-     <code class="literal">
+     <code>
       sind(30)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0.5
      </code>
     </p>
@@ -3207,15 +3207,15 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       tan
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -3223,11 +3223,11 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
      Tangente, argumento em radianos
     </p>
     <p>
-     <code class="literal">
+     <code>
       tan(1)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1.5574077246549023
      </code>
     </p>
@@ -3236,15 +3236,15 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       tand
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -3252,11 +3252,11 @@ As funções `random()` e `random_normal()` listadas na [Tabela 9.6](functions-m
      Tangente, argumento em graus
     </p>
     <p>
-     <code class="literal">
+     <code>
       tand(45)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1
      </code>
     </p>
@@ -3284,7 +3284,7 @@ Outra maneira de trabalhar com ângulos medidos em graus é usar as funções de
 
 
 
-<table border="1" class="table" summary="Hyperbolic Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -3307,15 +3307,15 @@ Outra maneira de trabalhar com ângulos medidos em graus é usar as funções de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       sinh
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -3323,11 +3323,11 @@ Outra maneira de trabalhar com ângulos medidos em graus é usar as funções de
      seno hiperbólico
     </p>
     <p>
-     <code class="literal">
+     <code>
       sinh(1)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1.1752011936438014
      </code>
     </p>
@@ -3336,15 +3336,15 @@ Outra maneira de trabalhar com ângulos medidos em graus é usar as funções de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cosh
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -3352,11 +3352,11 @@ Outra maneira de trabalhar com ângulos medidos em graus é usar as funções de
      Cosseno hiperbólico
     </p>
     <p>
-     <code class="literal">
+     <code>
       cosh(0)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1
      </code>
     </p>
@@ -3365,15 +3365,15 @@ Outra maneira de trabalhar com ângulos medidos em graus é usar as funções de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       tanh
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -3381,11 +3381,11 @@ Outra maneira de trabalhar com ângulos medidos em graus é usar as funções de
      Tangente hiperbólica
     </p>
     <p>
-     <code class="literal">
+     <code>
       tanh(1)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0.7615941559557649
      </code>
     </p>
@@ -3394,15 +3394,15 @@ Outra maneira de trabalhar com ângulos medidos em graus é usar as funções de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       asinh
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -3410,11 +3410,11 @@ Outra maneira de trabalhar com ângulos medidos em graus é usar as funções de
      seno hiperbólico inverso
     </p>
     <p>
-     <code class="literal">
+     <code>
       asinh(1)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0.881373587019543
      </code>
     </p>
@@ -3423,15 +3423,15 @@ Outra maneira de trabalhar com ângulos medidos em graus é usar as funções de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       acosh
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -3439,11 +3439,11 @@ Outra maneira de trabalhar com ângulos medidos em graus é usar as funções de
      Cosseno hiperbólico inverso
     </p>
     <p>
-     <code class="literal">
+     <code>
       acosh(1)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0
      </code>
     </p>
@@ -3452,15 +3452,15 @@ Outra maneira de trabalhar com ângulos medidos em graus é usar as funções de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       atanh
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -3468,11 +3468,11 @@ Outra maneira de trabalhar com ângulos medidos em graus é usar as funções de
      Tangente hiperbólica inversa
     </p>
     <p>
-     <code class="literal">
+     <code>
       atanh(0.5)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0.5493061443340548
      </code>
     </p>

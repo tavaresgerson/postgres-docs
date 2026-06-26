@@ -6,7 +6,7 @@ O catálogo `pg_statistic_ext` contém definições de estatísticas de planejad
 
 
 
-<table border="1" class="table" summary="pg_statistic_ext Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_statistic_ext` contém definições de estatísticas de planejad
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,20 +41,20 @@ O catálogo `pg_statistic_ext` contém definições de estatísticas de planejad
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stxrelid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -67,10 +67,10 @@ O catálogo `pg_statistic_ext` contém definições de estatísticas de planejad
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stxname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -82,20 +82,20 @@ O catálogo `pg_statistic_ext` contém definições de estatísticas de planejad
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stxnamespace
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -108,20 +108,20 @@ O catálogo `pg_statistic_ext` contém definições de estatísticas de planejad
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stxowner
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -134,27 +134,27 @@ O catálogo `pg_statistic_ext` contém definições de estatísticas de planejad
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stxkeys
      </code>
-     <code class="type">
+     <code>
       int2vector
      </code>
      (referências
      <a class="link" href="catalog-pg-attribute.md" title="52.7. pg_attribute">
-      <code class="structname">
+      <code>
        pg_attribute
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       attnum
      </code>
      )
     </p>
     <p>
      Uma série de números de atributos, indicando quais colunas da tabela são cobertas por este objeto de estatísticas; por exemplo, um valor de
-     <code class="literal">
+     <code>
       1 3
      </code>
      significaria que as primeiras e as colunas da terceira tabela estão cobertas
@@ -164,25 +164,25 @@ O catálogo `pg_statistic_ext` contém definições de estatísticas de planejad
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stxstattarget
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
     <p>
-     <code class="structfield">
+     <code>
       stxstattarget
      </code>
      controla o nível de detalhe das estatísticas acumuladas para este objeto estatístico por
      <a class="link" href="sql-analyze.md" title="ANALYZE">
-      <code class="command">
+      <code>
        ANALYZE
       </code>
      </a>
      Um valor nulo indica que não devem ser coletadas estatísticas. Um valor nulo diz para usar o máximo dos objetivos de estatísticas das colunas referenciadas, se configurados, ou o objetivo de estatísticas padrão do sistema. Valores positivos de
-     <code class="structfield">
+     <code>
       stxstattarget
      </code>
      determine o número alvo de
@@ -200,28 +200,28 @@ O catálogo `pg_statistic_ext` contém definições de estatísticas de planejad
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stxkind
      </code>
-     <code class="type">
+     <code>
       char[]
      </code>
     </p>
     <p>
      Um array contendo códigos para os tipos de estatísticas habilitados; os valores válidos são:
-     <code class="literal">
+     <code>
       d
      </code>
      para n estatísticas distintas,
-     <code class="literal">
+     <code>
       f
      </code>
      para estatísticas de dependência funcional,
-     <code class="literal">
+     <code>
       m
      </code>
      para a lista de estatísticas de valores mais comuns (MCV), e
-     <code class="literal">
+     <code>
       e
      </code>
      para estatísticas de expressão
@@ -231,16 +231,16 @@ O catálogo `pg_statistic_ext` contém definições de estatísticas de planejad
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stxexprs
      </code>
-     <code class="type">
+     <code>
       pg_node_tree
      </code>
     </p>
     <p>
      árvores de expressão (em
-     <code class="function">
+     <code>
       nodeToString()
      </code>
      (representação) para atributos de objeto de estatísticas que não são referências simples de coluna. Esta é uma lista com um elemento por expressão. Nulo se todos os atributos de objeto de estatísticas forem referências simples.

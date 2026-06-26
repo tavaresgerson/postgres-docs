@@ -8,7 +8,7 @@ A vista `pg_prepared_xacts` exibe informações sobre as transações que estão
 
 
 
-<table border="1" class="table" summary="pg_prepared_xacts Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ A vista `pg_prepared_xacts` exibe informações sobre as transações que estão
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       transaction
      </code>
-     <code class="type">
+     <code>
       xid
      </code>
     </p>
@@ -43,10 +43,10 @@ A vista `pg_prepared_xacts` exibe informações sobre as transações que estão
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       gid
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -58,10 +58,10 @@ A vista `pg_prepared_xacts` exibe informações sobre as transações que estão
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prepared
      </code>
-     <code class="type">
+     <code>
       timestamptz
      </code>
     </p>
@@ -73,20 +73,20 @@ A vista `pg_prepared_xacts` exibe informações sobre as transações que estão
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       owner
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       rolname
      </code>
      )
@@ -99,20 +99,20 @@ A vista `pg_prepared_xacts` exibe informações sobre as transações que estão
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       database
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (referências
      <a class="link" href="catalog-pg-database.md" title="52.15. pg_database">
-      <code class="structname">
+      <code>
        pg_database
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       datname
      </code>
      )

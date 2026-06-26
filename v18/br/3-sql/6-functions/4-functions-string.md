@@ -1,4 +1,4 @@
-## 9.4. Funções e operadores de strings [#](#FUNCTIONS-STRING)
+### 9.4. Funções e operadores de strings [#](#FUNCTIONS-STRING)
 
 * [9.4.1. `format`](functions-string.md#FUNCTIONS-STRING-FORMAT)
 
@@ -12,9 +12,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
 
 **Tabela 9.9. Funções e operadores de cadeia de caracteres SQL**
 
-
-
-<table border="1" class="table" summary="SQL String Functions and Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -37,17 +35,17 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       text
      </code>
-     <code class="literal">
+     <code>
       ||
      </code>
-     <code class="type">
+     <code>
       text
      </code>
      →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -55,11 +53,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
      Concatenia as duas strings.
     </p>
     <p>
-     <code class="literal">
+     <code>
       'Post' || 'greSQL'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       PostgreSQL
      </code>
     </p>
@@ -68,52 +66,52 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       text
      </code>
-     <code class="literal">
+     <code>
       ||
      </code>
-     <code class="type">
+     <code>
       anynonarray
      </code>
      →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p class="func_signature">
-     <code class="type">
+     <code>
       anynonarray
      </code>
-     <code class="literal">
+     <code>
       ||
      </code>
-     <code class="type">
+     <code>
       text
      </code>
      →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Converte a entrada não-string para texto e, em seguida, concatenia as duas strings. (A entrada não-string não pode ser de um tipo de matriz, porque isso criaria ambiguidade com a matriz
-     <code class="literal">
+     <code>
       ||
      </code>
      operadores. Se você quiser concatenar o equivalente textual de um array, faça-o com a função cast.
-     <code class="type">
+     <code>
       text
      </code>
      explicitly.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       'Value: ' || 42
      </code>
      →
-     <code class="returnvalue">
+     <code>
       Value: 42
      </code>
     </p>
@@ -122,7 +120,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       btrim
      </code>
      (
@@ -131,7 +129,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -142,12 +140,12 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
         characters
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -167,11 +165,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       btrim('xyxtrimyyx', 'xyz')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       trim
      </code>
     </p>
@@ -180,15 +178,15 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       text
      </code>
-     <code class="literal">
+     <code>
       IS
      </code>
      [
      <span class="optional">
-      <code class="literal">
+      <code>
        NOT
       </code>
      </span>
@@ -201,11 +199,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
       </em>
      </span>
      ]
-     <code class="literal">
+     <code>
       NORMALIZED
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -217,33 +215,33 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
       </code>
      </em>
      palavra-chave especifica o formulário:
-     <code class="literal">
+     <code>
       NFC
      </code>
      (o padrão),
-     <code class="literal">
+     <code>
       NFD
      </code>
      ,
-     <code class="literal">
+     <code>
       NFKC
      </code>
      , ou
-     <code class="literal">
+     <code>
       NFKD
      </code>
      Essa expressão só pode ser usada quando o codificação do servidor é
-     <code class="literal">
+     <code>
       UTF8
      </code>
      Observe que verificar a normalização usando essa expressão é, muitas vezes, mais rápido do que normalizar strings que já podem estar normalizadas.
     </p>
     <p>
-     <code class="literal">
+     <code>
       U&amp;'\0061\0308bc' IS NFD NORMALIZED
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -252,31 +250,31 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       bit_length
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Retorna o número de bits na string (8 vezes o
-     <code class="function">
+     <code>
       octet_length
      </code>
      ).
     </p>
     <p>
-     <code class="literal">
+     <code>
       bit_length('jose')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       32
      </code>
     </p>
@@ -285,28 +283,28 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       char_length
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       character_length
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -314,11 +312,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
      Retorna o número de caracteres na string.
     </p>
     <p>
-     <code class="literal">
+     <code>
       char_length('josé')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       4
      </code>
     </p>
@@ -327,15 +325,15 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       lower
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -343,11 +341,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
      Converte a string para maiúsculas, de acordo com as regras do local do banco de dados.
     </p>
     <p>
-     <code class="literal">
+     <code>
       lower('TOM')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       tom
      </code>
     </p>
@@ -356,7 +354,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       lpad
      </code>
      (
@@ -365,7 +363,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -374,7 +372,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        length
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      [
@@ -385,12 +383,12 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
         fill
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -428,11 +426,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
      então, ele é truncado (à direita).
     </p>
     <p>
-     <code class="literal">
+     <code>
       lpad('hi', 5, 'xy')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       xyxhi
      </code>
     </p>
@@ -441,7 +439,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ltrim
      </code>
      (
@@ -450,7 +448,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -461,12 +459,12 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
         characters
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -486,11 +484,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       ltrim('zzzytest', 'xyz')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       test
      </code>
     </p>
@@ -499,11 +497,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       normalize
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -516,7 +514,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
       </em>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -528,33 +526,33 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
       </code>
      </em>
      palavra-chave especifica o formulário:
-     <code class="literal">
+     <code>
       NFC
      </code>
      (o padrão),
-     <code class="literal">
+     <code>
       NFD
      </code>
      ,
-     <code class="literal">
+     <code>
       NFKC
      </code>
      , ou
-     <code class="literal">
+     <code>
       NFKD
      </code>
      Essa função só pode ser usada quando o codificação do servidor é
-     <code class="literal">
+     <code>
       UTF8
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       normalize(U&amp;'\0061\0308bc', NFC)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       U&amp;'\00E4bc'
      </code>
     </p>
@@ -563,15 +561,15 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       octet_length
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -579,11 +577,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
      Retorna o número de bytes na string.
     </p>
     <p>
-     <code class="literal">
+     <code>
       octet_length('josé')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       5
      </code>
      (se o codificação do servidor for UTF8)
@@ -593,31 +591,31 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       octet_length
      </code>
      (
-     <code class="type">
+     <code>
       character
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Retorna o número de bytes na string. Como esta versão da função aceita o tipo
-     <code class="type">
+     <code>
       character
      </code>
      diretamente, não removerá espaços finais.
     </p>
     <p>
-     <code class="literal">
+     <code>
       octet_length('abc '::character(4))
      </code>
      →
-     <code class="returnvalue">
+     <code>
       4
      </code>
     </p>
@@ -626,7 +624,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       overlay
      </code>
      (
@@ -635,10 +633,10 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
-     <code class="literal">
+     <code>
       PLACING
      </code>
      <em class="parameter">
@@ -646,10 +644,10 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        newsubstring
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
-     <code class="literal">
+     <code>
       FROM
      </code>
      <em class="parameter">
@@ -657,12 +655,12 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        start
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      [
      <span class="optional">
-      <code class="literal">
+      <code>
        FOR
       </code>
       <em class="parameter">
@@ -670,12 +668,12 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
         count
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -719,11 +717,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       overlay('Txxxxas' placing 'hom' from 2 for 4)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       Thomas
      </code>
     </p>
@@ -732,7 +730,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       position
      </code>
      (
@@ -741,10 +739,10 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        substring
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
-     <code class="literal">
+     <code>
       IN
      </code>
      <em class="parameter">
@@ -752,11 +750,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -776,11 +774,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
      , ou zero se não estiver presente.
     </p>
     <p>
-     <code class="literal">
+     <code>
       position('om' in 'Thomas')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3
      </code>
     </p>
@@ -789,7 +787,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       rpad
      </code>
      (
@@ -798,7 +796,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -807,7 +805,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        length
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      [
@@ -818,12 +816,12 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
         fill
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -861,11 +859,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
      então, ela é truncada.
     </p>
     <p>
-     <code class="literal">
+     <code>
       rpad('hi', 5, 'xy')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       hixyx
      </code>
     </p>
@@ -874,7 +872,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       rtrim
      </code>
      (
@@ -883,7 +881,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -894,12 +892,12 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
         characters
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -919,11 +917,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       rtrim('testxxzx', 'xyz')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       test
      </code>
     </p>
@@ -932,7 +930,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       substring
      </code>
      (
@@ -941,12 +939,12 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
      <span class="optional">
-      <code class="literal">
+      <code>
        FROM
       </code>
       <em class="parameter">
@@ -954,13 +952,13 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
         start
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
      </span>
      ] [
      <span class="optional">
-      <code class="literal">
+      <code>
        FOR
       </code>
       <em class="parameter">
@@ -968,12 +966,12 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
         count
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -1011,29 +1009,29 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       substring('Thomas' from 2 for 3)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       hom
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       substring('Thomas' from 3)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       omas
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       substring('Thomas' for 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       Th
      </code>
     </p>
@@ -1042,7 +1040,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       substring
      </code>
      (
@@ -1051,10 +1049,10 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
-     <code class="literal">
+     <code>
       FROM
      </code>
      <em class="parameter">
@@ -1062,11 +1060,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        pattern
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -1078,11 +1076,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       substring('Thomas' from '...$')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       mas
      </code>
     </p>
@@ -1091,7 +1089,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       substring
      </code>
      (
@@ -1100,10 +1098,10 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
-     <code class="literal">
+     <code>
       SIMILAR
      </code>
      <em class="parameter">
@@ -1111,10 +1109,10 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        pattern
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
-     <code class="literal">
+     <code>
       ESCAPE
      </code>
      <em class="parameter">
@@ -1122,16 +1120,16 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        escape
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       substring
      </code>
      (
@@ -1140,10 +1138,10 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
-     <code class="literal">
+     <code>
       FROM
      </code>
      <em class="parameter">
@@ -1151,10 +1149,10 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        pattern
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
-     <code class="literal">
+     <code>
       FOR
      </code>
      <em class="parameter">
@@ -1162,11 +1160,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        escape
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -1182,11 +1180,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
      A primeira forma foi especificada desde SQL:2003; a segunda forma só estava presente no SQL:1999 e deve ser considerada obsoleta.
     </p>
     <p>
-     <code class="literal">
+     <code>
       substring('Thomas' similar '%#"o_a#"_' escape '#')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       oma
      </code>
     </p>
@@ -1195,20 +1193,20 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       trim
      </code>
      ( [
      <span class="optional">
-      <code class="literal">
+      <code>
        LEADING
       </code>
       |
-      <code class="literal">
+      <code>
        TRAILING
       </code>
       |
-      <code class="literal">
+      <code>
        BOTH
       </code>
      </span>
@@ -1219,12 +1217,12 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
         characters
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ]
-     <code class="literal">
+     <code>
       FROM
      </code>
      <em class="parameter">
@@ -1232,11 +1230,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -1248,7 +1246,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
       </code>
      </em>
      (um espaço por padrão) a partir do início, do fim ou de ambos os extremos (
-     <code class="literal">
+     <code>
       BOTH
      </code>
      é o padrão) de
@@ -1260,11 +1258,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       trim(both 'xyz' from 'yxTomxx')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       Tom
      </code>
     </p>
@@ -1273,26 +1271,26 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       trim
      </code>
      ( [
      <span class="optional">
-      <code class="literal">
+      <code>
        LEADING
       </code>
       |
-      <code class="literal">
+      <code>
        TRAILING
       </code>
       |
-      <code class="literal">
+      <code>
        BOTH
       </code>
      </span>
      ] [
      <span class="optional">
-      <code class="literal">
+      <code>
        FROM
       </code>
      </span>
@@ -1302,7 +1300,7 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -1313,28 +1311,28 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
         characters
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Esta é uma sintaxe não padrão para
-     <code class="function">
+     <code>
       trim()
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       trim(both from 'yxTomxx', 'xyz')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       Tom
      </code>
     </p>
@@ -1343,29 +1341,29 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       unicode_assigned
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Retornos
-     <code class="literal">
+     <code>
       true
      </code>
      se todos os caracteres na string forem atribuídos a pontos de código Unicode;
-     <code class="literal">
+     <code>
       false
      </code>
      caso contrário. Essa função só pode ser usada quando o codificação do servidor é
-     <code class="literal">
+     <code>
       UTF8
      </code>
      .
@@ -1375,15 +1373,15 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       upper
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -1391,11 +1389,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
      Converte a string para maiúsculas, de acordo com as regras do local do banco de dados.
     </p>
     <p>
-     <code class="literal">
+     <code>
       upper('tom')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       TOM
      </code>
     </p>
@@ -1404,22 +1402,11 @@ O operador de concatenação de strings (`||`) aceitará entrada não de tipo de
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Funções e operadores adicionais de manipulação de strings estão disponíveis e estão listados em [Tabela 9.10] ((functions-string.md#FUNCTIONS-STRING-OTHER "Table 9.10. Other String Functions and Operators")). (Algumas dessas funções são usadas internamente para implementar as funções de string padrão do SQL listadas em [Tabela 9.9] ((functions-string.md#FUNCTIONS-STRING-SQL "Table 9.9. SQL String Functions and Operators")). Além disso, há operadores de correspondência de padrões, que são descritos em [Seção 9.7] ((functions-matching.md "9.7. Pattern Matching")), e operadores para pesquisa de texto completo, que são descritos em [Capítulo 12] ((textsearch.md "Chapter 12. Full Text Search")).
 
 **Tabela 9.10. Outras funções e operadores de cadeia**
 
-
-
-<table border="1" class="table" summary="Other String Functions and Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -1442,33 +1429,33 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       text
      </code>
-     <code class="literal">
+     <code>
       ^@
      </code>
-     <code class="type">
+     <code>
       text
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Retorna verdadeiro se a primeira string começar com a segunda string (equivalente a o
-     <code class="function">
+     <code>
       starts_with()
      </code>
      function).
     </p>
     <p>
-     <code class="literal">
+     <code>
       'alphabet' ^@ 'alph'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1477,15 +1464,15 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ascii
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -1501,11 +1488,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      character.
     </p>
     <p>
-     <code class="literal">
+     <code>
       ascii('x')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       120
      </code>
     </p>
@@ -1514,15 +1501,15 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       chr
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -1536,17 +1523,17 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       ASCII
      </acronym>
      character.
-     <code class="literal">
+     <code>
       chr(0)
      </code>
      é desaconselhável, pois os tipos de dados de texto não podem armazenar esse caractere.
     </p>
     <p>
-     <code class="literal">
+     <code>
       chr(65)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       A
      </code>
     </p>
@@ -1555,7 +1542,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       concat
      </code>
      (
@@ -1564,7 +1551,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        val1
       </code>
      </em>
-     <code class="type">
+     <code>
       "any"
      </code>
      [
@@ -1575,7 +1562,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
         val2
        </code>
       </em>
-      <code class="type">
+      <code>
        "any"
       </code>
       [
@@ -1585,7 +1572,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -1593,11 +1580,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      Concatenia as representações de texto de todos os argumentos. Argumentos NULL são ignorados.
     </p>
     <p>
-     <code class="literal">
+     <code>
       concat('abcde', 2, NULL, 22)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       abcde222
      </code>
     </p>
@@ -1606,7 +1593,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       concat_ws
      </code>
      (
@@ -1615,7 +1602,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        sep
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -1624,7 +1611,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        val1
       </code>
      </em>
-     <code class="type">
+     <code>
       "any"
      </code>
      [
@@ -1635,7 +1622,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
         val2
        </code>
       </em>
-      <code class="type">
+      <code>
        "any"
       </code>
       [
@@ -1645,7 +1632,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -1653,11 +1640,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      Concatenia todos, exceto o primeiro argumento, com separadores. O primeiro argumento é usado como a string de separador e não deve ser NULL. Outros argumentos NULL são ignorados.
     </p>
     <p>
-     <code class="literal">
+     <code>
       concat_ws(',', 'abcde', 2, NULL, 22)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       abcde,2,22
      </code>
     </p>
@@ -1666,7 +1653,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       format
      </code>
      (
@@ -1675,7 +1662,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        formatstr
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -1686,7 +1673,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
         formatarg
        </code>
       </em>
-      <code class="type">
+      <code>
        "any"
       </code>
       [
@@ -1696,7 +1683,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -1706,17 +1693,17 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       Seção 9.4.1
      </a>
      Essa função é semelhante à função C
-     <code class="function">
+     <code>
       sprintf
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       format('Hello %s, %1$s', 'World')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       Hello World, World
      </code>
     </p>
@@ -1725,15 +1712,15 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       initcap
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -1741,11 +1728,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      Converte a primeira letra de cada palavra para maiúscula e o resto para minúscula. As palavras são sequências de caracteres alfanuméricos separados por caracteres não alfanuméricos.
     </p>
     <p>
-     <code class="literal">
+     <code>
       initcap('hi THOMAS')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       Hi Thomas
      </code>
     </p>
@@ -1754,21 +1741,21 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       casefold
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Realiza a compactação de maiúsculas da string de entrada de acordo com a correção de texto. A compactação de maiúsculas é semelhante à conversão de maiúsculas, mas o propósito da compactação de maiúsculas é facilitar a correspondência não sensível à maiúscula das strings, enquanto o propósito da conversão de maiúsculas é converter para uma forma específica de maiúsculas. Esta função só pode ser usada quando o codificação do servidor é
-     <code class="literal">
+     <code>
       UTF8
      </code>
      .
@@ -1778,21 +1765,21 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
     </p>
     <p>
      A dobragem do caso pode alterar o comprimento da corda. Por exemplo, no
-     <code class="literal">
+     <code>
       PG_UNICODE_FAST
      </code>
      colação,
-     <code class="literal">
+     <code>
       ß
      </code>
      (U+00DF) dobra para
-     <code class="literal">
+     <code>
       ss
      </code>
      .
     </p>
     <p>
-     <code class="function">
+     <code>
       casefold
      </code>
      pode ser usado para correspondência de caso não maiúsculo padrão Unicode. Ele não preserva sempre a forma normalizada da string de entrada (veja a seção "Notas de rodapé").
@@ -1803,11 +1790,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
     </p>
     <p>
      O
-     <code class="literal">
+     <code>
       libc
      </code>
      o fornecedor não suporta dobramento de caso, então
-     <code class="function">
+     <code>
       casefold
      </code>
      é idêntico a
@@ -1821,7 +1808,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       left
      </code>
      (
@@ -1830,7 +1817,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -1839,11 +1826,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        n
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -1869,11 +1856,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      | personagens.
     </p>
     <p>
-     <code class="literal">
+     <code>
       left('abcde', 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ab
      </code>
     </p>
@@ -1882,15 +1869,15 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       length
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -1898,11 +1885,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      Retorna o número de caracteres na string.
     </p>
     <p>
-     <code class="literal">
+     <code>
       length('jose')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       4
      </code>
     </p>
@@ -1911,15 +1898,15 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       md5
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -1931,11 +1918,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      do argumento, com o resultado escrito em hexadecimal.
     </p>
     <p>
-     <code class="literal">
+     <code>
       md5('abc')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       900150983cd24fb0​d6963f7d28e17f72
      </code>
     </p>
@@ -1944,7 +1931,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       parse_ident
      </code>
      (
@@ -1953,7 +1940,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        qualified_identifier
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -1964,18 +1951,18 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
         strict_mode
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
-      <code class="literal">
+      <code>
        DEFAULT
       </code>
-      <code class="literal">
+      <code>
        true
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text[]
      </code>
     </p>
@@ -1987,21 +1974,21 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       </code>
      </em>
      em um conjunto de identificadores, removendo qualquer citação de identificadores individuais. Por padrão, caracteres extras após o último identificador são considerados um erro; mas se o segundo parâmetro for
-     <code class="literal">
+     <code>
       false
      </code>
      , então esses caracteres extras são ignorados. (Esse comportamento é útil para a análise de nomes para objetos como funções.) Observe que essa função não corta identificadores de comprimento excessivo. Se você deseja uma redução, pode-se converter o resultado em
-     <code class="type">
+     <code>
       name[]
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       parse_ident('"SomeSchema".someTable')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {SomeSchema,sometable}
      </code>
     </p>
@@ -2010,11 +1997,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_client_encoding
      </code>
      ( )
-     <code class="returnvalue">
+     <code>
       name
      </code>
     </p>
@@ -2022,11 +2009,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      Retorna o nome atual do codificador do cliente.
     </p>
     <p>
-     <code class="literal">
+     <code>
       pg_client_encoding()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       UTF8
      </code>
     </p>
@@ -2035,15 +2022,15 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       quote_ident
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -2059,11 +2046,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       quote_ident('Foo bar')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "Foo bar"
      </code>
     </p>
@@ -2072,15 +2059,15 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       quote_literal
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -2090,11 +2077,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       SQL
      </acronym>
      string de declaração. As aspas embutidas e barras invertidas são duplicadas corretamente. Observe que
-     <code class="function">
+     <code>
       quote_literal
      </code>
      retorna nulo em entrada nulo; se o argumento pode ser nulo,
-     <code class="function">
+     <code>
       quote_nullable
      </code>
      é muitas vezes mais adequada. Veja também
@@ -2104,11 +2091,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       quote_literal(E'O\'Reilly')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'O''Reilly'
      </code>
     </p>
@@ -2117,15 +2104,15 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       quote_literal
      </code>
      (
-     <code class="type">
+     <code>
       anyelement
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -2133,11 +2120,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      Converte o valor fornecido em texto e, em seguida, o cita como literal. As aspas embutidas e barras invertidas são duplicadas corretamente.
     </p>
     <p>
-     <code class="literal">
+     <code>
       quote_literal(42.5)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       '42.5'
      </code>
     </p>
@@ -2146,15 +2133,15 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       quote_nullable
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -2164,7 +2151,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       SQL
      </acronym>
      string; ou, se o argumento for nulo, retorna
-     <code class="literal">
+     <code>
       NULL
      </code>
      As aspas embutidas e barras invertidas são duplicadas corretamente. Veja também
@@ -2174,11 +2161,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       quote_nullable(NULL)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       NULL
      </code>
     </p>
@@ -2187,31 +2174,31 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       quote_nullable
      </code>
      (
-     <code class="type">
+     <code>
       anyelement
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Converte o valor fornecido em texto e, em seguida, o cita como literal; ou, se o argumento for nulo, retorna
-     <code class="literal">
+     <code>
       NULL
      </code>
      As aspas embutidas e barras invertidas são duplicadas corretamente.
     </p>
     <p>
-     <code class="literal">
+     <code>
       quote_nullable(42.5)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       '42.5'
      </code>
     </p>
@@ -2220,7 +2207,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       regexp_count
      </code>
      (
@@ -2229,7 +2216,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2238,7 +2225,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        pattern
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -2249,7 +2236,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
         start
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
       [
@@ -2260,14 +2247,14 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
          flags
         </code>
        </em>
-       <code class="type">
+       <code>
         text
        </code>
       </span>
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -2291,11 +2278,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       regexp_count('123456789012', '\d\d\d', 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3
      </code>
     </p>
@@ -2304,7 +2291,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       regexp_instr
      </code>
      (
@@ -2313,7 +2300,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2322,7 +2309,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        pattern
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -2333,7 +2320,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
         start
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
       [
@@ -2344,7 +2331,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
          N
         </code>
        </em>
-       <code class="type">
+       <code>
         integer
        </code>
        [
@@ -2355,7 +2342,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
           endoption
          </code>
         </em>
-        <code class="type">
+        <code>
          integer
         </code>
         [
@@ -2366,7 +2353,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
            flags
           </code>
          </em>
-         <code class="type">
+         <code>
           text
          </code>
          [
@@ -2377,7 +2364,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
             subexpr
            </code>
           </em>
-          <code class="type">
+          <code>
            integer
           </code>
          </span>
@@ -2390,7 +2377,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -2420,20 +2407,20 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       regexp_instr('ABCDEF', 'c(.)(..)', 1, 1, 0, 'i')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       regexp_instr('ABCDEF', 'c(.)(..)', 1, 1, 0, 'i', 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       5
      </code>
     </p>
@@ -2442,7 +2429,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       regexp_like
      </code>
      (
@@ -2451,7 +2438,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2460,7 +2447,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        pattern
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -2471,12 +2458,12 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
         flags
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -2500,11 +2487,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       regexp_like('Hello World', 'world$', 'i')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -2513,7 +2500,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       regexp_match
      </code>
      (
@@ -2522,7 +2509,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2531,7 +2518,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        pattern
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -2542,12 +2529,12 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
         flags
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       text[]
      </code>
     </p>
@@ -2571,11 +2558,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       regexp_match('foobarbequebaz', '(bar)(beque)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {bar,beque}
      </code>
     </p>
@@ -2584,7 +2571,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       regexp_matches
      </code>
      (
@@ -2593,7 +2580,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2602,7 +2589,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        pattern
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -2613,12 +2600,12 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
         flags
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       setof text[]
      </code>
     </p>
@@ -2636,7 +2623,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       </code>
      </em>
      , ou substratos em todas essas correspondências, se o
-     <code class="literal">
+     <code>
       g
      </code>
      é usada a bandeira; veja
@@ -2646,11 +2633,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       regexp_matches('foobarbequebaz', 'ba.', 'g')
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -2663,7 +2650,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       regexp_replace
      </code>
      (
@@ -2672,7 +2659,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2681,7 +2668,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        pattern
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2690,7 +2677,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        replacement
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -2701,12 +2688,12 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
         flags
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -2718,7 +2705,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       </code>
      </em>
      , ou todos esses jogos, se o
-     <code class="literal">
+     <code>
       g
      </code>
      é usada a bandeira; veja
@@ -2728,11 +2715,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       regexp_replace('Thomas', '.[mN]a.', 'M')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ThM
      </code>
     </p>
@@ -2741,7 +2728,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       regexp_replace
      </code>
      (
@@ -2750,7 +2737,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2759,7 +2746,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        pattern
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2768,7 +2755,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        replacement
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2777,7 +2764,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        start
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      [
@@ -2788,7 +2775,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
         N
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
       [
@@ -2799,14 +2786,14 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
          flags
         </code>
        </em>
-       <code class="type">
+       <code>
         text
        </code>
       </span>
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -2854,20 +2841,20 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       regexp_replace('Thomas', '.', 'X', 3, 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ThoXas
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       regexp_replace(string=&gt;'hello world', pattern=&gt;'l', replacement=&gt;'XX', start=&gt;1, "N"=&gt;2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       helXXo world
      </code>
     </p>
@@ -2876,7 +2863,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       regexp_split_to_array
      </code>
      (
@@ -2885,7 +2872,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2894,7 +2881,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        pattern
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -2905,12 +2892,12 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
         flags
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       text[]
      </code>
     </p>
@@ -2928,11 +2915,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       regexp_split_to_array('hello world', '\s+')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {hello,world}
      </code>
     </p>
@@ -2941,7 +2928,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       regexp_split_to_table
      </code>
      (
@@ -2950,7 +2937,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2959,7 +2946,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        pattern
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -2970,12 +2957,12 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
         flags
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       setof text
      </code>
     </p>
@@ -2993,11 +2980,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       regexp_split_to_table('hello world', '\s+')
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -3010,7 +2997,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       regexp_substr
      </code>
      (
@@ -3019,7 +3006,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -3028,7 +3015,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        pattern
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -3039,7 +3026,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
         start
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
       [
@@ -3050,7 +3037,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
          N
         </code>
        </em>
-       <code class="type">
+       <code>
         integer
        </code>
        [
@@ -3061,7 +3048,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
           flags
          </code>
         </em>
-        <code class="type">
+        <code>
          text
         </code>
         [
@@ -3072,7 +3059,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
            subexpr
           </code>
          </em>
-         <code class="type">
+         <code>
           integer
          </code>
         </span>
@@ -3083,7 +3070,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -3107,7 +3094,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       </code>
      </em>
      , ou
-     <code class="literal">
+     <code>
       NULL
      </code>
      se não houver tal correspondência; veja
@@ -3117,20 +3104,20 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       regexp_substr('ABCDEF', 'c(.)(..)', 1, 1, 'i')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       CDEF
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       regexp_substr('ABCDEF', 'c(.)(..)', 1, 1, 'i', 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       EF
      </code>
     </p>
@@ -3139,7 +3126,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       repeat
      </code>
      (
@@ -3148,7 +3135,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -3157,11 +3144,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        number
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -3181,11 +3168,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      das vezes.
     </p>
     <p>
-     <code class="literal">
+     <code>
       repeat('Pg', 4)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       PgPgPgPg
      </code>
     </p>
@@ -3194,7 +3181,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       replace
      </code>
      (
@@ -3203,7 +3190,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -3212,7 +3199,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        from
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -3221,11 +3208,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        to
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -3251,11 +3238,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       replace('abcdefabcdef', 'cd', 'XX')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       abXXefabXXef
      </code>
     </p>
@@ -3264,15 +3251,15 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       reverse
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -3280,11 +3267,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      Reverte a ordem dos caracteres na string.
     </p>
     <p>
-     <code class="literal">
+     <code>
       reverse('abcde')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       edcba
      </code>
     </p>
@@ -3293,7 +3280,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       right
      </code>
      (
@@ -3302,7 +3289,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -3311,11 +3298,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        n
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -3341,11 +3328,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      | personagens.
     </p>
     <p>
-     <code class="literal">
+     <code>
       right('abcde', 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       de
      </code>
     </p>
@@ -3354,7 +3341,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       split_part
      </code>
      (
@@ -3363,7 +3350,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -3372,7 +3359,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        delimiter
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -3381,11 +3368,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        n
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -3423,20 +3410,20 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      campo 'th-from-last.
     </p>
     <p>
-     <code class="literal">
+     <code>
       split_part('abc~@~def~@~ghi', '~@~', 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       def
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       split_part('abc,def,ghi,jkl', ',', -2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ghi
      </code>
     </p>
@@ -3445,7 +3432,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       starts_with
      </code>
      (
@@ -3454,7 +3441,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -3463,11 +3450,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        prefix
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -3487,11 +3474,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       starts_with('alphabet', 'alph')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -3500,7 +3487,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       string_to_array
      </code>
      (
@@ -3509,7 +3496,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -3518,7 +3505,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        delimiter
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -3529,12 +3516,12 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
         null_string
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       text[]
      </code>
     </p>
@@ -3552,7 +3539,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       </code>
      </em>
      e forma os campos resultantes em um
-     <code class="type">
+     <code>
       text
      </code>
      matriz. Se
@@ -3562,7 +3549,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       </code>
      </em>
      é
-     <code class="literal">
+     <code>
       NULL
      </code>
      , cada personagem no
@@ -3590,27 +3577,27 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       </code>
      </em>
      é fornecida e não
-     <code class="literal">
+     <code>
       NULL
      </code>
      , campos que correspondem a essa string são substituídos por
-     <code class="literal">
+     <code>
       NULL
      </code>
      Veja também
      <a class="link" href="functions-array.md#FUNCTION-ARRAY-TO-STRING">
-      <code class="function">
+      <code>
        array_to_string
       </code>
      </a>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       string_to_array('xx~~yy~~zz', '~~', 'yy')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {xx,NULL,zz}
      </code>
     </p>
@@ -3619,7 +3606,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       string_to_table
      </code>
      (
@@ -3628,7 +3615,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -3637,7 +3624,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        delimiter
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -3648,12 +3635,12 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
         null_string
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       setof text
      </code>
     </p>
@@ -3671,7 +3658,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       </code>
      </em>
      e retorna os campos resultantes como um conjunto de
-     <code class="type">
+     <code>
       text
      </code>
      linhas. Se
@@ -3681,7 +3668,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       </code>
      </em>
      é
-     <code class="literal">
+     <code>
       NULL
      </code>
      , cada personagem no
@@ -3709,21 +3696,21 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       </code>
      </em>
      é fornecida e não
-     <code class="literal">
+     <code>
       NULL
      </code>
      , campos que correspondem a essa string são substituídos por
-     <code class="literal">
+     <code>
       NULL
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       string_to_table('xx~^~yy~^~zz', '~^~', 'yy')
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -3736,7 +3723,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       strpos
      </code>
      (
@@ -3745,7 +3732,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -3754,11 +3741,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        substring
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -3776,7 +3763,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       </code>
      </em>
      , ou zero se não estiver presente. (O mesmo que
-     <code class="literal">
+     <code>
       position(
       <em class="parameter">
        <code>
@@ -3794,11 +3781,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      , mas observe a ordem de argumento invertida.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       strpos('high', 'ig')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -3807,7 +3794,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       substr
      </code>
      (
@@ -3816,7 +3803,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -3825,7 +3812,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        start
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      [
@@ -3836,12 +3823,12 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
         count
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -3865,7 +3852,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       </code>
      </em>
      caracteres, se isso for especificado. (O mesmo que
-     <code class="literal">
+     <code>
       substring(
       <em class="parameter">
        <code>
@@ -3889,20 +3876,20 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      .)
     </p>
     <p>
-     <code class="literal">
+     <code>
       substr('alphabet', 3)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       phabet
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       substr('alphabet', 3, 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ph
      </code>
     </p>
@@ -3911,7 +3898,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_ascii
      </code>
      (
@@ -3920,16 +3907,16 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_ascii
      </code>
      (
@@ -3938,7 +3925,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -3947,16 +3934,16 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        encoding
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_ascii
      </code>
      (
@@ -3965,7 +3952,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -3974,11 +3961,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        encoding
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -4000,19 +3987,19 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       </code>
      </em>
      Se omite o codificação do banco de dados, presume-se que ela está presente (o que, na prática, é o único caso útil). A conversão consiste principalmente na eliminação de acentos. A conversão é suportada apenas a partir
-     <code class="literal">
+     <code>
       LATIN1
      </code>
      ,
-     <code class="literal">
+     <code>
       LATIN2
      </code>
      ,
-     <code class="literal">
+     <code>
       LATIN9
      </code>
      , e
-     <code class="literal">
+     <code>
       WIN1250
      </code>
      códigos de codificação.
@@ -4022,11 +4009,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      um módulo para outra solução mais flexível.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_ascii('Karél')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       Karel
      </code>
     </p>
@@ -4035,28 +4022,28 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_bin
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_bin
      </code>
      (
-     <code class="type">
+     <code>
       bigint
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -4064,20 +4051,20 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      Converte o número para sua representação binária equivalente ao complemento de dois.
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_bin(2147483647)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1111111111111111111111111111111
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_bin(-1234)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       11111111111111111111101100101110
      </code>
     </p>
@@ -4086,28 +4073,28 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_hex
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_hex
      </code>
      (
-     <code class="type">
+     <code>
       bigint
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -4115,20 +4102,20 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      Converte o número para sua representação hexadecimal equivalente em complemento de dois.
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_hex(2147483647)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       7fffffff
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_hex(-1234)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       fffffb2e
      </code>
     </p>
@@ -4137,28 +4124,28 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_oct
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_oct
      </code>
      (
-     <code class="type">
+     <code>
       bigint
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -4166,20 +4153,20 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      Converte o número para sua representação equivalente octal de complemento de dois.
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_oct(2147483647)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       17777777777
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_oct(-1234)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       37777775456
      </code>
     </p>
@@ -4188,7 +4175,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       translate
      </code>
      (
@@ -4197,7 +4184,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -4206,7 +4193,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        from
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -4215,11 +4202,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
        to
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -4263,11 +4250,11 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      são excluídos.
     </p>
     <p>
-     <code class="literal">
+     <code>
       translate('12345', '143', 'ax')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       a2x5
      </code>
     </p>
@@ -4276,21 +4263,21 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       unistr
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Avalie caracteres Unicode escapados no argumento. Caracteres Unicode podem ser especificados como
-     <code class="literal">
+     <code>
       \
       <em class="replaceable">
        <code>
@@ -4299,7 +4286,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       </em>
      </code>
      (4 dígitos hexadecimais),
-     <code class="literal">
+     <code>
       \+
       <em class="replaceable">
        <code>
@@ -4308,7 +4295,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       </em>
      </code>
      (6 dígitos hexadecimais),
-     <code class="literal">
+     <code>
       \u
       <em class="replaceable">
        <code>
@@ -4317,7 +4304,7 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
       </em>
      </code>
      (4 dígitos hexadecimais), ou
-     <code class="literal">
+     <code>
       \U
       <em class="replaceable">
        <code>
@@ -4338,20 +4325,20 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
      ).
     </p>
     <p>
-     <code class="literal">
+     <code>
       unistr('d\0061t\+000061')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       data
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       unistr('d\u0061t\U00000061')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       data
      </code>
     </p>
@@ -4360,24 +4347,15 @@ Funções e operadores adicionais de manipulação de strings estão disponívei
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 As funções `concat`, `concat_ws` e `format` são variáveis, portanto é possível passar os valores a serem concatenados ou formatados como um array marcado com a palavra-chave `VARIADIC` (ver [Seção 36.5.6](xfunc-sql.md#XFUNC-SQL-VARIADIC-FUNCTIONS "36.5.6. SQL Functions with Variable Numbers of Arguments")). Os elementos do array são tratados como se fossem argumentos comuns separados da função. Se o argumento do array variável for NULL, `concat` e `concat_ws` retornam NULL, mas `format` trata um NULL como um array de elemento zero.
 
 Veja também a função agregada `string_agg` em [Seção 9.21](functions-aggregate.md "9.21. Aggregate Functions"), e as funções para conversão entre strings e o tipo `bytea` em [Tabela 9.13](functions-binarystring.md#FUNCTIONS-BINARYSTRING-CONVERSIONS "Table 9.13. Text/Binary String Conversion Functions").
 
-### 9.4.1. `format` [#](#FUNCTIONS-STRING-FORMAT)
+#### 9.4.1. `format` [#](#FUNCTIONS-STRING-FORMAT)
 
 A função `format` produz saída formatada de acordo com uma string de formato, em um estilo semelhante à função C `sprintf`.
 
-```
+```sql
 format(formatstr text [, formatarg "any" [, ...] ])
 ```
 
@@ -4385,7 +4363,7 @@ format(formatstr text [, formatarg "any" [, ...] ])
 
 Os especificadores de formato são introduzidos por um caractere `%` e têm a forma
 
-```
+```sql
 %[position][flags][width]type
 ```
 
@@ -4407,7 +4385,7 @@ Além dos especificadores de formato descritos acima, a sequência especial `%%`
 
 Aqui estão alguns exemplos das conversões de formato básico:
 
-```
+```sql
 SELECT format('Hello %s', 'World');
 Result: Hello World
 
@@ -4423,7 +4401,7 @@ Result: INSERT INTO locations VALUES('C:\Program Files')
 
 Aqui estão exemplos usando os campos *`width`* e a bandeira `-`:
 
-```
+```sql
 SELECT format('|%10s|', 'foo');
 Result: |       foo|
 
@@ -4445,7 +4423,7 @@ Result: |foo       |
 
 Esses exemplos mostram o uso dos campos *`position`*:
 
-```
+```sql
 SELECT format('Testing %3$s, %2$s, %1$s', 'one', 'two', 'three');
 Result: Testing three, two, one
 
@@ -4458,7 +4436,7 @@ Result: |       foo|
 
 Ao contrário da função padrão C `sprintf`, a função `format` do PostgreSQL permite que os especificadores de formato com e sem campos *`position`* sejam misturados na mesma string de formato. Um especificador de formato sem um campo *`position`* sempre usa o próximo argumento após o último argumento consumido. Além disso, a função `format` não exige que todos os argumentos da função sejam usados na string de formato. Por exemplo:
 
-```
+```sql
 SELECT format('Testing %3$s, %2$s, %s', 'one', 'two', 'three');
 Result: Testing three, two, three
 ```

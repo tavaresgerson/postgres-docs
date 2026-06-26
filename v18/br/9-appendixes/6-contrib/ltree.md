@@ -91,7 +91,7 @@ O tipo `ltree` possui os operadores de comparação habituais `=`, `<>`, `<`, `>
 
 
 
-<table border="1" class="table" summary="ltree Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -111,17 +111,17 @@ O tipo `ltree` possui os operadores de comparação habituais `=`, `<>`, `<`, `>
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       ltree
      </code>
-     <code class="literal">
+     <code>
       @&gt;
      </code>
-     <code class="type">
+     <code>
       ltree
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -133,17 +133,17 @@ O tipo `ltree` possui os operadores de comparação habituais `=`, `<>`, `<`, `>
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       ltree
      </code>
-     <code class="literal">
+     <code>
       &lt;@
      </code>
-     <code class="type">
+     <code>
       ltree
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -155,42 +155,42 @@ O tipo `ltree` possui os operadores de comparação habituais `=`, `<>`, `<`, `>
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       ltree
      </code>
-     <code class="literal">
+     <code>
       ~
      </code>
-     <code class="type">
+     <code>
       lquery
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p class="func_signature">
-     <code class="type">
+     <code>
       lquery
      </code>
-     <code class="literal">
+     <code>
       ~
      </code>
-     <code class="type">
+     <code>
       ltree
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Faz
-     <code class="type">
+     <code>
       ltree
      </code>
      jogo
-     <code class="type">
+     <code>
       lquery
      </code>
      ?
@@ -200,42 +200,42 @@ O tipo `ltree` possui os operadores de comparação habituais `=`, `<>`, `<`, `>
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       ltree
      </code>
-     <code class="literal">
+     <code>
       ?
      </code>
-     <code class="type">
+     <code>
       lquery[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p class="func_signature">
-     <code class="type">
+     <code>
       lquery[]
      </code>
-     <code class="literal">
+     <code>
       ?
      </code>
-     <code class="type">
+     <code>
       ltree
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Faz
-     <code class="type">
+     <code>
       ltree
      </code>
      corresponda a qualquer
-     <code class="type">
+     <code>
       lquery
      </code>
      em linha?
@@ -245,42 +245,42 @@ O tipo `ltree` possui os operadores de comparação habituais `=`, `<>`, `<`, `>
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       ltree
      </code>
-     <code class="literal">
+     <code>
       @
      </code>
-     <code class="type">
+     <code>
       ltxtquery
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p class="func_signature">
-     <code class="type">
+     <code>
       ltxtquery
      </code>
-     <code class="literal">
+     <code>
       @
      </code>
-     <code class="type">
+     <code>
       ltree
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Faz
-     <code class="type">
+     <code>
       ltree
      </code>
      jogo
-     <code class="type">
+     <code>
       ltxtquery
      </code>
      ?
@@ -290,23 +290,23 @@ O tipo `ltree` possui os operadores de comparação habituais `=`, `<>`, `<`, `>
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       ltree
      </code>
-     <code class="literal">
+     <code>
       ||
      </code>
-     <code class="type">
+     <code>
       ltree
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ltree
      </code>
     </p>
     <p>
      Concatenam
-     <code class="type">
+     <code>
       ltree
      </code>
      paths.
@@ -316,38 +316,38 @@ O tipo `ltree` possui os operadores de comparação habituais `=`, `<>`, `<`, `>
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       ltree
      </code>
-     <code class="literal">
+     <code>
       ||
      </code>
-     <code class="type">
+     <code>
       text
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ltree
      </code>
     </p>
     <p class="func_signature">
-     <code class="type">
+     <code>
       text
      </code>
-     <code class="literal">
+     <code>
       ||
      </code>
-     <code class="type">
+     <code>
       ltree
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ltree
      </code>
     </p>
     <p>
      Converte texto em
-     <code class="type">
+     <code>
       ltree
      </code>
      e concatenam.
@@ -357,38 +357,38 @@ O tipo `ltree` possui os operadores de comparação habituais `=`, `<>`, `<`, `>
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       ltree[]
      </code>
-     <code class="literal">
+     <code>
       @&gt;
      </code>
-     <code class="type">
+     <code>
       ltree
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p class="func_signature">
-     <code class="type">
+     <code>
       ltree
      </code>
-     <code class="literal">
+     <code>
       &lt;@
      </code>
-     <code class="type">
+     <code>
       ltree[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      A matriz contém um antepassado de
-     <code class="type">
+     <code>
       ltree
      </code>
      ?
@@ -398,38 +398,38 @@ O tipo `ltree` possui os operadores de comparação habituais `=`, `<>`, `<`, `>
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       ltree[]
      </code>
-     <code class="literal">
+     <code>
       &lt;@
      </code>
-     <code class="type">
+     <code>
       ltree
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p class="func_signature">
-     <code class="type">
+     <code>
       ltree
      </code>
-     <code class="literal">
+     <code>
       @&gt;
      </code>
-     <code class="type">
+     <code>
       ltree[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      A matriz contém um descendente de
-     <code class="type">
+     <code>
       ltree
      </code>
      ?
@@ -439,38 +439,38 @@ O tipo `ltree` possui os operadores de comparação habituais `=`, `<>`, `<`, `>
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       ltree[]
      </code>
-     <code class="literal">
+     <code>
       ~
      </code>
-     <code class="type">
+     <code>
       lquery
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p class="func_signature">
-     <code class="type">
+     <code>
       lquery
      </code>
-     <code class="literal">
+     <code>
       ~
      </code>
-     <code class="type">
+     <code>
       ltree[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      O array contém algum caminho correspondente
-     <code class="type">
+     <code>
       lquery
      </code>
      ?
@@ -480,42 +480,42 @@ O tipo `ltree` possui os operadores de comparação habituais `=`, `<>`, `<`, `>
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       ltree[]
      </code>
-     <code class="literal">
+     <code>
       ?
      </code>
-     <code class="type">
+     <code>
       lquery[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p class="func_signature">
-     <code class="type">
+     <code>
       lquery[]
      </code>
-     <code class="literal">
+     <code>
       ?
      </code>
-     <code class="type">
+     <code>
       ltree[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Faz
-     <code class="type">
+     <code>
       ltree
      </code>
      um array que contenha qualquer caminho que corresponda a qualquer
-     <code class="type">
+     <code>
       lquery
      </code>
      ?
@@ -525,38 +525,38 @@ O tipo `ltree` possui os operadores de comparação habituais `=`, `<>`, `<`, `>
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       ltree[]
      </code>
-     <code class="literal">
+     <code>
       @
      </code>
-     <code class="type">
+     <code>
       ltxtquery
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p class="func_signature">
-     <code class="type">
+     <code>
       ltxtquery
      </code>
-     <code class="literal">
+     <code>
       @
      </code>
-     <code class="type">
+     <code>
       ltree[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      O array contém algum caminho correspondente
-     <code class="type">
+     <code>
       ltxtquery
      </code>
      ?
@@ -566,27 +566,27 @@ O tipo `ltree` possui os operadores de comparação habituais `=`, `<>`, `<`, `>
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       ltree[]
      </code>
-     <code class="literal">
+     <code>
       ?@&gt;
      </code>
-     <code class="type">
+     <code>
       ltree
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ltree
      </code>
     </p>
     <p>
      Retorna a primeira entrada do array que é um antecessor de
-     <code class="type">
+     <code>
       ltree
      </code>
      , ou
-     <code class="literal">
+     <code>
       NULL
      </code>
      nenhum.
@@ -596,27 +596,27 @@ O tipo `ltree` possui os operadores de comparação habituais `=`, `<>`, `<`, `>
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       ltree[]
      </code>
-     <code class="literal">
+     <code>
       ?&lt;@
      </code>
-     <code class="type">
+     <code>
       ltree
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ltree
      </code>
     </p>
     <p>
      Retorna a primeira entrada do array que é um descendente de
-     <code class="type">
+     <code>
       ltree
      </code>
      , ou
-     <code class="literal">
+     <code>
       NULL
      </code>
      nenhum.
@@ -626,27 +626,27 @@ O tipo `ltree` possui os operadores de comparação habituais `=`, `<>`, `<`, `>
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       ltree[]
      </code>
-     <code class="literal">
+     <code>
       ?~
      </code>
-     <code class="type">
+     <code>
       lquery
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ltree
      </code>
     </p>
     <p>
      Retorna a primeira entrada do array que corresponde
-     <code class="type">
+     <code>
       lquery
      </code>
      , ou
-     <code class="literal">
+     <code>
       NULL
      </code>
      nenhum.
@@ -656,27 +656,27 @@ O tipo `ltree` possui os operadores de comparação habituais `=`, `<>`, `<`, `>
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       ltree[]
      </code>
-     <code class="literal">
+     <code>
       ?@
      </code>
-     <code class="type">
+     <code>
       ltxtquery
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ltree
      </code>
     </p>
     <p>
      Retorna a primeira entrada do array que corresponde
-     <code class="type">
+     <code>
       ltxtquery
      </code>
      , ou
-     <code class="literal">
+     <code>
       NULL
      </code>
      nenhum.
@@ -703,7 +703,7 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
 
 
 
-<table border="1" class="table" summary="ltree Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -726,11 +726,11 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       subltree
      </code>
      (
-     <code class="type">
+     <code>
       ltree
      </code>
      ,
@@ -739,7 +739,7 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
        start
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -748,17 +748,17 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
        end
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       ltree
      </code>
     </p>
     <p>
      Retorna subcaminho de
-     <code class="type">
+     <code>
       ltree
      </code>
      da posição
@@ -776,11 +776,11 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
      -1 (contando a partir de 0).
     </p>
     <p>
-     <code class="literal">
+     <code>
       subltree('Top.Child1.Child2', 1, 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       Child1
      </code>
     </p>
@@ -789,11 +789,11 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       subpath
      </code>
      (
-     <code class="type">
+     <code>
       ltree
      </code>
      ,
@@ -802,7 +802,7 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
        offset
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -811,17 +811,17 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
        len
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       ltree
      </code>
     </p>
     <p>
      Retorna subcaminho de
-     <code class="type">
+     <code>
       ltree
      </code>
      a partir da posição
@@ -851,11 +851,11 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
      É negativo, deixa muitas etiquetas no fim do caminho.
     </p>
     <p>
-     <code class="literal">
+     <code>
       subpath('Top.Child1.Child2', 0, 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       Top.Child1
      </code>
     </p>
@@ -864,11 +864,11 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       subpath
      </code>
      (
-     <code class="type">
+     <code>
       ltree
      </code>
      ,
@@ -877,17 +877,17 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
        offset
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       ltree
      </code>
     </p>
     <p>
      Retorna subcaminho de
-     <code class="type">
+     <code>
       ltree
      </code>
      a partir da posição
@@ -905,11 +905,11 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
      se for negativo, o subcaminho começa muito longe do final do caminho.
     </p>
     <p>
-     <code class="literal">
+     <code>
       subpath('Top.Child1.Child2', 1)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       Child1.Child2
      </code>
     </p>
@@ -918,15 +918,15 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       nlevel
      </code>
      (
-     <code class="type">
+     <code>
       ltree
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -934,11 +934,11 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
      Retorna o número de rótulos no caminho.
     </p>
     <p>
-     <code class="literal">
+     <code>
       nlevel('Top.Child1.Child2')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3
      </code>
     </p>
@@ -947,7 +947,7 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       index
      </code>
      (
@@ -956,7 +956,7 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
        a
       </code>
      </em>
-     <code class="type">
+     <code>
       ltree
      </code>
      ,
@@ -965,11 +965,11 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
        b
       </code>
      </em>
-     <code class="type">
+     <code>
       ltree
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -989,11 +989,11 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
      , ou -1 se não for encontrado.
     </p>
     <p>
-     <code class="literal">
+     <code>
       index('0.1.2.3.5.4.5.6.8.5.6.8', '5.6')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       6
      </code>
     </p>
@@ -1002,7 +1002,7 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       index
      </code>
      (
@@ -1011,7 +1011,7 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
        a
       </code>
      </em>
-     <code class="type">
+     <code>
       ltree
      </code>
      ,
@@ -1020,7 +1020,7 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
        b
       </code>
      </em>
-     <code class="type">
+     <code>
       ltree
      </code>
      ,
@@ -1029,11 +1029,11 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
        offset
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -1071,11 +1071,11 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
      etiquetas do final do caminho.
     </p>
     <p>
-     <code class="literal">
+     <code>
       index('0.1.2.3.5.4.5.6.8.5.6.8', '5.6', -4)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       9
      </code>
     </p>
@@ -1084,25 +1084,25 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       text2ltree
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       ltree
      </code>
     </p>
     <p>
      Funduras
-     <code class="type">
+     <code>
       text
      </code>
      para
-     <code class="type">
+     <code>
       ltree
      </code>
      .
@@ -1112,25 +1112,25 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ltree2text
      </code>
      (
-     <code class="type">
+     <code>
       ltree
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Funduras
-     <code class="type">
+     <code>
       ltree
      </code>
      para
-     <code class="type">
+     <code>
       text
      </code>
      .
@@ -1140,17 +1140,17 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       lca
      </code>
      (
-     <code class="type">
+     <code>
       ltree
      </code>
      [
      <span class="optional">
       ,
-      <code class="type">
+      <code>
        ltree
       </code>
       [
@@ -1160,7 +1160,7 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
       ]
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       ltree
      </code>
     </p>
@@ -1168,11 +1168,11 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
      Calcula o antepassado comum mais longo dos caminhos (até 8 argumentos são suportados).
     </p>
     <p>
-     <code class="literal">
+     <code>
       lca('1.2.3', '1.2.3.4.5.6')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1.2
      </code>
     </p>
@@ -1181,15 +1181,15 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       lca
      </code>
      (
-     <code class="type">
+     <code>
       ltree[]
      </code>
      )
-     <code class="returnvalue">
+     <code>
       ltree
      </code>
     </p>
@@ -1197,11 +1197,11 @@ As funções disponíveis são mostradas na [Tabela F.13](ltree.md#LTREE-FUNC-TA
      Calcula o antepassado comum mais longo dos caminhos no array.
     </p>
     <p>
-     <code class="literal">
+     <code>
       lca(array['1.2.3'::ltree,'1.2.3.4'])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1.2
      </code>
     </p>

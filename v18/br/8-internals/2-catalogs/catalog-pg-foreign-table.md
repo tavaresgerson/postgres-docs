@@ -6,7 +6,7 @@ O catálogo `pg_foreign_table` contém informações auxiliares sobre tabelas es
 
 
 
-<table border="1" class="table" summary="pg_foreign_table Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,20 +26,20 @@ O catálogo `pg_foreign_table` contém informações auxiliares sobre tabelas es
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       ftrelid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -47,7 +47,7 @@ O catálogo `pg_foreign_table` contém informações auxiliares sobre tabelas es
     <p>
      O OID do
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
@@ -58,20 +58,20 @@ O catálogo `pg_foreign_table` contém informações auxiliares sobre tabelas es
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       ftserver
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-foreign-server.md" title="52.24. pg_foreign_server">
-      <code class="structname">
+      <code>
        pg_foreign_server
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -84,10 +84,10 @@ O catálogo `pg_foreign_table` contém informações auxiliares sobre tabelas es
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       ftoptions
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>

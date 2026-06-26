@@ -29,7 +29,7 @@ As funções fornecidas são mostradas na [Tabela F.4](earthdistance.md#EARTHDIS
 
 
 
-<table border="1" class="table" summary="Cube-Based Earthdistance Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -49,11 +49,11 @@ As funções fornecidas são mostradas na [Tabela F.4](earthdistance.md#EARTHDIS
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       earth
      </code>
      ()
-     <code class="returnvalue">
+     <code>
       float8
      </code>
     </p>
@@ -65,15 +65,15 @@ As funções fornecidas são mostradas na [Tabela F.4](earthdistance.md#EARTHDIS
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       sec_to_gc
      </code>
      (
-     <code class="type">
+     <code>
       float8
      </code>
      )
-     <code class="returnvalue">
+     <code>
       float8
      </code>
     </p>
@@ -85,15 +85,15 @@ As funções fornecidas são mostradas na [Tabela F.4](earthdistance.md#EARTHDIS
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       gc_to_sec
      </code>
      (
-     <code class="type">
+     <code>
       float8
      </code>
      )
-     <code class="returnvalue">
+     <code>
       float8
      </code>
     </p>
@@ -105,19 +105,19 @@ As funções fornecidas são mostradas na [Tabela F.4](earthdistance.md#EARTHDIS
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ll_to_earth
      </code>
      (
-     <code class="type">
+     <code>
       float8
      </code>
      ,
-     <code class="type">
+     <code>
       float8
      </code>
      )
-     <code class="returnvalue">
+     <code>
       earth
      </code>
     </p>
@@ -129,15 +129,15 @@ As funções fornecidas são mostradas na [Tabela F.4](earthdistance.md#EARTHDIS
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       latitude
      </code>
      (
-     <code class="type">
+     <code>
       earth
      </code>
      )
-     <code class="returnvalue">
+     <code>
       float8
      </code>
     </p>
@@ -149,15 +149,15 @@ As funções fornecidas são mostradas na [Tabela F.4](earthdistance.md#EARTHDIS
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       longitude
      </code>
      (
-     <code class="type">
+     <code>
       earth
      </code>
      )
-     <code class="returnvalue">
+     <code>
       float8
      </code>
     </p>
@@ -169,19 +169,19 @@ As funções fornecidas são mostradas na [Tabela F.4](earthdistance.md#EARTHDIS
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       earth_distance
      </code>
      (
-     <code class="type">
+     <code>
       earth
      </code>
      ,
-     <code class="type">
+     <code>
       earth
      </code>
      )
-     <code class="returnvalue">
+     <code>
       float8
      </code>
     </p>
@@ -193,32 +193,32 @@ As funções fornecidas são mostradas na [Tabela F.4](earthdistance.md#EARTHDIS
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       earth_box
      </code>
      (
-     <code class="type">
+     <code>
       earth
      </code>
      ,
-     <code class="type">
+     <code>
       float8
      </code>
      )
-     <code class="returnvalue">
+     <code>
       cube
      </code>
     </p>
     <p>
      Retorna uma caixa adequada para uma pesquisa indexada usando o
-     <code class="type">
+     <code>
       cube
      </code>
-     <code class="literal">
+     <code>
       @&gt;
      </code>
      operador para pontos dentro de uma distância dada em círculo máximo de uma localização. Alguns pontos nesta caixa estão mais distantes do que a distância especificado em círculo máximo da localização, então uma segunda verificação usando
-     <code class="function">
+     <code>
       earth_distance
      </code>
      deveriam ser incluídas na consulta.
@@ -244,7 +244,7 @@ Um único operador é fornecido, mostrado em [Tabela F.5](earthdistance.md#EARTH
 
 
 
-<table border="1" class="table" summary="Point-Based Earthdistance Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -264,17 +264,17 @@ Um único operador é fornecido, mostrado em [Tabela F.5](earthdistance.md#EARTH
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       point
      </code>
-     <code class="literal">
+     <code>
       &lt;@&gt;
      </code>
-     <code class="type">
+     <code>
       point
      </code>
      →
-     <code class="returnvalue">
+     <code>
       float8
      </code>
     </p>

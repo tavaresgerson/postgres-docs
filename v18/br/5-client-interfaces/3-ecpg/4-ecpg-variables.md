@@ -118,11 +118,7 @@ Nesse sentido, existem dois tipos de dados: Alguns tipos de dados simples do Pos
 
 
 
-<table border="1" class="table" summary="Mapping Between PostgreSQL Data Types and C Variable Types">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -136,48 +132,48 @@ Nesse sentido, existem dois tipos de dados: Alguns tipos de dados simples do Pos
  <tbody>
   <tr>
    <td>
-    <code class="type">
+    <code>
      smallint
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      short
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      int
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      long long int
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      decimal
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      decimal
     </code>
     <a class="footnote" href="#ftn.ECPG-DATATYPE-TABLE-FN">
@@ -189,12 +185,12 @@ Nesse sentido, existem dois tipos de dados: Alguns tipos de dados simples do Pos
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      numeric
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      numeric
     </code>
     <a class="footnoteref" href="ecpg-variables.md#ftn.ECPG-DATATYPE-TABLE-FN">
@@ -206,79 +202,79 @@ Nesse sentido, existem dois tipos de dados: Alguns tipos de dados simples do Pos
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      real
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      float
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      double precision
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      double
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      smallserial
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      short
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      serial
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      int
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      bigserial
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      long long int
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      oid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      unsigned int
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      character(
      <em class="replaceable">
       <code>
@@ -288,7 +284,7 @@ Nesse sentido, existem dois tipos de dados: Alguns tipos de dados simples do Pos
      )
     </code>
     ,
-    <code class="type">
+    <code>
      varchar(
      <em class="replaceable">
       <code>
@@ -298,12 +294,12 @@ Nesse sentido, existem dois tipos de dados: Alguns tipos de dados simples do Pos
      )
     </code>
     ,
-    <code class="type">
+    <code>
      text
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      char[
      <em class="replaceable">
       <code>
@@ -313,7 +309,7 @@ Nesse sentido, existem dois tipos de dados: Alguns tipos de dados simples do Pos
      +1]
     </code>
     ,
-    <code class="type">
+    <code>
      VARCHAR[
      <em class="replaceable">
       <code>
@@ -326,24 +322,24 @@ Nesse sentido, existem dois tipos de dados: Alguns tipos de dados simples do Pos
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      name
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      char[NAMEDATALEN]
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      timestamp
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      timestamp
     </code>
     <a class="footnoteref" href="ecpg-variables.md#ftn.ECPG-DATATYPE-TABLE-FN">
@@ -355,12 +351,12 @@ Nesse sentido, existem dois tipos de dados: Alguns tipos de dados simples do Pos
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      interval
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      interval
     </code>
     <a class="footnoteref" href="ecpg-variables.md#ftn.ECPG-DATATYPE-TABLE-FN">
@@ -372,12 +368,12 @@ Nesse sentido, existem dois tipos de dados: Alguns tipos de dados simples do Pos
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      date
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      date
     </code>
     <a class="footnoteref" href="ecpg-variables.md#ftn.ECPG-DATATYPE-TABLE-FN">
@@ -389,12 +385,12 @@ Nesse sentido, existem dois tipos de dados: Alguns tipos de dados simples do Pos
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      boolean
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bool
     </code>
     <a class="footnote" href="#ftn.id-1.7.5.10.7.5.2.2.17.2.2">
@@ -406,16 +402,16 @@ Nesse sentido, existem dois tipos de dados: Alguns tipos de dados simples do Pos
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      bytea
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      char *
     </code>
     ,
-    <code class="type">
+    <code>
      bytea[
      <em class="replaceable">
       <code>
@@ -452,7 +448,7 @@ Nesse sentido, existem dois tipos de dados: Alguns tipos de dados simples do Pos
        </sup>
       </a>
       declared in
-      <code class="filename">
+      <code>
        ecpglib.h
       </code>
       if not native

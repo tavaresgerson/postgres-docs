@@ -6,7 +6,7 @@ O catálogo `pg_extension` armazena informações sobre as extensões instaladas
 
 
 
-<table border="1" class="table" summary="pg_extension Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_extension` armazena informações sobre as extensões instaladas
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,10 +41,10 @@ O catálogo `pg_extension` armazena informações sobre as extensões instaladas
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       extname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -56,20 +56,20 @@ O catálogo `pg_extension` armazena informações sobre as extensões instaladas
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       extowner
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -82,20 +82,20 @@ O catálogo `pg_extension` armazena informações sobre as extensões instaladas
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       extnamespace
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -108,10 +108,10 @@ O catálogo `pg_extension` armazena informações sobre as extensões instaladas
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       extrelocatable
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -123,10 +123,10 @@ O catálogo `pg_extension` armazena informações sobre as extensões instaladas
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       extversion
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -138,31 +138,31 @@ O catálogo `pg_extension` armazena informações sobre as extensões instaladas
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       extconfig
      </code>
-     <code class="type">
+     <code>
       oid[]
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
     </p>
     <p>
      Conjunto de
-     <code class="type">
+     <code>
       regclass
      </code>
      IDOs para a(s) tabela(s) de configuração da extensão, ou
-     <code class="literal">
+     <code>
       NULL
      </code>
      se nenhum
@@ -172,20 +172,20 @@ O catálogo `pg_extension` armazena informações sobre as extensões instaladas
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       extcondition
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>
     <p>
      Conjunto de
-     <code class="literal">
+     <code>
       WHERE
      </code>
      - condições de filtro de cláusula para a(s) tabela(s) de configuração da extensão, ou
-     <code class="literal">
+     <code>
       NULL
      </code>
      se nenhum

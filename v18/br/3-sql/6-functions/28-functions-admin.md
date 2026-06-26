@@ -21,7 +21,7 @@ As funções descritas nesta seção são usadas para controlar e monitorar uma 
 
 
 
-<table border="1" class="table" summary="Configuration Settings Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -44,7 +44,7 @@ As funções descritas nesta seção são usadas para controlar e monitorar uma 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       current_setting
      </code>
      (
@@ -53,7 +53,7 @@ As funções descritas nesta seção são usadas para controlar e monitorar uma 
        setting_name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -64,12 +64,12 @@ As funções descritas nesta seção são usadas para controlar e monitorar uma 
         missing_ok
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -81,7 +81,7 @@ As funções descritas nesta seção são usadas para controlar e monitorar uma 
       </code>
      </em>
      Se não houver essa configuração,
-     <code class="function">
+     <code>
       current_setting
      </code>
      lança um erro, a menos que
@@ -91,7 +91,7 @@ As funções descritas nesta seção são usadas para controlar e monitorar uma 
       </code>
      </em>
      é fornecida e é
-     <code class="literal">
+     <code>
       true
      </code>
      (nesse caso, NULL é retornado). Esta função corresponde à
@@ -107,11 +107,11 @@ As funções descritas nesta seção são usadas para controlar e monitorar uma 
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       current_setting('datestyle')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ISO, MDY
      </code>
     </p>
@@ -120,7 +120,7 @@ As funções descritas nesta seção são usadas para controlar e monitorar uma 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       set_config
      </code>
      (
@@ -129,7 +129,7 @@ As funções descritas nesta seção são usadas para controlar e monitorar uma 
        setting_name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -138,7 +138,7 @@ As funções descritas nesta seção são usadas para controlar e monitorar uma 
        new_value
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -147,11 +147,11 @@ As funções descritas nesta seção são usadas para controlar e monitorar uma 
        is_local
       </code>
      </em>
-     <code class="type">
+     <code>
       boolean
      </code>
      )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -175,11 +175,11 @@ As funções descritas nesta seção são usadas para controlar e monitorar uma 
       </code>
      </em>
      é
-     <code class="literal">
+     <code>
       true
      </code>
      , o novo valor só será aplicado durante a transação atual. Se você deseja que o novo valor seja aplicado para o resto da sessão atual, use
-     <code class="literal">
+     <code>
       false
      </code>
      em vez disso. Essa função corresponde ao comando SQL
@@ -191,7 +191,7 @@ As funções descritas nesta seção são usadas para controlar e monitorar uma 
      .
     </p>
     <p>
-     <code class="function">
+     <code>
       set_config
      </code>
      aceita o valor NULL para
@@ -203,11 +203,11 @@ As funções descritas nesta seção são usadas para controlar e monitorar uma 
      , mas como as configurações não podem ser nulos, é interpretado como um pedido para redefinir a configuração para seu valor padrão.
     </p>
     <p>
-     <code class="literal">
+     <code>
       set_config('log_statement_stats', 'off', false)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       off
      </code>
     </p>
@@ -232,7 +232,7 @@ Cada uma dessas funções retorna `true` se o sinal for enviado com sucesso e `f
 
 
 
-<table border="1" class="table" summary="Server Signaling Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -252,7 +252,7 @@ Cada uma dessas funções retorna `true` se o sinal for enviado com sucesso e `f
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_cancel_backend
      </code>
      (
@@ -261,21 +261,21 @@ Cada uma dessas funções retorna `true` se o sinal for enviado com sucesso e `f
        pid
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Cancels the current query of the session whose backend process has the specified process ID.  This is also allowed if the calling role is a member of the role whose backend is being canceled or the calling role has privileges of
-     <code class="literal">
+     <code>
       pg_signal_backend
      </code>
      , however only superusers can cancel superuser backends. As an exception, roles with privileges of
-     <code class="literal">
+     <code>
       pg_signal_autovacuum_worker
      </code>
      are permitted to cancel autovacuum worker processes, which are otherwise considered superuser backends.
@@ -285,7 +285,7 @@ Cada uma dessas funções retorna `true` se o sinal for enviado com sucesso e `f
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_log_backend_memory_contexts
      </code>
      (
@@ -294,17 +294,17 @@ Cada uma dessas funções retorna `true` se o sinal for enviado com sucesso e `f
        pid
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Requests to log the memory contexts of the backend with the specified process ID.  This function can send the request to backends and auxiliary processes except logger.  These memory contexts will be logged at
-     <code class="literal">
+     <code>
       LOG
      </code>
      message level. They will appear in the server log based on the log configuration set (see
@@ -322,11 +322,11 @@ Cada uma dessas funções retorna `true` se o sinal for enviado com sucesso e `f
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_reload_conf
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -345,19 +345,19 @@ Cada uma dessas funções retorna `true` se o sinal for enviado com sucesso e `f
      </span>
      to each of its children.) You can use the
      <a class="link" href="view-pg-file-settings.md" title="53.8. pg_file_settings">
-      <code class="structname">
+      <code>
        pg_file_settings
       </code>
      </a>
      ,
      <a class="link" href="view-pg-hba-file-rules.md" title="53.10. pg_hba_file_rules">
-      <code class="structname">
+      <code>
        pg_hba_file_rules
       </code>
      </a>
      and
      <a class="link" href="view-pg-ident-file-mappings.md" title="53.11. pg_ident_file_mappings">
-      <code class="structname">
+      <code>
        pg_ident_file_mappings
       </code>
      </a>
@@ -368,11 +368,11 @@ Cada uma dessas funções retorna `true` se o sinal for enviado com sucesso e `f
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_rotate_logfile
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -384,7 +384,7 @@ Cada uma dessas funções retorna `true` se o sinal for enviado com sucesso e `f
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_terminate_backend
      </code>
      (
@@ -393,7 +393,7 @@ Cada uma dessas funções retorna `true` se o sinal for enviado com sucesso e `f
        pid
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -402,27 +402,27 @@ Cada uma dessas funções retorna `true` se o sinal for enviado com sucesso e `f
        timeout
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
-     <code class="literal">
+     <code>
       DEFAULT
      </code>
-     <code class="literal">
+     <code>
       0
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Terminates the session whose backend process has the specified process ID.  This is also allowed if the calling role is a member of the role whose backend is being terminated or the calling role has privileges of
-     <code class="literal">
+     <code>
       pg_signal_backend
      </code>
      , however only superusers can terminate superuser backends. As an exception, roles with privileges of
-     <code class="literal">
+     <code>
       pg_signal_autovacuum_worker
      </code>
      are permitted to terminate autovacuum worker processes, which are otherwise considered superuser backends.
@@ -435,7 +435,7 @@ Cada uma dessas funções retorna `true` se o sinal for enviado com sucesso e `f
       </code>
      </em>
      is not specified or zero, this function returns
-     <code class="literal">
+     <code>
       true
      </code>
      whether the process actually terminates or not, indicating only that the sending of the signal was successful.  If the
@@ -445,11 +445,11 @@ Cada uma dessas funções retorna `true` se o sinal for enviado com sucesso e `f
       </code>
      </em>
      is specified (in milliseconds) and greater than zero, the function waits until the process is actually terminated or until the given time has passed. If the process is terminated, the function returns
-     <code class="literal">
+     <code>
       true
      </code>
      .  On timeout, a warning is emitted and
-     <code class="literal">
+     <code>
       false
      </code>
      is returned.
@@ -510,7 +510,7 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
 
 
 
-<table border="1" class="table" summary="Backup Control Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -530,7 +530,7 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_create_restore_point
      </code>
      (
@@ -539,11 +539,11 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
        name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       pg_lsn
      </code>
     </p>
@@ -562,11 +562,11 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_current_wal_flush_lsn
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       pg_lsn
      </code>
     </p>
@@ -578,11 +578,11 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_current_wal_insert_lsn
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       pg_lsn
      </code>
     </p>
@@ -594,11 +594,11 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_current_wal_lsn
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       pg_lsn
      </code>
     </p>
@@ -610,7 +610,7 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_backup_start
      </code>
      (
@@ -619,7 +619,7 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
        label
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -630,22 +630,22 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
         fast
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       pg_lsn
      </code>
     </p>
     <p>
      Prepares the server to begin an on-line backup.  The only required parameter is an arbitrary user-defined label for the backup. (Typically this would be the name under which the backup dump file will be stored.) If the optional second parameter is given as
-     <code class="literal">
+     <code>
       true
      </code>
      , it specifies executing
-     <code class="function">
+     <code>
       pg_backup_start
      </code>
      as quickly as possible.  This forces an immediate checkpoint which will cause a spike in I/O operations, slowing any concurrently executing queries.
@@ -658,7 +658,7 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_backup_stop
      </code>
      ( [
@@ -668,12 +668,12 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
         wait_for_archive
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       record
      </code>
      (
@@ -682,7 +682,7 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
        lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ,
@@ -691,7 +691,7 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
        labelfile
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -700,7 +700,7 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
        spcmapfile
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
@@ -710,30 +710,30 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
     </p>
     <p>
      There is an optional parameter of type
-     <code class="type">
+     <code>
       boolean
      </code>
      . If false, the function will return immediately after the backup is completed, without waiting for WAL to be archived.  This behavior is only useful with backup software that independently monitors WAL archiving.  Otherwise, WAL required to make the backup consistent might be missing and make the backup useless.  By default or when this parameter is true,
-     <code class="function">
+     <code>
       pg_backup_stop
      </code>
      will wait for WAL to be archived when archiving is enabled.  (On a standby, this means that it will wait only when
-     <code class="varname">
+     <code>
       archive_mode
      </code>
      =
-     <code class="literal">
+     <code>
       always
      </code>
      .  If write activity on the primary is low, it may be useful to run
-     <code class="function">
+     <code>
       pg_switch_wal
      </code>
      on the primary in order to trigger an immediate segment switch.)
     </p>
     <p>
      When executed on a primary, this function also creates a backup history file in the write-ahead log archive area.  The history file includes the label given to
-     <code class="function">
+     <code>
       pg_backup_start
      </code>
      , the starting and ending write-ahead log locations for the backup, and the starting and ending times of the backup.  After recording the ending location, the current write-ahead log insertion point is automatically advanced to the next write-ahead log file, so that the ending write-ahead log file can be archived immediately to complete the backup.
@@ -755,17 +755,17 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_switch_wal
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       pg_lsn
      </code>
     </p>
     <p>
      Forces the server to switch to a new write-ahead log file, which allows the current file to be archived (assuming you are using continuous archiving).  The result is the ending write-ahead log location plus 1 within the just-completed write-ahead log file.  If there has been no write-ahead log activity since the last write-ahead log switch,
-     <code class="function">
+     <code>
       pg_switch_wal
      </code>
      does nothing and returns the start location of the write-ahead log file currently in use.
@@ -778,7 +778,7 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_walfile_name
      </code>
      (
@@ -787,11 +787,11 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
        lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -803,7 +803,7 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_walfile_name_offset
      </code>
      (
@@ -812,11 +812,11 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
        lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       record
      </code>
      (
@@ -825,7 +825,7 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
        file_name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -834,7 +834,7 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
        file_offset
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
@@ -847,7 +847,7 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_split_walfile_name
      </code>
      (
@@ -856,11 +856,11 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
        file_name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       record
      </code>
      (
@@ -869,7 +869,7 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
        segment_number
       </code>
      </em>
-     <code class="type">
+     <code>
       numeric
      </code>
      ,
@@ -878,7 +878,7 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
        timeline_id
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      )
@@ -891,7 +891,7 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_wal_lsn_diff
      </code>
      (
@@ -900,7 +900,7 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
        lsn1
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ,
@@ -909,11 +909,11 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
        lsn2
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
@@ -931,7 +931,7 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
       </code>
      </em>
      ) between two write-ahead log locations.  This can be used with
-     <code class="structname">
+     <code>
       pg_stat_replication
      </code>
      or some of the functions shown in
@@ -991,7 +991,7 @@ As funções apresentadas na [Tabela 9.98](functions-admin.md#FUNCTIONS-RECOVERY
 
 
 
-<table border="1" class="table" summary="Recovery Information Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -1011,11 +1011,11 @@ As funções apresentadas na [Tabela 9.98](functions-admin.md#FUNCTIONS-RECOVERY
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_is_in_recovery
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1027,17 +1027,17 @@ As funções apresentadas na [Tabela 9.98](functions-admin.md#FUNCTIONS-RECOVERY
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_last_wal_receive_lsn
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       pg_lsn
      </code>
     </p>
     <p>
      Returns the last write-ahead log location that has been received and synced to disk by streaming replication. While streaming replication is in progress this will increase monotonically. If recovery has completed then this will remain static at the location of the last WAL record received and synced to disk during recovery. If streaming replication is disabled, or if it has not yet started, the function returns
-     <code class="literal">
+     <code>
       NULL
      </code>
      .
@@ -1047,17 +1047,17 @@ As funções apresentadas na [Tabela 9.98](functions-admin.md#FUNCTIONS-RECOVERY
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_last_wal_replay_lsn
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       pg_lsn
      </code>
     </p>
     <p>
      Returns the last write-ahead log location that has been replayed during recovery.  If recovery is still in progress this will increase monotonically.  If recovery has completed then this will remain static at the location of the last WAL record applied during recovery. When the server has been started normally without recovery, the function returns
-     <code class="literal">
+     <code>
       NULL
      </code>
      .
@@ -1067,21 +1067,21 @@ As funções apresentadas na [Tabela 9.98](functions-admin.md#FUNCTIONS-RECOVERY
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_last_xact_replay_timestamp
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
     <p>
      Returns the time stamp of the last transaction replayed during recovery.  This is the time at which the commit or abort WAL record for that transaction was generated on the primary.  If no transactions have been replayed during recovery, the function returns
-     <code class="literal">
+     <code>
       NULL
      </code>
      .  Otherwise, if recovery is still in progress this will increase monotonically.  If recovery has completed then this will remain static at the time of the last transaction applied during recovery.  When the server has been started normally without recovery, the function returns
-     <code class="literal">
+     <code>
       NULL
      </code>
      .
@@ -1091,11 +1091,11 @@ As funções apresentadas na [Tabela 9.98](functions-admin.md#FUNCTIONS-RECOVERY
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_wal_resource_managers
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -1104,7 +1104,7 @@ As funções apresentadas na [Tabela 9.98](functions-admin.md#FUNCTIONS-RECOVERY
        rm_id
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -1113,7 +1113,7 @@ As funções apresentadas na [Tabela 9.98](functions-admin.md#FUNCTIONS-RECOVERY
        rm_name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -1122,7 +1122,7 @@ As funções apresentadas na [Tabela 9.98](functions-admin.md#FUNCTIONS-RECOVERY
        rm_builtin
       </code>
      </em>
-     <code class="type">
+     <code>
       boolean
      </code>
      )
@@ -1156,7 +1156,7 @@ As funções mostradas na [Tabela 9.99](functions-admin.md#FUNCTIONS-RECOVERY-CO
 
 
 
-<table border="1" class="table" summary="Recovery Control Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -1176,11 +1176,11 @@ As funções mostradas na [Tabela 9.99](functions-admin.md#FUNCTIONS-RECOVERY-CO
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_is_wal_replay_paused
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1192,25 +1192,25 @@ As funções mostradas na [Tabela 9.99](functions-admin.md#FUNCTIONS-RECOVERY-CO
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_wal_replay_pause_state
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Returns recovery pause state.  The return values are
-     <code class="literal">
+     <code>
       not paused
      </code>
      if pause is not requested,
-     <code class="literal">
+     <code>
       pause requested
      </code>
      if pause is requested but recovery is not yet paused, and
-     <code class="literal">
+     <code>
       paused
      </code>
      if the recovery is actually paused.
@@ -1220,7 +1220,7 @@ As funções mostradas na [Tabela 9.99](functions-admin.md#FUNCTIONS-RECOVERY-CO
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_promote
      </code>
      (
@@ -1229,13 +1229,13 @@ As funções mostradas na [Tabela 9.99](functions-admin.md#FUNCTIONS-RECOVERY-CO
        wait
       </code>
      </em>
-     <code class="type">
+     <code>
       boolean
      </code>
-     <code class="literal">
+     <code>
       DEFAULT
      </code>
-     <code class="literal">
+     <code>
       true
      </code>
      ,
@@ -1244,17 +1244,17 @@ As funções mostradas na [Tabela 9.99](functions-admin.md#FUNCTIONS-RECOVERY-CO
        wait_seconds
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
-     <code class="literal">
+     <code>
       DEFAULT
      </code>
-     <code class="literal">
+     <code>
       60
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1266,7 +1266,7 @@ As funções mostradas na [Tabela 9.99](functions-admin.md#FUNCTIONS-RECOVERY-CO
       </code>
      </em>
      set to
-     <code class="literal">
+     <code>
       true
      </code>
      (the default), the function waits until promotion is completed or
@@ -1276,11 +1276,11 @@ As funções mostradas na [Tabela 9.99](functions-admin.md#FUNCTIONS-RECOVERY-CO
       </code>
      </em>
      seconds have passed, and returns
-     <code class="literal">
+     <code>
       true
      </code>
      if promotion is successful and
-     <code class="literal">
+     <code>
       false
      </code>
      otherwise. If
@@ -1290,15 +1290,15 @@ As funções mostradas na [Tabela 9.99](functions-admin.md#FUNCTIONS-RECOVERY-CO
       </code>
      </em>
      is set to
-     <code class="literal">
+     <code>
       false
      </code>
      , the function returns
-     <code class="literal">
+     <code>
       true
      </code>
      immediately after sending a
-     <code class="literal">
+     <code>
       SIGUSR1
      </code>
      signal to the postmaster to trigger promotion.
@@ -1311,21 +1311,21 @@ As funções mostradas na [Tabela 9.99](functions-admin.md#FUNCTIONS-RECOVERY-CO
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_wal_replay_pause
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
     <p>
      Request to pause recovery.  A request doesn't mean that recovery stops right away.  If you want a guarantee that recovery is actually paused, you need to check for the recovery pause state returned by
-     <code class="function">
+     <code>
       pg_get_wal_replay_pause_state()
      </code>
      .  Note that
-     <code class="function">
+     <code>
       pg_is_wal_replay_paused()
      </code>
      returns whether a request is made.  While recovery is paused, no further database changes are applied. If hot standby is active, all new queries will see the same consistent snapshot of the database, and no further query conflicts will be generated until recovery is resumed.
@@ -1338,11 +1338,11 @@ As funções mostradas na [Tabela 9.99](functions-admin.md#FUNCTIONS-RECOVERY-CO
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_wal_replay_resume
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -1382,7 +1382,7 @@ Os instantâneos são exportados com a função `pg_export_snapshot`, mostrada n
 
 
 
-<table border="1" class="table" summary="Snapshot Synchronization Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -1402,28 +1402,28 @@ Os instantâneos são exportados com a função `pg_export_snapshot`, mostrada n
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_export_snapshot
      </code>
      ()
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Salva o instantâneo atual da transação e retorna um
-     <code class="type">
+     <code>
       text
      </code>
      string que identifica o instantâneo. Essa string deve ser passada (fora do banco de dados) para clientes que desejam importar o instantâneo. O instantâneo está disponível para importação apenas até o final da transação que o exportou.
     </p>
     <p>
      Uma transação pode exportar mais de um instantâneo, se necessário. Observe que essa ação só é útil em
-     <code class="literal">
+     <code>
       READ COMMITTED
      </code>
      transações, já que em
-     <code class="literal">
+     <code>
       REPEATABLE READ
      </code>
      e níveis de isolamento mais altos, as transações utilizam o mesmo instantâneo ao longo de sua vida útil. Uma vez que uma transação tenha exportado quaisquer instantâneos, ela não pode ser preparada com
@@ -1439,11 +1439,11 @@ Os instantâneos são exportados com a função `pg_export_snapshot`, mostrada n
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_log_standby_snapshot
      </code>
      ()
-     <code class="returnvalue">
+     <code>
       pg_lsn
      </code>
     </p>
@@ -1473,7 +1473,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
 
 
 
-<table border="1" class="table" summary="Replication Management Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -1493,7 +1493,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_create_physical_replication_slot
      </code>
      (
@@ -1502,7 +1502,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        slot_name
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      [
@@ -1513,7 +1513,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
         immediately_reserve
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
       ,
@@ -1522,12 +1522,12 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
         temporary
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       record
      </code>
      (
@@ -1536,7 +1536,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        slot_name
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ,
@@ -1545,7 +1545,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      )
@@ -1558,7 +1558,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
       </code>
      </em>
      . The optional second parameter, when
-     <code class="literal">
+     <code>
       true
      </code>
      , specifies that the
@@ -1580,7 +1580,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
       </code>
      </em>
      , when set to true, specifies that the slot should not be permanently stored to disk and is only meant for use by the current session. Temporary slots are also released upon any error. This function corresponds to the replication protocol command
-     <code class="literal">
+     <code>
       CREATE_REPLICATION_SLOT ... PHYSICAL
      </code>
      .
@@ -1590,7 +1590,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_drop_replication_slot
      </code>
      (
@@ -1599,11 +1599,11 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        slot_name
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -1615,7 +1615,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
       </code>
      </em>
      . Same as replication protocol command
-     <code class="literal">
+     <code>
       DROP_REPLICATION_SLOT
      </code>
      .
@@ -1625,7 +1625,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry" id="PG-CREATE-LOGICAL-REPLICATION-SLOT">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_create_logical_replication_slot
      </code>
      (
@@ -1634,7 +1634,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        slot_name
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ,
@@ -1643,7 +1643,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        plugin
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      [
@@ -1654,7 +1654,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
         temporary
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
       ,
@@ -1663,7 +1663,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
         twophase
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
       ,
@@ -1672,12 +1672,12 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
         failover
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       record
      </code>
      (
@@ -1686,7 +1686,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        slot_name
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ,
@@ -1695,7 +1695,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      )
@@ -1732,7 +1732,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
       </code>
      </em>
      , when set to true, specifies that this slot is enabled to be synced to the standbys so that logical replication can be resumed after failover. A call to this function has the same effect as the replication protocol command
-     <code class="literal">
+     <code>
       CREATE_REPLICATION_SLOT ... LOGICAL
      </code>
      .
@@ -1742,7 +1742,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_copy_physical_replication_slot
      </code>
      (
@@ -1751,7 +1751,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        src_slot_name
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ,
@@ -1760,7 +1760,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        dst_slot_name
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      [
@@ -1771,12 +1771,12 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
         temporary
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       record
      </code>
      (
@@ -1785,7 +1785,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        slot_name
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ,
@@ -1794,7 +1794,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      )
@@ -1835,7 +1835,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_copy_logical_replication_slot
      </code>
      (
@@ -1844,7 +1844,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        src_slot_name
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ,
@@ -1853,7 +1853,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        dst_slot_name
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      [
@@ -1864,7 +1864,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
         temporary
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
       [
@@ -1875,14 +1875,14 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
          plugin
         </code>
        </em>
-       <code class="type">
+       <code>
         name
        </code>
       </span>
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       record
      </code>
      (
@@ -1891,7 +1891,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        slot_name
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ,
@@ -1900,7 +1900,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      )
@@ -1935,11 +1935,11 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
       </code>
      </em>
      are optional; if they are omitted, the values of the source slot are used. The
-     <code class="literal">
+     <code>
       failover
      </code>
      option of the source logical slot is not copied and is set to
-     <code class="literal">
+     <code>
       false
      </code>
      by default. This is to avoid the risk of being unable to continue logical replication after failover to standby where the slot is being synchronized. Copy of an invalidated slot is not allowed.
@@ -1949,7 +1949,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry" id="PG-LOGICAL-SLOT-GET-CHANGES">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_logical_slot_get_changes
      </code>
      (
@@ -1958,7 +1958,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        slot_name
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ,
@@ -1967,7 +1967,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        upto_lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ,
@@ -1976,11 +1976,11 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        upto_nchanges
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
-     <code class="literal">
+     <code>
       VARIADIC
      </code>
      <em class="parameter">
@@ -1988,11 +1988,11 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        options
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -2001,7 +2001,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ,
@@ -2010,7 +2010,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        xid
       </code>
      </em>
-     <code class="type">
+     <code>
       xid
      </code>
      ,
@@ -2019,7 +2019,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        data
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
@@ -2057,7 +2057,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
      </em>
      is non-NULL, decoding will stop when the number of rows produced by decoding exceeds the specified value.  Note, however, that the actual number of rows returned may be larger, since this limit is only checked after adding the rows produced when decoding each new transaction commit. If the specified slot is a logical failover slot then the function will not return until all physical slots specified in
      <a class="link" href="runtime-config-replication.md#GUC-SYNCHRONIZED-STANDBY-SLOTS">
-      <code class="varname">
+      <code>
        synchronized_standby_slots
       </code>
      </a>
@@ -2068,7 +2068,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry" id="PG-LOGICAL-SLOT-PEEK-CHANGES">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_logical_slot_peek_changes
      </code>
      (
@@ -2077,7 +2077,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        slot_name
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ,
@@ -2086,7 +2086,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        upto_lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ,
@@ -2095,11 +2095,11 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        upto_nchanges
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
-     <code class="literal">
+     <code>
       VARIADIC
      </code>
      <em class="parameter">
@@ -2107,11 +2107,11 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        options
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -2120,7 +2120,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ,
@@ -2129,7 +2129,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        xid
       </code>
      </em>
-     <code class="type">
+     <code>
       xid
      </code>
      ,
@@ -2138,14 +2138,14 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        data
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
     </p>
     <p>
      Behaves just like the
-     <code class="function">
+     <code>
       pg_logical_slot_get_changes()
      </code>
      function, except that changes are not consumed; that is, they will be returned again on future calls.
@@ -2155,7 +2155,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry" id="PG-LOGICAL-SLOT-GET-BINARY-CHANGES">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_logical_slot_get_binary_changes
      </code>
      (
@@ -2164,7 +2164,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        slot_name
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ,
@@ -2173,7 +2173,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        upto_lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ,
@@ -2182,11 +2182,11 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        upto_nchanges
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
-     <code class="literal">
+     <code>
       VARIADIC
      </code>
      <em class="parameter">
@@ -2194,11 +2194,11 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        options
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -2207,7 +2207,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ,
@@ -2216,7 +2216,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        xid
       </code>
      </em>
-     <code class="type">
+     <code>
       xid
      </code>
      ,
@@ -2225,18 +2225,18 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        data
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      )
     </p>
     <p>
      Behaves just like the
-     <code class="function">
+     <code>
       pg_logical_slot_get_changes()
      </code>
      function, except that changes are returned as
-     <code class="type">
+     <code>
       bytea
      </code>
      .
@@ -2246,7 +2246,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_logical_slot_peek_binary_changes
      </code>
      (
@@ -2255,7 +2255,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        slot_name
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ,
@@ -2264,7 +2264,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        upto_lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ,
@@ -2273,11 +2273,11 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        upto_nchanges
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
-     <code class="literal">
+     <code>
       VARIADIC
      </code>
      <em class="parameter">
@@ -2285,11 +2285,11 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        options
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -2298,7 +2298,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ,
@@ -2307,7 +2307,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        xid
       </code>
      </em>
-     <code class="type">
+     <code>
       xid
      </code>
      ,
@@ -2316,18 +2316,18 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        data
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      )
     </p>
     <p>
      Behaves just like the
-     <code class="function">
+     <code>
       pg_logical_slot_peek_changes()
      </code>
      function, except that changes are returned as
-     <code class="type">
+     <code>
       bytea
      </code>
      .
@@ -2337,7 +2337,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry" id="PG-REPLICATION-SLOT-ADVANCE">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_replication_slot_advance
      </code>
      (
@@ -2346,7 +2346,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        slot_name
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ,
@@ -2355,11 +2355,11 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        upto_lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       record
      </code>
      (
@@ -2368,7 +2368,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        slot_name
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ,
@@ -2377,7 +2377,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        end_lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      )
@@ -2391,7 +2391,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
      </em>
      . The slot will not be moved backwards, and it will not be moved beyond the current insert location. Returns the name of the slot and the actual position that it was advanced to. The updated slot position information is written out at the next checkpoint if any advancing is done. So in the event of a crash, the slot may return to an earlier position. If the specified slot is a logical failover slot then the function will not return until all physical slots specified in
      <a class="link" href="runtime-config-replication.md#GUC-SYNCHRONIZED-STANDBY-SLOTS">
-      <code class="varname">
+      <code>
        synchronized_standby_slots
       </code>
      </a>
@@ -2402,7 +2402,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry" id="PG-REPLICATION-ORIGIN-CREATE">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_replication_origin_create
      </code>
      (
@@ -2411,11 +2411,11 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        node_name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       oid
      </code>
     </p>
@@ -2427,7 +2427,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry" id="PG-REPLICATION-ORIGIN-DROP">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_replication_origin_drop
      </code>
      (
@@ -2436,11 +2436,11 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        node_name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -2452,7 +2452,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_replication_origin_oid
      </code>
      (
@@ -2461,17 +2461,17 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        node_name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       oid
      </code>
     </p>
     <p>
      Looks up a replication origin by name and returns the internal ID. If no such replication origin is found,
-     <code class="literal">
+     <code>
       NULL
      </code>
      is returned.
@@ -2481,7 +2481,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry" id="PG-REPLICATION-ORIGIN-SESSION-SETUP">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_replication_origin_session_setup
      </code>
      (
@@ -2490,17 +2490,17 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        node_name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
     <p>
      Marks the current session as replaying from the given origin, allowing replay progress to be tracked. Can only be used if no origin is currently selected. Use
-     <code class="function">
+     <code>
       pg_replication_origin_session_reset
      </code>
      to undo.
@@ -2510,17 +2510,17 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_replication_origin_session_reset
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
     <p>
      Cancels the effects of
-     <code class="function">
+     <code>
       pg_replication_origin_session_setup()
      </code>
      .
@@ -2530,11 +2530,11 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_replication_origin_session_is_setup
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -2546,7 +2546,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry" id="PG-REPLICATION-ORIGIN-SESSION-PROGRESS">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_replication_origin_session_progress
      </code>
      (
@@ -2555,11 +2555,11 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        flush
       </code>
      </em>
-     <code class="type">
+     <code>
       boolean
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       pg_lsn
      </code>
     </p>
@@ -2577,7 +2577,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry" id="PG-REPLICATION-ORIGIN-XACT-SETUP">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_replication_origin_xact_setup
      </code>
      (
@@ -2586,7 +2586,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        origin_lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ,
@@ -2595,11 +2595,11 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        origin_timestamp
       </code>
      </em>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -2609,7 +2609,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
       LSN
      </acronym>
      and timestamp. Can only be called when a replication origin has been selected using
-     <code class="function">
+     <code>
       pg_replication_origin_session_setup
      </code>
      .
@@ -2619,17 +2619,17 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry" id="PG-REPLICATION-ORIGIN-XACT-RESET">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_replication_origin_xact_reset
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
     <p>
      Cancels the effects of
-     <code class="function">
+     <code>
       pg_replication_origin_xact_setup()
      </code>
      .
@@ -2639,7 +2639,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry" id="PG-REPLICATION-ORIGIN-ADVANCE">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_replication_origin_advance
      </code>
      (
@@ -2648,7 +2648,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        node_name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2657,11 +2657,11 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -2673,7 +2673,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry" id="PG-REPLICATION-ORIGIN-PROGRESS">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_replication_origin_progress
      </code>
      (
@@ -2682,7 +2682,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        node_name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2691,11 +2691,11 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        flush
       </code>
      </em>
-     <code class="type">
+     <code>
       boolean
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       pg_lsn
      </code>
     </p>
@@ -2713,7 +2713,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry" id="PG-LOGICAL-EMIT-MESSAGE">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_logical_emit_message
      </code>
      (
@@ -2722,7 +2722,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        transactional
       </code>
      </em>
-     <code class="type">
+     <code>
       boolean
      </code>
      ,
@@ -2731,7 +2731,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        prefix
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2740,7 +2740,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        content
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -2751,23 +2751,23 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
         flush
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
-      <code class="literal">
+      <code>
        DEFAULT
       </code>
-      <code class="literal">
+      <code>
        false
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       pg_lsn
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_logical_emit_message
      </code>
      (
@@ -2776,7 +2776,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        transactional
       </code>
      </em>
-     <code class="type">
+     <code>
       boolean
      </code>
      ,
@@ -2785,7 +2785,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        prefix
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2794,7 +2794,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
        content
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      [
@@ -2805,18 +2805,18 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
         flush
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
-      <code class="literal">
+      <code>
        DEFAULT
       </code>
-      <code class="literal">
+      <code>
        false
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       pg_lsn
      </code>
     </p>
@@ -2846,7 +2846,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
       </code>
      </em>
      parameter (default set to
-     <code class="literal">
+     <code>
       false
      </code>
      ) controls if the message is immediately flushed to WAL or not.
@@ -2868,11 +2868,11 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
   <tr>
    <td class="func_table_entry" id="PG-SYNC-REPLICATION-SLOTS">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_sync_replication_slots
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -2883,7 +2883,7 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
      </a>
      for details. Note that this function is primarily intended for testing and debugging purposes and should be used with caution. Additionally, this function cannot be executed if
      <a class="link" href="runtime-config-replication.md#GUC-SYNC-REPLICATION-SLOTS">
-      <code class="varname">
+      <code>
        sync_replication_slots
       </code>
      </a>
@@ -2896,13 +2896,13 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
      <p>
       If, after executing the function,
       <a class="link" href="runtime-config-replication.md#GUC-HOT-STANDBY-FEEDBACK">
-       <code class="varname">
+       <code>
         hot_standby_feedback
        </code>
       </a>
       is disabled on the standby or the physical slot configured in
       <a class="link" href="runtime-config-replication.md#GUC-PRIMARY-SLOT-NAME">
-       <code class="varname">
+       <code>
         primary_slot_name
        </code>
       </a>
@@ -2928,7 +2928,7 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
 
 
 
-<table border="1" class="table" summary="Database Object Size Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -2948,15 +2948,15 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_column_size
      </code>
      (
-     <code class="type">
+     <code>
       "any"
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -2968,21 +2968,21 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_column_compression
      </code>
      (
-     <code class="type">
+     <code>
       "any"
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Shows the compression algorithm that was used to compress an individual variable-length value. Returns
-     <code class="literal">
+     <code>
       NULL
      </code>
      if the value is not compressed.
@@ -2992,21 +2992,21 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_column_toast_chunk_id
      </code>
      (
-     <code class="type">
+     <code>
       "any"
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       oid
      </code>
     </p>
     <p>
      Shows the
-     <code class="structfield">
+     <code>
       chunk_id
      </code>
      of an on-disk
@@ -3014,7 +3014,7 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
       TOAST
      </acronym>
      ed value.  Returns
-     <code class="literal">
+     <code>
       NULL
      </code>
      if the value is un-
@@ -3036,38 +3036,38 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_database_size
      </code>
      (
-     <code class="type">
+     <code>
       name
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_database_size
      </code>
      (
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Computes the total disk space used by the database with the specified name or OID.  To use this function, you must have
-     <code class="literal">
+     <code>
       CONNECT
      </code>
      privilege on the specified database (which is granted by default) or have privileges of the
-     <code class="literal">
+     <code>
       pg_read_all_stats
      </code>
      role.
@@ -3077,15 +3077,15 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_indexes_size
      </code>
      (
-     <code class="type">
+     <code>
       regclass
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
@@ -3097,7 +3097,7 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_relation_size
      </code>
      (
@@ -3106,7 +3106,7 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
        relation
       </code>
      </em>
-     <code class="type">
+     <code>
       regclass
      </code>
      [
@@ -3117,12 +3117,12 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
         fork
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
@@ -3136,11 +3136,11 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
       ”
      </span>
      of the specified relation.  (Note that for most purposes it is more convenient to use the higher-level functions
-     <code class="function">
+     <code>
       pg_total_relation_size
      </code>
      or
-     <code class="function">
+     <code>
       pg_table_size
      </code>
      , which sum the sizes of all forks.)  With one argument, this returns the size of the main data fork of the relation.  The second argument can be provided to specify which fork to examine:
@@ -3149,7 +3149,7 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
      <ul class="itemizedlist compact" style="list-style-type: disc; ">
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          main
         </code>
         returns the size of the main data fork of the relation.
@@ -3157,7 +3157,7 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          fsm
         </code>
         returns the size of the Free Space Map (see
@@ -3169,7 +3169,7 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          vm
         </code>
         returns the size of the Visibility Map (see
@@ -3181,7 +3181,7 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          init
         </code>
         returns the size of the initialization fork, if any, associated with the relation.
@@ -3196,49 +3196,49 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_size_bytes
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Converts a size in human-readable format (as returned by
-     <code class="function">
+     <code>
       pg_size_pretty
      </code>
      ) into bytes.  Valid units are
-     <code class="literal">
+     <code>
       bytes
      </code>
      ,
-     <code class="literal">
+     <code>
       B
      </code>
      ,
-     <code class="literal">
+     <code>
       kB
      </code>
      ,
-     <code class="literal">
+     <code>
       MB
      </code>
      ,
-     <code class="literal">
+     <code>
       GB
      </code>
      ,
-     <code class="literal">
+     <code>
       TB
      </code>
      , and
-     <code class="literal">
+     <code>
       PB
      </code>
      .
@@ -3248,28 +3248,28 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_size_pretty
      </code>
      (
-     <code class="type">
+     <code>
       bigint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_size_pretty
      </code>
      (
-     <code class="type">
+     <code>
       numeric
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -3285,15 +3285,15 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_table_size
      </code>
      (
-     <code class="type">
+     <code>
       regclass
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
@@ -3305,38 +3305,38 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_tablespace_size
      </code>
      (
-     <code class="type">
+     <code>
       name
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_tablespace_size
      </code>
      (
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Computes the total disk space used in the tablespace with the specified name or OID. To use this function, you must have
-     <code class="literal">
+     <code>
       CREATE
      </code>
      privilege on the specified tablespace or have privileges of the
-     <code class="literal">
+     <code>
       pg_read_all_stats
      </code>
      role, unless it is the default tablespace for the current database.
@@ -3346,15 +3346,15 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_total_relation_size
      </code>
      (
-     <code class="type">
+     <code>
       regclass
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
@@ -3364,13 +3364,13 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
       TOAST
      </acronym>
      data.  The result is equivalent to
-     <code class="function">
+     <code>
       pg_table_size
      </code>
-     <code class="literal">
+     <code>
       +
      </code>
-     <code class="function">
+     <code>
       pg_indexes_size
      </code>
      .
@@ -3397,7 +3397,7 @@ As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-D
 
 
 
-<table border="1" class="table" summary="Database Object Location Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -3417,7 +3417,7 @@ As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-D
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_relation_filenode
      </code>
      (
@@ -3426,11 +3426,11 @@ As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-D
        relation
       </code>
      </em>
-     <code class="type">
+     <code>
       regclass
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       oid
      </code>
     </p>
@@ -3448,15 +3448,15 @@ As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-D
       Section 66.1
      </a>
      for more information). For most relations the result is the same as
-     <code class="structname">
+     <code>
       pg_class
      </code>
      .
-     <code class="structfield">
+     <code>
       relfilenode
      </code>
      , but for certain system catalogs
-     <code class="structfield">
+     <code>
       relfilenode
      </code>
      is zero and this function must be used to get the correct value.  The function returns NULL if passed a relation that does not have storage, such as a view.
@@ -3466,7 +3466,7 @@ As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-D
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_relation_filepath
      </code>
      (
@@ -3475,17 +3475,17 @@ As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-D
        relation
       </code>
      </em>
-     <code class="type">
+     <code>
       regclass
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Returns the entire file path name (relative to the database cluster's data directory,
-     <code class="varname">
+     <code>
       PGDATA
      </code>
      ) of the relation.
@@ -3495,7 +3495,7 @@ As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-D
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_filenode_relation
      </code>
      (
@@ -3504,7 +3504,7 @@ As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-D
        tablespace
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -3513,21 +3513,21 @@ As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-D
        filenode
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       regclass
      </code>
     </p>
     <p>
      Returns a relation's OID given the tablespace OID and filenode it is stored under.  This is essentially the inverse mapping of
-     <code class="function">
+     <code>
       pg_relation_filepath
      </code>
      .  For a relation in the database's default tablespace, the tablespace can be specified as zero. Returns
-     <code class="literal">
+     <code>
       NULL
      </code>
      if no relation in the current database is associated with the given values, or if dealing with a temporary relation.
@@ -3552,7 +3552,7 @@ As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-D
 
 
 
-<table border="1" class="table" summary="Collation Management Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -3572,25 +3572,25 @@ As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-D
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_collation_actual_version
      </code>
      (
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Returns the actual version of the collation object as it is currently installed in the operating system.  If this is different from the value in
-     <code class="structname">
+     <code>
       pg_collation
      </code>
      .
-     <code class="structfield">
+     <code>
       collversion
      </code>
      , then objects depending on the collation might need to be rebuilt.  See also
@@ -3606,25 +3606,25 @@ As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-D
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_database_collation_actual_version
      </code>
      (
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Returns the actual version of the database's collation as it is currently installed in the operating system.  If this is different from the value in
-     <code class="structname">
+     <code>
       pg_database
      </code>
      .
-     <code class="structfield">
+     <code>
       datcollversion
      </code>
      , then objects depending on the collation might need to be rebuilt.  See also
@@ -3640,7 +3640,7 @@ As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-D
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_import_system_collations
      </code>
      (
@@ -3649,21 +3649,21 @@ As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-D
        schema
       </code>
      </em>
-     <code class="type">
+     <code>
       regnamespace
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Adds collations to the system catalog
-     <code class="structname">
+     <code>
       pg_collation
      </code>
      based on all the locales it finds in the operating system.  This is what
-     <code class="command">
+     <code>
       initdb
      </code>
      uses; see
@@ -3671,7 +3671,7 @@ As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-D
       Section 23.2.2
      </a>
      for more details.  If additional locales are installed into the operating system later on, this function can be run again to add collations for the new locales. Locales that match existing entries in
-     <code class="structname">
+     <code>
       pg_collation
      </code>
      will be skipped.  (But collation objects based on locales that are no longer present in the operating system are not removed by this function.) The
@@ -3681,7 +3681,7 @@ As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-D
       </code>
      </em>
      parameter would typically be
-     <code class="literal">
+     <code>
       pg_catalog
      </code>
      , but that is not a requirement; the collations could be installed into some other schema as well.  The function returns the number of new collation objects it created. Use of this function is restricted to superusers.
@@ -3710,7 +3710,7 @@ As alterações feitas por essas funções de manipulação de estatísticas pro
 
 
 
-<table border="1" class="table" summary="Database Object Statistics Manipulation Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -3730,11 +3730,11 @@ As alterações feitas por essas funções de manipulação de estatísticas pro
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_restore_relation_stats
      </code>
      (
-     <code class="literal">
+     <code>
       VARIADIC
      </code>
      <em class="parameter">
@@ -3742,11 +3742,11 @@ As alterações feitas por essas funções de manipulação de estatísticas pro
        kwargs
       </code>
      </em>
-     <code class="type">
+     <code>
       "any"
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -3764,7 +3764,7 @@ As alterações feitas por essas funções de manipulação de estatísticas pro
       </span>
      </a>
      , so it's not necessary to call this function.  However, it is useful after a restore to enable the optimizer to choose better plans if
-     <code class="command">
+     <code>
       ANALYZE
      </code>
      has not been run yet.
@@ -3785,21 +3785,21 @@ As alterações feitas por essas funções de manipulação de estatísticas pro
      in the form:
     </p>
     <pre class="programlisting">
-SELECT pg_restore_relation_stats( '<em class="replaceable"><code>arg1name</code></em>', '<em class="replaceable"><code>arg1value</code></em>'::<em class="replaceable"><code>arg1type</code></em>, '<em class="replaceable"><code>arg2name</code></em>', '<em class="replaceable"><code>arg2value</code></em>'::<em class="replaceable"><code>arg2type</code></em>, '<em class="replaceable"><code>arg3name</code></em>', '<em class="replaceable"><code>arg3value</code></em>'::<em class="replaceable"><code>arg3type</code></em>);
+SELECT pg_restore_relation_stats( '<code>arg1name</code>', '<code>arg1value</code>'::<code>arg1type</code>, '<code>arg2name</code>', '<code>arg2value</code>'::<code>arg2type</code>, '<code>arg3name</code>', '<code>arg3value</code>'::<code>arg3type</code>);
 </pre>
     <p>
     </p>
     <p>
      For example, to set the
-     <code class="structfield">
+     <code>
       relpages
      </code>
      and
-     <code class="structfield">
+     <code>
       reltuples
      </code>
      values for the table
-     <code class="structname">
+     <code>
       mytable
      </code>
      :
@@ -3811,60 +3811,60 @@ SELECT pg_restore_relation_stats( 'schemaname', 'myschema', 'relname',    'mytab
     </p>
     <p>
      The arguments
-     <code class="literal">
+     <code>
       schemaname
      </code>
      and
-     <code class="literal">
+     <code>
       relname
      </code>
      are required, and specify the table. Other arguments are the names and values of statistics corresponding to certain columns in
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      . The currently-supported relation statistics are
-     <code class="literal">
+     <code>
       relpages
      </code>
      with a value of type
-     <code class="type">
+     <code>
       integer
      </code>
      ,
-     <code class="literal">
+     <code>
       reltuples
      </code>
      with a value of type
-     <code class="type">
+     <code>
       real
      </code>
      ,
-     <code class="literal">
+     <code>
       relallvisible
      </code>
      with a value of type
-     <code class="type">
+     <code>
       integer
      </code>
      , and
-     <code class="literal">
+     <code>
       relallfrozen
      </code>
      with a value of type
-     <code class="type">
+     <code>
       integer
      </code>
      .
     </p>
     <p>
      Additionally, this function accepts argument name
-     <code class="literal">
+     <code>
       version
      </code>
      of type
-     <code class="type">
+     <code>
       integer
      </code>
      , which specifies the server version from which the statistics originated. This is anticipated to be helpful in porting statistics from older versions of
@@ -3875,22 +3875,22 @@ SELECT pg_restore_relation_stats( 'schemaname', 'myschema', 'relname',    'mytab
     </p>
     <p>
      Minor errors are reported as a
-     <code class="literal">
+     <code>
       WARNING
      </code>
      and ignored, and remaining statistics will still be restored. If all specified statistics are successfully restored, returns
-     <code class="literal">
+     <code>
       true
      </code>
      , otherwise
-     <code class="literal">
+     <code>
       false
      </code>
      .
     </p>
     <p>
      The caller must have the
-     <code class="literal">
+     <code>
       MAINTAIN
      </code>
      privilege on the table or be the owner of the database.
@@ -3900,7 +3900,7 @@ SELECT pg_restore_relation_stats( 'schemaname', 'myschema', 'relname',    'mytab
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_clear_relation_stats
      </code>
      (
@@ -3909,7 +3909,7 @@ SELECT pg_restore_relation_stats( 'schemaname', 'myschema', 'relname',    'mytab
        schemaname
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -3918,11 +3918,11 @@ SELECT pg_restore_relation_stats( 'schemaname', 'myschema', 'relname',    'mytab
        relname
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -3931,7 +3931,7 @@ SELECT pg_restore_relation_stats( 'schemaname', 'myschema', 'relname',    'mytab
     </p>
     <p>
      The caller must have the
-     <code class="literal">
+     <code>
       MAINTAIN
      </code>
      privilege on the table or be the owner of the database.
@@ -3941,11 +3941,11 @@ SELECT pg_restore_relation_stats( 'schemaname', 'myschema', 'relname',    'mytab
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_restore_attribute_stats
      </code>
      (
-     <code class="literal">
+     <code>
       VARIADIC
      </code>
      <em class="parameter">
@@ -3953,11 +3953,11 @@ SELECT pg_restore_relation_stats( 'schemaname', 'myschema', 'relname',    'mytab
        kwargs
       </code>
      </em>
-     <code class="type">
+     <code>
       "any"
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -3975,7 +3975,7 @@ SELECT pg_restore_relation_stats( 'schemaname', 'myschema', 'relname',    'mytab
       </span>
      </a>
      , so it's not necessary to call this function.  However, it is useful after a restore to enable the optimizer to choose better plans if
-     <code class="command">
+     <code>
       ANALYZE
      </code>
      has not been run yet.
@@ -3996,25 +3996,25 @@ SELECT pg_restore_relation_stats( 'schemaname', 'myschema', 'relname',    'mytab
      in the form:
     </p>
     <pre class="programlisting">
-SELECT pg_restore_attribute_stats( '<em class="replaceable"><code>arg1name</code></em>', '<em class="replaceable"><code>arg1value</code></em>'::<em class="replaceable"><code>arg1type</code></em>, '<em class="replaceable"><code>arg2name</code></em>', '<em class="replaceable"><code>arg2value</code></em>'::<em class="replaceable"><code>arg2type</code></em>, '<em class="replaceable"><code>arg3name</code></em>', '<em class="replaceable"><code>arg3value</code></em>'::<em class="replaceable"><code>arg3type</code></em>);
+SELECT pg_restore_attribute_stats( '<code>arg1name</code>', '<code>arg1value</code>'::<code>arg1type</code>, '<code>arg2name</code>', '<code>arg2value</code>'::<code>arg2type</code>, '<code>arg3name</code>', '<code>arg3value</code>'::<code>arg3type</code>);
 </pre>
     <p>
     </p>
     <p>
      For example, to set the
-     <code class="structfield">
+     <code>
       avg_width
      </code>
      and
-     <code class="structfield">
+     <code>
       null_frac
      </code>
      values for the attribute
-     <code class="structfield">
+     <code>
       col1
      </code>
      of the table
-     <code class="structname">
+     <code>
       mytable
      </code>
      :
@@ -4026,40 +4026,40 @@ SELECT pg_restore_attribute_stats( 'schemaname', 'myschema', 'relname',    'myta
     </p>
     <p>
      The required arguments are
-     <code class="literal">
+     <code>
       schemaname
      </code>
      and
-     <code class="literal">
+     <code>
       relname
      </code>
      with a value of type
-     <code class="type">
+     <code>
       text
      </code>
      which specify the table; either
-     <code class="literal">
+     <code>
       attname
      </code>
      with a value of type
-     <code class="type">
+     <code>
       text
      </code>
      or
-     <code class="literal">
+     <code>
       attnum
      </code>
      with a value of type
-     <code class="type">
+     <code>
       smallint
      </code>
      , which specifies the column; and
-     <code class="literal">
+     <code>
       inherited
      </code>
      , which specifies whether the statistics include values from child tables.  Other arguments are the names and values of statistics corresponding to columns in
      <a class="link" href="view-pg-stats.md" title="53.29. pg_stats">
-      <code class="structname">
+      <code>
        pg_stats
       </code>
      </a>
@@ -4067,11 +4067,11 @@ SELECT pg_restore_attribute_stats( 'schemaname', 'myschema', 'relname',    'myta
     </p>
     <p>
      Additionally, this function accepts argument name
-     <code class="literal">
+     <code>
       version
      </code>
      of type
-     <code class="type">
+     <code>
       integer
      </code>
      , which specifies the server version from which the statistics originated. This is anticipated to be helpful in porting statistics from older versions of
@@ -4082,22 +4082,22 @@ SELECT pg_restore_attribute_stats( 'schemaname', 'myschema', 'relname',    'myta
     </p>
     <p>
      Minor errors are reported as a
-     <code class="literal">
+     <code>
       WARNING
      </code>
      and ignored, and remaining statistics will still be restored. If all specified statistics are successfully restored, returns
-     <code class="literal">
+     <code>
       true
      </code>
      , otherwise
-     <code class="literal">
+     <code>
       false
      </code>
      .
     </p>
     <p>
      The caller must have the
-     <code class="literal">
+     <code>
       MAINTAIN
      </code>
      privilege on the table or be the owner of the database.
@@ -4107,7 +4107,7 @@ SELECT pg_restore_attribute_stats( 'schemaname', 'myschema', 'relname',    'myta
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_clear_attribute_stats
      </code>
      (
@@ -4116,7 +4116,7 @@ SELECT pg_restore_attribute_stats( 'schemaname', 'myschema', 'relname',    'myta
        schemaname
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -4125,7 +4125,7 @@ SELECT pg_restore_attribute_stats( 'schemaname', 'myschema', 'relname',    'myta
        relname
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -4134,7 +4134,7 @@ SELECT pg_restore_attribute_stats( 'schemaname', 'myschema', 'relname',    'myta
        attname
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -4143,11 +4143,11 @@ SELECT pg_restore_attribute_stats( 'schemaname', 'myschema', 'relname',    'myta
        inherited
       </code>
      </em>
-     <code class="type">
+     <code>
       boolean
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -4156,7 +4156,7 @@ SELECT pg_restore_attribute_stats( 'schemaname', 'myschema', 'relname',    'myta
     </p>
     <p>
      The caller must have the
-     <code class="literal">
+     <code>
       MAINTAIN
      </code>
      privilege on the table or be the owner of the database.
@@ -4181,7 +4181,7 @@ SELECT pg_restore_attribute_stats( 'schemaname', 'myschema', 'relname',    'myta
 
 
 
-<table border="1" class="table" summary="Partitioning Information Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -4201,15 +4201,15 @@ SELECT pg_restore_attribute_stats( 'schemaname', 'myschema', 'relname',    'myta
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_partition_tree
      </code>
      (
-     <code class="type">
+     <code>
       regclass
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -4218,7 +4218,7 @@ SELECT pg_restore_attribute_stats( 'schemaname', 'myschema', 'relname',    'myta
        relid
       </code>
      </em>
-     <code class="type">
+     <code>
       regclass
      </code>
      ,
@@ -4227,7 +4227,7 @@ SELECT pg_restore_attribute_stats( 'schemaname', 'myschema', 'relname',    'myta
        parentrelid
       </code>
      </em>
-     <code class="type">
+     <code>
       regclass
      </code>
      ,
@@ -4236,7 +4236,7 @@ SELECT pg_restore_attribute_stats( 'schemaname', 'myschema', 'relname',    'myta
        isleaf
       </code>
      </em>
-     <code class="type">
+     <code>
       boolean
      </code>
      ,
@@ -4245,7 +4245,7 @@ SELECT pg_restore_attribute_stats( 'schemaname', 'myschema', 'relname',    'myta
        level
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
@@ -4258,15 +4258,15 @@ SELECT pg_restore_attribute_stats( 'schemaname', 'myschema', 'relname',    'myta
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_partition_ancestors
      </code>
      (
-     <code class="type">
+     <code>
       regclass
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof regclass
      </code>
     </p>
@@ -4278,21 +4278,21 @@ SELECT pg_restore_attribute_stats( 'schemaname', 'myschema', 'relname',    'myta
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_partition_root
      </code>
      (
-     <code class="type">
+     <code>
       regclass
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       regclass
      </code>
     </p>
     <p>
      Returns the top-most parent of the partition tree to which the given relation belongs.  Returns
-     <code class="literal">
+     <code>
       NULL
      </code>
      if the relation does not exist or is not a partition or partitioned table.
@@ -4326,7 +4326,7 @@ SELECT pg_size_pretty(sum(pg_relation_size(relid))) AS total_size
 
 
 
-<table border="1" class="table" summary="Index Maintenance Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -4346,7 +4346,7 @@ SELECT pg_size_pretty(sum(pg_relation_size(relid))) AS total_size
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       brin_summarize_new_values
      </code>
      (
@@ -4355,11 +4355,11 @@ SELECT pg_size_pretty(sum(pg_relation_size(relid))) AS total_size
        index
       </code>
      </em>
-     <code class="type">
+     <code>
       regclass
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -4371,7 +4371,7 @@ SELECT pg_size_pretty(sum(pg_relation_size(relid))) AS total_size
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       brin_summarize_range
      </code>
      (
@@ -4380,7 +4380,7 @@ SELECT pg_size_pretty(sum(pg_relation_size(relid))) AS total_size
        index
       </code>
      </em>
-     <code class="type">
+     <code>
       regclass
      </code>
      ,
@@ -4389,17 +4389,17 @@ SELECT pg_size_pretty(sum(pg_relation_size(relid))) AS total_size
        blockNumber
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Summarizes the page range covering the given block, if not already summarized.  This is like
-     <code class="function">
+     <code>
       brin_summarize_new_values
      </code>
      except that it only processes the page range that covers the given table block number.
@@ -4409,7 +4409,7 @@ SELECT pg_size_pretty(sum(pg_relation_size(relid))) AS total_size
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       brin_desummarize_range
      </code>
      (
@@ -4418,7 +4418,7 @@ SELECT pg_size_pretty(sum(pg_relation_size(relid))) AS total_size
        index
       </code>
      </em>
-     <code class="type">
+     <code>
       regclass
      </code>
      ,
@@ -4427,11 +4427,11 @@ SELECT pg_size_pretty(sum(pg_relation_size(relid))) AS total_size
        blockNumber
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -4443,7 +4443,7 @@ SELECT pg_size_pretty(sum(pg_relation_size(relid))) AS total_size
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       gin_clean_pending_list
      </code>
      (
@@ -4452,11 +4452,11 @@ SELECT pg_size_pretty(sum(pg_relation_size(relid))) AS total_size
        index
       </code>
      </em>
-     <code class="type">
+     <code>
       regclass
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
@@ -4470,7 +4470,7 @@ SELECT pg_size_pretty(sum(pg_relation_size(relid))) AS total_size
       ”
      </span>
      list of the specified GIN index by moving entries in it, in bulk, to the main GIN data structure. Returns the number of pages removed from the pending list. If the argument is a GIN index built with the
-     <code class="literal">
+     <code>
       fastupdate
      </code>
      option disabled, no cleanup happens and the result is zero, because the index doesn't have a pending list. See
@@ -4482,7 +4482,7 @@ SELECT pg_size_pretty(sum(pg_relation_size(relid))) AS total_size
       Section 65.4.5
      </a>
      for details about the pending list and
-     <code class="literal">
+     <code>
       fastupdate
      </code>
      option.
@@ -4512,7 +4512,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
 
 
 
-<table border="1" class="table" summary="Generic File Access Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -4532,7 +4532,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_ls_dir
      </code>
      (
@@ -4541,7 +4541,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        dirname
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -4552,7 +4552,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
         missing_ok
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
       ,
@@ -4561,12 +4561,12 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
         include_dot_dirs
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       setof text
      </code>
     </p>
@@ -4600,7 +4600,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
       </code>
      </em>
      is
-     <code class="literal">
+     <code>
       true
      </code>
      , to distinguish an empty directory from a non-existent directory.
@@ -4613,11 +4613,11 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_ls_logdir
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -4626,7 +4626,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -4635,7 +4635,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        size
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ,
@@ -4644,7 +4644,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        modification
       </code>
      </em>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      )
@@ -4654,7 +4654,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
     </p>
     <p>
      This function is restricted to superusers and roles with privileges of the
-     <code class="literal">
+     <code>
       pg_monitor
      </code>
      role by default, but other users can be granted EXECUTE to run the function.
@@ -4664,11 +4664,11 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_ls_waldir
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -4677,7 +4677,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -4686,7 +4686,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        size
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ,
@@ -4695,7 +4695,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        modification
       </code>
      </em>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      )
@@ -4705,7 +4705,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
     </p>
     <p>
      This function is restricted to superusers and roles with privileges of the
-     <code class="literal">
+     <code>
       pg_monitor
      </code>
      role by default, but other users can be granted EXECUTE to run the function.
@@ -4715,11 +4715,11 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_ls_logicalmapdir
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -4728,7 +4728,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -4737,7 +4737,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        size
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ,
@@ -4746,21 +4746,21 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        modification
       </code>
      </em>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      )
     </p>
     <p>
      Returns the name, size, and last modification time (mtime) of each ordinary file in the server's
-     <code class="filename">
+     <code>
       pg_logical/mappings
      </code>
      directory. Filenames beginning with a dot, directories, and other special files are excluded.
     </p>
     <p>
      This function is restricted to superusers and members of the
-     <code class="literal">
+     <code>
       pg_monitor
      </code>
      role by default, but other users can be granted EXECUTE to run the function.
@@ -4770,11 +4770,11 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_ls_logicalsnapdir
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -4783,7 +4783,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -4792,7 +4792,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        size
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ,
@@ -4801,21 +4801,21 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        modification
       </code>
      </em>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      )
     </p>
     <p>
      Returns the name, size, and last modification time (mtime) of each ordinary file in the server's
-     <code class="filename">
+     <code>
       pg_logical/snapshots
      </code>
      directory. Filenames beginning with a dot, directories, and other special files are excluded.
     </p>
     <p>
      This function is restricted to superusers and members of the
-     <code class="literal">
+     <code>
       pg_monitor
      </code>
      role by default, but other users can be granted EXECUTE to run the function.
@@ -4825,7 +4825,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_ls_replslotdir
      </code>
      (
@@ -4834,11 +4834,11 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        slot_name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -4847,7 +4847,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -4856,7 +4856,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        size
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ,
@@ -4865,14 +4865,14 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        modification
       </code>
      </em>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      )
     </p>
     <p>
      Returns the name, size, and last modification time (mtime) of each ordinary file in the server's
-     <code class="filename">
+     <code>
       pg_replslot/slot_name
      </code>
      directory, where
@@ -4885,7 +4885,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
     </p>
     <p>
      This function is restricted to superusers and members of the
-     <code class="literal">
+     <code>
       pg_monitor
      </code>
      role by default, but other users can be granted EXECUTE to run the function.
@@ -4895,11 +4895,11 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_ls_summariesdir
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -4908,7 +4908,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -4917,7 +4917,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        size
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ,
@@ -4926,21 +4926,21 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        modification
       </code>
      </em>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      )
     </p>
     <p>
      Returns the name, size, and last modification time (mtime) of each ordinary file in the server's WAL summaries directory (
-     <code class="filename">
+     <code>
       pg_wal/summaries
      </code>
      ).  Filenames beginning with a dot, directories, and other special files are excluded.
     </p>
     <p>
      This function is restricted to superusers and members of the
-     <code class="literal">
+     <code>
       pg_monitor
      </code>
      role by default, but other users can be granted EXECUTE to run the function.
@@ -4950,11 +4950,11 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_ls_archive_statusdir
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -4963,7 +4963,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -4972,7 +4972,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        size
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ,
@@ -4981,21 +4981,21 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        modification
       </code>
      </em>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      )
     </p>
     <p>
      Returns the name, size, and last modification time (mtime) of each ordinary file in the server's WAL archive status directory (
-     <code class="filename">
+     <code>
       pg_wal/archive_status
      </code>
      ).  Filenames beginning with a dot, directories, and other special files are excluded.
     </p>
     <p>
      This function is restricted to superusers and members of the
-     <code class="literal">
+     <code>
       pg_monitor
      </code>
      role by default, but other users can be granted EXECUTE to run the function.
@@ -5005,7 +5005,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_ls_tmpdir
      </code>
      ( [
@@ -5015,12 +5015,12 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
         tablespace
        </code>
       </em>
-      <code class="type">
+      <code>
        oid
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -5029,7 +5029,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -5038,7 +5038,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        size
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ,
@@ -5047,7 +5047,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        modification
       </code>
      </em>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      )
@@ -5066,14 +5066,14 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
       </code>
      </em>
      is not provided, the
-     <code class="literal">
+     <code>
       pg_default
      </code>
      tablespace is examined.  Filenames beginning with a dot, directories, and other special files are excluded.
     </p>
     <p>
      This function is restricted to superusers and members of the
-     <code class="literal">
+     <code>
       pg_monitor
      </code>
      role by default, but other users can be granted EXECUTE to run the function.
@@ -5083,7 +5083,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_read_file
      </code>
      (
@@ -5092,7 +5092,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        filename
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -5103,7 +5103,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
         offset
        </code>
       </em>
-      <code class="type">
+      <code>
        bigint
       </code>
       ,
@@ -5112,7 +5112,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
         length
        </code>
       </em>
-      <code class="type">
+      <code>
        bigint
       </code>
      </span>
@@ -5124,12 +5124,12 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
         missing_ok
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -5174,7 +5174,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_read_binary_file
      </code>
      (
@@ -5183,7 +5183,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
        filename
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -5194,7 +5194,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
         offset
        </code>
       </em>
-      <code class="type">
+      <code>
        bigint
       </code>
       ,
@@ -5203,7 +5203,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
         length
        </code>
       </em>
-      <code class="type">
+      <code>
        bigint
       </code>
      </span>
@@ -5215,26 +5215,26 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
         missing_ok
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
     <p>
      Returns all or part of a file.  This function is identical to
-     <code class="function">
+     <code>
       pg_read_file
      </code>
      except that it can read arbitrary binary data, returning the result as
-     <code class="type">
+     <code>
       bytea
      </code>
      not
-     <code class="type">
+     <code>
       text
      </code>
      ; accordingly, no encoding checks are performed.
@@ -5244,7 +5244,7 @@ Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que espe
     </p>
     <p>
      In combination with the
-     <code class="function">
+     <code>
       convert_from
      </code>
      function, this function can be used to read a text file in a specified encoding and convert to the database's encoding:
@@ -5259,7 +5259,7 @@ SELECT convert_from(pg_read_binary_file('file_in_utf8.txt'), 'UTF8');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_file
      </code>
      (
@@ -5268,7 +5268,7 @@ SELECT convert_from(pg_read_binary_file('file_in_utf8.txt'), 'UTF8');
        filename
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -5279,12 +5279,12 @@ SELECT convert_from(pg_read_binary_file('file_in_utf8.txt'), 'UTF8');
         missing_ok
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       record
      </code>
      (
@@ -5293,7 +5293,7 @@ SELECT convert_from(pg_read_binary_file('file_in_utf8.txt'), 'UTF8');
        size
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ,
@@ -5302,7 +5302,7 @@ SELECT convert_from(pg_read_binary_file('file_in_utf8.txt'), 'UTF8');
        access
       </code>
      </em>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      ,
@@ -5311,7 +5311,7 @@ SELECT convert_from(pg_read_binary_file('file_in_utf8.txt'), 'UTF8');
        modification
       </code>
      </em>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      ,
@@ -5320,7 +5320,7 @@ SELECT convert_from(pg_read_binary_file('file_in_utf8.txt'), 'UTF8');
        change
       </code>
      </em>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      ,
@@ -5329,7 +5329,7 @@ SELECT convert_from(pg_read_binary_file('file_in_utf8.txt'), 'UTF8');
        creation
       </code>
      </em>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      ,
@@ -5338,7 +5338,7 @@ SELECT convert_from(pg_read_binary_file('file_in_utf8.txt'), 'UTF8');
        isdir
       </code>
      </em>
-     <code class="type">
+     <code>
       boolean
      </code>
      )
@@ -5370,7 +5370,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
 
 
 
-<table border="1" class="table" summary="Advisory Lock Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -5390,7 +5390,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_advisory_lock
      </code>
      (
@@ -5399,16 +5399,16 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_advisory_lock
      </code>
      (
@@ -5417,7 +5417,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key1
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -5426,11 +5426,11 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key2
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -5442,7 +5442,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_advisory_lock_shared
      </code>
      (
@@ -5451,16 +5451,16 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_advisory_lock_shared
      </code>
      (
@@ -5469,7 +5469,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key1
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -5478,11 +5478,11 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key2
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -5494,7 +5494,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_advisory_unlock
      </code>
      (
@@ -5503,16 +5503,16 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_advisory_unlock
      </code>
      (
@@ -5521,7 +5521,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key1
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -5530,21 +5530,21 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key2
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Releases a previously-acquired exclusive session-level advisory lock. Returns
-     <code class="literal">
+     <code>
       true
      </code>
      if the lock is successfully released. If the lock was not held,
-     <code class="literal">
+     <code>
       false
      </code>
      is returned, and in addition, an SQL warning will be reported by the server.
@@ -5554,11 +5554,11 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_advisory_unlock_all
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -5570,7 +5570,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_advisory_unlock_shared
      </code>
      (
@@ -5579,16 +5579,16 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_advisory_unlock_shared
      </code>
      (
@@ -5597,7 +5597,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key1
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -5606,21 +5606,21 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key2
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Releases a previously-acquired shared session-level advisory lock. Returns
-     <code class="literal">
+     <code>
       true
      </code>
      if the lock is successfully released. If the lock was not held,
-     <code class="literal">
+     <code>
       false
      </code>
      is returned, and in addition, an SQL warning will be reported by the server.
@@ -5630,7 +5630,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_advisory_xact_lock
      </code>
      (
@@ -5639,16 +5639,16 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_advisory_xact_lock
      </code>
      (
@@ -5657,7 +5657,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key1
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -5666,11 +5666,11 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key2
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -5682,7 +5682,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_advisory_xact_lock_shared
      </code>
      (
@@ -5691,16 +5691,16 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_advisory_xact_lock_shared
      </code>
      (
@@ -5709,7 +5709,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key1
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -5718,11 +5718,11 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key2
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -5734,7 +5734,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_try_advisory_lock
      </code>
      (
@@ -5743,16 +5743,16 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_try_advisory_lock
      </code>
      (
@@ -5761,7 +5761,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key1
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -5770,21 +5770,21 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key2
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Obtains an exclusive session-level advisory lock if available. This will either obtain the lock immediately and return
-     <code class="literal">
+     <code>
       true
      </code>
      , or return
-     <code class="literal">
+     <code>
       false
      </code>
      without waiting if the lock cannot be acquired immediately.
@@ -5794,7 +5794,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_try_advisory_lock_shared
      </code>
      (
@@ -5803,16 +5803,16 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_try_advisory_lock_shared
      </code>
      (
@@ -5821,7 +5821,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key1
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -5830,21 +5830,21 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key2
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Obtains a shared session-level advisory lock if available. This will either obtain the lock immediately and return
-     <code class="literal">
+     <code>
       true
      </code>
      , or return
-     <code class="literal">
+     <code>
       false
      </code>
      without waiting if the lock cannot be acquired immediately.
@@ -5854,7 +5854,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_try_advisory_xact_lock
      </code>
      (
@@ -5863,16 +5863,16 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_try_advisory_xact_lock
      </code>
      (
@@ -5881,7 +5881,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key1
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -5890,21 +5890,21 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key2
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Obtains an exclusive transaction-level advisory lock if available. This will either obtain the lock immediately and return
-     <code class="literal">
+     <code>
       true
      </code>
      , or return
-     <code class="literal">
+     <code>
       false
      </code>
      without waiting if the lock cannot be acquired immediately.
@@ -5914,7 +5914,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_try_advisory_xact_lock_shared
      </code>
      (
@@ -5923,16 +5923,16 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_try_advisory_xact_lock_shared
      </code>
      (
@@ -5941,7 +5941,7 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key1
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -5950,21 +5950,21 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
        key2
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Obtains a shared transaction-level advisory lock if available. This will either obtain the lock immediately and return
-     <code class="literal">
+     <code>
       true
      </code>
      , or return
-     <code class="literal">
+     <code>
       false
      </code>
      without waiting if the lock cannot be acquired immediately.

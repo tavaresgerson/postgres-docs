@@ -131,7 +131,7 @@ Essa notação se comporta de maneira diferente, dependendo do contexto; consult
 
 Existem duas possíveis sintaxes para uma invocação de operador:
 
-<table border="0" class="simplelist" summary="Simple list">
+<table>
  <tr>
   <td>
    <em class="replaceable">

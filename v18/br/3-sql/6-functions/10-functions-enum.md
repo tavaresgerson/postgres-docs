@@ -10,7 +10,7 @@ CREATE TYPE rainbow AS ENUM ('red', 'orange', 'yellow', 'green', 'blue', 'purple
 
 
 
-<table border="1" class="table" summary="Enum Support Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -33,15 +33,15 @@ CREATE TYPE rainbow AS ENUM ('red', 'orange', 'yellow', 'green', 'blue', 'purple
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       enum_first
      </code>
      (
-     <code class="type">
+     <code>
       anyenum
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anyenum
      </code>
     </p>
@@ -49,11 +49,11 @@ CREATE TYPE rainbow AS ENUM ('red', 'orange', 'yellow', 'green', 'blue', 'purple
      Returns the first value of the input enum type.
     </p>
     <p>
-     <code class="literal">
+     <code>
       enum_first(null::rainbow)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       red
      </code>
     </p>
@@ -62,15 +62,15 @@ CREATE TYPE rainbow AS ENUM ('red', 'orange', 'yellow', 'green', 'blue', 'purple
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       enum_last
      </code>
      (
-     <code class="type">
+     <code>
       anyenum
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anyenum
      </code>
     </p>
@@ -78,11 +78,11 @@ CREATE TYPE rainbow AS ENUM ('red', 'orange', 'yellow', 'green', 'blue', 'purple
      Returns the last value of the input enum type.
     </p>
     <p>
-     <code class="literal">
+     <code>
       enum_last(null::rainbow)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       purple
      </code>
     </p>
@@ -91,15 +91,15 @@ CREATE TYPE rainbow AS ENUM ('red', 'orange', 'yellow', 'green', 'blue', 'purple
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       enum_range
      </code>
      (
-     <code class="type">
+     <code>
       anyenum
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anyarray
      </code>
     </p>
@@ -107,11 +107,11 @@ CREATE TYPE rainbow AS ENUM ('red', 'orange', 'yellow', 'green', 'blue', 'purple
      Returns all values of the input enum type in an ordered array.
     </p>
     <p>
-     <code class="literal">
+     <code>
       enum_range(null::rainbow)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {red,orange,yellow,​green,blue,purple}
      </code>
     </p>
@@ -120,19 +120,19 @@ CREATE TYPE rainbow AS ENUM ('red', 'orange', 'yellow', 'green', 'blue', 'purple
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       enum_range
      </code>
      (
-     <code class="type">
+     <code>
       anyenum
      </code>
      ,
-     <code class="type">
+     <code>
       anyenum
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anyarray
      </code>
     </p>
@@ -140,29 +140,29 @@ CREATE TYPE rainbow AS ENUM ('red', 'orange', 'yellow', 'green', 'blue', 'purple
      Returns the range between the two given enum values, as an ordered array. The values must be from the same enum type. If the first parameter is null, the result will start with the first value of the enum type. If the second parameter is null, the result will end with the last value of the enum type.
     </p>
     <p>
-     <code class="literal">
+     <code>
       enum_range('orange'::rainbow, 'green'::rainbow)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {orange,yellow,green}
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       enum_range(NULL, 'green'::rainbow)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {red,orange,​yellow,green}
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       enum_range('orange'::rainbow, NULL)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {orange,yellow,green,​blue,purple}
      </code>
     </p>

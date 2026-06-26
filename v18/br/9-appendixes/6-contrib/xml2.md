@@ -20,7 +20,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
 
 
 
-<table border="1" class="table" summary="xml2 Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -40,7 +40,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       xml_valid
      </code>
      (
@@ -49,21 +49,21 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
        document
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Parses the given document and returns true if the document is well-formed XML.  (Note: this is an alias for the standard PostgreSQL function
-     <code class="function">
+     <code>
       xml_is_well_formed()
      </code>
      .  The name
-     <code class="function">
+     <code>
       xml_valid()
      </code>
      is technically incorrect since validity and well-formedness have different meanings in XML.)
@@ -73,7 +73,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       xpath_string
      </code>
      (
@@ -82,7 +82,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
        document
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -91,17 +91,17 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
        query
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Evaluates the XPath query on the supplied document, and casts the result to
-     <code class="type">
+     <code>
       text
      </code>
      .
@@ -111,7 +111,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       xpath_number
      </code>
      (
@@ -120,7 +120,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
        document
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -129,17 +129,17 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
        query
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       real
      </code>
     </p>
     <p>
      Evaluates the XPath query on the supplied document, and casts the result to
-     <code class="type">
+     <code>
       real
      </code>
      .
@@ -149,7 +149,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       xpath_bool
      </code>
      (
@@ -158,7 +158,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
        document
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -167,17 +167,17 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
        query
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Evaluates the XPath query on the supplied document, and casts the result to
-     <code class="type">
+     <code>
       boolean
      </code>
      .
@@ -187,7 +187,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       xpath_nodeset
      </code>
      (
@@ -196,7 +196,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
        document
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -205,7 +205,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
        query
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -214,7 +214,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
        toptag
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -223,11 +223,11 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
        itemtag
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -257,7 +257,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       xpath_nodeset
      </code>
      (
@@ -266,7 +266,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
        document
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -275,7 +275,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
        query
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -284,17 +284,17 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
        itemtag
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Like
-     <code class="function">
+     <code>
       xpath_nodeset(document, query, toptag, itemtag)
      </code>
      but result omits
@@ -310,7 +310,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       xpath_nodeset
      </code>
      (
@@ -319,7 +319,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
        document
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -328,17 +328,17 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
        query
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Like
-     <code class="function">
+     <code>
       xpath_nodeset(document, query, toptag, itemtag)
      </code>
      but result omits both tags.
@@ -348,7 +348,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       xpath_list
      </code>
      (
@@ -357,7 +357,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
        document
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -366,7 +366,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
        query
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -375,17 +375,17 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
        separator
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Evaluates the query on the document and returns multiple values separated by the specified separator, for example
-     <code class="literal">
+     <code>
       Value 1,Value 2,Value 3
      </code>
      if
@@ -395,7 +395,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
       </code>
      </em>
      is
-     <code class="literal">
+     <code>
       ,
      </code>
      .
@@ -405,7 +405,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       xpath_list
      </code>
      (
@@ -414,7 +414,7 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
        document
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -423,17 +423,17 @@ A partir do PostgreSQL 8.3, há funcionalidades relacionadas a XML baseadas no p
        query
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      This is a wrapper for the above function that uses
-     <code class="literal">
+     <code>
       ,
      </code>
      as the separator.
@@ -461,7 +461,7 @@ xpath_table(text key, text document, text relation, text xpaths, text criteria) 
 
 
 
-<table border="1" class="table" summary="xpath_table Parameters">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -538,7 +538,7 @@ xpath_table(text key, text document, text relation, text xpaths, text criteria) 
    <td>
     <p>
      uma ou mais expressões XPath, separadas por
-     <code class="literal">
+     <code>
       |
      </code>
     </p>
@@ -555,11 +555,11 @@ xpath_table(text key, text document, text relation, text xpaths, text criteria) 
    <td>
     <p>
      os conteúdos da cláusula WHERE. Isso não pode ser omitido, então use
-     <code class="literal">
+     <code>
       true
      </code>
      ou
-     <code class="literal">
+     <code>
       1=1
      </code>
      se você quiser processar todas as linhas na relação

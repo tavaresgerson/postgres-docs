@@ -6,7 +6,7 @@
 
 
 
-<table border="1" class="table" summary="UUID Generation Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -29,20 +29,20 @@
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       gen_random_uuid
      </code>
      ( )
-     <code class="returnvalue">
+     <code>
       uuid
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       uuidv4
      </code>
      ( )
-     <code class="returnvalue">
+     <code>
       uuid
      </code>
     </p>
@@ -50,20 +50,20 @@
      Gera uma versão 4 (aleatória) de UUID
     </p>
     <p>
-     <code class="literal">
+     <code>
       gen_random_uuid()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       5b30857f-0bfa-48b5-ac0b-5c64e28078d1
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       uuidv4()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       b42410ee-132f-42ee-9e4f-09a6485c95b8
      </code>
     </p>
@@ -72,7 +72,7 @@
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       uuidv7
      </code>
      ( [
@@ -82,12 +82,12 @@
         shift
        </code>
       </em>
-      <code class="type">
+      <code>
        interval
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       uuid
      </code>
     </p>
@@ -99,17 +99,17 @@
       </code>
      </em>
      mudará o horário de registro calculado pelo dado
-     <code class="type">
+     <code>
       interval
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       uuidv7()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       019535d9-3df7-79fb-b466-fa907fa17f9e
      </code>
     </p>
@@ -126,7 +126,7 @@ O módulo [uuid-ossp](uuid-ossp.md) fornece funções adicionais que implementam
 
 **Tabela 9.46. Funções de extração de UUID**
 
-<table border="1" class="table" summary="UUID Extraction Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -149,31 +149,31 @@ O módulo [uuid-ossp](uuid-ossp.md) fornece funções adicionais que implementam
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       uuid_extract_timestamp
      </code>
      (
-     <code class="type">
+     <code>
       uuid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
     <p>
      Extrai um
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      de uma UUID da versão 1 ou 7. Para outras versões, essa função retorna null. Observe que o timestamp extraído não é necessariamente exatamente igual ao momento em que a UUID foi gerada; isso depende da implementação que gerou a UUID.
     </p>
     <p>
-     <code class="literal">
+     <code>
       uuid_extract_timestamp('019535d9-3df7-79fb-b466-​fa907fa17f9e'::uuid)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2025-02-23 21:46:24.503-05
      </code>
     </p>
@@ -182,15 +182,15 @@ O módulo [uuid-ossp](uuid-ossp.md) fornece funções adicionais que implementam
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       uuid_extract_version
      </code>
      (
-     <code class="type">
+     <code>
       uuid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       smallint
      </code>
     </p>
@@ -200,26 +200,26 @@ O módulo [uuid-ossp](uuid-ossp.md) fornece funções adicionais que implementam
       RFC 9562
      </a>
      Para outras variantes, essa função retorna null. Por exemplo, para uma UUID gerada por
-     <code class="function">
+     <code>
       gen_random_uuid()
      </code>
      , essa função retornará 4.
     </p>
     <p>
-     <code class="literal">
+     <code>
       uuid_extract_version('41db1265-8bc1-4ab3-992f-​885799a4af1d'::uuid)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       4
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       uuid_extract_version('019535d9-3df7-79fb-b466-​fa907fa17f9e'::uuid)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       7
      </code>
     </p>

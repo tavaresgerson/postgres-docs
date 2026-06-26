@@ -24,7 +24,7 @@ A distribuição principal do PostgreSQL inclui as classes de operadores SP-GiST
 
 
 
-<table border="1" class="table" summary="Built-in SP-GiST Operator Classes">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -46,106 +46,106 @@ A distribuição principal do PostgreSQL inclui as classes de operadores SP-GiST
  <tbody>
   <tr>
    <td rowspan="12" valign="middle">
-    <code class="literal">
+    <code>
      box_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt; (box,box)
     </code>
    </td>
    <td rowspan="12" valign="middle">
-    <code class="literal">
+    <code>
      &lt;-&gt; (box,point)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&lt; (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&gt; (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;&gt; (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;@ (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @&gt; (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ~= (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&amp; (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt;| (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&lt;| (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      |&amp;&gt; (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      |&gt;&gt; (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="11" valign="middle">
-    <code class="literal">
+    <code>
      inet_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt; (inet,inet)
     </code>
    </td>
@@ -154,280 +154,280 @@ A distribuição principal do PostgreSQL inclui as classes de operadores SP-GiST
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt;= (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;&gt; (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;&gt;= (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      = (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&gt; (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&amp; (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="6" valign="middle">
-    <code class="literal">
+    <code>
      kd_point_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      |&gt;&gt; (point,point)
     </code>
    </td>
    <td rowspan="6" valign="middle">
-    <code class="literal">
+    <code>
      &lt;-&gt; (point,point)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt; (point,point)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;&gt; (point,point)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt;| (point,point)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ~= (point,point)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;@ (point,box)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="12" valign="middle">
-    <code class="literal">
+    <code>
      poly_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt; (polygon,polygon)
     </code>
    </td>
    <td rowspan="12" valign="middle">
-    <code class="literal">
+    <code>
      &lt;-&gt; (polygon,point)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&lt; (polygon,polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&gt; (polygon,polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;&gt; (polygon,polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;@ (polygon,polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @&gt; (polygon,polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ~= (polygon,polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&amp; (polygon,polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt;| (polygon,polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&lt;| (polygon,polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      |&gt;&gt; (polygon,polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      |&amp;&gt; (polygon,polygon)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="6" valign="middle">
-    <code class="literal">
+    <code>
      quad_point_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      |&gt;&gt; (point,point)
     </code>
    </td>
    <td rowspan="6" valign="middle">
-    <code class="literal">
+    <code>
      &lt;-&gt; (point,point)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt; (point,point)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;&gt; (point,point)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt;| (point,point)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ~= (point,point)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;@ (point,box)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="10" valign="middle">
-    <code class="literal">
+    <code>
      range_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (anyrange,anyrange)
     </code>
    </td>
@@ -436,75 +436,75 @@ A distribuição principal do PostgreSQL inclui as classes de operadores SP-GiST
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&amp; (anyrange,anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @&gt; (anyrange,anyelement)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @&gt; (anyrange,anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;@ (anyrange,anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt; (anyrange,anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;&gt; (anyrange,anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&lt; (anyrange,anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&gt; (anyrange,anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      -|- (anyrange,anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="10" valign="middle">
-    <code class="literal">
+    <code>
      text_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (text,text)
     </code>
    </td>
@@ -513,63 +513,63 @@ A distribuição principal do PostgreSQL inclui as classes de operadores SP-GiST
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (text,text)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (text,text)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (text,text)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (text,text)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ~&lt;~ (text,text)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ~&lt;=~ (text,text)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ~&gt;=~ (text,text)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ~&gt;~ (text,text)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ^@ (text,text)
     </code>
    </td>

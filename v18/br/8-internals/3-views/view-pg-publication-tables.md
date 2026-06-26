@@ -6,7 +6,7 @@ A vista `pg_publication_tables` fornece informações sobre o mapeamento entre a
 
 
 
-<table border="1" class="table" summary="pg_publication_tables Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,20 +26,20 @@ A vista `pg_publication_tables` fornece informações sobre o mapeamento entre a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pubname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (referências
      <a class="link" href="catalog-pg-publication.md" title="52.40. pg_publication">
-      <code class="structname">
+      <code>
        pg_publication
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       pubname
      </code>
      )
@@ -52,20 +52,20 @@ A vista `pg_publication_tables` fornece informações sobre o mapeamento entre a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       schemaname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (referências
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       nspname
      </code>
      )
@@ -78,20 +78,20 @@ A vista `pg_publication_tables` fornece informações sobre o mapeamento entre a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tablename
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       relname
      </code>
      )
@@ -104,20 +104,20 @@ A vista `pg_publication_tables` fornece informações sobre o mapeamento entre a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attnames
      </code>
-     <code class="type">
+     <code>
       name[]
      </code>
      (referências
      <a class="link" href="catalog-pg-attribute.md" title="52.7. pg_attribute">
-      <code class="structname">
+      <code>
        pg_attribute
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       attname
      </code>
      )
@@ -130,10 +130,10 @@ A vista `pg_publication_tables` fornece informações sobre o mapeamento entre a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rowfilter
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>

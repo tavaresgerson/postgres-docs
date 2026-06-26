@@ -29,7 +29,7 @@ Para saber mais sobre o padrão SQL/JSON, consulte [[sqltr-19075-6]] (biblio.md#
 
 
 
-<table border="1" class="table" summary="json and jsonb Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -52,32 +52,32 @@ Para saber mais sobre o padrão SQL/JSON, consulte [[sqltr-19075-6]] (biblio.md#
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       json
      </code>
-     <code class="literal">
+     <code>
       -&gt;
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
      →
-     <code class="returnvalue">
+     <code>
       json
      </code>
     </p>
     <p class="func_signature">
-     <code class="type">
+     <code>
       jsonb
      </code>
-     <code class="literal">
+     <code>
       -&gt;
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
      →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
@@ -91,20 +91,20 @@ Para saber mais sobre o padrão SQL/JSON, consulte [[sqltr-19075-6]] (biblio.md#
      'O elemento do array JSON (os elementos do array são indexados a partir de zero, mas os inteiros negativos contam a partir do final).
     </p>
     <p>
-     <code class="literal">
+     <code>
       '[{"a":"foo"},{"b":"bar"},{"c":"baz"}]'::json -&gt; 2
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"c":"baz"}
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       '[{"a":"foo"},{"b":"bar"},{"c":"baz"}]'::json -&gt; -3
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"a":"foo"}
      </code>
     </p>
@@ -113,32 +113,32 @@ Para saber mais sobre o padrão SQL/JSON, consulte [[sqltr-19075-6]] (biblio.md#
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       json
      </code>
-     <code class="literal">
+     <code>
       -&gt;
      </code>
-     <code class="type">
+     <code>
       text
      </code>
      →
-     <code class="returnvalue">
+     <code>
       json
      </code>
     </p>
     <p class="func_signature">
-     <code class="type">
+     <code>
       jsonb
      </code>
-     <code class="literal">
+     <code>
       -&gt;
      </code>
-     <code class="type">
+     <code>
       text
      </code>
      →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
@@ -146,11 +146,11 @@ Para saber mais sobre o padrão SQL/JSON, consulte [[sqltr-19075-6]] (biblio.md#
      Extrai o campo do objeto JSON com a chave fornecida.
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{"a": {"b":"foo"}}'::json -&gt; 'a'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"b":"foo"}
      </code>
     </p>
@@ -159,32 +159,32 @@ Para saber mais sobre o padrão SQL/JSON, consulte [[sqltr-19075-6]] (biblio.md#
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       json
      </code>
-     <code class="literal">
+     <code>
       -&gt;&gt;
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
      →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p class="func_signature">
-     <code class="type">
+     <code>
       jsonb
      </code>
-     <code class="literal">
+     <code>
       -&gt;&gt;
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
      →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -196,17 +196,17 @@ Para saber mais sobre o padrão SQL/JSON, consulte [[sqltr-19075-6]] (biblio.md#
       </code>
      </em>
      'o elemento do array JSON, como
-     <code class="type">
+     <code>
       text
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       '[1,2,3]'::json -&gt;&gt; 2
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3
      </code>
     </p>
@@ -215,48 +215,48 @@ Para saber mais sobre o padrão SQL/JSON, consulte [[sqltr-19075-6]] (biblio.md#
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       json
      </code>
-     <code class="literal">
+     <code>
       -&gt;&gt;
      </code>
-     <code class="type">
+     <code>
       text
      </code>
      →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p class="func_signature">
-     <code class="type">
+     <code>
       jsonb
      </code>
-     <code class="literal">
+     <code>
       -&gt;&gt;
      </code>
-     <code class="type">
+     <code>
       text
      </code>
      →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Extrai o campo do objeto JSON com a chave fornecida, como
-     <code class="type">
+     <code>
       text
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{"a":1,"b":2}'::json -&gt;&gt; 'b'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -265,32 +265,32 @@ Para saber mais sobre o padrão SQL/JSON, consulte [[sqltr-19075-6]] (biblio.md#
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       json
      </code>
-     <code class="literal">
+     <code>
       #&gt;
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       json
      </code>
     </p>
     <p class="func_signature">
-     <code class="type">
+     <code>
       jsonb
      </code>
-     <code class="literal">
+     <code>
       #&gt;
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
@@ -298,11 +298,11 @@ Para saber mais sobre o padrão SQL/JSON, consulte [[sqltr-19075-6]] (biblio.md#
      Extrai o subobjeto JSON no caminho especificado, onde os elementos do caminho podem ser chaves de campo ou índices de matriz.
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{"a": {"b": ["foo","bar"]}}'::json #&gt; '{a,b,1}'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "bar"
      </code>
     </p>
@@ -311,48 +311,48 @@ Para saber mais sobre o padrão SQL/JSON, consulte [[sqltr-19075-6]] (biblio.md#
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       json
      </code>
-     <code class="literal">
+     <code>
       #&gt;&gt;
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p class="func_signature">
-     <code class="type">
+     <code>
       jsonb
      </code>
-     <code class="literal">
+     <code>
       #&gt;&gt;
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Extrai o subobjeto JSON no caminho especificado como
-     <code class="type">
+     <code>
       text
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{"a": {"b": ["foo","bar"]}}'::json #&gt;&gt; '{a,b,1}'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       bar
      </code>
     </p>
@@ -380,7 +380,7 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
 
 
 
-<table border="1" class="table" summary="Additional jsonb Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -403,17 +403,17 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       jsonb
      </code>
-     <code class="literal">
+     <code>
       @&gt;
      </code>
-     <code class="type">
+     <code>
       jsonb
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -425,11 +425,11 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
      para obter detalhes sobre contenção.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{"a":1, "b":2}'::jsonb @&gt; '{"b":2}'::jsonb
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -438,17 +438,17 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       jsonb
      </code>
-     <code class="literal">
+     <code>
       &lt;@
      </code>
-     <code class="type">
+     <code>
       jsonb
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -456,11 +456,11 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
      O primeiro valor JSON está contido no segundo?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{"b":2}'::jsonb &lt;@ '{"a":1, "b":2}'::jsonb
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -469,17 +469,17 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       jsonb
      </code>
-     <code class="literal">
+     <code>
       ?
      </code>
-     <code class="type">
+     <code>
       text
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -487,20 +487,20 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
      A string de texto existe como uma chave de nível superior ou elemento de matriz dentro do valor JSON?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{"a":1, "b":2}'::jsonb ? 'b'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       '["a", "b", "c"]'::jsonb ? 'b'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -509,17 +509,17 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       jsonb
      </code>
-     <code class="literal">
+     <code>
       ?|
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -527,11 +527,11 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
      Algumas das strings na matriz de texto existem como chaves de nível superior ou elementos da matriz?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{"a":1, "b":2, "c":3}'::jsonb ?| array['b', 'd']
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -540,17 +540,17 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       jsonb
      </code>
-     <code class="literal">
+     <code>
       ?&amp;
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -558,11 +558,11 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
      Todas as strings na matriz de texto existem como chaves de nível superior ou elementos da matriz?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '["a", "b", "c"]'::jsonb ?&amp; array['a', 'b']
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -571,60 +571,60 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       jsonb
      </code>
-     <code class="literal">
+     <code>
       ||
      </code>
-     <code class="type">
+     <code>
       jsonb
      </code>
      →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
     <p>
      Concatenam dois
-     <code class="type">
+     <code>
       jsonb
      </code>
      valores. A concatenação de dois arrays gera um array que contém todos os elementos de cada entrada. A concatenação de dois objetos gera um objeto que contém a união de suas chaves, tomando o valor do segundo objeto quando há chaves duplicadas. Todos os outros casos são tratados convertendo uma entrada que não é um array em um array de um único elemento, e então procedendo como para dois arrays. Não opera recursivamente: apenas a estrutura de array ou objeto de nível superior é montada.
     </p>
     <p>
-     <code class="literal">
+     <code>
       '["a", "b"]'::jsonb || '["a", "d"]'::jsonb
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ["a", "b", "a", "d"]
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{"a": "b"}'::jsonb || '{"c": "d"}'::jsonb
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"a": "b", "c": "d"}
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       '[1, 2]'::jsonb || '3'::jsonb
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [1, 2, 3]
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{"a": "b"}'::jsonb || '42'::jsonb
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [{"a": "b"}, 42]
      </code>
     </p>
@@ -632,11 +632,11 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
      Para adicionar um array a outro array como uma única entrada, envolva-o em uma camada adicional de array, por exemplo:
     </p>
     <p>
-     <code class="literal">
+     <code>
       '[1, 2]'::jsonb || jsonb_build_array('[3, 4]'::jsonb)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [1, 2, [3, 4]]
      </code>
     </p>
@@ -645,17 +645,17 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       jsonb
      </code>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       text
      </code>
      →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
@@ -663,20 +663,20 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
      Exclui uma chave (e seu valor) de um objeto JSON ou valores de string correspondentes de um array JSON.
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{"a": "b", "c": "d"}'::jsonb - 'a'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"c": "d"}
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       '["a", "b", "c", "b"]'::jsonb - 'b'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ["a", "c"]
      </code>
     </p>
@@ -685,17 +685,17 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       jsonb
      </code>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
@@ -703,11 +703,11 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
      Exclui todas as chaves ou elementos de array correspondentes do operando esquerdo.
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{"a": "b", "c": "d"}'::jsonb - '{a,c}'::text[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {}
      </code>
     </p>
@@ -716,17 +716,17 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       jsonb
      </code>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
      →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
@@ -734,11 +734,11 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
      Exclui o elemento do array com o índice especificado (contando valores negativos a partir do final). Lança um erro se o valor JSON não for um array.
     </p>
     <p>
-     <code class="literal">
+     <code>
       '["a", "b"]'::jsonb - 1
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ["a"]
      </code>
     </p>
@@ -747,17 +747,17 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       jsonb
      </code>
-     <code class="literal">
+     <code>
       #-
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
      →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
@@ -765,11 +765,11 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
      Exclui o campo ou o elemento do array no caminho especificado, onde os elementos do caminho podem ser chaves de campo ou índices de array.
     </p>
     <p>
-     <code class="literal">
+     <code>
       '["a", {"b":1}]'::jsonb #- '{1,b}'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ["a", {}]
      </code>
     </p>
@@ -778,17 +778,17 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       jsonb
      </code>
-     <code class="literal">
+     <code>
       @?
      </code>
-     <code class="type">
+     <code>
       jsonpath
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -800,11 +800,11 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
      , pois esses sempre retornam um valor.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{"a":[1,2,3,4,5]}'::jsonb @? '$.a[*] ? (@ &gt; 2)'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -813,17 +813,17 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       jsonb
      </code>
-     <code class="literal">
+     <code>
       @@
      </code>
-     <code class="type">
+     <code>
       jsonpath
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -833,17 +833,17 @@ Alguns operadores adicionais existem apenas para `jsonb`, conforme mostrado na [
       expressões de verificação de predicado
      </a>
      , não expressões de caminho JSON padrão do SQL, pois ele retornará
-     <code class="literal">
+     <code>
       NULL
      </code>
      se o resultado do caminho não for um único valor booleano.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{"a":[1,2,3,4,5]}'::jsonb @@ '$.a[*] &gt; 2'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -871,7 +871,7 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
 
 
 
-<table border="1" class="table" summary="JSON Creation Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -894,42 +894,42 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_json
      </code>
      (
-     <code class="type">
+     <code>
       anyelement
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       json
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_jsonb
      </code>
      (
-     <code class="type">
+     <code>
       anyelement
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
     <p>
      Converts any SQL value to
-     <code class="type">
+     <code>
       json
      </code>
      or
-     <code class="type">
+     <code>
       jsonb
      </code>
      . Arrays and composites are converted recursively to arrays and objects (multidimensional arrays become arrays of arrays in JSON). Otherwise, if there is a cast from the SQL data type to
-     <code class="type">
+     <code>
       json
      </code>
      , the cast function will be used to perform the conversion;
@@ -941,20 +941,20 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
      otherwise, a scalar JSON value is produced.  For any scalar other than a number, a Boolean, or a null value, the text representation will be used, with escaping as necessary to make it a valid JSON string value.
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_json('Fred said "Hi."'::text)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "Fred said \"Hi.\""
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_jsonb(row(42, 'Fred said "Hi."'::text))
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"f1": 42, "f2": "Fred said \"Hi.\""}
      </code>
     </p>
@@ -963,38 +963,38 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_to_json
      </code>
      (
-     <code class="type">
+     <code>
       anyarray
      </code>
      [
      <span class="optional">
       ,
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       json
      </code>
     </p>
     <p>
      Converts an SQL array to a JSON array.  The behavior is the same as
-     <code class="function">
+     <code>
       to_json
      </code>
      except that line feeds will be added between top-level array elements if the optional boolean parameter is true.
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_to_json('{{1,5},{99,100}}'::int[])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [[1,5],[99,100]]
      </code>
     </p>
@@ -1003,7 +1003,7 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_array
      </code>
      ( [
@@ -1016,7 +1016,7 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
       </em>
       [
       <span class="optional">
-       <code class="literal">
+       <code>
         FORMAT JSON
        </code>
       </span>
@@ -1029,21 +1029,21 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
      ] [
      <span class="optional">
       {
-      <code class="literal">
+      <code>
        NULL
       </code>
       |
-      <code class="literal">
+      <code>
        ABSENT
       </code>
       }
-      <code class="literal">
+      <code>
        ON NULL
       </code>
      </span>
      ] [
      <span class="optional">
-      <code class="literal">
+      <code>
        RETURNING
       </code>
       <em class="replaceable">
@@ -1053,12 +1053,12 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
       </em>
       [
       <span class="optional">
-       <code class="literal">
+       <code>
         FORMAT JSON
        </code>
        [
        <span class="optional">
-        <code class="literal">
+        <code>
          ENCODING UTF8
         </code>
        </span>
@@ -1069,7 +1069,7 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
      ])
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_array
      </code>
      ( [
@@ -1082,7 +1082,7 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
      </span>
      ] [
      <span class="optional">
-      <code class="literal">
+      <code>
        RETURNING
       </code>
       <em class="replaceable">
@@ -1092,12 +1092,12 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
       </em>
       [
       <span class="optional">
-       <code class="literal">
+       <code>
         FORMAT JSON
        </code>
        [
        <span class="optional">
-        <code class="literal">
+        <code>
          ENCODING UTF8
         </code>
        </span>
@@ -1121,7 +1121,7 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
       </code>
      </em>
      , which must be a SELECT query returning a single column. If
-     <code class="literal">
+     <code>
       ABSENT ON NULL
      </code>
      is specified, NULL values are ignored. This is always the case if a
@@ -1133,20 +1133,20 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
      is used.
     </p>
     <p>
-     <code class="literal">
+     <code>
       json_array(1,true,json '{"a":null}')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [1, true, {"a":null}]
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       json_array(SELECT * FROM (VALUES(1),(2)) t)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [1, 2]
      </code>
     </p>
@@ -1155,38 +1155,38 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       row_to_json
      </code>
      (
-     <code class="type">
+     <code>
       record
      </code>
      [
      <span class="optional">
       ,
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       json
      </code>
     </p>
     <p>
      Converts an SQL composite value to a JSON object.  The behavior is the same as
-     <code class="function">
+     <code>
       to_json
      </code>
      except that line feeds will be added between top-level elements if the optional boolean parameter is true.
     </p>
     <p>
-     <code class="literal">
+     <code>
       row_to_json(row(1,'foo'))
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"f1":1,"f2":"foo"}
      </code>
     </p>
@@ -1195,54 +1195,54 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_build_array
      </code>
      (
-     <code class="literal">
+     <code>
       VARIADIC
      </code>
-     <code class="type">
+     <code>
       "any"
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       json
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_build_array
      </code>
      (
-     <code class="literal">
+     <code>
       VARIADIC
      </code>
-     <code class="type">
+     <code>
       "any"
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
     <p>
      Builds a possibly-heterogeneously-typed JSON array out of a variadic argument list.  Each argument is converted as per
-     <code class="function">
+     <code>
       to_json
      </code>
      or
-     <code class="function">
+     <code>
       to_jsonb
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       json_build_array(1, 2, 'foo', 4, 5)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [1, 2, "foo", 4, 5]
      </code>
     </p>
@@ -1251,54 +1251,54 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_build_object
      </code>
      (
-     <code class="literal">
+     <code>
       VARIADIC
      </code>
-     <code class="type">
+     <code>
       "any"
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       json
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_build_object
      </code>
      (
-     <code class="literal">
+     <code>
       VARIADIC
      </code>
-     <code class="type">
+     <code>
       "any"
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
     <p>
      Builds a JSON object out of a variadic argument list.  By convention, the argument list consists of alternating keys and values.  Key arguments are coerced to text; value arguments are converted as per
-     <code class="function">
+     <code>
       to_json
      </code>
      or
-     <code class="function">
+     <code>
       to_jsonb
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       json_build_object('foo', 1, 2, row(3,'bar'))
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"foo" : 1, "2" : {"f1":3,"f2":"bar"}}
      </code>
     </p>
@@ -1307,7 +1307,7 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_object
      </code>
      ( [
@@ -1319,7 +1319,7 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
        </code>
       </em>
       {
-      <code class="literal">
+      <code>
        VALUE
       </code>
       | ':' }
@@ -1330,12 +1330,12 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
       </em>
       [
       <span class="optional">
-       <code class="literal">
+       <code>
         FORMAT JSON
        </code>
        [
        <span class="optional">
-        <code class="literal">
+        <code>
          ENCODING UTF8
         </code>
        </span>
@@ -1350,35 +1350,35 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
      ] [
      <span class="optional">
       {
-      <code class="literal">
+      <code>
        NULL
       </code>
       |
-      <code class="literal">
+      <code>
        ABSENT
       </code>
       }
-      <code class="literal">
+      <code>
        ON NULL
       </code>
      </span>
      ] [
      <span class="optional">
       {
-      <code class="literal">
+      <code>
        WITH
       </code>
       |
-      <code class="literal">
+      <code>
        WITHOUT
       </code>
       }
-      <code class="literal">
+      <code>
        UNIQUE
       </code>
       [
       <span class="optional">
-       <code class="literal">
+       <code>
         KEYS
        </code>
       </span>
@@ -1386,7 +1386,7 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
      </span>
      ] [
      <span class="optional">
-      <code class="literal">
+      <code>
        RETURNING
       </code>
       <em class="replaceable">
@@ -1396,12 +1396,12 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
       </em>
       [
       <span class="optional">
-       <code class="literal">
+       <code>
         FORMAT JSON
        </code>
        [
        <span class="optional">
-        <code class="literal">
+        <code>
          ENCODING UTF8
         </code>
        </span>
@@ -1423,19 +1423,19 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
       JSON
      </acronym>
      key, which is converted to the
-     <code class="type">
+     <code>
       text
      </code>
      type. It cannot be
-     <code class="literal">
+     <code>
       NULL
      </code>
      nor can it belong to a type that has a cast to the
-     <code class="type">
+     <code>
       json
      </code>
      type. If
-     <code class="literal">
+     <code>
       WITH UNIQUE KEYS
      </code>
      is specified, there must not be any duplicate
@@ -1451,29 +1451,29 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
       </code>
      </em>
      evaluates to
-     <code class="literal">
+     <code>
       NULL
      </code>
      is omitted from the output if
-     <code class="literal">
+     <code>
       ABSENT ON NULL
      </code>
      is specified; if
-     <code class="literal">
+     <code>
       NULL ON NULL
      </code>
      is specified or the clause omitted, the key is included with value
-     <code class="literal">
+     <code>
       NULL
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       json_object('code' VALUE 'P123', 'title': 'Jaws')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"code" : "P123", "title" : "Jaws"}
      </code>
     </p>
@@ -1482,28 +1482,28 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_object
      </code>
      (
-     <code class="type">
+     <code>
       text[]
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       json
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_object
      </code>
      (
-     <code class="type">
+     <code>
       text[]
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
@@ -1511,20 +1511,20 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
      Builds a JSON object out of a text array.  The array must have either exactly one dimension with an even number of members, in which case they are taken as alternating key/value pairs, or two dimensions such that each inner array has exactly two elements, which are taken as a key/value pair.  All values are converted to JSON strings.
     </p>
     <p>
-     <code class="literal">
+     <code>
       json_object('{a, 1, b, "def", c, 3.5}')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"a" : "1", "b" : "def", "c" : "3.5"}
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       json_object('{{a, 1}, {b, "def"}, {c, 3.5}}')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"a" : "1", "b" : "def", "c" : "3.5"}
      </code>
     </p>
@@ -1533,7 +1533,7 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_object
      </code>
      (
@@ -1542,7 +1542,7 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
        keys
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ,
@@ -1551,16 +1551,16 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
        values
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       json
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_object
      </code>
      (
@@ -1569,7 +1569,7 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
        keys
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ,
@@ -1578,27 +1578,27 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
        values
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
     <p>
      This form of
-     <code class="function">
+     <code>
       json_object
      </code>
      takes keys and values pairwise from separate text arrays.  Otherwise it is identical to the one-argument form.
     </p>
     <p>
-     <code class="literal">
+     <code>
       json_object('{a,b}', '{1,2}')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"a": "1", "b": "2"}
      </code>
     </p>
@@ -1607,7 +1607,7 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json
      </code>
      (
@@ -1618,12 +1618,12 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
      </em>
      [
      <span class="optional">
-      <code class="literal">
+      <code>
        FORMAT JSON
       </code>
       [
       <span class="optional">
-       <code class="literal">
+       <code>
         ENCODING UTF8
        </code>
       </span>
@@ -1632,37 +1632,37 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
      ] [
      <span class="optional">
       {
-      <code class="literal">
+      <code>
        WITH
       </code>
       |
-      <code class="literal">
+      <code>
        WITHOUT
       </code>
       }
-      <code class="literal">
+      <code>
        UNIQUE
       </code>
       [
       <span class="optional">
-       <code class="literal">
+       <code>
         KEYS
        </code>
       </span>
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       json
      </code>
     </p>
     <p>
      Converts a given expression specified as
-     <code class="type">
+     <code>
       text
      </code>
      or
-     <code class="type">
+     <code>
       bytea
      </code>
      string (in UTF8 encoding) into a JSON value.  If
@@ -1676,7 +1676,7 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
       SQL
      </acronym>
      null value is returned. If
-     <code class="literal">
+     <code>
       WITH UNIQUE
      </code>
      is specified, the
@@ -1688,11 +1688,11 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
      must not contain any duplicate object keys.
     </p>
     <p>
-     <code class="literal">
+     <code>
       json('{"a":123, "b":[true,"foo"], "a":"bar"}')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"a":123, "b":[true,"foo"], "a":"bar"}
      </code>
     </p>
@@ -1701,7 +1701,7 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_scalar
      </code>
      (
@@ -1720,20 +1720,20 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
      null is returned. If the input is number or a boolean value, a corresponding JSON number or boolean value is returned. For any other value, a JSON string is returned.
     </p>
     <p>
-     <code class="literal">
+     <code>
       json_scalar(123.45)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       123.45
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       json_scalar(CURRENT_TIMESTAMP)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "2022-05-10T10:51:04.62128-04:00"
      </code>
     </p>
@@ -1742,7 +1742,7 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_serialize
      </code>
      (
@@ -1753,12 +1753,12 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
      </em>
      [
      <span class="optional">
-      <code class="literal">
+      <code>
        FORMAT JSON
       </code>
       [
       <span class="optional">
-       <code class="literal">
+       <code>
         ENCODING UTF8
        </code>
       </span>
@@ -1766,7 +1766,7 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
      </span>
      ] [
      <span class="optional">
-      <code class="literal">
+      <code>
        RETURNING
       </code>
       <em class="replaceable">
@@ -1776,12 +1776,12 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
       </em>
       [
       <span class="optional">
-       <code class="literal">
+       <code>
         FORMAT JSON
        </code>
        [
        <span class="optional">
-        <code class="literal">
+        <code>
          ENCODING UTF8
         </code>
        </span>
@@ -1799,29 +1799,29 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
       </code>
      </em>
      can be of any JSON type, any character string type, or
-     <code class="type">
+     <code>
       bytea
      </code>
      in UTF8 encoding. The returned type used in
-     <code class="literal">
+     <code>
       RETURNING
      </code>
      can be any character string type or
-     <code class="type">
+     <code>
       bytea
      </code>
      . The default is
-     <code class="type">
+     <code>
       text
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       json_serialize('{ "a" : 1 } ' RETURNING bytea)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       \x7b20226122203a2031207d20
      </code>
     </p>
@@ -1843,15 +1843,15 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
        hstore
       </a>
       extension has a cast from
-      <code class="type">
+      <code>
        hstore
       </code>
       to
-      <code class="type">
+      <code>
        json
       </code>
       , so that
-      <code class="type">
+      <code>
        hstore
       </code>
       values converted via the JSON creation functions will be represented as JSON objects, not as primitive string values.
@@ -1877,7 +1877,7 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
 
 
 
-<table border="1" class="table" summary="SQL/JSON Testing Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -1905,35 +1905,35 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
        expression
       </code>
      </em>
-     <code class="literal">
+     <code>
       IS
      </code>
      [
      <span class="optional">
-      <code class="literal">
+      <code>
        NOT
       </code>
      </span>
      ]
-     <code class="literal">
+     <code>
       JSON
      </code>
      [
      <span class="optional">
       { English: The 2018 FIFA World Cup is the 21st FIFA World Cup and the first to be held in Asia. Portuguese (Brazilian): A Copa do Mundo da FIFA de 2018 é a 21ª Copa do Mundo da FIFA e a primeira a ser realizada na Ásia.
-      <code class="literal">
+      <code>
        VALUE
       </code>
       |
-      <code class="literal">
+      <code>
        SCALAR
       </code>
       |
-      <code class="literal">
+      <code>
        ARRAY
       </code>
       |
-      <code class="literal">
+      <code>
        OBJECT
       </code>
       }
@@ -1941,20 +1941,20 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
      ] [
      <span class="optional">
       { English: The 2018 FIFA World Cup is the 21st FIFA World Cup and the first to be held in Asia. Portuguese (Brazilian): A Copa do Mundo da FIFA de 2018 é a 21ª Copa do Mundo da FIFA e a primeira a ser realizada na Ásia.
-      <code class="literal">
+      <code>
        WITH
       </code>
       |
-      <code class="literal">
+      <code>
        WITHOUT
       </code>
       }
-      <code class="literal">
+      <code>
        UNIQUE
       </code>
       [
       <span class="optional">
-       <code class="literal">
+       <code>
         KEYS
        </code>
       </span>
@@ -1970,19 +1970,19 @@ Os operadores `jsonpath` `@?` e `@@` suprimem os seguintes erros: campo ou eleme
       </code>
      </em>
      pode ser analisado como JSON, possivelmente de um tipo especificado. Se
-     <code class="literal">
+     <code>
       SCALAR
      </code>
      ou
-     <code class="literal">
+     <code>
       ARRAY
      </code>
      ou
-     <code class="literal">
+     <code>
       OBJECT
      </code>
      é especificado, o teste é se o JSON é ou não desse tipo específico. Se
-     <code class="literal">
+     <code>
       WITH UNIQUE KEYS
      </code>
      se especificado, então qualquer objeto no
@@ -2029,7 +2029,7 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
 
 
 
-<table border="1" class="table" summary="JSON Processing Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -2052,28 +2052,28 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_array_elements
      </code>
      (
-     <code class="type">
+     <code>
       json
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof json
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_array_elements
      </code>
      (
-     <code class="type">
+     <code>
       jsonb
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof jsonb
      </code>
     </p>
@@ -2081,11 +2081,11 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
      Expands the top-level JSON array into a set of JSON values.
     </p>
     <p>
-     <code class="literal">
+     <code>
       select * from json_array_elements('[1,true, [2,false]]')
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -2098,44 +2098,44 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_array_elements_text
      </code>
      (
-     <code class="type">
+     <code>
       json
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof text
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_array_elements_text
      </code>
      (
-     <code class="type">
+     <code>
       jsonb
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof text
      </code>
     </p>
     <p>
      Expands the top-level JSON array into a set of
-     <code class="type">
+     <code>
       text
      </code>
      values.
     </p>
     <p>
-     <code class="literal">
+     <code>
       select * from json_array_elements_text('["foo", "bar"]')
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -2148,28 +2148,28 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_array_length
      </code>
      (
-     <code class="type">
+     <code>
       json
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_array_length
      </code>
      (
-     <code class="type">
+     <code>
       jsonb
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -2177,20 +2177,20 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
      Returns the number of elements in the top-level JSON array.
     </p>
     <p>
-     <code class="literal">
+     <code>
       json_array_length('[1,2,3,{"f1":1,"f2":[5,6]},4]')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       5
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_array_length('[]')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0
      </code>
     </p>
@@ -2199,15 +2199,15 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_each
      </code>
      (
-     <code class="type">
+     <code>
       json
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -2216,7 +2216,7 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2225,21 +2225,21 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       json
      </code>
      )
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_each
      </code>
      (
-     <code class="type">
+     <code>
       jsonb
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -2248,7 +2248,7 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2257,7 +2257,7 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      )
@@ -2266,11 +2266,11 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
      Expands the top-level JSON object into a set of key/value pairs.
     </p>
     <p>
-     <code class="literal">
+     <code>
       select * from json_each('{"a":"foo", "b":"bar"}')
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -2283,15 +2283,15 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_each_text
      </code>
      (
-     <code class="type">
+     <code>
       json
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -2300,7 +2300,7 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2309,21 +2309,21 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_each_text
      </code>
      (
-     <code class="type">
+     <code>
       jsonb
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -2332,7 +2332,7 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2341,7 +2341,7 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
@@ -2354,17 +2354,17 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
       </code>
      </em>
      s will be of type
-     <code class="type">
+     <code>
       text
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       select * from json_each_text('{"a":"foo", "b":"bar"}')
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -2377,7 +2377,7 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_extract_path
      </code>
      (
@@ -2386,11 +2386,11 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        from_json
       </code>
      </em>
-     <code class="type">
+     <code>
       json
      </code>
      ,
-     <code class="literal">
+     <code>
       VARIADIC
      </code>
      <em class="parameter">
@@ -2398,16 +2398,16 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        path_elems
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       json
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_extract_path
      </code>
      (
@@ -2416,11 +2416,11 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        from_json
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ,
-     <code class="literal">
+     <code>
       VARIADIC
      </code>
      <em class="parameter">
@@ -2428,27 +2428,27 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        path_elems
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
     <p>
      Extracts JSON sub-object at the specified path. (This is functionally equivalent to the
-     <code class="literal">
+     <code>
       #&gt;
      </code>
      operator, but writing the path out as a variadic list can be more convenient in some cases.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       json_extract_path('{"f2":{"f3":1},"f4":{"f5":99,"f6":"foo"}}', 'f4', 'f6')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "foo"
      </code>
     </p>
@@ -2457,7 +2457,7 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_extract_path_text
      </code>
      (
@@ -2466,11 +2466,11 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        from_json
       </code>
      </em>
-     <code class="type">
+     <code>
       json
      </code>
      ,
-     <code class="literal">
+     <code>
       VARIADIC
      </code>
      <em class="parameter">
@@ -2478,16 +2478,16 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        path_elems
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_extract_path_text
      </code>
      (
@@ -2496,11 +2496,11 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        from_json
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ,
-     <code class="literal">
+     <code>
       VARIADIC
      </code>
      <em class="parameter">
@@ -2508,31 +2508,31 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        path_elems
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Extracts JSON sub-object at the specified path as
-     <code class="type">
+     <code>
       text
      </code>
      . (This is functionally equivalent to the
-     <code class="literal">
+     <code>
       #&gt;&gt;
      </code>
      operator.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       json_extract_path_text('{"f2":{"f3":1},"f4":{"f5":99,"f6":"foo"}}', 'f4', 'f6')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       foo
      </code>
     </p>
@@ -2541,28 +2541,28 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_object_keys
      </code>
      (
-     <code class="type">
+     <code>
       json
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof text
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_object_keys
      </code>
      (
-     <code class="type">
+     <code>
       jsonb
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof text
      </code>
     </p>
@@ -2570,11 +2570,11 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
      Returns the set of keys in the top-level JSON object.
     </p>
     <p>
-     <code class="literal">
+     <code>
       select * from json_object_keys('{"f1":"abc","f2":{"f3":"a", "f4":"b"}}')
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -2587,7 +2587,7 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_populate_record
      </code>
      (
@@ -2596,7 +2596,7 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        base
       </code>
      </em>
-     <code class="type">
+     <code>
       anyelement
      </code>
      ,
@@ -2605,16 +2605,16 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        from_json
       </code>
      </em>
-     <code class="type">
+     <code>
       json
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anyelement
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_populate_record
      </code>
      (
@@ -2623,7 +2623,7 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        base
       </code>
      </em>
-     <code class="type">
+     <code>
       anyelement
      </code>
      ,
@@ -2632,11 +2632,11 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        from_json
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anyelement
      </code>
     </p>
@@ -2654,7 +2654,7 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
       </code>
      </em>
      is just
-     <code class="literal">
+     <code>
       NULL
      </code>
      , which means that any output columns that do not match any object field will be filled with nulls.  However, if
@@ -2664,7 +2664,7 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
       </code>
      </em>
      isn't
-     <code class="literal">
+     <code>
       NULL
      </code>
      then the values it contains will be used for unmatched columns.
@@ -2682,11 +2682,11 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
       <li class="listitem">
        <p>
         If the output column is of type
-        <code class="type">
+        <code>
          json
         </code>
         or
-        <code class="type">
+        <code>
          jsonb
         </code>
         , the JSON value is just reproduced exactly.
@@ -2718,41 +2718,41 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
     </p>
     <p>
      While the example below uses a constant JSON value, typical use would be to reference a
-     <code class="type">
+     <code>
       json
      </code>
      or
-     <code class="type">
+     <code>
       jsonb
      </code>
      column laterally from another table in the query's
-     <code class="literal">
+     <code>
       FROM
      </code>
      clause.  Writing
-     <code class="function">
+     <code>
       json_populate_record
      </code>
      in the
-     <code class="literal">
+     <code>
       FROM
      </code>
      clause is good practice, since all of the extracted columns are available for use without duplicate function calls.
     </p>
     <p>
-     <code class="literal">
+     <code>
       create type subrowtype as (d int, e text);
      </code>
-     <code class="literal">
+     <code>
       create type myrowtype as (a int, b text[], c subrowtype);
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       select * from json_populate_record(null::myrowtype, '{"a": 1, "b": ["2", "a b"], "c": {"d": 4, "e": "a  b c"}, "x": "foo"}')
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -2765,7 +2765,7 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_populate_record_valid
      </code>
      (
@@ -2774,7 +2774,7 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        base
       </code>
      </em>
-     <code class="type">
+     <code>
       anyelement
      </code>
      ,
@@ -2783,77 +2783,77 @@ object?       | f array?        | t array w. UK?  | f array w/o UK? | t
        from_json
       </code>
      </em>
-     <code class="type">
+     <code>
       json
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Function for testing
-     <code class="function">
+     <code>
       jsonb_populate_record
      </code>
      .  Returns
-     <code class="literal">
+     <code>
       true
      </code>
      if the input
-     <code class="function">
+     <code>
       jsonb_populate_record
      </code>
      would finish without an error for the given input JSON object; that is, it's valid input,
-     <code class="literal">
+     <code>
       false
      </code>
      otherwise.
     </p>
     <p>
-     <code class="literal">
+     <code>
       create type jsb_char2 as (a char(2));
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       select jsonb_populate_record_valid(NULL::jsb_char2, '{"a": "aaa"}');
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
  jsonb_populate_record_valid ----------------------------- f (1 row)
 </pre>
     <p>
-     <code class="literal">
+     <code>
       select * from jsonb_populate_record(NULL::jsb_char2, '{"a": "aaa"}') q;
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
 ERROR:  value too long for type character(2)
 </pre>
     <p>
-     <code class="literal">
+     <code>
       select jsonb_populate_record_valid(NULL::jsb_char2, '{"a": "aa"}');
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
  jsonb_populate_record_valid ----------------------------- t (1 row)
 </pre>
     <p>
-     <code class="literal">
+     <code>
       select * from jsonb_populate_record(NULL::jsb_char2, '{"a": "aa"}') q;
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -2866,7 +2866,7 @@ ERROR:  value too long for type character(2)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_populate_recordset
      </code>
      (
@@ -2875,7 +2875,7 @@ ERROR:  value too long for type character(2)
        base
       </code>
      </em>
-     <code class="type">
+     <code>
       anyelement
      </code>
      ,
@@ -2884,16 +2884,16 @@ ERROR:  value too long for type character(2)
        from_json
       </code>
      </em>
-     <code class="type">
+     <code>
       json
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof anyelement
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_populate_recordset
      </code>
      (
@@ -2902,7 +2902,7 @@ ERROR:  value too long for type character(2)
        base
       </code>
      </em>
-     <code class="type">
+     <code>
       anyelement
      </code>
      ,
@@ -2911,11 +2911,11 @@ ERROR:  value too long for type character(2)
        from_json
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof anyelement
      </code>
     </p>
@@ -2927,22 +2927,22 @@ ERROR:  value too long for type character(2)
       </code>
      </em>
      argument. Each element of the JSON array is processed as described above for
-     <code class="function">
+     <code>
       json[b]_populate_record
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       create type twoints as (a int, b int);
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       select * from json_populate_recordset(null::twoints, '[{"a":1,"b":2}, {"a":3,"b":4}]')
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -2955,61 +2955,61 @@ ERROR:  value too long for type character(2)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_to_record
      </code>
      (
-     <code class="type">
+     <code>
       json
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       record
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_to_record
      </code>
      (
-     <code class="type">
+     <code>
       jsonb
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       record
      </code>
     </p>
     <p>
      Expands the top-level JSON object to a row having the composite type defined by an
-     <code class="literal">
+     <code>
       AS
      </code>
      clause.  (As with all functions returning
-     <code class="type">
+     <code>
       record
      </code>
      , the calling query must explicitly define the structure of the record with an
-     <code class="literal">
+     <code>
       AS
      </code>
      clause.)  The output record is filled from fields of the JSON object, in the same way as described above for
-     <code class="function">
+     <code>
       json[b]_populate_record
      </code>
      .  Since there is no input record value, unmatched columns are always filled with nulls.
     </p>
     <p>
-     <code class="literal">
+     <code>
       create type myrowtype as (a int, b text);
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       select * from json_to_record('{"a":1,"b":[1,2,3],"c":[1,2,3],"e":"bar","r": {"a": 123, "b": "a b c"}}') as x(a int, b text, c int[], d text, r myrowtype)
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -3022,56 +3022,56 @@ ERROR:  value too long for type character(2)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_to_recordset
      </code>
      (
-     <code class="type">
+     <code>
       json
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_to_recordset
      </code>
      (
-     <code class="type">
+     <code>
       jsonb
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
     </p>
     <p>
      Expands the top-level JSON array of objects to a set of rows having the composite type defined by an
-     <code class="literal">
+     <code>
       AS
      </code>
      clause.  (As with all functions returning
-     <code class="type">
+     <code>
       record
      </code>
      , the calling query must explicitly define the structure of the record with an
-     <code class="literal">
+     <code>
       AS
      </code>
      clause.)  Each element of the JSON array is processed as described above for
-     <code class="function">
+     <code>
       json[b]_populate_record
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       select * from json_to_recordset('[{"a":1,"b":"foo"}, {"a":"2","c":"bar"}]') as x(a int, b text)
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -3084,7 +3084,7 @@ ERROR:  value too long for type character(2)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_set
      </code>
      (
@@ -3093,7 +3093,7 @@ ERROR:  value too long for type character(2)
        target
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ,
@@ -3102,7 +3102,7 @@ ERROR:  value too long for type character(2)
        path
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ,
@@ -3111,7 +3111,7 @@ ERROR:  value too long for type character(2)
        new_value
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      [
@@ -3122,12 +3122,12 @@ ERROR:  value too long for type character(2)
         create_if_missing
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
@@ -3189,20 +3189,20 @@ ERROR:  value too long for type character(2)
      is true, the new value is added at the beginning of the array if the index is negative, or at the end of the array if it is positive.
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_set('[{"f1":1,"f2":null},2,null,3]', '{0,f1}', '[2,3,4]', false)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [{"f1": [2, 3, 4], "f2": null}, 2, null, 3]
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_set('[{"f1":1,"f2":null},2]', '{0,f3}', '[2,3,4]')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [{"f1": 1, "f2": null, "f3": [2, 3, 4]}, 2]
      </code>
     </p>
@@ -3211,7 +3211,7 @@ ERROR:  value too long for type character(2)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_set_lax
      </code>
      (
@@ -3220,7 +3220,7 @@ ERROR:  value too long for type character(2)
        target
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ,
@@ -3229,7 +3229,7 @@ ERROR:  value too long for type character(2)
        path
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ,
@@ -3238,7 +3238,7 @@ ERROR:  value too long for type character(2)
        new_value
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      [
@@ -3249,7 +3249,7 @@ ERROR:  value too long for type character(2)
         create_if_missing
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
       [
@@ -3260,14 +3260,14 @@ ERROR:  value too long for type character(2)
          null_value_treatment
         </code>
        </em>
-       <code class="type">
+       <code>
         text
        </code>
       </span>
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
@@ -3279,11 +3279,11 @@ ERROR:  value too long for type character(2)
       </code>
      </em>
      is not
-     <code class="literal">
+     <code>
       NULL
      </code>
      , behaves identically to
-     <code class="literal">
+     <code>
       jsonb_set
      </code>
      . Otherwise behaves according to the value of
@@ -3293,42 +3293,42 @@ ERROR:  value too long for type character(2)
       </code>
      </em>
      which must be one of
-     <code class="literal">
+     <code>
       'raise_exception'
      </code>
      ,
-     <code class="literal">
+     <code>
       'use_json_null'
      </code>
      ,
-     <code class="literal">
+     <code>
       'delete_key'
      </code>
      , or
-     <code class="literal">
+     <code>
       'return_target'
      </code>
      . The default is
-     <code class="literal">
+     <code>
       'use_json_null'
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_set_lax('[{"f1":1,"f2":null},2,null,3]', '{0,f1}', null)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [{"f1": null, "f2": null}, 2, null, 3]
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_set_lax('[{"f1":99,"f2":null},2]', '{0,f3}', null, true, 'return_target')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [{"f1": 99, "f2": null}, 2]
      </code>
     </p>
@@ -3337,7 +3337,7 @@ ERROR:  value too long for type character(2)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_insert
      </code>
      (
@@ -3346,7 +3346,7 @@ ERROR:  value too long for type character(2)
        target
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ,
@@ -3355,7 +3355,7 @@ ERROR:  value too long for type character(2)
        path
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ,
@@ -3364,7 +3364,7 @@ ERROR:  value too long for type character(2)
        new_value
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      [
@@ -3375,12 +3375,12 @@ ERROR:  value too long for type character(2)
         insert_after
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
@@ -3448,20 +3448,20 @@ ERROR:  value too long for type character(2)
      count from the end of JSON arrays. If the last path step is an array index that is out of range, the new value is added at the beginning of the array if the index is negative, or at the end of the array if it is positive.
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_insert('{"a": [0,1,2]}', '{a, 1}', '"new_value"')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"a": [0, "new_value", 1, 2]}
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_insert('{"a": [0,1,2]}', '{a, 1}', '"new_value"', true)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"a": [0, 1, "new_value", 2]}
      </code>
     </p>
@@ -3470,7 +3470,7 @@ ERROR:  value too long for type character(2)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_strip_nulls
      </code>
      (
@@ -3479,7 +3479,7 @@ ERROR:  value too long for type character(2)
        target
       </code>
      </em>
-     <code class="type">
+     <code>
       json
      </code>
      [
@@ -3490,17 +3490,17 @@ ERROR:  value too long for type character(2)
         strip_in_arrays
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       json
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_strip_nulls
      </code>
      (
@@ -3509,7 +3509,7 @@ ERROR:  value too long for type character(2)
        target
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      [
@@ -3520,12 +3520,12 @@ ERROR:  value too long for type character(2)
         strip_in_arrays
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
@@ -3539,20 +3539,20 @@ ERROR:  value too long for type character(2)
      is true (the default is false), null array elements are also stripped. Otherwise they are not stripped. Bare null values are never stripped.
     </p>
     <p>
-     <code class="literal">
+     <code>
       json_strip_nulls('[{"f1":1, "f2":null}, 2, null, 3]')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [{"f1":1},2,null,3]
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_strip_nulls('[1,2,null,3,4]', true)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [1,2,3,4]
      </code>
     </p>
@@ -3561,7 +3561,7 @@ ERROR:  value too long for type character(2)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_path_exists
      </code>
      (
@@ -3570,7 +3570,7 @@ ERROR:  value too long for type character(2)
        target
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ,
@@ -3579,7 +3579,7 @@ ERROR:  value too long for type character(2)
        path
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonpath
      </code>
      [
@@ -3590,7 +3590,7 @@ ERROR:  value too long for type character(2)
         vars
        </code>
       </em>
-      <code class="type">
+      <code>
        jsonb
       </code>
       [
@@ -3601,14 +3601,14 @@ ERROR:  value too long for type character(2)
          silent
         </code>
        </em>
-       <code class="type">
+       <code>
         boolean
        </code>
       </span>
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -3624,7 +3624,7 @@ ERROR:  value too long for type character(2)
       </code>
      </em>
      argument is specified, it must be a JSON object, and its fields provide named values to be substituted into the
-     <code class="type">
+     <code>
       jsonpath
      </code>
      expression. If the
@@ -3634,25 +3634,25 @@ ERROR:  value too long for type character(2)
       </code>
      </em>
      argument is specified and is
-     <code class="literal">
+     <code>
       true
      </code>
      , the function suppresses the same errors as the
-     <code class="literal">
+     <code>
       @?
      </code>
      and
-     <code class="literal">
+     <code>
       @@
      </code>
      operators do.
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_exists('{"a":[1,2,3,4,5]}', '$.a[*] ? (@ &gt;= $min &amp;&amp; @ &lt;= $max)', '{"min":2, "max":4}')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -3661,7 +3661,7 @@ ERROR:  value too long for type character(2)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_path_match
      </code>
      (
@@ -3670,7 +3670,7 @@ ERROR:  value too long for type character(2)
        target
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ,
@@ -3679,7 +3679,7 @@ ERROR:  value too long for type character(2)
        path
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonpath
      </code>
      [
@@ -3690,7 +3690,7 @@ ERROR:  value too long for type character(2)
         vars
        </code>
       </em>
-      <code class="type">
+      <code>
        jsonb
       </code>
       [
@@ -3701,14 +3701,14 @@ ERROR:  value too long for type character(2)
          silent
         </code>
        </em>
-       <code class="type">
+       <code>
         boolean
        </code>
       </span>
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -3718,7 +3718,7 @@ ERROR:  value too long for type character(2)
       predicate check expressions
      </a>
      , not SQL-standard JSON path expressions, since it will either fail or return
-     <code class="literal">
+     <code>
       NULL
      </code>
      if the path result is not a single boolean value.) The optional
@@ -3734,17 +3734,17 @@ ERROR:  value too long for type character(2)
       </code>
      </em>
      arguments act the same as for
-     <code class="function">
+     <code>
       jsonb_path_exists
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_match('{"a":[1,2,3,4,5]}', 'exists($.a[*] ? (@ &gt;= $min &amp;&amp; @ &lt;= $max))', '{"min":2, "max":4}')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -3753,7 +3753,7 @@ ERROR:  value too long for type character(2)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_path_query
      </code>
      (
@@ -3762,7 +3762,7 @@ ERROR:  value too long for type character(2)
        target
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ,
@@ -3771,7 +3771,7 @@ ERROR:  value too long for type character(2)
        path
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonpath
      </code>
      [
@@ -3782,7 +3782,7 @@ ERROR:  value too long for type character(2)
         vars
        </code>
       </em>
-      <code class="type">
+      <code>
        jsonb
       </code>
       [
@@ -3793,14 +3793,14 @@ ERROR:  value too long for type character(2)
          silent
         </code>
        </em>
-       <code class="type">
+       <code>
         boolean
        </code>
       </span>
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       setof jsonb
      </code>
     </p>
@@ -3816,15 +3816,15 @@ ERROR:  value too long for type character(2)
       predicate check expressions
      </a>
      it returns the result of the predicate check:
-     <code class="literal">
+     <code>
       true
      </code>
      ,
-     <code class="literal">
+     <code>
       false
      </code>
      , or
-     <code class="literal">
+     <code>
       null
      </code>
      . The optional
@@ -3840,17 +3840,17 @@ ERROR:  value too long for type character(2)
       </code>
      </em>
      arguments act the same as for
-     <code class="function">
+     <code>
       jsonb_path_exists
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       select * from jsonb_path_query('{"a":[1,2,3,4,5]}', '$.a[*] ? (@ &gt;= $min &amp;&amp; @ &lt;= $max)', '{"min":2, "max":4}')
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -3863,7 +3863,7 @@ ERROR:  value too long for type character(2)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_path_query_array
      </code>
      (
@@ -3872,7 +3872,7 @@ ERROR:  value too long for type character(2)
        target
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ,
@@ -3881,7 +3881,7 @@ ERROR:  value too long for type character(2)
        path
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonpath
      </code>
      [
@@ -3892,7 +3892,7 @@ ERROR:  value too long for type character(2)
         vars
        </code>
       </em>
-      <code class="type">
+      <code>
        jsonb
       </code>
       [
@@ -3903,30 +3903,30 @@ ERROR:  value too long for type character(2)
          silent
         </code>
        </em>
-       <code class="type">
+       <code>
         boolean
        </code>
       </span>
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
     <p>
      Returns all JSON items returned by the JSON path for the specified JSON value, as a JSON array. The parameters are the same as for
-     <code class="function">
+     <code>
       jsonb_path_query
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query_array('{"a":[1,2,3,4,5]}', '$.a[*] ? (@ &gt;= $min &amp;&amp; @ &lt;= $max)', '{"min":2, "max":4}')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [2, 3, 4]
      </code>
     </p>
@@ -3935,7 +3935,7 @@ ERROR:  value too long for type character(2)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_path_query_first
      </code>
      (
@@ -3944,7 +3944,7 @@ ERROR:  value too long for type character(2)
        target
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ,
@@ -3953,7 +3953,7 @@ ERROR:  value too long for type character(2)
        path
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonpath
      </code>
      [
@@ -3964,7 +3964,7 @@ ERROR:  value too long for type character(2)
         vars
        </code>
       </em>
-      <code class="type">
+      <code>
        jsonb
       </code>
       [
@@ -3975,34 +3975,34 @@ ERROR:  value too long for type character(2)
          silent
         </code>
        </em>
-       <code class="type">
+       <code>
         boolean
        </code>
       </span>
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
     <p>
      Returns the first JSON item returned by the JSON path for the specified JSON value, or
-     <code class="literal">
+     <code>
       NULL
      </code>
      if there are no results. The parameters are the same as for
-     <code class="function">
+     <code>
       jsonb_path_query
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query_first('{"a":[1,2,3,4,5]}', '$.a[*] ? (@ &gt;= $min &amp;&amp; @ &lt;= $max)', '{"min":2, "max":4}')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -4011,7 +4011,7 @@ ERROR:  value too long for type character(2)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_path_exists_tz
      </code>
      (
@@ -4020,7 +4020,7 @@ ERROR:  value too long for type character(2)
        target
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ,
@@ -4029,7 +4029,7 @@ ERROR:  value too long for type character(2)
        path
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonpath
      </code>
      [
@@ -4040,7 +4040,7 @@ ERROR:  value too long for type character(2)
         vars
        </code>
       </em>
-      <code class="type">
+      <code>
        jsonb
       </code>
       [
@@ -4051,19 +4051,19 @@ ERROR:  value too long for type character(2)
          silent
         </code>
        </em>
-       <code class="type">
+       <code>
         boolean
        </code>
       </span>
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_path_match_tz
      </code>
      (
@@ -4072,7 +4072,7 @@ ERROR:  value too long for type character(2)
        target
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ,
@@ -4081,7 +4081,7 @@ ERROR:  value too long for type character(2)
        path
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonpath
      </code>
      [
@@ -4092,7 +4092,7 @@ ERROR:  value too long for type character(2)
         vars
        </code>
       </em>
-      <code class="type">
+      <code>
        jsonb
       </code>
       [
@@ -4103,19 +4103,19 @@ ERROR:  value too long for type character(2)
          silent
         </code>
        </em>
-       <code class="type">
+       <code>
         boolean
        </code>
       </span>
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_path_query_tz
      </code>
      (
@@ -4124,7 +4124,7 @@ ERROR:  value too long for type character(2)
        target
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ,
@@ -4133,7 +4133,7 @@ ERROR:  value too long for type character(2)
        path
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonpath
      </code>
      [
@@ -4144,7 +4144,7 @@ ERROR:  value too long for type character(2)
         vars
        </code>
       </em>
-      <code class="type">
+      <code>
        jsonb
       </code>
       [
@@ -4155,19 +4155,19 @@ ERROR:  value too long for type character(2)
          silent
         </code>
        </em>
-       <code class="type">
+       <code>
         boolean
        </code>
       </span>
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       setof jsonb
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_path_query_array_tz
      </code>
      (
@@ -4176,7 +4176,7 @@ ERROR:  value too long for type character(2)
        target
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ,
@@ -4185,7 +4185,7 @@ ERROR:  value too long for type character(2)
        path
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonpath
      </code>
      [
@@ -4196,7 +4196,7 @@ ERROR:  value too long for type character(2)
         vars
        </code>
       </em>
-      <code class="type">
+      <code>
        jsonb
       </code>
       [
@@ -4207,19 +4207,19 @@ ERROR:  value too long for type character(2)
          silent
         </code>
        </em>
-       <code class="type">
+       <code>
         boolean
        </code>
       </span>
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_path_query_first_tz
      </code>
      (
@@ -4228,7 +4228,7 @@ ERROR:  value too long for type character(2)
        target
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ,
@@ -4237,7 +4237,7 @@ ERROR:  value too long for type character(2)
        path
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonpath
      </code>
      [
@@ -4248,7 +4248,7 @@ ERROR:  value too long for type character(2)
         vars
        </code>
       </em>
-      <code class="type">
+      <code>
        jsonb
       </code>
       [
@@ -4259,24 +4259,24 @@ ERROR:  value too long for type character(2)
          silent
         </code>
        </em>
-       <code class="type">
+       <code>
         boolean
        </code>
       </span>
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
     <p>
      These functions act like their counterparts described above without the
-     <code class="literal">
+     <code>
       _tz
      </code>
      suffix, except that these functions support comparisons of date/time values that require timezone-aware conversions.  The example below requires interpretation of the date-only value
-     <code class="literal">
+     <code>
       2015-08-02
      </code>
      as a timestamp with time zone, so the result depends on the current
@@ -4286,11 +4286,11 @@ ERROR:  value too long for type character(2)
      setting.  Due to this dependency, these functions are marked as stable, which means these functions cannot be used in indexes.  Their counterparts are immutable, and so can be used in indexes; but they will throw errors if asked to make such comparisons.
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_exists_tz('["2015-08-01 12:00:00-05"]', '$[*] ? (@.datetime() &lt; "2015-08-02".datetime())')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -4299,15 +4299,15 @@ ERROR:  value too long for type character(2)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_pretty
      </code>
      (
-     <code class="type">
+     <code>
       jsonb
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -4315,11 +4315,11 @@ ERROR:  value too long for type character(2)
      Converts the given JSON value to pretty-printed, indented text.
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_pretty('[{"f1":1,"f2":null}, 2]')
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -4332,88 +4332,88 @@ ERROR:  value too long for type character(2)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_typeof
      </code>
      (
-     <code class="type">
+     <code>
       json
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_typeof
      </code>
      (
-     <code class="type">
+     <code>
       jsonb
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Returns the type of the top-level JSON value as a text string. Possible types are
-     <code class="literal">
+     <code>
       object
      </code>
      ,
-     <code class="literal">
+     <code>
       array
      </code>
      ,
-     <code class="literal">
+     <code>
       string
      </code>
      ,
-     <code class="literal">
+     <code>
       number
      </code>
      ,
-     <code class="literal">
+     <code>
       boolean
      </code>
      , and
-     <code class="literal">
+     <code>
       null
      </code>
      .</p>
 
         (The
-     <code class="literal">
+     <code>
       null
      </code>
      result should not be confused with an SQL NULL; see the examples.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       json_typeof('-123.4')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       number
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       json_typeof('null'::json)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       null
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       json_typeof(NULL::json) IS NULL
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -4691,7 +4691,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
 
 
 
-<table border="1" class="table" summary="jsonpath Operators and Methods">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -4719,7 +4719,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        number
       </code>
      </em>
-     <code class="literal">
+     <code>
       +
      </code>
      <em class="replaceable">
@@ -4728,7 +4728,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         number
@@ -4740,11 +4740,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Addition
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('[2]', '$[0] + 3')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       5
      </code>
     </p>
@@ -4753,7 +4753,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       +
      </code>
      <em class="replaceable">
@@ -4762,7 +4762,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         number
@@ -4774,11 +4774,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Unary plus (no operation); unlike addition, this can iterate over multiple values
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query_array('{"x": [2,3,4]}', '+ $.x')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [2, 3, 4]
      </code>
     </p>
@@ -4792,7 +4792,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        number
       </code>
      </em>
-     <code class="literal">
+     <code>
       -
      </code>
      <em class="replaceable">
@@ -4801,7 +4801,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         number
@@ -4813,11 +4813,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Subtraction
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('[2]', '7 - $[0]')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       5
      </code>
     </p>
@@ -4826,7 +4826,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       -
      </code>
      <em class="replaceable">
@@ -4835,7 +4835,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         number
@@ -4847,11 +4847,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Negation; unlike subtraction, this can iterate over multiple values
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query_array('{"x": [2,3,4]}', '- $.x')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [-2, -3, -4]
      </code>
     </p>
@@ -4865,7 +4865,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        number
       </code>
      </em>
-     <code class="literal">
+     <code>
       *
      </code>
      <em class="replaceable">
@@ -4874,7 +4874,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         number
@@ -4886,11 +4886,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Multiplication
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('[4]', '2 * $[0]')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       8
      </code>
     </p>
@@ -4904,7 +4904,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        number
       </code>
      </em>
-     <code class="literal">
+     <code>
       /
      </code>
      <em class="replaceable">
@@ -4913,7 +4913,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         number
@@ -4925,11 +4925,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Division
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('[8.5]', '$[0] / 2')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       4.2500000000000000
      </code>
     </p>
@@ -4943,7 +4943,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        number
       </code>
      </em>
-     <code class="literal">
+     <code>
       %
      </code>
      <em class="replaceable">
@@ -4952,7 +4952,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         number
@@ -4964,11 +4964,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Modulo (remainder)
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('[32]', '$[0] % 10')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -4982,14 +4982,14 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        value
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       type()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         string
@@ -4999,17 +4999,17 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
     </p>
     <p>
      Type of the JSON item (see
-     <code class="function">
+     <code>
       json_typeof
      </code>
      )
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query_array('[1, "2", {}]', '$[*].type()')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ["number", "string", "object"]
      </code>
     </p>
@@ -5023,14 +5023,14 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        value
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       size()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         number
@@ -5042,11 +5042,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Size of the JSON item (number of array elements, or 1 if not an array)
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('{"m": [11, 15]}', '$.m.size()')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -5060,14 +5060,14 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        value
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       boolean()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         boolean
@@ -5079,11 +5079,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Boolean value converted from a JSON boolean, number, or string
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query_array('[1, "yes", false]', '$[*].boolean()')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [true, true, false]
      </code>
     </p>
@@ -5097,14 +5097,14 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        value
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       string()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         string
@@ -5116,20 +5116,20 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      String value converted from a JSON boolean, number, string, or datetime
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query_array('[1.23, "xyz", false]', '$[*].string()')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ["1.23", "xyz", "false"]
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('"2023-08-15 12:34:56"', '$.timestamp().string()')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "2023-08-15T12:34:56"
      </code>
     </p>
@@ -5143,14 +5143,14 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        value
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       double()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         number
@@ -5162,11 +5162,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Approximate floating-point number converted from a JSON number or string
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('{"len": "1.9"}', '$.len.double() * 2')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3.8
      </code>
     </p>
@@ -5180,14 +5180,14 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        number
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       ceiling()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         number
@@ -5199,11 +5199,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Nearest integer greater than or equal to the given number
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('{"h": 1.3}', '$.h.ceiling()')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -5217,14 +5217,14 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        number
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       floor()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         number
@@ -5236,11 +5236,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Nearest integer less than or equal to the given number
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('{"h": 1.7}', '$.h.floor()')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1
      </code>
     </p>
@@ -5254,14 +5254,14 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        number
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       abs()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         number
@@ -5273,11 +5273,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Absolute value of the given number
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('{"z": -0.3}', '$.z.abs()')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0.3
      </code>
     </p>
@@ -5291,14 +5291,14 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        value
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       bigint()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         bigint
@@ -5310,11 +5310,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Big integer value converted from a JSON number or string
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('{"len": "9876543219"}', '$.len.bigint()')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       9876543219
      </code>
     </p>
@@ -5328,10 +5328,10 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        value
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       decimal( [
       <em class="replaceable">
        <code>
@@ -5347,7 +5347,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
       ] ] )
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         decimal
@@ -5357,21 +5357,21 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
     </p>
     <p>
      Rounded decimal value converted from a JSON number or string (
-     <code class="literal">
+     <code>
       precision
      </code>
      and
-     <code class="literal">
+     <code>
       scale
      </code>
      must be integer values)
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('1234.5678', '$.decimal(6, 2)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1234.57
      </code>
     </p>
@@ -5385,14 +5385,14 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        value
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       integer()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         integer
@@ -5404,11 +5404,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Integer value converted from a JSON number or string
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('{"len": "12345"}', '$.len.integer()')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       12345
      </code>
     </p>
@@ -5422,14 +5422,14 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        value
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       number()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         numeric
@@ -5441,11 +5441,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Numeric value converted from a JSON number or string
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('{"len": "123.45"}', '$.len.number()')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       123.45
      </code>
     </p>
@@ -5459,14 +5459,14 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        string
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       datetime()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         datetime_type
@@ -5479,11 +5479,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Date/time value converted from a string
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('["2015-8-1", "2015-08-12"]', '$[*] ? (@.datetime() &lt; "2015-08-2".datetime())')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "2015-8-1"
      </code>
     </p>
@@ -5497,10 +5497,10 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        string
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       datetime(
       <em class="replaceable">
        <code>
@@ -5510,7 +5510,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
       )
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         datetime_type
@@ -5521,17 +5521,17 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
     </p>
     <p>
      Date/time value converted from a string using the specified
-     <code class="function">
+     <code>
       to_timestamp
      </code>
      template
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query_array('["12:30", "18:40"]', '$[*].datetime("HH24:MI")')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ["12:30:00", "18:40:00"]
      </code>
     </p>
@@ -5545,14 +5545,14 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        string
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       date()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         date
@@ -5564,11 +5564,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Date value converted from a string
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('"2023-08-15"', '$.date()')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "2023-08-15"
      </code>
     </p>
@@ -5582,14 +5582,14 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        string
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       time()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         time without time zone
@@ -5601,11 +5601,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Time without time zone value converted from a string
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('"12:34:56"', '$.time()')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "12:34:56"
      </code>
     </p>
@@ -5619,10 +5619,10 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        string
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       time(
       <em class="replaceable">
        <code>
@@ -5632,7 +5632,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
       )
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         time without time zone
@@ -5644,11 +5644,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Time without time zone value converted from a string, with fractional seconds adjusted to the given precision
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('"12:34:56.789"', '$.time(2)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "12:34:56.79"
      </code>
     </p>
@@ -5662,14 +5662,14 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        string
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       time_tz()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         time with time zone
@@ -5681,11 +5681,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Time with time zone value converted from a string
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('"12:34:56 +05:30"', '$.time_tz()')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "12:34:56+05:30"
      </code>
     </p>
@@ -5699,10 +5699,10 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        string
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       time_tz(
       <em class="replaceable">
        <code>
@@ -5712,7 +5712,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
       )
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         time with time zone
@@ -5724,11 +5724,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Time with time zone value converted from a string, with fractional seconds adjusted to the given precision
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('"12:34:56.789 +05:30"', '$.time_tz(2)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "12:34:56.79+05:30"
      </code>
     </p>
@@ -5742,14 +5742,14 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        string
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       timestamp()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         timestamp without time zone
@@ -5761,11 +5761,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Timestamp without time zone value converted from a string
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('"2023-08-15 12:34:56"', '$.timestamp()')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "2023-08-15T12:34:56"
      </code>
     </p>
@@ -5779,10 +5779,10 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        string
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       timestamp(
       <em class="replaceable">
        <code>
@@ -5792,7 +5792,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
       )
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         timestamp without time zone
@@ -5804,11 +5804,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Timestamp without time zone value converted from a string, with fractional seconds adjusted to the given precision
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('"2023-08-15 12:34:56.789"', '$.timestamp(2)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "2023-08-15T12:34:56.79"
      </code>
     </p>
@@ -5822,14 +5822,14 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        string
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       timestamp_tz()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         timestamp with time zone
@@ -5841,11 +5841,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Timestamp with time zone value converted from a string
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('"2023-08-15 12:34:56 +05:30"', '$.timestamp_tz()')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "2023-08-15T12:34:56+05:30"
      </code>
     </p>
@@ -5859,10 +5859,10 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        string
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       timestamp_tz(
       <em class="replaceable">
        <code>
@@ -5872,7 +5872,7 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
       )
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         timestamp with time zone
@@ -5884,11 +5884,11 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
      Timestamp with time zone value converted from a string, with fractional seconds adjusted to the given precision
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('"2023-08-15 12:34:56.789 +05:30"', '$.timestamp_tz(2)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "2023-08-15T12:34:56.79+05:30"
      </code>
     </p>
@@ -5902,14 +5902,14 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
        object
       </code>
      </em>
-     <code class="literal">
+     <code>
       .
      </code>
-     <code class="literal">
+     <code>
       keyvalue()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         array
@@ -5919,29 +5919,29 @@ Isso, apesar do fato de que os arrays completos são selecionados pela expressã
     </p>
     <p>
      The object's key-value pairs, represented as an array of objects containing three fields:
-     <code class="literal">
+     <code>
       "key"
      </code>
      ,
-     <code class="literal">
+     <code>
       "value"
      </code>
      , and
-     <code class="literal">
+     <code>
       "id"
      </code>
      ;
-     <code class="literal">
+     <code>
       "id"
      </code>
      is a unique identifier of the object the key-value pair belongs to
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query_array('{"x": "20", "y": 32}', '$.keyvalue()')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [{"id": 0, "key": "x", "value": "20"}, {"id": 0, "key": "y", "value": 32}]
      </code>
     </p>
@@ -5977,7 +5977,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
 
 
 
-<table border="1" class="table" summary="jsonpath Filter Expression Elements">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -6005,7 +6005,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
        value
       </code>
      </em>
-     <code class="literal">
+     <code>
       ==
      </code>
      <em class="replaceable">
@@ -6014,7 +6014,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -6022,20 +6022,20 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
      Equality comparison (this, and the other comparison operators, work on all JSON scalar values)
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query_array('[1, "a", 1, 3]', '$[*] ? (@ == 1)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [1, 1]
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query_array('[1, "a", 1, 3]', '$[*] ? (@ == "a")')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ["a"]
      </code>
     </p>
@@ -6049,7 +6049,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
        value
       </code>
      </em>
-     <code class="literal">
+     <code>
       !=
      </code>
      <em class="replaceable">
@@ -6058,7 +6058,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -6068,7 +6068,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
        value
       </code>
      </em>
-     <code class="literal">
+     <code>
       &lt;&gt;
      </code>
      <em class="replaceable">
@@ -6077,7 +6077,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -6085,20 +6085,20 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
      Non-equality comparison
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query_array('[1, 2, 1, 3]', '$[*] ? (@ != 1)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [2, 3]
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query_array('["a", "b", "c"]', '$[*] ? (@ &lt;&gt; "b")')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ["a", "c"]
      </code>
     </p>
@@ -6112,7 +6112,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
        value
       </code>
      </em>
-     <code class="literal">
+     <code>
       &lt;
      </code>
      <em class="replaceable">
@@ -6121,7 +6121,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -6129,11 +6129,11 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
      Less-than comparison
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query_array('[1, 2, 3]', '$[*] ? (@ &lt; 2)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [1]
      </code>
     </p>
@@ -6147,7 +6147,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
        value
       </code>
      </em>
-     <code class="literal">
+     <code>
       &lt;=
      </code>
      <em class="replaceable">
@@ -6156,7 +6156,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -6164,11 +6164,11 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
      Less-than-or-equal-to comparison
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query_array('["a", "b", "c"]', '$[*] ? (@ &lt;= "b")')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ["a", "b"]
      </code>
     </p>
@@ -6182,7 +6182,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
        value
       </code>
      </em>
-     <code class="literal">
+     <code>
       &gt;
      </code>
      <em class="replaceable">
@@ -6191,7 +6191,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -6199,11 +6199,11 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
      Greater-than comparison
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query_array('[1, 2, 3]', '$[*] ? (@ &gt; 2)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [3]
      </code>
     </p>
@@ -6217,7 +6217,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
        value
       </code>
      </em>
-     <code class="literal">
+     <code>
       &gt;=
      </code>
      <em class="replaceable">
@@ -6226,7 +6226,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -6234,11 +6234,11 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
      Greater-than-or-equal-to comparison
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query_array('[1, 2, 3]', '$[*] ? (@ &gt;= 2)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [2, 3]
      </code>
     </p>
@@ -6247,26 +6247,26 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       true
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      JSON constant
-     <code class="literal">
+     <code>
       true
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('[{"name": "John", "parent": false}, {"name": "Chris", "parent": true}]', '$[*] ? (@.parent == true)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"name": "Chris", "parent": true}
      </code>
     </p>
@@ -6275,26 +6275,26 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       false
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      JSON constant
-     <code class="literal">
+     <code>
       false
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('[{"name": "John", "parent": false}, {"name": "Chris", "parent": true}]', '$[*] ? (@.parent == false)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"name": "John", "parent": false}
      </code>
     </p>
@@ -6303,11 +6303,11 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       null
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         value
@@ -6317,21 +6317,21 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
     </p>
     <p>
      JSON constant
-     <code class="literal">
+     <code>
       null
      </code>
      (note that, unlike in SQL, comparison to
-     <code class="literal">
+     <code>
       null
      </code>
      works normally)
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('[{"name": "Mary", "job": null}, {"name": "Michael", "job": "driver"}]', '$[*] ? (@.job == null) .name')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "Mary"
      </code>
     </p>
@@ -6345,7 +6345,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
        boolean
       </code>
      </em>
-     <code class="literal">
+     <code>
       &amp;&amp;
      </code>
      <em class="replaceable">
@@ -6354,7 +6354,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -6362,11 +6362,11 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
      Boolean AND
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('[1, 3, 7]', '$[*] ? (@ &gt; 1 &amp;&amp; @ &lt; 5)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3
      </code>
     </p>
@@ -6380,7 +6380,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
        boolean
       </code>
      </em>
-     <code class="literal">
+     <code>
       ||
      </code>
      <em class="replaceable">
@@ -6389,7 +6389,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -6397,11 +6397,11 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
      Boolean OR
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('[1, 3, 7]', '$[*] ? (@ &lt; 1 || @ &gt; 5)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       7
      </code>
     </p>
@@ -6410,7 +6410,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       !
      </code>
      <em class="replaceable">
@@ -6419,7 +6419,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -6427,11 +6427,11 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
      Boolean NOT
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('[1, 3, 7]', '$[*] ? (!(@ &lt; 5))')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       7
      </code>
     </p>
@@ -6445,27 +6445,27 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
        boolean
       </code>
      </em>
-     <code class="literal">
+     <code>
       is unknown
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Tests whether a Boolean condition is
-     <code class="literal">
+     <code>
       unknown
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('[-1, 2, 7, "foo"]', '$[*] ? ((@ &gt; 0) is unknown)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "foo"
      </code>
     </p>
@@ -6479,7 +6479,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
        string
       </code>
      </em>
-     <code class="literal">
+     <code>
       like_regex
      </code>
      <em class="replaceable">
@@ -6489,7 +6489,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
      </em>
      [
      <span class="optional">
-      <code class="literal">
+      <code>
        flag
       </code>
       <em class="replaceable">
@@ -6499,13 +6499,13 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
       </em>
      </span>
      ] →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Tests whether the first operand matches the regular expression given by the second operand, optionally with modifications described by a string of
-     <code class="literal">
+     <code>
       flag
      </code>
      characters (see
@@ -6515,20 +6515,20 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
      ).
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query_array('["abc", "abd", "aBdC", "abdacb", "babc"]', '$[*] ? (@ like_regex "^ab.*c")')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ["abc", "abdacb"]
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query_array('["abc", "abd", "aBdC", "abdacb", "babc"]', '$[*] ? (@ like_regex "^ab.*c" flag "i")')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ["abc", "aBdC", "abdacb"]
      </code>
     </p>
@@ -6542,7 +6542,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
        string
       </code>
      </em>
-     <code class="literal">
+     <code>
       starts with
      </code>
      <em class="replaceable">
@@ -6551,7 +6551,7 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -6559,11 +6559,11 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
      Tests whether the second operand is an initial substring of the first operand.
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('["John Smith", "Mary Stone", "Bob Johnson"]', '$[*] ? (@ starts with "John")')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "John Smith"
      </code>
     </p>
@@ -6572,10 +6572,10 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       exists
      </code>
-     <code class="literal">
+     <code>
       (
      </code>
      <em class="replaceable">
@@ -6583,36 +6583,36 @@ Se diferentes tipos de data/hora precisam ser comparados, uma conversão implíc
        path_expression
       </code>
      </em>
-     <code class="literal">
+     <code>
       )
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Tests whether a path expression matches at least one SQL/JSON item. Returns
-     <code class="literal">
+     <code>
       unknown
      </code>
      if the path expression would result in an error; the second example uses this to avoid a no-such-key error in strict mode.
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query('{"x": [1, 2], "y": [2, 4]}', 'strict $.* ? (exists (@ ? (@[*] &gt; 2)))')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [2, 4]
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       jsonb_path_query_array('{"value": 41}', 'strict $ ? (exists (@.name)) .name')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       []
      </code>
     </p>
@@ -6653,7 +6653,7 @@ As funções SQL/JSON `JSON_EXISTS()`, `JSON_QUERY()` e `JSON_VALUE()` descritas
 
 
 
-<table border="1" class="table" summary="SQL/JSON Query Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -6678,9 +6678,9 @@ As funções SQL/JSON `JSON_EXISTS()`, `JSON_QUERY()` e `JSON_VALUE()` descritas
     <p class="func_signature">
     </p>
     <pre class="synopsis">
-<code class="function">JSON_EXISTS</code> (
-<em class="replaceable"><code>context_item</code></em>, <em class="replaceable"><code>path_expression</code></em>
-[<span class="optional"> <code class="literal">PASSING</code> { <em class="replaceable"><code>value</code></em> <code class="literal">AS</code> <em class="replaceable"><code>varname</code></em> } [<span class="optional">, ...</span>]</span>] [<span class="optional">{ <code class="literal">TRUE</code> | <code class="literal">FALSE</code> |<code class="literal"> UNKNOWN</code> | <code class="literal">ERROR</code> } <code class="literal">ON ERROR</code> </span>]) → <code class="returnvalue">boolean</code>
+<code>JSON_EXISTS</code> (
+<code>context_item</code>, <code>path_expression</code>
+[ <code>PASSING</code> { <code>value</code> <code>AS</code> <code>varname</code> } [<span class="optional">, ...]</span>] [{ <code>TRUE</code> | <code>FALSE</code> |<code> UNKNOWN</code> | <code>ERROR</code> } <code>ON ERROR</code> ]) → <code>boolean</code>
 </pre>
     <p class="func_signature">
     </p>
@@ -6706,7 +6706,7 @@ As funções SQL/JSON `JSON_EXISTS()`, `JSON_QUERY()` e `JSON_VALUE()` descritas
       <li class="listitem">
        <p>
         The
-        <code class="literal">
+        <code>
          ON ERROR
         </code>
         clause specifies the behavior if an error occurs during
@@ -6716,35 +6716,35 @@ As funções SQL/JSON `JSON_EXISTS()`, `JSON_QUERY()` e `JSON_VALUE()` descritas
          </code>
         </em>
         evaluation.  Specifying
-        <code class="literal">
+        <code>
          ERROR
         </code>
         will cause an error to be thrown with the appropriate message.  Other options include returning
-        <code class="type">
+        <code>
          boolean
         </code>
         values
-        <code class="literal">
+        <code>
          FALSE
         </code>
         or
-        <code class="literal">
+        <code>
          TRUE
         </code>
         or the value
-        <code class="literal">
+        <code>
          UNKNOWN
         </code>
         which is actually an SQL NULL. The default when no
-        <code class="literal">
+        <code>
          ON ERROR
         </code>
         clause is specified is to return the
-        <code class="type">
+        <code>
          boolean
         </code>
         value
-        <code class="literal">
+        <code>
          FALSE
         </code>
         .
@@ -6756,29 +6756,29 @@ As funções SQL/JSON `JSON_EXISTS()`, `JSON_QUERY()` e `JSON_VALUE()` descritas
      Examples:
     </p>
     <p>
-     <code class="literal">
+     <code>
       JSON_EXISTS(jsonb '{"key1": [1,2,3]}', 'strict $.key1[*] ? (@ &gt; $x)' PASSING 2 AS x)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       JSON_EXISTS(jsonb '{"a": [1,2,3]}', 'lax $.a[5]' ERROR ON ERROR)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       JSON_EXISTS(jsonb '{"a": [1,2,3]}', 'strict $.a[5]' ERROR ON ERROR)
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -6793,9 +6793,9 @@ ERROR:  jsonpath array subscript is out of bounds
     <p class="func_signature">
     </p>
     <pre class="synopsis">
-<code class="function">JSON_QUERY</code> (
-<em class="replaceable"><code>context_item</code></em>, <em class="replaceable"><code>path_expression</code></em>
-[<span class="optional"> <code class="literal">PASSING</code> { <em class="replaceable"><code>value</code></em> <code class="literal">AS</code> <em class="replaceable"><code>varname</code></em> } [<span class="optional">, ...</span>]</span>] [<span class="optional"> <code class="literal">RETURNING</code> <em class="replaceable"><code>data_type</code></em> [<span class="optional"> <code class="literal">FORMAT JSON</code> [<span class="optional"> <code class="literal">ENCODING UTF8</code> </span>] </span>] </span>] [<span class="optional"> { <code class="literal">WITHOUT</code> | <code class="literal">WITH</code> { <code class="literal">CONDITIONAL</code> | [<span class="optional"><code class="literal">UNCONDITIONAL</code></span>] } } [<span class="optional"> <code class="literal">ARRAY</code> </span>] <code class="literal">WRAPPER</code> </span>] [<span class="optional"> { <code class="literal">KEEP</code> | <code class="literal">OMIT</code> } <code class="literal">QUOTES</code> [<span class="optional"> <code class="literal">ON SCALAR STRING</code> </span>] </span>] [<span class="optional"> { <code class="literal">ERROR</code> | <code class="literal">NULL</code> | <code class="literal">EMPTY</code> { [<span class="optional"> <code class="literal">ARRAY</code> </span>] | <code class="literal">OBJECT</code> } | <code class="literal">DEFAULT</code> <em class="replaceable"><code>expression</code></em> } <code class="literal">ON EMPTY</code> </span>] [<span class="optional"> { <code class="literal">ERROR</code> | <code class="literal">NULL</code> | <code class="literal">EMPTY</code> { [<span class="optional"> <code class="literal">ARRAY</code> </span>] | <code class="literal">OBJECT</code> } | <code class="literal">DEFAULT</code> <em class="replaceable"><code>expression</code></em> } <code class="literal">ON ERROR</code> </span>]) → <code class="returnvalue">jsonb</code>
+<code>JSON_QUERY</code> (
+<code>context_item</code>, <code>path_expression</code>
+[ <code>PASSING</code> { <code>value</code> <code>AS</code> <code>varname</code> } [<span class="optional">, ...]</span>] [ <code>RETURNING</code> <code>data_type</code> [<span class="optional"> <code>FORMAT JSON</code> [<span class="optional"> <code>ENCODING UTF8</code> ] </span>] </span>] [ { <code>WITHOUT</code> | <code>WITH</code> { <code>CONDITIONAL</code> | [<span class="optional"><code>UNCONDITIONAL</code>] } } [ <code>ARRAY</code> ] <code>WRAPPER</code> </span>] [ { <code>KEEP</code> | <code>OMIT</code> } <code>QUOTES</code> [<span class="optional"> <code>ON SCALAR STRING</code> ] </span>] [ { <code>ERROR</code> | <code>NULL</code> | <code>EMPTY</code> { [<span class="optional"> <code>ARRAY</code> ] | <code>OBJECT</code> } | <code>DEFAULT</code> <code>expression</code> } <code>ON EMPTY</code> </span>] [ { <code>ERROR</code> | <code>NULL</code> | <code>EMPTY</code> { [<span class="optional"> <code>ARRAY</code> ] | <code>OBJECT</code> } | <code>DEFAULT</code> <code>expression</code> } <code>ON ERROR</code> </span>]) → <code>jsonb</code>
 </pre>
     <p class="func_signature">
     </p>
@@ -6821,11 +6821,11 @@ ERROR:  jsonpath array subscript is out of bounds
       <li class="listitem">
        <p>
         By default, the result is returned as a value of type
-        <code class="type">
+        <code>
          jsonb
         </code>
         , though the
-        <code class="literal">
+        <code>
          RETURNING
         </code>
         clause can be used to return as some other type to which it can be successfully coerced.
@@ -6834,27 +6834,27 @@ ERROR:  jsonpath array subscript is out of bounds
       <li class="listitem">
        <p>
         If the path expression may return multiple values, it might be necessary to wrap those values using the
-        <code class="literal">
+        <code>
          WITH WRAPPER
         </code>
         clause to make it a valid JSON string, because the default behavior is to not wrap them, as if
-        <code class="literal">
+        <code>
          WITHOUT WRAPPER
         </code>
         were specified. The
-        <code class="literal">
+        <code>
          WITH WRAPPER
         </code>
         clause is by default taken to mean
-        <code class="literal">
+        <code>
          WITH UNCONDITIONAL WRAPPER
         </code>
         , which means that even a single result value will be wrapped. To apply the wrapper only when multiple values are present, specify
-        <code class="literal">
+        <code>
          WITH CONDITIONAL WRAPPER
         </code>
         . Getting multiple values in result will be treated as an error if
-        <code class="literal">
+        <code>
          WITHOUT WRAPPER
         </code>
         is specified.
@@ -6863,19 +6863,19 @@ ERROR:  jsonpath array subscript is out of bounds
       <li class="listitem">
        <p>
         If the result is a scalar string, by default, the returned value will be surrounded by quotes, making it a valid JSON value.  It can be made explicit by specifying
-        <code class="literal">
+        <code>
          KEEP QUOTES
         </code>
         .  Conversely, quotes can be omitted by specifying
-        <code class="literal">
+        <code>
          OMIT QUOTES
         </code>
         . To ensure that the result is a valid JSON value,
-        <code class="literal">
+        <code>
          OMIT QUOTES
         </code>
         cannot be specified when
-        <code class="literal">
+        <code>
          WITH WRAPPER
         </code>
         is also specified.
@@ -6884,7 +6884,7 @@ ERROR:  jsonpath array subscript is out of bounds
       <li class="listitem">
        <p>
         The
-        <code class="literal">
+        <code>
          ON EMPTY
         </code>
         clause specifies the behavior if evaluating
@@ -6894,7 +6894,7 @@ ERROR:  jsonpath array subscript is out of bounds
          </code>
         </em>
         yields an empty set. The
-        <code class="literal">
+        <code>
          ON ERROR
         </code>
         clause specifies the behavior if an error occurs when evaluating
@@ -6904,11 +6904,11 @@ ERROR:  jsonpath array subscript is out of bounds
          </code>
         </em>
         , when coercing the result value to the
-        <code class="literal">
+        <code>
          RETURNING
         </code>
         type, or when evaluating the
-        <code class="literal">
+        <code>
          ON EMPTY
         </code>
         expression if the
@@ -6923,19 +6923,19 @@ ERROR:  jsonpath array subscript is out of bounds
       <li class="listitem">
        <p>
         For both
-        <code class="literal">
+        <code>
          ON EMPTY
         </code>
         and
-        <code class="literal">
+        <code>
          ON ERROR
         </code>
         , specifying
-        <code class="literal">
+        <code>
          ERROR
         </code>
         will cause an error to be thrown with the appropriate message. Other options include returning an SQL NULL, an empty array (
-        <code class="literal">
+        <code>
          EMPTY [
          <span class="optional">
           ARRAY
@@ -6943,11 +6943,11 @@ ERROR:  jsonpath array subscript is out of bounds
          ]
         </code>
         ), an empty object (
-        <code class="literal">
+        <code>
          EMPTY OBJECT
         </code>
         ), or a user-specified expression (
-        <code class="literal">
+        <code>
          DEFAULT
         </code>
         <em class="replaceable">
@@ -6956,15 +6956,15 @@ ERROR:  jsonpath array subscript is out of bounds
          </code>
         </em>
         ) that can be coerced to jsonb or the type specified in
-        <code class="literal">
+        <code>
          RETURNING
         </code>
         . The default when
-        <code class="literal">
+        <code>
          ON EMPTY
         </code>
         or
-        <code class="literal">
+        <code>
          ON ERROR
         </code>
         is not specified is to return an SQL NULL value.
@@ -6976,29 +6976,29 @@ ERROR:  jsonpath array subscript is out of bounds
      Examples:
     </p>
     <p>
-     <code class="literal">
+     <code>
       JSON_QUERY(jsonb '[1,[2,3],null]', 'lax $[*][$off]' PASSING 1 AS off WITH CONDITIONAL WRAPPER)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       JSON_QUERY(jsonb '{"a": "[1, 2]"}', 'lax $.a' OMIT QUOTES)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [1, 2]
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       JSON_QUERY(jsonb '{"a": "[1, 2]"}', 'lax $.a' RETURNING int[] OMIT QUOTES ERROR ON ERROR)
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -7013,9 +7013,9 @@ ERROR:  malformed array literal: "[1, 2]" DETAIL:  Missing "]" after array dimen
     <p class="func_signature">
     </p>
     <pre class="synopsis">
-<code class="function">JSON_VALUE</code> (
-<em class="replaceable"><code>context_item</code></em>, <em class="replaceable"><code>path_expression</code></em>
-[<span class="optional"> <code class="literal">PASSING</code> { <em class="replaceable"><code>value</code></em> <code class="literal">AS</code> <em class="replaceable"><code>varname</code></em> } [<span class="optional">, ...</span>]</span>] [<span class="optional"> <code class="literal">RETURNING</code> <em class="replaceable"><code>data_type</code></em> </span>] [<span class="optional"> { <code class="literal">ERROR</code> | <code class="literal">NULL</code> | <code class="literal">DEFAULT</code> <em class="replaceable"><code>expression</code></em> } <code class="literal">ON EMPTY</code> </span>] [<span class="optional"> { <code class="literal">ERROR</code> | <code class="literal">NULL</code> | <code class="literal">DEFAULT</code> <em class="replaceable"><code>expression</code></em> } <code class="literal">ON ERROR</code> </span>]) → <code class="returnvalue">text</code>
+<code>JSON_VALUE</code> (
+<code>context_item</code>, <code>path_expression</code>
+[ <code>PASSING</code> { <code>value</code> <code>AS</code> <code>varname</code> } [<span class="optional">, ...]</span>] [ <code>RETURNING</code> <code>data_type</code> ] [ { <code>ERROR</code> | <code>NULL</code> | <code>DEFAULT</code> <code>expression</code> } <code>ON EMPTY</code> ] [ { <code>ERROR</code> | <code>NULL</code> | <code>DEFAULT</code> <code>expression</code> } <code>ON ERROR</code> ]) → <code>text</code>
 </pre>
     <p class="func_signature">
     </p>
@@ -7041,7 +7041,7 @@ ERROR:  malformed array literal: "[1, 2]" DETAIL:  Missing "]" after array dimen
       <li class="listitem">
        <p>
         Only use
-        <code class="function">
+        <code>
          JSON_VALUE()
         </code>
         if the extracted value is expected to be a single
@@ -7049,7 +7049,7 @@ ERROR:  malformed array literal: "[1, 2]" DETAIL:  Missing "]" after array dimen
          SQL/JSON
         </acronym>
         scalar item; getting multiple values will be treated as an error. If you expect that extracted value might be an object or an array, use the
-        <code class="function">
+        <code>
          JSON_QUERY
         </code>
         function instead.
@@ -7058,11 +7058,11 @@ ERROR:  malformed array literal: "[1, 2]" DETAIL:  Missing "]" after array dimen
       <li class="listitem">
        <p>
         By default, the result, which must be a single scalar value, is returned as a value of type
-        <code class="type">
+        <code>
          text
         </code>
         , though the
-        <code class="literal">
+        <code>
          RETURNING
         </code>
         clause can be used to return as some other type to which it can be successfully coerced.
@@ -7071,15 +7071,15 @@ ERROR:  malformed array literal: "[1, 2]" DETAIL:  Missing "]" after array dimen
       <li class="listitem">
        <p>
         The
-        <code class="literal">
+        <code>
          ON ERROR
         </code>
         and
-        <code class="literal">
+        <code>
          ON EMPTY
         </code>
         clauses have similar semantics as mentioned in the description of
-        <code class="function">
+        <code>
          JSON_QUERY
         </code>
         , except the set of values returned in lieu of throwing an error is different.
@@ -7088,15 +7088,15 @@ ERROR:  malformed array literal: "[1, 2]" DETAIL:  Missing "]" after array dimen
       <li class="listitem">
        <p>
         Note that scalar strings returned by
-        <code class="function">
+        <code>
          JSON_VALUE
         </code>
         always have their quotes removed, equivalent to specifying
-        <code class="literal">
+        <code>
          OMIT QUOTES
         </code>
         in
-        <code class="function">
+        <code>
          JSON_QUERY
         </code>
         .
@@ -7108,38 +7108,38 @@ ERROR:  malformed array literal: "[1, 2]" DETAIL:  Missing "]" after array dimen
      Examples:
     </p>
     <p>
-     <code class="literal">
+     <code>
       JSON_VALUE(jsonb '"123.45"', '$' RETURNING float)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       123.45
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       JSON_VALUE(jsonb '"03:04 2015-02-01"', '$.datetime("HH24:MI YYYY-MM-DD")' RETURNING date)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2015-02-01
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       JSON_VALUE(jsonb '[1,2]', 'strict $[$off]' PASSING 1 as off)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       JSON_VALUE(jsonb '[1,2]', 'strict $[*]' DEFAULT 9 ON ERROR)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       9
      </code>
     </p>

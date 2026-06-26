@@ -7,7 +7,7 @@ O tipo de dados `bytea` permite o armazenamento de cadeias binárias; veja [Tabe
 
 **Tabela 8.6. Tipos de dados binários**
 
-<table border="1" class="table" summary="Binary Data Types">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -29,7 +29,7 @@ O tipo de dados `bytea` permite o armazenamento de cadeias binárias; veja [Tabe
  <tbody>
   <tr>
    <td>
-    <code class="type">
+    <code>
      bytea
     </code>
    </td>
@@ -72,7 +72,7 @@ Ao inserir valores de `bytea` em formato de escape, os octetos de certos valores
 
 **Tabela 8.7. Octetos Literais Escapados `bytea`**
 
-<table border="1" class="table" summary="bytea Literal Escaped Octets">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -108,17 +108,17 @@ Ao inserir valores de `bytea` em formato de escape, os octetos de certos valores
     zero octet
    </td>
    <td>
-    <code class="literal">
+    <code>
      '\000'
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '\000'::bytea
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      \x00
     </code>
    </td>
@@ -131,21 +131,21 @@ Ao inserir valores de `bytea` em formato de escape, os octetos de certos valores
     single quote
    </td>
    <td>
-    <code class="literal">
+    <code>
      ''''
     </code>
     or
-    <code class="literal">
+    <code>
      '\047'
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ''''::bytea
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      \x27
     </code>
    </td>
@@ -158,21 +158,21 @@ Ao inserir valores de `bytea` em formato de escape, os octetos de certos valores
     backslash
    </td>
    <td>
-    <code class="literal">
+    <code>
      '\\'
     </code>
     or
-    <code class="literal">
+    <code>
      '\134'
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '\\'::bytea
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      \x5c
     </code>
    </td>
@@ -192,7 +192,7 @@ Ao inserir valores de `bytea` em formato de escape, os octetos de certos valores
     octets
    </td>
    <td>
-    <code class="literal">
+    <code>
      '\
      <em class="replaceable">
       <code>
@@ -203,12 +203,12 @@ Ao inserir valores de `bytea` em formato de escape, os octetos de certos valores
     (octal value)
    </td>
    <td>
-    <code class="literal">
+    <code>
      '\001'::bytea
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      \x01
     </code>
    </td>
@@ -237,7 +237,7 @@ O octal com valor decimal 92 (barra) é duplicado na saída. Os detalhes estão 
 
 **Tabela 8.8. Octetos de Saída Escapados `bytea`**
 
-<table border="1" class="table" summary="bytea Output Escaped Octets">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -273,17 +273,17 @@ O octal com valor decimal 92 (barra) é duplicado na saída. Os detalhes estão 
     barra invertida
    </td>
    <td>
-    <code class="literal">
+    <code>
      \\
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      '\134'::bytea
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      \\
     </code>
    </td>
@@ -303,7 +303,7 @@ O octal com valor decimal 92 (barra) é duplicado na saída. Os detalhes estão 
     oitos
    </td>
    <td>
-    <code class="literal">
+    <code>
      \
      <em class="replaceable">
       <code>
@@ -314,12 +314,12 @@ O octal com valor decimal 92 (barra) é duplicado na saída. Os detalhes estão 
     (valor octal)
    </td>
    <td>
-    <code class="literal">
+    <code>
      '\001'::bytea
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      \001
     </code>
    </td>
@@ -342,12 +342,12 @@ O octal com valor decimal 92 (barra) é duplicado na saída. Os detalhes estão 
     representação do conjunto de caracteres do cliente
    </td>
    <td>
-    <code class="literal">
+    <code>
      '\176'::bytea
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ~
     </code>
    </td>

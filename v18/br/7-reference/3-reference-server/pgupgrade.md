@@ -295,59 +295,59 @@ O pg_upgrade não suporta a atualização de bancos de dados que contêm colunas
 
 
 
-<table border="0" class="simplelist" summary="Simple list">
+<table>
  <tr>
   <td>
-   <code class="type">
+   <code>
     regcollation
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="type">
+   <code>
     regconfig
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="type">
+   <code>
     regdictionary
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="type">
+   <code>
     regnamespace
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="type">
+   <code>
     regoper
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="type">
+   <code>
     regoperator
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="type">
+   <code>
     regproc
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="type">
+   <code>
     regprocedure
    </code>
   </td>

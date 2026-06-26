@@ -8,7 +8,7 @@ Observe que as entradas para ambas as funções na visualização fazem referên
 
 
 
-<table border="1" class="table" summary="routine_routine_usage Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ Observe que as entradas para ambas as funções na visualização fazem referên
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       specific_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -43,10 +43,10 @@ Observe que as entradas para ambas as funções na visualização fazem referên
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       specific_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -58,10 +58,10 @@ Observe que as entradas para ambas as funções na visualização fazem referên
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       specific_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -81,10 +81,10 @@ Observe que as entradas para ambas as funções na visualização fazem referên
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       routine_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -96,10 +96,10 @@ Observe que as entradas para ambas as funções na visualização fazem referên
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       routine_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -111,10 +111,10 @@ Observe que as entradas para ambas as funções na visualização fazem referên
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       routine_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>

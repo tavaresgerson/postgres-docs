@@ -8,7 +8,7 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
 
 
 
-<table border="1" class="table" summary="Default Parser's Token Types">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -30,7 +30,7 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      asciiword
     </code>
    </td>
@@ -38,14 +38,14 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     Palavra, todas as letras ASCII
    </td>
    <td>
-    <code class="literal">
+    <code>
      elephant
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      word
     </code>
    </td>
@@ -53,14 +53,14 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     Palavra, todas as letras
    </td>
    <td>
-    <code class="literal">
+    <code>
      mañana
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      numword
     </code>
    </td>
@@ -68,14 +68,14 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     Palavras, letras e algarismos
    </td>
    <td>
-    <code class="literal">
+    <code>
      beta1
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      asciihword
     </code>
    </td>
@@ -83,14 +83,14 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     Palavra hífena, todo ASCII
    </td>
    <td>
-    <code class="literal">
+    <code>
      up-to-date
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      hword
     </code>
    </td>
@@ -98,14 +98,14 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     Palavra hífena, todas as letras
    </td>
    <td>
-    <code class="literal">
+    <code>
      lógico-matemática
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      numhword
     </code>
    </td>
@@ -113,14 +113,14 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     Palavras compostas, letras e algarismos
    </td>
    <td>
-    <code class="literal">
+    <code>
      postgresql-beta1
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      hword_asciipart
     </code>
    </td>
@@ -128,18 +128,18 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     Parte de palavra com hífen, todo ASCII
    </td>
    <td>
-    <code class="literal">
+    <code>
      postgresql
     </code>
     in the context
-    <code class="literal">
+    <code>
      postgresql-beta1
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      hword_part
     </code>
    </td>
@@ -147,22 +147,22 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     Parte de palavra com hífen, todas as letras
    </td>
    <td>
-    <code class="literal">
+    <code>
      lógico
     </code>
     or
-    <code class="literal">
+    <code>
      matemática
     </code>
     in the context
-    <code class="literal">
+    <code>
      lógico-matemática
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      hword_numpart
     </code>
    </td>
@@ -170,18 +170,18 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     Parte de palavra com hífen, letras e dígitos
    </td>
    <td>
-    <code class="literal">
+    <code>
      beta1
     </code>
     in the context
-    <code class="literal">
+    <code>
      postgresql-beta1
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      email
     </code>
    </td>
@@ -189,14 +189,14 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     Endereço de e-mail
    </td>
    <td>
-    <code class="literal">
+    <code>
      foo@example.com
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      protocol
     </code>
    </td>
@@ -204,14 +204,14 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     Cabeçalho do protocolo
    </td>
    <td>
-    <code class="literal">
+    <code>
      http://
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      url
     </code>
    </td>
@@ -219,14 +219,14 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     URL
    </td>
    <td>
-    <code class="literal">
+    <code>
      example.com/stuff/index.html
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      host
     </code>
    </td>
@@ -234,14 +234,14 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     Anfitrião
    </td>
    <td>
-    <code class="literal">
+    <code>
      example.com
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      url_path
     </code>
    </td>
@@ -249,7 +249,7 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     Caminho do URL
    </td>
    <td>
-    <code class="literal">
+    <code>
      /stuff/index.html
     </code>
     , in the context of a URL
@@ -257,7 +257,7 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      file
     </code>
    </td>
@@ -265,7 +265,7 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     Nome do arquivo ou caminho
    </td>
    <td>
-    <code class="literal">
+    <code>
      /usr/local/foo.txt
     </code>
     , if not within a URL
@@ -273,7 +273,7 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      sfloat
     </code>
    </td>
@@ -281,14 +281,14 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     Notação científica
    </td>
    <td>
-    <code class="literal">
+    <code>
      -1.234e56
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      float
     </code>
    </td>
@@ -296,14 +296,14 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     Notação decimal
    </td>
    <td>
-    <code class="literal">
+    <code>
      -1.234
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      int
     </code>
    </td>
@@ -311,14 +311,14 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     Inteiro assinado
    </td>
    <td>
-    <code class="literal">
+    <code>
      -1234
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      uint
     </code>
    </td>
@@ -326,14 +326,14 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     Inteiro não assinado
    </td>
    <td>
-    <code class="literal">
+    <code>
      1234
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      version
     </code>
    </td>
@@ -341,14 +341,14 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     Número da versão
    </td>
    <td>
-    <code class="literal">
+    <code>
      8.3.0
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      tag
     </code>
    </td>
@@ -356,14 +356,14 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     etiqueta XML
    </td>
    <td>
-    <code class="literal">
+    <code>
      &lt;a href="dictionaries.html"&gt;
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      entity
     </code>
    </td>
@@ -371,14 +371,14 @@ O analisador embutido é chamado `pg_catalog.default`. Ele reconhece 23 tipos de
     entidade XML
    </td>
    <td>
-    <code class="literal">
+    <code>
      &amp;amp;
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      blank
     </code>
    </td>

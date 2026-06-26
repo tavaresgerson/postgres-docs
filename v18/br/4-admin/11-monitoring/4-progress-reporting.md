@@ -17,7 +17,7 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
 
 
 
-<table border="1" class="table" summary="pg_stat_progress_analyze View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -37,10 +37,10 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pid
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
@@ -52,10 +52,10 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -67,10 +67,10 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -82,10 +82,10 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -97,10 +97,10 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       phase
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -116,10 +116,10 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sample_blks_total
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -131,10 +131,10 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sample_blks_scanned
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -146,10 +146,10 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       ext_stats_total
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -161,16 +161,16 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       ext_stats_computed
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Número de estatísticas estendidas calculadas. Esse contador avança apenas quando a fase é
-     <code class="literal">
+     <code>
       computing extended statistics
      </code>
      .
@@ -180,10 +180,10 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       child_tables_total
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -195,16 +195,16 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       child_tables_done
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Número de tabelas de crianças analisadas. Esse contador avança apenas quando a fase é
-     <code class="literal">
+     <code>
       acquiring inherited sample rows
      </code>
      .
@@ -214,16 +214,16 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       current_child_table_relid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
     <p>
      OID da tabela de crianças que está sendo atualmente analisada. Esse campo é válido apenas quando a fase é
-     <code class="literal">
+     <code>
       acquiring inherited sample rows
      </code>
      .
@@ -233,10 +233,10 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       delay_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -269,7 +269,7 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
 
 
 
-<table border="1" class="table" summary="ANALYZE Phases">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -287,7 +287,7 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      initializing
     </code>
    </td>
@@ -297,13 +297,13 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      acquiring sample rows
     </code>
    </td>
    <td>
     O comando está atualmente analisando a tabela fornecida por
-    <code class="structfield">
+    <code>
      relid
     </code>
     para obter linhas de amostra.
@@ -311,21 +311,21 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      acquiring inherited sample rows
     </code>
    </td>
    <td>
     O comando está atualmente analisando tabelas de crianças para obter linhas de amostra. Colunas
-    <code class="structfield">
+    <code>
      child_tables_total
     </code>
     ,
-    <code class="structfield">
+    <code>
      child_tables_done
     </code>
     , e
-    <code class="structfield">
+    <code>
      current_child_table_relid
     </code>
     contenha as informações sobre o progresso nesta fase.
@@ -333,7 +333,7 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      computing statistics
     </code>
    </td>
@@ -343,7 +343,7 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      computing extended statistics
     </code>
    </td>
@@ -353,17 +353,17 @@ Sempre que o `ANALYZE` estiver em execução, a visualização `pg_stat_progress
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      finalizing analyze
     </code>
    </td>
    <td>
     O comando está sendo atualizado
-    <code class="structname">
+    <code>
      pg_class
     </code>
     Quando esta fase for concluída,
-    <code class="command">
+    <code>
      ANALYZE
     </code>
     isso terminará.
@@ -393,7 +393,7 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
 
 
 
-<table border="1" class="table" summary="pg_stat_progress_cluster View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -413,10 +413,10 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pid
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
@@ -428,10 +428,10 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -443,10 +443,10 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -458,10 +458,10 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -473,20 +473,20 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       command
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      O comando que está em execução. Ou
-     <code class="literal">
+     <code>
       CLUSTER
      </code>
      ou
-     <code class="literal">
+     <code>
       VACUUM FULL
      </code>
      .
@@ -496,10 +496,10 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       phase
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -515,10 +515,10 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       cluster_index_relid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -530,24 +530,24 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       heap_tuples_scanned
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Número de tuplas de pilha analisadas. Esse contador avança apenas quando a fase está
-     <code class="literal">
+     <code>
       seq scanning heap
      </code>
      ,
-     <code class="literal">
+     <code>
       index scanning heap
      </code>
      ou
-     <code class="literal">
+     <code>
       writing new heap
      </code>
      .
@@ -557,24 +557,24 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       heap_tuples_written
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Número de tuplas de pilha escritas. Esse contador avança apenas quando a fase está
-     <code class="literal">
+     <code>
       seq scanning heap
      </code>
      ,
-     <code class="literal">
+     <code>
       index scanning heap
      </code>
      ou
-     <code class="literal">
+     <code>
       writing new heap
      </code>
      .
@@ -584,16 +584,16 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       heap_blks_total
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Número total de blocos de pilha na tabela. Esse número é relatado a partir do início
-     <code class="literal">
+     <code>
       seq scanning heap
      </code>
      .
@@ -603,16 +603,16 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       heap_blks_scanned
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Número de blocos de pilha examinados. Esse contador avança apenas quando a fase está
-     <code class="literal">
+     <code>
       seq scanning heap
      </code>
      .
@@ -622,16 +622,16 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       index_rebuild_count
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Número de índices reconstruídos. Esse contador só avança quando a fase está
-     <code class="literal">
+     <code>
       rebuilding index
      </code>
      .
@@ -654,7 +654,7 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
 
 
 
-<table border="1" class="table" summary="CLUSTER and VACUUM FULL Phases">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -672,7 +672,7 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      initializing
     </code>
    </td>
@@ -682,7 +682,7 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      seq scanning heap
     </code>
    </td>
@@ -692,12 +692,12 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      index scanning heap
     </code>
    </td>
    <td>
-    <code class="command">
+    <code>
      CLUSTER
     </code>
     está atualmente a digitalizar a tabela usando uma varredura de índice.
@@ -705,12 +705,12 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      sorting tuples
     </code>
    </td>
    <td>
-    <code class="command">
+    <code>
      CLUSTER
     </code>
     está atualmente classificando tuplas.
@@ -718,12 +718,12 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      writing new heap
     </code>
    </td>
    <td>
-    <code class="command">
+    <code>
      CLUSTER
     </code>
     está escrevendo atualmente o novo heap.
@@ -731,7 +731,7 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      swapping relation files
     </code>
    </td>
@@ -741,7 +741,7 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      rebuilding index
     </code>
    </td>
@@ -751,17 +751,17 @@ Sempre que o `CLUSTER` ou o `VACUUM FULL` estiver em execução, a visualizaçã
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      performing final cleanup
     </code>
    </td>
    <td>
     O comando está realizando a limpeza final. Quando esta fase for concluída,
-    <code class="command">
+    <code>
      CLUSTER
     </code>
     ou
-    <code class="command">
+    <code>
      VACUUM FULL
     </code>
     isso terminará.
@@ -784,7 +784,7 @@ Sempre que o `COPY` estiver em execução, a visualização `pg_stat_progress_co
 
 
 
-<table border="1" class="table" summary="pg_stat_progress_copy View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -804,10 +804,10 @@ Sempre que o `COPY` estiver em execução, a visualização `pg_stat_progress_co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pid
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
@@ -819,10 +819,10 @@ Sempre que o `COPY` estiver em execução, a visualização `pg_stat_progress_co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -834,10 +834,10 @@ Sempre que o `COPY` estiver em execução, a visualização `pg_stat_progress_co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -849,24 +849,24 @@ Sempre que o `COPY` estiver em execução, a visualização `pg_stat_progress_co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
     <p>
      OID da tabela em que o
-     <code class="command">
+     <code>
       COPY
      </code>
      O comando é executado. Está definido para
-     <code class="literal">
+     <code>
       0
      </code>
      se copiar de um
-     <code class="command">
+     <code>
       SELECT
      </code>
      query.
@@ -876,20 +876,20 @@ Sempre que o `COPY` estiver em execução, a visualização `pg_stat_progress_co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       command
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      O comando que está em execução:
-     <code class="literal">
+     <code>
       COPY FROM
      </code>
      , ou
-     <code class="literal">
+     <code>
       COPY TO
      </code>
      .
@@ -899,36 +899,36 @@ Sempre que o `COPY` estiver em execução, a visualização `pg_stat_progress_co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       type
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      O tipo de E/S do qual os dados são lidos ou escritos:
-     <code class="literal">
+     <code>
       FILE
      </code>
      ,
-     <code class="literal">
+     <code>
       PROGRAM
      </code>
      ,
-     <code class="literal">
+     <code>
       PIPE
      </code>
      (para
-     <code class="command">
+     <code>
       COPY FROM STDIN
      </code>
      e
-     <code class="command">
+     <code>
       COPY TO STDOUT
      </code>
      ), ou
-     <code class="literal">
+     <code>
       CALLBACK
      </code>
      (usado, por exemplo, durante a sincronização inicial da tabela na replicação lógica).
@@ -938,16 +938,16 @@ Sempre que o `COPY` estiver em execução, a visualização `pg_stat_progress_co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       bytes_processed
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Número de bytes já processados por
-     <code class="command">
+     <code>
       COPY
      </code>
      command.
@@ -957,20 +957,20 @@ Sempre que o `COPY` estiver em execução, a visualização `pg_stat_progress_co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       bytes_total
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Tamanho do arquivo fonte para
-     <code class="command">
+     <code>
       COPY FROM
      </code>
      comando em bytes. Ele está configurado para
-     <code class="literal">
+     <code>
       0
      </code>
      se não estiver disponível.
@@ -980,16 +980,16 @@ Sempre que o `COPY` estiver em execução, a visualização `pg_stat_progress_co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tuples_processed
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Número de tuplas já processadas por
-     <code class="command">
+     <code>
       COPY
      </code>
      command.
@@ -999,20 +999,20 @@ Sempre que o `COPY` estiver em execução, a visualização `pg_stat_progress_co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tuples_excluded
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Número de tuplas que não foram processadas porque foram excluídas pelo
-     <code class="command">
+     <code>
       WHERE
      </code>
      cláusula do
-     <code class="command">
+     <code>
       COPY
      </code>
      command.
@@ -1022,20 +1022,20 @@ Sempre que o `COPY` estiver em execução, a visualização `pg_stat_progress_co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tuples_skipped
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Número de tuplas ignoradas porque contêm dados malformados. Esse contador avança apenas quando um valor diferente de
-     <code class="literal">
+     <code>
       stop
      </code>
      é especificado para
-     <code class="literal">
+     <code>
       ON_ERROR
      </code>
      option.
@@ -1059,7 +1059,7 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
 
 
 
-<table border="1" class="table" summary="pg_stat_progress_create_index View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -1079,10 +1079,10 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pid
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
@@ -1094,10 +1094,10 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -1109,10 +1109,10 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -1124,10 +1124,10 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -1139,16 +1139,16 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       index_relid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
     <p>
      OID do índice que está sendo criado ou reindexado. Durante uma operação não concorrente
-     <code class="command">
+     <code>
       CREATE INDEX
      </code>
      , isso é 0.
@@ -1158,28 +1158,28 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       command
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      Tipo de comando específico:
-     <code class="literal">
+     <code>
       CREATE INDEX
      </code>
      ,
-     <code class="literal">
+     <code>
       CREATE INDEX CONCURRENTLY
      </code>
      ,
-     <code class="literal">
+     <code>
       REINDEX
      </code>
      , ou
-     <code class="literal">
+     <code>
       REINDEX CONCURRENTLY
      </code>
      .
@@ -1189,10 +1189,10 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       phase
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -1208,10 +1208,10 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       lockers_total
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -1223,10 +1223,10 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       lockers_done
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -1238,10 +1238,10 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       current_locker_pid
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -1253,10 +1253,10 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       blocks_total
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -1268,10 +1268,10 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       blocks_done
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -1283,10 +1283,10 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tuples_total
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -1298,10 +1298,10 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tuples_done
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -1313,20 +1313,20 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       partitions_total
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Número total de partições nas quais o índice deve ser criado ou anexado, incluindo partições diretas e indiretas.
-     <code class="literal">
+     <code>
       0
      </code>
      durante um
-     <code class="literal">
+     <code>
       REINDEX
      </code>
      , ou quando o índice não está particionado.
@@ -1336,20 +1336,20 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       partitions_done
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Número de partições nas quais o índice já foi criado ou anexado, incluindo partições diretas e indiretas.
-     <code class="literal">
+     <code>
       0
      </code>
      durante um
-     <code class="literal">
+     <code>
       REINDEX
      </code>
      , ou quando o índice não está particionado.
@@ -1372,7 +1372,7 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
 
 
 
-<table border="1" class="table" summary="CREATE INDEX Phases">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -1390,16 +1390,16 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      initializing
     </code>
    </td>
    <td>
-    <code class="command">
+    <code>
      CREATE INDEX
     </code>
     or
-    <code class="command">
+    <code>
      REINDEX
     </code>
     is preparing to create the index.  This phase is expected to be very brief.
@@ -1407,28 +1407,28 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      waiting for writers before build
     </code>
    </td>
    <td>
-    <code class="command">
+    <code>
      CREATE INDEX CONCURRENTLY
     </code>
     or
-    <code class="command">
+    <code>
      REINDEX CONCURRENTLY
     </code>
     is waiting for transactions with write locks that can potentially see the table to finish. This phase is skipped when not in concurrent mode. Columns
-    <code class="structname">
+    <code>
      lockers_total
     </code>
     ,
-    <code class="structname">
+    <code>
      lockers_done
     </code>
     and
-    <code class="structname">
+    <code>
      current_locker_pid
     </code>
     contain the progress information for this phase.
@@ -1436,25 +1436,25 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      building index
     </code>
    </td>
    <td>
     The index is being built by the access method-specific code.  In this phase, access methods that support progress reporting fill in their own progress data, and the subphase is indicated in this column.  Typically,
-    <code class="structname">
+    <code>
      blocks_total
     </code>
     and
-    <code class="structname">
+    <code>
      blocks_done
     </code>
     will contain progress data, as well as potentially
-    <code class="structname">
+    <code>
      tuples_total
     </code>
     and
-    <code class="structname">
+    <code>
      tuples_done
     </code>
     .
@@ -1462,28 +1462,28 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      waiting for writers before validation
     </code>
    </td>
    <td>
-    <code class="command">
+    <code>
      CREATE INDEX CONCURRENTLY
     </code>
     or
-    <code class="command">
+    <code>
      REINDEX CONCURRENTLY
     </code>
     is waiting for transactions with write locks that can potentially write into the table to finish. This phase is skipped when not in concurrent mode. Columns
-    <code class="structname">
+    <code>
      lockers_total
     </code>
     ,
-    <code class="structname">
+    <code>
      lockers_done
     </code>
     and
-    <code class="structname">
+    <code>
      current_locker_pid
     </code>
     contain the progress information for this phase.
@@ -1491,20 +1491,20 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      index validation: scanning index
     </code>
    </td>
    <td>
-    <code class="command">
+    <code>
      CREATE INDEX CONCURRENTLY
     </code>
     is scanning the index searching for tuples that need to be validated. This phase is skipped when not in concurrent mode. Columns
-    <code class="structname">
+    <code>
      blocks_total
     </code>
     (set to the total size of the index) and
-    <code class="structname">
+    <code>
      blocks_done
     </code>
     contain the progress information for this phase.
@@ -1512,12 +1512,12 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      index validation: sorting tuples
     </code>
    </td>
    <td>
-    <code class="command">
+    <code>
      CREATE INDEX CONCURRENTLY
     </code>
     is sorting the output of the index scanning phase.
@@ -1525,20 +1525,20 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      index validation: scanning table
     </code>
    </td>
    <td>
-    <code class="command">
+    <code>
      CREATE INDEX CONCURRENTLY
     </code>
     is scanning the table to validate the index tuples collected in the previous two phases. This phase is skipped when not in concurrent mode. Columns
-    <code class="structname">
+    <code>
      blocks_total
     </code>
     (set to the total size of the table) and
-    <code class="structname">
+    <code>
      blocks_done
     </code>
     contain the progress information for this phase.
@@ -1546,28 +1546,28 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      waiting for old snapshots
     </code>
    </td>
    <td>
-    <code class="command">
+    <code>
      CREATE INDEX CONCURRENTLY
     </code>
     or
-    <code class="command">
+    <code>
      REINDEX CONCURRENTLY
     </code>
     is waiting for transactions that can potentially see the table to release their snapshots.  This phase is skipped when not in concurrent mode. Columns
-    <code class="structname">
+    <code>
      lockers_total
     </code>
     ,
-    <code class="structname">
+    <code>
      lockers_done
     </code>
     and
-    <code class="structname">
+    <code>
      current_locker_pid
     </code>
     contain the progress information for this phase.
@@ -1575,24 +1575,24 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      waiting for readers before marking dead
     </code>
    </td>
    <td>
-    <code class="command">
+    <code>
      REINDEX CONCURRENTLY
     </code>
     is waiting for transactions with read locks on the table to finish, before marking the old index dead. This phase is skipped when not in concurrent mode. Columns
-    <code class="structname">
+    <code>
      lockers_total
     </code>
     ,
-    <code class="structname">
+    <code>
      lockers_done
     </code>
     and
-    <code class="structname">
+    <code>
      current_locker_pid
     </code>
     contain the progress information for this phase.
@@ -1600,24 +1600,24 @@ Sempre que o `CREATE INDEX` ou o `REINDEX` estiver em execução, a visualizaç�
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      waiting for readers before dropping
     </code>
    </td>
    <td>
-    <code class="command">
+    <code>
      REINDEX CONCURRENTLY
     </code>
     is waiting for transactions with read locks on the table to finish, before dropping the old index. This phase is skipped when not in concurrent mode. Columns
-    <code class="structname">
+    <code>
      lockers_total
     </code>
     ,
-    <code class="structname">
+    <code>
      lockers_done
     </code>
     and
-    <code class="structname">
+    <code>
      current_locker_pid
     </code>
     contain the progress information for this phase.
@@ -1640,7 +1640,7 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
 
 
 
-<table border="1" class="table" summary="pg_stat_progress_vacuum View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -1660,10 +1660,10 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pid
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
@@ -1675,10 +1675,10 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -1690,10 +1690,10 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -1705,10 +1705,10 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -1720,10 +1720,10 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       phase
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -1739,16 +1739,16 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       heap_blks_total
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Número total de blocos de pilha na tabela. Esse número é relatado a partir do início da varredura; blocos adicionados posteriormente não serão (e não precisam ser) visitados por este
-     <code class="command">
+     <code>
       VACUUM
      </code>
      .
@@ -1758,10 +1758,10 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       heap_blks_scanned
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -1771,11 +1771,11 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
       mapa de visibilidade
      </a>
      é usado para otimizar as varreduras, alguns blocos serão ignorados sem inspeção; os blocos ignorados estão incluídos neste total, de modo que este número acabará se tornando igual a
-     <code class="structfield">
+     <code>
       heap_blks_total
      </code>
      quando o vácuo estiver completo. Esse contador só avança quando a fase estiver
-     <code class="literal">
+     <code>
       scanning heap
      </code>
      .
@@ -1785,16 +1785,16 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       heap_blks_vacuumed
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Número de blocos de pilha aspirados. A menos que a tabela não tenha índices, esse contador só avança quando a fase está
-     <code class="literal">
+     <code>
       vacuuming heap
      </code>
      Os blocos que não contêm tuplas mortas são ignorados, portanto, o contador pode, às vezes, avançar em grandes incrementos.
@@ -1804,10 +1804,10 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       index_vacuum_count
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -1819,10 +1819,10 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       max_dead_tuple_bytes
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -1838,10 +1838,10 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       dead_tuple_bytes
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -1853,10 +1853,10 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       num_dead_item_ids
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -1868,20 +1868,20 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indexes_total
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Número total de índices que serão aspirados ou limpos. Esse número é relatado no início do
-     <code class="literal">
+     <code>
       vacuuming indexes
      </code>
      fase ou a
-     <code class="literal">
+     <code>
       cleaning up indexes
      </code>
      phase.
@@ -1891,20 +1891,20 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indexes_processed
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Número de índices processados. Esse contador avança apenas quando a fase é
-     <code class="literal">
+     <code>
       vacuuming indexes
      </code>
      ou
-     <code class="literal">
+     <code>
       cleaning up indexes
      </code>
      .
@@ -1914,10 +1914,10 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       delay_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -1950,7 +1950,7 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
 
 
 
-<table border="1" class="table" summary="VACUUM Phases">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -1968,12 +1968,12 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      initializing
     </code>
    </td>
    <td>
-    <code class="command">
+    <code>
      VACUUM
     </code>
     está se preparando para começar a varredura do heap. Essa fase deve ser muito breve.
@@ -1981,16 +1981,16 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      scanning heap
     </code>
    </td>
    <td>
-    <code class="command">
+    <code>
      VACUUM
     </code>
     está atualmente a digitalizar o heap. Ela podará e defragmenta cada página, se necessário, e, possivelmente, realizará atividade de congelamento. A
-    <code class="structfield">
+    <code>
      heap_blks_scanned
     </code>
     A coluna pode ser usada para monitorar o progresso do exame.
@@ -1998,12 +1998,12 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      vacuuming indexes
     </code>
    </td>
    <td>
-    <code class="command">
+    <code>
      VACUUM
     </code>
     está atualmente limpando os índices. Se uma tabela tiver algum índice, isso ocorrerá pelo menos uma vez por limpeza, após o heap ter sido completamente escaneado. Pode ocorrer várias vezes por limpeza se
@@ -2019,20 +2019,20 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      vacuuming heap
     </code>
    </td>
    <td>
-    <code class="command">
+    <code>
      VACUUM
     </code>
     está atualmente aspirando a pilha. Aspirar a pilha é distinto de varrer a pilha, e ocorre após cada instância de aspiração de índices. Se
-    <code class="structfield">
+    <code>
      heap_blks_scanned
     </code>
     é menor que
-    <code class="structfield">
+    <code>
      heap_blks_total
     </code>
     , o sistema voltará a varrer a pilha após esta fase ser concluída; caso contrário, começará a limpar os índices após esta fase ser concluída.
@@ -2040,12 +2040,12 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      cleaning up indexes
     </code>
    </td>
    <td>
-    <code class="command">
+    <code>
      VACUUM
     </code>
     Atualmente, está limpando os índices. Isso ocorre após o heap ter sido completamente escaneado e toda a varredura dos índices e do heap ter sido concluída.
@@ -2053,12 +2053,12 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      truncating heap
     </code>
    </td>
    <td>
-    <code class="command">
+    <code>
      VACUUM
     </code>
     Atualmente, está truncando o heap para retornar páginas vazias no final da relação ao sistema operacional. Isso ocorre após a limpeza dos índices.
@@ -2066,24 +2066,24 @@ Sempre que o `VACUUM` estiver em execução, a visualização `pg_stat_progress_
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      performing final cleanup
     </code>
    </td>
    <td>
-    <code class="command">
+    <code>
      VACUUM
     </code>
     está realizando a limpeza final. Durante esta fase,
-    <code class="command">
+    <code>
      VACUUM
     </code>
     vaçará o mapa do espaço livre, atualizará as estatísticas
-    <code class="literal">
+    <code>
      pg_class
     </code>
     , e informe as estatísticas ao sistema de estatísticas acumuladas. Quando essa fase for concluída,
-    <code class="command">
+    <code>
      VACUUM
     </code>
     isso terminará.
@@ -2106,7 +2106,7 @@ Sempre que um aplicativo como o pg_basebackup estiver fazendo um backup de base,
 
 
 
-<table border="1" class="table" summary="pg_stat_progress_basebackup View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -2126,10 +2126,10 @@ Sempre que um aplicativo como o pg_basebackup estiver fazendo um backup de base,
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pid
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
@@ -2141,10 +2141,10 @@ Sempre que um aplicativo como o pg_basebackup estiver fazendo um backup de base,
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       phase
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -2160,24 +2160,24 @@ Sempre que um aplicativo como o pg_basebackup estiver fazendo um backup de base,
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       backup_total
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Quantidade total de dados que serão transmitidos. Isso é estimado e relatado a partir do início
-     <code class="literal">
+     <code>
       streaming database files
      </code>
      Observe que essa é apenas uma aproximação, pois o banco de dados pode mudar durante o processo.
-     <code class="literal">
+     <code>
       streaming database files
      </code>
      A fase e o registro WAL podem ser incluídos no backup posteriormente. Este é sempre o mesmo valor que
-     <code class="structfield">
+     <code>
       backup_streamed
      </code>
      uma vez que o volume de dados transmitidos exceda o tamanho total estimado. Se a estimativa estiver desativada
@@ -2185,11 +2185,11 @@ Sempre que um aplicativo como o pg_basebackup estiver fazendo um backup de base,
       pg_basebackup
      </span>
      (i.e.,
-     <code class="literal">
+     <code>
       --no-estimate-size
      </code>
      se especificado uma opção), isso é
-     <code class="literal">
+     <code>
       NULL
      </code>
      .
@@ -2199,20 +2199,20 @@ Sempre que um aplicativo como o pg_basebackup estiver fazendo um backup de base,
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       backup_streamed
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Quantidade de dados transmitidos. Esse contador avança apenas quando a fase é
-     <code class="literal">
+     <code>
       streaming database files
      </code>
      ou
-     <code class="literal">
+     <code>
       transferring wal files
      </code>
      .
@@ -2222,10 +2222,10 @@ Sempre que um aplicativo como o pg_basebackup estiver fazendo um backup de base,
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tablespaces_total
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -2237,16 +2237,16 @@ Sempre que um aplicativo como o pg_basebackup estiver fazendo um backup de base,
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tablespaces_streamed
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Número de espaços de tabela transmitidos. Esse contador avança apenas quando a fase é
-     <code class="literal">
+     <code>
       streaming database files
      </code>
      .
@@ -2269,7 +2269,7 @@ Sempre que um aplicativo como o pg_basebackup estiver fazendo um backup de base,
 
 
 
-<table border="1" class="table" summary="Base Backup Phases">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -2287,7 +2287,7 @@ Sempre que um aplicativo como o pg_basebackup estiver fazendo um backup de base,
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      initializing
     </code>
    </td>
@@ -2297,13 +2297,13 @@ Sempre que um aplicativo como o pg_basebackup estiver fazendo um backup de base,
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      waiting for checkpoint to finish
     </code>
    </td>
    <td>
     O processo de envio WAL está atualmente em execução
-    <code class="function">
+    <code>
      pg_backup_start
     </code>
     para se preparar para fazer um backup básico e esperar que o ponto de verificação de início do backup seja concluído.
@@ -2311,7 +2311,7 @@ Sempre que um aplicativo como o pg_basebackup estiver fazendo um backup de base,
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      estimating backup size
     </code>
    </td>
@@ -2321,7 +2321,7 @@ Sempre que um aplicativo como o pg_basebackup estiver fazendo um backup de base,
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      streaming database files
     </code>
    </td>
@@ -2331,21 +2331,21 @@ Sempre que um aplicativo como o pg_basebackup estiver fazendo um backup de base,
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      waiting for wal archiving to finish
     </code>
    </td>
    <td>
     O processo de envio WAL está atualmente em execução
-    <code class="function">
+    <code>
      pg_backup_stop
     </code>
     para finalizar o backup, e esperar que todos os arquivos WAL necessários para o backup de base sejam arquivados com sucesso. Se qualquer um dos
-    <code class="literal">
+    <code>
      --wal-method=none
     </code>
     ou
-    <code class="literal">
+    <code>
      --wal-method=stream
     </code>
     é especificado em
@@ -2357,17 +2357,17 @@ Sempre que um aplicativo como o pg_basebackup estiver fazendo um backup de base,
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      transferring wal files
     </code>
    </td>
    <td>
     O processo de emissor WAL está atualmente transferindo todos os registros WAL gerados durante o backup. Essa fase ocorre após
-    <code class="literal">
+    <code>
      waiting for wal archiving to finish
     </code>
     fase se
-    <code class="literal">
+    <code>
      --wal-method=fetch
     </code>
     é especificado em

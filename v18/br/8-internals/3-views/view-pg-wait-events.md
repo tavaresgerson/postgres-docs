@@ -6,7 +6,7 @@ A vista `pg_wait_events` fornece uma descrição sobre os eventos de espera.
 
 
 
-<table border="1" class="table" summary="pg_wait_events Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `pg_wait_events` fornece uma descrição sobre os eventos de espera.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       type
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `pg_wait_events` fornece uma descrição sobre os eventos de espera.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       name
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `pg_wait_events` fornece uma descrição sobre os eventos de espera.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       description
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>

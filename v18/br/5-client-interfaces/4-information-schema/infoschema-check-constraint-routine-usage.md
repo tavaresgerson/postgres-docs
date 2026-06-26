@@ -6,7 +6,7 @@ A vista `check_constraint_routine_usage` identifica rotinas (funções e procedi
 
 
 
-<table border="1" class="table" summary="check_constraint_routine_usage Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `check_constraint_routine_usage` identifica rotinas (funções e procedi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       constraint_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `check_constraint_routine_usage` identifica rotinas (funções e procedi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       constraint_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `check_constraint_routine_usage` identifica rotinas (funções e procedi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       constraint_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,10 +71,10 @@ A vista `check_constraint_routine_usage` identifica rotinas (funções e procedi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       specific_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -86,10 +86,10 @@ A vista `check_constraint_routine_usage` identifica rotinas (funções e procedi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       specific_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -101,10 +101,10 @@ A vista `check_constraint_routine_usage` identifica rotinas (funções e procedi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       specific_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>

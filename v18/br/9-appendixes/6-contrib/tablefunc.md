@@ -15,7 +15,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
 
 
 
-<table border="1" class="table" summary="tablefunc Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -35,7 +35,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       normal_rand
      </code>
      (
@@ -44,7 +44,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
        numvals
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -53,7 +53,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
        mean
       </code>
      </em>
-     <code class="type">
+     <code>
       float8
      </code>
      ,
@@ -62,11 +62,11 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
        stddev
       </code>
      </em>
-     <code class="type">
+     <code>
       float8
      </code>
      )
-     <code class="returnvalue">
+     <code>
       setof float8
      </code>
     </p>
@@ -78,7 +78,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       crosstab
      </code>
      (
@@ -87,11 +87,11 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
        sql
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
     </p>
@@ -123,7 +123,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       crosstab
       <em class="replaceable">
        <code>
@@ -137,11 +137,11 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
        sql
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       setof table_crosstab_
       <em class="replaceable">
        <code>
@@ -166,19 +166,19 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
       </code>
      </em>
      colunas de valor.
-     <code class="function">
+     <code>
       crosstab2
      </code>
      ,
-     <code class="function">
+     <code>
       crosstab3
      </code>
      , e
-     <code class="function">
+     <code>
       crosstab4
      </code>
      são pré-definidos, mas você pode criar outros
-     <code class="function">
+     <code>
       crosstab
       <em class="replaceable">
        <code>
@@ -193,7 +193,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       crosstab
      </code>
      (
@@ -202,7 +202,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
        source_sql
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -211,11 +211,11 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
        category_sql
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
     </p>
@@ -235,7 +235,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       crosstab
      </code>
      (
@@ -244,7 +244,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
        sql
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -253,17 +253,17 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
        N
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
     </p>
     <p>
      Versão obsoleta de
-     <code class="function">
+     <code>
       crosstab(text)
      </code>
      O parâmetro
@@ -279,7 +279,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       connectby
      </code>
      (
@@ -288,7 +288,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
        relname
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -297,7 +297,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
        keyid_fld
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -306,7 +306,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
        parent_keyid_fld
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -317,7 +317,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
         orderby_fld
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
@@ -327,7 +327,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
        start_with
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -336,7 +336,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
        max_depth
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      [
@@ -347,12 +347,12 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
         branch_delim
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
     </p>
@@ -717,11 +717,7 @@ A função `connectby` produz uma exibição de dados hierárquicos que são arm
 
 
 
-<table border="1" class="table" summary="connectby Parameters">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>

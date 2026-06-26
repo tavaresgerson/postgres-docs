@@ -23,7 +23,7 @@ Embora isso não pareça muito ruim por si só, ainda é bastante simplificado. 
 
 **Tabela 8.26. Tipos de Identificador de Objeto**
 
-<table border="1" class="table" summary="Object Identifier Types">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -49,7 +49,7 @@ Embora isso não pareça muito ruim por si só, ainda é bastante simplificado. 
  <tbody>
   <tr>
    <td>
-    <code class="type">
+    <code>
      oid
     </code>
    </td>
@@ -60,19 +60,19 @@ Embora isso não pareça muito ruim por si só, ainda é bastante simplificado. 
     identificador de objeto numérico
    </td>
    <td>
-    <code class="literal">
+    <code>
      564182
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      regclass
     </code>
    </td>
    <td>
-    <code class="structname">
+    <code>
      pg_class
     </code>
    </td>
@@ -80,19 +80,19 @@ Embora isso não pareça muito ruim por si só, ainda é bastante simplificado. 
     nome da relação
    </td>
    <td>
-    <code class="literal">
+    <code>
      pg_type
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      regcollation
     </code>
    </td>
    <td>
-    <code class="structname">
+    <code>
      pg_collation
     </code>
    </td>
@@ -100,19 +100,19 @@ Embora isso não pareça muito ruim por si só, ainda é bastante simplificado. 
     nome da agregação
    </td>
    <td>
-    <code class="literal">
+    <code>
      "POSIX"
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      regconfig
     </code>
    </td>
    <td>
-    <code class="structname">
+    <code>
      pg_ts_config
     </code>
    </td>
@@ -120,19 +120,19 @@ Embora isso não pareça muito ruim por si só, ainda é bastante simplificado. 
     configuração de pesquisa de texto
    </td>
    <td>
-    <code class="literal">
+    <code>
      english
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      regdictionary
     </code>
    </td>
    <td>
-    <code class="structname">
+    <code>
      pg_ts_dict
     </code>
    </td>
@@ -140,19 +140,19 @@ Embora isso não pareça muito ruim por si só, ainda é bastante simplificado. 
     dicionário de busca de texto
    </td>
    <td>
-    <code class="literal">
+    <code>
      simple
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      regnamespace
     </code>
    </td>
    <td>
-    <code class="structname">
+    <code>
      pg_namespace
     </code>
    </td>
@@ -160,19 +160,19 @@ Embora isso não pareça muito ruim por si só, ainda é bastante simplificado. 
     nome do espaço de nomeação
    </td>
    <td>
-    <code class="literal">
+    <code>
      pg_catalog
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      regoper
     </code>
    </td>
    <td>
-    <code class="structname">
+    <code>
      pg_operator
     </code>
    </td>
@@ -180,19 +180,19 @@ Embora isso não pareça muito ruim por si só, ainda é bastante simplificado. 
     nome do operador
    </td>
    <td>
-    <code class="literal">
+    <code>
      +
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      regoperator
     </code>
    </td>
    <td>
-    <code class="structname">
+    <code>
      pg_operator
     </code>
    </td>
@@ -200,23 +200,23 @@ Embora isso não pareça muito ruim por si só, ainda é bastante simplificado. 
     operador com tipos de argumento
    </td>
    <td>
-    <code class="literal">
+    <code>
      *(integer,​integer)
     </code>
     or
-    <code class="literal">
+    <code>
      -(NONE,​integer)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      regproc
     </code>
    </td>
    <td>
-    <code class="structname">
+    <code>
      pg_proc
     </code>
    </td>
@@ -224,19 +224,19 @@ Embora isso não pareça muito ruim por si só, ainda é bastante simplificado. 
     nome da função
    </td>
    <td>
-    <code class="literal">
+    <code>
      sum
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      regprocedure
     </code>
    </td>
    <td>
-    <code class="structname">
+    <code>
      pg_proc
     </code>
    </td>
@@ -244,19 +244,19 @@ Embora isso não pareça muito ruim por si só, ainda é bastante simplificado. 
     função com tipos de argumentos
    </td>
    <td>
-    <code class="literal">
+    <code>
      sum(int4)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      regrole
     </code>
    </td>
    <td>
-    <code class="structname">
+    <code>
      pg_authid
     </code>
    </td>
@@ -264,19 +264,19 @@ Embora isso não pareça muito ruim por si só, ainda é bastante simplificado. 
     nome do papel
    </td>
    <td>
-    <code class="literal">
+    <code>
      smithee
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      regtype
     </code>
    </td>
    <td>
-    <code class="structname">
+    <code>
      pg_type
     </code>
    </td>
@@ -284,7 +284,7 @@ Embora isso não pareça muito ruim por si só, ainda é bastante simplificado. 
     nome do tipo de dados
    </td>
    <td>
-    <code class="literal">
+    <code>
      integer
     </code>
    </td>

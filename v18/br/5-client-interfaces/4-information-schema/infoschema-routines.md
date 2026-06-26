@@ -6,7 +6,7 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
 
 
 
-<table border="1" class="table" summary="routines Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       specific_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       specific_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       specific_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -79,10 +79,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       routine_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -94,10 +94,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       routine_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -109,10 +109,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       routine_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -124,19 +124,19 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       routine_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       FUNCTION
      </code>
      for a function,
-     <code class="literal">
+     <code>
       PROCEDURE
      </code>
      for a procedure
@@ -146,10 +146,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       module_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -164,10 +164,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       module_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -182,10 +182,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       module_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -200,10 +200,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -218,10 +218,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -236,10 +236,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -254,28 +254,28 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       data_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Return data type of the function, if it is a built-in type, or
-     <code class="literal">
+     <code>
       ARRAY
      </code>
      if it is some array (in that case, see the view
-     <code class="literal">
+     <code>
       element_types
      </code>
      ), else
-     <code class="literal">
+     <code>
       USER-DEFINED
      </code>
      (in that case, the type is identified in
-     <code class="literal">
+     <code>
       type_udt_name
      </code>
      and associated columns).  Null for a procedure.
@@ -285,10 +285,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_maximum_length
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -303,10 +303,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_octet_length
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -321,10 +321,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_set_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -339,10 +339,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_set_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -357,10 +357,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_set_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -375,10 +375,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collation_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -393,10 +393,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collation_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -411,10 +411,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collation_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -429,10 +429,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numeric_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -447,10 +447,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numeric_precision_radix
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -465,10 +465,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numeric_scale
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -483,10 +483,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datetime_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -501,10 +501,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       interval_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -519,10 +519,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       interval_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -537,10 +537,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       type_udt_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -552,10 +552,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       type_udt_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -567,10 +567,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       type_udt_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -582,10 +582,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       scope_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -600,10 +600,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       scope_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -618,10 +618,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       scope_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -636,10 +636,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       maximum_cardinality
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -654,10 +654,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       dtd_identifier
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -669,20 +669,20 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       routine_body
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      If the function is an SQL function, then
-     <code class="literal">
+     <code>
       SQL
      </code>
      , else
-     <code class="literal">
+     <code>
       EXTERNAL
      </code>
      .
@@ -692,20 +692,20 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       routine_definition
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      The source text of the function (null if the function is not owned by a currently enabled role).  (According to the SQL standard, this column is only applicable if
-     <code class="literal">
+     <code>
       routine_body
      </code>
      is
-     <code class="literal">
+     <code>
       SQL
      </code>
      , but in
@@ -719,16 +719,16 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       external_name
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      If this function is a C function, then the external name (link symbol) of the function; else null.  (This works out to be the same value that is shown in
-     <code class="literal">
+     <code>
       routine_definition
      </code>
      .)
@@ -738,10 +738,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       external_language
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -753,16 +753,16 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       parameter_style
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Always
-     <code class="literal">
+     <code>
       GENERAL
      </code>
      (The SQL standard defines other parameter styles, which are not available in
@@ -776,20 +776,20 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_deterministic
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
      If the function is declared immutable (called deterministic in the SQL standard), then
-     <code class="literal">
+     <code>
       YES
      </code>
      , else
-     <code class="literal">
+     <code>
       NO
      </code>
      .  (You cannot query the other volatility levels available in
@@ -803,16 +803,16 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sql_data_access
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Always
-     <code class="literal">
+     <code>
       MODIFIES
      </code>
      , meaning that the function possibly modifies SQL data.  This information is not useful for
@@ -826,20 +826,20 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_null_call
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
      If the function automatically returns null if any of its arguments are null, then
-     <code class="literal">
+     <code>
       YES
      </code>
      , else
-     <code class="literal">
+     <code>
       NO
      </code>
      .  Null for a procedure.
@@ -849,10 +849,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sql_path
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -867,16 +867,16 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       schema_level_routine
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
      Always
-     <code class="literal">
+     <code>
       YES
      </code>
      (The opposite would be a method of a user-defined type, which is a feature not available in
@@ -890,10 +890,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       max_dynamic_result_sets
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -908,10 +908,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_user_defined_cast
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
@@ -926,10 +926,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_implicitly_invocable
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
@@ -944,20 +944,20 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       security_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      If the function runs with the privileges of the current user, then
-     <code class="literal">
+     <code>
       INVOKER
      </code>
      , if the function runs with the privileges of the user who defined it, then
-     <code class="literal">
+     <code>
       DEFINER
      </code>
      .
@@ -967,10 +967,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       to_sql_specific_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -985,10 +985,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       to_sql_specific_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -1003,10 +1003,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       to_sql_specific_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -1021,10 +1021,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       as_locator
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
@@ -1039,10 +1039,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       created
      </code>
-     <code class="type">
+     <code>
       time_stamp
      </code>
     </p>
@@ -1057,10 +1057,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       last_altered
      </code>
-     <code class="type">
+     <code>
       time_stamp
      </code>
     </p>
@@ -1075,10 +1075,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       new_savepoint_level
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
@@ -1093,20 +1093,20 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_udt_dependent
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
      Currently always
-     <code class="literal">
+     <code>
       NO
      </code>
      .  The alternative
-     <code class="literal">
+     <code>
       YES
      </code>
      applies to a feature not available in
@@ -1120,10 +1120,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_from_data_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -1138,10 +1138,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_as_locator
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
@@ -1156,10 +1156,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_char_max_length
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -1174,10 +1174,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_char_octet_length
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -1192,10 +1192,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_char_set_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -1210,10 +1210,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_char_set_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -1228,10 +1228,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_char_set_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -1246,10 +1246,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_collation_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -1264,10 +1264,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_collation_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -1282,10 +1282,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_collation_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -1300,10 +1300,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_numeric_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -1318,10 +1318,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_numeric_precision_radix
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -1336,10 +1336,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_numeric_scale
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -1354,10 +1354,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_datetime_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -1372,10 +1372,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_interval_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -1390,10 +1390,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_interval_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -1408,10 +1408,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_type_udt_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -1426,10 +1426,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_type_udt_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -1444,10 +1444,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_type_udt_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -1462,10 +1462,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_scope_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -1480,10 +1480,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_scope_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -1498,10 +1498,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_scope_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -1516,10 +1516,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_maximum_cardinality
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -1534,10 +1534,10 @@ A vista `routines` contém todas as funções e procedimentos no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result_cast_dtd_identifier
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>

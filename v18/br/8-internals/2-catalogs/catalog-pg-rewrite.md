@@ -6,7 +6,7 @@ O catálogo `pg_rewrite` armazena regras de reescrita para tabelas e visualizaç
 
 
 
-<table border="1" class="table" summary="pg_rewrite Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_rewrite` armazena regras de reescrita para tabelas e visualizaç
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,10 +41,10 @@ O catálogo `pg_rewrite` armazena regras de reescrita para tabelas e visualizaç
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rulename
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -56,20 +56,20 @@ O catálogo `pg_rewrite` armazena regras de reescrita para tabelas e visualizaç
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       ev_class
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -82,10 +82,10 @@ O catálogo `pg_rewrite` armazena regras de reescrita para tabelas e visualizaç
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       ev_type
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
@@ -120,10 +120,10 @@ O catálogo `pg_rewrite` armazena regras de reescrita para tabelas e visualizaç
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       ev_enabled
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
@@ -133,7 +133,7 @@ O catálogo `pg_rewrite` armazena regras de reescrita para tabelas e visualizaç
       session_replication_role
      </a>
      modos que os disparos são feitos.
-     <code class="literal">
+     <code>
       O
      </code>
      = incêndios em áreas florestais
@@ -153,11 +153,11 @@ O catálogo `pg_rewrite` armazena regras de reescrita para tabelas e visualizaç
       ”
      </span>
      modos,
-     <code class="literal">
+     <code>
       D
      </code>
      = a regra está desativada,
-     <code class="literal">
+     <code>
       R
      </code>
      = incêndios em áreas florestais
@@ -169,7 +169,7 @@ O catálogo `pg_rewrite` armazena regras de reescrita para tabelas e visualizaç
       ”
      </span>
      modo,
-     <code class="literal">
+     <code>
       A
      </code>
      = regras sempre.
@@ -179,16 +179,16 @@ O catálogo `pg_rewrite` armazena regras de reescrita para tabelas e visualizaç
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_instead
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Verdadeiro se a regra for uma
-     <code class="literal">
+     <code>
       INSTEAD
      </code>
      regra
@@ -198,16 +198,16 @@ O catálogo `pg_rewrite` armazena regras de reescrita para tabelas e visualizaç
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       ev_qual
      </code>
-     <code class="type">
+     <code>
       pg_node_tree
      </code>
     </p>
     <p>
      árvore de expressão (na forma de
-     <code class="function">
+     <code>
       nodeToString()
      </code>
      representação) para a condição qualificadora da regra
@@ -217,16 +217,16 @@ O catálogo `pg_rewrite` armazena regras de reescrita para tabelas e visualizaç
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       ev_action
      </code>
-     <code class="type">
+     <code>
       pg_node_tree
      </code>
     </p>
     <p>
      Consulta de árvore (na forma de
-     <code class="function">
+     <code>
       nodeToString()
      </code>
      representação) para a ação da regra

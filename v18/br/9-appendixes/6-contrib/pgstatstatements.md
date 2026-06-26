@@ -21,7 +21,7 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
 
 
 
-<table border="1" class="table" summary="pg_stat_statements Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -41,20 +41,20 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       userid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (references
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -67,20 +67,20 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       dbid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (references
      <a class="link" href="catalog-pg-database.md" title="52.15. pg_database">
-      <code class="structname">
+      <code>
        pg_database
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -93,20 +93,20 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       toplevel
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      True if the query was executed as a top-level statement (always true if
-     <code class="varname">
+     <code>
       pg_stat_statements.track
      </code>
      is set to
-     <code class="literal">
+     <code>
       top
      </code>
      )
@@ -116,10 +116,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       queryid
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -131,10 +131,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       query
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -146,16 +146,16 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       plans
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Number of times the statement was planned (if
-     <code class="varname">
+     <code>
       pg_stat_statements.track_planning
      </code>
      is enabled, otherwise zero)
@@ -165,16 +165,16 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       total_plan_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Total time spent planning the statement, in milliseconds (if
-     <code class="varname">
+     <code>
       pg_stat_statements.track_planning
      </code>
      is enabled, otherwise zero)
@@ -184,28 +184,28 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       min_plan_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Minimum time spent planning the statement, in milliseconds. This field will be zero if
-     <code class="varname">
+     <code>
       pg_stat_statements.track_planning
      </code>
      is disabled, or if the counter has been reset using the
-     <code class="function">
+     <code>
       pg_stat_statements_reset
      </code>
      function with the
-     <code class="structfield">
+     <code>
       minmax_only
      </code>
      parameter set to
-     <code class="literal">
+     <code>
       true
      </code>
      and never been planned since.
@@ -215,28 +215,28 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       max_plan_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Maximum time spent planning the statement, in milliseconds. This field will be zero if
-     <code class="varname">
+     <code>
       pg_stat_statements.track_planning
      </code>
      is disabled, or if the counter has been reset using the
-     <code class="function">
+     <code>
       pg_stat_statements_reset
      </code>
      function with the
-     <code class="structfield">
+     <code>
       minmax_only
      </code>
      parameter set to
-     <code class="literal">
+     <code>
       true
      </code>
      and never been planned since.
@@ -246,16 +246,16 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       mean_plan_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Mean time spent planning the statement, in milliseconds (if
-     <code class="varname">
+     <code>
       pg_stat_statements.track_planning
      </code>
      is enabled, otherwise zero)
@@ -265,16 +265,16 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stddev_plan_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Population standard deviation of time spent planning the statement, in milliseconds (if
-     <code class="varname">
+     <code>
       pg_stat_statements.track_planning
      </code>
      is enabled, otherwise zero)
@@ -284,10 +284,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       calls
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -299,10 +299,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       total_exec_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -314,24 +314,24 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       min_exec_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Minimum time spent executing the statement, in milliseconds, this field will be zero until this statement is executed first time after reset performed by the
-     <code class="function">
+     <code>
       pg_stat_statements_reset
      </code>
      function with the
-     <code class="structfield">
+     <code>
       minmax_only
      </code>
      parameter set to
-     <code class="literal">
+     <code>
       true
      </code>
     </p>
@@ -340,24 +340,24 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       max_exec_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Maximum time spent executing the statement, in milliseconds, this field will be zero until this statement is executed first time after reset performed by the
-     <code class="function">
+     <code>
       pg_stat_statements_reset
      </code>
      function with the
-     <code class="structfield">
+     <code>
       minmax_only
      </code>
      parameter set to
-     <code class="literal">
+     <code>
       true
      </code>
     </p>
@@ -366,10 +366,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       mean_exec_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -381,10 +381,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stddev_exec_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -396,10 +396,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rows
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -411,10 +411,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       shared_blks_hit
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -426,10 +426,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       shared_blks_read
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -441,10 +441,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       shared_blks_dirtied
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -456,10 +456,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       shared_blks_written
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -471,10 +471,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       local_blks_hit
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -486,10 +486,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       local_blks_read
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -501,10 +501,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       local_blks_dirtied
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -516,10 +516,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       local_blks_written
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -531,10 +531,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       temp_blks_read
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -546,10 +546,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       temp_blks_written
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -561,10 +561,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       shared_blk_read_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -580,10 +580,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       shared_blk_write_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -599,10 +599,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       local_blk_read_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -618,10 +618,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       local_blk_write_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -637,10 +637,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       temp_blk_read_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -656,10 +656,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       temp_blk_write_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -675,10 +675,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       wal_records
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -690,10 +690,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       wal_fpi
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -705,10 +705,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       wal_bytes
      </code>
-     <code class="type">
+     <code>
       numeric
      </code>
     </p>
@@ -720,10 +720,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       wal_buffers_full
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -735,10 +735,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       jit_functions
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -750,10 +750,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       jit_generation_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -765,10 +765,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       jit_inlining_count
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -780,10 +780,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       jit_inlining_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -795,10 +795,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       jit_optimization_count
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -810,10 +810,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       jit_optimization_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -825,10 +825,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       jit_emission_count
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -840,10 +840,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       jit_emission_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -855,10 +855,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       jit_deform_count
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -870,10 +870,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       jit_deform_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -885,10 +885,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       parallel_workers_to_launch
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -900,10 +900,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       parallel_workers_launched
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -915,10 +915,10 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stats_since
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -930,28 +930,28 @@ As estatísticas coletadas pelo módulo são disponibilizadas por meio de uma vi
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       minmax_stats_since
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
     <p>
      Time at which min/max statistics gathering started for this statement (fields
-     <code class="structfield">
+     <code>
       min_plan_time
      </code>
      ,
-     <code class="structfield">
+     <code>
       max_plan_time
      </code>
      ,
-     <code class="structfield">
+     <code>
       min_exec_time
      </code>
      and
-     <code class="structfield">
+     <code>
       max_exec_time
      </code>
      )
@@ -1019,7 +1019,7 @@ As estatísticas do próprio módulo `pg_stat_statements` são acompanhadas e di
 
 
 
-<table border="1" class="table" summary="pg_stat_statements_info Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -1039,20 +1039,20 @@ As estatísticas do próprio módulo `pg_stat_statements` são acompanhadas e di
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       dealloc
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Número total de vezes
-     <code class="structname">
+     <code>
       pg_stat_statements
      </code>
      as entradas sobre as declarações menos executadas foram realocadas porque havia mais declarações distintas do que
-     <code class="varname">
+     <code>
       pg_stat_statements.max
      </code>
      foram observados
@@ -1062,16 +1062,16 @@ As estatísticas do próprio módulo `pg_stat_statements` são acompanhadas e di
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stats_reset
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
     <p>
      Tempo em que todas as estatísticas estão
-     <code class="structname">
+     <code>
       pg_stat_statements
      </code>
      a vista foi a última a ser redefinida.

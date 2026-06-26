@@ -14,7 +14,7 @@ pg_mcv_list_items ( pg_mcv_list ) → setof record
 
 
 
-<table border="1" class="informaltable">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -36,12 +36,12 @@ pg_mcv_list_items ( pg_mcv_list ) → setof record
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      index
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
@@ -55,12 +55,12 @@ pg_mcv_list_items ( pg_mcv_list ) → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      values
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text[]
     </code>
    </td>
@@ -70,18 +70,18 @@ pg_mcv_list_items ( pg_mcv_list ) → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      nulls
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      boolean[]
     </code>
    </td>
    <td>
     bandeiras identificadoras
-    <code class="literal">
+    <code>
      NULL
     </code>
     valores
@@ -89,12 +89,12 @@ pg_mcv_list_items ( pg_mcv_list ) → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      frequency
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      double precision
     </code>
    </td>
@@ -108,12 +108,12 @@ pg_mcv_list_items ( pg_mcv_list ) → setof record
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      base_frequency
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      double precision
     </code>
    </td>

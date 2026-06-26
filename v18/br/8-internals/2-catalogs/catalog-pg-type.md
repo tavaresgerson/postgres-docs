@@ -6,7 +6,7 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
 
 
 
-<table border="1" class="table" summary="pg_type Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,10 +41,10 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -56,20 +56,20 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typnamespace
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -82,20 +82,20 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typowner
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -108,20 +108,20 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typlen
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
     <p>
      Para um tipo de tamanho fixo,
-     <code class="structfield">
+     <code>
       typlen
      </code>
      é o número de bytes na representação interna do tipo. Mas, para um tipo de comprimento variável,
-     <code class="structfield">
+     <code>
       typlen
      </code>
      é negativa. -1 indica uma
@@ -139,27 +139,27 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typbyval
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
-     <code class="structfield">
+     <code>
       typbyval
      </code>
      determina se as rotinas internas passam um valor desse tipo por valor ou por referência.
-     <code class="structfield">
+     <code>
       typbyval
      </code>
      teria que ser falsa se
-     <code class="structfield">
+     <code>
       typlen
      </code>
      não é 1, 2 ou 4 (ou 8 em máquinas onde o Datum é de 8 bytes). Os tipos de comprimento variável são sempre passados por referência. Note que
-     <code class="structfield">
+     <code>
       typbyval
      </code>
      pode ser falsa mesmo que a comprimento permita a passagem por valor.
@@ -169,51 +169,51 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typtype
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
-     <code class="structfield">
+     <code>
       typtype
      </code>
      é
-     <code class="literal">
+     <code>
       b
      </code>
      para um tipo de base,
-     <code class="literal">
+     <code>
       c
      </code>
      para um tipo composto (por exemplo, o tipo de linha de uma tabela),
-     <code class="literal">
+     <code>
       d
      </code>
      para um domínio,
-     <code class="literal">
+     <code>
       e
      </code>
      para um tipo de enum,
-     <code class="literal">
+     <code>
       p
      </code>
      para um pseudo-tipo,
-     <code class="literal">
+     <code>
       r
      </code>
      para um tipo de gama, ou
-     <code class="literal">
+     <code>
       m
      </code>
      para um tipo multiranged.
-     <code class="structfield">
+     <code>
       typrelid
      </code>
      e
-     <code class="structfield">
+     <code>
       typbasetype
      </code>
      .
@@ -223,15 +223,15 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typcategory
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
-     <code class="structfield">
+     <code>
       typcategory
      </code>
      é uma classificação arbitrária de tipos de dados que é usada pelo analisador para determinar quais casts implícitos devem ser
@@ -253,16 +253,16 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typispreferred
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Verdadeiro se o tipo é um alvo de cast preferido dentro de seu
-     <code class="structfield">
+     <code>
       typcategory
      </code>
     </p>
@@ -271,16 +271,16 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typisdefined
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Verdadeiro se o tipo estiver definido, falso se esta for uma entrada de marcador para um tipo ainda não definido. Quando
-     <code class="structfield">
+     <code>
       typisdefined
      </code>
      É falso, nada, exceto o nome do tipo, o espaço de nomeação e o OID podem ser confiáveis.
@@ -290,10 +290,10 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typdelim
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
@@ -305,44 +305,44 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typrelid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
     </p>
     <p>
      Se este for um tipo composto (veja
-     <code class="structfield">
+     <code>
       typtype
      </code>
      ), então esta coluna aponta para
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      entrada que define a tabela correspondente. (Para um tipo de composto independente, o
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      A entrada não representa realmente uma tabela, mas é necessária de qualquer forma para o tipo
      <a class="link" href="catalog-pg-attribute.md" title="52.7. pg_attribute">
-      <code class="structname">
+      <code>
        pg_attribute
       </code>
      </a>
@@ -353,20 +353,20 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typsubscript
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -381,11 +381,11 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
       ”
      </span>
      tipos de arrays têm
-     <code class="structfield">
+     <code>
       typsubscript
      </code>
      =
-     <code class="function">
+     <code>
       array_subscript_handler
      </code>
      , mas outros tipos podem ter outras funções de manipulador para implementar comportamentos de subscrito especializados.
@@ -395,47 +395,47 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typelem
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
     </p>
     <p>
      Se
-     <code class="structfield">
+     <code>
       typelem
      </code>
      Se não for zero, então ele identifica outra linha
-     <code class="structname">
+     <code>
       pg_type
      </code>
      , definindo o tipo gerado por subscrito. Isso deve ser zero se
-     <code class="structfield">
+     <code>
       typsubscript
      </code>
      é zero. No entanto, pode ser zero quando
-     <code class="structfield">
+     <code>
       typsubscript
      </code>
      não é zero, se o manipulador não precisa
-     <code class="structfield">
+     <code>
       typelem
      </code>
      para determinar o tipo do resultado de subscrita. Observe que
-     <code class="structfield">
+     <code>
       typelem
      </code>
      A dependência é considerada para implicar contenção física do tipo de elemento neste tipo; portanto, as alterações no DDL no tipo de elemento podem ser restringidas pela presença deste tipo.
@@ -445,31 +445,31 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typarray
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
     </p>
     <p>
      Se
-     <code class="structfield">
+     <code>
       typarray
      </code>
      Se não for zero, então ele identifica outra linha
-     <code class="structname">
+     <code>
       pg_type
      </code>
      , que é a
@@ -487,20 +487,20 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typinput
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -513,20 +513,20 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typoutput
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -539,20 +539,20 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typreceive
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -565,20 +565,20 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typsend
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -591,20 +591,20 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typmodin
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -617,20 +617,20 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typmodout
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -643,20 +643,20 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typanalyze
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -675,15 +675,15 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typalign
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
-     <code class="structfield">
+     <code>
       typalign
      </code>
      é o alinhamento necessário ao armazenar um valor desse tipo. Isso se aplica ao armazenamento em disco, bem como à maioria das representações do valor dentro
@@ -696,11 +696,11 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
      <ul class="itemizedlist" style="list-style-type: disc; ">
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          c
         </code>
         =
-        <code class="type">
+        <code>
          char
         </code>
         alinhamento, ou seja, não há necessidade de alinhamento.
@@ -708,11 +708,11 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          s
         </code>
         =
-        <code class="type">
+        <code>
          short
         </code>
         alinhamento (2 bytes na maioria das máquinas).
@@ -720,11 +720,11 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          i
         </code>
         =
-        <code class="type">
+        <code>
          int
         </code>
         alinhamento (4 bytes na maioria das máquinas).
@@ -732,11 +732,11 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          d
         </code>
         =
-        <code class="type">
+        <code>
          double
         </code>
         alinhamento (8 bytes em muitas máquinas, mas de forma alguma todos).
@@ -751,19 +751,19 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typstorage
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
-     <code class="structfield">
+     <code>
       typstorage
      </code>
      conta para varlena tipos (aqueles com
-     <code class="structfield">
+     <code>
       typlen
      </code>
      = -1) se o tipo estiver preparado para torrar e qual a estratégia padrão para os atributos desse tipo deve ser. Os valores possíveis são:
@@ -772,7 +772,7 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
      <ul class="itemizedlist" style="list-style-type: disc; ">
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          p
         </code>
         (simples): Os valores devem ser sempre armazenados simples
@@ -780,7 +780,7 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          e
         </code>
         (externo): Os valores podem ser armazenados em um secundário
@@ -792,7 +792,7 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
          ”
         </span>
         relação (se a relação tiver uma, veja
-        <code class="literal">
+        <code>
          pg_class.reltoastrelid
         </code>
         ).
@@ -800,7 +800,7 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          m
         </code>
         (principal): Os valores podem ser comprimidos e armazenados inline.
@@ -808,7 +808,7 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          x
         </code>
         (ampliado): Os valores podem ser comprimidos e/ou movidos para uma relação secundária.
@@ -817,19 +817,19 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
      </ul>
     </div>
     <p>
-     <code class="literal">
+     <code>
       x
      </code>
      é a escolha usual para tipos que podem ser torrados.
-     <code class="literal">
+     <code>
       m
      </code>
      Os valores também podem ser transferidos para armazenamento secundário, mas apenas como último recurso (
-     <code class="literal">
+     <code>
       e
      </code>
      e
-     <code class="literal">
+     <code>
       x
      </code>
      Os valores são movidos primeiro).
@@ -839,15 +839,15 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typnotnull
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
-     <code class="structfield">
+     <code>
       typnotnull
      </code>
      representa uma restrição não nula em um tipo. Usada apenas para domínios.
@@ -857,31 +857,31 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typbasetype
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
     </p>
     <p>
      Se este for um domínio (veja
-     <code class="structfield">
+     <code>
       typtype
      </code>
      ), então
-     <code class="structfield">
+     <code>
       typbasetype
      </code>
      identifica o tipo sobre o qual este se baseia. Zero se este tipo não for um domínio.
@@ -891,24 +891,24 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typtypmod
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
      Domínios de uso
-     <code class="structfield">
+     <code>
       typtypmod
      </code>
      para registrar
-     <code class="literal">
+     <code>
       typmod
      </code>
      devem ser aplicados ao seu tipo base (-1 se o tipo base não utiliza um
-     <code class="literal">
+     <code>
       typmod
      </code>
      ). -1 se este tipo não for um domínio.
@@ -918,19 +918,19 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typndims
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
-     <code class="structfield">
+     <code>
       typndims
      </code>
      é o número de dimensões de um domínio sobre um array (ou seja,
-     <code class="structfield">
+     <code>
       typbasetype
      </code>
      é um tipo de matriz). Zero para outros tipos, exceto domínios sobre tipos de matriz.
@@ -940,30 +940,30 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typcollation
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-collation.md" title="52.12. pg_collation">
-      <code class="structname">
+      <code>
        pg_collation
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
     </p>
     <p>
-     <code class="structfield">
+     <code>
       typcollation
      </code>
      especifica a ordenação do tipo. Se o tipo não suportar ordenações, este será zero. Um tipo de base que suporte ordenações terá um valor não nulo aqui, tipicamente
-     <code class="symbol">
+     <code>
       DEFAULT_COLLATION_OID
      </code>
      Um domínio sobre um tipo colidível pode ter um OID de codificação diferente do seu tipo de base, se um foi especificado para o domínio.
@@ -973,20 +973,20 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typdefaultbin
      </code>
-     <code class="type">
+     <code>
       pg_node_tree
      </code>
     </p>
     <p>
      Se
-     <code class="structfield">
+     <code>
       typdefaultbin
      </code>
      se não for nulo, é o
-     <code class="function">
+     <code>
       nodeToString()
      </code>
      representação de uma expressão padrão para o tipo. Isso é usado apenas para domínios.
@@ -996,39 +996,39 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typdefault
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
-     <code class="structfield">
+     <code>
       typdefault
      </code>
      é nulo se o tipo não tiver um valor padrão associado. Se
-     <code class="structfield">
+     <code>
       typdefaultbin
      </code>
      não é nulo,
-     <code class="structfield">
+     <code>
       typdefault
      </code>
      deve conter uma versão legível pelo ser humano da expressão padrão representada por
-     <code class="structfield">
+     <code>
       typdefaultbin
      </code>
      . Se
-     <code class="structfield">
+     <code>
       typdefaultbin
      </code>
      é nulo e
-     <code class="structfield">
+     <code>
       typdefault
      </code>
      não é, então
-     <code class="structfield">
+     <code>
       typdefault
      </code>
      é a representação externa do valor padrão do tipo, que pode ser alimentada no conversor de entrada do tipo para produzir uma constante.
@@ -1038,10 +1038,10 @@ O catálogo `pg_type` armazena informações sobre os tipos de dados. Os tipos b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       typacl
      </code>
-     <code class="type">
+     <code>
       aclitem[]
      </code>
     </p>
@@ -1076,11 +1076,7 @@ Para tipos de largura fixa usados em tabelas de sistema, é fundamental que o ta
 
 
 
-<table border="1" class="table" summary="typcategory Codes">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -1094,7 +1090,7 @@ Para tipos de largura fixa usados em tabelas de sistema, é fundamental que o ta
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      A
     </code>
    </td>
@@ -1104,7 +1100,7 @@ Para tipos de largura fixa usados em tabelas de sistema, é fundamental que o ta
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      B
     </code>
    </td>
@@ -1114,7 +1110,7 @@ Para tipos de largura fixa usados em tabelas de sistema, é fundamental que o ta
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      C
     </code>
    </td>
@@ -1124,7 +1120,7 @@ Para tipos de largura fixa usados em tabelas de sistema, é fundamental que o ta
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      D
     </code>
    </td>
@@ -1134,7 +1130,7 @@ Para tipos de largura fixa usados em tabelas de sistema, é fundamental que o ta
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      E
     </code>
    </td>
@@ -1144,7 +1140,7 @@ Para tipos de largura fixa usados em tabelas de sistema, é fundamental que o ta
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      G
     </code>
    </td>
@@ -1154,7 +1150,7 @@ Para tipos de largura fixa usados em tabelas de sistema, é fundamental que o ta
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      I
     </code>
    </td>
@@ -1164,7 +1160,7 @@ Para tipos de largura fixa usados em tabelas de sistema, é fundamental que o ta
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      N
     </code>
    </td>
@@ -1174,7 +1170,7 @@ Para tipos de largura fixa usados em tabelas de sistema, é fundamental que o ta
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      P
     </code>
    </td>
@@ -1184,7 +1180,7 @@ Para tipos de largura fixa usados em tabelas de sistema, é fundamental que o ta
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      R
     </code>
    </td>
@@ -1194,7 +1190,7 @@ Para tipos de largura fixa usados em tabelas de sistema, é fundamental que o ta
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      S
     </code>
    </td>
@@ -1204,7 +1200,7 @@ Para tipos de largura fixa usados em tabelas de sistema, é fundamental que o ta
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      T
     </code>
    </td>
@@ -1214,7 +1210,7 @@ Para tipos de largura fixa usados em tabelas de sistema, é fundamental que o ta
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      U
     </code>
    </td>
@@ -1224,7 +1220,7 @@ Para tipos de largura fixa usados em tabelas de sistema, é fundamental que o ta
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      V
     </code>
    </td>
@@ -1234,12 +1230,12 @@ Para tipos de largura fixa usados em tabelas de sistema, é fundamental que o ta
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      X
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      unknown
     </code>
     type
@@ -1247,7 +1243,7 @@ Para tipos de largura fixa usados em tabelas de sistema, é fundamental que o ta
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      Z
     </code>
    </td>

@@ -20,7 +20,7 @@ O parâmetro é o nome de uma tabela. O resultado é um conjunto de registros, c
 
 
 
-<table border="1" class="table" summary="pgrowlocks Output Columns">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -42,12 +42,12 @@ O parâmetro é o nome de uma tabela. O resultado é um conjunto de registros, c
  <tbody>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      locked_row
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      tid
     </code>
    </td>
@@ -57,12 +57,12 @@ O parâmetro é o nome de uma tabela. O resultado é um conjunto de registros, c
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      locker
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      xid
     </code>
    </td>
@@ -75,12 +75,12 @@ O parâmetro é o nome de uma tabela. O resultado é um conjunto de registros, c
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      multi
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      boolean
     </code>
    </td>
@@ -90,12 +90,12 @@ O parâmetro é o nome de uma tabela. O resultado é um conjunto de registros, c
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      xids
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      xid[]
     </code>
    </td>
@@ -105,38 +105,38 @@ O parâmetro é o nome de uma tabela. O resultado é um conjunto de registros, c
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      modes
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text[]
     </code>
    </td>
    <td>
     Modo de bloqueio dos armários (mais de um, se for multitransação), uma matriz de
-    <code class="literal">
+    <code>
      For Key Share
     </code>
     ,
-    <code class="literal">
+    <code>
      For Share
     </code>
     ,
-    <code class="literal">
+    <code>
      For No Key Update
     </code>
     ,
-    <code class="literal">
+    <code>
      No Key Update
     </code>
     ,
-    <code class="literal">
+    <code>
      For Update
     </code>
     ,
-    <code class="literal">
+    <code>
      Update
     </code>
     .
@@ -144,12 +144,12 @@ O parâmetro é o nome de uma tabela. O resultado é um conjunto de registros, c
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      pids
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer[]
     </code>
    </td>

@@ -6,7 +6,7 @@ O catálogo `pg_publication` contém todas as publicações criadas no banco de 
 
 
 
-<table border="1" class="table" summary="pg_publication Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_publication` contém todas as publicações criadas no banco de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,10 +41,10 @@ O catálogo `pg_publication` contém todas as publicações criadas no banco de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pubname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -56,20 +56,20 @@ O catálogo `pg_publication` contém todas as publicações criadas no banco de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pubowner
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -82,10 +82,10 @@ O catálogo `pg_publication` contém todas as publicações criadas no banco de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       puballtables
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -97,10 +97,10 @@ O catálogo `pg_publication` contém todas as publicações criadas no banco de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pubinsert
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -118,10 +118,10 @@ O catálogo `pg_publication` contém todas as publicações criadas no banco de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pubupdate
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -139,10 +139,10 @@ O catálogo `pg_publication` contém todas as publicações criadas no banco de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pubdelete
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -160,10 +160,10 @@ O catálogo `pg_publication` contém todas as publicações criadas no banco de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pubtruncate
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -181,10 +181,10 @@ O catálogo `pg_publication` contém todas as publicações criadas no banco de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pubviaroot
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -196,20 +196,20 @@ O catálogo `pg_publication` contém todas as publicações criadas no banco de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pubgencols
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      Controla como lidar com a replicação de coluna gerada quando não há uma lista de colunas de publicação:
-     <code class="literal">
+     <code>
       n
      </code>
      = as colunas geradas nas tabelas associadas à publicação não devem ser replicadas,
-     <code class="literal">
+     <code>
       s
      </code>
      = as colunas geradas armazenadas nas tabelas associadas à publicação devem ser replicadas.

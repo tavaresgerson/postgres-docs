@@ -10,7 +10,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
 
 
 
-<table border="1" class="table" summary="General-Purpose Aggregate Functions">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -34,15 +34,15 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       any_value
      </code>
      (
-     <code class="type">
+     <code>
       anyelement
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         same as input type
@@ -61,21 +61,21 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_agg
      </code>
      (
-     <code class="type">
+     <code>
       anynonarray
      </code>
-     <code class="literal">
+     <code>
       ORDER BY
      </code>
-     <code class="literal">
+     <code>
       input_sort_columns
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anyarray
      </code>
     </p>
@@ -90,21 +90,21 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_agg
      </code>
      (
-     <code class="type">
+     <code>
       anyarray
      </code>
-     <code class="literal">
+     <code>
       ORDER BY
      </code>
-     <code class="literal">
+     <code>
       input_sort_columns
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anyarray
      </code>
     </p>
@@ -119,93 +119,93 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       avg
      </code>
      (
-     <code class="type">
+     <code>
       smallint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       avg
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       avg
      </code>
      (
-     <code class="type">
+     <code>
       bigint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       avg
      </code>
      (
-     <code class="type">
+     <code>
       numeric
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       avg
      </code>
      (
-     <code class="type">
+     <code>
       real
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       avg
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       avg
      </code>
      (
-     <code class="type">
+     <code>
       interval
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       interval
      </code>
     </p>
@@ -220,54 +220,54 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       bit_and
      </code>
      (
-     <code class="type">
+     <code>
       smallint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       smallint
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       bit_and
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       bit_and
      </code>
      (
-     <code class="type">
+     <code>
       bigint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       bit_and
      </code>
      (
-     <code class="type">
+     <code>
       bit
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bit
      </code>
     </p>
@@ -282,54 +282,54 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       bit_or
      </code>
      (
-     <code class="type">
+     <code>
       smallint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       smallint
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       bit_or
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       bit_or
      </code>
      (
-     <code class="type">
+     <code>
       bigint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       bit_or
      </code>
      (
-     <code class="type">
+     <code>
       bit
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bit
      </code>
     </p>
@@ -344,54 +344,54 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       bit_xor
      </code>
      (
-     <code class="type">
+     <code>
       smallint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       smallint
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       bit_xor
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       bit_xor
      </code>
      (
-     <code class="type">
+     <code>
       bigint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       bit_xor
      </code>
      (
-     <code class="type">
+     <code>
       bit
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bit
      </code>
     </p>
@@ -406,15 +406,15 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       bool_and
      </code>
      (
-     <code class="type">
+     <code>
       boolean
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -429,15 +429,15 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       bool_or
      </code>
      (
-     <code class="type">
+     <code>
       boolean
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -452,15 +452,15 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       count
      </code>
      (
-     <code class="literal">
+     <code>
       *
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
@@ -475,15 +475,15 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       count
      </code>
      (
-     <code class="type">
+     <code>
       "any"
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
@@ -498,21 +498,21 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       every
      </code>
      (
-     <code class="type">
+     <code>
       boolean
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      This is the SQL standard's equivalent to
-     <code class="function">
+     <code>
       bool_and
      </code>
      .
@@ -525,50 +525,50 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_agg
      </code>
      (
-     <code class="type">
+     <code>
       anyelement
      </code>
-     <code class="literal">
+     <code>
       ORDER BY
      </code>
-     <code class="literal">
+     <code>
       input_sort_columns
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       json
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_agg
      </code>
      (
-     <code class="type">
+     <code>
       anyelement
      </code>
-     <code class="literal">
+     <code>
       ORDER BY
      </code>
-     <code class="literal">
+     <code>
       input_sort_columns
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
     <p>
      Collects all the input values, including nulls, into a JSON array. Values are converted to JSON as per
-     <code class="function">
+     <code>
       to_json
      </code>
      or
-     <code class="function">
+     <code>
       to_jsonb
      </code>
      .
@@ -581,38 +581,38 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_agg_strict
      </code>
      (
-     <code class="type">
+     <code>
       anyelement
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       json
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_agg_strict
      </code>
      (
-     <code class="type">
+     <code>
       anyelement
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
     <p>
      Collects all the input values, skipping nulls, into a JSON array. Values are converted to JSON as per
-     <code class="function">
+     <code>
       to_json
      </code>
      or
-     <code class="function">
+     <code>
       to_jsonb
      </code>
      .
@@ -625,7 +625,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_arrayagg
      </code>
      ( [
@@ -638,7 +638,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
      </span>
      ] [
      <span class="optional">
-      <code class="literal">
+      <code>
        ORDER BY
       </code>
       <em class="replaceable">
@@ -650,21 +650,21 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
      ] [
      <span class="optional">
       {
-      <code class="literal">
+      <code>
        NULL
       </code>
       |
-      <code class="literal">
+      <code>
        ABSENT
       </code>
       }
-      <code class="literal">
+      <code>
        ON NULL
       </code>
      </span>
      ] [
      <span class="optional">
-      <code class="literal">
+      <code>
        RETURNING
       </code>
       <em class="replaceable">
@@ -674,12 +674,12 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
       </em>
       [
       <span class="optional">
-       <code class="literal">
+       <code>
         FORMAT JSON
        </code>
        [
        <span class="optional">
-        <code class="literal">
+        <code>
          ENCODING UTF8
         </code>
        </span>
@@ -691,7 +691,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
     </p>
     <p>
      Behaves in the same way as
-     <code class="function">
+     <code>
       json_array
      </code>
      but as an aggregate function so it only takes one
@@ -701,21 +701,21 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
       </code>
      </em>
      parameter. If
-     <code class="literal">
+     <code>
       ABSENT ON NULL
      </code>
      is specified, any NULL values are omitted. If
-     <code class="literal">
+     <code>
       ORDER BY
      </code>
      is specified, the elements will appear in the array in that order rather than in the input order.
     </p>
     <p>
-     <code class="literal">
+     <code>
       SELECT json_arrayagg(v) FROM (VALUES(2),(1)) t(v)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [2, 1]
      </code>
     </p>
@@ -727,7 +727,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_objectagg
      </code>
      ( [
@@ -739,7 +739,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        </code>
       </em>
       {
-      <code class="literal">
+      <code>
        VALUE
       </code>
       | ':' }
@@ -753,35 +753,35 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
      ] [
      <span class="optional">
       {
-      <code class="literal">
+      <code>
        NULL
       </code>
       |
-      <code class="literal">
+      <code>
        ABSENT
       </code>
       }
-      <code class="literal">
+      <code>
        ON NULL
       </code>
      </span>
      ] [
      <span class="optional">
       {
-      <code class="literal">
+      <code>
        WITH
       </code>
       |
-      <code class="literal">
+      <code>
        WITHOUT
       </code>
       }
-      <code class="literal">
+      <code>
        UNIQUE
       </code>
       [
       <span class="optional">
-       <code class="literal">
+       <code>
         KEYS
        </code>
       </span>
@@ -789,7 +789,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
      </span>
      ] [
      <span class="optional">
-      <code class="literal">
+      <code>
        RETURNING
       </code>
       <em class="replaceable">
@@ -799,12 +799,12 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
       </em>
       [
       <span class="optional">
-       <code class="literal">
+       <code>
         FORMAT JSON
        </code>
        [
        <span class="optional">
-        <code class="literal">
+        <code>
          ENCODING UTF8
         </code>
        </span>
@@ -816,7 +816,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
     </p>
     <p>
      Behaves like
-     <code class="function">
+     <code>
       json_object
      </code>
      , but as an aggregate function, so it only takes one
@@ -834,11 +834,11 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
      parameter.
     </p>
     <p>
-     <code class="literal">
+     <code>
       SELECT json_objectagg(k:v) FROM (VALUES ('a'::text,current_date),('b',current_date + 1)) AS t(k,v)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       { "a" : "2022-05-10", "b" : "2022-05-11" }
      </code>
     </p>
@@ -850,7 +850,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_object_agg
      </code>
      (
@@ -859,7 +859,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       "any"
      </code>
      ,
@@ -868,22 +868,22 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       "any"
      </code>
-     <code class="literal">
+     <code>
       ORDER BY
      </code>
-     <code class="literal">
+     <code>
       input_sort_columns
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       json
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_object_agg
      </code>
      (
@@ -892,7 +892,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       "any"
      </code>
      ,
@@ -901,27 +901,27 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       "any"
      </code>
-     <code class="literal">
+     <code>
       ORDER BY
      </code>
-     <code class="literal">
+     <code>
       input_sort_columns
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
     <p>
      Collects all the key/value pairs into a JSON object.  Key arguments are coerced to text; value arguments are converted as per
-     <code class="function">
+     <code>
       to_json
      </code>
      or
-     <code class="function">
+     <code>
       to_jsonb
      </code>
      . Values can be null, but keys cannot.
@@ -934,7 +934,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_object_agg_strict
      </code>
      (
@@ -943,7 +943,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       "any"
      </code>
      ,
@@ -952,16 +952,16 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       "any"
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       json
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_object_agg_strict
      </code>
      (
@@ -970,7 +970,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       "any"
      </code>
      ,
@@ -979,21 +979,21 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       "any"
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
     <p>
      Collects all the key/value pairs into a JSON object.  Key arguments are coerced to text; value arguments are converted as per
-     <code class="function">
+     <code>
       to_json
      </code>
      or
-     <code class="function">
+     <code>
       to_jsonb
      </code>
      . The
@@ -1018,7 +1018,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_object_agg_unique
      </code>
      (
@@ -1027,7 +1027,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       "any"
      </code>
      ,
@@ -1036,16 +1036,16 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       "any"
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       json
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_object_agg_unique
      </code>
      (
@@ -1054,7 +1054,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       "any"
      </code>
      ,
@@ -1063,21 +1063,21 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       "any"
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
     <p>
      Collects all the key/value pairs into a JSON object.  Key arguments are coerced to text; value arguments are converted as per
-     <code class="function">
+     <code>
       to_json
      </code>
      or
-     <code class="function">
+     <code>
       to_jsonb
      </code>
      . Values can be null, but keys cannot. If there is a duplicate key an error is thrown.
@@ -1090,7 +1090,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_object_agg_unique_strict
      </code>
      (
@@ -1099,7 +1099,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       "any"
      </code>
      ,
@@ -1108,16 +1108,16 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       "any"
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       json
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_object_agg_unique_strict
      </code>
      (
@@ -1126,7 +1126,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        key
       </code>
      </em>
-     <code class="type">
+     <code>
       "any"
      </code>
      ,
@@ -1135,21 +1135,21 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       "any"
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       jsonb
      </code>
     </p>
     <p>
      Collects all the key/value pairs into a JSON object.  Key arguments are coerced to text; value arguments are converted as per
-     <code class="function">
+     <code>
       to_json
      </code>
      or
-     <code class="function">
+     <code>
       to_jsonb
      </code>
      . The
@@ -1174,7 +1174,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       max
      </code>
      (
@@ -1184,7 +1184,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
       </code>
      </em>
      ) →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         same as input type
@@ -1194,35 +1194,35 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
     </p>
     <p>
      Computes the maximum of the non-null input values.  Available for any numeric, string, date/time, or enum type, as well as
-     <code class="type">
+     <code>
       bytea
      </code>
      ,
-     <code class="type">
+     <code>
       inet
      </code>
      ,
-     <code class="type">
+     <code>
       interval
      </code>
      ,
-     <code class="type">
+     <code>
       money
      </code>
      ,
-     <code class="type">
+     <code>
       oid
      </code>
      ,
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ,
-     <code class="type">
+     <code>
       tid
      </code>
      ,
-     <code class="type">
+     <code>
       xid8
      </code>
      , and also arrays and composite types containing sortable data types.
@@ -1235,7 +1235,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       min
      </code>
      (
@@ -1245,7 +1245,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
       </code>
      </em>
      ) →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         same as input type
@@ -1255,35 +1255,35 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
     </p>
     <p>
      Computes the minimum of the non-null input values.  Available for any numeric, string, date/time, or enum type, as well as
-     <code class="type">
+     <code>
       bytea
      </code>
      ,
-     <code class="type">
+     <code>
       inet
      </code>
      ,
-     <code class="type">
+     <code>
       interval
      </code>
      ,
-     <code class="type">
+     <code>
       money
      </code>
      ,
-     <code class="type">
+     <code>
       oid
      </code>
      ,
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ,
-     <code class="type">
+     <code>
       tid
      </code>
      ,
-     <code class="type">
+     <code>
       xid8
      </code>
      , and also arrays and composite types containing sortable data types.
@@ -1296,7 +1296,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       range_agg
      </code>
      (
@@ -1305,16 +1305,16 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       anyrange
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anymultirange
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       range_agg
      </code>
      (
@@ -1323,11 +1323,11 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anymultirange
      </code>
     </p>
@@ -1342,7 +1342,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       range_intersect_agg
      </code>
      (
@@ -1351,16 +1351,16 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       anyrange
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anyrange
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       range_intersect_agg
      </code>
      (
@@ -1369,11 +1369,11 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       anymultirange
      </code>
     </p>
@@ -1388,7 +1388,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       string_agg
      </code>
      (
@@ -1397,7 +1397,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -1406,16 +1406,16 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        delimiter
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       string_agg
      </code>
      (
@@ -1424,7 +1424,7 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        value
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ,
@@ -1433,17 +1433,17 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
        delimiter
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
-     <code class="literal">
+     <code>
       ORDER BY
      </code>
-     <code class="literal">
+     <code>
       input_sort_columns
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
@@ -1464,106 +1464,106 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       sum
      </code>
      (
-     <code class="type">
+     <code>
       smallint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       sum
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       sum
      </code>
      (
-     <code class="type">
+     <code>
       bigint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       sum
      </code>
      (
-     <code class="type">
+     <code>
       numeric
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       sum
      </code>
      (
-     <code class="type">
+     <code>
       real
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       real
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       sum
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       sum
      </code>
      (
-     <code class="type">
+     <code>
       interval
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       interval
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       sum
      </code>
      (
-     <code class="type">
+     <code>
       money
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       money
      </code>
     </p>
@@ -1578,21 +1578,21 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       xmlagg
      </code>
      (
-     <code class="type">
+     <code>
       xml
      </code>
-     <code class="literal">
+     <code>
       ORDER BY
      </code>
-     <code class="literal">
+     <code>
       input_sort_columns
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       xml
      </code>
     </p>
@@ -1656,7 +1656,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
 
 
 
-<table border="1" class="table" summary="Aggregate Functions for Statistics">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -1680,7 +1680,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       corr
      </code>
      (
@@ -1689,7 +1689,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        Y
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ,
@@ -1698,11 +1698,11 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        X
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -1717,7 +1717,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       covar_pop
      </code>
      (
@@ -1726,7 +1726,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        Y
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ,
@@ -1735,11 +1735,11 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        X
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -1754,7 +1754,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       covar_samp
      </code>
      (
@@ -1763,7 +1763,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        Y
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ,
@@ -1772,11 +1772,11 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        X
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -1791,7 +1791,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       regr_avgx
      </code>
      (
@@ -1800,7 +1800,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        Y
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ,
@@ -1809,17 +1809,17 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        X
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Computes the average of the independent variable,
-     <code class="literal">
+     <code>
       sum(
       <em class="parameter">
        <code>
@@ -1843,7 +1843,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       regr_avgy
      </code>
      (
@@ -1852,7 +1852,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        Y
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ,
@@ -1861,17 +1861,17 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        X
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Computes the average of the dependent variable,
-     <code class="literal">
+     <code>
       sum(
       <em class="parameter">
        <code>
@@ -1895,7 +1895,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       regr_count
      </code>
      (
@@ -1904,7 +1904,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        Y
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ,
@@ -1913,11 +1913,11 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        X
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
@@ -1932,7 +1932,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       regr_intercept
      </code>
      (
@@ -1941,7 +1941,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        Y
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ,
@@ -1950,11 +1950,11 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        X
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -1981,7 +1981,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       regr_r2
      </code>
      (
@@ -1990,7 +1990,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        Y
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ,
@@ -1999,11 +1999,11 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        X
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -2018,7 +2018,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       regr_slope
      </code>
      (
@@ -2027,7 +2027,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        Y
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ,
@@ -2036,11 +2036,11 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        X
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -2067,7 +2067,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       regr_sxx
      </code>
      (
@@ -2076,7 +2076,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        Y
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ,
@@ -2085,11 +2085,11 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        X
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -2103,7 +2103,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
       ”
      </span>
      of the independent variable,
-     <code class="literal">
+     <code>
       sum(
       <em class="parameter">
        <code>
@@ -2133,7 +2133,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       regr_sxy
      </code>
      (
@@ -2142,7 +2142,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        Y
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ,
@@ -2151,11 +2151,11 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        X
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -2169,7 +2169,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
       ”
      </span>
      of independent times dependent variables,
-     <code class="literal">
+     <code>
       sum(
       <em class="parameter">
        <code>
@@ -2211,7 +2211,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       regr_syy
      </code>
      (
@@ -2220,7 +2220,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        Y
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ,
@@ -2229,11 +2229,11 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        X
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -2247,7 +2247,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
       ”
      </span>
      of the dependent variable,
-     <code class="literal">
+     <code>
       sum(
       <em class="parameter">
        <code>
@@ -2277,7 +2277,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       stddev
      </code>
      (
@@ -2287,27 +2287,27 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
       </code>
      </em>
      ) →
-     <code class="returnvalue">
+     <code>
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
      for
-     <code class="type">
+     <code>
       real
      </code>
      or
-     <code class="type">
+     <code>
       double precision
      </code>
      , otherwise
-     <code class="type">
+     <code>
       numeric
      </code>
     </p>
     <p>
      This is a historical alias for
-     <code class="function">
+     <code>
       stddev_samp
      </code>
      .
@@ -2320,7 +2320,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       stddev_pop
      </code>
      (
@@ -2330,21 +2330,21 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
       </code>
      </em>
      ) →
-     <code class="returnvalue">
+     <code>
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
      for
-     <code class="type">
+     <code>
       real
      </code>
      or
-     <code class="type">
+     <code>
       double precision
      </code>
      , otherwise
-     <code class="type">
+     <code>
       numeric
      </code>
     </p>
@@ -2359,7 +2359,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       stddev_samp
      </code>
      (
@@ -2369,21 +2369,21 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
       </code>
      </em>
      ) →
-     <code class="returnvalue">
+     <code>
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
      for
-     <code class="type">
+     <code>
       real
      </code>
      or
-     <code class="type">
+     <code>
       double precision
      </code>
      , otherwise
-     <code class="type">
+     <code>
       numeric
      </code>
     </p>
@@ -2398,7 +2398,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       variance
      </code>
      (
@@ -2408,27 +2408,27 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
       </code>
      </em>
      ) →
-     <code class="returnvalue">
+     <code>
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
      for
-     <code class="type">
+     <code>
       real
      </code>
      or
-     <code class="type">
+     <code>
       double precision
      </code>
      , otherwise
-     <code class="type">
+     <code>
       numeric
      </code>
     </p>
     <p>
      This is a historical alias for
-     <code class="function">
+     <code>
       var_samp
      </code>
      .
@@ -2441,7 +2441,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       var_pop
      </code>
      (
@@ -2451,21 +2451,21 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
       </code>
      </em>
      ) →
-     <code class="returnvalue">
+     <code>
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
      for
-     <code class="type">
+     <code>
       real
      </code>
      or
-     <code class="type">
+     <code>
       double precision
      </code>
      , otherwise
-     <code class="type">
+     <code>
       numeric
      </code>
     </p>
@@ -2480,7 +2480,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       var_samp
      </code>
      (
@@ -2490,21 +2490,21 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
       </code>
      </em>
      ) →
-     <code class="returnvalue">
+     <code>
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
      for
-     <code class="type">
+     <code>
       real
      </code>
      or
-     <code class="type">
+     <code>
       double precision
      </code>
      , otherwise
-     <code class="type">
+     <code>
       numeric
      </code>
     </p>
@@ -2534,7 +2534,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
 
 
 
-<table border="1" class="table" summary="Ordered-Set Aggregate Functions">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -2558,22 +2558,22 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       mode
      </code>
      ()
-     <code class="literal">
+     <code>
       WITHIN GROUP
      </code>
      (
-     <code class="literal">
+     <code>
       ORDER BY
      </code>
-     <code class="type">
+     <code>
       anyelement
      </code>
      )
-     <code class="returnvalue">
+     <code>
       anyelement
      </code>
     </p>
@@ -2592,7 +2592,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       percentile_cont
      </code>
      (
@@ -2601,27 +2601,27 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        fraction
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="literal">
+     <code>
       WITHIN GROUP
      </code>
      (
-     <code class="literal">
+     <code>
       ORDER BY
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       percentile_cont
      </code>
      (
@@ -2630,22 +2630,22 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        fraction
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="literal">
+     <code>
       WITHIN GROUP
      </code>
      (
-     <code class="literal">
+     <code>
       ORDER BY
      </code>
-     <code class="type">
+     <code>
       interval
      </code>
      )
-     <code class="returnvalue">
+     <code>
       interval
      </code>
     </p>
@@ -2670,7 +2670,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       percentile_cont
      </code>
      (
@@ -2679,27 +2679,27 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        fractions
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision[]
      </code>
      )
-     <code class="literal">
+     <code>
       WITHIN GROUP
      </code>
      (
-     <code class="literal">
+     <code>
       ORDER BY
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision[]
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       percentile_cont
      </code>
      (
@@ -2708,22 +2708,22 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        fractions
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision[]
      </code>
      )
-     <code class="literal">
+     <code>
       WITHIN GROUP
      </code>
      (
-     <code class="literal">
+     <code>
       ORDER BY
      </code>
-     <code class="type">
+     <code>
       interval
      </code>
      )
-     <code class="returnvalue">
+     <code>
       interval[]
      </code>
     </p>
@@ -2744,7 +2744,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       percentile_disc
      </code>
      (
@@ -2753,22 +2753,22 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        fraction
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="literal">
+     <code>
       WITHIN GROUP
      </code>
      (
-     <code class="literal">
+     <code>
       ORDER BY
      </code>
-     <code class="type">
+     <code>
       anyelement
      </code>
      )
-     <code class="returnvalue">
+     <code>
       anyelement
      </code>
     </p>
@@ -2793,7 +2793,7 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       percentile_disc
      </code>
      (
@@ -2802,22 +2802,22 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
        fractions
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision[]
      </code>
      )
-     <code class="literal">
+     <code>
       WITHIN GROUP
      </code>
      (
-     <code class="literal">
+     <code>
       ORDER BY
      </code>
-     <code class="type">
+     <code>
       anyelement
      </code>
      )
-     <code class="returnvalue">
+     <code>
       anyarray
      </code>
     </p>
@@ -2853,7 +2853,7 @@ Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](funct
 
 
 
-<table border="1" class="table" summary="Hypothetical-Set Aggregate Functions">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -2877,7 +2877,7 @@ Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](funct
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       rank
      </code>
      (
@@ -2887,11 +2887,11 @@ Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](funct
       </code>
      </em>
      )
-     <code class="literal">
+     <code>
       WITHIN GROUP
      </code>
      (
-     <code class="literal">
+     <code>
       ORDER BY
      </code>
      <em class="replaceable">
@@ -2900,7 +2900,7 @@ Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](funct
       </code>
      </em>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
@@ -2915,7 +2915,7 @@ Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](funct
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       dense_rank
      </code>
      (
@@ -2925,11 +2925,11 @@ Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](funct
       </code>
      </em>
      )
-     <code class="literal">
+     <code>
       WITHIN GROUP
      </code>
      (
-     <code class="literal">
+     <code>
       ORDER BY
      </code>
      <em class="replaceable">
@@ -2938,7 +2938,7 @@ Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](funct
       </code>
      </em>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
@@ -2953,7 +2953,7 @@ Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](funct
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       percent_rank
      </code>
      (
@@ -2963,11 +2963,11 @@ Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](funct
       </code>
      </em>
      )
-     <code class="literal">
+     <code>
       WITHIN GROUP
      </code>
      (
-     <code class="literal">
+     <code>
       ORDER BY
      </code>
      <em class="replaceable">
@@ -2976,13 +2976,13 @@ Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](funct
       </code>
      </em>
      ) →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Computes the relative rank of the hypothetical row, that is (
-     <code class="function">
+     <code>
       rank
      </code>
      - 1) / (total rows - 1). The value thus ranges from 0 to 1 inclusive.
@@ -2995,7 +2995,7 @@ Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](funct
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cume_dist
      </code>
      (
@@ -3005,11 +3005,11 @@ Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](funct
       </code>
      </em>
      )
-     <code class="literal">
+     <code>
       WITHIN GROUP
      </code>
      (
-     <code class="literal">
+     <code>
       ORDER BY
      </code>
      <em class="replaceable">
@@ -3018,7 +3018,7 @@ Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](funct
       </code>
      </em>
      ) →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -3052,7 +3052,7 @@ Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](funct
 
 
 
-<table border="1" class="table" summary="Grouping Operations">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -3072,7 +3072,7 @@ Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](funct
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       GROUPING
      </code>
      (
@@ -3082,13 +3082,13 @@ Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](funct
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Retorna uma máscara de bits que indica quais
-     <code class="literal">
+     <code>
       GROUP BY
      </code>
      As expressões não estão incluídas no conjunto atual de agrupamento. Os bits são atribuídos com o argumento mais à direita correspondente ao bit menos significativo; cada bit é 0 se a expressão correspondente estiver incluída nos critérios de agrupamento do conjunto de agrupamento que gera a linha de resultado atual, e 1 se não estiver incluída.

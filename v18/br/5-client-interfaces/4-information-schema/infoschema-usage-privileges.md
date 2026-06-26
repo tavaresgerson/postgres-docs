@@ -10,7 +10,7 @@ No PostgreSQL, as sequências também suportam os privilégios `SELECT` e `UPDAT
 
 
 
-<table border="1" class="table" summary="usage_privileges Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -30,10 +30,10 @@ No PostgreSQL, as sequências também suportam os privilégios `SELECT` e `UPDAT
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       grantor
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -45,10 +45,10 @@ No PostgreSQL, as sequências também suportam os privilégios `SELECT` e `UPDAT
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       grantee
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -60,10 +60,10 @@ No PostgreSQL, as sequências também suportam os privilégios `SELECT` e `UPDAT
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       object_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -75,10 +75,10 @@ No PostgreSQL, as sequências também suportam os privilégios `SELECT` e `UPDAT
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       object_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -90,10 +90,10 @@ No PostgreSQL, as sequências também suportam os privilégios `SELECT` e `UPDAT
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       object_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -105,31 +105,31 @@ No PostgreSQL, as sequências também suportam os privilégios `SELECT` e `UPDAT
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       object_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       COLLATION
      </code>
      or
-     <code class="literal">
+     <code>
       DOMAIN
      </code>
      or
-     <code class="literal">
+     <code>
       FOREIGN DATA WRAPPER
      </code>
      or
-     <code class="literal">
+     <code>
       FOREIGN SERVER
      </code>
      or
-     <code class="literal">
+     <code>
       SEQUENCE
      </code>
     </p>
@@ -138,16 +138,16 @@ No PostgreSQL, as sequências também suportam os privilégios `SELECT` e `UPDAT
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       privilege_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Always
-     <code class="literal">
+     <code>
       USAGE
      </code>
     </p>
@@ -156,19 +156,19 @@ No PostgreSQL, as sequências também suportam os privilégios `SELECT` e `UPDAT
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_grantable
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       YES
      </code>
      if the privilege is grantable,
-     <code class="literal">
+     <code>
       NO
      </code>
      if not

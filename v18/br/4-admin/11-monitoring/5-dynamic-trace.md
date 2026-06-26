@@ -23,7 +23,7 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
 
 
 
-<table border="1" class="table" summary="Built-in DTrace Probes">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -45,12 +45,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      transaction-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (LocalTransactionId)
     </code>
    </td>
@@ -60,12 +60,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      transaction-commit
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (LocalTransactionId)
     </code>
    </td>
@@ -75,12 +75,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      transaction-abort
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (LocalTransactionId)
     </code>
    </td>
@@ -90,12 +90,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      query-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (const char *)
     </code>
    </td>
@@ -105,12 +105,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      query-done
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (const char *)
     </code>
    </td>
@@ -120,12 +120,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      query-parse-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (const char *)
     </code>
    </td>
@@ -135,12 +135,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      query-parse-done
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (const char *)
     </code>
    </td>
@@ -150,12 +150,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      query-rewrite-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (const char *)
     </code>
    </td>
@@ -165,12 +165,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      query-rewrite-done
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (const char *)
     </code>
    </td>
@@ -180,12 +180,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      query-plan-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ()
     </code>
    </td>
@@ -195,12 +195,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      query-plan-done
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ()
     </code>
    </td>
@@ -210,12 +210,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      query-execute-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ()
     </code>
    </td>
@@ -225,12 +225,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      query-execute-done
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ()
     </code>
    </td>
@@ -240,22 +240,22 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      statement-status
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (const char *)
     </code>
    </td>
    <td>
     Probe que acende sempre que o processo do servidor atualiza
-    <code class="structname">
+    <code>
      pg_stat_activity
     </code>
     .
-    <code class="structfield">
+    <code>
      status
     </code>
     .  arg0 é a nova string de status.
@@ -263,12 +263,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      checkpoint-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (int)
     </code>
    </td>
@@ -278,12 +278,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      checkpoint-done
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (int, int, int, int, int)
     </code>
    </td>
@@ -293,12 +293,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      clog-checkpoint-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (bool)
     </code>
    </td>
@@ -308,18 +308,18 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      clog-checkpoint-done
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (bool)
     </code>
    </td>
    <td>
     Prova que acende quando a porção CLOG de um ponto de verificação é concluída. arg0 tem o mesmo significado que para
-    <code class="literal">
+    <code>
      clog-checkpoint-start
     </code>
     .
@@ -327,12 +327,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      subtrans-checkpoint-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (bool)
     </code>
    </td>
@@ -342,18 +342,18 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      subtrans-checkpoint-done
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (bool)
     </code>
    </td>
    <td>
     Prova que acende quando a parte SUBTRANS de um ponto de verificação é concluída. arg0 tem o mesmo significado que para
-    <code class="literal">
+    <code>
      subtrans-checkpoint-start
     </code>
     .
@@ -361,12 +361,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      multixact-checkpoint-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (bool)
     </code>
    </td>
@@ -376,18 +376,18 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      multixact-checkpoint-done
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (bool)
     </code>
    </td>
    <td>
     Prova que acende quando a porção MultiXact de um ponto de verificação é concluída. arg0 tem o mesmo significado que para
-    <code class="literal">
+    <code>
      multixact-checkpoint-start
     </code>
     .
@@ -395,12 +395,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      buffer-checkpoint-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (int)
     </code>
    </td>
@@ -410,12 +410,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      buffer-sync-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (int, int)
     </code>
    </td>
@@ -425,12 +425,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      buffer-sync-written
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (int)
     </code>
    </td>
@@ -440,18 +440,18 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      buffer-sync-done
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (int, int, int)
     </code>
    </td>
    <td>
     Prova que acende quando todos os buffers sujos foram escritos. arg0 é o número total de buffers. arg1 é o número de buffers que realmente foram escritos pelo processo de verificação. arg2 é o número que se esperava que fossem escritos (arg1 de
-    <code class="literal">
+    <code>
      buffer-sync-start
     </code>
     ); qualquer diferença reflete outros processos que limpem os buffers durante o ponto de verificação.
@@ -459,12 +459,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      buffer-checkpoint-sync-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ()
     </code>
    </td>
@@ -474,12 +474,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      buffer-checkpoint-done
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ()
     </code>
    </td>
@@ -489,12 +489,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      twophase-checkpoint-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ()
     </code>
    </td>
@@ -504,12 +504,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      twophase-checkpoint-done
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ()
     </code>
    </td>
@@ -519,18 +519,18 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      buffer-extend-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (ForkNumber, BlockNumber, Oid, Oid, Oid, int, unsigned int)
     </code>
    </td>
    <td>
     A sonda que acende quando uma extensão de relação é iniciada. arg0 contém o fork a ser estendido. arg1, arg2 e arg3 contêm os OIDs do espaço de tabela, banco de dados e relação que identificam a relação. arg4 é o ID do backend que criou a relação temporária para um buffer local, ou
-    <code class="symbol">
+    <code>
      INVALID_PROC_NUMBER
     </code>
     (-1) para um buffer compartilhado. arg5 é o número de blocos que o chamador gostaria de estender.
@@ -538,22 +538,22 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      buffer-extend-done
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (ForkNumber, BlockNumber, Oid, Oid, Oid, int, unsigned int, BlockNumber)
     </code>
    </td>
    <td>
     Probe que acende quando uma extensão de relação é concluída. arg0 contém o fork a ser estendido. arg1, arg2 e arg3 contêm os OIDs do espaço de tabela, banco de dados e relação que identificam a relação. arg4 é o ID do backend que criou a relação temporária para um buffer local, ou
-    <code class="symbol">
+    <code>
      INVALID_PROC_NUMBER
     </code>
     (-1) para um buffer compartilhado. arg5 é o número de blocos pelo qual a relação foi estendida, que pode ser menor que o número no
-    <code class="literal">
+    <code>
      buffer-extend-start
     </code>
     devido a restrições de recursos. arg6 contém o número de bloco do primeiro novo bloco.
@@ -561,18 +561,18 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      buffer-read-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (ForkNumber, BlockNumber, Oid, Oid, Oid, int)
     </code>
    </td>
    <td>
     Probe que acende quando uma leitura de buffer é iniciada. arg0 e arg1 contêm os números de bifurcação e bloqueio da página. arg2, arg3 e arg4 contêm os OIDs do tablespace, banco de dados e relação que identificam a relação. arg5 é o ID do backend que criou a relação temporária para um buffer local, ou
-    <code class="symbol">
+    <code>
      INVALID_PROC_NUMBER
     </code>
     (-1) para um buffer compartilhado.
@@ -580,18 +580,18 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      buffer-read-done
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (ForkNumber, BlockNumber, Oid, Oid, Oid, int, bool)
     </code>
    </td>
    <td>
     Probe que acende quando uma leitura de buffer é concluída.  arg0 e arg1 contêm os números de bifurcação e bloqueio da página. arg2, arg3 e arg4 contêm os OIDs do tablespace, banco de dados e relação que identificam a relação. arg5 é o ID do backend que criou a relação temporária para um buffer local, ou
-    <code class="symbol">
+    <code>
      INVALID_PROC_NUMBER
     </code>
     (-1) para um buffer compartilhado. arg6 é verdadeiro se o buffer foi encontrado no pool, falso se
@@ -599,12 +599,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      buffer-flush-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (ForkNumber, BlockNumber, Oid, Oid, Oid)
     </code>
    </td>
@@ -614,18 +614,18 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      buffer-flush-done
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (ForkNumber, BlockNumber, Oid, Oid, Oid)
     </code>
    </td>
    <td>
     Probe que acende quando um pedido de escrita está concluído. (Observe que isso apenas reflete o tempo para passar os dados para o kernel; normalmente, eles ainda não foram escritos no disco.) Os argumentos são os mesmos que para
-    <code class="literal">
+    <code>
      buffer-flush-start
     </code>
     .
@@ -633,12 +633,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      wal-buffer-write-dirty-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ()
     </code>
    </td>
@@ -652,12 +652,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      wal-buffer-write-dirty-done
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ()
     </code>
    </td>
@@ -667,12 +667,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      wal-insert
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (unsigned char, unsigned char)
     </code>
    </td>
@@ -682,12 +682,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      wal-switch
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ()
     </code>
    </td>
@@ -697,18 +697,18 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      smgr-md-read-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (ForkNumber, BlockNumber, Oid, Oid, Oid, int)
     </code>
    </td>
    <td>
     Probe que acende quando começa a ler um bloco de uma relação. arg0 e arg1 contêm os números de bifurcação e bloco da página. arg2, arg3 e arg4 contêm os OIDs do tablespace, banco de dados e relação que identificam a relação. arg5 é o ID do backend que criou a relação temporária para um buffer local, ou
-    <code class="symbol">
+    <code>
      INVALID_PROC_NUMBER
     </code>
     (-1) para um buffer compartilhado.
@@ -716,18 +716,18 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      smgr-md-read-done
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (ForkNumber, BlockNumber, Oid, Oid, Oid, int, int, int)
     </code>
    </td>
    <td>
     Probe que acende quando uma leitura de bloco é concluída. arg0 e arg1 contêm os números de bifurcação e bloco da página. arg2, arg3 e arg4 contêm os OIDs do tablespace, banco de dados e relação que identificam a relação. arg5 é o ID do backend que criou a relação temporária para um buffer local, ou
-    <code class="symbol">
+    <code>
      INVALID_PROC_NUMBER
     </code>
     (-1) para um buffer compartilhado. arg6 é o número de bytes realmente lidos, enquanto arg7 é o número solicitado (se esses forem diferentes, isso indica uma leitura curta).
@@ -735,18 +735,18 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      smgr-md-write-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (ForkNumber, BlockNumber, Oid, Oid, Oid, int)
     </code>
    </td>
    <td>
     Probe que acende quando começa a escrever um bloco em uma relação. arg0 e arg1 contêm os números de bifurcação e bloqueio da página. arg2, arg3 e arg4 contêm os OIDs do tablespace, banco de dados e relação que identificam a relação. arg5 é o ID do backend que criou a relação temporária para um buffer local, ou
-    <code class="symbol">
+    <code>
      INVALID_PROC_NUMBER
     </code>
     (-1) para um buffer compartilhado.
@@ -754,18 +754,18 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      smgr-md-write-done
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (ForkNumber, BlockNumber, Oid, Oid, Oid, int, int, int)
     </code>
    </td>
    <td>
     Probe que acende quando uma escrita de bloco é concluída. arg0 e arg1 contêm os números de bifurcação e bloco da página. arg2, arg3 e arg4 contêm os OIDs do tablespace, banco de dados e relação que identificam a relação. arg5 é o ID do backend que criou a relação temporária para um buffer local, ou
-    <code class="symbol">
+    <code>
      INVALID_PROC_NUMBER
     </code>
     (-1) para um buffer compartilhado. arg6 é o número de bytes realmente escritos, enquanto arg7 é o número solicitado (se esses forem diferentes, isso indica uma escrita curta).
@@ -773,26 +773,26 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      sort-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (int, bool, int, int, bool, int)
     </code>
    </td>
    <td>
     Probe que acende quando uma operação de classificação é iniciada. arg0 indica heap, índice ou classificação de dados. arg1 é verdadeiro para a aplicação de valores únicos. arg2 é o número de colunas chave. arg3 é o número de kilobytes de memória de trabalho permitidos. arg4 é verdadeiro se o acesso aleatório ao resultado da classificação é necessário. arg5 indica serial quando
-    <code class="literal">
+    <code>
      0
     </code>
     , trabalhador paralelo quando
-    <code class="literal">
+    <code>
      1
     </code>
     , ou líder paralelo quando
-    <code class="literal">
+    <code>
      2
     </code>
     .
@@ -800,12 +800,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      sort-done
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (bool, long)
     </code>
    </td>
@@ -815,12 +815,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      lwlock-acquire
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (char *, LWLockMode)
     </code>
    </td>
@@ -830,12 +830,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      lwlock-release
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (char *)
     </code>
    </td>
@@ -845,12 +845,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      lwlock-wait-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (char *, LWLockMode)
     </code>
    </td>
@@ -860,12 +860,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      lwlock-wait-done
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (char *, LWLockMode)
     </code>
    </td>
@@ -875,12 +875,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      lwlock-condacquire
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (char *, LWLockMode)
     </code>
    </td>
@@ -890,12 +890,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      lwlock-condacquire-fail
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (char *, LWLockMode)
     </code>
    </td>
@@ -905,12 +905,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      lock-wait-start
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, LOCKMODE)
     </code>
    </td>
@@ -920,18 +920,18 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      lock-wait-done
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      (unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, LOCKMODE)
     </code>
    </td>
    <td>
     Probe que acende quando um pedido de bloqueio de peso pesado (bloqueio lmgr) termina de esperar (ou seja, adquiriu o bloqueio). Os argumentos são os mesmos que para
-    <code class="literal">
+    <code>
      lock-wait-start
     </code>
     .
@@ -939,12 +939,12 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      deadlock-found
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ()
     </code>
    </td>
@@ -968,11 +968,7 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
 
 
 
-<table border="1" class="table" summary="Defined Types Used in Probe Parameters">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -986,84 +982,84 @@ Vários sondas padrão são fornecidos no código-fonte, conforme mostrado em [T
  <tbody>
   <tr>
    <td>
-    <code class="type">
+    <code>
      LocalTransactionId
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      unsigned int
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      LWLockMode
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      int
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      LOCKMODE
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      int
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      BlockNumber
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      unsigned int
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      Oid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      unsigned int
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      ForkNumber
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      int
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      bool
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      unsigned char
     </code>
    </td>

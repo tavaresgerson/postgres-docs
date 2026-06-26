@@ -6,7 +6,7 @@ Esta seção descreve funções para operar em objetos de sequência, também ch
 
 
 
-<table border="1" class="table" summary="Sequence Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,25 +26,25 @@ Esta seção descreve funções para operar em objetos de sequência, também ch
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       nextval
      </code>
      (
-     <code class="type">
+     <code>
       regclass
      </code>
      )
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Avança o objeto de sequência para seu próximo valor e retorna esse valor. Isso é feito de forma atômica: mesmo que várias sessões executem
-     <code class="function">
+     <code>
       nextval
      </code>
      concomitantemente, cada um receberá, de forma segura, um valor de sequência distinto. Se o objeto de sequência tiver sido criado com parâmetros padrão, sucessivos
-     <code class="function">
+     <code>
       nextval
      </code>
      As chamadas retornarão valores sucessivos que começam com 1. Outros comportamentos podem ser obtidos usando parâmetros apropriados no
@@ -57,11 +57,11 @@ Esta seção descreve funções para operar em objetos de sequência, também ch
     </p>
     <p>
      Esta função requer
-     <code class="literal">
+     <code>
       USAGE
      </code>
      ou
-     <code class="literal">
+     <code>
       UPDATE
      </code>
      privilégio na sequência.
@@ -71,101 +71,101 @@ Esta seção descreve funções para operar em objetos de sequência, também ch
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       setval
      </code>
      (
-     <code class="type">
+     <code>
       regclass
      </code>
      ,
-     <code class="type">
+     <code>
       bigint
      </code>
      [
      <span class="optional">
       ,
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Define o valor atual do objeto de sequência e, opcionalmente, sua
-     <code class="literal">
+     <code>
       is_called
      </code>
      flag. A forma de dois parâmetros define a sequência
-     <code class="literal">
+     <code>
       last_value
      </code>
      campo para o valor especificado e define seu
-     <code class="literal">
+     <code>
       is_called
      </code>
      campo para
-     <code class="literal">
+     <code>
       true
      </code>
      , ou seja, a próxima
-     <code class="function">
+     <code>
       nextval
      </code>
      avançar a sequência antes de retornar um valor. O valor que será relatado por
-     <code class="function">
+     <code>
       currval
      </code>
      também é definido para o valor especificado. Na forma de três parâmetros,
-     <code class="literal">
+     <code>
       is_called
      </code>
      pode ser configurada para qualquer uma das opções
-     <code class="literal">
+     <code>
       true
      </code>
      ou
-     <code class="literal">
+     <code>
       false
      </code>
      .
-     <code class="literal">
+     <code>
       true
      </code>
      tem o mesmo efeito que a forma de dois parâmetros. Se estiver definido como
-     <code class="literal">
+     <code>
       false
      </code>
      , a próxima
-     <code class="function">
+     <code>
       nextval
      </code>
      retornará exatamente o valor especificado, e o avanço da sequência começa com o seguinte
-     <code class="function">
+     <code>
       nextval
      </code>
      Além disso, o valor relatado por
-     <code class="function">
+     <code>
       currval
      </code>
      não é alterado neste caso. Por exemplo,
     </p>
     <pre class="programlisting">
-SELECT setval('myseq', 42);           <em class="lineannotation"><span class="lineannotation">Próximo<code class="function">nextval</code>retornará 43</span></em> SELECT setval('myseq', 42, true);     <em class="lineannotation"><span class="lineannotation">O mesmo que acima</span></em> SELECT setval('myseq', 42, false);    <em class="lineannotation"><span class="lineannotation">Próximo<code class="function">nextval</code>retornará 42</span></em>
+SELECT setval('myseq', 42);           Próximo<code>nextval</code>retornará 43 SELECT setval('myseq', 42, true);     O mesmo que acima SELECT setval('myseq', 42, false);    Próximo<code>nextval</code>retornará 42
 </pre>
     <p>
      O resultado retornado por
-     <code class="function">
+     <code>
       setval
      </code>
      é apenas o valor do seu segundo argumento.
     </p>
     <p>
      Esta função requer
-     <code class="literal">
+     <code>
       UPDATE
      </code>
      privilégio na sequência.
@@ -175,40 +175,40 @@ SELECT setval('myseq', 42);           <em class="lineannotation"><span class="li
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       currval
      </code>
      (
-     <code class="type">
+     <code>
       regclass
      </code>
      )
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Retorna o valor obtido mais recentemente por
-     <code class="function">
+     <code>
       nextval
      </code>
      para esta sequência na sessão atual. (Um erro é relatado se
-     <code class="function">
+     <code>
       nextval
      </code>
      nunca foi chamada para essa sequência nesta sessão.) Como isso está retornando um valor local da sessão, ele dá uma resposta previsível, independentemente de outras sessões terem executado ou
-     <code class="function">
+     <code>
       nextval
      </code>
      como a sessão atual já fez.
     </p>
     <p>
      Esta função requer
-     <code class="literal">
+     <code>
       USAGE
      </code>
      ou
-     <code class="literal">
+     <code>
       SELECT
      </code>
      privilégio na sequência.
@@ -218,44 +218,44 @@ SELECT setval('myseq', 42);           <em class="lineannotation"><span class="li
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       lastval
      </code>
      ()
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Retorna o valor mais recentemente retornado por
-     <code class="function">
+     <code>
       nextval
      </code>
      na sessão atual. Esta função é identicamente igual a
-     <code class="function">
+     <code>
       currval
      </code>
      , exceto que, em vez de tomar o nome da sequência como argumento, ele se refere a qualquer sequência
-     <code class="function">
+     <code>
       nextval
      </code>
      foi mais recentemente aplicado na sessão atual. É um erro chamar
-     <code class="function">
+     <code>
       lastval
      </code>
      se
-     <code class="function">
+     <code>
       nextval
      </code>
      não foi convocada ainda na sessão atual.
     </p>
     <p>
      Esta função requer
-     <code class="literal">
+     <code>
       USAGE
      </code>
      ou
-     <code class="literal">
+     <code>
       SELECT
      </code>
      privilegio na última sequência usada.

@@ -8,7 +8,7 @@ Como as identidades dos usuários são globais para o clúster, o `pg_auth_membe
 
 
 
-<table border="1" class="table" summary="pg_auth_members Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ Como as identidades dos usuários são globais para o clúster, o `pg_auth_membe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -43,20 +43,20 @@ Como as identidades dos usuários são globais para o clúster, o `pg_auth_membe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       roleid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (references
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -69,27 +69,27 @@ Como as identidades dos usuários são globais para o clúster, o `pg_auth_membe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       member
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (references
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
     </p>
     <p>
      ID of a role that is a member of
-     <code class="structfield">
+     <code>
       roleid
      </code>
     </p>
@@ -98,20 +98,20 @@ Como as identidades dos usuários são globais para o clúster, o `pg_auth_membe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       grantor
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (references
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -124,20 +124,20 @@ Como as identidades dos usuários são globais para o clúster, o `pg_auth_membe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       admin_option
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      True if
-     <code class="structfield">
+     <code>
       member
      </code>
      can grant membership in
-     <code class="structfield">
+     <code>
       roleid
      </code>
      to others
@@ -147,10 +147,10 @@ Como as identidades dos usuários são globais para o clúster, o `pg_auth_membe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       inherit_option
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -162,17 +162,17 @@ Como as identidades dos usuários são globais para o clúster, o `pg_auth_membe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       set_option
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      True if the member can
      <a class="link" href="sql-set-role.md" title="SET ROLE">
-      <code class="command">
+      <code>
        SET ROLE
       </code>
      </a>

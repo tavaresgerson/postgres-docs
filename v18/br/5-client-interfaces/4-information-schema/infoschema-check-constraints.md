@@ -8,7 +8,7 @@ O padrão SQL considera restrições não nulos como restrições de verificaç�
 
 
 
-<table border="1" class="table" summary="check_constraints Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ O padrão SQL considera restrições não nulos como restrições de verificaç�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       constraint_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -43,10 +43,10 @@ O padrão SQL considera restrições não nulos como restrições de verificaç�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       constraint_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -58,10 +58,10 @@ O padrão SQL considera restrições não nulos como restrições de verificaç�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       constraint_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -73,10 +73,10 @@ O padrão SQL considera restrições não nulos como restrições de verificaç�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       check_clause
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>

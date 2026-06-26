@@ -6,7 +6,7 @@ O catálogo `pg_event_trigger` armazena gatilhos de eventos. Consulte o [Capítu
 
 
 
-<table border="1" class="table" summary="pg_event_trigger Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_event_trigger` armazena gatilhos de eventos. Consulte o [Capítu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,10 +41,10 @@ O catálogo `pg_event_trigger` armazena gatilhos de eventos. Consulte o [Capítu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       evtname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -56,10 +56,10 @@ O catálogo `pg_event_trigger` armazena gatilhos de eventos. Consulte o [Capítu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       evtevent
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -71,20 +71,20 @@ O catálogo `pg_event_trigger` armazena gatilhos de eventos. Consulte o [Capítu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       evtowner
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -97,20 +97,20 @@ O catálogo `pg_event_trigger` armazena gatilhos de eventos. Consulte o [Capítu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       evtfoid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -123,10 +123,10 @@ O catálogo `pg_event_trigger` armazena gatilhos de eventos. Consulte o [Capítu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       evtenabled
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
@@ -136,7 +136,7 @@ O catálogo `pg_event_trigger` armazena gatilhos de eventos. Consulte o [Capítu
       session_replication_role
      </a>
      os modos que o gatilho do evento aciona os fogos.
-     <code class="literal">
+     <code>
       O
      </code>
      = desencadeia incêndios
@@ -156,11 +156,11 @@ O catálogo `pg_event_trigger` armazena gatilhos de eventos. Consulte o [Capítu
       ”
      </span>
      modos,
-     <code class="literal">
+     <code>
       D
      </code>
      = o gatilho está desativado,
-     <code class="literal">
+     <code>
       R
      </code>
      = desencadeia incêndios
@@ -172,7 +172,7 @@ O catálogo `pg_event_trigger` armazena gatilhos de eventos. Consulte o [Capítu
       ”
      </span>
      modo,
-     <code class="literal">
+     <code>
       A
      </code>
      = acionam incêndios sempre.
@@ -182,10 +182,10 @@ O catálogo `pg_event_trigger` armazena gatilhos de eventos. Consulte o [Capítu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       evttags
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>

@@ -6,7 +6,7 @@ A vista `constraint_column_usage` identifica todas as colunas no banco de dados 
 
 
 
-<table border="1" class="table" summary="constraint_column_usage Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `constraint_column_usage` identifica todas as colunas no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `constraint_column_usage` identifica todas as colunas no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `constraint_column_usage` identifica todas as colunas no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,10 +71,10 @@ A vista `constraint_column_usage` identifica todas as colunas no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       column_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -86,10 +86,10 @@ A vista `constraint_column_usage` identifica todas as colunas no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       constraint_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -101,10 +101,10 @@ A vista `constraint_column_usage` identifica todas as colunas no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       constraint_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -116,10 +116,10 @@ A vista `constraint_column_usage` identifica todas as colunas no banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       constraint_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>

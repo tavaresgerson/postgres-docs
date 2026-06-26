@@ -6,7 +6,7 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
 
 
 
-<table border="1" class="table" summary="columns Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,10 +71,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       column_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -86,10 +86,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       ordinal_position
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -101,10 +101,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       column_default
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -116,19 +116,19 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_nullable
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       YES
      </code>
      if the column is possibly nullable,
-     <code class="literal">
+     <code>
       NO
      </code>
      if it is known not nullable.  A not-null constraint is one way a column can be known not nullable, but there can be others.
@@ -138,32 +138,32 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       data_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Data type of the column, if it is a built-in type, or
-     <code class="literal">
+     <code>
       ARRAY
      </code>
      if it is some array (in that case, see the view
-     <code class="literal">
+     <code>
       element_types
      </code>
      ), else
-     <code class="literal">
+     <code>
       USER-DEFINED
      </code>
      (in that case, the type is identified in
-     <code class="literal">
+     <code>
       udt_name
      </code>
      and associated columns).  If the column is based on a domain, this column refers to the type underlying the domain (and the domain is identified in
-     <code class="literal">
+     <code>
       domain_name
      </code>
      and associated columns).
@@ -173,16 +173,16 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_maximum_length
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
     <p>
      If
-     <code class="literal">
+     <code>
       data_type
      </code>
      identifies a character or bit string type, the declared maximum length; null for all other data types or if no maximum length was declared.
@@ -192,16 +192,16 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_octet_length
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
     <p>
      If
-     <code class="literal">
+     <code>
       data_type
      </code>
      identifies a character type, the maximum possible length in octets (bytes) of a datum; null for all other data types.  The maximum octet length depends on the declared character maximum length (see above) and the server encoding.
@@ -211,20 +211,20 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numeric_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
     <p>
      If
-     <code class="literal">
+     <code>
       data_type
      </code>
      identifies a numeric type, this column contains the (declared or implicit) precision of the type for this column.  The precision indicates the number of significant digits.  It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column
-     <code class="literal">
+     <code>
       numeric_precision_radix
      </code>
      .  For all other data types, this column is null.
@@ -234,24 +234,24 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numeric_precision_radix
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
     <p>
      If
-     <code class="literal">
+     <code>
       data_type
      </code>
      identifies a numeric type, this column indicates in which base the values in the columns
-     <code class="literal">
+     <code>
       numeric_precision
      </code>
      and
-     <code class="literal">
+     <code>
       numeric_scale
      </code>
      are expressed.  The value is either 2 or 10.  For all other data types, this column is null.
@@ -261,20 +261,20 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numeric_scale
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
     <p>
      If
-     <code class="literal">
+     <code>
       data_type
      </code>
      identifies an exact numeric type, this column contains the (declared or implicit) scale of the type for this column.  The scale indicates the number of significant digits to the right of the decimal point.  It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column
-     <code class="literal">
+     <code>
       numeric_precision_radix
      </code>
      .  For all other data types, this column is null.
@@ -284,16 +284,16 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datetime_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
     <p>
      If
-     <code class="literal">
+     <code>
       data_type
      </code>
      identifies a date, time, timestamp, or interval type, this column contains the (declared or implicit) fractional seconds precision of the type for this column, that is, the number of decimal digits maintained following the decimal point in the seconds value.  For all other data types, this column is null.
@@ -303,24 +303,24 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       interval_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      If
-     <code class="literal">
+     <code>
       data_type
      </code>
      identifies an interval type, this column contains the specification which fields the intervals include for this column, e.g.,
-     <code class="literal">
+     <code>
       YEAR TO MONTH
      </code>
      ,
-     <code class="literal">
+     <code>
       DAY TO SECOND
      </code>
      , etc.  If no field restrictions were specified (that is, the interval accepts all fields), and for all other data types, this field is null.
@@ -330,10 +330,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       interval_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -343,7 +343,7 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
       PostgreSQL
      </span>
      (see
-     <code class="literal">
+     <code>
       datetime_precision
      </code>
      for the fractional seconds precision of interval type columns)
@@ -353,10 +353,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_set_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -371,10 +371,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_set_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -389,10 +389,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_set_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -407,10 +407,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collation_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -422,10 +422,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collation_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -437,10 +437,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collation_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -452,10 +452,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       domain_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -467,10 +467,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       domain_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -482,10 +482,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       domain_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -497,10 +497,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -512,10 +512,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -527,10 +527,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -542,10 +542,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       scope_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -560,10 +560,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       scope_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -578,10 +578,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       scope_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -596,10 +596,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       maximum_cardinality
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -614,10 +614,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       dtd_identifier
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -629,10 +629,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_self_referencing
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
@@ -647,20 +647,20 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_identity
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
      If the column is an identity column, then
-     <code class="literal">
+     <code>
       YES
      </code>
      , else
-     <code class="literal">
+     <code>
       NO
      </code>
      .
@@ -670,20 +670,20 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       identity_generation
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      If the column is an identity column, then
-     <code class="literal">
+     <code>
       ALWAYS
      </code>
      or
-     <code class="literal">
+     <code>
       BY DEFAULT
      </code>
      , reflecting the definition of the column.
@@ -693,10 +693,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       identity_start
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -708,10 +708,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       identity_increment
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -723,10 +723,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       identity_maximum
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -738,10 +738,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       identity_minimum
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -753,20 +753,20 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       identity_cycle
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
      If the column is an identity column, then
-     <code class="literal">
+     <code>
       YES
      </code>
      if the internal sequence cycles or
-     <code class="literal">
+     <code>
       NO
      </code>
      if it does not; otherwise null.
@@ -776,20 +776,20 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_generated
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      If the column is a generated column, then
-     <code class="literal">
+     <code>
       ALWAYS
      </code>
      , else
-     <code class="literal">
+     <code>
       NEVER
      </code>
      .
@@ -799,10 +799,10 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       generation_expression
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -814,19 +814,19 @@ A vista `columns` contém informações sobre todas as colunas da tabela (ou col
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_updatable
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       YES
      </code>
      if the column is updatable,
-     <code class="literal">
+     <code>
       NO
      </code>
      if not (Columns in base tables are always updatable, columns in views not necessarily)

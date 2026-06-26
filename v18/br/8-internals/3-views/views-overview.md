@@ -6,11 +6,7 @@
 
 
 
-<table border="1" class="table" summary="System Views">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -25,7 +21,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-aios.md" title="53.2. pg_aios">
-     <code class="structname">
+     <code>
       pg_aios
      </code>
     </a>
@@ -37,7 +33,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-available-extensions.md" title="53.3. pg_available_extensions">
-     <code class="structname">
+     <code>
       pg_available_extensions
      </code>
     </a>
@@ -49,7 +45,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-available-extension-versions.md" title="53.4. pg_available_extension_versions">
-     <code class="structname">
+     <code>
       pg_available_extension_versions
      </code>
     </a>
@@ -61,7 +57,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-backend-memory-contexts.md" title="53.5. pg_backend_memory_contexts">
-     <code class="structname">
+     <code>
       pg_backend_memory_contexts
      </code>
     </a>
@@ -73,7 +69,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-config.md" title="53.6. pg_config">
-     <code class="structname">
+     <code>
       pg_config
      </code>
     </a>
@@ -85,7 +81,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-cursors.md" title="53.7. pg_cursors">
-     <code class="structname">
+     <code>
       pg_cursors
      </code>
     </a>
@@ -97,7 +93,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-file-settings.md" title="53.8. pg_file_settings">
-     <code class="structname">
+     <code>
       pg_file_settings
      </code>
     </a>
@@ -109,7 +105,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-group.md" title="53.9. pg_group">
-     <code class="structname">
+     <code>
       pg_group
      </code>
     </a>
@@ -121,7 +117,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-hba-file-rules.md" title="53.10. pg_hba_file_rules">
-     <code class="structname">
+     <code>
       pg_hba_file_rules
      </code>
     </a>
@@ -133,7 +129,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-ident-file-mappings.md" title="53.11. pg_ident_file_mappings">
-     <code class="structname">
+     <code>
       pg_ident_file_mappings
      </code>
     </a>
@@ -145,7 +141,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-indexes.md" title="53.12. pg_indexes">
-     <code class="structname">
+     <code>
       pg_indexes
      </code>
     </a>
@@ -157,7 +153,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-locks.md" title="53.13. pg_locks">
-     <code class="structname">
+     <code>
       pg_locks
      </code>
     </a>
@@ -169,7 +165,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-matviews.md" title="53.14. pg_matviews">
-     <code class="structname">
+     <code>
       pg_matviews
      </code>
     </a>
@@ -181,7 +177,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-policies.md" title="53.15. pg_policies">
-     <code class="structname">
+     <code>
       pg_policies
      </code>
     </a>
@@ -193,7 +189,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-prepared-statements.md" title="53.16. pg_prepared_statements">
-     <code class="structname">
+     <code>
       pg_prepared_statements
      </code>
     </a>
@@ -205,7 +201,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-prepared-xacts.md" title="53.17. pg_prepared_xacts">
-     <code class="structname">
+     <code>
       pg_prepared_xacts
      </code>
     </a>
@@ -217,7 +213,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-publication-tables.md" title="53.18. pg_publication_tables">
-     <code class="structname">
+     <code>
       pg_publication_tables
      </code>
     </a>
@@ -229,7 +225,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-replication-origin-status.md" title="53.19. pg_replication_origin_status">
-     <code class="structname">
+     <code>
       pg_replication_origin_status
      </code>
     </a>
@@ -241,7 +237,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-replication-slots.md" title="53.20. pg_replication_slots">
-     <code class="structname">
+     <code>
       pg_replication_slots
      </code>
     </a>
@@ -253,7 +249,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-roles.md" title="53.21. pg_roles">
-     <code class="structname">
+     <code>
       pg_roles
      </code>
     </a>
@@ -265,7 +261,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-rules.md" title="53.22. pg_rules">
-     <code class="structname">
+     <code>
       pg_rules
      </code>
     </a>
@@ -277,7 +273,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-seclabels.md" title="53.23. pg_seclabels">
-     <code class="structname">
+     <code>
       pg_seclabels
      </code>
     </a>
@@ -289,7 +285,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-sequences.md" title="53.24. pg_sequences">
-     <code class="structname">
+     <code>
       pg_sequences
      </code>
     </a>
@@ -301,7 +297,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-settings.md" title="53.25. pg_settings">
-     <code class="structname">
+     <code>
       pg_settings
      </code>
     </a>
@@ -313,7 +309,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-shadow.md" title="53.26. pg_shadow">
-     <code class="structname">
+     <code>
       pg_shadow
      </code>
     </a>
@@ -325,7 +321,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-shmem-allocations.md" title="53.27. pg_shmem_allocations">
-     <code class="structname">
+     <code>
       pg_shmem_allocations
      </code>
     </a>
@@ -337,7 +333,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-shmem-allocations-numa.md" title="53.28. pg_shmem_allocations_numa">
-     <code class="structname">
+     <code>
       pg_shmem_allocations_numa
      </code>
     </a>
@@ -349,7 +345,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-stats.md" title="53.29. pg_stats">
-     <code class="structname">
+     <code>
       pg_stats
      </code>
     </a>
@@ -361,7 +357,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-stats-ext.md" title="53.30. pg_stats_ext">
-     <code class="structname">
+     <code>
       pg_stats_ext
      </code>
     </a>
@@ -373,7 +369,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-stats-ext-exprs.md" title="53.31. pg_stats_ext_exprs">
-     <code class="structname">
+     <code>
       pg_stats_ext_exprs
      </code>
     </a>
@@ -385,7 +381,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-tables.md" title="53.32. pg_tables">
-     <code class="structname">
+     <code>
       pg_tables
      </code>
     </a>
@@ -397,7 +393,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-timezone-abbrevs.md" title="53.33. pg_timezone_abbrevs">
-     <code class="structname">
+     <code>
       pg_timezone_abbrevs
      </code>
     </a>
@@ -409,7 +405,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-timezone-names.md" title="53.34. pg_timezone_names">
-     <code class="structname">
+     <code>
       pg_timezone_names
      </code>
     </a>
@@ -421,7 +417,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-user.md" title="53.35. pg_user">
-     <code class="structname">
+     <code>
       pg_user
      </code>
     </a>
@@ -433,7 +429,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-user-mappings.md" title="53.36. pg_user_mappings">
-     <code class="structname">
+     <code>
       pg_user_mappings
      </code>
     </a>
@@ -445,7 +441,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-views.md" title="53.37. pg_views">
-     <code class="structname">
+     <code>
       pg_views
      </code>
     </a>
@@ -457,7 +453,7 @@
   <tr>
    <td>
     <a class="link" href="view-pg-wait-events.md" title="53.38. pg_wait_events">
-     <code class="structname">
+     <code>
       pg_wait_events
      </code>
     </a>

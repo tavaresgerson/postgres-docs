@@ -8,7 +8,7 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
 
 
 
-<table border="1" class="table" summary="pg_attribute Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,20 +28,20 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attrelid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -54,10 +54,10 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -69,20 +69,20 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       atttypid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -95,16 +95,16 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attlen
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
     <p>
      Uma cópia de
-     <code class="literal">
+     <code>
       pg_type.typlen
      </code>
      do tipo desta coluna
@@ -114,16 +114,16 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attnum
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
     <p>
      O número da coluna. As colunas comuns são numeradas de 1 em diante. As colunas do sistema, como
-     <code class="structfield">
+     <code>
       ctid
      </code>
      , têm números (arbitrários) negativos.
@@ -133,23 +133,23 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       atttypmod
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
-     <code class="structfield">
+     <code>
       atttypmod
      </code>
      registros de dados específicos para o tipo fornecidos no momento da criação da tabela (por exemplo, o comprimento máximo de um
-     <code class="type">
+     <code>
       varchar
      </code>
      coluna). É passado para funções de entrada específicas para o tipo e funções de coação de comprimento. O valor geralmente será -1 para tipos que não precisam
-     <code class="structfield">
+     <code>
       atttypmod
      </code>
      .
@@ -159,10 +159,10 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attndims
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
@@ -182,16 +182,16 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attbyval
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Uma cópia de
-     <code class="literal">
+     <code>
       pg_type.typbyval
      </code>
      do tipo desta coluna
@@ -201,16 +201,16 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attalign
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      Uma cópia de
-     <code class="literal">
+     <code>
       pg_type.typalign
      </code>
      do tipo desta coluna
@@ -220,16 +220,16 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attstorage
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      Normalmente, uma cópia de
-     <code class="literal">
+     <code>
       pg_type.typstorage
      </code>
      do tipo desta coluna. Para tipos de dados TOAST-áveis, isso pode ser alterado após a criação da coluna para controlar a política de armazenamento.
@@ -239,16 +239,16 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attcompression
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      O método atual de compressão da coluna. Normalmente, isso
-     <code class="literal">
+     <code>
       '\0'
      </code>
      especificar o uso da configuração padrão atual
@@ -256,11 +256,11 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
       default_toast_compression
      </a>
      ). Caso contrário,
-     <code class="literal">
+     <code>
       'p'
      </code>
      seleciona a compressão pglz, enquanto
-     <code class="literal">
+     <code>
       'l'
      </code>
      seleciona
@@ -268,7 +268,7 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
       LZ4
      </span>
      compressão. No entanto, este campo é ignorado sempre que
-     <code class="structfield">
+     <code>
       attstorage
      </code>
      não permite compressão.
@@ -278,10 +278,10 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attnotnull
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -293,22 +293,22 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       atthasdef
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Esta coluna tem uma expressão padrão ou expressão de geração, no caso, haverá uma entrada correspondente no
      <a class="link" href="catalog-pg-attrdef.md" title="52.6. pg_attrdef">
-      <code class="structname">
+      <code>
        pg_attrdef
       </code>
      </a>
      um catálogo que, na verdade, define a expressão. (Verifique
-     <code class="structfield">
+     <code>
       attgenerated
      </code>
      para determinar se se trata de uma expressão padrão ou de uma expressão de geração.)
@@ -318,20 +318,20 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       atthasmissing
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Esta coluna tem um valor que é usado quando a coluna está completamente ausente na linha, como acontece quando uma coluna é adicionada com um não volátil
-     <code class="literal">
+     <code>
       DEFAULT
      </code>
      valor após a criação da linha. O valor real utilizado é armazenado na
-     <code class="structfield">
+     <code>
       attmissingval
      </code>
      column.
@@ -341,24 +341,24 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attidentity
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      Se um byte zero (
-     <code class="literal">
+     <code>
       ''
      </code>
      ), então não é uma coluna de identidade. Caso contrário,
-     <code class="literal">
+     <code>
       a
      </code>
      = gerado sempre,
-     <code class="literal">
+     <code>
       d
      </code>
      = gerado por padrão.
@@ -368,24 +368,24 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attgenerated
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      Se um byte zero (
-     <code class="literal">
+     <code>
       ''
      </code>
      ), então não é uma coluna gerada. Caso contrário,
-     <code class="literal">
+     <code>
       s
      </code>
      = armazenado,
-     <code class="literal">
+     <code>
       v
      </code>
      = virtual. Uma coluna gerada armazenada é armazenada fisicamente como uma coluna normal. Uma coluna gerada virtual é armazenada fisicamente como um valor nulo, com o valor real sendo calculado no momento da execução.
@@ -395,10 +395,10 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attisdropped
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -410,10 +410,10 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attislocal
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -425,10 +425,10 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attinhcount
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
@@ -440,20 +440,20 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attcollation
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-collation.md" title="52.12. pg_collation">
-      <code class="structname">
+      <code>
        pg_collation
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -466,25 +466,25 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attstattarget
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
     <p>
-     <code class="structfield">
+     <code>
       attstattarget
      </code>
      controla o nível de detalhe das estatísticas acumuladas para esta coluna por
      <a class="link" href="sql-analyze.md" title="ANALYZE">
-      <code class="command">
+      <code>
        ANALYZE
       </code>
      </a>
      Um valor nulo indica que não devem ser coletadas estatísticas. Um valor nulo diz para usar o alvo de estatísticas padrão do sistema. O significado exato dos valores positivos depende do tipo de dados. Para tipos de dados escalares,
-     <code class="structfield">
+     <code>
       attstattarget
      </code>
      é o número alvo
@@ -502,10 +502,10 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attacl
      </code>
-     <code class="type">
+     <code>
       aclitem[]
      </code>
     </p>
@@ -517,10 +517,10 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attoptions
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>
@@ -540,10 +540,10 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attfdwoptions
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>
@@ -563,20 +563,20 @@ O termo atributo é equivalente a coluna e é usado por razões históricas.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attmissingval
      </code>
-     <code class="type">
+     <code>
       anyarray
      </code>
     </p>
     <p>
      Esta coluna tem um array de um elemento que contém o valor usado quando a coluna está inteiramente ausente na linha, como acontece quando a coluna é adicionada com um não volátil
-     <code class="literal">
+     <code>
       DEFAULT
      </code>
      valor após a criação da linha. O valor é usado apenas quando
-     <code class="structfield">
+     <code>
       atthasmissing
      </code>
      É verdade. Se não houver valor, a coluna é nula.

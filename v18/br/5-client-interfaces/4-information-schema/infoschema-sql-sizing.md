@@ -6,7 +6,7 @@ A tabela `sql_sizing` contém informações sobre vários limites de tamanho e v
 
 
 
-<table border="1" class="table" summary="sql_sizing Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A tabela `sql_sizing` contém informações sobre vários limites de tamanho e v
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sizing_id
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -41,10 +41,10 @@ A tabela `sql_sizing` contém informações sobre vários limites de tamanho e v
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sizing_name
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -56,10 +56,10 @@ A tabela `sql_sizing` contém informações sobre vários limites de tamanho e v
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       supported_value
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -71,10 +71,10 @@ A tabela `sql_sizing` contém informações sobre vários limites de tamanho e v
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       comments
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>

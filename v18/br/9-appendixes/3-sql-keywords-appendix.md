@@ -18,7 +18,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
 
 
 
-<table border="1" class="table" summary="SQL Key Words">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -50,7 +50,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
  <tbody>
   <tr>
    <td>
-    <code class="token">
+    <code>
      A
     </code>
    </td>
@@ -67,7 +67,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ABORT
     </code>
    </td>
@@ -83,7 +83,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ABS
     </code>
    </td>
@@ -100,7 +100,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ABSENT
     </code>
    </td>
@@ -118,7 +118,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ABSOLUTE
     </code>
    </td>
@@ -137,7 +137,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ACCESS
     </code>
    </td>
@@ -153,7 +153,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ACCORDING
     </code>
    </td>
@@ -170,7 +170,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ACOS
     </code>
    </td>
@@ -187,7 +187,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ACTION
     </code>
    </td>
@@ -206,7 +206,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ADA
     </code>
    </td>
@@ -224,7 +224,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ADD
     </code>
    </td>
@@ -243,7 +243,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ADMIN
     </code>
    </td>
@@ -261,7 +261,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      AFTER
     </code>
    </td>
@@ -279,7 +279,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      AGGREGATE
     </code>
    </td>
@@ -295,7 +295,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ALL
     </code>
    </td>
@@ -314,7 +314,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ALLOCATE
     </code>
    </td>
@@ -332,7 +332,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ALSO
     </code>
    </td>
@@ -348,7 +348,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ALTER
     </code>
    </td>
@@ -367,7 +367,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ALWAYS
     </code>
    </td>
@@ -385,7 +385,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ANALYSE
     </code>
    </td>
@@ -401,7 +401,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ANALYZE
     </code>
    </td>
@@ -417,7 +417,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      AND
     </code>
    </td>
@@ -436,7 +436,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ANY
     </code>
    </td>
@@ -455,7 +455,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ANY_VALUE
     </code>
    </td>
@@ -471,7 +471,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ARE
     </code>
    </td>
@@ -489,13 +489,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ARRAY
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -510,7 +510,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ARRAY_AGG
     </code>
    </td>
@@ -527,7 +527,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ARRAY_​MAX_​CARDINALITY
     </code>
    </td>
@@ -544,13 +544,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      AS
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -566,7 +566,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ASC
     </code>
    </td>
@@ -585,7 +585,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ASENSITIVE
     </code>
    </td>
@@ -603,7 +603,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ASIN
     </code>
    </td>
@@ -620,7 +620,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ASSERTION
     </code>
    </td>
@@ -639,7 +639,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ASSIGNMENT
     </code>
    </td>
@@ -657,7 +657,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ASYMMETRIC
     </code>
    </td>
@@ -675,7 +675,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      AT
     </code>
    </td>
@@ -694,7 +694,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ATAN
     </code>
    </td>
@@ -711,7 +711,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ATOMIC
     </code>
    </td>
@@ -729,7 +729,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ATTACH
     </code>
    </td>
@@ -745,7 +745,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ATTRIBUTE
     </code>
    </td>
@@ -763,7 +763,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ATTRIBUTES
     </code>
    </td>
@@ -780,7 +780,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      AUTHORIZATION
     </code>
    </td>
@@ -799,7 +799,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      AVG
     </code>
    </td>
@@ -817,7 +817,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      BACKWARD
     </code>
    </td>
@@ -833,7 +833,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      BASE64
     </code>
    </td>
@@ -850,7 +850,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      BEFORE
     </code>
    </td>
@@ -868,7 +868,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      BEGIN
     </code>
    </td>
@@ -887,7 +887,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      BEGIN_FRAME
     </code>
    </td>
@@ -904,7 +904,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      BEGIN_PARTITION
     </code>
    </td>
@@ -921,7 +921,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      BERNOULLI
     </code>
    </td>
@@ -938,7 +938,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      BETWEEN
     </code>
    </td>
@@ -957,7 +957,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      BIGINT
     </code>
    </td>
@@ -975,7 +975,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      BINARY
     </code>
    </td>
@@ -993,7 +993,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      BIT
     </code>
    </td>
@@ -1010,7 +1010,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      BIT_LENGTH
     </code>
    </td>
@@ -1026,7 +1026,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      BLOB
     </code>
    </td>
@@ -1043,7 +1043,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      BLOCKED
     </code>
    </td>
@@ -1060,7 +1060,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      BOM
     </code>
    </td>
@@ -1077,7 +1077,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      BOOLEAN
     </code>
    </td>
@@ -1095,7 +1095,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      BOTH
     </code>
    </td>
@@ -1114,7 +1114,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      BREADTH
     </code>
    </td>
@@ -1132,7 +1132,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      BTRIM
     </code>
    </td>
@@ -1148,7 +1148,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      BY
     </code>
    </td>
@@ -1167,7 +1167,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      C
     </code>
    </td>
@@ -1185,7 +1185,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CACHE
     </code>
    </td>
@@ -1201,7 +1201,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CALL
     </code>
    </td>
@@ -1219,7 +1219,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CALLED
     </code>
    </td>
@@ -1237,7 +1237,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CARDINALITY
     </code>
    </td>
@@ -1254,7 +1254,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CASCADE
     </code>
    </td>
@@ -1273,7 +1273,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CASCADED
     </code>
    </td>
@@ -1292,7 +1292,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CASE
     </code>
    </td>
@@ -1311,7 +1311,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CAST
     </code>
    </td>
@@ -1330,7 +1330,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CATALOG
     </code>
    </td>
@@ -1349,7 +1349,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CATALOG_NAME
     </code>
    </td>
@@ -1367,7 +1367,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CEIL
     </code>
    </td>
@@ -1384,7 +1384,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CEILING
     </code>
    </td>
@@ -1401,7 +1401,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CHAIN
     </code>
    </td>
@@ -1419,7 +1419,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CHAINING
     </code>
    </td>
@@ -1436,13 +1436,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CHAR
     </code>
    </td>
    <td>
     non-reserved (cannot be function or type), requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -1458,13 +1458,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CHARACTER
     </code>
    </td>
    <td>
     non-reserved (cannot be function or type), requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -1480,7 +1480,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CHARACTERISTICS
     </code>
    </td>
@@ -1498,7 +1498,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CHARACTERS
     </code>
    </td>
@@ -1515,7 +1515,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CHARACTER_LENGTH
     </code>
    </td>
@@ -1533,7 +1533,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CHARACTER_​SET_​CATALOG
     </code>
    </td>
@@ -1551,7 +1551,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CHARACTER_SET_NAME
     </code>
    </td>
@@ -1569,7 +1569,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CHARACTER_SET_SCHEMA
     </code>
    </td>
@@ -1587,7 +1587,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CHAR_LENGTH
     </code>
    </td>
@@ -1605,7 +1605,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CHECK
     </code>
    </td>
@@ -1624,7 +1624,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CHECKPOINT
     </code>
    </td>
@@ -1640,7 +1640,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CLASS
     </code>
    </td>
@@ -1656,7 +1656,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CLASSIFIER
     </code>
    </td>
@@ -1673,7 +1673,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CLASS_ORIGIN
     </code>
    </td>
@@ -1691,7 +1691,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CLOB
     </code>
    </td>
@@ -1708,7 +1708,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CLOSE
     </code>
    </td>
@@ -1727,7 +1727,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CLUSTER
     </code>
    </td>
@@ -1743,7 +1743,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COALESCE
     </code>
    </td>
@@ -1762,7 +1762,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COBOL
     </code>
    </td>
@@ -1780,7 +1780,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COLLATE
     </code>
    </td>
@@ -1799,7 +1799,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COLLATION
     </code>
    </td>
@@ -1818,7 +1818,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COLLATION_CATALOG
     </code>
    </td>
@@ -1836,7 +1836,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COLLATION_NAME
     </code>
    </td>
@@ -1854,7 +1854,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COLLATION_SCHEMA
     </code>
    </td>
@@ -1872,7 +1872,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COLLECT
     </code>
    </td>
@@ -1889,7 +1889,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COLUMN
     </code>
    </td>
@@ -1908,7 +1908,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COLUMNS
     </code>
    </td>
@@ -1926,7 +1926,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COLUMN_NAME
     </code>
    </td>
@@ -1944,7 +1944,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COMMAND_FUNCTION
     </code>
    </td>
@@ -1962,7 +1962,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COMMAND_​FUNCTION_​CODE
     </code>
    </td>
@@ -1979,7 +1979,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COMMENT
     </code>
    </td>
@@ -1995,7 +1995,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COMMENTS
     </code>
    </td>
@@ -2011,7 +2011,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COMMIT
     </code>
    </td>
@@ -2030,7 +2030,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COMMITTED
     </code>
    </td>
@@ -2049,7 +2049,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COMPRESSION
     </code>
    </td>
@@ -2065,7 +2065,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CONCURRENTLY
     </code>
    </td>
@@ -2081,7 +2081,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CONDITION
     </code>
    </td>
@@ -2098,7 +2098,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CONDITIONAL
     </code>
    </td>
@@ -2116,7 +2116,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CONDITION_NUMBER
     </code>
    </td>
@@ -2134,7 +2134,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CONFIGURATION
     </code>
    </td>
@@ -2150,7 +2150,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CONFLICT
     </code>
    </td>
@@ -2166,7 +2166,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CONNECT
     </code>
    </td>
@@ -2184,7 +2184,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CONNECTION
     </code>
    </td>
@@ -2203,7 +2203,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CONNECTION_NAME
     </code>
    </td>
@@ -2221,7 +2221,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CONSTRAINT
     </code>
    </td>
@@ -2240,7 +2240,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CONSTRAINTS
     </code>
    </td>
@@ -2259,7 +2259,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CONSTRAINT_CATALOG
     </code>
    </td>
@@ -2277,7 +2277,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CONSTRAINT_NAME
     </code>
    </td>
@@ -2295,7 +2295,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CONSTRAINT_SCHEMA
     </code>
    </td>
@@ -2313,7 +2313,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CONSTRUCTOR
     </code>
    </td>
@@ -2330,7 +2330,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CONTAINS
     </code>
    </td>
@@ -2347,7 +2347,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CONTENT
     </code>
    </td>
@@ -2365,7 +2365,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CONTINUE
     </code>
    </td>
@@ -2384,7 +2384,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CONTROL
     </code>
    </td>
@@ -2401,7 +2401,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CONVERSION
     </code>
    </td>
@@ -2417,7 +2417,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CONVERT
     </code>
    </td>
@@ -2435,7 +2435,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COPARTITION
     </code>
    </td>
@@ -2451,7 +2451,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COPY
     </code>
    </td>
@@ -2469,7 +2469,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CORR
     </code>
    </td>
@@ -2486,7 +2486,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CORRESPONDING
     </code>
    </td>
@@ -2504,7 +2504,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COS
     </code>
    </td>
@@ -2521,7 +2521,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COSH
     </code>
    </td>
@@ -2538,7 +2538,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COST
     </code>
    </td>
@@ -2554,7 +2554,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COUNT
     </code>
    </td>
@@ -2572,7 +2572,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COVAR_POP
     </code>
    </td>
@@ -2589,7 +2589,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COVAR_SAMP
     </code>
    </td>
@@ -2606,13 +2606,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CREATE
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -2628,7 +2628,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CROSS
     </code>
    </td>
@@ -2647,7 +2647,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CSV
     </code>
    </td>
@@ -2663,7 +2663,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CUBE
     </code>
    </td>
@@ -2681,7 +2681,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CUME_DIST
     </code>
    </td>
@@ -2698,7 +2698,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CURRENT
     </code>
    </td>
@@ -2717,7 +2717,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CURRENT_CATALOG
     </code>
    </td>
@@ -2735,7 +2735,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CURRENT_DATE
     </code>
    </td>
@@ -2754,7 +2754,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CURRENT_​DEFAULT_​TRANSFORM_​GROUP
     </code>
    </td>
@@ -2771,7 +2771,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CURRENT_PATH
     </code>
    </td>
@@ -2788,7 +2788,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CURRENT_ROLE
     </code>
    </td>
@@ -2806,7 +2806,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CURRENT_ROW
     </code>
    </td>
@@ -2823,7 +2823,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CURRENT_SCHEMA
     </code>
    </td>
@@ -2841,7 +2841,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CURRENT_TIME
     </code>
    </td>
@@ -2860,7 +2860,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CURRENT_TIMESTAMP
     </code>
    </td>
@@ -2879,7 +2879,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CURRENT_​TRANSFORM_​GROUP_​FOR_​TYPE
     </code>
    </td>
@@ -2896,7 +2896,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CURRENT_USER
     </code>
    </td>
@@ -2915,7 +2915,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CURSOR
     </code>
    </td>
@@ -2934,7 +2934,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CURSOR_NAME
     </code>
    </td>
@@ -2952,7 +2952,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      CYCLE
     </code>
    </td>
@@ -2970,7 +2970,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DATA
     </code>
    </td>
@@ -2989,7 +2989,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DATABASE
     </code>
    </td>
@@ -3005,7 +3005,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DATALINK
     </code>
    </td>
@@ -3022,7 +3022,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DATE
     </code>
    </td>
@@ -3040,7 +3040,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DATETIME_​INTERVAL_​CODE
     </code>
    </td>
@@ -3058,7 +3058,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DATETIME_​INTERVAL_​PRECISION
     </code>
    </td>
@@ -3076,13 +3076,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DAY
     </code>
    </td>
    <td>
     non-reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -3098,7 +3098,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DB
     </code>
    </td>
@@ -3115,7 +3115,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DEALLOCATE
     </code>
    </td>
@@ -3134,7 +3134,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DEC
     </code>
    </td>
@@ -3153,7 +3153,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DECFLOAT
     </code>
    </td>
@@ -3170,7 +3170,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DECIMAL
     </code>
    </td>
@@ -3189,7 +3189,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DECLARE
     </code>
    </td>
@@ -3208,7 +3208,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DEFAULT
     </code>
    </td>
@@ -3227,7 +3227,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DEFAULTS
     </code>
    </td>
@@ -3245,7 +3245,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DEFERRABLE
     </code>
    </td>
@@ -3264,7 +3264,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DEFERRED
     </code>
    </td>
@@ -3283,7 +3283,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DEFINE
     </code>
    </td>
@@ -3300,7 +3300,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DEFINED
     </code>
    </td>
@@ -3317,7 +3317,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DEFINER
     </code>
    </td>
@@ -3335,7 +3335,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DEGREE
     </code>
    </td>
@@ -3352,7 +3352,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DELETE
     </code>
    </td>
@@ -3371,7 +3371,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DELIMITER
     </code>
    </td>
@@ -3387,7 +3387,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DELIMITERS
     </code>
    </td>
@@ -3403,7 +3403,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DENSE_RANK
     </code>
    </td>
@@ -3420,7 +3420,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DEPENDS
     </code>
    </td>
@@ -3436,7 +3436,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DEPTH
     </code>
    </td>
@@ -3454,7 +3454,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DEREF
     </code>
    </td>
@@ -3471,7 +3471,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DERIVED
     </code>
    </td>
@@ -3488,7 +3488,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DESC
     </code>
    </td>
@@ -3507,7 +3507,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DESCRIBE
     </code>
    </td>
@@ -3525,7 +3525,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DESCRIPTOR
     </code>
    </td>
@@ -3543,7 +3543,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DETACH
     </code>
    </td>
@@ -3559,7 +3559,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DETERMINISTIC
     </code>
    </td>
@@ -3576,7 +3576,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DIAGNOSTICS
     </code>
    </td>
@@ -3594,7 +3594,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DICTIONARY
     </code>
    </td>
@@ -3610,7 +3610,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DISABLE
     </code>
    </td>
@@ -3626,7 +3626,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DISCARD
     </code>
    </td>
@@ -3642,7 +3642,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DISCONNECT
     </code>
    </td>
@@ -3660,7 +3660,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DISPATCH
     </code>
    </td>
@@ -3677,7 +3677,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DISTINCT
     </code>
    </td>
@@ -3696,7 +3696,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DLNEWCOPY
     </code>
    </td>
@@ -3713,7 +3713,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DLPREVIOUSCOPY
     </code>
    </td>
@@ -3730,7 +3730,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DLURLCOMPLETE
     </code>
    </td>
@@ -3747,7 +3747,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DLURLCOMPLETEONLY
     </code>
    </td>
@@ -3764,7 +3764,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DLURLCOMPLETEWRITE
     </code>
    </td>
@@ -3781,7 +3781,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DLURLPATH
     </code>
    </td>
@@ -3798,7 +3798,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DLURLPATHONLY
     </code>
    </td>
@@ -3815,7 +3815,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DLURLPATHWRITE
     </code>
    </td>
@@ -3832,7 +3832,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DLURLSCHEME
     </code>
    </td>
@@ -3849,7 +3849,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DLURLSERVER
     </code>
    </td>
@@ -3866,7 +3866,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DLVALUE
     </code>
    </td>
@@ -3883,7 +3883,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DO
     </code>
    </td>
@@ -3899,7 +3899,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DOCUMENT
     </code>
    </td>
@@ -3917,7 +3917,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DOMAIN
     </code>
    </td>
@@ -3936,7 +3936,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DOUBLE
     </code>
    </td>
@@ -3955,7 +3955,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DROP
     </code>
    </td>
@@ -3974,7 +3974,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DYNAMIC
     </code>
    </td>
@@ -3991,7 +3991,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DYNAMIC_FUNCTION
     </code>
    </td>
@@ -4009,7 +4009,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      DYNAMIC_​FUNCTION_​CODE
     </code>
    </td>
@@ -4026,7 +4026,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      EACH
     </code>
    </td>
@@ -4044,7 +4044,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ELEMENT
     </code>
    </td>
@@ -4061,7 +4061,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ELSE
     </code>
    </td>
@@ -4080,7 +4080,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      EMPTY
     </code>
    </td>
@@ -4098,7 +4098,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ENABLE
     </code>
    </td>
@@ -4114,7 +4114,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ENCODING
     </code>
    </td>
@@ -4132,7 +4132,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ENCRYPTED
     </code>
    </td>
@@ -4148,7 +4148,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      END
     </code>
    </td>
@@ -4167,7 +4167,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      END-EXEC
     </code>
    </td>
@@ -4185,7 +4185,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      END_FRAME
     </code>
    </td>
@@ -4202,7 +4202,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      END_PARTITION
     </code>
    </td>
@@ -4219,7 +4219,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ENFORCED
     </code>
    </td>
@@ -4237,7 +4237,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ENUM
     </code>
    </td>
@@ -4253,7 +4253,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      EQUALS
     </code>
    </td>
@@ -4270,7 +4270,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ERROR
     </code>
    </td>
@@ -4288,7 +4288,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ESCAPE
     </code>
    </td>
@@ -4307,7 +4307,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      EVENT
     </code>
    </td>
@@ -4323,7 +4323,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      EVERY
     </code>
    </td>
@@ -4340,13 +4340,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      EXCEPT
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -4362,7 +4362,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      EXCEPTION
     </code>
    </td>
@@ -4378,7 +4378,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      EXCLUDE
     </code>
    </td>
@@ -4396,7 +4396,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      EXCLUDING
     </code>
    </td>
@@ -4414,7 +4414,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      EXCLUSIVE
     </code>
    </td>
@@ -4430,7 +4430,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      EXEC
     </code>
    </td>
@@ -4448,7 +4448,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      EXECUTE
     </code>
    </td>
@@ -4467,7 +4467,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      EXISTS
     </code>
    </td>
@@ -4486,7 +4486,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      EXP
     </code>
    </td>
@@ -4503,7 +4503,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      EXPLAIN
     </code>
    </td>
@@ -4519,7 +4519,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      EXPRESSION
     </code>
    </td>
@@ -4537,7 +4537,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      EXTENSION
     </code>
    </td>
@@ -4553,7 +4553,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      EXTERNAL
     </code>
    </td>
@@ -4572,7 +4572,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      EXTRACT
     </code>
    </td>
@@ -4591,7 +4591,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FALSE
     </code>
    </td>
@@ -4610,7 +4610,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FAMILY
     </code>
    </td>
@@ -4626,13 +4626,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FETCH
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -4648,7 +4648,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FILE
     </code>
    </td>
@@ -4665,13 +4665,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FILTER
     </code>
    </td>
    <td>
     non-reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -4686,7 +4686,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FINAL
     </code>
    </td>
@@ -4703,7 +4703,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FINALIZE
     </code>
    </td>
@@ -4719,7 +4719,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FINISH
     </code>
    </td>
@@ -4736,7 +4736,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FIRST
     </code>
    </td>
@@ -4755,7 +4755,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FIRST_VALUE
     </code>
    </td>
@@ -4772,7 +4772,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FLAG
     </code>
    </td>
@@ -4789,7 +4789,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FLOAT
     </code>
    </td>
@@ -4808,7 +4808,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FLOOR
     </code>
    </td>
@@ -4825,7 +4825,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FOLLOWING
     </code>
    </td>
@@ -4843,13 +4843,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FOR
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -4865,7 +4865,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FORCE
     </code>
    </td>
@@ -4881,7 +4881,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FOREIGN
     </code>
    </td>
@@ -4900,7 +4900,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FORMAT
     </code>
    </td>
@@ -4918,7 +4918,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FORTRAN
     </code>
    </td>
@@ -4936,7 +4936,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FORWARD
     </code>
    </td>
@@ -4952,7 +4952,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FOUND
     </code>
    </td>
@@ -4970,7 +4970,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FRAME_ROW
     </code>
    </td>
@@ -4987,7 +4987,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FREE
     </code>
    </td>
@@ -5004,7 +5004,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FREEZE
     </code>
    </td>
@@ -5020,13 +5020,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FROM
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -5042,7 +5042,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FS
     </code>
    </td>
@@ -5059,7 +5059,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FULFILL
     </code>
    </td>
@@ -5076,7 +5076,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FULL
     </code>
    </td>
@@ -5095,7 +5095,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FUNCTION
     </code>
    </td>
@@ -5113,7 +5113,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FUNCTIONS
     </code>
    </td>
@@ -5129,7 +5129,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      FUSION
     </code>
    </td>
@@ -5146,7 +5146,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      G
     </code>
    </td>
@@ -5163,7 +5163,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      GENERAL
     </code>
    </td>
@@ -5180,7 +5180,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      GENERATED
     </code>
    </td>
@@ -5198,7 +5198,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      GET
     </code>
    </td>
@@ -5216,7 +5216,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      GLOBAL
     </code>
    </td>
@@ -5235,7 +5235,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      GO
     </code>
    </td>
@@ -5253,7 +5253,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      GOTO
     </code>
    </td>
@@ -5271,13 +5271,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      GRANT
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -5293,7 +5293,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      GRANTED
     </code>
    </td>
@@ -5311,7 +5311,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      GREATEST
     </code>
    </td>
@@ -5328,13 +5328,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      GROUP
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -5350,7 +5350,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      GROUPING
     </code>
    </td>
@@ -5368,7 +5368,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      GROUPS
     </code>
    </td>
@@ -5386,7 +5386,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      HANDLER
     </code>
    </td>
@@ -5402,13 +5402,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      HAVING
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -5424,7 +5424,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      HEADER
     </code>
    </td>
@@ -5440,7 +5440,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      HEX
     </code>
    </td>
@@ -5457,7 +5457,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      HIERARCHY
     </code>
    </td>
@@ -5474,7 +5474,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      HOLD
     </code>
    </td>
@@ -5492,13 +5492,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      HOUR
     </code>
    </td>
    <td>
     non-reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -5514,7 +5514,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ID
     </code>
    </td>
@@ -5531,7 +5531,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      IDENTITY
     </code>
    </td>
@@ -5550,7 +5550,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      IF
     </code>
    </td>
@@ -5566,7 +5566,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      IGNORE
     </code>
    </td>
@@ -5583,7 +5583,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ILIKE
     </code>
    </td>
@@ -5599,7 +5599,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      IMMEDIATE
     </code>
    </td>
@@ -5618,7 +5618,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      IMMEDIATELY
     </code>
    </td>
@@ -5635,7 +5635,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      IMMUTABLE
     </code>
    </td>
@@ -5651,7 +5651,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      IMPLEMENTATION
     </code>
    </td>
@@ -5668,7 +5668,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      IMPLICIT
     </code>
    </td>
@@ -5684,7 +5684,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      IMPORT
     </code>
    </td>
@@ -5702,7 +5702,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      IN
     </code>
    </td>
@@ -5721,7 +5721,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INCLUDE
     </code>
    </td>
@@ -5737,7 +5737,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INCLUDING
     </code>
    </td>
@@ -5755,7 +5755,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INCREMENT
     </code>
    </td>
@@ -5773,7 +5773,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INDENT
     </code>
    </td>
@@ -5791,7 +5791,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INDEX
     </code>
    </td>
@@ -5807,7 +5807,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INDEXES
     </code>
    </td>
@@ -5823,7 +5823,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INDICATOR
     </code>
    </td>
@@ -5841,7 +5841,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INHERIT
     </code>
    </td>
@@ -5857,7 +5857,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INHERITS
     </code>
    </td>
@@ -5873,7 +5873,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INITIAL
     </code>
    </td>
@@ -5890,7 +5890,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INITIALLY
     </code>
    </td>
@@ -5909,7 +5909,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INLINE
     </code>
    </td>
@@ -5925,7 +5925,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INNER
     </code>
    </td>
@@ -5944,7 +5944,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INOUT
     </code>
    </td>
@@ -5962,7 +5962,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INPUT
     </code>
    </td>
@@ -5981,7 +5981,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INSENSITIVE
     </code>
    </td>
@@ -6000,7 +6000,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INSERT
     </code>
    </td>
@@ -6019,7 +6019,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INSTANCE
     </code>
    </td>
@@ -6036,7 +6036,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INSTANTIABLE
     </code>
    </td>
@@ -6053,7 +6053,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INSTEAD
     </code>
    </td>
@@ -6071,7 +6071,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INT
     </code>
    </td>
@@ -6090,7 +6090,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INTEGER
     </code>
    </td>
@@ -6109,7 +6109,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INTEGRITY
     </code>
    </td>
@@ -6126,13 +6126,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INTERSECT
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -6148,7 +6148,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INTERSECTION
     </code>
    </td>
@@ -6165,7 +6165,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INTERVAL
     </code>
    </td>
@@ -6184,13 +6184,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INTO
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -6206,7 +6206,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      INVOKER
     </code>
    </td>
@@ -6224,7 +6224,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      IS
     </code>
    </td>
@@ -6243,13 +6243,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ISNULL
     </code>
    </td>
    <td>
     reserved (can be function or type), requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -6262,7 +6262,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ISOLATION
     </code>
    </td>
@@ -6281,7 +6281,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      JOIN
     </code>
    </td>
@@ -6300,7 +6300,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      JSON
     </code>
    </td>
@@ -6317,7 +6317,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      JSON_ARRAY
     </code>
    </td>
@@ -6335,7 +6335,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      JSON_ARRAYAGG
     </code>
    </td>
@@ -6353,7 +6353,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      JSON_EXISTS
     </code>
    </td>
@@ -6371,7 +6371,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      JSON_OBJECT
     </code>
    </td>
@@ -6389,7 +6389,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      JSON_OBJECTAGG
     </code>
    </td>
@@ -6407,7 +6407,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      JSON_QUERY
     </code>
    </td>
@@ -6425,7 +6425,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      JSON_SCALAR
     </code>
    </td>
@@ -6442,7 +6442,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      JSON_SERIALIZE
     </code>
    </td>
@@ -6459,7 +6459,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      JSON_TABLE
     </code>
    </td>
@@ -6477,7 +6477,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      JSON_TABLE_PRIMITIVE
     </code>
    </td>
@@ -6494,7 +6494,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      JSON_VALUE
     </code>
    </td>
@@ -6512,7 +6512,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      K
     </code>
    </td>
@@ -6529,7 +6529,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      KEEP
     </code>
    </td>
@@ -6547,7 +6547,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      KEY
     </code>
    </td>
@@ -6566,7 +6566,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      KEYS
     </code>
    </td>
@@ -6584,7 +6584,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      KEY_MEMBER
     </code>
    </td>
@@ -6601,7 +6601,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      KEY_TYPE
     </code>
    </td>
@@ -6618,7 +6618,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LABEL
     </code>
    </td>
@@ -6634,7 +6634,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LAG
     </code>
    </td>
@@ -6651,7 +6651,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LANGUAGE
     </code>
    </td>
@@ -6670,7 +6670,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LARGE
     </code>
    </td>
@@ -6688,7 +6688,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LAST
     </code>
    </td>
@@ -6707,7 +6707,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LAST_VALUE
     </code>
    </td>
@@ -6724,7 +6724,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LATERAL
     </code>
    </td>
@@ -6742,7 +6742,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LEAD
     </code>
    </td>
@@ -6759,7 +6759,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LEADING
     </code>
    </td>
@@ -6778,7 +6778,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LEAKPROOF
     </code>
    </td>
@@ -6794,7 +6794,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LEAST
     </code>
    </td>
@@ -6811,7 +6811,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LEFT
     </code>
    </td>
@@ -6830,7 +6830,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LENGTH
     </code>
    </td>
@@ -6848,7 +6848,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LEVEL
     </code>
    </td>
@@ -6867,7 +6867,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LIBRARY
     </code>
    </td>
@@ -6884,7 +6884,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LIKE
     </code>
    </td>
@@ -6903,7 +6903,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LIKE_REGEX
     </code>
    </td>
@@ -6920,13 +6920,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LIMIT
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -6941,7 +6941,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LINK
     </code>
    </td>
@@ -6958,7 +6958,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LISTAGG
     </code>
    </td>
@@ -6975,7 +6975,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LISTEN
     </code>
    </td>
@@ -6991,7 +6991,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LN
     </code>
    </td>
@@ -7008,7 +7008,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LOAD
     </code>
    </td>
@@ -7024,7 +7024,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LOCAL
     </code>
    </td>
@@ -7043,7 +7043,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LOCALTIME
     </code>
    </td>
@@ -7061,7 +7061,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LOCALTIMESTAMP
     </code>
    </td>
@@ -7079,7 +7079,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LOCATION
     </code>
    </td>
@@ -7097,7 +7097,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LOCATOR
     </code>
    </td>
@@ -7114,7 +7114,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LOCK
     </code>
    </td>
@@ -7130,7 +7130,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LOCKED
     </code>
    </td>
@@ -7146,7 +7146,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LOG
     </code>
    </td>
@@ -7163,7 +7163,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LOG10
     </code>
    </td>
@@ -7180,7 +7180,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LOGGED
     </code>
    </td>
@@ -7196,7 +7196,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LOWER
     </code>
    </td>
@@ -7214,7 +7214,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LPAD
     </code>
    </td>
@@ -7230,7 +7230,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      LTRIM
     </code>
    </td>
@@ -7246,7 +7246,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      M
     </code>
    </td>
@@ -7263,7 +7263,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MAP
     </code>
    </td>
@@ -7280,7 +7280,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MAPPING
     </code>
    </td>
@@ -7298,7 +7298,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MATCH
     </code>
    </td>
@@ -7317,7 +7317,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MATCHED
     </code>
    </td>
@@ -7335,7 +7335,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MATCHES
     </code>
    </td>
@@ -7352,7 +7352,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MATCH_NUMBER
     </code>
    </td>
@@ -7369,7 +7369,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MATCH_RECOGNIZE
     </code>
    </td>
@@ -7386,7 +7386,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MATERIALIZED
     </code>
    </td>
@@ -7402,7 +7402,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MAX
     </code>
    </td>
@@ -7420,7 +7420,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MAXVALUE
     </code>
    </td>
@@ -7438,7 +7438,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MEASURES
     </code>
    </td>
@@ -7455,7 +7455,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MEMBER
     </code>
    </td>
@@ -7472,7 +7472,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MERGE
     </code>
    </td>
@@ -7490,7 +7490,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MERGE_ACTION
     </code>
    </td>
@@ -7506,7 +7506,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MESSAGE_LENGTH
     </code>
    </td>
@@ -7524,7 +7524,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MESSAGE_OCTET_LENGTH
     </code>
    </td>
@@ -7542,7 +7542,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MESSAGE_TEXT
     </code>
    </td>
@@ -7560,7 +7560,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      METHOD
     </code>
    </td>
@@ -7578,7 +7578,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MIN
     </code>
    </td>
@@ -7596,13 +7596,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MINUTE
     </code>
    </td>
    <td>
     non-reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -7618,7 +7618,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MINVALUE
     </code>
    </td>
@@ -7636,7 +7636,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MOD
     </code>
    </td>
@@ -7653,7 +7653,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MODE
     </code>
    </td>
@@ -7669,7 +7669,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MODIFIES
     </code>
    </td>
@@ -7686,7 +7686,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MODULE
     </code>
    </td>
@@ -7704,13 +7704,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MONTH
     </code>
    </td>
    <td>
     non-reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -7726,7 +7726,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MORE
     </code>
    </td>
@@ -7744,7 +7744,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MOVE
     </code>
    </td>
@@ -7760,7 +7760,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MULTISET
     </code>
    </td>
@@ -7777,7 +7777,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      MUMPS
     </code>
    </td>
@@ -7795,7 +7795,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NAME
     </code>
    </td>
@@ -7814,7 +7814,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NAMES
     </code>
    </td>
@@ -7833,7 +7833,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NAMESPACE
     </code>
    </td>
@@ -7850,7 +7850,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NATIONAL
     </code>
    </td>
@@ -7869,7 +7869,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NATURAL
     </code>
    </td>
@@ -7888,7 +7888,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NCHAR
     </code>
    </td>
@@ -7907,7 +7907,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NCLOB
     </code>
    </td>
@@ -7924,7 +7924,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NESTED
     </code>
    </td>
@@ -7942,7 +7942,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NESTING
     </code>
    </td>
@@ -7959,7 +7959,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NEW
     </code>
    </td>
@@ -7977,7 +7977,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NEXT
     </code>
    </td>
@@ -7996,7 +7996,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NFC
     </code>
    </td>
@@ -8014,7 +8014,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NFD
     </code>
    </td>
@@ -8032,7 +8032,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NFKC
     </code>
    </td>
@@ -8050,7 +8050,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NFKD
     </code>
    </td>
@@ -8068,7 +8068,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NIL
     </code>
    </td>
@@ -8085,7 +8085,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NO
     </code>
    </td>
@@ -8104,7 +8104,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NONE
     </code>
    </td>
@@ -8122,7 +8122,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NORMALIZE
     </code>
    </td>
@@ -8140,7 +8140,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NORMALIZED
     </code>
    </td>
@@ -8158,7 +8158,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NOT
     </code>
    </td>
@@ -8177,7 +8177,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NOTHING
     </code>
    </td>
@@ -8193,7 +8193,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NOTIFY
     </code>
    </td>
@@ -8209,13 +8209,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NOTNULL
     </code>
    </td>
    <td>
     reserved (can be function or type), requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -8228,7 +8228,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NOWAIT
     </code>
    </td>
@@ -8244,7 +8244,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NTH_VALUE
     </code>
    </td>
@@ -8261,7 +8261,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NTILE
     </code>
    </td>
@@ -8278,7 +8278,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NULL
     </code>
    </td>
@@ -8297,7 +8297,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NULLABLE
     </code>
    </td>
@@ -8315,7 +8315,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NULLIF
     </code>
    </td>
@@ -8334,7 +8334,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NULLS
     </code>
    </td>
@@ -8352,7 +8352,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NULL_ORDERING
     </code>
    </td>
@@ -8369,7 +8369,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NUMBER
     </code>
    </td>
@@ -8387,7 +8387,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NUMERIC
     </code>
    </td>
@@ -8406,7 +8406,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OBJECT
     </code>
    </td>
@@ -8424,7 +8424,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OBJECTS
     </code>
    </td>
@@ -8440,7 +8440,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OCCURRENCE
     </code>
    </td>
@@ -8457,7 +8457,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OCCURRENCES_REGEX
     </code>
    </td>
@@ -8474,7 +8474,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OCTETS
     </code>
    </td>
@@ -8491,7 +8491,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OCTET_LENGTH
     </code>
    </td>
@@ -8509,7 +8509,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OF
     </code>
    </td>
@@ -8528,7 +8528,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OFF
     </code>
    </td>
@@ -8546,13 +8546,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OFFSET
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -8567,7 +8567,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OIDS
     </code>
    </td>
@@ -8583,7 +8583,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OLD
     </code>
    </td>
@@ -8601,7 +8601,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OMIT
     </code>
    </td>
@@ -8619,13 +8619,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ON
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -8641,7 +8641,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ONE
     </code>
    </td>
@@ -8658,7 +8658,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ONLY
     </code>
    </td>
@@ -8677,7 +8677,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OPEN
     </code>
    </td>
@@ -8695,7 +8695,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OPERATOR
     </code>
    </td>
@@ -8711,7 +8711,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OPTION
     </code>
    </td>
@@ -8730,7 +8730,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OPTIONS
     </code>
    </td>
@@ -8748,7 +8748,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OR
     </code>
    </td>
@@ -8767,13 +8767,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ORDER
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -8789,7 +8789,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ORDERING
     </code>
    </td>
@@ -8806,7 +8806,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ORDINALITY
     </code>
    </td>
@@ -8824,7 +8824,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OTHERS
     </code>
    </td>
@@ -8842,7 +8842,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OUT
     </code>
    </td>
@@ -8860,7 +8860,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OUTER
     </code>
    </td>
@@ -8879,7 +8879,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OUTPUT
     </code>
    </td>
@@ -8897,13 +8897,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OVER
     </code>
    </td>
    <td>
     non-reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -8918,7 +8918,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OVERFLOW
     </code>
    </td>
@@ -8935,13 +8935,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OVERLAPS
     </code>
    </td>
    <td>
     reserved (can be function or type), requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -8957,7 +8957,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OVERLAY
     </code>
    </td>
@@ -8975,7 +8975,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OVERRIDING
     </code>
    </td>
@@ -8993,7 +8993,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OWNED
     </code>
    </td>
@@ -9009,7 +9009,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OWNER
     </code>
    </td>
@@ -9025,7 +9025,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      P
     </code>
    </td>
@@ -9042,7 +9042,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PAD
     </code>
    </td>
@@ -9060,7 +9060,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PARALLEL
     </code>
    </td>
@@ -9076,7 +9076,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PARAMETER
     </code>
    </td>
@@ -9094,7 +9094,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PARAMETER_MODE
     </code>
    </td>
@@ -9111,7 +9111,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PARAMETER_NAME
     </code>
    </td>
@@ -9128,7 +9128,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PARAMETER_​ORDINAL_​POSITION
     </code>
    </td>
@@ -9145,7 +9145,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PARAMETER_​SPECIFIC_​CATALOG
     </code>
    </td>
@@ -9162,7 +9162,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PARAMETER_​SPECIFIC_​NAME
     </code>
    </td>
@@ -9179,7 +9179,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PARAMETER_​SPECIFIC_​SCHEMA
     </code>
    </td>
@@ -9196,7 +9196,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PARSER
     </code>
    </td>
@@ -9212,7 +9212,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PARTIAL
     </code>
    </td>
@@ -9231,7 +9231,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PARTITION
     </code>
    </td>
@@ -9249,7 +9249,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PASCAL
     </code>
    </td>
@@ -9267,7 +9267,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PASS
     </code>
    </td>
@@ -9284,7 +9284,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PASSING
     </code>
    </td>
@@ -9302,7 +9302,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PASSTHROUGH
     </code>
    </td>
@@ -9319,7 +9319,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PASSWORD
     </code>
    </td>
@@ -9335,7 +9335,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PAST
     </code>
    </td>
@@ -9352,7 +9352,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PATH
     </code>
    </td>
@@ -9370,7 +9370,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PATTERN
     </code>
    </td>
@@ -9387,7 +9387,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PER
     </code>
    </td>
@@ -9404,7 +9404,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PERCENT
     </code>
    </td>
@@ -9421,7 +9421,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PERCENTILE_CONT
     </code>
    </td>
@@ -9438,7 +9438,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PERCENTILE_DISC
     </code>
    </td>
@@ -9455,7 +9455,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PERCENT_RANK
     </code>
    </td>
@@ -9472,7 +9472,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PERIOD
     </code>
    </td>
@@ -9490,7 +9490,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PERMISSION
     </code>
    </td>
@@ -9507,7 +9507,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PERMUTE
     </code>
    </td>
@@ -9524,7 +9524,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PIPE
     </code>
    </td>
@@ -9541,7 +9541,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PLACING
     </code>
    </td>
@@ -9559,7 +9559,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PLAN
     </code>
    </td>
@@ -9577,7 +9577,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PLANS
     </code>
    </td>
@@ -9593,7 +9593,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PLI
     </code>
    </td>
@@ -9611,7 +9611,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      POLICY
     </code>
    </td>
@@ -9627,7 +9627,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PORTION
     </code>
    </td>
@@ -9644,7 +9644,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      POSITION
     </code>
    </td>
@@ -9663,7 +9663,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      POSITION_REGEX
     </code>
    </td>
@@ -9680,7 +9680,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      POWER
     </code>
    </td>
@@ -9697,7 +9697,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PRECEDES
     </code>
    </td>
@@ -9714,7 +9714,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PRECEDING
     </code>
    </td>
@@ -9732,13 +9732,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PRECISION
     </code>
    </td>
    <td>
     non-reserved (cannot be function or type), requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -9754,7 +9754,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PREPARE
     </code>
    </td>
@@ -9773,7 +9773,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PREPARED
     </code>
    </td>
@@ -9789,7 +9789,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PRESERVE
     </code>
    </td>
@@ -9808,7 +9808,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PREV
     </code>
    </td>
@@ -9825,7 +9825,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PRIMARY
     </code>
    </td>
@@ -9844,7 +9844,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PRIOR
     </code>
    </td>
@@ -9863,7 +9863,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PRIVATE
     </code>
    </td>
@@ -9880,7 +9880,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PRIVILEGES
     </code>
    </td>
@@ -9899,7 +9899,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PROCEDURAL
     </code>
    </td>
@@ -9915,7 +9915,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PROCEDURE
     </code>
    </td>
@@ -9934,7 +9934,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PROCEDURES
     </code>
    </td>
@@ -9950,7 +9950,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PROGRAM
     </code>
    </td>
@@ -9966,7 +9966,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PRUNE
     </code>
    </td>
@@ -9983,7 +9983,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PTF
     </code>
    </td>
@@ -10000,7 +10000,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PUBLIC
     </code>
    </td>
@@ -10018,7 +10018,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      PUBLICATION
     </code>
    </td>
@@ -10034,7 +10034,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      QUOTE
     </code>
    </td>
@@ -10050,7 +10050,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      QUOTES
     </code>
    </td>
@@ -10068,7 +10068,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RANGE
     </code>
    </td>
@@ -10086,7 +10086,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RANK
     </code>
    </td>
@@ -10103,7 +10103,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      READ
     </code>
    </td>
@@ -10122,7 +10122,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      READS
     </code>
    </td>
@@ -10139,7 +10139,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      REAL
     </code>
    </td>
@@ -10158,7 +10158,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      REASSIGN
     </code>
    </td>
@@ -10174,7 +10174,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RECOVERY
     </code>
    </td>
@@ -10191,7 +10191,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RECURSIVE
     </code>
    </td>
@@ -10209,7 +10209,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      REF
     </code>
    </td>
@@ -10227,7 +10227,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      REFERENCES
     </code>
    </td>
@@ -10246,7 +10246,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      REFERENCING
     </code>
    </td>
@@ -10264,7 +10264,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      REFRESH
     </code>
    </td>
@@ -10280,7 +10280,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      REGR_AVGX
     </code>
    </td>
@@ -10297,7 +10297,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      REGR_AVGY
     </code>
    </td>
@@ -10314,7 +10314,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      REGR_COUNT
     </code>
    </td>
@@ -10331,7 +10331,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      REGR_INTERCEPT
     </code>
    </td>
@@ -10348,7 +10348,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      REGR_R2
     </code>
    </td>
@@ -10365,7 +10365,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      REGR_SLOPE
     </code>
    </td>
@@ -10382,7 +10382,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      REGR_SXX
     </code>
    </td>
@@ -10399,7 +10399,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      REGR_SXY
     </code>
    </td>
@@ -10416,7 +10416,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      REGR_SYY
     </code>
    </td>
@@ -10433,7 +10433,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      REINDEX
     </code>
    </td>
@@ -10449,7 +10449,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RELATIVE
     </code>
    </td>
@@ -10468,7 +10468,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RELEASE
     </code>
    </td>
@@ -10486,7 +10486,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RENAME
     </code>
    </td>
@@ -10502,7 +10502,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      REPEATABLE
     </code>
    </td>
@@ -10521,7 +10521,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      REPLACE
     </code>
    </td>
@@ -10537,7 +10537,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      REPLICA
     </code>
    </td>
@@ -10553,7 +10553,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      REQUIRING
     </code>
    </td>
@@ -10570,7 +10570,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RESET
     </code>
    </td>
@@ -10586,7 +10586,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RESPECT
     </code>
    </td>
@@ -10603,7 +10603,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RESTART
     </code>
    </td>
@@ -10621,7 +10621,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RESTORE
     </code>
    </td>
@@ -10638,7 +10638,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RESTRICT
     </code>
    </td>
@@ -10657,7 +10657,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RESULT
     </code>
    </td>
@@ -10674,7 +10674,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RETURN
     </code>
    </td>
@@ -10692,7 +10692,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RETURNED_CARDINALITY
     </code>
    </td>
@@ -10709,7 +10709,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RETURNED_LENGTH
     </code>
    </td>
@@ -10727,7 +10727,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RETURNED_​OCTET_​LENGTH
     </code>
    </td>
@@ -10745,7 +10745,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RETURNED_SQLSTATE
     </code>
    </td>
@@ -10763,13 +10763,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RETURNING
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -10784,7 +10784,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RETURNS
     </code>
    </td>
@@ -10802,7 +10802,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      REVOKE
     </code>
    </td>
@@ -10821,7 +10821,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RIGHT
     </code>
    </td>
@@ -10840,7 +10840,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ROLE
     </code>
    </td>
@@ -10858,7 +10858,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ROLLBACK
     </code>
    </td>
@@ -10877,7 +10877,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ROLLUP
     </code>
    </td>
@@ -10895,7 +10895,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ROUTINE
     </code>
    </td>
@@ -10913,7 +10913,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ROUTINES
     </code>
    </td>
@@ -10929,7 +10929,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ROUTINE_CATALOG
     </code>
    </td>
@@ -10946,7 +10946,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ROUTINE_NAME
     </code>
    </td>
@@ -10963,7 +10963,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ROUTINE_SCHEMA
     </code>
    </td>
@@ -10980,7 +10980,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ROW
     </code>
    </td>
@@ -10998,7 +10998,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ROWS
     </code>
    </td>
@@ -11017,7 +11017,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ROW_COUNT
     </code>
    </td>
@@ -11035,7 +11035,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ROW_NUMBER
     </code>
    </td>
@@ -11052,7 +11052,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RPAD
     </code>
    </td>
@@ -11068,7 +11068,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RTRIM
     </code>
    </td>
@@ -11084,7 +11084,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RULE
     </code>
    </td>
@@ -11100,7 +11100,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      RUNNING
     </code>
    </td>
@@ -11117,7 +11117,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SAVEPOINT
     </code>
    </td>
@@ -11135,7 +11135,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SCALAR
     </code>
    </td>
@@ -11153,7 +11153,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SCALE
     </code>
    </td>
@@ -11171,7 +11171,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SCHEMA
     </code>
    </td>
@@ -11190,7 +11190,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SCHEMAS
     </code>
    </td>
@@ -11206,7 +11206,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SCHEMA_NAME
     </code>
    </td>
@@ -11224,7 +11224,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SCOPE
     </code>
    </td>
@@ -11241,7 +11241,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SCOPE_CATALOG
     </code>
    </td>
@@ -11258,7 +11258,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SCOPE_NAME
     </code>
    </td>
@@ -11275,7 +11275,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SCOPE_SCHEMA
     </code>
    </td>
@@ -11292,7 +11292,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SCROLL
     </code>
    </td>
@@ -11311,7 +11311,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SEARCH
     </code>
    </td>
@@ -11329,13 +11329,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SECOND
     </code>
    </td>
    <td>
     non-reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -11351,7 +11351,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SECTION
     </code>
    </td>
@@ -11369,7 +11369,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SECURITY
     </code>
    </td>
@@ -11387,7 +11387,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SEEK
     </code>
    </td>
@@ -11404,7 +11404,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SELECT
     </code>
    </td>
@@ -11423,7 +11423,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SELECTIVE
     </code>
    </td>
@@ -11440,7 +11440,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SELF
     </code>
    </td>
@@ -11457,7 +11457,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SEMANTICS
     </code>
    </td>
@@ -11474,7 +11474,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SENSITIVE
     </code>
    </td>
@@ -11491,7 +11491,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SEQUENCE
     </code>
    </td>
@@ -11509,7 +11509,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SEQUENCES
     </code>
    </td>
@@ -11525,7 +11525,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SERIALIZABLE
     </code>
    </td>
@@ -11544,7 +11544,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SERVER
     </code>
    </td>
@@ -11562,7 +11562,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SERVER_NAME
     </code>
    </td>
@@ -11580,7 +11580,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SESSION
     </code>
    </td>
@@ -11599,7 +11599,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SESSION_USER
     </code>
    </td>
@@ -11618,7 +11618,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SET
     </code>
    </td>
@@ -11637,7 +11637,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SETOF
     </code>
    </td>
@@ -11653,7 +11653,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SETS
     </code>
    </td>
@@ -11671,7 +11671,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SHARE
     </code>
    </td>
@@ -11687,7 +11687,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SHOW
     </code>
    </td>
@@ -11705,7 +11705,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SIMILAR
     </code>
    </td>
@@ -11723,7 +11723,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SIMPLE
     </code>
    </td>
@@ -11741,7 +11741,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SIN
     </code>
    </td>
@@ -11758,7 +11758,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SINH
     </code>
    </td>
@@ -11775,7 +11775,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SIZE
     </code>
    </td>
@@ -11793,7 +11793,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SKIP
     </code>
    </td>
@@ -11811,7 +11811,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SMALLINT
     </code>
    </td>
@@ -11830,7 +11830,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SNAPSHOT
     </code>
    </td>
@@ -11846,7 +11846,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SOME
     </code>
    </td>
@@ -11865,7 +11865,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SORT_DIRECTION
     </code>
    </td>
@@ -11882,7 +11882,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SOURCE
     </code>
    </td>
@@ -11900,7 +11900,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SPACE
     </code>
    </td>
@@ -11918,7 +11918,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SPECIFIC
     </code>
    </td>
@@ -11935,7 +11935,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SPECIFICTYPE
     </code>
    </td>
@@ -11952,7 +11952,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SPECIFIC_NAME
     </code>
    </td>
@@ -11969,7 +11969,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SQL
     </code>
    </td>
@@ -11988,7 +11988,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SQLCODE
     </code>
    </td>
@@ -12004,7 +12004,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SQLERROR
     </code>
    </td>
@@ -12020,7 +12020,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SQLEXCEPTION
     </code>
    </td>
@@ -12037,7 +12037,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SQLSTATE
     </code>
    </td>
@@ -12055,7 +12055,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SQLWARNING
     </code>
    </td>
@@ -12072,7 +12072,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SQRT
     </code>
    </td>
@@ -12089,7 +12089,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      STABLE
     </code>
    </td>
@@ -12105,7 +12105,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      STANDALONE
     </code>
    </td>
@@ -12123,7 +12123,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      START
     </code>
    </td>
@@ -12141,7 +12141,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      STATE
     </code>
    </td>
@@ -12158,7 +12158,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      STATEMENT
     </code>
    </td>
@@ -12176,7 +12176,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      STATIC
     </code>
    </td>
@@ -12193,7 +12193,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      STATISTICS
     </code>
    </td>
@@ -12209,7 +12209,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      STDDEV_POP
     </code>
    </td>
@@ -12226,7 +12226,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      STDDEV_SAMP
     </code>
    </td>
@@ -12243,7 +12243,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      STDIN
     </code>
    </td>
@@ -12259,7 +12259,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      STDOUT
     </code>
    </td>
@@ -12275,7 +12275,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      STORAGE
     </code>
    </td>
@@ -12291,7 +12291,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      STORED
     </code>
    </td>
@@ -12307,7 +12307,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      STRICT
     </code>
    </td>
@@ -12323,7 +12323,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      STRING
     </code>
    </td>
@@ -12341,7 +12341,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      STRIP
     </code>
    </td>
@@ -12359,7 +12359,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      STRUCTURE
     </code>
    </td>
@@ -12376,7 +12376,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      STYLE
     </code>
    </td>
@@ -12393,7 +12393,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SUBCLASS_ORIGIN
     </code>
    </td>
@@ -12411,7 +12411,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SUBMULTISET
     </code>
    </td>
@@ -12428,7 +12428,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SUBSCRIPTION
     </code>
    </td>
@@ -12444,7 +12444,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SUBSET
     </code>
    </td>
@@ -12461,7 +12461,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SUBSTRING
     </code>
    </td>
@@ -12480,7 +12480,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SUBSTRING_REGEX
     </code>
    </td>
@@ -12497,7 +12497,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SUCCEEDS
     </code>
    </td>
@@ -12514,7 +12514,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SUM
     </code>
    </td>
@@ -12532,7 +12532,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SUPPORT
     </code>
    </td>
@@ -12548,7 +12548,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SYMMETRIC
     </code>
    </td>
@@ -12566,7 +12566,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SYSID
     </code>
    </td>
@@ -12582,7 +12582,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SYSTEM
     </code>
    </td>
@@ -12600,7 +12600,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SYSTEM_TIME
     </code>
    </td>
@@ -12617,7 +12617,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      SYSTEM_USER
     </code>
    </td>
@@ -12636,7 +12636,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      T
     </code>
    </td>
@@ -12653,7 +12653,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TABLE
     </code>
    </td>
@@ -12672,7 +12672,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TABLES
     </code>
    </td>
@@ -12688,7 +12688,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TABLESAMPLE
     </code>
    </td>
@@ -12706,7 +12706,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TABLESPACE
     </code>
    </td>
@@ -12722,7 +12722,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TABLE_NAME
     </code>
    </td>
@@ -12740,7 +12740,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TAN
     </code>
    </td>
@@ -12757,7 +12757,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TANH
     </code>
    </td>
@@ -12774,7 +12774,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TARGET
     </code>
    </td>
@@ -12790,7 +12790,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TEMP
     </code>
    </td>
@@ -12806,7 +12806,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TEMPLATE
     </code>
    </td>
@@ -12822,7 +12822,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TEMPORARY
     </code>
    </td>
@@ -12841,7 +12841,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TEXT
     </code>
    </td>
@@ -12857,7 +12857,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      THEN
     </code>
    </td>
@@ -12876,7 +12876,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      THROUGH
     </code>
    </td>
@@ -12893,7 +12893,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TIES
     </code>
    </td>
@@ -12911,7 +12911,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TIME
     </code>
    </td>
@@ -12930,7 +12930,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TIMESTAMP
     </code>
    </td>
@@ -12949,7 +12949,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TIMEZONE_HOUR
     </code>
    </td>
@@ -12967,7 +12967,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TIMEZONE_MINUTE
     </code>
    </td>
@@ -12985,13 +12985,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TO
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -13007,7 +13007,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TOKEN
     </code>
    </td>
@@ -13024,7 +13024,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TOP_LEVEL_COUNT
     </code>
    </td>
@@ -13041,7 +13041,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TRAILING
     </code>
    </td>
@@ -13060,7 +13060,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TRANSACTION
     </code>
    </td>
@@ -13079,7 +13079,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TRANSACTIONS_​COMMITTED
     </code>
    </td>
@@ -13096,7 +13096,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TRANSACTIONS_​ROLLED_​BACK
     </code>
    </td>
@@ -13113,7 +13113,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TRANSACTION_ACTIVE
     </code>
    </td>
@@ -13130,7 +13130,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TRANSFORM
     </code>
    </td>
@@ -13148,7 +13148,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TRANSFORMS
     </code>
    </td>
@@ -13165,7 +13165,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TRANSLATE
     </code>
    </td>
@@ -13183,7 +13183,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TRANSLATE_REGEX
     </code>
    </td>
@@ -13200,7 +13200,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TRANSLATION
     </code>
    </td>
@@ -13218,7 +13218,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TREAT
     </code>
    </td>
@@ -13236,7 +13236,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TRIGGER
     </code>
    </td>
@@ -13254,7 +13254,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TRIGGER_CATALOG
     </code>
    </td>
@@ -13271,7 +13271,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TRIGGER_NAME
     </code>
    </td>
@@ -13288,7 +13288,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TRIGGER_SCHEMA
     </code>
    </td>
@@ -13305,7 +13305,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TRIM
     </code>
    </td>
@@ -13324,7 +13324,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TRIM_ARRAY
     </code>
    </td>
@@ -13341,7 +13341,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TRUE
     </code>
    </td>
@@ -13360,7 +13360,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TRUNCATE
     </code>
    </td>
@@ -13378,7 +13378,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TRUSTED
     </code>
    </td>
@@ -13394,7 +13394,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TYPE
     </code>
    </td>
@@ -13413,7 +13413,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      TYPES
     </code>
    </td>
@@ -13429,7 +13429,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UESCAPE
     </code>
    </td>
@@ -13447,7 +13447,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UNBOUNDED
     </code>
    </td>
@@ -13465,7 +13465,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UNCOMMITTED
     </code>
    </td>
@@ -13484,7 +13484,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UNCONDITIONAL
     </code>
    </td>
@@ -13502,7 +13502,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UNDER
     </code>
    </td>
@@ -13519,7 +13519,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UNENCRYPTED
     </code>
    </td>
@@ -13535,13 +13535,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UNION
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -13557,7 +13557,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UNIQUE
     </code>
    </td>
@@ -13576,7 +13576,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UNKNOWN
     </code>
    </td>
@@ -13595,7 +13595,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UNLINK
     </code>
    </td>
@@ -13612,7 +13612,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UNLISTEN
     </code>
    </td>
@@ -13628,7 +13628,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UNLOGGED
     </code>
    </td>
@@ -13644,7 +13644,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UNMATCHED
     </code>
    </td>
@@ -13661,7 +13661,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UNNAMED
     </code>
    </td>
@@ -13679,7 +13679,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UNNEST
     </code>
    </td>
@@ -13696,7 +13696,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UNTIL
     </code>
    </td>
@@ -13712,7 +13712,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UNTYPED
     </code>
    </td>
@@ -13729,7 +13729,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UPDATE
     </code>
    </td>
@@ -13748,7 +13748,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UPPER
     </code>
    </td>
@@ -13766,7 +13766,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      URI
     </code>
    </td>
@@ -13783,7 +13783,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      USAGE
     </code>
    </td>
@@ -13801,7 +13801,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      USER
     </code>
    </td>
@@ -13820,7 +13820,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      USER_​DEFINED_​TYPE_​CATALOG
     </code>
    </td>
@@ -13837,7 +13837,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      USER_​DEFINED_​TYPE_​CODE
     </code>
    </td>
@@ -13854,7 +13854,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      USER_​DEFINED_​TYPE_​NAME
     </code>
    </td>
@@ -13871,7 +13871,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      USER_​DEFINED_​TYPE_​SCHEMA
     </code>
    </td>
@@ -13888,7 +13888,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      USING
     </code>
    </td>
@@ -13907,7 +13907,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UTF16
     </code>
    </td>
@@ -13924,7 +13924,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UTF32
     </code>
    </td>
@@ -13941,7 +13941,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      UTF8
     </code>
    </td>
@@ -13958,7 +13958,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      VACUUM
     </code>
    </td>
@@ -13974,7 +13974,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      VALID
     </code>
    </td>
@@ -13992,7 +13992,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      VALIDATE
     </code>
    </td>
@@ -14008,7 +14008,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      VALIDATOR
     </code>
    </td>
@@ -14024,7 +14024,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      VALUE
     </code>
    </td>
@@ -14043,7 +14043,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      VALUES
     </code>
    </td>
@@ -14062,7 +14062,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      VALUE_OF
     </code>
    </td>
@@ -14079,7 +14079,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      VARBINARY
     </code>
    </td>
@@ -14096,7 +14096,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      VARCHAR
     </code>
    </td>
@@ -14115,7 +14115,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      VARIADIC
     </code>
    </td>
@@ -14131,13 +14131,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      VARYING
     </code>
    </td>
    <td>
     non-reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -14153,7 +14153,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      VAR_POP
     </code>
    </td>
@@ -14170,7 +14170,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      VAR_SAMP
     </code>
    </td>
@@ -14187,7 +14187,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      VERBOSE
     </code>
    </td>
@@ -14203,7 +14203,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      VERSION
     </code>
    </td>
@@ -14221,7 +14221,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      VERSIONING
     </code>
    </td>
@@ -14238,7 +14238,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      VIEW
     </code>
    </td>
@@ -14257,7 +14257,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      VIEWS
     </code>
    </td>
@@ -14273,7 +14273,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      VIRTUAL
     </code>
    </td>
@@ -14289,7 +14289,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      VOLATILE
     </code>
    </td>
@@ -14305,7 +14305,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      WHEN
     </code>
    </td>
@@ -14324,7 +14324,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      WHENEVER
     </code>
    </td>
@@ -14342,13 +14342,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      WHERE
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -14364,7 +14364,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      WHITESPACE
     </code>
    </td>
@@ -14382,7 +14382,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      WIDTH_BUCKET
     </code>
    </td>
@@ -14399,13 +14399,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      WINDOW
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -14420,13 +14420,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      WITH
     </code>
    </td>
    <td>
     reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -14442,13 +14442,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      WITHIN
     </code>
    </td>
    <td>
     non-reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -14463,13 +14463,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      WITHOUT
     </code>
    </td>
    <td>
     non-reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -14484,7 +14484,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      WORK
     </code>
    </td>
@@ -14503,7 +14503,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      WRAPPER
     </code>
    </td>
@@ -14521,7 +14521,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      WRITE
     </code>
    </td>
@@ -14540,7 +14540,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XML
     </code>
    </td>
@@ -14558,7 +14558,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLAGG
     </code>
    </td>
@@ -14575,7 +14575,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLATTRIBUTES
     </code>
    </td>
@@ -14593,7 +14593,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLBINARY
     </code>
    </td>
@@ -14610,7 +14610,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLCAST
     </code>
    </td>
@@ -14627,7 +14627,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLCOMMENT
     </code>
    </td>
@@ -14644,7 +14644,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLCONCAT
     </code>
    </td>
@@ -14662,7 +14662,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLDECLARATION
     </code>
    </td>
@@ -14679,7 +14679,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLDOCUMENT
     </code>
    </td>
@@ -14696,7 +14696,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLELEMENT
     </code>
    </td>
@@ -14714,7 +14714,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLEXISTS
     </code>
    </td>
@@ -14732,7 +14732,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLFOREST
     </code>
    </td>
@@ -14750,7 +14750,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLITERATE
     </code>
    </td>
@@ -14767,7 +14767,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLNAMESPACES
     </code>
    </td>
@@ -14785,7 +14785,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLPARSE
     </code>
    </td>
@@ -14803,7 +14803,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLPI
     </code>
    </td>
@@ -14821,7 +14821,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLQUERY
     </code>
    </td>
@@ -14838,7 +14838,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLROOT
     </code>
    </td>
@@ -14854,7 +14854,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLSCHEMA
     </code>
    </td>
@@ -14871,7 +14871,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLSERIALIZE
     </code>
    </td>
@@ -14889,7 +14889,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLTABLE
     </code>
    </td>
@@ -14907,7 +14907,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLTEXT
     </code>
    </td>
@@ -14924,7 +14924,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      XMLVALIDATE
     </code>
    </td>
@@ -14941,13 +14941,13 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      YEAR
     </code>
    </td>
    <td>
     non-reserved, requires
-    <code class="literal">
+    <code>
      AS
     </code>
    </td>
@@ -14963,7 +14963,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      YES
     </code>
    </td>
@@ -14981,7 +14981,7 @@ Como regra geral, se você receber erros de análise de sintaxe falsos para coma
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ZONE
     </code>
    </td>

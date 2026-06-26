@@ -8,7 +8,7 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_parameter_acl` é comp
 
 
 
-<table border="1" class="table" summary="pg_parameter_acl Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_parameter_acl` é comp
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -43,10 +43,10 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_parameter_acl` é comp
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       parname
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -58,10 +58,10 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_parameter_acl` é comp
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       paracl
      </code>
-     <code class="type">
+     <code>
       aclitem[]
      </code>
     </p>

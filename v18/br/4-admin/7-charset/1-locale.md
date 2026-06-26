@@ -25,7 +25,7 @@ Ocasionalmente, é útil misturar regras de vários locais, por exemplo, usar re
 
 
 
-<table border="1" class="informaltable">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -33,7 +33,7 @@ Ocasionalmente, é útil misturar regras de vários locais, por exemplo, usar re
  <tbody>
   <tr>
    <td>
-    <code class="envar">
+    <code>
      LC_COLLATE
     </code>
    </td>
@@ -43,7 +43,7 @@ Ocasionalmente, é útil misturar regras de vários locais, por exemplo, usar re
   </tr>
   <tr>
    <td>
-    <code class="envar">
+    <code>
      LC_CTYPE
     </code>
    </td>
@@ -53,7 +53,7 @@ Ocasionalmente, é útil misturar regras de vários locais, por exemplo, usar re
   </tr>
   <tr>
    <td>
-    <code class="envar">
+    <code>
      LC_MESSAGES
     </code>
    </td>
@@ -63,7 +63,7 @@ Ocasionalmente, é útil misturar regras de vários locais, por exemplo, usar re
   </tr>
   <tr>
    <td>
-    <code class="envar">
+    <code>
      LC_MONETARY
     </code>
    </td>
@@ -73,7 +73,7 @@ Ocasionalmente, é útil misturar regras de vários locais, por exemplo, usar re
   </tr>
   <tr>
    <td>
-    <code class="envar">
+    <code>
      LC_NUMERIC
     </code>
    </td>
@@ -83,7 +83,7 @@ Ocasionalmente, é útil misturar regras de vários locais, por exemplo, usar re
   </tr>
   <tr>
    <td>
-    <code class="envar">
+    <code>
      LC_TIME
     </code>
    </td>

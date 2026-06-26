@@ -14,7 +14,7 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
 
 
 
-<table border="1" class="table" summary="pg_statistic Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -34,20 +34,20 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       starelid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -60,20 +60,20 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       staattnum
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
      (referências
      <a class="link" href="catalog-pg-attribute.md" title="52.7. pg_attribute">
-      <code class="structname">
+      <code>
        pg_attribute
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       attnum
      </code>
      )
@@ -86,10 +86,10 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stainherit
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -101,10 +101,10 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stanullfrac
      </code>
-     <code class="type">
+     <code>
       float4
      </code>
     </p>
@@ -116,10 +116,10 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stawidth
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -131,16 +131,16 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stadistinct
      </code>
-     <code class="type">
+     <code>
       float4
      </code>
     </p>
     <p>
      O número de valores de dados distintos e não nulos na coluna. Um valor maior que zero é o número real de valores distintos. Um valor menor que zero é o negativo de um multiplicador para o número de linhas na tabela; por exemplo, uma coluna na qual cerca de 80% dos valores são não nulos e cada valor não nulo aparece aproximadamente duas vezes em média pode ser representado por
-     <code class="structfield">
+     <code>
       stadistinct
      </code>
      = -0,4. Um valor zero significa que o número de valores distintos é desconhecido.
@@ -150,7 +150,7 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stakind
       <em class="replaceable">
        <code>
@@ -158,7 +158,7 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
        </code>
       </em>
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
@@ -178,7 +178,7 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
       ”
      </span>
      de o
-     <code class="structname">
+     <code>
       pg_statistic
      </code>
      row.
@@ -188,7 +188,7 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       staop
       <em class="replaceable">
        <code>
@@ -196,17 +196,17 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
        </code>
       </em>
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-operator.md" title="52.34. pg_operator">
-      <code class="structname">
+      <code>
        pg_operator
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -227,7 +227,7 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
       ”
      </span>
      Por exemplo, um carpete de histograma mostraria o
-     <code class="literal">
+     <code>
       &lt;
      </code>
      operador que define a ordem de classificação dos dados. Zero se o tipo de estatística não requer um operador.
@@ -237,7 +237,7 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stacoll
       <em class="replaceable">
        <code>
@@ -245,17 +245,17 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
        </code>
       </em>
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-collation.md" title="52.12. pg_collation">
-      <code class="structname">
+      <code>
        pg_collation
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -282,7 +282,7 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stanumbers
       <em class="replaceable">
        <code>
@@ -290,7 +290,7 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
        </code>
       </em>
      </code>
-     <code class="type">
+     <code>
       float4[]
      </code>
     </p>
@@ -316,7 +316,7 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stavalues
       <em class="replaceable">
        <code>
@@ -324,7 +324,7 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
        </code>
       </em>
      </code>
-     <code class="type">
+     <code>
       anyarray
      </code>
     </p>
@@ -344,7 +344,7 @@ Como diferentes tipos de estatísticas podem ser apropriados para diferentes tip
       ”
      </span>
      , ou nulo se o tipo de slot não armazenar nenhum valor de dados. Os valores dos elementos de cada matriz são, na verdade, do tipo de dados da coluna específica, ou de um tipo relacionado, como o tipo de elemento de uma matriz, portanto, não há como definir o tipo dessas colunas de forma mais específica do que
-     <code class="type">
+     <code>
       anyarray
      </code>
      .

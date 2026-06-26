@@ -10,7 +10,7 @@ As restrições sobre os domínios também são armazenadas aqui.
 
 
 
-<table border="1" class="table" summary="pg_constraint Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -30,10 +30,10 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -45,10 +45,10 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       conname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -60,20 +60,20 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       connamespace
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -86,39 +86,39 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       contype
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       c
      </code>
      = restrição de verificação,
-     <code class="literal">
+     <code>
       f
      </code>
      = restrição de chave estrangeira,
-     <code class="literal">
+     <code>
       n
      </code>
      = restrição não-nulo,
-     <code class="literal">
+     <code>
       p
      </code>
      = restrição de chave primária,
-     <code class="literal">
+     <code>
       u
      </code>
      = restrição única,
-     <code class="literal">
+     <code>
       t
      </code>
      = gatilho de restrição,
-     <code class="literal">
+     <code>
       x
      </code>
      = restrição de exclusão
@@ -128,10 +128,10 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       condeferrable
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -143,10 +143,10 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       condeferred
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -158,10 +158,10 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       conenforced
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -173,10 +173,10 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       convalidated
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -188,20 +188,20 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       conrelid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -214,20 +214,20 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       contypid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -240,20 +240,20 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       conindid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -266,20 +266,20 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       conparentid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-constraint.md" title="52.13. pg_constraint">
-      <code class="structname">
+      <code>
        pg_constraint
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -292,20 +292,20 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       confrelid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -318,32 +318,32 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       confupdtype
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      Código da ação de atualização da chave estrangeira:
-     <code class="literal">
+     <code>
       a
      </code>
      = sem ação,
-     <code class="literal">
+     <code>
       r
      </code>
      = restringir,
-     <code class="literal">
+     <code>
       c
      </code>
      = cascata,
-     <code class="literal">
+     <code>
       n
      </code>
      = definir como nulo,
-     <code class="literal">
+     <code>
       d
      </code>
      = definir padrão
@@ -353,32 +353,32 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       confdeltype
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      Código da ação de exclusão de chave estrangeira:
-     <code class="literal">
+     <code>
       a
      </code>
      = sem ação,
-     <code class="literal">
+     <code>
       r
      </code>
      = restringir,
-     <code class="literal">
+     <code>
       c
      </code>
      = cascata,
-     <code class="literal">
+     <code>
       n
      </code>
      = definir como nulo,
-     <code class="literal">
+     <code>
       d
      </code>
      = definir padrão
@@ -388,24 +388,24 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       confmatchtype
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      Tipo de correspondência de chave estrangeira:
-     <code class="literal">
+     <code>
       f
      </code>
      = completo,
-     <code class="literal">
+     <code>
       p
      </code>
      = parcial,
-     <code class="literal">
+     <code>
       s
      </code>
      = simples
@@ -415,10 +415,10 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       conislocal
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -430,10 +430,10 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       coninhcount
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
@@ -445,10 +445,10 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       connoinherit
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -460,20 +460,20 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       conperiod
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Essa restrição é definida com
-     <code class="literal">
+     <code>
       WITHOUT OVERLAPS
      </code>
      (para chaves primárias e restrições únicas) ou
-     <code class="literal">
+     <code>
       PERIOD
      </code>
      (para chaves estrangeiras).
@@ -483,20 +483,20 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       conkey
      </code>
-     <code class="type">
+     <code>
       int2[]
      </code>
      (referências
      <a class="link" href="catalog-pg-attribute.md" title="52.7. pg_attribute">
-      <code class="structname">
+      <code>
        pg_attribute
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       attnum
      </code>
      )
@@ -509,20 +509,20 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       confkey
      </code>
-     <code class="type">
+     <code>
       int2[]
      </code>
      (referências
      <a class="link" href="catalog-pg-attribute.md" title="52.7. pg_attribute">
-      <code class="structname">
+      <code>
        pg_attribute
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       attnum
      </code>
      )
@@ -535,20 +535,20 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       conpfeqop
      </code>
-     <code class="type">
+     <code>
       oid[]
      </code>
      (referências
      <a class="link" href="catalog-pg-operator.md" title="52.34. pg_operator">
-      <code class="structname">
+      <code>
        pg_operator
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -561,20 +561,20 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       conppeqop
      </code>
-     <code class="type">
+     <code>
       oid[]
      </code>
      (referências
      <a class="link" href="catalog-pg-operator.md" title="52.34. pg_operator">
-      <code class="structname">
+      <code>
        pg_operator
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -587,20 +587,20 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       conffeqop
      </code>
-     <code class="type">
+     <code>
       oid[]
      </code>
      (referências
      <a class="link" href="catalog-pg-operator.md" title="52.34. pg_operator">
-      <code class="structname">
+      <code>
        pg_operator
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -613,31 +613,31 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       confdelsetcols
      </code>
-     <code class="type">
+     <code>
       int2[]
      </code>
      (referências
      <a class="link" href="catalog-pg-attribute.md" title="52.7. pg_attribute">
-      <code class="structname">
+      <code>
        pg_attribute
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       attnum
      </code>
      )
     </p>
     <p>
      Se uma chave estrangeira com
-     <code class="literal">
+     <code>
       SET NULL
      </code>
      ou
-     <code class="literal">
+     <code>
       SET DEFAULT
      </code>
      Para a ação de exclusão, as colunas que serão atualizadas. Se nulo, todas as colunas de referência serão atualizadas.
@@ -647,27 +647,27 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       conexclop
      </code>
-     <code class="type">
+     <code>
       oid[]
      </code>
      (referências
      <a class="link" href="catalog-pg-operator.md" title="52.34. pg_operator">
-      <code class="structname">
+      <code>
        pg_operator
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
     </p>
     <p>
      Se uma restrição de exclusão ou
-     <code class="literal">
+     <code>
       WITHOUT OVERLAPS
      </code>
      chave primária/constrangimento único, lista dos operadores de exclusão por coluna.
@@ -677,16 +677,16 @@ As restrições sobre os domínios também são armazenadas aqui.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       conbin
      </code>
-     <code class="type">
+     <code>
       pg_node_tree
      </code>
     </p>
     <p>
      Se for uma restrição de verificação, uma representação interna da expressão. (Recomenda-se o uso
-     <code class="function">
+     <code>
       pg_get_constraintdef()
      </code>
      para extrair a definição de uma restrição de verificação.)

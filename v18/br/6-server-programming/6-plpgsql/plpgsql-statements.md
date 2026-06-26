@@ -305,7 +305,7 @@ GET DIAGNOSTICS integer_var = ROW_COUNT;
 
 
 
-<table border="1" class="table" summary="Available Diagnostics Items">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -327,12 +327,12 @@ GET DIAGNOSTICS integer_var = ROW_COUNT;
  <tbody>
   <tr>
    <td>
-    <code class="varname">
+    <code>
      ROW_COUNT
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -346,12 +346,12 @@ GET DIAGNOSTICS integer_var = ROW_COUNT;
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PG_CONTEXT
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
@@ -365,12 +365,12 @@ GET DIAGNOSTICS integer_var = ROW_COUNT;
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PG_ROUTINE_OID
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      oid
     </code>
    </td>

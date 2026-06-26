@@ -6,7 +6,7 @@ O catálogo `pg_am` armazena informações sobre os métodos de acesso à relaç
 
 
 
-<table border="1" class="table" summary="pg_am Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_am` armazena informações sobre os métodos de acesso à relaç
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,10 +41,10 @@ O catálogo `pg_am` armazena informações sobre os métodos de acesso à relaç
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       amname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -56,20 +56,20 @@ O catálogo `pg_am` armazena informações sobre os métodos de acesso à relaç
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       amhandler
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -82,19 +82,19 @@ O catálogo `pg_am` armazena informações sobre os métodos de acesso à relaç
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       amtype
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       t
      </code>
      = tabela (incluindo visualizações materializadas),
-     <code class="literal">
+     <code>
       i
      </code>
      = índice.

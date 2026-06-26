@@ -6,7 +6,7 @@ A vista `pg_user` fornece acesso a informações sobre os usuários do banco de 
 
 
 
-<table border="1" class="table" summary="pg_user Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `pg_user` fornece acesso a informações sobre os usuários do banco de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       usename
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `pg_user` fornece acesso a informações sobre os usuários do banco de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       usesysid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `pg_user` fornece acesso a informações sobre os usuários do banco de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       usecreatedb
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -71,10 +71,10 @@ A vista `pg_user` fornece acesso a informações sobre os usuários do banco de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       usesuper
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -86,10 +86,10 @@ A vista `pg_user` fornece acesso a informações sobre os usuários do banco de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       userepl
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -101,10 +101,10 @@ A vista `pg_user` fornece acesso a informações sobre os usuários do banco de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       usebypassrls
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -120,16 +120,16 @@ A vista `pg_user` fornece acesso a informações sobre os usuários do banco de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       passwd
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      Não a senha (sempre é lido como
-     <code class="literal">
+     <code>
       ********
      </code>
      )
@@ -139,10 +139,10 @@ A vista `pg_user` fornece acesso a informações sobre os usuários do banco de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       valuntil
      </code>
-     <code class="type">
+     <code>
       timestamptz
      </code>
     </p>
@@ -154,10 +154,10 @@ A vista `pg_user` fornece acesso a informações sobre os usuários do banco de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       useconfig
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>

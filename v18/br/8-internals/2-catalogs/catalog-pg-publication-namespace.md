@@ -6,7 +6,7 @@ O catálogo `pg_publication_namespace` contém a mapeo entre esquemas e publica�
 
 
 
-<table border="1" class="table" summary="pg_publication_namespace Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_publication_namespace` contém a mapeo entre esquemas e publica�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,20 +41,20 @@ O catálogo `pg_publication_namespace` contém a mapeo entre esquemas e publica�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pnpubid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-publication.md" title="52.40. pg_publication">
-      <code class="structname">
+      <code>
        pg_publication
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -67,20 +67,20 @@ O catálogo `pg_publication_namespace` contém a mapeo entre esquemas e publica�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pnnspid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )

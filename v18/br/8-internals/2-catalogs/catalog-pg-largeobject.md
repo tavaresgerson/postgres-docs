@@ -8,7 +8,7 @@ Antes do PostgreSQL 9.0, não havia uma estrutura de permissão associada a obje
 
 
 
-<table border="1" class="table" summary="pg_largeobject Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,20 +28,20 @@ Antes do PostgreSQL 9.0, não havia uma estrutura de permissão associada a obje
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       loid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-largeobject-metadata.md" title="52.31. pg_largeobject_metadata">
-      <code class="structname">
+      <code>
        pg_largeobject_metadata
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -54,10 +54,10 @@ Antes do PostgreSQL 9.0, não havia uma estrutura de permissão associada a obje
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pageno
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -69,16 +69,16 @@ Antes do PostgreSQL 9.0, não havia uma estrutura de permissão associada a obje
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       data
      </code>
-     <code class="type">
+     <code>
       bytea
      </code>
     </p>
     <p>
      Dados reais armazenados no grande objeto. Isso nunca será mais do que
-     <code class="symbol">
+     <code>
       LOBLKSIZE
      </code>
      bytes e pode ser menos.

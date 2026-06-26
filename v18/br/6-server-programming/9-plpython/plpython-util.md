@@ -4,10 +4,10 @@ O módulo `plpy` também fornece as funções
 
 
 
-<table border="0" class="simplelist" summary="Simple list">
+<table>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     plpy.debug(
     <em class="replaceable">
      <code>
@@ -20,7 +20,7 @@ O módulo `plpy` também fornece as funções
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     plpy.log(
     <em class="replaceable">
      <code>
@@ -33,7 +33,7 @@ O módulo `plpy` também fornece as funções
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     plpy.info(
     <em class="replaceable">
      <code>
@@ -46,7 +46,7 @@ O módulo `plpy` também fornece as funções
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     plpy.notice(
     <em class="replaceable">
      <code>
@@ -59,7 +59,7 @@ O módulo `plpy` também fornece as funções
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     plpy.warning(
     <em class="replaceable">
      <code>
@@ -72,7 +72,7 @@ O módulo `plpy` também fornece as funções
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     plpy.error(
     <em class="replaceable">
      <code>
@@ -85,7 +85,7 @@ O módulo `plpy` também fornece as funções
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     plpy.fatal(
     <em class="replaceable">
      <code>
@@ -112,59 +112,59 @@ Os seguintes argumentos com palavras-chave são aceitos:
 
 
 
-<table border="0" class="simplelist" summary="Simple list">
+<table>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     detail
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     hint
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     sqlstate
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     schema_name
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     table_name
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     column_name
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     datatype_name
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     constraint_name
    </code>
   </td>

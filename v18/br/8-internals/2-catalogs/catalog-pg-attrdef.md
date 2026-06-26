@@ -6,7 +6,7 @@ O catálogo `pg_attrdef` armazena expressões padrão de colunas e expressões d
 
 
 
-<table border="1" class="table" summary="pg_attrdef Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_attrdef` armazena expressões padrão de colunas e expressões d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,20 +41,20 @@ O catálogo `pg_attrdef` armazena expressões padrão de colunas e expressões d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       adrelid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -67,20 +67,20 @@ O catálogo `pg_attrdef` armazena expressões padrão de colunas e expressões d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       adnum
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
      (referências
      <a class="link" href="catalog-pg-attribute.md" title="52.7. pg_attribute">
-      <code class="structname">
+      <code>
        pg_attribute
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       attnum
      </code>
      )
@@ -93,20 +93,20 @@ O catálogo `pg_attrdef` armazena expressões padrão de colunas e expressões d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       adbin
      </code>
-     <code class="type">
+     <code>
       pg_node_tree
      </code>
     </p>
     <p>
      A expressão padrão ou de geração da coluna, em
-     <code class="function">
+     <code>
       nodeToString()
      </code>
      representação. Use
-     <code class="literal">
+     <code>
       pg_get_expr(adbin, adrelid)
      </code>
      para convertê-lo em uma expressão SQL.

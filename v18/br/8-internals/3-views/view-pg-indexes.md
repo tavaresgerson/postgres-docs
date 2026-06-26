@@ -6,7 +6,7 @@ A vista `pg_indexes` fornece acesso a informações úteis sobre cada índice no
 
 
 
-<table border="1" class="table" summary="pg_indexes Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,20 +26,20 @@ A vista `pg_indexes` fornece acesso a informações úteis sobre cada índice no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       schemaname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (referências
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       nspname
      </code>
      )
@@ -52,20 +52,20 @@ A vista `pg_indexes` fornece acesso a informações úteis sobre cada índice no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tablename
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       relname
      </code>
      )
@@ -78,20 +78,20 @@ A vista `pg_indexes` fornece acesso a informações úteis sobre cada índice no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indexname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       relname
      </code>
      )
@@ -104,20 +104,20 @@ A vista `pg_indexes` fornece acesso a informações úteis sobre cada índice no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tablespace
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (referências
      <a class="link" href="catalog-pg-tablespace.md" title="52.56. pg_tablespace">
-      <code class="structname">
+      <code>
        pg_tablespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       spcname
      </code>
      )
@@ -130,10 +130,10 @@ A vista `pg_indexes` fornece acesso a informações úteis sobre cada índice no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indexdef
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>

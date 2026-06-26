@@ -17,7 +17,7 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
 
 
 
-<table border="1" class="table" summary="element_types Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -37,10 +37,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       object_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -52,10 +52,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       object_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -67,10 +67,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       object_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -82,28 +82,28 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       object_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      The type of the object that uses the array being described: one of
-     <code class="literal">
+     <code>
       TABLE
      </code>
      (the array is used by a column of that table),
-     <code class="literal">
+     <code>
       USER-DEFINED TYPE
      </code>
      (the array is used by an attribute of that composite type),
-     <code class="literal">
+     <code>
       DOMAIN
      </code>
      (the array is used by that domain),
-     <code class="literal">
+     <code>
       ROUTINE
      </code>
      (the array is used by a parameter or the return data type of that function).
@@ -113,16 +113,16 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collection_type_identifier
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
     <p>
      The identifier of the data type descriptor of the array being described.  Use this to join with the
-     <code class="literal">
+     <code>
       dtd_identifier
      </code>
      columns of other information schema views.
@@ -132,20 +132,20 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       data_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Data type of the array elements, if it is a built-in type, else
-     <code class="literal">
+     <code>
       USER-DEFINED
      </code>
      (in that case, the type is identified in
-     <code class="literal">
+     <code>
       udt_name
      </code>
      and associated columns).
@@ -155,10 +155,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_maximum_length
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -173,10 +173,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_octet_length
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -191,10 +191,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_set_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -209,10 +209,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_set_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -227,10 +227,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_set_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -245,10 +245,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collation_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -260,10 +260,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collation_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -275,10 +275,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collation_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -290,10 +290,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numeric_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -308,10 +308,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numeric_precision_radix
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -326,10 +326,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numeric_scale
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -344,10 +344,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datetime_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -362,10 +362,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       interval_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -380,10 +380,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       interval_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -398,10 +398,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -413,10 +413,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -428,10 +428,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -443,10 +443,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       scope_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -461,10 +461,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       scope_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -479,10 +479,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       scope_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -497,10 +497,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       maximum_cardinality
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -515,10 +515,10 @@ Essa visão inclui apenas os objetos a que o usuário atual tem acesso, sendo pr
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       dtd_identifier
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>

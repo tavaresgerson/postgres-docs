@@ -6,7 +6,7 @@ Esta seção descreve funções que possivelmente retornam mais de uma linha. As
 
 
 
-<table border="1" class="table" summary="Series Generating Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,7 +26,7 @@ Esta seção descreve funções que possivelmente retornam mais de uma linha. As
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       generate_series
      </code>
      (
@@ -35,7 +35,7 @@ Esta seção descreve funções que possivelmente retornam mais de uma linha. As
        start
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -44,7 +44,7 @@ Esta seção descreve funções que possivelmente retornam mais de uma linha. As
        stop
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      [
@@ -55,17 +55,17 @@ Esta seção descreve funções que possivelmente retornam mais de uma linha. As
         step
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       setof integer
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       generate_series
      </code>
      (
@@ -74,7 +74,7 @@ Esta seção descreve funções que possivelmente retornam mais de uma linha. As
        start
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ,
@@ -83,7 +83,7 @@ Esta seção descreve funções que possivelmente retornam mais de uma linha. As
        stop
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      [
@@ -94,17 +94,17 @@ Esta seção descreve funções que possivelmente retornam mais de uma linha. As
         step
        </code>
       </em>
-      <code class="type">
+      <code>
        bigint
       </code>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       setof bigint
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       generate_series
      </code>
      (
@@ -113,7 +113,7 @@ Esta seção descreve funções que possivelmente retornam mais de uma linha. As
        start
       </code>
      </em>
-     <code class="type">
+     <code>
       numeric
      </code>
      ,
@@ -122,7 +122,7 @@ Esta seção descreve funções que possivelmente retornam mais de uma linha. As
        stop
       </code>
      </em>
-     <code class="type">
+     <code>
       numeric
      </code>
      [
@@ -133,12 +133,12 @@ Esta seção descreve funções que possivelmente retornam mais de uma linha. As
         step
        </code>
       </em>
-      <code class="type">
+      <code>
        numeric
       </code>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       setof numeric
      </code>
     </p>
@@ -174,7 +174,7 @@ Esta seção descreve funções que possivelmente retornam mais de uma linha. As
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       generate_series
      </code>
      (
@@ -183,7 +183,7 @@ Esta seção descreve funções que possivelmente retornam mais de uma linha. As
        start
       </code>
      </em>
-     <code class="type">
+     <code>
       timestamp
      </code>
      ,
@@ -192,7 +192,7 @@ Esta seção descreve funções que possivelmente retornam mais de uma linha. As
        stop
       </code>
      </em>
-     <code class="type">
+     <code>
       timestamp
      </code>
      ,
@@ -201,16 +201,16 @@ Esta seção descreve funções que possivelmente retornam mais de uma linha. As
        step
       </code>
      </em>
-     <code class="type">
+     <code>
       interval
      </code>
      )
-     <code class="returnvalue">
+     <code>
       setof timestamp
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       generate_series
      </code>
      (
@@ -219,7 +219,7 @@ Esta seção descreve funções que possivelmente retornam mais de uma linha. As
        start
       </code>
      </em>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      ,
@@ -228,7 +228,7 @@ Esta seção descreve funções que possivelmente retornam mais de uma linha. As
        stop
       </code>
      </em>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      ,
@@ -237,7 +237,7 @@ Esta seção descreve funções que possivelmente retornam mais de uma linha. As
        step
       </code>
      </em>
-     <code class="type">
+     <code>
       interval
      </code>
      [
@@ -248,12 +248,12 @@ Esta seção descreve funções que possivelmente retornam mais de uma linha. As
         timezone
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       setof timestamp with time zone
      </code>
     </p>
@@ -382,7 +382,7 @@ SELECT * FROM generate_series('2001-10-22 00:00 -04:00'::timestamptz,
 
 
 
-<table border="1" class="table" summary="Subscript Generating Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -402,7 +402,7 @@ SELECT * FROM generate_series('2001-10-22 00:00 -04:00'::timestamptz,
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       generate_subscripts
      </code>
      (
@@ -411,7 +411,7 @@ SELECT * FROM generate_series('2001-10-22 00:00 -04:00'::timestamptz,
        array
       </code>
      </em>
-     <code class="type">
+     <code>
       anyarray
      </code>
      ,
@@ -420,11 +420,11 @@ SELECT * FROM generate_series('2001-10-22 00:00 -04:00'::timestamptz,
        dim
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       setof integer
      </code>
     </p>
@@ -442,7 +442,7 @@ SELECT * FROM generate_series('2001-10-22 00:00 -04:00'::timestamptz,
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       generate_subscripts
      </code>
      (
@@ -451,7 +451,7 @@ SELECT * FROM generate_series('2001-10-22 00:00 -04:00'::timestamptz,
        array
       </code>
      </em>
-     <code class="type">
+     <code>
       anyarray
      </code>
      ,
@@ -460,7 +460,7 @@ SELECT * FROM generate_series('2001-10-22 00:00 -04:00'::timestamptz,
        dim
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -469,11 +469,11 @@ SELECT * FROM generate_series('2001-10-22 00:00 -04:00'::timestamptz,
        reverse
       </code>
      </em>
-     <code class="type">
+     <code>
       boolean
      </code>
      )
-     <code class="returnvalue">
+     <code>
       setof integer
      </code>
     </p>

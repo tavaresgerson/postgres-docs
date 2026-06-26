@@ -6,7 +6,7 @@ A visão `domain_udt_usage` identifica todos os domínios que são baseados em t
 
 
 
-<table border="1" class="table" summary="domain_udt_usage Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A visão `domain_udt_usage` identifica todos os domínios que são baseados em t
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A visão `domain_udt_usage` identifica todos os domínios que são baseados em t
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A visão `domain_udt_usage` identifica todos os domínios que são baseados em t
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,10 +71,10 @@ A visão `domain_udt_usage` identifica todos os domínios que são baseados em t
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       domain_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -86,10 +86,10 @@ A visão `domain_udt_usage` identifica todos os domínios que são baseados em t
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       domain_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -101,10 +101,10 @@ A visão `domain_udt_usage` identifica todos os domínios que são baseados em t
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       domain_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>

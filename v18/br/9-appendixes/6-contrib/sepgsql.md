@@ -279,7 +279,7 @@ Recusamos o comando `LOAD`(sql-load.md "LOAD") em todos os casos, porque qualque
 
 
 
-<table border="1" class="table" summary="Sepgsql Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -299,11 +299,11 @@ Recusamos o comando `LOAD`(sql-load.md "LOAD") em todos os casos, porque qualque
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       sepgsql_getcon
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -315,21 +315,21 @@ Recusamos o comando `LOAD`(sql-load.md "LOAD") em todos os casos, porque qualque
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       sepgsql_setcon
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Switches the client domain of the current session to the new domain, if allowed by the security policy. It also accepts
-     <code class="literal">
+     <code>
       NULL
      </code>
      input as a request to transition to the client's original domain.
@@ -339,15 +339,15 @@ Recusamos o comando `LOAD`(sql-load.md "LOAD") em todos os casos, porque qualque
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       sepgsql_mcstrans_in
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -359,15 +359,15 @@ Recusamos o comando `LOAD`(sql-load.md "LOAD") em todos os casos, porque qualque
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       sepgsql_mcstrans_out
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -379,21 +379,21 @@ Recusamos o comando `LOAD`(sql-load.md "LOAD") em todos os casos, porque qualque
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       sepgsql_restorecon
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Sets up initial security labels for all objects within the current database. The argument may be
-     <code class="literal">
+     <code>
       NULL
      </code>
      , or the name of a specfile to be used as alternative of the system default.

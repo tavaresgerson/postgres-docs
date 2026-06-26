@@ -38,7 +38,7 @@ As definições das colunas expostas pela visualização são mostradas em [Tabe
 
 
 
-<table border="1" class="table" summary="pg_buffercache Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -58,16 +58,16 @@ As definições das colunas expostas pela visualização são mostradas em [Tabe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       bufferid
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
     <p>
      ID, na faixa de 1 a.
-     <code class="varname">
+     <code>
       shared_buffers
      </code>
     </p>
@@ -76,20 +76,20 @@ As definições das colunas expostas pela visualização são mostradas em [Tabe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relfilenode
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       relfilenode
      </code>
      )
@@ -102,20 +102,20 @@ As definições das colunas expostas pela visualização são mostradas em [Tabe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       reltablespace
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-tablespace.md" title="52.56. pg_tablespace">
-      <code class="structname">
+      <code>
        pg_tablespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -128,20 +128,20 @@ As definições das colunas expostas pela visualização são mostradas em [Tabe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       reldatabase
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-database.md" title="52.15. pg_database">
-      <code class="structname">
+      <code>
        pg_database
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -154,16 +154,16 @@ As definições das colunas expostas pela visualização são mostradas em [Tabe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relforknumber
      </code>
-     <code class="type">
+     <code>
       smallint
      </code>
     </p>
     <p>
      Número de garfo dentro da relação; veja
-     <code class="filename">
+     <code>
       common/relpath.h
      </code>
     </p>
@@ -172,10 +172,10 @@ As definições das colunas expostas pela visualização são mostradas em [Tabe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relblocknumber
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -187,10 +187,10 @@ As definições das colunas expostas pela visualização são mostradas em [Tabe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       isdirty
      </code>
-     <code class="type">
+     <code>
       boolean
      </code>
     </p>
@@ -202,10 +202,10 @@ As definições das colunas expostas pela visualização são mostradas em [Tabe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       usagecount
      </code>
-     <code class="type">
+     <code>
       smallint
      </code>
     </p>
@@ -217,10 +217,10 @@ As definições das colunas expostas pela visualização são mostradas em [Tabe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pinning_backends
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
@@ -255,7 +255,7 @@ As definições das colunas expostas pela visualização são mostradas em [Tabe
 
 
 
-<table border="1" class="table" summary="pg_buffercache_numa Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -275,16 +275,16 @@ As definições das colunas expostas pela visualização são mostradas em [Tabe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       bufferid
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
     <p>
      ID, in the range 1..
-     <code class="varname">
+     <code>
       shared_buffers
      </code>
     </p>
@@ -293,10 +293,10 @@ As definições das colunas expostas pela visualização são mostradas em [Tabe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       os_page_num
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -308,10 +308,10 @@ As definições das colunas expostas pela visualização são mostradas em [Tabe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numa_node
      </code>
-     <code class="type">
+     <code>
       int
      </code>
     </p>
@@ -350,7 +350,7 @@ As definições das colunas expostas pela função são mostradas em [Tabela F.1
 
 
 
-<table border="1" class="table" summary="pg_buffercache_summary() Output Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -370,10 +370,10 @@ As definições das colunas expostas pela função são mostradas em [Tabela F.1
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       buffers_used
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -385,10 +385,10 @@ As definições das colunas expostas pela função são mostradas em [Tabela F.1
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       buffers_unused
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -400,10 +400,10 @@ As definições das colunas expostas pela função são mostradas em [Tabela F.1
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       buffers_dirty
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -415,10 +415,10 @@ As definições das colunas expostas pela função são mostradas em [Tabela F.1
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       buffers_pinned
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -430,10 +430,10 @@ As definições das colunas expostas pela função são mostradas em [Tabela F.1
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       usagecount_avg
      </code>
-     <code class="type">
+     <code>
       float8
      </code>
     </p>
@@ -466,7 +466,7 @@ As definições das colunas expostas pela função são mostradas na [Tabela F.1
 
 
 
-<table border="1" class="table" summary="pg_buffercache_usage_counts() Output Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -486,10 +486,10 @@ As definições das colunas expostas pela função são mostradas na [Tabela F.1
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       usage_count
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -501,10 +501,10 @@ As definições das colunas expostas pela função são mostradas na [Tabela F.1
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       buffers
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -516,10 +516,10 @@ As definições das colunas expostas pela função são mostradas na [Tabela F.1
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       dirty
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -531,10 +531,10 @@ As definições das colunas expostas pela função são mostradas na [Tabela F.1
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pinned
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>

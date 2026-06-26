@@ -6,7 +6,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
 
 
 
-<table border="1" class="table" summary="Geometric Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -34,14 +34,14 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        geometric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       +
      </code>
-     <code class="type">
+     <code>
       point
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         geometric_type
@@ -51,33 +51,33 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
     </p>
     <p>
      Adicione as coordenadas do segundo
-     <code class="type">
+     <code>
       point
      </code>
      para aqueles de cada ponto do primeiro argumento, realizando assim a tradução. Disponível para
-     <code class="type">
+     <code>
       point
      </code>
      ,
-     <code class="type">
+     <code>
       box
      </code>
      ,
-     <code class="type">
+     <code>
       path
      </code>
      ,
-     <code class="type">
+     <code>
       circle
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       box '(1,1),(0,0)' + point '(2,0)'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (3,1),(2,0)
      </code>
     </p>
@@ -86,17 +86,17 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       path
      </code>
-     <code class="literal">
+     <code>
       +
      </code>
-     <code class="type">
+     <code>
       path
      </code>
      →
-     <code class="returnvalue">
+     <code>
       path
      </code>
     </p>
@@ -104,11 +104,11 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
      Concatenia dois caminhos abertos (retorna NULL se qualquer um dos caminhos estiver fechado).
     </p>
     <p>
-     <code class="literal">
+     <code>
       path '[(0,0),(1,1)]' + path '[(2,2),(3,3),(4,4)]'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [(0,0),(1,1),(2,2),(3,3),(4,4)]
      </code>
     </p>
@@ -122,14 +122,14 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        geometric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       point
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         geometric_type
@@ -139,33 +139,33 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
     </p>
     <p>
      Subtrai as coordenadas do segundo
-     <code class="type">
+     <code>
       point
      </code>
      a partir dos de cada ponto do primeiro argumento, realizando assim a tradução. Disponível para
-     <code class="type">
+     <code>
       point
      </code>
      ,
-     <code class="type">
+     <code>
       box
      </code>
      ,
-     <code class="type">
+     <code>
       path
      </code>
      ,
-     <code class="type">
+     <code>
       circle
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       box '(1,1),(0,0)' - point '(2,0)'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (-1,1),(-2,0)
      </code>
     </p>
@@ -179,14 +179,14 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        geometric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       *
      </code>
-     <code class="type">
+     <code>
       point
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         geometric_type
@@ -196,11 +196,11 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
     </p>
     <p>
      Multiplica cada ponto do primeiro argumento pelo segundo
-     <code class="type">
+     <code>
       point
      </code>
      (tratando um ponto como um número complexo representado por partes reais e imaginárias, e realizando a multiplicação padrão de números complexos). Se se interpretar o segundo
-     <code class="type">
+     <code>
       point
      </code>
      Como um vetor, isso é equivalente a escalar o tamanho do objeto e a distância da origem pelo comprimento do vetor, e rotá-lo no sentido anti-horário em torno da origem pelo ângulo do vetor a partir
@@ -210,11 +210,11 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
       </code>
      </em>
      eixo. Disponível para
-     <code class="type">
+     <code>
       point
      </code>
      ,
-     <code class="type">
+     <code>
       box
      </code>
      ,
@@ -223,30 +223,30 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        [a]
       </sup>
      </a>
-     <code class="type">
+     <code>
       path
      </code>
      ,
-     <code class="type">
+     <code>
       circle
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       path '((0,0),(1,0),(1,1))' * point '(3.0,0)'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ((0,0),(3,0),(3,3))
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       path '((0,0),(1,0),(1,1))' * point(cosd(45), sind(45))
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ((0,0),​(0.7071067811865475,0.7071067811865475),​(0,1.414213562373095))
      </code>
     </p>
@@ -260,14 +260,14 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        geometric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       /
      </code>
-     <code class="type">
+     <code>
       point
      </code>
      →
-     <code class="returnvalue">
+     <code>
       <em class="replaceable">
        <code>
         geometric_type
@@ -277,11 +277,11 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
     </p>
     <p>
      Divide cada ponto do primeiro argumento pelo segundo
-     <code class="type">
+     <code>
       point
      </code>
      (tratando um ponto como um número complexo representado por partes reais e imaginárias, e realizando a divisão padrão de números complexos). Se se interpretar o segundo
-     <code class="type">
+     <code>
       point
      </code>
      Como um vetor, isso é equivalente a escalar o tamanho do objeto e a distância da origem para baixo pelo comprimento do vetor, e rotá-lo no sentido horário em torno da origem pelo ângulo do vetor a partir
@@ -291,11 +291,11 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
       </code>
      </em>
      eixo. Disponível para
-     <code class="type">
+     <code>
       point
      </code>
      ,
-     <code class="type">
+     <code>
       box
      </code>
      ,
@@ -304,30 +304,30 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        [a]
       </sup>
      </a>
-     <code class="type">
+     <code>
       path
      </code>
      ,
-     <code class="type">
+     <code>
       circle
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       path '((0,0),(1,0),(1,1))' / point '(2.0,0)'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ((0,0),(0.5,0),(0.5,0.5))
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       path '((0,0),(1,0),(1,1))' / point(cosd(45), sind(45))
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ((0,0),​(0.7071067811865476,-0.7071067811865476),​(1.4142135623730951,0))
      </code>
     </p>
@@ -336,7 +336,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       @-@
      </code>
      <em class="replaceable">
@@ -345,27 +345,27 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Calcula o comprimento total. Disponível para
-     <code class="type">
+     <code>
       lseg
      </code>
      ,
-     <code class="type">
+     <code>
       path
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       @-@ path '[(0,0),(1,0),(1,1)]'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -374,7 +374,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       @@
      </code>
      <em class="replaceable">
@@ -383,35 +383,35 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       point
      </code>
     </p>
     <p>
      Calcula o ponto central. Disponível para
-     <code class="type">
+     <code>
       box
      </code>
      ,
-     <code class="type">
+     <code>
       lseg
      </code>
      ,
-     <code class="type">
+     <code>
       polygon
      </code>
      ,
-     <code class="type">
+     <code>
       circle
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       @@ box '(2,2),(0,0)'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (1,1)
      </code>
     </p>
@@ -420,7 +420,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       #
      </code>
      <em class="replaceable">
@@ -429,27 +429,27 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Retorna o número de pontos. Disponível para
-     <code class="type">
+     <code>
       path
      </code>
      ,
-     <code class="type">
+     <code>
       polygon
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       # path '((1,0),(0,1),(-1,0))'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3
      </code>
     </p>
@@ -463,7 +463,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        geometric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       #
      </code>
      <em class="replaceable">
@@ -472,27 +472,27 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       point
      </code>
     </p>
     <p>
      Calcula o ponto de interseção, ou NULL, se não houver nenhum. Disponível para
-     <code class="type">
+     <code>
       lseg
      </code>
      ,
-     <code class="type">
+     <code>
       line
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       lseg '[(0,0),(1,1)]' # lseg '[(1,0),(0,1)]'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (0.5,0.5)
      </code>
     </p>
@@ -501,17 +501,17 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       box
      </code>
-     <code class="literal">
+     <code>
       #
      </code>
-     <code class="type">
+     <code>
       box
      </code>
      →
-     <code class="returnvalue">
+     <code>
       box
      </code>
     </p>
@@ -519,11 +519,11 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
      Calcula a interseção de duas caixas, ou NULL, se não houver nenhuma.
     </p>
     <p>
-     <code class="literal">
+     <code>
       box '(2,2),(-1,-1)' # box '(1,1),(-2,-2)'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (1,1),(-1,-1)
      </code>
     </p>
@@ -537,7 +537,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        geometric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       ##
      </code>
      <em class="replaceable">
@@ -546,67 +546,67 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       point
      </code>
     </p>
     <p>
      Calcula o ponto mais próximo do primeiro objeto no segundo objeto. Disponível para esses pares de tipos: (
-     <code class="type">
+     <code>
       point
      </code>
      ,
-     <code class="type">
+     <code>
       box
      </code>
      ), (
-     <code class="type">
+     <code>
       point
      </code>
      ,
-     <code class="type">
+     <code>
       lseg
      </code>
      ), (
-     <code class="type">
+     <code>
       point
      </code>
      ,
-     <code class="type">
+     <code>
       line
      </code>
      ), (
-     <code class="type">
+     <code>
       lseg
      </code>
      ,
-     <code class="type">
+     <code>
       box
      </code>
      ), (
-     <code class="type">
+     <code>
       lseg
      </code>
      ,
-     <code class="type">
+     <code>
       lseg
      </code>
      ), (
-     <code class="type">
+     <code>
       line
      </code>
      ,
-     <code class="type">
+     <code>
       lseg
      </code>
      ).
     </p>
     <p>
-     <code class="literal">
+     <code>
       point '(0,0)' ## lseg '[(2,0),(0,2)]'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (1,1)
      </code>
     </p>
@@ -620,7 +620,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        geometric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       &lt;-&gt;
      </code>
      <em class="replaceable">
@@ -629,47 +629,47 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Calcula a distância entre os objetos. Disponível para todos os sete tipos geométricos, para todas as combinações de
-     <code class="type">
+     <code>
       point
      </code>
      com outro tipo geométrico, e para esses pares adicionais de tipos: (
-     <code class="type">
+     <code>
       box
      </code>
      ,
-     <code class="type">
+     <code>
       lseg
      </code>
      ), (
-     <code class="type">
+     <code>
       lseg
      </code>
      ,
-     <code class="type">
+     <code>
       line
      </code>
      ), (
-     <code class="type">
+     <code>
       polygon
      </code>
      ,
-     <code class="type">
+     <code>
       circle
      </code>
      ) (e os casos de commutator).
     </p>
     <p>
-     <code class="literal">
+     <code>
       circle '&lt;(0,0),1&gt;' &lt;-&gt; circle '&lt;(5,0),1&gt;'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3
      </code>
     </p>
@@ -683,7 +683,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        geometric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       @&gt;
      </code>
      <em class="replaceable">
@@ -692,75 +692,75 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      O primeiro objeto contém o segundo? Disponível para esses pares de tipos: (
-     <code class="literal">
+     <code>
       box
      </code>
      ,
-     <code class="literal">
+     <code>
       point
      </code>
      ), (
-     <code class="literal">
+     <code>
       box
      </code>
      ,
-     <code class="literal">
+     <code>
       box
      </code>
      ), (
-     <code class="literal">
+     <code>
       path
      </code>
      ,
-     <code class="literal">
+     <code>
       point
      </code>
      ), (
-     <code class="literal">
+     <code>
       polygon
      </code>
      ,
-     <code class="literal">
+     <code>
       point
      </code>
      ), (
-     <code class="literal">
+     <code>
       polygon
      </code>
      ,
-     <code class="literal">
+     <code>
       polygon
      </code>
      ), (
-     <code class="literal">
+     <code>
       circle
      </code>
      ,
-     <code class="literal">
+     <code>
       point
      </code>
      ), (
-     <code class="literal">
+     <code>
       circle
      </code>
      ,
-     <code class="literal">
+     <code>
       circle
      </code>
      ).
     </p>
     <p>
-     <code class="literal">
+     <code>
       circle '&lt;(0,0),2&gt;' @&gt; point '(1,1)'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -774,7 +774,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        geometric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       &lt;@
      </code>
      <em class="replaceable">
@@ -783,107 +783,107 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      O primeiro objeto está contido em ou sobre o segundo? Disponível para esses pares de tipos: (
-     <code class="literal">
+     <code>
       point
      </code>
      ,
-     <code class="literal">
+     <code>
       box
      </code>
      ), (
-     <code class="literal">
+     <code>
       point
      </code>
      ,
-     <code class="literal">
+     <code>
       lseg
      </code>
      ), (
-     <code class="literal">
+     <code>
       point
      </code>
      ,
-     <code class="literal">
+     <code>
       line
      </code>
      ), (
-     <code class="literal">
+     <code>
       point
      </code>
      ,
-     <code class="literal">
+     <code>
       path
      </code>
      ), (
-     <code class="literal">
+     <code>
       point
      </code>
      ,
-     <code class="literal">
+     <code>
       polygon
      </code>
      ), (
-     <code class="literal">
+     <code>
       point
      </code>
      ,
-     <code class="literal">
+     <code>
       circle
      </code>
      ), (
-     <code class="literal">
+     <code>
       box
      </code>
      ,
-     <code class="literal">
-      box
-     </code>
-     ), (
-     <code class="literal">
-      lseg
-     </code>
-     ,
-     <code class="literal">
+     <code>
       box
      </code>
      ), (
-     <code class="literal">
+     <code>
       lseg
      </code>
      ,
-     <code class="literal">
+     <code>
+      box
+     </code>
+     ), (
+     <code>
+      lseg
+     </code>
+     ,
+     <code>
       line
      </code>
      ), (
-     <code class="literal">
+     <code>
       polygon
      </code>
      ,
-     <code class="literal">
+     <code>
       polygon
      </code>
      ), (
-     <code class="literal">
+     <code>
       circle
      </code>
      ,
-     <code class="literal">
+     <code>
       circle
      </code>
      ).
     </p>
     <p>
-     <code class="literal">
+     <code>
       point '(1,1)' &lt;@ circle '&lt;(0,0),2&gt;'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -897,7 +897,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        geometric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       &amp;&amp;
      </code>
      <em class="replaceable">
@@ -906,31 +906,31 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Estes objetos se sobrepõem? (Um ponto em comum torna isso verdadeiro.) Disponível para
-     <code class="type">
+     <code>
       box
      </code>
      ,
-     <code class="type">
+     <code>
       polygon
      </code>
      ,
-     <code class="type">
+     <code>
       circle
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       box '(1,1),(0,0)' &amp;&amp; box '(2,2),(0,0)'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -944,7 +944,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        geometric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       &lt;&lt;
      </code>
      <em class="replaceable">
@@ -953,35 +953,35 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      O primeiro objeto está estritamente à esquerda do segundo? Disponível para
-     <code class="type">
+     <code>
       point
      </code>
      ,
-     <code class="type">
+     <code>
       box
      </code>
      ,
-     <code class="type">
+     <code>
       polygon
      </code>
      ,
-     <code class="type">
+     <code>
       circle
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       circle '&lt;(0,0),1&gt;' &lt;&lt; circle '&lt;(5,0),1&gt;'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -995,7 +995,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        geometric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       &gt;&gt;
      </code>
      <em class="replaceable">
@@ -1004,35 +1004,35 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      O primeiro objeto é estritamente correto em relação ao segundo? Disponível para
-     <code class="type">
+     <code>
       point
      </code>
      ,
-     <code class="type">
+     <code>
       box
      </code>
      ,
-     <code class="type">
+     <code>
       polygon
      </code>
      ,
-     <code class="type">
+     <code>
       circle
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       circle '&lt;(5,0),1&gt;' &gt;&gt; circle '&lt;(0,0),1&gt;'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1046,7 +1046,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        geometric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       &amp;&lt;
      </code>
      <em class="replaceable">
@@ -1055,31 +1055,31 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      O primeiro objeto não se estende ao direito do segundo? Disponível para
-     <code class="type">
+     <code>
       box
      </code>
      ,
-     <code class="type">
+     <code>
       polygon
      </code>
      ,
-     <code class="type">
+     <code>
       circle
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       box '(1,1),(0,0)' &amp;&lt; box '(2,2),(0,0)'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1093,7 +1093,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        geometric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       &amp;&gt;
      </code>
      <em class="replaceable">
@@ -1102,31 +1102,31 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      O primeiro objeto não se estende à esquerda do segundo? Disponível para
-     <code class="type">
+     <code>
       box
      </code>
      ,
-     <code class="type">
+     <code>
       polygon
      </code>
      ,
-     <code class="type">
+     <code>
       circle
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       box '(3,3),(0,0)' &amp;&gt; box '(2,2),(0,0)'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1140,7 +1140,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        geometric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       &lt;&lt;|
      </code>
      <em class="replaceable">
@@ -1149,35 +1149,35 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      O primeiro objeto está estritamente abaixo do segundo? Disponível para
-     <code class="type">
+     <code>
       point
      </code>
      ,
-     <code class="type">
+     <code>
       box
      </code>
      ,
-     <code class="type">
+     <code>
       polygon
      </code>
      ,
-     <code class="type">
+     <code>
       circle
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       box '(3,3),(0,0)' &lt;&lt;| box '(5,5),(3,4)'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1191,7 +1191,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        geometric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       |&gt;&gt;
      </code>
      <em class="replaceable">
@@ -1200,35 +1200,35 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      O primeiro objeto está estritamente acima do segundo? Disponível para
-     <code class="type">
+     <code>
       point
      </code>
      ,
-     <code class="type">
+     <code>
       box
      </code>
      ,
-     <code class="type">
+     <code>
       polygon
      </code>
      ,
-     <code class="type">
+     <code>
       circle
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       box '(5,5),(3,4)' |&gt;&gt; box '(3,3),(0,0)'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1242,7 +1242,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        geometric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       &amp;&lt;|
      </code>
      <em class="replaceable">
@@ -1251,31 +1251,31 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      O primeiro objeto não se estende acima do segundo? Disponível para
-     <code class="type">
+     <code>
       box
      </code>
      ,
-     <code class="type">
+     <code>
       polygon
      </code>
      ,
-     <code class="type">
+     <code>
       circle
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       box '(1,1),(0,0)' &amp;&lt;| box '(2,2),(0,0)'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1289,7 +1289,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        geometric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       |&amp;&gt;
      </code>
      <em class="replaceable">
@@ -1298,31 +1298,31 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      O primeiro objeto não se estende abaixo do segundo? Disponível para
-     <code class="type">
+     <code>
       box
      </code>
      ,
-     <code class="type">
+     <code>
       polygon
      </code>
      ,
-     <code class="type">
+     <code>
       circle
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       box '(3,3),(0,0)' |&amp;&gt; box '(2,2),(0,0)'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1331,17 +1331,17 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       box
      </code>
-     <code class="literal">
+     <code>
       &lt;^
      </code>
-     <code class="type">
+     <code>
       box
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1349,11 +1349,11 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
      O primeiro objeto está abaixo do segundo (permite que as bordas se toquem)?
     </p>
     <p>
-     <code class="literal">
+     <code>
       box '((1,1),(0,0))' &lt;^ box '((2,2),(1,1))'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1362,17 +1362,17 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       box
      </code>
-     <code class="literal">
+     <code>
       &gt;^
      </code>
-     <code class="type">
+     <code>
       box
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1380,11 +1380,11 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
      O primeiro objeto está acima do segundo (permite que as bordas se toquem)?
     </p>
     <p>
-     <code class="literal">
+     <code>
       box '((2,2),(1,1))' &gt;^ box '((1,1),(0,0))'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1398,7 +1398,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        geometric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       ?#
      </code>
      <em class="replaceable">
@@ -1407,75 +1407,75 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Estes objetos se cruzam? Disponível para estes pares de tipos: (
-     <code class="type">
+     <code>
       box
      </code>
      ,
-     <code class="type">
+     <code>
       box
      </code>
      ), (
-     <code class="type">
+     <code>
       lseg
      </code>
      ,
-     <code class="type">
+     <code>
       box
      </code>
      ), (
-     <code class="type">
+     <code>
       lseg
      </code>
      ,
-     <code class="type">
+     <code>
       lseg
      </code>
      ), (
-     <code class="type">
+     <code>
       lseg
      </code>
      ,
-     <code class="type">
+     <code>
       line
      </code>
      ), (
-     <code class="type">
+     <code>
       line
      </code>
      ,
-     <code class="type">
+     <code>
       box
      </code>
      ), (
-     <code class="type">
+     <code>
       line
      </code>
      ,
-     <code class="type">
+     <code>
       line
      </code>
      ), (
-     <code class="type">
+     <code>
       path
      </code>
      ,
-     <code class="type">
+     <code>
       path
      </code>
      ).
     </p>
     <p>
-     <code class="literal">
+     <code>
       lseg '[(-1,0),(1,0)]' ?# box '(2,2),(-2,-2)'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1484,26 +1484,26 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       ?-
      </code>
-     <code class="type">
+     <code>
       line
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p class="func_signature">
-     <code class="literal">
+     <code>
       ?-
      </code>
-     <code class="type">
+     <code>
       lseg
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1511,11 +1511,11 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
      A linha é horizontal?
     </p>
     <p>
-     <code class="literal">
+     <code>
       ?- lseg '[(-1,0),(1,0)]'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1524,17 +1524,17 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       point
      </code>
-     <code class="literal">
+     <code>
       ?-
      </code>
-     <code class="type">
+     <code>
       point
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1542,11 +1542,11 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
      Os pontos estão alinhados horizontalmente (ou seja, têm a mesma coordenada y)?
     </p>
     <p>
-     <code class="literal">
+     <code>
       point '(1,0)' ?- point '(0,0)'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1555,26 +1555,26 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       ?|
      </code>
-     <code class="type">
+     <code>
       line
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p class="func_signature">
-     <code class="literal">
+     <code>
       ?|
      </code>
-     <code class="type">
+     <code>
       lseg
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1582,11 +1582,11 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
      A linha é vertical?
     </p>
     <p>
-     <code class="literal">
+     <code>
       ?| lseg '[(-1,0),(1,0)]'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
@@ -1595,17 +1595,17 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       point
      </code>
-     <code class="literal">
+     <code>
       ?|
      </code>
-     <code class="type">
+     <code>
       point
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1613,11 +1613,11 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
      Os pontos estão alinhados verticalmente (ou seja, têm a mesma coordenada x)?
     </p>
     <p>
-     <code class="literal">
+     <code>
       point '(0,1)' ?| point '(0,0)'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1626,32 +1626,32 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       line
      </code>
-     <code class="literal">
+     <code>
       ?-|
      </code>
-     <code class="type">
+     <code>
       line
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p class="func_signature">
-     <code class="type">
+     <code>
       lseg
      </code>
-     <code class="literal">
+     <code>
       ?-|
      </code>
-     <code class="type">
+     <code>
       lseg
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1659,11 +1659,11 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
      As linhas são perpendiculares?
     </p>
     <p>
-     <code class="literal">
+     <code>
       lseg '[(0,0),(0,1)]' ?-| lseg '[(0,0),(1,0)]'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1672,32 +1672,32 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       line
      </code>
-     <code class="literal">
+     <code>
       ?||
      </code>
-     <code class="type">
+     <code>
       line
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p class="func_signature">
-     <code class="type">
+     <code>
       lseg
      </code>
-     <code class="literal">
+     <code>
       ?||
      </code>
-     <code class="type">
+     <code>
       lseg
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1705,11 +1705,11 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
      As linhas são paralelas?
     </p>
     <p>
-     <code class="literal">
+     <code>
       lseg '[(-1,0),(1,0)]' ?|| lseg '[(-1,2),(1,2)]'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1723,7 +1723,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
        geometric_type
       </code>
      </em>
-     <code class="literal">
+     <code>
       ~=
      </code>
      <em class="replaceable">
@@ -1732,35 +1732,35 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Estes objetos são os mesmos? Disponível para
-     <code class="type">
+     <code>
       point
      </code>
      ,
-     <code class="type">
+     <code>
       box
      </code>
      ,
-     <code class="type">
+     <code>
       polygon
      </code>
      ,
-     <code class="type">
+     <code>
       circle
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       polygon '((0,0),(1,1))' ~= polygon '((1,1),(0,0))'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1813,7 +1813,7 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
 
 
 
-<table border="1" class="table" summary="Geometric Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -1836,7 +1836,7 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       area
      </code>
      (
@@ -1846,39 +1846,39 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Calcula a área. Disponível para
-     <code class="type">
+     <code>
       box
      </code>
      ,
-     <code class="type">
+     <code>
       path
      </code>
      ,
-     <code class="type">
+     <code>
       circle
      </code>
      . A
-     <code class="type">
+     <code>
       path
      </code>
      A entrada deve ser fechada, caso contrário, NULL é retornado. Além disso, se o
-     <code class="type">
+     <code>
       path
      </code>
      se auto-intersecta, o resultado pode não ter sentido.
     </p>
     <p>
-     <code class="literal">
+     <code>
       area(box '(2,2),(0,0)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       4
      </code>
     </p>
@@ -1887,7 +1887,7 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       center
      </code>
      (
@@ -1897,27 +1897,27 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
       point
      </code>
     </p>
     <p>
      Calcula o ponto central. Disponível para
-     <code class="type">
+     <code>
       box
      </code>
      ,
-     <code class="type">
+     <code>
       circle
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       center(box '(1,2),(0,0)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (0.5,1)
      </code>
     </p>
@@ -1926,31 +1926,31 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       diagonal
      </code>
      (
-     <code class="type">
+     <code>
       box
      </code>
      )
-     <code class="returnvalue">
+     <code>
       lseg
      </code>
     </p>
     <p>
      Extrai a diagonal da caixa como um segmento de linha (mesmo que
-     <code class="function">
+     <code>
       lseg(box)
      </code>
      ).
     </p>
     <p>
-     <code class="literal">
+     <code>
       diagonal(box '(1,2),(0,0)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [(1,2),(0,0)]
      </code>
     </p>
@@ -1959,15 +1959,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       diameter
      </code>
      (
-     <code class="type">
+     <code>
       circle
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -1975,11 +1975,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Calcula o diâmetro do círculo.
     </p>
     <p>
-     <code class="literal">
+     <code>
       diameter(circle '&lt;(0,0),2&gt;')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       4
      </code>
     </p>
@@ -1988,15 +1988,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       height
      </code>
      (
-     <code class="type">
+     <code>
       box
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -2004,11 +2004,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Calcula o tamanho vertical da caixa.
     </p>
     <p>
-     <code class="literal">
+     <code>
       height(box '(1,2),(0,0)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -2017,15 +2017,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       isclosed
      </code>
      (
-     <code class="type">
+     <code>
       path
      </code>
      )
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -2033,11 +2033,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      O caminho está fechado?
     </p>
     <p>
-     <code class="literal">
+     <code>
       isclosed(path '((0,0),(1,1),(2,0))')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -2046,15 +2046,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       isopen
      </code>
      (
-     <code class="type">
+     <code>
       path
      </code>
      )
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -2062,11 +2062,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      O caminho está aberto?
     </p>
     <p>
-     <code class="literal">
+     <code>
       isopen(path '[(0,0),(1,1),(2,0)]')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -2075,7 +2075,7 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       length
      </code>
      (
@@ -2085,27 +2085,27 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Calcula o comprimento total. Disponível para
-     <code class="type">
+     <code>
       lseg
      </code>
      ,
-     <code class="type">
+     <code>
       path
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       length(path '((-1,0),(1,0))')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       4
      </code>
     </p>
@@ -2114,7 +2114,7 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       npoints
      </code>
      (
@@ -2124,27 +2124,27 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
       </code>
      </em>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Retorna o número de pontos. Disponível para
-     <code class="type">
+     <code>
       path
      </code>
      ,
-     <code class="type">
+     <code>
       polygon
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       npoints(path '[(0,0),(1,1),(2,0)]')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3
      </code>
     </p>
@@ -2153,15 +2153,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pclose
      </code>
      (
-     <code class="type">
+     <code>
       path
      </code>
      )
-     <code class="returnvalue">
+     <code>
       path
      </code>
     </p>
@@ -2169,11 +2169,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Converte o caminho para uma forma fechada.
     </p>
     <p>
-     <code class="literal">
+     <code>
       pclose(path '[(0,0),(1,1),(2,0)]')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ((0,0),(1,1),(2,0))
      </code>
     </p>
@@ -2182,15 +2182,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       popen
      </code>
      (
-     <code class="type">
+     <code>
       path
      </code>
      )
-     <code class="returnvalue">
+     <code>
       path
      </code>
     </p>
@@ -2198,11 +2198,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Converte o caminho para o formulário aberto.
     </p>
     <p>
-     <code class="literal">
+     <code>
       popen(path '((0,0),(1,1),(2,0))')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [(0,0),(1,1),(2,0)]
      </code>
     </p>
@@ -2211,15 +2211,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       radius
      </code>
      (
-     <code class="type">
+     <code>
       circle
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -2227,11 +2227,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Calcula o raio do círculo.
     </p>
     <p>
-     <code class="literal">
+     <code>
       radius(circle '&lt;(0,0),2&gt;')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -2240,19 +2240,19 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       slope
      </code>
      (
-     <code class="type">
+     <code>
       point
      </code>
      ,
-     <code class="type">
+     <code>
       point
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -2260,11 +2260,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Calcula a inclinação de uma linha traçada pelos dois pontos.
     </p>
     <p>
-     <code class="literal">
+     <code>
       slope(point '(0,0)', point '(2,1)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0.5
      </code>
     </p>
@@ -2273,15 +2273,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       width
      </code>
      (
-     <code class="type">
+     <code>
       box
      </code>
      )
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -2289,11 +2289,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Calcula o tamanho horizontal da caixa.
     </p>
     <p>
-     <code class="literal">
+     <code>
       width(box '(1,2),(0,0)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1
      </code>
     </p>
@@ -2315,7 +2315,7 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
 
 
 
-<table border="1" class="table" summary="Geometric Type Conversion Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -2338,15 +2338,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       box
      </code>
      (
-     <code class="type">
+     <code>
       circle
      </code>
      )
-     <code class="returnvalue">
+     <code>
       box
      </code>
     </p>
@@ -2354,11 +2354,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Calcula a caixa inscrita dentro do círculo.
     </p>
     <p>
-     <code class="literal">
+     <code>
       box(circle '&lt;(0,0),2&gt;')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (1.414213562373095,1.414213562373095),​(-1.414213562373095,-1.414213562373095)
      </code>
     </p>
@@ -2367,15 +2367,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       box
      </code>
      (
-     <code class="type">
+     <code>
       point
      </code>
      )
-     <code class="returnvalue">
+     <code>
       box
      </code>
     </p>
@@ -2383,11 +2383,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Converte ponto em caixa vazia.
     </p>
     <p>
-     <code class="literal">
+     <code>
       box(point '(1,0)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (1,0),(1,0)
      </code>
     </p>
@@ -2396,19 +2396,19 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       box
      </code>
      (
-     <code class="type">
+     <code>
       point
      </code>
      ,
-     <code class="type">
+     <code>
       point
      </code>
      )
-     <code class="returnvalue">
+     <code>
       box
      </code>
     </p>
@@ -2416,11 +2416,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Converte quaisquer dois pontos de canto em caixa.
     </p>
     <p>
-     <code class="literal">
+     <code>
       box(point '(0,1)', point '(1,0)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (1,1),(0,0)
      </code>
     </p>
@@ -2429,15 +2429,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       box
      </code>
      (
-     <code class="type">
+     <code>
       polygon
      </code>
      )
-     <code class="returnvalue">
+     <code>
       box
      </code>
     </p>
@@ -2445,11 +2445,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Calcula a caixa de delimitação do polígono.
     </p>
     <p>
-     <code class="literal">
+     <code>
       box(polygon '((0,0),(1,1),(2,0))')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (2,1),(0,0)
      </code>
     </p>
@@ -2458,19 +2458,19 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       bound_box
      </code>
      (
-     <code class="type">
+     <code>
       box
      </code>
      ,
-     <code class="type">
+     <code>
       box
      </code>
      )
-     <code class="returnvalue">
+     <code>
       box
      </code>
     </p>
@@ -2478,11 +2478,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Calcula a caixa de delimitação de duas caixas.
     </p>
     <p>
-     <code class="literal">
+     <code>
       bound_box(box '(1,1),(0,0)', box '(4,4),(3,3)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (4,4),(0,0)
      </code>
     </p>
@@ -2491,15 +2491,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       circle
      </code>
      (
-     <code class="type">
+     <code>
       box
      </code>
      )
-     <code class="returnvalue">
+     <code>
       circle
      </code>
     </p>
@@ -2507,11 +2507,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Calcula o menor círculo que envolve a caixa.
     </p>
     <p>
-     <code class="literal">
+     <code>
       circle(box '(1,1),(0,0)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       &lt;(0.5,0.5),0.7071067811865476&gt;
      </code>
     </p>
@@ -2520,19 +2520,19 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       circle
      </code>
      (
-     <code class="type">
+     <code>
       point
      </code>
      ,
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       circle
      </code>
     </p>
@@ -2540,11 +2540,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Construa um círculo a partir do centro e do raio.
     </p>
     <p>
-     <code class="literal">
+     <code>
       circle(point '(0,0)', 2.0)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       &lt;(0,0),2&gt;
      </code>
     </p>
@@ -2553,15 +2553,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       circle
      </code>
      (
-     <code class="type">
+     <code>
       polygon
      </code>
      )
-     <code class="returnvalue">
+     <code>
       circle
      </code>
     </p>
@@ -2569,11 +2569,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Converte polígono em círculo. O centro do círculo é a média das posições dos pontos do polígono, e o raio é a distância média dos pontos do polígono a partir desse centro.
     </p>
     <p>
-     <code class="literal">
+     <code>
       circle(polygon '((0,0),(1,3),(2,0))')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       &lt;(1,1),1.6094757082487299&gt;
      </code>
     </p>
@@ -2582,19 +2582,19 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       line
      </code>
      (
-     <code class="type">
+     <code>
       point
      </code>
      ,
-     <code class="type">
+     <code>
       point
      </code>
      )
-     <code class="returnvalue">
+     <code>
       line
      </code>
     </p>
@@ -2602,11 +2602,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Converte dois pontos na linha que os une.
     </p>
     <p>
-     <code class="literal">
+     <code>
       line(point '(-1,0)', point '(1,0)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {0,-1,0}
      </code>
     </p>
@@ -2615,15 +2615,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       lseg
      </code>
      (
-     <code class="type">
+     <code>
       box
      </code>
      )
-     <code class="returnvalue">
+     <code>
       lseg
      </code>
     </p>
@@ -2631,11 +2631,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Extrai a diagonal da caixa como um segmento de linha.
     </p>
     <p>
-     <code class="literal">
+     <code>
       lseg(box '(1,0),(-1,0)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [(1,0),(-1,0)]
      </code>
     </p>
@@ -2644,19 +2644,19 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       lseg
      </code>
      (
-     <code class="type">
+     <code>
       point
      </code>
      ,
-     <code class="type">
+     <code>
       point
      </code>
      )
-     <code class="returnvalue">
+     <code>
       lseg
      </code>
     </p>
@@ -2664,11 +2664,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Construi um segmento de linha a partir de dois pontos finais.
     </p>
     <p>
-     <code class="literal">
+     <code>
       lseg(point '(-1,0)', point '(1,0)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [(-1,0),(1,0)]
      </code>
     </p>
@@ -2677,15 +2677,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       path
      </code>
      (
-     <code class="type">
+     <code>
       polygon
      </code>
      )
-     <code class="returnvalue">
+     <code>
       path
      </code>
     </p>
@@ -2693,11 +2693,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Converte polígono em um caminho fechado com a mesma lista de pontos.
     </p>
     <p>
-     <code class="literal">
+     <code>
       path(polygon '((0,0),(1,1),(2,0))')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ((0,0),(1,1),(2,0))
      </code>
     </p>
@@ -2706,19 +2706,19 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       point
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      ,
-     <code class="type">
+     <code>
       double precision
      </code>
      )
-     <code class="returnvalue">
+     <code>
       point
      </code>
     </p>
@@ -2726,11 +2726,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Construi pontos a partir de suas coordenadas.
     </p>
     <p>
-     <code class="literal">
+     <code>
       point(23.4, -44.5)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (23.4,-44.5)
      </code>
     </p>
@@ -2739,15 +2739,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       point
      </code>
      (
-     <code class="type">
+     <code>
       box
      </code>
      )
-     <code class="returnvalue">
+     <code>
       point
      </code>
     </p>
@@ -2755,11 +2755,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Calcula o centro da caixa.
     </p>
     <p>
-     <code class="literal">
+     <code>
       point(box '(1,0),(-1,0)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (0,0)
      </code>
     </p>
@@ -2768,15 +2768,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       point
      </code>
      (
-     <code class="type">
+     <code>
       circle
      </code>
      )
-     <code class="returnvalue">
+     <code>
       point
      </code>
     </p>
@@ -2784,11 +2784,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Calcula o centro do círculo.
     </p>
     <p>
-     <code class="literal">
+     <code>
       point(circle '&lt;(0,0),2&gt;')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (0,0)
      </code>
     </p>
@@ -2797,15 +2797,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       point
      </code>
      (
-     <code class="type">
+     <code>
       lseg
      </code>
      )
-     <code class="returnvalue">
+     <code>
       point
      </code>
     </p>
@@ -2813,11 +2813,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Calcula o centro do segmento de linha.
     </p>
     <p>
-     <code class="literal">
+     <code>
       point(lseg '[(-1,0),(1,0)]')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (0,0)
      </code>
     </p>
@@ -2826,15 +2826,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       point
      </code>
      (
-     <code class="type">
+     <code>
       polygon
      </code>
      )
-     <code class="returnvalue">
+     <code>
       point
      </code>
     </p>
@@ -2842,11 +2842,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Calcula o centro do polígono (a média das posições dos pontos do polígono).
     </p>
     <p>
-     <code class="literal">
+     <code>
       point(polygon '((0,0),(1,1),(2,0))')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (1,0.3333333333333333)
      </code>
     </p>
@@ -2855,15 +2855,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       polygon
      </code>
      (
-     <code class="type">
+     <code>
       box
      </code>
      )
-     <code class="returnvalue">
+     <code>
       polygon
      </code>
     </p>
@@ -2871,11 +2871,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Converte a caixa em um polígono de 4 pontos.
     </p>
     <p>
-     <code class="literal">
+     <code>
       polygon(box '(1,1),(0,0)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ((0,0),(0,1),(1,1),(1,0))
      </code>
     </p>
@@ -2884,15 +2884,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       polygon
      </code>
      (
-     <code class="type">
+     <code>
       circle
      </code>
      )
-     <code class="returnvalue">
+     <code>
       polygon
      </code>
     </p>
@@ -2900,11 +2900,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Converte o círculo em um polígono de 12 pontos.
     </p>
     <p>
-     <code class="literal">
+     <code>
       polygon(circle '&lt;(0,0),2&gt;')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ((-2,0),​(-1.7320508075688774,0.9999999999999999),​(-1.0000000000000002,1.7320508075688772),​(-1.2246063538223773e-16,2),​(0.9999999999999996,1.7320508075688774),​(1.732050807568877,1.0000000000000007),​(2,2.4492127076447545e-16),​(1.7320508075688776,-0.9999999999999994),​(1.0000000000000009,-1.7320508075688767),​(3.673819061467132e-16,-2),​(-0.9999999999999987,-1.732050807568878),​(-1.7320508075688767,-1.0000000000000009))
      </code>
     </p>
@@ -2913,19 +2913,19 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       polygon
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ,
-     <code class="type">
+     <code>
       circle
      </code>
      )
-     <code class="returnvalue">
+     <code>
       polygon
      </code>
     </p>
@@ -2939,11 +2939,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      - ponto poligonal.
     </p>
     <p>
-     <code class="literal">
+     <code>
       polygon(4, circle '&lt;(3,0),1&gt;')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ((2,0),​(3,1),​(4,1.2246063538223773e-16),​(3,-1))
      </code>
     </p>
@@ -2952,15 +2952,15 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       polygon
      </code>
      (
-     <code class="type">
+     <code>
       path
      </code>
      )
-     <code class="returnvalue">
+     <code>
       polygon
      </code>
     </p>
@@ -2968,11 +2968,11 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
      Converte o caminho fechado em um polígono com a mesma lista de pontos.
     </p>
     <p>
-     <code class="literal">
+     <code>
       polygon(path '((0,0),(1,1),(2,0))')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ((0,0),(1,1),(2,0))
      </code>
     </p>

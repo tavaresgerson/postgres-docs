@@ -6,7 +6,7 @@ O catálogo `pg_conversion` descreve as funções de conversão de codificação
 
 
 
-<table border="1" class="table" summary="pg_conversion Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_conversion` descreve as funções de conversão de codificação
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,10 +41,10 @@ O catálogo `pg_conversion` descreve as funções de conversão de codificação
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       conname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -56,20 +56,20 @@ O catálogo `pg_conversion` descreve as funções de conversão de codificação
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       connamespace
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -82,20 +82,20 @@ O catálogo `pg_conversion` descreve as funções de conversão de codificação
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       conowner
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -108,17 +108,17 @@ O catálogo `pg_conversion` descreve as funções de conversão de codificação
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       conforencoding
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
      ID de codificação de fonte (
      <a class="link" href="functions-info.md#PG-ENCODING-TO-CHAR">
-      <code class="function">
+      <code>
        pg_encoding_to_char()
       </code>
      </a>
@@ -129,17 +129,17 @@ O catálogo `pg_conversion` descreve as funções de conversão de codificação
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       contoencoding
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
      ID de codificação de destino (
      <a class="link" href="functions-info.md#PG-ENCODING-TO-CHAR">
-      <code class="function">
+      <code>
        pg_encoding_to_char()
       </code>
      </a>
@@ -150,20 +150,20 @@ O catálogo `pg_conversion` descreve as funções de conversão de codificação
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       conproc
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -176,10 +176,10 @@ O catálogo `pg_conversion` descreve as funções de conversão de codificação
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       condefault
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>

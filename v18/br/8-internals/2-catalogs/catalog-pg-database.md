@@ -8,7 +8,7 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_database` é compartil
 
 
 
-<table border="1" class="table" summary="pg_database Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_database` é compartil
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -43,10 +43,10 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_database` é compartil
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -58,20 +58,20 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_database` é compartil
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datdba
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -84,17 +84,17 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_database` é compartil
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       encoding
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
      Codificação de caracteres para este banco de dados (
      <a class="link" href="functions-info.md#PG-ENCODING-TO-CHAR">
-      <code class="function">
+      <code>
        pg_encoding_to_char()
       </code>
      </a>
@@ -105,24 +105,24 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_database` é compartil
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datlocprovider
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      Fornecedora de localização para este banco de dados:
-     <code class="literal">
+     <code>
       b
      </code>
      = embutido,
-     <code class="literal">
+     <code>
       c
      </code>
      = libc,
-     <code class="literal">
+     <code>
       i
      </code>
      = icu
@@ -132,16 +132,16 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_database` é compartil
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datistemplate
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Se for verdade, então esse banco de dados pode ser clonado por qualquer usuário com
-     <code class="literal">
+     <code>
       CREATEDB
      </code>
      privilegios; se falso, então apenas superusuários ou o proprietário do banco de dados podem cloná-lo.
@@ -151,16 +151,16 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_database` é compartil
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datallowconn
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Se falso, então ninguém pode se conectar a este banco de dados. Isso é usado para proteger
-     <code class="literal">
+     <code>
       template0
      </code>
      para que o banco de dados não seja alterado.
@@ -170,16 +170,16 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_database` é compartil
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       dathasloginevt
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Indica que há gatilhos de eventos de login definidos para este banco de dados. Essa bandeira é usada para evitar pesquisas extras no
-     <code class="structname">
+     <code>
       pg_event_trigger
      </code>
      tabela durante cada inicialização do backend. Essa bandeira é usada internamente pelo
@@ -193,10 +193,10 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_database` é compartil
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datconnlimit
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -208,10 +208,10 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_database` é compartil
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datfrozenxid
      </code>
-     <code class="type">
+     <code>
       xid
      </code>
     </p>
@@ -225,17 +225,17 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_database` é compartil
       ”
      </span>
      ) ID de transação neste banco de dados. Isso é usado para rastrear se o banco de dados precisa ser aspirado para evitar o envolvimento do ID de transação ou para permitir
-     <code class="literal">
+     <code>
       pg_xact
      </code>
      para ser reduzido. É o mínimo por tabela
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       relfrozenxid
      </code>
      values.
@@ -245,26 +245,26 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_database` é compartil
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datminmxid
      </code>
-     <code class="type">
+     <code>
       xid
      </code>
     </p>
     <p>
      Todos os IDs multixact anteriores a este foram substituídos por um ID de transação neste banco de dados. Isso é usado para rastrear se o banco de dados precisa ser aspirado para evitar o envolvimento de IDs multixact ou para permitir
-     <code class="literal">
+     <code>
       pg_multixact
      </code>
      para ser reduzido. É o mínimo por tabela
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       relminmxid
      </code>
      values.
@@ -274,20 +274,20 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_database` é compartil
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       dattablespace
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-tablespace.md" title="52.56. pg_tablespace">
-      <code class="structname">
+      <code>
        pg_tablespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -295,12 +295,12 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_database` é compartil
     <p>
      O espaço de tabela padrão para o banco de dados. Dentro deste banco de dados, todas as tabelas para as quais
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       reltablespace
      </code>
      é zero; será armazenado neste espaço de tabela; em particular, todos os catálogos do sistema não compartilhados estarão lá.
@@ -310,10 +310,10 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_database` é compartil
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datcollate
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -325,10 +325,10 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_database` é compartil
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datctype
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -340,32 +340,32 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_database` é compartil
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datlocale
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      Nome do local do provedor de cotação para este banco de dados. Se o provedor for
-     <code class="literal">
+     <code>
       libc
      </code>
      ,
-     <code class="structfield">
+     <code>
       datlocale
      </code>
      é
-     <code class="literal">
+     <code>
       NULL
      </code>
      ;
-     <code class="structfield">
+     <code>
       datcollate
      </code>
      e
-     <code class="structfield">
+     <code>
       datctype
      </code>
      são utilizados em vez disso.
@@ -375,10 +375,10 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_database` é compartil
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       daticurules
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -390,10 +390,10 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_database` é compartil
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datcollversion
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -405,10 +405,10 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_database` é compartil
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datacl
      </code>
-     <code class="type">
+     <code>
       aclitem[]
      </code>
     </p>

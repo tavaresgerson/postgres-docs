@@ -301,7 +301,7 @@ $$ LANGUAGE plpgsql;
 
 
 
-<table border="0" summary="Callout list">
+<table>
  <tr>
   <td align="left" valign="top" width="5%">
    <p>
@@ -313,11 +313,11 @@ $$ LANGUAGE plpgsql;
   <td align="left" valign="top">
    <p>
     The syntax of
-    <code class="literal">
+    <code>
      RAISE
     </code>
     is considerably different from Oracle's statement, although the basic case
-    <code class="literal">
+    <code>
      RAISE
     </code>
     <em class="replaceable">

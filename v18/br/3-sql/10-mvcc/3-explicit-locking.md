@@ -58,7 +58,7 @@ Uma vez adquirida, uma bloqueio é normalmente mantida até o final da transaç�
 
 
 
-<table border="1" class="table" summary="Conflicting Lock Modes">
+<table>
  <colgroup>
   <col/>
   <col class="lockst"/>
@@ -81,42 +81,42 @@ Uma vez adquirida, uma bloqueio é normalmente mantida até o final da transaç�
   </tr>
   <tr>
    <th>
-    <code class="literal">
+    <code>
      ACCESS SHARE
     </code>
    </th>
    <th>
-    <code class="literal">
+    <code>
      ROW SHARE
     </code>
    </th>
    <th>
-    <code class="literal">
+    <code>
      ROW EXCL.
     </code>
    </th>
    <th>
-    <code class="literal">
+    <code>
      SHARE UPDATE EXCL.
     </code>
    </th>
    <th>
-    <code class="literal">
+    <code>
      SHARE
     </code>
    </th>
    <th>
-    <code class="literal">
+    <code>
      SHARE ROW EXCL.
     </code>
    </th>
    <th>
-    <code class="literal">
+    <code>
      EXCL.
     </code>
    </th>
    <th>
-    <code class="literal">
+    <code>
      ACCESS EXCL.
     </code>
    </th>
@@ -125,7 +125,7 @@ Uma vez adquirida, uma bloqueio é normalmente mantida até o final da transaç�
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ACCESS SHARE
     </code>
    </td>
@@ -149,7 +149,7 @@ Uma vez adquirida, uma bloqueio é normalmente mantida até o final da transaç�
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ROW SHARE
     </code>
    </td>
@@ -174,7 +174,7 @@ Uma vez adquirida, uma bloqueio é normalmente mantida até o final da transaç�
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ROW EXCL.
     </code>
    </td>
@@ -201,7 +201,7 @@ Uma vez adquirida, uma bloqueio é normalmente mantida até o final da transaç�
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SHARE UPDATE EXCL.
     </code>
    </td>
@@ -229,7 +229,7 @@ Uma vez adquirida, uma bloqueio é normalmente mantida até o final da transaç�
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SHARE
     </code>
    </td>
@@ -257,7 +257,7 @@ Uma vez adquirida, uma bloqueio é normalmente mantida até o final da transaç�
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SHARE ROW EXCL.
     </code>
    </td>
@@ -286,7 +286,7 @@ Uma vez adquirida, uma bloqueio é normalmente mantida até o final da transaç�
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      EXCL.
     </code>
    </td>
@@ -316,7 +316,7 @@ Uma vez adquirida, uma bloqueio é normalmente mantida até o final da transaç�
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ACCESS EXCL.
     </code>
    </td>
@@ -376,7 +376,7 @@ O PostgreSQL não lembra nenhuma informação sobre as linhas modificadas na mem
 
 
 
-<table border="1" class="table" summary="Conflicting Row-Level Locks">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="lockst"/>

@@ -16,7 +16,7 @@ Os cursors são usados internamente para implementar alguns dos componentes do P
 
 
 
-<table border="1" class="table" summary="pg_cursors Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -36,10 +36,10 @@ Os cursors são usados internamente para implementar alguns dos componentes do P
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       name
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -51,10 +51,10 @@ Os cursors são usados internamente para implementar alguns dos componentes do P
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       statement
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -66,19 +66,19 @@ Os cursors são usados internamente para implementar alguns dos componentes do P
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_holdable
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       true
      </code>
      se o cursor for mantido (ou seja, pode ser acessado após a transação que declarou que o cursor foi comprometido);
-     <code class="literal">
+     <code>
       false
      </code>
      caso contrário
@@ -88,23 +88,23 @@ Os cursors são usados internamente para implementar alguns dos componentes do P
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_binary
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       true
      </code>
      se o cursor foi declarado
-     <code class="literal">
+     <code>
       BINARY
      </code>
      ;
-     <code class="literal">
+     <code>
       false
      </code>
      caso contrário
@@ -114,19 +114,19 @@ Os cursors são usados internamente para implementar alguns dos componentes do P
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_scrollable
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       true
      </code>
      se o cursor for rolável (ou seja, permite que as linhas sejam recuperadas de maneira não sequencial);
-     <code class="literal">
+     <code>
       false
      </code>
      caso contrário
@@ -136,10 +136,10 @@ Os cursors são usados internamente para implementar alguns dos componentes do P
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       creation_time
      </code>
-     <code class="type">
+     <code>
       timestamptz
      </code>
     </p>

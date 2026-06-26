@@ -8,7 +8,7 @@ Deve-se notar que `pg_cast` não representa todo o tipo de conversão que o sist
 
 
 
-<table border="1" class="table" summary="pg_cast Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ Deve-se notar que `pg_cast` não representa todo o tipo de conversão que o sist
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -43,20 +43,20 @@ Deve-se notar que `pg_cast` não representa todo o tipo de conversão que o sist
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       castsource
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -69,20 +69,20 @@ Deve-se notar que `pg_cast` não representa todo o tipo de conversão que o sist
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       casttarget
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -95,20 +95,20 @@ Deve-se notar que `pg_cast` não representa todo o tipo de conversão que o sist
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       castfunc
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -121,32 +121,32 @@ Deve-se notar que `pg_cast` não representa todo o tipo de conversão que o sist
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       castcontext
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      Indica em quais contextos o cast pode ser invocado.
-     <code class="literal">
+     <code>
       e
      </code>
      significa apenas como um elenco explícito (usando
-     <code class="literal">
+     <code>
       CAST
      </code>
      ou
-     <code class="literal">
+     <code>
       ::
      </code>
      syntax).
-     <code class="literal">
+     <code>
       a
      </code>
      significa implicitamente na atribuição a uma coluna de destino, bem como explicitamente.
-     <code class="literal">
+     <code>
       i
      </code>
      significa implicitamente em expressões, bem como em outros casos.
@@ -156,28 +156,28 @@ Deve-se notar que `pg_cast` não representa todo o tipo de conversão que o sist
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       castmethod
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      Indica como o elenco é realizado.
-     <code class="literal">
+     <code>
       f
      </code>
      significa que a função especificada no
-     <code class="structfield">
+     <code>
       castfunc
      </code>
      campo é utilizado.
-     <code class="literal">
+     <code>
       i
      </code>
      significa que as funções de entrada/saída são utilizadas.
-     <code class="literal">
+     <code>
       b
      </code>
      Isso significa que os tipos são binariamente coeríveis, portanto, nenhuma conversão é necessária.

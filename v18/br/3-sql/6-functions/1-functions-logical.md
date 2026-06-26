@@ -1,8 +1,8 @@
-## 9.1. Operadores Lógicos [#](#FUNCTIONS-LOGICAL)
+### 9.1. Operadores Lógicos [#](#FUNCTIONS-LOGICAL)
 
 Os operadores lógicos usuais estão disponíveis:
 
-```
+```sql
 boolean AND boolean → boolean
 boolean OR boolean → boolean
 NOT boolean → boolean
@@ -10,15 +10,7 @@ NOT boolean → boolean
 
 O SQL utiliza um sistema lógico de três valores com verdadeiro, falso e `null`, que representa “desconhecido”. Observe as seguintes tabelas de verdade:
 
-
-
-<table border="1" class="informaltable">
- <colgroup>
-  <col/>
-  <col/>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -49,17 +41,11 @@ O SQL utiliza um sistema lógico de três valores com verdadeiro, falso e `null`
     </em>
    </th>
    <th>
-    <em class="replaceable">
-     <code>
-      a
-     </code>
-    </em>
+     <code>a</code>
     OR
-    <em class="replaceable">
      <code>
       b
      </code>
-    </em>
    </th>
   </tr>
  </thead>
@@ -151,36 +137,14 @@ O SQL utiliza um sistema lógico de três valores com verdadeiro, falso e `null`
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
-<table border="1" class="informaltable">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
-    <em class="replaceable">
-     <code>
-      a
-     </code>
-    </em>
+    <code>a</code>
    </th>
    <th>
-    NOT
-    <em class="replaceable">
-     <code>
-      a
-     </code>
-    </em>
+    NOT <code>a</code>
    </th>
   </tr>
  </thead>
@@ -211,11 +175,5 @@ O SQL utiliza um sistema lógico de três valores com verdadeiro, falso e `null`
   </tr>
  </tbody>
 </table>
-
-
-
-
-
-
 
 Os operadores `AND` e `OR` são compostos, ou seja, você pode trocar os operandos esquerdo e direito sem afetar o resultado. (No entanto, não é garantido que o operando esquerdo seja avaliado antes do operando direito. Consulte [Seção 4.2.14](sql-expressions.md#SYNTAX-EXPRESS-EVAL) para obter mais informações sobre a ordem de avaliação das subexpressões.)

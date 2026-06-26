@@ -8,7 +8,7 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
 
 
 
-<table border="1" class="table" summary="pg_ts_parser Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -43,10 +43,10 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prsname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -58,20 +58,20 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prsnamespace
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -84,20 +84,20 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prsstart
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -110,20 +110,20 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prstoken
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -136,20 +136,20 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prsend
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -162,20 +162,20 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prsheadline
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -188,20 +188,20 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prslextype
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )

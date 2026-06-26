@@ -40,7 +40,7 @@ O quadro a seguir resume os tipos de gatilho que podem ser usados em tabelas, vi
 
 
 
-<table border="1" class="informaltable">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -66,20 +66,20 @@ O quadro a seguir resume os tipos de gatilho que podem ser usados em tabelas, vi
  <tbody>
   <tr>
    <td align="center" rowspan="2">
-    <code class="literal">
+    <code>
      BEFORE
     </code>
    </td>
    <td align="center">
-    <code class="command">
+    <code>
      INSERT
     </code>
     /
-    <code class="command">
+    <code>
      UPDATE
     </code>
     /
-    <code class="command">
+    <code>
      DELETE
     </code>
    </td>
@@ -92,7 +92,7 @@ O quadro a seguir resume os tipos de gatilho que podem ser usados em tabelas, vi
   </tr>
   <tr>
    <td align="center">
-    <code class="command">
+    <code>
      TRUNCATE
     </code>
    </td>
@@ -105,20 +105,20 @@ O quadro a seguir resume os tipos de gatilho que podem ser usados em tabelas, vi
   </tr>
   <tr>
    <td align="center" rowspan="2">
-    <code class="literal">
+    <code>
      AFTER
     </code>
    </td>
    <td align="center">
-    <code class="command">
+    <code>
      INSERT
     </code>
     /
-    <code class="command">
+    <code>
      UPDATE
     </code>
     /
-    <code class="command">
+    <code>
      DELETE
     </code>
    </td>
@@ -131,7 +131,7 @@ O quadro a seguir resume os tipos de gatilho que podem ser usados em tabelas, vi
   </tr>
   <tr>
    <td align="center">
-    <code class="command">
+    <code>
      TRUNCATE
     </code>
    </td>
@@ -144,20 +144,20 @@ O quadro a seguir resume os tipos de gatilho que podem ser usados em tabelas, vi
   </tr>
   <tr>
    <td align="center" rowspan="2">
-    <code class="literal">
+    <code>
      INSTEAD OF
     </code>
    </td>
    <td align="center">
-    <code class="command">
+    <code>
      INSERT
     </code>
     /
-    <code class="command">
+    <code>
      UPDATE
     </code>
     /
-    <code class="command">
+    <code>
      DELETE
     </code>
    </td>
@@ -170,7 +170,7 @@ O quadro a seguir resume os tipos de gatilho que podem ser usados em tabelas, vi
   </tr>
   <tr>
    <td align="center">
-    <code class="command">
+    <code>
      TRUNCATE
     </code>
    </td>

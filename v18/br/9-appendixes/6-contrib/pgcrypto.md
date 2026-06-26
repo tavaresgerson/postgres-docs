@@ -65,7 +65,7 @@ Os algoritmos em `crypt()` diferem dos algoritmos de hashing MD5 ou SHA-1 usuais
 
 
 
-<table border="1" class="table" summary="Supported Algorithms for crypt()">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -99,7 +99,7 @@ Os algoritmos em `crypt()` diferem dos algoritmos de hashing MD5 ou SHA-1 usuais
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      bf
     </code>
    </td>
@@ -121,7 +121,7 @@ Os algoritmos em `crypt()` diferem dos algoritmos de hashing MD5 ou SHA-1 usuais
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      md5
     </code>
    </td>
@@ -143,7 +143,7 @@ Os algoritmos em `crypt()` diferem dos algoritmos de hashing MD5 ou SHA-1 usuais
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      xdes
     </code>
    </td>
@@ -165,7 +165,7 @@ Os algoritmos em `crypt()` diferem dos algoritmos de hashing MD5 ou SHA-1 usuais
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      des
     </code>
    </td>
@@ -187,7 +187,7 @@ Os algoritmos em `crypt()` diferem dos algoritmos de hashing MD5 ou SHA-1 usuais
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      sha256crypt
     </code>
    </td>
@@ -212,7 +212,7 @@ Os algoritmos em `crypt()` diferem dos algoritmos de hashing MD5 ou SHA-1 usuais
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      sha512crypt
     </code>
    </td>
@@ -285,7 +285,7 @@ O parâmetro *`iter_count`* permite que o usuário especifique o número de iter
 
 
 
-<table border="1" class="table" summary="Iteration Counts for crypt()">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -311,7 +311,7 @@ O parâmetro *`iter_count`* permite que o usuário especifique o número de iter
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      xdes
     </code>
    </td>
@@ -327,7 +327,7 @@ O parâmetro *`iter_count`* permite que o usuário especifique o número de iter
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      bf
     </code>
    </td>
@@ -343,7 +343,7 @@ O parâmetro *`iter_count`* permite que o usuário especifique o número de iter
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      sha256crypt, sha512crypt
     </code>
    </td>
@@ -381,7 +381,7 @@ O padrão *`iter_count` para `sha256crypt` e `sha512crypt` de `5000` é consider
 
 
 
-<table border="1" class="table" summary="Hash Algorithm Speeds">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -399,19 +399,19 @@ O padrão *`iter_count` para `sha256crypt` e `sha512crypt` de `5000` é consider
    </th>
    <th>
     For
-    <code class="literal">
+    <code>
      [a-z]
     </code>
    </th>
    <th>
     For
-    <code class="literal">
+    <code>
      [A-Za-z0-9]
     </code>
    </th>
    <th>
     Duration relative to
-    <code class="literal">
+    <code>
      md5 hash
     </code>
    </th>
@@ -420,7 +420,7 @@ O padrão *`iter_count` para `sha256crypt` e `sha512crypt` de `5000` é consider
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      crypt-bf/8
     </code>
    </td>
@@ -439,7 +439,7 @@ O padrão *`iter_count` para `sha256crypt` e `sha512crypt` de `5000` é consider
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      crypt-bf/7
     </code>
    </td>
@@ -458,7 +458,7 @@ O padrão *`iter_count` para `sha256crypt` e `sha512crypt` de `5000` é consider
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      crypt-bf/6
     </code>
    </td>
@@ -477,7 +477,7 @@ O padrão *`iter_count` para `sha256crypt` e `sha512crypt` de `5000` é consider
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      crypt-bf/5
     </code>
    </td>
@@ -496,7 +496,7 @@ O padrão *`iter_count` para `sha256crypt` e `sha512crypt` de `5000` é consider
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      crypt-md5
     </code>
    </td>
@@ -515,7 +515,7 @@ O padrão *`iter_count` para `sha256crypt` e `sha512crypt` de `5000` é consider
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      crypt-des
     </code>
    </td>
@@ -534,7 +534,7 @@ O padrão *`iter_count` para `sha256crypt` e `sha512crypt` de `5000` é consider
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      sha1
     </code>
    </td>
@@ -553,7 +553,7 @@ O padrão *`iter_count` para `sha256crypt` e `sha512crypt` de `5000` é consider
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      md5
     </code>
     (hash)
@@ -928,7 +928,7 @@ Marko Kreen `<markokr@gmail.com>`
 
 
 
-<table border="1" class="informaltable">
+<table>
  <colgroup>
   <col/>
   <col/>

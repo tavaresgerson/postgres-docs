@@ -6,7 +6,7 @@ O catálogo `pg_sequence` contém informações sobre sequências. Algumas das i
 
 
 
-<table border="1" class="table" summary="pg_sequence Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,20 +26,20 @@ O catálogo `pg_sequence` contém informações sobre sequências. Algumas das i
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       seqrelid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -47,7 +47,7 @@ O catálogo `pg_sequence` contém informações sobre sequências. Algumas das i
     <p>
      O OID do
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
@@ -58,20 +58,20 @@ O catálogo `pg_sequence` contém informações sobre sequências. Algumas das i
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       seqtypid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -84,10 +84,10 @@ O catálogo `pg_sequence` contém informações sobre sequências. Algumas das i
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       seqstart
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
@@ -99,10 +99,10 @@ O catálogo `pg_sequence` contém informações sobre sequências. Algumas das i
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       seqincrement
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
@@ -114,10 +114,10 @@ O catálogo `pg_sequence` contém informações sobre sequências. Algumas das i
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       seqmax
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
@@ -129,10 +129,10 @@ O catálogo `pg_sequence` contém informações sobre sequências. Algumas das i
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       seqmin
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
@@ -144,10 +144,10 @@ O catálogo `pg_sequence` contém informações sobre sequências. Algumas das i
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       seqcache
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
@@ -159,10 +159,10 @@ O catálogo `pg_sequence` contém informações sobre sequências. Algumas das i
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       seqcycle
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>

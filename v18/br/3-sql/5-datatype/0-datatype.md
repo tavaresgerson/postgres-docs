@@ -91,7 +91,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
 
 **Tabela 8.1. Tipos de dados**
 
-<table border="1" class="table" summary="Data Types">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -113,12 +113,12 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
  <tbody>
   <tr>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      int8
     </code>
    </td>
@@ -128,12 +128,12 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      bigserial
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      serial8
     </code>
    </td>
@@ -143,7 +143,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      bit [ (
      <em class="replaceable">
       <code>
@@ -161,7 +161,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      bit varying [ (
      <em class="replaceable">
       <code>
@@ -172,7 +172,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      varbit [ (
      <em class="replaceable">
       <code>
@@ -188,12 +188,12 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      boolean
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bool
     </code>
    </td>
@@ -203,7 +203,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      box
     </code>
    </td>
@@ -215,7 +215,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      bytea
     </code>
    </td>
@@ -235,7 +235,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      character [ (
      <em class="replaceable">
       <code>
@@ -246,7 +246,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      char [ (
      <em class="replaceable">
       <code>
@@ -262,7 +262,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      character varying [ (
      <em class="replaceable">
       <code>
@@ -273,7 +273,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      varchar [ (
      <em class="replaceable">
       <code>
@@ -289,7 +289,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      cidr
     </code>
    </td>
@@ -301,7 +301,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      circle
     </code>
    </td>
@@ -313,7 +313,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      date
     </code>
    </td>
@@ -325,16 +325,16 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      double precision
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      float
     </code>
     ,
-    <code class="type">
+    <code>
      float8
     </code>
    </td>
@@ -344,7 +344,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      inet
     </code>
    </td>
@@ -356,16 +356,16 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      int
     </code>
     ,
-    <code class="type">
+    <code>
      int4
     </code>
    </td>
@@ -375,7 +375,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      interval [
      <em class="replaceable">
       <code>
@@ -399,7 +399,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      json
     </code>
    </td>
@@ -411,7 +411,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      jsonb
     </code>
    </td>
@@ -423,7 +423,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      line
     </code>
    </td>
@@ -435,7 +435,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      lseg
     </code>
    </td>
@@ -447,7 +447,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      macaddr
     </code>
    </td>
@@ -459,7 +459,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      macaddr8
     </code>
    </td>
@@ -471,7 +471,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      money
     </code>
    </td>
@@ -483,7 +483,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      numeric [ (
      <em class="replaceable">
       <code>
@@ -500,7 +500,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      decimal [ (
      <em class="replaceable">
       <code>
@@ -522,7 +522,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      path
     </code>
    </td>
@@ -534,7 +534,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      pg_lsn
     </code>
    </td>
@@ -549,7 +549,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      pg_snapshot
     </code>
    </td>
@@ -561,7 +561,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      point
     </code>
    </td>
@@ -573,7 +573,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      polygon
     </code>
    </td>
@@ -585,12 +585,12 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      real
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      float4
     </code>
    </td>
@@ -600,12 +600,12 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      smallint
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      int2
     </code>
    </td>
@@ -615,12 +615,12 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      smallserial
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      serial2
     </code>
    </td>
@@ -630,12 +630,12 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      serial
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      serial4
     </code>
    </td>
@@ -645,7 +645,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
@@ -657,7 +657,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      time [ (
      <em class="replaceable">
       <code>
@@ -675,7 +675,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      time [ (
      <em class="replaceable">
       <code>
@@ -686,7 +686,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      timetz
     </code>
    </td>
@@ -696,7 +696,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      timestamp [ (
      <em class="replaceable">
       <code>
@@ -714,7 +714,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      timestamp [ (
      <em class="replaceable">
       <code>
@@ -725,7 +725,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      timestamptz
     </code>
    </td>
@@ -735,7 +735,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      tsquery
     </code>
    </td>
@@ -747,7 +747,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      tsvector
     </code>
    </td>
@@ -759,7 +759,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      txid_snapshot
     </code>
    </td>
@@ -767,7 +767,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
    </td>
    <td>
     instantâneo do ID de transação de nível de usuário (desatualizado; veja
-    <code class="type">
+    <code>
      pg_snapshot
     </code>
     )
@@ -775,7 +775,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      uuid
     </code>
    </td>
@@ -787,7 +787,7 @@ O PostgreSQL possui um conjunto rico de tipos de dados nativos disponíveis para
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      xml
     </code>
    </td>

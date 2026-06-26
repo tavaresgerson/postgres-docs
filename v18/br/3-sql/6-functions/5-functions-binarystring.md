@@ -1,4 +1,4 @@
-## 9.5. Funções e operadores de string binária [#](#FUNCTIONS-BINARYSTRING)
+### 9.5. Funções e operadores de string binária [#](#FUNCTIONS-BINARYSTRING)
 
 Esta seção descreve funções e operadores para examinar e manipular strings binárias, ou seja, valores do tipo `bytea`. Muitas dessas funções são equivalentes, em propósito e sintaxe, às funções de string de texto descritas na seção anterior.
 
@@ -6,9 +6,7 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
 
 **Tabela 9.11. Funções e operadores de cadeia binária SQL**
 
-
-
-<table border="1" class="table" summary="SQL Binary String Functions and Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -31,17 +29,17 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       bytea
      </code>
-     <code class="literal">
+     <code>
       ||
      </code>
-     <code class="type">
+     <code>
       bytea
      </code>
      →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
@@ -49,11 +47,11 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
      Concatenates the two binary strings.
     </p>
     <p>
-     <code class="literal">
+     <code>
       '\x123456'::bytea || '\x789a00bcde'::bytea
      </code>
      →
-     <code class="returnvalue">
+     <code>
       \x123456789a00bcde
      </code>
     </p>
@@ -62,31 +60,31 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       bit_length
      </code>
      (
-     <code class="type">
+     <code>
       bytea
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Returns number of bits in the binary string (8 times the
-     <code class="function">
+     <code>
       octet_length
      </code>
      ).
     </p>
     <p>
-     <code class="literal">
+     <code>
       bit_length('\x123456'::bytea)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       24
      </code>
     </p>
@@ -95,7 +93,7 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       btrim
      </code>
      (
@@ -104,7 +102,7 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
        bytes
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ,
@@ -113,11 +111,11 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
        bytesremoved
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
@@ -137,11 +135,11 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       btrim('\x1234567890'::bytea, '\x9012'::bytea)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       \x345678
      </code>
     </p>
@@ -150,7 +148,7 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ltrim
      </code>
      (
@@ -159,7 +157,7 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
        bytes
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ,
@@ -168,11 +166,11 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
        bytesremoved
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
@@ -192,11 +190,11 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       ltrim('\x1234567890'::bytea, '\x9012'::bytea)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       \x34567890
      </code>
     </p>
@@ -205,15 +203,15 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       octet_length
      </code>
      (
-     <code class="type">
+     <code>
       bytea
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -221,11 +219,11 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
      Returns number of bytes in the binary string.
     </p>
     <p>
-     <code class="literal">
+     <code>
       octet_length('\x123456'::bytea)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3
      </code>
     </p>
@@ -234,7 +232,7 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       overlay
      </code>
      (
@@ -243,10 +241,10 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
        bytes
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
-     <code class="literal">
+     <code>
       PLACING
      </code>
      <em class="parameter">
@@ -254,10 +252,10 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
        newsubstring
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
-     <code class="literal">
+     <code>
       FROM
      </code>
      <em class="parameter">
@@ -265,12 +263,12 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
        start
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      [
      <span class="optional">
-      <code class="literal">
+      <code>
        FOR
       </code>
       <em class="parameter">
@@ -278,12 +276,12 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
         count
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
@@ -327,11 +325,11 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       overlay('\x1234567890'::bytea placing '\002\003'::bytea from 2 for 3)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       \x12020390
      </code>
     </p>
@@ -340,7 +338,7 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       position
      </code>
      (
@@ -349,10 +347,10 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
        substring
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
-     <code class="literal">
+     <code>
       IN
      </code>
      <em class="parameter">
@@ -360,11 +358,11 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
        bytes
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -384,11 +382,11 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
      , or zero if it's not present.
     </p>
     <p>
-     <code class="literal">
+     <code>
       position('\x5678'::bytea in '\x1234567890'::bytea)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3
      </code>
     </p>
@@ -397,7 +395,7 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       rtrim
      </code>
      (
@@ -406,7 +404,7 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
        bytes
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ,
@@ -415,11 +413,11 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
        bytesremoved
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
@@ -439,11 +437,11 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       rtrim('\x1234567890'::bytea, '\x9012'::bytea)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       \x12345678
      </code>
     </p>
@@ -452,7 +450,7 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       substring
      </code>
      (
@@ -461,12 +459,12 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
        bytes
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      [
      <span class="optional">
-      <code class="literal">
+      <code>
        FROM
       </code>
       <em class="parameter">
@@ -474,13 +472,13 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
         start
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
      </span>
      ] [
      <span class="optional">
-      <code class="literal">
+      <code>
        FOR
       </code>
       <em class="parameter">
@@ -488,12 +486,12 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
         count
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
@@ -531,11 +529,11 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       substring('\x1234567890'::bytea from 3 for 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       \x5678
      </code>
     </p>
@@ -544,20 +542,20 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       trim
      </code>
      ( [
      <span class="optional">
-      <code class="literal">
+      <code>
        LEADING
       </code>
       |
-      <code class="literal">
+      <code>
        TRAILING
       </code>
       |
-      <code class="literal">
+      <code>
        BOTH
       </code>
      </span>
@@ -567,10 +565,10 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
        bytesremoved
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
-     <code class="literal">
+     <code>
       FROM
      </code>
      <em class="parameter">
@@ -578,11 +576,11 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
        bytes
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
@@ -594,7 +592,7 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
       </code>
      </em>
      from the start, end, or both ends (
-     <code class="literal">
+     <code>
       BOTH
      </code>
      is the default) of
@@ -606,11 +604,11 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       trim('\x9012'::bytea from '\x1234567890'::bytea)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       \x345678
      </code>
     </p>
@@ -619,26 +617,26 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       trim
      </code>
      ( [
      <span class="optional">
-      <code class="literal">
+      <code>
        LEADING
       </code>
       |
-      <code class="literal">
+      <code>
        TRAILING
       </code>
       |
-      <code class="literal">
+      <code>
        BOTH
       </code>
      </span>
      ] [
      <span class="optional">
-      <code class="literal">
+      <code>
        FROM
       </code>
      </span>
@@ -648,7 +646,7 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
        bytes
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ,
@@ -657,27 +655,27 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
        bytesremoved
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
     <p>
      This is a non-standard syntax for
-     <code class="function">
+     <code>
       trim()
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       trim(both from '\x1234567890'::bytea, '\x9012'::bytea)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       \x345678
      </code>
     </p>
@@ -686,22 +684,11 @@ O SQL define algumas funções de string que utilizam palavras-chave, em vez de 
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Funções adicionais de manipulação de strings binárias estão disponíveis e estão listadas em [Tabela 9.12](functions-binarystring.md#FUNCTIONS-BINARYSTRING-OTHER). Algumas delas são usadas internamente para implementar as funções de string padrão do SQL listadas em [Tabela 9.11](functions-binarystring.md#FUNCTIONS-BINARYSTRING-SQL).
 
 **Tabela 9.12. Outras funções de string binária**
 
-
-
-<table border="1" class="table" summary="Other Binary String Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -724,7 +711,7 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       bit_count
      </code>
      (
@@ -733,11 +720,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
        bytes
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
@@ -753,11 +740,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
      ).
     </p>
     <p>
-     <code class="literal">
+     <code>
       bit_count('\x1234567890'::bytea)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       15
      </code>
     </p>
@@ -766,15 +753,15 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       crc32
      </code>
      (
-     <code class="type">
+     <code>
       bytea
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
@@ -782,11 +769,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
      Computes the CRC-32 value of the binary string.
     </p>
     <p>
-     <code class="literal">
+     <code>
       crc32('abc'::bytea)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       891568578
      </code>
     </p>
@@ -795,15 +782,15 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       crc32c
      </code>
      (
-     <code class="type">
+     <code>
       bytea
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
@@ -811,11 +798,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
      Computes the CRC-32C value of the binary string.
     </p>
     <p>
-     <code class="literal">
+     <code>
       crc32c('abc'::bytea)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       910901175
      </code>
     </p>
@@ -824,7 +811,7 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       get_bit
      </code>
      (
@@ -833,7 +820,7 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
        bytes
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ,
@@ -842,11 +829,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
        n
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -858,11 +845,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
      bit from binary string.
     </p>
     <p>
-     <code class="literal">
+     <code>
       get_bit('\x1234567890'::bytea, 30)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1
      </code>
     </p>
@@ -871,7 +858,7 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       get_byte
      </code>
      (
@@ -880,7 +867,7 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
        bytes
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ,
@@ -889,11 +876,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
        n
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -905,11 +892,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
      byte from binary string.
     </p>
     <p>
-     <code class="literal">
+     <code>
       get_byte('\x1234567890'::bytea, 4)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       144
      </code>
     </p>
@@ -918,15 +905,15 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       length
      </code>
      (
-     <code class="type">
+     <code>
       bytea
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -934,11 +921,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
      Returns the number of bytes in the binary string.
     </p>
     <p>
-     <code class="literal">
+     <code>
       length('\x1234567890'::bytea)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       5
      </code>
     </p>
@@ -947,7 +934,7 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       length
      </code>
      (
@@ -956,7 +943,7 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
        bytes
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ,
@@ -965,11 +952,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
        encoding
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -983,11 +970,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       length('jose'::bytea, 'UTF8')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       4
      </code>
     </p>
@@ -996,15 +983,15 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       md5
      </code>
      (
-     <code class="type">
+     <code>
       bytea
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -1016,11 +1003,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
      of the binary string, with the result written in hexadecimal.
     </p>
     <p>
-     <code class="literal">
+     <code>
       md5('Th\000omas'::bytea)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       8ab2d3c9689aaf18​b4958c334c82d8b1
      </code>
     </p>
@@ -1029,15 +1016,15 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       reverse
      </code>
      (
-     <code class="type">
+     <code>
       bytea
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
@@ -1045,11 +1032,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
      Reverses the order of the bytes in the binary string.
     </p>
     <p>
-     <code class="literal">
+     <code>
       reverse('\xabcd'::bytea)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       \xcdab
      </code>
     </p>
@@ -1058,7 +1045,7 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       set_bit
      </code>
      (
@@ -1067,7 +1054,7 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
        bytes
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ,
@@ -1076,7 +1063,7 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
        n
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ,
@@ -1085,11 +1072,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
        newvalue
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
@@ -1107,11 +1094,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       set_bit('\x1234567890'::bytea, 30, 0)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       \x1234563890
      </code>
     </p>
@@ -1120,7 +1107,7 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       set_byte
      </code>
      (
@@ -1129,7 +1116,7 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
        bytes
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ,
@@ -1138,7 +1125,7 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
        n
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -1147,11 +1134,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
        newvalue
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
@@ -1169,11 +1156,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       set_byte('\x1234567890'::bytea, 4, 64)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       \x1234567840
      </code>
     </p>
@@ -1182,15 +1169,15 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       sha224
      </code>
      (
-     <code class="type">
+     <code>
       bytea
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
@@ -1202,11 +1189,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
      of the binary string.
     </p>
     <p>
-     <code class="literal">
+     <code>
       sha224('abc'::bytea)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       \x23097d223405d8228642a477bda2​55b32aadbce4bda0b3f7e36c9da7
      </code>
     </p>
@@ -1215,15 +1202,15 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       sha256
      </code>
      (
-     <code class="type">
+     <code>
       bytea
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
@@ -1235,11 +1222,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
      of the binary string.
     </p>
     <p>
-     <code class="literal">
+     <code>
       sha256('abc'::bytea)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       \xba7816bf8f01cfea414140de5dae2223​b00361a396177a9cb410ff61f20015ad
      </code>
     </p>
@@ -1248,15 +1235,15 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       sha384
      </code>
      (
-     <code class="type">
+     <code>
       bytea
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
@@ -1268,11 +1255,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
      of the binary string.
     </p>
     <p>
-     <code class="literal">
+     <code>
       sha384('abc'::bytea)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       \xcb00753f45a35e8bb5a03d699ac65007​272c32ab0eded1631a8b605a43ff5bed​8086072ba1e7cc2358baeca134c825a7
      </code>
     </p>
@@ -1281,15 +1268,15 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       sha512
      </code>
      (
-     <code class="type">
+     <code>
       bytea
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
@@ -1301,11 +1288,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
      of the binary string.
     </p>
     <p>
-     <code class="literal">
+     <code>
       sha512('abc'::bytea)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       \xddaf35a193617abacc417349ae204131​12e6fa4e89a97ea20a9eeee64b55d39a​2192992a274fc1a836ba3c23a3feebbd​454d4423643ce80e2a9ac94fa54ca49f
      </code>
     </p>
@@ -1314,7 +1301,7 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       substr
      </code>
      (
@@ -1323,7 +1310,7 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
        bytes
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ,
@@ -1332,7 +1319,7 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
        start
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      [
@@ -1343,12 +1330,12 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
         count
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
@@ -1372,7 +1359,7 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
       </code>
      </em>
      bytes if that is specified.  (Same as
-     <code class="literal">
+     <code>
       substring(
       <em class="parameter">
        <code>
@@ -1396,11 +1383,11 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
      .)
     </p>
     <p>
-     <code class="literal">
+     <code>
       substr('\x1234567890'::bytea, 3, 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       \x5678
      </code>
     </p>
@@ -1408,15 +1395,6 @@ Funções adicionais de manipulação de strings binárias estão disponíveis e
   </tr>
  </tbody>
 </table>
-
-
-
-
-
-
-
-
-
 
 As funções `get_byte` e `set_byte` numeram o primeiro byte de uma string binária como byte 0. As funções `get_bit` e `set_bit` numeram bits da direita para a esquerda em cada byte; por exemplo, o bit 0 é o bit menos significativo do primeiro byte, e o bit 15 é o bit mais significativo do segundo byte.
 
@@ -1426,9 +1404,7 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
 
 **Tabela 9.13. Funções de conversão de string de texto/binária**
 
-
-
-<table border="1" class="table" summary="Text/Binary String Conversion Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -1451,7 +1427,7 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       convert
      </code>
      (
@@ -1460,7 +1436,7 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
        bytes
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ,
@@ -1469,7 +1445,7 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
        src_encoding
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ,
@@ -1478,11 +1454,11 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
        dest_encoding
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
@@ -1506,11 +1482,11 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
      for available conversions).
     </p>
     <p>
-     <code class="literal">
+     <code>
       convert('text_in_utf8', 'UTF8', 'LATIN1')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       \x746578745f696e5f75746638
      </code>
     </p>
@@ -1519,7 +1495,7 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       convert_from
      </code>
      (
@@ -1528,7 +1504,7 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
        bytes
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ,
@@ -1537,11 +1513,11 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
        src_encoding
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -1553,7 +1529,7 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
       </code>
      </em>
      to
-     <code class="type">
+     <code>
       text
      </code>
      in the database encoding (see
@@ -1563,11 +1539,11 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
      for available conversions).
     </p>
     <p>
-     <code class="literal">
+     <code>
       convert_from('text_in_utf8', 'UTF8')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       text_in_utf8
      </code>
     </p>
@@ -1576,7 +1552,7 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       convert_to
      </code>
      (
@@ -1585,7 +1561,7 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -1594,17 +1570,17 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
        dest_encoding
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
     <p>
      Converts a
-     <code class="type">
+     <code>
       text
      </code>
      string (in the database encoding) to a binary string encoded in encoding
@@ -1620,11 +1596,11 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
      for available conversions).
     </p>
     <p>
-     <code class="literal">
+     <code>
       convert_to('some_text', 'UTF8')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       \x736f6d655f74657874
      </code>
     </p>
@@ -1633,7 +1609,7 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       encode
      </code>
      (
@@ -1642,7 +1618,7 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
        bytes
       </code>
      </em>
-     <code class="type">
+     <code>
       bytea
      </code>
      ,
@@ -1651,11 +1627,11 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
        format
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -1668,30 +1644,30 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
      </em>
      values are:
      <a class="link" href="functions-binarystring.md#ENCODE-FORMAT-BASE64">
-      <code class="literal">
+      <code>
        base64
       </code>
      </a>
      ,
      <a class="link" href="functions-binarystring.md#ENCODE-FORMAT-ESCAPE">
-      <code class="literal">
+      <code>
        escape
       </code>
      </a>
      ,
      <a class="link" href="functions-binarystring.md#ENCODE-FORMAT-HEX">
-      <code class="literal">
+      <code>
        hex
       </code>
      </a>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       encode('123\000\001', 'base64')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       MTIzAAE=
      </code>
     </p>
@@ -1700,7 +1676,7 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       decode
      </code>
      (
@@ -1709,7 +1685,7 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -1718,11 +1694,11 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
        format
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bytea
      </code>
     </p>
@@ -1734,17 +1710,17 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
       </code>
      </em>
      values are the same as for
-     <code class="function">
+     <code>
       encode
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       decode('MTIzAAE=', 'base64')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       \x3132330001
      </code>
     </p>
@@ -1752,15 +1728,6 @@ As funções para converter strings entre diferentes conjuntos de caracteres (c�
   </tr>
  </tbody>
 </table>
-
-
-
-
-
-
-
-
-
 
 As funções `encode` e `decode` suportam os seguintes formatos textuais:
 
@@ -1772,7 +1739,7 @@ hex [#](#ENCODE-FORMAT-HEX): O formato `hex` representa cada 4 bits de dados com
 
 Além disso, é possível converter valores inteiros para e a partir do tipo `bytea`. A conversão de um inteiro para `bytea` produz 2, 4 ou 8 bytes, dependendo da largura do tipo de inteiro. O resultado é a representação de complemento de dois do inteiro, com o byte mais significativo primeiro. Alguns exemplos:
 
-```
+```sql
 1234::smallint::bytea          \x04d2
 cast(1234 as bytea)            \x000004d2
 cast(-1234 as bytea)           \xfffffb2e

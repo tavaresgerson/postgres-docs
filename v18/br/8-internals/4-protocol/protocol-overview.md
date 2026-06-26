@@ -53,7 +53,7 @@ A negociação de protocolo foi introduzida na versão 9.3.21 do PostgreSQL. As 
 
 
 
-<table border="1" class="table" summary="Protocol Versions">
+<table>
  <colgroup>
   <col/>
   <col/>

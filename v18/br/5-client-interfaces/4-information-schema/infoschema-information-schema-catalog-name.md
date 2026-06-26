@@ -6,7 +6,7 @@
 
 
 
-<table border="1" class="table" summary="information_schema_catalog_name Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       catalog_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>

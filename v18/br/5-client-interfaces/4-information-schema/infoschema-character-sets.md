@@ -16,7 +16,7 @@ Você pode considerar um "codificação" no PostgreSQL como um conjunto de carac
 
 
 
-<table border="1" class="table" summary="character_sets Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -36,10 +36,10 @@ Você pode considerar um "codificação" no PostgreSQL como um conjunto de carac
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_set_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -51,10 +51,10 @@ Você pode considerar um "codificação" no PostgreSQL como um conjunto de carac
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_set_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -66,10 +66,10 @@ Você pode considerar um "codificação" no PostgreSQL como um conjunto de carac
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_set_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -81,20 +81,20 @@ Você pode considerar um "codificação" no PostgreSQL como um conjunto de carac
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_repertoire
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
     <p>
      Character repertoire, showing
-     <code class="literal">
+     <code>
       UCS
      </code>
      if the encoding is
-     <code class="literal">
+     <code>
       UTF8
      </code>
      , else just the encoding name
@@ -104,10 +104,10 @@ Você pode considerar um "codificação" no PostgreSQL como um conjunto de carac
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       form_of_use
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -119,10 +119,10 @@ Você pode considerar um "codificação" no PostgreSQL como um conjunto de carac
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       default_collate_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -134,10 +134,10 @@ Você pode considerar um "codificação" no PostgreSQL como um conjunto de carac
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       default_collate_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -149,20 +149,20 @@ Você pode considerar um "codificação" no PostgreSQL como um conjunto de carac
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       default_collate_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
     <p>
      Name of the default collation.  The default collation is identified as the collation that matches the
-     <code class="literal">
+     <code>
       COLLATE
      </code>
      and
-     <code class="literal">
+     <code>
       CTYPE
      </code>
      settings of the current database.  If there is no such collation, then this column and the associated schema and catalog columns are null.

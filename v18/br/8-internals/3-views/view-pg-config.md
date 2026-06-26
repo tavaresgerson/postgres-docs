@@ -8,7 +8,7 @@ Por padrão, a visualização `pg_config` pode ser lida apenas por superusuário
 
 
 
-<table border="1" class="table" summary="pg_config Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ Por padrão, a visualização `pg_config` pode ser lida apenas por superusuário
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       name
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -43,10 +43,10 @@ Por padrão, a visualização `pg_config` pode ser lida apenas por superusuário
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       setting
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>

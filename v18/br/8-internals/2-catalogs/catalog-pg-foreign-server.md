@@ -6,7 +6,7 @@ O catálogo `pg_foreign_server` armazena definições de servidores externos. Um
 
 
 
-<table border="1" class="table" summary="pg_foreign_server Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_foreign_server` armazena definições de servidores externos. Um
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,10 +41,10 @@ O catálogo `pg_foreign_server` armazena definições de servidores externos. Um
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       srvname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -56,20 +56,20 @@ O catálogo `pg_foreign_server` armazena definições de servidores externos. Um
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       srvowner
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -82,20 +82,20 @@ O catálogo `pg_foreign_server` armazena definições de servidores externos. Um
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       srvfdw
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-foreign-data-wrapper.md" title="52.23. pg_foreign_data_wrapper">
-      <code class="structname">
+      <code>
        pg_foreign_data_wrapper
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -108,10 +108,10 @@ O catálogo `pg_foreign_server` armazena definições de servidores externos. Um
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       srvtype
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -123,10 +123,10 @@ O catálogo `pg_foreign_server` armazena definições de servidores externos. Um
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       srvversion
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -138,10 +138,10 @@ O catálogo `pg_foreign_server` armazena definições de servidores externos. Um
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       srvacl
      </code>
-     <code class="type">
+     <code>
       aclitem[]
      </code>
     </p>
@@ -157,10 +157,10 @@ O catálogo `pg_foreign_server` armazena definições de servidores externos. Um
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       srvoptions
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>

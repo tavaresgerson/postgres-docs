@@ -24,10 +24,10 @@ Existem várias maneiras de iniciar a síntese inicial de um intervalo de págin
 
 Por último, as seguintes funções podem ser utilizadas (enquanto essas funções estão em execução, [search_path](runtime-config-client.md#GUC-SEARCH-PATH) é temporariamente alterado para `pg_catalog, pg_temp`):
 
-<table border="0" class="simplelist" summary="Simple list">
+<table>
  <tr>
   <td>
-   <code class="function">
+   <code>
     brin_summarize_new_values(regclass)
    </code>
    which summarizes all unsummarized ranges;
@@ -35,7 +35,7 @@ Por último, as seguintes funções podem ser utilizadas (enquanto essas funçõ
  </tr>
  <tr>
   <td>
-   <code class="function">
+   <code>
     brin_summarize_range(regclass, bigint)
    </code>
    which summarizes only the range containing the given page, if it is unsummarized.
@@ -61,11 +61,7 @@ As classes do operador *minmax* armazenam os valores mínimo e máximo que apare
 
 **Tabela 65.4. Classes de operadores BRIN integrados**
 
-<table border="1" class="table" summary="Built-in BRIN Operator Classes">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -79,2334 +75,2334 @@ As classes do operador *minmax* armazenam os valores mínimo e máximo que apare
  <tbody>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      bit_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (bit,bit)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (bit,bit)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (bit,bit)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (bit,bit)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (bit,bit)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="13" valign="middle">
-    <code class="literal">
+    <code>
      box_inclusion_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      @&gt; (box,point)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt; (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&lt; (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&gt; (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;&gt; (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;@ (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @&gt; (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ~= (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&amp; (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt;| (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&lt;| (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      |&amp;&gt; (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      |&gt;&gt; (box,box)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      bpchar_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (character,character)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      bpchar_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (character,character)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (character,character)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (character,character)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (character,character)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (character,character)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      bytea_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (bytea,bytea)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      bytea_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (bytea,bytea)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (bytea,bytea)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (bytea,bytea)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (bytea,bytea)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (bytea,bytea)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      char_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = ("char","char")
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      char_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = ("char","char")
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; ("char","char")
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= ("char","char")
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; ("char","char")
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= ("char","char")
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      date_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (date,date)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      date_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (date,date)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (date,date)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (date,date)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (date,date)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (date,date)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      date_minmax_multi_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (date,date)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (date,date)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (date,date)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (date,date)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (date,date)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      float4_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (float4,float4)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      float4_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (float4,float4)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (float4,float4)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (float4,float4)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (float4,float4)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (float4,float4)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      float4_minmax_multi_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (float4,float4)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (float4,float4)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (float4,float4)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (float4,float4)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (float4,float4)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      float8_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (float8,float8)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      float8_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (float8,float8)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (float8,float8)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (float8,float8)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (float8,float8)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (float8,float8)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      float8_minmax_multi_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (float8,float8)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (float8,float8)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (float8,float8)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (float8,float8)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (float8,float8)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="6" valign="middle">
-    <code class="literal">
+    <code>
      inet_inclusion_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt; (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt;= (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;&gt; (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;&gt;= (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      = (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&amp; (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      inet_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      inet_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      inet_minmax_multi_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (inet,inet)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      int2_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (int2,int2)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      int2_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (int2,int2)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (int2,int2)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (int2,int2)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (int2,int2)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (int2,int2)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      int2_minmax_multi_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (int2,int2)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (int2,int2)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (int2,int2)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (int2,int2)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (int2,int2)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      int4_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (int4,int4)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      int4_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (int4,int4)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (int4,int4)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (int4,int4)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (int4,int4)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (int4,int4)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      int4_minmax_multi_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (int4,int4)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (int4,int4)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (int4,int4)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (int4,int4)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (int4,int4)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      int8_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (bigint,bigint)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      int8_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (bigint,bigint)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (bigint,bigint)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (bigint,bigint)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (bigint,bigint)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (bigint,bigint)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      int8_minmax_multi_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (bigint,bigint)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (bigint,bigint)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (bigint,bigint)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (bigint,bigint)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (bigint,bigint)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      interval_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (interval,interval)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      interval_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (interval,interval)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (interval,interval)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (interval,interval)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (interval,interval)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (interval,interval)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      interval_minmax_multi_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (interval,interval)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (interval,interval)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (interval,interval)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (interval,interval)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (interval,interval)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      macaddr_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (macaddr,macaddr)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      macaddr_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (macaddr,macaddr)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (macaddr,macaddr)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (macaddr,macaddr)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (macaddr,macaddr)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (macaddr,macaddr)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      macaddr_minmax_multi_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (macaddr,macaddr)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (macaddr,macaddr)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (macaddr,macaddr)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (macaddr,macaddr)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (macaddr,macaddr)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      macaddr8_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (macaddr8,macaddr8)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      macaddr8_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (macaddr8,macaddr8)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (macaddr8,macaddr8)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (macaddr8,macaddr8)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (macaddr8,macaddr8)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (macaddr8,macaddr8)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      macaddr8_minmax_multi_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (macaddr8,macaddr8)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (macaddr8,macaddr8)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (macaddr8,macaddr8)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (macaddr8,macaddr8)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (macaddr8,macaddr8)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      name_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (name,name)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      name_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (name,name)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (name,name)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (name,name)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (name,name)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (name,name)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      numeric_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (numeric,numeric)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      numeric_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (numeric,numeric)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (numeric,numeric)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (numeric,numeric)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (numeric,numeric)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (numeric,numeric)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      numeric_minmax_multi_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (numeric,numeric)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (numeric,numeric)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (numeric,numeric)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (numeric,numeric)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (numeric,numeric)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      oid_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (oid,oid)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      oid_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (oid,oid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (oid,oid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (oid,oid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (oid,oid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (oid,oid)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      oid_minmax_multi_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (oid,oid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (oid,oid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (oid,oid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (oid,oid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (oid,oid)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      pg_lsn_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (pg_lsn,pg_lsn)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      pg_lsn_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (pg_lsn,pg_lsn)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (pg_lsn,pg_lsn)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (pg_lsn,pg_lsn)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (pg_lsn,pg_lsn)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (pg_lsn,pg_lsn)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      pg_lsn_minmax_multi_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (pg_lsn,pg_lsn)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (pg_lsn,pg_lsn)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (pg_lsn,pg_lsn)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (pg_lsn,pg_lsn)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (pg_lsn,pg_lsn)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="14" valign="middle">
-    <code class="literal">
+    <code>
      range_inclusion_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (anyrange,anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (anyrange,anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (anyrange,anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (anyrange,anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (anyrange,anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&amp; (anyrange,anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @&gt; (anyrange,anyelement)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      @&gt; (anyrange,anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;@ (anyrange,anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;&lt; (anyrange,anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;&gt; (anyrange,anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&lt; (anyrange,anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &amp;&gt; (anyrange,anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      -|- (anyrange,anyrange)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      text_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (text,text)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      text_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (text,text)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (text,text)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (text,text)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (text,text)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (text,text)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      tid_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (tid,tid)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      tid_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (tid,tid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (tid,tid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (tid,tid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (tid,tid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (tid,tid)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      tid_minmax_multi_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (tid,tid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (tid,tid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (tid,tid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (tid,tid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (tid,tid)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      timestamp_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (timestamp,timestamp)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      timestamp_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (timestamp,timestamp)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (timestamp,timestamp)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (timestamp,timestamp)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (timestamp,timestamp)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (timestamp,timestamp)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      timestamp_minmax_multi_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (timestamp,timestamp)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (timestamp,timestamp)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (timestamp,timestamp)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (timestamp,timestamp)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (timestamp,timestamp)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      timestamptz_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (timestamptz,timestamptz)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      timestamptz_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (timestamptz,timestamptz)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (timestamptz,timestamptz)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (timestamptz,timestamptz)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (timestamptz,timestamptz)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (timestamptz,timestamptz)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      timestamptz_minmax_multi_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (timestamptz,timestamptz)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (timestamptz,timestamptz)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (timestamptz,timestamptz)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (timestamptz,timestamptz)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (timestamptz,timestamptz)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      time_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (time,time)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      time_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (time,time)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (time,time)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (time,time)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (time,time)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (time,time)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      time_minmax_multi_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (time,time)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (time,time)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (time,time)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (time,time)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (time,time)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      timetz_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (timetz,timetz)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      timetz_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (timetz,timetz)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (timetz,timetz)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (timetz,timetz)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (timetz,timetz)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (timetz,timetz)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      timetz_minmax_multi_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (timetz,timetz)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (timetz,timetz)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (timetz,timetz)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (timetz,timetz)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (timetz,timetz)
     </code>
    </td>
   </tr>
   <tr>
    <td valign="middle">
-    <code class="literal">
+    <code>
      uuid_bloom_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (uuid,uuid)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      uuid_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (uuid,uuid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (uuid,uuid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (uuid,uuid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (uuid,uuid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (uuid,uuid)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      uuid_minmax_multi_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (uuid,uuid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (uuid,uuid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (uuid,uuid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (uuid,uuid)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (uuid,uuid)
     </code>
    </td>
   </tr>
   <tr>
    <td rowspan="5" valign="middle">
-    <code class="literal">
+    <code>
      varbit_minmax_ops
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      = (varbit,varbit)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt; (varbit,varbit)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt; (varbit,varbit)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;= (varbit,varbit)
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;= (varbit,varbit)
     </code>
    </td>
@@ -2483,7 +2479,7 @@ Para escrever uma classe de operador para um tipo de dados que implementa um con
 
 
 
-<table border="1" class="table" summary="Function and Support Numbers for Minmax Operator Classes">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -2505,7 +2501,7 @@ Para escrever uma classe de operador para um tipo de dados que implementa um con
    </td>
    <td>
     internal function
-    <code class="function">
+    <code>
      brin_minmax_opcinfo()
     </code>
    </td>
@@ -2516,7 +2512,7 @@ Para escrever uma classe de operador para um tipo de dados que implementa um con
    </td>
    <td>
     internal function
-    <code class="function">
+    <code>
      brin_minmax_add_value()
     </code>
    </td>
@@ -2527,7 +2523,7 @@ Para escrever uma classe de operador para um tipo de dados que implementa um con
    </td>
    <td>
     internal function
-    <code class="function">
+    <code>
      brin_minmax_consistent()
     </code>
    </td>
@@ -2538,7 +2534,7 @@ Para escrever uma classe de operador para um tipo de dados que implementa um con
    </td>
    <td>
     internal function
-    <code class="function">
+    <code>
      brin_minmax_union()
     </code>
    </td>
@@ -2601,7 +2597,7 @@ Para escrever uma classe de operador para um tipo de dados complexo que tem valo
 
 
 
-<table border="1" class="table" summary="Function and Support Numbers for Inclusion Operator Classes">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -2627,7 +2623,7 @@ Para escrever uma classe de operador para um tipo de dados complexo que tem valo
    </td>
    <td>
     função interna
-    <code class="function">
+    <code>
      brin_inclusion_opcinfo()
     </code>
    </td>
@@ -2640,7 +2636,7 @@ Para escrever uma classe de operador para um tipo de dados complexo que tem valo
    </td>
    <td>
     função interna
-    <code class="function">
+    <code>
      brin_inclusion_add_value()
     </code>
    </td>
@@ -2653,7 +2649,7 @@ Para escrever uma classe de operador para um tipo de dados complexo que tem valo
    </td>
    <td>
     função interna
-    <code class="function">
+    <code>
      brin_inclusion_consistent()
     </code>
    </td>
@@ -2666,7 +2662,7 @@ Para escrever uma classe de operador para um tipo de dados complexo que tem valo
    </td>
    <td>
     função interna
-    <code class="function">
+    <code>
      brin_inclusion_union()
     </code>
    </td>
@@ -2909,11 +2905,7 @@ Para escrever uma classe de operador para um tipo de dados que implemente apenas
 
 
 
-<table border="1" class="table" summary="Procedure and Support Numbers for Bloom Operator Classes">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -2931,7 +2923,7 @@ Para escrever uma classe de operador para um tipo de dados que implemente apenas
    </td>
    <td>
     internal function
-    <code class="function">
+    <code>
      brin_bloom_opcinfo()
     </code>
    </td>
@@ -2942,7 +2934,7 @@ Para escrever uma classe de operador para um tipo de dados que implemente apenas
    </td>
    <td>
     internal function
-    <code class="function">
+    <code>
      brin_bloom_add_value()
     </code>
    </td>
@@ -2953,7 +2945,7 @@ Para escrever uma classe de operador para um tipo de dados que implemente apenas
    </td>
    <td>
     internal function
-    <code class="function">
+    <code>
      brin_bloom_consistent()
     </code>
    </td>
@@ -2964,7 +2956,7 @@ Para escrever uma classe de operador para um tipo de dados que implemente apenas
    </td>
    <td>
     internal function
-    <code class="function">
+    <code>
      brin_bloom_union()
     </code>
    </td>
@@ -2975,7 +2967,7 @@ Para escrever uma classe de operador para um tipo de dados que implemente apenas
    </td>
    <td>
     internal function
-    <code class="function">
+    <code>
      brin_bloom_options()
     </code>
    </td>
@@ -3016,11 +3008,7 @@ A classe do operador minmax-multi também é destinada a tipos de dados que impl
 
 
 
-<table border="1" class="table" summary="Procedure and Support Numbers for minmax-multi Operator Classes">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -3038,7 +3026,7 @@ A classe do operador minmax-multi também é destinada a tipos de dados que impl
    </td>
    <td>
     função interna
-    <code class="function">
+    <code>
      brin_minmax_multi_opcinfo()
     </code>
    </td>
@@ -3049,7 +3037,7 @@ A classe do operador minmax-multi também é destinada a tipos de dados que impl
    </td>
    <td>
     função interna
-    <code class="function">
+    <code>
      brin_minmax_multi_add_value()
     </code>
    </td>
@@ -3060,7 +3048,7 @@ A classe do operador minmax-multi também é destinada a tipos de dados que impl
    </td>
    <td>
     função interna
-    <code class="function">
+    <code>
      brin_minmax_multi_consistent()
     </code>
    </td>
@@ -3071,7 +3059,7 @@ A classe do operador minmax-multi também é destinada a tipos de dados que impl
    </td>
    <td>
     função interna
-    <code class="function">
+    <code>
      brin_minmax_multi_union()
     </code>
    </td>
@@ -3082,7 +3070,7 @@ A classe do operador minmax-multi também é destinada a tipos de dados que impl
    </td>
    <td>
     função interna
-    <code class="function">
+    <code>
      brin_minmax_multi_options()
     </code>
    </td>

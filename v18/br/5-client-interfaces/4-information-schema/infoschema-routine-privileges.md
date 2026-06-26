@@ -6,7 +6,7 @@ A visão `routine_privileges` identifica todos os privilégios concedidos em fun
 
 
 
-<table border="1" class="table" summary="routine_privileges Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A visão `routine_privileges` identifica todos os privilégios concedidos em fun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       grantor
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A visão `routine_privileges` identifica todos os privilégios concedidos em fun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       grantee
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A visão `routine_privileges` identifica todos os privilégios concedidos em fun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       specific_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,10 +71,10 @@ A visão `routine_privileges` identifica todos os privilégios concedidos em fun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       specific_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -86,10 +86,10 @@ A visão `routine_privileges` identifica todos os privilégios concedidos em fun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       specific_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -113,10 +113,10 @@ A visão `routine_privileges` identifica todos os privilégios concedidos em fun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       routine_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -128,10 +128,10 @@ A visão `routine_privileges` identifica todos os privilégios concedidos em fun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       routine_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -143,10 +143,10 @@ A visão `routine_privileges` identifica todos os privilégios concedidos em fun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       routine_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -158,16 +158,16 @@ A visão `routine_privileges` identifica todos os privilégios concedidos em fun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       privilege_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Always
-     <code class="literal">
+     <code>
       EXECUTE
      </code>
      (the only privilege type for functions)
@@ -177,19 +177,19 @@ A visão `routine_privileges` identifica todos os privilégios concedidos em fun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_grantable
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       YES
      </code>
      if the privilege is grantable,
-     <code class="literal">
+     <code>
       NO
      </code>
      if not

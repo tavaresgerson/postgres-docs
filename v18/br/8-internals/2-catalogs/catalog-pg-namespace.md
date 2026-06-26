@@ -6,7 +6,7 @@ O catálogo `pg_namespace` armazena namespaces. Um namespace é a estrutura subj
 
 
 
-<table border="1" class="table" summary="pg_namespace Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_namespace` armazena namespaces. Um namespace é a estrutura subj
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,10 +41,10 @@ O catálogo `pg_namespace` armazena namespaces. Um namespace é a estrutura subj
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       nspname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -56,20 +56,20 @@ O catálogo `pg_namespace` armazena namespaces. Um namespace é a estrutura subj
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       nspowner
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -82,10 +82,10 @@ O catálogo `pg_namespace` armazena namespaces. Um namespace é a estrutura subj
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       nspacl
      </code>
-     <code class="type">
+     <code>
       aclitem[]
      </code>
     </p>

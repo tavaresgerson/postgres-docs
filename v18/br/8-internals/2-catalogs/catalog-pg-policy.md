@@ -6,7 +6,7 @@ O catálogo `pg_policy` armazena políticas de segurança de nível de linha par
 
 
 
-<table border="1" class="table" summary="pg_policy Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_policy` armazena políticas de segurança de nível de linha par
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,10 +41,10 @@ O catálogo `pg_policy` armazena políticas de segurança de nível de linha par
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       polname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -56,20 +56,20 @@ O catálogo `pg_policy` armazena políticas de segurança de nível de linha par
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       polrelid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -82,16 +82,16 @@ O catálogo `pg_policy` armazena políticas de segurança de nível de linha par
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       polcmd
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      O tipo de comando ao qual a política é aplicada:
-     <code class="literal">
+     <code>
       r
      </code>
      para
@@ -101,7 +101,7 @@ O catálogo `pg_policy` armazena políticas de segurança de nível de linha par
       </span>
      </a>
      ,
-     <code class="literal">
+     <code>
       a
      </code>
      para
@@ -111,7 +111,7 @@ O catálogo `pg_policy` armazena políticas de segurança de nível de linha par
       </span>
      </a>
      ,
-     <code class="literal">
+     <code>
       w
      </code>
      para
@@ -121,7 +121,7 @@ O catálogo `pg_policy` armazena políticas de segurança de nível de linha par
       </span>
      </a>
      ,
-     <code class="literal">
+     <code>
       d
      </code>
      para
@@ -131,7 +131,7 @@ O catálogo `pg_policy` armazena políticas de segurança de nível de linha par
       </span>
      </a>
      ou
-     <code class="literal">
+     <code>
       *
      </code>
      para todos
@@ -141,10 +141,10 @@ O catálogo `pg_policy` armazena políticas de segurança de nível de linha par
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       polpermissive
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -156,27 +156,27 @@ O catálogo `pg_policy` armazena políticas de segurança de nível de linha par
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       polroles
      </code>
-     <code class="type">
+     <code>
       oid[]
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
     </p>
     <p>
      Os papéis aos quais a política é aplicada; zero significa
-     <code class="literal">
+     <code>
       PUBLIC
      </code>
      (e normalmente aparece sozinho na matriz)
@@ -186,10 +186,10 @@ O catálogo `pg_policy` armazena políticas de segurança de nível de linha par
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       polqual
      </code>
-     <code class="type">
+     <code>
       pg_node_tree
      </code>
     </p>
@@ -201,10 +201,10 @@ O catálogo `pg_policy` armazena políticas de segurança de nível de linha par
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       polwithcheck
      </code>
-     <code class="type">
+     <code>
       pg_node_tree
      </code>
     </p>

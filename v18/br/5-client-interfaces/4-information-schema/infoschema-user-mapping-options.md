@@ -6,7 +6,7 @@ A vista `user_mapping_options` contém todas as opções definidas para mapeamen
 
 
 
-<table border="1" class="table" summary="user_mapping_options Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,16 +26,16 @@ A vista `user_mapping_options` contém todas as opções definidas para mapeamen
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       authorization_identifier
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
     <p>
      Name of the user being mapped, or
-     <code class="literal">
+     <code>
       PUBLIC
      </code>
      if the mapping is public
@@ -45,10 +45,10 @@ A vista `user_mapping_options` contém todas as opções definidas para mapeamen
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       foreign_server_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -60,10 +60,10 @@ A vista `user_mapping_options` contém todas as opções definidas para mapeamen
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       foreign_server_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -75,10 +75,10 @@ A vista `user_mapping_options` contém todas as opções definidas para mapeamen
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       option_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -90,16 +90,16 @@ A vista `user_mapping_options` contém todas as opções definidas para mapeamen
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       option_value
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Value of the option.  This column will show as null unless the current user is the user being mapped, or the mapping is for
-     <code class="literal">
+     <code>
       PUBLIC
      </code>
      and the current user is the server owner, or the current user is a superuser.  The intent is to protect password information stored as user mapping option.

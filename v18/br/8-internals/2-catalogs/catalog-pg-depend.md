@@ -8,7 +8,7 @@ Veja também `pg_shdepend` (catalog-pg-shdepend.md "52.48. pg_shdepend"), que r
 
 
 
-<table border="1" class="table" summary="pg_depend Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,20 +28,20 @@ Veja também `pg_shdepend` (catalog-pg-shdepend.md "52.48. pg_shdepend"), que r
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       classid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -54,10 +54,10 @@ Veja também `pg_shdepend` (catalog-pg-shdepend.md "52.48. pg_shdepend"), que r
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       objid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referência a qualquer coluna OID)
@@ -70,20 +70,20 @@ Veja também `pg_shdepend` (catalog-pg-shdepend.md "52.48. pg_shdepend"), que r
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       objsubid
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
      Para uma coluna de tabela, este é o número da coluna (o
-     <code class="structfield">
+     <code>
       objid
      </code>
      e
-     <code class="structfield">
+     <code>
       classid
      </code>
      refere-se à própria tabela). Para todos os outros tipos de objeto, essa coluna é zero.
@@ -93,20 +93,20 @@ Veja também `pg_shdepend` (catalog-pg-shdepend.md "52.48. pg_shdepend"), que r
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       refclassid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -119,10 +119,10 @@ Veja também `pg_shdepend` (catalog-pg-shdepend.md "52.48. pg_shdepend"), que r
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       refobjid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referência a qualquer coluna OID)
@@ -135,20 +135,20 @@ Veja também `pg_shdepend` (catalog-pg-shdepend.md "52.48. pg_shdepend"), que r
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       refobjsubid
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
      Para uma coluna de tabela, este é o número da coluna (o
-     <code class="structfield">
+     <code>
       refobjid
      </code>
      e
-     <code class="structfield">
+     <code>
       refclassid
      </code>
      refere-se à tabela em si). Para todos os outros tipos de objeto, essa coluna é zero.
@@ -158,10 +158,10 @@ Veja também `pg_shdepend` (catalog-pg-shdepend.md "52.48. pg_shdepend"), que r
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       deptype
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>

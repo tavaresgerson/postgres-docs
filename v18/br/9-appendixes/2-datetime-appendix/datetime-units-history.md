@@ -10,7 +10,7 @@ A aproximação 365+97/400 é alcançada ao ter 97 anos bissextos a cada 400 ano
 
 
 
-<table border="0" class="simplelist" summary="Simple list">
+<table>
  <tr>
   <td>
    Todo ano divisível por 4 é um ano bissexto.

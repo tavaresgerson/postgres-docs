@@ -24,10 +24,10 @@ O catálogo `pg_enum` contém entradas que mostram os valores e rótulos para ca
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -39,20 +39,20 @@ O catálogo `pg_enum` contém entradas que mostram os valores e rótulos para ca
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       enumtypid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -60,7 +60,7 @@ O catálogo `pg_enum` contém entradas que mostram os valores e rótulos para ca
     <p>
      O OID do
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
@@ -71,10 +71,10 @@ O catálogo `pg_enum` contém entradas que mostram os valores e rótulos para ca
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       enumsortorder
      </code>
-     <code class="type">
+     <code>
       float4
      </code>
     </p>
@@ -86,10 +86,10 @@ O catálogo `pg_enum` contém entradas que mostram os valores e rótulos para ca
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       enumlabel
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>

@@ -1,12 +1,10 @@
-## 9.6. Funções e operadores de string de bits [#](#FUNCTIONS-BITSTRING)
+### 9.6. Funções e operadores de string de bits [#](#FUNCTIONS-BITSTRING)
 
 Esta seção descreve funções e operadores para examinar e manipular strings de bits, ou seja, valores dos tipos `bit` e `bit varying`. (Embora apenas o tipo `bit` seja mencionado nessas tabelas, os valores do tipo `bit varying` podem ser usados de forma intercambiável.) As strings de bits suportam os operadores de comparação usuais mostrados em [Tabela 9.1](functions-comparison.md#FUNCTIONS-COMPARISON-OP-TABLE "Table 9.1. Comparison Operators"), bem como os operadores mostrados em [Tabela 9.14](functions-bitstring.md#FUNCTIONS-BIT-STRING-OP-TABLE "Table 9.14. Bit String Operators").
 
 **Tabela 9.14. Operadores de String de Bits**
 
-
-
-<table border="1" class="table" summary="Bit String Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -29,17 +27,17 @@ Esta seção descreve funções e operadores para examinar e manipular strings d
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       bit
      </code>
-     <code class="literal">
+     <code>
       ||
      </code>
-     <code class="type">
+     <code>
       bit
      </code>
      →
-     <code class="returnvalue">
+     <code>
       bit
      </code>
     </p>
@@ -47,11 +45,11 @@ Esta seção descreve funções e operadores para examinar e manipular strings d
      Concatenação
     </p>
     <p>
-     <code class="literal">
+     <code>
       B'10001' || B'011'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       10001011
      </code>
     </p>
@@ -60,17 +58,17 @@ Esta seção descreve funções e operadores para examinar e manipular strings d
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       bit
      </code>
-     <code class="literal">
+     <code>
       &amp;
      </code>
-     <code class="type">
+     <code>
       bit
      </code>
      →
-     <code class="returnvalue">
+     <code>
       bit
      </code>
     </p>
@@ -78,11 +76,11 @@ Esta seção descreve funções e operadores para examinar e manipular strings d
      E AND (as entradas devem ter a mesma comprimento)
     </p>
     <p>
-     <code class="literal">
+     <code>
       B'10001' &amp; B'01101'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       00001
      </code>
     </p>
@@ -91,17 +89,17 @@ Esta seção descreve funções e operadores para examinar e manipular strings d
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       bit
      </code>
-     <code class="literal">
+     <code>
       |
      </code>
-     <code class="type">
+     <code>
       bit
      </code>
      →
-     <code class="returnvalue">
+     <code>
       bit
      </code>
     </p>
@@ -109,11 +107,11 @@ Esta seção descreve funções e operadores para examinar e manipular strings d
      XOR (as entradas devem ter a mesma comprimento)
     </p>
     <p>
-     <code class="literal">
+     <code>
       B'10001' | B'01101'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       11101
      </code>
     </p>
@@ -122,17 +120,17 @@ Esta seção descreve funções e operadores para examinar e manipular strings d
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       bit
      </code>
-     <code class="literal">
+     <code>
       #
      </code>
-     <code class="type">
+     <code>
       bit
      </code>
      →
-     <code class="returnvalue">
+     <code>
       bit
      </code>
     </p>
@@ -140,11 +138,11 @@ Esta seção descreve funções e operadores para examinar e manipular strings d
      XOR (bit a bit) (os inputs devem ter a mesma extensão)
     </p>
     <p>
-     <code class="literal">
+     <code>
       B'10001' # B'01101'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       11100
      </code>
     </p>
@@ -153,14 +151,14 @@ Esta seção descreve funções e operadores para examinar e manipular strings d
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       ~
      </code>
-     <code class="type">
+     <code>
       bit
      </code>
      →
-     <code class="returnvalue">
+     <code>
       bit
      </code>
     </p>
@@ -168,11 +166,11 @@ Esta seção descreve funções e operadores para examinar e manipular strings d
      Bitwise NOT
     </p>
     <p>
-     <code class="literal">
+     <code>
       ~ B'10001'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       01110
      </code>
     </p>
@@ -181,17 +179,17 @@ Esta seção descreve funções e operadores para examinar e manipular strings d
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       bit
      </code>
-     <code class="literal">
+     <code>
       &lt;&lt;
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
      →
-     <code class="returnvalue">
+     <code>
       bit
      </code>
     </p>
@@ -199,11 +197,11 @@ Esta seção descreve funções e operadores para examinar e manipular strings d
      Deslocamento lógico à esquerda (comprimento da string é preservado)
     </p>
     <p>
-     <code class="literal">
+     <code>
       B'10001' &lt;&lt; 3
      </code>
      →
-     <code class="returnvalue">
+     <code>
       01000
      </code>
     </p>
@@ -212,17 +210,17 @@ Esta seção descreve funções e operadores para examinar e manipular strings d
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       bit
      </code>
-     <code class="literal">
+     <code>
       &gt;&gt;
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
      →
-     <code class="returnvalue">
+     <code>
       bit
      </code>
     </p>
@@ -230,11 +228,11 @@ Esta seção descreve funções e operadores para examinar e manipular strings d
      Deslocamento à direita de bits (o comprimento da string é preservado)
     </p>
     <p>
-     <code class="literal">
+     <code>
       B'10001' &gt;&gt; 2
      </code>
      →
-     <code class="returnvalue">
+     <code>
       00100
      </code>
     </p>
@@ -243,22 +241,11 @@ Esta seção descreve funções e operadores para examinar e manipular strings d
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Algumas das funções disponíveis para strings binárias também estão disponíveis para strings de bits, conforme mostrado na [Tabela 9.15](functions-bitstring.md#FUNCTIONS-BIT-STRING-TABLE).
 
 **Tabela 9.15. Funções de String de Bits**
 
-
-
-<table border="1" class="table" summary="Bit String Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -281,15 +268,15 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       bit_count
      </code>
      (
-     <code class="type">
+     <code>
       bit
      </code>
      )
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
@@ -305,11 +292,11 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
      ).
     </p>
     <p>
-     <code class="literal">
+     <code>
       bit_count(B'10111')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       4
      </code>
     </p>
@@ -318,15 +305,15 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       bit_length
      </code>
      (
-     <code class="type">
+     <code>
       bit
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -334,11 +321,11 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
      Retorna o número de bits na string de bits.
     </p>
     <p>
-     <code class="literal">
+     <code>
       bit_length(B'10111')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       5
      </code>
     </p>
@@ -347,15 +334,15 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       length
      </code>
      (
-     <code class="type">
+     <code>
       bit
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -363,11 +350,11 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
      Retorna o número de bits na string de bits.
     </p>
     <p>
-     <code class="literal">
+     <code>
       length(B'10111')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       5
      </code>
     </p>
@@ -376,15 +363,15 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       octet_length
      </code>
      (
-     <code class="type">
+     <code>
       bit
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -392,11 +379,11 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
      Retorna o número de bytes na string de bits.
     </p>
     <p>
-     <code class="literal">
+     <code>
       octet_length(B'1011111011')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -405,7 +392,7 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       overlay
      </code>
      (
@@ -414,10 +401,10 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
        bits
       </code>
      </em>
-     <code class="type">
+     <code>
       bit
      </code>
-     <code class="literal">
+     <code>
       PLACING
      </code>
      <em class="parameter">
@@ -425,10 +412,10 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
        newsubstring
       </code>
      </em>
-     <code class="type">
+     <code>
       bit
      </code>
-     <code class="literal">
+     <code>
       FROM
      </code>
      <em class="parameter">
@@ -436,12 +423,12 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
        start
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      [
      <span class="optional">
-      <code class="literal">
+      <code>
        FOR
       </code>
       <em class="parameter">
@@ -449,12 +436,12 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
         count
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       bit
      </code>
     </p>
@@ -498,11 +485,11 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       overlay(B'01010101010101010' placing B'11111' from 2 for 3)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0111110101010101010
      </code>
     </p>
@@ -511,7 +498,7 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       position
      </code>
      (
@@ -520,10 +507,10 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
        substring
       </code>
      </em>
-     <code class="type">
+     <code>
       bit
      </code>
-     <code class="literal">
+     <code>
       IN
      </code>
      <em class="parameter">
@@ -531,11 +518,11 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
        bits
       </code>
      </em>
-     <code class="type">
+     <code>
       bit
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -555,11 +542,11 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
      , ou zero se não estiver presente.
     </p>
     <p>
-     <code class="literal">
+     <code>
       position(B'010' in B'000001101011')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       8
      </code>
     </p>
@@ -568,7 +555,7 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       substring
      </code>
      (
@@ -577,12 +564,12 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
        bits
       </code>
      </em>
-     <code class="type">
+     <code>
       bit
      </code>
      [
      <span class="optional">
-      <code class="literal">
+      <code>
        FROM
       </code>
       <em class="parameter">
@@ -590,13 +577,13 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
         start
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
      </span>
      ] [
      <span class="optional">
-      <code class="literal">
+      <code>
        FOR
       </code>
       <em class="parameter">
@@ -604,12 +591,12 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
         count
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
      </span>
      ] )
-     <code class="returnvalue">
+     <code>
       bit
      </code>
     </p>
@@ -647,11 +634,11 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       substring(B'110010111111' from 3 for 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       00
      </code>
     </p>
@@ -660,7 +647,7 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       get_bit
      </code>
      (
@@ -669,7 +656,7 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
        bits
       </code>
      </em>
-     <code class="type">
+     <code>
       bit
      </code>
      ,
@@ -678,11 +665,11 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
        n
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -696,11 +683,11 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
      'bit a bit; o primeiro bit (o mais à esquerda) é o bit 0.
     </p>
     <p>
-     <code class="literal">
+     <code>
       get_bit(B'101010101010101010', 6)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1
      </code>
     </p>
@@ -709,7 +696,7 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       set_bit
      </code>
      (
@@ -718,7 +705,7 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
        bits
       </code>
      </em>
-     <code class="type">
+     <code>
       bit
      </code>
      ,
@@ -727,7 +714,7 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
        n
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -736,11 +723,11 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
        newvalue
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       bit
      </code>
     </p>
@@ -760,11 +747,11 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
      ; o primeiro bit (o mais à esquerda) é o bit 0.
     </p>
     <p>
-     <code class="literal">
+     <code>
       set_bit(B'101010101010101010', 6, 0)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       101010001010101010
      </code>
     </p>
@@ -773,18 +760,9 @@ Algumas das funções disponíveis para strings binárias também estão dispon�
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Além disso, é possível converter valores inteiros para e a partir do tipo `bit`. A conversão de um inteiro para `bit(n)` copia os bits mais à direita do `n`. A conversão de um inteiro para uma string de bits com largura maior que o próprio inteiro fará extensão de sinal à esquerda. Alguns exemplos:
 
-```
+```sql
 44::bit(10)                    0000101100
 44::bit(3)                     100
 cast(-44 as bit(12))           111111010100

@@ -1,16 +1,10 @@
-## 9.2. Funções e operadores de comparação [#](#FUNCTIONS-COMPARISON)
+### 9.2. Funções e operadores de comparação [#](#FUNCTIONS-COMPARISON)
 
 Os operadores de comparação comuns estão disponíveis, conforme mostrado na [Tabela 9.1](functions-comparison.md#FUNCTIONS-COMPARISON-OP-TABLE).
 
 **Tabela 9.1. Operadores de comparação**
 
-
-
-<table border="1" class="table" summary="Comparison Operators">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -29,7 +23,7 @@ Os operadores de comparação comuns estão disponíveis, conforme mostrado na [
       datatype
      </code>
     </em>
-    <code class="literal">
+    <code>
      &lt;
     </code>
     <em class="replaceable">
@@ -38,7 +32,7 @@ Os operadores de comparação comuns estão disponíveis, conforme mostrado na [
      </code>
     </em>
     →
-    <code class="returnvalue">
+    <code>
      boolean
     </code>
    </td>
@@ -53,7 +47,7 @@ Os operadores de comparação comuns estão disponíveis, conforme mostrado na [
       datatype
      </code>
     </em>
-    <code class="literal">
+    <code>
      &gt;
     </code>
     <em class="replaceable">
@@ -62,7 +56,7 @@ Os operadores de comparação comuns estão disponíveis, conforme mostrado na [
      </code>
     </em>
     →
-    <code class="returnvalue">
+    <code>
      boolean
     </code>
    </td>
@@ -77,7 +71,7 @@ Os operadores de comparação comuns estão disponíveis, conforme mostrado na [
       datatype
      </code>
     </em>
-    <code class="literal">
+    <code>
      &lt;=
     </code>
     <em class="replaceable">
@@ -86,7 +80,7 @@ Os operadores de comparação comuns estão disponíveis, conforme mostrado na [
      </code>
     </em>
     →
-    <code class="returnvalue">
+    <code>
      boolean
     </code>
    </td>
@@ -101,7 +95,7 @@ Os operadores de comparação comuns estão disponíveis, conforme mostrado na [
       datatype
      </code>
     </em>
-    <code class="literal">
+    <code>
      &gt;=
     </code>
     <em class="replaceable">
@@ -110,7 +104,7 @@ Os operadores de comparação comuns estão disponíveis, conforme mostrado na [
      </code>
     </em>
     →
-    <code class="returnvalue">
+    <code>
      boolean
     </code>
    </td>
@@ -125,7 +119,7 @@ Os operadores de comparação comuns estão disponíveis, conforme mostrado na [
       datatype
      </code>
     </em>
-    <code class="literal">
+    <code>
      =
     </code>
     <em class="replaceable">
@@ -134,7 +128,7 @@ Os operadores de comparação comuns estão disponíveis, conforme mostrado na [
      </code>
     </em>
     →
-    <code class="returnvalue">
+    <code>
      boolean
     </code>
    </td>
@@ -149,7 +143,7 @@ Os operadores de comparação comuns estão disponíveis, conforme mostrado na [
       datatype
      </code>
     </em>
-    <code class="literal">
+    <code>
      &lt;&gt;
     </code>
     <em class="replaceable">
@@ -158,7 +152,7 @@ Os operadores de comparação comuns estão disponíveis, conforme mostrado na [
      </code>
     </em>
     →
-    <code class="returnvalue">
+    <code>
      boolean
     </code>
    </td>
@@ -173,7 +167,7 @@ Os operadores de comparação comuns estão disponíveis, conforme mostrado na [
       datatype
      </code>
     </em>
-    <code class="literal">
+    <code>
      !=
     </code>
     <em class="replaceable">
@@ -182,7 +176,7 @@ Os operadores de comparação comuns estão disponíveis, conforme mostrado na [
      </code>
     </em>
     →
-    <code class="returnvalue">
+    <code>
      boolean
     </code>
    </td>
@@ -192,14 +186,6 @@ Os operadores de comparação comuns estão disponíveis, conforme mostrado na [
   </tr>
  </tbody>
 </table>
-
-
-
-
-
-
-
-
 
 
 Nota
@@ -216,9 +202,7 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
 
 **Tabela 9.2. Predicados de comparação**
 
-
-
-<table border="1" class="table" summary="Comparison Predicates">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -246,7 +230,7 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
        datatype
       </code>
      </em>
-     <code class="literal">
+     <code>
       BETWEEN
      </code>
      <em class="replaceable">
@@ -254,7 +238,7 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
        datatype
       </code>
      </em>
-     <code class="literal">
+     <code>
       AND
      </code>
      <em class="replaceable">
@@ -263,7 +247,7 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -271,20 +255,20 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
      Entre (incluindo os pontos finais da faixa).
     </p>
     <p>
-     <code class="literal">
+     <code>
       2 BETWEEN 1 AND 3
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       2 BETWEEN 3 AND 1
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
@@ -298,7 +282,7 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
        datatype
       </code>
      </em>
-     <code class="literal">
+     <code>
       NOT BETWEEN
      </code>
      <em class="replaceable">
@@ -306,7 +290,7 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
        datatype
       </code>
      </em>
-     <code class="literal">
+     <code>
       AND
      </code>
      <em class="replaceable">
@@ -315,23 +299,23 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Não entre (a negação de
-     <code class="literal">
+     <code>
       BETWEEN
      </code>
      ).
     </p>
     <p>
-     <code class="literal">
+     <code>
       2 NOT BETWEEN 1 AND 3
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
@@ -345,7 +329,7 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
        datatype
       </code>
      </em>
-     <code class="literal">
+     <code>
       BETWEEN SYMMETRIC
      </code>
      <em class="replaceable">
@@ -353,7 +337,7 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
        datatype
       </code>
      </em>
-     <code class="literal">
+     <code>
       AND
      </code>
      <em class="replaceable">
@@ -362,7 +346,7 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -370,11 +354,11 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
      Entre, após a classificação dos dois valores de extremidade.
     </p>
     <p>
-     <code class="literal">
+     <code>
       2 BETWEEN SYMMETRIC 3 AND 1
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -388,7 +372,7 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
        datatype
       </code>
      </em>
-     <code class="literal">
+     <code>
       NOT BETWEEN SYMMETRIC
      </code>
      <em class="replaceable">
@@ -396,7 +380,7 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
        datatype
       </code>
      </em>
-     <code class="literal">
+     <code>
       AND
      </code>
      <em class="replaceable">
@@ -405,7 +389,7 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -413,11 +397,11 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
      Não entre, após a classificação dos dois valores de extremidade.
     </p>
     <p>
-     <code class="literal">
+     <code>
       2 NOT BETWEEN SYMMETRIC 3 AND 1
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
@@ -431,7 +415,7 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
        datatype
       </code>
      </em>
-     <code class="literal">
+     <code>
       IS DISTINCT FROM
      </code>
      <em class="replaceable">
@@ -440,7 +424,7 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -448,29 +432,29 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
      Não é igual, tratando o nulo como um valor comparável.
     </p>
     <p>
-     <code class="literal">
+     <code>
       1 IS DISTINCT FROM NULL
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
      (em vez de
-     <code class="literal">
+     <code>
       NULL
      </code>
      )
     </p>
     <p>
-     <code class="literal">
+     <code>
       NULL IS DISTINCT FROM NULL
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
      (em vez de
-     <code class="literal">
+     <code>
       NULL
      </code>
      )
@@ -485,7 +469,7 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
        datatype
       </code>
      </em>
-     <code class="literal">
+     <code>
       IS NOT DISTINCT FROM
      </code>
      <em class="replaceable">
@@ -494,7 +478,7 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -502,29 +486,29 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
      Igual, tratando o nulo como um valor comparável.
     </p>
     <p>
-     <code class="literal">
+     <code>
       1 IS NOT DISTINCT FROM NULL
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
      (em vez de
-     <code class="literal">
+     <code>
       NULL
      </code>
      )
     </p>
     <p>
-     <code class="literal">
+     <code>
       NULL IS NOT DISTINCT FROM NULL
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
      (em vez de
-     <code class="literal">
+     <code>
       NULL
      </code>
      )
@@ -539,11 +523,11 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
        datatype
       </code>
      </em>
-     <code class="literal">
+     <code>
       IS NULL
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -551,11 +535,11 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
      Teste se o valor é nulo.
     </p>
     <p>
-     <code class="literal">
+     <code>
       1.5 IS NULL
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
@@ -569,11 +553,11 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
        datatype
       </code>
      </em>
-     <code class="literal">
+     <code>
       IS NOT NULL
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -581,11 +565,11 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
      Teste se o valor não é nulo.
     </p>
     <p>
-     <code class="literal">
+     <code>
       'null' IS NOT NULL
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -599,11 +583,11 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
        datatype
       </code>
      </em>
-     <code class="literal">
+     <code>
       ISNULL
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -620,11 +604,11 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
        datatype
       </code>
      </em>
-     <code class="literal">
+     <code>
       NOTNULL
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -636,14 +620,14 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       boolean
      </code>
-     <code class="literal">
+     <code>
       IS TRUE
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -651,24 +635,24 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
      Teste se a expressão booleana produz verdadeiro.
     </p>
     <p>
-     <code class="literal">
+     <code>
       true IS TRUE
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       NULL::boolean IS TRUE
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
      (em vez de
-     <code class="literal">
+     <code>
       NULL
      </code>
      )
@@ -678,14 +662,14 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       boolean
      </code>
-     <code class="literal">
+     <code>
       IS NOT TRUE
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -693,24 +677,24 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
      Teste se a expressão booleana gera falso ou desconhecido.
     </p>
     <p>
-     <code class="literal">
+     <code>
       true IS NOT TRUE
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       NULL::boolean IS NOT TRUE
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
      (em vez de
-     <code class="literal">
+     <code>
       NULL
      </code>
      )
@@ -720,14 +704,14 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       boolean
      </code>
-     <code class="literal">
+     <code>
       IS FALSE
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -735,24 +719,24 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
      Teste se a expressão booleana gera um valor falso.
     </p>
     <p>
-     <code class="literal">
+     <code>
       true IS FALSE
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       NULL::boolean IS FALSE
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
      (em vez de
-     <code class="literal">
+     <code>
       NULL
      </code>
      )
@@ -762,14 +746,14 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       boolean
      </code>
-     <code class="literal">
+     <code>
       IS NOT FALSE
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -777,24 +761,24 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
      Teste se a expressão booleana produz verdadeiro ou desconhecido.
     </p>
     <p>
-     <code class="literal">
+     <code>
       true IS NOT FALSE
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       NULL::boolean IS NOT FALSE
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
      (em vez de
-     <code class="literal">
+     <code>
       NULL
      </code>
      )
@@ -804,14 +788,14 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       boolean
      </code>
-     <code class="literal">
+     <code>
       IS UNKNOWN
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -819,24 +803,24 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
      Teste se a expressão booleana gera desconhecido.
     </p>
     <p>
-     <code class="literal">
+     <code>
       true IS UNKNOWN
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       NULL::boolean IS UNKNOWN
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
      (em vez de
-     <code class="literal">
+     <code>
       NULL
      </code>
      )
@@ -846,14 +830,14 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       boolean
      </code>
-     <code class="literal">
+     <code>
       IS NOT UNKNOWN
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -861,24 +845,24 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
      Teste se a expressão booleana produz verdadeiro ou falso.
     </p>
     <p>
-     <code class="literal">
+     <code>
       true IS NOT UNKNOWN
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       NULL::boolean IS NOT UNKNOWN
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
      (em vez de
-     <code class="literal">
+     <code>
       NULL
      </code>
      )
@@ -888,24 +872,15 @@ Existem também alguns predicados de comparação, conforme mostrado na [Tabela 
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 O predicado `BETWEEN` simplifica os testes de intervalo:
 
-```
+```sql
 a BETWEEN x AND y
 ```
 
 é equivalente a
 
-```
+```sql
 a >= x AND a <= y
 ```
 
@@ -919,7 +894,7 @@ O uso de `AND` na sintaxe de `BETWEEN` cria uma ambiguidade com o uso de `AND` c
 
 Os operadores de comparação comuns retornam nulo (indicando “desconhecido”), não verdadeiro ou falso, quando qualquer um dos inputs é nulo. Por exemplo, `7 = NULL` retorna nulo, assim como `7 <> NULL`. Quando esse comportamento não é adequado, use os predicados `IS [ NOT ] DISTINCT FROM`:
 
-```
+```sql
 a IS DISTINCT FROM b
 a IS NOT DISTINCT FROM b
 ```
@@ -928,14 +903,14 @@ Para entradas não nulos, `IS DISTINCT FROM` é o mesmo que o operador `<>`. No 
 
 Para verificar se um valor é nulo ou não, use os predicados:
 
-```
+```sql
 expression IS NULL
 expression IS NOT NULL
 ```
 
 ou predicados equivalentes, mas não padronizados:
 
-```
+```sql
 expression ISNULL
 expression NOTNULL
 ```
@@ -948,7 +923,7 @@ Algumas aplicações podem esperar que `expression = NULL` retorne verdadeiro se
 
 Se o *`expression`* for de valor de linha, então `IS NULL` é verdadeiro quando a própria expressão de linha é nula ou quando todos os campos da linha são nulos, enquanto `IS NOT NULL` é verdadeiro quando a própria expressão de linha não é nula e todos os campos da linha não são nulos. Devido a esse comportamento, `IS NULL` e `IS NOT NULL` nem sempre retornam resultados inversos para expressões de valor de linha; em particular, uma expressão de valor de linha que contém campos tanto nulos quanto não nulos retornará falso para ambos os testes. Por exemplo:
 
-```
+```sql
 SELECT ROW(1,2.5,'this is a test') = ROW(1, 3, 'not the same');
 
 SELECT ROW(table.*) IS NULL FROM table;  -- detect all-null rows
@@ -962,7 +937,7 @@ Em alguns casos, pode ser preferível escrever *`row`* `IS DISTINCT FROM NULL` o
 
 Os valores lógicos também podem ser testados usando os predicados
 
-```
+```sql
 boolean_expression IS TRUE
 boolean_expression IS NOT TRUE
 boolean_expression IS FALSE
@@ -977,9 +952,7 @@ Algumas funções relacionadas à comparação também estão disponíveis, conf
 
 **Tabela 9.3. Funções de comparação**
 
-
-
-<table border="1" class="table" summary="Comparison Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -1002,18 +975,18 @@ Algumas funções relacionadas à comparação também estão disponíveis, conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       num_nonnulls
      </code>
      (
-     <code class="literal">
+     <code>
       VARIADIC
      </code>
-     <code class="type">
+     <code>
       "any"
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -1021,11 +994,11 @@ Algumas funções relacionadas à comparação também estão disponíveis, conf
      Retorna o número de argumentos que não são nulos.
     </p>
     <p>
-     <code class="literal">
+     <code>
       num_nonnulls(1, NULL, 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -1034,18 +1007,18 @@ Algumas funções relacionadas à comparação também estão disponíveis, conf
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       num_nulls
      </code>
      (
-     <code class="literal">
+     <code>
       VARIADIC
      </code>
-     <code class="type">
+     <code>
       "any"
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -1053,11 +1026,11 @@ Algumas funções relacionadas à comparação também estão disponíveis, conf
      Retorna o número de argumentos nulos.
     </p>
     <p>
-     <code class="literal">
+     <code>
       num_nulls(1, NULL, 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1
      </code>
     </p>
@@ -1065,8 +1038,3 @@ Algumas funções relacionadas à comparação também estão disponíveis, conf
   </tr>
  </tbody>
 </table>
-
-
-
-
-

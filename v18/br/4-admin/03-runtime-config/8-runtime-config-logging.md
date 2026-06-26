@@ -129,7 +129,7 @@ Por exemplo, se a sincronização do diretório de dados leva 25 segundos e, pos
 
 
 
-<table border="1" class="table" summary="Message Severity Levels">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -159,7 +159,7 @@ Por exemplo, se a sincronização do diretório de dados leva 25 segundos e, pos
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DEBUG1 .. DEBUG5
     </code>
    </td>
@@ -167,43 +167,43 @@ Por exemplo, se a sincronização do diretório de dados leva 25 segundos e, pos
     Fornece informações sucessivamente mais detalhadas para uso por desenvolvedores.
    </td>
    <td>
-    <code class="literal">
+    <code>
      DEBUG
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      INFORMATION
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      INFO
     </code>
    </td>
    <td>
     Fornece informações implicitamente solicitadas pelo usuário, por exemplo, saída de
-    <code class="command">
+    <code>
      VACUUM VERBOSE
     </code>
     .
    </td>
    <td>
-    <code class="literal">
+    <code>
      INFO
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      INFORMATION
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      NOTICE
     </code>
    </td>
@@ -211,43 +211,43 @@ Por exemplo, se a sincronização do diretório de dados leva 25 segundos e, pos
     Fornece informações que podem ser úteis para os usuários, como aviso sobre a redução de identificadores longos.
    </td>
    <td>
-    <code class="literal">
+    <code>
      NOTICE
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      INFORMATION
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WARNING
     </code>
    </td>
    <td>
     Fornece avisos sobre problemas prováveis, por exemplo,
-    <code class="command">
+    <code>
      COMMIT
     </code>
     fora de um bloco de transação.
    </td>
    <td>
-    <code class="literal">
+    <code>
      NOTICE
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WARNING
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ERROR
     </code>
    </td>
@@ -255,19 +255,19 @@ Por exemplo, se a sincronização do diretório de dados leva 25 segundos e, pos
     Relata um erro que causou o cancelamento do comando atual.
    </td>
    <td>
-    <code class="literal">
+    <code>
      WARNING
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ERROR
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LOG
     </code>
    </td>
@@ -275,19 +275,19 @@ Por exemplo, se a sincronização do diretório de dados leva 25 segundos e, pos
     Relata informações de interesse para os administradores, como a atividade do ponto de controle.
    </td>
    <td>
-    <code class="literal">
+    <code>
      INFO
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      INFORMATION
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      FATAL
     </code>
    </td>
@@ -295,19 +295,19 @@ Por exemplo, se a sincronização do diretório de dados leva 25 segundos e, pos
     Relata um erro que causou o cancelamento da sessão atual.
    </td>
    <td>
-    <code class="literal">
+    <code>
      ERR
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ERROR
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PANIC
     </code>
    </td>
@@ -315,12 +315,12 @@ Por exemplo, se a sincronização do diretório de dados leva 25 segundos e, pos
     Relata um erro que fez com que todas as sessões do banco de dados sejam interrompidas.
    </td>
    <td>
-    <code class="literal">
+    <code>
      CRIT
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ERROR
     </code>
    </td>
@@ -356,7 +356,7 @@ O que você escolhe registrar pode ter implicações de segurança; veja [Seçã
 
 
 
-<table border="1" class="table" summary="Log Connection Options">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -374,7 +374,7 @@ O que você escolhe registrar pode ter implicações de segurança; veja [Seçã
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      receipt
     </code>
    </td>
@@ -384,7 +384,7 @@ O que você escolhe registrar pode ter implicações de segurança; veja [Seçã
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      authentication
     </code>
    </td>
@@ -398,7 +398,7 @@ O que você escolhe registrar pode ter implicações de segurança; veja [Seçã
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      authorization
     </code>
    </td>
@@ -408,7 +408,7 @@ O que você escolhe registrar pode ter implicações de segurança; veja [Seçã
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      setup_durations
     </code>
    </td>
@@ -418,13 +418,13 @@ O que você escolhe registrar pode ter implicações de segurança; veja [Seçã
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      all
     </code>
    </td>
    <td>
     Um alias de conveniência equivalente a especificar todas as opções. Se
-    <code class="literal">
+    <code>
      all
     </code>
     Se estiver especificado em uma lista de outras opções, todos os aspectos da conexão serão registrados.
@@ -472,7 +472,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
 
 
 
-<table border="1" class="informaltable">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -494,7 +494,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %a
     </code>
    </td>
@@ -507,7 +507,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %u
     </code>
    </td>
@@ -520,7 +520,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %d
     </code>
    </td>
@@ -533,7 +533,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %r
     </code>
    </td>
@@ -546,7 +546,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %h
     </code>
    </td>
@@ -559,7 +559,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %L
     </code>
    </td>
@@ -572,7 +572,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %b
     </code>
    </td>
@@ -585,7 +585,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %p
     </code>
    </td>
@@ -598,7 +598,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %P
     </code>
    </td>
@@ -611,7 +611,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %t
     </code>
    </td>
@@ -624,7 +624,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %m
     </code>
    </td>
@@ -637,7 +637,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %n
     </code>
    </td>
@@ -650,7 +650,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %i
     </code>
    </td>
@@ -663,7 +663,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %e
     </code>
    </td>
@@ -676,7 +676,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %c
     </code>
    </td>
@@ -689,7 +689,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %l
     </code>
    </td>
@@ -702,7 +702,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %s
     </code>
    </td>
@@ -715,7 +715,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %v
     </code>
    </td>
@@ -731,7 +731,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %x
     </code>
    </td>
@@ -747,7 +747,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %q
     </code>
    </td>
@@ -760,7 +760,7 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %Q
     </code>
    </td>
@@ -777,13 +777,13 @@ Este parâmetro só pode ser definido no arquivo `postgresql.conf` ou na linha d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      %%
     </code>
    </td>
    <td>
     Literal
-    <code class="literal">
+    <code>
      %
     </code>
    </td>
@@ -895,7 +895,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
 
 
 
-<table border="1" class="table" summary="Keys and Values of JSON Log Entries">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -917,7 +917,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      timestamp
     </code>
    </td>
@@ -930,7 +930,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      user
     </code>
    </td>
@@ -943,7 +943,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      dbname
     </code>
    </td>
@@ -956,7 +956,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      pid
     </code>
    </td>
@@ -969,7 +969,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      remote_host
     </code>
    </td>
@@ -982,7 +982,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      remote_port
     </code>
    </td>
@@ -995,7 +995,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      session_id
     </code>
    </td>
@@ -1008,7 +1008,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      line_num
     </code>
    </td>
@@ -1021,7 +1021,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ps
     </code>
    </td>
@@ -1034,7 +1034,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      session_start
     </code>
    </td>
@@ -1047,7 +1047,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      vxid
     </code>
    </td>
@@ -1060,7 +1060,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      txid
     </code>
    </td>
@@ -1073,7 +1073,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      error_severity
     </code>
    </td>
@@ -1086,7 +1086,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      state_code
     </code>
    </td>
@@ -1099,7 +1099,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      message
     </code>
    </td>
@@ -1112,7 +1112,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      detail
     </code>
    </td>
@@ -1125,7 +1125,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      hint
     </code>
    </td>
@@ -1138,7 +1138,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      internal_query
     </code>
    </td>
@@ -1151,7 +1151,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      internal_position
     </code>
    </td>
@@ -1164,7 +1164,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      context
     </code>
    </td>
@@ -1177,7 +1177,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      statement
     </code>
    </td>
@@ -1190,7 +1190,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      cursor_position
     </code>
    </td>
@@ -1203,7 +1203,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      func_name
     </code>
    </td>
@@ -1216,7 +1216,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      file_name
     </code>
    </td>
@@ -1229,7 +1229,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      file_line_num
     </code>
    </td>
@@ -1242,7 +1242,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      application_name
     </code>
    </td>
@@ -1255,7 +1255,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      backend_type
     </code>
    </td>
@@ -1268,7 +1268,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      leader_pid
     </code>
    </td>
@@ -1281,7 +1281,7 @@ Cada linha de registro é serializada como um objeto JSON com o conjunto de chav
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      query_id
     </code>
    </td>

@@ -10,7 +10,7 @@ Por padrão, a visualização `pg_ident_file_mappings` pode ser lida apenas por 
 
 
 
-<table border="1" class="table" summary="pg_ident_file_mappings Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -30,16 +30,16 @@ Por padrão, a visualização `pg_ident_file_mappings` pode ser lida apenas por 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       map_number
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
      Number of this map, in priority order, if valid, otherwise
-     <code class="literal">
+     <code>
       NULL
      </code>
     </p>
@@ -48,10 +48,10 @@ Por padrão, a visualização `pg_ident_file_mappings` pode ser lida apenas por 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       file_name
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -63,16 +63,16 @@ Por padrão, a visualização `pg_ident_file_mappings` pode ser lida apenas por 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       line_number
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
      Line number of this map in
-     <code class="literal">
+     <code>
       file_name
      </code>
     </p>
@@ -81,10 +81,10 @@ Por padrão, a visualização `pg_ident_file_mappings` pode ser lida apenas por 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       map_name
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -96,10 +96,10 @@ Por padrão, a visualização `pg_ident_file_mappings` pode ser lida apenas por 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sys_name
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -111,10 +111,10 @@ Por padrão, a visualização `pg_ident_file_mappings` pode ser lida apenas por 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pg_username
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -126,16 +126,16 @@ Por padrão, a visualização `pg_ident_file_mappings` pode ser lida apenas por 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       error
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      If not
-     <code class="literal">
+     <code>
       NULL
      </code>
      , an error message indicating why this line could not be processed

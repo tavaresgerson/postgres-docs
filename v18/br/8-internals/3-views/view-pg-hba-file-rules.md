@@ -10,7 +10,7 @@ Por padrão, a visualização `pg_hba_file_rules` pode ser lida apenas por super
 
 
 
-<table border="1" class="table" summary="pg_hba_file_rules Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -30,16 +30,16 @@ Por padrão, a visualização `pg_hba_file_rules` pode ser lida apenas por super
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rule_number
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
      Número desta regra, se válida, caso contrário
-     <code class="literal">
+     <code>
       NULL
      </code>
      . Isso indica a ordem em que cada regra é considerada até que uma correspondência seja encontrada durante a autenticação.
@@ -49,10 +49,10 @@ Por padrão, a visualização `pg_hba_file_rules` pode ser lida apenas por super
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       file_name
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -64,16 +64,16 @@ Por padrão, a visualização `pg_hba_file_rules` pode ser lida apenas por super
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       line_number
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
      Número da linha desta regra em
-     <code class="literal">
+     <code>
       file_name
      </code>
     </p>
@@ -82,10 +82,10 @@ Por padrão, a visualização `pg_hba_file_rules` pode ser lida apenas por super
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       type
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -97,10 +97,10 @@ Por padrão, a visualização `pg_hba_file_rules` pode ser lida apenas por super
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       database
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>
@@ -112,10 +112,10 @@ Por padrão, a visualização `pg_hba_file_rules` pode ser lida apenas por super
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       user_name
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>
@@ -127,24 +127,24 @@ Por padrão, a visualização `pg_hba_file_rules` pode ser lida apenas por super
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       address
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      Nome do host ou endereço IP, ou um dos
-     <code class="literal">
+     <code>
       all
      </code>
      ,
-     <code class="literal">
+     <code>
       samehost
      </code>
      , ou
-     <code class="literal">
+     <code>
       samenet
      </code>
      , ou nulo para conexões locais
@@ -154,10 +154,10 @@ Por padrão, a visualização `pg_hba_file_rules` pode ser lida apenas por super
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       netmask
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -169,10 +169,10 @@ Por padrão, a visualização `pg_hba_file_rules` pode ser lida apenas por super
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       auth_method
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -184,10 +184,10 @@ Por padrão, a visualização `pg_hba_file_rules` pode ser lida apenas por super
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       options
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>
@@ -199,10 +199,10 @@ Por padrão, a visualização `pg_hba_file_rules` pode ser lida apenas por super
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       error
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>

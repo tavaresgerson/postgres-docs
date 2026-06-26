@@ -10,7 +10,7 @@ Assim como `pg_statistic` (catalog-pg-statistic.md "52.51. pg_statistic"), `pg_
 
 
 
-<table border="1" class="table" summary="pg_statistic_ext_data Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -30,20 +30,20 @@ Assim como `pg_statistic` (catalog-pg-statistic.md "52.51. pg_statistic"), `pg_
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stxoid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (references
      <a class="link" href="catalog-pg-statistic-ext.md" title="52.52. pg_statistic_ext">
-      <code class="structname">
+      <code>
        pg_statistic_ext
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -56,10 +56,10 @@ Assim como `pg_statistic` (catalog-pg-statistic.md "52.51. pg_statistic"), `pg_
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stxdinherit
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -71,16 +71,16 @@ Assim como `pg_statistic` (catalog-pg-statistic.md "52.51. pg_statistic"), `pg_
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stxdndistinct
      </code>
-     <code class="type">
+     <code>
       pg_ndistinct
      </code>
     </p>
     <p>
      N-distinct counts, serialized as
-     <code class="structname">
+     <code>
       pg_ndistinct
      </code>
      type
@@ -90,16 +90,16 @@ Assim como `pg_statistic` (catalog-pg-statistic.md "52.51. pg_statistic"), `pg_
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stxddependencies
      </code>
-     <code class="type">
+     <code>
       pg_dependencies
      </code>
     </p>
     <p>
      Functional dependency statistics, serialized as
-     <code class="structname">
+     <code>
       pg_dependencies
      </code>
      type
@@ -109,16 +109,16 @@ Assim como `pg_statistic` (catalog-pg-statistic.md "52.51. pg_statistic"), `pg_
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stxdmcv
      </code>
-     <code class="type">
+     <code>
       pg_mcv_list
      </code>
     </p>
     <p>
      MCV (most-common values) list statistics, serialized as
-     <code class="structname">
+     <code>
       pg_mcv_list
      </code>
      type
@@ -128,16 +128,16 @@ Assim como `pg_statistic` (catalog-pg-statistic.md "52.51. pg_statistic"), `pg_
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stxdexpr
      </code>
-     <code class="type">
+     <code>
       pg_statistic[]
      </code>
     </p>
     <p>
      Per-expression statistics, serialized as an array of
-     <code class="structname">
+     <code>
       pg_statistic
      </code>
      type

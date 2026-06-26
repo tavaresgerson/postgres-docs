@@ -514,7 +514,7 @@ As seguintes pessoas (em ordem alfabética) contribuíram para esta versão como
 
 
 
-<table border="0" class="simplelist" summary="Simple list">
+<table>
  <tr>
   <td>
    Abhishek Chanda

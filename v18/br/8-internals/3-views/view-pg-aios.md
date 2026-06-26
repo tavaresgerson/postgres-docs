@@ -8,7 +8,7 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
 
 
 
-<table border="1" class="table" summary="pg_aios Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pid
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -43,21 +43,21 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       io_id
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
      Identifier of the I/O handle. Handles are reused once the I/O completed (or if the handle is released before I/O is started). On reuse
      <a class="link" href="view-pg-aios.md#VIEW-PG-AIOS-IO-GENERATION">
-      <code class="structname">
+      <code>
        pg_aios
       </code>
       .
-      <code class="structfield">
+      <code>
        io_generation
       </code>
      </a>
@@ -68,10 +68,10 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
   <tr>
    <td class="catalog_table_entry" id="VIEW-PG-AIOS-IO-GENERATION">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       io_generation
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
@@ -83,10 +83,10 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       state
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -97,7 +97,7 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
      <ul class="itemizedlist" style="list-style-type: disc; ">
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          HANDED_OUT
         </code>
         , referenced by code but not yet used
@@ -105,7 +105,7 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          DEFINED
         </code>
         , information necessary for execution is known
@@ -113,7 +113,7 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          STAGED
         </code>
         , ready for execution
@@ -121,7 +121,7 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          SUBMITTED
         </code>
         , submitted for execution
@@ -129,7 +129,7 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          COMPLETED_IO
         </code>
         , finished, but result has not yet been processed
@@ -137,7 +137,7 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          COMPLETED_SHARED
         </code>
         , shared completion processing completed
@@ -145,7 +145,7 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          COMPLETED_LOCAL
         </code>
         , backend local completion processing completed
@@ -160,10 +160,10 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       operation
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -174,7 +174,7 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
      <ul class="itemizedlist" style="list-style-type: disc; ">
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          invalid
         </code>
         , not yet known
@@ -182,7 +182,7 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          readv
         </code>
         , a vectored read
@@ -190,7 +190,7 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          writev
         </code>
         , a vectored write
@@ -205,10 +205,10 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       off
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
@@ -220,10 +220,10 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       length
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
@@ -235,10 +235,10 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       target
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -249,7 +249,7 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
      <ul class="itemizedlist compact" style="list-style-type: disc; ">
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          smgr
         </code>
         , I/O on relations
@@ -264,10 +264,10 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       handle_data_len
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
@@ -287,10 +287,10 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       raw_result
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -302,10 +302,10 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       result
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -316,7 +316,7 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
      <ul class="itemizedlist" style="list-style-type: disc; ">
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          UNKNOWN
         </code>
         means that the result of the operation is not yet known.
@@ -324,7 +324,7 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          OK
         </code>
         means the I/O completed successfully.
@@ -332,7 +332,7 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          PARTIAL
         </code>
         means that the I/O completed without error, but did not process all data. Commonly callers will need to retry and perform the remainder of the work in a separate I/O.
@@ -340,7 +340,7 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          WARNING
         </code>
         means that the I/O completed without error, but that execution of the IO triggered a warning. E.g. when encountering a corrupted buffer with
@@ -352,7 +352,7 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          ERROR
         </code>
         means the I/O failed with an error.
@@ -367,10 +367,10 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       target_desc
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -382,10 +382,10 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       f_sync
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -397,10 +397,10 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       f_localmem
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -412,10 +412,10 @@ Essa visão é principalmente útil para desenvolvedores do PostgreSQL, mas tamb
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       f_buffered
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>

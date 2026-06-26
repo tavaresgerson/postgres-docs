@@ -6,7 +6,7 @@ A vista `tables` contém todas as tabelas e vistas definidas no banco de dados a
 
 
 
-<table border="1" class="table" summary="tables Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `tables` contém todas as tabelas e vistas definidas no banco de dados a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `tables` contém todas as tabelas e vistas definidas no banco de dados a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `tables` contém todas as tabelas e vistas definidas no banco de dados a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,28 +71,28 @@ A vista `tables` contém todas as tabelas e vistas definidas no banco de dados a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Type of the table:
-     <code class="literal">
+     <code>
       BASE TABLE
      </code>
      for a persistent base table (the normal table type),
-     <code class="literal">
+     <code>
       VIEW
      </code>
      for a view,
-     <code class="literal">
+     <code>
       FOREIGN
      </code>
      for a foreign table, or
-     <code class="literal">
+     <code>
       LOCAL TEMPORARY
      </code>
      for a temporary table
@@ -102,10 +102,10 @@ A vista `tables` contém todas as tabelas e vistas definidas no banco de dados a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       self_referencing_column_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -120,10 +120,10 @@ A vista `tables` contém todas as tabelas e vistas definidas no banco de dados a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       reference_generation
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -138,10 +138,10 @@ A vista `tables` contém todas as tabelas e vistas definidas no banco de dados a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       user_defined_type_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -153,10 +153,10 @@ A vista `tables` contém todas as tabelas e vistas definidas no banco de dados a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       user_defined_type_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -168,10 +168,10 @@ A vista `tables` contém todas as tabelas e vistas definidas no banco de dados a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       user_defined_type_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -183,19 +183,19 @@ A vista `tables` contém todas as tabelas e vistas definidas no banco de dados a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_insertable_into
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       YES
      </code>
      if the table is insertable into,
-     <code class="literal">
+     <code>
       NO
      </code>
      if not (Base tables are always insertable into, views not necessarily.)
@@ -205,19 +205,19 @@ A vista `tables` contém todas as tabelas e vistas definidas no banco de dados a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_typed
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       YES
      </code>
      if the table is a typed table,
-     <code class="literal">
+     <code>
       NO
      </code>
      if not
@@ -227,10 +227,10 @@ A vista `tables` contém todas as tabelas e vistas definidas no banco de dados a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       commit_action
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>

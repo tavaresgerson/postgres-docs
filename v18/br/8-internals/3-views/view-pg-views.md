@@ -6,7 +6,7 @@ A vista `pg_views` fornece acesso a informações úteis sobre cada vista no ban
 
 
 
-<table border="1" class="table" summary="pg_views Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,20 +26,20 @@ A vista `pg_views` fornece acesso a informações úteis sobre cada vista no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       schemaname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (referências
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       nspname
      </code>
      )
@@ -52,20 +52,20 @@ A vista `pg_views` fornece acesso a informações úteis sobre cada vista no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       viewname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       relname
      </code>
      )
@@ -78,20 +78,20 @@ A vista `pg_views` fornece acesso a informações úteis sobre cada vista no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       viewowner
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       rolname
      </code>
      )
@@ -104,10 +104,10 @@ A vista `pg_views` fornece acesso a informações úteis sobre cada vista no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       definition
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>

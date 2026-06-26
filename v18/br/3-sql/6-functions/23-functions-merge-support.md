@@ -6,7 +6,7 @@ O PostgreSQL inclui uma função de suporte a junção que pode ser usada na lis
 
 
 
-<table border="1" class="table" summary="Merge Support Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,25 +26,25 @@ O PostgreSQL inclui uma função de suporte a junção que pode ser usada na lis
   <tr>
    <td class="func_table_entry" id="MERGE-ACTION">
     <p class="func_signature">
-     <code class="function">
+     <code>
       merge_action
      </code>
      ( )
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Retorna o comando de ação de junção executado para a linha atual. Isso será
-     <code class="literal">
+     <code>
       'INSERT'
      </code>
      ,
-     <code class="literal">
+     <code>
       'UPDATE'
      </code>
      , ou
-     <code class="literal">
+     <code>
       'DELETE'
      </code>
      .

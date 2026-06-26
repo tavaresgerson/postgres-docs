@@ -10,7 +10,7 @@ Por padrão, a visualização `pg_file_settings` pode ser lida apenas por superu
 
 
 
-<table border="1" class="table" summary="pg_file_settings Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -30,10 +30,10 @@ Por padrão, a visualização `pg_file_settings` pode ser lida apenas por superu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sourcefile
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -45,10 +45,10 @@ Por padrão, a visualização `pg_file_settings` pode ser lida apenas por superu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sourceline
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -60,10 +60,10 @@ Por padrão, a visualização `pg_file_settings` pode ser lida apenas por superu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       seqno
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -81,10 +81,10 @@ Por padrão, a visualização `pg_file_settings` pode ser lida apenas por superu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       name
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -96,10 +96,10 @@ Por padrão, a visualização `pg_file_settings` pode ser lida apenas por superu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       setting
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -111,10 +111,10 @@ Por padrão, a visualização `pg_file_settings` pode ser lida apenas por superu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       applied
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -126,10 +126,10 @@ Por padrão, a visualização `pg_file_settings` pode ser lida apenas por superu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       error
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>

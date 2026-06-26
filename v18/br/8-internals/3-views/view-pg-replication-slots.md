@@ -8,7 +8,7 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
 
 
 
-<table border="1" class="table" summary="pg_replication_slots Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       slot_name
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -43,10 +43,10 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       plugin
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -58,20 +58,20 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       slot_type
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      O tipo de slot:
-     <code class="literal">
+     <code>
       physical
      </code>
      ou
-     <code class="literal">
+     <code>
       logical
      </code>
     </p>
@@ -80,20 +80,20 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datoid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-database.md" title="52.15. pg_database">
-      <code class="structname">
+      <code>
        pg_database
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -106,20 +106,20 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       database
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (referências
      <a class="link" href="catalog-pg-database.md" title="52.15. pg_database">
-      <code class="structname">
+      <code>
        pg_database
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       datname
      </code>
      )
@@ -132,10 +132,10 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       temporary
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -147,10 +147,10 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       active
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -162,16 +162,16 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       active_pid
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
      O ID de processo dos dados de transmissão da sessão para este slot.
-     <code class="literal">
+     <code>
       NULL
      </code>
      se inativo.
@@ -181,16 +181,16 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       xmin
      </code>
-     <code class="type">
+     <code>
       xid
      </code>
     </p>
     <p>
      A transação mais antiga que essa posição precisa manter no banco de dados.
-     <code class="literal">
+     <code>
       VACUUM
      </code>
      não é possível remover tuplas excluídas por qualquer transação posterior.
@@ -200,16 +200,16 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       catalog_xmin
      </code>
-     <code class="type">
+     <code>
       xid
      </code>
     </p>
     <p>
      A transação mais antiga que afeta os catálogos do sistema é que esse slot precisa do banco de dados para ser mantido.
-     <code class="literal">
+     <code>
       VACUUM
      </code>
      não é possível remover tuplas de catálogo excluídas por qualquer transação posterior.
@@ -219,16 +219,16 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       restart_lsn
      </code>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
     </p>
     <p>
      O endereço (
-     <code class="literal">
+     <code>
       LSN
      </code>
      ) do WAL mais antigo que ainda possa ser necessário pelo consumidor deste slot e, portanto, não será removido automaticamente durante os pontos de verificação, a menos que este LSN fique para trás em mais de
@@ -236,11 +236,11 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
       max_slot_wal_keep_size
      </a>
      a partir do LSN atual.
-     <code class="literal">
+     <code>
       NULL
      </code>
      se o
-     <code class="literal">
+     <code>
       LSN
      </code>
      Este slot nunca foi reservado.
@@ -250,24 +250,24 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       confirmed_flush_lsn
      </code>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
     </p>
     <p>
      O endereço (
-     <code class="literal">
+     <code>
       LSN
      </code>
      ) até a qual o consumidor do slot lógico confirmou ter recebido os dados. Os dados correspondentes às transações comprometidas antes disso
-     <code class="literal">
+     <code>
       LSN
      </code>
      não está mais disponível.
-     <code class="literal">
+     <code>
       NULL
      </code>
      para slots físicos.
@@ -277,10 +277,10 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       wal_status
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -291,11 +291,11 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
      <ul class="itemizedlist" style="list-style-type: disc; ">
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          reserved
         </code>
         significa que os arquivos reivindicados estão dentro
-        <code class="varname">
+        <code>
          max_wal_size
         </code>
         .
@@ -303,15 +303,15 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          extended
         </code>
         significa que
-        <code class="varname">
+        <code>
          max_wal_size
         </code>
         se o limite é ultrapassado, mas os arquivos ainda são retidos, seja pelo slot de replicação ou pelo
-        <code class="varname">
+        <code>
          wal_keep_size
         </code>
         .
@@ -319,7 +319,7 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          unreserved
         </code>
         significa que o slot não retém mais os arquivos WAL necessários e alguns deles devem ser removidos no próximo ponto de verificação. Isso geralmente ocorre quando
@@ -327,11 +327,11 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
          max_slot_wal_keep_size
         </a>
         está definido para um valor não negativo. Esse estado pode retornar para
-        <code class="literal">
+        <code>
          reserved
         </code>
         ou
-        <code class="literal">
+        <code>
          extended
         </code>
         .
@@ -339,7 +339,7 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          lost
         </code>
         Isso significa que esse slot não é mais utilizável.
@@ -354,20 +354,20 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       safe_wal_size
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
     <p>
      O número de bytes que podem ser escritos no WAL de modo que esse slot não esteja em perigo de entrar no estado "perdido". É NULL para slots perdidos, bem como se
-     <code class="varname">
+     <code>
       max_slot_wal_keep_size
      </code>
      é
-     <code class="literal">
+     <code>
       -1
      </code>
      .
@@ -377,10 +377,10 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       two_phase
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -392,24 +392,24 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       two_phase_at
      </code>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
     </p>
     <p>
      O endereço (
-     <code class="literal">
+     <code>
       LSN
      </code>
      ) a partir da qual a decodificação de transações preparadas é habilitada.
-     <code class="literal">
+     <code>
       NULL
      </code>
      para slots lógicos onde
-     <code class="structfield">
+     <code>
       two_phase
      </code>
      é falsa e para slots físicos.
@@ -419,28 +419,28 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       inactive_since
      </code>
-     <code class="type">
+     <code>
       timestamptz
      </code>
     </p>
     <p>
      O momento em que o slot se tornou inativo.
-     <code class="literal">
+     <code>
       NULL
      </code>
      se o horário estiver sendo transmitido atualmente. Se o horário se tornar inválido, esse valor nunca será atualizado. Para horários de espera que estão sendo sincronizados a partir de um servidor primário (cujo
-     <code class="structfield">
+     <code>
       synced
      </code>
      campo é
-     <code class="literal">
+     <code>
       true
      </code>
      ), o
-     <code class="structfield">
+     <code>
       inactive_since
      </code>
      indica o momento em que a sincronização de faixas (veja
@@ -448,7 +448,7 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
       Seção 47.2.3
      </a>
      ) foi recentemente interrompido.
-     <code class="literal">
+     <code>
       NULL
      </code>
      se a posição sempre estiver sincronizada. Isso ajuda as posições de espera a rastrear quando a sincronização foi interrompida.
@@ -458,20 +458,20 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       conflicting
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Verdadeiro se este slot lógico entrou em conflito com a recuperação (e, portanto, foi invalidado). Quando esta coluna estiver verdadeira, verifique
-     <code class="structfield">
+     <code>
       invalidation_reason
      </code>
      coluna para o conflito. Sempre
-     <code class="literal">
+     <code>
       NULL
      </code>
      para slots físicos.
@@ -481,16 +481,16 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       invalidation_reason
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      A razão da invalidação do slot. É definida tanto para slots lógicos quanto físicos.
-     <code class="literal">
+     <code>
       NULL
      </code>
      se o slot não for invalido. Os valores possíveis são:
@@ -499,7 +499,7 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
      <ul class="itemizedlist compact" style="list-style-type: disc; ">
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          wal_removed
         </code>
         significa que o WAL necessário foi removido.
@@ -507,7 +507,7 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          rows_removed
         </code>
         significa que as linhas necessárias foram removidas. É definido apenas para slots lógicos.
@@ -515,7 +515,7 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          wal_level_insufficient
         </code>
         significa que o primário não tem
@@ -527,7 +527,7 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          idle_timeout
         </code>
         significa que a posição permaneceu inativa por mais tempo do que a configurada
@@ -546,10 +546,10 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       failover
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -561,10 +561,10 @@ Para mais informações sobre slots de replicação, consulte [Seção 26.2.6](w
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       synced
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>

@@ -6,7 +6,7 @@ A tabela `sql_implementation_info` contém informações sobre vários aspectos 
 
 
 
-<table border="1" class="table" summary="sql_implementation_info Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A tabela `sql_implementation_info` contém informações sobre vários aspectos 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       implementation_info_id
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -41,10 +41,10 @@ A tabela `sql_implementation_info` contém informações sobre vários aspectos 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       implementation_info_name
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -56,16 +56,16 @@ A tabela `sql_implementation_info` contém informações sobre vários aspectos 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       integer_value
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
     <p>
      Value of the implementation information item, or null if the value is contained in the column
-     <code class="literal">
+     <code>
       character_value
      </code>
     </p>
@@ -74,16 +74,16 @@ A tabela `sql_implementation_info` contém informações sobre vários aspectos 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_value
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Value of the implementation information item, or null if the value is contained in the column
-     <code class="literal">
+     <code>
       integer_value
      </code>
     </p>
@@ -92,10 +92,10 @@ A tabela `sql_implementation_info` contém informações sobre vários aspectos 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       comments
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>

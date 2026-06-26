@@ -8,7 +8,7 @@ A vista `pg_stats` fornece acesso às informações armazenadas no catálogo [`p
 
 
 
-<table border="1" class="table" summary="pg_stats Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,20 +28,20 @@ A vista `pg_stats` fornece acesso às informações armazenadas no catálogo [`p
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       schemaname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (references
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       nspname
      </code>
      )
@@ -54,20 +54,20 @@ A vista `pg_stats` fornece acesso às informações armazenadas no catálogo [`p
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tablename
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (references
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       relname
      </code>
      )
@@ -80,20 +80,20 @@ A vista `pg_stats` fornece acesso às informações armazenadas no catálogo [`p
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       attname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (references
      <a class="link" href="catalog-pg-attribute.md" title="52.7. pg_attribute">
-      <code class="structname">
+      <code>
        pg_attribute
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       attname
      </code>
      )
@@ -106,10 +106,10 @@ A vista `pg_stats` fornece acesso às informações armazenadas no catálogo [`p
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       inherited
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -121,10 +121,10 @@ A vista `pg_stats` fornece acesso às informações armazenadas no catálogo [`p
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       null_frac
      </code>
-     <code class="type">
+     <code>
       float4
      </code>
     </p>
@@ -136,10 +136,10 @@ A vista `pg_stats` fornece acesso às informações armazenadas no catálogo [`p
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       avg_width
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -151,16 +151,16 @@ A vista `pg_stats` fornece acesso às informações armazenadas no catálogo [`p
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       n_distinct
      </code>
-     <code class="type">
+     <code>
       float4
      </code>
     </p>
     <p>
      If greater than zero, the estimated number of distinct values in the column.  If less than zero, the negative of the number of distinct values divided by the number of rows.  (The negated form is used when
-     <code class="command">
+     <code>
       ANALYZE
      </code>
      believes that the number of distinct values is likely to increase as the table grows; the positive form is used when the column seems to have a fixed number of possible values.)  For example, -1 indicates a unique column in which the number of distinct values is the same as the number of rows.
@@ -170,10 +170,10 @@ A vista `pg_stats` fornece acesso às informações armazenadas no catálogo [`p
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       most_common_vals
      </code>
-     <code class="type">
+     <code>
       anyarray
      </code>
     </p>
@@ -185,16 +185,16 @@ A vista `pg_stats` fornece acesso às informações armazenadas no catálogo [`p
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       most_common_freqs
      </code>
-     <code class="type">
+     <code>
       float4[]
      </code>
     </p>
     <p>
      A list of the frequencies of the most common values, i.e., number of occurrences of each divided by total number of rows. (Null when
-     <code class="structfield">
+     <code>
       most_common_vals
      </code>
      is.)
@@ -204,24 +204,24 @@ A vista `pg_stats` fornece acesso às informações armazenadas no catálogo [`p
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       histogram_bounds
      </code>
-     <code class="type">
+     <code>
       anyarray
      </code>
     </p>
     <p>
      A list of values that divide the column's values into groups of approximately equal population.  The values in
-     <code class="structfield">
+     <code>
       most_common_vals
      </code>
      , if present, are omitted from this histogram calculation.  (This column is null if the column data type does not have a
-     <code class="literal">
+     <code>
       &lt;
      </code>
      operator or if the
-     <code class="structfield">
+     <code>
       most_common_vals
      </code>
      list accounts for the entire population.)
@@ -231,16 +231,16 @@ A vista `pg_stats` fornece acesso às informações armazenadas no catálogo [`p
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       correlation
      </code>
-     <code class="type">
+     <code>
       float4
      </code>
     </p>
     <p>
      Statistical correlation between physical row ordering and logical ordering of the column values.  This ranges from -1 to +1. When the value is near -1 or +1, an index scan on the column will be estimated to be cheaper than when it is near zero, due to reduction of random access to the disk.  (This column is null if the column data type does not have a
-     <code class="literal">
+     <code>
       &lt;
      </code>
      operator.)
@@ -250,10 +250,10 @@ A vista `pg_stats` fornece acesso às informações armazenadas no catálogo [`p
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       most_common_elems
      </code>
-     <code class="type">
+     <code>
       anyarray
      </code>
     </p>
@@ -265,16 +265,16 @@ A vista `pg_stats` fornece acesso às informações armazenadas no catálogo [`p
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       most_common_elem_freqs
      </code>
-     <code class="type">
+     <code>
       float4[]
      </code>
     </p>
     <p>
      A list of the frequencies of the most common element values, i.e., the fraction of rows containing at least one instance of the given value. Two or three additional values follow the per-element frequencies; these are the minimum and maximum of the preceding per-element frequencies, and optionally the frequency of null elements. (Null when
-     <code class="structfield">
+     <code>
       most_common_elems
      </code>
      is.)
@@ -284,10 +284,10 @@ A vista `pg_stats` fornece acesso às informações armazenadas no catálogo [`p
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       elem_count_histogram
      </code>
-     <code class="type">
+     <code>
       float4[]
      </code>
     </p>
@@ -299,10 +299,10 @@ A vista `pg_stats` fornece acesso às informações armazenadas no catálogo [`p
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       range_length_histogram
      </code>
-     <code class="type">
+     <code>
       anyarray
      </code>
     </p>
@@ -311,7 +311,7 @@ A vista `pg_stats` fornece acesso às informações armazenadas no catálogo [`p
     </p>
     <p>
      This histogram is calculated using the
-     <code class="function">
+     <code>
       subtype_diff
      </code>
      range function regardless of whether range bounds are inclusive.
@@ -321,10 +321,10 @@ A vista `pg_stats` fornece acesso às informações armazenadas no catálogo [`p
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       range_empty_frac
      </code>
-     <code class="type">
+     <code>
       float4
      </code>
     </p>
@@ -336,10 +336,10 @@ A vista `pg_stats` fornece acesso às informações armazenadas no catálogo [`p
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       range_bounds_histogram
      </code>
-     <code class="type">
+     <code>
       anyarray
      </code>
     </p>

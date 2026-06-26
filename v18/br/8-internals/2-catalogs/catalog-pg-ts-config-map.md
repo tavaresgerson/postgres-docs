@@ -8,7 +8,7 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
 
 
 
-<table border="1" class="table" summary="pg_ts_config_map Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,20 +28,20 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       mapcfg
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-ts-config.md" title="52.59. pg_ts_config">
-      <code class="structname">
+      <code>
        pg_ts_config
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -49,7 +49,7 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
     <p>
      O OID do
      <a class="link" href="catalog-pg-ts-config.md" title="52.59. pg_ts_config">
-      <code class="structname">
+      <code>
        pg_ts_config
       </code>
      </a>
@@ -60,10 +60,10 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       maptokentype
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -75,16 +75,16 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       mapseqno
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
      Ordem em que consultar esta entrada (inferior
-     <code class="structfield">
+     <code>
       mapseqno
      </code>
      primeiro)
@@ -94,20 +94,20 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       mapdict
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-ts-dict.md" title="52.61. pg_ts_dict">
-      <code class="structname">
+      <code>
        pg_ts_dict
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )

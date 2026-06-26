@@ -6,7 +6,7 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
 
 
 
-<table border="1" class="table" summary="pg_index Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,20 +26,20 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indexrelid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -47,7 +47,7 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
     <p>
      O OID do
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
@@ -58,20 +58,20 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indrelid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -79,7 +79,7 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
     <p>
      O OID do
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
@@ -90,16 +90,16 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indnatts
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
     <p>
      O número total de colunas no índice (duplicatas
-     <code class="literal">
+     <code>
       pg_class.relnatts
      </code>
      ); esse número inclui tanto atributos chave quanto atributos incluídos
@@ -109,10 +109,10 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indnkeyatts
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
@@ -132,10 +132,10 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indisunique
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -147,10 +147,10 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indnullsnotdistinct
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -162,16 +162,16 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indisprimary
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Se for verdade, este índice representa a chave primária da tabela (
-     <code class="structfield">
+     <code>
       indisunique
      </code>
      deve ser sempre verdadeiro quando isso é verdadeiro)
@@ -181,10 +181,10 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indisexclusion
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -196,16 +196,16 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indimmediate
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Se for verdade, a verificação de unicidade é aplicada imediatamente na inserção (irrelevant se
-     <code class="structfield">
+     <code>
       indisunique
      </code>
      não é verdade)
@@ -215,10 +215,10 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indisclustered
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -230,23 +230,23 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indisvalid
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Se for verdade, o índice é atualmente válido para consultas. Se for falso, significa que o índice é possivelmente incompleto: ainda deve ser modificado por
      <a class="link" href="sql-insert.md" title="INSERT">
-      <code class="command">
+      <code>
        INSERT
       </code>
      </a>
      /
      <a class="link" href="sql-update.md" title="UPDATE">
-      <code class="command">
+      <code>
        UPDATE
       </code>
      </a>
@@ -257,24 +257,24 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indcheckxmin
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Se for verdade, as consultas não devem usar o índice até que
-     <code class="structfield">
+     <code>
       xmin
      </code>
      de isto
-     <code class="structname">
+     <code>
       pg_index
      </code>
      A linha está abaixo deles
-     <code class="symbol">
+     <code>
       TransactionXmin
      </code>
      limite de eventos, porque a tabela pode conter quebrados
@@ -288,23 +288,23 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indisready
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Se for verdade, o índice está atualmente pronto para inserções. Se for falso, significa que o índice deve ser ignorado
      <a class="link" href="sql-insert.md" title="INSERT">
-      <code class="command">
+      <code>
        INSERT
       </code>
      </a>
      /
      <a class="link" href="sql-update.md" title="UPDATE">
-      <code class="command">
+      <code>
        UPDATE
       </code>
      </a>
@@ -315,10 +315,10 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indislive
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -330,10 +330,10 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indisreplident
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -348,7 +348,7 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
      </span>
      utilizando
      <a class="link" href="sql-altertable.md#SQL-ALTERTABLE-REPLICA-IDENTITY">
-      <code class="command">
+      <code>
        ALTER TABLE ... REPLICA IDENTITY USING INDEX ...
       </code>
      </a>
@@ -358,31 +358,31 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indkey
      </code>
-     <code class="type">
+     <code>
       int2vector
      </code>
      (referências
      <a class="link" href="catalog-pg-attribute.md" title="52.7. pg_attribute">
-      <code class="structname">
+      <code>
        pg_attribute
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       attnum
      </code>
      )
     </p>
     <p>
      Este é um conjunto de
-     <code class="structfield">
+     <code>
       indnatts
      </code>
      valores que indicam quais colunas da tabela este índice indexa. Por exemplo, um valor de
-     <code class="literal">
+     <code>
       1 3
      </code>
      Isso significaria que as primeiras e as terceiras colunas da tabela compõem as entradas do índice. As colunas chave vêm antes das colunas não chave (incluídas). Um zero nesse array indica que o atributo de índice correspondente é uma expressão sobre as colunas da tabela, e não uma simples referência de coluna.
@@ -392,27 +392,27 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indcollation
      </code>
-     <code class="type">
+     <code>
       oidvector
      </code>
      (referências
      <a class="link" href="catalog-pg-collation.md" title="52.12. pg_collation">
-      <code class="structname">
+      <code>
        pg_collation
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
     </p>
     <p>
      Para cada coluna na chave do índice (
-     <code class="structfield">
+     <code>
       indnkeyatts
      </code>
      valores), este contém o OID da correção de texto a ser usada para o índice, ou zero se a coluna não for de um tipo de dados correcionável.
@@ -422,32 +422,32 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indclass
      </code>
-     <code class="type">
+     <code>
       oidvector
      </code>
      (referências
      <a class="link" href="catalog-pg-opclass.md" title="52.33. pg_opclass">
-      <code class="structname">
+      <code>
        pg_opclass
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
     </p>
     <p>
      Para cada coluna na chave do índice (
-     <code class="structfield">
+     <code>
       indnkeyatts
      </code>
      valores), este contém o OID da classe de operador a ser usado. Veja
      <a class="link" href="catalog-pg-opclass.md" title="52.33. pg_opclass">
-      <code class="structname">
+      <code>
        pg_opclass
       </code>
      </a>
@@ -458,16 +458,16 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indoption
      </code>
-     <code class="type">
+     <code>
       int2vector
      </code>
     </p>
     <p>
      Este é um conjunto de
-     <code class="structfield">
+     <code>
       indnkeyatts
      </code>
      valores que armazenam bits de sinalização por coluna. O significado dos bits é definido pelo método de acesso do índice.
@@ -477,20 +477,20 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indexprs
      </code>
-     <code class="type">
+     <code>
       pg_node_tree
      </code>
     </p>
     <p>
      árvores de expressão (em
-     <code class="function">
+     <code>
       nodeToString()
      </code>
      (representação) para atributos de índice que não são referências simples de coluna. Esta é uma lista com um elemento para cada entrada zero
-     <code class="structfield">
+     <code>
       indkey
      </code>
      Nulo se todos os atributos do índice forem referências simples.
@@ -500,16 +500,16 @@ O catálogo `pg_index` contém parte das informações sobre índices. O restant
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indpred
      </code>
-     <code class="type">
+     <code>
       pg_node_tree
      </code>
     </p>
     <p>
      árvore de expressão (em
-     <code class="function">
+     <code>
       nodeToString()
      </code>
      representação) para predicado de índice parcial. Nulo se não for um índice parcial.

@@ -18,7 +18,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
 
 
 
-<table border="1" class="table" summary="PostgreSQL Character Sets">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -56,7 +56,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BIG5
     </code>
    </td>
@@ -76,18 +76,18 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
     1–2
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN950
     </code>
     ,
-    <code class="literal">
+    <code>
      Windows950
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      EUC_CN
     </code>
    </td>
@@ -111,7 +111,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      EUC_JP
     </code>
    </td>
@@ -135,7 +135,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      EUC_JIS_2004
     </code>
    </td>
@@ -159,7 +159,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      EUC_KR
     </code>
    </td>
@@ -183,7 +183,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      EUC_TW
     </code>
    </td>
@@ -207,7 +207,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      GB18030
     </code>
    </td>
@@ -231,7 +231,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      GBK
     </code>
    </td>
@@ -251,18 +251,18 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
     1–2
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN936
     </code>
     ,
-    <code class="literal">
+    <code>
      Windows936
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_5
     </code>
    </td>
@@ -290,7 +290,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_6
     </code>
    </td>
@@ -318,7 +318,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_7
     </code>
    </td>
@@ -346,7 +346,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_8
     </code>
    </td>
@@ -374,7 +374,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      JOHAB
     </code>
    </td>
@@ -400,7 +400,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      KOI8R
     </code>
    </td>
@@ -423,14 +423,14 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
     1
    </td>
    <td>
-    <code class="literal">
+    <code>
      KOI8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      KOI8U
     </code>
    </td>
@@ -457,7 +457,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LATIN1
     </code>
    </td>
@@ -481,14 +481,14 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
     1
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO88591
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LATIN2
     </code>
    </td>
@@ -512,14 +512,14 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
     1
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO88592
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LATIN3
     </code>
    </td>
@@ -543,14 +543,14 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
     1
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO88593
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LATIN4
     </code>
    </td>
@@ -574,14 +574,14 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
     1
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO88594
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LATIN5
     </code>
    </td>
@@ -605,14 +605,14 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
     1
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO88599
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LATIN6
     </code>
    </td>
@@ -636,14 +636,14 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
     1
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO885910
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LATIN7
     </code>
    </td>
@@ -663,14 +663,14 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
     1
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO885913
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LATIN8
     </code>
    </td>
@@ -690,14 +690,14 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
     1
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO885914
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LATIN9
     </code>
    </td>
@@ -717,14 +717,14 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
     1
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO885915
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LATIN10
     </code>
    </td>
@@ -748,14 +748,14 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
     1
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO885916
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
@@ -779,7 +779,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SJIS
     </code>
    </td>
@@ -799,26 +799,26 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
     1–2
    </td>
    <td>
-    <code class="literal">
+    <code>
      Mskanji
     </code>
     ,
-    <code class="literal">
+    <code>
      ShiftJIS
     </code>
     ,
-    <code class="literal">
+    <code>
      WIN932
     </code>
     ,
-    <code class="literal">
+    <code>
      Windows932
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SHIFT_JIS_2004
     </code>
    </td>
@@ -842,7 +842,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SQL_ASCII
     </code>
    </td>
@@ -870,7 +870,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      UHC
     </code>
    </td>
@@ -890,18 +890,18 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
     1–2
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN949
     </code>
     ,
-    <code class="literal">
+    <code>
      Windows949
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
@@ -925,14 +925,14 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
     1–4
    </td>
    <td>
-    <code class="literal">
+    <code>
      Unicode
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN866
     </code>
    </td>
@@ -952,14 +952,14 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
     1
    </td>
    <td>
-    <code class="literal">
+    <code>
      ALT
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN874
     </code>
    </td>
@@ -983,7 +983,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN1250
     </code>
    </td>
@@ -1007,7 +1007,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN1251
     </code>
    </td>
@@ -1027,14 +1027,14 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
     1
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN1252
     </code>
    </td>
@@ -1058,7 +1058,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN1253
     </code>
    </td>
@@ -1082,7 +1082,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN1254
     </code>
    </td>
@@ -1106,7 +1106,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN1255
     </code>
    </td>
@@ -1130,7 +1130,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN1256
     </code>
    </td>
@@ -1154,7 +1154,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN1257
     </code>
    </td>
@@ -1178,7 +1178,7 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN1258
     </code>
    </td>
@@ -1198,19 +1198,19 @@ Uma restrição importante, no entanto, é que o conjunto de caracteres de cada 
     1
    </td>
    <td>
-    <code class="literal">
+    <code>
      ABC
     </code>
     ,
-    <code class="literal">
+    <code>
      TCVN
     </code>
     ,
-    <code class="literal">
+    <code>
      TCVN5712
     </code>
     ,
-    <code class="literal">
+    <code>
      VSCII
     </code>
    </td>
@@ -1324,7 +1324,7 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
 
 
 
-<table border="1" class="table" summary="Built-in Client/Server Character Set Conversions">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -1342,7 +1342,7 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BIG5
     </code>
    </td>
@@ -1356,7 +1356,7 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      EUC_CN
     </code>
    </td>
@@ -1367,18 +1367,18 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      EUC_JP
     </code>
    </td>
@@ -1389,22 +1389,22 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
     ,
-    <code class="literal">
+    <code>
      SJIS
     </code>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      EUC_JIS_2004
     </code>
    </td>
@@ -1415,18 +1415,18 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      SHIFT_JIS_2004
     </code>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      EUC_KR
     </code>
    </td>
@@ -1437,18 +1437,18 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      EUC_TW
     </code>
    </td>
@@ -1459,22 +1459,22 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      BIG5
     </code>
     ,
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      GB18030
     </code>
    </td>
@@ -1488,7 +1488,7 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      GBK
     </code>
    </td>
@@ -1502,7 +1502,7 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_5
     </code>
    </td>
@@ -1513,30 +1513,30 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      KOI8R
     </code>
     ,
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
     ,
-    <code class="literal">
+    <code>
      WIN866
     </code>
     ,
-    <code class="literal">
+    <code>
      WIN1251
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_6
     </code>
    </td>
@@ -1547,14 +1547,14 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_7
     </code>
    </td>
@@ -1565,14 +1565,14 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_8
     </code>
    </td>
@@ -1583,14 +1583,14 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      JOHAB
     </code>
    </td>
@@ -1604,7 +1604,7 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      KOI8R
     </code>
    </td>
@@ -1615,30 +1615,30 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      ISO_8859_5
     </code>
     ,
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
     ,
-    <code class="literal">
+    <code>
      WIN866
     </code>
     ,
-    <code class="literal">
+    <code>
      WIN1251
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      KOI8U
     </code>
    </td>
@@ -1649,14 +1649,14 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LATIN1
     </code>
    </td>
@@ -1667,18 +1667,18 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LATIN2
     </code>
    </td>
@@ -1689,22 +1689,22 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
     ,
-    <code class="literal">
+    <code>
      WIN1250
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LATIN3
     </code>
    </td>
@@ -1715,18 +1715,18 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LATIN4
     </code>
    </td>
@@ -1737,18 +1737,18 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LATIN5
     </code>
    </td>
@@ -1759,14 +1759,14 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LATIN6
     </code>
    </td>
@@ -1777,14 +1777,14 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LATIN7
     </code>
    </td>
@@ -1795,14 +1795,14 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LATIN8
     </code>
    </td>
@@ -1813,14 +1813,14 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LATIN9
     </code>
    </td>
@@ -1831,14 +1831,14 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LATIN10
     </code>
    </td>
@@ -1849,14 +1849,14 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
@@ -1867,62 +1867,62 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      BIG5
     </code>
     ,
-    <code class="literal">
+    <code>
      EUC_CN
     </code>
     ,
-    <code class="literal">
+    <code>
      EUC_JP
     </code>
     ,
-    <code class="literal">
+    <code>
      EUC_KR
     </code>
     ,
-    <code class="literal">
+    <code>
      EUC_TW
     </code>
     ,
-    <code class="literal">
+    <code>
      ISO_8859_5
     </code>
     ,
-    <code class="literal">
+    <code>
      KOI8R
     </code>
     ,
-    <code class="literal">
+    <code>
      LATIN1
     </code>
     para
-    <code class="literal">
+    <code>
      LATIN4
     </code>
     ,
-    <code class="literal">
+    <code>
      SJIS
     </code>
     ,
-    <code class="literal">
+    <code>
      WIN866
     </code>
     ,
-    <code class="literal">
+    <code>
      WIN1250
     </code>
     ,
-    <code class="literal">
+    <code>
      WIN1251
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SJIS
     </code>
    </td>
@@ -1936,7 +1936,7 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SHIFT_JIS_2004
     </code>
    </td>
@@ -1950,7 +1950,7 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SQL_ASCII
     </code>
    </td>
@@ -1964,7 +1964,7 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      UHC
     </code>
    </td>
@@ -1978,7 +1978,7 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
@@ -1992,7 +1992,7 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN866
     </code>
    </td>
@@ -2003,30 +2003,30 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      ISO_8859_5
     </code>
     ,
-    <code class="literal">
+    <code>
      KOI8R
     </code>
     ,
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
     ,
-    <code class="literal">
+    <code>
      WIN1251
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN874
     </code>
    </td>
@@ -2037,14 +2037,14 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN1250
     </code>
    </td>
@@ -2055,22 +2055,22 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      LATIN2
     </code>
     ,
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN1251
     </code>
    </td>
@@ -2081,30 +2081,30 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      ISO_8859_5
     </code>
     ,
-    <code class="literal">
+    <code>
      KOI8R
     </code>
     ,
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
     ,
-    <code class="literal">
+    <code>
      WIN866
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN1252
     </code>
    </td>
@@ -2115,14 +2115,14 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN1253
     </code>
    </td>
@@ -2133,14 +2133,14 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN1254
     </code>
    </td>
@@ -2151,14 +2151,14 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN1255
     </code>
    </td>
@@ -2169,14 +2169,14 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN1256
     </code>
    </td>
@@ -2187,14 +2187,14 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN1257
     </code>
    </td>
@@ -2205,14 +2205,14 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WIN1258
     </code>
    </td>
@@ -2223,7 +2223,7 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
      </em>
     </span>
     ,
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
@@ -2244,7 +2244,7 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
 
 
 
-<table border="1" class="table" summary="All Built-in Character Set Conversions">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -2271,2108 +2271,2108 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      big5_to_euc_tw
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      BIG5
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_TW
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      big5_to_mic
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      BIG5
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      big5_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      BIG5
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      euc_cn_to_mic
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_CN
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      euc_cn_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_CN
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      euc_jp_to_mic
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_JP
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      euc_jp_to_sjis
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_JP
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      SJIS
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      euc_jp_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_JP
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      euc_kr_to_mic
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_KR
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      euc_kr_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_KR
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      euc_tw_to_big5
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_TW
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      BIG5
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      euc_tw_to_mic
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_TW
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      euc_tw_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_TW
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      gb18030_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      GB18030
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      gbk_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      GBK
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_10_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN6
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_13_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN7
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_14_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_15_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN9
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_16_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN10
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_1_to_mic
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN1
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_1_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN1
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_2_to_mic
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN2
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_2_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN2
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_2_to_windows_1250
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN2
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1250
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_3_to_mic
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN3
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_3_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN3
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_4_to_mic
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN4
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_4_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN4
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_5_to_koi8_r
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_5
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      KOI8R
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_5_to_mic
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_5
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_5_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_5
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_5_to_windows_1251
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_5
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1251
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_5_to_windows_866
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_5
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN866
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_6_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_6
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_7_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_7
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_8_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8859_9_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN5
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      johab_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      JOHAB
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      koi8_r_to_iso_8859_5
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      KOI8R
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_5
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      koi8_r_to_mic
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      KOI8R
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      koi8_r_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      KOI8R
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      koi8_r_to_windows_1251
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      KOI8R
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1251
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      koi8_r_to_windows_866
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      KOI8R
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN866
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      koi8_u_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      KOI8U
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mic_to_big5
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      BIG5
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mic_to_euc_cn
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_CN
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mic_to_euc_jp
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_JP
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mic_to_euc_kr
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_KR
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mic_to_euc_tw
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_TW
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mic_to_iso_8859_1
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN1
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mic_to_iso_8859_2
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN2
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mic_to_iso_8859_3
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN3
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mic_to_iso_8859_4
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN4
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mic_to_iso_8859_5
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_5
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mic_to_koi8_r
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      KOI8R
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mic_to_sjis
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      SJIS
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mic_to_windows_1250
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1250
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mic_to_windows_1251
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1251
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      mic_to_windows_866
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN866
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      sjis_to_euc_jp
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      SJIS
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_JP
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      sjis_to_mic
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      SJIS
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      sjis_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      SJIS
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      windows_1258_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1258
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      uhc_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UHC
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_big5
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      BIG5
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_euc_cn
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_CN
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_euc_jp
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_JP
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_euc_kr
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_KR
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_euc_tw
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_TW
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_gb18030
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      GB18030
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_gbk
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      GBK
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_iso_8859_1
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN1
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_iso_8859_10
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN6
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_iso_8859_13
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN7
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_iso_8859_14
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_iso_8859_15
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN9
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_iso_8859_16
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN10
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_iso_8859_2
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN2
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_iso_8859_3
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN3
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_iso_8859_4
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN4
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_iso_8859_5
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_5
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_iso_8859_6
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_6
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_iso_8859_7
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_7
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_iso_8859_8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_iso_8859_9
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN5
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_johab
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      JOHAB
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_koi8_r
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      KOI8R
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_koi8_u
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      KOI8U
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_sjis
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      SJIS
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_windows_1258
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1258
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_uhc
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UHC
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_windows_1250
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1250
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_windows_1251
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1251
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_windows_1252
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1252
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_windows_1253
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1253
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_windows_1254
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1254
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_windows_1255
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1255
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_windows_1256
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1256
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_windows_1257
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1257
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_windows_866
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN866
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_windows_874
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN874
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      windows_1250_to_iso_8859_2
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1250
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      LATIN2
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      windows_1250_to_mic
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1250
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      windows_1250_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1250
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      windows_1251_to_iso_8859_5
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1251
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_5
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      windows_1251_to_koi8_r
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1251
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      KOI8R
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      windows_1251_to_mic
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1251
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      windows_1251_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1251
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      windows_1251_to_windows_866
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1251
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN866
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      windows_1252_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1252
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      windows_1256_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN1256
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      windows_866_to_iso_8859_5
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN866
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ISO_8859_5
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      windows_866_to_koi8_r
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN866
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      KOI8R
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      windows_866_to_mic
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN866
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      MULE_INTERNAL
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      windows_866_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN866
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      windows_866_to_windows_1251
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN866
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      windows_874_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      WIN874
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      euc_jis_2004_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_JIS_2004
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_euc_jis_2004
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_JIS_2004
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      shift_jis_2004_to_utf8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      SHIFT_JIS_2004
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      utf8_to_shift_jis_2004
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UTF8
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      SHIFT_JIS_2004
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      euc_jis_2004_to_shift_jis_2004
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_JIS_2004
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      SHIFT_JIS_2004
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      shift_jis_2004_to_euc_jis_2004
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      SHIFT_JIS_2004
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      EUC_JIS_2004
     </code>
    </td>
@@ -4389,7 +4389,7 @@ O PostgreSQL permite a conversão entre qualquer dois conjuntos de caracteres pa
        </sup>
       </a>
       The conversion names follow a standard naming scheme: The official name of the source encoding with all non-alphanumeric characters replaced by underscores, followed by
-      <code class="literal">
+      <code>
        _to_
       </code>
       , followed by the similarly processed destination encoding name.  Therefore, these names sometimes deviate from the customary encoding names shown in

@@ -8,7 +8,7 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_db_role_setting` é co
 
 
 
-<table border="1" class="table" summary="pg_db_role_setting Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,20 +28,20 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_db_role_setting` é co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       setdatabase
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-database.md" title="52.15. pg_database">
-      <code class="structname">
+      <code>
        pg_database
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -54,20 +54,20 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_db_role_setting` é co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       setrole
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -80,10 +80,10 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_db_role_setting` é co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       setconfig
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>

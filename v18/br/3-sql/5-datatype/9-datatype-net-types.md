@@ -27,7 +27,7 @@ O PostgreSQL oferece tipos de dados para armazenar endereços IPv4, IPv6 e MAC, 
  <tbody>
   <tr>
    <td>
-    <code class="type">
+    <code>
      cidr
     </code>
    </td>
@@ -40,7 +40,7 @@ O PostgreSQL oferece tipos de dados para armazenar endereços IPv4, IPv6 e MAC, 
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      inet
     </code>
    </td>
@@ -53,7 +53,7 @@ O PostgreSQL oferece tipos de dados para armazenar endereços IPv4, IPv6 e MAC, 
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      macaddr
     </code>
    </td>
@@ -66,7 +66,7 @@ O PostgreSQL oferece tipos de dados para armazenar endereços IPv4, IPv6 e MAC, 
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      macaddr8
     </code>
    </td>
@@ -96,7 +96,7 @@ O tipo `cidr` contém uma especificação de rede IPv4 ou IPv6. Os formatos de e
 
 **Tabela 8.22. Exemplos de entrada de tipo `cidr`**
 
-<table border="1" class="table" summary="cidr Type Input Examples">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -105,22 +105,22 @@ O tipo `cidr` contém uma especificação de rede IPv4 ou IPv6. Os formatos de e
  <thead>
   <tr>
    <th>
-    <code class="type">
+    <code>
      cidr
     </code>
     Input
    </th>
    <th>
-    <code class="type">
+    <code>
      cidr
     </code>
     Output
    </th>
    <th>
-    <code class="literal">
-     <code class="function">
+    <code>
+     <code>
       abbrev(
-      <code class="type">
+      <code>
        cidr
       </code>
       )
@@ -321,52 +321,52 @@ Se você não gosta do formato de saída para os valores de `inet` ou `cidr`, te
 
 O tipo `macaddr` armazena endereços MAC, conhecidos, por exemplo, dos endereços de hardware dos cartões Ethernet (embora os endereços MAC sejam usados para outros propósitos também). A entrada é aceita nos seguintes formatos:
 
-<table border="0" class="simplelist" summary="Simple list">
+<table>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     '08:00:2b:01:02:03'
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     '08-00-2b-01-02-03'
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     '08002b:010203'
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     '08002b-010203'
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     '0800.2b01.0203'
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     '0800-2b01-0203'
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     '08002b010203'
    </code>
   </td>
@@ -383,59 +383,59 @@ Os cinco formatos de entrada restantes não fazem parte de nenhum padrão.
 
 O tipo `macaddr8` armazena endereços MAC no formato EUI-64, conhecido, por exemplo, dos endereços de hardware de cartões Ethernet (embora os endereços MAC sejam usados para outros propósitos também). Este tipo pode aceitar endereços MAC de comprimento de 6 e 8 bytes e os armazena no formato de comprimento de 8 bytes. Os endereços MAC fornecidos no formato de 6 bytes serão armazenados no formato de comprimento de 8 bytes com os 4º e 5º bytes definidos como FF e FE, respectivamente. Observe que o IPv6 usa um formato EUI-64 modificado, onde o 7º bit deve ser definido como um após a conversão do EUI-48. A função `macaddr8_set7bit` é fornecida para fazer essa mudança. De maneira geral, qualquer entrada que seja composta por pares de algarismos hex (em limites de byte), opcionalmente separados consistentemente por um dos `':'`, `'-'` ou `'.'`, é aceita. O número de algarismos hex deve ser de 16 (8 bytes) ou 12 (6 bytes). Espaços em branco no início e no fim são ignorados. Os seguintes são exemplos de formatos de entrada que são aceitos:
 
-<table border="0" class="simplelist" summary="Simple list">
+<table>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     '08:00:2b:01:02:03:04:05'
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     '08-00-2b-01-02-03-04-05'
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     '08002b:0102030405'
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     '08002b-0102030405'
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     '0800.2b01.0203.0405'
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     '0800-2b01-0203-0405'
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     '08002b01:02030405'
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     '08002b0102030405'
    </code>
   </td>

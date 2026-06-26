@@ -10,7 +10,7 @@ As colunas das tabelas do sistema não estão incluídas. Isso deve ser corrigid
 
 
 
-<table border="1" class="table" summary="view_column_usage Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -30,10 +30,10 @@ As colunas das tabelas do sistema não estão incluídas. Isso deve ser corrigid
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       view_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -45,10 +45,10 @@ As colunas das tabelas do sistema não estão incluídas. Isso deve ser corrigid
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       view_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -60,10 +60,10 @@ As colunas das tabelas do sistema não estão incluídas. Isso deve ser corrigid
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       view_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -75,10 +75,10 @@ As colunas das tabelas do sistema não estão incluídas. Isso deve ser corrigid
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -90,10 +90,10 @@ As colunas das tabelas do sistema não estão incluídas. Isso deve ser corrigid
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -105,10 +105,10 @@ As colunas das tabelas do sistema não estão incluídas. Isso deve ser corrigid
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -120,10 +120,10 @@ As colunas das tabelas do sistema não estão incluídas. Isso deve ser corrigid
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       column_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>

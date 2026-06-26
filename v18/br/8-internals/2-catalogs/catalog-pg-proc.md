@@ -8,7 +8,7 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
 
 
 
-<table border="1" class="table" summary="pg_proc Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -43,10 +43,10 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       proname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -58,20 +58,20 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pronamespace
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -84,20 +84,20 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       proowner
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -110,20 +110,20 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prolang
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-language.md" title="52.29. pg_language">
-      <code class="structname">
+      <code>
        pg_language
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -136,10 +136,10 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       procost
      </code>
-     <code class="type">
+     <code>
       float4
      </code>
     </p>
@@ -149,7 +149,7 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
       cpu_operator_cost
      </a>
      ); se
-     <code class="structfield">
+     <code>
       proretset
      </code>
      , esse é o custo por linha devolvida
@@ -159,16 +159,16 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prorows
      </code>
-     <code class="type">
+     <code>
       float4
      </code>
     </p>
     <p>
      Número estimado de linhas de resultado (zero se não
-     <code class="structfield">
+     <code>
       proretset
      </code>
      )
@@ -178,20 +178,20 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       provariadic
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -204,20 +204,20 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prosupport
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -234,27 +234,27 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prokind
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       f
      </code>
      para uma função normal,
-     <code class="literal">
+     <code>
       p
      </code>
      para um procedimento,
-     <code class="literal">
+     <code>
       a
      </code>
      para uma função agregada, ou
-     <code class="literal">
+     <code>
       w
      </code>
      para uma função de janela
@@ -264,10 +264,10 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prosecdef
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -287,10 +287,10 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       proleakproof
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -302,10 +302,10 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       proisstrict
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -325,10 +325,10 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       proretset
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -340,19 +340,19 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       provolatile
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
-     <code class="structfield">
+     <code>
       provolatile
      </code>
      indica se o resultado da função depende apenas de seus argumentos de entrada, ou se é afetado por fatores externos. É
-     <code class="literal">
+     <code>
       i
      </code>
      para
@@ -364,7 +364,7 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
       ”
      </span>
      funções, que sempre produzem o mesmo resultado para os mesmos inputs. É
-     <code class="literal">
+     <code>
       s
      </code>
      para
@@ -376,7 +376,7 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
       ”
      </span>
      funções, cujos resultados (para entradas fixas) não mudam durante uma varredura. É
-     <code class="literal">
+     <code>
       v
      </code>
      para
@@ -388,7 +388,7 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
       ”
      </span>
      funções, cujos resultados podem mudar a qualquer momento. (Use
-     <code class="literal">
+     <code>
       v
      </code>
      também para funções com efeitos colaterais, para que as chamadas a elas não possam ser otimizadas.)
@@ -398,27 +398,27 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       proparallel
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
-     <code class="structfield">
+     <code>
       proparallel
      </code>
      indica se a função pode ser executada com segurança no modo paralelo. É
-     <code class="literal">
+     <code>
       s
      </code>
      para funções que são seguras para execução em modo paralelo sem restrições. É
-     <code class="literal">
+     <code>
       r
      </code>
      para funções que podem ser executadas em modo paralelo, mas cuja execução é restrita ao líder do grupo paralelo; os processos de trabalho paralelos não podem invocar essas funções. É
-     <code class="literal">
+     <code>
       u
      </code>
      para funções que são inseguras no modo paralelo; a presença de tal função obriga um plano de execução em série.
@@ -428,10 +428,10 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pronargs
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
@@ -443,10 +443,10 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pronargdefaults
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
@@ -458,20 +458,20 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prorettype
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -484,31 +484,31 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       proargtypes
      </code>
-     <code class="type">
+     <code>
       oidvector
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
     </p>
     <p>
      Uma série dos tipos de dados dos argumentos da função. Isso inclui apenas argumentos de entrada (incluindo
-     <code class="literal">
+     <code>
       INOUT
      </code>
      e
-     <code class="literal">
+     <code>
       VARIADIC
      </code>
      argumentos), e, portanto, representa a assinatura de chamada da função.
@@ -518,39 +518,39 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       proallargtypes
      </code>
-     <code class="type">
+     <code>
       oid[]
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
     </p>
     <p>
      Uma série dos tipos de dados dos argumentos da função. Isso inclui todos os argumentos (incluindo
-     <code class="literal">
+     <code>
       OUT
      </code>
      e
-     <code class="literal">
+     <code>
       INOUT
      </code>
      argumentos); no entanto, se todos os argumentos forem
-     <code class="literal">
+     <code>
       IN
      </code>
      argumentos, este campo será nulo. Observe que a subscrita é baseada em 1, enquanto por razões históricas
-     <code class="structfield">
+     <code>
       proargtypes
      </code>
      é subscrita a partir de 0.
@@ -560,64 +560,64 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       proargmodes
      </code>
-     <code class="type">
+     <code>
       char[]
      </code>
     </p>
     <p>
      Uma série dos modos dos argumentos da função, codificados como
-     <code class="literal">
+     <code>
       i
      </code>
      para
-     <code class="literal">
+     <code>
       IN
      </code>
      argumentos,
-     <code class="literal">
+     <code>
       o
      </code>
      para
-     <code class="literal">
+     <code>
       OUT
      </code>
      argumentos,
-     <code class="literal">
+     <code>
       b
      </code>
      para
-     <code class="literal">
+     <code>
       INOUT
      </code>
      argumentos,
-     <code class="literal">
+     <code>
       v
      </code>
      para
-     <code class="literal">
+     <code>
       VARIADIC
      </code>
      argumentos,
-     <code class="literal">
+     <code>
       t
      </code>
      para
-     <code class="literal">
+     <code>
       TABLE
      </code>
      argumentos. Se todos os argumentos forem
-     <code class="literal">
+     <code>
       IN
      </code>
      argumentos, este campo será nulo. Observe que os subíndices correspondem às posições de
-     <code class="structfield">
+     <code>
       proallargtypes
      </code>
      não
-     <code class="structfield">
+     <code>
       proargtypes
      </code>
      .
@@ -627,20 +627,20 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       proargnames
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>
     <p>
      Uma matriz com os nomes dos argumentos da função. Os argumentos sem nome são definidos como strings vazias na matriz. Se nenhum dos argumentos tiver um nome, este campo será nulo. Observe que os subíndices correspondem às posições
-     <code class="structfield">
+     <code>
       proallargtypes
      </code>
      não
-     <code class="structfield">
+     <code>
       proargtypes
      </code>
      .
@@ -650,20 +650,20 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       proargdefaults
      </code>
-     <code class="type">
+     <code>
       pg_node_tree
      </code>
     </p>
     <p>
      árvores de expressão (em
-     <code class="function">
+     <code>
       nodeToString()
      </code>
      representação) para valores padrão. Esta é uma lista com
-     <code class="structfield">
+     <code>
       pronargdefaults
      </code>
      elementos, correspondentes à última
@@ -683,7 +683,7 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
        N
       </code>
      </em>
-     <code class="structfield">
+     <code>
       proargtypes
      </code>
      posições).  Se nenhum dos argumentos tiver um valor padrão, este campo será nulo.
@@ -693,27 +693,27 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       protrftypes
      </code>
-     <code class="type">
+     <code>
       oid[]
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
     </p>
     <p>
      Uma matriz dos tipos de dados de argumento/resultado para os quais aplicar transformações (da função)
-     <code class="literal">
+     <code>
       TRANSFORM
      </code>
      cláusula). Vazio se não houver.
@@ -723,10 +723,10 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prosrc
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -738,10 +738,10 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       probin
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -753,10 +753,10 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prosqlbody
      </code>
-     <code class="type">
+     <code>
       pg_node_tree
      </code>
     </p>
@@ -768,10 +768,10 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       proconfig
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>
@@ -783,10 +783,10 @@ Se `prokind` indicar que a entrada é para uma função agregada, deve haver uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       proacl
      </code>
-     <code class="type">
+     <code>
       aclitem[]
      </code>
     </p>

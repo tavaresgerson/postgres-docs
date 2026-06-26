@@ -10,7 +10,7 @@ O acesso à coluna `subconninfo` é revogado para usuários normais, pois ela po
 
 
 
-<table border="1" class="table" summary="pg_subscription Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -30,10 +30,10 @@ O acesso à coluna `subconninfo` é revogado para usuários normais, pois ela po
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -45,20 +45,20 @@ O acesso à coluna `subconninfo` é revogado para usuários normais, pois ela po
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       subdbid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-database.md" title="52.15. pg_database">
-      <code class="structname">
+      <code>
        pg_database
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -71,16 +71,16 @@ O acesso à coluna `subconninfo` é revogado para usuários normais, pois ela po
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       subskiplsn
      </code>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
     </p>
     <p>
      Finalize o LSN da transação cujas alterações devem ser ignoradas, se houver um LSN válido; caso contrário
-     <code class="literal">
+     <code>
       0/0
      </code>
      .
@@ -90,10 +90,10 @@ O acesso à coluna `subconninfo` é revogado para usuários normais, pois ela po
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       subname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -105,20 +105,20 @@ O acesso à coluna `subconninfo` é revogado para usuários normais, pois ela po
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       subowner
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -131,10 +131,10 @@ O acesso à coluna `subconninfo` é revogado para usuários normais, pois ela po
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       subenabled
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -146,10 +146,10 @@ O acesso à coluna `subconninfo` é revogado para usuários normais, pois ela po
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       subbinary
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -161,28 +161,28 @@ O acesso à coluna `subconninfo` é revogado para usuários normais, pois ela po
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       substream
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      Controla como lidar com o streaming de transações em andamento:
-     <code class="literal">
+     <code>
       f
      </code>
      = não permitir o streaming de transações em andamento,
-     <code class="literal">
+     <code>
       t
      </code>
      = transferir as alterações das transações em andamento para o disco e aplicá-las de uma vez, após a transação ser confirmada no editor e recebida pelo assinante,
-     <code class="literal">
+     <code>
       p
      </code>
      = aplicar as alterações diretamente usando um trabalhador de aplicação paralela, se disponível (mesmo que
-     <code class="literal">
+     <code>
       t
      </code>
      se nenhum trabalhador estiver disponível)
@@ -192,24 +192,24 @@ O acesso à coluna `subconninfo` é revogado para usuários normais, pois ela po
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       subtwophasestate
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      Códigos estaduais para modo de duas fases:
-     <code class="literal">
+     <code>
       d
      </code>
      = deficiente,
-     <code class="literal">
+     <code>
       p
      </code>
      = em espera de ativação,
-     <code class="literal">
+     <code>
       e
      </code>
      = ativado
@@ -219,10 +219,10 @@ O acesso à coluna `subconninfo` é revogado para usuários normais, pois ela po
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       subdisableonerr
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -234,10 +234,10 @@ O acesso à coluna `subconninfo` é revogado para usuários normais, pois ela po
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       subpasswordrequired
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -249,10 +249,10 @@ O acesso à coluna `subconninfo` é revogado para usuários normais, pois ela po
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       subrunasowner
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -264,10 +264,10 @@ O acesso à coluna `subconninfo` é revogado para usuários normais, pois ela po
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       subfailover
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -279,10 +279,10 @@ O acesso à coluna `subconninfo` é revogado para usuários normais, pois ela po
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       subconninfo
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -294,16 +294,16 @@ O acesso à coluna `subconninfo` é revogado para usuários normais, pois ela po
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       subslotname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
     <p>
      Nome do slot de replicação no banco de dados upstream (também utilizado para o nome da origem de replicação local); nulo representa
-     <code class="literal">
+     <code>
       NONE
      </code>
     </p>
@@ -312,16 +312,16 @@ O acesso à coluna `subconninfo` é revogado para usuários normais, pois ela po
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       subsynccommit
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      O
-     <code class="varname">
+     <code>
       synchronous_commit
      </code>
      ambiente para os trabalhadores da assinatura utilizarem
@@ -331,10 +331,10 @@ O acesso à coluna `subconninfo` é revogado para usuários normais, pois ela po
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       subpublications
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>
@@ -350,32 +350,32 @@ O acesso à coluna `subconninfo` é revogado para usuários normais, pois ela po
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       suborigin
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      O valor de origem deve ser ou
-     <code class="literal">
+     <code>
       none
      </code>
      ou
-     <code class="literal">
+     <code>
       any
      </code>
      O padrão é
-     <code class="literal">
+     <code>
       any
      </code>
      . Se
-     <code class="literal">
+     <code>
       none
      </code>
      , a assinatura solicitará que o editor envie apenas alterações que não tenham origem. Se
-     <code class="literal">
+     <code>
       any
      </code>
      , o editor envia as alterações independentemente de sua origem.

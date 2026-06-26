@@ -6,7 +6,7 @@ A vista `schemata` contém todos os esquemas no banco de dados atual que o usuá
 
 
 
-<table border="1" class="table" summary="schemata Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `schemata` contém todos os esquemas no banco de dados atual que o usuá
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       catalog_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `schemata` contém todos os esquemas no banco de dados atual que o usuá
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       schema_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `schemata` contém todos os esquemas no banco de dados atual que o usuá
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       schema_owner
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,10 +71,10 @@ A vista `schemata` contém todos os esquemas no banco de dados atual que o usuá
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       default_character_set_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -89,10 +89,10 @@ A vista `schemata` contém todos os esquemas no banco de dados atual que o usuá
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       default_character_set_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -107,10 +107,10 @@ A vista `schemata` contém todos os esquemas no banco de dados atual que o usuá
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       default_character_set_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -125,10 +125,10 @@ A vista `schemata` contém todos os esquemas no banco de dados atual que o usuá
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sql_path
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>

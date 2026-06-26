@@ -17,7 +17,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
 
 
 
-<table border="1" class="table" summary="Date/Time Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -40,17 +40,17 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       date
      </code>
-     <code class="literal">
+     <code>
       +
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
      →
-     <code class="returnvalue">
+     <code>
       date
      </code>
     </p>
@@ -58,11 +58,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Adicione um número de dias a uma data
     </p>
     <p>
-     <code class="literal">
+     <code>
       date '2001-09-28' + 7
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2001-10-05
      </code>
     </p>
@@ -71,17 +71,17 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       date
      </code>
-     <code class="literal">
+     <code>
       +
      </code>
-     <code class="type">
+     <code>
       interval
      </code>
      →
-     <code class="returnvalue">
+     <code>
       timestamp
      </code>
     </p>
@@ -89,11 +89,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Adicione um intervalo a uma data
     </p>
     <p>
-     <code class="literal">
+     <code>
       date '2001-09-28' + interval '1 hour'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2001-09-28 01:00:00
      </code>
     </p>
@@ -102,17 +102,17 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       date
      </code>
-     <code class="literal">
+     <code>
       +
      </code>
-     <code class="type">
+     <code>
       time
      </code>
      →
-     <code class="returnvalue">
+     <code>
       timestamp
      </code>
     </p>
@@ -120,11 +120,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Adicione um horário a uma data
     </p>
     <p>
-     <code class="literal">
+     <code>
       date '2001-09-28' + time '03:00'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2001-09-28 03:00:00
      </code>
     </p>
@@ -133,17 +133,17 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       interval
      </code>
-     <code class="literal">
+     <code>
       +
      </code>
-     <code class="type">
+     <code>
       interval
      </code>
      →
-     <code class="returnvalue">
+     <code>
       interval
      </code>
     </p>
@@ -151,11 +151,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Adicione intervalos
     </p>
     <p>
-     <code class="literal">
+     <code>
       interval '1 day' + interval '1 hour'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1 day 01:00:00
      </code>
     </p>
@@ -164,17 +164,17 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       timestamp
      </code>
-     <code class="literal">
+     <code>
       +
      </code>
-     <code class="type">
+     <code>
       interval
      </code>
      →
-     <code class="returnvalue">
+     <code>
       timestamp
      </code>
     </p>
@@ -182,11 +182,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Adicione um intervalo a um timestamp
     </p>
     <p>
-     <code class="literal">
+     <code>
       timestamp '2001-09-28 01:00' + interval '23 hours'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2001-09-29 00:00:00
      </code>
     </p>
@@ -195,17 +195,17 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       time
      </code>
-     <code class="literal">
+     <code>
       +
      </code>
-     <code class="type">
+     <code>
       interval
      </code>
      →
-     <code class="returnvalue">
+     <code>
       time
      </code>
     </p>
@@ -213,11 +213,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Adicione um intervalo a um horário
     </p>
     <p>
-     <code class="literal">
+     <code>
       time '01:00' + interval '3 hours'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       04:00:00
      </code>
     </p>
@@ -226,14 +226,14 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       interval
      </code>
      →
-     <code class="returnvalue">
+     <code>
       interval
      </code>
     </p>
@@ -241,11 +241,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Negar um intervalo
     </p>
     <p>
-     <code class="literal">
+     <code>
       - interval '23 hours'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       -23:00:00
      </code>
     </p>
@@ -254,17 +254,17 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       date
      </code>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       date
      </code>
      →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -272,11 +272,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Subtraia as datas, produzindo o número de dias que se passaram
     </p>
     <p>
-     <code class="literal">
+     <code>
       date '2001-10-01' - date '2001-09-28'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3
      </code>
     </p>
@@ -285,17 +285,17 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       date
      </code>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
      →
-     <code class="returnvalue">
+     <code>
       date
      </code>
     </p>
@@ -303,11 +303,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Subtraia um número de dias de uma data
     </p>
     <p>
-     <code class="literal">
+     <code>
       date '2001-10-01' - 7
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2001-09-24
      </code>
     </p>
@@ -316,17 +316,17 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       date
      </code>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       interval
      </code>
      →
-     <code class="returnvalue">
+     <code>
       timestamp
      </code>
     </p>
@@ -334,11 +334,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Subtrair um intervalo de uma data
     </p>
     <p>
-     <code class="literal">
+     <code>
       date '2001-09-28' - interval '1 hour'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2001-09-27 23:00:00
      </code>
     </p>
@@ -347,17 +347,17 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       time
      </code>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       time
      </code>
      →
-     <code class="returnvalue">
+     <code>
       interval
      </code>
     </p>
@@ -365,11 +365,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Subtraia os tempos
     </p>
     <p>
-     <code class="literal">
+     <code>
       time '05:00' - time '03:00'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       02:00:00
      </code>
     </p>
@@ -378,17 +378,17 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       time
      </code>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       interval
      </code>
      →
-     <code class="returnvalue">
+     <code>
       time
      </code>
     </p>
@@ -396,11 +396,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Subtrair um intervalo de um horário
     </p>
     <p>
-     <code class="literal">
+     <code>
       time '05:00' - interval '2 hours'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       03:00:00
      </code>
     </p>
@@ -409,17 +409,17 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       timestamp
      </code>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       interval
      </code>
      →
-     <code class="returnvalue">
+     <code>
       timestamp
      </code>
     </p>
@@ -427,11 +427,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Subtrair um intervalo de um timestamp
     </p>
     <p>
-     <code class="literal">
+     <code>
       timestamp '2001-09-28 23:00' - interval '23 hours'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2001-09-28 00:00:00
      </code>
     </p>
@@ -440,17 +440,17 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       interval
      </code>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       interval
      </code>
      →
-     <code class="returnvalue">
+     <code>
       interval
      </code>
     </p>
@@ -458,11 +458,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Subtraia intervalos
     </p>
     <p>
-     <code class="literal">
+     <code>
       interval '1 day' - interval '1 hour'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1 day -01:00:00
      </code>
     </p>
@@ -471,35 +471,35 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       timestamp
      </code>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       timestamp
      </code>
      →
-     <code class="returnvalue">
+     <code>
       interval
      </code>
     </p>
     <p>
      Subtraia os timestamps (convertendo intervalos de 24 horas em dias, de forma semelhante a
      <a class="link" href="functions-datetime.md#FUNCTION-JUSTIFY-HOURS">
-      <code class="function">
+      <code>
        justify_hours()
       </code>
      </a>
      )
     </p>
     <p>
-     <code class="literal">
+     <code>
       timestamp '2001-09-29 03:00' - timestamp '2001-07-27 12:00'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       63 days 15:00:00
      </code>
     </p>
@@ -508,17 +508,17 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       interval
      </code>
-     <code class="literal">
+     <code>
       *
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
      →
-     <code class="returnvalue">
+     <code>
       interval
      </code>
     </p>
@@ -526,29 +526,29 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Multiplicar um intervalo por um escalar
     </p>
     <p>
-     <code class="literal">
+     <code>
       interval '1 second' * 900
      </code>
      →
-     <code class="returnvalue">
+     <code>
       00:15:00
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       interval '1 day' * 21
      </code>
      →
-     <code class="returnvalue">
+     <code>
       21 days
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       interval '1 hour' * 3.5
      </code>
      →
-     <code class="returnvalue">
+     <code>
       03:30:00
      </code>
     </p>
@@ -557,17 +557,17 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       interval
      </code>
-     <code class="literal">
+     <code>
       /
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
      →
-     <code class="returnvalue">
+     <code>
       interval
      </code>
     </p>
@@ -575,11 +575,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Dividir um intervalo por um escalar
     </p>
     <p>
-     <code class="literal">
+     <code>
       interval '1 hour' / 1.5
      </code>
      →
-     <code class="returnvalue">
+     <code>
       00:40:00
      </code>
     </p>
@@ -601,7 +601,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
 
 
 
-<table border="1" class="table" summary="Date/Time Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -624,19 +624,19 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       age
      </code>
      (
-     <code class="type">
+     <code>
       timestamp
      </code>
      ,
-     <code class="type">
+     <code>
       timestamp
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       interval
      </code>
     </p>
@@ -652,11 +652,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      result that uses years and months, rather than just days
     </p>
     <p>
-     <code class="literal">
+     <code>
       age(timestamp '2001-04-10', timestamp '1957-06-13')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       43 years 9 mons 27 days
      </code>
     </p>
@@ -665,31 +665,31 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       age
      </code>
      (
-     <code class="type">
+     <code>
       timestamp
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       interval
      </code>
     </p>
     <p>
      Subtract argument from
-     <code class="function">
+     <code>
       current_date
      </code>
      (at midnight)
     </p>
     <p>
-     <code class="literal">
+     <code>
       age(timestamp '1957-06-13')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       62 years 6 mons 10 days
      </code>
     </p>
@@ -698,11 +698,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       clock_timestamp
      </code>
      ( ) →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -713,11 +713,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       clock_timestamp()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2019-12-23 14:39:53.662522-05
      </code>
     </p>
@@ -726,11 +726,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       current_date
      </code>
      →
-     <code class="returnvalue">
+     <code>
       date
      </code>
     </p>
@@ -741,11 +741,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       current_date
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2019-12-23
      </code>
     </p>
@@ -754,11 +754,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       current_time
      </code>
      →
-     <code class="returnvalue">
+     <code>
       time with time zone
      </code>
     </p>
@@ -769,11 +769,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       current_time
      </code>
      →
-     <code class="returnvalue">
+     <code>
       14:39:53.662522-05
      </code>
     </p>
@@ -782,15 +782,15 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       current_time
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       time with time zone
      </code>
     </p>
@@ -801,11 +801,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       current_time(2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       14:39:53.66-05
      </code>
     </p>
@@ -814,11 +814,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       current_timestamp
      </code>
      →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -829,11 +829,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       current_timestamp
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2019-12-23 14:39:53.662522-05
      </code>
     </p>
@@ -842,15 +842,15 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       current_timestamp
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -861,11 +861,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       current_timestamp(0)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2019-12-23 14:39:53-05
      </code>
     </p>
@@ -874,36 +874,36 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       date_add
      </code>
      (
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      ,
-     <code class="type">
+     <code>
       interval
      </code>
      [
      <span class="optional">
       ,
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
     <p>
      Add an
-     <code class="type">
+     <code>
       interval
      </code>
      to a
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      , computing times of day and daylight-savings adjustments according to the time zone named by the third argument, or the current
@@ -911,23 +911,23 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
       TimeZone
      </a>
      setting if that is omitted. The form with two arguments is equivalent to the
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
-     <code class="literal">
+     <code>
       +
      </code>
-     <code class="type">
+     <code>
       interval
      </code>
      operator.
     </p>
     <p>
-     <code class="literal">
+     <code>
       date_add('2021-10-31 00:00:00+02'::timestamptz, '1 day'::interval, 'Europe/Warsaw')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2021-10-31 23:00:00+00
      </code>
     </p>
@@ -936,23 +936,23 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       date_bin
      </code>
      (
-     <code class="type">
+     <code>
       interval
      </code>
      ,
-     <code class="type">
+     <code>
       timestamp
      </code>
      ,
-     <code class="type">
+     <code>
       timestamp
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       timestamp
      </code>
     </p>
@@ -963,11 +963,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       date_bin('15 minutes', timestamp '2001-02-16 20:38:40', timestamp '2001-02-16 20:05:00')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2001-02-16 20:35:00
      </code>
     </p>
@@ -976,25 +976,25 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       date_part
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ,
-     <code class="type">
+     <code>
       timestamp
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Get timestamp subfield (equivalent to
-     <code class="function">
+     <code>
       extract
      </code>
      ); see
@@ -1003,11 +1003,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       date_part('hour', timestamp '2001-02-16 20:38:40')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       20
      </code>
     </p>
@@ -1016,25 +1016,25 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       date_part
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ,
-     <code class="type">
+     <code>
       interval
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Get interval subfield (equivalent to
-     <code class="function">
+     <code>
       extract
      </code>
      ); see
@@ -1043,11 +1043,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       date_part('month', interval '2 years 3 months')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3
      </code>
     </p>
@@ -1056,36 +1056,36 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       date_subtract
      </code>
      (
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      ,
-     <code class="type">
+     <code>
       interval
      </code>
      [
      <span class="optional">
       ,
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
     <p>
      Subtract an
-     <code class="type">
+     <code>
       interval
      </code>
      from a
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      , computing times of day and daylight-savings adjustments according to the time zone named by the third argument, or the current
@@ -1093,23 +1093,23 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
       TimeZone
      </a>
      setting if that is omitted. The form with two arguments is equivalent to the
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       interval
      </code>
      operator.
     </p>
     <p>
-     <code class="literal">
+     <code>
       date_subtract('2021-11-01 00:00:00+01'::timestamptz, '1 day'::interval, 'Europe/Warsaw')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2021-10-30 22:00:00+00
      </code>
     </p>
@@ -1118,19 +1118,19 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       date_trunc
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ,
-     <code class="type">
+     <code>
       timestamp
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       timestamp
      </code>
     </p>
@@ -1141,11 +1141,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       date_trunc('hour', timestamp '2001-02-16 20:38:40')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2001-02-16 20:00:00
      </code>
     </p>
@@ -1154,23 +1154,23 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       date_trunc
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ,
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      ,
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -1181,11 +1181,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       date_trunc('day', timestamptz '2001-02-16 20:38:40+00', 'Australia/Sydney')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2001-02-16 13:00:00+00
      </code>
     </p>
@@ -1194,19 +1194,19 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       date_trunc
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ,
-     <code class="type">
+     <code>
       interval
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       interval
      </code>
     </p>
@@ -1217,11 +1217,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       date_trunc('hour', interval '2 days 3 hours 40 minutes')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2 days 03:00:00
      </code>
     </p>
@@ -1230,7 +1230,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       extract
      </code>
      (
@@ -1239,14 +1239,14 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
        field
       </code>
      </em>
-     <code class="literal">
+     <code>
       from
      </code>
-     <code class="type">
+     <code>
       timestamp
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
@@ -1257,11 +1257,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       extract(hour from timestamp '2001-02-16 20:38:40')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       20
      </code>
     </p>
@@ -1270,7 +1270,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       extract
      </code>
      (
@@ -1279,14 +1279,14 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
        field
       </code>
      </em>
-     <code class="literal">
+     <code>
       from
      </code>
-     <code class="type">
+     <code>
       interval
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       numeric
      </code>
     </p>
@@ -1297,11 +1297,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       extract(month from interval '2 years 3 months')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3
      </code>
     </p>
@@ -1310,15 +1310,15 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       isfinite
      </code>
      (
-     <code class="type">
+     <code>
       date
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1326,11 +1326,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Test for finite date (not +/-infinity)
     </p>
     <p>
-     <code class="literal">
+     <code>
       isfinite(date '2001-02-16')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       true
      </code>
     </p>
@@ -1339,15 +1339,15 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       isfinite
      </code>
      (
-     <code class="type">
+     <code>
       timestamp
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1355,11 +1355,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Test for finite timestamp (not +/-infinity)
     </p>
     <p>
-     <code class="literal">
+     <code>
       isfinite(timestamp 'infinity')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       false
      </code>
     </p>
@@ -1368,15 +1368,15 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       isfinite
      </code>
      (
-     <code class="type">
+     <code>
       interval
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1384,11 +1384,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Test for finite interval (not +/-infinity)
     </p>
     <p>
-     <code class="literal">
+     <code>
       isfinite(interval '4 hours')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       true
      </code>
     </p>
@@ -1397,15 +1397,15 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       justify_days
      </code>
      (
-     <code class="type">
+     <code>
       interval
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       interval
      </code>
     </p>
@@ -1413,11 +1413,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Adjust interval, converting 30-day time periods to months
     </p>
     <p>
-     <code class="literal">
+     <code>
       justify_days(interval '1 year 65 days')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1 year 2 mons 5 days
      </code>
     </p>
@@ -1426,15 +1426,15 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       justify_hours
      </code>
      (
-     <code class="type">
+     <code>
       interval
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       interval
      </code>
     </p>
@@ -1442,11 +1442,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Adjust interval, converting 24-hour time periods to days
     </p>
     <p>
-     <code class="literal">
+     <code>
       justify_hours(interval '50 hours 10 minutes')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2 days 02:10:00
      </code>
     </p>
@@ -1455,35 +1455,35 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       justify_interval
      </code>
      (
-     <code class="type">
+     <code>
       interval
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       interval
      </code>
     </p>
     <p>
      Adjust interval using
-     <code class="function">
+     <code>
       justify_days
      </code>
      and
-     <code class="function">
+     <code>
       justify_hours
      </code>
      , with additional sign adjustments
     </p>
     <p>
-     <code class="literal">
+     <code>
       justify_interval(interval '1 mon -1 hour')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       29 days 23:00:00
      </code>
     </p>
@@ -1492,11 +1492,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       localtime
      </code>
      →
-     <code class="returnvalue">
+     <code>
       time
      </code>
     </p>
@@ -1507,11 +1507,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       localtime
      </code>
      →
-     <code class="returnvalue">
+     <code>
       14:39:53.662522
      </code>
     </p>
@@ -1520,15 +1520,15 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       localtime
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       time
      </code>
     </p>
@@ -1539,11 +1539,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       localtime(0)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       14:39:53
      </code>
     </p>
@@ -1552,11 +1552,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       localtimestamp
      </code>
      →
-     <code class="returnvalue">
+     <code>
       timestamp
      </code>
     </p>
@@ -1567,11 +1567,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       localtimestamp
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2019-12-23 14:39:53.662522
      </code>
     </p>
@@ -1580,15 +1580,15 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       localtimestamp
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       timestamp
      </code>
     </p>
@@ -1599,11 +1599,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       localtimestamp(2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2019-12-23 14:39:53.66
      </code>
     </p>
@@ -1612,7 +1612,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       make_date
      </code>
      (
@@ -1621,7 +1621,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
        year
       </code>
      </em>
-     <code class="type">
+     <code>
       int
      </code>
      ,
@@ -1630,7 +1630,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
        month
       </code>
      </em>
-     <code class="type">
+     <code>
       int
      </code>
      ,
@@ -1639,11 +1639,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
        day
       </code>
      </em>
-     <code class="type">
+     <code>
       int
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       date
      </code>
     </p>
@@ -1651,11 +1651,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Create date from year, month and day fields (negative years signify BC)
     </p>
     <p>
-     <code class="literal">
+     <code>
       make_date(2013, 7, 15)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2013-07-15
      </code>
     </p>
@@ -1664,7 +1664,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       make_interval
      </code>
      ( [
@@ -1674,7 +1674,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
         years
        </code>
       </em>
-      <code class="type">
+      <code>
        int
       </code>
       [
@@ -1685,7 +1685,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
          months
         </code>
        </em>
-       <code class="type">
+       <code>
         int
        </code>
        [
@@ -1696,7 +1696,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
           weeks
          </code>
         </em>
-        <code class="type">
+        <code>
          int
         </code>
         [
@@ -1707,7 +1707,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
            days
           </code>
          </em>
-         <code class="type">
+         <code>
           int
          </code>
          [
@@ -1718,7 +1718,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
             hours
            </code>
           </em>
-          <code class="type">
+          <code>
            int
           </code>
           [
@@ -1729,7 +1729,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
              mins
             </code>
            </em>
-           <code class="type">
+           <code>
             int
            </code>
            [
@@ -1740,7 +1740,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
               secs
              </code>
             </em>
-            <code class="type">
+            <code>
              double precision
             </code>
            </span>
@@ -1757,7 +1757,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
       ]
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       interval
      </code>
     </p>
@@ -1765,11 +1765,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Create interval from years, months, weeks, days, hours, minutes and seconds fields, each of which can default to zero
     </p>
     <p>
-     <code class="literal">
+     <code>
       make_interval(days =&gt; 10)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       10 days
      </code>
     </p>
@@ -1778,7 +1778,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       make_time
      </code>
      (
@@ -1787,7 +1787,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
        hour
       </code>
      </em>
-     <code class="type">
+     <code>
       int
      </code>
      ,
@@ -1796,7 +1796,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
        min
       </code>
      </em>
-     <code class="type">
+     <code>
       int
      </code>
      ,
@@ -1805,11 +1805,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
        sec
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       time
      </code>
     </p>
@@ -1817,11 +1817,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Create time from hour, minute and seconds fields
     </p>
     <p>
-     <code class="literal">
+     <code>
       make_time(8, 15, 23.5)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       08:15:23.5
      </code>
     </p>
@@ -1830,7 +1830,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       make_timestamp
      </code>
      (
@@ -1839,7 +1839,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
        year
       </code>
      </em>
-     <code class="type">
+     <code>
       int
      </code>
      ,
@@ -1848,7 +1848,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
        month
       </code>
      </em>
-     <code class="type">
+     <code>
       int
      </code>
      ,
@@ -1857,7 +1857,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
        day
       </code>
      </em>
-     <code class="type">
+     <code>
       int
      </code>
      ,
@@ -1866,7 +1866,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
        hour
       </code>
      </em>
-     <code class="type">
+     <code>
       int
      </code>
      ,
@@ -1875,7 +1875,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
        min
       </code>
      </em>
-     <code class="type">
+     <code>
       int
      </code>
      ,
@@ -1884,11 +1884,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
        sec
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       timestamp
      </code>
     </p>
@@ -1896,11 +1896,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Create timestamp from year, month, day, hour, minute and seconds fields (negative years signify BC)
     </p>
     <p>
-     <code class="literal">
+     <code>
       make_timestamp(2013, 7, 15, 8, 15, 23.5)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2013-07-15 08:15:23.5
      </code>
     </p>
@@ -1909,7 +1909,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       make_timestamptz
      </code>
      (
@@ -1918,7 +1918,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
        year
       </code>
      </em>
-     <code class="type">
+     <code>
       int
      </code>
      ,
@@ -1927,7 +1927,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
        month
       </code>
      </em>
-     <code class="type">
+     <code>
       int
      </code>
      ,
@@ -1936,7 +1936,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
        day
       </code>
      </em>
-     <code class="type">
+     <code>
       int
      </code>
      ,
@@ -1945,7 +1945,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
        hour
       </code>
      </em>
-     <code class="type">
+     <code>
       int
      </code>
      ,
@@ -1954,7 +1954,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
        min
       </code>
      </em>
-     <code class="type">
+     <code>
       int
      </code>
      ,
@@ -1963,7 +1963,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
        sec
       </code>
      </em>
-     <code class="type">
+     <code>
       double precision
      </code>
      [
@@ -1974,12 +1974,12 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
         timezone
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -1991,25 +1991,25 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
       </code>
      </em>
      is not specified, the current time zone is used; the examples assume the session time zone is
-     <code class="literal">
+     <code>
       Europe/London
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       make_timestamptz(2013, 7, 15, 8, 15, 23.5)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2013-07-15 08:15:23.5+01
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       make_timestamptz(2013, 7, 15, 8, 15, 23.5, 'America/New_York')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2013-07-15 13:15:23.5+01
      </code>
     </p>
@@ -2018,11 +2018,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       now
      </code>
      ( ) →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -2033,11 +2033,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       now()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2019-12-23 14:39:53.662522-05
      </code>
     </p>
@@ -2046,11 +2046,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       statement_timestamp
      </code>
      ( ) →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -2061,11 +2061,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       statement_timestamp()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2019-12-23 14:39:53.662522-05
      </code>
     </p>
@@ -2074,21 +2074,21 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       timeofday
      </code>
      ( ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Current date and time (like
-     <code class="function">
+     <code>
       clock_timestamp
      </code>
      , but as a
-     <code class="type">
+     <code>
       text
      </code>
      string); see
@@ -2097,11 +2097,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       timeofday()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       Mon Dec 23 14:39:53.662522 2019 EST
      </code>
     </p>
@@ -2110,11 +2110,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       transaction_timestamp
      </code>
      ( ) →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -2125,11 +2125,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      </a>
     </p>
     <p>
-     <code class="literal">
+     <code>
       transaction_timestamp()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2019-12-23 14:39:53.662522-05
      </code>
     </p>
@@ -2138,15 +2138,15 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_timestamp
      </code>
      (
-     <code class="type">
+     <code>
       double precision
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -2154,11 +2154,11 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
      Convert Unix epoch (seconds since 1970-01-01 00:00:00+00) to timestamp with time zone
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_timestamp(1284352323)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2010-09-13 04:32:03+00
      </code>
     </p>
@@ -2419,94 +2419,94 @@ Os valores válidos para *`field`* são:
 
 
 
-<table border="0" class="simplelist" summary="Simple list">
+<table>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     microseconds
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     milliseconds
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     second
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     minute
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     hour
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     day
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     week
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     month
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     quarter
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     year
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     decade
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     century
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="literal">
+   <code>
     millennium
    </code>
   </td>
@@ -2557,7 +2557,7 @@ O operador `AT TIME ZONE` converte o rótulo de tempo *sem* fuso horário para/d
 
 
 
-<table border="1" class="table" summary="AT TIME ZONE and AT LOCAL Variants">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -2580,10 +2580,10 @@ O operador `AT TIME ZONE` converte o rótulo de tempo *sem* fuso horário para/d
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       timestamp without time zone
      </code>
-     <code class="literal">
+     <code>
       AT TIME ZONE
      </code>
      <em class="replaceable">
@@ -2592,7 +2592,7 @@ O operador `AT TIME ZONE` converte o rótulo de tempo *sem* fuso horário para/d
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -2612,11 +2612,11 @@ O operador `AT TIME ZONE` converte o rótulo de tempo *sem* fuso horário para/d
      fuso horário, assumindo que o valor dado está no fuso horário designado.
     </p>
     <p>
-     <code class="literal">
+     <code>
       timestamp '2001-02-16 20:38:40' at time zone 'America/Denver'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2001-02-17 03:38:40+00
      </code>
     </p>
@@ -2625,14 +2625,14 @@ O operador `AT TIME ZONE` converte o rótulo de tempo *sem* fuso horário para/d
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       timestamp without time zone
      </code>
-     <code class="literal">
+     <code>
       AT LOCAL
      </code>
      →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -2650,17 +2650,17 @@ O operador `AT TIME ZONE` converte o rótulo de tempo *sem* fuso horário para/d
       </em>
      </span>
      a sessão de
-     <code class="varname">
+     <code>
       TimeZone
      </code>
      valor como fuso horário.
     </p>
     <p>
-     <code class="literal">
+     <code>
       timestamp '2001-02-16 20:38:40' at local
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2001-02-17 03:38:40+00
      </code>
     </p>
@@ -2669,10 +2669,10 @@ O operador `AT TIME ZONE` converte o rótulo de tempo *sem* fuso horário para/d
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
-     <code class="literal">
+     <code>
       AT TIME ZONE
      </code>
      <em class="replaceable">
@@ -2681,7 +2681,7 @@ O operador `AT TIME ZONE` converte o rótulo de tempo *sem* fuso horário para/d
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       timestamp without time zone
      </code>
     </p>
@@ -2701,11 +2701,11 @@ O operador `AT TIME ZONE` converte o rótulo de tempo *sem* fuso horário para/d
      fuso horário, pois o horário apareceria nessa zona.
     </p>
     <p>
-     <code class="literal">
+     <code>
       timestamp with time zone '2001-02-16 20:38:40-05' at time zone 'America/Denver'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2001-02-16 18:38:40
      </code>
     </p>
@@ -2714,14 +2714,14 @@ O operador `AT TIME ZONE` converte o rótulo de tempo *sem* fuso horário para/d
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
-     <code class="literal">
+     <code>
       AT LOCAL
      </code>
      →
-     <code class="returnvalue">
+     <code>
       timestamp without time zone
      </code>
     </p>
@@ -2739,17 +2739,17 @@ O operador `AT TIME ZONE` converte o rótulo de tempo *sem* fuso horário para/d
       </em>
      </span>
      fuso horário, pois o horário apareceria com a sessão
-     <code class="varname">
+     <code>
       TimeZone
      </code>
      valor como fuso horário.
     </p>
     <p>
-     <code class="literal">
+     <code>
       timestamp with time zone '2001-02-16 20:38:40-05' at local
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2001-02-16 18:38:40
      </code>
     </p>
@@ -2758,10 +2758,10 @@ O operador `AT TIME ZONE` converte o rótulo de tempo *sem* fuso horário para/d
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       time with time zone
      </code>
-     <code class="literal">
+     <code>
       AT TIME ZONE
      </code>
      <em class="replaceable">
@@ -2770,7 +2770,7 @@ O operador `AT TIME ZONE` converte o rótulo de tempo *sem* fuso horário para/d
       </code>
      </em>
      →
-     <code class="returnvalue">
+     <code>
       time with time zone
      </code>
     </p>
@@ -2784,11 +2784,11 @@ O operador `AT TIME ZONE` converte o rótulo de tempo *sem* fuso horário para/d
      Para mudar a zona horária para uma nova zona horária. Como não foi fornecida uma data, este usa o deslocamento UTC atualmente ativo para a zona de destino designada.
     </p>
     <p>
-     <code class="literal">
+     <code>
       time with time zone '05:34:17-05' at time zone 'UTC'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       10:34:17+00
      </code>
     </p>
@@ -2797,14 +2797,14 @@ O operador `AT TIME ZONE` converte o rótulo de tempo *sem* fuso horário para/d
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       time with time zone
      </code>
-     <code class="literal">
+     <code>
       AT LOCAL
      </code>
      →
-     <code class="returnvalue">
+     <code>
       time with time zone
      </code>
     </p>
@@ -2816,28 +2816,28 @@ O operador `AT TIME ZONE` converte o rótulo de tempo *sem* fuso horário para/d
       </em>
      </span>
      tempo de fuso horário para uma nova zona horária. Como não foi fornecida uma data, este usa o deslocamento UTC atualmente ativo para a sessão
-     <code class="varname">
+     <code>
       TimeZone
      </code>
      value.
     </p>
     <p>
      Supondo que a sessão seja
-     <code class="varname">
+     <code>
       TimeZone
      </code>
      está previsto
-     <code class="literal">
+     <code>
       UTC
      </code>
      :
     </p>
     <p>
-     <code class="literal">
+     <code>
       time with time zone '05:34:17-05' at local
      </code>
      →
-     <code class="returnvalue">
+     <code>
       10:34:17+00
      </code>
     </p>

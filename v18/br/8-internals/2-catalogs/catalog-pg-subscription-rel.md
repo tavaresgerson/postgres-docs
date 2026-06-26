@@ -8,7 +8,7 @@ Este catálogo contém apenas tabelas conhecidas pela assinatura após a execuç
 
 
 
-<table border="1" class="table" summary="pg_subscription_rel Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,20 +28,20 @@ Este catálogo contém apenas tabelas conhecidas pela assinatura após a execuç
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       srsubid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-subscription.md" title="52.54. pg_subscription">
-      <code class="structname">
+      <code>
        pg_subscription
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -54,20 +54,20 @@ Este catálogo contém apenas tabelas conhecidas pela assinatura após a execuç
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       srrelid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -80,32 +80,32 @@ Este catálogo contém apenas tabelas conhecidas pela assinatura após a execuç
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       srsubstate
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      Código estadual:
-     <code class="literal">
+     <code>
       i
      </code>
      = inicializar,
-     <code class="literal">
+     <code>
       d
      </code>
      = dados estão sendo copiados,
-     <code class="literal">
+     <code>
       f
      </code>
      = cópia de tabela finalizada,
-     <code class="literal">
+     <code>
       s
      </code>
      = sincronizada,
-     <code class="literal">
+     <code>
       r
      </code>
      = pronto (replicação normal)
@@ -115,20 +115,20 @@ Este catálogo contém apenas tabelas conhecidas pela assinatura após a execuç
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       srsublsn
      </code>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
     </p>
     <p>
      LSN remoto da mudança do estado utilizado para coordenação de sincronização quando em
-     <code class="literal">
+     <code>
       s
      </code>
      ou
-     <code class="literal">
+     <code>
       r
      </code>
      estados, caso contrário, nulos

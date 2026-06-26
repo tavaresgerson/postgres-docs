@@ -6,7 +6,7 @@ O catálogo `pg_amop` armazena informações sobre operadores associados a famí
 
 
 
-<table border="1" class="table" summary="pg_amop Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_amop` armazena informações sobre operadores associados a famí
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,20 +41,20 @@ O catálogo `pg_amop` armazena informações sobre operadores associados a famí
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       amopfamily
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-opfamily.md" title="52.35. pg_opfamily">
-      <code class="structname">
+      <code>
        pg_opfamily
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -67,20 +67,20 @@ O catálogo `pg_amop` armazena informações sobre operadores associados a famí
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       amoplefttype
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -93,20 +93,20 @@ O catálogo `pg_amop` armazena informações sobre operadores associados a famí
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       amoprighttype
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -119,10 +119,10 @@ O catálogo `pg_amop` armazena informações sobre operadores associados a famí
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       amopstrategy
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
@@ -134,20 +134,20 @@ O catálogo `pg_amop` armazena informações sobre operadores associados a famí
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       amoppurpose
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      Propósito do operador, ou seja,
-     <code class="literal">
+     <code>
       s
      </code>
      para pesquisa ou
-     <code class="literal">
+     <code>
       o
      </code>
      para encomendar
@@ -157,20 +157,20 @@ O catálogo `pg_amop` armazena informações sobre operadores associados a famí
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       amopopr
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-operator.md" title="52.34. pg_operator">
-      <code class="structname">
+      <code>
        pg_operator
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -183,20 +183,20 @@ O catálogo `pg_amop` armazena informações sobre operadores associados a famí
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       amopmethod
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-am.md" title="52.3. pg_am">
-      <code class="structname">
+      <code>
        pg_am
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -209,20 +209,20 @@ O catálogo `pg_amop` armazena informações sobre operadores associados a famí
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       amopsortfamily
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-opfamily.md" title="52.35. pg_opfamily">
-      <code class="structname">
+      <code>
        pg_opfamily
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )

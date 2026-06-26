@@ -20,7 +20,7 @@ As características do Sistema V IPC são tipicamente limitadas por limites de a
 
 
 
-<table border="1" class="table" summary="System V IPC Parameters">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -46,7 +46,7 @@ As características do Sistema V IPC são tipicamente limitadas por limites de a
  <tbody>
   <tr>
    <td>
-    <code class="varname">
+    <code>
      SHMMAX
     </code>
    </td>
@@ -59,7 +59,7 @@ As características do Sistema V IPC são tipicamente limitadas por limites de a
   </tr>
   <tr>
    <td>
-    <code class="varname">
+    <code>
      SHMMIN
     </code>
    </td>
@@ -72,7 +72,7 @@ As características do Sistema V IPC são tipicamente limitadas por limites de a
   </tr>
   <tr>
    <td>
-    <code class="varname">
+    <code>
      SHMALL
     </code>
    </td>
@@ -81,11 +81,11 @@ As características do Sistema V IPC são tipicamente limitadas por limites de a
    </td>
    <td>
     mesmo que
-    <code class="varname">
+    <code>
      SHMMAX
     </code>
     se são bytes,
-    <code class="literal">
+    <code>
      ceil(SHMMAX/PAGE_SIZE)
     </code>
     se páginas, além de espaço para outras aplicações
@@ -93,7 +93,7 @@ As características do Sistema V IPC são tipicamente limitadas por limites de a
   </tr>
   <tr>
    <td>
-    <code class="varname">
+    <code>
      SHMSEG
     </code>
    </td>
@@ -106,7 +106,7 @@ As características do Sistema V IPC são tipicamente limitadas por limites de a
   </tr>
   <tr>
    <td>
-    <code class="varname">
+    <code>
      SHMMNI
     </code>
    </td>
@@ -115,7 +115,7 @@ As características do Sistema V IPC são tipicamente limitadas por limites de a
    </td>
    <td>
     como
-    <code class="varname">
+    <code>
      SHMSEG
     </code>
     mais espaço para outras aplicações
@@ -123,7 +123,7 @@ As características do Sistema V IPC são tipicamente limitadas por limites de a
   </tr>
   <tr>
    <td>
-    <code class="varname">
+    <code>
      SEMMNI
     </code>
    </td>
@@ -132,7 +132,7 @@ As características do Sistema V IPC são tipicamente limitadas por limites de a
    </td>
    <td>
     pelo menos
-    <code class="literal">
+    <code>
      ceil(num_os_semaphores / 16)
     </code>
     mais espaço para outras aplicações
@@ -140,7 +140,7 @@ As características do Sistema V IPC são tipicamente limitadas por limites de a
   </tr>
   <tr>
    <td>
-    <code class="varname">
+    <code>
      SEMMNS
     </code>
    </td>
@@ -148,7 +148,7 @@ As características do Sistema V IPC são tipicamente limitadas por limites de a
     Número máximo de semaforos em todo o sistema
    </td>
    <td>
-    <code class="literal">
+    <code>
      ceil(num_os_semaphores / 16) * 17
     </code>
     mais espaço para outras aplicações
@@ -156,7 +156,7 @@ As características do Sistema V IPC são tipicamente limitadas por limites de a
   </tr>
   <tr>
    <td>
-    <code class="varname">
+    <code>
      SEMMSL
     </code>
    </td>
@@ -169,7 +169,7 @@ As características do Sistema V IPC são tipicamente limitadas por limites de a
   </tr>
   <tr>
    <td>
-    <code class="varname">
+    <code>
      SEMMAP
     </code>
    </td>
@@ -182,7 +182,7 @@ As características do Sistema V IPC são tipicamente limitadas por limites de a
   </tr>
   <tr>
    <td>
-    <code class="varname">
+    <code>
      SEMVMX
     </code>
    </td>

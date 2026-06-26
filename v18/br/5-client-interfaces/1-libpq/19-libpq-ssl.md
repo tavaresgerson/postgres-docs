@@ -68,7 +68,7 @@ Todas as opções de SSL apresentam custos na forma de criptografia e troca de c
 
 
 
-<table border="1" class="table" summary="SSL Mode Descriptions">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -78,7 +78,7 @@ Todas as opções de SSL apresentam custos na forma de criptografia e troca de c
  <thead>
   <tr>
    <th>
-    <code class="literal">
+    <code>
      sslmode
     </code>
    </th>
@@ -99,7 +99,7 @@ Todas as opções de SSL apresentam custos na forma de criptografia e troca de c
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      disable
     </code>
    </td>
@@ -115,7 +115,7 @@ Todas as opções de SSL apresentam custos na forma de criptografia e troca de c
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      allow
     </code>
    </td>
@@ -131,7 +131,7 @@ Todas as opções de SSL apresentam custos na forma de criptografia e troca de c
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      prefer
     </code>
    </td>
@@ -147,7 +147,7 @@ Todas as opções de SSL apresentam custos na forma de criptografia e troca de c
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      require
     </code>
    </td>
@@ -163,7 +163,7 @@ Todas as opções de SSL apresentam custos na forma de criptografia e troca de c
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      verify-ca
     </code>
    </td>
@@ -179,7 +179,7 @@ Todas as opções de SSL apresentam custos na forma de criptografia e troca de c
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      verify-full
     </code>
    </td>
@@ -217,7 +217,7 @@ O valor padrão para `sslmode` é `prefer`. Como mostrado na tabela, isso não f
 
 
 
-<table border="1" class="table" summary="Libpq/Client SSL File Usage">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -239,7 +239,7 @@ O valor padrão para `sslmode` é `prefer`. Como mostrado na tabela, isso não f
  <tbody>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      ~/.postgresql/postgresql.crt
     </code>
    </td>
@@ -252,7 +252,7 @@ O valor padrão para `sslmode` é `prefer`. Como mostrado na tabela, isso não f
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      ~/.postgresql/postgresql.key
     </code>
    </td>
@@ -265,7 +265,7 @@ O valor padrão para `sslmode` é `prefer`. Como mostrado na tabela, isso não f
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      ~/.postgresql/root.crt
     </code>
    </td>
@@ -278,7 +278,7 @@ O valor padrão para `sslmode` é `prefer`. Como mostrado na tabela, isso não f
   </tr>
   <tr>
    <td>
-    <code class="filename">
+    <code>
      ~/.postgresql/root.crl
     </code>
    </td>

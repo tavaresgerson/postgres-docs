@@ -6,7 +6,7 @@ O catálogo `pg_partitioned_table` armazena informações sobre como as tabelas 
 
 
 
-<table border="1" class="table" summary="pg_partitioned_table Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,20 +26,20 @@ O catálogo `pg_partitioned_table` armazena informações sobre como as tabelas 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       partrelid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -47,7 +47,7 @@ O catálogo `pg_partitioned_table` armazena informações sobre como as tabelas 
     <p>
      O OID do
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
@@ -58,24 +58,24 @@ O catálogo `pg_partitioned_table` armazena informações sobre como as tabelas 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       partstrat
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      Estratégia de partição;
-     <code class="literal">
+     <code>
       h
      </code>
      = tabela particionada por hash,
-     <code class="literal">
+     <code>
       l
      </code>
      = tabela dividida em listas
-     <code class="literal">
+     <code>
       r
      </code>
      = tabela particionada de intervalo
@@ -85,10 +85,10 @@ O catálogo `pg_partitioned_table` armazena informações sobre como as tabelas 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       partnatts
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
@@ -100,20 +100,20 @@ O catálogo `pg_partitioned_table` armazena informações sobre como as tabelas 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       partdefid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -121,7 +121,7 @@ O catálogo `pg_partitioned_table` armazena informações sobre como as tabelas 
     <p>
      O OID do
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
@@ -132,31 +132,31 @@ O catálogo `pg_partitioned_table` armazena informações sobre como as tabelas 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       partattrs
      </code>
-     <code class="type">
+     <code>
       int2vector
      </code>
      (referências
      <a class="link" href="catalog-pg-attribute.md" title="52.7. pg_attribute">
-      <code class="structname">
+      <code>
        pg_attribute
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       attnum
      </code>
      )
     </p>
     <p>
      Este é um conjunto de
-     <code class="structfield">
+     <code>
       partnatts
      </code>
      valores que indicam quais colunas da tabela fazem parte da chave de partição. Por exemplo, um valor de
-     <code class="literal">
+     <code>
       1 3
      </code>
      significaria que as primeiras e as terceiras colunas da tabela compõem a chave de partição. Um zero neste array indica que a coluna correspondente à chave de partição é uma expressão, e não uma simples referência de coluna.
@@ -166,20 +166,20 @@ O catálogo `pg_partitioned_table` armazena informações sobre como as tabelas 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       partclass
      </code>
-     <code class="type">
+     <code>
       oidvector
      </code>
      (referências
      <a class="link" href="catalog-pg-opclass.md" title="52.33. pg_opclass">
-      <code class="structname">
+      <code>
        pg_opclass
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -187,7 +187,7 @@ O catálogo `pg_partitioned_table` armazena informações sobre como as tabelas 
     <p>
      Para cada coluna na chave de partição, isso contém o OID da classe de operador a ser usada. Veja
      <a class="link" href="catalog-pg-opclass.md" title="52.33. pg_opclass">
-      <code class="structname">
+      <code>
        pg_opclass
       </code>
      </a>
@@ -198,20 +198,20 @@ O catálogo `pg_partitioned_table` armazena informações sobre como as tabelas 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       partcollation
      </code>
-     <code class="type">
+     <code>
       oidvector
      </code>
      (referências
      <a class="link" href="catalog-pg-collation.md" title="52.12. pg_collation">
-      <code class="structname">
+      <code>
        pg_collation
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -224,20 +224,20 @@ O catálogo `pg_partitioned_table` armazena informações sobre como as tabelas 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       partexprs
      </code>
-     <code class="type">
+     <code>
       pg_node_tree
      </code>
     </p>
     <p>
      árvores de expressão (em
-     <code class="function">
+     <code>
       nodeToString()
      </code>
      (representação) para as colunas de chave de partição que não são referências simples de coluna. Esta é uma lista com um elemento para cada entrada de zero
-     <code class="structfield">
+     <code>
       partattrs
      </code>
      Nulo se todas as colunas da chave de partição forem referências simples.

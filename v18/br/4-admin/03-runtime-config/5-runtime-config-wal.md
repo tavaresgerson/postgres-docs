@@ -18,35 +18,35 @@ O nível `minimal` gera o menor volume de WAL. Ele não registra nenhuma informa
 
 
 
-<table border="0" class="simplelist" summary="Simple list">
+<table>
  <tr>
   <td>
-   <code class="command">
+   <code>
     ALTER ... SET TABLESPACE
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="command">
+   <code>
     CLUSTER
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="command">
+   <code>
     CREATE TABLE
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="command">
+   <code>
     REFRESH MATERIALIZED VIEW
    </code>
    (sem
-   <code class="option">
+   <code>
     CONCURRENTLY
    </code>
    )
@@ -54,14 +54,14 @@ O nível `minimal` gera o menor volume de WAL. Ele não registra nenhuma informa
  </tr>
  <tr>
   <td>
-   <code class="command">
+   <code>
     REINDEX
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="command">
+   <code>
     TRUNCATE
    </code>
   </td>
@@ -108,7 +108,7 @@ Este parâmetro pode ser alterado a qualquer momento; o comportamento de qualque
 
 
 
-<table border="1" class="table" summary="synchronous_commit Modes">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>

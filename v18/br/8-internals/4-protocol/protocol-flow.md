@@ -288,94 +288,94 @@ Atualmente, há um conjunto de parâmetros pré-definidos para os quais o Parame
 
 
 
-<table border="0" class="simplelist" summary="Simple list">
+<table>
  <tr>
   <td>
-   <code class="varname">
+   <code>
     application_name
    </code>
   </td>
   <td>
-   <code class="varname">
+   <code>
     scram_iterations
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="varname">
+   <code>
     client_encoding
    </code>
   </td>
   <td>
-   <code class="varname">
+   <code>
     search_path
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="varname">
+   <code>
     DateStyle
    </code>
   </td>
   <td>
-   <code class="varname">
+   <code>
     server_encoding
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="varname">
+   <code>
     default_transaction_read_only
    </code>
   </td>
   <td>
-   <code class="varname">
+   <code>
     server_version
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="varname">
+   <code>
     in_hot_standby
    </code>
   </td>
   <td>
-   <code class="varname">
+   <code>
     session_authorization
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="varname">
+   <code>
     integer_datetimes
    </code>
   </td>
   <td>
-   <code class="varname">
+   <code>
     standard_conforming_strings
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="varname">
+   <code>
     IntervalStyle
    </code>
   </td>
   <td>
-   <code class="varname">
+   <code>
     TimeZone
    </code>
   </td>
  </tr>
  <tr>
   <td>
-   <code class="varname">
+   <code>
     is_superuser
    </code>
   </td>

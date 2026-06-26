@@ -6,7 +6,7 @@ A vista `foreign_servers` contém todos os servidores externos definidos no banc
 
 
 
-<table border="1" class="table" summary="foreign_servers Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `foreign_servers` contém todos os servidores externos definidos no banc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       foreign_server_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `foreign_servers` contém todos os servidores externos definidos no banc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       foreign_server_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `foreign_servers` contém todos os servidores externos definidos no banc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       foreign_data_wrapper_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,10 +71,10 @@ A vista `foreign_servers` contém todos os servidores externos definidos no banc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       foreign_data_wrapper_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -86,10 +86,10 @@ A vista `foreign_servers` contém todos os servidores externos definidos no banc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       foreign_server_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -101,10 +101,10 @@ A vista `foreign_servers` contém todos os servidores externos definidos no banc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       foreign_server_version
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -116,10 +116,10 @@ A vista `foreign_servers` contém todos os servidores externos definidos no banc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       authorization_identifier
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>

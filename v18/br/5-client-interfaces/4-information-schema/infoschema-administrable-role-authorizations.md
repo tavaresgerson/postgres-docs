@@ -6,7 +6,7 @@ A vista `administrable_role_authorizations` identifica todos os papéis que o us
 
 
 
-<table border="1" class="table" summary="administrable_role_authorizations Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `administrable_role_authorizations` identifica todos os papéis que o us
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       grantee
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `administrable_role_authorizations` identifica todos os papéis que o us
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       role_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,16 +56,16 @@ A vista `administrable_role_authorizations` identifica todos os papéis que o us
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_grantable
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
      Always
-     <code class="literal">
+     <code>
       YES
      </code>
     </p>

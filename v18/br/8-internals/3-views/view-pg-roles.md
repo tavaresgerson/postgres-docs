@@ -6,7 +6,7 @@ A vista `pg_roles` fornece acesso a informações sobre os papéis do banco de d
 
 
 
-<table border="1" class="table" summary="pg_roles Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `pg_roles` fornece acesso a informações sobre os papéis do banco de d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `pg_roles` fornece acesso a informações sobre os papéis do banco de d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolsuper
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `pg_roles` fornece acesso a informações sobre os papéis do banco de d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolinherit
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -71,10 +71,10 @@ A vista `pg_roles` fornece acesso a informações sobre os papéis do banco de d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolcreaterole
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -86,10 +86,10 @@ A vista `pg_roles` fornece acesso a informações sobre os papéis do banco de d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolcreatedb
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -101,10 +101,10 @@ A vista `pg_roles` fornece acesso a informações sobre os papéis do banco de d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolcanlogin
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -116,10 +116,10 @@ A vista `pg_roles` fornece acesso a informações sobre os papéis do banco de d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolreplication
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -131,10 +131,10 @@ A vista `pg_roles` fornece acesso a informações sobre os papéis do banco de d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolconnlimit
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -146,16 +146,16 @@ A vista `pg_roles` fornece acesso a informações sobre os papéis do banco de d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolpassword
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      Não a senha (sempre é lido como
-     <code class="literal">
+     <code>
       ********
      </code>
      )
@@ -165,10 +165,10 @@ A vista `pg_roles` fornece acesso a informações sobre os papéis do banco de d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolvaliduntil
      </code>
-     <code class="type">
+     <code>
       timestamptz
      </code>
     </p>
@@ -180,10 +180,10 @@ A vista `pg_roles` fornece acesso a informações sobre os papéis do banco de d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolbypassrls
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -199,10 +199,10 @@ A vista `pg_roles` fornece acesso a informações sobre os papéis do banco de d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolconfig
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>
@@ -214,20 +214,20 @@ A vista `pg_roles` fornece acesso a informações sobre os papéis do banco de d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )

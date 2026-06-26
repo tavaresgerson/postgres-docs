@@ -10,7 +10,7 @@ Os objetos que possuem privilégios iniciais definidos por initdb terão entrada
 
 
 
-<table border="1" class="table" summary="pg_init_privs Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -30,10 +30,10 @@ Os objetos que possuem privilégios iniciais definidos por initdb terão entrada
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       objoid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referência a qualquer coluna OID)
@@ -46,20 +46,20 @@ Os objetos que possuem privilégios iniciais definidos por initdb terão entrada
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       classoid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -72,20 +72,20 @@ Os objetos que possuem privilégios iniciais definidos por initdb terão entrada
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       objsubid
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
      Para uma coluna de tabela, este é o número da coluna (o
-     <code class="structfield">
+     <code>
       objoid
      </code>
      e
-     <code class="structfield">
+     <code>
       classoid
      </code>
      refere-se à própria tabela). Para todos os outros tipos de objeto, essa coluna é zero.
@@ -95,10 +95,10 @@ Os objetos que possuem privilégios iniciais definidos por initdb terão entrada
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       privtype
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
@@ -110,10 +110,10 @@ Os objetos que possuem privilégios iniciais definidos por initdb terão entrada
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       initprivs
      </code>
-     <code class="type">
+     <code>
       aclitem[]
      </code>
     </p>

@@ -90,7 +90,7 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
 
 **Tabela 5.1. Abreviações de privilégios do ACL**
 
-<table border="1" class="table" summary="ACL Privilege Abbreviations">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -112,12 +112,12 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SELECT
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      r
     </code>
     (
@@ -131,15 +131,15 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
     )
    </td>
    <td>
-    <code class="literal">
+    <code>
      LARGE OBJECT
     </code>
     ,
-    <code class="literal">
+    <code>
      SEQUENCE
     </code>
     ,
-    <code class="literal">
+    <code>
      TABLE
     </code>
     (e objetos semelhantes a uma mesa), coluna de tabela
@@ -147,12 +147,12 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      INSERT
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      a
     </code>
     (
@@ -166,7 +166,7 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
     )
    </td>
    <td>
-    <code class="literal">
+    <code>
      TABLE
     </code>
     , coluna de tabela
@@ -174,12 +174,12 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      UPDATE
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      w
     </code>
     (
@@ -193,15 +193,15 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
     )
    </td>
    <td>
-    <code class="literal">
+    <code>
      LARGE OBJECT
     </code>
     ,
-    <code class="literal">
+    <code>
      SEQUENCE
     </code>
     ,
-    <code class="literal">
+    <code>
      TABLE
     </code>
     , , coluna de tabela
@@ -209,51 +209,51 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DELETE
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      d
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      TABLE
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TRUNCATE
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      D
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      TABLE
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      REFERENCES
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      x
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      TABLE
     </code>
     , coluna de tabela
@@ -261,189 +261,189 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TRIGGER
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      t
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      TABLE
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      CREATE
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      C
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      DATABASE
     </code>
     ,
-    <code class="literal">
+    <code>
      SCHEMA
     </code>
     ,
-    <code class="literal">
+    <code>
      TABLESPACE
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      CONNECT
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      c
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      DATABASE
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TEMPORARY
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      T
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      DATABASE
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      EXECUTE
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      X
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      FUNCTION
     </code>
     ,
-    <code class="literal">
+    <code>
      PROCEDURE
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      USAGE
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      U
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      DOMAIN
     </code>
     ,
-    <code class="literal">
+    <code>
      FOREIGN DATA WRAPPER
     </code>
     ,
-    <code class="literal">
+    <code>
      FOREIGN SERVER
     </code>
     ,
-    <code class="literal">
+    <code>
      LANGUAGE
     </code>
     ,
-    <code class="literal">
+    <code>
      SCHEMA
     </code>
     ,
-    <code class="literal">
+    <code>
      SEQUENCE
     </code>
     ,
-    <code class="literal">
+    <code>
      TYPE
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SET
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      s
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      PARAMETER
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ALTER SYSTEM
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      A
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      PARAMETER
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      MAINTAIN
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      m
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      TABLE
     </code>
    </td>
@@ -455,7 +455,7 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
 
 **Tabela 5.2. Resumo dos privilégios de acesso**
 
-<table border="1" class="table" summary="Summary of Access Privileges">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -472,7 +472,7 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
    </th>
    <th>
     Default
-    <code class="literal">
+    <code>
      PUBLIC
     </code>
     Privileges
@@ -488,82 +488,82 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DATABASE
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      CTc
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      Tc
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      \l
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DOMAIN
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      U
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      U
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      \dD+
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      FUNCTION
     </code>
     or
-    <code class="literal">
+    <code>
      PROCEDURE
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      X
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      X
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      \df+
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      FOREIGN DATA WRAPPER
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      U
     </code>
    </td>
@@ -571,19 +571,19 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
     none
    </td>
    <td>
-    <code class="literal">
+    <code>
      \dew+
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      FOREIGN SERVER
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      U
     </code>
    </td>
@@ -591,41 +591,41 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
     none
    </td>
    <td>
-    <code class="literal">
+    <code>
      \des+
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LANGUAGE
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      U
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      U
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      \dL+
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LARGE OBJECT
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      rw
     </code>
    </td>
@@ -633,19 +633,19 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
     none
    </td>
    <td>
-    <code class="literal">
+    <code>
      \dl+
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PARAMETER
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      sA
     </code>
    </td>
@@ -653,19 +653,19 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
     none
    </td>
    <td>
-    <code class="literal">
+    <code>
      \dconfig+
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SCHEMA
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      UC
     </code>
    </td>
@@ -673,19 +673,19 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
     none
    </td>
    <td>
-    <code class="literal">
+    <code>
      \dn+
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SEQUENCE
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      rwU
     </code>
    </td>
@@ -693,20 +693,20 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
     none
    </td>
    <td>
-    <code class="literal">
+    <code>
      \dp
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TABLE
     </code>
     (and table-like objects)
    </td>
    <td>
-    <code class="literal">
+    <code>
      arwdDxtm
     </code>
    </td>
@@ -714,7 +714,7 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
     none
    </td>
    <td>
-    <code class="literal">
+    <code>
      \dp
     </code>
    </td>
@@ -724,7 +724,7 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
     Table column
    </td>
    <td>
-    <code class="literal">
+    <code>
      arwx
     </code>
    </td>
@@ -732,19 +732,19 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
     none
    </td>
    <td>
-    <code class="literal">
+    <code>
      \dp
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TABLESPACE
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      C
     </code>
    </td>
@@ -752,29 +752,29 @@ O PostgreSQL concede privilégios em alguns tipos de objetos ao `PUBLIC` por pad
     none
    </td>
    <td>
-    <code class="literal">
+    <code>
      \db+
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TYPE
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      U
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      U
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      \dT+
     </code>
    </td>

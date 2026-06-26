@@ -6,7 +6,7 @@ A visão `applicable_roles` identifica todos os papéis cujos privilégios o usu
 
 
 
-<table border="1" class="table" summary="applicable_roles Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A visão `applicable_roles` identifica todos os papéis cujos privilégios o usu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       grantee
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A visão `applicable_roles` identifica todos os papéis cujos privilégios o usu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       role_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,19 +56,19 @@ A visão `applicable_roles` identifica todos os papéis cujos privilégios o usu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_grantable
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       YES
      </code>
      if the grantee has the admin option on the role,
-     <code class="literal">
+     <code>
       NO
      </code>
      if not

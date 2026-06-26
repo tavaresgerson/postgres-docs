@@ -6,7 +6,7 @@ A visão `pg_replication_origin_status` contém informações sobre o progresso 
 
 
 
-<table border="1" class="table" summary="pg_replication_origin_status Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,20 +26,20 @@ A visão `pg_replication_origin_status` contém informações sobre o progresso 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       local_id
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (references
      <a class="link" href="catalog-pg-replication-origin.md" title="52.44. pg_replication_origin">
-      <code class="structname">
+      <code>
        pg_replication_origin
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       roident
      </code>
      )
@@ -52,20 +52,20 @@ A visão `pg_replication_origin_status` contém informações sobre o progresso 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       external_id
      </code>
-     <code class="type">
+     <code>
       text
      </code>
      (references
      <a class="link" href="catalog-pg-replication-origin.md" title="52.44. pg_replication_origin">
-      <code class="structname">
+      <code>
        pg_replication_origin
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       roname
      </code>
      )
@@ -78,10 +78,10 @@ A visão `pg_replication_origin_status` contém informações sobre o progresso 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       remote_lsn
      </code>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
     </p>
@@ -93,16 +93,16 @@ A visão `pg_replication_origin_status` contém informações sobre o progresso 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       local_lsn
      </code>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
     </p>
     <p>
      This node's LSN at which
-     <code class="literal">
+     <code>
       remote_lsn
      </code>
      has been replicated. Used to flush commit records before persisting data to disk when using asynchronous commits.

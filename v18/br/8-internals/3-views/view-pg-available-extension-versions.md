@@ -6,7 +6,7 @@ A visão `pg_available_extension_versions` lista as versões específicas de ext
 
 
 
-<table border="1" class="table" summary="pg_available_extension_versions Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A visão `pg_available_extension_versions` lista as versões específicas de ext
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       name
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -41,10 +41,10 @@ A visão `pg_available_extension_versions` lista as versões específicas de ext
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       version
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -56,10 +56,10 @@ A visão `pg_available_extension_versions` lista as versões específicas de ext
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       installed
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -71,16 +71,16 @@ A visão `pg_available_extension_versions` lista as versões específicas de ext
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       superuser
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Verdadeiro se apenas superusuários são autorizados a instalar esta extensão (mas veja
-     <code class="structfield">
+     <code>
       trusted
      </code>
      )
@@ -90,10 +90,10 @@ A visão `pg_available_extension_versions` lista as versões específicas de ext
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       trusted
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -105,10 +105,10 @@ A visão `pg_available_extension_versions` lista as versões específicas de ext
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relocatable
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -120,16 +120,16 @@ A visão `pg_available_extension_versions` lista as versões específicas de ext
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       schema
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
     <p>
      Nome do esquema no qual a extensão deve ser instalada, ou
-     <code class="literal">
+     <code>
       NULL
      </code>
      se parcialmente ou totalmente relocável
@@ -139,16 +139,16 @@ A visão `pg_available_extension_versions` lista as versões específicas de ext
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       requires
      </code>
-     <code class="type">
+     <code>
       name[]
      </code>
     </p>
     <p>
      Nomes de extensões pré-requisitos, ou
-     <code class="literal">
+     <code>
       NULL
      </code>
      se nenhum
@@ -158,10 +158,10 @@ A visão `pg_available_extension_versions` lista as versões específicas de ext
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       comment
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>

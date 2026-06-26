@@ -6,7 +6,7 @@ A vista `pg_user_mappings` fornece acesso a informações sobre mapeamentos de u
 
 
 
-<table border="1" class="table" summary="pg_user_mappings Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,20 +26,20 @@ A vista `pg_user_mappings` fornece acesso a informações sobre mapeamentos de u
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       umid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-user-mapping.md" title="52.65. pg_user_mapping">
-      <code class="structname">
+      <code>
        pg_user_mapping
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -52,20 +52,20 @@ A vista `pg_user_mappings` fornece acesso a informações sobre mapeamentos de u
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       srvid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-foreign-server.md" title="52.24. pg_foreign_server">
-      <code class="structname">
+      <code>
        pg_foreign_server
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -78,20 +78,20 @@ A vista `pg_user_mappings` fornece acesso a informações sobre mapeamentos de u
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       srvname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (referências
      <a class="link" href="catalog-pg-foreign-server.md" title="52.24. pg_foreign_server">
-      <code class="structname">
+      <code>
        pg_foreign_server
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       srvname
      </code>
      )
@@ -104,20 +104,20 @@ A vista `pg_user_mappings` fornece acesso a informações sobre mapeamentos de u
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       umuser
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -130,10 +130,10 @@ A vista `pg_user_mappings` fornece acesso a informações sobre mapeamentos de u
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       usename
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -145,10 +145,10 @@ A vista `pg_user_mappings` fornece acesso a informações sobre mapeamentos de u
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       umoptions
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>

@@ -6,7 +6,7 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
 
 
 
-<table border="1" class="table" summary="parameters Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       specific_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       specific_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       specific_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -83,10 +83,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       ordinal_position
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -98,23 +98,23 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       parameter_mode
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       IN
      </code>
      for input parameter,
-     <code class="literal">
+     <code>
       OUT
      </code>
      for output parameter, and
-     <code class="literal">
+     <code>
       INOUT
      </code>
      for input/output parameter.
@@ -124,10 +124,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_result
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
@@ -142,10 +142,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       as_locator
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
@@ -160,10 +160,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       parameter_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -175,28 +175,28 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       data_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Data type of the parameter, if it is a built-in type, or
-     <code class="literal">
+     <code>
       ARRAY
      </code>
      if it is some array (in that case, see the view
-     <code class="literal">
+     <code>
       element_types
      </code>
      ), else
-     <code class="literal">
+     <code>
       USER-DEFINED
      </code>
      (in that case, the type is identified in
-     <code class="literal">
+     <code>
       udt_name
      </code>
      and associated columns).
@@ -206,10 +206,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_maximum_length
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -224,10 +224,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_octet_length
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -242,10 +242,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_set_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -260,10 +260,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_set_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -278,10 +278,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_set_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -296,10 +296,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collation_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -314,10 +314,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collation_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -332,10 +332,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collation_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -350,10 +350,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numeric_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -368,10 +368,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numeric_precision_radix
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -386,10 +386,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numeric_scale
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -404,10 +404,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datetime_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -422,10 +422,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       interval_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -440,10 +440,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       interval_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -458,10 +458,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -473,10 +473,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -488,10 +488,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -503,10 +503,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       scope_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -521,10 +521,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       scope_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -539,10 +539,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       scope_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -557,10 +557,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       maximum_cardinality
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -575,10 +575,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       dtd_identifier
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -590,10 +590,10 @@ A vista `parameters` contém informações sobre os parâmetros (argumentos) de 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       parameter_default
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>

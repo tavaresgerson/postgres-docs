@@ -87,7 +87,7 @@ SELECT city, count(*), max(temp_lo)
 
 
 
-<table border="0" summary="Callout list">
+<table>
  <tr>
   <td align="left" valign="top" width="5%">
    <p>
@@ -99,7 +99,7 @@ SELECT city, count(*), max(temp_lo)
   <td align="left" valign="top">
    <p>
     O
-    <code class="literal">
+    <code>
      LIKE
     </code>
     o operador faz correspondência de padrões e é explicado na Seção 9.7

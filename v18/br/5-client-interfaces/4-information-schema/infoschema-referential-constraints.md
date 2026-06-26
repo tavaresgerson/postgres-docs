@@ -6,7 +6,7 @@ A vista `referential_constraints` contém todas as restrições referenciais (ch
 
 
 
-<table border="1" class="table" summary="referential_constraints Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `referential_constraints` contém todas as restrições referenciais (ch
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       constraint_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `referential_constraints` contém todas as restrições referenciais (ch
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       constraint_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `referential_constraints` contém todas as restrições referenciais (ch
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       constraint_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,10 +71,10 @@ A vista `referential_constraints` contém todas as restrições referenciais (ch
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       unique_constraint_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -86,10 +86,10 @@ A vista `referential_constraints` contém todas as restrições referenciais (ch
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       unique_constraint_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -101,10 +101,10 @@ A vista `referential_constraints` contém todas as restrições referenciais (ch
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       unique_constraint_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -116,24 +116,24 @@ A vista `referential_constraints` contém todas as restrições referenciais (ch
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       match_option
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Match option of the foreign key constraint:
-     <code class="literal">
+     <code>
       FULL
      </code>
      ,
-     <code class="literal">
+     <code>
       PARTIAL
      </code>
      , or
-     <code class="literal">
+     <code>
       NONE
      </code>
      .
@@ -143,32 +143,32 @@ A vista `referential_constraints` contém todas as restrições referenciais (ch
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       update_rule
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Update rule of the foreign key constraint:
-     <code class="literal">
+     <code>
       CASCADE
      </code>
      ,
-     <code class="literal">
+     <code>
       SET NULL
      </code>
      ,
-     <code class="literal">
+     <code>
       SET DEFAULT
      </code>
      ,
-     <code class="literal">
+     <code>
       RESTRICT
      </code>
      , or
-     <code class="literal">
+     <code>
       NO ACTION
      </code>
      .
@@ -178,32 +178,32 @@ A vista `referential_constraints` contém todas as restrições referenciais (ch
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       delete_rule
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Delete rule of the foreign key constraint:
-     <code class="literal">
+     <code>
       CASCADE
      </code>
      ,
-     <code class="literal">
+     <code>
       SET NULL
      </code>
      ,
-     <code class="literal">
+     <code>
       SET DEFAULT
      </code>
      ,
-     <code class="literal">
+     <code>
       RESTRICT
      </code>
      , or
-     <code class="literal">
+     <code>
       NO ACTION
      </code>
      .

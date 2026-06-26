@@ -19,11 +19,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
 
 
 
-<table border="1" class="table" summary="Cube External Representations">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -37,7 +33,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      <em class="replaceable">
       <code>
        x
@@ -51,7 +47,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      (
      <em class="replaceable">
       <code>
@@ -67,7 +63,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      <em class="replaceable">
       <code>
        x1
@@ -93,7 +89,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      (
      <em class="replaceable">
       <code>
@@ -121,7 +117,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      (
      <em class="replaceable">
       <code>
@@ -155,7 +151,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      [(
      <em class="replaceable">
       <code>
@@ -177,7 +173,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      (
      <em class="replaceable">
       <code>
@@ -211,7 +207,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      [(
      <em class="replaceable">
       <code>
@@ -271,7 +267,7 @@ Os valores são armazenados internamente como números de ponto flutuante de 64 
 
 
 
-<table border="1" class="table" summary="Cube Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -291,17 +287,17 @@ Os valores são armazenados internamente como números de ponto flutuante de 64 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       cube
      </code>
-     <code class="literal">
+     <code>
       &amp;&amp;
      </code>
-     <code class="type">
+     <code>
       cube
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -313,17 +309,17 @@ Os valores são armazenados internamente como números de ponto flutuante de 64 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       cube
      </code>
-     <code class="literal">
+     <code>
       @&gt;
      </code>
-     <code class="type">
+     <code>
       cube
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -335,17 +331,17 @@ Os valores são armazenados internamente como números de ponto flutuante de 64 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       cube
      </code>
-     <code class="literal">
+     <code>
       &lt;@
      </code>
-     <code class="type">
+     <code>
       cube
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -357,17 +353,17 @@ Os valores são armazenados internamente como números de ponto flutuante de 64 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       cube
      </code>
-     <code class="literal">
+     <code>
       -&gt;
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
      →
-     <code class="returnvalue">
+     <code>
       float8
      </code>
     </p>
@@ -385,17 +381,17 @@ Os valores são armazenados internamente como números de ponto flutuante de 64 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       cube
      </code>
-     <code class="literal">
+     <code>
       ~&gt;
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
      →
-     <code class="returnvalue">
+     <code>
       float8
      </code>
     </p>
@@ -455,17 +451,17 @@ Os valores são armazenados internamente como números de ponto flutuante de 64 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       cube
      </code>
-     <code class="literal">
+     <code>
       &lt;-&gt;
      </code>
-     <code class="type">
+     <code>
       cube
      </code>
      →
-     <code class="returnvalue">
+     <code>
       float8
      </code>
     </p>
@@ -477,17 +473,17 @@ Os valores são armazenados internamente como números de ponto flutuante de 64 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       cube
      </code>
-     <code class="literal">
+     <code>
       &lt;#&gt;
      </code>
-     <code class="type">
+     <code>
       cube
      </code>
      →
-     <code class="returnvalue">
+     <code>
       float8
      </code>
     </p>
@@ -499,17 +495,17 @@ Os valores são armazenados internamente como números de ponto flutuante de 64 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       cube
      </code>
-     <code class="literal">
+     <code>
       &lt;=&gt;
      </code>
-     <code class="type">
+     <code>
       cube
      </code>
      →
-     <code class="returnvalue">
+     <code>
       float8
      </code>
     </p>
@@ -558,7 +554,7 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
 
 
 
-<table border="1" class="table" summary="Cube Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -581,15 +577,15 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cube
      </code>
      (
-     <code class="type">
+     <code>
       float8
      </code>
      )
-     <code class="returnvalue">
+     <code>
       cube
      </code>
     </p>
@@ -597,11 +593,11 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
      Faz um cubo unidimensional com ambas as coordenadas iguais.
     </p>
     <p>
-     <code class="literal">
+     <code>
       cube(1)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (1)
      </code>
     </p>
@@ -610,19 +606,19 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cube
      </code>
      (
-     <code class="type">
+     <code>
       float8
      </code>
      ,
-     <code class="type">
+     <code>
       float8
      </code>
      )
-     <code class="returnvalue">
+     <code>
       cube
      </code>
     </p>
@@ -630,11 +626,11 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
      Faz um cubo unidimensional.
     </p>
     <p>
-     <code class="literal">
+     <code>
       cube(1, 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (1),(2)
      </code>
     </p>
@@ -643,15 +639,15 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cube
      </code>
      (
-     <code class="type">
+     <code>
       float8[]
      </code>
      )
-     <code class="returnvalue">
+     <code>
       cube
      </code>
     </p>
@@ -659,11 +655,11 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
      Faz um cubo de volume zero usando as coordenadas definidas pelo array.
     </p>
     <p>
-     <code class="literal">
+     <code>
       cube(ARRAY[1,2,3])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (1, 2, 3)
      </code>
     </p>
@@ -672,19 +668,19 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cube
      </code>
      (
-     <code class="type">
+     <code>
       float8[]
      </code>
      ,
-     <code class="type">
+     <code>
       float8[]
      </code>
      )
-     <code class="returnvalue">
+     <code>
       cube
      </code>
     </p>
@@ -692,11 +688,11 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
      Faz um cubo com as coordenadas superior direita e inferior esquerda definidas pelos dois arrays, que devem ter o mesmo comprimento.
     </p>
     <p>
-     <code class="literal">
+     <code>
       cube(ARRAY[1,2], ARRAY[3,4])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (1, 2),(3, 4)
      </code>
     </p>
@@ -705,19 +701,19 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cube
      </code>
      (
-     <code class="type">
+     <code>
       cube
      </code>
      ,
-     <code class="type">
+     <code>
       float8
      </code>
      )
-     <code class="returnvalue">
+     <code>
       cube
      </code>
     </p>
@@ -725,11 +721,11 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
      Cria um novo cubo ao adicionar uma dimensão a um cubo existente, com os mesmos valores para ambos os pontos finais da nova coordenada. Isso é útil para construir cubos peça por peça a partir de valores calculados.
     </p>
     <p>
-     <code class="literal">
+     <code>
       cube('(1,2),(3,4)'::cube, 5)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (1, 2, 5),(3, 4, 5)
      </code>
     </p>
@@ -738,23 +734,23 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cube
      </code>
      (
-     <code class="type">
+     <code>
       cube
      </code>
      ,
-     <code class="type">
+     <code>
       float8
      </code>
      ,
-     <code class="type">
+     <code>
       float8
      </code>
      )
-     <code class="returnvalue">
+     <code>
       cube
      </code>
     </p>
@@ -762,11 +758,11 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
      Cria um novo cubo adicionando uma dimensão a um cubo existente. Isso é útil para construir cubos peça por peça a partir de valores calculados.
     </p>
     <p>
-     <code class="literal">
+     <code>
       cube('(1,2),(3,4)'::cube, 5, 6)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (1, 2, 5),(3, 4, 6)
      </code>
     </p>
@@ -775,15 +771,15 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cube_dim
      </code>
      (
-     <code class="type">
+     <code>
       cube
      </code>
      )
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -791,11 +787,11 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
      Retorna o número de dimensões do cubo.
     </p>
     <p>
-     <code class="literal">
+     <code>
       cube_dim('(1,2),(3,4)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -804,19 +800,19 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cube_ll_coord
      </code>
      (
-     <code class="type">
+     <code>
       cube
      </code>
      ,
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       float8
      </code>
     </p>
@@ -830,11 +826,11 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
      - o valor da coordenada da diagonal que vai do canto inferior esquerdo do cubo.
     </p>
     <p>
-     <code class="literal">
+     <code>
       cube_ll_coord('(1,2),(3,4)', 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2
      </code>
     </p>
@@ -843,19 +839,19 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cube_ur_coord
      </code>
      (
-     <code class="type">
+     <code>
       cube
      </code>
      ,
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       float8
      </code>
     </p>
@@ -869,11 +865,11 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
      - o valor da coordenada da terceira dimensão para o canto superior direito do cubo.
     </p>
     <p>
-     <code class="literal">
+     <code>
       cube_ur_coord('(1,2),(3,4)', 2)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       4
      </code>
     </p>
@@ -882,15 +878,15 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cube_is_point
      </code>
      (
-     <code class="type">
+     <code>
       cube
      </code>
      )
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -898,11 +894,11 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
      Retorna verdadeiro se o cubo for um ponto, ou seja, se as duas arestas definidoras forem iguais.
     </p>
     <p>
-     <code class="literal">
+     <code>
       cube_is_point(cube(1,1))
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -911,19 +907,19 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cube_distance
      </code>
      (
-     <code class="type">
+     <code>
       cube
      </code>
      ,
-     <code class="type">
+     <code>
       cube
      </code>
      )
-     <code class="returnvalue">
+     <code>
       float8
      </code>
     </p>
@@ -931,11 +927,11 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
      Retorna a distância entre dois cubos. Se ambos os cubos forem pontos, esta é a função de distância normal.
     </p>
     <p>
-     <code class="literal">
+     <code>
       cube_distance('(1,2)', '(3,4)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2.8284271247461903
      </code>
     </p>
@@ -944,19 +940,19 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cube_subset
      </code>
      (
-     <code class="type">
+     <code>
       cube
      </code>
      ,
-     <code class="type">
+     <code>
       integer[]
      </code>
      )
-     <code class="returnvalue">
+     <code>
       cube
      </code>
     </p>
@@ -964,20 +960,20 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
      Faz um novo cubo a partir de um cubo existente, usando uma lista de índices de dimensão de um array. Pode ser usado para extrair os pontos finais de uma única dimensão, ou para descartar as dimensões, ou para reordená-las conforme desejado.
     </p>
     <p>
-     <code class="literal">
+     <code>
       cube_subset(cube('(1,3,5),(6,7,8)'), ARRAY[2])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (3),(7)
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       cube_subset(cube('(1,3,5),(6,7,8)'), ARRAY[3,2,1,1])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (5, 3, 1, 1),(8, 7, 6, 6)
      </code>
     </p>
@@ -986,19 +982,19 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cube_union
      </code>
      (
-     <code class="type">
+     <code>
       cube
      </code>
      ,
-     <code class="type">
+     <code>
       cube
      </code>
      )
-     <code class="returnvalue">
+     <code>
       cube
      </code>
     </p>
@@ -1006,11 +1002,11 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
      Produz a união de dois cubos.
     </p>
     <p>
-     <code class="literal">
+     <code>
       cube_union('(1,2)', '(3,4)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (1, 2),(3, 4)
      </code>
     </p>
@@ -1019,19 +1015,19 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cube_inter
      </code>
      (
-     <code class="type">
+     <code>
       cube
      </code>
      ,
-     <code class="type">
+     <code>
       cube
      </code>
      )
-     <code class="returnvalue">
+     <code>
       cube
      </code>
     </p>
@@ -1039,11 +1035,11 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
      Produz a interseção de dois cubos.
     </p>
     <p>
-     <code class="literal">
+     <code>
       cube_inter('(1,2)', '(3,4)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (3, 4),(1, 2)
      </code>
     </p>
@@ -1052,7 +1048,7 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       cube_enlarge
      </code>
      (
@@ -1061,7 +1057,7 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
        c
       </code>
      </em>
-     <code class="type">
+     <code>
       cube
      </code>
      ,
@@ -1070,7 +1066,7 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
        r
       </code>
      </em>
-     <code class="type">
+     <code>
       double
      </code>
      ,
@@ -1079,11 +1075,11 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
        n
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
-     <code class="returnvalue">
+     <code>
       cube
      </code>
     </p>
@@ -1145,11 +1141,11 @@ SELECT c FROM test ORDER BY c ~> 3 DESC LIMIT 5;
      em conjunto; 0 é usado como o valor inicial para as coordenadas extras. Esta função é útil para criar caixas de delimitação em torno de um ponto para a busca de pontos próximos.
     </p>
     <p>
-     <code class="literal">
+     <code>
       cube_enlarge('(1,2),(3,4)', 0.5, 3)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (0.5, 1.5, -0.5),(3.5, 4.5, 0.5)
      </code>
     </p>

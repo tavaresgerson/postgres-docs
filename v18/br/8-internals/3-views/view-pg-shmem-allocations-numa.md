@@ -12,7 +12,7 @@ Ao determinar o nó NUMA, a visão toca todas as páginas de memória do segment
 
 
 
-<table border="1" class="table" summary="pg_shmem_allocations_numa Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -32,10 +32,10 @@ Ao determinar o nó NUMA, a visão toca todas as páginas de memória do segment
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       name
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -47,10 +47,10 @@ Ao determinar o nó NUMA, a visão toca todas as páginas de memória do segment
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numa_node
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -66,10 +66,10 @@ Ao determinar o nó NUMA, a visão toca todas as páginas de memória do segment
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       size
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>

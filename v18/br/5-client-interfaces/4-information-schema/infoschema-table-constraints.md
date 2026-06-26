@@ -6,7 +6,7 @@ A vista `table_constraints` contém todas as restrições que pertencem a tabela
 
 
 
-<table border="1" class="table" summary="table_constraints Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `table_constraints` contém todas as restrições que pertencem a tabela
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       constraint_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `table_constraints` contém todas as restrições que pertencem a tabela
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       constraint_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `table_constraints` contém todas as restrições que pertencem a tabela
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       constraint_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,10 +71,10 @@ A vista `table_constraints` contém todas as restrições que pertencem a tabela
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -86,10 +86,10 @@ A vista `table_constraints` contém todas as restrições que pertencem a tabela
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -101,10 +101,10 @@ A vista `table_constraints` contém todas as restrições que pertencem a tabela
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -116,28 +116,28 @@ A vista `table_constraints` contém todas as restrições que pertencem a tabela
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       constraint_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Type of the constraint:
-     <code class="literal">
+     <code>
       CHECK
      </code>
      (includes not-null constraints),
-     <code class="literal">
+     <code>
       FOREIGN KEY
      </code>
      ,
-     <code class="literal">
+     <code>
       PRIMARY KEY
      </code>
      , or
-     <code class="literal">
+     <code>
       UNIQUE
      </code>
     </p>
@@ -146,19 +146,19 @@ A vista `table_constraints` contém todas as restrições que pertencem a tabela
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_deferrable
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       YES
      </code>
      if the constraint is deferrable,
-     <code class="literal">
+     <code>
       NO
      </code>
      if not
@@ -168,19 +168,19 @@ A vista `table_constraints` contém todas as restrições que pertencem a tabela
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       initially_deferred
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       YES
      </code>
      if the constraint is deferrable and initially deferred,
-     <code class="literal">
+     <code>
       NO
      </code>
      if not
@@ -190,19 +190,19 @@ A vista `table_constraints` contém todas as restrições que pertencem a tabela
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       enforced
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       YES
      </code>
      if the constraint is enforced,
-     <code class="literal">
+     <code>
       NO
      </code>
      if not
@@ -212,20 +212,20 @@ A vista `table_constraints` contém todas as restrições que pertencem a tabela
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       nulls_distinct
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
      If the constraint is a unique constraint, then
-     <code class="literal">
+     <code>
       YES
      </code>
      if the constraint treats nulls as distinct or
-     <code class="literal">
+     <code>
       NO
      </code>
      if it treats nulls as not distinct, otherwise null for other types of constraints.

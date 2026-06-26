@@ -179,11 +179,7 @@ As seguintes sequências de barra invertida especiais são reconhecidas por `COP
 
 
 
-<table border="1" class="informaltable">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -197,7 +193,7 @@ As seguintes sequências de barra invertida especiais são reconhecidas por `COP
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \b
     </code>
    </td>
@@ -207,7 +203,7 @@ As seguintes sequências de barra invertida especiais são reconhecidas por `COP
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \f
     </code>
    </td>
@@ -217,7 +213,7 @@ As seguintes sequências de barra invertida especiais são reconhecidas por `COP
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \n
     </code>
    </td>
@@ -227,7 +223,7 @@ As seguintes sequências de barra invertida especiais são reconhecidas por `COP
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \r
     </code>
    </td>
@@ -237,7 +233,7 @@ As seguintes sequências de barra invertida especiais são reconhecidas por `COP
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \t
     </code>
    </td>
@@ -247,7 +243,7 @@ As seguintes sequências de barra invertida especiais são reconhecidas por `COP
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \v
     </code>
    </td>
@@ -257,7 +253,7 @@ As seguintes sequências de barra invertida especiais são reconhecidas por `COP
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \
     </code>
     <em class="replaceable">
@@ -272,7 +268,7 @@ As seguintes sequências de barra invertida especiais são reconhecidas por `COP
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \x
     </code>
     <em class="replaceable">
@@ -283,7 +279,7 @@ As seguintes sequências de barra invertida especiais são reconhecidas por `COP
    </td>
    <td>
     Barra de retorno
-    <code class="literal">
+    <code>
      x
     </code>
     seguido por um ou dois dígitos hexadecimais especifica o byte com aquele código numérico

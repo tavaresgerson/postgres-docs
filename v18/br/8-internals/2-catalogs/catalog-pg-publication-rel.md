@@ -6,7 +6,7 @@ O catálogo `pg_publication_rel` contém a mapeo entre as relações e as public
 
 
 
-<table border="1" class="table" summary="pg_publication_rel Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_publication_rel` contém a mapeo entre as relações e as public
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,20 +41,20 @@ O catálogo `pg_publication_rel` contém a mapeo entre as relações e as public
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prpubid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-publication.md" title="52.40. pg_publication">
-      <code class="structname">
+      <code>
        pg_publication
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -67,20 +67,20 @@ O catálogo `pg_publication_rel` contém a mapeo entre as relações e as public
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prrelid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -93,16 +93,16 @@ O catálogo `pg_publication_rel` contém a mapeo entre as relações e as public
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prqual
      </code>
-     <code class="type">
+     <code>
       pg_node_tree
      </code>
     </p>
     <p>
      árvore de expressão (em
-     <code class="function">
+     <code>
       nodeToString()
      </code>
      representação) para a condição de publicação da relação. Nulo se não houver nenhuma condição de publicação.
@@ -112,27 +112,27 @@ O catálogo `pg_publication_rel` contém a mapeo entre as relações e as public
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prattrs
      </code>
-     <code class="type">
+     <code>
       int2vector
      </code>
      (referências
      <a class="link" href="catalog-pg-attribute.md" title="52.7. pg_attribute">
-      <code class="structname">
+      <code>
        pg_attribute
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       attnum
      </code>
      )
     </p>
     <p>
      Este é um conjunto de valores que indica quais colunas da tabela fazem parte da publicação. Por exemplo, um valor de
-     <code class="literal">
+     <code>
       1 3
      </code>
      significaria que as primeiras e as colunas da terceira tabela são publicadas. Um valor nulo indica que todas as colunas são publicadas.

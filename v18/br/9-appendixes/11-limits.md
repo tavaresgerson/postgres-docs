@@ -6,7 +6,7 @@
 
 
 
-<table border="1" class="table" summary="PostgreSQL Limitations">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -65,7 +65,7 @@
    </td>
    <td>
     com o padrão
-    <code class="symbol">
+    <code>
      BLCKSZ
     </code>
     de 8192 bytes

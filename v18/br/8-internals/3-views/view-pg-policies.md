@@ -6,7 +6,7 @@ A vista `pg_policies` fornece acesso a informações úteis sobre cada política
 
 
 
-<table border="1" class="table" summary="pg_policies Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,20 +26,20 @@ A vista `pg_policies` fornece acesso a informações úteis sobre cada política
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       schemaname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (referências
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       nspname
      </code>
      )
@@ -52,20 +52,20 @@ A vista `pg_policies` fornece acesso a informações úteis sobre cada política
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tablename
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       relname
      </code>
      )
@@ -78,20 +78,20 @@ A vista `pg_policies` fornece acesso a informações úteis sobre cada política
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       policyname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (referências
      <a class="link" href="catalog-pg-policy.md" title="52.38. pg_policy">
-      <code class="structname">
+      <code>
        pg_policy
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       polname
      </code>
      )
@@ -104,10 +104,10 @@ A vista `pg_policies` fornece acesso a informações úteis sobre cada política
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       permissive
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -119,10 +119,10 @@ A vista `pg_policies` fornece acesso a informações úteis sobre cada política
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       roles
      </code>
-     <code class="type">
+     <code>
       name[]
      </code>
     </p>
@@ -134,10 +134,10 @@ A vista `pg_policies` fornece acesso a informações úteis sobre cada política
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       cmd
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -149,10 +149,10 @@ A vista `pg_policies` fornece acesso a informações úteis sobre cada política
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       qual
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -164,10 +164,10 @@ A vista `pg_policies` fornece acesso a informações úteis sobre cada política
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       with_check
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>

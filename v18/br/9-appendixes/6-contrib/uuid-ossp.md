@@ -16,7 +16,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
 
 
 
-<table border="1" class="table" summary="Functions for UUID Generation">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -36,11 +36,11 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       uuid_generate_v1
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       uuid
      </code>
     </p>
@@ -52,11 +52,11 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       uuid_generate_v1mc
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       uuid
      </code>
     </p>
@@ -68,7 +68,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       uuid_generate_v3
      </code>
      (
@@ -77,7 +77,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
        namespace
       </code>
      </em>
-     <code class="type">
+     <code>
       uuid
      </code>
      ,
@@ -86,17 +86,17 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
        name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       uuid
      </code>
     </p>
     <p>
      Generates a version 3 UUID in the given namespace using the specified input name.  The namespace should be one of the special constants produced by the
-     <code class="function">
+     <code>
       uuid_ns_*()
      </code>
      functions shown in
@@ -119,11 +119,11 @@ SELECT uuid_generate_v3(uuid_ns_url(), 'http://www.postgresql.org');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       uuid_generate_v4
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       uuid
      </code>
     </p>
@@ -135,7 +135,7 @@ SELECT uuid_generate_v3(uuid_ns_url(), 'http://www.postgresql.org');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       uuid_generate_v5
      </code>
      (
@@ -144,7 +144,7 @@ SELECT uuid_generate_v3(uuid_ns_url(), 'http://www.postgresql.org');
        namespace
       </code>
      </em>
-     <code class="type">
+     <code>
       uuid
      </code>
      ,
@@ -153,11 +153,11 @@ SELECT uuid_generate_v3(uuid_ns_url(), 'http://www.postgresql.org');
        name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       uuid
      </code>
     </p>
@@ -182,7 +182,7 @@ SELECT uuid_generate_v3(uuid_ns_url(), 'http://www.postgresql.org');
 
 
 
-<table border="1" class="table" summary="Functions Returning UUID Constants">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -202,11 +202,11 @@ SELECT uuid_generate_v3(uuid_ns_url(), 'http://www.postgresql.org');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       uuid_nil
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       uuid
      </code>
     </p>
@@ -226,11 +226,11 @@ SELECT uuid_generate_v3(uuid_ns_url(), 'http://www.postgresql.org');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       uuid_ns_dns
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       uuid
      </code>
     </p>
@@ -242,11 +242,11 @@ SELECT uuid_generate_v3(uuid_ns_url(), 'http://www.postgresql.org');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       uuid_ns_url
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       uuid
      </code>
     </p>
@@ -258,11 +258,11 @@ SELECT uuid_generate_v3(uuid_ns_url(), 'http://www.postgresql.org');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       uuid_ns_oid
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       uuid
      </code>
     </p>
@@ -278,11 +278,11 @@ SELECT uuid_generate_v3(uuid_ns_url(), 'http://www.postgresql.org');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       uuid_ns_x500
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       uuid
      </code>
     </p>

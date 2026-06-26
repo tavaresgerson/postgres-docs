@@ -25,7 +25,7 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
 
 
 
-<table border="1" class="table" summary="Session Information Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -45,20 +45,20 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       current_catalog
      </code>
      →
-     <code class="returnvalue">
+     <code>
       name
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       current_database
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       name
      </code>
     </p>
@@ -72,7 +72,7 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
       ”
      </span>
      in the SQL standard, so
-     <code class="function">
+     <code>
       current_catalog
      </code>
      is the standard's spelling.)
@@ -82,11 +82,11 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       current_query
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -98,17 +98,17 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       current_role
      </code>
      →
-     <code class="returnvalue">
+     <code>
       name
      </code>
     </p>
     <p>
      This is equivalent to
-     <code class="function">
+     <code>
       current_user
      </code>
      .
@@ -118,20 +118,20 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       current_schema
      </code>
      →
-     <code class="returnvalue">
+     <code>
       name
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       current_schema
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       name
      </code>
     </p>
@@ -143,7 +143,7 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       current_schemas
      </code>
      (
@@ -152,11 +152,11 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
        include_implicit
       </code>
      </em>
-     <code class="type">
+     <code>
       boolean
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       name[]
      </code>
     </p>
@@ -166,11 +166,11 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
       search_path
      </a>
      setting that do not correspond to existing, searchable schemas are omitted.)  If the Boolean argument is
-     <code class="literal">
+     <code>
       true
      </code>
      , then implicitly-searched system schemas such as
-     <code class="literal">
+     <code>
       pg_catalog
      </code>
      are included in the result.
@@ -180,11 +180,11 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       current_user
      </code>
      →
-     <code class="returnvalue">
+     <code>
       name
      </code>
     </p>
@@ -196,17 +196,17 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       inet_client_addr
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       inet
      </code>
     </p>
     <p>
      Returns the IP address of the current client, or
-     <code class="literal">
+     <code>
       NULL
      </code>
      if the current connection is via a Unix-domain socket.
@@ -216,17 +216,17 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       inet_client_port
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Returns the IP port number of the current client, or
-     <code class="literal">
+     <code>
       NULL
      </code>
      if the current connection is via a Unix-domain socket.
@@ -236,17 +236,17 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       inet_server_addr
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       inet
      </code>
     </p>
     <p>
      Returns the IP address on which the server accepted the current connection, or
-     <code class="literal">
+     <code>
       NULL
      </code>
      if the current connection is via a Unix-domain socket.
@@ -256,17 +256,17 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       inet_server_port
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Returns the IP port number on which the server accepted the current connection, or
-     <code class="literal">
+     <code>
       NULL
      </code>
      if the current connection is via a Unix-domain socket.
@@ -276,11 +276,11 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_backend_pid
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -292,15 +292,15 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_blocking_pids
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer[]
      </code>
     </p>
@@ -309,7 +309,7 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
     </p>
     <p>
      One server process blocks another if it either holds a lock that conflicts with the blocked process's lock request (hard block), or is waiting for a lock that would conflict with the blocked process's lock request and is ahead of it in the wait queue (soft block).  When using parallel queries the result always lists client-visible process IDs (that is,
-     <code class="function">
+     <code>
       pg_backend_pid
      </code>
      results) even if the actual lock is held or awaited by a child worker process.  As a result of that, there may be duplicated PIDs in the result.  Also note that when a prepared transaction holds a conflicting lock, it will be represented by a zero process ID.
@@ -322,11 +322,11 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_conf_load_time
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -338,17 +338,17 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_current_logfile
      </code>
      ( [
      <span class="optional">
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -358,43 +358,43 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
       log_directory
      </a>
      directory and the individual log file name.  The result is
-     <code class="literal">
+     <code>
       NULL
      </code>
      if the logging collector is disabled. When multiple log files exist, each in a different format,
-     <code class="function">
+     <code>
       pg_current_logfile
      </code>
      without an argument returns the path of the file having the first format found in the ordered list:
-     <code class="literal">
+     <code>
       stderr
      </code>
      ,
-     <code class="literal">
+     <code>
       csvlog
      </code>
      ,
-     <code class="literal">
+     <code>
       jsonlog
      </code>
      .
-     <code class="literal">
+     <code>
       NULL
      </code>
      is returned if no log file has any of these formats. To request information about a specific log file format, supply either
-     <code class="literal">
+     <code>
       csvlog
      </code>
      ,
-     <code class="literal">
+     <code>
       jsonlog
      </code>
      or
-     <code class="literal">
+     <code>
       stderr
      </code>
      as the value of the optional parameter. The result is
-     <code class="literal">
+     <code>
       NULL
      </code>
      if the log format requested is not configured in
@@ -402,14 +402,14 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
       log_destination
      </a>
      . The result reflects the contents of the
-     <code class="filename">
+     <code>
       current_logfiles
      </code>
      file.
     </p>
     <p>
      This function is restricted to superusers and roles with privileges of the
-     <code class="literal">
+     <code>
       pg_monitor
      </code>
      role by default, but other users can be granted EXECUTE to run the function.
@@ -419,11 +419,11 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_loaded_modules
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -432,7 +432,7 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
        module_name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -441,7 +441,7 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
        version
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -450,7 +450,7 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
        file_name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
@@ -469,7 +469,7 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
       </code>
      </em>
      fields are NULL unless the module author supplied values for them using the
-     <code class="literal">
+     <code>
       PG_MODULE_MAGIC_EXT
      </code>
      macro. The
@@ -485,11 +485,11 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_my_temp_schema
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       oid
      </code>
     </p>
@@ -501,15 +501,15 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_is_other_temp_schema
      </code>
      (
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -521,11 +521,11 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_jit_available
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -543,7 +543,7 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
       jit
      </a>
      configuration parameter is set to
-     <code class="literal">
+     <code>
       on
      </code>
      .
@@ -553,11 +553,11 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_numa_available
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -573,11 +573,11 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_listening_channels
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       setof text
      </code>
     </p>
@@ -589,11 +589,11 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_notification_queue_usage
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       double precision
      </code>
     </p>
@@ -617,11 +617,11 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_postmaster_start_time
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -633,15 +633,15 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_safe_snapshot_blocking_pids
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer[]
      </code>
     </p>
@@ -650,11 +650,11 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
     </p>
     <p>
      A session running a
-     <code class="literal">
+     <code>
       SERIALIZABLE
      </code>
      transaction blocks a
-     <code class="literal">
+     <code>
       SERIALIZABLE READ ONLY DEFERRABLE
      </code>
      transaction from acquiring a snapshot until the latter determines that it is safe to avoid taking any predicate locks.  See
@@ -671,11 +671,11 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_trigger_depth
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -691,11 +691,11 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       session_user
      </code>
      →
-     <code class="returnvalue">
+     <code>
       name
      </code>
     </p>
@@ -707,21 +707,21 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       system_user
      </code>
      →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Returns the authentication method and the identity (if any) that the user presented during the authentication cycle before they were assigned a database role. It is represented as
-     <code class="literal">
+     <code>
       auth_method:identity
      </code>
      or
-     <code class="literal">
+     <code>
       NULL
      </code>
      if the user has not been authenticated (for example if
@@ -735,17 +735,17 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       user
      </code>
      →
-     <code class="returnvalue">
+     <code>
       name
      </code>
     </p>
     <p>
      This is equivalent to
-     <code class="function">
+     <code>
       current_user
      </code>
      .
@@ -783,7 +783,7 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
 
 
 
-<table border="1" class="table" summary="Access Privilege Inquiry Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -803,7 +803,7 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       has_any_column_privilege
      </code>
      ( [
@@ -813,11 +813,11 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
         user
        </code>
       </em>
-      <code class="type">
+      <code>
        name
       </code>
       or
-      <code class="type">
+      <code>
        oid
       </code>
       ,
@@ -828,11 +828,11 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
        table
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      or
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -841,29 +841,29 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
        privilege
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Does user have privilege for any column of table? This succeeds either if the privilege is held for the whole table, or if there is a column-level grant of the privilege for at least one column. Allowable privilege types are
-     <code class="literal">
+     <code>
       SELECT
      </code>
      ,
-     <code class="literal">
+     <code>
       INSERT
      </code>
      ,
-     <code class="literal">
+     <code>
       UPDATE
      </code>
      , and
-     <code class="literal">
+     <code>
       REFERENCES
      </code>
      .
@@ -873,7 +873,7 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       has_column_privilege
      </code>
      ( [
@@ -883,11 +883,11 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
         user
        </code>
       </em>
-      <code class="type">
+      <code>
        name
       </code>
       or
-      <code class="type">
+      <code>
        oid
       </code>
       ,
@@ -898,11 +898,11 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
        table
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      or
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -911,11 +911,11 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
        column
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      or
-     <code class="type">
+     <code>
       smallint
      </code>
      ,
@@ -924,37 +924,37 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
        privilege
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Does user have privilege for the specified table column? This succeeds either if the privilege is held for the whole table, or if there is a column-level grant of the privilege for the column. The column can be specified by name or by attribute number (
-     <code class="structname">
+     <code>
       pg_attribute
      </code>
      .
-     <code class="structfield">
+     <code>
       attnum
      </code>
      ). Allowable privilege types are
-     <code class="literal">
+     <code>
       SELECT
      </code>
      ,
-     <code class="literal">
+     <code>
       INSERT
      </code>
      ,
-     <code class="literal">
+     <code>
       UPDATE
      </code>
      , and
-     <code class="literal">
+     <code>
       REFERENCES
      </code>
      .
@@ -964,7 +964,7 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       has_database_privilege
      </code>
      ( [
@@ -974,11 +974,11 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
         user
        </code>
       </em>
-      <code class="type">
+      <code>
        name
       </code>
       or
-      <code class="type">
+      <code>
        oid
       </code>
       ,
@@ -989,11 +989,11 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
        database
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      or
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -1002,33 +1002,33 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
        privilege
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Does user have privilege for database? Allowable privilege types are
-     <code class="literal">
+     <code>
       CREATE
      </code>
      ,
-     <code class="literal">
+     <code>
       CONNECT
      </code>
      ,
-     <code class="literal">
+     <code>
       TEMPORARY
      </code>
      , and
-     <code class="literal">
+     <code>
       TEMP
      </code>
      (which is equivalent to
-     <code class="literal">
+     <code>
       TEMPORARY
      </code>
      ).
@@ -1038,7 +1038,7 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       has_foreign_data_wrapper_privilege
      </code>
      ( [
@@ -1048,11 +1048,11 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
         user
        </code>
       </em>
-      <code class="type">
+      <code>
        name
       </code>
       or
-      <code class="type">
+      <code>
        oid
       </code>
       ,
@@ -1063,11 +1063,11 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
        fdw
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      or
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -1076,17 +1076,17 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
        privilege
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Does user have privilege for foreign-data wrapper? The only allowable privilege type is
-     <code class="literal">
+     <code>
       USAGE
      </code>
      .
@@ -1096,7 +1096,7 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       has_function_privilege
      </code>
      ( [
@@ -1106,11 +1106,11 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
         user
        </code>
       </em>
-      <code class="type">
+      <code>
        name
       </code>
       or
-      <code class="type">
+      <code>
        oid
       </code>
       ,
@@ -1121,11 +1121,11 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
        function
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      or
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -1134,24 +1134,24 @@ SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION')
        privilege
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Does user have privilege for function? The only allowable privilege type is
-     <code class="literal">
+     <code>
       EXECUTE
      </code>
      .
     </p>
     <p>
      When specifying a function by name rather than by OID, the allowed input is the same as for the
-     <code class="type">
+     <code>
       regprocedure
      </code>
      data type (see
@@ -1170,7 +1170,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       has_language_privilege
      </code>
      ( [
@@ -1180,11 +1180,11 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
         user
        </code>
       </em>
-      <code class="type">
+      <code>
        name
       </code>
       or
-      <code class="type">
+      <code>
        oid
       </code>
       ,
@@ -1195,11 +1195,11 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        language
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      or
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -1208,17 +1208,17 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        privilege
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Does user have privilege for language? The only allowable privilege type is
-     <code class="literal">
+     <code>
       USAGE
      </code>
      .
@@ -1228,7 +1228,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       has_largeobject_privilege
      </code>
      ( [
@@ -1238,11 +1238,11 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
         user
        </code>
       </em>
-      <code class="type">
+      <code>
        name
       </code>
       or
-      <code class="type">
+      <code>
        oid
       </code>
       ,
@@ -1253,7 +1253,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        largeobject
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -1262,21 +1262,21 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        privilege
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Does user have privilege for large object? Allowable privilege types are
-     <code class="literal">
+     <code>
       SELECT
      </code>
      and
-     <code class="literal">
+     <code>
       UPDATE
      </code>
      .
@@ -1286,7 +1286,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       has_parameter_privilege
      </code>
      ( [
@@ -1296,11 +1296,11 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
         user
        </code>
       </em>
-      <code class="type">
+      <code>
        name
       </code>
       or
-      <code class="type">
+      <code>
        oid
       </code>
       ,
@@ -1311,7 +1311,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        parameter
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -1320,21 +1320,21 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        privilege
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Does user have privilege for configuration parameter? The parameter name is case-insensitive. Allowable privilege types are
-     <code class="literal">
+     <code>
       SET
      </code>
      and
-     <code class="literal">
+     <code>
       ALTER SYSTEM
      </code>
      .
@@ -1344,7 +1344,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       has_schema_privilege
      </code>
      ( [
@@ -1354,11 +1354,11 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
         user
        </code>
       </em>
-      <code class="type">
+      <code>
        name
       </code>
       or
-      <code class="type">
+      <code>
        oid
       </code>
       ,
@@ -1369,11 +1369,11 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        schema
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      or
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -1382,21 +1382,21 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        privilege
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Does user have privilege for schema? Allowable privilege types are
-     <code class="literal">
+     <code>
       CREATE
      </code>
      and
-     <code class="literal">
+     <code>
       USAGE
      </code>
      .
@@ -1406,7 +1406,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       has_sequence_privilege
      </code>
      ( [
@@ -1416,11 +1416,11 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
         user
        </code>
       </em>
-      <code class="type">
+      <code>
        name
       </code>
       or
-      <code class="type">
+      <code>
        oid
       </code>
       ,
@@ -1431,11 +1431,11 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        sequence
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      or
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -1444,25 +1444,25 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        privilege
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Does user have privilege for sequence? Allowable privilege types are
-     <code class="literal">
+     <code>
       USAGE
      </code>
      ,
-     <code class="literal">
+     <code>
       SELECT
      </code>
      , and
-     <code class="literal">
+     <code>
       UPDATE
      </code>
      .
@@ -1472,7 +1472,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       has_server_privilege
      </code>
      ( [
@@ -1482,11 +1482,11 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
         user
        </code>
       </em>
-      <code class="type">
+      <code>
        name
       </code>
       or
-      <code class="type">
+      <code>
        oid
       </code>
       ,
@@ -1497,11 +1497,11 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        server
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      or
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -1510,17 +1510,17 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        privilege
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Does user have privilege for foreign server? The only allowable privilege type is
-     <code class="literal">
+     <code>
       USAGE
      </code>
      .
@@ -1530,7 +1530,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       has_table_privilege
      </code>
      ( [
@@ -1540,11 +1540,11 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
         user
        </code>
       </em>
-      <code class="type">
+      <code>
        name
       </code>
       or
-      <code class="type">
+      <code>
        oid
       </code>
       ,
@@ -1555,11 +1555,11 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        table
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      or
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -1568,45 +1568,45 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        privilege
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Does user have privilege for table? Allowable privilege types are
-     <code class="literal">
+     <code>
       SELECT
      </code>
      ,
-     <code class="literal">
+     <code>
       INSERT
      </code>
      ,
-     <code class="literal">
+     <code>
       UPDATE
      </code>
      ,
-     <code class="literal">
+     <code>
       DELETE
      </code>
      ,
-     <code class="literal">
+     <code>
       TRUNCATE
      </code>
      ,
-     <code class="literal">
+     <code>
       REFERENCES
      </code>
      ,
-     <code class="literal">
+     <code>
       TRIGGER
      </code>
      , and
-     <code class="literal">
+     <code>
       MAINTAIN
      </code>
      .
@@ -1616,7 +1616,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       has_tablespace_privilege
      </code>
      ( [
@@ -1626,11 +1626,11 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
         user
        </code>
       </em>
-      <code class="type">
+      <code>
        name
       </code>
       or
-      <code class="type">
+      <code>
        oid
       </code>
       ,
@@ -1641,11 +1641,11 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        tablespace
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      or
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -1654,17 +1654,17 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        privilege
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Does user have privilege for tablespace? The only allowable privilege type is
-     <code class="literal">
+     <code>
       CREATE
      </code>
      .
@@ -1674,7 +1674,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       has_type_privilege
      </code>
      ( [
@@ -1684,11 +1684,11 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
         user
        </code>
       </em>
-      <code class="type">
+      <code>
        name
       </code>
       or
-      <code class="type">
+      <code>
        oid
       </code>
       ,
@@ -1699,11 +1699,11 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        type
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      or
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -1712,21 +1712,21 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        privilege
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Does user have privilege for data type? The only allowable privilege type is
-     <code class="literal">
+     <code>
       USAGE
      </code>
      . When specifying a type by name rather than by OID, the allowed input is the same as for the
-     <code class="type">
+     <code>
       regtype
      </code>
      data type (see
@@ -1740,7 +1740,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_has_role
      </code>
      ( [
@@ -1750,11 +1750,11 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
         user
        </code>
       </em>
-      <code class="type">
+      <code>
        name
       </code>
       or
-      <code class="type">
+      <code>
        oid
       </code>
       ,
@@ -1765,11 +1765,11 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        role
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      or
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -1778,57 +1778,57 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        privilege
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Does user have privilege for role? Allowable privilege types are
-     <code class="literal">
+     <code>
       MEMBER
      </code>
      ,
-     <code class="literal">
+     <code>
       USAGE
      </code>
      , and
-     <code class="literal">
+     <code>
       SET
      </code>
      .
-     <code class="literal">
+     <code>
       MEMBER
      </code>
      denotes direct or indirect membership in the role without regard to what specific privileges may be conferred.
-     <code class="literal">
+     <code>
       USAGE
      </code>
      denotes whether the privileges of the role are immediately available without doing
-     <code class="command">
+     <code>
       SET ROLE
      </code>
      , while
-     <code class="literal">
+     <code>
       SET
      </code>
      denotes whether it is possible to change to the role using the
-     <code class="literal">
+     <code>
       SET ROLE
      </code>
      command.
-     <code class="literal">
+     <code>
       WITH ADMIN OPTION
      </code>
      or
-     <code class="literal">
+     <code>
       WITH GRANT OPTION
      </code>
      can be added to any of these privilege types to test whether the
-     <code class="literal">
+     <code>
       ADMIN
      </code>
      privilege is held (all six spellings test the same thing). This function does not allow the special case of setting
@@ -1838,7 +1838,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
       </code>
      </em>
      to
-     <code class="literal">
+     <code>
       public
      </code>
      , because the PUBLIC pseudo-role can never be a member of real roles.
@@ -1848,7 +1848,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       row_security_active
      </code>
      (
@@ -1857,15 +1857,15 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        table
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      or
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1892,7 +1892,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
 
 
 
-<table border="1" class="table" summary="aclitem Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -1915,41 +1915,41 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       aclitem
      </code>
-     <code class="literal">
+     <code>
       =
      </code>
-     <code class="type">
+     <code>
       aclitem
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Are
-     <code class="type">
+     <code>
       aclitem
      </code>
      s equal?  (Notice that type
-     <code class="type">
+     <code>
       aclitem
      </code>
      lacks the usual set of comparison operators; it has only equality.  In turn,
-     <code class="type">
+     <code>
       aclitem
      </code>
      arrays can only be compared for equality.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       'calvin=r*w/hobbes'::aclitem = 'calvin=r*w*/hobbes'::aclitem
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
@@ -1958,33 +1958,33 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       aclitem[]
      </code>
-     <code class="literal">
+     <code>
       @&gt;
      </code>
-     <code class="type">
+     <code>
       aclitem
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Does array contain the specified privileges?  (This is true if there is an array entry that matches the
-     <code class="type">
+     <code>
       aclitem
      </code>
      's grantee and grantor, and has at least the specified set of privileges.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{calvin=r*w/hobbes,hobbes=r*w*/postgres}'::aclitem[] @&gt; 'calvin=r*/hobbes'::aclitem
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1993,33 +1993,33 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       aclitem[]
      </code>
-     <code class="literal">
+     <code>
       ~
      </code>
-     <code class="type">
+     <code>
       aclitem
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      This is a deprecated alias for
-     <code class="literal">
+     <code>
       @&gt;
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{calvin=r*w/hobbes,hobbes=r*w*/postgres}'::aclitem[] ~ 'calvin=r*/hobbes'::aclitem
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -2043,7 +2043,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
 
 
 
-<table border="1" class="table" summary="aclitem Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -2063,7 +2063,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       acldefault
      </code>
      (
@@ -2072,7 +2072,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        type
       </code>
      </em>
-     <code class="type">
+     <code>
       "char"
      </code>
      ,
@@ -2081,17 +2081,17 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        ownerId
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      )
-     <code class="returnvalue">
+     <code>
       aclitem[]
      </code>
     </p>
     <p>
      constrói
-     <code class="type">
+     <code>
       aclitem
      </code>
      um array que contém os privilégios de acesso padrão para um objeto do tipo
@@ -2121,63 +2121,63 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
       </code>
      </em>
      o parâmetro deve ser um dos valores 'c' para
-     <code class="literal">
+     <code>
       COLUMN
      </code>
      , 'r' para
-     <code class="literal">
+     <code>
       TABLE
      </code>
      e objetos semelhantes a mesas, 's' para
-     <code class="literal">
+     <code>
       SEQUENCE
      </code>
      , 'd' para
-     <code class="literal">
+     <code>
       DATABASE
      </code>
      , 'f' para
-     <code class="literal">
+     <code>
       FUNCTION
      </code>
      ou
-     <code class="literal">
+     <code>
       PROCEDURE
      </code>
      , 'l' para
-     <code class="literal">
+     <code>
       LANGUAGE
      </code>
      , 'L' para
-     <code class="literal">
+     <code>
       LARGE OBJECT
      </code>
      , 'n' para
-     <code class="literal">
+     <code>
       SCHEMA
      </code>
      , 'p' para
-     <code class="literal">
+     <code>
       PARAMETER
      </code>
      , 't' para
-     <code class="literal">
+     <code>
       TABLESPACE
      </code>
      , 'F' para
-     <code class="literal">
+     <code>
       FOREIGN DATA WRAPPER
      </code>
      , 'S' para
-     <code class="literal">
+     <code>
       FOREIGN SERVER
      </code>
      , ou 'T' para
-     <code class="literal">
+     <code>
       TYPE
      </code>
      ou
-     <code class="literal">
+     <code>
       DOMAIN
      </code>
      .
@@ -2187,15 +2187,15 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       aclexplode
      </code>
      (
-     <code class="type">
+     <code>
       aclitem[]
      </code>
      )
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -2204,7 +2204,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        grantor
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -2213,7 +2213,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        grantee
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -2222,7 +2222,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        privilege_type
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2231,14 +2231,14 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        is_grantable
       </code>
      </em>
-     <code class="type">
+     <code>
       boolean
      </code>
      )
     </p>
     <p>
      Retorna o
-     <code class="type">
+     <code>
       aclitem
      </code>
      um array como um conjunto de linhas. Se o destinatário for o pseudorole PUBLIC, ele é representado por zero no
@@ -2248,11 +2248,11 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
       </code>
      </em>
      coluna. Cada privilégio concedido é representado como
-     <code class="literal">
+     <code>
       SELECT
      </code>
      ,
-     <code class="literal">
+     <code>
       INSERT
      </code>
      , etc. (ver
@@ -2272,7 +2272,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       makeaclitem
      </code>
      (
@@ -2281,7 +2281,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        grantee
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -2290,7 +2290,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        grantor
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -2299,7 +2299,7 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        privileges
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2308,17 +2308,17 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
        is_grantable
       </code>
      </em>
-     <code class="type">
+     <code>
       boolean
      </code>
      )
-     <code class="returnvalue">
+     <code>
       aclitem
      </code>
     </p>
     <p>
      constrói
-     <code class="type">
+     <code>
       aclitem
      </code>
      com as propriedades dadas.
@@ -2328,11 +2328,11 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
       </code>
      </em>
      é uma lista separada por vírgula de nomes de privilégios, como
-     <code class="literal">
+     <code>
       SELECT
      </code>
      ,
-     <code class="literal">
+     <code>
       INSERT
      </code>
      , etc., todas as quais estão definidas no resultado. (O caso da string de privilégio não é significativo, e espaços em branco extras são permitidos entre, mas não dentro, dos nomes de privilégio.)
@@ -2362,7 +2362,7 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
 
 
 
-<table border="1" class="table" summary="Schema Visibility Inquiry Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -2382,7 +2382,7 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_collation_is_visible
      </code>
      (
@@ -2391,11 +2391,11 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
        collation
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -2407,7 +2407,7 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_conversion_is_visible
      </code>
      (
@@ -2416,11 +2416,11 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
        conversion
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -2432,7 +2432,7 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_function_is_visible
      </code>
      (
@@ -2441,11 +2441,11 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
        function
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -2457,7 +2457,7 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_opclass_is_visible
      </code>
      (
@@ -2466,11 +2466,11 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
        opclass
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -2482,7 +2482,7 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_operator_is_visible
      </code>
      (
@@ -2491,11 +2491,11 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
        operator
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -2507,7 +2507,7 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_opfamily_is_visible
      </code>
      (
@@ -2516,11 +2516,11 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
        opclass
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -2532,7 +2532,7 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_statistics_obj_is_visible
      </code>
      (
@@ -2541,11 +2541,11 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
        stat
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -2557,7 +2557,7 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_table_is_visible
      </code>
      (
@@ -2566,11 +2566,11 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
        table
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -2582,7 +2582,7 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_ts_config_is_visible
      </code>
      (
@@ -2591,11 +2591,11 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
        config
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -2607,7 +2607,7 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_ts_dict_is_visible
      </code>
      (
@@ -2616,11 +2616,11 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
        dict
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -2632,7 +2632,7 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_ts_parser_is_visible
      </code>
      (
@@ -2641,11 +2641,11 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
        parser
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -2657,7 +2657,7 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_ts_template_is_visible
      </code>
      (
@@ -2666,11 +2666,11 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
        template
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -2682,7 +2682,7 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_type_is_visible
      </code>
      (
@@ -2691,11 +2691,11 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
        type
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -2732,7 +2732,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
 
 
 
-<table border="1" class="table" summary="System Catalog Information Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -2752,7 +2752,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
   <tr>
    <td class="func_table_entry" id="FORMAT-TYPE">
     <p class="func_signature">
-     <code class="function">
+     <code>
       format_type
      </code>
      (
@@ -2761,7 +2761,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        type
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -2770,11 +2770,11 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        typemod
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -2786,15 +2786,15 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_basetype
      </code>
      (
-     <code class="type">
+     <code>
       regtype
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       regtype
      </code>
     </p>
@@ -2803,17 +2803,17 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
     </p>
     <p>
      Assuming
-     <code class="literal">
+     <code>
       CREATE DOMAIN mytext AS text
      </code>
      :
     </p>
     <p>
-     <code class="literal">
+     <code>
       pg_basetype('mytext'::regtype)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -2822,7 +2822,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
   <tr>
    <td class="func_table_entry" id="PG-CHAR-TO-ENCODING">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_char_to_encoding
      </code>
      (
@@ -2831,17 +2831,17 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        encoding
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Converts the supplied encoding name into an integer representing the internal identifier used in some system catalog tables. Returns
-     <code class="literal">
+     <code>
       -1
      </code>
      if an unknown encoding name is provided.
@@ -2851,7 +2851,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
   <tr>
    <td class="func_table_entry" id="PG-ENCODING-TO-CHAR">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_encoding_to_char
      </code>
      (
@@ -2860,11 +2860,11 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        encoding
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       name
      </code>
     </p>
@@ -2876,11 +2876,11 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_catalog_foreign_keys
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -2889,7 +2889,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        fktable
       </code>
      </em>
-     <code class="type">
+     <code>
       regclass
      </code>
      ,
@@ -2898,7 +2898,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        fkcols
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ,
@@ -2907,7 +2907,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        pktable
       </code>
      </em>
-     <code class="type">
+     <code>
       regclass
      </code>
      ,
@@ -2916,7 +2916,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        pkcols
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ,
@@ -2925,7 +2925,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        is_array
       </code>
      </em>
-     <code class="type">
+     <code>
       boolean
      </code>
      ,
@@ -2934,7 +2934,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        is_opt
       </code>
      </em>
-     <code class="type">
+     <code>
       boolean
      </code>
      )
@@ -2987,7 +2987,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_constraintdef
      </code>
      (
@@ -2996,7 +2996,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        constraint
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      [
@@ -3007,12 +3007,12 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
         pretty
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -3024,7 +3024,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_expr
      </code>
      (
@@ -3033,7 +3033,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        expr
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_node_tree
      </code>
      ,
@@ -3042,7 +3042,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        relation
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      [
@@ -3053,12 +3053,12 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
         pretty
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -3070,7 +3070,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_functiondef
      </code>
      (
@@ -3079,21 +3079,21 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        func
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Reconstructs the creating command for a function or procedure. (This is a decompiled reconstruction, not the original text of the command.) The result is a complete
-     <code class="command">
+     <code>
       CREATE OR REPLACE FUNCTION
      </code>
      or
-     <code class="command">
+     <code>
       CREATE OR REPLACE PROCEDURE
      </code>
      statement.
@@ -3103,7 +3103,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_function_arguments
      </code>
      (
@@ -3112,17 +3112,17 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        func
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Reconstructs the argument list of a function or procedure, in the form it would need to appear in within
-     <code class="command">
+     <code>
       CREATE FUNCTION
      </code>
      (including default values).
@@ -3132,7 +3132,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_function_identity_arguments
      </code>
      (
@@ -3141,17 +3141,17 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        func
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Reconstructs the argument list necessary to identify a function or procedure, in the form it would need to appear in within commands such as
-     <code class="command">
+     <code>
       ALTER FUNCTION
      </code>
      .  This form omits default values.
@@ -3161,7 +3161,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_function_result
      </code>
      (
@@ -3170,25 +3170,25 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        func
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Reconstructs the
-     <code class="literal">
+     <code>
       RETURNS
      </code>
      clause of a function, in the form it would need to appear in within
-     <code class="command">
+     <code>
       CREATE FUNCTION
      </code>
      .  Returns
-     <code class="literal">
+     <code>
       NULL
      </code>
      for a procedure.
@@ -3198,7 +3198,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_indexdef
      </code>
      (
@@ -3207,7 +3207,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        index
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      [
@@ -3218,7 +3218,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
         column
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
       ,
@@ -3227,12 +3227,12 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
         pretty
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -3250,11 +3250,11 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_keywords
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -3263,7 +3263,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        word
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -3272,7 +3272,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        catcode
       </code>
      </em>
-     <code class="type">
+     <code>
       "char"
      </code>
      ,
@@ -3281,7 +3281,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        barelabel
       </code>
      </em>
-     <code class="type">
+     <code>
       boolean
      </code>
      ,
@@ -3290,7 +3290,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        catdesc
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -3299,7 +3299,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        baredesc
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
@@ -3318,19 +3318,19 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
       </code>
      </em>
      column contains a category code:
-     <code class="literal">
+     <code>
       U
      </code>
      for an unreserved keyword,
-     <code class="literal">
+     <code>
       C
      </code>
      for a keyword that can be a column name,
-     <code class="literal">
+     <code>
       T
      </code>
      for a keyword that can be a type or function name, or
-     <code class="literal">
+     <code>
       R
      </code>
      for a fully reserved keyword. The
@@ -3340,7 +3340,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
       </code>
      </em>
      column contains
-     <code class="literal">
+     <code>
       true
      </code>
      if the keyword can be used as a
@@ -3352,15 +3352,15 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
       ”
      </span>
      column label in
-     <code class="command">
+     <code>
       SELECT
      </code>
      lists, or
-     <code class="literal">
+     <code>
       false
      </code>
      if it can only be used after
-     <code class="literal">
+     <code>
       AS
      </code>
      . The
@@ -3382,7 +3382,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_partition_constraintdef
      </code>
      (
@@ -3391,11 +3391,11 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        table
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -3407,7 +3407,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_partkeydef
      </code>
      (
@@ -3416,21 +3416,21 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        table
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Reconstructs the definition of a partitioned table's partition key, in the form it would have in the
-     <code class="literal">
+     <code>
       PARTITION BY
      </code>
      clause of
-     <code class="command">
+     <code>
       CREATE TABLE
      </code>
      . (This is a decompiled reconstruction, not the original text of the command.)
@@ -3440,7 +3440,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_ruledef
      </code>
      (
@@ -3449,7 +3449,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        rule
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      [
@@ -3460,12 +3460,12 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
         pretty
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -3477,7 +3477,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_serial_sequence
      </code>
      (
@@ -3486,7 +3486,7 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        table
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -3495,33 +3495,33 @@ Observe que não faria muito sentido testar um nome de tipo não qualificado por
        column
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Returns the name of the sequence associated with a column, or NULL if no sequence is associated with the column. If the column is an identity column, the associated sequence is the sequence internally created for that column. For columns created using one of the serial types (
-     <code class="type">
+     <code>
       serial
      </code>
      ,
-     <code class="type">
+     <code>
       smallserial
      </code>
      ,
-     <code class="type">
+     <code>
       bigserial
      </code>
      ), it is the sequence created for that serial column definition. In the latter case, the association can be modified or removed with
-     <code class="command">
+     <code>
       ALTER SEQUENCE OWNED BY
      </code>
      . (This function probably should have been called
-     <code class="function">
+     <code>
       pg_get_owned_sequence
      </code>
      ; its current name reflects the fact that it has historically been used with serial-type columns.)  The first parameter is a table name with optional schema, and the second parameter is a column name.  Because the first parameter potentially contains both schema and table names, it is parsed per usual SQL rules, meaning it is lower-cased by default. The second parameter, being just a column name, is treated literally and so has its case preserved.  The result is suitably formatted for passing to the sequence functions (see
@@ -3543,7 +3543,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_statisticsobjdef
      </code>
      (
@@ -3552,11 +3552,11 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
        statobj
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -3568,7 +3568,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_triggerdef
      </code>
      (
@@ -3577,7 +3577,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
        trigger
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      [
@@ -3588,12 +3588,12 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
         pretty
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -3605,7 +3605,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_userbyid
      </code>
      (
@@ -3614,11 +3614,11 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
        role
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       name
      </code>
     </p>
@@ -3630,7 +3630,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_viewdef
      </code>
      (
@@ -3639,7 +3639,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
        view
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      [
@@ -3650,18 +3650,18 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
         pretty
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Reconstructs the underlying
-     <code class="command">
+     <code>
       SELECT
      </code>
      command for a view or materialized view.  (This is a decompiled reconstruction, not the original text of the command.)
@@ -3671,7 +3671,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_viewdef
      </code>
      (
@@ -3680,7 +3680,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
        view
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -3689,17 +3689,17 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
        wrap_column
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Reconstructs the underlying
-     <code class="command">
+     <code>
       SELECT
      </code>
      command for a view or materialized view.  (This is a decompiled reconstruction, not the original text of the command.)  In this form of the function, pretty-printing is always enabled, and long lines are wrapped to try to keep them shorter than the specified number of columns.
@@ -3709,7 +3709,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_viewdef
      </code>
      (
@@ -3718,7 +3718,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
        view
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -3729,18 +3729,18 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
         pretty
        </code>
       </em>
-      <code class="type">
+      <code>
        boolean
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Reconstructs the underlying
-     <code class="command">
+     <code>
       SELECT
      </code>
      command for a view or materialized view, working from a textual name for the view rather than its OID.  (This is deprecated; use the OID variant instead.)
@@ -3750,7 +3750,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_index_column_has_property
      </code>
      (
@@ -3759,7 +3759,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
        index
       </code>
      </em>
-     <code class="type">
+     <code>
       regclass
      </code>
      ,
@@ -3768,7 +3768,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
        column
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -3777,11 +3777,11 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
        property
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -3793,7 +3793,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
      .</p>
 
         (Note that extension access methods can define additional property names for their indexes.)
-     <code class="literal">
+     <code>
       NULL
      </code>
      is returned if the property name is not known or does not apply to the particular object, or if the OID or column number does not identify a valid object.
@@ -3803,7 +3803,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_index_has_property
      </code>
      (
@@ -3812,7 +3812,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
        index
       </code>
      </em>
-     <code class="type">
+     <code>
       regclass
      </code>
      ,
@@ -3821,11 +3821,11 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
        property
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -3837,7 +3837,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
      .
 
         (Note that extension access methods can define additional property names for their indexes.)
-     <code class="literal">
+     <code>
       NULL
      </code>
      is returned if the property name is not known or does not apply to the particular object, or if the OID does not identify a valid object.
@@ -3847,7 +3847,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_indexam_has_property
      </code>
      (
@@ -3856,7 +3856,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
        am
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -3865,11 +3865,11 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
        property
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -3879,7 +3879,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
       Table 9.79
      </a>
      .
-     <code class="literal">
+     <code>
       NULL
      </code>
      is returned if the property name is not known or does not apply to the particular object, or if the OID does not identify a valid object.
@@ -3889,7 +3889,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_options_to_table
      </code>
      (
@@ -3898,11 +3898,11 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
        options_array
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -3911,7 +3911,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
        option_name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -3920,26 +3920,26 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
        option_value
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
     </p>
     <p>
      Returns the set of storage options represented by a value from
-     <code class="structname">
+     <code>
       pg_class
      </code>
      .
-     <code class="structfield">
+     <code>
       reloptions
      </code>
      or
-     <code class="structname">
+     <code>
       pg_attribute
      </code>
      .
-     <code class="structfield">
+     <code>
       attoptions
      </code>
      .
@@ -3949,7 +3949,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_settings_get_flags
      </code>
      (
@@ -3958,17 +3958,17 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
        guc
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text[]
      </code>
     </p>
     <p>
      Returns an array of the flags associated with the given GUC, or
-     <code class="literal">
+     <code>
       NULL
      </code>
      if it does not exist. The result is an empty array if the GUC exists but there are no flags to show. Only the most useful flags listed in
@@ -3982,7 +3982,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_tablespace_databases
      </code>
      (
@@ -3991,21 +3991,21 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
        tablespace
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof oid
      </code>
     </p>
     <p>
      Returns the set of OIDs of databases that have objects stored in the specified tablespace.  If this function returns any rows, the tablespace is not empty and cannot be dropped.  To identify the specific objects populating the tablespace, you will need to connect to the database(s) identified by
-     <code class="function">
+     <code>
       pg_tablespace_databases
      </code>
      and query their
-     <code class="structname">
+     <code>
       pg_class
      </code>
      catalogs.
@@ -4015,7 +4015,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_tablespace_location
      </code>
      (
@@ -4024,11 +4024,11 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
        tablespace
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -4040,21 +4040,21 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_typeof
      </code>
      (
-     <code class="type">
+     <code>
       "any"
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       regtype
      </code>
     </p>
     <p>
      Returns the OID of the data type of the value that is passed to it. This can be helpful for troubleshooting or dynamically constructing SQL queries.  The function is declared as returning
-     <code class="type">
+     <code>
       regtype
      </code>
      , which is an OID alias type (see
@@ -4064,11 +4064,11 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
      ); this means that it is the same as an OID for comparison purposes but displays as a type name.
     </p>
     <p>
-     <code class="literal">
+     <code>
       pg_typeof(33)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -4077,40 +4077,40 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       COLLATION FOR
      </code>
      (
-     <code class="type">
+     <code>
       "any"
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Returns the name of the collation of the value that is passed to it. The value is quoted and schema-qualified if necessary.  If no collation was derived for the argument expression, then
-     <code class="literal">
+     <code>
       NULL
      </code>
      is returned.  If the argument is not of a collatable data type, then an error is raised.
     </p>
     <p>
-     <code class="literal">
+     <code>
       collation for ('foo'::text)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "default"
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       collation for ('foo' COLLATE "de_DE")
      </code>
      →
-     <code class="returnvalue">
+     <code>
       "de_DE"
      </code>
     </p>
@@ -4119,21 +4119,21 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_regclass
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       regclass
      </code>
     </p>
     <p>
      Translates a textual relation name to its OID.  A similar result is obtained by casting the string to type
-     <code class="type">
+     <code>
       regclass
      </code>
      (see
@@ -4141,7 +4141,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
       Section 8.19
      </a>
      ); however, this function will return
-     <code class="literal">
+     <code>
       NULL
      </code>
      rather than throwing an error if the name is not found.
@@ -4151,21 +4151,21 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_regcollation
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       regcollation
      </code>
     </p>
     <p>
      Translates a textual collation name to its OID.  A similar result is obtained by casting the string to type
-     <code class="type">
+     <code>
       regcollation
      </code>
      (see
@@ -4173,7 +4173,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
       Section 8.19
      </a>
      ); however, this function will return
-     <code class="literal">
+     <code>
       NULL
      </code>
      rather than throwing an error if the name is not found.
@@ -4183,21 +4183,21 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_regnamespace
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       regnamespace
      </code>
     </p>
     <p>
      Translates a textual schema name to its OID.  A similar result is obtained by casting the string to type
-     <code class="type">
+     <code>
       regnamespace
      </code>
      (see
@@ -4205,7 +4205,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
       Section 8.19
      </a>
      ); however, this function will return
-     <code class="literal">
+     <code>
       NULL
      </code>
      rather than throwing an error if the name is not found.
@@ -4215,21 +4215,21 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_regoper
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       regoper
      </code>
     </p>
     <p>
      Translates a textual operator name to its OID.  A similar result is obtained by casting the string to type
-     <code class="type">
+     <code>
       regoper
      </code>
      (see
@@ -4237,7 +4237,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
       Section 8.19
      </a>
      ); however, this function will return
-     <code class="literal">
+     <code>
       NULL
      </code>
      rather than throwing an error if the name is not found or is ambiguous.
@@ -4247,21 +4247,21 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_regoperator
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       regoperator
      </code>
     </p>
     <p>
      Translates a textual operator name (with parameter types) to its OID.  A similar result is obtained by casting the string to type
-     <code class="type">
+     <code>
       regoperator
      </code>
      (see
@@ -4269,7 +4269,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
       Section 8.19
      </a>
      ); however, this function will return
-     <code class="literal">
+     <code>
       NULL
      </code>
      rather than throwing an error if the name is not found.
@@ -4279,21 +4279,21 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_regproc
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       regproc
      </code>
     </p>
     <p>
      Translates a textual function or procedure name to its OID.  A similar result is obtained by casting the string to type
-     <code class="type">
+     <code>
       regproc
      </code>
      (see
@@ -4301,7 +4301,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
       Section 8.19
      </a>
      ); however, this function will return
-     <code class="literal">
+     <code>
       NULL
      </code>
      rather than throwing an error if the name is not found or is ambiguous.
@@ -4311,21 +4311,21 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_regprocedure
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       regprocedure
      </code>
     </p>
     <p>
      Translates a textual function or procedure name (with argument types) to its OID.  A similar result is obtained by casting the string to type
-     <code class="type">
+     <code>
       regprocedure
      </code>
      (see
@@ -4333,7 +4333,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
       Section 8.19
      </a>
      ); however, this function will return
-     <code class="literal">
+     <code>
       NULL
      </code>
      rather than throwing an error if the name is not found.
@@ -4343,21 +4343,21 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_regrole
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       regrole
      </code>
     </p>
     <p>
      Translates a textual role name to its OID.  A similar result is obtained by casting the string to type
-     <code class="type">
+     <code>
       regrole
      </code>
      (see
@@ -4365,7 +4365,7 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
       Section 8.19
      </a>
      ); however, this function will return
-     <code class="literal">
+     <code>
       NULL
      </code>
      rather than throwing an error if the name is not found.
@@ -4375,25 +4375,25 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry" id="TO-REGTYPE">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_regtype
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       regtype
      </code>
     </p>
     <p>
      Parses a string of text, extracts a potential type name from it, and translates that name into a type OID.  A syntax error in the string will result in an error; but if the string is a syntactically valid type name that happens not to be found in the catalogs, the result is
-     <code class="literal">
+     <code>
       NULL
      </code>
      .  A similar result is obtained by casting the string to type
-     <code class="type">
+     <code>
       regtype
      </code>
      (see
@@ -4407,31 +4407,31 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_regtypemod
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Parses a string of text, extracts a potential type name from it, and translates its type modifier, if any.  A syntax error in the string will result in an error; but if the string is a syntactically valid type name that happens not to be found in the catalogs, the result is
-     <code class="literal">
+     <code>
       NULL
      </code>
      .  The result is
-     <code class="literal">
+     <code>
       -1
      </code>
      if no type modifier is present.
     </p>
     <p>
-     <code class="function">
+     <code>
       to_regtypemod
      </code>
      can be combined with
@@ -4445,11 +4445,11 @@ SELECT currval(pg_get_serial_sequence('sometable', 'id'));
      , allowing a string representing a type name to be canonicalized.
     </p>
     <p>
-     <code class="literal">
+     <code>
       format_type(to_regtype('varchar(32)'), to_regtypemod('varchar(32)'))
      </code>
      →
-     <code class="returnvalue">
+     <code>
       character varying(32)
      </code>
     </p>
@@ -4473,11 +4473,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
 
 
 
-<table border="1" class="table" summary="Index Column Properties">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -4491,7 +4487,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      asc
     </code>
    </td>
@@ -4501,7 +4497,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      desc
     </code>
    </td>
@@ -4511,7 +4507,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      nulls_first
     </code>
    </td>
@@ -4521,7 +4517,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      nulls_last
     </code>
    </td>
@@ -4531,7 +4527,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      orderable
     </code>
    </td>
@@ -4541,7 +4537,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      distance_orderable
     </code>
    </td>
@@ -4555,7 +4551,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
      ”
     </span>
     operador, por exemplo
-    <code class="literal">
+    <code>
      ORDER BY col &lt;-&gt; constant
     </code>
     ?
@@ -4563,7 +4559,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      returnable
     </code>
    </td>
@@ -4573,13 +4569,13 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      search_array
     </code>
    </td>
    <td>
     A coluna suporta nativamente
-    <code class="literal">
+    <code>
      col = ANY(array)
     </code>
     pesquisas?
@@ -4587,17 +4583,17 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      search_nulls
     </code>
    </td>
    <td>
     A coluna suporta
-    <code class="literal">
+    <code>
      IS NULL
     </code>
     e
-    <code class="literal">
+    <code>
      IS NOT NULL
     </code>
     pesquisas?
@@ -4619,11 +4615,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
 
 
 
-<table border="1" class="table" summary="Index Properties">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -4637,13 +4629,13 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      clusterable
     </code>
    </td>
    <td>
     Pode o índice ser utilizado em um
-    <code class="literal">
+    <code>
      CLUSTER
     </code>
     qual o comando?
@@ -4651,7 +4643,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      index_scan
     </code>
    </td>
@@ -4661,7 +4653,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      bitmap_scan
     </code>
    </td>
@@ -4671,13 +4663,13 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      backward_scan
     </code>
    </td>
    <td>
     É possível alterar a direção do exame durante o exame (para
-    <code class="literal">
+    <code>
      FETCH BACKWARD
     </code>
     sobre um cursor sem necessidade de materialização)?
@@ -4699,11 +4691,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
 
 
 
-<table border="1" class="table" summary="Index Access Method Properties">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -4717,21 +4705,21 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      can_order
     </code>
    </td>
    <td>
     O método de acesso suporta
-    <code class="literal">
+    <code>
      ASC
     </code>
     ,
-    <code class="literal">
+    <code>
      DESC
     </code>
     e palavras-chave relacionadas em
-    <code class="literal">
+    <code>
      CREATE INDEX
     </code>
     ?
@@ -4739,7 +4727,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      can_unique
     </code>
    </td>
@@ -4749,7 +4737,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      can_multi_col
     </code>
    </td>
@@ -4759,7 +4747,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      can_exclude
     </code>
    </td>
@@ -4769,17 +4757,17 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      can_include
     </code>
    </td>
    <td>
     O método de acesso suporta o
-    <code class="literal">
+    <code>
      INCLUDE
     </code>
     cláusula de
-    <code class="literal">
+    <code>
      CREATE INDEX
     </code>
     ?
@@ -4801,11 +4789,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
 
 
 
-<table border="1" class="table" summary="GUC Flags">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -4819,13 +4803,13 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      EXPLAIN
     </code>
    </td>
    <td>
     Os parâmetros com essa bandeira estão incluídos em
-    <code class="command">
+    <code>
      EXPLAIN (SETTINGS)
     </code>
     commands.
@@ -4833,13 +4817,13 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      NO_SHOW_ALL
     </code>
    </td>
    <td>
     Os parâmetros com essa bandeira são excluídos
-    <code class="command">
+    <code>
      SHOW ALL
     </code>
     commands.
@@ -4847,13 +4831,13 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      NO_RESET
     </code>
    </td>
    <td>
     Os parâmetros com esta bandeira não são suportados
-    <code class="command">
+    <code>
      RESET
     </code>
     commands.
@@ -4861,13 +4845,13 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      NO_RESET_ALL
     </code>
    </td>
    <td>
     Os parâmetros com essa bandeira são excluídos
-    <code class="command">
+    <code>
      RESET ALL
     </code>
     commands.
@@ -4875,13 +4859,13 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      NOT_IN_SAMPLE
     </code>
    </td>
    <td>
     Os parâmetros com essa bandeira não são incluídos
-    <code class="filename">
+    <code>
      postgresql.conf
     </code>
     padrão.
@@ -4889,7 +4873,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      RUNTIME_COMPUTED
     </code>
    </td>
@@ -4914,7 +4898,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
 
 
 
-<table border="1" class="table" summary="Object Information and Addressing Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -4934,7 +4918,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_acl
      </code>
      (
@@ -4943,7 +4927,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        classid
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -4952,7 +4936,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        objid
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -4961,11 +4945,11 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        objsubid
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       aclitem[]
      </code>
     </p>
@@ -4975,7 +4959,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
       ACL
      </acronym>
      for a database object, specified by catalog OID, object OID and sub-object ID. This function returns
-     <code class="literal">
+     <code>
       NULL
      </code>
      values for undefined objects.
@@ -4985,7 +4969,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_describe_object
      </code>
      (
@@ -4994,7 +4978,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        classid
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -5003,7 +4987,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        objid
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -5012,21 +4996,21 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        objsubid
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Returns a textual description of a database object identified by catalog OID, object OID, and sub-object ID (such as a column number within a table; the sub-object ID is zero when referring to a whole object).  This description is intended to be human-readable, and might be translated, depending on server configuration.  This is especially useful to determine the identity of an object referenced in the
-     <code class="structname">
+     <code>
       pg_depend
      </code>
      catalog. This function returns
-     <code class="literal">
+     <code>
       NULL
      </code>
      values for undefined objects.
@@ -5036,7 +5020,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_identify_object
      </code>
      (
@@ -5045,7 +5029,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        classid
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -5054,7 +5038,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        objid
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -5063,11 +5047,11 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        objsubid
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       record
      </code>
      (
@@ -5076,7 +5060,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        type
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -5085,7 +5069,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        schema
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -5094,7 +5078,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -5103,7 +5087,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        identity
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
@@ -5122,7 +5106,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
       </code>
      </em>
      is the schema name that the object belongs in, or
-     <code class="literal">
+     <code>
       NULL
      </code>
      for object types that do not belong to schemas;
@@ -5132,7 +5116,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
       </code>
      </em>
      is the name of the object, quoted if necessary, if the name (along with schema name, if pertinent) is sufficient to uniquely identify the object, otherwise
-     <code class="literal">
+     <code>
       NULL
      </code>
      ;
@@ -5142,7 +5126,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
       </code>
      </em>
      is the complete object identity, with the precise format depending on object type, and each name within the format being schema-qualified and quoted as necessary. Undefined objects are identified with
-     <code class="literal">
+     <code>
       NULL
      </code>
      values.
@@ -5152,7 +5136,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_identify_object_as_address
      </code>
      (
@@ -5161,7 +5145,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        classid
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -5170,7 +5154,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        objid
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -5179,11 +5163,11 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        objsubid
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       record
      </code>
      (
@@ -5192,7 +5176,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        type
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -5201,7 +5185,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        object_names
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ,
@@ -5210,7 +5194,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        object_args
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      )
@@ -5235,7 +5219,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
       </code>
      </em>
      are text arrays that together form a reference to the object. These three values can be passed to
-     <code class="function">
+     <code>
       pg_get_object_address
      </code>
      to obtain the internal address of the object.
@@ -5245,7 +5229,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_object_address
      </code>
      (
@@ -5254,7 +5238,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        type
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -5263,7 +5247,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        object_names
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ,
@@ -5272,11 +5256,11 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        object_args
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       record
      </code>
      (
@@ -5285,7 +5269,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        classid
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -5294,7 +5278,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        objid
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -5303,22 +5287,22 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
        objsubid
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
     </p>
     <p>
      Returns a row containing enough information to uniquely identify the database object specified by a type code and object name and argument arrays. The returned values are the ones that would be used in system catalogs such as
-     <code class="structname">
+     <code>
       pg_depend
      </code>
      ; they can be passed to other system functions such as
-     <code class="function">
+     <code>
       pg_describe_object
      </code>
      or
-     <code class="function">
+     <code>
       pg_identify_object
      </code>
      .
@@ -5340,11 +5324,11 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
       </code>
      </em>
      is the sub-object ID, or zero if none. This function is the inverse of
-     <code class="function">
+     <code>
       pg_identify_object_as_address
      </code>
      . Undefined objects are identified with
-     <code class="literal">
+     <code>
       NULL
      </code>
      values.
@@ -5393,7 +5377,7 @@ As funções mostradas na [Tabela 9.82](functions-info.md#FUNCTIONS-INFO-COMMENT
 
 
 
-<table border="1" class="table" summary="Comment Information Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -5413,7 +5397,7 @@ As funções mostradas na [Tabela 9.82](functions-info.md#FUNCTIONS-INFO-COMMENT
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       col_description
      </code>
      (
@@ -5422,7 +5406,7 @@ As funções mostradas na [Tabela 9.82](functions-info.md#FUNCTIONS-INFO-COMMENT
        table
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -5431,17 +5415,17 @@ As funções mostradas na [Tabela 9.82](functions-info.md#FUNCTIONS-INFO-COMMENT
        column
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Returns the comment for a table column, which is specified by the OID of its table and its column number. (
-     <code class="function">
+     <code>
       obj_description
      </code>
      cannot be used for table columns, since columns do not have OIDs of their own.)
@@ -5451,7 +5435,7 @@ As funções mostradas na [Tabela 9.82](functions-info.md#FUNCTIONS-INFO-COMMENT
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       obj_description
      </code>
      (
@@ -5460,7 +5444,7 @@ As funções mostradas na [Tabela 9.82](functions-info.md#FUNCTIONS-INFO-COMMENT
        object
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -5469,17 +5453,17 @@ As funções mostradas na [Tabela 9.82](functions-info.md#FUNCTIONS-INFO-COMMENT
        catalog
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Returns the comment for a database object specified by its OID and the name of the containing system catalog.  For example,
-     <code class="literal">
+     <code>
       obj_description(123456, 'pg_class')
      </code>
      would retrieve the comment for the table with OID 123456.
@@ -5489,7 +5473,7 @@ As funções mostradas na [Tabela 9.82](functions-info.md#FUNCTIONS-INFO-COMMENT
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       obj_description
      </code>
      (
@@ -5498,11 +5482,11 @@ As funções mostradas na [Tabela 9.82](functions-info.md#FUNCTIONS-INFO-COMMENT
        object
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -5520,7 +5504,7 @@ As funções mostradas na [Tabela 9.82](functions-info.md#FUNCTIONS-INFO-COMMENT
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       shobj_description
      </code>
      (
@@ -5529,7 +5513,7 @@ As funções mostradas na [Tabela 9.82](functions-info.md#FUNCTIONS-INFO-COMMENT
        object
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -5538,17 +5522,17 @@ As funções mostradas na [Tabela 9.82](functions-info.md#FUNCTIONS-INFO-COMMENT
        catalog
       </code>
      </em>
-     <code class="type">
+     <code>
       name
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Returns the comment for a shared database object specified by its OID and the name of the containing system catalog.  This is just like
-     <code class="function">
+     <code>
       obj_description
      </code>
      except that it is used for retrieving comments on shared objects (that is, databases, roles, and tablespaces).  Some system catalogs are global to all databases within each cluster, and the descriptions for objects in them are stored globally as well.
@@ -5572,7 +5556,7 @@ As funções apresentadas na [Tabela 9.83](functions-info.md#FUNCTIONS-INFO-VALI
 
 
 
-<table border="1" class="table" summary="Data Validity Checking Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -5595,7 +5579,7 @@ As funções apresentadas na [Tabela 9.83](functions-info.md#FUNCTIONS-INFO-VALI
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_input_is_valid
      </code>
      (
@@ -5604,7 +5588,7 @@ As funções apresentadas na [Tabela 9.83](functions-info.md#FUNCTIONS-INFO-VALI
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -5613,11 +5597,11 @@ As funções apresentadas na [Tabela 9.83](functions-info.md#FUNCTIONS-INFO-VALI
        type
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -5642,29 +5626,29 @@ As funções apresentadas na [Tabela 9.83](functions-info.md#FUNCTIONS-INFO-VALI
      Caso contrário, a entrada inválida abortará a transação, assim como se a string tivesse sido convertida diretamente para o tipo.
     </p>
     <p>
-     <code class="literal">
+     <code>
       pg_input_is_valid('42', 'integer')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       pg_input_is_valid('42000000000', 'integer')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       pg_input_is_valid('1234.567', 'numeric(7,4)')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
@@ -5673,7 +5657,7 @@ As funções apresentadas na [Tabela 9.83](functions-info.md#FUNCTIONS-INFO-VALI
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_input_error_info
      </code>
      (
@@ -5682,7 +5666,7 @@ As funções apresentadas na [Tabela 9.83](functions-info.md#FUNCTIONS-INFO-VALI
        string
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -5691,11 +5675,11 @@ As funções apresentadas na [Tabela 9.83](functions-info.md#FUNCTIONS-INFO-VALI
        type
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       record
      </code>
      (
@@ -5704,7 +5688,7 @@ As funções apresentadas na [Tabela 9.83](functions-info.md#FUNCTIONS-INFO-VALI
        message
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -5713,7 +5697,7 @@ As funções apresentadas na [Tabela 9.83](functions-info.md#FUNCTIONS-INFO-VALI
        detail
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -5722,7 +5706,7 @@ As funções apresentadas na [Tabela 9.83](functions-info.md#FUNCTIONS-INFO-VALI
        hint
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -5731,7 +5715,7 @@ As funções apresentadas na [Tabela 9.83](functions-info.md#FUNCTIONS-INFO-VALI
        sql_error_code
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
@@ -5744,7 +5728,7 @@ As funções apresentadas na [Tabela 9.83](functions-info.md#FUNCTIONS-INFO-VALI
       </code>
      </em>
      é uma entrada válida para o tipo de dados especificado; se não for, retorne os detalhes do erro que teria sido lançado. Se a entrada for válida, os resultados são NULL. As entradas são as mesmas que para
-     <code class="function">
+     <code>
       pg_input_is_valid
      </code>
      .
@@ -5761,11 +5745,11 @@ As funções apresentadas na [Tabela 9.83](functions-info.md#FUNCTIONS-INFO-VALI
      Caso contrário, a entrada inválida abortará a transação, assim como se a string tivesse sido convertida diretamente para o tipo.
     </p>
     <p>
-     <code class="literal">
+     <code>
       SELECT * FROM pg_input_error_info('42000000000', 'integer')
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -5792,7 +5776,7 @@ As funções apresentadas na [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSH
 
 
 
-<table border="1" class="table" summary="Transaction ID and Snapshot Information Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -5812,15 +5796,15 @@ As funções apresentadas na [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSH
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       age
      </code>
      (
-     <code class="type">
+     <code>
       xid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -5832,15 +5816,15 @@ As funções apresentadas na [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSH
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       mxid_age
      </code>
      (
-     <code class="type">
+     <code>
       xid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -5852,11 +5836,11 @@ As funções apresentadas na [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSH
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_current_xact_id
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       xid8
      </code>
     </p>
@@ -5876,17 +5860,17 @@ As funções apresentadas na [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSH
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_current_xact_id_if_assigned
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       xid8
      </code>
     </p>
     <p>
      Returns the current transaction's ID, or
-     <code class="literal">
+     <code>
       NULL
      </code>
      if no ID is assigned yet.  (It's best to use this variant if the transaction might otherwise be read-only, to avoid unnecessary consumption of an XID.) If executed in a subtransaction, this will return the top-level transaction ID.
@@ -5896,46 +5880,46 @@ As funções apresentadas na [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSH
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_xact_status
      </code>
      (
-     <code class="type">
+     <code>
       xid8
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Reports the commit status of a recent transaction. The result is one of
-     <code class="literal">
+     <code>
       in progress
      </code>
      ,
-     <code class="literal">
+     <code>
       committed
      </code>
      , or
-     <code class="literal">
+     <code>
       aborted
      </code>
      , provided that the transaction is recent enough that the system retains the commit status of that transaction. If it is old enough that no references to the transaction survive in the system and the commit status information has been discarded, the result is
-     <code class="literal">
+     <code>
       NULL
      </code>
      . Applications might use this function, for example, to determine whether their transaction committed or aborted after the application and database server become disconnected while a
-     <code class="literal">
+     <code>
       COMMIT
      </code>
      is in progress. Note that prepared transactions are reported as
-     <code class="literal">
+     <code>
       in progress
      </code>
      ; applications must check
      <a class="link" href="view-pg-prepared-xacts.md" title="53.17. pg_prepared_xacts">
-      <code class="structname">
+      <code>
        pg_prepared_xacts
       </code>
      </a>
@@ -5946,11 +5930,11 @@ As funções apresentadas na [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSH
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_current_snapshot
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       pg_snapshot
      </code>
     </p>
@@ -5970,15 +5954,15 @@ As funções apresentadas na [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSH
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_snapshot_xip
      </code>
      (
-     <code class="type">
+     <code>
       pg_snapshot
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof xid8
      </code>
     </p>
@@ -5990,21 +5974,21 @@ As funções apresentadas na [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSH
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_snapshot_xmax
      </code>
      (
-     <code class="type">
+     <code>
       pg_snapshot
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       xid8
      </code>
     </p>
     <p>
      Returns the
-     <code class="structfield">
+     <code>
       xmax
      </code>
      of a snapshot.
@@ -6014,21 +5998,21 @@ As funções apresentadas na [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSH
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_snapshot_xmin
      </code>
      (
-     <code class="type">
+     <code>
       pg_snapshot
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       xid8
      </code>
     </p>
     <p>
      Returns the
-     <code class="structfield">
+     <code>
       xmin
      </code>
      of a snapshot.
@@ -6038,19 +6022,19 @@ As funções apresentadas na [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSH
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_visible_in_snapshot
      </code>
      (
-     <code class="type">
+     <code>
       xid8
      </code>
      ,
-     <code class="type">
+     <code>
       pg_snapshot
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -6070,7 +6054,7 @@ As funções apresentadas na [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSH
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_multixact_members
      </code>
      (
@@ -6079,11 +6063,11 @@ As funções apresentadas na [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSH
        multixid
       </code>
      </em>
-     <code class="type">
+     <code>
       xid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -6092,7 +6076,7 @@ As funções apresentadas na [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSH
        xid
       </code>
      </em>
-     <code class="type">
+     <code>
       xid
      </code>
      ,
@@ -6101,42 +6085,42 @@ As funções apresentadas na [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSH
        mode
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
     </p>
     <p>
      Returns the transaction ID and lock mode for each member of the specified multixact ID.  The lock modes
-     <code class="literal">
+     <code>
       forupd
      </code>
      ,
-     <code class="literal">
+     <code>
       fornokeyupd
      </code>
      ,
-     <code class="literal">
+     <code>
       sh
      </code>
      , and
-     <code class="literal">
+     <code>
       keysh
      </code>
      correspond to the row-level locks
-     <code class="literal">
+     <code>
       FOR UPDATE
      </code>
      ,
-     <code class="literal">
+     <code>
       FOR NO KEY UPDATE
      </code>
      ,
-     <code class="literal">
+     <code>
       FOR SHARE
      </code>
      , and
-     <code class="literal">
+     <code>
       FOR KEY SHARE
      </code>
      , respectively, as described in
@@ -6144,11 +6128,11 @@ As funções apresentadas na [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSH
       Section 13.3.2
      </a>
      .  Two additional modes are specific to multixacts:
-     <code class="literal">
+     <code>
       nokeyupd
      </code>
      , used by updates that do not modify key columns, and
-     <code class="literal">
+     <code>
       upd
      </code>
      , used by updates or deletes that modify key columns.
@@ -6173,11 +6157,7 @@ O tipo de ID de transação interna `xid` é de 32 bits e volta ao início a cad
 
 
 
-<table border="1" class="table" summary="Snapshot Components">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -6191,13 +6171,13 @@ O tipo de ID de transação interna `xid` é de 32 bits e volta ao início a cad
  <tbody>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      xmin
     </code>
    </td>
    <td>
     ID de transação mais baixo que ainda estava ativo. Todos os IDs de transação menores que
-    <code class="structfield">
+    <code>
      xmin
     </code>
     ou são comprometidos e visíveis, ou são recuados e mortos.
@@ -6205,13 +6185,13 @@ O tipo de ID de transação interna `xid` é de 32 bits e volta ao início a cad
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      xmax
     </code>
    </td>
    <td>
     Um acima do ID da transação mais alta concluída. Todos os IDs de transação maiores ou iguais a
-    <code class="structfield">
+    <code>
      xmax
     </code>
     não haviam sido concluídos até o momento do instantâneo, e, portanto, são invisíveis.
@@ -6219,13 +6199,13 @@ O tipo de ID de transação interna `xid` é de 32 bits e volta ao início a cad
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      xip_list
     </code>
    </td>
    <td>
     Transações em andamento no momento do instantâneo. Um ID de transação que é
-    <code class="literal">
+    <code>
      xmin &lt;=
      <em class="replaceable">
       <code>
@@ -6255,7 +6235,7 @@ Nas versões do PostgreSQL anteriores à 13, não havia o tipo `xid8`. Portanto,
 
 
 
-<table border="1" class="table" summary="Deprecated Transaction ID and Snapshot Information Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -6275,17 +6255,17 @@ Nas versões do PostgreSQL anteriores à 13, não havia o tipo `xid8`. Portanto,
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       txid_current
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p>
      See
-     <code class="function">
+     <code>
       pg_current_xact_id()
      </code>
      .
@@ -6295,17 +6275,17 @@ Nas versões do PostgreSQL anteriores à 13, não havia o tipo `xid8`. Portanto,
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       txid_current_if_assigned
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p>
      See
-     <code class="function">
+     <code>
       pg_current_xact_id_if_assigned()
      </code>
      .
@@ -6315,17 +6295,17 @@ Nas versões do PostgreSQL anteriores à 13, não havia o tipo `xid8`. Portanto,
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       txid_current_snapshot
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       txid_snapshot
      </code>
     </p>
     <p>
      See
-     <code class="function">
+     <code>
       pg_current_snapshot()
      </code>
      .
@@ -6335,21 +6315,21 @@ Nas versões do PostgreSQL anteriores à 13, não havia o tipo `xid8`. Portanto,
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       txid_snapshot_xip
      </code>
      (
-     <code class="type">
+     <code>
       txid_snapshot
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof bigint
      </code>
     </p>
     <p>
      See
-     <code class="function">
+     <code>
       pg_snapshot_xip()
      </code>
      .
@@ -6359,21 +6339,21 @@ Nas versões do PostgreSQL anteriores à 13, não havia o tipo `xid8`. Portanto,
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       txid_snapshot_xmax
      </code>
      (
-     <code class="type">
+     <code>
       txid_snapshot
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p>
      See
-     <code class="function">
+     <code>
       pg_snapshot_xmax()
      </code>
      .
@@ -6383,21 +6363,21 @@ Nas versões do PostgreSQL anteriores à 13, não havia o tipo `xid8`. Portanto,
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       txid_snapshot_xmin
      </code>
      (
-     <code class="type">
+     <code>
       txid_snapshot
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p>
      See
-     <code class="function">
+     <code>
       pg_snapshot_xmin()
      </code>
      .
@@ -6407,25 +6387,25 @@ Nas versões do PostgreSQL anteriores à 13, não havia o tipo `xid8`. Portanto,
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       txid_visible_in_snapshot
      </code>
      (
-     <code class="type">
+     <code>
       bigint
      </code>
      ,
-     <code class="type">
+     <code>
       txid_snapshot
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      See
-     <code class="function">
+     <code>
       pg_visible_in_snapshot()
      </code>
      .
@@ -6435,21 +6415,21 @@ Nas versões do PostgreSQL anteriores à 13, não havia o tipo `xid8`. Portanto,
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       txid_status
      </code>
      (
-     <code class="type">
+     <code>
       bigint
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      See
-     <code class="function">
+     <code>
       pg_xact_status()
      </code>
      .
@@ -6473,7 +6453,7 @@ As funções mostradas na [Tabela 9.87](functions-info.md#FUNCTIONS-COMMIT-TIMES
 
 
 
-<table border="1" class="table" summary="Committed Transaction Information Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -6493,15 +6473,15 @@ As funções mostradas na [Tabela 9.87](functions-info.md#FUNCTIONS-COMMIT-TIMES
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_xact_commit_timestamp
      </code>
      (
-     <code class="type">
+     <code>
       xid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -6513,15 +6493,15 @@ As funções mostradas na [Tabela 9.87](functions-info.md#FUNCTIONS-COMMIT-TIMES
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_xact_commit_timestamp_origin
      </code>
      (
-     <code class="type">
+     <code>
       xid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       record
      </code>
      (
@@ -6530,7 +6510,7 @@ As funções mostradas na [Tabela 9.87](functions-info.md#FUNCTIONS-COMMIT-TIMES
        timestamp
       </code>
      </em>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      ,
@@ -6539,7 +6519,7 @@ As funções mostradas na [Tabela 9.87](functions-info.md#FUNCTIONS-COMMIT-TIMES
        roident
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      )
@@ -6552,11 +6532,11 @@ As funções mostradas na [Tabela 9.87](functions-info.md#FUNCTIONS-COMMIT-TIMES
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_last_committed_xact
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       record
      </code>
      (
@@ -6565,7 +6545,7 @@ As funções mostradas na [Tabela 9.87](functions-info.md#FUNCTIONS-COMMIT-TIMES
        xid
       </code>
      </em>
-     <code class="type">
+     <code>
       xid
      </code>
      ,
@@ -6574,7 +6554,7 @@ As funções mostradas na [Tabela 9.87](functions-info.md#FUNCTIONS-COMMIT-TIMES
        timestamp
       </code>
      </em>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
      ,
@@ -6583,7 +6563,7 @@ As funções mostradas na [Tabela 9.87](functions-info.md#FUNCTIONS-COMMIT-TIMES
        roident
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      )
@@ -6610,7 +6590,7 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
 
 
 
-<table border="1" class="table" summary="Control Data Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -6630,11 +6610,11 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_control_checkpoint
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       record
      </code>
     </p>
@@ -6650,11 +6630,11 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_control_system
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       record
      </code>
     </p>
@@ -6670,11 +6650,11 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_control_init
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       record
      </code>
     </p>
@@ -6690,11 +6670,11 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_control_recovery
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       record
      </code>
     </p>
@@ -6723,11 +6703,7 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
 
 
 
-<table border="1" class="table" summary="pg_control_checkpoint Output Columns">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -6741,216 +6717,216 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
  <tbody>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      checkpoint_lsn
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      pg_lsn
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      redo_lsn
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      pg_lsn
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      redo_wal_file
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      timeline_id
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      prev_timeline_id
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      full_page_writes
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      boolean
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      next_xid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      next_oid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      oid
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      next_multixact_id
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      xid
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      next_multi_offset
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      xid
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      oldest_xid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      xid
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      oldest_xid_dbid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      oid
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      oldest_active_xid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      xid
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      oldest_multi_xid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      xid
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      oldest_multi_dbid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      oid
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      oldest_commit_ts_xid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      xid
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      newest_commit_ts_xid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      xid
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      checkpoint_time
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      timestamp with time zone
     </code>
    </td>
@@ -6971,11 +6947,7 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
 
 
 
-<table border="1" class="table" summary="pg_control_system Output Columns">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -6989,48 +6961,48 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
  <tbody>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      pg_control_version
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      catalog_version_no
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      system_identifier
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      pg_control_last_modified
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      timestamp with time zone
     </code>
    </td>
@@ -7051,11 +7023,7 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
 
 
 
-<table border="1" class="table" summary="pg_control_init Output Columns">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -7069,144 +7037,144 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
  <tbody>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      max_data_alignment
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      database_block_size
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      blocks_per_segment
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      wal_block_size
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      bytes_per_wal_segment
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      max_identifier_length
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      max_index_columns
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      max_toast_chunk_size
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      large_object_chunk_size
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      float8_pass_by_value
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      boolean
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      data_page_checksum_version
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      default_char_signedness
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      boolean
     </code>
    </td>
@@ -7227,11 +7195,7 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
 
 
 
-<table border="1" class="table" summary="pg_control_recovery Output Columns">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -7245,60 +7209,60 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
  <tbody>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      min_recovery_end_lsn
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      pg_lsn
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      min_recovery_end_timeline
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      backup_start_lsn
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      pg_lsn
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      backup_end_lsn
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      pg_lsn
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="structfield">
+    <code>
      end_of_backup_record_required
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      boolean
     </code>
    </td>
@@ -7320,7 +7284,7 @@ As funções mostradas na [Tabela 9.93](functions-info.md#FUNCTIONS-VERSION) imp
 
 
 
-<table border="1" class="table" summary="Version Information Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -7340,11 +7304,11 @@ As funções mostradas na [Tabela 9.93](functions-info.md#FUNCTIONS-VERSION) imp
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       version
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -7362,12 +7326,12 @@ As funções mostradas na [Tabela 9.93](functions-info.md#FUNCTIONS-VERSION) imp
       server_version_num
      </a>
      .  Software developers should use
-     <code class="varname">
+     <code>
       server_version_num
      </code>
      (available since 8.2) or
      <a class="xref" href="libpq-status.md#LIBPQ-PQSERVERVERSION">
-      <code class="function">
+      <code>
        PQserverVersion
       </code>
      </a>
@@ -7378,11 +7342,11 @@ As funções mostradas na [Tabela 9.93](functions-info.md#FUNCTIONS-VERSION) imp
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       unicode_version
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -7398,17 +7362,17 @@ As funções mostradas na [Tabela 9.93](functions-info.md#FUNCTIONS-VERSION) imp
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       icu_unicode_version
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Returns a string representing the version of Unicode used by ICU, if the server was built with ICU support; otherwise returns
-     <code class="literal">
+     <code>
       NULL
      </code>
     </p>
@@ -7431,7 +7395,7 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
 
 
 
-<table border="1" class="table" summary="WAL Summarization Information Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -7451,11 +7415,11 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_available_wal_summaries
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -7464,7 +7428,7 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
        tli
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ,
@@ -7473,7 +7437,7 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
        start_lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ,
@@ -7482,14 +7446,14 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
        end_lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      )
     </p>
     <p>
      Returns information about the WAL summary files present in the data directory, under
-     <code class="literal">
+     <code>
       pg_wal/summaries
      </code>
      . One row will be returned per WAL summary file. Each file summarizes WAL on the indicated TLI within the indicated LSN range. This function might be useful to determine whether enough WAL summaries are present on the server to take an incremental backup based on some prior backup whose start LSN is known.
@@ -7499,7 +7463,7 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_wal_summary_contents
      </code>
      (
@@ -7508,7 +7472,7 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
        tli
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ,
@@ -7517,7 +7481,7 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
        start_lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ,
@@ -7526,11 +7490,11 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
        end_lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -7539,7 +7503,7 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
        relfilenode
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -7548,7 +7512,7 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
        reltablespace
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -7557,7 +7521,7 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
        reldatabase
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -7566,7 +7530,7 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
        relforknumber
       </code>
      </em>
-     <code class="type">
+     <code>
       smallint
      </code>
      ,
@@ -7575,7 +7539,7 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
        relblocknumber
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ,
@@ -7584,26 +7548,26 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
        is_limit_block
       </code>
      </em>
-     <code class="type">
+     <code>
       boolean
      </code>
      )
     </p>
     <p>
      Returns one information about the contents of a single WAL summary file identified by TLI and starting and ending LSNs. Each row with
-     <code class="literal">
+     <code>
       is_limit_block
      </code>
      false indicates that the block identified by the remaining output columns was modified by at least one WAL record within the range of records summarized by this file. Each row with
-     <code class="literal">
+     <code>
       is_limit_block
      </code>
      true indicates either that (a) the relation fork was truncated to the length given by
-     <code class="literal">
+     <code>
       relblocknumber
      </code>
      within the relevant range of WAL records or (b) that the relation fork was created or dropped within the relevant range of WAL records; in such cases,
-     <code class="literal">
+     <code>
       relblocknumber
      </code>
      will be zero.
@@ -7613,11 +7577,11 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_get_wal_summarizer_state
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       record
      </code>
      (
@@ -7626,7 +7590,7 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
        summarized_tli
       </code>
      </em>
-     <code class="type">
+     <code>
       bigint
      </code>
      ,
@@ -7635,7 +7599,7 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
        summarized_lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ,
@@ -7644,7 +7608,7 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
        pending_lsn
       </code>
      </em>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
      ,
@@ -7653,57 +7617,57 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
        summarizer_pid
       </code>
      </em>
-     <code class="type">
+     <code>
       int
      </code>
      )
     </p>
     <p>
      Returns information about the progress of the WAL summarizer. If the WAL summarizer has never run since the instance was started, then
-     <code class="literal">
+     <code>
       summarized_tli
      </code>
      and
-     <code class="literal">
+     <code>
       summarized_lsn
      </code>
      will be
-     <code class="literal">
+     <code>
       0
      </code>
      and
-     <code class="literal">
+     <code>
       0/0
      </code>
      respectively; otherwise, they will be the TLI and ending LSN of the last WAL summary file written to disk. If the WAL summarizer is currently running,
-     <code class="literal">
+     <code>
       pending_lsn
      </code>
      will be the ending LSN of the last record that it has consumed, which must always be greater than or equal to
-     <code class="literal">
+     <code>
       summarized_lsn
      </code>
      ; if the WAL summarizer is not running, it will be equal to
-     <code class="literal">
+     <code>
       summarized_lsn
      </code>
      .
-     <code class="literal">
+     <code>
       summarizer_pid
      </code>
      is the PID of the WAL summarizer process, if it is running, and otherwise NULL.
     </p>
     <p>
      As a special exception, the WAL summarizer will refuse to generate WAL summary files if run on WAL generated under
-     <code class="literal">
+     <code>
       wal_level=minimal
      </code>
      , since such summaries would be unsafe to use as the basis for an incremental backup. In this case, the fields above will continue to advance as if summaries were being generated, but nothing will be written to disk. Once the summarizer reaches WAL generated while
-     <code class="literal">
+     <code>
       wal_level
      </code>
      was set to
-     <code class="literal">
+     <code>
       replica
      </code>
      or higher, it will resume writing summaries to disk.

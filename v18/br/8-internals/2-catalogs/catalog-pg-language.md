@@ -6,7 +6,7 @@ O catálogo `pg_language` registra os idiomas nos quais você pode escrever fun�
 
 
 
-<table border="1" class="table" summary="pg_language Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_language` registra os idiomas nos quais você pode escrever fun�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,10 +41,10 @@ O catálogo `pg_language` registra os idiomas nos quais você pode escrever fun�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       lanname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -56,20 +56,20 @@ O catálogo `pg_language` registra os idiomas nos quais você pode escrever fun�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       lanowner
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -82,10 +82,10 @@ O catálogo `pg_language` registra os idiomas nos quais você pode escrever fun�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       lanispl
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -105,10 +105,10 @@ O catálogo `pg_language` registra os idiomas nos quais você pode escrever fun�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       lanpltrusted
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -120,20 +120,20 @@ O catálogo `pg_language` registra os idiomas nos quais você pode escrever fun�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       lanplcallfoid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -146,20 +146,20 @@ O catálogo `pg_language` registra os idiomas nos quais você pode escrever fun�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       laninline
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -186,20 +186,20 @@ O catálogo `pg_language` registra os idiomas nos quais você pode escrever fun�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       lanvalidator
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -212,10 +212,10 @@ O catálogo `pg_language` registra os idiomas nos quais você pode escrever fun�
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       lanacl
      </code>
-     <code class="type">
+     <code>
       aclitem[]
      </code>
     </p>

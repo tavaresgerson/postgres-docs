@@ -14,11 +14,7 @@ Cada tabela e índice são armazenados como um array de *páginas* de tamanho fi
 
 
 
-<table border="1" class="table" summary="Overall Page Layout">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -88,7 +84,7 @@ Os primeiros 24 bytes de cada página consistem em um cabeçalho de página (`Pa
 
 
 
-<table border="1" class="table" summary="PageHeaderData Layout">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -258,7 +254,7 @@ Todas as linhas da tabela são estruturadas da mesma maneira. Há um cabeçalho 
 
 
 
-<table border="1" class="table" summary="HeapTupleHeaderData Layout">
+<table>
  <colgroup>
   <col/>
   <col/>

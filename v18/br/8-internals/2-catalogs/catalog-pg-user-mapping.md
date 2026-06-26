@@ -6,7 +6,7 @@ O catálogo `pg_user_mapping` armazena as mapeamentos de usuário local para rem
 
 
 
-<table border="1" class="table" summary="pg_user_mapping Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_user_mapping` armazena as mapeamentos de usuário local para rem
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,20 +41,20 @@ O catálogo `pg_user_mapping` armazena as mapeamentos de usuário local para rem
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       umuser
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -67,20 +67,20 @@ O catálogo `pg_user_mapping` armazena as mapeamentos de usuário local para rem
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       umserver
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-foreign-server.md" title="52.24. pg_foreign_server">
-      <code class="structname">
+      <code>
        pg_foreign_server
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -93,10 +93,10 @@ O catálogo `pg_user_mapping` armazena as mapeamentos de usuário local para rem
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       umoptions
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>

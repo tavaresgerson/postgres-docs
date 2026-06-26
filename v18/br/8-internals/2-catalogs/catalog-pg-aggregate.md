@@ -6,7 +6,7 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
 
 
 
-<table border="1" class="table" summary="pg_aggregate Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,26 +26,26 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       aggfnoid
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
     </p>
     <p>
-     <code class="structname">
+     <code>
       pg_proc
      </code>
      OID da função agregada
@@ -55,16 +55,16 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       aggkind
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      Tipo agregado:
-     <code class="literal">
+     <code>
       n
      </code>
      para
@@ -76,7 +76,7 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
       ”
      </span>
      agregados,
-     <code class="literal">
+     <code>
       o
      </code>
      para
@@ -88,7 +88,7 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
       ”
      </span>
      agregados, ou
-     <code class="literal">
+     <code>
       h
      </code>
      para
@@ -106,16 +106,16 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       aggnumdirectargs
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
     <p>
      Número de argumentos diretos (não agregados) de um conjunto ordenado ou agregado de conjuntos hipotéticos, contando uma matriz variadic como um argumento. Se igual a
-     <code class="structfield">
+     <code>
       pronargs
      </code>
      , o agregado deve ser variadic e o array variadic descreve os argumentos agregados, bem como os argumentos diretos finais. Sempre zero para agregados normais.
@@ -125,20 +125,20 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       aggtransfn
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -151,20 +151,20 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       aggfinalfn
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -177,20 +177,20 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       aggcombinefn
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -203,20 +203,20 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       aggserialfn
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -229,20 +229,20 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       aggdeserialfn
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -255,20 +255,20 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       aggmtransfn
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -281,20 +281,20 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       aggminvtransfn
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -307,20 +307,20 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       aggmfinalfn
      </code>
-     <code class="type">
+     <code>
       regproc
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -333,16 +333,16 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       aggfinalextra
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Verdadeiro para passar argumentos de teste adicionais
-     <code class="structfield">
+     <code>
       aggfinalfn
      </code>
     </p>
@@ -351,16 +351,16 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       aggmfinalextra
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Verdadeiro para passar argumentos de teste adicionais
-     <code class="structfield">
+     <code>
       aggmfinalfn
      </code>
     </p>
@@ -369,36 +369,36 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       aggfinalmodify
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      Seja
-     <code class="structfield">
+     <code>
       aggfinalfn
      </code>
      modifica o valor do estado de transição:
-     <code class="literal">
+     <code>
       r
      </code>
      se for somente de leitura,
-     <code class="literal">
+     <code>
       s
      </code>
      se o
-     <code class="structfield">
+     <code>
       aggtransfn
      </code>
      não pode ser aplicada após
-     <code class="structfield">
+     <code>
       aggfinalfn
      </code>
      , ou
-     <code class="literal">
+     <code>
       w
      </code>
      se escreve sobre o valor
@@ -408,20 +408,20 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       aggmfinalmodify
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      Como
-     <code class="structfield">
+     <code>
       aggfinalmodify
      </code>
      , mas para o
-     <code class="structfield">
+     <code>
       aggmfinalfn
      </code>
     </p>
@@ -430,20 +430,20 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       aggsortop
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-operator.md" title="52.34. pg_operator">
-      <code class="structname">
+      <code>
        pg_operator
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -456,20 +456,20 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       aggtranstype
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -482,10 +482,10 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       aggtransspace
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -497,20 +497,20 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       aggmtranstype
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -523,10 +523,10 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       aggmtransspace
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -538,10 +538,10 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       agginitval
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -553,10 +553,10 @@ O catálogo `pg_aggregate` armazena informações sobre funções agregadas. Uma
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       aggminitval
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>

@@ -8,7 +8,7 @@ Para mais informações sobre como criar gatilhos, consulte [CREATE TRIGGER](sql
 
 
 
-<table border="1" class="table" summary="Built-In Trigger Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -31,11 +31,11 @@ Para mais informações sobre como criar gatilhos, consulte [CREATE TRIGGER](sql
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       suppress_redundant_updates_trigger
      </code>
      ( ) →
-     <code class="returnvalue">
+     <code>
       trigger
      </code>
     </p>
@@ -43,7 +43,7 @@ Para mais informações sobre como criar gatilhos, consulte [CREATE TRIGGER](sql
      Suppresses do-nothing update operations.  See below for details.
     </p>
     <p>
-     <code class="literal">
+     <code>
       CREATE TRIGGER ... suppress_redundant_updates_trigger()
      </code>
     </p>
@@ -52,17 +52,17 @@ Para mais informações sobre como criar gatilhos, consulte [CREATE TRIGGER](sql
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       tsvector_update_trigger
      </code>
      ( ) →
-     <code class="returnvalue">
+     <code>
       trigger
      </code>
     </p>
     <p>
      Automatically updates a
-     <code class="type">
+     <code>
       tsvector
      </code>
      column from associated plain-text document column(s).  The text search configuration to use is specified by name as a trigger argument.  See
@@ -72,7 +72,7 @@ Para mais informações sobre como criar gatilhos, consulte [CREATE TRIGGER](sql
      for details.
     </p>
     <p>
-     <code class="literal">
+     <code>
       CREATE TRIGGER ... tsvector_update_trigger(tsvcol, 'pg_catalog.swedish', title, body)
      </code>
     </p>
@@ -81,21 +81,21 @@ Para mais informações sobre como criar gatilhos, consulte [CREATE TRIGGER](sql
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       tsvector_update_trigger_column
      </code>
      ( ) →
-     <code class="returnvalue">
+     <code>
       trigger
      </code>
     </p>
     <p>
      Automatically updates a
-     <code class="type">
+     <code>
       tsvector
      </code>
      column from associated plain-text document column(s).  The text search configuration to use is taken from a
-     <code class="type">
+     <code>
       regconfig
      </code>
      column of the table.  See
@@ -105,7 +105,7 @@ Para mais informações sobre como criar gatilhos, consulte [CREATE TRIGGER](sql
      for details.
     </p>
     <p>
-     <code class="literal">
+     <code>
       CREATE TRIGGER ... tsvector_update_trigger_column(tsvcol, tsconfigcol, title, body)
      </code>
     </p>

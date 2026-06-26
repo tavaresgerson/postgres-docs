@@ -10,7 +10,7 @@ Existem vários tipos distintos de objetos que podem ser bloqueados: relações 
 
 
 
-<table border="1" class="table" summary="pg_locks Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -30,60 +30,60 @@ Existem vários tipos distintos de objetos que podem ser bloqueados: relações 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       locktype
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      Tipo do objeto que pode ser trancado:
-     <code class="literal">
+     <code>
       relation
      </code>
      ,
-     <code class="literal">
+     <code>
       extend
      </code>
      ,
-     <code class="literal">
+     <code>
       frozenid
      </code>
      ,
-     <code class="literal">
+     <code>
       page
      </code>
      ,
-     <code class="literal">
+     <code>
       tuple
      </code>
      ,
-     <code class="literal">
+     <code>
       transactionid
      </code>
      ,
-     <code class="literal">
+     <code>
       virtualxid
      </code>
      ,
-     <code class="literal">
+     <code>
       spectoken
      </code>
      ,
-     <code class="literal">
+     <code>
       object
      </code>
      ,
-     <code class="literal">
+     <code>
       userlock
      </code>
      ,
-     <code class="literal">
+     <code>
       advisory
      </code>
      , ou
-     <code class="literal">
+     <code>
       applytransaction
      </code>
      . (Veja também
@@ -97,20 +97,20 @@ Existem vários tipos distintos de objetos que podem ser bloqueados: relações 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       database
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-database.md" title="52.15. pg_database">
-      <code class="structname">
+      <code>
        pg_database
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -123,20 +123,20 @@ Existem vários tipos distintos de objetos que podem ser bloqueados: relações 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relation
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -149,10 +149,10 @@ Existem vários tipos distintos de objetos que podem ser bloqueados: relações 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       page
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -164,10 +164,10 @@ Existem vários tipos distintos de objetos que podem ser bloqueados: relações 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tuple
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
@@ -179,10 +179,10 @@ Existem vários tipos distintos de objetos que podem ser bloqueados: relações 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       virtualxid
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -197,10 +197,10 @@ Existem vários tipos distintos de objetos que podem ser bloqueados: relações 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       transactionid
      </code>
-     <code class="type">
+     <code>
       xid
      </code>
     </p>
@@ -215,20 +215,20 @@ Existem vários tipos distintos de objetos que podem ser bloqueados: relações 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       classid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -241,10 +241,10 @@ Existem vários tipos distintos de objetos que podem ser bloqueados: relações 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       objid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referência a qualquer coluna OID)
@@ -257,20 +257,20 @@ Existem vários tipos distintos de objetos que podem ser bloqueados: relações 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       objsubid
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
     <p>
      Número da coluna almejada pelo bloqueio (o
-     <code class="structfield">
+     <code>
       classid
      </code>
      e
-     <code class="structfield">
+     <code>
       objid
      </code>
      se refere à própria tabela), ou zero se o alvo for algum outro objeto de banco de dados geral, ou nulo se o alvo não for um objeto de banco de dados geral
@@ -280,10 +280,10 @@ Existem vários tipos distintos de objetos que podem ser bloqueados: relações 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       virtualtransaction
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -295,10 +295,10 @@ Existem vários tipos distintos de objetos que podem ser bloqueados: relações 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pid
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -310,10 +310,10 @@ Existem vários tipos distintos de objetos que podem ser bloqueados: relações 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       mode
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -333,10 +333,10 @@ Existem vários tipos distintos de objetos que podem ser bloqueados: relações 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       granted
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -348,10 +348,10 @@ Existem vários tipos distintos de objetos que podem ser bloqueados: relações 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       fastpath
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -363,20 +363,20 @@ Existem vários tipos distintos de objetos que podem ser bloqueados: relações 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       waitstart
      </code>
-     <code class="type">
+     <code>
       timestamptz
      </code>
     </p>
     <p>
      O tempo em que o processo do servidor começou a esperar por esse bloqueio, ou nulo se o bloqueio estiver sendo mantido. Note que isso pode ser nulo por um período muito curto de tempo após o início da espera, mesmo que
-     <code class="structfield">
+     <code>
       granted
      </code>
      é
-     <code class="literal">
+     <code>
       false
      </code>
      .

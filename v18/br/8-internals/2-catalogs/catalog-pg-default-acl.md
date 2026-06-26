@@ -6,7 +6,7 @@ O catálogo `pg_default_acl` armazena privilégios iniciais a serem atribuídos 
 
 
 
-<table border="1" class="table" summary="pg_default_acl Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_default_acl` armazena privilégios iniciais a serem atribuídos 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,20 +41,20 @@ O catálogo `pg_default_acl` armazena privilégios iniciais a serem atribuídos 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       defaclrole
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -67,20 +67,20 @@ O catálogo `pg_default_acl` armazena privilégios iniciais a serem atribuídos 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       defaclnamespace
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -93,36 +93,36 @@ O catálogo `pg_default_acl` armazena privilégios iniciais a serem atribuídos 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       defaclobjtype
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
     <p>
      Tipo de objeto para o qual esta entrada é destinada:
-     <code class="literal">
+     <code>
       r
      </code>
      = relação (tabela, visualização),
-     <code class="literal">
+     <code>
       S
      </code>
      = sequência,
-     <code class="literal">
+     <code>
       f
      </code>
      = função,
-     <code class="literal">
+     <code>
       T
      </code>
      = tipo,
-     <code class="literal">
+     <code>
       n
      </code>
      = esquema,
-     <code class="literal">
+     <code>
       L
      </code>
      = grande objeto
@@ -132,10 +132,10 @@ O catálogo `pg_default_acl` armazena privilégios iniciais a serem atribuídos 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       defaclacl
      </code>
-     <code class="type">
+     <code>
       aclitem[]
      </code>
     </p>

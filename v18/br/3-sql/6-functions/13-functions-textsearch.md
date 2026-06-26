@@ -6,7 +6,7 @@
 
 
 
-<table border="1" class="table" summary="Text Search Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -29,52 +29,52 @@
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       tsvector
      </code>
-     <code class="literal">
+     <code>
       @@
      </code>
-     <code class="type">
+     <code>
       tsquery
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p class="func_signature">
-     <code class="type">
+     <code>
       tsquery
      </code>
-     <code class="literal">
+     <code>
       @@
      </code>
-     <code class="type">
+     <code>
       tsvector
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Faz
-     <code class="type">
+     <code>
       tsvector
      </code>
      jogo
-     <code class="type">
+     <code>
       tsquery
      </code>
      (Os argumentos podem ser apresentados em qualquer ordem.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_tsvector('fat cats ate rats') @@ to_tsquery('cat &amp; rat')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -83,37 +83,37 @@
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       text
      </code>
-     <code class="literal">
+     <code>
       @@
      </code>
-     <code class="type">
+     <code>
       tsquery
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Texto, após invocação implícita de
-     <code class="function">
+     <code>
       to_tsvector()
      </code>
      , jogo
-     <code class="type">
+     <code>
       tsquery
      </code>
      ?
     </p>
     <p>
-     <code class="literal">
+     <code>
       'fat cats ate rats' @@ to_tsquery('cat &amp; rat')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -122,33 +122,33 @@
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       tsvector
      </code>
-     <code class="literal">
+     <code>
       ||
      </code>
-     <code class="type">
+     <code>
       tsvector
      </code>
      →
-     <code class="returnvalue">
+     <code>
       tsvector
      </code>
     </p>
     <p>
      Concatenam dois
-     <code class="type">
+     <code>
       tsvector
      </code>
      s. Se ambos os inputs contiverem posições de léxico, as posições do segundo input são ajustadas conforme necessário.
     </p>
     <p>
-     <code class="literal">
+     <code>
       'a:1 b:2'::tsvector || 'c:1 d:2 b:3'::tsvector
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'a':1 'b':2,5 'c':3 'd':4
      </code>
     </p>
@@ -157,33 +157,33 @@
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       tsquery
      </code>
-     <code class="literal">
+     <code>
       &amp;&amp;
      </code>
-     <code class="type">
+     <code>
       tsquery
      </code>
      →
-     <code class="returnvalue">
+     <code>
       tsquery
      </code>
     </p>
     <p>
      E os dois ANDs
-     <code class="type">
+     <code>
       tsquery
      </code>
      juntos, produzindo uma consulta que corresponde a documentos que correspondem às duas consultas de entrada.
     </p>
     <p>
-     <code class="literal">
+     <code>
       'fat | rat'::tsquery &amp;&amp; 'cat'::tsquery
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ( 'fat' | 'rat' ) &amp; 'cat'
      </code>
     </p>
@@ -192,33 +192,33 @@
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       tsquery
      </code>
-     <code class="literal">
+     <code>
       ||
      </code>
-     <code class="type">
+     <code>
       tsquery
      </code>
      →
-     <code class="returnvalue">
+     <code>
       tsquery
      </code>
     </p>
     <p>
      ORs dois
-     <code class="type">
+     <code>
       tsquery
      </code>
      juntos, produzindo uma consulta que corresponde a documentos que correspondem à consulta de entrada.
     </p>
     <p>
-     <code class="literal">
+     <code>
       'fat | rat'::tsquery || 'cat'::tsquery
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'fat' | 'rat' | 'cat'
      </code>
     </p>
@@ -227,30 +227,30 @@
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       !!
      </code>
-     <code class="type">
+     <code>
       tsquery
      </code>
      →
-     <code class="returnvalue">
+     <code>
       tsquery
      </code>
     </p>
     <p>
      Anula um
-     <code class="type">
+     <code>
       tsquery
      </code>
      , produzindo uma consulta que corresponde a documentos que não correspondem à consulta de entrada.
     </p>
     <p>
-     <code class="literal">
+     <code>
       !! 'cat'::tsquery
      </code>
      →
-     <code class="returnvalue">
+     <code>
       !'cat'
      </code>
     </p>
@@ -259,17 +259,17 @@
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       tsquery
      </code>
-     <code class="literal">
+     <code>
       &lt;-&gt;
      </code>
-     <code class="type">
+     <code>
       tsquery
      </code>
      →
-     <code class="returnvalue">
+     <code>
       tsquery
      </code>
     </p>
@@ -277,11 +277,11 @@
      Construi uma consulta de frase, que corresponde se as duas consultas de entrada corresponderem em lexemas sucessivos.
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_tsquery('fat') &lt;-&gt; to_tsquery('rat')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'fat' &lt;-&gt; 'rat'
      </code>
     </p>
@@ -290,33 +290,33 @@
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       tsquery
      </code>
-     <code class="literal">
+     <code>
       @&gt;
      </code>
-     <code class="type">
+     <code>
       tsquery
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Primeiro
-     <code class="type">
+     <code>
       tsquery
      </code>
      contêm o segundo? (Isso considera apenas se todos os lexemas que aparecem em uma consulta aparecem na outra, ignorando os operadores de combinação.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       'cat'::tsquery @&gt; 'cat &amp; rat'::tsquery
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
@@ -325,42 +325,42 @@
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       tsquery
      </code>
-     <code class="literal">
+     <code>
       &lt;@
      </code>
-     <code class="type">
+     <code>
       tsquery
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      É o primeiro
-     <code class="type">
+     <code>
       tsquery
      </code>
      contido no segundo? (Isso considera apenas se todos os lexemas que aparecem em uma consulta aparecem no outro, ignorando os operadores de combinação.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       'cat'::tsquery &lt;@ 'cat &amp; rat'::tsquery
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       'cat'::tsquery &lt;@ '!cat &amp; rat'::tsquery
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -384,7 +384,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
 
 
 
-<table border="1" class="table" summary="Text Search Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -407,35 +407,35 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       array_to_tsvector
      </code>
      (
-     <code class="type">
+     <code>
       text[]
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       tsvector
      </code>
     </p>
     <p>
      Converts an array of text strings to a
-     <code class="type">
+     <code>
       tsvector
      </code>
      . The given strings are used as lexemes as-is, without further processing.  Array elements must not be empty strings or
-     <code class="literal">
+     <code>
       NULL
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       array_to_tsvector('{fat,cat,rat}'::text[])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'cat' 'fat' 'rat'
      </code>
     </p>
@@ -444,11 +444,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       get_current_ts_config
      </code>
      ( ) →
-     <code class="returnvalue">
+     <code>
       regconfig
      </code>
     </p>
@@ -460,11 +460,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      ).
     </p>
     <p>
-     <code class="literal">
+     <code>
       get_current_ts_config()
      </code>
      →
-     <code class="returnvalue">
+     <code>
       english
      </code>
     </p>
@@ -473,31 +473,31 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       length
      </code>
      (
-     <code class="type">
+     <code>
       tsvector
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Returns the number of lexemes in the
-     <code class="type">
+     <code>
       tsvector
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       length('fat:2,4 cat:3 rat:5A'::tsvector)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       3
      </code>
     </p>
@@ -506,31 +506,31 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       numnode
      </code>
      (
-     <code class="type">
+     <code>
       tsquery
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Returns the number of lexemes plus operators in the
-     <code class="type">
+     <code>
       tsquery
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       numnode('(fat &amp; rat) | cat'::tsquery)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       5
      </code>
     </p>
@@ -539,7 +539,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       plainto_tsquery
      </code>
      ( [
@@ -549,7 +549,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
         config
        </code>
       </em>
-      <code class="type">
+      <code>
        regconfig
       </code>
       ,
@@ -560,27 +560,27 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        query
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       tsquery
      </code>
     </p>
     <p>
      Converts text to a
-     <code class="type">
+     <code>
       tsquery
      </code>
      , normalizing words according to the specified or default configuration.  Any punctuation in the string is ignored (it does not determine query operators).  The resulting query matches documents containing all non-stopwords in the text.
     </p>
     <p>
-     <code class="literal">
+     <code>
       plainto_tsquery('english', 'The Fat Rats')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'fat' &amp; 'rat'
      </code>
     </p>
@@ -589,7 +589,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       phraseto_tsquery
      </code>
      ( [
@@ -599,7 +599,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
         config
        </code>
       </em>
-      <code class="type">
+      <code>
        regconfig
       </code>
       ,
@@ -610,36 +610,36 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        query
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       tsquery
      </code>
     </p>
     <p>
      Converts text to a
-     <code class="type">
+     <code>
       tsquery
      </code>
      , normalizing words according to the specified or default configuration.  Any punctuation in the string is ignored (it does not determine query operators).  The resulting query matches phrases containing all non-stopwords in the text.
     </p>
     <p>
-     <code class="literal">
+     <code>
       phraseto_tsquery('english', 'The Fat Rats')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'fat' &lt;-&gt; 'rat'
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       phraseto_tsquery('english', 'The Cat and Rats')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'cat' &lt;2&gt; 'rat'
      </code>
     </p>
@@ -648,7 +648,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       websearch_to_tsquery
      </code>
      ( [
@@ -658,7 +658,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
         config
        </code>
       </em>
-      <code class="type">
+      <code>
        regconfig
       </code>
       ,
@@ -669,17 +669,17 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        query
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       tsquery
      </code>
     </p>
     <p>
      Converts text to a
-     <code class="type">
+     <code>
       tsquery
      </code>
      , normalizing words according to the specified or default configuration.  Quoted word sequences are converted to phrase tests.  The word
@@ -693,11 +693,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      is understood as producing an OR operator, and a dash produces a NOT operator; other punctuation is ignored. This approximates the behavior of some common web search tools.
     </p>
     <p>
-     <code class="literal">
+     <code>
       websearch_to_tsquery('english', '"fat rat" or cat dog')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'fat' &lt;-&gt; 'rat' | 'cat' &amp; 'dog'
      </code>
     </p>
@@ -706,35 +706,35 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       querytree
      </code>
      (
-     <code class="type">
+     <code>
       tsquery
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Produces a representation of the indexable portion of a
-     <code class="type">
+     <code>
       tsquery
      </code>
      .  A result that is empty or just
-     <code class="literal">
+     <code>
       T
      </code>
      indicates a non-indexable query.
     </p>
     <p>
-     <code class="literal">
+     <code>
       querytree('foo &amp; ! bar'::tsquery)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'foo'
      </code>
     </p>
@@ -743,7 +743,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       setweight
      </code>
      (
@@ -752,7 +752,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        vector
       </code>
      </em>
-     <code class="type">
+     <code>
       tsvector
      </code>
      ,
@@ -761,11 +761,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        weight
       </code>
      </em>
-     <code class="type">
+     <code>
       "char"
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       tsvector
      </code>
     </p>
@@ -785,11 +785,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       setweight('fat:2,4 cat:3 rat:5B'::tsvector, 'A')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'cat':3A 'fat':2A,4A 'rat':5A
      </code>
     </p>
@@ -798,7 +798,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       setweight
      </code>
      (
@@ -807,7 +807,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        vector
       </code>
      </em>
-     <code class="type">
+     <code>
       tsvector
      </code>
      ,
@@ -816,7 +816,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        weight
       </code>
      </em>
-     <code class="type">
+     <code>
       "char"
      </code>
      ,
@@ -825,11 +825,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        lexemes
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       tsvector
      </code>
     </p>
@@ -867,11 +867,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      are ignored.
     </p>
     <p>
-     <code class="literal">
+     <code>
       setweight('fat:2,4 cat:3 rat:5,6B'::tsvector, 'A', '{cat,rat}')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'cat':3A 'fat':2,4 'rat':5A,6A
      </code>
     </p>
@@ -880,31 +880,31 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       strip
      </code>
      (
-     <code class="type">
+     <code>
       tsvector
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       tsvector
      </code>
     </p>
     <p>
      Removes positions and weights from the
-     <code class="type">
+     <code>
       tsvector
      </code>
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       strip('fat:2,4 cat:3 rat:5A'::tsvector)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'cat' 'fat' 'rat'
      </code>
     </p>
@@ -913,7 +913,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_tsquery
      </code>
      ( [
@@ -923,7 +923,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
         config
        </code>
       </em>
-      <code class="type">
+      <code>
        regconfig
       </code>
       ,
@@ -934,31 +934,31 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        query
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       tsquery
      </code>
     </p>
     <p>
      Converts text to a
-     <code class="type">
+     <code>
       tsquery
      </code>
      , normalizing words according to the specified or default configuration.  The words must be combined by valid
-     <code class="type">
+     <code>
       tsquery
      </code>
      operators.
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_tsquery('english', 'The &amp; Fat &amp; Rats')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'fat' &amp; 'rat'
      </code>
     </p>
@@ -967,7 +967,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_tsvector
      </code>
      ( [
@@ -977,7 +977,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
         config
        </code>
       </em>
-      <code class="type">
+      <code>
        regconfig
       </code>
       ,
@@ -988,27 +988,27 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        document
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       tsvector
      </code>
     </p>
     <p>
      Converts text to a
-     <code class="type">
+     <code>
       tsvector
      </code>
      , normalizing words according to the specified or default configuration.  Position information is included in the result.
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_tsvector('english', 'The Fat Rats')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'fat':2 'rat':3
      </code>
     </p>
@@ -1017,7 +1017,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_tsvector
      </code>
      ( [
@@ -1027,7 +1027,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
         config
        </code>
       </em>
-      <code class="type">
+      <code>
        regconfig
       </code>
       ,
@@ -1038,16 +1038,16 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        document
       </code>
      </em>
-     <code class="type">
+     <code>
       json
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       tsvector
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       to_tsvector
      </code>
      ( [
@@ -1057,7 +1057,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
         config
        </code>
       </em>
-      <code class="type">
+      <code>
        regconfig
       </code>
       ,
@@ -1068,17 +1068,17 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        document
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       tsvector
      </code>
     </p>
     <p>
      Converts each string value in the JSON document to a
-     <code class="type">
+     <code>
       tsvector
      </code>
      , normalizing words according to the specified or default configuration.  The results are then concatenated in document order to produce the output.  Position information is generated as though one stopword exists between each pair of string values.  (Beware that
@@ -1090,26 +1090,26 @@ Além desses operadores especializados, os operadores de comparação comuns mos
       ”
      </span>
      of the fields of a JSON object is implementation-dependent when the input is
-     <code class="type">
+     <code>
       jsonb
      </code>
      ; observe the difference in the examples.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_tsvector('english', '{"aa": "The Fat Rats", "b": "dog"}'::json)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'dog':5 'fat':2 'rat':3
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       to_tsvector('english', '{"aa": "The Fat Rats", "b": "dog"}'::jsonb)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'dog':1 'fat':4 'rat':5
      </code>
     </p>
@@ -1118,7 +1118,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       json_to_tsvector
      </code>
      ( [
@@ -1128,7 +1128,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
         config
        </code>
       </em>
-      <code class="type">
+      <code>
        regconfig
       </code>
       ,
@@ -1139,7 +1139,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        document
       </code>
      </em>
-     <code class="type">
+     <code>
       json
      </code>
      ,
@@ -1148,16 +1148,16 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        filter
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       tsvector
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       jsonb_to_tsvector
      </code>
      ( [
@@ -1167,7 +1167,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
         config
        </code>
       </em>
-      <code class="type">
+      <code>
        regconfig
       </code>
       ,
@@ -1178,7 +1178,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        document
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ,
@@ -1187,11 +1187,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        filter
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       tsvector
      </code>
     </p>
@@ -1203,7 +1203,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
       </code>
      </em>
      and converts each one to a
-     <code class="type">
+     <code>
       tsvector
      </code>
      , normalizing words according to the specified or default configuration.  The results are then concatenated in document order to produce the output.  Position information is generated as though one stopword exists between each pair of selected items.  (Beware that
@@ -1215,7 +1215,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
       ”
      </span>
      of the fields of a JSON object is implementation-dependent when the input is
-     <code class="type">
+     <code>
       jsonb
      </code>
      .) The
@@ -1225,27 +1225,27 @@ Além desses operadores especializados, os operadores de comparação comuns mos
       </code>
      </em>
      must be a
-     <code class="type">
+     <code>
       jsonb
      </code>
      array containing zero or more of these keywords:
-     <code class="literal">
+     <code>
       "string"
      </code>
      (to include all string values),
-     <code class="literal">
+     <code>
       "numeric"
      </code>
      (to include all numeric values),
-     <code class="literal">
+     <code>
       "boolean"
      </code>
      (to include all boolean values),
-     <code class="literal">
+     <code>
       "key"
      </code>
      (to include all keys), or
-     <code class="literal">
+     <code>
       "all"
      </code>
      (to include all the above). As a special case, the
@@ -1257,20 +1257,20 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      can also be a simple JSON value that is one of these keywords.
     </p>
     <p>
-     <code class="literal">
+     <code>
       json_to_tsvector('english', '{"a": "The Fat Rats", "b": 123}'::json, '["string", "numeric"]')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       '123':5 'fat':2 'rat':3
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       json_to_tsvector('english', '{"cat": "The Fat Rats", "dog": 123}'::json, '"all"')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       '123':9 'cat':1 'dog':7 'fat':4 'rat':5
      </code>
     </p>
@@ -1279,7 +1279,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ts_delete
      </code>
      (
@@ -1288,7 +1288,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        vector
       </code>
      </em>
-     <code class="type">
+     <code>
       tsvector
      </code>
      ,
@@ -1297,11 +1297,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        lexeme
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       tsvector
      </code>
     </p>
@@ -1327,11 +1327,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      string is treated as a lexeme as-is, without further processing.
     </p>
     <p>
-     <code class="literal">
+     <code>
       ts_delete('fat:2,4 cat:3 rat:5A'::tsvector, 'fat')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'cat':3 'rat':5A
      </code>
     </p>
@@ -1340,7 +1340,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ts_delete
      </code>
      (
@@ -1349,7 +1349,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        vector
       </code>
      </em>
-     <code class="type">
+     <code>
       tsvector
      </code>
      ,
@@ -1358,11 +1358,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        lexemes
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       tsvector
      </code>
     </p>
@@ -1394,11 +1394,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      are ignored.
     </p>
     <p>
-     <code class="literal">
+     <code>
       ts_delete('fat:2,4 cat:3 rat:5A'::tsvector, ARRAY['fat','rat'])
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'cat':3
      </code>
     </p>
@@ -1407,7 +1407,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ts_filter
      </code>
      (
@@ -1416,7 +1416,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        vector
       </code>
      </em>
-     <code class="type">
+     <code>
       tsvector
      </code>
      ,
@@ -1425,11 +1425,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        weights
       </code>
      </em>
-     <code class="type">
+     <code>
       "char"[]
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       tsvector
      </code>
     </p>
@@ -1449,11 +1449,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       ts_filter('fat:2,4 cat:3b,7c rat:5A'::tsvector, '{a,b}')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'cat':3B 'rat':5A
      </code>
     </p>
@@ -1462,7 +1462,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ts_headline
      </code>
      ( [
@@ -1472,7 +1472,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
         config
        </code>
       </em>
-      <code class="type">
+      <code>
        regconfig
       </code>
       ,
@@ -1483,7 +1483,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        document
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -1492,7 +1492,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        query
       </code>
      </em>
-     <code class="type">
+     <code>
       tsquery
      </code>
      [
@@ -1503,12 +1503,12 @@ Além desses operadores especializados, os operadores de comparação comuns mos
         options
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -1526,7 +1526,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
       </code>
      </em>
      , which must be raw text not a
-     <code class="type">
+     <code>
       tsvector
      </code>
      .  Words in the document are normalized according to the specified or default configuration before matching to the query.  Use of this function is discussed in
@@ -1542,11 +1542,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      .
     </p>
     <p>
-     <code class="literal">
+     <code>
       ts_headline('The fat cat ate the rat.', 'cat')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       The fat &lt;b&gt;cat&lt;/b&gt; ate the rat.
      </code>
     </p>
@@ -1555,7 +1555,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ts_headline
      </code>
      ( [
@@ -1565,7 +1565,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
         config
        </code>
       </em>
-      <code class="type">
+      <code>
        regconfig
       </code>
       ,
@@ -1576,7 +1576,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        document
       </code>
      </em>
-     <code class="type">
+     <code>
       json
      </code>
      ,
@@ -1585,7 +1585,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        query
       </code>
      </em>
-     <code class="type">
+     <code>
       tsquery
      </code>
      [
@@ -1596,17 +1596,17 @@ Além desses operadores especializados, os operadores de comparação comuns mos
         options
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p class="func_signature">
-     <code class="function">
+     <code>
       ts_headline
      </code>
      ( [
@@ -1616,7 +1616,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
         config
        </code>
       </em>
-      <code class="type">
+      <code>
        regconfig
       </code>
       ,
@@ -1627,7 +1627,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        document
       </code>
      </em>
-     <code class="type">
+     <code>
       jsonb
      </code>
      ,
@@ -1636,7 +1636,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        query
       </code>
      </em>
-     <code class="type">
+     <code>
       tsquery
      </code>
      [
@@ -1647,12 +1647,12 @@ Além desses operadores especializados, os operadores de comparação comuns mos
         options
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -1676,11 +1676,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      for more details.
     </p>
     <p>
-     <code class="literal">
+     <code>
       ts_headline('{"cat":"raining cats and dogs"}'::jsonb, 'cat')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {"cat": "raining &lt;b&gt;cats&lt;/b&gt; and dogs"}
      </code>
     </p>
@@ -1689,7 +1689,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ts_rank
      </code>
      ( [
@@ -1699,7 +1699,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
         weights
        </code>
       </em>
-      <code class="type">
+      <code>
        real[]
       </code>
       ,
@@ -1710,7 +1710,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        vector
       </code>
      </em>
-     <code class="type">
+     <code>
       tsvector
      </code>
      ,
@@ -1719,7 +1719,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        query
       </code>
      </em>
-     <code class="type">
+     <code>
       tsquery
      </code>
      [
@@ -1730,12 +1730,12 @@ Além desses operadores especializados, os operadores de comparação comuns mos
         normalization
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       real
      </code>
     </p>
@@ -1759,11 +1759,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      for details.
     </p>
     <p>
-     <code class="literal">
+     <code>
       ts_rank(to_tsvector('raining cats and dogs'), 'cat')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0.06079271
      </code>
     </p>
@@ -1772,7 +1772,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ts_rank_cd
      </code>
      ( [
@@ -1782,7 +1782,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
         weights
        </code>
       </em>
-      <code class="type">
+      <code>
        real[]
       </code>
       ,
@@ -1793,7 +1793,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        vector
       </code>
      </em>
-     <code class="type">
+     <code>
       tsvector
      </code>
      ,
@@ -1802,7 +1802,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        query
       </code>
      </em>
-     <code class="type">
+     <code>
       tsquery
      </code>
      [
@@ -1813,12 +1813,12 @@ Além desses operadores especializados, os operadores de comparação comuns mos
         normalization
        </code>
       </em>
-      <code class="type">
+      <code>
        integer
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       real
      </code>
     </p>
@@ -1842,11 +1842,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      for details.
     </p>
     <p>
-     <code class="literal">
+     <code>
       ts_rank_cd(to_tsvector('raining cats and dogs'), 'cat')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0.1
      </code>
     </p>
@@ -1855,7 +1855,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ts_rewrite
      </code>
      (
@@ -1864,7 +1864,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        query
       </code>
      </em>
-     <code class="type">
+     <code>
       tsquery
      </code>
      ,
@@ -1873,7 +1873,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        target
       </code>
      </em>
-     <code class="type">
+     <code>
       tsquery
      </code>
      ,
@@ -1882,11 +1882,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        substitute
       </code>
      </em>
-     <code class="type">
+     <code>
       tsquery
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       tsquery
      </code>
     </p>
@@ -1916,11 +1916,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      for details.
     </p>
     <p>
-     <code class="literal">
+     <code>
       ts_rewrite('a &amp; b'::tsquery, 'a'::tsquery, 'foo|bar'::tsquery)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'b' &amp; ( 'foo' | 'bar' )
      </code>
     </p>
@@ -1929,7 +1929,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ts_rewrite
      </code>
      (
@@ -1938,7 +1938,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        query
       </code>
      </em>
-     <code class="type">
+     <code>
       tsquery
      </code>
      ,
@@ -1947,11 +1947,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        select
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       tsquery
      </code>
     </p>
@@ -1963,7 +1963,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
       </code>
      </em>
      according to target(s) and substitute(s) obtained by executing a
-     <code class="command">
+     <code>
       SELECT
      </code>
      command. See
@@ -1973,11 +1973,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      for details.
     </p>
     <p>
-     <code class="literal">
+     <code>
       SELECT ts_rewrite('a &amp; b'::tsquery, 'SELECT t,s FROM aliases')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'b' &amp; ( 'foo' | 'bar' )
      </code>
     </p>
@@ -1986,7 +1986,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       tsquery_phrase
      </code>
      (
@@ -1995,7 +1995,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        query1
       </code>
      </em>
-     <code class="type">
+     <code>
       tsquery
      </code>
      ,
@@ -2004,11 +2004,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        query2
       </code>
      </em>
-     <code class="type">
+     <code>
       tsquery
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       tsquery
      </code>
     </p>
@@ -2026,17 +2026,17 @@ Além desses operadores especializados, os operadores de comparação comuns mos
       </code>
      </em>
      at successive lexemes (same as
-     <code class="literal">
+     <code>
       &lt;-&gt;
      </code>
      operator).
     </p>
     <p>
-     <code class="literal">
+     <code>
       tsquery_phrase(to_tsquery('fat'), to_tsquery('cat'))
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'fat' &lt;-&gt; 'cat'
      </code>
     </p>
@@ -2045,7 +2045,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       tsquery_phrase
      </code>
      (
@@ -2054,7 +2054,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        query1
       </code>
      </em>
-     <code class="type">
+     <code>
       tsquery
      </code>
      ,
@@ -2063,7 +2063,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        query2
       </code>
      </em>
-     <code class="type">
+     <code>
       tsquery
      </code>
      ,
@@ -2072,11 +2072,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        distance
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       tsquery
      </code>
     </p>
@@ -2102,11 +2102,11 @@ Além desses operadores especializados, os operadores de comparação comuns mos
      lexemes apart.
     </p>
     <p>
-     <code class="literal">
+     <code>
       tsquery_phrase(to_tsquery('fat'), to_tsquery('cat'), 10)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       'fat' &lt;10&gt; 'cat'
      </code>
     </p>
@@ -2115,31 +2115,31 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       tsvector_to_array
      </code>
      (
-     <code class="type">
+     <code>
       tsvector
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text[]
      </code>
     </p>
     <p>
      Converts a
-     <code class="type">
+     <code>
       tsvector
      </code>
      to an array of lexemes.
     </p>
     <p>
-     <code class="literal">
+     <code>
       tsvector_to_array('fat:2,4 cat:3 rat:5A'::tsvector)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {cat,fat,rat}
      </code>
     </p>
@@ -2148,15 +2148,15 @@ Além desses operadores especializados, os operadores de comparação comuns mos
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       unnest
      </code>
      (
-     <code class="type">
+     <code>
       tsvector
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -2165,7 +2165,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        lexeme
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2174,7 +2174,7 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        positions
       </code>
      </em>
-     <code class="type">
+     <code>
       smallint[]
      </code>
      ,
@@ -2183,24 +2183,24 @@ Além desses operadores especializados, os operadores de comparação comuns mos
        weights
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
     </p>
     <p>
      Expands a
-     <code class="type">
+     <code>
       tsvector
      </code>
      into a set of rows, one per lexeme.
     </p>
     <p>
-     <code class="literal">
+     <code>
       select * from unnest('cat:3 fat:2,4 rat:5A'::tsvector)
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">
@@ -2232,7 +2232,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
 
 
 
-<table border="1" class="table" summary="Text Search Debugging Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -2255,7 +2255,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ts_debug
      </code>
      ( [
@@ -2265,7 +2265,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
         config
        </code>
       </em>
-      <code class="type">
+      <code>
        regconfig
       </code>
       ,
@@ -2276,11 +2276,11 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        document
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -2289,7 +2289,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        alias
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2298,7 +2298,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        description
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2307,7 +2307,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        token
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2316,7 +2316,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        dictionaries
       </code>
      </em>
-     <code class="type">
+     <code>
       regdictionary[]
      </code>
      ,
@@ -2325,7 +2325,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        dictionary
       </code>
      </em>
-     <code class="type">
+     <code>
       regdictionary
      </code>
      ,
@@ -2334,7 +2334,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        lexemes
       </code>
      </em>
-     <code class="type">
+     <code>
       text[]
      </code>
      )
@@ -2353,11 +2353,11 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
      for details.
     </p>
     <p>
-     <code class="literal">
+     <code>
       ts_debug('english', 'The Brightest supernovaes')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (asciiword,"Word, all ASCII",The,{english_stem},english_stem,{}) ...
      </code>
     </p>
@@ -2366,7 +2366,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ts_lexize
      </code>
      (
@@ -2375,7 +2375,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        dict
       </code>
      </em>
-     <code class="type">
+     <code>
       regdictionary
      </code>
      ,
@@ -2384,11 +2384,11 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        token
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text[]
      </code>
     </p>
@@ -2400,11 +2400,11 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
      for details.
     </p>
     <p>
-     <code class="literal">
+     <code>
       ts_lexize('english_stem', 'stars')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {star}
      </code>
     </p>
@@ -2413,7 +2413,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ts_parse
      </code>
      (
@@ -2422,7 +2422,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        parser_name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2431,11 +2431,11 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        document
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -2444,7 +2444,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        tokid
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -2453,7 +2453,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        token
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
@@ -2472,11 +2472,11 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
      for details.
     </p>
     <p>
-     <code class="literal">
+     <code>
       ts_parse('default', 'foo - bar')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (1,foo) ...
      </code>
     </p>
@@ -2485,7 +2485,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ts_parse
      </code>
      (
@@ -2494,7 +2494,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        parser_oid
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ,
@@ -2503,11 +2503,11 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        document
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -2516,7 +2516,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        tokid
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -2525,7 +2525,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        token
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
@@ -2544,11 +2544,11 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
      for details.
     </p>
     <p>
-     <code class="literal">
+     <code>
       ts_parse(3722, 'foo - bar')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (1,foo) ...
      </code>
     </p>
@@ -2557,7 +2557,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ts_token_type
      </code>
      (
@@ -2566,11 +2566,11 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        parser_name
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -2579,7 +2579,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        tokid
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -2588,7 +2588,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        alias
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2597,7 +2597,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        description
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
@@ -2610,11 +2610,11 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
      for details.
     </p>
     <p>
-     <code class="literal">
+     <code>
       ts_token_type('default')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (1,asciiword,"Word, all ASCII") ...
      </code>
     </p>
@@ -2623,7 +2623,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ts_token_type
      </code>
      (
@@ -2632,11 +2632,11 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        parser_oid
       </code>
      </em>
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -2645,7 +2645,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        tokid
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -2654,7 +2654,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        alias
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2663,7 +2663,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        description
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      )
@@ -2676,11 +2676,11 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
      for details.
     </p>
     <p>
-     <code class="literal">
+     <code>
       ts_token_type(3722)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (1,asciiword,"Word, all ASCII") ...
      </code>
     </p>
@@ -2689,7 +2689,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       ts_stat
      </code>
      (
@@ -2698,7 +2698,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        sqlquery
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      [
@@ -2709,12 +2709,12 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
         weights
        </code>
       </em>
-      <code class="type">
+      <code>
        text
       </code>
      </span>
      ] ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
      (
@@ -2723,7 +2723,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        word
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
      ,
@@ -2732,7 +2732,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        ndoc
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      ,
@@ -2741,7 +2741,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
        nentry
       </code>
      </em>
-     <code class="type">
+     <code>
       integer
      </code>
      )
@@ -2754,7 +2754,7 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
       </code>
      </em>
      , which must return a single
-     <code class="type">
+     <code>
       tsvector
      </code>
      column, and returns statistics about each distinct lexeme contained in the data. See
@@ -2764,11 +2764,11 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
      for details.
     </p>
     <p>
-     <code class="literal">
+     <code>
       ts_stat('SELECT vector FROM apod')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       (foo,10,15) ...
      </code>
     </p>

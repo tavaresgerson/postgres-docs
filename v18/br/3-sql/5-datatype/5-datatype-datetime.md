@@ -10,7 +10,7 @@ O PostgreSQL suporta o conjunto completo dos tipos de data e hora do SQL, mostra
 
 **Tabela 8.9. Tipos de data/hora**
 
-<table border="1" class="table" summary="Date/Time Types">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -44,7 +44,7 @@ O PostgreSQL suporta o conjunto completo dos tipos de data e hora do SQL, mostra
  <tbody>
   <tr>
    <td>
-    <code class="type">
+    <code>
      timestamp [ (
      <em class="replaceable">
       <code>
@@ -72,7 +72,7 @@ O PostgreSQL suporta o conjunto completo dos tipos de data e hora do SQL, mostra
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      timestamp [ (
      <em class="replaceable">
       <code>
@@ -100,7 +100,7 @@ O PostgreSQL suporta o conjunto completo dos tipos de data e hora do SQL, mostra
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      date
     </code>
    </td>
@@ -122,7 +122,7 @@ O PostgreSQL suporta o conjunto completo dos tipos de data e hora do SQL, mostra
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      time [ (
      <em class="replaceable">
       <code>
@@ -150,7 +150,7 @@ O PostgreSQL suporta o conjunto completo dos tipos de data e hora do SQL, mostra
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      time [ (
      <em class="replaceable">
       <code>
@@ -178,7 +178,7 @@ O PostgreSQL suporta o conjunto completo dos tipos de data e hora do SQL, mostra
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      interval [
      <em class="replaceable">
       <code>
@@ -261,7 +261,7 @@ onde *`p`* é uma especificação opcional de precisão que fornece o número de
 
 **Tabela 8.10. Data de entrada**
 
-<table border="1" class="table" summary="Date Input">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -291,7 +291,7 @@ onde *`p`* é uma especificação opcional de precisão que fornece o número de
    </td>
    <td>
     ambiguoso em qualquer
-    <code class="varname">
+    <code>
      datestyle
     </code>
     modo de entrada
@@ -303,11 +303,11 @@ onde *`p`* é uma especificação opcional de precisão que fornece o número de
    </td>
    <td>
     8 de janeiro em
-    <code class="literal">
+    <code>
      MDY
     </code>
     modo; 1º de agosto
-    <code class="literal">
+    <code>
      DMY
     </code>
     modo
@@ -319,7 +319,7 @@ onde *`p`* é uma especificação opcional de precisão que fornece o número de
    </td>
    <td>
     18 de janeiro em
-    <code class="literal">
+    <code>
      MDY
     </code>
     modo; rejeitado em outros modos
@@ -331,15 +331,15 @@ onde *`p`* é uma especificação opcional de precisão que fornece o número de
    </td>
    <td>
     2 de janeiro de 2003 em
-    <code class="literal">
+    <code>
      MDY
     </code>
     modo; 1 de fevereiro de 2003 em
-    <code class="literal">
+    <code>
      DMY
     </code>
     modo; 3 de fevereiro de 2001 em
-    <code class="literal">
+    <code>
      YMD
     </code>
     modo
@@ -375,7 +375,7 @@ onde *`p`* é uma especificação opcional de precisão que fornece o número de
    </td>
    <td>
     8 de janeiro em
-    <code class="literal">
+    <code>
      YMD
     </code>
     modo, caso contrário, erro
@@ -387,7 +387,7 @@ onde *`p`* é uma especificação opcional de precisão que fornece o número de
    </td>
    <td>
     8 de janeiro, exceto erro em
-    <code class="literal">
+    <code>
      YMD
     </code>
     modo
@@ -399,7 +399,7 @@ onde *`p`* é uma especificação opcional de precisão que fornece o número de
    </td>
    <td>
     8 de janeiro, exceto erro em
-    <code class="literal">
+    <code>
      YMD
     </code>
     modo
@@ -456,7 +456,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
 
 **Tabela 8.11. Tempo de entrada**
 
-<table border="1" class="table" summary="Time Input">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -474,7 +474,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      04:05:06.789
     </code>
    </td>
@@ -484,7 +484,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      04:05:06
     </code>
    </td>
@@ -494,7 +494,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      04:05
     </code>
    </td>
@@ -504,7 +504,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      040506
     </code>
    </td>
@@ -514,7 +514,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      04:05 AM
     </code>
    </td>
@@ -524,7 +524,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      04:05 PM
     </code>
    </td>
@@ -534,7 +534,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      04:05:06.789-8
     </code>
    </td>
@@ -544,7 +544,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      04:05:06-08:00
     </code>
    </td>
@@ -554,7 +554,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      04:05-08:00
     </code>
    </td>
@@ -564,7 +564,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      040506-08
     </code>
    </td>
@@ -574,7 +574,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      040506+0730
     </code>
    </td>
@@ -584,7 +584,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      040506+07:30:00
     </code>
    </td>
@@ -594,7 +594,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      04:05:06 PST
     </code>
    </td>
@@ -604,7 +604,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2003-04-12 04:05:06 America/New_York
     </code>
    </td>
@@ -617,11 +617,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
 
 **Tabela 8.12. Entrada de fuso horário**
 
-<table border="1" class="table" summary="Time Zone Input">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -635,7 +631,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PST
     </code>
    </td>
@@ -645,7 +641,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      America/New_York
     </code>
    </td>
@@ -655,7 +651,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PST8PDT
     </code>
    </td>
@@ -665,7 +661,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      -8:00:00
     </code>
    </td>
@@ -675,7 +671,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      -8:00
     </code>
    </td>
@@ -685,7 +681,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      -800
     </code>
    </td>
@@ -695,7 +691,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      -8
     </code>
    </td>
@@ -705,7 +701,7 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      zulu
     </code>
    </td>
@@ -715,13 +711,13 @@ A entrada válida para esses tipos consiste em uma hora do dia seguida de um fus
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      z
     </code>
    </td>
    <td>
     Forma abreviada de
-    <code class="literal">
+    <code>
      zulu
     </code>
     (também no ISO 8601)
@@ -786,7 +782,7 @@ O PostgreSQL suporta vários valores especiais de data/hora para conveniência, 
 
 **Tabela 8.13. Datas/horários especiais**
 
-<table border="1" class="table" summary="Special Date/Time Inputs">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -808,16 +804,16 @@ O PostgreSQL suporta vários valores especiais de data/hora para conveniência, 
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      epoch
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      date
     </code>
     ,
-    <code class="type">
+    <code>
      timestamp
     </code>
    </td>
@@ -827,20 +823,20 @@ O PostgreSQL suporta vários valores especiais de data/hora para conveniência, 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      infinity
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      date
     </code>
     ,
-    <code class="type">
+    <code>
      timestamp
     </code>
     ,
-    <code class="type">
+    <code>
      interval
     </code>
    </td>
@@ -850,20 +846,20 @@ O PostgreSQL suporta vários valores especiais de data/hora para conveniência, 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      -infinity
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      date
     </code>
     ,
-    <code class="type">
+    <code>
      timestamp
     </code>
     ,
-    <code class="type">
+    <code>
      interval
     </code>
    </td>
@@ -873,20 +869,20 @@ O PostgreSQL suporta vários valores especiais de data/hora para conveniência, 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      now
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      date
     </code>
     ,
-    <code class="type">
+    <code>
      time
     </code>
     ,
-    <code class="type">
+    <code>
      timestamp
     </code>
    </td>
@@ -896,22 +892,22 @@ O PostgreSQL suporta vários valores especiais de data/hora para conveniência, 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      today
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      date
     </code>
     ,
-    <code class="type">
+    <code>
      timestamp
     </code>
    </td>
    <td>
     meia-noite (
-    <code class="literal">
+    <code>
      00:00
     </code>
     ) de hoje
@@ -919,22 +915,22 @@ O PostgreSQL suporta vários valores especiais de data/hora para conveniência, 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      tomorrow
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      date
     </code>
     ,
-    <code class="type">
+    <code>
      timestamp
     </code>
    </td>
    <td>
     meia-noite (
-    <code class="literal">
+    <code>
      00:00
     </code>
     ) amanhã
@@ -942,22 +938,22 @@ O PostgreSQL suporta vários valores especiais de data/hora para conveniência, 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      yesterday
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      date
     </code>
     ,
-    <code class="type">
+    <code>
      timestamp
     </code>
    </td>
    <td>
     meia-noite (
-    <code class="literal">
+    <code>
      00:00
     </code>
     ) ontem
@@ -965,12 +961,12 @@ O PostgreSQL suporta vários valores especiais de data/hora para conveniência, 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      allballs
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      time
     </code>
    </td>
@@ -993,7 +989,7 @@ O formato de saída dos tipos de data/hora pode ser definido como um dos quatro 
 
 **Tabela 8.14. Estilos de saída de data/hora**
 
-<table border="1" class="table" summary="Date/Time Output Styles">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -1015,7 +1011,7 @@ O formato de saída dos tipos de data/hora pode ser definido como um dos quatro 
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ISO
     </code>
    </td>
@@ -1023,14 +1019,14 @@ O formato de saída dos tipos de data/hora pode ser definido como um dos quatro 
     ISO 8601, SQL standard
    </td>
    <td>
-    <code class="literal">
+    <code>
      1997-12-17 07:37:16-08
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SQL
     </code>
    </td>
@@ -1038,14 +1034,14 @@ O formato de saída dos tipos de data/hora pode ser definido como um dos quatro 
     traditional style
    </td>
    <td>
-    <code class="literal">
+    <code>
      12/17/1997 07:37:16.00 PST
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      Postgres
     </code>
    </td>
@@ -1053,14 +1049,14 @@ O formato de saída dos tipos de data/hora pode ser definido como um dos quatro 
     original style
    </td>
    <td>
-    <code class="literal">
+    <code>
      Wed Dec 17 07:37:16 1997 PST
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      German
     </code>
    </td>
@@ -1068,7 +1064,7 @@ O formato de saída dos tipos de data/hora pode ser definido como um dos quatro 
     regional style
    </td>
    <td>
-    <code class="literal">
+    <code>
      17.12.1997 07:37:16.00 PST
     </code>
    </td>
@@ -1084,7 +1080,7 @@ Nos estilos SQL e POSTGRES, o dia aparece antes do mês se o campo de ordenaçã
 
 **Tabela 8.15. Convenções de data de ordem**
 
-<table border="1" class="table" summary="Date Order Conventions">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -1093,7 +1089,7 @@ Nos estilos SQL e POSTGRES, o dia aparece antes do mês se o campo de ordenaçã
  <thead>
   <tr>
    <th>
-    <code class="varname">
+    <code>
      datestyle
     </code>
     Setting
@@ -1109,7 +1105,7 @@ Nos estilos SQL e POSTGRES, o dia aparece antes do mês se o campo de ordenaçã
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SQL, DMY
     </code>
    </td>
@@ -1133,14 +1129,14 @@ Nos estilos SQL e POSTGRES, o dia aparece antes do mês se o campo de ordenaçã
     </em>
    </td>
    <td>
-    <code class="literal">
+    <code>
      17/12/1997 15:37:16.00 CET
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SQL, MDY
     </code>
    </td>
@@ -1164,14 +1160,14 @@ Nos estilos SQL e POSTGRES, o dia aparece antes do mês se o campo de ordenaçã
     </em>
    </td>
    <td>
-    <code class="literal">
+    <code>
      12/17/1997 07:37:16.00 PST
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      Postgres, DMY
     </code>
    </td>
@@ -1195,7 +1191,7 @@ Nos estilos SQL e POSTGRES, o dia aparece antes do mês se o campo de ordenaçã
     </em>
    </td>
    <td>
-    <code class="literal">
+    <code>
      Wed 17 Dec 07:37:16 1997 PST
     </code>
    </td>
@@ -1267,11 +1263,7 @@ A string deve começar com um `P`, e pode incluir um `T` que introduz as unidade
 
 **Tabela 8.16. Abreviações de unidades de intervalo ISO 8601**
 
-<table border="1" class="table" summary="ISO 8601 Interval Unit Abbreviations">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -1371,11 +1363,7 @@ Os valores dos campos de entrada podem ter partes fracionárias, por exemplo, `'
 
 **Tabela 8.17. Entrada de intervalo**
 
-<table border="1" class="table" summary="Interval Input">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -1389,7 +1377,7 @@ Os valores dos campos de entrada podem ter partes fracionárias, por exemplo, `'
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      1-2
     </code>
    </td>
@@ -1399,7 +1387,7 @@ Os valores dos campos de entrada podem ter partes fracionárias, por exemplo, `'
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      3 4:05:06
     </code>
    </td>
@@ -1409,7 +1397,7 @@ Os valores dos campos de entrada podem ter partes fracionárias, por exemplo, `'
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      1 year 2 months 3 days 4 hours 5 minutes 6 seconds
     </code>
    </td>
@@ -1419,7 +1407,7 @@ Os valores dos campos de entrada podem ter partes fracionárias, por exemplo, `'
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      P1Y2M3DT4H5M6S
     </code>
    </td>
@@ -1437,7 +1425,7 @@ Os valores dos campos de entrada podem ter partes fracionárias, por exemplo, `'
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      P0001-02-03T04:05:06
     </code>
    </td>
@@ -1472,7 +1460,7 @@ A saída do estilo `iso_8601` corresponde ao "formato com designações" descrit
 
 **Tabela 8.18. Exemplos de estilo de saída de intervalo**
 
-<table border="1" class="table" summary="Interval Output Style Examples">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -1498,7 +1486,7 @@ A saída do estilo `iso_8601` corresponde ao "formato com designações" descrit
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      sql_standard
     </code>
    </td>
@@ -1514,7 +1502,7 @@ A saída do estilo `iso_8601` corresponde ao "formato com designações" descrit
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      postgres
     </code>
    </td>
@@ -1530,7 +1518,7 @@ A saída do estilo `iso_8601` corresponde ao "formato com designações" descrit
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      postgres_verbose
     </code>
    </td>
@@ -1546,7 +1534,7 @@ A saída do estilo `iso_8601` corresponde ao "formato com designações" descrit
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      iso_8601
     </code>
    </td>

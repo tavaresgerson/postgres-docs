@@ -20,7 +20,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
 
 
 
-<table border="1" class="table" summary="isn Data Types">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -38,7 +38,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
  <tbody>
   <tr>
    <td>
-    <code class="type">
+    <code>
      EAN13
     </code>
    </td>
@@ -48,7 +48,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      ISBN13
     </code>
    </td>
@@ -58,7 +58,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      ISMN13
     </code>
    </td>
@@ -68,7 +68,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      ISSN13
     </code>
    </td>
@@ -78,7 +78,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      ISBN
     </code>
    </td>
@@ -88,7 +88,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      ISMN
     </code>
    </td>
@@ -98,7 +98,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      ISSN
     </code>
    </td>
@@ -108,7 +108,7 @@ Este módulo é considerado "confiável", ou seja, pode ser instalado por usuár
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      UPC
     </code>
    </td>
@@ -161,7 +161,7 @@ O módulo `isn` fornece os operadores de comparação padrão, além do suporte 
 
 
 
-<table border="1" class="table" summary="isn Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -181,15 +181,15 @@ O módulo `isn` fornece os operadores de comparação padrão, além do suporte 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       make_valid
      </code>
      (
-     <code class="type">
+     <code>
       isn
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       isn
      </code>
     </p>
@@ -201,15 +201,15 @@ O módulo `isn` fornece os operadores de comparação padrão, além do suporte 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       is_valid
      </code>
      (
-     <code class="type">
+     <code>
       isn
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -221,21 +221,21 @@ O módulo `isn` fornece os operadores de comparação padrão, além do suporte 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       isn_weak
      </code>
      (
-     <code class="type">
+     <code>
       boolean
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Sets the weak input mode, and returns the new setting. This function is retained for backward compatibility. The recommended way to set weak mode is via the
-     <code class="varname">
+     <code>
       isn.weak
      </code>
      configuration parameter.
@@ -245,17 +245,17 @@ O módulo `isn` fornece os operadores de comparação padrão, além do suporte 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       isn_weak
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Returns the current status of the weak mode. This function is retained for backward compatibility. The recommended way to check weak mode is via the
-     <code class="varname">
+     <code>
       isn.weak
      </code>
      configuration parameter.

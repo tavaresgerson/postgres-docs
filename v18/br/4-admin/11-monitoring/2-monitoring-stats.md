@@ -67,11 +67,7 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
 
 
 
-<table border="1" class="table" summary="Dynamic Statistics Views">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -85,14 +81,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
  <tbody>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_activity
     </code>
    </td>
    <td>
     Uma linha por processo do servidor, mostrando informações relacionadas à atividade atual desse processo, como estado e consulta atual. Veja
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-ACTIVITY-VIEW" title="27.2.3. pg_stat_activity">
-     <code class="structname">
+     <code>
       pg_stat_activity
      </code>
     </a>
@@ -101,14 +97,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_replication
     </code>
    </td>
    <td>
     Uma linha por processo de emissor WAL, mostrando estatísticas sobre a replicação para o servidor de standby conectado a esse emissor. Veja
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-REPLICATION-VIEW" title="27.2.4. pg_stat_replication">
-     <code class="structname">
+     <code>
       pg_stat_replication
      </code>
     </a>
@@ -117,14 +113,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_wal_receiver
     </code>
    </td>
    <td>
     Apenas uma linha, mostrando estatísticas sobre o receptor WAL do servidor conectado desse receptor. Veja
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-WAL-RECEIVER-VIEW" title="27.2.6. pg_stat_wal_receiver">
-     <code class="structname">
+     <code>
       pg_stat_wal_receiver
      </code>
     </a>
@@ -133,14 +129,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_recovery_prefetch
     </code>
    </td>
    <td>
     Apenas uma linha, mostrando estatísticas sobre os blocos pré-carregados durante a recuperação.
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-RECOVERY-PREFETCH" title="27.2.7. pg_stat_recovery_prefetch">
-     <code class="structname">
+     <code>
       pg_stat_recovery_prefetch
      </code>
     </a>
@@ -149,14 +145,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_subscription
     </code>
    </td>
    <td>
     Pelo menos uma linha por assinatura, mostrando informações sobre os trabalhadores da assinatura. Veja
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-SUBSCRIPTION" title="27.2.8. pg_stat_subscription">
-     <code class="structname">
+     <code>
       pg_stat_subscription
      </code>
     </a>
@@ -165,14 +161,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_ssl
     </code>
    </td>
    <td>
     Uma linha por conexão (regular e de replicação), mostrando informações sobre SSL usado nesta conexão. Veja
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-SSL-VIEW" title="27.2.10. pg_stat_ssl">
-     <code class="structname">
+     <code>
       pg_stat_ssl
      </code>
     </a>
@@ -181,14 +177,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_gssapi
     </code>
    </td>
    <td>
     Uma linha por conexão (regular e de replicação), mostrando informações sobre a autenticação e criptografia GSSAPI usadas nesta conexão. Veja
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-GSSAPI-VIEW" title="27.2.11. pg_stat_gssapi">
-     <code class="structname">
+     <code>
       pg_stat_gssapi
      </code>
     </a>
@@ -197,13 +193,13 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_progress_analyze
     </code>
    </td>
    <td>
     Uma linha para cada backend (incluindo processos de trabalho do autovacuum) em execução
-    <code class="command">
+    <code>
      ANALYZE
     </code>
     , mostrando o progresso atual.
@@ -215,17 +211,17 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_progress_create_index
     </code>
    </td>
    <td>
     Uma linha para cada backend em execução
-    <code class="command">
+    <code>
      CREATE INDEX
     </code>
     ou
-    <code class="command">
+    <code>
      REINDEX
     </code>
     , mostrando o progresso atual. Veja
@@ -237,13 +233,13 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_progress_vacuum
     </code>
    </td>
    <td>
     Uma linha para cada backend (incluindo processos de trabalho do autovacuum) em execução
-    <code class="command">
+    <code>
      VACUUM
     </code>
     , mostrando o progresso atual.
@@ -255,17 +251,17 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_progress_cluster
     </code>
    </td>
    <td>
     Uma linha para cada backend em execução
-    <code class="command">
+    <code>
      CLUSTER
     </code>
     ou
-    <code class="command">
+    <code>
      VACUUM FULL
     </code>
     , mostrando o progresso atual.
@@ -277,7 +273,7 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_progress_basebackup
     </code>
    </td>
@@ -291,13 +287,13 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_progress_copy
     </code>
    </td>
    <td>
     Uma linha para cada backend em execução
-    <code class="command">
+    <code>
      COPY
     </code>
     , mostrando o progresso atual.
@@ -323,11 +319,7 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
 
 
 
-<table border="1" class="table" summary="Collected Statistics Views">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -341,14 +333,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
  <tbody>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_archiver
     </code>
    </td>
    <td>
     One row only, showing statistics about the WAL archiver process's activity. See
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-ARCHIVER-VIEW" title="27.2.12. pg_stat_archiver">
-     <code class="structname">
+     <code>
       pg_stat_archiver
      </code>
     </a>
@@ -357,14 +349,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_bgwriter
     </code>
    </td>
    <td>
     One row only, showing statistics about the background writer process's activity. See
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-BGWRITER-VIEW" title="27.2.14. pg_stat_bgwriter">
-     <code class="structname">
+     <code>
       pg_stat_bgwriter
      </code>
     </a>
@@ -373,14 +365,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_checkpointer
     </code>
    </td>
    <td>
     One row only, showing statistics about the checkpointer process's activity. See
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-CHECKPOINTER-VIEW" title="27.2.15. pg_stat_checkpointer">
-     <code class="structname">
+     <code>
       pg_stat_checkpointer
      </code>
     </a>
@@ -389,14 +381,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_database
     </code>
    </td>
    <td>
     One row per database, showing database-wide statistics. See
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-DATABASE-VIEW" title="27.2.17. pg_stat_database">
-     <code class="structname">
+     <code>
       pg_stat_database
      </code>
     </a>
@@ -405,14 +397,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_database_conflicts
     </code>
    </td>
    <td>
     One row per database, showing database-wide statistics about query cancels due to conflict with recovery on standby servers. See
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-DATABASE-CONFLICTS-VIEW" title="27.2.18. pg_stat_database_conflicts">
-     <code class="structname">
+     <code>
       pg_stat_database_conflicts
      </code>
     </a>
@@ -421,14 +413,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_io
     </code>
    </td>
    <td>
     One row for each combination of backend type, context, and target object containing cluster-wide I/O statistics. See
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-IO-VIEW" title="27.2.13. pg_stat_io">
-     <code class="structname">
+     <code>
       pg_stat_io
      </code>
     </a>
@@ -437,14 +429,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_replication_slots
     </code>
    </td>
    <td>
     One row per replication slot, showing statistics about the replication slot's usage. See
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-REPLICATION-SLOTS-VIEW" title="27.2.5. pg_stat_replication_slots">
-     <code class="structname">
+     <code>
       pg_stat_replication_slots
      </code>
     </a>
@@ -453,14 +445,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_slru
     </code>
    </td>
    <td>
     One row per SLRU, showing statistics of operations. See
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-SLRU-VIEW" title="27.2.25. pg_stat_slru">
-     <code class="structname">
+     <code>
       pg_stat_slru
      </code>
     </a>
@@ -469,14 +461,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_subscription_stats
     </code>
    </td>
    <td>
     One row per subscription, showing statistics about errors and conflicts. See
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-SUBSCRIPTION-STATS" title="27.2.9. pg_stat_subscription_stats">
-     <code class="structname">
+     <code>
       pg_stat_subscription_stats
      </code>
     </a>
@@ -485,14 +477,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_wal
     </code>
    </td>
    <td>
     One row only, showing statistics about WAL activity. See
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-WAL-VIEW" title="27.2.16. pg_stat_wal">
-     <code class="structname">
+     <code>
       pg_stat_wal
      </code>
     </a>
@@ -501,14 +493,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_all_tables
     </code>
    </td>
    <td>
     One row for each table in the current database, showing statistics about accesses to that specific table. See
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-ALL-TABLES-VIEW" title="27.2.19. pg_stat_all_tables">
-     <code class="structname">
+     <code>
       pg_stat_all_tables
      </code>
     </a>
@@ -517,13 +509,13 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_sys_tables
     </code>
    </td>
    <td>
     Same as
-    <code class="structname">
+    <code>
      pg_stat_all_tables
     </code>
     , except that only system tables are shown.
@@ -531,13 +523,13 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_user_tables
     </code>
    </td>
    <td>
     Same as
-    <code class="structname">
+    <code>
      pg_stat_all_tables
     </code>
     , except that only user tables are shown.
@@ -545,13 +537,13 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_xact_all_tables
     </code>
    </td>
    <td>
     Similar to
-    <code class="structname">
+    <code>
      pg_stat_all_tables
     </code>
     , but counts actions taken so far within the current transaction (which are
@@ -561,7 +553,7 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
      </em>
     </span>
     yet included in
-    <code class="structname">
+    <code>
      pg_stat_all_tables
     </code>
     and related views). The columns for numbers of live and dead rows and vacuum and analyze actions are not present in this view.
@@ -569,13 +561,13 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_xact_sys_tables
     </code>
    </td>
    <td>
     Same as
-    <code class="structname">
+    <code>
      pg_stat_xact_all_tables
     </code>
     , except that only system tables are shown.
@@ -583,13 +575,13 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_xact_user_tables
     </code>
    </td>
    <td>
     Same as
-    <code class="structname">
+    <code>
      pg_stat_xact_all_tables
     </code>
     , except that only user tables are shown.
@@ -597,14 +589,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_all_indexes
     </code>
    </td>
    <td>
     One row for each index in the current database, showing statistics about accesses to that specific index. See
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-ALL-INDEXES-VIEW" title="27.2.20. pg_stat_all_indexes">
-     <code class="structname">
+     <code>
       pg_stat_all_indexes
      </code>
     </a>
@@ -613,13 +605,13 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_sys_indexes
     </code>
    </td>
    <td>
     Same as
-    <code class="structname">
+    <code>
      pg_stat_all_indexes
     </code>
     , except that only indexes on system tables are shown.
@@ -627,13 +619,13 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_user_indexes
     </code>
    </td>
    <td>
     Same as
-    <code class="structname">
+    <code>
      pg_stat_all_indexes
     </code>
     , except that only indexes on user tables are shown.
@@ -641,14 +633,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_user_functions
     </code>
    </td>
    <td>
     One row for each tracked function, showing statistics about executions of that function. See
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-USER-FUNCTIONS-VIEW" title="27.2.24. pg_stat_user_functions">
-     <code class="structname">
+     <code>
       pg_stat_user_functions
      </code>
     </a>
@@ -657,13 +649,13 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_stat_xact_user_functions
     </code>
    </td>
    <td>
     Similar to
-    <code class="structname">
+    <code>
      pg_stat_user_functions
     </code>
     , but counts only calls during the current transaction (which are
@@ -673,7 +665,7 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
      </em>
     </span>
     yet included in
-    <code class="structname">
+    <code>
      pg_stat_user_functions
     </code>
     ).
@@ -681,14 +673,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_statio_all_tables
     </code>
    </td>
    <td>
     One row for each table in the current database, showing statistics about I/O on that specific table. See
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STATIO-ALL-TABLES-VIEW" title="27.2.21. pg_statio_all_tables">
-     <code class="structname">
+     <code>
       pg_statio_all_tables
      </code>
     </a>
@@ -697,13 +689,13 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_statio_sys_tables
     </code>
    </td>
    <td>
     Same as
-    <code class="structname">
+    <code>
      pg_statio_all_tables
     </code>
     , except that only system tables are shown.
@@ -711,13 +703,13 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_statio_user_tables
     </code>
    </td>
    <td>
     Same as
-    <code class="structname">
+    <code>
      pg_statio_all_tables
     </code>
     , except that only user tables are shown.
@@ -725,14 +717,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_statio_all_indexes
     </code>
    </td>
    <td>
     One row for each index in the current database, showing statistics about I/O on that specific index. See
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STATIO-ALL-INDEXES-VIEW" title="27.2.22. pg_statio_all_indexes">
-     <code class="structname">
+     <code>
       pg_statio_all_indexes
      </code>
     </a>
@@ -741,13 +733,13 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_statio_sys_indexes
     </code>
    </td>
    <td>
     Same as
-    <code class="structname">
+    <code>
      pg_statio_all_indexes
     </code>
     , except that only indexes on system tables are shown.
@@ -755,13 +747,13 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_statio_user_indexes
     </code>
    </td>
    <td>
     Same as
-    <code class="structname">
+    <code>
      pg_statio_all_indexes
     </code>
     , except that only indexes on user tables are shown.
@@ -769,14 +761,14 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_statio_all_sequences
     </code>
    </td>
    <td>
     One row for each sequence in the current database, showing statistics about I/O on that specific sequence. See
     <a class="link" href="monitoring-stats.md#MONITORING-PG-STATIO-ALL-SEQUENCES-VIEW" title="27.2.23. pg_statio_all_sequences">
-     <code class="structname">
+     <code>
       pg_statio_all_sequences
      </code>
     </a>
@@ -785,13 +777,13 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_statio_sys_sequences
     </code>
    </td>
    <td>
     Same as
-    <code class="structname">
+    <code>
      pg_statio_all_sequences
     </code>
     , except that only system sequences are shown.  (Presently, no system sequences are defined, so this view is always empty.)
@@ -799,13 +791,13 @@ Algumas das informações nas visualizações de estatísticas dinâmicas mostra
   </tr>
   <tr>
    <td>
-    <code class="structname">
+    <code>
      pg_statio_user_sequences
     </code>
    </td>
    <td>
     Same as
-    <code class="structname">
+    <code>
      pg_statio_all_sequences
     </code>
     , except that only user sequences are shown.
@@ -835,7 +827,7 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
 
 
 
-<table border="1" class="table" summary="pg_stat_activity View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -855,10 +847,10 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -870,10 +862,10 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -885,10 +877,10 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pid
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
@@ -900,16 +892,16 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       leader_pid
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
     <p>
      Process ID of the parallel group leader if this process is a parallel query worker, or process ID of the leader apply worker if this process is a parallel apply worker.
-     <code class="literal">
+     <code>
       NULL
      </code>
      indicates that this process is a parallel group leader or leader apply worker, or does not participate in any parallel operation.
@@ -919,10 +911,10 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       usesysid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -934,10 +926,10 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       usename
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -949,10 +941,10 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       application_name
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -964,10 +956,10 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       client_addr
      </code>
-     <code class="type">
+     <code>
       inet
      </code>
     </p>
@@ -979,16 +971,16 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       client_hostname
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      Host name of the connected client, as reported by a reverse DNS lookup of
-     <code class="structfield">
+     <code>
       client_addr
      </code>
      . This field will only be non-null for IP connections, and only when
@@ -1002,16 +994,16 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       client_port
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
     <p>
      TCP port number that the client is using for communication with this backend, or
-     <code class="literal">
+     <code>
       -1
      </code>
      if a Unix socket is used. If this field is null, it indicates that this is an internal server process.
@@ -1021,10 +1013,10 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       backend_start
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -1036,16 +1028,16 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       xact_start
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
     <p>
      Time when this process' current transaction was started, or null if no transaction is active. If the current query is the first of its transaction, this column is equal to the
-     <code class="structfield">
+     <code>
       query_start
      </code>
      column.
@@ -1055,20 +1047,20 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       query_start
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
     <p>
      Time when the currently active query was started, or if
-     <code class="structfield">
+     <code>
       state
      </code>
      is not
-     <code class="literal">
+     <code>
       active
      </code>
      , when the last query was started
@@ -1078,16 +1070,16 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       state_change
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
     <p>
      Time when the
-     <code class="structfield">
+     <code>
       state
      </code>
      was last changed
@@ -1097,10 +1089,10 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       wait_event_type
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -1116,10 +1108,10 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       wait_event
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -1139,10 +1131,10 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       state
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -1153,7 +1145,7 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
      <ul class="itemizedlist" style="list-style-type: disc; ">
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          starting
         </code>
         : The backend is in initial startup. Client authentication is performed during this phase.
@@ -1161,7 +1153,7 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          active
         </code>
         : The backend is executing a query.
@@ -1169,7 +1161,7 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          idle
         </code>
         : The backend is waiting for a new client command.
@@ -1177,7 +1169,7 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          idle in transaction
         </code>
         : The backend is in a transaction, but is not currently executing a query.
@@ -1185,11 +1177,11 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          idle in transaction (aborted)
         </code>
         : This state is similar to
-        <code class="literal">
+        <code>
          idle in transaction
         </code>
         , except one of the statements in the transaction caused an error.
@@ -1197,7 +1189,7 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          fastpath function call
         </code>
         : The backend is executing a fast-path function.
@@ -1205,7 +1197,7 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          disabled
         </code>
         : This state is reported if
@@ -1224,10 +1216,10 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       backend_xid
      </code>
-     <code class="type">
+     <code>
       xid
      </code>
     </p>
@@ -1243,16 +1235,16 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       backend_xmin
      </code>
-     <code class="type">
+     <code>
       xid
      </code>
     </p>
     <p>
      The current backend's
-     <code class="literal">
+     <code>
       xmin
      </code>
      horizon.
@@ -1262,20 +1254,20 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       query_id
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Identifier of this backend's most recent query. If
-     <code class="structfield">
+     <code>
       state
      </code>
      is
-     <code class="literal">
+     <code>
       active
      </code>
      this field shows the identifier of the currently executing query. In all other states, it shows the identifier of last query that was executed.  Query identifiers are not computed by default so this field will be null unless
@@ -1289,20 +1281,20 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       query
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      Text of this backend's most recent query. If
-     <code class="structfield">
+     <code>
       state
      </code>
      is
-     <code class="literal">
+     <code>
       active
      </code>
      this field shows the currently executing query. In all other states, it shows the last query that was executed. By default the query text is truncated at 1024 bytes; this value can be changed via the parameter
@@ -1316,72 +1308,72 @@ A visualização `pg_stat_activity` terá uma linha por processo do servidor, ex
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       backend_type
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      Type of current backend. Possible types are
-     <code class="literal">
+     <code>
       autovacuum launcher
      </code>
      ,
-     <code class="literal">
+     <code>
       autovacuum worker
      </code>
      ,
-     <code class="literal">
+     <code>
       logical replication launcher
      </code>
      ,
-     <code class="literal">
+     <code>
       logical replication worker
      </code>
      ,
-     <code class="literal">
+     <code>
       parallel worker
      </code>
      ,
-     <code class="literal">
+     <code>
       background writer
      </code>
      ,
-     <code class="literal">
+     <code>
       client backend
      </code>
      ,
-     <code class="literal">
+     <code>
       checkpointer
      </code>
      ,
-     <code class="literal">
+     <code>
       archiver
      </code>
      ,
-     <code class="literal">
+     <code>
       standalone backend
      </code>
      ,
-     <code class="literal">
+     <code>
       startup
      </code>
      ,
-     <code class="literal">
+     <code>
       walreceiver
      </code>
      ,
-     <code class="literal">
+     <code>
       walsender
      </code>
      ,
-     <code class="literal">
+     <code>
       walwriter
      </code>
      and
-     <code class="literal">
+     <code>
       walsummarizer
      </code>
      . In addition, background workers registered by extensions may have additional types.
@@ -1408,11 +1400,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
 
 
 
-<table border="1" class="table" summary="Wait Event Types">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -1426,13 +1414,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      Activity
     </code>
    </td>
    <td>
     The server process is idle.  This event type indicates a process waiting for activity in its main processing loop.
-    <code class="literal">
+    <code>
      wait_event
     </code>
     will identify the specific wait point; see
@@ -1444,7 +1432,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BufferPin
     </code>
    </td>
@@ -1458,13 +1446,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      Client
     </code>
    </td>
    <td>
     The server process is waiting for activity on a socket connected to a user application.  Thus, the server expects something to happen that is independent of its internal processes.
-    <code class="literal">
+    <code>
      wait_event
     </code>
     will identify the specific wait point; see
@@ -1476,7 +1464,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      Extension
     </code>
    </td>
@@ -1490,7 +1478,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      InjectionPoint
     </code>
    </td>
@@ -1504,13 +1492,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      IO
     </code>
    </td>
    <td>
     The server process is waiting for an I/O operation to complete.
-    <code class="literal">
+    <code>
      wait_event
     </code>
     will identify the specific wait point; see
@@ -1522,13 +1510,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      IPC
     </code>
    </td>
    <td>
     The server process is waiting for some interaction with another server process.
-    <code class="literal">
+    <code>
      wait_event
     </code>
     will identify the specific wait point; see
@@ -1540,13 +1528,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      Lock
     </code>
    </td>
    <td>
     The server process is waiting for a heavyweight lock. Heavyweight locks, also known as lock manager locks or simply locks, primarily protect SQL-visible objects such as tables.  However, they are also used to ensure mutual exclusion for certain internal operations such as relation extension.
-    <code class="literal">
+    <code>
      wait_event
     </code>
     will identify the type of lock awaited; see
@@ -1558,13 +1546,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LWLock
     </code>
    </td>
    <td>
     The server process is waiting for a lightweight lock. Most such locks protect a particular data structure in shared memory.
-    <code class="literal">
+    <code>
      wait_event
     </code>
     will contain a name identifying the purpose of the lightweight lock.  (Some locks have specific names; others are part of a group of locks each with a similar purpose.) See
@@ -1576,13 +1564,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      Timeout
     </code>
    </td>
    <td>
     The server process is waiting for a timeout to expire.
-    <code class="literal">
+    <code>
      wait_event
     </code>
     will identify the specific wait point; see
@@ -1608,15 +1596,11 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
 
 
 
-<table border="1" class="table" summary="Wait Events of Type Activity">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
-    <code class="literal">
+    <code>
      Activity
     </code>
     Wait Event
@@ -1629,7 +1613,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ArchiverMain
     </code>
    </td>
@@ -1639,7 +1623,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      AutovacuumMain
     </code>
    </td>
@@ -1649,7 +1633,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BgwriterHibernate
     </code>
    </td>
@@ -1659,7 +1643,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BgwriterMain
     </code>
    </td>
@@ -1669,7 +1653,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      CheckpointerMain
     </code>
    </td>
@@ -1679,7 +1663,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      CheckpointerShutdown
     </code>
    </td>
@@ -1689,7 +1673,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      IoWorkerMain
     </code>
    </td>
@@ -1699,7 +1683,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LogicalApplyMain
     </code>
    </td>
@@ -1709,7 +1693,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LogicalLauncherMain
     </code>
    </td>
@@ -1719,7 +1703,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LogicalParallelApplyMain
     </code>
    </td>
@@ -1729,7 +1713,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      RecoveryWalStream
     </code>
    </td>
@@ -1739,7 +1723,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ReplicationSlotsyncMain
     </code>
    </td>
@@ -1749,7 +1733,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ReplicationSlotsyncShutdown
     </code>
    </td>
@@ -1759,7 +1743,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SysloggerMain
     </code>
    </td>
@@ -1769,7 +1753,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalReceiverMain
     </code>
    </td>
@@ -1779,7 +1763,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalSenderMain
     </code>
    </td>
@@ -1789,7 +1773,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalSummarizerWal
     </code>
    </td>
@@ -1799,7 +1783,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalWriterMain
     </code>
    </td>
@@ -1823,15 +1807,11 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
 
 
 
-<table border="1" class="table" summary="Wait Events of Type Bufferpin">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
-    <code class="literal">
+    <code>
      BufferPin
     </code>
     Wait Event
@@ -1844,7 +1824,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BufferPin
     </code>
    </td>
@@ -1868,15 +1848,11 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
 
 
 
-<table border="1" class="table" summary="Wait Events of Type Client">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
-    <code class="literal">
+    <code>
      Client
     </code>
     Wait Event
@@ -1889,7 +1865,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ClientRead
     </code>
    </td>
@@ -1899,7 +1875,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ClientWrite
     </code>
    </td>
@@ -1909,7 +1885,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      GssOpenServer
     </code>
    </td>
@@ -1919,7 +1895,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LibpqwalreceiverConnect
     </code>
    </td>
@@ -1929,7 +1905,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LibpqwalreceiverReceive
     </code>
    </td>
@@ -1939,7 +1915,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SslOpenServer
     </code>
    </td>
@@ -1949,7 +1925,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WaitForStandbyConfirmation
     </code>
    </td>
@@ -1959,7 +1935,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalSenderWaitForWal
     </code>
    </td>
@@ -1969,7 +1945,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalSenderWriteData
     </code>
    </td>
@@ -1993,15 +1969,11 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
 
 
 
-<table border="1" class="table" summary="Wait Events of Type Extension">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
-    <code class="literal">
+    <code>
      Extension
     </code>
     Wait Event
@@ -2014,7 +1986,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      Extension
     </code>
    </td>
@@ -2038,15 +2010,11 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
 
 
 
-<table border="1" class="table" summary="Wait Events of Type Io">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
-    <code class="literal">
+    <code>
      IO
     </code>
     Wait Event
@@ -2059,7 +2027,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      AioIoCompletion
     </code>
    </td>
@@ -2069,7 +2037,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      AioIoUringExecution
     </code>
    </td>
@@ -2079,7 +2047,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      AioIoUringSubmit
     </code>
    </td>
@@ -2089,7 +2057,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BasebackupRead
     </code>
    </td>
@@ -2099,7 +2067,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BasebackupSync
     </code>
    </td>
@@ -2109,7 +2077,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BasebackupWrite
     </code>
    </td>
@@ -2119,7 +2087,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BuffileRead
     </code>
    </td>
@@ -2129,7 +2097,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BuffileTruncate
     </code>
    </td>
@@ -2139,7 +2107,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BuffileWrite
     </code>
    </td>
@@ -2149,13 +2117,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ControlFileRead
     </code>
    </td>
    <td>
     Esperando uma leitura do
-    <code class="filename">
+    <code>
      pg_control
     </code>
     file.
@@ -2163,13 +2131,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ControlFileSync
     </code>
    </td>
    <td>
     Esperando pelo
-    <code class="filename">
+    <code>
      pg_control
     </code>
     arquivo para alcançar armazenamento durável.
@@ -2177,13 +2145,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ControlFileSyncUpdate
     </code>
    </td>
    <td>
     Esperando por uma atualização para o
-    <code class="filename">
+    <code>
      pg_control
     </code>
     arquivo para alcançar armazenamento durável.
@@ -2191,13 +2159,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ControlFileWrite
     </code>
    </td>
    <td>
     Esperando uma escrita para o
-    <code class="filename">
+    <code>
      pg_control
     </code>
     file.
@@ -2205,13 +2173,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ControlFileWriteUpdate
     </code>
    </td>
    <td>
     Esperando por uma atualização para atualizar
-    <code class="filename">
+    <code>
      pg_control
     </code>
     file.
@@ -2219,7 +2187,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      CopyFileCopy
     </code>
    </td>
@@ -2229,7 +2197,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      CopyFileRead
     </code>
    </td>
@@ -2239,7 +2207,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      CopyFileWrite
     </code>
    </td>
@@ -2249,7 +2217,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DataFileExtend
     </code>
    </td>
@@ -2259,7 +2227,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DataFileFlush
     </code>
    </td>
@@ -2269,7 +2237,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DataFileImmediateSync
     </code>
    </td>
@@ -2279,7 +2247,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DataFilePrefetch
     </code>
    </td>
@@ -2289,7 +2257,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DataFileRead
     </code>
    </td>
@@ -2299,7 +2267,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DataFileSync
     </code>
    </td>
@@ -2309,7 +2277,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DataFileTruncate
     </code>
    </td>
@@ -2319,7 +2287,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DataFileWrite
     </code>
    </td>
@@ -2329,7 +2297,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DsmAllocate
     </code>
    </td>
@@ -2339,7 +2307,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DsmFillZeroWrite
     </code>
    </td>
@@ -2349,7 +2317,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LockFileAddtodatadirRead
     </code>
    </td>
@@ -2359,7 +2327,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LockFileAddtodatadirSync
     </code>
    </td>
@@ -2369,7 +2337,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LockFileAddtodatadirWrite
     </code>
    </td>
@@ -2379,7 +2347,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LockFileCreateRead
     </code>
    </td>
@@ -2389,7 +2357,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LockFileCreateSync
     </code>
    </td>
@@ -2399,7 +2367,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LockFileCreateWrite
     </code>
    </td>
@@ -2409,7 +2377,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LockFileRecheckdatadirRead
     </code>
    </td>
@@ -2419,7 +2387,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LogicalRewriteCheckpointSync
     </code>
    </td>
@@ -2429,7 +2397,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LogicalRewriteMappingSync
     </code>
    </td>
@@ -2439,7 +2407,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LogicalRewriteMappingWrite
     </code>
    </td>
@@ -2449,7 +2417,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LogicalRewriteSync
     </code>
    </td>
@@ -2459,7 +2427,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LogicalRewriteTruncate
     </code>
    </td>
@@ -2469,7 +2437,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LogicalRewriteWrite
     </code>
    </td>
@@ -2479,7 +2447,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      RelationMapRead
     </code>
    </td>
@@ -2489,7 +2457,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      RelationMapReplace
     </code>
    </td>
@@ -2499,7 +2467,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      RelationMapWrite
     </code>
    </td>
@@ -2509,7 +2477,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ReorderBufferRead
     </code>
    </td>
@@ -2519,7 +2487,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ReorderBufferWrite
     </code>
    </td>
@@ -2529,7 +2497,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ReorderLogicalMappingRead
     </code>
    </td>
@@ -2539,7 +2507,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ReplicationSlotRead
     </code>
    </td>
@@ -2549,7 +2517,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ReplicationSlotRestoreSync
     </code>
    </td>
@@ -2559,7 +2527,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ReplicationSlotSync
     </code>
    </td>
@@ -2569,7 +2537,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ReplicationSlotWrite
     </code>
    </td>
@@ -2579,7 +2547,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SlruFlushSync
     </code>
    </td>
@@ -2589,7 +2557,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SlruRead
     </code>
    </td>
@@ -2599,7 +2567,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SlruSync
     </code>
    </td>
@@ -2609,7 +2577,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SlruWrite
     </code>
    </td>
@@ -2619,7 +2587,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SnapbuildRead
     </code>
    </td>
@@ -2629,7 +2597,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SnapbuildSync
     </code>
    </td>
@@ -2639,7 +2607,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SnapbuildWrite
     </code>
    </td>
@@ -2649,7 +2617,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TimelineHistoryFileSync
     </code>
    </td>
@@ -2659,7 +2627,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TimelineHistoryFileWrite
     </code>
    </td>
@@ -2669,7 +2637,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TimelineHistoryRead
     </code>
    </td>
@@ -2679,7 +2647,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TimelineHistorySync
     </code>
    </td>
@@ -2689,7 +2657,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TimelineHistoryWrite
     </code>
    </td>
@@ -2699,7 +2667,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TwophaseFileRead
     </code>
    </td>
@@ -2709,7 +2677,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TwophaseFileSync
     </code>
    </td>
@@ -2719,7 +2687,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TwophaseFileWrite
     </code>
    </td>
@@ -2729,7 +2697,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      VersionFileSync
     </code>
    </td>
@@ -2739,7 +2707,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      VersionFileWrite
     </code>
    </td>
@@ -2749,7 +2717,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalsenderTimelineHistoryRead
     </code>
    </td>
@@ -2759,7 +2727,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalBootstrapSync
     </code>
    </td>
@@ -2769,7 +2737,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalBootstrapWrite
     </code>
    </td>
@@ -2779,7 +2747,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalCopyRead
     </code>
    </td>
@@ -2789,7 +2757,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalCopySync
     </code>
    </td>
@@ -2799,7 +2767,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalCopyWrite
     </code>
    </td>
@@ -2809,7 +2777,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalInitSync
     </code>
    </td>
@@ -2819,7 +2787,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalInitWrite
     </code>
    </td>
@@ -2829,7 +2797,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalRead
     </code>
    </td>
@@ -2839,7 +2807,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalSummaryRead
     </code>
    </td>
@@ -2849,7 +2817,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalSummaryWrite
     </code>
    </td>
@@ -2859,7 +2827,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalSync
     </code>
    </td>
@@ -2869,7 +2837,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalSyncMethodAssign
     </code>
    </td>
@@ -2879,7 +2847,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalWrite
     </code>
    </td>
@@ -2903,15 +2871,11 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
 
 
 
-<table border="1" class="table" summary="Wait Events of Type Ipc">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
-    <code class="literal">
+    <code>
      IPC
     </code>
     Wait Event
@@ -2924,13 +2888,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      AppendReady
     </code>
    </td>
    <td>
     Esperando por nós de subplano de um
-    <code class="literal">
+    <code>
      Append
     </code>
     O nó do plano estará pronto.
@@ -2938,7 +2902,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ArchiveCleanupCommand
     </code>
    </td>
@@ -2952,7 +2916,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ArchiveCommand
     </code>
    </td>
@@ -2966,7 +2930,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BackendTermination
     </code>
    </td>
@@ -2976,7 +2940,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BackupWaitWalArchive
     </code>
    </td>
@@ -2986,7 +2950,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BgworkerShutdown
     </code>
    </td>
@@ -2996,7 +2960,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BgworkerStartup
     </code>
    </td>
@@ -3006,7 +2970,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BtreePage
     </code>
    </td>
@@ -3016,7 +2980,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BufferIo
     </code>
    </td>
@@ -3026,7 +2990,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      CheckpointDelayComplete
     </code>
    </td>
@@ -3036,7 +3000,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      CheckpointDelayStart
     </code>
    </td>
@@ -3046,7 +3010,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      CheckpointDone
     </code>
    </td>
@@ -3056,7 +3020,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      CheckpointStart
     </code>
    </td>
@@ -3066,13 +3030,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ExecuteGather
     </code>
    </td>
    <td>
     Esperando por atividade de um processo de criança enquanto executa um
-    <code class="literal">
+    <code>
      Gather
     </code>
     nó do plano.
@@ -3080,7 +3044,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HashBatchAllocate
     </code>
    </td>
@@ -3090,7 +3054,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HashBatchElect
     </code>
    </td>
@@ -3100,7 +3064,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HashBatchLoad
     </code>
    </td>
@@ -3110,7 +3074,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HashBuildAllocate
     </code>
    </td>
@@ -3120,7 +3084,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HashBuildElect
     </code>
    </td>
@@ -3130,7 +3094,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HashBuildHashInner
     </code>
    </td>
@@ -3140,7 +3104,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HashBuildHashOuter
     </code>
    </td>
@@ -3150,7 +3114,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HashGrowBatchesDecide
     </code>
    </td>
@@ -3160,7 +3124,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HashGrowBatchesElect
     </code>
    </td>
@@ -3170,7 +3134,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HashGrowBatchesFinish
     </code>
    </td>
@@ -3180,7 +3144,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HashGrowBatchesReallocate
     </code>
    </td>
@@ -3190,7 +3154,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HashGrowBatchesRepartition
     </code>
    </td>
@@ -3200,7 +3164,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HashGrowBucketsElect
     </code>
    </td>
@@ -3210,7 +3174,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HashGrowBucketsReallocate
     </code>
    </td>
@@ -3220,7 +3184,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HashGrowBucketsReinsert
     </code>
    </td>
@@ -3230,7 +3194,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LogicalApplySendData
     </code>
    </td>
@@ -3240,7 +3204,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LogicalParallelApplyStateChange
     </code>
    </td>
@@ -3250,7 +3214,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LogicalSyncData
     </code>
    </td>
@@ -3260,7 +3224,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LogicalSyncStateChange
     </code>
    </td>
@@ -3270,7 +3234,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      MessageQueueInternal
     </code>
    </td>
@@ -3280,7 +3244,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      MessageQueuePutMessage
     </code>
    </td>
@@ -3290,7 +3254,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      MessageQueueReceive
     </code>
    </td>
@@ -3300,7 +3264,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      MessageQueueSend
     </code>
    </td>
@@ -3310,7 +3274,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      MultixactCreation
     </code>
    </td>
@@ -3320,7 +3284,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ParallelBitmapScan
     </code>
    </td>
@@ -3330,13 +3294,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ParallelCreateIndexScan
     </code>
    </td>
    <td>
     Esperando em paralelo
-    <code class="command">
+    <code>
      CREATE INDEX
     </code>
     trabalhadores para finalizar a varredura do monte.
@@ -3344,7 +3308,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ParallelFinish
     </code>
    </td>
@@ -3354,7 +3318,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ProcarrayGroupUpdate
     </code>
    </td>
@@ -3364,7 +3328,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ProcSignalBarrier
     </code>
    </td>
@@ -3374,7 +3338,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      Promote
     </code>
    </td>
@@ -3384,7 +3348,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      RecoveryConflictSnapshot
     </code>
    </td>
@@ -3394,7 +3358,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      RecoveryConflictTablespace
     </code>
    </td>
@@ -3404,7 +3368,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      RecoveryEndCommand
     </code>
    </td>
@@ -3418,7 +3382,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      RecoveryPause
     </code>
    </td>
@@ -3428,7 +3392,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ReplicationOriginDrop
     </code>
    </td>
@@ -3438,7 +3402,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ReplicationSlotDrop
     </code>
    </td>
@@ -3448,7 +3412,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      RestoreCommand
     </code>
    </td>
@@ -3462,13 +3426,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SafeSnapshot
     </code>
    </td>
    <td>
     Esperando obter um instantâneo válido para um
-    <code class="literal">
+    <code>
      READ ONLY DEFERRABLE
     </code>
     transaction.
@@ -3476,7 +3440,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SyncRep
     </code>
    </td>
@@ -3486,7 +3450,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalReceiverExit
     </code>
    </td>
@@ -3496,7 +3460,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalReceiverWaitStart
     </code>
    </td>
@@ -3506,7 +3470,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalSummaryReady
     </code>
    </td>
@@ -3516,7 +3480,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      XactGroupUpdate
     </code>
    </td>
@@ -3540,15 +3504,11 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
 
 
 
-<table border="1" class="table" summary="Wait Events of Type Lock">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
-    <code class="literal">
+    <code>
      Lock
     </code>
     Wait Event
@@ -3561,7 +3521,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      advisory
     </code>
    </td>
@@ -3571,7 +3531,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      applytransaction
     </code>
    </td>
@@ -3581,7 +3541,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      extend
     </code>
    </td>
@@ -3591,25 +3551,25 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      frozenid
     </code>
    </td>
    <td>
     Esperando atualizar
-    <code class="structname">
+    <code>
      pg_database
     </code>
     .
-    <code class="structfield">
+    <code>
      datfrozenxid
     </code>
     e
-    <code class="structname">
+    <code>
      pg_database
     </code>
     .
-    <code class="structfield">
+    <code>
      datminmxid
     </code>
     .
@@ -3617,7 +3577,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      object
     </code>
    </td>
@@ -3627,7 +3587,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      page
     </code>
    </td>
@@ -3637,7 +3597,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      relation
     </code>
    </td>
@@ -3647,7 +3607,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      spectoken
     </code>
    </td>
@@ -3657,7 +3617,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      transactionid
     </code>
    </td>
@@ -3667,7 +3627,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      tuple
     </code>
    </td>
@@ -3677,7 +3637,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      userlock
     </code>
    </td>
@@ -3687,7 +3647,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      virtualxid
     </code>
    </td>
@@ -3715,15 +3675,11 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
 
 
 
-<table border="1" class="table" summary="Wait Events of Type Lwlock">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
-    <code class="literal">
+    <code>
      LWLock
     </code>
     Wait Event
@@ -3736,7 +3692,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      AddinShmemInit
     </code>
    </td>
@@ -3746,7 +3702,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      AioUringCompletion
     </code>
    </td>
@@ -3756,7 +3712,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      AioWorkerSubmissionQueue
     </code>
    </td>
@@ -3766,13 +3722,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      AutoFile
     </code>
    </td>
    <td>
     Esperando atualizar o
-    <code class="filename">
+    <code>
      postgresql.auto.conf
     </code>
     file.
@@ -3780,7 +3736,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      Autovacuum
     </code>
    </td>
@@ -3790,7 +3746,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      AutovacuumSchedule
     </code>
    </td>
@@ -3800,7 +3756,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BackgroundWorker
     </code>
    </td>
@@ -3810,7 +3766,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BtreeVacuum
     </code>
    </td>
@@ -3820,7 +3776,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BufferContent
     </code>
    </td>
@@ -3830,7 +3786,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BufferMapping
     </code>
    </td>
@@ -3840,7 +3796,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      CheckpointerComm
     </code>
    </td>
@@ -3850,7 +3806,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      CommitTs
     </code>
    </td>
@@ -3860,7 +3816,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      CommitTsBuffer
     </code>
    </td>
@@ -3870,7 +3826,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      CommitTsSLRU
     </code>
    </td>
@@ -3880,13 +3836,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ControlFile
     </code>
    </td>
    <td>
     Esperando para ler ou atualizar o
-    <code class="filename">
+    <code>
      pg_control
     </code>
     arquivo ou crie um novo arquivo WAL.
@@ -3894,7 +3850,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DSMRegistry
     </code>
    </td>
@@ -3904,7 +3860,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DSMRegistryDSA
     </code>
    </td>
@@ -3914,7 +3870,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DSMRegistryHash
     </code>
    </td>
@@ -3924,7 +3880,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      DynamicSharedMemoryControl
     </code>
    </td>
@@ -3934,7 +3890,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      InjectionPoint
     </code>
    </td>
@@ -3944,7 +3900,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LockFastPath
     </code>
    </td>
@@ -3954,7 +3910,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LockManager
     </code>
    </td>
@@ -3972,7 +3928,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LogicalRepLauncherDSA
     </code>
    </td>
@@ -3982,7 +3938,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LogicalRepLauncherHash
     </code>
    </td>
@@ -3992,7 +3948,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      LogicalRepWorker
     </code>
    </td>
@@ -4002,7 +3958,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      MultiXactGen
     </code>
    </td>
@@ -4012,7 +3968,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      MultiXactMemberBuffer
     </code>
    </td>
@@ -4022,7 +3978,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      MultiXactMemberSLRU
     </code>
    </td>
@@ -4032,7 +3988,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      MultiXactOffsetBuffer
     </code>
    </td>
@@ -4042,7 +3998,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      MultiXactOffsetSLRU
     </code>
    </td>
@@ -4052,7 +4008,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      MultiXactTruncation
     </code>
    </td>
@@ -4062,13 +4018,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      NotifyBuffer
     </code>
    </td>
    <td>
     Esperando por I/O em um
-    <code class="command">
+    <code>
      NOTIFY
     </code>
     mensagem SLRU buffer.
@@ -4076,13 +4032,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      NotifyQueue
     </code>
    </td>
    <td>
     Esperando para ler ou atualizar
-    <code class="command">
+    <code>
      NOTIFY
     </code>
     messages.
@@ -4090,13 +4046,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      NotifyQueueTail
     </code>
    </td>
    <td>
     Esperando para atualizar o limite
-    <code class="command">
+    <code>
      NOTIFY
     </code>
     armazenamento de mensagens.
@@ -4104,13 +4060,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      NotifySLRU
     </code>
    </td>
    <td>
     Esperando acessar o
-    <code class="command">
+    <code>
      NOTIFY
     </code>
     mensagem SLRU cache.
@@ -4118,7 +4074,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      OidGen
     </code>
    </td>
@@ -4128,7 +4084,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ParallelAppend
     </code>
    </td>
@@ -4138,7 +4094,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ParallelBtreeScan
     </code>
    </td>
@@ -4148,7 +4104,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ParallelHashJoin
     </code>
    </td>
@@ -4158,7 +4114,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ParallelQueryDSA
     </code>
    </td>
@@ -4168,7 +4124,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ParallelVacuumDSA
     </code>
    </td>
@@ -4178,7 +4134,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PerSessionDSA
     </code>
    </td>
@@ -4188,7 +4144,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PerSessionRecordType
     </code>
    </td>
@@ -4198,7 +4154,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PerSessionRecordTypmod
     </code>
    </td>
@@ -4208,7 +4164,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PerXactPredicateList
     </code>
    </td>
@@ -4218,7 +4174,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PgStatsData
     </code>
    </td>
@@ -4228,7 +4184,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PgStatsDSA
     </code>
    </td>
@@ -4238,7 +4194,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PgStatsHash
     </code>
    </td>
@@ -4248,7 +4204,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PredicateLockManager
     </code>
    </td>
@@ -4258,7 +4214,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ProcArray
     </code>
    </td>
@@ -4268,13 +4224,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      RelationMapping
     </code>
    </td>
    <td>
     Esperando para ler ou atualizar um
-    <code class="filename">
+    <code>
      pg_filenode.map
     </code>
     arquivo (usado para rastrear as atribuições do filenode de certos catálogos do sistema).
@@ -4282,13 +4238,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      RelCacheInit
     </code>
    </td>
    <td>
     Esperando para ler ou atualizar um
-    <code class="filename">
+    <code>
      pg_internal.init
     </code>
     arquivo de inicialização do cache de relação.
@@ -4296,7 +4252,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ReplicationOrigin
     </code>
    </td>
@@ -4306,7 +4262,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ReplicationOriginState
     </code>
    </td>
@@ -4316,7 +4272,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ReplicationSlotAllocation
     </code>
    </td>
@@ -4326,7 +4282,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ReplicationSlotControl
     </code>
    </td>
@@ -4336,7 +4292,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ReplicationSlotIO
     </code>
    </td>
@@ -4346,7 +4302,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SerialBuffer
     </code>
    </td>
@@ -4356,13 +4312,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SerialControl
     </code>
    </td>
    <td>
     Esperando para ler ou atualizar compartilhado
-    <code class="filename">
+    <code>
      pg_serial
     </code>
     state.
@@ -4370,7 +4326,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SerializableFinishedList
     </code>
    </td>
@@ -4380,7 +4336,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SerializablePredicateList
     </code>
    </td>
@@ -4390,7 +4346,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SerializableXactHash
     </code>
    </td>
@@ -4400,7 +4356,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SerialSLRU
     </code>
    </td>
@@ -4410,7 +4366,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SharedTidBitmap
     </code>
    </td>
@@ -4420,7 +4376,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SharedTupleStore
     </code>
    </td>
@@ -4430,7 +4386,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ShmemIndex
     </code>
    </td>
@@ -4440,7 +4396,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SInvalRead
     </code>
    </td>
@@ -4450,7 +4406,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SInvalWrite
     </code>
    </td>
@@ -4460,7 +4416,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SubtransBuffer
     </code>
    </td>
@@ -4470,7 +4426,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SubtransSLRU
     </code>
    </td>
@@ -4480,7 +4436,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SyncRep
     </code>
    </td>
@@ -4490,7 +4446,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SyncScan
     </code>
    </td>
@@ -4500,7 +4456,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TablespaceCreate
     </code>
    </td>
@@ -4510,7 +4466,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TwoPhaseState
     </code>
    </td>
@@ -4520,7 +4476,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WaitEventCustom
     </code>
    </td>
@@ -4530,7 +4486,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WALBufMapping
     </code>
    </td>
@@ -4540,7 +4496,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WALInsert
     </code>
    </td>
@@ -4550,7 +4506,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WALSummarizer
     </code>
    </td>
@@ -4560,7 +4516,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WALWrite
     </code>
    </td>
@@ -4570,7 +4526,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WrapLimitsVacuum
     </code>
    </td>
@@ -4580,7 +4536,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      XactBuffer
     </code>
    </td>
@@ -4590,7 +4546,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      XactSLRU
     </code>
    </td>
@@ -4600,13 +4556,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      XactTruncation
     </code>
    </td>
    <td>
     Esperando executar
-    <code class="function">
+    <code>
      pg_xact_status
     </code>
     ou atualize o ID de transação mais antigo disponível.
@@ -4614,7 +4570,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      XidGen
     </code>
    </td>
@@ -4638,15 +4594,11 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
 
 
 
-<table border="1" class="table" summary="Wait Events of Type Timeout">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
-    <code class="literal">
+    <code>
      Timeout
     </code>
     Wait Event
@@ -4659,7 +4611,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      BaseBackupThrottle
     </code>
    </td>
@@ -4669,7 +4621,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      CheckpointWriteDelay
     </code>
    </td>
@@ -4679,13 +4631,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      PgSleep
     </code>
    </td>
    <td>
     Esperando devido a uma chamada
-    <code class="function">
+    <code>
      pg_sleep
     </code>
     ou uma função de irmão.
@@ -4693,7 +4645,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      RecoveryApplyDelay
     </code>
    </td>
@@ -4703,13 +4655,13 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      RecoveryRetrieveRetryInterval
     </code>
    </td>
    <td>
     Esperar durante a recuperação quando os dados do WAL não estão disponíveis em nenhuma fonte (
-    <code class="filename">
+    <code>
      pg_wal
     </code>
     , arquivar ou transmitir).
@@ -4717,7 +4669,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      RegisterSyncRequest
     </code>
    </td>
@@ -4727,7 +4679,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SpinDelay
     </code>
    </td>
@@ -4737,7 +4689,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      VacuumDelay
     </code>
    </td>
@@ -4747,7 +4699,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      VacuumTruncate
     </code>
    </td>
@@ -4757,7 +4709,7 @@ As colunas `wait_event` e `state` são independentes. Se um backend estiver no e
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      WalSummarizerError
     </code>
    </td>
@@ -4812,7 +4764,7 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
 
 
 
-<table border="1" class="table" summary="pg_stat_replication View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -4832,10 +4784,10 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pid
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
@@ -4847,10 +4799,10 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       usesysid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -4862,10 +4814,10 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       usename
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -4877,10 +4829,10 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       application_name
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -4892,10 +4844,10 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       client_addr
      </code>
-     <code class="type">
+     <code>
       inet
      </code>
     </p>
@@ -4907,16 +4859,16 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       client_hostname
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      Host name of the connected client, as reported by a reverse DNS lookup of
-     <code class="structfield">
+     <code>
       client_addr
      </code>
      . This field will only be non-null for IP connections, and only when
@@ -4930,16 +4882,16 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       client_port
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
     <p>
      TCP port number that the client is using for communication with this WAL sender, or
-     <code class="literal">
+     <code>
       -1
      </code>
      if a Unix socket is used
@@ -4949,10 +4901,10 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       backend_start
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -4964,16 +4916,16 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       backend_xmin
      </code>
-     <code class="type">
+     <code>
       xid
      </code>
     </p>
     <p>
      This standby's
-     <code class="literal">
+     <code>
       xmin
      </code>
      horizon reported by
@@ -4987,10 +4939,10 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       state
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -5001,7 +4953,7 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
      <ul class="itemizedlist" style="list-style-type: disc; ">
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          startup
         </code>
         : This WAL sender is starting up.
@@ -5009,7 +4961,7 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          catchup
         </code>
         : This WAL sender's connected standby is catching up with the primary.
@@ -5017,7 +4969,7 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          streaming
         </code>
         : This WAL sender is streaming changes after its connected standby server has caught up with the primary.
@@ -5025,7 +4977,7 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          backup
         </code>
         : This WAL sender is sending a backup.
@@ -5033,7 +4985,7 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          stopping
         </code>
         : This WAL sender is stopping.
@@ -5048,10 +5000,10 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sent_lsn
      </code>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
     </p>
@@ -5063,10 +5015,10 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       write_lsn
      </code>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
     </p>
@@ -5078,10 +5030,10 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       flush_lsn
      </code>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
     </p>
@@ -5093,10 +5045,10 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       replay_lsn
      </code>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
     </p>
@@ -5108,20 +5060,20 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       write_lag
      </code>
-     <code class="type">
+     <code>
       interval
      </code>
     </p>
     <p>
      Time elapsed between flushing recent WAL locally and receiving notification that this standby server has written it (but not yet flushed it or applied it).  This can be used to gauge the delay that
-     <code class="literal">
+     <code>
       synchronous_commit
      </code>
      level
-     <code class="literal">
+     <code>
       remote_write
      </code>
      incurred while committing if this server was configured as a synchronous standby.
@@ -5131,20 +5083,20 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       flush_lag
      </code>
-     <code class="type">
+     <code>
       interval
      </code>
     </p>
     <p>
      Time elapsed between flushing recent WAL locally and receiving notification that this standby server has written and flushed it (but not yet applied it).  This can be used to gauge the delay that
-     <code class="literal">
+     <code>
       synchronous_commit
      </code>
      level
-     <code class="literal">
+     <code>
       on
      </code>
      incurred while committing if this server was configured as a synchronous standby.
@@ -5154,20 +5106,20 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       replay_lag
      </code>
-     <code class="type">
+     <code>
       interval
      </code>
     </p>
     <p>
      Time elapsed between flushing recent WAL locally and receiving notification that this standby server has written, flushed and applied it.  This can be used to gauge the delay that
-     <code class="literal">
+     <code>
       synchronous_commit
      </code>
      level
-     <code class="literal">
+     <code>
       remote_apply
      </code>
      incurred while committing if this server was configured as a synchronous standby.
@@ -5177,10 +5129,10 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sync_priority
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
@@ -5192,10 +5144,10 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sync_state
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -5206,7 +5158,7 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
      <ul class="itemizedlist" style="list-style-type: disc; ">
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          async
         </code>
         : This standby server is asynchronous.
@@ -5214,7 +5166,7 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          potential
         </code>
         : This standby server is now asynchronous, but can potentially become synchronous if one of current synchronous ones fails.
@@ -5222,7 +5174,7 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          sync
         </code>
         : This standby server is synchronous.
@@ -5230,7 +5182,7 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          quorum
         </code>
         : This standby server is considered as a candidate for quorum standbys.
@@ -5245,10 +5197,10 @@ A visão `pg_stat_replication` conterá uma linha por processo de emissor WAL, m
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       reply_time
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -5285,7 +5237,7 @@ A visualização `pg_stat_replication_slots` conterá uma linha por slot de repl
 
 
 
-<table border="1" class="table" summary="pg_stat_replication_slots View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -5305,10 +5257,10 @@ A visualização `pg_stat_replication_slots` conterá uma linha por slot de repl
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       slot_name
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -5320,16 +5272,16 @@ A visualização `pg_stat_replication_slots` conterá uma linha por slot de repl
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       spill_txns
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Number of transactions spilled to disk once the memory used by logical decoding to decode changes from WAL has exceeded
-     <code class="literal">
+     <code>
       logical_decoding_work_mem
      </code>
      . The counter gets incremented for both top-level transactions and subtransactions.
@@ -5339,10 +5291,10 @@ A visualização `pg_stat_replication_slots` conterá uma linha por slot de repl
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       spill_count
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -5354,16 +5306,16 @@ A visualização `pg_stat_replication_slots` conterá uma linha por slot de repl
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       spill_bytes
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Amount of decoded transaction data spilled to disk while performing decoding of changes from WAL for this slot. This and other spill counters can be used to gauge the I/O which occurred during logical decoding and allow tuning
-     <code class="literal">
+     <code>
       logical_decoding_work_mem
      </code>
      .
@@ -5373,16 +5325,16 @@ A visualização `pg_stat_replication_slots` conterá uma linha por slot de repl
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stream_txns
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Number of in-progress transactions streamed to the decoding output plugin after the memory used by logical decoding to decode changes from WAL for this slot has exceeded
-     <code class="literal">
+     <code>
       logical_decoding_work_mem
      </code>
      . Streaming only works with top-level transactions (subtransactions can't be streamed independently), so the counter is not incremented for subtransactions.
@@ -5392,10 +5344,10 @@ A visualização `pg_stat_replication_slots` conterá uma linha por slot de repl
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stream_count
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -5407,16 +5359,16 @@ A visualização `pg_stat_replication_slots` conterá uma linha por slot de repl
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stream_bytes
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Amount of transaction data decoded for streaming in-progress transactions to the decoding output plugin while decoding changes from WAL for this slot. This and other streaming counters for this slot can be used to tune
-     <code class="literal">
+     <code>
       logical_decoding_work_mem
      </code>
      .
@@ -5426,10 +5378,10 @@ A visualização `pg_stat_replication_slots` conterá uma linha por slot de repl
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       total_txns
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -5441,10 +5393,10 @@ A visualização `pg_stat_replication_slots` conterá uma linha por slot de repl
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       total_bytes
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -5456,10 +5408,10 @@ A visualização `pg_stat_replication_slots` conterá uma linha por slot de repl
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stats_reset
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -5485,7 +5437,7 @@ A vista `pg_stat_wal_receiver` conterá apenas uma linha, mostrando estatística
 
 
 
-<table border="1" class="table" summary="pg_stat_wal_receiver View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -5505,10 +5457,10 @@ A vista `pg_stat_wal_receiver` conterá apenas uma linha, mostrando estatística
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pid
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
@@ -5520,10 +5472,10 @@ A vista `pg_stat_wal_receiver` conterá apenas uma linha, mostrando estatística
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       status
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -5535,10 +5487,10 @@ A vista `pg_stat_wal_receiver` conterá apenas uma linha, mostrando estatística
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       receive_start_lsn
      </code>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
     </p>
@@ -5550,10 +5502,10 @@ A vista `pg_stat_wal_receiver` conterá apenas uma linha, mostrando estatística
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       receive_start_tli
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
@@ -5565,10 +5517,10 @@ A vista `pg_stat_wal_receiver` conterá apenas uma linha, mostrando estatística
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       written_lsn
      </code>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
     </p>
@@ -5580,10 +5532,10 @@ A vista `pg_stat_wal_receiver` conterá apenas uma linha, mostrando estatística
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       flushed_lsn
      </code>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
     </p>
@@ -5595,10 +5547,10 @@ A vista `pg_stat_wal_receiver` conterá apenas uma linha, mostrando estatística
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       received_tli
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
@@ -5610,10 +5562,10 @@ A vista `pg_stat_wal_receiver` conterá apenas uma linha, mostrando estatística
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       last_msg_send_time
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -5625,10 +5577,10 @@ A vista `pg_stat_wal_receiver` conterá apenas uma linha, mostrando estatística
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       last_msg_receipt_time
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -5640,10 +5592,10 @@ A vista `pg_stat_wal_receiver` conterá apenas uma linha, mostrando estatística
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       latest_end_lsn
      </code>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
     </p>
@@ -5655,10 +5607,10 @@ A vista `pg_stat_wal_receiver` conterá apenas uma linha, mostrando estatística
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       latest_end_time
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -5670,10 +5622,10 @@ A vista `pg_stat_wal_receiver` conterá apenas uma linha, mostrando estatística
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       slot_name
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -5685,10 +5637,10 @@ A vista `pg_stat_wal_receiver` conterá apenas uma linha, mostrando estatística
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sender_host
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -5698,7 +5650,7 @@ A vista `pg_stat_wal_receiver` conterá apenas uma linha, mostrando estatística
       PostgreSQL
      </span>
      instance this WAL receiver is connected to. This can be a host name, an IP address, or a directory path if the connection is via Unix socket.  (The path case can be distinguished because it will always be an absolute path, beginning with
-     <code class="literal">
+     <code>
       /
      </code>
      .)
@@ -5708,10 +5660,10 @@ A vista `pg_stat_wal_receiver` conterá apenas uma linha, mostrando estatística
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sender_port
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
@@ -5727,10 +5679,10 @@ A vista `pg_stat_wal_receiver` conterá apenas uma linha, mostrando estatística
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       conninfo
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -5756,7 +5708,7 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
 
 
 
-<table border="1" class="table" summary="pg_stat_recovery_prefetch View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -5776,10 +5728,10 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stats_reset
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -5791,10 +5743,10 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       prefetch
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -5806,10 +5758,10 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       hit
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -5821,10 +5773,10 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       skip_init
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -5836,10 +5788,10 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       skip_new
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -5851,10 +5803,10 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       skip_fpw
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -5866,10 +5818,10 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       skip_rep
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -5881,10 +5833,10 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       wal_distance
      </code>
-     <code class="type">
+     <code>
       int
      </code>
     </p>
@@ -5896,10 +5848,10 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       block_distance
      </code>
-     <code class="type">
+     <code>
       int
      </code>
     </p>
@@ -5911,10 +5863,10 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       io_depth
      </code>
-     <code class="type">
+     <code>
       int
      </code>
     </p>
@@ -5938,7 +5890,7 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
 
 
 
-<table border="1" class="table" summary="pg_stat_subscription View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -5958,10 +5910,10 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       subid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -5973,10 +5925,10 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       subname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -5988,24 +5940,24 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       worker_type
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      Tipo do processo de trabalho da assinatura. Os tipos possíveis são
-     <code class="literal">
+     <code>
       apply
      </code>
      ,
-     <code class="literal">
+     <code>
       parallel apply
      </code>
      , e
-     <code class="literal">
+     <code>
       table synchronization
      </code>
      .
@@ -6015,10 +5967,10 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pid
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
@@ -6030,10 +5982,10 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       leader_pid
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
@@ -6045,10 +5997,10 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -6060,10 +6012,10 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       received_lsn
      </code>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
     </p>
@@ -6075,10 +6027,10 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       last_msg_send_time
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -6090,10 +6042,10 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       last_msg_receipt_time
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -6105,10 +6057,10 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       latest_end_lsn
      </code>
-     <code class="type">
+     <code>
       pg_lsn
      </code>
     </p>
@@ -6120,10 +6072,10 @@ A visualização `pg_stat_recovery_prefetch` conterá apenas uma linha. As colun
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       latest_end_time
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -6149,7 +6101,7 @@ A visualização `pg_stat_subscription_stats` conterá uma linha por assinatura.
 
 
 
-<table border="1" class="table" summary="pg_stat_subscription_stats View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -6169,10 +6121,10 @@ A visualização `pg_stat_subscription_stats` conterá uma linha por assinatura.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       subid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -6184,10 +6136,10 @@ A visualização `pg_stat_subscription_stats` conterá uma linha por assinatura.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       subname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -6199,20 +6151,20 @@ A visualização `pg_stat_subscription_stats` conterá uma linha por assinatura.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       apply_error_count
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Number of times an error occurred while applying changes. Note that any conflict resulting in an apply error will be counted in both
-     <code class="literal">
+     <code>
       apply_error_count
      </code>
      and the corresponding conflict count (e.g.,
-     <code class="literal">
+     <code>
       confl_*
      </code>
      ).
@@ -6222,10 +6174,10 @@ A visualização `pg_stat_subscription_stats` conterá uma linha por assinatura.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sync_error_count
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -6237,16 +6189,16 @@ A visualização `pg_stat_subscription_stats` conterá uma linha por assinatura.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       confl_insert_exists
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Number of times a row insertion violated a
-     <code class="literal">
+     <code>
       NOT DEFERRABLE
      </code>
      unique constraint during the application of changes. See
@@ -6260,10 +6212,10 @@ A visualização `pg_stat_subscription_stats` conterá uma linha por assinatura.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       confl_update_origin_differs
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -6279,16 +6231,16 @@ A visualização `pg_stat_subscription_stats` conterá uma linha por assinatura.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       confl_update_exists
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Number of times that an updated row value violated a
-     <code class="literal">
+     <code>
       NOT DEFERRABLE
      </code>
      unique constraint during the application of changes. See
@@ -6302,10 +6254,10 @@ A visualização `pg_stat_subscription_stats` conterá uma linha por assinatura.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       confl_update_missing
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -6321,10 +6273,10 @@ A visualização `pg_stat_subscription_stats` conterá uma linha por assinatura.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       confl_delete_origin_differs
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -6340,10 +6292,10 @@ A visualização `pg_stat_subscription_stats` conterá uma linha por assinatura.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       confl_delete_missing
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -6359,16 +6311,16 @@ A visualização `pg_stat_subscription_stats` conterá uma linha por assinatura.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       confl_multiple_unique_conflicts
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Number of times a row insertion or an updated row values violated multiple
-     <code class="literal">
+     <code>
       NOT DEFERRABLE
      </code>
      unique constraints during the application of changes. See
@@ -6382,10 +6334,10 @@ A visualização `pg_stat_subscription_stats` conterá uma linha por assinatura.
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stats_reset
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -6411,7 +6363,7 @@ A visão `pg_stat_ssl` conterá uma linha por processo de emissor de backend ou 
 
 
 
-<table border="1" class="table" summary="pg_stat_ssl View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -6431,10 +6383,10 @@ A visão `pg_stat_ssl` conterá uma linha por processo de emissor de backend ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pid
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
@@ -6446,10 +6398,10 @@ A visão `pg_stat_ssl` conterá uma linha por processo de emissor de backend ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       ssl
      </code>
-     <code class="type">
+     <code>
       boolean
      </code>
     </p>
@@ -6461,10 +6413,10 @@ A visão `pg_stat_ssl` conterá uma linha por processo de emissor de backend ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       version
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -6476,10 +6428,10 @@ A visão `pg_stat_ssl` conterá uma linha por processo de emissor de backend ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       cipher
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -6491,10 +6443,10 @@ A visão `pg_stat_ssl` conterá uma linha por processo de emissor de backend ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       bits
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
@@ -6506,16 +6458,16 @@ A visão `pg_stat_ssl` conterá uma linha por processo de emissor de backend ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       client_dn
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      Campo Nome Distinguido (DN) do certificado do cliente utilizado, ou NULL se nenhum certificado do cliente foi fornecido ou se o SSL não está em uso nesta conexão. Este campo é truncado se o campo DN for mais longo que
-     <code class="symbol">
+     <code>
       NAMEDATALEN
      </code>
      (64 caracteres em uma versão padrão).
@@ -6525,10 +6477,10 @@ A visão `pg_stat_ssl` conterá uma linha por processo de emissor de backend ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       client_serial
      </code>
-     <code class="type">
+     <code>
       numeric
      </code>
     </p>
@@ -6540,16 +6492,16 @@ A visão `pg_stat_ssl` conterá uma linha por processo de emissor de backend ou 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       issuer_dn
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      DN do emissor do certificado do cliente, ou NULL se não foi fornecido nenhum certificado do cliente ou se o SSL não está em uso nesta conexão. Este campo é truncado como
-     <code class="structfield">
+     <code>
       client_dn
      </code>
      .
@@ -6573,7 +6525,7 @@ A visão `pg_stat_gssapi` conterá uma linha por backend, mostrando informaçõe
 
 
 
-<table border="1" class="table" summary="pg_stat_gssapi View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -6593,10 +6545,10 @@ A visão `pg_stat_gssapi` conterá uma linha por backend, mostrando informaçõe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pid
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
@@ -6608,10 +6560,10 @@ A visão `pg_stat_gssapi` conterá uma linha por backend, mostrando informaçõe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       gss_authenticated
      </code>
-     <code class="type">
+     <code>
       boolean
      </code>
     </p>
@@ -6623,16 +6575,16 @@ A visão `pg_stat_gssapi` conterá uma linha por backend, mostrando informaçõe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       principal
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      O principal costuma autenticar essa conexão, ou NULL se o GSSAPI não foi usado para autenticar essa conexão. Esse campo é truncado se o principal for mais longo que
-     <code class="symbol">
+     <code>
       NAMEDATALEN
      </code>
      (64 caracteres em uma versão padrão).
@@ -6642,10 +6594,10 @@ A visão `pg_stat_gssapi` conterá uma linha por backend, mostrando informaçõe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       encrypted
      </code>
-     <code class="type">
+     <code>
       boolean
      </code>
     </p>
@@ -6657,10 +6609,10 @@ A visão `pg_stat_gssapi` conterá uma linha por backend, mostrando informaçõe
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       credentials_delegated
      </code>
-     <code class="type">
+     <code>
       boolean
      </code>
     </p>
@@ -6686,7 +6638,7 @@ A visão `pg_stat_archiver` sempre terá uma única linha, contendo dados sobre 
 
 
 
-<table border="1" class="table" summary="pg_stat_archiver View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -6706,10 +6658,10 @@ A visão `pg_stat_archiver` sempre terá uma única linha, contendo dados sobre 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       archived_count
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -6721,10 +6673,10 @@ A visão `pg_stat_archiver` sempre terá uma única linha, contendo dados sobre 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       last_archived_wal
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -6736,10 +6688,10 @@ A visão `pg_stat_archiver` sempre terá uma única linha, contendo dados sobre 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       last_archived_time
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -6751,10 +6703,10 @@ A visão `pg_stat_archiver` sempre terá uma única linha, contendo dados sobre 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       failed_count
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -6766,10 +6718,10 @@ A visão `pg_stat_archiver` sempre terá uma única linha, contendo dados sobre 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       last_failed_wal
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -6781,10 +6733,10 @@ A visão `pg_stat_archiver` sempre terá uma única linha, contendo dados sobre 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       last_failed_time
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -6796,10 +6748,10 @@ A visão `pg_stat_archiver` sempre terá uma única linha, contendo dados sobre 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stats_reset
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -6832,7 +6784,7 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
 
 
 
-<table border="1" class="table" summary="pg_stat_io View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -6852,26 +6804,26 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       backend_type
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      Tipo de backend (por exemplo, trabalhador de fundo, trabalhador de autovacuum). Veja
      <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-ACTIVITY-VIEW" title="27.2.3. pg_stat_activity">
-      <code class="structname">
+      <code>
        pg_stat_activity
       </code>
      </a>
      para mais informações sobre
-     <code class="varname">
+     <code>
       backend_type
      </code>
      algumas s.
-     <code class="varname">
+     <code>
       backend_type
      </code>
      Eles não acumulam estatísticas de operação de E/S e não serão incluídos na visualização.
@@ -6881,10 +6833,10 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       object
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -6895,7 +6847,7 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
      <ul class="itemizedlist" style="list-style-type: disc; ">
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          relation
         </code>
         Relações permanentes.
@@ -6903,7 +6855,7 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          temp relation
         </code>
         Relações temporárias.
@@ -6911,7 +6863,7 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          wal
         </code>
         : Registros de escrita antecipada.
@@ -6926,10 +6878,10 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       context
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -6940,18 +6892,18 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
      <ul class="itemizedlist" style="list-style-type: disc; ">
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          normal
         </code>
         : O padrão ou padrão
-        <code class="varname">
+        <code>
          context
         </code>
         para um tipo de operação de E/S. Por exemplo, por padrão, os dados da relação são lidos e escritos em buffers compartilhados. Assim, as leituras e escritas de dados da relação em e a partir de buffers compartilhados são rastreadas em
-        <code class="varname">
+        <code>
          context
         </code>
-        <code class="literal">
+        <code>
          normal
         </code>
         .
@@ -6959,14 +6911,14 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          init
         </code>
         : As operações de E/S realizadas durante a criação dos segmentos WAL são rastreadas em
-        <code class="varname">
+        <code>
          context
         </code>
-        <code class="literal">
+        <code>
          init
         </code>
         .
@@ -6974,14 +6926,14 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          vacuum
         </code>
         : Operações de E/S realizadas fora dos buffers compartilhados durante a limpeza e análise de relações permanentes. Os vazamentos temporários de tabela utilizam o mesmo conjunto de buffers locais que outras operações de E/S de tabela temporária e são rastreados em
-        <code class="varname">
+        <code>
          context
         </code>
-        <code class="literal">
+        <code>
          normal
         </code>
         .
@@ -6989,7 +6941,7 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          bulkread
         </code>
         : Algumas operações de leitura de grande porte realizadas fora dos buffers compartilhados, por exemplo, uma varredura sequencial de uma grande tabela.
@@ -6997,11 +6949,11 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          bulkwrite
         </code>
         : Algumas operações de escrita de grande porte realizadas fora dos buffers compartilhados, como
-        <code class="command">
+        <code>
          COPY
         </code>
         .
@@ -7014,10 +6966,10 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       reads
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7029,10 +6981,10 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       read_bytes
      </code>
-     <code class="type">
+     <code>
       numeric
      </code>
     </p>
@@ -7044,10 +6996,10 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       read_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -7057,11 +7009,11 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
       track_io_timing
      </a>
      está habilitado e
-     <code class="varname">
+     <code>
       object
      </code>
      não é
-     <code class="literal">
+     <code>
       wal
      </code>
      , ou se
@@ -7069,11 +7021,11 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
       track_wal_io_timing
      </a>
      está habilitado e
-     <code class="varname">
+     <code>
       object
      </code>
      é
-     <code class="literal">
+     <code>
       wal
      </code>
      , caso contrário, zero)
@@ -7083,10 +7035,10 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       writes
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7098,10 +7050,10 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       write_bytes
      </code>
-     <code class="type">
+     <code>
       numeric
      </code>
     </p>
@@ -7113,10 +7065,10 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       write_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -7126,11 +7078,11 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
       track_io_timing
      </a>
      está habilitado e
-     <code class="varname">
+     <code>
       object
      </code>
      não é
-     <code class="literal">
+     <code>
       wal
      </code>
      , ou se
@@ -7138,11 +7090,11 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
       track_wal_io_timing
      </a>
      está habilitado e
-     <code class="varname">
+     <code>
       object
      </code>
      é
-     <code class="literal">
+     <code>
       wal
      </code>
      , caso contrário, zero)
@@ -7152,16 +7104,16 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       writebacks
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Número de unidades do tamanho
-     <code class="symbol">
+     <code>
       BLCKSZ
      </code>
      (geralmente 8 kB) que o processo solicitou que o kernel escrevesse para armazenamento permanente.
@@ -7171,10 +7123,10 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       writeback_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -7190,10 +7142,10 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       extends
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7205,10 +7157,10 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       extend_bytes
      </code>
-     <code class="type">
+     <code>
       numeric
      </code>
     </p>
@@ -7220,10 +7172,10 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       extend_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -7233,11 +7185,11 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
       track_io_timing
      </a>
      está habilitado e
-     <code class="varname">
+     <code>
       object
      </code>
      não é
-     <code class="literal">
+     <code>
       wal
      </code>
      , ou se
@@ -7245,11 +7197,11 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
       track_wal_io_timing
      </a>
      está habilitado e
-     <code class="varname">
+     <code>
       object
      </code>
      é
-     <code class="literal">
+     <code>
       wal
      </code>
      , caso contrário, zero)
@@ -7259,10 +7211,10 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       hits
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7274,10 +7226,10 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       evictions
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7286,26 +7238,26 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
     </p>
     <p>
      Em
-     <code class="varname">
+     <code>
       context
      </code>
-     <code class="literal">
+     <code>
       normal
      </code>
      , isso conta o número de vezes que um bloco foi ejetado de um buffer e substituído por outro bloco. Em
-     <code class="varname">
+     <code>
       context
      </code>
      s
-     <code class="literal">
+     <code>
       bulkwrite
      </code>
      ,
-     <code class="literal">
+     <code>
       bulkread
      </code>
      , e
-     <code class="literal">
+     <code>
       vacuum
      </code>
      , isso conta o número de vezes que um bloco foi excluído dos buffers compartilhados, a fim de adicionar o buffer compartilhado a um buffer de anel separado, com tamanho limitado, para uso em uma operação de E/S em massa.
@@ -7315,27 +7267,27 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       reuses
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      O número de vezes que um buffer existente em um buffer de anel limitado por tamanho, fora dos buffers compartilhados, foi reutilizado como parte de uma operação de E/S no
-     <code class="literal">
+     <code>
       bulkread
      </code>
      ,
-     <code class="literal">
+     <code>
       bulkwrite
      </code>
      , ou
-     <code class="literal">
+     <code>
       vacuum
      </code>
-     <code class="varname">
+     <code>
       context
      </code>
      s.
@@ -7345,23 +7297,23 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       fsyncs
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Número de
-     <code class="literal">
+     <code>
       fsync
      </code>
      chamadas. Essas são apenas rastreadas em
-     <code class="varname">
+     <code>
       context
      </code>
-     <code class="literal">
+     <code>
       normal
      </code>
      .
@@ -7371,10 +7323,10 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       fsync_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -7384,11 +7336,11 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
       track_io_timing
      </a>
      está habilitado e
-     <code class="varname">
+     <code>
       object
      </code>
      não é
-     <code class="literal">
+     <code>
       wal
      </code>
      , ou se
@@ -7396,11 +7348,11 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
       track_wal_io_timing
      </a>
      está habilitado e
-     <code class="varname">
+     <code>
       object
      </code>
      é
-     <code class="literal">
+     <code>
       wal
      </code>
      , caso contrário, zero)
@@ -7410,10 +7362,10 @@ Atualmente, o I/O em relação a relações (por exemplo, tabelas, índices) e a
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stats_reset
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -7458,7 +7410,7 @@ A vista `pg_stat_bgwriter` sempre terá uma única linha, contendo dados sobre o
 
 
 
-<table border="1" class="table" summary="pg_stat_bgwriter View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -7478,10 +7430,10 @@ A vista `pg_stat_bgwriter` sempre terá uma única linha, contendo dados sobre o
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       buffers_clean
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7493,10 +7445,10 @@ A vista `pg_stat_bgwriter` sempre terá uma única linha, contendo dados sobre o
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       maxwritten_clean
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7508,10 +7460,10 @@ A vista `pg_stat_bgwriter` sempre terá uma única linha, contendo dados sobre o
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       buffers_alloc
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7523,10 +7475,10 @@ A vista `pg_stat_bgwriter` sempre terá uma única linha, contendo dados sobre o
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stats_reset
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -7552,7 +7504,7 @@ A visão `pg_stat_checkpointer` sempre terá uma única linha, contendo dados so
 
 
 
-<table border="1" class="table" summary="pg_stat_checkpointer View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -7572,10 +7524,10 @@ A visão `pg_stat_checkpointer` sempre terá uma única linha, contendo dados so
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       num_timed
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7587,10 +7539,10 @@ A visão `pg_stat_checkpointer` sempre terá uma única linha, contendo dados so
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       num_requested
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7602,10 +7554,10 @@ A visão `pg_stat_checkpointer` sempre terá uma única linha, contendo dados so
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       num_done
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7617,10 +7569,10 @@ A visão `pg_stat_checkpointer` sempre terá uma única linha, contendo dados so
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       restartpoints_timed
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7632,10 +7584,10 @@ A visão `pg_stat_checkpointer` sempre terá uma única linha, contendo dados so
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       restartpoints_req
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7647,10 +7599,10 @@ A visão `pg_stat_checkpointer` sempre terá uma única linha, contendo dados so
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       restartpoints_done
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7662,10 +7614,10 @@ A visão `pg_stat_checkpointer` sempre terá uma única linha, contendo dados so
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       write_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -7677,10 +7629,10 @@ A visão `pg_stat_checkpointer` sempre terá uma única linha, contendo dados so
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sync_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -7692,10 +7644,10 @@ A visão `pg_stat_checkpointer` sempre terá uma única linha, contendo dados so
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       buffers_written
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7707,10 +7659,10 @@ A visão `pg_stat_checkpointer` sempre terá uma única linha, contendo dados so
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       slru_written
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7722,10 +7674,10 @@ A visão `pg_stat_checkpointer` sempre terá uma única linha, contendo dados so
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stats_reset
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -7756,7 +7708,7 @@ A vista `pg_stat_wal` sempre terá uma única linha, contendo dados sobre a ativ
 
 
 
-<table border="1" class="table" summary="pg_stat_wal View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -7776,10 +7728,10 @@ A vista `pg_stat_wal` sempre terá uma única linha, contendo dados sobre a ativ
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       wal_records
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7791,10 +7743,10 @@ A vista `pg_stat_wal` sempre terá uma única linha, contendo dados sobre a ativ
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       wal_fpi
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7806,10 +7758,10 @@ A vista `pg_stat_wal` sempre terá uma única linha, contendo dados sobre a ativ
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       wal_bytes
      </code>
-     <code class="type">
+     <code>
       numeric
      </code>
     </p>
@@ -7821,10 +7773,10 @@ A vista `pg_stat_wal` sempre terá uma única linha, contendo dados sobre a ativ
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       wal_buffers_full
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7836,10 +7788,10 @@ A vista `pg_stat_wal` sempre terá uma única linha, contendo dados sobre a ativ
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stats_reset
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -7865,7 +7817,7 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
 
 
 
-<table border="1" class="table" summary="pg_stat_database View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -7885,10 +7837,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -7900,16 +7852,16 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
     <p>
      Name of this database, or
-     <code class="literal">
+     <code>
       NULL
      </code>
      for shared objects.
@@ -7919,16 +7871,16 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numbackends
      </code>
-     <code class="type">
+     <code>
       integer
      </code>
     </p>
     <p>
      Number of backends currently connected to this database, or
-     <code class="literal">
+     <code>
       NULL
      </code>
      for shared objects.  This is the only column in this view that returns a value reflecting current state; all other columns return the accumulated values since the last reset.
@@ -7938,10 +7890,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       xact_commit
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7953,10 +7905,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       xact_rollback
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7968,10 +7920,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       blks_read
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7983,10 +7935,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       blks_hit
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -7998,10 +7950,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tup_returned
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8013,10 +7965,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tup_fetched
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8028,10 +7980,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tup_inserted
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8043,10 +7995,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tup_updated
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8058,10 +8010,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tup_deleted
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8073,17 +8025,17 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       conflicts
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Number of queries canceled due to conflicts with recovery in this database. (Conflicts occur only on standby servers; see
      <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-DATABASE-CONFLICTS-VIEW" title="27.2.18. pg_stat_database_conflicts">
-      <code class="structname">
+      <code>
        pg_stat_database_conflicts
       </code>
      </a>
@@ -8094,10 +8046,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       temp_files
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8113,10 +8065,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       temp_bytes
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8132,10 +8084,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       deadlocks
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8147,10 +8099,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       checksum_failures
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8162,10 +8114,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       checksum_last_failure
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -8177,10 +8129,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       blk_read_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -8196,10 +8148,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       blk_write_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -8215,10 +8167,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       session_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -8230,25 +8182,25 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       active_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Time spent executing SQL statements in this database, in milliseconds (this corresponds to the states
-     <code class="literal">
+     <code>
       active
      </code>
      and
-     <code class="literal">
+     <code>
       fastpath function call
      </code>
      in
      <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-ACTIVITY-VIEW" title="27.2.3. pg_stat_activity">
-      <code class="structname">
+      <code>
        pg_stat_activity
       </code>
      </a>
@@ -8259,25 +8211,25 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       idle_in_transaction_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Time spent idling while in a transaction in this database, in milliseconds (this corresponds to the states
-     <code class="literal">
+     <code>
       idle in transaction
      </code>
      and
-     <code class="literal">
+     <code>
       idle in transaction (aborted)
      </code>
      in
      <a class="link" href="monitoring-stats.md#MONITORING-PG-STAT-ACTIVITY-VIEW" title="27.2.3. pg_stat_activity">
-      <code class="structname">
+      <code>
        pg_stat_activity
       </code>
      </a>
@@ -8288,10 +8240,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sessions
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8303,10 +8255,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sessions_abandoned
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8318,10 +8270,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sessions_fatal
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8333,10 +8285,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sessions_killed
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8348,10 +8300,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       parallel_workers_to_launch
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8363,10 +8315,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       parallel_workers_launched
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8378,10 +8330,10 @@ A visualização `pg_stat_database` conterá uma linha para cada banco de dados 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stats_reset
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -8407,7 +8359,7 @@ A visão `pg_stat_database_conflicts` conterá uma linha por banco de dados, mos
 
 
 
-<table border="1" class="table" summary="pg_stat_database_conflicts View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -8427,10 +8379,10 @@ A visão `pg_stat_database_conflicts` conterá uma linha por banco de dados, mos
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -8442,10 +8394,10 @@ A visão `pg_stat_database_conflicts` conterá uma linha por banco de dados, mos
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -8457,10 +8409,10 @@ A visão `pg_stat_database_conflicts` conterá uma linha por banco de dados, mos
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       confl_tablespace
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8472,10 +8424,10 @@ A visão `pg_stat_database_conflicts` conterá uma linha por banco de dados, mos
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       confl_lock
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8487,10 +8439,10 @@ A visão `pg_stat_database_conflicts` conterá uma linha por banco de dados, mos
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       confl_snapshot
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8502,10 +8454,10 @@ A visão `pg_stat_database_conflicts` conterá uma linha por banco de dados, mos
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       confl_bufferpin
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8517,10 +8469,10 @@ A visão `pg_stat_database_conflicts` conterá uma linha por banco de dados, mos
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       confl_deadlock
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8532,10 +8484,10 @@ A visão `pg_stat_database_conflicts` conterá uma linha por banco de dados, mos
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       confl_active_logicalslot
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8565,7 +8517,7 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
 
 
 
-<table border="1" class="table" summary="pg_stat_all_tables View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -8585,10 +8537,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -8600,10 +8552,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       schemaname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -8615,10 +8567,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -8630,10 +8582,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       seq_scan
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8645,10 +8597,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       last_seq_scan
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -8660,10 +8612,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       seq_tup_read
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8675,10 +8627,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       idx_scan
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8690,10 +8642,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       last_idx_scan
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -8705,10 +8657,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       idx_tup_fetch
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8720,10 +8672,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       n_tup_ins
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8735,20 +8687,20 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       n_tup_upd
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Total number of rows updated.  (This includes row updates counted in
-     <code class="structfield">
+     <code>
       n_tup_hot_upd
      </code>
      and
-     <code class="structfield">
+     <code>
       n_tup_newpage_upd
      </code>
      , and remaining non-
@@ -8762,10 +8714,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       n_tup_del
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8777,10 +8729,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       n_tup_hot_upd
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8796,10 +8748,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       n_tup_newpage_upd
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8812,7 +8764,7 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
      </span>
      heap page, leaving behind an original version with a
      <a class="link" href="storage-page-layout.md#STORAGE-TUPLE-LAYOUT" title="66.6.1. Table Row Layout">
-      <code class="structfield">
+      <code>
        t_ctid
       </code>
       field
@@ -8828,10 +8780,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       n_live_tup
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8843,10 +8795,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       n_dead_tup
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8858,10 +8810,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       n_mod_since_analyze
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8873,16 +8825,16 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       n_ins_since_vacuum
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Estimated number of rows inserted since this table was last vacuumed (not counting
-     <code class="command">
+     <code>
       VACUUM FULL
      </code>
      )
@@ -8892,16 +8844,16 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       last_vacuum
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
     <p>
      Last time at which this table was manually vacuumed (not counting
-     <code class="command">
+     <code>
       VACUUM FULL
      </code>
      )
@@ -8911,10 +8863,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       last_autovacuum
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -8926,10 +8878,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       last_analyze
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -8941,10 +8893,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       last_autoanalyze
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -8956,16 +8908,16 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       vacuum_count
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Number of times this table has been manually vacuumed (not counting
-     <code class="command">
+     <code>
       VACUUM FULL
      </code>
      )
@@ -8975,10 +8927,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       autovacuum_count
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -8990,10 +8942,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       analyze_count
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9005,10 +8957,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       autoanalyze_count
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9020,16 +8972,16 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       total_vacuum_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
     <p>
      Total time this table has been manually vacuumed, in milliseconds (not counting
-     <code class="command">
+     <code>
       VACUUM FULL
      </code>
      ). (This includes the time spent sleeping due to cost-based delays.)
@@ -9039,10 +8991,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       total_autovacuum_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -9054,10 +9006,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       total_analyze_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -9069,10 +9021,10 @@ A visualização `pg_stat_all_tables` conterá uma linha para cada tabela no ban
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       total_autoanalyze_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -9098,7 +9050,7 @@ A visualização `pg_stat_all_indexes` conterá uma linha para cada índice no b
 
 
 
-<table border="1" class="table" summary="pg_stat_all_indexes View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -9118,10 +9070,10 @@ A visualização `pg_stat_all_indexes` conterá uma linha para cada índice no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -9133,10 +9085,10 @@ A visualização `pg_stat_all_indexes` conterá uma linha para cada índice no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indexrelid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -9148,10 +9100,10 @@ A visualização `pg_stat_all_indexes` conterá uma linha para cada índice no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       schemaname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -9163,10 +9115,10 @@ A visualização `pg_stat_all_indexes` conterá uma linha para cada índice no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -9178,10 +9130,10 @@ A visualização `pg_stat_all_indexes` conterá uma linha para cada índice no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indexrelname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -9193,10 +9145,10 @@ A visualização `pg_stat_all_indexes` conterá uma linha para cada índice no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       idx_scan
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9208,10 +9160,10 @@ A visualização `pg_stat_all_indexes` conterá uma linha para cada índice no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       last_idx_scan
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -9223,10 +9175,10 @@ A visualização `pg_stat_all_indexes` conterá uma linha para cada índice no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       idx_tup_read
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9238,10 +9190,10 @@ A visualização `pg_stat_all_indexes` conterá uma linha para cada índice no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       idx_tup_fetch
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9286,7 +9238,7 @@ A visualização `pg_statio_all_tables` conterá uma linha para cada tabela no b
 
 
 
-<table border="1" class="table" summary="pg_statio_all_tables View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -9306,10 +9258,10 @@ A visualização `pg_statio_all_tables` conterá uma linha para cada tabela no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -9321,10 +9273,10 @@ A visualização `pg_statio_all_tables` conterá uma linha para cada tabela no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       schemaname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -9336,10 +9288,10 @@ A visualização `pg_statio_all_tables` conterá uma linha para cada tabela no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -9351,10 +9303,10 @@ A visualização `pg_statio_all_tables` conterá uma linha para cada tabela no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       heap_blks_read
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9366,10 +9318,10 @@ A visualização `pg_statio_all_tables` conterá uma linha para cada tabela no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       heap_blks_hit
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9381,10 +9333,10 @@ A visualização `pg_statio_all_tables` conterá uma linha para cada tabela no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       idx_blks_read
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9396,10 +9348,10 @@ A visualização `pg_statio_all_tables` conterá uma linha para cada tabela no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       idx_blks_hit
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9411,10 +9363,10 @@ A visualização `pg_statio_all_tables` conterá uma linha para cada tabela no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       toast_blks_read
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9426,10 +9378,10 @@ A visualização `pg_statio_all_tables` conterá uma linha para cada tabela no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       toast_blks_hit
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9441,10 +9393,10 @@ A visualização `pg_statio_all_tables` conterá uma linha para cada tabela no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tidx_blks_read
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9456,10 +9408,10 @@ A visualização `pg_statio_all_tables` conterá uma linha para cada tabela no b
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tidx_blks_hit
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9485,7 +9437,7 @@ A visualização `pg_statio_all_indexes` conterá uma linha para cada índice no
 
 
 
-<table border="1" class="table" summary="pg_statio_all_indexes View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -9505,10 +9457,10 @@ A visualização `pg_statio_all_indexes` conterá uma linha para cada índice no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -9520,10 +9472,10 @@ A visualização `pg_statio_all_indexes` conterá uma linha para cada índice no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indexrelid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -9535,10 +9487,10 @@ A visualização `pg_statio_all_indexes` conterá uma linha para cada índice no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       schemaname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -9550,10 +9502,10 @@ A visualização `pg_statio_all_indexes` conterá uma linha para cada índice no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -9565,10 +9517,10 @@ A visualização `pg_statio_all_indexes` conterá uma linha para cada índice no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       indexrelname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -9580,10 +9532,10 @@ A visualização `pg_statio_all_indexes` conterá uma linha para cada índice no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       idx_blks_read
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9595,10 +9547,10 @@ A visualização `pg_statio_all_indexes` conterá uma linha para cada índice no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       idx_blks_hit
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9624,7 +9576,7 @@ A visualização `pg_statio_all_sequences` conterá uma linha para cada sequênc
 
 
 
-<table border="1" class="table" summary="pg_statio_all_sequences View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -9644,10 +9596,10 @@ A visualização `pg_statio_all_sequences` conterá uma linha para cada sequênc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -9659,10 +9611,10 @@ A visualização `pg_statio_all_sequences` conterá uma linha para cada sequênc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       schemaname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -9674,10 +9626,10 @@ A visualização `pg_statio_all_sequences` conterá uma linha para cada sequênc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       relname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -9689,10 +9641,10 @@ A visualização `pg_statio_all_sequences` conterá uma linha para cada sequênc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       blks_read
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9704,10 +9656,10 @@ A visualização `pg_statio_all_sequences` conterá uma linha para cada sequênc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       blks_hit
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9733,7 +9685,7 @@ A visualização `pg_stat_user_functions` conterá uma linha para cada função 
 
 
 
-<table border="1" class="table" summary="pg_stat_user_functions View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -9753,10 +9705,10 @@ A visualização `pg_stat_user_functions` conterá uma linha para cada função 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       funcid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -9768,10 +9720,10 @@ A visualização `pg_stat_user_functions` conterá uma linha para cada função 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       schemaname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -9783,10 +9735,10 @@ A visualização `pg_stat_user_functions` conterá uma linha para cada função 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       funcname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -9798,10 +9750,10 @@ A visualização `pg_stat_user_functions` conterá uma linha para cada função 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       calls
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9813,10 +9765,10 @@ A visualização `pg_stat_user_functions` conterá uma linha para cada função 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       total_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -9828,10 +9780,10 @@ A visualização `pg_stat_user_functions` conterá uma linha para cada função 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       self_time
      </code>
-     <code class="type">
+     <code>
       double precision
      </code>
     </p>
@@ -9859,7 +9811,7 @@ Para cada cache `SLRU` que faz parte do servidor principal, há um parâmetro de
 
 
 
-<table border="1" class="table" summary="pg_stat_slru View">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -9879,10 +9831,10 @@ Para cada cache `SLRU` que faz parte do servidor principal, há um parâmetro de
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       name
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -9894,10 +9846,10 @@ Para cada cache `SLRU` que faz parte do servidor principal, há um parâmetro de
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       blks_zeroed
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9909,10 +9861,10 @@ Para cada cache `SLRU` que faz parte do servidor principal, há um parâmetro de
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       blks_hit
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9924,10 +9876,10 @@ Para cada cache `SLRU` que faz parte do servidor principal, há um parâmetro de
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       blks_read
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9939,10 +9891,10 @@ Para cada cache `SLRU` que faz parte do servidor principal, há um parâmetro de
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       blks_written
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9954,10 +9906,10 @@ Para cada cache `SLRU` que faz parte do servidor principal, há um parâmetro de
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       blks_exists
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9969,10 +9921,10 @@ Para cada cache `SLRU` que faz parte do servidor principal, há um parâmetro de
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       flushes
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9984,10 +9936,10 @@ Para cada cache `SLRU` que faz parte do servidor principal, há um parâmetro de
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       truncates
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
     </p>
@@ -9999,10 +9951,10 @@ Para cada cache `SLRU` que faz parte do servidor principal, há um parâmetro de
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       stats_reset
      </code>
-     <code class="type">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -10030,7 +9982,7 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
 
 
 
-<table border="1" class="table" summary="Additional Statistics Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -10050,11 +10002,11 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_backend_pid
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -10066,28 +10018,28 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
   <tr>
    <td class="func_table_entry" id="PG-STAT-GET-BACKEND-IO">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_get_backend_io
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
     </p>
     <p>
      Returns I/O statistics about the backend with the specified process ID. The output fields are exactly the same as the ones in the
-     <code class="structname">
+     <code>
       pg_stat_io
      </code>
      view.
     </p>
     <p>
      The function does not return I/O statistics for the checkpointer, the background writer, the startup process and the autovacuum launcher as they are already visible in the
-     <code class="structname">
+     <code>
       pg_stat_io
      </code>
      view and there is only one of each.
@@ -10097,25 +10049,25 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_get_activity
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       setof record
      </code>
     </p>
     <p>
      Returns a record of information about the backend with the specified process ID, or one record for each active backend in the system if
-     <code class="literal">
+     <code>
       NULL
      </code>
      is specified.  The fields returned are a subset of those in the
-     <code class="structname">
+     <code>
       pg_stat_activity
      </code>
      view.
@@ -10125,21 +10077,21 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
   <tr>
    <td class="func_table_entry" id="PG-STAT-GET-BACKEND-WAL">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_get_backend_wal
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       record
      </code>
     </p>
     <p>
      Returns WAL statistics about the backend with the specified process ID. The output fields are exactly the same as the ones in the
-     <code class="structname">
+     <code>
       pg_stat_wal
      </code>
      view.
@@ -10152,21 +10104,21 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_get_snapshot_timestamp
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
     <p>
      Returns the timestamp of the current statistics snapshot, or NULL if no statistics snapshot has been taken. A snapshot is taken the first time cumulative statistics are accessed in a transaction if
-     <code class="varname">
+     <code>
       stats_fetch_consistency
      </code>
      is set to
-     <code class="literal">
+     <code>
       snapshot
      </code>
     </p>
@@ -10175,25 +10127,25 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_get_xact_blocks_fetched
      </code>
      (
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Returns the number of block read requests for table or index, in the current transaction. This number minus
-     <code class="function">
+     <code>
       pg_stat_get_xact_blocks_hit
      </code>
      gives the number of kernel
-     <code class="function">
+     <code>
       read()
      </code>
      calls; the number of actual physical reads is usually lower due to kernel-level buffering.
@@ -10203,21 +10155,21 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_get_xact_blocks_hit
      </code>
      (
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
     <p>
      Returns the number of block read requests for table or index, in the current transaction, found in cache (not triggering kernel
-     <code class="function">
+     <code>
       read()
      </code>
      calls).
@@ -10227,11 +10179,11 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_clear_snapshot
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -10243,11 +10195,11 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_reset
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -10262,7 +10214,7 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_reset_shared
      </code>
      ( [
@@ -10271,17 +10223,17 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
        target
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
-     <code class="literal">
+     <code>
       DEFAULT
      </code>
-     <code class="literal">
+     <code>
       NULL
      </code>
      ] ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -10298,11 +10250,11 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
      <ul class="itemizedlist" style="list-style-type: disc; ">
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          archiver
         </code>
         : Reset all the counters shown in the
-        <code class="structname">
+        <code>
          pg_stat_archiver
         </code>
         view.
@@ -10310,11 +10262,11 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          bgwriter
         </code>
         : Reset all the counters shown in the
-        <code class="structname">
+        <code>
          pg_stat_bgwriter
         </code>
         view.
@@ -10322,11 +10274,11 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          checkpointer
         </code>
         : Reset all the counters shown in the
-        <code class="structname">
+        <code>
          pg_stat_checkpointer
         </code>
         view.
@@ -10334,11 +10286,11 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          io
         </code>
         : Reset all the counters shown in the
-        <code class="structname">
+        <code>
          pg_stat_io
         </code>
         view.
@@ -10346,11 +10298,11 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          recovery_prefetch
         </code>
         : Reset all the counters shown in the
-        <code class="structname">
+        <code>
          pg_stat_recovery_prefetch
         </code>
         view.
@@ -10358,11 +10310,11 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          slru
         </code>
         : Reset all the counters shown in the
-        <code class="structname">
+        <code>
          pg_stat_slru
         </code>
         view.
@@ -10370,11 +10322,11 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          wal
         </code>
         : Reset all the counters shown in the
-        <code class="structname">
+        <code>
          pg_stat_wal
         </code>
         view.
@@ -10382,7 +10334,7 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
       </li>
       <li class="listitem">
        <p>
-        <code class="literal">
+        <code>
          NULL
         </code>
         or not specified: All the counters from the views listed above are reset.
@@ -10400,15 +10352,15 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_reset_single_table_counters
      </code>
      (
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -10423,15 +10375,15 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_reset_backend_stats
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -10446,15 +10398,15 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_reset_single_function_counters
      </code>
      (
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -10469,7 +10421,7 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_reset_slru
      </code>
      ( [
@@ -10478,17 +10430,17 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
        target
       </code>
      </em>
-     <code class="type">
+     <code>
       text
      </code>
-     <code class="literal">
+     <code>
       DEFAULT
      </code>
-     <code class="literal">
+     <code>
       NULL
      </code>
      ] ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
@@ -10500,43 +10452,43 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
       </code>
      </em>
      is
-     <code class="literal">
+     <code>
       NULL
      </code>
      or is not specified, all the counters shown in the
-     <code class="structname">
+     <code>
       pg_stat_slru
      </code>
      view for all SLRU caches are reset. The argument can be one of
-     <code class="literal">
+     <code>
       commit_timestamp
      </code>
      ,
-     <code class="literal">
+     <code>
       multixact_member
      </code>
      ,
-     <code class="literal">
+     <code>
       multixact_offset
      </code>
      ,
-     <code class="literal">
+     <code>
       notify
      </code>
      ,
-     <code class="literal">
+     <code>
       serializable
      </code>
      ,
-     <code class="literal">
+     <code>
       subtransaction
      </code>
      , or
-     <code class="literal">
+     <code>
       transaction
      </code>
      to reset the counters for only that entry. If the argument is
-     <code class="literal">
+     <code>
       other
      </code>
      (or indeed, any unrecognized name), then the counters for all other SLRU caches, such as extension-defined caches, are reset.
@@ -10549,21 +10501,21 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_reset_replication_slot
      </code>
      (
-     <code class="type">
+     <code>
       text
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
     <p>
      Resets statistics of the replication slot defined by the argument. If the argument is
-     <code class="literal">
+     <code>
       NULL
      </code>
      , resets statistics for all the replication slots.
@@ -10576,25 +10528,25 @@ Funções adicionais relacionadas ao sistema de estatísticas acumuladas estão 
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_reset_subscription_stats
      </code>
      (
-     <code class="type">
+     <code>
       oid
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       void
      </code>
     </p>
     <p>
      Resets statistics for a single subscription shown in the
-     <code class="structname">
+     <code>
       pg_stat_subscription_stats
      </code>
      view to zero. If the argument is
-     <code class="literal">
+     <code>
       NULL
      </code>
      , reset statistics for all subscriptions.
@@ -10632,7 +10584,7 @@ FROM pg_stat_get_backend_idset() AS backendid;
 
 
 
-<table border="1" class="table" summary="Per-Backend Statistics Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -10652,15 +10604,15 @@ FROM pg_stat_get_backend_idset() AS backendid;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_get_backend_activity
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -10672,15 +10624,15 @@ FROM pg_stat_get_backend_idset() AS backendid;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_get_backend_activity_start
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -10692,15 +10644,15 @@ FROM pg_stat_get_backend_idset() AS backendid;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_get_backend_client_addr
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       inet
      </code>
     </p>
@@ -10712,15 +10664,15 @@ FROM pg_stat_get_backend_idset() AS backendid;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_get_backend_client_port
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -10732,15 +10684,15 @@ FROM pg_stat_get_backend_idset() AS backendid;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_get_backend_dbid
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       oid
      </code>
     </p>
@@ -10752,11 +10704,11 @@ FROM pg_stat_get_backend_idset() AS backendid;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_get_backend_idset
      </code>
      () →
-     <code class="returnvalue">
+     <code>
       setof integer
      </code>
     </p>
@@ -10768,15 +10720,15 @@ FROM pg_stat_get_backend_idset() AS backendid;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_get_backend_pid
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -10788,15 +10740,15 @@ FROM pg_stat_get_backend_idset() AS backendid;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_get_backend_start
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>
@@ -10808,15 +10760,15 @@ FROM pg_stat_get_backend_idset() AS backendid;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_get_backend_subxact
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       record
      </code>
     </p>
@@ -10840,15 +10792,15 @@ FROM pg_stat_get_backend_idset() AS backendid;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_get_backend_userid
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       oid
      </code>
     </p>
@@ -10860,15 +10812,15 @@ FROM pg_stat_get_backend_idset() AS backendid;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_get_backend_wait_event
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -10888,15 +10840,15 @@ FROM pg_stat_get_backend_idset() AS backendid;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_get_backend_wait_event_type
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -10912,15 +10864,15 @@ FROM pg_stat_get_backend_idset() AS backendid;
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       pg_stat_get_backend_xact_start
      </code>
      (
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       timestamp with time zone
      </code>
     </p>

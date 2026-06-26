@@ -122,11 +122,7 @@ O PostgreSQL também aceita constantes de cadeia de "escape", que são uma exten
 
 **Tabela 4.1. Sequências de Escape de Backslash**
 
-<table border="1" class="table" summary="Backslash Escape Sequences">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -140,7 +136,7 @@ O PostgreSQL também aceita constantes de cadeia de "escape", que são uma exten
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \b
     </code>
    </td>
@@ -150,7 +146,7 @@ O PostgreSQL também aceita constantes de cadeia de "escape", que são uma exten
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \f
     </code>
    </td>
@@ -160,7 +156,7 @@ O PostgreSQL também aceita constantes de cadeia de "escape", que são uma exten
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \n
     </code>
    </td>
@@ -170,7 +166,7 @@ O PostgreSQL também aceita constantes de cadeia de "escape", que são uma exten
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \r
     </code>
    </td>
@@ -180,7 +176,7 @@ O PostgreSQL também aceita constantes de cadeia de "escape", que são uma exten
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \t
     </code>
    </td>
@@ -190,7 +186,7 @@ O PostgreSQL também aceita constantes de cadeia de "escape", que são uma exten
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \
      <em class="replaceable">
       <code>
@@ -199,7 +195,7 @@ O PostgreSQL também aceita constantes de cadeia de "escape", que são uma exten
      </em>
     </code>
     ,
-    <code class="literal">
+    <code>
      \
      <em class="replaceable">
       <code>
@@ -208,7 +204,7 @@ O PostgreSQL também aceita constantes de cadeia de "escape", que são uma exten
      </em>
     </code>
     ,
-    <code class="literal">
+    <code>
      \
      <em class="replaceable">
       <code>
@@ -230,7 +226,7 @@ O PostgreSQL também aceita constantes de cadeia de "escape", que são uma exten
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \x
      <em class="replaceable">
       <code>
@@ -239,7 +235,7 @@ O PostgreSQL também aceita constantes de cadeia de "escape", que são uma exten
      </em>
     </code>
     ,
-    <code class="literal">
+    <code>
      \x
      <em class="replaceable">
       <code>
@@ -261,7 +257,7 @@ O PostgreSQL também aceita constantes de cadeia de "escape", que são uma exten
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \u
      <em class="replaceable">
       <code>
@@ -270,7 +266,7 @@ O PostgreSQL também aceita constantes de cadeia de "escape", que são uma exten
      </em>
     </code>
     ,
-    <code class="literal">
+    <code>
      \U
      <em class="replaceable">
       <code>
@@ -495,7 +491,7 @@ Um comentário é removido do fluxo de entrada antes de uma análise sintática 
 
 **Tabela 4.2. Prioridade do operador (da maior para a menor)**
 
-<table border="1" class="table" summary="Operator Precedence (highest to lowest)">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -517,7 +513,7 @@ Um comentário é removido do fluxo de entrada antes de uma análise sintática 
  <tbody>
   <tr>
    <td>
-    <code class="token">
+    <code>
      .
     </code>
    </td>
@@ -530,7 +526,7 @@ Um comentário é removido do fluxo de entrada antes de uma análise sintática 
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ::
     </code>
    </td>
@@ -546,10 +542,10 @@ Um comentário é removido do fluxo de entrada antes de uma análise sintática 
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      [
     </code>
-    <code class="token">
+    <code>
      ]
     </code>
    </td>
@@ -562,10 +558,10 @@ Um comentário é removido do fluxo de entrada antes de uma análise sintática 
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      +
     </code>
-    <code class="token">
+    <code>
      -
     </code>
    </td>
@@ -578,7 +574,7 @@ Um comentário é removido do fluxo de entrada antes de uma análise sintática 
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      COLLATE
     </code>
    </td>
@@ -591,7 +587,7 @@ Um comentário é removido do fluxo de entrada antes de uma análise sintática 
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      AT
     </code>
    </td>
@@ -599,18 +595,18 @@ Um comentário é removido do fluxo de entrada antes de uma análise sintática 
     left
    </td>
    <td>
-    <code class="literal">
+    <code>
      AT TIME ZONE
     </code>
     ,
-    <code class="literal">
+    <code>
      AT LOCAL
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      ^
     </code>
    </td>
@@ -623,13 +619,13 @@ Um comentário é removido do fluxo de entrada antes de uma análise sintática 
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      *
     </code>
-    <code class="token">
+    <code>
      /
     </code>
-    <code class="token">
+    <code>
      %
     </code>
    </td>
@@ -642,10 +638,10 @@ Um comentário é removido do fluxo de entrada antes de uma análise sintática 
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      +
     </code>
-    <code class="token">
+    <code>
      -
     </code>
    </td>
@@ -669,19 +665,19 @@ Um comentário é removido do fluxo de entrada antes de uma análise sintática 
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      BETWEEN
     </code>
-    <code class="token">
+    <code>
      IN
     </code>
-    <code class="token">
+    <code>
      LIKE
     </code>
-    <code class="token">
+    <code>
      ILIKE
     </code>
-    <code class="token">
+    <code>
      SIMILAR
     </code>
    </td>
@@ -693,22 +689,22 @@ Um comentário é removido do fluxo de entrada antes de uma análise sintática 
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      &lt;
     </code>
-    <code class="token">
+    <code>
      &gt;
     </code>
-    <code class="token">
+    <code>
      =
     </code>
-    <code class="token">
+    <code>
      &lt;=
     </code>
-    <code class="token">
+    <code>
      &gt;=
     </code>
-    <code class="token">
+    <code>
      &lt;&gt;
     </code>
    </td>
@@ -720,32 +716,32 @@ Um comentário é removido do fluxo de entrada antes de uma análise sintática 
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      IS
     </code>
-    <code class="token">
+    <code>
      ISNULL
     </code>
-    <code class="token">
+    <code>
      NOTNULL
     </code>
    </td>
    <td>
    </td>
    <td>
-    <code class="literal">
+    <code>
      IS TRUE
     </code>
     ,
-    <code class="literal">
+    <code>
      IS FALSE
     </code>
     ,
-    <code class="literal">
+    <code>
      IS NULL
     </code>
     ,
-    <code class="literal">
+    <code>
      IS DISTINCT FROM
     </code>
     , etc.
@@ -753,7 +749,7 @@ Um comentário é removido do fluxo de entrada antes de uma análise sintática 
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      NOT
     </code>
    </td>
@@ -766,7 +762,7 @@ Um comentário é removido do fluxo de entrada antes de uma análise sintática 
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      AND
     </code>
    </td>
@@ -779,7 +775,7 @@ Um comentário é removido do fluxo de entrada antes de uma análise sintática 
   </tr>
   <tr>
    <td>
-    <code class="token">
+    <code>
      OR
     </code>
    </td>

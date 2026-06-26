@@ -14,7 +14,7 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
 
 
 
-<table border="1" class="table" summary="PostgreSQL Error Codes">
+<table>
  <colgroup>
   <col class="errorcode"/>
   <col class="condname"/>
@@ -41,12 +41,12 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      00000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      successful_completion
     </code>
    </td>
@@ -62,96 +62,96 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      01000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      warning
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      0100C
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      dynamic_result_sets_returned
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      01008
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      implicit_zero_bit_padding
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      01003
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      null_value_eliminated_in_set_function
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      01007
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      privilege_not_granted
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      01006
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      privilege_not_revoked
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      01004
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      string_data_right_truncation
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      01P01
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      deprecated_feature
     </code>
    </td>
@@ -167,24 +167,24 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      02000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      no_data
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      02001
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      no_additional_dynamic_result_sets_returned
     </code>
    </td>
@@ -200,12 +200,12 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      03000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      sql_statement_not_yet_complete
     </code>
    </td>
@@ -221,84 +221,84 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      08000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      connection_exception
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      08003
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      connection_does_not_exist
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      08006
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      connection_failure
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      08001
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      sqlclient_unable_to_establish_sqlconnection
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      08004
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      sqlserver_rejected_establishment_of_sqlconnection
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      08007
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      transaction_resolution_unknown
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      08P01
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      protocol_violation
     </code>
    </td>
@@ -314,12 +314,12 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      09000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      triggered_action_exception
     </code>
    </td>
@@ -335,12 +335,12 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      0A000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      feature_not_supported
     </code>
    </td>
@@ -356,12 +356,12 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      0B000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_transaction_initiation
     </code>
    </td>
@@ -377,24 +377,24 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      0F000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      locator_exception
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      0F001
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_locator_specification
     </code>
    </td>
@@ -410,24 +410,24 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      0L000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_grantor
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      0LP01
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_grant_operation
     </code>
    </td>
@@ -443,12 +443,12 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      0P000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_role_specification
     </code>
    </td>
@@ -464,24 +464,24 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      0Z000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      diagnostics_exception
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      0Z002
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      stacked_diagnostics_accessed_without_active_handler
     </code>
    </td>
@@ -497,12 +497,12 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      10608
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_argument_for_xquery
     </code>
    </td>
@@ -518,12 +518,12 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      20000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      case_not_found
     </code>
    </td>
@@ -539,12 +539,12 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      21000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      cardinality_violation
     </code>
    </td>
@@ -560,816 +560,816 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      data_exception
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2202E
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      array_subscript_error
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22021
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      character_not_in_repertoire
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22008
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      datetime_field_overflow
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22012
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      division_by_zero
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22005
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      error_in_assignment
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2200B
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      escape_character_conflict
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22022
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      indicator_overflow
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22015
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      interval_field_overflow
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2201E
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_argument_for_logarithm
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22014
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_argument_for_ntile_function
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22016
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_argument_for_nth_value_function
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2201F
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_argument_for_power_function
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2201G
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_argument_for_width_bucket_function
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22018
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_character_value_for_cast
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22007
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_datetime_format
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22019
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_escape_character
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2200D
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_escape_octet
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22025
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_escape_sequence
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22P06
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      nonstandard_use_of_escape_character
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22010
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_indicator_parameter_value
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22023
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_parameter_value
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22013
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_preceding_or_following_size
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2201B
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_regular_expression
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2201W
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_row_count_in_limit_clause
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2201X
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_row_count_in_result_offset_clause
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2202H
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_tablesample_argument
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2202G
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_tablesample_repeat
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22009
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_time_zone_displacement_value
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2200C
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_use_of_escape_character
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2200G
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      most_specific_type_mismatch
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22004
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      null_value_not_allowed
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22002
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      null_value_no_indicator_parameter
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22003
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      numeric_value_out_of_range
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2200H
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      sequence_generator_limit_exceeded
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22026
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      string_data_length_mismatch
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22001
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      string_data_right_truncation
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22011
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      substring_error
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22027
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      trim_error
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22024
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      unterminated_c_string
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2200F
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      zero_length_character_string
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22P01
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      floating_point_exception
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22P02
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_text_representation
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22P03
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_binary_representation
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22P04
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      bad_copy_file_format
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22P05
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      untranslatable_character
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2200L
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      not_an_xml_document
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2200M
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_xml_document
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2200N
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_xml_content
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2200S
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_xml_comment
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2200T
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_xml_processing_instruction
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22030
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      duplicate_json_object_key_value
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22031
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_argument_for_sql_json_datetime_function
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22032
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_json_text
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22033
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_sql_json_subscript
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22034
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      more_than_one_sql_json_item
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22035
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      no_sql_json_item
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22036
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      non_numeric_sql_json_item
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22037
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      non_unique_keys_in_a_json_object
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22038
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      singleton_sql_json_item_required
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      22039
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      sql_json_array_not_found
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2203A
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      sql_json_member_not_found
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2203B
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      sql_json_number_not_found
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2203C
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      sql_json_object_not_found
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2203D
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      too_many_json_array_elements
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2203E
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      too_many_json_object_members
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2203F
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      sql_json_scalar_required
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2203G
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      sql_json_item_cannot_be_cast_to_target_type
     </code>
    </td>
@@ -1385,84 +1385,84 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      23000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      integrity_constraint_violation
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      23001
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      restrict_violation
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      23502
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      not_null_violation
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      23503
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      foreign_key_violation
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      23505
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      unique_violation
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      23514
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      check_violation
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      23P01
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      exclusion_violation
     </code>
    </td>
@@ -1478,12 +1478,12 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      24000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_cursor_state
     </code>
    </td>
@@ -1499,156 +1499,156 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      25000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_transaction_state
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      25001
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      active_sql_transaction
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      25002
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      branch_transaction_already_active
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      25008
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      held_cursor_requires_same_isolation_level
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      25003
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      inappropriate_access_mode_for_branch_transaction
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      25004
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      inappropriate_isolation_level_for_branch_transaction
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      25005
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      no_active_sql_transaction_for_branch_transaction
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      25006
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      read_only_sql_transaction
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      25007
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      schema_and_data_statement_mixing_not_supported
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      25P01
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      no_active_sql_transaction
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      25P02
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      in_failed_sql_transaction
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      25P03
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      idle_in_transaction_session_timeout
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      25P04
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      transaction_timeout
     </code>
    </td>
@@ -1664,12 +1664,12 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      26000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_sql_statement_name
     </code>
    </td>
@@ -1685,12 +1685,12 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      27000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      triggered_data_change_violation
     </code>
    </td>
@@ -1706,24 +1706,24 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      28000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_authorization_specification
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      28P01
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_password
     </code>
    </td>
@@ -1739,24 +1739,24 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2B000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      dependent_privilege_descriptors_still_exist
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2BP01
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      dependent_objects_still_exist
     </code>
    </td>
@@ -1772,12 +1772,12 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2D000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_transaction_termination
     </code>
    </td>
@@ -1793,60 +1793,60 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2F000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      sql_routine_exception
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2F005
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      function_executed_no_return_statement
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2F002
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      modifying_sql_data_not_permitted
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2F003
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      prohibited_sql_statement_attempted
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      2F004
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      reading_sql_data_not_permitted
     </code>
    </td>
@@ -1862,12 +1862,12 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      34000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_cursor_name
     </code>
    </td>
@@ -1883,60 +1883,60 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      38000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      external_routine_exception
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      38001
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      containing_sql_not_permitted
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      38002
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      modifying_sql_data_not_permitted
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      38003
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      prohibited_sql_statement_attempted
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      38004
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      reading_sql_data_not_permitted
     </code>
    </td>
@@ -1952,72 +1952,72 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      39000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      external_routine_invocation_exception
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      39001
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_sqlstate_returned
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      39004
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      null_value_not_allowed
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      39P01
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      trigger_protocol_violated
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      39P02
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      srf_protocol_violated
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      39P03
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      event_trigger_protocol_violated
     </code>
    </td>
@@ -2033,24 +2033,24 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      3B000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      savepoint_exception
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      3B001
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_savepoint_specification
     </code>
    </td>
@@ -2066,12 +2066,12 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      3D000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_catalog_name
     </code>
    </td>
@@ -2087,12 +2087,12 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      3F000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_schema_name
     </code>
    </td>
@@ -2108,60 +2108,60 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      40000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      transaction_rollback
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      40002
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      transaction_integrity_constraint_violation
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      40001
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      serialization_failure
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      40003
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      statement_completion_unknown
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      40P01
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      deadlock_detected
     </code>
    </td>
@@ -2177,528 +2177,528 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      syntax_error_or_access_rule_violation
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42601
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      syntax_error
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42501
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      insufficient_privilege
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42846
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      cannot_coerce
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42803
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      grouping_error
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P20
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      windowing_error
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P19
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_recursion
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42830
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_foreign_key
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42602
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_name
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42622
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      name_too_long
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42939
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      reserved_name
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42804
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      datatype_mismatch
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P18
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      indeterminate_datatype
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P21
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      collation_mismatch
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P22
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      indeterminate_collation
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42809
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      wrong_object_type
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      428C9
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      generated_always
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42703
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      undefined_column
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42883
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      undefined_function
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P01
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      undefined_table
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P02
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      undefined_parameter
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42704
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      undefined_object
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42701
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      duplicate_column
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P03
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      duplicate_cursor
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P04
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      duplicate_database
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42723
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      duplicate_function
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P05
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      duplicate_prepared_statement
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P06
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      duplicate_schema
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P07
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      duplicate_table
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42712
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      duplicate_alias
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42710
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      duplicate_object
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42702
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      ambiguous_column
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42725
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      ambiguous_function
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P08
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      ambiguous_parameter
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P09
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      ambiguous_alias
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P10
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_column_reference
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42611
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_column_definition
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P11
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_cursor_definition
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P12
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_database_definition
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P13
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_function_definition
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P14
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_prepared_statement_definition
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P15
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_schema_definition
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P16
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_table_definition
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      42P17
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      invalid_object_definition
     </code>
    </td>
@@ -2714,12 +2714,12 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      44000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      with_check_option_violation
     </code>
    </td>
@@ -2735,60 +2735,60 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      53000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      insufficient_resources
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      53100
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      disk_full
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      53200
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      out_of_memory
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      53300
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      too_many_connections
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      53400
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      configuration_limit_exceeded
     </code>
    </td>
@@ -2804,48 +2804,48 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      54000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      program_limit_exceeded
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      54001
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      statement_too_complex
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      54011
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      too_many_columns
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      54023
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      too_many_arguments
     </code>
    </td>
@@ -2861,60 +2861,60 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      55000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      object_not_in_prerequisite_state
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      55006
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      object_in_use
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      55P02
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      cant_change_runtime_param
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      55P03
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      lock_not_available
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      55P04
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      unsafe_new_enum_value_usage
     </code>
    </td>
@@ -2930,84 +2930,84 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      57000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      operator_intervention
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      57014
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      query_canceled
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      57P01
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      admin_shutdown
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      57P02
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      crash_shutdown
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      57P03
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      cannot_connect_now
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      57P04
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      database_dropped
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      57P05
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      idle_session_timeout
     </code>
    </td>
@@ -3027,60 +3027,60 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      58000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      system_error
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      58030
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      io_error
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      58P01
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      undefined_file
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      58P02
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      duplicate_file
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      58P03
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      file_name_too_long
     </code>
    </td>
@@ -3096,24 +3096,24 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      F0000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      config_file_error
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      F0001
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      lock_file_exists
     </code>
    </td>
@@ -3129,324 +3129,324 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_error
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV005
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_column_name_not_found
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV002
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_dynamic_parameter_value_needed
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV010
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_function_sequence_error
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV021
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_inconsistent_descriptor_information
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV024
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_invalid_attribute_value
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV007
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_invalid_column_name
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV008
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_invalid_column_number
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV004
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_invalid_data_type
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV006
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_invalid_data_type_descriptors
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV091
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_invalid_descriptor_field_identifier
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV00B
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_invalid_handle
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV00C
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_invalid_option_index
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV00D
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_invalid_option_name
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV090
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_invalid_string_length_or_buffer_length
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV00A
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_invalid_string_format
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV009
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_invalid_use_of_null_pointer
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV014
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_too_many_handles
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV001
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_out_of_memory
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV00P
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_no_schemas
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV00J
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_option_name_not_found
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV00K
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_reply_handle
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV00Q
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_schema_not_found
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV00R
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_table_not_found
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV00L
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_unable_to_create_execution
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV00M
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_unable_to_create_reply
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      HV00N
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      fdw_unable_to_establish_connection
     </code>
    </td>
@@ -3462,60 +3462,60 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      P0000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      plpgsql_error
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      P0001
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      raise_exception
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      P0002
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      no_data_found
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      P0003
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      too_many_rows
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      P0004
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      assert_failure
     </code>
    </td>
@@ -3531,36 +3531,36 @@ Para alguns tipos de erros, o servidor reporta o nome de um objeto de banco de d
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      XX000
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      internal_error
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      XX001
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      data_corrupted
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      XX002
     </code>
    </td>
    <td>
-    <code class="symbol">
+    <code>
      index_corrupted
     </code>
    </td>

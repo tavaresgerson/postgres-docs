@@ -8,7 +8,7 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
 
 
 
-<table border="1" class="table" summary="pg_ts_config Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -43,10 +43,10 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       cfgname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -58,20 +58,20 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       cfgnamespace
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -84,20 +84,20 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       cfgowner
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -110,20 +110,20 @@ As funcionalidades de busca de texto do PostgreSQL são descritas em detalhes no
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       cfgparser
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-ts-parser.md" title="52.62. pg_ts_parser">
-      <code class="structname">
+      <code>
        pg_ts_parser
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )

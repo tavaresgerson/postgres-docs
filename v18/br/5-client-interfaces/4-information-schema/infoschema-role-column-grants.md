@@ -6,7 +6,7 @@ A vista `role_column_grants` identifica todos os privilégios concedidos em colu
 
 
 
-<table border="1" class="table" summary="role_column_grants Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `role_column_grants` identifica todos os privilégios concedidos em colu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       grantor
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `role_column_grants` identifica todos os privilégios concedidos em colu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       grantee
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `role_column_grants` identifica todos os privilégios concedidos em colu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,10 +71,10 @@ A vista `role_column_grants` identifica todos os privilégios concedidos em colu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -86,10 +86,10 @@ A vista `role_column_grants` identifica todos os privilégios concedidos em colu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -101,10 +101,10 @@ A vista `role_column_grants` identifica todos os privilégios concedidos em colu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       column_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -116,28 +116,28 @@ A vista `role_column_grants` identifica todos os privilégios concedidos em colu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       privilege_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Type of the privilege:
-     <code class="literal">
+     <code>
       SELECT
      </code>
      ,
-     <code class="literal">
+     <code>
       INSERT
      </code>
      ,
-     <code class="literal">
+     <code>
       UPDATE
      </code>
      , or
-     <code class="literal">
+     <code>
       REFERENCES
      </code>
     </p>
@@ -146,19 +146,19 @@ A vista `role_column_grants` identifica todos os privilégios concedidos em colu
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_grantable
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       YES
      </code>
      if the privilege is grantable,
-     <code class="literal">
+     <code>
       NO
      </code>
      if not

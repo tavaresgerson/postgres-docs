@@ -6,7 +6,7 @@ A vista `foreign_table_options` contém todas as opções definidas para tabelas
 
 
 
-<table border="1" class="table" summary="foreign_table_options Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `foreign_table_options` contém todas as opções definidas para tabelas
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       foreign_table_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `foreign_table_options` contém todas as opções definidas para tabelas
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       foreign_table_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `foreign_table_options` contém todas as opções definidas para tabelas
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       foreign_table_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,10 +71,10 @@ A vista `foreign_table_options` contém todas as opções definidas para tabelas
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       option_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -86,10 +86,10 @@ A vista `foreign_table_options` contém todas as opções definidas para tabelas
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       option_value
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>

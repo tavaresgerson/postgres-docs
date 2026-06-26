@@ -6,7 +6,7 @@ A vista `pg_timezone_names` fornece uma lista de nomes de fuso horário reconhec
 
 
 
-<table border="1" class="table" summary="pg_timezone_names Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `pg_timezone_names` fornece uma lista de nomes de fuso horário reconhec
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       name
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `pg_timezone_names` fornece uma lista de nomes de fuso horário reconhec
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       abbrev
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `pg_timezone_names` fornece uma lista de nomes de fuso horário reconhec
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       utc_offset
      </code>
-     <code class="type">
+     <code>
       interval
      </code>
     </p>
@@ -71,10 +71,10 @@ A vista `pg_timezone_names` fornece uma lista de nomes de fuso horário reconhec
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_dst
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>

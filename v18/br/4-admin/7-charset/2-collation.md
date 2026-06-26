@@ -247,7 +247,7 @@ A comparação de duas cadeias de caracteres (colação) no ICU é determinada p
 
 
 
-<table border="1" class="table" summary="ICU Collation Levels">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -267,32 +267,32 @@ A comparação de duas cadeias de caracteres (colação) no ICU é determinada p
     Description
    </th>
    <th>
-    <code class="literal">
+    <code>
      'f' = 'f'
     </code>
    </th>
    <th>
-    <code class="literal">
+    <code>
      'ab' = U&amp;'a\2063b'
     </code>
    </th>
    <th>
-    <code class="literal">
+    <code>
      'x-y' = 'x_y'
     </code>
    </th>
    <th>
-    <code class="literal">
+    <code>
      'g' = 'G'
     </code>
    </th>
    <th>
-    <code class="literal">
+    <code>
      'n' = 'ñ'
     </code>
    </th>
    <th>
-    <code class="literal">
+    <code>
      'y' = 'z'
     </code>
    </th>
@@ -307,32 +307,32 @@ A comparação de duas cadeias de caracteres (colação) no ICU é determinada p
     Base Character
    </td>
    <td>
-    <code class="literal">
+    <code>
      true
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      true
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      true
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      true
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      true
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
@@ -345,32 +345,32 @@ A comparação de duas cadeias de caracteres (colação) no ICU é determinada p
     Accents
    </td>
    <td>
-    <code class="literal">
+    <code>
      true
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      true
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      true
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      true
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
@@ -383,32 +383,32 @@ A comparação de duas cadeias de caracteres (colação) no ICU é determinada p
     Case/Variants
    </td>
    <td>
-    <code class="literal">
+    <code>
      true
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      true
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      true
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
@@ -426,32 +426,32 @@ A comparação de duas cadeias de caracteres (colação) no ICU é determinada p
     </a>
    </td>
    <td>
-    <code class="literal">
+    <code>
      true
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      true
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
@@ -464,32 +464,32 @@ A comparação de duas cadeias de caracteres (colação) no ICU é determinada p
     All
    </td>
    <td>
-    <code class="literal">
+    <code>
      true
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
@@ -506,7 +506,7 @@ A comparação de duas cadeias de caracteres (colação) no ICU é determinada p
        </sup>
       </a>
       only with
-      <code class="literal">
+      <code>
        ka-shifted
       </code>
       ; see
@@ -555,7 +555,7 @@ SELECT 'x-y' = 'x_y' COLLATE level4; -- false
 
 
 
-<table border="1" class="table" summary="ICU Collation Settings">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -581,20 +581,20 @@ SELECT 'x-y' = 'x_y' COLLATE level4; -- false
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      co
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      emoji
     </code>
     ,
-    <code class="literal">
+    <code>
      phonebk
     </code>
     ,
-    <code class="literal">
+    <code>
      standard
     </code>
     ,
@@ -605,7 +605,7 @@ SELECT 'x-y' = 'x_y' COLLATE level4; -- false
     </em>
    </td>
    <td>
-    <code class="literal">
+    <code>
      standard
     </code>
    </td>
@@ -619,39 +619,39 @@ SELECT 'x-y' = 'x_y' COLLATE level4; -- false
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ka
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      noignore
     </code>
     ,
-    <code class="literal">
+    <code>
      shifted
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      noignore
     </code>
    </td>
    <td>
     Se definido como
-    <code class="literal">
+    <code>
      shifted
     </code>
     , faz com que alguns caracteres (por exemplo, pontuação ou espaço) sejam ignorados na comparação. Chave
-    <code class="literal">
+    <code>
      ks
     </code>
     deve ser ajustado para
-    <code class="literal">
+    <code>
      level3
     </code>
     ou reduza-o para entrar em vigor. Defina a chave
-    <code class="literal">
+    <code>
      kv
     </code>
     para controlar quais classes de caracteres são ignoradas.
@@ -659,35 +659,35 @@ SELECT 'x-y' = 'x_y' COLLATE level4; -- false
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      kb
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      true
     </code>
     ,
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
    <td>
     Comparação reversa para as diferenças do nível 2. Por exemplo, local
-    <code class="literal">
+    <code>
      und-u-kb
     </code>
     selecione
-    <code class="literal">
+    <code>
      'àe'
     </code>
     antes
-    <code class="literal">
+    <code>
      'aé'
     </code>
     .
@@ -695,21 +695,21 @@ SELECT 'x-y' = 'x_y' COLLATE level4; -- false
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      kc
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      true
     </code>
     ,
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
@@ -719,15 +719,15 @@ SELECT 'x-y' = 'x_y' COLLATE level4; -- false
     </p>
     <p>
      Se definido como
-     <code class="literal">
+     <code>
       true
      </code>
      e
-     <code class="literal">
+     <code>
       ks
      </code>
      está previsto
-     <code class="literal">
+     <code>
       level1
      </code>
      , ignorará acentos, mas levará em conta a grafia.
@@ -736,39 +736,39 @@ SELECT 'x-y' = 'x_y' COLLATE level4; -- false
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      kf
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      upper
     </code>
     ,
-    <code class="literal">
+    <code>
      lower
     </code>
     ,
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
    <td>
     Se definido como
-    <code class="literal">
+    <code>
      upper
     </code>
     , as letras maiúsculas são ordenadas antes das minúsculas. Se definido como
-    <code class="literal">
+    <code>
      lower
     </code>
     , as letras minúsculas são ordenadas antes das maiúsculas. Se definido como
-    <code class="literal">
+    <code>
      false
     </code>
     , o tipo depende das regras do local.
@@ -776,35 +776,35 @@ SELECT 'x-y' = 'x_y' COLLATE level4; -- false
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      kn
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      true
     </code>
     ,
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
    <td>
     Se definido como
-    <code class="literal">
+    <code>
      true
     </code>
     , os números dentro de uma string são tratados como um único valor numérico, e não como uma sequência de dígitos. Por exemplo,
-    <code class="literal">
+    <code>
      'id-45'
     </code>
     separam antes
-    <code class="literal">
+    <code>
      'id-123'
     </code>
     .
@@ -812,43 +812,43 @@ SELECT 'x-y' = 'x_y' COLLATE level4; -- false
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      kk
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      true
     </code>
     ,
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      false
     </code>
    </td>
    <td>
     <p>
      Ative a normalização completa; pode afetar o desempenho. A normalização básica é realizada mesmo quando configurada para
-     <code class="literal">
+     <code>
       false
      </code>
      . Os locais para idiomas que exigem normalização completa geralmente permitem isso por padrão.
     </p>
     <p>
      A normalização completa é importante em alguns casos, como quando múltiplos acentos são aplicados a um único caractere. Por exemplo, as sequências de pontos de código
-     <code class="literal">
+     <code>
       U&amp;'\0065\0323\0302'
      </code>
      e
-     <code class="literal">
+     <code>
       U&amp;'\0065\0302\0323'
      </code>
      representam
-     <code class="literal">
+     <code>
       e
      </code>
      com acentos circunflexos e pontos abaixo aplicados em diferentes ordens. Com a normalização completa ativada, essas sequências de pontos de código são tratadas como iguais; caso contrário, são desiguais.
@@ -857,28 +857,28 @@ SELECT 'x-y' = 'x_y' COLLATE level4; -- false
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      kr
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      space
     </code>
     ,
-    <code class="literal">
+    <code>
      punct
     </code>
     ,
-    <code class="literal">
+    <code>
      symbol
     </code>
     ,
-    <code class="literal">
+    <code>
      currency
     </code>
     ,
-    <code class="literal">
+    <code>
      digit
     </code>
     ,
@@ -899,26 +899,26 @@ SELECT 'x-y' = 'x_y' COLLATE level4; -- false
       </code>
      </em>
      , por exemplo.
-     <code class="literal">
+     <code>
       latn
      </code>
      ("Latino") ou
-     <code class="literal">
+     <code>
       grek
      </code>
      ("Grego"). Múltiplos valores são separados por "
-     <code class="literal">
+     <code>
       -
      </code>
      ".
     </p>
     <p>
      Redefine a ordem das classes de caracteres; os caracteres que pertencem a uma classe mais cedo na lista são ordenados antes dos caracteres que pertencem a uma classe mais tarde na lista. Por exemplo, o valor
-     <code class="literal">
+     <code>
       digit-currency-space
      </code>
      (como parte de uma tag de idioma como
-     <code class="literal">
+     <code>
       und-u-kr-digit-currency-space
      </code>
      ) ordena a pontuação antes dos dígitos e dos espaços.
@@ -927,43 +927,43 @@ SELECT 'x-y' = 'x_y' COLLATE level4; -- false
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ks
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      level1
     </code>
     ,
-    <code class="literal">
+    <code>
      level2
     </code>
     ,
-    <code class="literal">
+    <code>
      level3
     </code>
     ,
-    <code class="literal">
+    <code>
      level4
     </code>
     ,
-    <code class="literal">
+    <code>
      identic
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      level3
     </code>
    </td>
    <td>
     Sensibilidade (ou "força") ao determinar a igualdade, com
-    <code class="literal">
+    <code>
      level1
     </code>
     menos sensíveis às diferenças e
-    <code class="literal">
+    <code>
      identic
     </code>
     os mais sensíveis às diferenças. Veja
@@ -975,59 +975,59 @@ SELECT 'x-y' = 'x_y' COLLATE level4; -- false
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      kv
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      space
     </code>
     ,
-    <code class="literal">
+    <code>
      punct
     </code>
     ,
-    <code class="literal">
+    <code>
      symbol
     </code>
     ,
-    <code class="literal">
+    <code>
      currency
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      punct
     </code>
    </td>
    <td>
     Classes de caracteres ignoradas durante a comparação no nível 3. Definir um valor posterior inclui valores anteriores; por exemplo,
-    <code class="literal">
+    <code>
      symbol
     </code>
     também inclui
-    <code class="literal">
+    <code>
      punct
     </code>
     e
-    <code class="literal">
+    <code>
      space
     </code>
     em os caracteres a serem ignorados. Chave
-    <code class="literal">
+    <code>
      ka
     </code>
     deve ser ajustado para
-    <code class="literal">
+    <code>
      shifted
     </code>
     e chave
-    <code class="literal">
+    <code>
      ks
     </code>
     deve ser definido
-    <code class="literal">
+    <code>
      level3
     </code>
     ou inferior para entrar em vigor.

@@ -2,11 +2,7 @@
 
 **Tabela 8.4. Tipos de Caracteres**
 
-<table border="1" class="table" summary="Character Types">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -20,7 +16,7 @@
  <tbody>
   <tr>
    <td>
-    <code class="type">
+    <code>
      character varying(
      <em class="replaceable">
       <code>
@@ -30,7 +26,7 @@
      )
     </code>
     ,
-    <code class="type">
+    <code>
      varchar(
      <em class="replaceable">
       <code>
@@ -46,7 +42,7 @@
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      character(
      <em class="replaceable">
       <code>
@@ -56,7 +52,7 @@
      )
     </code>
     ,
-    <code class="type">
+    <code>
      char(
      <em class="replaceable">
       <code>
@@ -66,7 +62,7 @@
      )
     </code>
     ,
-    <code class="type">
+    <code>
      bpchar(
      <em class="replaceable">
       <code>
@@ -82,7 +78,7 @@
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      bpchar
     </code>
    </td>
@@ -92,7 +88,7 @@
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
@@ -152,7 +148,7 @@ SELECT b, char_length(b) FROM test2;
  too l |           5
 ```
 
-<table border="0" summary="Callout list">
+<table>
  <tr>
   <td align="left" valign="top" width="5%">
    <p>
@@ -164,7 +160,7 @@ SELECT b, char_length(b) FROM test2;
   <td align="left" valign="top">
    <p>
     The
-    <code class="function">
+    <code>
      char_length
     </code>
     function is discussed in
@@ -181,7 +177,7 @@ Existem outros dois tipos de caracteres de comprimento fixo no PostgreSQL, mostr
 
 **Tabela 8.5. Tipos de Caracteres Especiais**
 
-<table border="1" class="table" summary="Special Character Types">
+<table>
  <colgroup>
   <col/>
   <col/>
@@ -203,7 +199,7 @@ Existem outros dois tipos de caracteres de comprimento fixo no PostgreSQL, mostr
  <tbody>
   <tr>
    <td>
-    <code class="type">
+    <code>
      "char"
     </code>
    </td>
@@ -216,7 +212,7 @@ Existem outros dois tipos de caracteres de comprimento fixo no PostgreSQL, mostr
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      name
     </code>
    </td>

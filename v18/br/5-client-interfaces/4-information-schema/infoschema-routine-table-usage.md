@@ -6,7 +6,7 @@ A vista `routine_table_usage` √© destinada a identificar todas as tabelas que s√
 
 
 
-<table border="1" class="table" summary="routine_table_usage Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `routine_table_usage` √© destinada a identificar todas as tabelas que s√
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       specific_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `routine_table_usage` √© destinada a identificar todas as tabelas que s√
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       specific_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `routine_table_usage` √© destinada a identificar todas as tabelas que s√
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       specific_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -83,10 +83,10 @@ A vista `routine_table_usage` √© destinada a identificar todas as tabelas que s√
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       routine_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -98,10 +98,10 @@ A vista `routine_table_usage` √© destinada a identificar todas as tabelas que s√
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       routine_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -113,10 +113,10 @@ A vista `routine_table_usage` √© destinada a identificar todas as tabelas que s√
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       routine_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -128,10 +128,10 @@ A vista `routine_table_usage` √© destinada a identificar todas as tabelas que s√
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -143,10 +143,10 @@ A vista `routine_table_usage` √© destinada a identificar todas as tabelas que s√
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -158,10 +158,10 @@ A vista `routine_table_usage` √© destinada a identificar todas as tabelas que s√
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>

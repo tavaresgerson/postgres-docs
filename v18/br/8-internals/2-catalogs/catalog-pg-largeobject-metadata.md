@@ -6,7 +6,7 @@ O catálogo `pg_largeobject_metadata` contém metadados associados a objetos gra
 
 
 
-<table border="1" class="table" summary="pg_largeobject_metadata Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_largeobject_metadata` contém metadados associados a objetos gra
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,20 +41,20 @@ O catálogo `pg_largeobject_metadata` contém metadados associados a objetos gra
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       lomowner
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -67,10 +67,10 @@ O catálogo `pg_largeobject_metadata` contém metadados associados a objetos gra
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       lomacl
      </code>
-     <code class="type">
+     <code>
       aclitem[]
      </code>
     </p>

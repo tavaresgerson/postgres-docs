@@ -6,7 +6,7 @@ A tabela `sql_parts` contém informações sobre quais das várias partes do pad
 
 
 
-<table border="1" class="table" summary="sql_parts Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A tabela `sql_parts` contém informações sobre quais das várias partes do pad
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       feature_id
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -41,10 +41,10 @@ A tabela `sql_parts` contém informações sobre quais das várias partes do pad
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       feature_name
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -56,15 +56,15 @@ A tabela `sql_parts` contém informações sobre quais das várias partes do pad
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_supported
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       YES
      </code>
      if the part is fully supported by the current version of
@@ -72,7 +72,7 @@ A tabela `sql_parts` contém informações sobre quais das várias partes do pad
       PostgreSQL
      </span>
      ,
-     <code class="literal">
+     <code>
       NO
      </code>
      if not
@@ -82,10 +82,10 @@ A tabela `sql_parts` contém informações sobre quais das várias partes do pad
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_verified_by
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -101,10 +101,10 @@ A tabela `sql_parts` contém informações sobre quais das várias partes do pad
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       comments
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>

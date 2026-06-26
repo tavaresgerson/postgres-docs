@@ -10,7 +10,7 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_shdescription` é comp
 
 
 
-<table border="1" class="table" summary="pg_shdescription Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -30,10 +30,10 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_shdescription` é comp
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       objoid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referência a qualquer coluna OID)
@@ -46,20 +46,20 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_shdescription` é comp
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       classoid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -72,10 +72,10 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_shdescription` é comp
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       description
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>

@@ -6,7 +6,7 @@ A vista `user_mappings` contém todos os mapeamentos de usuário definidos no ba
 
 
 
-<table border="1" class="table" summary="user_mappings Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,16 +26,16 @@ A vista `user_mappings` contém todos os mapeamentos de usuário definidos no ba
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       authorization_identifier
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
     <p>
      Name of the user being mapped, or
-     <code class="literal">
+     <code>
       PUBLIC
      </code>
      if the mapping is public
@@ -45,10 +45,10 @@ A vista `user_mappings` contém todos os mapeamentos de usuário definidos no ba
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       foreign_server_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -60,10 +60,10 @@ A vista `user_mappings` contém todos os mapeamentos de usuário definidos no ba
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       foreign_server_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>

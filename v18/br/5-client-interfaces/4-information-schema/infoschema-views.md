@@ -6,7 +6,7 @@ A vista `views` contém todas as vistas definidas no banco de dados atual. Apena
 
 
 
-<table border="1" class="table" summary="views Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `views` contém todas as vistas definidas no banco de dados atual. Apena
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `views` contém todas as vistas definidas no banco de dados atual. Apena
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `views` contém todas as vistas definidas no banco de dados atual. Apena
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       table_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,10 +71,10 @@ A vista `views` contém todas as vistas definidas no banco de dados atual. Apena
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       view_definition
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -86,27 +86,27 @@ A vista `views` contém todas as vistas definidas no banco de dados atual. Apena
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       check_option
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       CASCADED
      </code>
      or
-     <code class="literal">
+     <code>
       LOCAL
      </code>
      if the view has a
-     <code class="literal">
+     <code>
       CHECK OPTION
      </code>
      defined on it,
-     <code class="literal">
+     <code>
       NONE
      </code>
      if not
@@ -116,27 +116,27 @@ A vista `views` contém todas as vistas definidas no banco de dados atual. Apena
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_updatable
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       YES
      </code>
      if the view is updatable (allows
-     <code class="command">
+     <code>
       UPDATE
      </code>
      and
-     <code class="command">
+     <code>
       DELETE
      </code>
      ),
-     <code class="literal">
+     <code>
       NO
      </code>
      if not
@@ -146,23 +146,23 @@ A vista `views` contém todas as vistas definidas no banco de dados atual. Apena
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_insertable_into
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       YES
      </code>
      if the view is insertable into (allows
-     <code class="command">
+     <code>
       INSERT
      </code>
      ),
-     <code class="literal">
+     <code>
       NO
      </code>
      if not
@@ -172,26 +172,26 @@ A vista `views` contém todas as vistas definidas no banco de dados atual. Apena
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_trigger_updatable
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       YES
      </code>
      if the view has an
-     <code class="literal">
+     <code>
       INSTEAD OF
      </code>
-     <code class="command">
+     <code>
       UPDATE
      </code>
      trigger defined on it,
-     <code class="literal">
+     <code>
       NO
      </code>
      if not
@@ -201,26 +201,26 @@ A vista `views` contém todas as vistas definidas no banco de dados atual. Apena
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_trigger_deletable
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       YES
      </code>
      if the view has an
-     <code class="literal">
+     <code>
       INSTEAD OF
      </code>
-     <code class="command">
+     <code>
       DELETE
      </code>
      trigger defined on it,
-     <code class="literal">
+     <code>
       NO
      </code>
      if not
@@ -230,26 +230,26 @@ A vista `views` contém todas as vistas definidas no banco de dados atual. Apena
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_trigger_insertable_into
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       YES
      </code>
      if the view has an
-     <code class="literal">
+     <code>
       INSTEAD OF
      </code>
-     <code class="command">
+     <code>
       INSERT
      </code>
      trigger defined on it,
-     <code class="literal">
+     <code>
       NO
      </code>
      if not

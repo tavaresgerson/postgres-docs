@@ -33,11 +33,7 @@ O método de índice de árvore B define cinco estratégias, mostradas na [Tabel
 
 
 
-<table border="1" class="table" summary="B-Tree Strategies">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -107,11 +103,7 @@ Os índices de hash só suportam comparações de igualdade, e, portanto, usam a
 
 
 
-<table border="1" class="table" summary="Hash Strategies">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -149,11 +141,7 @@ Os índices GiST são mais flexíveis: não possuem um conjunto fixo de estraté
 
 
 
-<table border="1" class="table" summary="GiST Two-Dimensional R-tree Strategies">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -279,11 +267,7 @@ Os índices SP-GiST são semelhantes aos índices GiST em termos de flexibilidad
 
 
 
-<table border="1" class="table" summary="SP-GiST Point Strategies">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -361,11 +345,7 @@ Os índices GIN são semelhantes aos índices GiST e SP-GiST, na medida em que t
 
 
 
-<table border="1" class="table" summary="GIN Array Strategies">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -427,11 +407,7 @@ Os índices BRIN são semelhantes aos índices GiST, SP-GiST e GIN, pois também
 
 
 
-<table border="1" class="table" summary="BRIN Minmax Strategies">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -511,7 +487,7 @@ As árvores B requerem uma função de suporte para comparações e permitem que
 
 
 
-<table border="1" class="table" summary="B-Tree Support Functions">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -593,7 +569,7 @@ Os índices hash exigem uma função de suporte e permitem que duas outras sejam
 
 
 
-<table border="1" class="table" summary="Hash Support Functions">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -651,7 +627,7 @@ Os índices GiST têm doze funções de suporte, das quais sete são opcionais, 
 
 
 
-<table border="1" class="table" summary="GiST Support Functions">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -673,7 +649,7 @@ Os índices GiST têm doze funções de suporte, das quais sete são opcionais, 
  <tbody>
   <tr>
    <td>
-    <code class="function">
+    <code>
      consistent
     </code>
    </td>
@@ -686,7 +662,7 @@ Os índices GiST têm doze funções de suporte, das quais sete são opcionais, 
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      union
     </code>
    </td>
@@ -699,7 +675,7 @@ Os índices GiST têm doze funções de suporte, das quais sete são opcionais, 
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      compress
     </code>
    </td>
@@ -712,7 +688,7 @@ Os índices GiST têm doze funções de suporte, das quais sete são opcionais, 
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      decompress
     </code>
    </td>
@@ -725,7 +701,7 @@ Os índices GiST têm doze funções de suporte, das quais sete são opcionais, 
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      penalty
     </code>
    </td>
@@ -738,7 +714,7 @@ Os índices GiST têm doze funções de suporte, das quais sete são opcionais, 
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      picksplit
     </code>
    </td>
@@ -751,7 +727,7 @@ Os índices GiST têm doze funções de suporte, das quais sete são opcionais, 
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      same
     </code>
    </td>
@@ -764,7 +740,7 @@ Os índices GiST têm doze funções de suporte, das quais sete são opcionais, 
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      distance
     </code>
    </td>
@@ -777,7 +753,7 @@ Os índices GiST têm doze funções de suporte, das quais sete são opcionais, 
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      fetch
     </code>
    </td>
@@ -790,7 +766,7 @@ Os índices GiST têm doze funções de suporte, das quais sete são opcionais, 
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      options
     </code>
    </td>
@@ -803,7 +779,7 @@ Os índices GiST têm doze funções de suporte, das quais sete são opcionais, 
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      sortsupport
     </code>
    </td>
@@ -816,7 +792,7 @@ Os índices GiST têm doze funções de suporte, das quais sete são opcionais, 
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      translate_cmptype
     </code>
    </td>
@@ -845,7 +821,7 @@ Os índices SP-GiST têm seis funções de suporte, uma das quais é opcional, c
 
 
 
-<table border="1" class="table" summary="SP-GiST Support Functions">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -867,7 +843,7 @@ Os índices SP-GiST têm seis funções de suporte, uma das quais é opcional, c
  <tbody>
   <tr>
    <td>
-    <code class="function">
+    <code>
      config
     </code>
    </td>
@@ -880,7 +856,7 @@ Os índices SP-GiST têm seis funções de suporte, uma das quais é opcional, c
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      choose
     </code>
    </td>
@@ -893,7 +869,7 @@ Os índices SP-GiST têm seis funções de suporte, uma das quais é opcional, c
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      picksplit
     </code>
    </td>
@@ -906,7 +882,7 @@ Os índices SP-GiST têm seis funções de suporte, uma das quais é opcional, c
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      inner_consistent
     </code>
    </td>
@@ -919,7 +895,7 @@ Os índices SP-GiST têm seis funções de suporte, uma das quais é opcional, c
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      leaf_consistent
     </code>
    </td>
@@ -932,7 +908,7 @@ Os índices SP-GiST têm seis funções de suporte, uma das quais é opcional, c
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      options
     </code>
    </td>
@@ -961,7 +937,7 @@ Os índices GIN têm sete funções de suporte, quatro das quais são opcionais,
 
 
 
-<table border="1" class="table" summary="GIN Support Functions">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -983,7 +959,7 @@ Os índices GIN têm sete funções de suporte, quatro das quais são opcionais,
  <tbody>
   <tr>
    <td>
-    <code class="function">
+    <code>
      compare
     </code>
    </td>
@@ -996,7 +972,7 @@ Os índices GIN têm sete funções de suporte, quatro das quais são opcionais,
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      extractValue
     </code>
    </td>
@@ -1009,7 +985,7 @@ Os índices GIN têm sete funções de suporte, quatro das quais são opcionais,
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      extractQuery
     </code>
    </td>
@@ -1022,7 +998,7 @@ Os índices GIN têm sete funções de suporte, quatro das quais são opcionais,
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      consistent
     </code>
    </td>
@@ -1035,7 +1011,7 @@ Os índices GIN têm sete funções de suporte, quatro das quais são opcionais,
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      comparePartial
     </code>
    </td>
@@ -1048,7 +1024,7 @@ Os índices GIN têm sete funções de suporte, quatro das quais são opcionais,
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      triConsistent
     </code>
    </td>
@@ -1061,7 +1037,7 @@ Os índices GIN têm sete funções de suporte, quatro das quais são opcionais,
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      options
     </code>
    </td>
@@ -1090,7 +1066,7 @@ Os índices BRIN têm cinco funções de suporte básicas, uma das quais é opci
 
 
 
-<table border="1" class="table" summary="BRIN Support Functions">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -1112,7 +1088,7 @@ Os índices BRIN têm cinco funções de suporte básicas, uma das quais é opci
  <tbody>
   <tr>
    <td>
-    <code class="function">
+    <code>
      opcInfo
     </code>
    </td>
@@ -1125,7 +1101,7 @@ Os índices BRIN têm cinco funções de suporte básicas, uma das quais é opci
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      add_value
     </code>
    </td>
@@ -1138,7 +1114,7 @@ Os índices BRIN têm cinco funções de suporte básicas, uma das quais é opci
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      consistent
     </code>
    </td>
@@ -1151,7 +1127,7 @@ Os índices BRIN têm cinco funções de suporte básicas, uma das quais é opci
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      union
     </code>
    </td>
@@ -1164,7 +1140,7 @@ Os índices BRIN têm cinco funções de suporte básicas, uma das quais é opci
   </tr>
   <tr>
    <td>
-    <code class="function">
+    <code>
      options
     </code>
    </td>

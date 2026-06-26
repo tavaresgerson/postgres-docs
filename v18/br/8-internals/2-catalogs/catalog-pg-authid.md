@@ -12,7 +12,7 @@ Como as identidades dos usuários são globais para o clúster, o `pg_authid` é
 
 
 
-<table border="1" class="table" summary="pg_authid Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -32,10 +32,10 @@ Como as identidades dos usuários são globais para o clúster, o `pg_authid` é
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -47,10 +47,10 @@ Como as identidades dos usuários são globais para o clúster, o `pg_authid` é
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -62,10 +62,10 @@ Como as identidades dos usuários são globais para o clúster, o `pg_authid` é
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolsuper
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -77,10 +77,10 @@ Como as identidades dos usuários são globais para o clúster, o `pg_authid` é
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolinherit
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -92,10 +92,10 @@ Como as identidades dos usuários são globais para o clúster, o `pg_authid` é
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolcreaterole
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -107,10 +107,10 @@ Como as identidades dos usuários são globais para o clúster, o `pg_authid` é
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolcreatedb
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -122,10 +122,10 @@ Como as identidades dos usuários são globais para o clúster, o `pg_authid` é
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolcanlogin
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -137,10 +137,10 @@ Como as identidades dos usuários são globais para o clúster, o `pg_authid` é
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolreplication
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -152,10 +152,10 @@ Como as identidades dos usuários são globais para o clúster, o `pg_authid` é
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolbypassrls
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -171,10 +171,10 @@ Como as identidades dos usuários são globais para o clúster, o `pg_authid` é
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolconnlimit
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -186,10 +186,10 @@ Como as identidades dos usuários são globais para o clúster, o `pg_authid` é
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolpassword
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -201,10 +201,10 @@ Como as identidades dos usuários são globais para o clúster, o `pg_authid` é
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       rolvaliduntil
      </code>
-     <code class="type">
+     <code>
       timestamptz
      </code>
     </p>

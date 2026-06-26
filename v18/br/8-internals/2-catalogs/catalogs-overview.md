@@ -8,11 +8,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
 
 
 
-<table border="1" class="table" summary="System Catalogs">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -27,7 +23,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-aggregate.md" title="52.2. pg_aggregate">
-     <code class="structname">
+     <code>
       pg_aggregate
      </code>
     </a>
@@ -39,7 +35,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-am.md" title="52.3. pg_am">
-     <code class="structname">
+     <code>
       pg_am
      </code>
     </a>
@@ -51,7 +47,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-amop.md" title="52.4. pg_amop">
-     <code class="structname">
+     <code>
       pg_amop
      </code>
     </a>
@@ -63,7 +59,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-amproc.md" title="52.5. pg_amproc">
-     <code class="structname">
+     <code>
       pg_amproc
      </code>
     </a>
@@ -75,7 +71,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-attrdef.md" title="52.6. pg_attrdef">
-     <code class="structname">
+     <code>
       pg_attrdef
      </code>
     </a>
@@ -87,7 +83,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-attribute.md" title="52.7. pg_attribute">
-     <code class="structname">
+     <code>
       pg_attribute
      </code>
     </a>
@@ -107,7 +103,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-     <code class="structname">
+     <code>
       pg_authid
      </code>
     </a>
@@ -119,7 +115,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-auth-members.md" title="52.9. pg_auth_members">
-     <code class="structname">
+     <code>
       pg_auth_members
      </code>
     </a>
@@ -131,7 +127,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-cast.md" title="52.10. pg_cast">
-     <code class="structname">
+     <code>
       pg_cast
      </code>
     </a>
@@ -143,7 +139,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-     <code class="structname">
+     <code>
       pg_class
      </code>
     </a>
@@ -163,7 +159,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-collation.md" title="52.12. pg_collation">
-     <code class="structname">
+     <code>
       pg_collation
      </code>
     </a>
@@ -175,7 +171,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-constraint.md" title="52.13. pg_constraint">
-     <code class="structname">
+     <code>
       pg_constraint
      </code>
     </a>
@@ -187,7 +183,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-conversion.md" title="52.14. pg_conversion">
-     <code class="structname">
+     <code>
       pg_conversion
      </code>
     </a>
@@ -199,7 +195,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-database.md" title="52.15. pg_database">
-     <code class="structname">
+     <code>
       pg_database
      </code>
     </a>
@@ -211,7 +207,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-db-role-setting.md" title="52.16. pg_db_role_setting">
-     <code class="structname">
+     <code>
       pg_db_role_setting
      </code>
     </a>
@@ -223,7 +219,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-default-acl.md" title="52.17. pg_default_acl">
-     <code class="structname">
+     <code>
       pg_default_acl
      </code>
     </a>
@@ -235,7 +231,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-depend.md" title="52.18. pg_depend">
-     <code class="structname">
+     <code>
       pg_depend
      </code>
     </a>
@@ -247,7 +243,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-description.md" title="52.19. pg_description">
-     <code class="structname">
+     <code>
       pg_description
      </code>
     </a>
@@ -259,7 +255,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-enum.md" title="52.20. pg_enum">
-     <code class="structname">
+     <code>
       pg_enum
      </code>
     </a>
@@ -271,7 +267,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-event-trigger.md" title="52.21. pg_event_trigger">
-     <code class="structname">
+     <code>
       pg_event_trigger
      </code>
     </a>
@@ -283,7 +279,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-extension.md" title="52.22. pg_extension">
-     <code class="structname">
+     <code>
       pg_extension
      </code>
     </a>
@@ -295,7 +291,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-foreign-data-wrapper.md" title="52.23. pg_foreign_data_wrapper">
-     <code class="structname">
+     <code>
       pg_foreign_data_wrapper
      </code>
     </a>
@@ -307,7 +303,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-foreign-server.md" title="52.24. pg_foreign_server">
-     <code class="structname">
+     <code>
       pg_foreign_server
      </code>
     </a>
@@ -319,7 +315,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-foreign-table.md" title="52.25. pg_foreign_table">
-     <code class="structname">
+     <code>
       pg_foreign_table
      </code>
     </a>
@@ -331,7 +327,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-index.md" title="52.26. pg_index">
-     <code class="structname">
+     <code>
       pg_index
      </code>
     </a>
@@ -343,7 +339,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-inherits.md" title="52.27. pg_inherits">
-     <code class="structname">
+     <code>
       pg_inherits
      </code>
     </a>
@@ -355,7 +351,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-init-privs.md" title="52.28. pg_init_privs">
-     <code class="structname">
+     <code>
       pg_init_privs
      </code>
     </a>
@@ -367,7 +363,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-language.md" title="52.29. pg_language">
-     <code class="structname">
+     <code>
       pg_language
      </code>
     </a>
@@ -379,7 +375,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-largeobject.md" title="52.30. pg_largeobject">
-     <code class="structname">
+     <code>
       pg_largeobject
      </code>
     </a>
@@ -391,7 +387,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-largeobject-metadata.md" title="52.31. pg_largeobject_metadata">
-     <code class="structname">
+     <code>
       pg_largeobject_metadata
      </code>
     </a>
@@ -403,7 +399,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-     <code class="structname">
+     <code>
       pg_namespace
      </code>
     </a>
@@ -415,7 +411,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-opclass.md" title="52.33. pg_opclass">
-     <code class="structname">
+     <code>
       pg_opclass
      </code>
     </a>
@@ -427,7 +423,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-operator.md" title="52.34. pg_operator">
-     <code class="structname">
+     <code>
       pg_operator
      </code>
     </a>
@@ -439,7 +435,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-opfamily.md" title="52.35. pg_opfamily">
-     <code class="structname">
+     <code>
       pg_opfamily
      </code>
     </a>
@@ -451,7 +447,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-parameter-acl.md" title="52.36. pg_parameter_acl">
-     <code class="structname">
+     <code>
       pg_parameter_acl
      </code>
     </a>
@@ -463,7 +459,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-partitioned-table.md" title="52.37. pg_partitioned_table">
-     <code class="structname">
+     <code>
       pg_partitioned_table
      </code>
     </a>
@@ -475,7 +471,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-policy.md" title="52.38. pg_policy">
-     <code class="structname">
+     <code>
       pg_policy
      </code>
     </a>
@@ -487,7 +483,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-     <code class="structname">
+     <code>
       pg_proc
      </code>
     </a>
@@ -499,7 +495,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-publication.md" title="52.40. pg_publication">
-     <code class="structname">
+     <code>
       pg_publication
      </code>
     </a>
@@ -511,7 +507,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-publication-namespace.md" title="52.41. pg_publication_namespace">
-     <code class="structname">
+     <code>
       pg_publication_namespace
      </code>
     </a>
@@ -523,7 +519,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-publication-rel.md" title="52.42. pg_publication_rel">
-     <code class="structname">
+     <code>
       pg_publication_rel
      </code>
     </a>
@@ -535,7 +531,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-range.md" title="52.43. pg_range">
-     <code class="structname">
+     <code>
       pg_range
      </code>
     </a>
@@ -547,7 +543,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-replication-origin.md" title="52.44. pg_replication_origin">
-     <code class="structname">
+     <code>
       pg_replication_origin
      </code>
     </a>
@@ -559,7 +555,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-rewrite.md" title="52.45. pg_rewrite">
-     <code class="structname">
+     <code>
       pg_rewrite
      </code>
     </a>
@@ -571,7 +567,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-seclabel.md" title="52.46. pg_seclabel">
-     <code class="structname">
+     <code>
       pg_seclabel
      </code>
     </a>
@@ -583,7 +579,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-sequence.md" title="52.47. pg_sequence">
-     <code class="structname">
+     <code>
       pg_sequence
      </code>
     </a>
@@ -595,7 +591,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-shdepend.md" title="52.48. pg_shdepend">
-     <code class="structname">
+     <code>
       pg_shdepend
      </code>
     </a>
@@ -607,7 +603,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-shdescription.md" title="52.49. pg_shdescription">
-     <code class="structname">
+     <code>
       pg_shdescription
      </code>
     </a>
@@ -619,7 +615,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-shseclabel.md" title="52.50. pg_shseclabel">
-     <code class="structname">
+     <code>
       pg_shseclabel
      </code>
     </a>
@@ -631,7 +627,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-statistic.md" title="52.51. pg_statistic">
-     <code class="structname">
+     <code>
       pg_statistic
      </code>
     </a>
@@ -643,7 +639,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-statistic-ext.md" title="52.52. pg_statistic_ext">
-     <code class="structname">
+     <code>
       pg_statistic_ext
      </code>
     </a>
@@ -655,7 +651,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-statistic-ext-data.md" title="52.53. pg_statistic_ext_data">
-     <code class="structname">
+     <code>
       pg_statistic_ext_data
      </code>
     </a>
@@ -667,7 +663,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-subscription.md" title="52.54. pg_subscription">
-     <code class="structname">
+     <code>
       pg_subscription
      </code>
     </a>
@@ -679,7 +675,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-subscription-rel.md" title="52.55. pg_subscription_rel">
-     <code class="structname">
+     <code>
       pg_subscription_rel
      </code>
     </a>
@@ -691,7 +687,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-tablespace.md" title="52.56. pg_tablespace">
-     <code class="structname">
+     <code>
       pg_tablespace
      </code>
     </a>
@@ -703,7 +699,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-transform.md" title="52.57. pg_transform">
-     <code class="structname">
+     <code>
       pg_transform
      </code>
     </a>
@@ -715,7 +711,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-trigger.md" title="52.58. pg_trigger">
-     <code class="structname">
+     <code>
       pg_trigger
      </code>
     </a>
@@ -727,7 +723,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-ts-config.md" title="52.59. pg_ts_config">
-     <code class="structname">
+     <code>
       pg_ts_config
      </code>
     </a>
@@ -739,7 +735,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-ts-config-map.md" title="52.60. pg_ts_config_map">
-     <code class="structname">
+     <code>
       pg_ts_config_map
      </code>
     </a>
@@ -751,7 +747,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-ts-dict.md" title="52.61. pg_ts_dict">
-     <code class="structname">
+     <code>
       pg_ts_dict
      </code>
     </a>
@@ -763,7 +759,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-ts-parser.md" title="52.62. pg_ts_parser">
-     <code class="structname">
+     <code>
       pg_ts_parser
      </code>
     </a>
@@ -775,7 +771,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-ts-template.md" title="52.63. pg_ts_template">
-     <code class="structname">
+     <code>
       pg_ts_template
      </code>
     </a>
@@ -787,7 +783,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-     <code class="structname">
+     <code>
       pg_type
      </code>
     </a>
@@ -799,7 +795,7 @@ A maioria dos catálogos do sistema é copiada do banco de dados de modelo duran
   <tr>
    <td>
     <a class="link" href="catalog-pg-user-mapping.md" title="52.65. pg_user_mapping">
-     <code class="structname">
+     <code>
       pg_user_mapping
      </code>
     </a>

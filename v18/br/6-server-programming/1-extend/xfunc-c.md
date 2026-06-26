@@ -142,7 +142,7 @@ memcpy(destination->data, buffer, 40);
 
 
 
-<table border="1" class="table" summary="Equivalent C Types for Built-in SQL Types">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -164,17 +164,17 @@ memcpy(destination->data, buffer, 40);
  <tbody>
   <tr>
    <td>
-    <code class="type">
+    <code>
      boolean
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bool
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      postgres.h
     </code>
     (maybe compiler built-in)
@@ -182,46 +182,46 @@ memcpy(destination->data, buffer, 40);
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      box
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      BOX*
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      utils/geo_decls.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      bytea
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      bytea*
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      postgres.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      "char"
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      char
     </code>
    </td>
@@ -231,450 +231,450 @@ memcpy(destination->data, buffer, 40);
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      character
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      BpChar*
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      postgres.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      cid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      CommandId
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      postgres.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      date
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      DateADT
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      utils/date.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      float4
     </code>
     (
-    <code class="type">
+    <code>
      real
     </code>
     )
    </td>
    <td>
-    <code class="type">
+    <code>
      float4
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      postgres.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      float8
     </code>
     (
-    <code class="type">
+    <code>
      double precision
     </code>
     )
    </td>
    <td>
-    <code class="type">
+    <code>
      float8
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      postgres.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      int2
     </code>
     (
-    <code class="type">
+    <code>
      smallint
     </code>
     )
    </td>
    <td>
-    <code class="type">
+    <code>
      int16
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      postgres.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      int4
     </code>
     (
-    <code class="type">
+    <code>
      integer
     </code>
     )
    </td>
    <td>
-    <code class="type">
+    <code>
      int32
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      postgres.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      int8
     </code>
     (
-    <code class="type">
+    <code>
      bigint
     </code>
     )
    </td>
    <td>
-    <code class="type">
+    <code>
      int64
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      postgres.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      interval
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      Interval*
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      datatype/timestamp.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      lseg
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      LSEG*
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      utils/geo_decls.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      name
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      Name
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      postgres.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      numeric
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      Numeric
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      utils/numeric.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      oid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      Oid
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      postgres.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      oidvector
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      oidvector*
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      postgres.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      path
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      PATH*
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      utils/geo_decls.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      point
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      POINT*
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      utils/geo_decls.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      regproc
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      RegProcedure
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      postgres.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      text
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      text*
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      postgres.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      tid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      ItemPointer
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      storage/itemptr.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      time
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      TimeADT
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      utils/date.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      time with time zone
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      TimeTzADT
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      utils/date.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      timestamp
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      Timestamp
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      datatype/timestamp.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      timestamp with time zone
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      TimestampTz
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      datatype/timestamp.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      varchar
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      VarChar*
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      postgres.h
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      xid
     </code>
    </td>
    <td>
-    <code class="type">
+    <code>
      TransactionId
     </code>
    </td>
    <td>
-    <code class="filename">
+    <code>
      postgres.h
     </code>
    </td>

@@ -6,7 +6,7 @@ A visão `pg_available_extensions` lista as extensões disponíveis para instala
 
 
 
-<table border="1" class="table" summary="pg_available_extensions Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A visão `pg_available_extensions` lista as extensões disponíveis para instala
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       name
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -41,16 +41,16 @@ A visão `pg_available_extensions` lista as extensões disponíveis para instala
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       default_version
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      Nome da versão padrão, ou
-     <code class="literal">
+     <code>
       NULL
      </code>
      se não for especificado
@@ -60,16 +60,16 @@ A visão `pg_available_extensions` lista as extensões disponíveis para instala
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       installed_version
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      Atualmente, a versão instalada da extensão, ou
-     <code class="literal">
+     <code>
       NULL
      </code>
      se não estiver instalado
@@ -79,10 +79,10 @@ A visão `pg_available_extensions` lista as extensões disponíveis para instala
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       comment
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>

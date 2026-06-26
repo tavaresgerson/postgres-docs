@@ -4,7 +4,7 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
 
 **Tabela 8.27. Pseudo-tipos**
 
-<table border="1" class="table" summary="Pseudo-Types">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -22,7 +22,7 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
  <tbody>
   <tr>
    <td>
-    <code class="type">
+    <code>
      any
     </code>
    </td>
@@ -32,7 +32,7 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anyelement
     </code>
    </td>
@@ -46,7 +46,7 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anyarray
     </code>
    </td>
@@ -60,7 +60,7 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anynonarray
     </code>
    </td>
@@ -74,7 +74,7 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anyenum
     </code>
    </td>
@@ -92,7 +92,7 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anyrange
     </code>
    </td>
@@ -110,7 +110,7 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anymultirange
     </code>
    </td>
@@ -128,7 +128,7 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anycompatible
     </code>
    </td>
@@ -142,7 +142,7 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anycompatiblearray
     </code>
    </td>
@@ -156,7 +156,7 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anycompatiblenonarray
     </code>
    </td>
@@ -170,7 +170,7 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anycompatiblerange
     </code>
    </td>
@@ -188,7 +188,7 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      anycompatiblemultirange
     </code>
    </td>
@@ -206,7 +206,7 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      cstring
     </code>
    </td>
@@ -216,7 +216,7 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      internal
     </code>
    </td>
@@ -226,13 +226,13 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      language_handler
     </code>
    </td>
    <td>
     Um controlador de chamada de linguagem procedural é declarado para retornar
-    <code class="type">
+    <code>
      language_handler
     </code>
     .
@@ -240,13 +240,13 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      fdw_handler
     </code>
    </td>
    <td>
     Um manipulador de wrapper de dados estrangeiros é declarado para retornar
-    <code class="type">
+    <code>
      fdw_handler
     </code>
     .
@@ -254,13 +254,13 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      table_am_handler
     </code>
    </td>
    <td>
     Um manipulador de método de acesso a tabela é declarado para retornar
-    <code class="type">
+    <code>
      table_am_handler
     </code>
     .
@@ -268,13 +268,13 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      index_am_handler
     </code>
    </td>
    <td>
     Um manipulador de método de acesso ao índice é declarado para retornar
-    <code class="type">
+    <code>
      index_am_handler
     </code>
     .
@@ -282,13 +282,13 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      tsm_handler
     </code>
    </td>
    <td>
     Um manipulador de amostra de tabela é declarado para retornar
-    <code class="type">
+    <code>
      tsm_handler
     </code>
     .
@@ -296,7 +296,7 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      record
     </code>
    </td>
@@ -306,33 +306,33 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      trigger
     </code>
    </td>
    <td>
     Uma função de gatilho é declarada para retornar
-    <code class="type">
+    <code>
      trigger.
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      event_trigger
     </code>
    </td>
    <td>
     Uma função de gatilho de evento é declarada para retornar
-    <code class="type">
+    <code>
      event_trigger.
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      pg_ddl_command
     </code>
    </td>
@@ -342,7 +342,7 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      void
     </code>
    </td>
@@ -352,7 +352,7 @@ O sistema de tipos do PostgreSQL contém várias entradas de propósito especial
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      unknown
     </code>
    </td>

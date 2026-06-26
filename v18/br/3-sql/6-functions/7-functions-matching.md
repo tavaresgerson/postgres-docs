@@ -1,4 +1,4 @@
-## 9.7. Contagem de Padrões [#](#FUNCTIONS-MATCHING)
+### 9.7. Contagem de Padrões [#](#FUNCTIONS-MATCHING)
 
 * [9.7.1. `LIKE`](functions-matching.md#FUNCTIONS-LIKE)
 * [9.7.2. `SIMILAR TO` Expressões Regulares](functions-matching.md#FUNCTIONS-SIMILARTO-REGEXP)
@@ -10,7 +10,7 @@ DICA
 
 Se você tem necessidades de correspondência de padrões que vão além disso, considere escrever uma função definida pelo usuário em Perl ou Tcl.
 
-### Atenção
+Atenção
 
 Embora a maioria das pesquisas com expressões regulares possa ser executada muito rapidamente, é possível criar expressões regulares que levam quantidades arbitrárias de tempo e memória para processar. Seja cauteloso ao aceitar padrões de pesquisa com expressões regulares de fontes hostis. Se você deve fazê-lo, é aconselhável impor um limite de tempo para a declaração.
 
@@ -20,9 +20,9 @@ As pesquisas `LIKE` são muito mais simples do que as outras duas opções e sã
 
 `SIMILAR TO` e as expressões regulares em estilo POSIX não suportam colas não determinísticas. Se necessário, use `LIKE` ou aplique uma outra colocação à expressão para contornar essa limitação.
 
-### 9.7.1. `LIKE` [#](#FUNCTIONS-LIKE)
+#### 9.7.1. `LIKE` [#](#FUNCTIONS-LIKE)
 
-```
+```sql
 string LIKE pattern [ESCAPE escape-character]
 string NOT LIKE pattern [ESCAPE escape-character]
 ```
@@ -33,7 +33,7 @@ Se *`pattern`* não contém sinais percentuais ou sublinhados, então o padrão 
 
 Alguns exemplos:
 
-```
+```sql
 'abc' LIKE 'abc'    true
 'abc' LIKE 'a%'     true
 'abc' LIKE '_b_'    true
@@ -42,14 +42,14 @@ Alguns exemplos:
 
 A correspondência de padrões `LIKE` suporta colunas não determinísticas (consulte [Seção 23.2.2.4](collation.md#COLLATION-NONDETERMINISTIC)), como colunas que são sensíveis ao caso ou que, por exemplo, ignoram a pontuação. Assim, com uma coluna sensível ao caso, pode-se ter:
 
-```
+```sql
 'AbC' LIKE 'abc' COLLATE case_insensitive    true
 'AbC' LIKE 'a%' COLLATE case_insensitive     true
 ```
 
 Com codificações que ignoram certos caracteres ou que, de forma geral, consideram cadeias de diferentes comprimentos iguais, a semântica pode se tornar um pouco mais complicada. Considere esses exemplos:
 
-```
+```sql
 '.foo.' LIKE 'foo' COLLATE ign_punct    true
 '.foo.' LIKE 'f_o' COLLATE ign_punct    true
 '.foo.' LIKE '_oo' COLLATE ign_punct    false
@@ -79,7 +79,7 @@ Veja também o operador começa com `^@` e a função correspondente `starts_wit
 
 ### 9.7.2. `SIMILAR TO` Expressões Regulares [#](#FUNCTIONS-SIMILARTO-REGEXP)
 
-```
+```sql
 string SIMILAR TO pattern [ESCAPE escape-character]
 string NOT SIMILAR TO pattern [ESCAPE escape-character]
 ```
@@ -110,7 +110,7 @@ Outra extensão não padrão é que, ao seguir o caractere de escape com uma let
 
 Alguns exemplos:
 
-```
+```sql
 'abc' SIMILAR TO 'abc'          true
 'abc' SIMILAR TO 'a'            false
 'abc' SIMILAR TO '%(b|d)%'      true
@@ -121,19 +121,19 @@ Alguns exemplos:
 
 A função `substring` com três parâmetros fornece a extração de uma subcadeia que corresponde a um padrão de expressão regular SQL. A função pode ser escrita de acordo com a sintaxe SQL padrão:
 
-```
+```sql
 substring(string similar pattern escape escape-character)
 ```
 
 ou usando a sintaxe SQL:1999, que já está obsoleta:
 
-```
+```sql
 substring(string from pattern for escape-character)
 ```
 
 ou como uma função simples de três argumentos:
 
-```
+```sql
 substring(string, pattern, escape-character)
 ```
 
@@ -145,20 +145,18 @@ Como uma extensão do padrão SQL, o PostgreSQL permite que haja apenas um separ
 
 Alguns exemplos, com `#"` delimitando a string de retorno:
 
-```
+```sql
 substring('foobar' similar '%#"o_b#"%' escape '#')   oob
 substring('foobar' similar '#"o_b#"%' escape '#')    NULL
 ```
 
-### 9.7.3. Expressões Regulares POSIX [#](#FUNCTIONS-POSIX-REGEXP)
+#### 9.7.3. Expressões Regulares POSIX [#](#FUNCTIONS-POSIX-REGEXP)
 
 [Tabela 9.16](functions-matching.md#FUNCTIONS-POSIX-TABLE) lista os operadores disponíveis para correspondência de padrões usando expressões regulares POSIX.
 
 **Tabela 9.16. Operadores de correspondência de expressão regular**
 
-
-
-<table border="1" class="table" summary="Regular Expression Match Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -181,17 +179,17 @@ substring('foobar' similar '#"o_b#"%' escape '#')    NULL
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       text
      </code>
-     <code class="literal">
+     <code>
       ~
      </code>
-     <code class="type">
+     <code>
       text
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -199,11 +197,11 @@ substring('foobar' similar '#"o_b#"%' escape '#')    NULL
      String corresponde à expressão regular, sensível ao caso
     </p>
     <p>
-     <code class="literal">
+     <code>
       'thomas' ~ 't.*ma'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -212,17 +210,17 @@ substring('foobar' similar '#"o_b#"%' escape '#')    NULL
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       text
      </code>
-     <code class="literal">
+     <code>
       ~*
      </code>
-     <code class="type">
+     <code>
       text
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -230,11 +228,11 @@ substring('foobar' similar '#"o_b#"%' escape '#')    NULL
      String corresponde à expressão regular, de forma sensível ao caso
     </p>
     <p>
-     <code class="literal">
+     <code>
       'thomas' ~* 'T.*ma'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -243,17 +241,17 @@ substring('foobar' similar '#"o_b#"%' escape '#')    NULL
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       text
      </code>
-     <code class="literal">
+     <code>
       !~
      </code>
-     <code class="type">
+     <code>
       text
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -261,11 +259,11 @@ substring('foobar' similar '#"o_b#"%' escape '#')    NULL
      A cadeia não corresponde à expressão regular, sensível ao caso
     </p>
     <p>
-     <code class="literal">
+     <code>
       'thomas' !~ 't.*max'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -274,17 +272,17 @@ substring('foobar' similar '#"o_b#"%' escape '#')    NULL
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       text
      </code>
-     <code class="literal">
+     <code>
       !~*
      </code>
-     <code class="type">
+     <code>
       text
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -292,11 +290,11 @@ substring('foobar' similar '#"o_b#"%' escape '#')    NULL
      A cadeia não corresponde à expressão regular, de forma sensível ao caso
     </p>
     <p>
-     <code class="literal">
+     <code>
       'thomas' !~* 'T.*ma'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
@@ -305,22 +303,13 @@ substring('foobar' similar '#"o_b#"%' escape '#')    NULL
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 As expressões regulares POSIX oferecem um meio mais poderoso para a correspondência de padrões do que os operadores `LIKE` e `SIMILAR TO`. Muitas ferramentas Unix, como `egrep`, `sed` ou `awk`, utilizam uma linguagem de correspondência de padrões semelhante àquela descrita aqui.
 
 Uma expressão regular é uma sequência de caracteres que é uma definição abreviada de um conjunto de cadeias de caracteres (um *conjunto regular*). Diz-se que uma cadeia de caracteres corresponde a uma expressão regular se ela é um membro do conjunto regular descrito pela expressão regular. Assim como em `LIKE`, os caracteres do padrão correspondem exatamente aos caracteres da cadeia de caracteres, a menos que sejam caracteres especiais na linguagem da expressão regular — mas as expressões regulares usam caracteres especiais diferentes do que `LIKE` faz. Ao contrário dos padrões de `LIKE`, uma expressão regular pode corresponder em qualquer lugar dentro de uma cadeia de caracteres, a menos que a expressão regular seja explicitamente ancorada ao início ou fim da cadeia de caracteres.
 
 Alguns exemplos:
 
-```
+```sql
 'abcd' ~ 'bc'     true
 'abcd' ~ 'a.c'    true — dot matches any character
 'abcd' ~ 'a.*d'   true — * repeats the preceding pattern item
@@ -335,7 +324,7 @@ A função `substring` com dois parâmetros, `substring(string from pattern)`, f
 
 Alguns exemplos:
 
-```
+```sql
 substring('foobar' from 'o.b')     oob
 substring('foobar' from 'o(.)b')   o
 ```
@@ -344,7 +333,7 @@ A função `regexp_count` conta o número de lugares onde um padrão de express�
 
 Alguns exemplos:
 
-```
+```sql
 regexp_count('ABCABCAXYaxy', 'A.')          3
 regexp_count('ABCABCAXYaxy', 'A.', 1, 'i')  4
 ```
@@ -353,7 +342,7 @@ A função `regexp_instr` retorna a posição inicial ou final da *`N`'ª ocorr�
 
 Alguns exemplos:
 
-```
+```sql
 regexp_instr('number of your street, town zip, FR', '[^,]+', 1, 2)
                                    23
 regexp_instr(string=>'ABCDEFGHI', pattern=>'(c..)(...)', start=>1, "N"=>1, endoption=>0, flags=>'i', subexpr=>2)
@@ -364,7 +353,7 @@ A função `regexp_like` verifica se ocorre uma correspondência de um padrão d
 
 Alguns exemplos:
 
-```
+```sql
 regexp_like('Hello World', 'world')       false
 regexp_like('Hello World', 'world', 'i')  true
 ```
@@ -373,7 +362,7 @@ A função `regexp_match` retorna um array de texto com subdivisões corresponde
 
 Alguns exemplos:
 
-```
+```sql
 SELECT regexp_match('foobarbequebaz', 'bar.*que');
  regexp_match
 --------------
@@ -391,7 +380,7 @@ DICA
 
 No caso comum em que você apenas deseja a subcadeia de caracteres correspondente inteira ou `NULL` sem correspondência, a melhor solução é usar `regexp_substr()`. No entanto, `regexp_substr()` existe apenas na versão PostgreSQL 15 e superior. Ao trabalhar em versões mais antigas, você pode extrair o primeiro elemento do resultado de `regexp_match()`, por exemplo:
 
-```
+```sql
 SELECT (regexp_match('foobarbequebaz', 'bar.*que'))[1];
  regexp_match
 --------------
@@ -403,7 +392,7 @@ A função `regexp_matches` retorna um conjunto de arrays de texto com substrato
 
 Alguns exemplos:
 
-```
+```sql
 SELECT regexp_matches('foo', 'not there');
  regexp_matches
 ----------------
@@ -421,7 +410,7 @@ DICA
 
 Na maioria dos casos, `regexp_matches()` deve ser usado com a bandeira `g`, pois, se você só deseja a primeira correspondência, é mais fácil e eficiente usar `regexp_match()`. No entanto, `regexp_match()` existe apenas na versão PostgreSQL 10 e superior. Ao trabalhar em versões mais antigas, um truque comum é colocar uma chamada `regexp_matches()` em um sub-seletor, por exemplo:
 
-```
+```sql
 SELECT col1, (SELECT regexp_matches(col2, '(bar)(beque)')) FROM tab;
 ```
 
@@ -431,7 +420,7 @@ A função `regexp_replace` fornece substituição de novo texto para substratos
 
 Alguns exemplos:
 
-```
+```sql
 regexp_replace('foobarbaz', 'b..', 'X')
                                    fooXbaz
 regexp_replace('foobarbaz', 'b..', 'X', 'g')
@@ -450,7 +439,7 @@ A função `regexp_split_to_array` se comporta da mesma forma que a `regexp_spli
 
 Alguns exemplos:
 
-```
+```sql
 SELECT foo FROM regexp_split_to_table('the quick brown fox jumps over the lazy dog', '\s+') AS foo;
   foo
 -------
@@ -499,14 +488,14 @@ A função `regexp_substr` retorna a subcadeia que corresponde a um padrão de e
 
 Alguns exemplos:
 
-```
+```sql
 regexp_substr('number of your street, town zip, FR', '[^,]+', 1, 2)
                                     town zip
 regexp_substr('ABCDEFGHI', '(c..)(...)', 1, 1, 'i', 2)
                                    FGH
 ```
 
-#### 9.7.3.1. Detalhes da expressão regular [#](#POSIX-SYNTAX-DETAILS)
+##### 9.7.3.1. Detalhes da expressão regular [#](#POSIX-SYNTAX-DETAILS)
 
 As expressões regulares do PostgreSQL são implementadas usando um pacote de software escrito por Henry Spencer. Grande parte da descrição das expressões regulares abaixo é copiada literalmente do manual dele.
 
@@ -526,13 +515,7 @@ Uma *restrição* corresponde a uma cadeia vazia, mas só corresponde quando con
 
 **Tabela 9.17. Átomos de expressão regular**
 
-
-
-<table border="1" class="table" summary="Regular Expression Atoms">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -546,7 +529,7 @@ Uma *restrição* corresponde a uma cadeia vazia, mas só corresponde quando con
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      (
     </code>
     <em class="replaceable">
@@ -554,7 +537,7 @@ Uma *restrição* corresponde a uma cadeia vazia, mas só corresponde quando con
       re
      </code>
     </em>
-    <code class="literal">
+    <code>
      )
     </code>
    </td>
@@ -576,7 +559,7 @@ Uma *restrição* corresponde a uma cadeia vazia, mas só corresponde quando con
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      (?:
     </code>
     <em class="replaceable">
@@ -584,7 +567,7 @@ Uma *restrição* corresponde a uma cadeia vazia, mas só corresponde quando con
       re
      </code>
     </em>
-    <code class="literal">
+    <code>
      )
     </code>
    </td>
@@ -602,7 +585,7 @@ Uma *restrição* corresponde a uma cadeia vazia, mas só corresponde quando con
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      .
     </code>
    </td>
@@ -612,7 +595,7 @@ Uma *restrição* corresponde a uma cadeia vazia, mas só corresponde quando con
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      [
     </code>
     <em class="replaceable">
@@ -620,7 +603,7 @@ Uma *restrição* corresponde a uma cadeia vazia, mas só corresponde quando con
       chars
      </code>
     </em>
-    <code class="literal">
+    <code>
      ]
     </code>
    </td>
@@ -644,7 +627,7 @@ Uma *restrição* corresponde a uma cadeia vazia, mas só corresponde quando con
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \
     </code>
     <em class="replaceable">
@@ -661,7 +644,7 @@ Uma *restrição* corresponde a uma cadeia vazia, mas só corresponde quando con
      </code>
     </em>
     é um caractere não alfanumérico) corresponda a esse caractere como um caractere comum, por exemplo,
-    <code class="literal">
+    <code>
      \\
     </code>
     corresponda a um caractere barra invertida
@@ -669,7 +652,7 @@ Uma *restrição* corresponde a uma cadeia vazia, mas só corresponde quando con
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \
     </code>
     <em class="replaceable">
@@ -704,13 +687,13 @@ Uma *restrição* corresponde a uma cadeia vazia, mas só corresponde quando con
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      {
     </code>
    </td>
    <td>
     quando seguido por outro caractere que não seja um dígito, corresponde ao caractere da brace esquerda
-    <code class="literal">
+    <code>
      {
     </code>
     ; quando seguido por um dígito, é o início de um
@@ -743,15 +726,6 @@ Uma *restrição* corresponde a uma cadeia vazia, mas só corresponde quando con
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Um RE não pode terminar com uma barra invertida (`\`).
 
 Nota
@@ -760,13 +734,7 @@ Se você tiver desativado [standard_conforming_strings](runtime-config-compatibl
 
 **Tabela 9.18. Quantificadores de expressão regular**
 
-
-
-<table border="1" class="table" summary="Regular Expression Quantifiers">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -780,7 +748,7 @@ Se você tiver desativado [standard_conforming_strings](runtime-config-compatibl
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      *
     </code>
    </td>
@@ -790,7 +758,7 @@ Se você tiver desativado [standard_conforming_strings](runtime-config-compatibl
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      +
     </code>
    </td>
@@ -800,7 +768,7 @@ Se você tiver desativado [standard_conforming_strings](runtime-config-compatibl
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ?
     </code>
    </td>
@@ -810,7 +778,7 @@ Se você tiver desativado [standard_conforming_strings](runtime-config-compatibl
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      {
     </code>
     <em class="replaceable">
@@ -818,7 +786,7 @@ Se você tiver desativado [standard_conforming_strings](runtime-config-compatibl
       m
      </code>
     </em>
-    <code class="literal">
+    <code>
      }
     </code>
    </td>
@@ -834,7 +802,7 @@ Se você tiver desativado [standard_conforming_strings](runtime-config-compatibl
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      {
     </code>
     <em class="replaceable">
@@ -842,7 +810,7 @@ Se você tiver desativado [standard_conforming_strings](runtime-config-compatibl
       m
      </code>
     </em>
-    <code class="literal">
+    <code>
      ,}
     </code>
    </td>
@@ -858,7 +826,7 @@ Se você tiver desativado [standard_conforming_strings](runtime-config-compatibl
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      {
     </code>
     <em class="replaceable">
@@ -866,7 +834,7 @@ Se você tiver desativado [standard_conforming_strings](runtime-config-compatibl
       m
      </code>
     </em>
-    <code class="literal">
+    <code>
      ,
     </code>
     <em class="replaceable">
@@ -874,7 +842,7 @@ Se você tiver desativado [standard_conforming_strings](runtime-config-compatibl
       n
      </code>
     </em>
-    <code class="literal">
+    <code>
      }
     </code>
    </td>
@@ -907,46 +875,46 @@ Se você tiver desativado [standard_conforming_strings](runtime-config-compatibl
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      *?
     </code>
    </td>
    <td>
     versão não gananciosa de
-    <code class="literal">
+    <code>
      *
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      +?
     </code>
    </td>
    <td>
     versão não gananciosa de
-    <code class="literal">
+    <code>
      +
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ??
     </code>
    </td>
    <td>
     versão não gananciosa de
-    <code class="literal">
+    <code>
      ?
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      {
     </code>
     <em class="replaceable">
@@ -954,13 +922,13 @@ Se você tiver desativado [standard_conforming_strings](runtime-config-compatibl
       m
      </code>
     </em>
-    <code class="literal">
+    <code>
      }?
     </code>
    </td>
    <td>
     versão não gananciosa de
-    <code class="literal">
+    <code>
      {
     </code>
     <em class="replaceable">
@@ -968,14 +936,14 @@ Se você tiver desativado [standard_conforming_strings](runtime-config-compatibl
       m
      </code>
     </em>
-    <code class="literal">
+    <code>
      }
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      {
     </code>
     <em class="replaceable">
@@ -983,13 +951,13 @@ Se você tiver desativado [standard_conforming_strings](runtime-config-compatibl
       m
      </code>
     </em>
-    <code class="literal">
+    <code>
      ,}?
     </code>
    </td>
    <td>
     versão não gananciosa de
-    <code class="literal">
+    <code>
      {
     </code>
     <em class="replaceable">
@@ -997,14 +965,14 @@ Se você tiver desativado [standard_conforming_strings](runtime-config-compatibl
       m
      </code>
     </em>
-    <code class="literal">
+    <code>
      ,}
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      {
     </code>
     <em class="replaceable">
@@ -1012,7 +980,7 @@ Se você tiver desativado [standard_conforming_strings](runtime-config-compatibl
       m
      </code>
     </em>
-    <code class="literal">
+    <code>
      ,
     </code>
     <em class="replaceable">
@@ -1020,13 +988,13 @@ Se você tiver desativado [standard_conforming_strings](runtime-config-compatibl
       n
      </code>
     </em>
-    <code class="literal">
+    <code>
      }?
     </code>
    </td>
    <td>
     versão não gananciosa de
-    <code class="literal">
+    <code>
      {
     </code>
     <em class="replaceable">
@@ -1034,7 +1002,7 @@ Se você tiver desativado [standard_conforming_strings](runtime-config-compatibl
       m
      </code>
     </em>
-    <code class="literal">
+    <code>
      ,
     </code>
     <em class="replaceable">
@@ -1042,22 +1010,13 @@ Se você tiver desativado [standard_conforming_strings](runtime-config-compatibl
       n
      </code>
     </em>
-    <code class="literal">
+    <code>
      }
     </code>
    </td>
   </tr>
  </tbody>
 </table>
-
-
-
-
-
-
-
-
-
 
 Os formulários que utilizam `{`*`...`*`}` são conhecidos como *limites*. Os números *`m`* e *`n`* dentro de um limite são inteiros decimais não assinados com valores permitidos de 0 a 255, inclusive.
 
@@ -1069,13 +1028,7 @@ Um quantificador não pode seguir imediatamente outro quantificador, por exemplo
 
 **Tabela 9.19. Restrições de expressão regular**
 
-
-
-<table border="1" class="table" summary="Regular Expression Constraints">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -1089,7 +1042,7 @@ Um quantificador não pode seguir imediatamente outro quantificador, por exemplo
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ^
     </code>
    </td>
@@ -1099,7 +1052,7 @@ Um quantificador não pode seguir imediatamente outro quantificador, por exemplo
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      $
     </code>
    </td>
@@ -1109,7 +1062,7 @@ Um quantificador não pode seguir imediatamente outro quantificador, por exemplo
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      (?=
     </code>
     <em class="replaceable">
@@ -1117,7 +1070,7 @@ Um quantificador não pode seguir imediatamente outro quantificador, por exemplo
       re
      </code>
     </em>
-    <code class="literal">
+    <code>
      )
     </code>
    </td>
@@ -1136,7 +1089,7 @@ Um quantificador não pode seguir imediatamente outro quantificador, por exemplo
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      (?!
     </code>
     <em class="replaceable">
@@ -1144,7 +1097,7 @@ Um quantificador não pode seguir imediatamente outro quantificador, por exemplo
       re
      </code>
     </em>
-    <code class="literal">
+    <code>
      )
     </code>
    </td>
@@ -1163,7 +1116,7 @@ Um quantificador não pode seguir imediatamente outro quantificador, por exemplo
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      (?&lt;=
     </code>
     <em class="replaceable">
@@ -1171,7 +1124,7 @@ Um quantificador não pode seguir imediatamente outro quantificador, por exemplo
       re
      </code>
     </em>
-    <code class="literal">
+    <code>
      )
     </code>
    </td>
@@ -1190,7 +1143,7 @@ Um quantificador não pode seguir imediatamente outro quantificador, por exemplo
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      (?&lt;!
     </code>
     <em class="replaceable">
@@ -1198,7 +1151,7 @@ Um quantificador não pode seguir imediatamente outro quantificador, por exemplo
       re
      </code>
     </em>
-    <code class="literal">
+    <code>
      )
     </code>
    </td>
@@ -1218,18 +1171,9 @@ Um quantificador não pode seguir imediatamente outro quantificador, por exemplo
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 As restrições de olhar para frente e para trás não podem conter referências *atrás* (ver [Seção 9.7.3.3] (functions-matching.md#POSIX-ESCAPE-SEQUENCES "9.7.3.3. Regular Expression Escapes")), e todas as chaves de parênteses dentro delas são consideradas não capturadoras.
 
-#### 9.7.3.2. Expressões de Braço [#](#POSIX-BRACKET-EXPRESSIONS)
+##### 9.7.3.2. Expressões de Braço [#](#POSIX-BRACKET-EXPRESSIONS)
 
 Uma expressão de *bracket* é uma lista de caracteres fechada entre `[]`. Normalmente, ela corresponde a qualquer único caractere da lista (mas veja abaixo). Se a lista começar com `^`, ela corresponde a qualquer único caractere *não* do resto da lista. Se dois caracteres na lista forem separados por `-`, isso é uma abreviação para a faixa completa de caracteres entre esses dois (incluindo) na sequência de ordenação, por exemplo, `[0-9]` no ASCII corresponde a qualquer dígito decimal. É ilegal que dois intervalos compartilhem um ponto final, por exemplo, `a-c-e`. Os intervalos são muito dependentes da sequência de ordenação, portanto, os programas portáteis devem evitar depender deles.
 
@@ -1247,7 +1191,7 @@ Dentro de uma expressão entre chaves, o nome de uma classe de caracteres encerr
 
 Existem dois casos especiais de expressões de colchetes: as expressões de colchetes `[[:<:]]` e `[[:>:]]` são restrições, correspondendo a cadeias vazias no início e no final de uma palavra, respectivamente. Uma palavra é definida como uma sequência de caracteres de palavra que não é precedida nem seguida por caracteres de palavra. Um caractere de palavra é qualquer caractere pertencente à classe de caracteres `word`, ou seja, qualquer letra, dígito ou sublinhado. Esta é uma extensão, compatível com, mas não especificada pelo POSIX 1003.2, e deve ser usada com cautela em software destinado a ser portátil para outros sistemas. As escapadas de restrições descritas abaixo são geralmente preferíveis; elas não são mais padrão, mas são mais fáceis de digitar.
 
-#### 9.7.3.3. Fuertes de expressão regular [#](#POSIX-ESCAPE-SEQUENCES)
+##### 9.7.3.3. Fuertes de expressão regular [#](#POSIX-ESCAPE-SEQUENCES)
 
 *Escapes* são sequências especiais que começam com `\`, seguidas por um caractere alfanumérico. Os escapes vêm em várias variedades: entrada de caracteres, abreviações de classe, escapes de restrição e referências de volta. Um `\`, seguido por um caractere alfanumérico, mas que não constitui uma saída válida, é ilegal em AREs. Em EREs, não há escapes: fora de uma expressão entre chaves, um `\`, seguido por um caractere alfanumérico, simplesmente representa esse caractere como um caractere comum, e dentro de uma expressão entre chaves, `\` é um caractere comum. (Este último é a incompatibilidade real entre EREs e AREs.)
 
@@ -1261,13 +1205,7 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
 
 **Tabela 9.20. Fuites de entrada de caracteres de expressão regular**
 
-
-
-<table border="1" class="table" summary="Regular Expression Character-Entry Escapes">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -1281,7 +1219,7 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \a
     </code>
    </td>
@@ -1291,7 +1229,7 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \b
     </code>
    </td>
@@ -1301,13 +1239,13 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \B
     </code>
    </td>
    <td>
     sinônimo de barra invertida (
-    <code class="literal">
+    <code>
      \
     </code>
     ) para ajudar a reduzir a necessidade de barras inclinadas dobrar
@@ -1315,7 +1253,7 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \c
     </code>
     <em class="replaceable">
@@ -1342,24 +1280,24 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \e
     </code>
    </td>
    <td>
     o personagem cujo nome de sequência de correspondência é
-    <code class="literal">
+    <code>
      ESC
     </code>
     , ou, caso contrário, o caractere com valor octal
-    <code class="literal">
+    <code>
      033
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \f
     </code>
    </td>
@@ -1369,7 +1307,7 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \n
     </code>
    </td>
@@ -1379,7 +1317,7 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \r
     </code>
    </td>
@@ -1389,7 +1327,7 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \t
     </code>
    </td>
@@ -1399,7 +1337,7 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \u
     </code>
     <em class="replaceable">
@@ -1416,7 +1354,7 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
      </code>
     </em>
     é exatamente quatro dígitos hexadecimais) o caractere cujo valor hexadecimal é
-    <code class="literal">
+    <code>
      0x
     </code>
     <em class="replaceable">
@@ -1428,7 +1366,7 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \U
     </code>
     <em class="replaceable">
@@ -1445,7 +1383,7 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
      </code>
     </em>
     é exatamente oito dígitos hexadecimais. O caractere cujo valor hexadecimal é
-    <code class="literal">
+    <code>
      0x
     </code>
     <em class="replaceable">
@@ -1457,7 +1395,7 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \v
     </code>
    </td>
@@ -1467,7 +1405,7 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \x
     </code>
     <em class="replaceable">
@@ -1484,7 +1422,7 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
      </code>
     </em>
     é qualquer sequência de dígitos hexadecimais) o caractere cujo valor hexadecimal é
-    <code class="literal">
+    <code>
      0x
     </code>
     <em class="replaceable">
@@ -1497,13 +1435,13 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \0
     </code>
    </td>
    <td>
     o caráter cujo valor é
-    <code class="literal">
+    <code>
      0
     </code>
     (o byte nulo)
@@ -1511,7 +1449,7 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \
     </code>
     <em class="replaceable">
@@ -1532,7 +1470,7 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
      referência de volta
     </em>
     ) o personagem cujo valor octal é
-    <code class="literal">
+    <code>
      0
     </code>
     <em class="replaceable">
@@ -1544,7 +1482,7 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \
     </code>
     <em class="replaceable">
@@ -1565,7 +1503,7 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
      referência de volta
     </em>
     ) o personagem cujo valor octal é
-    <code class="literal">
+    <code>
      0
     </code>
     <em class="replaceable">
@@ -1578,15 +1516,6 @@ Uma *referência de volta* (`\`*`n`*) corresponde à mesma cadeia de caracteres 
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Os dígitos hexadecimais são `0`-`9`, `a`-`f` e `A`-`F`. Os dígitos óctal são `0`-`7`.
 
 Saídas de entrada de caracteres numéricos que especificam valores fora do intervalo ASCII (0–127) têm significados dependentes do codificação do banco de dados. Quando a codificação é UTF-8, os valores de escape são equivalentes a pontos de código Unicode, por exemplo, `\u1234` significa o caractere `U+1234`. Para outras codificações multibyte, as saídas de entrada de caracteres geralmente especificam apenas a concatenação dos valores de byte para o caractere. Se o valor de escape não corresponder a nenhum caractere legal na codificação do banco de dados, não será gerado nenhum erro, mas nunca corresponderá a nenhum dado.
@@ -1595,13 +1524,7 @@ As escapas de entrada de caracteres são sempre tratadas como caracteres comuns.
 
 **Tabela 9.21. Evasões abreviadas de classe de expressão regular**
 
-
-
-<table border="1" class="table" summary="Regular Expression Class-Shorthand Escapes">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -1615,78 +1538,78 @@ As escapas de entrada de caracteres são sempre tratadas como caracteres comuns.
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \d
     </code>
    </td>
    <td>
     corresponda a qualquer dígito, como
-    <code class="literal">
+    <code>
      [[:digit:]]
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \s
     </code>
    </td>
    <td>
     corresponda a qualquer caractere de espaço em branco, como
-    <code class="literal">
+    <code>
      [[:space:]]
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \w
     </code>
    </td>
    <td>
     corresponda a qualquer caractere de palavra, como
-    <code class="literal">
+    <code>
      [[:word:]]
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \D
     </code>
    </td>
    <td>
     corresponda a qualquer caractere que não seja um dígito, como
-    <code class="literal">
+    <code>
      [^[:digit:]]
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \S
     </code>
    </td>
    <td>
     corresponda a qualquer caractere que não seja espaço em branco, como
-    <code class="literal">
+    <code>
      [^[:space:]]
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \W
     </code>
    </td>
    <td>
     corresponda a qualquer caractere não-alfabético, como
-    <code class="literal">
+    <code>
      [^[:word:]]
     </code>
    </td>
@@ -1694,26 +1617,11 @@ As escapas de entrada de caracteres são sempre tratadas como caracteres comuns.
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 As fórmulas de escape de abreviação de classe também funcionam dentro de expressões de chaves, embora as definições mostradas acima não sejam totalmente sintaticamente válidas nesse contexto. Por exemplo, `[a-c\d]` é equivalente a `[a-c[:digit:]]`.
 
 **Tabela 9.22. Evasões de restrições de expressão regular**
 
-
-
-<table border="1" class="table" summary="Regular Expression Constraint Escapes">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -1727,7 +1635,7 @@ As fórmulas de escape de abreviação de classe também funcionam dentro de exp
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \A
     </code>
    </td>
@@ -1737,7 +1645,7 @@ As fórmulas de escape de abreviação de classe também funcionam dentro de exp
      Seção 9.7.3.5
     </a>
     para que isso se diferencia de
-    <code class="literal">
+    <code>
      ^
     </code>
     )
@@ -1745,7 +1653,7 @@ As fórmulas de escape de abreviação de classe também funcionam dentro de exp
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \m
     </code>
    </td>
@@ -1755,7 +1663,7 @@ As fórmulas de escape de abreviação de classe também funcionam dentro de exp
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \M
     </code>
    </td>
@@ -1765,7 +1673,7 @@ As fórmulas de escape de abreviação de classe também funcionam dentro de exp
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \y
     </code>
    </td>
@@ -1775,7 +1683,7 @@ As fórmulas de escape de abreviação de classe também funcionam dentro de exp
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \Y
     </code>
    </td>
@@ -1785,7 +1693,7 @@ As fórmulas de escape de abreviação de classe também funcionam dentro de exp
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \Z
     </code>
    </td>
@@ -1795,7 +1703,7 @@ As fórmulas de escape de abreviação de classe também funcionam dentro de exp
      Seção 9.7.3.5
     </a>
     para que isso se diferencia de
-    <code class="literal">
+    <code>
      $
     </code>
     )
@@ -1804,26 +1712,11 @@ As fórmulas de escape de abreviação de classe também funcionam dentro de exp
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Uma palavra é definida conforme especificado nos padrões de `[[:<:]]` e `[[:>:]]` acima. Fuga de restrição é ilegal dentro das expressões de chaves.
 
 **Tabela 9.23. Referências de expressão regular de volta**
 
-
-
-<table border="1" class="table" summary="Regular Expression Back References">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -1837,7 +1730,7 @@ Uma palavra é definida conforme especificado nos padrões de `[[:<:]]` e `[[:>:
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \
     </code>
     <em class="replaceable">
@@ -1864,7 +1757,7 @@ Uma palavra é definida conforme especificado nos padrões de `[[:<:]]` e `[[:>:
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      \
     </code>
     <em class="replaceable">
@@ -1904,20 +1797,11 @@ Uma palavra é definida conforme especificado nos padrões de `[[:<:]]` e `[[:>:
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Nota
 
 Há uma ambiguidade inerente entre as saídas de entrada de caracteres octal e as referências de volta, que é resolvida pelas seguintes heurísticas, conforme mencionado acima. Um zero inicial sempre indica uma saída de escape octal. Um único dígito não nulo, não seguido por outro dígito, é sempre considerado uma referência de volta. Uma sequência de vários dígitos que não começa com um zero é considerada uma referência de volta se vier após uma subexpressão adequada (ou seja, o número está na faixa legal para uma referência de volta), e, caso contrário, é considerada octal.
 
-#### 9.7.3.4. Metasintaxe de expressão regular [#](#POSIX-METASYNTAX)
+##### 9.7.3.4. Metasintaxe de expressão regular [#](#POSIX-METASYNTAX)
 
 Além da sintaxe principal descrita acima, existem algumas formas especiais e facilidades sintáticas variadas disponíveis.
 
@@ -1927,13 +1811,7 @@ Um RE pode começar com *opções embutidas*: uma sequência `(?`*`xyz`*`)` (ond
 
 **Tabela 9.24. Cartas de opção embutidas da ARE**
 
-
-
-<table border="1" class="table" summary="ARE Embedded-Option Letters">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -1947,7 +1825,7 @@ Um RE pode começar com *opções embutidas*: uma sequência `(?`*`xyz`*`)` (ond
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      b
     </code>
    </td>
@@ -1957,7 +1835,7 @@ Um RE pode começar com *opções embutidas*: uma sequência `(?`*`xyz`*`)` (ond
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      c
     </code>
    </td>
@@ -1967,7 +1845,7 @@ Um RE pode começar com *opções embutidas*: uma sequência `(?`*`xyz`*`)` (ond
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      e
     </code>
    </td>
@@ -1977,7 +1855,7 @@ Um RE pode começar com *opções embutidas*: uma sequência `(?`*`xyz`*`)` (ond
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      i
     </code>
    </td>
@@ -1991,20 +1869,20 @@ Um RE pode começar com *opções embutidas*: uma sequência `(?`*`xyz`*`)` (ond
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      m
     </code>
    </td>
    <td>
     sinônimo histórico de
-    <code class="literal">
+    <code>
      n
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      n
     </code>
    </td>
@@ -2018,7 +1896,7 @@ Um RE pode começar com *opções embutidas*: uma sequência `(?`*`xyz`*`)` (ond
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      p
     </code>
    </td>
@@ -2032,7 +1910,7 @@ Um RE pode começar com *opções embutidas*: uma sequência `(?`*`xyz`*`)` (ond
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      q
     </code>
    </td>
@@ -2050,7 +1928,7 @@ Um RE pode começar com *opções embutidas*: uma sequência `(?`*`xyz`*`)` (ond
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      s
     </code>
    </td>
@@ -2060,7 +1938,7 @@ Um RE pode começar com *opções embutidas*: uma sequência `(?`*`xyz`*`)` (ond
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      t
     </code>
    </td>
@@ -2070,7 +1948,7 @@ Um RE pode começar com *opções embutidas*: uma sequência `(?`*`xyz`*`)` (ond
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      w
     </code>
    </td>
@@ -2092,7 +1970,7 @@ Um RE pode começar com *opções embutidas*: uma sequência `(?`*`xyz`*`)` (ond
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      x
     </code>
    </td>
@@ -2102,15 +1980,6 @@ Um RE pode começar com *opções embutidas*: uma sequência `(?`*`xyz`*`)` (ond
   </tr>
  </tbody>
 </table>
-
-
-
-
-
-
-
-
-
 
 As opções embutidas entram em vigor no ponto `)` que termina a sequência. Elas podem aparecer apenas no início de um ARE (após o diretor `***:`, se houver).
 
@@ -2126,7 +1995,7 @@ Finalmente, em uma ARE, as expressões fora de colchetes, a sequência `(?#`*`tt
 
 *Nenhuma* dessas extensões de sintaxe metassintática está disponível se um diretor inicial `***=` tiver especificado que a entrada do usuário seja tratada como uma string literal e não como um RE.
 
-#### 9.7.3.5. Regras de correspondência por expressão regular [#](#POSIX-MATCHING-RULES)
+##### 9.7.3.5. Regras de correspondência por expressão regular [#](#POSIX-MATCHING-RULES)
 
 Caso um RE possa corresponder a mais de uma subcadeia de uma string dada, o RE corresponderá àquela que começa mais cedo na string. Se o RE puder corresponder a mais de uma subcadeia começando nesse ponto, será tomada a correspondência mais longa possível ou a correspondência mais curta possível, dependendo se o RE é *greedy* ou *não-greedy*.
 
@@ -2144,7 +2013,7 @@ As regras acima associam a ganância a atributos não apenas a átomos quantific
 
 Um exemplo do que isso significa:
 
-```
+```sql
 SELECT SUBSTRING('XY1234Z', 'Y*([0-9]{1,3})');
 Result: 123
 SELECT SUBSTRING('XY1234Z', 'Y*?([0-9]{1,3})');
@@ -2157,21 +2026,21 @@ Em suma, quando um RE contém tanto expressões subexpressões gananciosas quant
 
 Os quantificadores `{1,1}` e `{1,1}?` podem ser usados para forçar ganância ou falta de ganância, respectivamente, em uma subexpressão ou em um RE inteiro. Isso é útil quando você precisa que o RE inteiro tenha um atributo de ganância diferente do que é deduzido de seus elementos. Como exemplo, suponha que estamos tentando separar uma string que contém alguns dígitos em dígitos e as partes antes e depois deles. Podemos tentar fazer isso assim:
 
-```
+```sql
 SELECT regexp_match('abc01234xyz', '(.*)(\d+)(.*)');
 Result: {abc0123,4,xyz}
 ```
 
 Isso não funcionou: o primeiro `.*` é ganancioso, então ele "come" o máximo que pode, deixando o `\d+` para se ajustar no último possível lugar, o último dígito. Talvez possamos tentar corrigir isso, tornando-o não ganancioso:
 
-```
+```sql
 SELECT regexp_match('abc01234xyz', '(.*?)(\d+)(.*)');
 Result: {abc,0,""}
 ```
 
 Isso também não funcionou, porque agora o RE como um todo é não-gancioso e, portanto, termina a partida como um todo o mais rápido possível. Podemos obter o que queremos, forçando o RE como um todo a ser ganancioso:
 
-```
+```sql
 SELECT regexp_match('abc01234xyz', '(?:(.*?)(\d+)(.*)){1,1}');
 Result: {abc,01234,xyz}
 ```
@@ -2188,7 +2057,7 @@ Se a correspondência parcial sensível a novas linhas for especificada, isso af
 
 Se a correspondência inversa sensível a novas linhas for especificada, isso afeta `^` e `$` como na correspondência sensível a novas linhas, mas não `.` e expressões de chaves. Isso não é muito útil, mas é fornecido por simetria.
 
-#### 9.7.3.6. Limites e compatibilidade [#](#POSIX-LIMITS-COMPATIBILITY)
+##### 9.7.3.6. Limites e compatibilidade [#](#POSIX-LIMITS-COMPATIBILITY)
 
 Não há uma limitação específica para o comprimento dos REs nesta implementação. No entanto, os programas destinados a serem altamente portáteis não devem utilizar REs com mais de 256 bytes, pois uma implementação compatível com POSIX pode se recusar a aceitar tais REs.
 
@@ -2196,11 +2065,11 @@ A única característica dos AREs que é realmente incompatível com os EREs POS
 
 Muitas das extensões do ARE foram emprestadas do Perl, mas algumas foram alteradas para limpá-las, e algumas extensões do Perl não estão presentes. As incompatibilidades de destaque incluem `\b`, `\B`, a falta de tratamento especial para uma nova linha final, a adição de expressões de chaves complementares às coisas afetadas por correspondência sensível à nova linha, as restrições em relação a parênteses e referências de volta nas restrições de pré-visualização/pré-visualização e a semântica de correspondência mais longa/mais curta (em vez de correspondência inicial)
 
-#### 9.7.3.7. Expressões Regulares Básicas [#](#POSIX-BASIC-REGEXES)
+##### 9.7.3.7. Expressões Regulares Básicas [#](#POSIX-BASIC-REGEXES)
 
 As BREs diferem das EREs em vários aspectos. Nas BREs, `|`, `+` e `?` são caracteres comuns e não há equivalente para sua funcionalidade. Os delimitadores para limites são `\{` e `\}`, com `{` e `}` sendo, por si sós, caracteres comuns. As chaves para subexpressões aninhadas são `\(` e `\)`, com `(` e `)` sendo, por si sós, caracteres comuns. `^` é um caractere comum, exceto no início do RE ou no início de uma subexpressão entre chaves, `$` é um caractere comum, exceto no final do RE ou no final de uma subexpressão entre chaves, e `*` é um caractere comum se aparecer no início do RE ou no início de uma subexpressão entre chaves (após um possível `^` inicial). Por fim, as referências de volta de um único dígito estão disponíveis, e `\<` e `\>` são sinônimos de `[[:<:]]` e `[[:>:]]`, respectivamente; não há outras escapadas disponíveis nas BREs.
 
-#### 9.7.3.8. Diferenças em relação ao Padrão SQL e ao XQuery [#](#POSIX-VS-XQUERY)
+##### 9.7.3.8. Diferenças em relação ao Padrão SQL e ao XQuery [#](#POSIX-VS-XQUERY)
 
 Desde o SQL:2008, o padrão SQL inclui operadores e funções de expressão regular que realizam a correspondência de padrões de acordo com o padrão de expressão regular XQuery:
 
@@ -2214,13 +2083,7 @@ O PostgreSQL não implementa atualmente esses operadores e funções. Você pode
 
 **Tabela 9.25. Equivalências de funções de expressão regular**
 
-
-
-<table border="1" class="table" summary="Regular Expression Functions Equivalencies">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <thead>
   <tr>
    <th>
@@ -2236,7 +2099,7 @@ O PostgreSQL não implementa atualmente esses operadores e funções. Você pode
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      <em class="replaceable">
       <code>
        string
@@ -2251,7 +2114,7 @@ O PostgreSQL não implementa atualmente esses operadores e funções. Você pode
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      regexp_like(
      <em class="replaceable">
       <code>
@@ -2267,7 +2130,7 @@ O PostgreSQL não implementa atualmente esses operadores e funções. Você pode
      )
     </code>
     or
-    <code class="literal">
+    <code>
      <em class="replaceable">
       <code>
        string
@@ -2284,7 +2147,7 @@ O PostgreSQL não implementa atualmente esses operadores e funções. Você pode
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      OCCURRENCES_REGEX(
      <em class="replaceable">
       <code>
@@ -2301,7 +2164,7 @@ O PostgreSQL não implementa atualmente esses operadores e funções. Você pode
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      regexp_count(
      <em class="replaceable">
       <code>
@@ -2320,7 +2183,7 @@ O PostgreSQL não implementa atualmente esses operadores e funções. Você pode
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      POSITION_REGEX(
      <em class="replaceable">
       <code>
@@ -2337,7 +2200,7 @@ O PostgreSQL não implementa atualmente esses operadores e funções. Você pode
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      regexp_instr(
      <em class="replaceable">
       <code>
@@ -2356,7 +2219,7 @@ O PostgreSQL não implementa atualmente esses operadores e funções. Você pode
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      SUBSTRING_REGEX(
      <em class="replaceable">
       <code>
@@ -2373,7 +2236,7 @@ O PostgreSQL não implementa atualmente esses operadores e funções. Você pode
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      regexp_substr(
      <em class="replaceable">
       <code>
@@ -2392,7 +2255,7 @@ O PostgreSQL não implementa atualmente esses operadores e funções. Você pode
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      TRANSLATE_REGEX(
      <em class="replaceable">
       <code>
@@ -2415,7 +2278,7 @@ O PostgreSQL não implementa atualmente esses operadores e funções. Você pode
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      regexp_replace(
      <em class="replaceable">
       <code>
@@ -2440,15 +2303,6 @@ O PostgreSQL não implementa atualmente esses operadores e funções. Você pode
   </tr>
  </tbody>
 </table>
-
-
-
-
-
-
-
-
-
 
 Funções de expressão regular semelhantes às fornecidas pelo PostgreSQL também estão disponíveis em vários outros implementações do SQL, enquanto as funções padrão do SQL não são tão amplamente implementadas. Alguns dos detalhes da sintaxe da expressão regular provavelmente diferirão em cada implementação.
 

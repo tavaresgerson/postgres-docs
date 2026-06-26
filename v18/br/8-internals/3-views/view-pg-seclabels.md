@@ -6,7 +6,7 @@ A vista `pg_seclabels` fornece informações sobre etiquetas de segurança. É u
 
 
 
-<table border="1" class="table" summary="pg_seclabels Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `pg_seclabels` fornece informações sobre etiquetas de segurança. É u
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       objoid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referência a qualquer coluna OID)
@@ -42,20 +42,20 @@ A vista `pg_seclabels` fornece informações sobre etiquetas de segurança. É u
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       classoid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -68,20 +68,20 @@ A vista `pg_seclabels` fornece informações sobre etiquetas de segurança. É u
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       objsubid
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
      Para uma etiqueta de segurança em uma coluna de mesa, este é o número da coluna (o
-     <code class="structfield">
+     <code>
       objoid
      </code>
      e
-     <code class="structfield">
+     <code>
       classoid
      </code>
      refere-se à própria tabela). Para todos os outros tipos de objeto, essa coluna é zero.
@@ -91,10 +91,10 @@ A vista `pg_seclabels` fornece informações sobre etiquetas de segurança. É u
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       objtype
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -106,20 +106,20 @@ A vista `pg_seclabels` fornece informações sobre etiquetas de segurança. É u
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       objnamespace
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -132,10 +132,10 @@ A vista `pg_seclabels` fornece informações sobre etiquetas de segurança. É u
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       objname
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -147,20 +147,20 @@ A vista `pg_seclabels` fornece informações sobre etiquetas de segurança. É u
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       provider
      </code>
-     <code class="type">
+     <code>
       text
      </code>
      (referências
      <a class="link" href="catalog-pg-seclabel.md" title="52.46. pg_seclabel">
-      <code class="structname">
+      <code>
        pg_seclabel
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       provider
      </code>
      )
@@ -173,20 +173,20 @@ A vista `pg_seclabels` fornece informações sobre etiquetas de segurança. É u
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       label
      </code>
-     <code class="type">
+     <code>
       text
      </code>
      (referências
      <a class="link" href="catalog-pg-seclabel.md" title="52.46. pg_seclabel">
-      <code class="structname">
+      <code>
        pg_seclabel
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       label
      </code>
      )

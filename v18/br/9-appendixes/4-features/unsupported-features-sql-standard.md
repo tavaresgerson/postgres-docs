@@ -4,7 +4,7 @@ As seguintes características definidas no SQL:2023 não são implementadas nest
 
 
 
-<table border="1" class="informaltable">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>

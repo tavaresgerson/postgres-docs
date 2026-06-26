@@ -6,7 +6,7 @@ A vista `pg_settings` fornece acesso aos parâmetros de execução do servidor. 
 
 
 
-<table border="1" class="table" summary="pg_settings Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `pg_settings` fornece acesso aos parâmetros de execução do servidor. 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       name
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `pg_settings` fornece acesso aos parâmetros de execução do servidor. 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       setting
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `pg_settings` fornece acesso aos parâmetros de execução do servidor. 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       unit
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -71,10 +71,10 @@ A vista `pg_settings` fornece acesso aos parâmetros de execução do servidor. 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       category
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -86,10 +86,10 @@ A vista `pg_settings` fornece acesso aos parâmetros de execução do servidor. 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       short_desc
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -101,10 +101,10 @@ A vista `pg_settings` fornece acesso aos parâmetros de execução do servidor. 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       extra_desc
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -116,10 +116,10 @@ A vista `pg_settings` fornece acesso aos parâmetros de execução do servidor. 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       context
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -131,32 +131,32 @@ A vista `pg_settings` fornece acesso aos parâmetros de execução do servidor. 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       vartype
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      Tipo de parâmetro (
-     <code class="literal">
+     <code>
       bool
      </code>
      ,
-     <code class="literal">
+     <code>
       enum
      </code>
      ,
-     <code class="literal">
+     <code>
       integer
      </code>
      ,
-     <code class="literal">
+     <code>
       real
      </code>
      , ou
-     <code class="literal">
+     <code>
       string
      </code>
      )
@@ -166,10 +166,10 @@ A vista `pg_settings` fornece acesso aos parâmetros de execução do servidor. 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       source
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -181,10 +181,10 @@ A vista `pg_settings` fornece acesso aos parâmetros de execução do servidor. 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       min_val
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -196,10 +196,10 @@ A vista `pg_settings` fornece acesso aos parâmetros de execução do servidor. 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       max_val
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -211,10 +211,10 @@ A vista `pg_settings` fornece acesso aos parâmetros de execução do servidor. 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       enumvals
      </code>
-     <code class="type">
+     <code>
       text[]
      </code>
     </p>
@@ -226,10 +226,10 @@ A vista `pg_settings` fornece acesso aos parâmetros de execução do servidor. 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       boot_val
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -241,17 +241,17 @@ A vista `pg_settings` fornece acesso aos parâmetros de execução do servidor. 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       reset_val
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      Valorize
      <a class="link" href="sql-reset.md" title="RESET">
-      <code class="command">
+      <code>
        RESET
       </code>
      </a>
@@ -262,20 +262,20 @@ A vista `pg_settings` fornece acesso aos parâmetros de execução do servidor. 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sourcefile
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
     <p>
      Arquivo de configuração no qual o valor atual foi definido (nulo para valores definidos a partir de fontes que não são arquivos de configuração, ou quando examinado por um usuário que não é um superusuário nem possui privilégios de
-     <code class="literal">
+     <code>
       pg_read_all_settings
      </code>
      ); útil ao usar
-     <code class="literal">
+     <code>
       include
      </code>
      diretrizes em arquivos de configuração
@@ -285,16 +285,16 @@ A vista `pg_settings` fornece acesso aos parâmetros de execução do servidor. 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sourceline
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
      Número de linha dentro do arquivo de configuração onde o valor atual foi definido (nulo para valores definidos a partir de fontes que não são arquivos de configuração, ou quando examinado por um usuário que não é um superusuário nem tem privilégios de
-     <code class="literal">
+     <code>
       pg_read_all_settings
      </code>
      ).
@@ -304,19 +304,19 @@ A vista `pg_settings` fornece acesso aos parâmetros de execução do servidor. 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       pending_restart
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       true
      </code>
      se o valor foi alterado no arquivo de configuração, mas precisa de um reinício; ou
-     <code class="literal">
+     <code>
       false
      </code>
      otherwise.

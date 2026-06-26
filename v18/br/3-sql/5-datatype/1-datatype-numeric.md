@@ -9,7 +9,7 @@ Os tipos numéricos consistem em inteiros de dois, quatro e oito bytes, números
 
 **Tabela 8.2. Tipos numéricos**
 
-<table border="1" class="table" summary="Numeric Types">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -35,7 +35,7 @@ Os tipos numéricos consistem em inteiros de dois, quatro e oito bytes, números
  <tbody>
   <tr>
    <td>
-    <code class="type">
+    <code>
      smallint
     </code>
    </td>
@@ -51,7 +51,7 @@ Os tipos numéricos consistem em inteiros de dois, quatro e oito bytes, números
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      integer
     </code>
    </td>
@@ -67,7 +67,7 @@ Os tipos numéricos consistem em inteiros de dois, quatro e oito bytes, números
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      bigint
     </code>
    </td>
@@ -83,7 +83,7 @@ Os tipos numéricos consistem em inteiros de dois, quatro e oito bytes, números
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      decimal
     </code>
    </td>
@@ -99,7 +99,7 @@ Os tipos numéricos consistem em inteiros de dois, quatro e oito bytes, números
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      numeric
     </code>
    </td>
@@ -115,7 +115,7 @@ Os tipos numéricos consistem em inteiros de dois, quatro e oito bytes, números
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      real
     </code>
    </td>
@@ -131,7 +131,7 @@ Os tipos numéricos consistem em inteiros de dois, quatro e oito bytes, números
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      double precision
     </code>
    </td>
@@ -147,7 +147,7 @@ Os tipos numéricos consistem em inteiros de dois, quatro e oito bytes, números
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      smallserial
     </code>
    </td>
@@ -163,7 +163,7 @@ Os tipos numéricos consistem em inteiros de dois, quatro e oito bytes, números
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      serial
     </code>
    </td>
@@ -179,7 +179,7 @@ Os tipos numéricos consistem em inteiros de dois, quatro e oito bytes, números
   </tr>
   <tr>
    <td>
-    <code class="type">
+    <code>
      bigserial
     </code>
    </td>

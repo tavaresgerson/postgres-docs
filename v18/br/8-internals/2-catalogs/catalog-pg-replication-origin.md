@@ -8,7 +8,7 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_replication_origin` é
 
 
 
-<table border="1" class="table" summary="pg_replication_origin Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_replication_origin` é
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       roident
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -43,10 +43,10 @@ Ao contrário da maioria dos catálogos de sistema, o `pg_replication_origin` é
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       roname
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>

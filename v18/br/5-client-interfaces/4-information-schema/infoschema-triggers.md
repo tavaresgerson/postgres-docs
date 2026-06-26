@@ -6,7 +6,7 @@ A vista `triggers` contém todos os gatilhos definidos no banco de dados atual e
 
 
 
-<table border="1" class="table" summary="triggers Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `triggers` contém todos os gatilhos definidos no banco de dados atual e
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       trigger_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `triggers` contém todos os gatilhos definidos no banco de dados atual e
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       trigger_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `triggers` contém todos os gatilhos definidos no banco de dados atual e
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       trigger_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,24 +71,24 @@ A vista `triggers` contém todos os gatilhos definidos no banco de dados atual e
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       event_manipulation
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Event that fires the trigger (
-     <code class="literal">
+     <code>
       INSERT
      </code>
      ,
-     <code class="literal">
+     <code>
       UPDATE
      </code>
      , or
-     <code class="literal">
+     <code>
       DELETE
      </code>
      )
@@ -98,10 +98,10 @@ A vista `triggers` contém todos os gatilhos definidos no banco de dados atual e
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       event_object_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -113,10 +113,10 @@ A vista `triggers` contém todos os gatilhos definidos no banco de dados atual e
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       event_object_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -128,10 +128,10 @@ A vista `triggers` contém todos os gatilhos definidos no banco de dados atual e
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       event_object_table
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -143,24 +143,24 @@ A vista `triggers` contém todos os gatilhos definidos no banco de dados atual e
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       action_order
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
     <p>
      Firing order among triggers on the same table having the same
-     <code class="literal">
+     <code>
       event_manipulation
      </code>
      ,
-     <code class="literal">
+     <code>
       action_timing
      </code>
      , and
-     <code class="literal">
+     <code>
       action_orientation
      </code>
      .  In
@@ -174,15 +174,15 @@ A vista `triggers` contém todos os gatilhos definidos no banco de dados atual e
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       action_condition
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       WHEN
      </code>
      condition of the trigger, null if none (also null if the table is not owned by a currently enabled role)
@@ -192,16 +192,16 @@ A vista `triggers` contém todos os gatilhos definidos no banco de dados atual e
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       action_statement
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Statement that is executed by the trigger (currently always
-     <code class="literal">
+     <code>
       EXECUTE FUNCTION
       <em class="replaceable">
        <code>
@@ -217,20 +217,20 @@ A vista `triggers` contém todos os gatilhos definidos no banco de dados atual e
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       action_orientation
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Identifies whether the trigger fires once for each processed row or once for each statement (
-     <code class="literal">
+     <code>
       ROW
      </code>
      or
-     <code class="literal">
+     <code>
       STATEMENT
      </code>
      )
@@ -240,24 +240,24 @@ A vista `triggers` contém todos os gatilhos definidos no banco de dados atual e
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       action_timing
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Time at which the trigger fires (
-     <code class="literal">
+     <code>
       BEFORE
      </code>
      ,
-     <code class="literal">
+     <code>
       AFTER
      </code>
      , or
-     <code class="literal">
+     <code>
       INSTEAD OF
      </code>
      )
@@ -267,10 +267,10 @@ A vista `triggers` contém todos os gatilhos definidos no banco de dados atual e
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       action_reference_old_table
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -290,10 +290,10 @@ A vista `triggers` contém todos os gatilhos definidos no banco de dados atual e
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       action_reference_new_table
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -313,10 +313,10 @@ A vista `triggers` contém todos os gatilhos definidos no banco de dados atual e
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       action_reference_old_row
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -331,10 +331,10 @@ A vista `triggers` contém todos os gatilhos definidos no banco de dados atual e
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       action_reference_new_row
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -349,10 +349,10 @@ A vista `triggers` contém todos os gatilhos definidos no banco de dados atual e
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       created
      </code>
-     <code class="type">
+     <code>
       time_stamp
      </code>
     </p>

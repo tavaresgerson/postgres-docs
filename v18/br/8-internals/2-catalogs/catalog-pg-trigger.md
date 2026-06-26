@@ -6,7 +6,7 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
 
 
 
-<table border="1" class="table" summary="pg_trigger Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       oid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
     </p>
@@ -41,20 +41,20 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tgrelid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -67,20 +67,20 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tgparentid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-trigger.md" title="52.58. pg_trigger">
-      <code class="structname">
+      <code>
        pg_trigger
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -93,10 +93,10 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tgname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
@@ -108,20 +108,20 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tgfoid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-proc.md" title="52.39. pg_proc">
-      <code class="structname">
+      <code>
        pg_proc
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -134,10 +134,10 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tgtype
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
@@ -149,10 +149,10 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tgenabled
      </code>
-     <code class="type">
+     <code>
       char
      </code>
     </p>
@@ -162,7 +162,7 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
       session_replication_role
      </a>
      os modos em que o gatilho dispara.
-     <code class="literal">
+     <code>
       O
      </code>
      = desencadeia incêndios
@@ -182,11 +182,11 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
       ”
      </span>
      modos,
-     <code class="literal">
+     <code>
       D
      </code>
      = o gatilho está desativado,
-     <code class="literal">
+     <code>
       R
      </code>
      = desencadeia incêndios
@@ -198,7 +198,7 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
       ”
      </span>
      modo,
-     <code class="literal">
+     <code>
       A
      </code>
      = acionam incêndios sempre.
@@ -208,16 +208,16 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tgisinternal
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
      Verdadeiro se o gatilho é gerado internamente (geralmente, para impor a restrição identificada por
-     <code class="structfield">
+     <code>
       tgconstraint
      </code>
      )
@@ -227,20 +227,20 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tgconstrrelid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -253,20 +253,20 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tgconstrindid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -279,20 +279,20 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tgconstraint
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-constraint.md" title="52.13. pg_constraint">
-      <code class="structname">
+      <code>
        pg_constraint
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -300,7 +300,7 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
     <p>
      O
      <a class="link" href="catalog-pg-constraint.md" title="52.13. pg_constraint">
-      <code class="structname">
+      <code>
        pg_constraint
       </code>
      </a>
@@ -311,10 +311,10 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tgdeferrable
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -326,10 +326,10 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tginitdeferred
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -341,10 +341,10 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tgnargs
      </code>
-     <code class="type">
+     <code>
       int2
      </code>
     </p>
@@ -356,20 +356,20 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tgattr
      </code>
-     <code class="type">
+     <code>
       int2vector
      </code>
      (referências
      <a class="link" href="catalog-pg-attribute.md" title="52.7. pg_attribute">
-      <code class="structname">
+      <code>
        pg_attribute
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       attnum
      </code>
      )
@@ -382,10 +382,10 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tgargs
      </code>
-     <code class="type">
+     <code>
       bytea
      </code>
     </p>
@@ -397,20 +397,20 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tgqual
      </code>
-     <code class="type">
+     <code>
       pg_node_tree
      </code>
     </p>
     <p>
      árvore de expressão (em
-     <code class="function">
+     <code>
       nodeToString()
      </code>
      representação) para o gatilho
-     <code class="literal">
+     <code>
       WHEN
      </code>
      condição, ou nulo se nenhuma
@@ -420,19 +420,19 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tgoldtable
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       REFERENCING
      </code>
      nome da cláusula para
-     <code class="literal">
+     <code>
       OLD TABLE
      </code>
      , ou nulo se nenhum
@@ -442,19 +442,19 @@ O catálogo `pg_trigger` armazena gatilhos em tabelas e visualizações. Consult
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       tgnewtable
      </code>
-     <code class="type">
+     <code>
       name
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       REFERENCING
      </code>
      nome da cláusula para
-     <code class="literal">
+     <code>
       NEW TABLE
      </code>
      , ou nulo se nenhum

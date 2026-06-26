@@ -8,7 +8,7 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
 
 
 
-<table border="1" class="table" summary="user_defined_types Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       user_defined_type_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -43,10 +43,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       user_defined_type_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -58,10 +58,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       user_defined_type_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -73,16 +73,16 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       user_defined_type_category
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Currently always
-     <code class="literal">
+     <code>
       STRUCTURED
      </code>
     </p>
@@ -91,10 +91,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_instantiable
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
@@ -109,10 +109,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_final
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
@@ -127,10 +127,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       ordering_form
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -145,10 +145,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       ordering_category
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -163,10 +163,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       ordering_routine_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -181,10 +181,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       ordering_routine_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -199,10 +199,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       ordering_routine_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -217,10 +217,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       reference_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -235,10 +235,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       data_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -253,10 +253,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_maximum_length
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -271,10 +271,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_octet_length
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -289,10 +289,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_set_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -307,10 +307,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_set_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -325,10 +325,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       character_set_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -343,10 +343,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collation_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -361,10 +361,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collation_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -379,10 +379,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       collation_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -397,10 +397,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numeric_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -415,10 +415,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numeric_precision_radix
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -433,10 +433,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       numeric_scale
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -451,10 +451,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       datetime_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -469,10 +469,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       interval_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
@@ -487,10 +487,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       interval_precision
      </code>
-     <code class="type">
+     <code>
       cardinal_number
      </code>
     </p>
@@ -505,10 +505,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       source_dtd_identifier
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -523,10 +523,10 @@ O SQL conhece dois tipos definidos pelo usuário: tipos estruturados (também co
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       ref_dtd_identifier
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>

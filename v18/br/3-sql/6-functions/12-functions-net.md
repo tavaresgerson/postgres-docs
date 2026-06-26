@@ -8,7 +8,7 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
 
 
 
-<table border="1" class="table" summary="IP Address Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -31,17 +31,17 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       inet
      </code>
-     <code class="literal">
+     <code>
       &lt;&lt;
      </code>
-     <code class="type">
+     <code>
       inet
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -49,29 +49,29 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
      A sub-rede é estritamente contida pela sub-rede? Este operador e os quatro seguintes testam a inclusão da sub-rede. Eles consideram apenas as partes de rede dos dois endereços (ignorando quaisquer bits à direita das máscaras de rede) e determinam se uma rede é idêntica à outra ou uma sub-rede dela.
     </p>
     <p>
-     <code class="literal">
+     <code>
       inet '192.168.1.5' &lt;&lt; inet '192.168.1/24'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       inet '192.168.0.5' &lt;&lt; inet '192.168.1/24'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       inet '192.168.1/24' &lt;&lt; inet '192.168.1/24'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
@@ -80,17 +80,17 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       inet
      </code>
-     <code class="literal">
+     <code>
       &lt;&lt;=
      </code>
-     <code class="type">
+     <code>
       inet
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -98,11 +98,11 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
      A sub-rede está contida pela sub-rede ou é igual à sub-rede?
     </p>
     <p>
-     <code class="literal">
+     <code>
       inet '192.168.1/24' &lt;&lt;= inet '192.168.1/24'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -111,17 +111,17 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       inet
      </code>
-     <code class="literal">
+     <code>
       &gt;&gt;
      </code>
-     <code class="type">
+     <code>
       inet
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -129,11 +129,11 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
      A sub-rede contém estritamente a sub-rede?
     </p>
     <p>
-     <code class="literal">
+     <code>
       inet '192.168.1/24' &gt;&gt; inet '192.168.1.5'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -142,17 +142,17 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       inet
      </code>
-     <code class="literal">
+     <code>
       &gt;&gt;=
      </code>
-     <code class="type">
+     <code>
       inet
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -160,11 +160,11 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
      Sub-rede contém ou é igual a sub-rede?
     </p>
     <p>
-     <code class="literal">
+     <code>
       inet '192.168.1/24' &gt;&gt;= inet '192.168.1/24'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -173,17 +173,17 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       inet
      </code>
-     <code class="literal">
+     <code>
       &amp;&amp;
      </code>
-     <code class="type">
+     <code>
       inet
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -191,20 +191,20 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
      Uma das sub-redes contém ou é igual à outra?
     </p>
     <p>
-     <code class="literal">
+     <code>
       inet '192.168.1/24' &amp;&amp; inet '192.168.1.80/28'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       inet '192.168.1/24' &amp;&amp; inet '192.168.2.0/28'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
@@ -213,14 +213,14 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="literal">
+     <code>
       ~
      </code>
-     <code class="type">
+     <code>
       inet
      </code>
      →
-     <code class="returnvalue">
+     <code>
       inet
      </code>
     </p>
@@ -228,11 +228,11 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
      Calcula a operação de NÃO bit a bit.
     </p>
     <p>
-     <code class="literal">
+     <code>
       ~ inet '192.168.1.6'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       63.87.254.249
      </code>
     </p>
@@ -241,17 +241,17 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       inet
      </code>
-     <code class="literal">
+     <code>
       &amp;
      </code>
-     <code class="type">
+     <code>
       inet
      </code>
      →
-     <code class="returnvalue">
+     <code>
       inet
      </code>
     </p>
@@ -259,11 +259,11 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
      Calcula a operação AND bit a bit.
     </p>
     <p>
-     <code class="literal">
+     <code>
       inet '192.168.1.6' &amp; inet '0.0.0.255'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0.0.0.6
      </code>
     </p>
@@ -272,17 +272,17 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       inet
      </code>
-     <code class="literal">
+     <code>
       |
      </code>
-     <code class="type">
+     <code>
       inet
      </code>
      →
-     <code class="returnvalue">
+     <code>
       inet
      </code>
     </p>
@@ -290,11 +290,11 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
      Calcula a OR bit a bit.
     </p>
     <p>
-     <code class="literal">
+     <code>
       inet '192.168.1.6' | inet '0.0.0.255'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       192.168.1.255
      </code>
     </p>
@@ -303,17 +303,17 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       inet
      </code>
-     <code class="literal">
+     <code>
       +
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
      →
-     <code class="returnvalue">
+     <code>
       inet
      </code>
     </p>
@@ -321,11 +321,11 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
      Adiciona um deslocamento a um endereço.
     </p>
     <p>
-     <code class="literal">
+     <code>
       inet '192.168.1.6' + 25
      </code>
      →
-     <code class="returnvalue">
+     <code>
       192.168.1.31
      </code>
     </p>
@@ -334,17 +334,17 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       bigint
      </code>
-     <code class="literal">
+     <code>
       +
      </code>
-     <code class="type">
+     <code>
       inet
      </code>
      →
-     <code class="returnvalue">
+     <code>
       inet
      </code>
     </p>
@@ -352,11 +352,11 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
      Adiciona um deslocamento a um endereço.
     </p>
     <p>
-     <code class="literal">
+     <code>
       200 + inet '::ffff:fff0:1'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       ::ffff:255.240.0.201
      </code>
     </p>
@@ -365,17 +365,17 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       inet
      </code>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       bigint
      </code>
      →
-     <code class="returnvalue">
+     <code>
       inet
      </code>
     </p>
@@ -383,11 +383,11 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
      Subtrai um deslocamento de um endereço.
     </p>
     <p>
-     <code class="literal">
+     <code>
       inet '192.168.1.43' - 36
      </code>
      →
-     <code class="returnvalue">
+     <code>
       192.168.1.7
      </code>
     </p>
@@ -396,17 +396,17 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       inet
      </code>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       inet
      </code>
      →
-     <code class="returnvalue">
+     <code>
       bigint
      </code>
     </p>
@@ -414,20 +414,20 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
      Calcula a diferença entre dois endereços.
     </p>
     <p>
-     <code class="literal">
+     <code>
       inet '192.168.1.43' - inet '192.168.1.19'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       24
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       inet '::1' - inet '::ffff:1'
      </code>
      →
-     <code class="returnvalue">
+     <code>
       -4294901760
      </code>
     </p>
@@ -449,7 +449,7 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
 
 
 
-<table border="1" class="table" summary="IP Address Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -472,21 +472,21 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       abbrev
      </code>
      (
-     <code class="type">
+     <code>
       inet
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Creates an abbreviated display format as text. (The result is the same as the
-     <code class="type">
+     <code>
       inet
      </code>
      output function produces; it is
@@ -498,17 +498,17 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
       ”
      </span>
      only in comparison to the result of an explicit cast to
-     <code class="type">
+     <code>
       text
      </code>
      , which for historical reasons will never suppress the netmask part.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       abbrev(inet '10.1.0.0/32')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       10.1.0.0
      </code>
     </p>
@@ -517,15 +517,15 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       abbrev
      </code>
      (
-     <code class="type">
+     <code>
       cidr
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -537,11 +537,11 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
      .)
     </p>
     <p>
-     <code class="literal">
+     <code>
       abbrev(cidr '10.1.0.0/16')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       10.1/16
      </code>
     </p>
@@ -550,15 +550,15 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       broadcast
      </code>
      (
-     <code class="type">
+     <code>
       inet
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       inet
      </code>
     </p>
@@ -566,11 +566,11 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
      Computes the broadcast address for the address's network.
     </p>
     <p>
-     <code class="literal">
+     <code>
       broadcast(inet '192.168.1.5/24')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       192.168.1.255/24
      </code>
     </p>
@@ -579,35 +579,35 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       family
      </code>
      (
-     <code class="type">
+     <code>
       inet
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
     <p>
      Returns the address's family:
-     <code class="literal">
+     <code>
       4
      </code>
      for IPv4,
-     <code class="literal">
+     <code>
       6
      </code>
      for IPv6.
     </p>
     <p>
-     <code class="literal">
+     <code>
       family(inet '::1')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       6
      </code>
     </p>
@@ -616,15 +616,15 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       host
      </code>
      (
-     <code class="type">
+     <code>
       inet
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
@@ -632,11 +632,11 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
      Returns the IP address as text, ignoring the netmask.
     </p>
     <p>
-     <code class="literal">
+     <code>
       host(inet '192.168.1.0/24')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       192.168.1.0
      </code>
     </p>
@@ -645,15 +645,15 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       hostmask
      </code>
      (
-     <code class="type">
+     <code>
       inet
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       inet
      </code>
     </p>
@@ -661,11 +661,11 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
      Computes the host mask for the address's network.
     </p>
     <p>
-     <code class="literal">
+     <code>
       hostmask(inet '192.168.23.20/30')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       0.0.0.3
      </code>
     </p>
@@ -674,19 +674,19 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       inet_merge
      </code>
      (
-     <code class="type">
+     <code>
       inet
      </code>
      ,
-     <code class="type">
+     <code>
       inet
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       cidr
      </code>
     </p>
@@ -694,11 +694,11 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
      Computes the smallest network that includes both of the given networks.
     </p>
     <p>
-     <code class="literal">
+     <code>
       inet_merge(inet '192.168.1.5/24', inet '192.168.2.5/24')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       192.168.0.0/22
      </code>
     </p>
@@ -707,19 +707,19 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       inet_same_family
      </code>
      (
-     <code class="type">
+     <code>
       inet
      </code>
      ,
-     <code class="type">
+     <code>
       inet
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -727,11 +727,11 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
      Tests whether the addresses belong to the same IP family.
     </p>
     <p>
-     <code class="literal">
+     <code>
       inet_same_family(inet '192.168.1.5/24', inet '::1')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
@@ -740,15 +740,15 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       masklen
      </code>
      (
-     <code class="type">
+     <code>
       inet
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       integer
      </code>
     </p>
@@ -756,11 +756,11 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
      Returns the netmask length in bits.
     </p>
     <p>
-     <code class="literal">
+     <code>
       masklen(inet '192.168.1.5/24')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       24
      </code>
     </p>
@@ -769,15 +769,15 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       netmask
      </code>
      (
-     <code class="type">
+     <code>
       inet
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       inet
      </code>
     </p>
@@ -785,11 +785,11 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
      Computes the network mask for the address's network.
     </p>
     <p>
-     <code class="literal">
+     <code>
       netmask(inet '192.168.1.5/24')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       255.255.255.0
      </code>
     </p>
@@ -798,31 +798,31 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       network
      </code>
      (
-     <code class="type">
+     <code>
       inet
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       cidr
      </code>
     </p>
     <p>
      Returns the network part of the address, zeroing out whatever is to the right of the netmask. (This is equivalent to casting the value to
-     <code class="type">
+     <code>
       cidr
      </code>
      .)
     </p>
     <p>
-     <code class="literal">
+     <code>
       network(inet '192.168.1.5/24')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       192.168.1.0/24
      </code>
     </p>
@@ -831,35 +831,35 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       set_masklen
      </code>
      (
-     <code class="type">
+     <code>
       inet
      </code>
      ,
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       inet
      </code>
     </p>
     <p>
      Sets the netmask length for an
-     <code class="type">
+     <code>
       inet
      </code>
      value. The address part does not change.
     </p>
     <p>
-     <code class="literal">
+     <code>
       set_masklen(inet '192.168.1.5/24', 16)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       192.168.1.5/16
      </code>
     </p>
@@ -868,35 +868,35 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       set_masklen
      </code>
      (
-     <code class="type">
+     <code>
       cidr
      </code>
      ,
-     <code class="type">
+     <code>
       integer
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       cidr
      </code>
     </p>
     <p>
      Sets the netmask length for a
-     <code class="type">
+     <code>
       cidr
      </code>
      value. Address bits to the right of the new netmask are set to zero.
     </p>
     <p>
-     <code class="literal">
+     <code>
       set_masklen(cidr '192.168.1.0/24', 16)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       192.168.0.0/16
      </code>
     </p>
@@ -905,31 +905,31 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       text
      </code>
      (
-     <code class="type">
+     <code>
       inet
      </code>
      ) →
-     <code class="returnvalue">
+     <code>
       text
      </code>
     </p>
     <p>
      Returns the unabbreviated IP address and netmask length as text. (This has the same result as an explicit cast to
-     <code class="type">
+     <code>
       text
      </code>
      .)
     </p>
     <p>
-     <code class="literal">
+     <code>
       text(inet '192.168.1.5')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       192.168.1.5/32
      </code>
     </p>
@@ -957,7 +957,7 @@ Os tipos de endereço MAC `macaddr` e `macaddr8` suportam os operadores de compa
 
 
 
-<table border="1" class="table" summary="MAC Address Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -980,15 +980,15 @@ Os tipos de endereço MAC `macaddr` e `macaddr8` suportam os operadores de compa
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       trunc
      </code>
      (
-     <code class="type">
+     <code>
       macaddr
      </code>
      )
-     <code class="returnvalue">
+     <code>
       macaddr
      </code>
     </p>
@@ -1000,11 +1000,11 @@ Os tipos de endereço MAC `macaddr` e `macaddr8` suportam os operadores de compa
      ).
     </p>
     <p>
-     <code class="literal">
+     <code>
       trunc(macaddr '12:34:56:78:90:ab')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       12:34:56:00:00:00
      </code>
     </p>
@@ -1013,15 +1013,15 @@ Os tipos de endereço MAC `macaddr` e `macaddr8` suportam os operadores de compa
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       trunc
      </code>
      (
-     <code class="type">
+     <code>
       macaddr8
      </code>
      )
-     <code class="returnvalue">
+     <code>
       macaddr8
      </code>
     </p>
@@ -1033,11 +1033,11 @@ Os tipos de endereço MAC `macaddr` e `macaddr8` suportam os operadores de compa
      ).
     </p>
     <p>
-     <code class="literal">
+     <code>
       trunc(macaddr8 '12:34:56:78:90:ab:cd:ef')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       12:34:56:00:00:00:00:00
      </code>
     </p>
@@ -1046,15 +1046,15 @@ Os tipos de endereço MAC `macaddr` e `macaddr8` suportam os operadores de compa
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       macaddr8_set7bit
      </code>
      (
-     <code class="type">
+     <code>
       macaddr8
      </code>
      )
-     <code class="returnvalue">
+     <code>
       macaddr8
      </code>
     </p>
@@ -1062,11 +1062,11 @@ Os tipos de endereço MAC `macaddr` e `macaddr8` suportam os operadores de compa
      Define o 7º bit do endereço como um, criando o que é conhecido como EUI-64 modificada, para inclusão em um endereço IPv6.
     </p>
     <p>
-     <code class="literal">
+     <code>
       macaddr8_set7bit(macaddr8 '00:34:56:ab:cd:ef')
      </code>
      →
-     <code class="returnvalue">
+     <code>
       02:34:56:ff:fe:ab:cd:ef
      </code>
     </p>

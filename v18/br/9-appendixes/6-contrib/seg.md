@@ -51,15 +51,11 @@ Em [Tabela F.29](seg.md#SEG-REPR-TABLE), *`x`*, *`y`* e *`delta`* denotam númer
 
 
 
-<table border="1" class="table" summary="seg External Representations">
- <colgroup>
-  <col/>
-  <col/>
- </colgroup>
+<table>
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      <em class="replaceable">
       <code>
        x
@@ -73,7 +69,7 @@ Em [Tabela F.29](seg.md#SEG-REPR-TABLE), *`x`*, *`y`* e *`delta`* denotam númer
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      <em class="replaceable">
       <code>
        x
@@ -104,7 +100,7 @@ Em [Tabela F.29](seg.md#SEG-REPR-TABLE), *`x`*, *`y`* e *`delta`* denotam númer
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      <em class="replaceable">
       <code>
        x
@@ -147,7 +143,7 @@ Em [Tabela F.29](seg.md#SEG-REPR-TABLE), *`x`*, *`y`* e *`delta`* denotam númer
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      <em class="replaceable">
       <code>
        x
@@ -167,7 +163,7 @@ Em [Tabela F.29](seg.md#SEG-REPR-TABLE), *`x`*, *`y`* e *`delta`* denotam númer
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ..
      <em class="replaceable">
       <code>
@@ -201,7 +197,7 @@ Em [Tabela F.29](seg.md#SEG-REPR-TABLE), *`x`*, *`y`* e *`delta`* denotam númer
 
 
 
-<table border="1" class="table" summary="Examples of Valid seg Input">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -209,7 +205,7 @@ Em [Tabela F.29](seg.md#SEG-REPR-TABLE), *`x`*, *`y`* e *`delta`* denotam númer
  <tbody>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      5.0
     </code>
    </td>
@@ -219,21 +215,21 @@ Em [Tabela F.29](seg.md#SEG-REPR-TABLE), *`x`*, *`y`* e *`delta`* denotam númer
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      ~5.0
     </code>
    </td>
    <td>
     Cria um segmento de comprimento zero e registra
-    <code class="literal">
+    <code>
      ~
     </code>
     nos dados.
-    <code class="literal">
+    <code>
      ~
     </code>
     é ignorado por
-    <code class="type">
+    <code>
      seg
     </code>
     operações, mas é preservado como um comentário.
@@ -241,13 +237,13 @@ Em [Tabela F.29](seg.md#SEG-REPR-TABLE), *`x`*, *`y`* e *`delta`* denotam númer
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &lt;5.0
     </code>
    </td>
    <td>
     Cria um ponto em 5,0.
-    <code class="literal">
+    <code>
      &lt;
     </code>
     é ignorado, mas é preservado como um comentário.
@@ -255,13 +251,13 @@ Em [Tabela F.29](seg.md#SEG-REPR-TABLE), *`x`*, *`y`* e *`delta`* denotam númer
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      &gt;5.0
     </code>
    </td>
    <td>
     Cria um ponto em 5,0.
-    <code class="literal">
+    <code>
      &gt;
     </code>
     é ignorado, mas é preservado como um comentário.
@@ -269,17 +265,17 @@ Em [Tabela F.29](seg.md#SEG-REPR-TABLE), *`x`*, *`y`* e *`delta`* denotam númer
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      5(+-)0.3
     </code>
    </td>
    <td>
     Cria um intervalo
-    <code class="literal">
+    <code>
      4.7 .. 5.3
     </code>
     . Observe que o
-    <code class="literal">
+    <code>
      (+-)
     </code>
     a notação não é preservada.
@@ -287,7 +283,7 @@ Em [Tabela F.29](seg.md#SEG-REPR-TABLE), *`x`*, *`y`* e *`delta`* denotam númer
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      50 ..
     </code>
    </td>
@@ -297,7 +293,7 @@ Em [Tabela F.29](seg.md#SEG-REPR-TABLE), *`x`*, *`y`* e *`delta`* denotam númer
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      .. 0
     </code>
    </td>
@@ -307,34 +303,34 @@ Em [Tabela F.29](seg.md#SEG-REPR-TABLE), *`x`*, *`y`* e *`delta`* denotam númer
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      1.5e-2 .. 2E-2
     </code>
    </td>
    <td>
     Cria um intervalo
-    <code class="literal">
+    <code>
      0.015 .. 0.02
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="literal">
+    <code>
      1 ... 2
     </code>
    </td>
    <td>
     O mesmo que
-    <code class="literal">
+    <code>
      1...2
     </code>
     , ou
-    <code class="literal">
+    <code>
      1 .. 2
     </code>
     , ou
-    <code class="literal">
+    <code>
      1..2
     </code>
     (espaços ao redor do operador de intervalo são ignorados)
@@ -370,7 +366,7 @@ O módulo `seg` inclui uma classe de operador de índice GiST para valores de `s
 
 
 
-<table border="1" class="table" summary="Seg GiST Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -390,23 +386,23 @@ O módulo `seg` inclui uma classe de operador de índice GiST para valores de `s
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       seg
      </code>
-     <code class="literal">
+     <code>
       &lt;&lt;
      </code>
-     <code class="type">
+     <code>
       seg
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      É o primeiro
-     <code class="type">
+     <code>
       seg
      </code>
      completamente à esquerda da segunda? [a, b] &lt;&lt; [c, d] é verdadeiro se b &lt; c.
@@ -416,23 +412,23 @@ O módulo `seg` inclui uma classe de operador de índice GiST para valores de `s
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       seg
      </code>
-     <code class="literal">
+     <code>
       &gt;&gt;
      </code>
-     <code class="type">
+     <code>
       seg
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      É o primeiro
-     <code class="type">
+     <code>
       seg
      </code>
      completamente à direita da segunda? [a, b] &gt;&gt; [c, d] é verdadeiro se a &gt; d.
@@ -442,23 +438,23 @@ O módulo `seg` inclui uma classe de operador de índice GiST para valores de `s
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       seg
      </code>
-     <code class="literal">
+     <code>
       &amp;&lt;
      </code>
-     <code class="type">
+     <code>
       seg
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      O primeiro
-     <code class="type">
+     <code>
       seg
      </code>
      Não se estende ao direito do segundo? [a, b] &amp;&lt; [c, d] é verdadeiro se b &lt;= d.
@@ -468,23 +464,23 @@ O módulo `seg` inclui uma classe de operador de índice GiST para valores de `s
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       seg
      </code>
-     <code class="literal">
+     <code>
       &amp;&gt;
      </code>
-     <code class="type">
+     <code>
       seg
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      O primeiro
-     <code class="type">
+     <code>
       seg
      </code>
      não se estenda à esquerda da segunda? [a, b] &amp;&gt; [c, d] é verdadeiro se a &gt;= c.
@@ -494,23 +490,23 @@ O módulo `seg` inclui uma classe de operador de índice GiST para valores de `s
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       seg
      </code>
-     <code class="literal">
+     <code>
       =
      </code>
-     <code class="type">
+     <code>
       seg
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      São os dois
-     <code class="type">
+     <code>
       seg
      </code>
      são iguais?
@@ -520,23 +516,23 @@ O módulo `seg` inclui uma classe de operador de índice GiST para valores de `s
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       seg
      </code>
-     <code class="literal">
+     <code>
       &amp;&amp;
      </code>
-     <code class="type">
+     <code>
       seg
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      Os dois
-     <code class="type">
+     <code>
       seg
      </code>
      sobreposição?
@@ -546,23 +542,23 @@ O módulo `seg` inclui uma classe de operador de índice GiST para valores de `s
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       seg
      </code>
-     <code class="literal">
+     <code>
       @&gt;
      </code>
-     <code class="type">
+     <code>
       seg
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      O primeiro
-     <code class="type">
+     <code>
       seg
      </code>
      contêm o segundo?
@@ -572,23 +568,23 @@ O módulo `seg` inclui uma classe de operador de índice GiST para valores de `s
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       seg
      </code>
-     <code class="literal">
+     <code>
       &lt;@
      </code>
-     <code class="type">
+     <code>
       seg
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      É o primeiro
-     <code class="type">
+     <code>
       seg
      </code>
      contido no segundo?

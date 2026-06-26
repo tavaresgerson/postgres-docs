@@ -6,7 +6,7 @@ O catálogo `pg_inherits` registra informações sobre hierarquias de herança d
 
 
 
-<table border="1" class="table" summary="pg_inherits Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,20 +26,20 @@ O catálogo `pg_inherits` registra informações sobre hierarquias de herança d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       inhrelid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -52,20 +52,20 @@ O catálogo `pg_inherits` registra informações sobre hierarquias de herança d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       inhparent
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (referências
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -78,10 +78,10 @@ O catálogo `pg_inherits` registra informações sobre hierarquias de herança d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       inhseqno
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
@@ -96,19 +96,19 @@ O catálogo `pg_inherits` registra informações sobre hierarquias de herança d
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       inhdetachpending
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       true
      </code>
      para uma partição que está em processo de ser desativada;
-     <code class="literal">
+     <code>
       false
      </code>
      otherwise.

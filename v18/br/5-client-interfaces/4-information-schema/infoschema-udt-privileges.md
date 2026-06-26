@@ -6,7 +6,7 @@ A vista `udt_privileges` identifica os privilégios `USAGE` concedidos em tipos 
 
 
 
-<table border="1" class="table" summary="udt_privileges Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,10 +26,10 @@ A vista `udt_privileges` identifica os privilégios `USAGE` concedidos em tipos 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       grantor
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -41,10 +41,10 @@ A vista `udt_privileges` identifica os privilégios `USAGE` concedidos em tipos 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       grantee
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -56,10 +56,10 @@ A vista `udt_privileges` identifica os privilégios `USAGE` concedidos em tipos 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_catalog
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -71,10 +71,10 @@ A vista `udt_privileges` identifica os privilégios `USAGE` concedidos em tipos 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_schema
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -86,10 +86,10 @@ A vista `udt_privileges` identifica os privilégios `USAGE` concedidos em tipos 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       udt_name
      </code>
-     <code class="type">
+     <code>
       sql_identifier
      </code>
     </p>
@@ -101,16 +101,16 @@ A vista `udt_privileges` identifica os privilégios `USAGE` concedidos em tipos 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       privilege_type
      </code>
-     <code class="type">
+     <code>
       character_data
      </code>
     </p>
     <p>
      Always
-     <code class="literal">
+     <code>
       TYPE USAGE
      </code>
     </p>
@@ -119,19 +119,19 @@ A vista `udt_privileges` identifica os privilégios `USAGE` concedidos em tipos 
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       is_grantable
      </code>
-     <code class="type">
+     <code>
       yes_or_no
      </code>
     </p>
     <p>
-     <code class="literal">
+     <code>
       YES
      </code>
      if the privilege is grantable,
-     <code class="literal">
+     <code>
       NO
      </code>
      if not

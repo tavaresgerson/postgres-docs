@@ -6,7 +6,7 @@ A vista `pg_group` existe para compatibilidade reversa: ela emula um catálogo q
 
 
 
-<table border="1" class="table" summary="pg_group Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,20 +26,20 @@ A vista `pg_group` existe para compatibilidade reversa: ela emula um catálogo q
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       groname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (references
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       rolname
      </code>
      )
@@ -52,20 +52,20 @@ A vista `pg_group` existe para compatibilidade reversa: ela emula um catálogo q
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       grosysid
      </code>
-     <code class="type">
+     <code>
       oid
      </code>
      (references
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -78,20 +78,20 @@ A vista `pg_group` existe para compatibilidade reversa: ela emula um catálogo q
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       grolist
      </code>
-     <code class="type">
+     <code>
       oid[]
      </code>
      (references
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )

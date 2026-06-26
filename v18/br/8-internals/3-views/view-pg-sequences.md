@@ -6,7 +6,7 @@ A vista `pg_sequences` fornece acesso a informações úteis sobre cada sequênc
 
 
 
-<table border="1" class="table" summary="pg_sequences Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -26,20 +26,20 @@ A vista `pg_sequences` fornece acesso a informações úteis sobre cada sequênc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       schemaname
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (references
      <a class="link" href="catalog-pg-namespace.md" title="52.32. pg_namespace">
-      <code class="structname">
+      <code>
        pg_namespace
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       nspname
      </code>
      )
@@ -52,20 +52,20 @@ A vista `pg_sequences` fornece acesso a informações úteis sobre cada sequênc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sequencename
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (references
      <a class="link" href="catalog-pg-class.md" title="52.11. pg_class">
-      <code class="structname">
+      <code>
        pg_class
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       relname
      </code>
      )
@@ -78,20 +78,20 @@ A vista `pg_sequences` fornece acesso a informações úteis sobre cada sequênc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       sequenceowner
      </code>
-     <code class="type">
+     <code>
       name
      </code>
      (references
      <a class="link" href="catalog-pg-authid.md" title="52.8. pg_authid">
-      <code class="structname">
+      <code>
        pg_authid
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       rolname
      </code>
      )
@@ -104,20 +104,20 @@ A vista `pg_sequences` fornece acesso a informações úteis sobre cada sequênc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       data_type
      </code>
-     <code class="type">
+     <code>
       regtype
      </code>
      (references
      <a class="link" href="catalog-pg-type.md" title="52.64. pg_type">
-      <code class="structname">
+      <code>
        pg_type
       </code>
      </a>
      .
-     <code class="structfield">
+     <code>
       oid
      </code>
      )
@@ -130,10 +130,10 @@ A vista `pg_sequences` fornece acesso a informações úteis sobre cada sequênc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       start_value
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
@@ -145,10 +145,10 @@ A vista `pg_sequences` fornece acesso a informações úteis sobre cada sequênc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       min_value
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
@@ -160,10 +160,10 @@ A vista `pg_sequences` fornece acesso a informações úteis sobre cada sequênc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       max_value
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
@@ -175,10 +175,10 @@ A vista `pg_sequences` fornece acesso a informações úteis sobre cada sequênc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       increment_by
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
@@ -190,10 +190,10 @@ A vista `pg_sequences` fornece acesso a informações úteis sobre cada sequênc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       cycle
      </code>
-     <code class="type">
+     <code>
       bool
      </code>
     </p>
@@ -205,10 +205,10 @@ A vista `pg_sequences` fornece acesso a informações úteis sobre cada sequênc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       cache_size
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
@@ -220,10 +220,10 @@ A vista `pg_sequences` fornece acesso a informações úteis sobre cada sequênc
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       last_value
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>

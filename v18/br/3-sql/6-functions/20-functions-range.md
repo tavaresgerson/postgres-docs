@@ -8,7 +8,7 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
 
 
 
-<table border="1" class="table" summary="Range Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -31,17 +31,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyrange
      </code>
-     <code class="literal">
+     <code>
       @&gt;
      </code>
-     <code class="type">
+     <code>
       anyrange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -49,11 +49,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      O primeiro intervalo contém o segundo?
     </p>
     <p>
-     <code class="literal">
+     <code>
       int4range(2,4) @&gt; int4range(2,3)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -62,17 +62,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyrange
      </code>
-     <code class="literal">
+     <code>
       @&gt;
      </code>
-     <code class="type">
+     <code>
       anyelement
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -80,11 +80,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A faixa contém o elemento?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '[2011-01-01,2011-03-01)'::tsrange @&gt; '2011-01-10'::timestamp
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -93,17 +93,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyrange
      </code>
-     <code class="literal">
+     <code>
       &lt;@
      </code>
-     <code class="type">
+     <code>
       anyrange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -111,11 +111,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A primeira faixa está contida pela segunda?
     </p>
     <p>
-     <code class="literal">
+     <code>
       int4range(2,4) &lt;@ int4range(1,7)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -124,17 +124,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyelement
      </code>
-     <code class="literal">
+     <code>
       &lt;@
      </code>
-     <code class="type">
+     <code>
       anyrange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -142,11 +142,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      O elemento está contido na faixa?
     </p>
     <p>
-     <code class="literal">
+     <code>
       42 &lt;@ int4range(1,7)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
@@ -155,17 +155,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyrange
      </code>
-     <code class="literal">
+     <code>
       &amp;&amp;
      </code>
-     <code class="type">
+     <code>
       anyrange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -173,11 +173,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      Os intervalos se sobrepõem, ou seja, têm algum elemento em comum?
     </p>
     <p>
-     <code class="literal">
+     <code>
       int8range(3,7) &amp;&amp; int8range(4,12)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -186,17 +186,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyrange
      </code>
-     <code class="literal">
+     <code>
       &lt;&lt;
      </code>
-     <code class="type">
+     <code>
       anyrange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -204,11 +204,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A primeira faixa está estritamente à esquerda da segunda?
     </p>
     <p>
-     <code class="literal">
+     <code>
       int8range(1,10) &lt;&lt; int8range(100,110)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -217,17 +217,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyrange
      </code>
-     <code class="literal">
+     <code>
       &gt;&gt;
      </code>
-     <code class="type">
+     <code>
       anyrange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -235,11 +235,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A primeira faixa está estritamente à direita da segunda?
     </p>
     <p>
-     <code class="literal">
+     <code>
       int8range(50,60) &gt;&gt; int8range(20,30)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -248,17 +248,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyrange
      </code>
-     <code class="literal">
+     <code>
       &amp;&lt;
      </code>
-     <code class="type">
+     <code>
       anyrange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -266,11 +266,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A primeira faixa não se estende à direita da segunda?
     </p>
     <p>
-     <code class="literal">
+     <code>
       int8range(1,20) &amp;&lt; int8range(18,20)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -279,17 +279,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyrange
      </code>
-     <code class="literal">
+     <code>
       &amp;&gt;
      </code>
-     <code class="type">
+     <code>
       anyrange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -297,11 +297,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A primeira faixa não se estende à esquerda da segunda?
     </p>
     <p>
-     <code class="literal">
+     <code>
       int8range(7,20) &amp;&gt; int8range(5,10)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -310,17 +310,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyrange
      </code>
-     <code class="literal">
+     <code>
       -|-
      </code>
-     <code class="type">
+     <code>
       anyrange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -328,11 +328,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      As faixas são adjacentes?
     </p>
     <p>
-     <code class="literal">
+     <code>
       numrange(1.1,2.2) -|- numrange(2.2,3.3)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -341,33 +341,33 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyrange
      </code>
-     <code class="literal">
+     <code>
       +
      </code>
-     <code class="type">
+     <code>
       anyrange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       anyrange
      </code>
     </p>
     <p>
      Calcula a união das faixas. As faixas devem se sobrepor ou estar adjacentes, de modo que a união seja uma única faixa (mas veja
-     <code class="function">
+     <code>
       range_merge()
      </code>
      ).
     </p>
     <p>
-     <code class="literal">
+     <code>
       numrange(5,15) + numrange(10,20)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [5,20)
      </code>
     </p>
@@ -376,17 +376,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyrange
      </code>
-     <code class="literal">
+     <code>
       *
      </code>
-     <code class="type">
+     <code>
       anyrange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       anyrange
      </code>
     </p>
@@ -394,11 +394,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      Calcula a interseção das faixas.
     </p>
     <p>
-     <code class="literal">
+     <code>
       int8range(5,15) * int8range(10,20)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [10,15)
      </code>
     </p>
@@ -407,17 +407,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyrange
      </code>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       anyrange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       anyrange
      </code>
     </p>
@@ -425,11 +425,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      Calcula a diferença das faixas. A segunda faixa não deve estar contida na primeira de tal forma que a diferença não seja uma única faixa.
     </p>
     <p>
-     <code class="literal">
+     <code>
       int8range(5,15) - int8range(10,20)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [5,10)
      </code>
     </p>
@@ -451,7 +451,7 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
 
 
 
-<table border="1" class="table" summary="Multirange Operators">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -474,17 +474,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anymultirange
      </code>
-     <code class="literal">
+     <code>
       @&gt;
      </code>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -492,11 +492,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      O primeiro multirange contém o segundo?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{[2,4)}'::int4multirange @&gt; '{[2,3)}'::int4multirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -505,17 +505,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anymultirange
      </code>
-     <code class="literal">
+     <code>
       @&gt;
      </code>
-     <code class="type">
+     <code>
       anyrange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -523,11 +523,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A multirange contém a faixa?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{[2,4)}'::int4multirange @&gt; int4range(2,3)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -536,17 +536,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anymultirange
      </code>
-     <code class="literal">
+     <code>
       @&gt;
      </code>
-     <code class="type">
+     <code>
       anyelement
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -554,11 +554,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      O multirange contém o elemento?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{[2011-01-01,2011-03-01)}'::tsmultirange @&gt; '2011-01-10'::timestamp
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -567,17 +567,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyrange
      </code>
-     <code class="literal">
+     <code>
       @&gt;
      </code>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -585,11 +585,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A faixa contém a faixa múltipla?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '[2,4)'::int4range @&gt; '{[2,3)}'::int4multirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -598,17 +598,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anymultirange
      </code>
-     <code class="literal">
+     <code>
       &lt;@
      </code>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -616,11 +616,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A primeira faixa está contida pela segunda?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{[2,4)}'::int4multirange &lt;@ '{[1,7)}'::int4multirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -629,17 +629,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anymultirange
      </code>
-     <code class="literal">
+     <code>
       &lt;@
      </code>
-     <code class="type">
+     <code>
       anyrange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -647,11 +647,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      O multirange está contido na faixa?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{[2,4)}'::int4multirange &lt;@ int4range(1,7)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -660,17 +660,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyrange
      </code>
-     <code class="literal">
+     <code>
       &lt;@
      </code>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -678,11 +678,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A faixa está contida na multifaixa?
     </p>
     <p>
-     <code class="literal">
+     <code>
       int4range(2,4) &lt;@ '{[1,7)}'::int4multirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -691,17 +691,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyelement
      </code>
-     <code class="literal">
+     <code>
       &lt;@
      </code>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -709,11 +709,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      O elemento está contido na multirange?
     </p>
     <p>
-     <code class="literal">
+     <code>
       4 &lt;@ '{[1,7)}'::int4multirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -722,17 +722,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anymultirange
      </code>
-     <code class="literal">
+     <code>
       &amp;&amp;
      </code>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -740,11 +740,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      As multiranges se sobrepõem, ou seja, têm algum elemento em comum?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{[3,7)}'::int8multirange &amp;&amp; '{[4,12)}'::int8multirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -753,17 +753,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anymultirange
      </code>
-     <code class="literal">
+     <code>
       &amp;&amp;
      </code>
-     <code class="type">
+     <code>
       anyrange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -771,11 +771,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A multirange sobrepõe-se à faixa?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{[3,7)}'::int8multirange &amp;&amp; int8range(4,12)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -784,17 +784,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyrange
      </code>
-     <code class="literal">
+     <code>
       &amp;&amp;
      </code>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -802,11 +802,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A faixa se sobrepõe à multifaixa?
     </p>
     <p>
-     <code class="literal">
+     <code>
       int8range(3,7) &amp;&amp; '{[4,12)}'::int8multirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -815,17 +815,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anymultirange
      </code>
-     <code class="literal">
+     <code>
       &lt;&lt;
      </code>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -833,11 +833,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A primeira faixa está estritamente à esquerda da segunda?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{[1,10)}'::int8multirange &lt;&lt; '{[100,110)}'::int8multirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -846,17 +846,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anymultirange
      </code>
-     <code class="literal">
+     <code>
       &lt;&lt;
      </code>
-     <code class="type">
+     <code>
       anyrange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -864,11 +864,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A multirange está estritamente à esquerda da faixa?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{[1,10)}'::int8multirange &lt;&lt; int8range(100,110)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -877,17 +877,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyrange
      </code>
-     <code class="literal">
+     <code>
       &lt;&lt;
      </code>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -895,11 +895,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A faixa está estritamente à esquerda da multifaixa?
     </p>
     <p>
-     <code class="literal">
+     <code>
       int8range(1,10) &lt;&lt; '{[100,110)}'::int8multirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -908,17 +908,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anymultirange
      </code>
-     <code class="literal">
+     <code>
       &gt;&gt;
      </code>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -926,11 +926,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      É o primeiro direito multirange estritamente o segundo?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{[50,60)}'::int8multirange &gt;&gt; '{[20,30)}'::int8multirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -939,17 +939,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anymultirange
      </code>
-     <code class="literal">
+     <code>
       &gt;&gt;
      </code>
-     <code class="type">
+     <code>
       anyrange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -957,11 +957,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A multirange é estritamente o mesmo que range?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{[50,60)}'::int8multirange &gt;&gt; int8range(20,30)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -970,17 +970,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyrange
      </code>
-     <code class="literal">
+     <code>
       &gt;&gt;
      </code>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -988,11 +988,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A faixa é estritamente à direita da faixa multibanda?
     </p>
     <p>
-     <code class="literal">
+     <code>
       int8range(50,60) &gt;&gt; '{[20,30)}'::int8multirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1001,17 +1001,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anymultirange
      </code>
-     <code class="literal">
+     <code>
       &amp;&lt;
      </code>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1019,11 +1019,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A primeira faixa não se estende à direita da segunda?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{[1,20)}'::int8multirange &amp;&lt; '{[18,20)}'::int8multirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1032,17 +1032,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anymultirange
      </code>
-     <code class="literal">
+     <code>
       &amp;&lt;
      </code>
-     <code class="type">
+     <code>
       anyrange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1050,11 +1050,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A multirange não se estende para a direita da faixa?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{[1,20)}'::int8multirange &amp;&lt; int8range(18,20)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1063,17 +1063,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyrange
      </code>
-     <code class="literal">
+     <code>
       &amp;&lt;
      </code>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1081,11 +1081,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A faixa não se estende para a direita da multifaixa?
     </p>
     <p>
-     <code class="literal">
+     <code>
       int8range(1,20) &amp;&lt; '{[18,20)}'::int8multirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1094,17 +1094,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anymultirange
      </code>
-     <code class="literal">
+     <code>
       &amp;&gt;
      </code>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1112,11 +1112,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      O primeiro multirange não se estende à esquerda do segundo?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{[7,20)}'::int8multirange &amp;&gt; '{[5,10)}'::int8multirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1125,17 +1125,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anymultirange
      </code>
-     <code class="literal">
+     <code>
       &amp;&gt;
      </code>
-     <code class="type">
+     <code>
       anyrange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1143,11 +1143,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A multirange não se estende à esquerda da faixa?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{[7,20)}'::int8multirange &amp;&gt; int8range(5,10)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1156,17 +1156,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyrange
      </code>
-     <code class="literal">
+     <code>
       &amp;&gt;
      </code>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1174,11 +1174,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A faixa não se estende à esquerda da multifaixa?
     </p>
     <p>
-     <code class="literal">
+     <code>
       int8range(7,20) &amp;&gt; '{[5,10)}'::int8multirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1187,17 +1187,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anymultirange
      </code>
-     <code class="literal">
+     <code>
       -|-
      </code>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1205,11 +1205,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      Os multiranges são adjacentes?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{[1.1,2.2)}'::nummultirange -|- '{[2.2,3.3)}'::nummultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1218,17 +1218,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anymultirange
      </code>
-     <code class="literal">
+     <code>
       -|-
      </code>
-     <code class="type">
+     <code>
       anyrange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1236,11 +1236,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A multirange é adjacente à faixa?
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{[1.1,2.2)}'::nummultirange -|- numrange(2.2,3.3)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1249,17 +1249,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anyrange
      </code>
-     <code class="literal">
+     <code>
       -|-
      </code>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1267,11 +1267,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      A faixa é adjacente à multifaixa?
     </p>
     <p>
-     <code class="literal">
+     <code>
       numrange(1.1,2.2) -|- '{[2.2,3.3)}'::nummultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1280,17 +1280,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anymultirange
      </code>
-     <code class="literal">
+     <code>
       +
      </code>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       anymultirange
      </code>
     </p>
@@ -1298,11 +1298,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      Calcula a união dos multiintervalos. Os multiintervalos não precisam se sobrepor ou estar adjacentes.
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{[5,10)}'::nummultirange + '{[15,20)}'::nummultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {[5,10), [15,20)}
      </code>
     </p>
@@ -1311,17 +1311,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anymultirange
      </code>
-     <code class="literal">
+     <code>
       *
      </code>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       anymultirange
      </code>
     </p>
@@ -1329,11 +1329,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      Calcula a interseção dos multiintervalos.
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{[5,15)}'::int8multirange * '{[10,20)}'::int8multirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {[10,15)}
      </code>
     </p>
@@ -1342,17 +1342,17 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="type">
+     <code>
       anymultirange
      </code>
-     <code class="literal">
+     <code>
       -
      </code>
-     <code class="type">
+     <code>
       anymultirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       anymultirange
      </code>
     </p>
@@ -1360,11 +1360,11 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
      Calcula a diferença dos multiintervalos.
     </p>
     <p>
-     <code class="literal">
+     <code>
       '{[5,20)}'::int8multirange - '{[10,15)}'::int8multirange
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {[5,10), [15,20)}
      </code>
     </p>
@@ -1394,7 +1394,7 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
 
 
 
-<table border="1" class="table" summary="Range Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -1417,31 +1417,31 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       lower
      </code>
      (
-     <code class="type">
+     <code>
       anyrange
      </code>
      )
-     <code class="returnvalue">
+     <code>
       anyelement
      </code>
     </p>
     <p>
      Extrai a menor faixa do intervalo (
-     <code class="literal">
+     <code>
       NULL
      </code>
      se a faixa estiver vazia ou não tiver limite inferior).
     </p>
     <p>
-     <code class="literal">
+     <code>
       lower(numrange(1.1,2.2))
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1.1
      </code>
     </p>
@@ -1450,31 +1450,31 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       upper
      </code>
      (
-     <code class="type">
+     <code>
       anyrange
      </code>
      )
-     <code class="returnvalue">
+     <code>
       anyelement
      </code>
     </p>
     <p>
      Extrai o limite superior da faixa (
-     <code class="literal">
+     <code>
       NULL
      </code>
      se a faixa estiver vazia ou não tiver limite superior).
     </p>
     <p>
-     <code class="literal">
+     <code>
       upper(numrange(1.1,2.2))
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2.2
      </code>
     </p>
@@ -1483,15 +1483,15 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       isempty
      </code>
      (
-     <code class="type">
+     <code>
       anyrange
      </code>
      )
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1499,11 +1499,11 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
      A faixa está vazia?
     </p>
     <p>
-     <code class="literal">
+     <code>
       isempty(numrange(1.1,2.2))
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
@@ -1512,15 +1512,15 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       lower_inc
      </code>
      (
-     <code class="type">
+     <code>
       anyrange
      </code>
      )
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1528,11 +1528,11 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
      A faixa de valores inferior é inclusiva?
     </p>
     <p>
-     <code class="literal">
+     <code>
       lower_inc(numrange(1.1,2.2))
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1541,15 +1541,15 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       upper_inc
      </code>
      (
-     <code class="type">
+     <code>
       anyrange
      </code>
      )
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1557,11 +1557,11 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
      A faixa tem limite superior inclusivo?
     </p>
     <p>
-     <code class="literal">
+     <code>
       upper_inc(numrange(1.1,2.2))
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
@@ -1570,31 +1570,31 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       lower_inf
      </code>
      (
-     <code class="type">
+     <code>
       anyrange
      </code>
      )
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      A faixa não tem limite inferior? (Um limite inferior de
-     <code class="literal">
+     <code>
       -Infinity
      </code>
      retorna falso.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       lower_inf('(,)'::daterange)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1603,31 +1603,31 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       upper_inf
      </code>
      (
-     <code class="type">
+     <code>
       anyrange
      </code>
      )
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      A faixa não tem limite superior? (Um limite superior de
-     <code class="literal">
+     <code>
       Infinity
      </code>
      retorna falso.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       upper_inf('(,)'::daterange)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1636,19 +1636,19 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       range_merge
      </code>
      (
-     <code class="type">
+     <code>
       anyrange
      </code>
      ,
-     <code class="type">
+     <code>
       anyrange
      </code>
      )
-     <code class="returnvalue">
+     <code>
       anyrange
      </code>
     </p>
@@ -1656,11 +1656,11 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
      Calcula a menor faixa que inclui ambos os intervalos fornecidos.
     </p>
     <p>
-     <code class="literal">
+     <code>
       range_merge('[1,2)'::int4range, '[3,4)'::int4range)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [1,4)
      </code>
     </p>
@@ -1682,7 +1682,7 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
 
 
 
-<table border="1" class="table" summary="Multirange Functions">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -1705,31 +1705,31 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       lower
      </code>
      (
-     <code class="type">
+     <code>
       anymultirange
      </code>
      )
-     <code class="returnvalue">
+     <code>
       anyelement
      </code>
     </p>
     <p>
      Extrai a menor faixa do multirange (
-     <code class="literal">
+     <code>
       NULL
      </code>
      se a multirange estiver vazia ou não tiver limite inferior).
     </p>
     <p>
-     <code class="literal">
+     <code>
       lower('{[1.1,2.2)}'::nummultirange)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       1.1
      </code>
     </p>
@@ -1738,31 +1738,31 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       upper
      </code>
      (
-     <code class="type">
+     <code>
       anymultirange
      </code>
      )
-     <code class="returnvalue">
+     <code>
       anyelement
      </code>
     </p>
     <p>
      Extrai o limite superior do multirange (
-     <code class="literal">
+     <code>
       NULL
      </code>
      se a multirange estiver vazia ou não tiver limite superior).
     </p>
     <p>
-     <code class="literal">
+     <code>
       upper('{[1.1,2.2)}'::nummultirange)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       2.2
      </code>
     </p>
@@ -1771,15 +1771,15 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       isempty
      </code>
      (
-     <code class="type">
+     <code>
       anymultirange
      </code>
      )
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1787,11 +1787,11 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
      A multirange está vazia?
     </p>
     <p>
-     <code class="literal">
+     <code>
       isempty('{[1.1,2.2)}'::nummultirange)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
@@ -1800,15 +1800,15 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       lower_inc
      </code>
      (
-     <code class="type">
+     <code>
       anymultirange
      </code>
      )
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1816,11 +1816,11 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
      A faixa inferior do multirange é inclusiva?
     </p>
     <p>
-     <code class="literal">
+     <code>
       lower_inc('{[1.1,2.2)}'::nummultirange)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1829,15 +1829,15 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       upper_inc
      </code>
      (
-     <code class="type">
+     <code>
       anymultirange
      </code>
      )
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
@@ -1845,11 +1845,11 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
      A fronteira superior do multirange é inclusiva?
     </p>
     <p>
-     <code class="literal">
+     <code>
       upper_inc('{[1.1,2.2)}'::nummultirange)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       f
      </code>
     </p>
@@ -1858,31 +1858,31 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       lower_inf
      </code>
      (
-     <code class="type">
+     <code>
       anymultirange
      </code>
      )
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      O multirange não tem limite inferior? (Um limite inferior de
-     <code class="literal">
+     <code>
       -Infinity
      </code>
      retorna falso.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       lower_inf('{(,)}'::datemultirange)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1891,31 +1891,31 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       upper_inf
      </code>
      (
-     <code class="type">
+     <code>
       anymultirange
      </code>
      )
-     <code class="returnvalue">
+     <code>
       boolean
      </code>
     </p>
     <p>
      O multirange não tem limite superior? (Um limite superior de
-     <code class="literal">
+     <code>
       Infinity
      </code>
      retorna falso.)
     </p>
     <p>
-     <code class="literal">
+     <code>
       upper_inf('{(,)}'::datemultirange)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       t
      </code>
     </p>
@@ -1924,15 +1924,15 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       range_merge
      </code>
      (
-     <code class="type">
+     <code>
       anymultirange
      </code>
      )
-     <code class="returnvalue">
+     <code>
       anyrange
      </code>
     </p>
@@ -1940,11 +1940,11 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
      Calcula a menor faixa que inclui toda a faixa múltipla.
     </p>
     <p>
-     <code class="literal">
+     <code>
       range_merge('{[1,2), [3,4)}'::int4multirange)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       [1,4)
      </code>
     </p>
@@ -1953,15 +1953,15 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       multirange
      </code>
      (
-     <code class="type">
+     <code>
       anyrange
      </code>
      )
-     <code class="returnvalue">
+     <code>
       anymultirange
      </code>
     </p>
@@ -1969,11 +1969,11 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
      Retorna uma faixa múltipla contendo apenas a faixa especificada.
     </p>
     <p>
-     <code class="literal">
+     <code>
       multirange('[1,2)'::int4range)
      </code>
      →
-     <code class="returnvalue">
+     <code>
       {[1,2)}
      </code>
     </p>
@@ -1982,15 +1982,15 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
   <tr>
    <td class="func_table_entry">
     <p class="func_signature">
-     <code class="function">
+     <code>
       unnest
      </code>
      (
-     <code class="type">
+     <code>
       anymultirange
      </code>
      )
-     <code class="returnvalue">
+     <code>
       setof anyrange
      </code>
     </p>
@@ -1998,11 +1998,11 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
      Expande uma faixa multirangedo em um conjunto de faixas em ordem crescente.
     </p>
     <p>
-     <code class="literal">
+     <code>
       unnest('{[1,2), [3,4)}'::int4multirange)
      </code>
      →
-     <code class="returnvalue">
+     <code>
      </code>
     </p>
     <pre class="programlisting">

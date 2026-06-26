@@ -6,7 +6,7 @@ Para conveniência, também estão disponíveis opções de linha de comando com
 
 
 
-<table border="1" class="table" summary="Short Option Key">
+<table>
  <colgroup>
   <col class="col1"/>
   <col class="col2"/>
@@ -24,7 +24,7 @@ Para conveniência, também estão disponíveis opções de linha de comando com
  <tbody>
   <tr>
    <td>
-    <code class="option">
+    <code>
      -B
      <em class="replaceable">
       <code>
@@ -34,7 +34,7 @@ Para conveniência, também estão disponíveis opções de linha de comando com
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      shared_buffers =
      <em class="replaceable">
       <code>
@@ -46,7 +46,7 @@ Para conveniência, também estão disponíveis opções de linha de comando com
   </tr>
   <tr>
    <td>
-    <code class="option">
+    <code>
      -d
      <em class="replaceable">
       <code>
@@ -56,7 +56,7 @@ Para conveniência, também estão disponíveis opções de linha de comando com
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      log_min_messages = DEBUG
      <em class="replaceable">
       <code>
@@ -68,99 +68,99 @@ Para conveniência, também estão disponíveis opções de linha de comando com
   </tr>
   <tr>
    <td>
-    <code class="option">
+    <code>
      -e
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      datestyle = euro
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="option">
+    <code>
      -fb
     </code>
     ,
-    <code class="option">
+    <code>
      -fh
     </code>
     ,
-    <code class="option">
+    <code>
      -fi
     </code>
     ,
-    <code class="option">
+    <code>
      -fm
     </code>
     ,
-    <code class="option">
+    <code>
      -fn
     </code>
     ,
-    <code class="option">
+    <code>
      -fo
     </code>
     ,
-    <code class="option">
+    <code>
      -fs
     </code>
     ,
-    <code class="option">
+    <code>
      -ft
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      enable_bitmapscan = off
     </code>
     ,
-    <code class="literal">
+    <code>
      enable_hashjoin = off
     </code>
     ,
-    <code class="literal">
+    <code>
      enable_indexscan = off
     </code>
     ,
-    <code class="literal">
+    <code>
      enable_mergejoin = off
     </code>
     ,
-    <code class="literal">
+    <code>
      enable_nestloop = off
     </code>
     ,
-    <code class="literal">
+    <code>
      enable_indexonlyscan = off
     </code>
     ,
-    <code class="literal">
+    <code>
      enable_seqscan = off
     </code>
     ,
-    <code class="literal">
+    <code>
      enable_tidscan = off
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="option">
+    <code>
      -F
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      fsync = off
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="option">
+    <code>
      -h
      <em class="replaceable">
       <code>
@@ -170,7 +170,7 @@ Para conveniência, também estão disponíveis opções de linha de comando com
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      listen_addresses =
      <em class="replaceable">
       <code>
@@ -182,19 +182,19 @@ Para conveniência, também estão disponíveis opções de linha de comando com
   </tr>
   <tr>
    <td>
-    <code class="option">
+    <code>
      -i
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      listen_addresses = '*'
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="option">
+    <code>
      -k
      <em class="replaceable">
       <code>
@@ -204,7 +204,7 @@ Para conveniência, também estão disponíveis opções de linha de comando com
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      unix_socket_directories =
      <em class="replaceable">
       <code>
@@ -216,19 +216,19 @@ Para conveniência, também estão disponíveis opções de linha de comando com
   </tr>
   <tr>
    <td>
-    <code class="option">
+    <code>
      -l
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ssl = on
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="option">
+    <code>
      -N
      <em class="replaceable">
       <code>
@@ -238,7 +238,7 @@ Para conveniência, também estão disponíveis opções de linha de comando com
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      max_connections =
      <em class="replaceable">
       <code>
@@ -250,19 +250,19 @@ Para conveniência, também estão disponíveis opções de linha de comando com
   </tr>
   <tr>
    <td>
-    <code class="option">
+    <code>
      -O
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      allow_system_table_mods = on
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="option">
+    <code>
      -p
      <em class="replaceable">
       <code>
@@ -272,7 +272,7 @@ Para conveniência, também estão disponíveis opções de linha de comando com
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      port =
      <em class="replaceable">
       <code>
@@ -284,31 +284,31 @@ Para conveniência, também estão disponíveis opções de linha de comando com
   </tr>
   <tr>
    <td>
-    <code class="option">
+    <code>
      -P
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      ignore_system_indexes = on
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="option">
+    <code>
      -s
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      log_statement_stats = on
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="option">
+    <code>
      -S
      <em class="replaceable">
       <code>
@@ -318,7 +318,7 @@ Para conveniência, também estão disponíveis opções de linha de comando com
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      work_mem =
      <em class="replaceable">
       <code>
@@ -330,35 +330,35 @@ Para conveniência, também estão disponíveis opções de linha de comando com
   </tr>
   <tr>
    <td>
-    <code class="option">
+    <code>
      -tpa
     </code>
     ,
-    <code class="option">
+    <code>
      -tpl
     </code>
     ,
-    <code class="option">
+    <code>
      -te
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      log_parser_stats = on
     </code>
     ,
-    <code class="literal">
+    <code>
      log_planner_stats = on
     </code>
     ,
-    <code class="literal">
+    <code>
      log_executor_stats = on
     </code>
    </td>
   </tr>
   <tr>
    <td>
-    <code class="option">
+    <code>
      -W
      <em class="replaceable">
       <code>
@@ -368,7 +368,7 @@ Para conveniência, também estão disponíveis opções de linha de comando com
     </code>
    </td>
    <td>
-    <code class="literal">
+    <code>
      post_auth_delay =
      <em class="replaceable">
       <code>

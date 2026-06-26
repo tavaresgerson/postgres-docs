@@ -8,7 +8,7 @@ A vista `pg_backend_memory_contexts` exibe todos os contextos de memória do pro
 
 
 
-<table border="1" class="table" summary="pg_backend_memory_contexts Columns">
+<table>
  <colgroup>
   <col/>
  </colgroup>
@@ -28,10 +28,10 @@ A vista `pg_backend_memory_contexts` exibe todos os contextos de memória do pro
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       name
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -43,10 +43,10 @@ A vista `pg_backend_memory_contexts` exibe todos os contextos de memória do pro
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       ident
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -58,10 +58,10 @@ A vista `pg_backend_memory_contexts` exibe todos os contextos de memória do pro
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       type
      </code>
-     <code class="type">
+     <code>
       text
      </code>
     </p>
@@ -73,16 +73,16 @@ A vista `pg_backend_memory_contexts` exibe todos os contextos de memória do pro
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       level
      </code>
-     <code class="type">
+     <code>
       int4
      </code>
     </p>
     <p>
      O nível de 1 da contexto na hierarquia do contexto de memória. O nível de um contexto também mostra a posição desse contexto na
-     <code class="structfield">
+     <code>
       path
      </code>
      column.
@@ -92,16 +92,16 @@ A vista `pg_backend_memory_contexts` exibe todos os contextos de memória do pro
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       path
      </code>
-     <code class="type">
+     <code>
       int4[]
      </code>
     </p>
     <p>
      Conjunto de identificadores numéricos transitórios para descrever a hierarquia do contexto de memória. O primeiro elemento é para
-     <code class="literal">
+     <code>
       TopMemoryContext
      </code>
      Os elementos subsequentes contêm pais intermediários e o elemento final contém o identificador do contexto atual.
@@ -111,10 +111,10 @@ A vista `pg_backend_memory_contexts` exibe todos os contextos de memória do pro
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       total_bytes
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
@@ -126,10 +126,10 @@ A vista `pg_backend_memory_contexts` exibe todos os contextos de memória do pro
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       total_nblocks
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
@@ -141,10 +141,10 @@ A vista `pg_backend_memory_contexts` exibe todos os contextos de memória do pro
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       free_bytes
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
@@ -156,10 +156,10 @@ A vista `pg_backend_memory_contexts` exibe todos os contextos de memória do pro
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       free_chunks
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
@@ -171,10 +171,10 @@ A vista `pg_backend_memory_contexts` exibe todos os contextos de memória do pro
   <tr>
    <td class="catalog_table_entry">
     <p class="column_definition">
-     <code class="structfield">
+     <code>
       used_bytes
      </code>
-     <code class="type">
+     <code>
       int8
      </code>
     </p>
