@@ -1,12 +1,10 @@
-## 9.12. Funções e operadores de endereço de rede [#](#FUNCTIONS-NET)
+### 9.12. Funções e operadores de endereço de rede [#](#FUNCTIONS-NET)
 
 Os tipos de endereço de rede IP, `cidr` e `inet`, suportam os operadores de comparação habituais mostrados na [Tabela 9.1](functions-comparison.md#FUNCTIONS-COMPARISON-OP-TABLE "Table 9.1. Comparison Operators"), bem como os operadores e funções especializados mostrados na [Tabela 9.39](functions-net.md#CIDR-INET-OPERATORS-TABLE "Table 9.39. IP Address Operators") e [Tabela 9.40](functions-net.md#CIDR-INET-FUNCTIONS-TABLE "Table 9.40. IP Address Functions").
 
 Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portanto, os operadores e funções mostrados abaixo que operam em `inet` também funcionam em valores de `cidr`. (Onde existem funções separadas para `inet` e `cidr`, isso ocorre porque o comportamento deve ser diferente para os dois casos.) Além disso, é permitido converter um valor de `inet` para `cidr`. Quando isso é feito, quaisquer bits à direita da máscara são zerados silenciosamente para criar um valor válido de `cidr`.
 
 **Tabela 9.39. Operadores de endereço IP**
-
-
 
 <table>
  <colgroup>
@@ -436,18 +434,7 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 **Tabela 9.40. Funções de endereço IP**
-
-
 
 <table>
  <colgroup>
@@ -938,15 +925,6 @@ Qualquer valor de `cidr` pode ser convertido para `inet` implicitamente; portant
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 DICA
 
 As funções `abbrev`, `host` e `text` são, principalmente, destinadas a oferecer formatos de exibição alternativos para endereços IP.
@@ -954,8 +932,6 @@ As funções `abbrev`, `host` e `text` são, principalmente, destinadas a oferec
 Os tipos de endereço MAC `macaddr` e `macaddr8` suportam os operadores de comparação comuns mostrados na [Tabela 9.1] (functions-comparison.md#FUNCTIONS-COMPARISON-OP-TABLE "Table 9.1. Comparison Operators"), bem como as funções especializadas mostradas na [Tabela 9.41] (functions-net.md#MACADDR-FUNCTIONS-TABLE "Table 9.41. MAC Address Functions"). Além disso, eles suportam os operadores lógicos bit a bit `~`, `&` e `|` (NOT, AND e OR), assim como mostrado acima para endereços IP.
 
 **Tabela 9.41. Funções de endereço MAC**
-
-
 
 <table>
  <colgroup>
@@ -1074,8 +1050,3 @@ Os tipos de endereço MAC `macaddr` e `macaddr8` suportam os operadores de compa
   </tr>
  </tbody>
 </table>
-
-
-
-
-

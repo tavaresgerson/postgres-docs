@@ -1442,489 +1442,489 @@ Certos modificadores podem ser aplicados a qualquer padrão de modelo para alter
 **Tabela 9.31. Exemplos de `to_char`**
 
 <table>
- <thead>
-  <tr>
-   <th>
-    Expression
-   </th>
-   <th>
-    Result
-   </th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td>
-    <code>
-     to_char(current_timestamp, 'Day, DD  HH12:MI:SS')
-    </code>
-   </td>
-   <td>
-    <code>
-     'Tuesday  , 06  05:39:18'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(current_timestamp, 'FMDay, FMDD  HH12:MI:SS')
-    </code>
-   </td>
-   <td>
-    <code>
-     'Tuesday, 6  05:39:18'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(current_timestamp AT TIME ZONE 'UTC', 'YYYY-MM-DD"T"HH24:MI:SS"Z"')
-    </code>
-   </td>
-   <td>
-    <code>
-     '2022-12-06T05:39:18Z'
-    </code>
-    ,
-    <acronym class="acronym">
-     ISO
-    </acronym>
-    8601 extended format
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(-0.1, '99.99')
-    </code>
-   </td>
-   <td>
-    <code>
-     '  -.10'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(-0.1, 'FM9.99')
-    </code>
-   </td>
-   <td>
-    <code>
-     '-.1'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(-0.1, 'FM90.99')
-    </code>
-   </td>
-   <td>
-    <code>
-     '-0.1'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(0.1, '0.9')
-    </code>
-   </td>
-   <td>
-    <code>
-     ' 0.1'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(12, '9990999.9')
-    </code>
-   </td>
-   <td>
-    <code>
-     '    0012.0'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(12, 'FM9990999.9')
-    </code>
-   </td>
-   <td>
-    <code>
-     '0012.'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(485, '999')
-    </code>
-   </td>
-   <td>
-    <code>
-     ' 485'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(-485, '999')
-    </code>
-   </td>
-   <td>
-    <code>
-     '-485'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(485, '9 9 9')
-    </code>
-   </td>
-   <td>
-    <code>
-     ' 4 8 5'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(1485, '9,999')
-    </code>
-   </td>
-   <td>
-    <code>
-     ' 1,485'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(1485, '9G999')
-    </code>
-   </td>
-   <td>
-    <code>
-     ' 1 485'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(148.5, '999.999')
-    </code>
-   </td>
-   <td>
-    <code>
-     ' 148.500'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(148.5, 'FM999.999')
-    </code>
-   </td>
-   <td>
-    <code>
-     '148.5'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(148.5, 'FM999.990')
-    </code>
-   </td>
-   <td>
-    <code>
-     '148.500'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(148.5, '999D999')
-    </code>
-   </td>
-   <td>
-    <code>
-     ' 148,500'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(3148.5, '9G999D999')
-    </code>
-   </td>
-   <td>
-    <code>
-     ' 3 148,500'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(-485, '999S')
-    </code>
-   </td>
-   <td>
-    <code>
-     '485-'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(-485, '999MI')
-    </code>
-   </td>
-   <td>
-    <code>
-     '485-'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(485, '999MI')
-    </code>
-   </td>
-   <td>
-    <code>
-     '485 '
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(485, 'FM999MI')
-    </code>
-   </td>
-   <td>
-    <code>
-     '485'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(485, 'PL999')
-    </code>
-   </td>
-   <td>
-    <code>
-     '+485'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(485, 'SG999')
-    </code>
-   </td>
-   <td>
-    <code>
-     '+485'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(-485, 'SG999')
-    </code>
-   </td>
-   <td>
-    <code>
-     '-485'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(-485, '9SG99')
-    </code>
-   </td>
-   <td>
-    <code>
-     '4-85'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(-485, '999PR')
-    </code>
-   </td>
-   <td>
-    <code>
-     '&lt;485&gt;'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(485, 'L999')
-    </code>
-   </td>
-   <td>
-    <code>
-     'DM 485'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(485, 'RN')
-    </code>
-   </td>
-   <td>
-    <code>
-     '        CDLXXXV'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(485, 'FMRN')
-    </code>
-   </td>
-   <td>
-    <code>
-     'CDLXXXV'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(5.2, 'FMRN')
-    </code>
-   </td>
-   <td>
-    <code>
-     'V'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(482, '999th')
-    </code>
-   </td>
-   <td>
-    <code>
-     ' 482nd'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(485, '"Good number:"999')
-    </code>
-   </td>
-   <td>
-    <code>
-     'Good number: 485'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(485.8, '"Pre:"999" Post:" .999')
-    </code>
-   </td>
-   <td>
-    <code>
-     'Pre: 485 Post: .800'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(12, '99V999')
-    </code>
-   </td>
-   <td>
-    <code>
-     ' 12000'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(12.4, '99V999')
-    </code>
-   </td>
-   <td>
-    <code>
-     ' 12400'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(12.45, '99V9')
-    </code>
-   </td>
-   <td>
-    <code>
-     ' 125'
-    </code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>
-     to_char(0.0004859, '9.99EEEE')
-    </code>
-   </td>
-   <td>
-    <code>
-     ' 4.86e-04'
-    </code>
-   </td>
-  </tr>
- </tbody>
+  <thead>
+    <tr>
+      <th>
+        Expression
+      </th>
+      <th>
+        Result
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>
+        to_char(current_timestamp, 'Day, DD  HH12:MI:SS')
+        </code>
+      </td>
+      <td>
+        <code>
+        'Tuesday  , 06  05:39:18'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(current_timestamp, 'FMDay, FMDD  HH12:MI:SS')
+        </code>
+      </td>
+      <td>
+        <code>
+        'Tuesday, 6  05:39:18'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(current_timestamp AT TIME ZONE 'UTC', 'YYYY-MM-DD"T"HH24:MI:SS"Z"')
+        </code>
+      </td>
+      <td>
+        <code>
+        '2022-12-06T05:39:18Z'
+        </code>
+        ,
+        <acronym class="acronym">
+        ISO
+        </acronym>
+        8601 extended format
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(-0.1, '99.99')
+        </code>
+      </td>
+      <td>
+        <code>
+        '  -.10'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(-0.1, 'FM9.99')
+        </code>
+      </td>
+      <td>
+        <code>
+        '-.1'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(-0.1, 'FM90.99')
+        </code>
+      </td>
+      <td>
+        <code>
+        '-0.1'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(0.1, '0.9')
+        </code>
+      </td>
+      <td>
+        <code>
+        ' 0.1'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(12, '9990999.9')
+        </code>
+      </td>
+      <td>
+        <code>
+        '    0012.0'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(12, 'FM9990999.9')
+        </code>
+      </td>
+      <td>
+        <code>
+        '0012.'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(485, '999')
+        </code>
+      </td>
+      <td>
+        <code>
+        ' 485'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(-485, '999')
+        </code>
+      </td>
+      <td>
+        <code>
+        '-485'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(485, '9 9 9')
+        </code>
+      </td>
+      <td>
+        <code>
+        ' 4 8 5'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(1485, '9,999')
+        </code>
+      </td>
+      <td>
+        <code>
+        ' 1,485'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(1485, '9G999')
+        </code>
+      </td>
+      <td>
+        <code>
+        ' 1 485'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(148.5, '999.999')
+        </code>
+      </td>
+      <td>
+        <code>
+        ' 148.500'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(148.5, 'FM999.999')
+        </code>
+      </td>
+      <td>
+        <code>
+        '148.5'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(148.5, 'FM999.990')
+        </code>
+      </td>
+      <td>
+        <code>
+        '148.500'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(148.5, '999D999')
+        </code>
+      </td>
+      <td>
+        <code>
+        ' 148,500'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(3148.5, '9G999D999')
+        </code>
+      </td>
+      <td>
+        <code>
+        ' 3 148,500'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(-485, '999S')
+        </code>
+      </td>
+      <td>
+        <code>
+        '485-'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(-485, '999MI')
+        </code>
+      </td>
+      <td>
+        <code>
+        '485-'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(485, '999MI')
+        </code>
+      </td>
+      <td>
+        <code>
+        '485 '
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(485, 'FM999MI')
+        </code>
+      </td>
+      <td>
+        <code>
+        '485'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(485, 'PL999')
+        </code>
+      </td>
+      <td>
+        <code>
+        '+485'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(485, 'SG999')
+        </code>
+      </td>
+      <td>
+        <code>
+        '+485'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(-485, 'SG999')
+        </code>
+      </td>
+      <td>
+        <code>
+        '-485'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(-485, '9SG99')
+        </code>
+      </td>
+      <td>
+        <code>
+        '4-85'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(-485, '999PR')
+        </code>
+      </td>
+      <td>
+        <code>
+        '&lt;485&gt;'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(485, 'L999')
+        </code>
+      </td>
+      <td>
+        <code>
+        'DM 485'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(485, 'RN')
+        </code>
+      </td>
+      <td>
+        <code>
+        '        CDLXXXV'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(485, 'FMRN')
+        </code>
+      </td>
+      <td>
+        <code>
+        'CDLXXXV'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(5.2, 'FMRN')
+        </code>
+      </td>
+      <td>
+        <code>
+        'V'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(482, '999th')
+        </code>
+      </td>
+      <td>
+        <code>
+        ' 482nd'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(485, '"Good number:"999')
+        </code>
+      </td>
+      <td>
+        <code>
+        'Good number: 485'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(485.8, '"Pre:"999" Post:" .999')
+        </code>
+      </td>
+      <td>
+        <code>
+        'Pre: 485 Post: .800'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(12, '99V999')
+        </code>
+      </td>
+      <td>
+        <code>
+        ' 12000'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(12.4, '99V999')
+        </code>
+      </td>
+      <td>
+        <code>
+        ' 12400'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(12.45, '99V9')
+        </code>
+      </td>
+      <td>
+        <code>
+        ' 125'
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+        to_char(0.0004859, '9.99EEEE')
+        </code>
+      </td>
+      <td>
+        <code>
+        ' 4.86e-04'
+        </code>
+      </td>
+    </tr>
+  </tbody>
 </table>

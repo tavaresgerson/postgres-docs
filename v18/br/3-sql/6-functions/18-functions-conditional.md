@@ -1,4 +1,4 @@
-## 9.18. Expressões Condicionais [#](#FUNCTIONS-CONDITIONAL)
+### 9.18. Expressões Condicionais [#](#FUNCTIONS-CONDITIONAL)
 
 * [9.18.1. `CASE`](functions-conditional.md#FUNCTIONS-CASE)
 * [9.18.2. `COALESCE`](functions-conditional.md#FUNCTIONS-COALESCE-NVL-IFNULL)
@@ -15,11 +15,11 @@ Nota
 
 Embora `COALESCE`, `GREATEST` e `LEAST` sejam sintaticamente semelhantes a funções, não são funções comuns e, portanto, não podem ser usadas com argumentos explícitos de matriz `VARIADIC`.
 
-### 9.18.1. `CASE` [#](#FUNCTIONS-CASE)
+#### 9.18.1. `CASE` [#](#FUNCTIONS-CASE)
 
 A expressão SQL `CASE` é uma expressão condicional genérica, semelhante às instruções if/else em outras linguagens de programação:
 
-```
+```sql
 CASE WHEN condition THEN result
      [WHEN ...]
      [ELSE result]
@@ -30,7 +30,7 @@ As cláusulas `CASE` podem ser usadas sempre que uma expressão é válida. Cada
 
 Um exemplo:
 
-```
+```sql
 SELECT * FROM test;
 
  a
@@ -58,7 +58,7 @@ Os tipos de dados de todas as expressões *`result`* devem ser convertidos em um
 
 Existe uma forma “simples” de expressão de `CASE` que é uma variante da forma geral acima:
 
-```
+```sql
 CASE expression
     WHEN value THEN result
     [WHEN ...]
@@ -70,7 +70,7 @@ O primeiro *`expression`* é calculado, em seguida, comparado a cada uma das exp
 
 O exemplo acima pode ser escrito usando a sintaxe simples `CASE`:
 
-```
+```sql
 SELECT a,
        CASE a WHEN 1 THEN 'one'
               WHEN 2 THEN 'two'
@@ -87,7 +87,7 @@ SELECT a,
 
 Uma expressão `CASE` não avalia nenhuma subexpressão que não seja necessária para determinar o resultado. Por exemplo, essa é uma maneira possível de evitar uma falha de divisão por zero:
 
-```
+```sql
 SELECT ... WHERE CASE WHEN x <> 0 THEN y/x > 1.5 ELSE false END;
 ```
 
@@ -95,15 +95,15 @@ Nota
 
 Como descrito na [Seção 4.2.14](sql-expressions.md#SYNTAX-EXPRESS-EVAL), existem várias situações em que subexpressiones de uma expressão são avaliadas em diferentes momentos, de modo que o princípio de que “`CASE` avalia apenas as subexpressiones necessárias” não é absoluto. Por exemplo, uma constante subexpressão `1/0` geralmente resultará em uma falha de divisão por zero no momento do planejamento, mesmo que esteja dentro de um braço `CASE` que nunca seria acessado no momento da execução.
 
-### 9.18.2. `COALESCE` [#](#FUNCTIONS-COALESCE-NVL-IFNULL)
+#### 9.18.2. `COALESCE` [#](#FUNCTIONS-COALESCE-NVL-IFNULL)
 
-```
+```sql
 COALESCE(value [, ...])
 ```
 
 A função `COALESCE` retorna o primeiro de seus argumentos que não é nulo. O nulo é retornado apenas se todos os argumentos forem nulos. Ela é frequentemente usada para substituir um valor padrão para valores nulos ao recuperar dados para exibição, por exemplo:
 
-```
+```sql
 SELECT COALESCE(description, short_description, '(none)') ...
 ```
 
@@ -113,15 +113,15 @@ Todos os argumentos devem ser convertidos para um tipo de dados comum, que será
 
 Assim como uma expressão `CASE`, `COALESCE` avalia apenas os argumentos necessários para determinar o resultado; ou seja, os argumentos à direita do primeiro argumento não nulo não são avaliados. Essa função padrão do SQL oferece capacidades semelhantes às de `NVL` e `IFNULL`, que são usadas em alguns outros sistemas de banco de dados.
 
-### 9.18.3. `NULLIF` [#](#FUNCTIONS-NULLIF)
+#### 9.18.3. `NULLIF` [#](#FUNCTIONS-NULLIF)
 
-```
+```sql
 NULLIF(value1, value2)
 ```
 
 A função `NULLIF` retorna um valor nulo se *`value1`* for igual a *`value2`*; caso contrário, ela retorna *`value1`*. Isso pode ser usado para realizar a operação inversa do exemplo `COALESCE` dado acima:
 
-```
+```sql
 SELECT NULLIF(value, '(none)') ...
 ```
 
@@ -131,13 +131,13 @@ Os dois argumentos devem ser de tipos comparáveis. Para ser específico, eles s
 
 O resultado tem o mesmo tipo que o primeiro argumento — mas há uma sutileza. O que é realmente retornado é o primeiro argumento do operador implícito `=`, e, em alguns casos, isso será promovido para corresponder ao tipo do segundo argumento. Por exemplo, `NULLIF(1, 2.2)` gera `numeric`, porque não há operador `integer` `=` `numeric`, apenas `numeric` `=` `numeric`.
 
-### 9.18.4. `GREATEST` e `LEAST` [#](#FUNCTIONS-GREATEST-LEAST)
+#### 9.18.4. `GREATEST` e `LEAST` [#](#FUNCTIONS-GREATEST-LEAST)
 
-```
+```sql
 GREATEST(value [, ...])
 ```
 
-```
+```sql
 LEAST(value [, ...])
 ```
 

@@ -1,12 +1,10 @@
-## 9.20. Funções e operadores de faixa/multifaixa [#](#FUNCTIONS-RANGE)
+### 9.20. Funções e operadores de faixa/multifaixa [#](#FUNCTIONS-RANGE)
 
 Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
 
 [Tabela 9.58](functions-range.md#RANGE-OPERATORS-TABLE) mostra os operadores especializados disponíveis para tipos de intervalo. [Tabela 9.59](functions-range.md#MULTIRANGE-OPERATORS-TABLE) mostra os operadores especializados disponíveis para tipos de multiintervalo. Além desses, os operadores de comparação comuns mostrados em [Tabela 9.1](functions-comparison.md#FUNCTIONS-COMPARISON-OP-TABLE) estão disponíveis para tipos de intervalo e multiintervalo. Os operadores de comparação ordenam primeiro pelos limites inferiores do intervalo e, apenas se esses forem iguais, comparam os limites superiores. Os operadores de multiintervalo comparam cada intervalo até que um deles seja desigual. Isso geralmente não resulta em uma ordem geral útil, mas os operadores são fornecidos para permitir que índices únicos sejam construídos em intervalos.
 
 **Tabela 9.58. Operadores de intervalo**
-
-
 
 <table>
  <colgroup>
@@ -438,18 +436,7 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 **Tabela 9.59. Operadores de múltiplos intervalos**
-
-
 
 <table>
  <colgroup>
@@ -1373,15 +1360,6 @@ Veja [Seção 8.17](rangetypes.md) para uma visão geral dos tipos de alcance.
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Os operadores de esquerda/direita/adjacente sempre retornam falso quando há uma faixa vazia ou uma faixa múltipla envolvida; ou seja, uma faixa vazia não é considerada antes ou depois de qualquer outra faixa.
 
 Em outros lugares, intervalos vazios e multiintervalos são tratados como a identidade aditiva: qualquer coisa que é unida a um valor vazio é ela mesma. Qualquer coisa menos um valor vazio é ela mesma. Um multiintervalo vazio tem exatamente os mesmos pontos que um intervalo vazio. Cada intervalo contém o intervalo vazio. Cada multiintervalo contém tantas faixas vazias quanto você quiser.
@@ -1391,8 +1369,6 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
 [Tabela 9.60](functions-range.md#RANGE-FUNCTIONS-TABLE) mostra as funções disponíveis para uso com tipos de intervalo. [Tabela 9.61](functions-range.md#MULTIRANGE-FUNCTIONS-TABLE) mostra as funções disponíveis para uso com tipos de multiintervalo.
 
 **Tabela 9.60. Funções de intervalo**
-
-
 
 <table>
  <colgroup>
@@ -1670,17 +1646,7 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
 </table>
 
 
-
-
-
-
-
-
-
-
 **Tabela 9.61. Funções multirangedoble**
-
-
 
 <table>
  <colgroup>
@@ -2014,14 +1980,5 @@ Os operadores de união e diferença de intervalo falharão se o intervalo resul
   </tr>
  </tbody>
 </table>
-
-
-
-
-
-
-
-
-
 
 As funções `lower_inc`, `upper_inc`, `lower_inf` e `upper_inf` retornam false para uma faixa ou faixa múltipla vazia.

@@ -1,4 +1,4 @@
-## 9.30. Funções de Desempenho de Eventos [#](#FUNCTIONS-EVENT-TRIGGERS)
+### 9.30. Funções de Desempenho de Eventos [#](#FUNCTIONS-EVENT-TRIGGERS)
 
 * [9.30.1. Captura de alterações no final do comando](functions-event-triggers.md#PG-EVENT-TRIGGER-DDL-COMMAND-END-FUNCTIONS)
 * [9.30.2. Processamento de objetos descartados por um comando DDL](functions-event-triggers.md#PG-EVENT-TRIGGER-SQL-DROP-FUNCTIONS)
@@ -8,15 +8,13 @@ O PostgreSQL fornece essas funções auxiliares para recuperar informações de 
 
 Para mais informações sobre gatilhos de eventos, consulte o [Capítulo 38](event-triggers.md).
 
-### 9.30.1. Capturando mudanças no final do comando [#](#PG-EVENT-TRIGGER-DDL-COMMAND-END-FUNCTIONS)
+#### 9.30.1. Capturando mudanças no final do comando [#](#PG-EVENT-TRIGGER-DDL-COMMAND-END-FUNCTIONS)
 
-```
+```sql
 pg_event_trigger_ddl_commands () → setof record
 ```
 
 `pg_event_trigger_ddl_commands` retorna uma lista de comandos DDL executados por cada ação do usuário, quando invocado em uma função anexada a um gatilho de evento `ddl_command_end`. Se chamado em qualquer outro contexto, um erro é exibido. `pg_event_trigger_ddl_commands` retorna uma linha para cada comando de base executado; alguns comandos que são uma única sentença SQL podem retornar mais de uma linha. Esta função retorna as seguintes colunas:
-
-
 
 <table>
  <colgroup>
@@ -180,21 +178,13 @@ pg_event_trigger_ddl_commands () → setof record
  </tbody>
 </table>
 
+#### 9.30.2. Processamento de Objetos Arrastados por um Comando DDL [#](#PG-EVENT-TRIGGER-SQL-DROP-FUNCTIONS)
 
-
-
-
-
-
-### 9.30.2. Processamento de Objetos Arrastados por um Comando DDL [#](#PG-EVENT-TRIGGER-SQL-DROP-FUNCTIONS)
-
-```
+```sql
 pg_event_trigger_dropped_objects () → setof record
 ```
 
 `pg_event_trigger_dropped_objects` retorna uma lista de todos os objetos que foram descartados pelo comando no evento cujo `sql_drop` é chamado. Se chamado em qualquer outro contexto, um erro é gerado. Esta função retorna as seguintes colunas:
-
-
 
 <table>
  <colgroup>
@@ -422,15 +412,9 @@ pg_event_trigger_dropped_objects () → setof record
  </tbody>
 </table>
 
-
-
-
-
-
-
 A função `pg_event_trigger_dropped_objects` pode ser usada em um gatilho de evento como este:
 
-```
+```sql
 CREATE FUNCTION test_event_trigger_for_drops()
         RETURNS event_trigger LANGUAGE plpgsql AS $$
 DECLARE
@@ -452,13 +436,11 @@ CREATE EVENT TRIGGER test_event_trigger_for_drops
    EXECUTE FUNCTION test_event_trigger_for_drops();
 ```
 
-### 9.30.3. Gerenciamento de um Evento de Reescrita de Tabela [#](#PG-EVENT-TRIGGER-TABLE-REWRITE-FUNCTIONS)
+#### 9.30.3. Gerenciamento de um Evento de Reescrita de Tabela [#](#PG-EVENT-TRIGGER-TABLE-REWRITE-FUNCTIONS)
 
 As funções mostradas na [Tabela 9.111](functions-event-triggers.md#FUNCTIONS-EVENT-TRIGGER-TABLE-REWRITE) fornecem informações sobre uma tabela para a qual um evento `table_rewrite` foi chamado recentemente. Se chamada em qualquer outro contexto, um erro é exibido.
 
 **Tabela 9.111. Funções de Reescrita de Tabela**
-
-
 
 <table>
  <colgroup>
@@ -528,18 +510,9 @@ As funções mostradas na [Tabela 9.111](functions-event-triggers.md#FUNCTIONS-E
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Essas funções podem ser usadas em um gatilho de evento como este:
 
-```
+```sql
 CREATE FUNCTION test_event_trigger_table_rewrite_oid()
  RETURNS event_trigger
  LANGUAGE plpgsql AS

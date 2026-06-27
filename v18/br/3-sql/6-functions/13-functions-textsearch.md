@@ -1,10 +1,8 @@
-## 9.13. Funções e operadores de pesquisa de texto [#](#FUNCTIONS-TEXTSEARCH)
+### 9.13. Funções e operadores de pesquisa de texto [#](#FUNCTIONS-TEXTSEARCH)
 
 [Tabela 9.42](functions-textsearch.md#TEXTSEARCH-OPERATORS-TABLE "Table 9.42. Text Search Operators"), [Tabela 9.43](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-TABLE "Table 9.43. Text Search Functions") e [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG-TABLE "Table 9.44. Text Search Debugging Functions") resumem as funções e operadores que são fornecidos para a pesquisa de texto completo. Consulte [Capítulo 12](textsearch.md "Chapter 12. Full Text Search") para uma explicação detalhada da facilidade de pesquisa de texto do PostgreSQL.
 
 **Tabela 9.42. Operadores de pesquisa de texto**
-
-
 
 <table>
  <colgroup>
@@ -369,20 +367,9 @@
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Além desses operadores especializados, os operadores de comparação comuns mostrados na [Tabela 9.1](functions-comparison.md#FUNCTIONS-COMPARISON-OP-TABLE) estão disponíveis para os tipos `tsvector` e `tsquery`. Estes não são muito úteis para pesquisas de texto, mas permitem, por exemplo, a construção de índices únicos em colunas desses tipos.
 
 **Tabela 9.43. Funções de pesquisa de texto**
-
-
 
 <table>
  <colgroup>
@@ -2213,15 +2200,6 @@ Além desses operadores especializados, os operadores de comparação comuns mos
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Nota
 
 Todas as funções de busca de texto que aceitam um argumento opcional `regconfig` usarão a configuração especificada por [default_text_search_config](runtime-config-client.md#GUC-DEFAULT-TEXT-SEARCH-CONFIG) quando esse argumento for omitido.
@@ -2229,8 +2207,6 @@ Todas as funções de busca de texto que aceitam um argumento opcional `regconfi
 As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG-TABLE) são listadas separadamente porque geralmente não são usadas em operações de busca de texto no dia a dia. Elas são principalmente úteis para o desenvolvimento e depuração de novas configurações de busca de texto.
 
 **Tabela 9.44. Funções de depuração de pesquisa de texto**
-
-
 
 <table>
  <colgroup>
@@ -2776,8 +2752,3 @@ As funções em [Tabela 9.44](functions-textsearch.md#TEXTSEARCH-FUNCTIONS-DEBUG
   </tr>
  </tbody>
 </table>
-
-
-
-
-

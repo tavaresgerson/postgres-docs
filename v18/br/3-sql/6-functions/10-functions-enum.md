@@ -1,14 +1,12 @@
-## 9.10. Funções de suporte de enumeração [#](#FUNCTIONS-ENUM)
+### 9.10. Funções de suporte de enumeração [#](#FUNCTIONS-ENUM)
 
 Para os tipos de enumeração (descritos na [Seção 8.7](datatype-enum.md)), existem várias funções que permitem uma programação mais limpa, sem codificar valores específicos de um tipo de enumeração. Essas funções estão listadas na [Tabela 9.35](functions-enum.md#FUNCTIONS-ENUM-TABLE). Os exemplos assumem um tipo de enumeração criado como:
 
-```
+```sql
 CREATE TYPE rainbow AS ENUM ('red', 'orange', 'yellow', 'green', 'blue', 'purple');
 ```
 
 **Tabela 9.35. Funções de suporte de enumeração**
-
-
 
 <table>
  <colgroup>
@@ -170,14 +168,5 @@ CREATE TYPE rainbow AS ENUM ('red', 'orange', 'yellow', 'green', 'blue', 'purple
   </tr>
  </tbody>
 </table>
-
-
-
-
-
-
-
-
-
 
 Observe que, exceto para a forma de dois argumentos de `enum_range`, essas funções ignoram o valor específico passado para elas; elas se importam apenas com seu tipo de dados declarado. Pode ser passado nulo ou um valor específico do tipo, com o mesmo resultado. É mais comum aplicar essas funções a uma coluna de tabela ou argumento de função do que a um nome de tipo hardwired como usado nos exemplos.

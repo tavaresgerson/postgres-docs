@@ -1,4 +1,4 @@
-## 9.22. Funções de janela [#](#FUNCTIONS-WINDOW)
+### 9.22. Funções de janela [#](#FUNCTIONS-WINDOW)
 
 As funções de janela fornecem a capacidade de realizar cálculos em conjuntos de linhas relacionadas à linha atual da consulta. Consulte a Seção 3.5 para uma introdução a este recurso, e a Seção 4.2.8 para detalhes de sintaxe.
 
@@ -7,8 +7,6 @@ As funções de janela embutidas estão listadas em [Tabela 9.67](functions-wind
 Além dessas funções, qualquer agregado ordinário incorporado ou definido pelo usuário (ou seja, agregados que não são conjuntos ordenados ou conjuntos hipotéticos) pode ser usado como uma função de janela; consulte [Seção 9.21] para uma lista dos agregados incorporados. As funções de agregação atuam como funções de janela apenas quando uma cláusula (functions-aggregate.md "9.21. Aggregate Functions") segue a chamada; caso contrário, atuam como agregados comuns e retornam uma única linha para todo o conjunto.
 
 **Tabela 9.67. Funções de janela de propósito geral**
-
-
 
 <table>
  <colgroup>
@@ -464,15 +462,6 @@ Além dessas funções, qualquer agregado ordinário incorporado ou definido pel
   </tr>
  </tbody>
 </table>
-
-
-
-
-
-
-
-
-
 
 Todas as funções listadas em [Tabela 9.67](functions-window.md#FUNCTIONS-WINDOW-TABLE) dependem da ordem de classificação especificada pela cláusula `ORDER BY` da definição associada da janela. As linhas que não são distintas quando consideradas apenas as colunas `ORDER BY` são chamadas de *pares*. As quatro funções de classificação (incluindo `cume_dist`) são definidas de modo que elas forneçam a mesma resposta para todas as linhas de um grupo de pares.
 

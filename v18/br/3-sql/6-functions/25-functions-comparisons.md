@@ -1,4 +1,4 @@
-## 9.25. Comparação de linhas e arrays [#](#FUNCTIONS-COMPARISONS)
+### 9.25. Comparação de linhas e arrays [#](#FUNCTIONS-COMPARISONS)
 
 * [9.25.1. `IN`](functions-comparisons.md#FUNCTIONS-COMPARISONS-IN-SCALAR)
 * [9.25.2. `NOT IN`](functions-comparisons.md#FUNCTIONS-COMPARISONS-NOT-IN)
@@ -9,15 +9,15 @@
 
 Esta seção descreve várias construções especializadas para fazer comparações múltiplas entre grupos de valores. Essas formas estão sintaticamente relacionadas às formas de subconsulta da seção anterior, mas não envolvem subconsultas. As formas que envolvem subexpressões de matriz são extensões do PostgreSQL; o restante é compatível com o SQL. Todas as formas de expressão documentadas nesta seção retornam resultados booleanos (verdadeiro/falso).
 
-### 9.25.1. `IN` [#](#FUNCTIONS-COMPARISONS-IN-SCALAR)
+#### 9.25.1. `IN` [#](#FUNCTIONS-COMPARISONS-IN-SCALAR)
 
-```
+```sql
 expression IN (value [, ...])
 ```
 
 O lado direito é uma lista entre parênteses de expressões. O resultado é "verdadeiro" se o resultado da expressão do lado esquerdo for igual a qualquer uma das expressões do lado direito. Esta é uma notação abreviada para
 
-```
+```sql
 expression = value1
 OR
 expression = value2
@@ -27,15 +27,15 @@ OR
 
 Observe que, se a expressão da mão esquerda resultar em nulo, ou se não houver valores iguais na mão direita e pelo menos uma expressão da mão direita resultar em nulo, o resultado da construção `IN` será nulo, não falso. Isso está de acordo com as regras normais do SQL para combinações booleanas de valores nulos.
 
-### 9.25.2. `NOT IN` [#](#FUNCTIONS-COMPARISONS-NOT-IN)
+#### 9.25.2. `NOT IN` [#](#FUNCTIONS-COMPARISONS-NOT-IN)
 
-```
+```sql
 expression NOT IN (value [, ...])
 ```
 
 O lado direito é uma lista entre parênteses de expressões. O resultado é "verdadeiro" se o resultado da expressão do lado esquerdo não for igual a todas as expressões do lado direito. Esta é uma notação abreviada para
 
-```
+```sql
 expression <> value1
 AND
 expression <> value2
@@ -49,9 +49,9 @@ DICA
 
 `x NOT IN y` é equivalente a `NOT (x IN y)` em todos os casos. No entanto, valores nulos têm muito mais probabilidade de confundir o novato ao trabalhar com `NOT IN` do que ao trabalhar com `IN`. É melhor expressar sua condição positivamente, se possível.
 
-### 9.25.3. `ANY`/`SOME` (matriz) [#](#FUNCTIONS-COMPARISONS-ANY-SOME)
+#### 9.25.3. `ANY`/`SOME` (matriz) [#](#FUNCTIONS-COMPARISONS-ANY-SOME)
 
-```
+```sql
 expression operator ANY (array expression)
 expression operator SOME (array expression)
 ```
@@ -62,9 +62,9 @@ Se a expressão de matriz gerar uma matriz nula, o resultado de `ANY` será nulo
 
 `SOME` é sinônimo de `ANY`.
 
-### 9.25.4. `ALL` (matriz) [#](#FUNCTIONS-COMPARISONS-ALL)
+#### 9.25.4. `ALL` (matriz) [#](#FUNCTIONS-COMPARISONS-ALL)
 
-```
+```sql
 expression operator ALL (array expression)
 ```
 
@@ -72,9 +72,9 @@ O lado direito é uma expressão entre parênteses, que deve produzir um valor d
 
 Se a expressão de matriz gerar uma matriz nula, o resultado de `ALL` será nulo. Se a expressão da mão esquerda gerar null, o resultado de `ALL` é normalmente nulo (embora um operador de comparação não estrito possa possivelmente gerar um resultado diferente). Além disso, se a matriz da mão direita contiver quaisquer elementos nulos e não for obtido nenhum resultado de comparação falsa, o resultado de `ALL` será nulo, não verdadeiro (novamente, assumindo um operador de comparação estrito). Isso está de acordo com as regras normais do SQL para combinações booleanas de valores nulos.
 
-### 9.25.5. Comparação do construtor de linhas [#](#ROW-WISE-COMPARISON)
+#### 9.25.5. Comparação do construtor de linhas [#](#ROW-WISE-COMPARISON)
 
-```
+```sql
 row_constructor operator row_constructor
 ```
 
@@ -84,21 +84,21 @@ Os casos `=` e `<>` funcionam de maneira um pouco diferente dos outros. Duas lin
 
 Para os casos de `<`, `<=`, `>` e `>=`, os elementos da linha são comparados de esquerda para direita, parando assim que é encontrado um par desigual ou nulo de elementos. Se qualquer um desses pares de elementos for nulo, o resultado da comparação da linha é desconhecido (nulo); caso contrário, a comparação desse par de elementos determina o resultado. Por exemplo, `ROW(1,2,NULL) < ROW(1,3,0)` produz verdadeiro, não nulo, porque o terceiro par de elementos não é considerado.
 
-```
+```sql
 row_constructor IS DISTINCT FROM row_constructor
 ```
 
 Esse construtor é semelhante a uma comparação de linha `<>`, mas ele não gera um valor nulo para entradas nulos. Em vez disso, qualquer valor nulo é considerado diferente (distinto) de qualquer valor não nulo, e quaisquer dois nulos são considerados iguais (não distintos). Assim, o resultado será verdadeiro ou falso, nunca nulo.
 
-```
+```sql
 row_constructor IS NOT DISTINCT FROM row_constructor
 ```
 
 Esse construtor é semelhante a uma comparação de linha `=`, mas não gera um valor nulo para entradas nulos. Em vez disso, qualquer valor nulo é considerado diferente (distinto) de qualquer valor não nulo, e quaisquer dois nulos são considerados iguais (não distintos). Assim, o resultado será sempre verdadeiro ou falso, nunca nulo.
 
-### 9.25.6. Comparação do tipo composto [#](#COMPOSITE-TYPE-COMPARISON)
+#### 9.25.6. Comparação do tipo composto [#](#COMPOSITE-TYPE-COMPARISON)
 
-```
+```sql
 record operator record
 ```
 

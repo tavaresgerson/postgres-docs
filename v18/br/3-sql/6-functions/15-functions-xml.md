@@ -1,4 +1,4 @@
-## 9.15. Funções XML [#](#FUNCTIONS-XML)
+### 9.15. Funções XML [#](#FUNCTIONS-XML)
 
 * [9.15.1. Produção de conteúdo XML](functions-xml.md#FUNCTIONS-PRODUCING-XML)
 * [9.15.2. Predicados XML](functions-xml.md#FUNCTIONS-XML-PREDICATES)
@@ -9,13 +9,13 @@ As funções e expressões semelhantes a funções descritas nesta seção opera
 
 O uso da maioria dessas funções exige que o PostgreSQL tenha sido construído com `configure --with-libxml`.
 
-### 9.15.1. Produzir conteúdo XML [#](#FUNCTIONS-PRODUCING-XML)
+#### 9.15.1. Produzir conteúdo XML [#](#FUNCTIONS-PRODUCING-XML)
 
 Um conjunto de funções e expressões semelhantes a funções está disponível para a produção de conteúdo XML a partir de dados SQL. Como tal, são particularmente adequados para formatar os resultados das consultas em documentos XML para processamento em aplicações cliente.
 
-#### 9.15.1.1. `xmltext` [#](#FUNCTIONS-PRODUCING-XML-XMLTEXT)
+##### 9.15.1.1. `xmltext` [#](#FUNCTIONS-PRODUCING-XML-XMLTEXT)
 
-```
+```sql
 xmltext ( text ) → xml
 ```
 
@@ -23,16 +23,16 @@ A função `xmltext` retorna um valor XML com um único nó de texto contendo o 
 
 Exemplo:
 
-```
+```sql
 SELECT xmltext('< foo & bar >');
          xmltext
 -------------------------
  &lt; foo &amp; bar &gt;
 ```
 
-#### 9.15.1.2. `xmlcomment` [#](#FUNCTIONS-PRODUCING-XML-XMLCOMMENT)
+##### 9.15.1.2. `xmlcomment` [#](#FUNCTIONS-PRODUCING-XML-XMLCOMMENT)
 
-```
+```sql
 xmlcomment ( text ) → xml
 ```
 
@@ -40,7 +40,7 @@ A função `xmlcomment` cria um valor XML que contém um comentário XML com o t
 
 Exemplo:
 
-```
+```sql
 SELECT xmlcomment('hello');
 
   xmlcomment
@@ -48,9 +48,9 @@ SELECT xmlcomment('hello');
  <!--hello-->
 ```
 
-#### 9.15.1.3. `xmlconcat` [#](#FUNCTIONS-PRODUCING-XML-XMLCONCAT)
+##### 9.15.1.3. `xmlconcat` [#](#FUNCTIONS-PRODUCING-XML-XMLCONCAT)
 
-```
+```sql
 xmlconcat ( xml [, ...] ) → xml
 ```
 
@@ -58,7 +58,7 @@ A função `xmlconcat` concatena uma lista de valores individuais XML para criar
 
 Exemplo:
 
-```
+```sql
 SELECT xmlconcat('<abc/>', '<bar>foo</bar>');
 
       xmlconcat
@@ -70,7 +70,7 @@ As declarações XML, se presentes, são combinadas da seguinte forma. Se todos 
 
 Exemplo:
 
-```
+```sql
 SELECT xmlconcat('<?xml version="1.1"?><foo/>', '<?xml version="1.1" standalone="no"?><bar/>');
 
              xmlconcat
@@ -78,9 +78,9 @@ SELECT xmlconcat('<?xml version="1.1"?><foo/>', '<?xml version="1.1" standalone=
  <?xml version="1.1"?><foo/><bar/>
 ```
 
-#### 9.15.1.4. `xmlelement` [#](#FUNCTIONS-PRODUCING-XML-XMLELEMENT)
+##### 9.15.1.4. `xmlelement` [#](#FUNCTIONS-PRODUCING-XML-XMLELEMENT)
 
-```
+```sql
 xmlelement ( NAME name [, XMLATTRIBUTES ( attvalue [ AS attname ] [, ...] ) ] [, content [, ...]] ) → xml
 ```
 
@@ -88,7 +88,7 @@ A expressão `xmlelement` produz um elemento XML com o nome, atributos e conteú
 
 Exemplos:
 
-```
+```sql
 SELECT xmlelement(name foo);
 
  xmlelement
@@ -110,7 +110,7 @@ SELECT xmlelement(name foo, xmlattributes(current_date as bar), 'cont', 'ent');
 
 Os nomes de elementos e atributos que não são nomes válidos XML são escapados, substituindo os caracteres oficiais pela sequência `_xHHHH_`, onde *`HHHH`* é o ponto de código Unicode do caractere em notação hexadecimal. Por exemplo:
 
-```
+```sql
 SELECT xmlelement(name "foo$bar", xmlattributes('xyz' as "a&b"));
 
             xmlelement
@@ -120,21 +120,21 @@ SELECT xmlelement(name "foo$bar", xmlattributes('xyz' as "a&b"));
 
 Um nome de atributo explícito não precisa ser especificado se o valor do atributo for uma referência de coluna, nesse caso, o nome da coluna será usado como nome do atributo por padrão. Em outros casos, o atributo deve ser dado um nome explícito. Portanto, este exemplo é válido:
 
-```
+```sql
 CREATE TABLE test (a xml, b xml);
 SELECT xmlelement(name test, xmlattributes(a, b)) FROM test;
 ```
 
 Mas estas não são:
 
-```
+```sql
 SELECT xmlelement(name test, xmlattributes('constant'), a, b) FROM test;
 SELECT xmlelement(name test, xmlattributes(func(a, b))) FROM test;
 ```
 
 O conteúdo de elementos, se especificado, será formatado de acordo com seu tipo de dados. Se o conteúdo for de tipo `xml`, documentos XML complexos podem ser construídos. Por exemplo:
 
-```
+```sql
 SELECT xmlelement(name foo, xmlattributes('xyz' as bar),
                             xmlelement(name abc),
                             xmlcomment('test'),
@@ -147,9 +147,9 @@ SELECT xmlelement(name foo, xmlattributes('xyz' as bar),
 
 O conteúdo de outros tipos será formatado em dados de caracteres XML válidos. Isso significa, em particular, que os caracteres <, > e & serão convertidos em entidades. Os dados binários (tipo de dados `bytea`) serão representados em codificação base64 ou hex, dependendo da configuração do parâmetro de configuração [xmlbinary](runtime-config-client.md#GUC-XMLBINARY). O comportamento específico para tipos de dados individuais é esperado para evoluir para alinhar as mapeamentos do PostgreSQL com os especificados em SQL:2006 e posteriores, conforme discutido em [Seção D.3.1.3](xml-limits-conformance.md#FUNCTIONS-XML-LIMITS-CASTS).
 
-#### 9.15.1.5. `xmlforest` [#](#FUNCTIONS-PRODUCING-XML-XMLFOREST)
+##### 9.15.1.5. `xmlforest` [#](#FUNCTIONS-PRODUCING-XML-XMLFOREST)
 
-```
+```sql
 xmlforest ( content [ AS name ] [, ...] ) → xml
 ```
 
@@ -157,7 +157,7 @@ A expressão `xmlforest` produz uma floresta (sequência) de elementos XML usand
 
 Exemplos:
 
-```
+```sql
 SELECT xmlforest('abc' AS foo, 123 AS bar);
 
           xmlforest
@@ -182,9 +182,9 @@ Os nomes de elementos que não são nomes válidos XML são escapados, conforme 
 
 Observe que florestas XML não são documentos XML válidos se consistirem em mais de um elemento, portanto, pode ser útil envolver as expressões `xmlforest` em `xmlelement`.
 
-#### 9.15.1.6. `xmlpi` [#](#FUNCTIONS-PRODUCING-XML-XMLPI)
+##### 9.15.1.6. `xmlpi` [#](#FUNCTIONS-PRODUCING-XML-XMLPI)
 
-```
+```sql
 xmlpi ( NAME name [, content ] ) → xml
 ```
 
@@ -192,7 +192,7 @@ A expressão `xmlpi` cria uma instrução de processamento de XML. Quanto à exp
 
 Exemplo:
 
-```
+```sql
 SELECT xmlpi(name php, 'echo "hello world";');
 
             xmlpi
@@ -200,15 +200,15 @@ SELECT xmlpi(name php, 'echo "hello world";');
  <?php echo "hello world";?>
 ```
 
-#### 9.15.1.7. `xmlroot` [#](#FUNCTIONS-PRODUCING-XML-XMLROOT)
+##### 9.15.1.7. `xmlroot` [#](#FUNCTIONS-PRODUCING-XML-XMLROOT)
 
-```
+```sql
 xmlroot ( xml, VERSION {text|NO VALUE} [, STANDALONE {YES|NO|NO VALUE} ] ) → xml
 ```
 
 A expressão `xmlroot` altera as propriedades do nó raiz de um valor XML. Se uma versão for especificada, ela substitui o valor na declaração de versão do nó raiz; se uma configuração independente for especificada, ela substitui o valor na declaração de independência do nó raiz.
 
-```
+```sql
 SELECT xmlroot(xmlparse(document '<?xml version="1.1"?><content>abc</content>'),
                version '1.0', standalone yes);
 
@@ -218,9 +218,9 @@ SELECT xmlroot(xmlparse(document '<?xml version="1.1"?><content>abc</content>'),
  <content>abc</content>
 ```
 
-#### 9.15.1.8. `xmlagg` [#](#FUNCTIONS-XML-XMLAGG)
+##### 9.15.1.8. `xmlagg` [#](#FUNCTIONS-XML-XMLAGG)
 
-```
+```sql
 xmlagg ( xml ) → xml
 ```
 
@@ -228,7 +228,7 @@ A função `xmlagg` é, ao contrário das outras funções descritas aqui, uma f
 
 Exemplo:
 
-```
+```sql
 CREATE TABLE test (y int, x xml);
 INSERT INTO test VALUES (1, '<foo>abc</foo>');
 INSERT INTO test VALUES (2, '<bar/>');
@@ -240,7 +240,7 @@ SELECT xmlagg(x) FROM test;
 
 Para determinar a ordem da concatenação, pode-se adicionar uma cláusula `ORDER BY` à chamada agregada, conforme descrito em [Seção 4.2.7](sql-expressions.md#SYNTAX-AGGREGATES). Por exemplo:
 
-```
+```sql
 SELECT xmlagg(x ORDER BY y DESC) FROM test;
         xmlagg
 ----------------------
@@ -249,36 +249,36 @@ SELECT xmlagg(x ORDER BY y DESC) FROM test;
 
 A abordagem não padrão a seguir era recomendada em versões anteriores e ainda pode ser útil em casos específicos:
 
-```
+```sql
 SELECT xmlagg(x) FROM (SELECT * FROM test ORDER BY y DESC) AS tab;
         xmlagg
 ----------------------
  <bar/><foo>abc</foo>
 ```
 
-### 9.15.2. Predicados XML [#](#FUNCTIONS-XML-PREDICATES)
+#### 9.15.2. Predicados XML [#](#FUNCTIONS-XML-PREDICATES)
 
 As expressões descritas nesta seção verificam as propriedades dos valores de `xml`.
 
-#### 9.15.2.1. `IS DOCUMENT` [#](#FUNCTIONS-PRODUCING-XML-IS-DOCUMENT)
+##### 9.15.2.1. `IS DOCUMENT` [#](#FUNCTIONS-PRODUCING-XML-IS-DOCUMENT)
 
-```
+```sql
 xml IS DOCUMENT → boolean
 ```
 
 A expressão `IS DOCUMENT` retorna verdadeiro se o valor XML do argumento for um documento XML válido, falso se não for (ou seja, se for um fragmento de conteúdo) ou nulo se o argumento for nulo. Consulte a [Seção 8.13](datatype-xml.md) sobre a diferença entre documentos e fragmentos de conteúdo.
 
-#### 9.15.2.2. `IS NOT DOCUMENT` [#](#FUNCTIONS-PRODUCING-XML-IS-NOT-DOCUMENT)
+##### 9.15.2.2. `IS NOT DOCUMENT` [#](#FUNCTIONS-PRODUCING-XML-IS-NOT-DOCUMENT)
 
-```
+```sql
 xml IS NOT DOCUMENT → boolean
 ```
 
 A expressão `IS NOT DOCUMENT` retorna false se o valor XML do argumento for um documento XML válido, true se não for (ou seja, é um fragmento de conteúdo) ou null se o argumento for nulo.
 
-#### 9.15.2.3. `XMLEXISTS` [#](#XML-EXISTS)
+##### 9.15.2.3. `XMLEXISTS` [#](#XML-EXISTS)
 
-```
+```sql
 XMLEXISTS ( text PASSING [BY {REF|VALUE}] xml [BY {REF|VALUE}] ) → boolean
 ```
 
@@ -286,7 +286,7 @@ A função `xmlexists` avalia uma expressão XPath 1.0 (o primeiro argumento), c
 
 Exemplo:
 
-```
+```sql
 SELECT xmlexists('//town[text() = ''Toronto'']' PASSING BY VALUE '<towns><town>Toronto</town><town>Ottawa</town></towns>');
 
  xmlexists
@@ -299,9 +299,9 @@ As cláusulas `BY REF` e `BY VALUE` são aceitas no PostgreSQL, mas são ignorad
 
 No padrão SQL, a função `xmlexists` avalia uma expressão no idioma de consulta XML, mas o PostgreSQL permite apenas uma expressão XPath 1.0, conforme discutido em [Seção D.3.1](xml-limits-conformance.md#FUNCTIONS-XML-LIMITS-XPATH1).
 
-#### 9.15.2.4. `xml_is_well_formed` [#](#XML-IS-WELL-FORMED)
+##### 9.15.2.4. `xml_is_well_formed` [#](#XML-IS-WELL-FORMED)
 
-```
+```sql
 xml_is_well_formed ( text ) → boolean
 xml_is_well_formed_document ( text ) → boolean
 xml_is_well_formed_content ( text ) → boolean
@@ -311,7 +311,7 @@ Essas funções verificam se uma string `text` representa um XML bem formado, re
 
 Exemplos:
 
-```
+```sql
 SET xmloption TO DOCUMENT;
 SELECT xml_is_well_formed('<>');
  xml_is_well_formed
@@ -347,13 +347,13 @@ SELECT xml_is_well_formed_document('<pg:foo xmlns:pg="http://postgresql.org/stuf
 
 O último exemplo mostra que os verificações incluem se os nomes de espaço são corretamente correspondidos.
 
-### 9.15.3. Processamento de XML [#](#FUNCTIONS-XML-PROCESSING)
+#### 9.15.3. Processamento de XML [#](#FUNCTIONS-XML-PROCESSING)
 
 Para processar valores de tipo de dados `xml`, o PostgreSQL oferece as funções `xpath` e `xpath_exists`, que avaliam expressões XPath 1.0, e a função de tabela `XMLTABLE`.
 
-#### 9.15.3.1. `xpath` [#](#FUNCTIONS-XML-PROCESSING-XPATH)
+##### 9.15.3.1. `xpath` [#](#FUNCTIONS-XML-PROCESSING-XPATH)
 
-```
+```sql
 xpath ( xpath text, xml xml [, nsarray text[] ] ) → xml[]
 ```
 
@@ -365,7 +365,7 @@ O terceiro argumento opcional da função é um array de mapeamentos de namespac
 
 Exemplo:
 
-```
+```sql
 SELECT xpath('/my:a/text()', '<my:a xmlns:my="http://example.com">test</my:a>',
              ARRAY[ARRAY['my', 'http://example.com']]);
 
@@ -377,7 +377,7 @@ SELECT xpath('/my:a/text()', '<my:a xmlns:my="http://example.com">test</my:a>',
 
 Para lidar com namespaces (anônimos) padrão, faça algo como este:
 
-```
+```sql
 SELECT xpath('//mydefns:b/text()', '<a xmlns="http://example.com"><b>test</b></a>',
              ARRAY[ARRAY['mydefns', 'http://example.com']]);
 
@@ -387,9 +387,9 @@ SELECT xpath('//mydefns:b/text()', '<a xmlns="http://example.com"><b>test</b></a
 (1 row)
 ```
 
-#### 9.15.3.2. `xpath_exists` [#](#FUNCTIONS-XML-PROCESSING-XPATH-EXISTS)
+##### 9.15.3.2. `xpath_exists` [#](#FUNCTIONS-XML-PROCESSING-XPATH-EXISTS)
 
-```
+```sql
 xpath_exists ( xpath text, xml xml [, nsarray text[] ] ) → boolean
 ```
 
@@ -397,7 +397,7 @@ A função `xpath_exists` é uma forma especializada da função `xpath`. Em vez
 
 Exemplo:
 
-```
+```sql
 SELECT xpath_exists('/my:a/text()', '<my:a xmlns:my="http://example.com">test</my:a>',
                      ARRAY[ARRAY['my', 'http://example.com']]);
 
@@ -407,9 +407,9 @@ SELECT xpath_exists('/my:a/text()', '<my:a xmlns:my="http://example.com">test</m
 (1 row)
 ```
 
-#### 9.15.3.3. `xmltable` [#](#FUNCTIONS-XML-PROCESSING-XMLTABLE)
+##### 9.15.3.3. `xmltable` [#](#FUNCTIONS-XML-PROCESSING-XMLTABLE)
 
-```
+```sql
 XMLTABLE (
     [ XMLNAMESPACES ( namespace_uri AS namespace_name [, ...] ), ]
     row_expression PASSING [BY {REF|VALUE}] document_expression [BY {REF|VALUE}]
@@ -457,7 +457,7 @@ As colunas podem ser marcadas com `NOT NULL`. Se o *`column_expression`* para um
 
 Exemplos:
 
-```
+```sql
 CREATE TABLE xmldata AS SELECT
 xml $$
 <ROWS>
@@ -501,7 +501,7 @@ SELECT xmltable.*
 
 O exemplo a seguir mostra a concatenação de múltiplos nós text(), o uso do nome da coluna como filtro XPath e o tratamento de espaços em branco, comentários XML e instruções de processamento:
 
-```
+```sql
 CREATE TABLE xmlelements AS SELECT
 xml $$
   <root>
@@ -518,7 +518,7 @@ SELECT xmltable.*
 
 O exemplo a seguir ilustra como a cláusula `XMLNAMESPACES` pode ser usada para especificar uma lista de namespaces utilizados no documento XML, bem como nas expressões XPath:
 
-```
+```sql
 WITH xmldata(data) AS (VALUES ('
 <example xmlns="http://example.com/myns" xmlns:B="http://example.com/b">
  <item foo="1" B:bar="2"/>
@@ -541,11 +541,11 @@ SELECT xmltable.*
 (3 rows)
 ```
 
-### 9.15.4. Mapeamento de tabelas para XML [#](#FUNCTIONS-XML-MAPPING)
+#### 9.15.4. Mapeamento de tabelas para XML [#](#FUNCTIONS-XML-MAPPING)
 
 As funções a seguir mapeiam o conteúdo de tabelas relacionais para valores XML. Elas podem ser consideradas como uma funcionalidade de exportação XML:
 
-```
+```sql
 table_to_xml ( table regclass, nulls boolean,
                tableforest boolean, targetns text ) → xml
 query_to_xml ( query text, nulls boolean,
@@ -558,7 +558,7 @@ cursor_to_xml ( cursor refcursor, count integer, nulls boolean,
 
 Se *`tableforest`* for falso, o documento XML resultante terá o seguinte aspecto:
 
-```
+```xml
 <tablename>
   <row>
     <columnname1>data</columnname1>
@@ -575,7 +575,7 @@ Se *`tableforest`* for falso, o documento XML resultante terá o seguinte aspect
 
 Se *`tableforest`* for verdadeiro, o resultado é um fragmento de conteúdo XML que se parece com este:
 
-```
+```xml
 <tablename>
   <columnname1>data</columnname1>
   <columnname2>data</columnname2>
@@ -596,7 +596,7 @@ Os valores dos dados são mapeados da mesma maneira que descrito para a função
 
 O parâmetro *`nulls`* determina se os valores nulos devem ser incluídos na saída. Se verdadeiro, os valores nulos nas colunas são representados como:
 
-```
+```xml
 <columnname xsi:nil="true"/>
 ```
 
@@ -606,7 +606,7 @@ O parâmetro *`targetns`* especifica o namespace XML desejado para o resultado. 
 
 As funções a seguir retornam documentos do esquema XML que descrevem as mapeamentos realizados pelas funções correspondentes acima:
 
-```
+```sql
 table_to_xmlschema ( table regclass, nulls boolean,
                      tableforest boolean, targetns text ) → xml
 query_to_xmlschema ( query text, nulls boolean,
@@ -619,7 +619,7 @@ cursor_to_xmlschema ( cursor refcursor, nulls boolean,
 
 As funções a seguir produzem mapeamentos de dados XML e o esquema XML correspondente em um único documento (ou floresta), vinculados entre si. Elas podem ser úteis quando se deseja resultados autocontidos e autodescritos:
 
-```
+```sql
 table_to_xml_and_xmlschema ( table regclass, nulls boolean,
                              tableforest boolean, targetns text ) → xml
 query_to_xml_and_xmlschema ( query text, nulls boolean,
@@ -628,7 +628,7 @@ query_to_xml_and_xmlschema ( query text, nulls boolean,
 
 Além disso, as seguintes funções estão disponíveis para produzir mapeamentos análogos de esquemas inteiros ou de todo o banco de dados atual:
 
-```
+```sql
 schema_to_xml ( schema name, nulls boolean,
                 tableforest boolean, targetns text ) → xml
 schema_to_xmlschema ( schema name, nulls boolean,
@@ -650,7 +650,7 @@ Observe que esses podem gerar uma grande quantidade de dados, que precisam ser a
 
 O resultado de uma mapeamento de conteúdo de esquema é o seguinte:
 
-```
+```xml
 <schemaname>
 
 table1-mapping
@@ -666,7 +666,7 @@ onde o formato de uma tabela de mapeamento depende do parâmetro *`tableforest`*
 
 O resultado de um mapeamento do conteúdo do banco de dados é o seguinte:
 
-```
+```xml
 <dbname>
 
 <schema1name>
@@ -688,60 +688,53 @@ Como exemplo de uso da saída produzida por essas funções, o [Exemplo 9.1] (fu
 
 **Exemplo 9.1. Folha de Estilo XSLT para Conversão de Saída SQL/XML para HTML**
 
-```
+```xml
 <?xml version="1.0"?>
 <xsl:stylesheet version="1.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-    xmlns="http://www.w3.org/1999/xhtml"
->
-
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://www.w3.org/1999/xhtml"
+  >
   <xsl:output method="xml"
-      doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
-      doctype-public="-//W3C/DTD XHTML 1.0 Strict//EN"
-      indent="yes"/>
-
+    doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
+    doctype-public="-//W3C/DTD XHTML 1.0 Strict//EN"
+    indent="yes"/>
   <xsl:template match="/*">
     <xsl:variable name="schema" select="//xsd:schema"/>
     <xsl:variable name="tabletypename"
-                  select="$schema/xsd:element[@name=name(current())]/@type"/>
+      select="$schema/xsd:element[@name=name(current())]/@type"/>
     <xsl:variable name="rowtypename"
-                  select="$schema/xsd:complexType[@name=$tabletypename]/xsd:sequence/xsd:element[@name='row']/@type"/>
-
+      select="$schema/xsd:complexType[@name=$tabletypename]/xsd:sequence/xsd:element[@name='row']/@type"/>
     <html>
       <head>
-        <title><xsl:value-of select="name(current())"/></title>
+        <title>
+          <xsl:value-of select="name(current())"/>
+        </title>
       </head>
       <body>
         <table>
- <tr>
-  <xsl:for-each select="$schema/xsd:complexType[@name=$rowtypename]/xsd:sequence/xsd:element/@name">
-   <th>
-    <xsl:value-of select=".">
-    </xsl:value-of>
-   </th>
-  </xsl:for-each>
- </tr>
- <xsl:for-each select="row">
-  <tr>
-   <xsl:for-each select="*">
-    <td>
-     <xsl:value-of select=".">
-     </xsl:value-of>
-    </td>
-   </xsl:for-each>
-  </tr>
- </xsl:for-each>
-</table>
-
-
-
-
-
+          <tr>
+            <xsl:for-each select="$schema/xsd:complexType[@name=$rowtypename]/xsd:sequence/xsd:element/@name">
+              <th>
+                <xsl:value-of select=".">
+                </xsl:value-of>
+              </th>
+            </xsl:for-each>
+          </tr>
+          <xsl:for-each select="row">
+            <tr>
+              <xsl:for-each select="*">
+                <td>
+                  <xsl:value-of select=".">
+                  </xsl:value-of>
+                </td>
+              </xsl:for-each>
+            </tr>
+          </xsl:for-each>
+        </table>
       </body>
     </html>
   </xsl:template>
-
 </xsl:stylesheet>
 ```
 

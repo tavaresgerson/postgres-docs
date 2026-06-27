@@ -1,10 +1,8 @@
-## 9.23. Fusão de funções de suporte [#](#FUNCTIONS-MERGE-SUPPORT)
+### 9.23. Fusão de funções de suporte [#](#FUNCTIONS-MERGE-SUPPORT)
 
 O PostgreSQL inclui uma função de suporte a junção que pode ser usada na lista `RETURNING` de um comando [MERGE](sql-merge.md "MERGE") para identificar a ação realizada para cada linha; veja [Tabela 9.68](functions-merge-support.md#FUNCTIONS-MERGE-SUPPORT-TABLE "Table 9.68. Merge Support Functions").
 
 **Tabela 9.68. Funções de suporte de fusão**
-
-
 
 <table>
  <colgroup>
@@ -54,18 +52,9 @@ O PostgreSQL inclui uma função de suporte a junção que pode ser usada na lis
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Exemplo:
 
-```
+```sql
 MERGE INTO products p
   USING stock s ON p.product_id = s.product_id
   WHEN MATCHED AND s.quantity > 0 THEN

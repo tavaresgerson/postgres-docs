@@ -1,10 +1,8 @@
-## 9.11. Funções e Operadores Geométricos [#](#FUNCTIONS-GEOMETRY)
+### 9.11. Funções e Operadores Geométricos [#](#FUNCTIONS-GEOMETRY)
 
 Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circle` possuem um grande conjunto de funções e operadores de suporte nativo, mostrados em [Tabela 9.36](functions-geometry.md#FUNCTIONS-GEOMETRY-OP-TABLE "Table 9.36. Geometric Operators"), [Tabela 9.37](functions-geometry.md#FUNCTIONS-GEOMETRY-FUNC-TABLE "Table 9.37. Geometric Functions") e [Tabela 9.38](functions-geometry.md#FUNCTIONS-GEOMETRY-CONV-TABLE "Table 9.38. Geometric Type Conversion Functions").
 
 **Tabela 9.36. Operadores geométricos**
-
-
 
 <table>
  <colgroup>
@@ -1792,16 +1790,7 @@ Os tipos geométricos `point`, `box`, `lseg`, `line`, `path`, `polygon` e `circl
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
-### Atenção
+Atenção
 
 Observe que o operador “igual a”, `~=`, representa a noção usual de igualdade para os tipos `point`, `box`, `polygon` e `circle`. Alguns dos tipos geométricos também têm um operador `=`, mas `=` compara apenas por *áreas* iguais. Os outros operadores de comparação escalar (`<=` e assim por diante), onde disponíveis para esses tipos, também comparam áreas.
 
@@ -1810,8 +1799,6 @@ Nota
 Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estritamente `point` `<<|` `point` e `point` `|>>` `point` eram respectivamente chamados `<^` e `>^`. Esses nomes ainda estão disponíveis, mas são desaconselhados e, eventualmente, serão removidos.
 
 **Tabela 9.37. Funções Geométrica**
-
-
 
 <table>
  <colgroup>
@@ -2302,18 +2289,7 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 **Tabela 9.38. Funções de conversão de tipo geométrico**
-
-
 
 <table>
  <colgroup>
@@ -2980,14 +2956,5 @@ Antes do PostgreSQL 14, os operadores de comparação ponto acima/abaixo estrita
   </tr>
  </tbody>
 </table>
-
-
-
-
-
-
-
-
-
 
 É possível acessar os dois números de componentes de um `point` como se o ponto fosse um array com índices 0 e 1. Por exemplo, se `t.p` é uma coluna de `point`, então `SELECT p[0] FROM t` recupera a coordenada X e `UPDATE t SET p[1] = ...` altera a coordenada Y. Da mesma forma, um valor do tipo `box` ou `lseg` pode ser tratado como um array de dois valores de `point`.

@@ -1,10 +1,8 @@
-## 9.19. Funções e operadores de matriz [#](#FUNCTIONS-ARRAY)
+### 9.19. Funções e operadores de matriz [#](#FUNCTIONS-ARRAY)
 
 [Tabela 9.56](functions-array.md#ARRAY-OPERATORS-TABLE) mostra os operadores especializados disponíveis para tipos de matriz. Além desses, os operadores de comparação comuns mostrados em [Tabela 9.1](functions-comparison.md#FUNCTIONS-COMPARISON-OP-TABLE) estão disponíveis para matrizes. Os operadores de comparação comparam o conteúdo da matriz elemento a elemento, usando a função de comparação padrão de árvore B para o tipo de dados do elemento, e ordenam com base na primeira diferença. Em matrizes multidimensionais, os elementos são visitados em ordem de linha (a última subexposição varia mais rapidamente). Se o conteúdo de duas matrizes for igual, mas a dimensionalidade for diferente, a primeira diferença na informação de dimensionalidade determina a ordem de classificação.
 
 **Tabela 9.56. Operadores de matriz**
-
-
 
 <table>
  <colgroup>
@@ -236,22 +234,11 @@
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do operador de matriz. Veja [Seção 11.2](indexes-types.md) para mais detalhes sobre quais operadores suportam operações indexadas.
 
 [Tabela 9.57](functions-array.md#ARRAY-FUNCTIONS-TABLE) mostra as funções disponíveis para uso com tipos de matriz. Consulte [Seção 8.15](arrays.md) para mais informações e exemplos de uso dessas funções.
 
 **Tabela 9.57. Funções de matriz**
-
-
 
 <table>
  <colgroup>
@@ -1310,14 +1297,5 @@ Veja [Seção 8.15](arrays.md) para mais detalhes sobre o comportamento do opera
   </tr>
  </tbody>
 </table>
-
-
-
-
-
-
-
-
-
 
 Veja também [Seção 9.21](functions-aggregate.md) sobre a função agregada `array_agg` para uso com matrizes.

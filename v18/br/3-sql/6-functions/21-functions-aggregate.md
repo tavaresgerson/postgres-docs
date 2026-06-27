@@ -1,4 +1,4 @@
-## 9.21. Funções agregadas [#](#FUNCTIONS-AGGREGATE)
+### 9.21. Funções agregadas [#](#FUNCTIONS-AGGREGATE)
 
 *As funções agregadas* calculam um único resultado a partir de um conjunto de valores de entrada. As funções agregadas de propósito geral integradas estão listadas em [Tabela 9.62](functions-aggregate.md#FUNCTIONS-AGGREGATE-TABLE), enquanto os agregados estatísticos estão em [Tabela 9.63](functions-aggregate.md#FUNCTIONS-AGGREGATE-STATISTICS-TABLE). As funções agregadas de conjunto ordenado dentro do grupo integrado estão listadas em [Tabela 9.64](functions-aggregate.md#FUNCTIONS-ORDEREDSET-TABLE), enquanto as funções agregadas de conjunto hipotético dentro do grupo integrado estão em [Tabela 9.65](functions-aggregate.md#FUNCTIONS-HYPOTHETICAL-TABLE). As operações de agrupamento, que estão intimamente relacionadas com as funções agregadas, estão listadas em [Tabela 9.66](functions-aggregate.md#FUNCTIONS-GROUPING-TABLE). As considerações de sintaxe especial para funções agregadas são explicadas em [Seção 4.2.7](sql-expressions.md#SYNTAX-AGGREGATES). Consulte [Seção 2.7](tutorial-agg.md) para informações adicionais introdutórias.
 
@@ -7,8 +7,6 @@ As funções agregadas que suportam o *Modo Parcial* são elegíveis para partic
 Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conforme descrito em [Seção 4.2.7](sql-expressions.md#SYNTAX-AGGREGATES)), a cláusula foi adicionada apenas aos agregados cuja saída é afetada pela ordenação.
 
 **Tabela 9.62. Funções agregadas de propósito geral**
-
-
 
 <table>
  <colgroup>
@@ -1611,20 +1609,11 @@ Embora todos os agregados abaixo aceitem uma cláusula opcional `ORDER BY` (conf
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Deve-se notar que, exceto para `count`, essas funções retornam um valor nulo quando nenhuma linha é selecionada. Em particular, `sum` sem nenhuma linha retorna nulo, não zero como se poderia esperar, e `array_agg` retorna nulo em vez de um array vazio quando não há linhas de entrada. A função `coalesce` pode ser usada para substituir zero ou um array vazio por nulo quando necessário.
 
 As funções agregadas `array_agg`, `json_agg`, `jsonb_agg`, `json_agg_strict`, `jsonb_agg_strict`, `json_object_agg`, `jsonb_object_agg`, `json_object_agg_strict`, `jsonb_object_agg_strict`, `json_object_agg_unique`, `jsonb_object_agg_unique`, `json_object_agg_unique_strict`, `jsonb_object_agg_unique_strict`, `string_agg` e `xmlagg`, bem como funções agregadas definidas pelo usuário semelhantes, produzem valores de resultado significativamente diferentes, dependendo da ordem dos valores de entrada. Essa ordem não é especificada por padrão, mas pode ser controlada escrevendo uma cláusula `ORDER BY` dentro da chamada agregada, conforme mostrado em [Seção 4.2.7](sql-expressions.md#SYNTAX-AGGREGATES). Alternativamente, fornecer os valores de entrada de uma subconsulta ordenada geralmente funciona. Por exemplo:
 
-```
+```sql
 SELECT xmlagg(x) FROM (SELECT x FROM test ORDER BY y DESC) AS tab;
 ```
 
@@ -1634,7 +1623,7 @@ Nota
 
 Os agregados booleanos `bool_and` e `bool_or` correspondem aos agregados padrão SQL `every` e `any` ou `some`. O PostgreSQL suporta `every`, mas não `any` ou `some`, porque há uma ambiguidade embutida na sintaxe padrão:
 
-```
+```sql
 SELECT b1 = ANY((SELECT b2 FROM t2 ...)) FROM t1 ...;
 ```
 
@@ -1644,7 +1633,7 @@ Nota
 
 Os usuários acostumados a trabalhar com outros sistemas de gerenciamento de banco de dados SQL podem ficar desapontados com o desempenho do agregado `count` quando aplicado a toda a tabela. Uma consulta como:
 
-```
+```sql
 SELECT count(*) FROM sometable;
 ```
 
@@ -1653,8 +1642,6 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
 [Tabela 9.63](functions-aggregate.md#FUNCTIONS-AGGREGATE-STATISTICS-TABLE "Table 9.63. Aggregate Functions for Statistics") mostra funções agregadas tipicamente usadas na análise estatística. (Essas são separadas apenas para evitar a sobrecarga na lista de agregados mais comumente usados.) As funções mostradas como aceitando *`numeric_type`* estão disponíveis para todos os tipos `smallint`, `integer`, `bigint`, `numeric`, `real` e `double precision`. Onde a descrição menciona *`N`*, isso significa que o número de linhas de entrada para as quais todas as expressões de entrada são não nulos. Em todos os casos, o nulo é retornado se a computação não tiver significado, por exemplo, quando *`N`* é zero.
 
 **Tabela 9.63. Funções agregadas para estatísticas**
-
-
 
 <table>
  <colgroup>
@@ -2519,20 +2506,9 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 [Tabela 9.64](functions-aggregate.md#FUNCTIONS-ORDEREDSET-TABLE) mostra algumas funções agregadas que utilizam a sintaxe de *conjunto ordenado* agregada. Essas funções são, por vezes, referidas como funções de “distribuição inversa”. A entrada agregada é introduzida por `ORDER BY`, e elas também podem receber um *argumento direto* que não é agregado, mas é calculado apenas uma vez. Todas essas funções ignoram valores nulos na sua entrada agregada. Para aquelas que recebem um *`fraction`* parâmetro, o valor da fração deve estar entre 0 e 1; uma exceção é lançada se não estiver. No entanto, um valor nulo de *`fraction`* simplesmente produz um resultado nulo.
 
 **Tabela 9.64. Funções agregadas de conjunto ordenado**
-
-
 
 <table>
  <colgroup>
@@ -2838,20 +2814,9 @@ requerirá um esforço proporcional ao tamanho da tabela: o PostgreSQL precisar�
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](functions-aggregate.md#FUNCTIONS-HYPOTHETICAL-TABLE) está associado a uma função de janela com o mesmo nome definida em [Seção 9.22](functions-window.md). Em cada caso, o resultado do agregado é o valor que a função de janela associada teria retornado para a linha "hipotética" construída a partir de *`args`*, se tal linha tivesse sido adicionada ao grupo de filas ordenadas representado por *`sorted_args`*. Para cada uma dessas funções, a lista de argumentos diretos dada em *`args`* deve corresponder ao número e aos tipos dos argumentos agregados dados em *`sorted_args`*. Ao contrário da maioria dos agregados embutidos, esses agregados não são estritos, ou seja, não descartam filas de entrada que contenham nulos. Os valores nulos são ordenados de acordo com a regra especificada na cláusula `ORDER BY`.
 
 **Tabela 9.65. Funções agregadas de conjunto hipotéticas**
-
-
 
 <table>
  <colgroup>
@@ -3039,18 +3004,7 @@ Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](funct
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 **Tabela 9.66. Operações de Grupos**
-
-
 
 <table>
  <colgroup>
@@ -3098,18 +3052,9 @@ Cada um dos agregados do "conjunto hipotético" listados em [Tabela 9.65](funct
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 As operações de agrupamento mostradas na [Tabela 9.66](functions-aggregate.md#FUNCTIONS-GROUPING-TABLE) são usadas em conjunto com conjuntos de agrupamento (veja [Seção 7.2.4](queries-table-expressions.md#QUERIES-GROUPING-SETS)) para distinguir as linhas de resultado. Os argumentos da função `GROUPING` não são realmente avaliados, mas devem corresponder exatamente às expressões fornecidas na cláusula `GROUP BY` do nível de consulta associado. Por exemplo:
 
-```
+```sql
 => SELECT * FROM items_sold;
  make  | model | sales
 -------+-------+-------

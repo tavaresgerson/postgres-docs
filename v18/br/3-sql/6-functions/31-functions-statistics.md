@@ -1,18 +1,16 @@
-## 9.31. Funções de Informações Estatísticas [#](#FUNCTIONS-STATISTICS)
+### 9.31. Funções de Informações Estatísticas [#](#FUNCTIONS-STATISTICS)
 
 * [9.31.1. Inspeção de listas de MCV](functions-statistics.md#FUNCTIONS-STATISTICS-MCV)
 
 O PostgreSQL oferece uma função para inspecionar estatísticas complexas definidas usando o comando `CREATE STATISTICS`.
 
-### 9.31.1. Inspeção de listas de MCV [#](#FUNCTIONS-STATISTICS-MCV)
+#### 9.31.1. Inspeção de listas de MCV [#](#FUNCTIONS-STATISTICS-MCV)
 
-```
+```sql
 pg_mcv_list_items ( pg_mcv_list ) → setof record
 ```
 
 `pg_mcv_list_items` retorna um conjunto de registros que descrevem todos os itens armazenados em uma lista MCV de várias colunas. Ele retorna as seguintes colunas:
-
-
 
 <table>
  <colgroup>
@@ -128,15 +126,9 @@ pg_mcv_list_items ( pg_mcv_list ) → setof record
  </tbody>
 </table>
 
-
-
-
-
-
-
 A função `pg_mcv_list_items` pode ser usada da seguinte forma:
 
-```
+```sql
 SELECT m.* FROM pg_statistic_ext join pg_statistic_ext_data on (oid = stxoid),
                 pg_mcv_list_items(stxdmcv) m WHERE stxname = 'stts';
 ```

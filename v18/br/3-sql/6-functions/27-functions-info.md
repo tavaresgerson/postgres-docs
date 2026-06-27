@@ -1,4 +1,4 @@
-## 9.27. Funções e Operadores de Informação do Sistema [#](#FUNCTIONS-INFO)
+### 9.27. Funções e Operadores de Informação do Sistema [#](#FUNCTIONS-INFO)
 
 * [9.27.1. Funções de Informações de Sessão](functions-info.md#FUNCTIONS-INFO-SESSION)
 * [9.27.2. Funções de Consultas de Privilegios de Acesso](functions-info.md#FUNCTIONS-INFO-ACCESS)
@@ -15,15 +15,13 @@
 
 As funções descritas nesta seção são usadas para obter várias informações sobre uma instalação do PostgreSQL.
 
-### 9.27.1. Funções de Informações de Sessão [#](#FUNCTIONS-INFO-SESSION)
+#### 9.27.1. Funções de Informações de Sessão [#](#FUNCTIONS-INFO-SESSION)
 
 [Tabela 9.71](functions-info.md#FUNCTIONS-INFO-SESSION-TABLE) mostra várias funções que extraem informações de sessão e sistema.
 
 Além das funções listadas nesta seção, há várias funções relacionadas ao sistema de estatísticas que também fornecem informações sobre o sistema. Consulte [Seção 27.2.26](monitoring-stats.md#MONITORING-STATS-FUNCTIONS) para obter mais informações.
 
 **Tabela 9.71. Funções de Informações de Sessão**
-
-
 
 <table>
  <colgroup>
@@ -755,33 +753,22 @@ Além das funções listadas nesta seção, há várias funções relacionadas a
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Nota
 
 `current_catalog`, `current_role`, `current_schema`, `current_user`, `session_user` e `user` têm um status sintático especial no SQL: eles devem ser chamados sem parênteses finais. No PostgreSQL, os parênteses podem ser usados opcionalmente com `current_schema`, mas não com os outros.
 
 O `session_user` é normalmente o usuário que iniciou a conexão atual com o banco de dados; mas os superusuários podem alterar essa configuração com [SET SESSION AUTHORIZATION](sql-set-session-authorization.md "SET SESSION AUTHORIZATION"). O `current_user` é o identificador do usuário que é aplicável para verificação de permissão. Normalmente, é igual ao usuário da sessão, mas pode ser alterado com [SET ROLE](sql-set-role.md "SET ROLE"). Também muda durante a execução de funções com o atributo `SECURITY DEFINER`. Na linguagem Unix, o usuário da sessão é o “usuário real” e o usuário atual é o “usuário efetivo”. `current_role` e `user` são sinônimos para `current_user`. (O padrão SQL faz uma distinção entre `current_role` e `current_user`, mas o PostgreSQL não, uma vez que unifica usuários e papéis em um único tipo de entidade.)
 
-### 9.27.2. Funções de Consulta de Privilegios de Acesso [#](#FUNCTIONS-INFO-ACCESS)
+#### 9.27.2. Funções de Consulta de Privilegios de Acesso [#](#FUNCTIONS-INFO-ACCESS)
 
 [Tabela 9.72](functions-info.md#FUNCTIONS-INFO-ACCESS-TABLE) lista funções que permitem consultar os privilégios de acesso a objetos de forma programática. (Veja [Seção 5.8](ddl-priv.md) para mais informações sobre privilégios.) Nessas funções, o usuário cujos privilégios estão sendo verificados pode ser especificado pelo nome ou pelo OID (`pg_authid`.`oid`), ou se o nome for fornecido como `public`, então os privilégios do pseudorole PUBLIC são verificados. Além disso, o argumento *`user`* pode ser omitido completamente, no caso, o `current_user` é assumido. O objeto que está sendo verificado pode ser especificado pelo nome ou pelo OID, também. Ao especificar pelo nome, um nome de esquema pode ser incluído, se relevante. O privilégio de acesso de interesse é especificado por uma string de texto, que deve avaliar para uma das palavras-chave de privilégio apropriadas para o tipo do objeto (e.g., `SELECT`). Opcionalmente, `WITH GRANT OPTION` pode ser adicionado a um tipo de privilégio para testar se o privilégio é mantido com opção de concessão. Além disso, vários tipos de privilégios podem ser listados separados por vírgulas, no caso, o resultado será verdadeiro se qualquer um dos privilégios listados for mantido. (O caso da string de privilégio não é significativo, e espaço em branco extra é permitido entre, mas não dentro dos nomes de privilégio.) Alguns exemplos:
 
-```
+```sql
 SELECT has_table_privilege('myschema.mytable', 'select');
 SELECT has_table_privilege('joe', 'mytable', 'INSERT, SELECT WITH GRANT OPTION');
 ```
 
 **Tabela 9.72. Funções de consulta de privilégios de acesso**
-
-
 
 <table>
  <colgroup>
@@ -1877,20 +1864,9 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 [Tabela 9.73](functions-info.md#FUNCTIONS-ACLITEM-OP-TABLE) mostra os operadores disponíveis para o tipo `aclitem`, que é a representação de catálogo de privilégios de acesso. Consulte [Seção 5.8](ddl-priv.md) para obter informações sobre como ler os valores de privilégios de acesso.
 
 **Tabela 9.73. Operadores `aclitem`
-
-
 
 <table>
  <colgroup>
@@ -2028,20 +2004,9 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 [Tabela 9.74](functions-info.md#FUNCTIONS-ACLITEM-FN-TABLE) mostra algumas funções adicionais para gerenciar o tipo `aclitem`.
 
 **Tabela 9.74. Funções `aclitem`**
-
-
 
 <table>
  <colgroup>
@@ -2342,25 +2307,17 @@ SELECT has_function_privilege('joeuser', 'myfunc(int, text)', 'execute');
  </tbody>
 </table>
 
-
-
-
-
-
-
-### 9.27.3. Funções de consulta de visibilidade do esquema [#](#FUNCTIONS-INFO-SCHEMA)
+#### 9.27.3. Funções de consulta de visibilidade do esquema [#](#FUNCTIONS-INFO-SCHEMA)
 
 [Tabela 9.75](functions-info.md#FUNCTIONS-INFO-SCHEMA-TABLE) mostra funções que determinam se um determinado objeto é *visível* no caminho de busca do esquema atual. Por exemplo, uma tabela é considerada visível se seu esquema contendo estiver no caminho de busca e nenhuma tabela com o mesmo nome aparecer anteriormente no caminho de busca. Isso é equivalente à afirmação de que a tabela pode ser referenciada pelo nome sem qualificação explícita do esquema. Assim, para listar os nomes de todas as tabelas visíveis:
 
-```
+```sql
 SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 ```
 
 Para funções e operadores, um objeto no caminho de busca é dito ser visível se não houver um objeto com o mesmo nome e o mesmo tipo de dados de argumento anteriormente no caminho. Para as classes e famílias de operadores, tanto o nome quanto o método de acesso ao índice associado são considerados.
 
 **Tabela 9.75. Funções de consulta de visibilidade de esquema**
-
-
 
 <table>
  <colgroup>
@@ -2707,30 +2664,19 @@ Para funções e operadores, um objeto no caminho de busca é dito ser visível 
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Todas essas funções exigem OIDs de objeto para identificar o objeto a ser verificado. Se você deseja testar um objeto pelo nome, é conveniente usar os tipos de alias de OID, como `regclass`, `regtype`, `regprocedure`, `regoperator`, `regconfig` ou `regdictionary`, por exemplo:
 
-```
+```sql
 SELECT pg_type_is_visible('myschema.widget'::regtype);
 ```
 
 Observe que não faria muito sentido testar um nome de tipo não qualificado por esquema dessa maneira — se o nome pode ser reconhecido, ele deve ser visível.
 
-### 9.27.4. Funções de informações do catálogo do sistema [#](#FUNCTIONS-INFO-CATALOG)
+#### 9.27.4. Funções de informações do catálogo do sistema [#](#FUNCTIONS-INFO-CATALOG)
 
 [Tabela 9.76](functions-info.md#FUNCTIONS-INFO-CATALOG-TABLE) lista funções que extraem informações dos catálogos do sistema.
 
 **Tabela 9.76. Funções de Informações do Catálogo do Sistema**
-
-
 
 <table>
  <colgroup>
@@ -4602,18 +4548,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 **Tabela 9.78. Propriedades do índice**
-
-
 
 <table>
  <thead>
@@ -4678,18 +4613,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 **Tabela 9.79. Propriedades do Método de Acesso ao Índice**
-
-
 
 <table>
  <thead>
@@ -4776,18 +4700,7 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 **Tabela 9.80. Fлагаres do GUC**
-
-
 
 <table>
  <thead>
@@ -4884,19 +4797,11 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
  </tbody>
 </table>
 
-
-
-
-
-
-
-### 9.27.5. Informações sobre o objeto e funções de endereçamento [#](#FUNCTIONS-INFO-OBJECT)
+#### 9.27.5. Informações sobre o objeto e funções de endereçamento [#](#FUNCTIONS-INFO-OBJECT)
 
 [Tabela 9.81](functions-info.md#FUNCTIONS-INFO-OBJECT-TABLE) lista funções relacionadas à identificação e endereçamento de objetos de banco de dados.
 
 **Tabela 9.81. Informações e funções de endereçamento de objetos**
-
-
 
 <table>
  <colgroup>
@@ -5338,18 +5243,9 @@ A maioria das funções que reconstruem (decompilam) objetos de banco de dados t
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 `pg_get_acl` é útil para recuperar e inspecionar os privilégios associados a objetos de banco de dados sem olhar para catálogos específicos. Por exemplo, para recuperar todos os privilégios concedidos em objetos no banco de dados atual:
 
-```
+```sql
 postgres=# SELECT
     (pg_identify_object(s.classid,s.objid,s.objsubid)).*,
     pg_catalog.pg_get_acl(s.classid,s.objid,s.objsubid) AS acl
@@ -5369,13 +5265,11 @@ identity | public.testtab
 acl      | {postgres=arwdDxtm/postgres,foo=r/postgres}
 ```
 
-### 9.27.6. Comentários sobre as funções de informação [#](#FUNCTIONS-INFO-COMMENT)
+#### 9.27.6. Comentários sobre as funções de informação [#](#FUNCTIONS-INFO-COMMENT)
 
 As funções mostradas na [Tabela 9.82](functions-info.md#FUNCTIONS-INFO-COMMENT-TABLE) extraem comentários que foram armazenados anteriormente com o comando [COMMENT](sql-comment.md). Um valor nulo é retornado se nenhum comentário puder ser encontrado para os parâmetros especificados.
 
 **Tabela 9.82. Funções de Comentário**
-
-
 
 <table>
  <colgroup>
@@ -5542,19 +5436,11 @@ As funções mostradas na [Tabela 9.82](functions-info.md#FUNCTIONS-INFO-COMMENT
  </tbody>
 </table>
 
-
-
-
-
-
-
-### 9.27.7. Funções de verificação da validade dos dados [#](#FUNCTIONS-INFO-VALIDITY)
+#### 9.27.7. Funções de verificação da validade dos dados [#](#FUNCTIONS-INFO-VALIDITY)
 
 As funções apresentadas na [Tabela 9.83](functions-info.md#FUNCTIONS-INFO-VALIDITY-TABLE) podem ser úteis para verificar a validade dos dados de entrada propostos.
 
 **Tabela 9.83. Funções de verificação de validade de dados**
-
-
 
 <table>
  <colgroup>
@@ -5762,19 +5648,11 @@ As funções apresentadas na [Tabela 9.83](functions-info.md#FUNCTIONS-INFO-VALI
  </tbody>
 </table>
 
-
-
-
-
-
-
-### 9.27.8. Funções de ID de Transação e Informações de Escaneamento [#](#FUNCTIONS-INFO-SNAPSHOT)
+#### 9.27.8. Funções de ID de Transação e Informações de Escaneamento [#](#FUNCTIONS-INFO-SNAPSHOT)
 
 As funções apresentadas na [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSHOT) fornecem informações sobre transações do servidor em um formato exportable. O uso principal dessas funções é determinar quais transações foram realizadas entre dois instantâneos.
 
 **Tabela 9.84. Funções de ID de Transação e Informações de Instantâneo**
-
-
 
 <table>
  <colgroup>
@@ -6142,20 +6020,9 @@ As funções apresentadas na [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSH
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 O tipo de ID de transação interna `xid` é de 32 bits e volta ao início a cada 4 bilhões de transações. No entanto, as funções mostradas na [Tabela 9.84](functions-info.md#FUNCTIONS-PG-SNAPSHOT "Table 9.84. Transaction ID and Snapshot Information Functions"), exceto `age`, `mxid_age` e `pg_get_multixact_members`, utilizam um tipo de 64 bits `xid8` que não volta ao início durante a vida de uma instalação e pode ser convertido para `xid` por colagem, se necessário; consulte [Seção 67.1](transaction-id.md "67.1. Transactions and Identifiers") para detalhes. O tipo de dados `pg_snapshot` armazena informações sobre a visibilidade do ID de transação em um momento específico. Seus componentes são descritos na [Tabela 9.85](functions-info.md#FUNCTIONS-PG-SNAPSHOT-PARTS "Table 9.85. Snapshot Components"). A representação textual de `pg_snapshot` é `xmin:xmax:xip_list`. Por exemplo, `10:20:10,14,15` significa `xmin=10, xmax=20, xip_list=10, 14, 15`.
 
 **Tabela 9.85. Componentes do Instantâneo**
-
-
 
 <table>
  <thead>
@@ -6220,20 +6087,9 @@ O tipo de ID de transação interna `xid` é de 32 bits e volta ao início a cad
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Nas versões do PostgreSQL anteriores à 13, não havia o tipo `xid8`. Portanto, foram fornecidas variantes dessas funções que utilizavam `bigint` para representar um XID de 64 bits, com um tipo de dados de instantâneo correspondentemente distinto `txid_snapshot`. Essas funções mais antigas têm `txid` em seus nomes. Elas ainda são suportadas para compatibilidade reversa, mas podem ser removidas em uma versão futura. Veja [Tabela 9.86](functions-info.md#FUNCTIONS-TXID-SNAPSHOT).
 
 **Tabela 9.86. Funções de ID de Transação e Informações de Escaneamento Desatualizadas**
-
-
 
 <table>
  <colgroup>
@@ -6439,19 +6295,11 @@ Nas versões do PostgreSQL anteriores à 13, não havia o tipo `xid8`. Portanto,
  </tbody>
 </table>
 
-
-
-
-
-
-
-### 9.27.9. Funções de Informações de Transações Comprometidas [#](#FUNCTIONS-INFO-COMMIT-TIMESTAMP)
+#### 9.27.9. Funções de Informações de Transações Comprometidas [#](#FUNCTIONS-INFO-COMMIT-TIMESTAMP)
 
 As funções mostradas na [Tabela 9.87](functions-info.md#FUNCTIONS-COMMIT-TIMESTAMP) fornecem informações sobre quando as transações passadas foram realizadas. Elas fornecem dados úteis apenas quando a opção de configuração [track_commit_timestamp](runtime-config-replication.md#GUC-TRACK-COMMIT-TIMESTAMP) é habilitada, e apenas para transações que foram realizadas após sua habilitação. As informações do timestamp de compromisso são removidas rotineiramente durante o vácuo.
 
 **Tabela 9.87. Funções de Informações de Transação Comprometida**
-
-
 
 <table>
  <colgroup>
@@ -6576,19 +6424,11 @@ As funções mostradas na [Tabela 9.87](functions-info.md#FUNCTIONS-COMMIT-TIMES
  </tbody>
 </table>
 
-
-
-
-
-
-
-### 9.27.10. Funções de Controle de Dados [#](#FUNCTIONS-INFO-CONTROLDATA)
+#### 9.27.10. Funções de Controle de Dados [#](#FUNCTIONS-INFO-CONTROLDATA)
 
 As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA) imprimem informações inicializadas durante `initdb`, como a versão do catálogo. Elas também mostram informações sobre o registro prévio de escrita e o processamento de pontos de verificação. Essas informações são válidas para todo o clúster, e não são específicas para nenhum banco de dados. Essas funções fornecem a maioria das mesmas informações, provenientes da mesma fonte, que o aplicativo [pg_controldata](app-pgcontroldata.md).
 
 **Tabela 9.88. Funções de dados de controle**
-
-
 
 <table>
  <colgroup>
@@ -6690,18 +6530,7 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 **Tabela 9.89. Colunas de saída `pg_control_checkpoint`**
-
-
 
 <table>
  <thead>
@@ -6934,18 +6763,7 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 **Tabela 9.90. Colunas de Saída `pg_control_system`**
-
-
 
 <table>
  <thead>
@@ -7010,18 +6828,7 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 **Tabela 9.91. Colunas de Saída `pg_control_init`**
-
-
 
 <table>
  <thead>
@@ -7182,18 +6989,7 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 **Tabela 9.92. Colunas de Saída `pg_control_recovery`**
-
-
 
 <table>
  <thead>
@@ -7270,19 +7066,11 @@ As funções mostradas na [Tabela 9.88](functions-info.md#FUNCTIONS-CONTROLDATA)
  </tbody>
 </table>
 
-
-
-
-
-
-
-### 9.27.11. Informações sobre a versão Funções [#](#FUNCTIONS-INFO-VERSION)
+#### 9.27.11. Informações sobre a versão Funções [#](#FUNCTIONS-INFO-VERSION)
 
 As funções mostradas na [Tabela 9.93](functions-info.md#FUNCTIONS-VERSION) imprimem informações da versão.
 
 **Tabela 9.93. Informações sobre a versão das funções**
-
-
 
 <table>
  <colgroup>
@@ -7381,19 +7169,11 @@ As funções mostradas na [Tabela 9.93](functions-info.md#FUNCTIONS-VERSION) imp
  </tbody>
 </table>
 
-
-
-
-
-
-
-### 9.27.12. Funções de Resumo de Informação WAL [#](#FUNCTIONS-INFO-WAL-SUMMARY)
+#### 9.27.12. Funções de Resumo de Informação WAL [#](#FUNCTIONS-INFO-WAL-SUMMARY)
 
 As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY) imprimem informações sobre o status da sumarização do WAL. Veja [summarize_wal](runtime-config-wal.md#GUC-SUMMARIZE-WAL).
 
 **Tabela 9.94. Funções de informações de resumo do WAL**
-
-
 
 <table>
  <colgroup>
@@ -7676,8 +7456,3 @@ As funções mostradas na [Tabela 9.94](functions-info.md#FUNCTIONS-WAL-SUMMARY)
   </tr>
  </tbody>
 </table>
-
-
-
-
-

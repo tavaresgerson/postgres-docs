@@ -1,4 +1,4 @@
-## 9.28. Funções de Administração do Sistema [#](#FUNCTIONS-ADMIN)
+### 9.28. Funções de Administração do Sistema [#](#FUNCTIONS-ADMIN)
 
 * [9.28.1. Funções de Configurações de Configuração](functions-admin.md#FUNCTIONS-ADMIN-SET)
 * [9.28.2. Funções de Sinalização do Servidor](functions-admin.md#FUNCTIONS-ADMIN-SIGNAL)
@@ -13,13 +13,11 @@
 
 As funções descritas nesta seção são usadas para controlar e monitorar uma instalação do PostgreSQL.
 
-### 9.28.1. Funções de Configurações de Configuração [#](#FUNCTIONS-ADMIN-SET)
+#### 9.28.1. Funções de Configurações de Configuração [#](#FUNCTIONS-ADMIN-SET)
 
 [Tabela 9.95](functions-admin.md#FUNCTIONS-ADMIN-SET-TABLE) mostra as funções disponíveis para consultar e alterar parâmetros de configuração de tempo de execução.
 
 **Tabela 9.95. Funções de Configurações de Configuração**
-
-
 
 <table>
  <colgroup>
@@ -216,21 +214,13 @@ As funções descritas nesta seção são usadas para controlar e monitorar uma 
  </tbody>
 </table>
 
-
-
-
-
-
-
-### 9.28.2. Funções de Sinalização do Servidor [#](#FUNCTIONS-ADMIN-SIGNAL)
+#### 9.28.2. Funções de Sinalização do Servidor [#](#FUNCTIONS-ADMIN-SIGNAL)
 
 As funções exibidas na [Tabela 9.96](functions-admin.md#FUNCTIONS-ADMIN-SIGNAL-TABLE) enviam sinais de controle para outros processos do servidor. O uso dessas funções é restrito por padrão a superusuários, mas o acesso pode ser concedido a outros usuários usando `GRANT`, com exceções indicadas.
 
 Cada uma dessas funções retorna `true` se o sinal for enviado com sucesso e `false` se o envio do sinal falhou.
 
 **Tabela 9.96. Funções de sinalização do servidor**
-
-
 
 <table>
  <colgroup>
@@ -459,20 +449,11 @@ Cada uma dessas funções retorna `true` se o sinal for enviado com sucesso e `f
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 `pg_cancel_backend` e `pg_terminate_backend` enviam sinais (SIGINT ou SIGTERM, respectivamente) para os processos de nível de profundidade identificados pelo ID de processo. O ID de processo de um backend ativo pode ser encontrado na coluna `pid` da visualização `pg_stat_activity`, ou listando os processos `postgres` no servidor (usando o comando ps no Unix ou o Gerenciador de Tarefas no Windows). O papel de um backend ativo pode ser encontrado na coluna `usename` da visualização `pg_stat_activity`.
 
 `pg_log_backend_memory_contexts` pode ser usado para registrar os contextos de memória de um processo de backend. Por exemplo:
 
-```
+```sql
 postgres=# SELECT pg_log_backend_memory_contexts(pg_backend_pid());
  pg_log_backend_memory_contexts
 --------------------------------
@@ -482,7 +463,7 @@ postgres=# SELECT pg_log_backend_memory_contexts(pg_backend_pid());
 
 Uma mensagem para cada contexto de memória será registrada. Por exemplo:
 
-```
+```sql
 LOG:  logging memory contexts of PID 10377
 STATEMENT:  SELECT pg_log_backend_memory_contexts(pg_backend_pid());
 LOG:  level: 1; TopMemoryContext: 80800 total in 6 blocks; 14432 free (5 chunks); 66368 used
@@ -500,15 +481,13 @@ LOG:  Grand total: 1651920 bytes in 201 blocks; 622360 free (88 chunks); 1029560
 
 Se houver mais de 100 contextos de criança sob o mesmo pai, os primeiros 100 contextos de criança são registrados, juntamente com um resumo dos contextos restantes. Observe que chamadas frequentes a essa função podem gerar um custo significativo, pois podem gerar um grande número de mensagens de registro.
 
-### 9.28.3. Funções de controle de backup [#](#FUNCTIONS-ADMIN-BACKUP)
+#### 9.28.3. Funções de controle de backup [#](#FUNCTIONS-ADMIN-BACKUP)
 
 As funções apresentadas na [Tabela 9.97](functions-admin.md#FUNCTIONS-ADMIN-BACKUP-TABLE) auxiliam na realização de backups on-line. Essas funções não podem ser executadas durante a recuperação (exceto `pg_backup_start`, `pg_backup_stop` e `pg_wal_lsn_diff`).
 
 Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.3](continuous-archiving.md)").
 
 **Tabela 9.97. Funções de controle de backup**
-
-
 
 <table>
  <colgroup>
@@ -945,20 +924,11 @@ Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 25.
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 `pg_current_wal_lsn` exibe a localização atual do log de pré-escrita no mesmo formato utilizado pelas funções acima. Da mesma forma, `pg_current_wal_insert_lsn` exibe a localização atual de inserção do log de pré-escrita e `pg_current_wal_flush_lsn` exibe a localização atual de esvaziamento do log de pré-escrita. A localização de inserção é o "lógico" final do log de pré-escrita em qualquer instante, enquanto a localização de escrita é o final do que foi efetivamente escrito dos buffers internos do servidor, e a localização de esvaziamento é a última localização conhecida que foi escrita em armazenamento durável. A localização de escrita é o final do que pode ser examinado de fora do servidor, e geralmente é o que você deseja se estiver interessado em arquivar arquivos de log de pré-escrita parcialmente completos. As localizações de inserção e esvaziamento são disponibilizadas principalmente para fins de depuração do servidor. Essas são todas operações somente de leitura e não requerem permissões de superusuário.
 
 Você pode usar `pg_walfile_name_offset` para extrair o nome do arquivo de registro de pré-escrita correspondente e o deslocamento de byte de um valor `pg_lsn`. Por exemplo:
 
-```
+```sql
 postgres=# SELECT * FROM pg_walfile_name_offset((pg_backup_stop()).lsn);
         file_name         | file_offset
 --------------------------+-------------
@@ -970,7 +940,7 @@ Da mesma forma, `pg_walfile_name` extrai apenas o nome do arquivo de registro de
 
 `pg_split_walfile_name` é útil para calcular um LSN a partir de um deslocamento de arquivo e do nome do arquivo WAL, por exemplo:
 
-```
+```sql
 postgres=# \set file_name '000000010000000100C000AB'
 postgres=# \set offset 256
 postgres=# SELECT '0/0'::pg_lsn + pd.segment_number * ps.setting::int + :offset AS lsn
@@ -983,13 +953,11 @@ postgres=# SELECT '0/0'::pg_lsn + pd.segment_number * ps.setting::int + :offset 
 (1 row)
 ```
 
-### 9.28.4. Funções de Controle de Recuperação [#](#FUNCTIONS-RECOVERY-CONTROL)
+#### 9.28.4. Funções de Controle de Recuperação [#](#FUNCTIONS-RECOVERY-CONTROL)
 
 As funções apresentadas na [Tabela 9.98](functions-admin.md#FUNCTIONS-RECOVERY-INFO-TABLE) fornecem informações sobre o estado atual de um servidor de espera. Essas funções podem ser executadas tanto durante a recuperação quanto no funcionamento normal.
 
 **Tabela 9.98. Funções de Recuperação de Informações**
-
-
 
 <table>
  <colgroup>
@@ -1141,20 +1109,9 @@ As funções apresentadas na [Tabela 9.98](functions-admin.md#FUNCTIONS-RECOVERY
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 As funções mostradas na [Tabela 9.99](functions-admin.md#FUNCTIONS-RECOVERY-CONTROL-TABLE) controlam o progresso da recuperação. Essas funções podem ser executadas apenas durante a recuperação.
 
 **Tabela 9.99. Funções de Controle de Recuperação**
-
-
 
 <table>
  <colgroup>
@@ -1357,20 +1314,11 @@ As funções mostradas na [Tabela 9.99](functions-admin.md#FUNCTIONS-RECOVERY-CO
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 `pg_wal_replay_pause` e `pg_wal_replay_resume` não podem ser executados enquanto uma promoção está em andamento. Se uma promoção for acionada enquanto a recuperação está em pausa, o estado de pausa termina e a promoção continua.
 
 Se a replicação em streaming estiver desativada, o estado pausado pode continuar indefinidamente sem problemas. Se a replicação em streaming estiver em andamento, os registros WAL continuarão a ser recebidos, o que acabará por preencher o espaço em disco disponível, dependendo da duração da pausa, da taxa de geração de WAL e do espaço em disco disponível.
 
-### 9.28.5. Funções de sincronização de instantâneo [#](#FUNCTIONS-SNAPSHOT-SYNCHRONIZATION)
+#### 9.28.5. Funções de sincronização de instantâneo [#](#FUNCTIONS-SNAPSHOT-SYNCHRONIZATION)
 
 O PostgreSQL permite que as sessões do banco de dados sincronizem seus snapshots. Um *snapshot* determina quais dados são visíveis para a transação que está usando o snapshot. Snapshots sincronizados são necessários quando duas ou mais sessões precisam ver conteúdo idêntico no banco de dados. Se duas sessões começam suas transações independentemente, sempre há a possibilidade de que alguma terceira transação seja confirmada entre as execuções dos dois comandos `START TRANSACTION`, de modo que uma sessão veja os efeitos dessa transação e a outra
 
@@ -1379,8 +1327,6 @@ Para resolver esse problema, o PostgreSQL permite que uma transação *exporte* 
 Os instantâneos são exportados com a função `pg_export_snapshot`, mostrada na [Tabela 9.100](functions-admin.md#FUNCTIONS-SNAPSHOT-SYNCHRONIZATION-TABLE "Table 9.100. Snapshot Synchronization Functions"), e importados com o comando [SET TRANSACTION](sql-set-transaction.md "SET TRANSACTION").
 
 **Tabela 9.100. Funções de sincronização de instantâneo**
-
-
 
 <table>
  <colgroup>
@@ -1455,13 +1401,7 @@ Os instantâneos são exportados com a função `pg_export_snapshot`, mostrada n
  </tbody>
 </table>
 
-
-
-
-
-
-
-### 9.28.6. Funções de Gerenciamento de Replicação [#](#FUNCTIONS-REPLICATION)
+#### 9.28.6. Funções de Gerenciamento de Replicação [#](#FUNCTIONS-REPLICATION)
 
 As funções apresentadas na [Tabela 9.101](functions-admin.md#FUNCTIONS-REPLICATION-TABLE) são para controlar e interagir com recursos de replicação. Consulte [Seção 26.2.5](warm-standby.md#STREAMING-REPLICATION), [Seção 26.2.6](warm-standby.md#STREAMING-REPLICATION-SLOTS) e [Capítulo 48](replication-origins.md) para informações sobre os recursos subjacentes. O uso de funções para origem de replicação é permitido apenas pelo superusuário por padrão, mas pode ser permitido a outros usuários usando o comando `GRANT`. O uso de funções para faixas de replicação é restrito a superusuários e usuários com privilégio `REPLICATION`.
 
@@ -1470,8 +1410,6 @@ Muitas dessas funções têm comandos equivalentes no protocolo de replicação;
 As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BACKUP), [Seção 9.28.4](functions-admin.md#FUNCTIONS-RECOVERY-CONTROL) e [Seção 9.28.5](functions-admin.md#FUNCTIONS-SNAPSHOT-SYNCHRONIZATION) também são relevantes para a replicação.
 
 **Tabela 9.101. Funções de Gerenciamento de Replicação**
-
-
 
 <table>
  <colgroup>
@@ -2914,19 +2852,11 @@ As funções descritas em [Seção 9.28.3](functions-admin.md#FUNCTIONS-ADMIN-BA
  </tbody>
 </table>
 
-
-
-
-
-
-
-### 9.28.7. Funções de Gerenciamento de Objetos de Banco de Dados [#](#FUNCTIONS-ADMIN-DBOBJECT)
+#### 9.28.7. Funções de Gerenciamento de Objetos de Banco de Dados [#](#FUNCTIONS-ADMIN-DBOBJECT)
 
 As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-DBSIZE) calculam o uso do espaço em disco dos objetos do banco de dados, ou auxiliam na apresentação ou compreensão dos resultados de uso. Os resultados `bigint` são medidos em bytes. Se um OID que não representa um objeto existente for passado para uma dessas funções, `NULL` é retornado.
 
 **Tabela 9.102. Funções de tamanho de objeto de banco de dados**
-
-
 
 <table>
  <colgroup>
@@ -3380,22 +3310,11 @@ As funções apresentadas na [Tabela 9.102](functions-admin.md#FUNCTIONS-ADMIN-D
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 As funções acima que operam em tabelas ou índices aceitam um argumento `regclass`, que é simplesmente o OID da tabela ou índice no catálogo de sistema `pg_class`. No entanto, você não precisa procurar o OID manualmente, pois o conversor de entrada do tipo de dados `regclass` fará o trabalho por você. Veja [Seção 8.19](datatype-oid.md) para detalhes.
 
 As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-DBLOCATION) auxiliam na identificação dos arquivos específicos do disco associados aos objetos do banco de dados.
 
 **Tabela 9.103. Funções de localização de objetos de banco de dados**
-
-
 
 <table>
  <colgroup>
@@ -3537,20 +3456,9 @@ As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-D
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 [Tabela 9.104](functions-admin.md#FUNCTIONS-ADMIN-COLLATION) lista as funções usadas para gerenciar colatões.
 
 **Tabela 9.104. Funções de Gerenciamento de Colaboração**
-
-
 
 <table>
  <colgroup>
@@ -3691,24 +3599,13 @@ As funções apresentadas na [Tabela 9.103](functions-admin.md#FUNCTIONS-ADMIN-D
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 [Tabela 9.105](functions-admin.md#FUNCTIONS-ADMIN-STATSMOD) lista funções usadas para manipular estatísticas. Essas funções não podem ser executadas durante a recuperação.
 
-### Aviso
+Aviso
 
 As alterações feitas por essas funções de manipulação de estatísticas provavelmente serão sobrescritas por [autovacuum](routine-vacuuming.md#AUTOVACUUM)(ou manual `VACUUM` ou `ANALYZE`) e devem ser consideradas temporárias.
 
 **Tabela 9.105. Funções de manipulação de estatísticas de objetos de banco de dados**
-
-
 
 <table>
  <colgroup>
@@ -4166,20 +4063,9 @@ SELECT pg_restore_attribute_stats( 'schemaname', 'myschema', 'relname',    'myta
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 [Tabela 9.106](functions-admin.md#FUNCTIONS-INFO-PARTITION) lista funções que fornecem informações sobre a estrutura de tabelas particionadas.
 
 **Tabela 9.106. Funções de informações de particionamento**
-
-
 
 <table>
  <colgroup>
@@ -4302,29 +4188,18 @@ SELECT pg_restore_attribute_stats( 'schemaname', 'myschema', 'relname',    'myta
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Por exemplo, para verificar o tamanho total dos dados contidos em uma tabela particionada `measurement`, é possível usar a seguinte consulta:
 
-```
+```sql
 SELECT pg_size_pretty(sum(pg_relation_size(relid))) AS total_size
   FROM pg_partition_tree('measurement');
 ```
 
-### 9.28.8. Funções de manutenção de índice [#](#FUNCTIONS-ADMIN-INDEX)
+#### 9.28.8. Funções de manutenção de índice [#](#FUNCTIONS-ADMIN-INDEX)
 
 [Tabela 9.107](functions-admin.md#FUNCTIONS-ADMIN-INDEX-TABLE) mostra as funções disponíveis para tarefas de manutenção de índices. (Observe que essas tarefas de manutenção são normalmente realizadas automaticamente pelo autovacuum; o uso dessas funções é necessário apenas em casos especiais.) Essas funções não podem ser executadas durante a recuperação. O uso dessas funções é restrito a superusuários e ao proprietário do índice dado.
 
 **Tabela 9.107. Funções de manutenção de índice**
-
-
 
 <table>
  <colgroup>
@@ -4492,13 +4367,7 @@ SELECT pg_size_pretty(sum(pg_relation_size(relid))) AS total_size
  </tbody>
 </table>
 
-
-
-
-
-
-
-### 9.28.9. Funções de acesso a arquivos genéricos [#](#FUNCTIONS-ADMIN-GENFILE)
+#### 9.28.9. Funções de acesso a arquivos genéricos [#](#FUNCTIONS-ADMIN-GENFILE)
 
 As funções exibidas na [Tabela 9.108](functions-admin.md#FUNCTIONS-ADMIN-GENFILE-TABLE) fornecem acesso nativo a arquivos na máquina que hospeda o servidor. Apenas os arquivos dentro do diretório do clúster do banco de dados e do `log_directory` podem ser acessados, a menos que o usuário seja um superusuário ou tenha concedido o papel `pg_read_server_files`. Use um caminho relativo para arquivos no diretório do clúster e um caminho que corresponda ao ajuste de configuração `log_directory` para arquivos de log.
 
@@ -4509,8 +4378,6 @@ Ao conceder privilégios nessas funções, observe que as entradas da tabela que
 Algumas dessas funções aceitam um parâmetro opcional *`missing_ok`*, que especifica o comportamento quando o arquivo ou diretório não existir. Se `true`, a função retorna `NULL` ou um conjunto de resultados vazio, conforme apropriado. Se `false`, um erro é gerado. (Condições de falha que não são "arquivo não encontrado" são relatadas como erros em qualquer caso.) O padrão é `false`.
 
 **Tabela 9.108. Funções genéricas de acesso a arquivos**
-
-
 
 <table>
  <colgroup>
@@ -5354,21 +5221,13 @@ SELECT convert_from(pg_read_binary_file('file_in_utf8.txt'), 'UTF8');
  </tbody>
 </table>
 
-
-
-
-
-
-
-### 9.28.10. Funções de bloqueio de aconselhamento [#](#FUNCTIONS-ADVISORY-LOCKS)
+#### 9.28.10. Funções de bloqueio de aconselhamento [#](#FUNCTIONS-ADVISORY-LOCKS)
 
 As funções apresentadas na [Tabela 9.109](functions-admin.md#FUNCTIONS-ADVISORY-LOCKS-TABLE) gerenciam bloqueios de aconselhamento. Para obter detalhes sobre o uso adequado dessas funções, consulte [Seção 13.3.5](explicit-locking.md#ADVISORY-LOCKS).
 
 Todas essas funções são destinadas a ser usadas para bloquear recursos definidos pela aplicação, que podem ser identificados por um único valor de chave de 64 bits ou por dois valores de chave de 32 bits (note que esses dois espaços de chave não se sobrepõem). Se outra sessão já tiver um bloqueio conflitante no mesmo identificador de recurso, as funções aguardará até que o recurso se torne disponível, ou retornará um resultado `false`, conforme apropriado para a função. Os bloqueios podem ser compartilhados ou exclusivos: um bloqueio compartilhado não conflita com outros bloqueios compartilhados no mesmo recurso, apenas com bloqueios exclusivos. Os bloqueios podem ser tomados em nível de sessão (para que sejam mantidos até serem liberados ou até o término da sessão) ou em nível de transação (para que sejam mantidos até o término da transação atual; não há disposição para liberação manual). Vários pedidos de bloqueio em nível de sessão se acumulam, portanto, se o mesmo identificador de recurso for bloqueado três vezes, então devem haver três solicitações de desbloqueio para liberar o recurso antes do término da sessão.
 
 **Tabela 9.109. Funções de bloqueio de consulta**
-
-
 
 <table>
  <colgroup>
@@ -5973,8 +5832,3 @@ Todas essas funções são destinadas a ser usadas para bloquear recursos defini
   </tr>
  </tbody>
 </table>
-
-
-
-
-

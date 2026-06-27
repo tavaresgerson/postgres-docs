@@ -1,4 +1,4 @@
-## 9.9. Funções e operadores de data/hora [#](#FUNCTIONS-DATETIME)
+### 9.9. Funções e operadores de data/hora [#](#FUNCTIONS-DATETIME)
 
 * [9.9.1. `EXTRACT`, `date_part`](functions-datetime.md#FUNCTIONS-DATETIME-EXTRACT)
 * [9.9.2. `date_trunc`](functions-datetime.md#FUNCTIONS-DATETIME-TRUNC)
@@ -15,12 +15,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
 
 **Tabela 9.32. Operadores de data/hora**
 
-
-
 <table>
- <colgroup>
-  <col/>
- </colgroup>
  <thead>
   <tr>
    <th class="func_table_entry">
@@ -588,18 +583,7 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 **Tabela 9.33. Funções de data/hora**
-
-
 
 <table>
  <colgroup>
@@ -2167,25 +2151,16 @@ Todas as funções e operadores descritos abaixo que recebem entradas de `time` 
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Além dessas funções, o operador SQL `OVERLAPS` é suportado:
 
-```
+```sql
 (start1, end1) OVERLAPS (start2, end2)
 (start1, length1) OVERLAPS (start2, length2)
 ```
 
 Essa expressão é verdadeira quando dois períodos de tempo (definidos por seus pontos finais) se sobrepõem, falsa quando não se sobrepõem. Os pontos finais podem ser especificados como pares de datas, horários ou marcações de tempo; ou como uma data, horário ou marcação de tempo seguida de um intervalo. Quando um par de valores é fornecido, o início ou o fim pode ser escrito primeiro; `OVERLAPS` automaticamente assume o valor anterior do par como o início. Cada período de tempo é considerado para representar o intervalo semiaberto *`start`* `<=` *`time`* `<` *`end`*, a menos que *`start`* e *`end`* sejam iguais, no caso em que representa aquele instante de tempo único. Isso significa, por exemplo, que dois períodos de tempo com apenas um ponto final em comum não se sobrepõem.
 
-```
+```sql
 SELECT (DATE '2001-02-16', DATE '2001-12-21') OVERLAPS
        (DATE '2001-10-30', DATE '2002-10-30');
 Result: true
@@ -2202,7 +2177,7 @@ Result: true
 
 Ao adicionar um valor de `interval` a (ou subtrair um valor de `interval` de) um valor de `timestamp` ou `timestamp with time zone`, os campos meses, dias e microsegundos do valor de `interval` são tratados em ordem. Primeiro, um campo de meses não nulo avança ou decrementa a data do timestamp pelo número indicado de meses, mantendo o dia do mês o mesmo, a menos que seja passado pelo final do novo mês, caso em que o último dia desse mês é usado. (Por exemplo, 31 de março mais 1 mês se torna 30 de abril, mas 31 de março mais 2 meses se torna 31 de maio.) Em seguida, o campo dias avança ou decrementa a data do timestamp pelo número indicado de dias. Em ambos os passos, o horário local do dia é mantido o mesmo. Finalmente, se houver um campo de microsegundos não nulo, ele é adicionado ou subtraído literalmente. Ao realizar cálculos em um valor de `timestamp with time zone` em um fuso horário que reconhece o DST, isso significa que adicionar ou subtrair (digamos) `interval '1 day'` não necessariamente tem o mesmo resultado que adicionar ou subtrair `interval '24 hours'`. Por exemplo, com o fuso horário de sessão definido como `America/Denver`:
 
-```
+```sql
 SELECT timestamp with time zone '2005-04-02 12:00:00-07' + interval '1 day';
 Result: 2005-04-03 12:00:00-06
 SELECT timestamp with time zone '2005-04-02 12:00:00-07' + interval '24 hours';
@@ -2215,7 +2190,7 @@ Observe que pode haver ambiguidade no campo `months` retornado por `age`, pois d
 
 A subtração de datas e timestamps também pode ser complexa. Uma maneira conceitualmente simples de realizar a subtração é converter cada valor em um número de segundos usando `EXTRACT(EPOCH FROM ...)`, e depois subtrair os resultados; isso produz o número de *segundos* entre os dois valores. Isso ajusta o número de dias em cada mês, mudanças de fuso horário e ajustes para o horário de verão. A subtração de valores de data ou timestamp com o operador “`-`” retorna o número de dias (24 horas) e horas/minutos/segundos entre os valores, fazendo os mesmos ajustes. A função `age` retorna anos, meses, dias e horas/minutos/segundos, realizando a subtração de campo por campo e depois ajustando para valores de campo negativos. As seguintes consultas ilustram as diferenças nessas abordagens. Os resultados da amostra foram produzidos com `timezone = 'US/Eastern'`; há uma mudança no horário de verão entre as duas datas usadas:
 
-```
+```sql
 SELECT EXTRACT(EPOCH FROM timestamptz '2013-07-01 12:00:00') -
        EXTRACT(EPOCH FROM timestamptz '2013-03-01 12:00:00');
 Result: 10537200.000000
@@ -2231,7 +2206,7 @@ Result: 4 mons
 
 ### 9.9.1. `EXTRACT`, `date_part` [#](#FUNCTIONS-DATETIME-EXTRACT)
 
-```
+```sql
 EXTRACT(field FROM source)
 ```
 
@@ -2241,25 +2216,25 @@ Os seguintes nomes de campo são válidos:
 
 `century`: O século; para os valores de `interval`, o campo ano dividido por 100
 
-```
+```sql
 SELECT EXTRACT(CENTURY FROM TIMESTAMP '2000-12-16 12:21:13'); Result: 20 SELECT EXTRACT(CENTURY FROM TIMESTAMP '2001-02-16 20:38:40'); Result: 21 SELECT EXTRACT(CENTURY FROM DATE '0001-01-01 AD'); Result: 1 SELECT EXTRACT(CENTURY FROM DATE '0001-12-31 BC'); Result: -1 SELECT EXTRACT(CENTURY FROM INTERVAL '2001 years'); Result: 20
 ```
 
 `day`: O dia do mês (1–31); para os valores de `interval`, o número de dias
 
-```
+```sql
 SELECT EXTRACT(DAY FROM TIMESTAMP '2001-02-16 20:38:40'); Result: 16 SELECT EXTRACT(DAY FROM INTERVAL '40 days 1 minute'); Result: 40
 ```
 
 `decade` :   O campo ano dividido por 10
 
-```
+```sql
 SELECT EXTRACT(DECADE FROM TIMESTAMP '2001-02-16 20:38:40'); Result: 200
 ```
 
 `dow` :   O dia da semana como domingo (`0`) a `6`  sábado
 
-```
+```sql
 SELECT EXTRACT(DOW FROM TIMESTAMP '2001-02-16 20:38:40'); Result: 5
 ```
 
@@ -2267,19 +2242,19 @@ Observe que a numeração do dia da semana de `extract` difere daquela da funç�
 
 `doy` :   Dia do ano (1 a 365/366)
 
-```
+```sql
 SELECT EXTRACT(DOY FROM TIMESTAMP '2001-02-16 20:38:40'); Result: 47
 ```
 
 `epoch` Para os valores de `timestamp with time zone`, o número de segundos desde 1970-01-01 00:00:00 UTC (negativo para timestamps antes disso); para os valores de `date` e `timestamp`, o número nominal de segundos desde 1970-01-01 00:00:00, sem considerar o fuso horário ou as regras de mudança de hora; para os valores de `interval`, o número total de segundos no intervalo
 
-```
+```sql
 SELECT EXTRACT(EPOCH FROM TIMESTAMP WITH TIME ZONE '2001-02-16 20:38:40.12-08'); Result: 982384720.120000 SELECT EXTRACT(EPOCH FROM TIMESTAMP '2001-02-16 20:38:40.12'); Result: 982355920.120000 SELECT EXTRACT(EPOCH FROM INTERVAL '5 days 3 hours'); Result: 442800.000000
 ```
 
 Você pode converter um valor de época de volta para um `timestamp with time zone` com `to_timestamp`:
 
-```
+```sql
 SELECT to_timestamp(982384720.12); Result: 2001-02-17 04:38:40.12+00
 ```
 
@@ -2287,13 +2262,13 @@ Cuidado: aplicar `to_timestamp` a uma época extraída de um valor de `date` ou 
 
 `hour`: O campo hora (0–23 em timestamps, sem restrições em intervalos)
 
-```
+```sql
 SELECT EXTRACT(HOUR FROM TIMESTAMP '2001-02-16 20:38:40'); Result: 20
 ```
 
 `isodow`: O dia da semana como Segunda-feira (`1`) a Domingo (`7`)
 
-```
+```sql
 SELECT EXTRACT(ISODOW FROM TIMESTAMP '2001-02-18 20:38:40'); Result: 7
 ```
 
@@ -2301,7 +2276,7 @@ Isso é idêntico a `dow`, exceto no domingo. Isso corresponde à numeração do
 
 `isoyear`: O ano de numeração de semana ISO 8601 em que a data ocorre
 
-```
+```sql
 SELECT EXTRACT(ISOYEAR FROM DATE '2006-01-01'); Result: 2005 SELECT EXTRACT(ISOYEAR FROM DATE '2006-01-02'); Result: 2006
 ```
 
@@ -2309,19 +2284,19 @@ Cada ano numerado com base na semana ISO 8601 começa na segunda-feira da semana
 
 `julian`: A *Data de Julho* correspondente à data ou timestamp. Os timestamps que não são meia-noite local resultam em um valor fracionário. Consulte a [Seção B.7](datetime-julian-dates.md) para mais informações.
 
-```
+```sql
 SELECT EXTRACT(JULIAN FROM DATE '2006-01-01'); Result: 2453737 SELECT EXTRACT(JULIAN FROM TIMESTAMP '2006-01-01 12:00'); Result: 2453737.50000000000000000000
 ```
 
 `microseconds`: Os segundos, incluindo partes fracionárias, multiplicados por 1 000 000; observe que isso inclui segundos completos
 
-```
+```sql
 SELECT EXTRACT(MICROSECONDS FROM TIME '17:12:28.5'); Result: 28500000
 ```
 
 `millennium`: O milênio; para os valores de `interval`, o campo ano dividido por 1000
 
-```
+```sql
 SELECT EXTRACT(MILLENNIUM FROM TIMESTAMP '2001-02-16 20:38:40'); Result: 3 SELECT EXTRACT(MILLENNIUM FROM INTERVAL '2001 years'); Result: 2
 ```
 
@@ -2329,31 +2304,31 @@ Os anos dos anos 1900 estão no segundo milênio. O terceiro milênio começou e
 
 `milliseconds`: O campo segundos, incluindo partes fracionárias, multiplicado por 1000. Observe que isso inclui segundos completos.
 
-```
+```sql
 SELECT EXTRACT(MILLISECONDS FROM TIME '17:12:28.5'); Result: 28500.000
 ```
 
 `minute` :   campo minutos (0–59)
 
-```
+```sql
 SELECT EXTRACT(MINUTE FROM TIMESTAMP '2001-02-16 20:38:40'); Result: 38
 ```
 
 `month` :   O número do mês dentro do ano (1–12); para os valores de `interval`, o número de meses módulo 12 (0–11)
 
-```
+```sql
 SELECT EXTRACT(MONTH FROM TIMESTAMP '2001-02-16 20:38:40'); Result: 2 SELECT EXTRACT(MONTH FROM INTERVAL '2 years 3 months'); Result: 3 SELECT EXTRACT(MONTH FROM INTERVAL '2 years 13 months'); Result: 1
 ```
 
 `quarter` : O trimestre do ano (1–4) em que a data está; para os valores de `interval`, o campo mês dividido por 3 mais 1
 
-```
+```sql
 SELECT EXTRACT(QUARTER FROM TIMESTAMP '2001-02-16 20:38:40'); Result: 1 SELECT EXTRACT(QUARTER FROM INTERVAL '1 year 6 months'); Result: 3
 ```
 
 `second`: O campo segundos, incluindo quaisquer segundos fracionários
 
-```
+```sql
 SELECT EXTRACT(SECOND FROM TIMESTAMP '2001-02-16 20:38:40'); Result: 40.000000 SELECT EXTRACT(SECOND FROM TIME '17:12:28.5'); Result: 28.500000
 ```
 
@@ -2369,19 +2344,19 @@ No sistema de numeração de semanas ISO, é possível que datas de início de j
 
 Para os valores de `interval`, o campo semana é simplesmente o número de dias inteiros dividido por 7.
 
-```
+```sql
 SELECT EXTRACT(WEEK FROM TIMESTAMP '2001-02-16 20:38:40'); Result: 7 SELECT EXTRACT(WEEK FROM INTERVAL '13 days 24 hours'); Result: 1
 ```
 
-:   O campo ano. Tenha em mente que não há `0 AD`, então subtrair `BC` anos de `AD` anos deve ser feito com cuidado.
+`year`:   O campo ano. Tenha em mente que não há `0 AD`, então subtrair `BC` anos de `AD` anos deve ser feito com cuidado.
 
-```
+```sql
 SELECT EXTRACT(YEAR FROM TIMESTAMP '2001-02-16 20:38:40'); Result: 2001
 ```
 
 Ao processar um valor de `interval`, a função `extract` produz valores de campo que correspondem à interpretação usada pela função de saída de intervalo. Isso pode produzir resultados surpreendentes se começar com uma representação de intervalo não normalizada, por exemplo:
 
-```
+```sql
 SELECT INTERVAL '80 minutes'; Result: 01:20:00 SELECT EXTRACT(MINUTES FROM INTERVAL '80 minutes'); Result: 20
 ```
 
@@ -2393,21 +2368,21 @@ A função `extract` é destinada principalmente ao processamento computacional.
 
 A função `date_part` é modelada no equivalente tradicional de Ingres ao padrão SQL, que é a função `extract`:
 
-```
+```sql
 date_part('field', source)
 ```
 
 Observe que, aqui, o parâmetro *`field`* precisa ser um valor de string, não um nome. Os nomes de campo válidos para `date_part` são os mesmos que para `extract`. Por razões históricas, a função `date_part` retorna valores do tipo `double precision`. Isso pode resultar em perda de precisão em certos usos. Em vez disso, é recomendado usar `extract`.
 
-```
+```sql
 SELECT date_part('day', TIMESTAMP '2001-02-16 20:38:40'); Result: 16 SELECT date_part('hour', INTERVAL '4 hours 3 minutes'); Result: 4
 ```
 
-### 9.9.2. `date_trunc` [#](#FUNCTIONS-DATETIME-TRUNC)
+#### 9.9.2. `date_trunc` [#](#FUNCTIONS-DATETIME-TRUNC)
 
 A função `date_trunc` é conceitualmente semelhante à função `trunc` para números.
 
-```
+```sql
 date_trunc(field, source [, time_zone ])
 ```
 
@@ -2416,8 +2391,6 @@ date_trunc(field, source [, time_zone ])
 (Os valores do tipo `date` e `time` são convertidos automaticamente para `timestamp` ou `interval`, respectivamente.) *`field`* seleciona a precisão para restringir o valor de entrada. O valor de retorno é igualmente do tipo `timestamp`, `timestamp with time zone`, ou `interval`, e possui todos os campos que são menos significativos que o selecionado definidos como zero (ou um, para dia e mês).
 
 Os valores válidos para *`field`* são:
-
-
 
 <table>
  <tr>
@@ -2513,27 +2486,21 @@ Os valores válidos para *`field`* são:
  </tr>
 </table>
 
-
-
-
-
-
-
 Quando o valor de entrada é do tipo `timestamp with time zone`, a troncamento é realizada em relação a um fuso horário específico; por exemplo, a troncamento para `day` produz um valor que é meia-noite nessa zona. Por padrão, a troncamento é feita em relação à configuração atual de [TimeZone](runtime-config-client.md#GUC-TIMEZONE), mas o argumento opcional *`time_zone`* pode ser fornecido para especificar um fuso horário diferente. O nome do fuso horário pode ser especificado em qualquer uma das maneiras descritas em [Seção 8.5.3](datatype-datetime.md#DATATYPE-TIMEZONES).
 
 Não é possível especificar um fuso horário ao processar as entradas `timestamp without time zone` ou `interval`. Essas são sempre tomadas como verdadeiras.
 
 Exemplos (assumindo que o fuso horário local é `America/New_York`):
 
-```
+```sql
 SELECT date_trunc('hour', TIMESTAMP '2001-02-16 20:38:40'); Result: 2001-02-16 20:00:00 SELECT date_trunc('year', TIMESTAMP '2001-02-16 20:38:40'); Result: 2001-01-01 00:00:00 SELECT date_trunc('day', TIMESTAMP WITH TIME ZONE '2001-02-16 20:38:40+00'); Result: 2001-02-16 00:00:00-05 SELECT date_trunc('day', TIMESTAMP WITH TIME ZONE '2001-02-16 20:38:40+00', 'Australia/Sydney'); Result: 2001-02-16 08:00:00-05 SELECT date_trunc('hour', INTERVAL '3 days 02:47:33'); Result: 3 days 02:00:00
 ```
 
-### 9.9.3. `date_bin` [#](#FUNCTIONS-DATETIME-BIN)
+#### 9.9.3. `date_bin` [#](#FUNCTIONS-DATETIME-BIN)
 
 A função `date_bin` "armazena" o timestamp de entrada no intervalo especificado (o *passo*) alinhado com uma origem especificada.
 
-```
+```sql
 date_bin(stride, source, origin)
 ```
 
@@ -2541,7 +2508,7 @@ date_bin(stride, source, origin)
 
 Exemplos:
 
-```
+```sql
 SELECT date_bin('15 minutes', TIMESTAMP '2020-02-11 15:44:17', TIMESTAMP '2001-01-01'); Result: 2020-02-11 15:30:00 SELECT date_bin('15 minutes', TIMESTAMP '2020-02-11 15:44:17', TIMESTAMP '2001-01-01 00:02:30'); Result: 2020-02-11 15:32:30
 ```
 
@@ -2549,13 +2516,11 @@ No caso de unidades completas (1 minuto, 1 hora, etc.), ele dá o mesmo resultad
 
 O intervalo *`stride`* deve ser maior que zero e não pode conter unidades de mês ou maiores.
 
-### 9.9.4. `AT TIME ZONE` e `AT LOCAL` [#](#FUNCTIONS-DATETIME-ZONECONVERT)
+#### 9.9.4. `AT TIME ZONE` e `AT LOCAL` [#](#FUNCTIONS-DATETIME-ZONECONVERT)
 
 O operador `AT TIME ZONE` converte o rótulo de tempo *sem* fuso horário para/do rótulo de tempo *com* fuso horário, e os valores `time with time zone` para diferentes fusos horários. [Tabela 9.34](functions-datetime.md#FUNCTIONS-DATETIME-ZONECONVERT-TABLE "Table 9.34. AT TIME ZONE and AT LOCAL Variants") mostra seus variações.
 
 **Tabela 9.34. `AT TIME ZONE` e `AT LOCAL` Variantes**
-
-
 
 <table>
  <colgroup>
@@ -2846,22 +2811,13 @@ O operador `AT TIME ZONE` converte o rótulo de tempo *sem* fuso horário para/d
  </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
 Nestas expressões, o fuso horário desejado *`zone`* pode ser especificado como um valor de texto (por exemplo, `'America/Los_Angeles'`) ou como um intervalo (por exemplo, `INTERVAL '-08:00'`). No caso de texto, um nome de fuso horário pode ser especificado de qualquer das maneiras descritas em [Seção 8.5.3](datatype-datetime.md#DATATYPE-TIMEZONES "8.5.3. Time Zones"). O caso de intervalo é útil apenas para zonas que têm deslocamentos fixos em relação ao UTC, portanto, não é muito comum na prática.
 
 A sintaxe `AT LOCAL` pode ser usada como abreviação para `AT TIME ZONE local`, onde *`local`* é o valor da sessão `TimeZone`.
 
 Exemplos (assumindo que o ajuste atual de [TimeZone](runtime-config-client.md#GUC-TIMEZONE) é `America/Los_Angeles`):
 
-```
+```sql
 SELECT TIMESTAMP '2001-02-16 20:38:40' AT TIME ZONE 'America/Denver'; Result: 2001-02-16 19:38:40-08 SELECT TIMESTAMP WITH TIME ZONE '2001-02-16 20:38:40-05' AT TIME ZONE 'America/Denver'; Result: 2001-02-16 18:38:40 SELECT TIMESTAMP '2001-02-16 20:38:40' AT TIME ZONE 'Asia/Tokyo' AT TIME ZONE 'America/Chicago'; Result: 2001-02-16 05:38:40 SELECT TIMESTAMP WITH TIME ZONE '2001-02-16 20:38:40-05' AT LOCAL; Result: 2001-02-16 17:38:40 SELECT TIMESTAMP WITH TIME ZONE '2001-02-16 20:38:40-05' AT TIME ZONE '+05'; Result: 2001-02-16 20:38:40 SELECT TIME WITH TIME ZONE '20:38:40-05' AT LOCAL; Result: 17:38:40
 ```
 
@@ -2877,11 +2833,11 @@ A função `timezone(timestamp)` é equivalente ao construtivo conforme SQL `tim
 
 A função `timezone(time)` é equivalente ao construtivo conforme SQL `time AT LOCAL`.
 
-### 9.9.5. Data/Hora atual [#](#FUNCTIONS-DATETIME-CURRENT)
+#### 9.9.5. Data/Hora atual [#](#FUNCTIONS-DATETIME-CURRENT)
 
 O PostgreSQL oferece vários funções que retornam valores relacionados à data e hora atuais. Essas funções padrão do SQL retornam todos os valores com base no horário de início da transação atual:
 
-```
+```sql
 CURRENT_DATE CURRENT_TIME CURRENT_TIMESTAMP CURRENT_TIME(precision) CURRENT_TIMESTAMP(precision) LOCALTIME LOCALTIMESTAMP LOCALTIME(precision) LOCALTIMESTAMP(precision)
 ```
 
@@ -2891,7 +2847,7 @@ CURRENT_DATE CURRENT_TIME CURRENT_TIMESTAMP CURRENT_TIME(precision) CURRENT_TIME
 
 Alguns exemplos:
 
-```
+```sql
 SELECT CURRENT_TIME; Result: 14:39:53.662522-05 SELECT CURRENT_DATE; Result: 2019-12-23 SELECT CURRENT_TIMESTAMP; Result: 2019-12-23 14:39:53.662522-05 SELECT CURRENT_TIMESTAMP(2); Result: 2019-12-23 14:39:53.66-05 SELECT LOCALTIMESTAMP; Result: 2019-12-23 14:39:53.662522
 ```
 
@@ -2903,7 +2859,7 @@ Outros sistemas de banco de dados podem avançar esses valores com mais frequên
 
 O PostgreSQL também fornece funções que retornam o horário de início da declaração atual, bem como o horário atual no instante em que a função é chamada. A lista completa das funções de hora não padrão do SQL é:
 
-```
+```sql
 transaction_timestamp() statement_timestamp() clock_timestamp() timeofday() now()
 ```
 
@@ -2911,7 +2867,7 @@ transaction_timestamp() statement_timestamp() clock_timestamp() timeofday() now(
 
 Todos os tipos de dados de data/hora também aceitam o valor literal especial `now` para especificar a data e hora atuais (novamente, interpretado como o horário de início da transação). Assim, os seguintes três retornam o mesmo resultado:
 
-```
+```sql
 SELECT CURRENT_TIMESTAMP; SELECT now(); SELECT TIMESTAMP 'now';  -- but see tip below
 ```
 
@@ -2921,17 +2877,17 @@ Não use a terceira forma ao especificar um valor a ser avaliado mais tarde, por
 
 (Veja também [Seção 8.5.1.4](datatype-datetime.md#DATATYPE-DATETIME-SPECIAL-VALUES).
 
-### 9.9.6. Retardo na execução [#](#FUNCTIONS-DATETIME-DELAY)
+#### 9.9.6. Retardo na execução [#](#FUNCTIONS-DATETIME-DELAY)
 
 As seguintes funções estão disponíveis para adiar a execução do processo do servidor:
 
-```
+```sql
 pg_sleep ( double precision ) pg_sleep_for ( interval ) pg_sleep_until ( timestamp with time zone )
 ```
 
 `pg_sleep` faz o processo da sessão atual dormir até que o número dado de segundos tenha decorrido. Atraso de fração de segundo podem ser especificados. `pg_sleep_for` é uma função de conveniência para permitir que o tempo de sono seja especificado como um `interval`. `pg_sleep_until` é uma função de conveniência para quando um horário específico de despertar é desejado. Por exemplo:
 
-```
+```sql
 SELECT pg_sleep(1.5); SELECT pg_sleep_for('5 minutes'); SELECT pg_sleep_until('tomorrow 03:00');
 ```
 
@@ -2939,6 +2895,6 @@ Nota
 
 A resolução efetiva do intervalo de sono é específica da plataforma; 0,01 segundos é um valor comum. O atraso de sono será pelo menos tão longo quanto especificado. Pode ser mais longo, dependendo de fatores como a carga do servidor. Em particular, `pg_sleep_until` não é garantido que acorde exatamente na hora especificada, mas não acordará mais cedo.
 
-### Aviso
+Aviso
 
 Certifique-se de que sua sessão não tenha mais bloqueios do que o necessário ao chamar `pg_sleep` ou suas variantes. Caso contrário, outras sessões podem ter que esperar pelo seu processo de sono, o que desacelera todo o sistema.

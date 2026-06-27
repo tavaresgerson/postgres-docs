@@ -1,10 +1,8 @@
-## 9.14. Funções UUID [#](#FUNCTIONS-UUID)
+### 9.14. Funções UUID [#](#FUNCTIONS-UUID)
 
 [Tabela 9.45](functions-uuid.md#FUNC_UUID_GEN_TABLE) mostra as funções do PostgreSQL que podem ser usadas para gerar UUIDs.
 
 **Tabela 9.45. Funções de Geração de UUID**
-
-
 
 <table>
  <colgroup>
@@ -227,15 +225,6 @@ O módulo [uuid-ossp](uuid-ossp.md) fornece funções adicionais que implementam
   </tr>
  </tbody>
 </table>
-
-
-
-
-
-
-
-
-
 
 O PostgreSQL também fornece os operadores de comparação habituais mostrados na [Tabela 9.1](functions-comparison.md#FUNCTIONS-COMPARISON-OP-TABLE) para UUIDs.
 
